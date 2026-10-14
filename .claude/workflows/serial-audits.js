@@ -39,10 +39,10 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,
    "status": "candidate"), in neutral wording other ideologies could also take a side on, and set "addedAs" to the new id.
    Or set "declined" with a reason. Keep the bank lean: every statement added must be answered by every future audit.
-4. \`git add\` only the audit file and statements.json; commit as "Audit <name>" ending with the line
-   "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>".
+4. \`git add\` only the audit file and statements.json; commit as "Audit <name>". Commits carry only the repo
+   owner's name: add no Co-Authored-By or other attribution line.
 5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
-   audits/statements/texts.json as "Rebuild site data" (same co-author line) and \`git push\`. If they fail, do not push;
+   audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push;
    say why in the report.
 6. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch scripts/candidates.js or any other file.`
@@ -67,7 +67,7 @@ Only edit those audit files. Do not commit.`, { label: `backfill:${batch.map((a)
   }
   return agent(`Working directory: ${ROOT}
 1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (contested), remove its "status" field in statements.json, keeping the one-line format.
-2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" ending with "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>", and \`git push\`. If they fail, don't push.
+2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
 Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
     { label: 'promote', phase: 'Backfill', effort: 'low' })
 }
