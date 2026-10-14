@@ -310,7 +310,8 @@ function renderQuestion() {
   $("settled-note").hidden = !settled;
   setHeaderAction(settled ? "results" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
-    const chosen = answers[q] === SHOWN_CHOICES[i].value;
+    // The sixth button is "No opinion": chosen when this statement was already shown and skipped.
+    const chosen = i < SHOWN_CHOICES.length ? answers[q] === SHOWN_CHOICES[i].value : answers[q] === null && position < order.length - 1;
     b.classList.toggle("chosen", chosen);
     b.setAttribute("aria-pressed", String(chosen));
   }
@@ -365,7 +366,15 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
 }
-$("skip").addEventListener("click", () => answer(null));
+// "No opinion": not part of the agree–disagree scale; the statement simply isn't counted.
+{
+  const b = document.createElement("button");
+  b.id = "choice-none";
+  b.className = "no-opinion";
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>No opinion</span><span class="key" aria-hidden="true">6</span>`;
+  b.addEventListener("click", () => answer(null));
+  $("likert").append(b);
+}
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
 $("finish-early").addEventListener("click", finishQuiz);
 $("resume").addEventListener("click", () => go("#/test"));
@@ -403,6 +412,7 @@ document.addEventListener("keydown", (e) => {
   if ($("page-test").hidden || e.metaKey || e.ctrlKey || e.altKey) return;
   const n = Number(e.key);
   if (n >= 1 && n <= 5) answer(SHOWN_CHOICES[n - 1].value);
+  else if (n === 6) answer(null);
   else if (e.key === "Backspace") $("back").click();
 });
 

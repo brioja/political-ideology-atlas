@@ -115,6 +115,10 @@ button:disabled { opacity: 0.4; cursor: default; }
 .likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
 .likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
+/* "No opinion" is set apart from the agree–disagree scale: it means the statement isn't counted. */
+.likert button.no-opinion { margin-top: 0.35rem; border-style: dashed; color: var(--muted); }
+.likert button.no-opinion .dot { border-style: dashed; width: 0.9rem; height: 0.9rem; }
+.likert button.no-opinion.chosen { color: var(--ink); }
 @media (hover: none) { .likert button .key { display: none; } }
 
 .explain { display: grid; gap: 0.9rem; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; }
@@ -491,7 +495,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
             <span class="eyebrow" id="counter"></span>
             <div class="quiz-actions">
               <button class="link" id="back">Back</button>
-              <button class="link" id="skip" title="Skip if you don't know enough to answer">Skip</button>
               <button class="link" id="finish-early" hidden>See results</button>
             </div>
           </div>
