@@ -6,7 +6,7 @@ evidence. Each answer you give becomes one coordinate of the ideology's profile,
 are matched against. Getting it wrong puts real people into the wrong ideology.
 
 Inputs (filled in by the runner):
-- Ideology: `{{name}}` (id `{{id}}`, broad category `{{category}}`)
+- Ideology: `{{name}}` (id `{{id}}`)
 - Statements: `statements.json` in the repo root. Answer every statement.
 
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
@@ -55,9 +55,6 @@ record it in `scope`:
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.
-
-The category given is only a hint for disambiguation. Do not let it override the evidence.
-If no category is given, leave `category` as null: it isn't needed for the audit.
 
 ## 2. Research with real sources
 
@@ -136,7 +133,6 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 {
   "id": "{{id}}",
   "name": "{{name}}",
-  "category": "{{category}} (null if none was given)",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",

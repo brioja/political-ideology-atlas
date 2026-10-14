@@ -20,11 +20,11 @@ const PENDING = {
       items: {
         type: 'object',
         properties: {
-          id: { type: 'string' }, name: { type: 'string' }, category: { type: 'string' },
+          id: { type: 'string' }, name: { type: 'string' },
           wikipedia: { type: ['string', 'null'] }, wikipediaMatch: { type: 'string' },
           scopeNote: { type: 'string', description: 'copy verbatim when present' },
         },
-        required: ['id', 'name', 'category'],
+        required: ['id', 'name'],
       },
     },
   },
@@ -60,7 +60,6 @@ Working directory: ${ROOT}
 Read ${ROOT}/audits/PROMPT.md first and follow it exactly. Fill its placeholders with:
 - name: ${i.name}
 - id: ${i.id}
-- category: ${i.category}
 - wikipedia (suggested, confirm it): ${i.wikipedia || 'none found'} (found as: ${i.wikipediaMatch || 'none'})${i.scopeNote ? `\n- scope note (follow it): ${i.scopeNote}` : ''}
 - auditedAt: today's date (YYYY-MM-DD)
 

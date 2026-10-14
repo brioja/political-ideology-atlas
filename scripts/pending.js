@@ -38,5 +38,5 @@ const pending = catalog().filter((entry) => {
 });
 
 if (process.argv.includes("--by-views")) pending.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
-console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
-  ({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }))));
+console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
+  ({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }))));

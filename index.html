@@ -28,9 +28,7 @@
   --accent: #1f6f78;      /* teal: you, primary actions */
   --accent-2: #8a3b6b;    /* plum: the matched ideology */
   --accent-soft: #d8ebec;
-  /* Ideology families in the international convention: red left, gold liberal & center, blue right.
-     Validated as a colorblind-safe set in both themes; each meets WCAG 2.2 SC 1.4.11 (>= 3:1).
-     Shape and the category name always accompany color (SC 1.4.1). */
+  /* The globe logo's three meridians (brand colors only; ideologies aren't colored by family). */
   --fam-left: #C2185B;
   --fam-center: #A67C00;
   --fam-right: #1565C0;
@@ -291,13 +289,8 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .footer-links a { color: var(--ink); text-decoration: none; font: 500 0.95rem var(--display); }
 .footer-links a:hover { color: var(--accent); text-decoration: underline; }
 
-/* Category markers */
+/* Position glyph: a tiny map showing where an ideology sits on the first two lines */
 .swatch-mark { flex: none; vertical-align: -2px; margin-right: 0.35rem; }
-.cat-tag { display: inline-flex; align-items: center; font: 500 0.8rem/1.2 var(--mono); color: var(--muted); white-space: nowrap; }
-.cat-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; font-size: 0.85rem; }
-.cat-legend li { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: center; }
-.cat-legend .fam-name { font-weight: 600; min-width: 8.5rem; }
-@media (max-width: 520px) { .cat-legend .fam-name { min-width: 0; flex-basis: 100%; } }
 .matches summary .match-name { display: inline-flex; align-items: center; }
 .explore h3 { align-items: center; }
 .chip-btn { display: inline-flex; align-items: center; }
@@ -595,7 +588,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
           <label for="ideo-up">Up</label><select id="ideo-up" class="up"></select>
         </div>
         <svg id="ideo-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the ideologies on two dividing lines"></svg>
-        <ul class="cat-legend" aria-label="Map key"></ul>
         <figcaption class="map-note"></figcaption>
       </figure>
       <div class="pick" id="ideo-pick" hidden></div>
@@ -604,7 +596,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
         <h2>All ideologies</h2>
         <label class="visually-hidden" for="explore-search">Search ideologies</label>
         <input id="explore-search" type="search" placeholder="Search, e.g. “socialism” or “monarchy”" autocomplete="off">
-        <div class="chip-row" id="explore-cats" aria-label="Filter by category"></div>
         <p class="muted small" id="explore-count" role="status"></p>
         <div class="stack" id="explore-list"></div>
       </div>
@@ -659,10 +650,10 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
       <p><strong>The match percentage.</strong> It compares your answers with each ideology's on the statements you answered. 100% means identical answers, and 0% means as far apart as the two most opposite ideologies.</p>
 
       <h2>Where the profiles come from</h2>
-      <p>Every ideology's answers come from a written audit: its position on each statement, a short rationale, a confidence level, and the sources behind it. The audits and the exact research instructions are <a href="https://github.com/brioja/political-ideology-atlas/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>, so anyone can check them or suggest a correction. The list of ideology names follows the one used by <a href="https://12axes.vercel.app/" target="_blank" rel="noopener">12axes</a>; all descriptions, answers and sources here are researched independently.</p>
+      <p>Every ideology's answers come from a written audit: its position on each statement, a short rationale, a confidence level, and the sources behind it. The audits and the exact research instructions are <a href="https://github.com/brioja/political-ideology-atlas/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>, so anyone can check them or suggest a correction. The list of ideologies draws on the one used by <a href="https://12axes.vercel.app/" target="_blank" rel="noopener">12axes</a> and on Wikipedia's list of political ideologies; all descriptions, answers and sources here are researched independently.</p>
 
-      <h2>Colors and accessibility</h2>
-      <p>Each ideology is shown with a color for its broad family and a shape for its category, and its category is always written out too, so nothing depends on color alone. The colors follow the international convention (red for the left, gold for liberals and the center, blue for the right) in shades tested to stay distinguishable for people with color-vision deficiency, and each meets the WCAG 2.2 contrast minimum on both light and dark backgrounds.</p>
+      <h2>No left, right or center labels</h2>
+      <p>Ideologies aren't sorted into families like "left" or "far right". Where each one sits comes from its answers, on the dividing lines the data shows, so the map and the small square beside each name show its position instead of a label. Nothing depends on color: every ideology is named, and colors are only used to pick out you and your closest match.</p>
 
       <h2>Privacy</h2>
       <p>There are no accounts and no tracking. Your answers stay in your browser, which remembers your progress on this device. A share link contains your answers to each statement and nothing else, so anyone you send it to can see how you answered.</p>

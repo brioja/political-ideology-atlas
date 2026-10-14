@@ -14,7 +14,6 @@ const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : li
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
-const CATEGORIES = ["Radical Left", "Left", "Center", "Right", "Far-Right", "Third Position", "Libertarian", "Anarchist"];
 const CONFIDENCE = ["high", "medium", "low"];
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
@@ -39,7 +38,6 @@ function validate(id) {
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  if (!PEOPLE && a.category != null && !CATEGORIES.includes(a.category)) errors.push(`"category" must be null or one of: ${CATEGORIES.join(", ")}`);
   for (const f of PEOPLE ? ["name", "auditedAt", "auditor", "summary", "role"] : ["name", "auditedAt", "auditor", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
