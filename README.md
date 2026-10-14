@@ -19,6 +19,10 @@ A political ideology test where the axes come from the data. You don't choose th
 Adding a statement or an ideology means adding one string to `data.js`. The axes, their names,
 and the number kept all update on their own.
 
+Ideologies get the same salience check as people (see below), counting only their **stated**
+positions (high or medium confidence). An ideology whose answers are mostly inferred is left out of
+both the results and the dividing lines.
+
 ## Sharing results
 
 The results page has a share link (`?r=1.` followed by one character per statement) that reopens

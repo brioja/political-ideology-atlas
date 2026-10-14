@@ -6,7 +6,7 @@
 //   add --controls to validate the negative-control audits (audits/controls)
 const fs = require("fs");
 const lib = require("./lib");
-const { readJson, allStatements, statementsVersion, personSalience } = lib;
+const { readJson, allStatements, statementsVersion, personSalience, ideologySalience } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
@@ -77,11 +77,12 @@ function validate(id) {
 
   // Not errors, but signs of a lazy audit worth a look.
   const vals = Object.values(answers);
-  if (PEOPLE && errors.length === 0) {
+  if (errors.length === 0) {
     // Salience: can their record place them precisely enough to match? (see pca.js)
-    const s = personSalience(answers);
+    // For ideologies only stated positions count; inferred (low-confidence) answers don't.
+    const s = PEOPLE ? personSalience(answers) : ideologySalience(answers);
     if (!s.salient) {
-      errors.push(`salience: ${s.known} recorded positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than a typical test-taker's settled result (${s.bar.toFixed(2)})`);
+      errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than a typical test-taker's settled result (${s.bar.toFixed(2)})`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;

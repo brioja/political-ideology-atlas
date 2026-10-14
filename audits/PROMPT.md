@@ -59,6 +59,11 @@ Confidence:
 - `medium`: clearly implied by core principles, or the documented majority view.
 - `low`: inferred, contested among adherents, or anachronistic.
 
+Inferred answers are fine, but be honest about them: only `high` and `medium` answers count as the
+ideology's stated positions. If too few are stated, the ideology can't be placed as precisely as a
+test-taker and is left out of the test (the salience check), so never upgrade an inference's
+confidence to get it included.
+
 Each rationale is one or two plain sentences that explain the answer, not restate it. Each answer
 cites at least one source id from your `sources` list.
 

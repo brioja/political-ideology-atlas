@@ -40,5 +40,12 @@ function personSalience(answers) {
   return pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));
 }
 
+// Ideologies must answer every statement, inferring where the ideology never took a position
+// (marked low confidence). For salience, only stated positions count: an inferred answer is the
+// ideology equivalent of a person's "no known position".
+const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
+  .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
+const ideologySalience = (answers) => personSalience(statedOnly(answers));
+
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, catalog, statementsVersion, profilePath,
-  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience };
+  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience };

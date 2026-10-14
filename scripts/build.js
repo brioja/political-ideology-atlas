@@ -4,7 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, allStatements, catalog, statementsVersion, profilePath,
-  peopleCatalog, personPath, personSalience } = require("./lib");
+  peopleCatalog, personPath, personSalience, ideologySalience } = require("./lib");
 const { buildModel, meaningfulAxes } = require("../pca.js");
 
 const version = statementsVersion();
@@ -12,12 +12,16 @@ const statements = allStatements();
 const included = [];
 const stale = [];
 const missing = [];
+const notSalient = [];
 
 for (const entry of catalog()) {
   const p = profilePath(entry.id);
   if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
   const a = readJson(p);
   if (a.statementsVersion !== version) { stale.push(entry.id); continue; }
+  // Too few stated positions to place it as precisely as a test-taker: leave it out, so it
+  // neither appears in results nor shapes the dividing lines.
+  if (!ideologySalience(a.answers).salient) { notSalient.push(entry.id); continue; }
   included.push({
     id: entry.id,
     name: entry.name,
@@ -59,6 +63,7 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
 
 console.log(`${included.length} audited, ${stale.length} stale, ${missing.length} not yet audited (of ${catalog().length}).`);
 if (stale.length) console.log(`Stale (re-audit): ${stale.join(", ")}`);
+if (notSalient.length) console.log(`Excluded as not salient (too few stated positions): ${notSalient.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {
   console.error("Need at least 3 audited ideologies to build; data.js left unchanged.");
