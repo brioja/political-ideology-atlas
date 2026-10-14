@@ -84,7 +84,7 @@ button {
   font: 500 0.95rem/1 var(--display); cursor: pointer; border-radius: 6px;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 0.8rem 1.1rem;
 }
-button:hover { border-color: var(--accent); }
+@media (hover: hover) { button:hover { border-color: var(--accent); } }
 button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 button.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 button.link { border: 0; background: none; padding: 0.4rem 0; color: var(--muted); text-decoration: underline; }
@@ -111,7 +111,7 @@ button:disabled { opacity: 0.4; cursor: default; }
 .likert button[data-value="2"] .dot, .likert button[data-value="-2"] .dot { width: 1.35rem; height: 1.35rem; }
 .likert button[data-value="1"] .dot, .likert button[data-value="-1"] .dot { width: 1.1rem; height: 1.1rem; }
 .likert button[data-value="0"] .dot { width: 0.7rem; height: 0.7rem; }
-.likert button:hover .dot { border-color: var(--ink); }
+@media (hover: hover) { .likert button:hover .dot { border-color: var(--ink); } }
 .likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
 .likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
@@ -353,6 +353,25 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 }
 .verdict.tinted .name { color: var(--ink); }
 
+/* Quiz top row: counter on the left; Back, Skip and (once possible) See results on the right */
+.quiz-top { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.quiz-actions { display: flex; gap: 1rem; align-items: center; }
+.quiz-actions .link { padding: 0.3rem 0; }
+#finish-early.primary { padding: 0.45rem 0.8rem; }
+
+/* Phones: compress the test so the statement, all five answers and the actions fit on one screen */
+@media (max-width: 759px) {
+  #page-test.page { padding-block: 0.75rem 1.5rem; }
+  #page-test .card { padding: 1rem; gap: 0.75rem; }
+  #page-test .card > .stack { gap: 0.5rem; }
+  #certainty, #settled-note { display: none; }
+  .statement { font-size: 1.2rem; min-height: 0; }
+  .explain-btn { margin-top: -0.5rem; font-size: 0.88rem; padding: 0.2rem 0; }
+  .likert { gap: 0.4rem; }
+  .likert button { padding: 0.62rem 0.9rem; font-size: 0.95rem; }
+  .quiz-foot { padding-top: 0.5rem; }
+}
+
 /* Statement explanation: beside the options on wide screens, a bottom sheet on phones */
 .explain-btn { justify-self: start; margin-top: -0.75rem; font-size: 0.95rem; }
 @media (min-width: 760px) { .explain-btn { display: none; } }
@@ -468,9 +487,13 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
     <div class="wrap mid">
       <div class="card">
         <div class="stack">
-          <div class="row" style="justify-content: space-between">
+          <div class="quiz-top">
             <span class="eyebrow" id="counter"></span>
-            <button class="link" id="back">Back</button>
+            <div class="quiz-actions">
+              <button class="link" id="back">Back</button>
+              <button class="link" id="skip" title="Skip if you don't know enough to answer">Skip</button>
+              <button class="link" id="finish-early" hidden>See results</button>
+            </div>
           </div>
           <div class="progress" title="How settled your result is"><div id="bar"></div></div>
           <span class="muted small" id="certainty"></span>
@@ -484,10 +507,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
             <div class="ex-row disagree"><span class="ex-label">If you disagree</span><p id="ex-disagree"></p></div>
             <p class="ex-note" id="ex-note"></p>
           </aside>
-        </div>
-        <div class="row" style="justify-content: space-between">
-          <button class="link" id="skip">Skip: I don't know enough to answer</button>
-          <button class="link" id="finish-early" hidden>See results</button>
         </div>
         <div class="row quiz-foot">
           <button class="link" id="restart">Start over</button>

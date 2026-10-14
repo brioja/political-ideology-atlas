@@ -324,6 +324,8 @@ function renderQuestion() {
 }
 
 function answer(value) {
+  // Touch browsers keep focus (and :hover) on the tapped button; drop it so the next statement starts clean.
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
   answers[order[position]] = value;
   position++;
   if (position === order.length) {
