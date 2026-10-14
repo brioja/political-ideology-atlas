@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eigencompass</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A 40-statement political ideology test. The axes are found by principal component analysis, not chosen in advance.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eigencompass: which ideology are you nearest?">
+<meta property="og:description" content="40 statements. The axes are found by principal component analysis, not chosen in advance.">
+<meta property="og:url" content="https://brioja.github.io/eigencompass/">
+<meta property="og:image" content="https://brioja.github.io/eigencompass/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -104,6 +113,22 @@ select { font: 400 0.9rem var(--mono); padding: 0.35rem; border-radius: 6px; bor
 .diffs { display: grid; align-items: start; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
 .diffs ul { margin: 0; align-content: start; padding-left: 1.1rem; display: grid; gap: 0.4rem; font-size: 0.95rem; }
 .diffs .mono { font-size: 0.8rem; color: var(--muted); }
+a.button {
+  font: 500 0.95rem/1 var(--display); border-radius: 6px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); padding: 0.8rem 1.1rem; text-decoration: none;
+}
+a.button:hover { border-color: var(--accent); }
+a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.shared-banner {
+  display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; align-items: center; justify-content: space-between;
+  background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 0.9rem 1.1rem;
+}
+.share-link { display: flex; gap: 0.5rem; }
+.share-link input {
+  flex: 1; min-width: 0; font: 400 0.85rem var(--mono); padding: 0.7rem; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.card-preview { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>

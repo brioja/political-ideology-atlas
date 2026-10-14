@@ -72,13 +72,13 @@ function drawMap(svg, xi, yi, { you = null, highlight = null } = {}) {
     el("text", { x: 10, y: H - 10 }, `← ${ex.lowEnd[0]}`),
     el("text", { x: W - 10, y: H - 10, "text-anchor": "end" }, `${ex.highEnd[0]} →`),
     el("text", { x: W / 2 + 6, y: pad - 18 }, `↑ ${ey.highEnd[0]}`),
-    el("text", { x: W / 2 + 6, y: H - pad + 28 }, `↓ ${ey.lowEnd[0]}`)
+    el("text", { x: W / 2 + 6, y: H - pad + 12 }, `↓ ${ey.lowEnd[0]}`)
   );
 
   // Greedy label placement: try right, left, then nudged up/down until a label clears the others.
   const placed = [];
   if (you) placed.push({ x0: sx(you[xi]) - 16, x1: sx(you[xi]) + 16, y0: sy(you[yi]) - 26, y1: sy(you[yi]) + 10 });
-  const hits = (b) => placed.some((p) => b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0);
+  const hits = (b) => b.x0 < 4 || b.x1 > W - 4 || placed.some((p) => b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0);
   for (const ideo of model.ideologies) {
     const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
     const hot = ideo.name === highlight;
@@ -155,7 +155,7 @@ for (const [i, c] of CHOICES.entries()) {
 }
 $("skip").addEventListener("click", () => answer(null));
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
-$("finish-early").addEventListener("click", showResults);
+$("finish-early").addEventListener("click", () => showResults());
 $("start").addEventListener("click", () => startQuiz(null));
 $("resume").addEventListener("click", () => startQuiz(load()));
 document.addEventListener("keydown", (e) => {
@@ -167,8 +167,27 @@ document.addEventListener("keydown", (e) => {
 
 // ---------- Results ----------
 
-function showResults() {
-  const given = answers.map((a) => (a === undefined ? null : a));
+// ---------- Share links ----------
+// A result link carries only the answers: "?r=1." + one character per statement in data order,
+// 0-4 for strongly disagree..strongly agree and "-" for skipped. The "1." is a format version so
+// links can be migrated if the statement list ever changes.
+
+const CODE = "01234";
+function encodeAnswers(given) {
+  return "1." + given.map((a) => (a == null ? "-" : CODE[a + 2])).join("");
+}
+function decodeAnswers(s) {
+  const m = /^1\.([0-4-]+)$/.exec(s || "");
+  if (!m || m[1].length !== QUESTIONS.length) return null;
+  return [...m[1]].map((c) => (c === "-" ? null : CODE.indexOf(c) - 2));
+}
+function shareUrl(given) {
+  return `${location.origin}${location.pathname}?r=${encodeAnswers(given)}`;
+}
+
+// Pass `shared` (decoded answers) to show someone else's result from a link.
+function showResults(shared = null) {
+  const given = shared || answers.map((a) => (a === undefined ? null : a));
   const { you, ranked } = match(model, given);
   const top = ranked[0];
   const answered = given.filter((a) => a !== null).length;
@@ -187,11 +206,12 @@ function showResults() {
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
 
   R.innerHTML = `
+    ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict">
-      <span class="eyebrow">Your closest match · ${answered} of ${QUESTIONS.length} statements answered</span>
+      <span class="eyebrow">${shared ? "Their" : "Your"} closest match · ${answered} of ${QUESTIONS.length} statements answered</span>
       <h1 class="name">${top.name}</h1>
       <p>${closeCall
-        ? `It's close. You sit nearly as near to <strong>${ranked[1].name}</strong>, so read the two together.`
+        ? `It's close. ${shared ? "They sit" : "You sit"} nearly as near to <strong>${ranked[1].name}</strong>, so read the two together.`
         : `Your next nearest is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
 
@@ -236,7 +256,26 @@ function showResults() {
       </figure>
     </section>
 
-    <div class="row"><button class="primary" id="retake">Take it again</button></div>
+    ${shared ? "" : `
+    <section id="share">
+      <h2>Share your result</h2>
+      <p>The link opens this results page for anyone. It contains your answers to each statement and nothing else, so anyone with it can see how you answered.</p>
+      <div class="share-link">
+        <input id="share-url" readonly aria-label="Link to your result">
+        <button class="primary" id="copy-link">Copy link</button>
+      </div>
+      <div class="row">
+        <a class="button" id="reddit" target="_blank" rel="noopener">Post to Reddit</a>
+        <button id="save-image">Save image</button>
+        <span class="muted" id="share-status" role="status"></span>
+      </div>
+      <figure>
+        <canvas id="card" class="card-preview" width="1200" height="630" aria-label="Shareable image of your result"></canvas>
+        <figcaption>The image is sized for Reddit and other social sites.</figcaption>
+      </figure>
+    </section>`}
+
+    <div class="row"><button class="${shared ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
   `;
 
   const axesBox = $("axes");
@@ -271,7 +310,14 @@ function showResults() {
   redraw();
 
   drawScree($("scree"));
-  $("retake").addEventListener("click", () => { clearSaved(); startQuiz(null); });
+  const fresh = () => {
+    if (shared) history.replaceState(null, "", location.pathname);
+    else clearSaved();
+    startQuiz(null);
+  };
+  $("retake").addEventListener("click", fresh);
+  if (shared) $("own-test").addEventListener("click", fresh);
+  else setUpSharing(given, ranked, you);
   show("results");
 }
 
@@ -294,9 +340,175 @@ function drawScree(svg) {
   });
 }
 
+// ---------- Sharing ----------
+
+function setUpSharing(given, ranked, you) {
+  const url = shareUrl(given);
+  const title = `I got ${ranked[0].name} on Eigencompass, a political test whose axes come from PCA`;
+  const status = $("share-status");
+  $("share-url").value = url;
+  $("reddit").href = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+
+  $("copy-link").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      status.textContent = "Link copied.";
+    } catch {
+      $("share-url").select();
+      status.textContent = "Press Ctrl+C (or ⌘C) to copy the selected link.";
+    }
+  });
+
+  const canvas = $("card");
+  drawCard(canvas, { ranked, you });
+  $("save-image").addEventListener("click", () => {
+    canvas.toBlob((blob) => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `eigencompass-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      status.textContent = "Image saved.";
+    }, "image/png");
+  });
+}
+
+// The card uses a fixed light palette: it's an image that gets posted elsewhere, not page UI.
+const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b" };
+const CARD_FONTS = { display: '"Bricolage Grotesque", "Segoe UI", sans-serif', body: '"Source Serif 4", Georgia, serif', mono: '"IBM Plex Mono", monospace' };
+
+function fitText(ctx, text, maxWidth, size, weight, family) {
+  do ctx.font = `${weight} ${size}px ${family}`;
+  while (ctx.measureText(text).width > maxWidth && --size > 24);
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  let line = "";
+  for (const word of text.split(" ")) {
+    if (line && ctx.measureText(`${line} ${word}`).width > maxWidth) {
+      ctx.fillText(line, x, y);
+      line = word;
+      y += lineHeight;
+    } else line = line ? `${line} ${word}` : word;
+  }
+  ctx.fillText(line, x, y);
+  return y + lineHeight;
+}
+
+// Draws a 1200x630 result card. With no `result`, draws the generic link-preview image.
+async function drawCard(canvas, result = null, site = `${location.host}${location.pathname.replace(/\/$/, "")}`) {
+  try {
+    await Promise.all([
+      document.fonts.load(`700 72px ${CARD_FONTS.display}`),
+      document.fonts.load(`400 24px ${CARD_FONTS.body}`),
+      document.fonts.load(`400 18px ${CARD_FONTS.mono}`),
+    ]);
+  } catch {}
+  const ctx = canvas.getContext("2d");
+  const W = 1200, H = 630;
+  ctx.fillStyle = CARD.bg;
+  ctx.fillRect(0, 0, W, H);
+  ctx.textBaseline = "alphabetic";
+
+  ctx.fillStyle = CARD.muted;
+  ctx.font = `500 18px ${CARD_FONTS.mono}`;
+  ctx.fillText(result ? "EIGENCOMPASS · CLOSEST MATCH" : "EIGENCOMPASS", 60, 84);
+
+  if (result) {
+    const { ranked } = result;
+    ctx.fillStyle = CARD.accent2;
+    fitText(ctx, ranked[0].name, 540, 68, 700, CARD_FONTS.display);
+    ctx.fillText(ranked[0].name, 60, 160);
+    ranked.slice(0, 5).forEach((r, i) => {
+      const y = 232 + i * 64;
+      ctx.fillStyle = CARD.ink;
+      ctx.font = `${i === 0 ? 600 : 400} 24px ${CARD_FONTS.body}`;
+      ctx.fillText(r.name, 60, y);
+      ctx.fillStyle = CARD.muted;
+      ctx.font = `400 20px ${CARD_FONTS.mono}`;
+      ctx.textAlign = "right";
+      ctx.fillText(pct(r.similarity), 600, y);
+      ctx.textAlign = "left";
+      ctx.fillStyle = CARD.line;
+      ctx.fillRect(60, y + 14, 540, 10);
+      ctx.fillStyle = i === 0 ? CARD.accent2 : CARD.muted;
+      ctx.fillRect(60, y + 14, 540 * r.similarity, 10);
+    });
+  } else {
+    ctx.fillStyle = CARD.ink;
+    ctx.font = `700 60px ${CARD_FONTS.display}`;
+    const y = wrapText(ctx, "Which ideology are you nearest?", 60, 170, 540, 68);
+    ctx.fillStyle = CARD.muted;
+    ctx.font = `400 26px ${CARD_FONTS.body}`;
+    wrapText(ctx, "40 statements. The axes are found by principal component analysis, not chosen in advance.", 60, y + 20, 520, 38);
+  }
+
+  ctx.fillStyle = CARD.ink;
+  ctx.font = `500 20px ${CARD_FONTS.mono}`;
+  ctx.fillText(`Take the test: ${site}`, 60, 585);
+
+  // Map of the two strongest axes.
+  const mx = 660, my = 50, ms = 490, c = ms / 2;
+  ctx.fillStyle = CARD.surface;
+  ctx.strokeStyle = CARD.line;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.roundRect(mx, my, ms, ms, 14);
+  ctx.fill();
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(mx + 30, my + c); ctx.lineTo(mx + ms - 30, my + c);
+  ctx.moveTo(mx + c, my + 30); ctx.lineTo(mx + c, my + ms - 30);
+  ctx.stroke();
+
+  const pts = model.ideologies.map((i) => [i.scores[0], i.scores[1]]);
+  if (result) pts.push([result.you[0], result.you[1]]);
+  const lim = Math.max(...pts.flat().map(Math.abs)) * 1.12;
+  const px = (v) => mx + c + (v / lim) * (c - 40);
+  const py = (v) => my + c - (v / lim) * (c - 40);
+
+  const ex = describeAxis(model, 0, QUESTIONS), ey = describeAxis(model, 1, QUESTIONS);
+  ctx.fillStyle = CARD.muted;
+  ctx.font = `400 15px ${CARD_FONTS.mono}`;
+  ctx.fillText(`← ${ex.lowEnd[0]}`, mx + 14, my + ms - 14);
+  ctx.textAlign = "right";
+  ctx.fillText(`${ex.highEnd[0]} →`, mx + ms - 14, my + ms - 14);
+  ctx.textAlign = "left";
+  ctx.fillText(`↑ ${ey.highEnd[0]}`, mx + 14, my + 26);
+
+  const topName = result ? result.ranked[0].name : null;
+  for (const ideo of model.ideologies) {
+    if (ideo.name === topName) continue;
+    ctx.fillStyle = CARD.muted;
+    ctx.globalAlpha = 0.55;
+    ctx.beginPath();
+    ctx.arc(px(ideo.scores[0]), py(ideo.scores[1]), 6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+  if (result) {
+    const top = result.ranked[0];
+    const tx = px(top.scores[0]), ty = py(top.scores[1]);
+    ctx.fillStyle = CARD.accent2;
+    ctx.beginPath(); ctx.arc(tx, ty, 9, 0, Math.PI * 2); ctx.fill();
+    const ux = px(result.you[0]), uy = py(result.you[1]);
+    ctx.strokeStyle = CARD.accent; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(ux, uy, 14, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = CARD.accent;
+    ctx.beginPath(); ctx.arc(ux, uy, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.font = `700 22px ${CARD_FONTS.display}`;
+    ctx.textAlign = "center";
+    ctx.fillText("You", ux, uy - 24);
+    ctx.textAlign = "left";
+  }
+}
+
 // ---------- Intro ----------
 
 drawMap($("intro-map"), 0, 1);
 $("intro-caption").textContent =
   `The 19 reference ideologies on the two strongest axes, which together explain ${pct(model.components[0].share + model.components[1].share)} of how they differ. You'll be placed on this map at the end.`;
 if (load()) $("resume").hidden = false;
+
+const sharedAnswers = decodeAnswers(new URLSearchParams(location.search).get("r"));
+if (sharedAnswers) showResults(sharedAnswers);
