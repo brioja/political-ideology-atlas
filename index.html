@@ -353,6 +353,20 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 }
 .verdict.tinted .name { color: var(--ink); }
 
+/* Statement explanation: beside the options on wide screens, a bottom sheet on phones */
+.explain-btn { justify-self: start; margin-top: -0.75rem; font-size: 0.95rem; }
+@media (min-width: 760px) { .explain-btn { display: none; } }
+@media (max-width: 759px) { .quiz-body .explain { display: none; } }
+.sheet {
+  border: 0; padding: 1.25rem max(16px, env(safe-area-inset-left, 0px)) calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  margin: auto auto 0; width: 100%; max-width: 40rem; max-height: 85vh; overflow: auto;
+  border-radius: 16px 16px 0 0; background: var(--surface); color: var(--ink);
+}
+.sheet::backdrop { background: rgb(10 15 20 / 0.45); }
+.sheet-statement { font: 600 1.15rem/1.35 var(--body); }
+.sheet .ex-row p { font-size: 1rem; }
+.sheet #sheet-close { justify-self: stretch; margin-top: 0.25rem; }
+
 /* Map picking */
 .chart .dot { cursor: pointer; }
 .chart .dot:hover circle:first-of-type { fill: var(--accent-2); }
@@ -462,6 +476,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
           <span class="muted small" id="certainty"></span>
         </div>
         <p class="statement" id="statement"></p>
+        <button class="link explain-btn" id="explain-btn" aria-haspopup="dialog">ⓘ What does this mean?</button>
         <div class="quiz-body">
           <div class="likert" id="likert" role="group" aria-label="Your answer"></div>
           <aside class="explain" id="explain" aria-label="What your answer means">
@@ -481,6 +496,16 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
       </div>
     </div>
   </section>
+
+  <dialog class="sheet" id="explain-sheet" aria-labelledby="sheet-statement">
+    <div class="stack">
+      <p class="sheet-statement" id="sheet-statement"></p>
+      <div class="ex-row agree"><span class="ex-label">If you agree</span><p id="sheet-agree"></p></div>
+      <div class="ex-row disagree"><span class="ex-label">If you disagree</span><p id="sheet-disagree"></p></div>
+      <p class="ex-note" id="sheet-note"></p>
+      <button class="primary" id="sheet-close">Close</button>
+    </div>
+  </dialog>
 
   <!-- Results -->
   <section class="page" id="page-results" hidden>

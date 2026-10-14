@@ -260,6 +260,22 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
 
 // ---------- Pages ----------
 
+// The header's call-to-action: "Start" on most pages; on the test page it's hidden until the result
+// settles, then becomes "See results" so it's reachable at the top on small screens.
+function setHeaderAction(mode) {
+  const btn = document.querySelector(".header-start");
+  btn.hidden = mode === "none";
+  if (mode === "results") {
+    btn.innerHTML = `See results <span aria-hidden="true">→</span>`;
+    btn.setAttribute("href", "#/results");
+    btn.onclick = (e) => { e.preventDefault(); finishQuiz(); };
+  } else {
+    btn.innerHTML = `Start <span aria-hidden="true">→</span>`;
+    btn.setAttribute("href", "#/test");
+    btn.onclick = null;
+  }
+}
+
 const PAGES = ["home", "test", "results", "ideologies", "ideology", "people", "person", "about"];
 const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", about: "About" };
 const NAV_FOR = { ideology: "ideologies", person: "people" };
@@ -270,6 +286,7 @@ function show(page, { scroll = true, title = null } = {}) {
     if (a.dataset.page === (NAV_FOR[page] || page)) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   }
+  if (page !== "test") setHeaderAction("start");
   const t = title || PAGE_TITLES[page];
   document.title = t ? `${t} · ${SITE_NAME}` : SITE_NAME;
   closeMenu();
@@ -291,6 +308,7 @@ function renderQuestion() {
   $("finish-early").hidden = answered < MIN_ANSWERS;
   $("finish-early").classList.toggle("primary", settled);
   $("settled-note").hidden = !settled;
+  setHeaderAction(settled ? "results" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
     const chosen = answers[q] === SHOWN_CHOICES[i].value;
     b.classList.toggle("chosen", chosen);
@@ -298,6 +316,8 @@ function renderQuestion() {
   }
   const Q = QUESTIONS[q];
   $("explain").hidden = !Q.agree;
+  $("explain-btn").hidden = !Q.agree;
+  if ($("explain-sheet").open) $("explain-sheet").close();
   $("ex-agree").textContent = Q.agree || "";
   $("ex-disagree").textContent = Q.disagree || "";
   $("ex-note").textContent = Q.note || "";
@@ -347,6 +367,18 @@ $("skip").addEventListener("click", () => answer(null));
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
 $("finish-early").addEventListener("click", finishQuiz);
 $("resume").addEventListener("click", () => go("#/test"));
+
+// On phones the agree/disagree explanation opens as a bottom sheet instead of taking up the page.
+$("explain-btn").addEventListener("click", () => {
+  const Q = QUESTIONS[order[position]];
+  $("sheet-statement").textContent = Q.text;
+  $("sheet-agree").textContent = Q.agree || "";
+  $("sheet-disagree").textContent = Q.disagree || "";
+  $("sheet-note").textContent = Q.note || "";
+  $("explain-sheet").showModal();
+});
+$("sheet-close").addEventListener("click", () => $("explain-sheet").close());
+$("explain-sheet").addEventListener("click", (e) => { if (e.target === $("explain-sheet")) $("explain-sheet").close(); });
 
 // Start over: a second tap within a few seconds confirms, so progress isn't wiped by accident.
 let restartTimer = 0;
