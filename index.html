@@ -150,6 +150,11 @@ ul.plain { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.45rem; font-si
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(4rem, 10rem) 3rem; gap: 0.75rem; align-items: center;
 }
 .matches summary::-webkit-details-marker { display: none; }
+/* Phones: name and percentage on one row, the bar full width beneath, so long names don't run under it. */
+@media (max-width: 520px) {
+  .matches summary { grid-template-columns: minmax(0, 1fr) auto; row-gap: 0.4rem; }
+  .matches summary .bar { grid-column: 1 / -1; grid-row: 2; }
+}
 .matches summary .match-name { font-weight: 600; }
 .matches summary .mono { text-align: right; font-size: 0.85rem; }
 .matches summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }

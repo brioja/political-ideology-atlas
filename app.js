@@ -631,7 +631,7 @@ function showResults(shared = null) {
     ${typeof PEOPLE !== "undefined" && PEOPLE.length ? `
     <section>
       <h2>People who think like ${shared ? "them" : "you"}</h2>
-      <p class="muted small">Matched on the statements where both ${you_} and they have a known position.</p>
+      <p class="muted small">Matched on the statements where both ${shared ? "this person and each figure" : "you and they"} have a known position.</p>
       <ul class="matches">${matchPeople(model, given, PEOPLE).slice(0, 5).map((p) => `
         <li><details>
           <summary><span class="match-name">${avatar(p)}${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>
