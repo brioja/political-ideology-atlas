@@ -1,7 +1,7 @@
 // Sanity checks: node test.js
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES } = require("./data.js");
-const { jacobiEigen, buildModel, match, describeAxis } = require("./pca.js");
+const { jacobiEigen, buildModel, match, nextQuestion, certainty, describeAxis } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -23,6 +23,29 @@ for (const ideo of IDEOLOGIES) {
   const top = match(model, ideo.profile).ranked[0].name;
   assert.strictEqual(top, ideo.name, `${ideo.name} matched ${top}`);
 }
+
+// 3. Adaptive run: simulated takers (an ideology's answers, with ~20% of them nudged by one
+// point) answer until the result settles. Most should land on their source ideology.
+let seed = 7;
+const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+let hits = 0, totalAsked = 0;
+for (const ideo of IDEOLOGIES) {
+  const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
+  const answers = Array(QUESTIONS.length).fill(null);
+  const asked = new Set();
+  for (;;) {
+    const next = nextQuestion(model, answers, asked);
+    if (!next) break;
+    asked.add(next.q);
+    answers[next.q] = truth[next.q];
+    if (asked.size >= 10 && certainty(model, answers, asked) >= 0.9) break;
+  }
+  totalAsked += asked.size;
+  if (match(model, answers).ranked[0].name === ideo.name) hits++;
+}
+console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their source, ` +
+  `averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
+assert(hits >= IDEOLOGIES.length * 0.8, "adaptive matching is too inaccurate");
 
 // Report what the data found.
 let cum = 0;

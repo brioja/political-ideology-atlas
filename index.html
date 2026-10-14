@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Eigencompass</title>
+<title>Political Ideology Atlas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="A 40-statement political ideology test. The axes are found by principal component analysis, not chosen in advance.">
+<meta name="description" content="A political ideology test that finds the real dividing lines between ideologies, then asks the statements that best tell them apart.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Eigencompass: which ideology are you nearest?">
-<meta property="og:description" content="40 statements. The axes are found by principal component analysis, not chosen in advance.">
-<meta property="og:url" content="https://brioja.github.io/eigencompass/">
-<meta property="og:image" content="https://brioja.github.io/eigencompass/og.png">
+<meta property="og:title" content="Political Ideology Atlas: which ideology are you closest to?">
+<meta property="og:description" content="Finds the real dividing lines between ideologies, then asks the statements that best tell them apart.">
+<meta property="og:url" content="https://brioja.github.io/political-ideology-atlas/">
+<meta property="og:image" content="https://brioja.github.io/political-ideology-atlas/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -70,6 +70,7 @@ button:hover { border-color: var(--accent); }
 button:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 button.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 button.link { border: 0; background: none; padding: 0.4rem 0; color: var(--muted); text-decoration: underline; }
+button.link.primary { background: var(--accent); color: var(--bg); padding: 0.8rem 1.1rem; border-radius: 6px; text-decoration: none; }
 button:disabled { opacity: 0.4; cursor: default; }
 .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
 
@@ -87,12 +88,35 @@ button:disabled { opacity: 0.4; cursor: default; }
 /* Results */
 .verdict { display: grid; gap: 0.5rem; }
 .verdict .name { color: var(--accent-2); }
+.small { font-size: 0.85rem; }
+h4 { font: 500 0.8rem/1.2 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0.5rem 0 0; }
+ul.plain { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.45rem; font-size: 0.95rem; }
+.beliefs { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+.beliefs li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.75rem; align-items: baseline; font-size: 0.95rem; }
+.chip { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.03em; white-space: nowrap; padding: 0.3rem 0.45rem; border-radius: 4px; text-align: center; border: 1px solid; }
+.chip.agree { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.chip.disagree { color: var(--accent-2); border-color: var(--accent-2); }
+@media (max-width: 520px) { .beliefs li { grid-template-columns: 1fr; gap: 0.3rem; } .chip { justify-self: start; } }
+
 .matches { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-.matches li { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr) 3.5rem; gap: 0.75rem; align-items: center; font-size: 0.95rem; }
-.bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
-.bar > div { height: 100%; background: var(--accent-2); }
-.matches li:not(:first-child) .bar > div { background: var(--muted); }
-.matches .mono { text-align: right; font-size: 0.85rem; }
+.matches details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.matches details[open] { border-color: var(--accent-2); }
+.matches summary {
+  cursor: pointer; list-style: none; padding: 0.75rem 1rem;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(4rem, 10rem) 3rem; gap: 0.75rem; align-items: center;
+}
+.matches summary::-webkit-details-marker { display: none; }
+.matches summary .match-name { font-weight: 600; }
+.matches summary .mono { text-align: right; font-size: 0.85rem; }
+.matches summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+.match-body { padding: 0 1rem 1rem; display: grid; gap: 0.6rem; border-top: 1px solid var(--line); padding-top: 0.75rem; }
+.bar { display: block; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar > span, .bar > div { display: block; height: 100%; background: var(--muted); }
+.verdict a, .match-body a, .how a { color: var(--accent); }
+
+details.how { border-top: 1px solid var(--line); padding-top: 1rem; }
+details.how > summary { cursor: pointer; font: 700 1.1rem var(--display); }
+details.how > .stack { margin-top: 1rem; }
 
 .axis { display: grid; gap: 0.4rem; padding-block: 0.75rem; border-top: 1px solid var(--line); }
 .axis-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
@@ -129,23 +153,57 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
 }
 .card-preview { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
+/* Map picking */
+.chart .dot { cursor: pointer; }
+.chart .dot:hover circle:first-of-type { fill: var(--accent-2); }
+.chart .pick-lbl { fill: var(--accent-2); font: 700 13px var(--display); }
+.pick { background: var(--surface); border: 1px solid var(--accent-2); border-radius: 10px; padding: 1rem 1.1rem; display: grid; gap: 0.6rem; }
+.pick-head { display: flex; flex-wrap: wrap; gap: 0.4rem 0.75rem; align-items: baseline; }
+.pick-head .mono { margin-left: auto; color: var(--accent-2); }
+
+/* Explore */
+.explore { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); gap: 1rem; }
+.explore h3 { display: flex; gap: 0.5rem; align-items: baseline; }
+#explore-search {
+  font: 400 1rem var(--body); padding: 0.7rem 0.85rem; border-radius: 6px; width: 100%;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+}
+#explore-search:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip-btn { font: 500 0.8rem/1 var(--display); padding: 0.5rem 0.75rem; border-radius: 999px; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.explore .matches summary { grid-template-columns: minmax(0, 1fr); }
+.read-more a { color: var(--accent); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
 <body>
 <main>
   <section id="intro">
-    <span class="eyebrow">40 statements · about 6 minutes</span>
-    <h1>Eigencompass</h1>
-    <p>Most political tests decide the axes first and then sort you onto them. This test works the other way round. It writes out how 19 ideologies would answer each statement, then uses principal component analysis to find the directions in which they actually disagree. Those directions become the axes, and the data decides how many of them matter.</p>
-    <p>At the end you get your nearest ideologies, how close each one is, and the specific statements that pulled you toward or away from them.</p>
+    <span class="eyebrow" id="intro-eyebrow">Stop whenever your result settles</span>
+    <h1>Political Ideology Atlas</h1>
+    <p>Most political tests pick their axes up front and sort you onto them, so you end up with a label that doesn't quite fit. This one starts from what <span id="ideology-count">many</span> ideologies actually believe, finds the real dividing lines between them, and asks you the statements that best tell them apart.</p>
+    <p>At the end you'll see the ideologies closest to you, what each one stands for, and the statements that pulled you toward or away from them.</p>
     <figure>
       <svg id="intro-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the reference ideologies on the two strongest axes"></svg>
       <figcaption id="intro-caption"></figcaption>
     </figure>
+    <div class="pick" id="intro-pick" hidden></div>
     <div class="row">
       <button class="primary" id="start">Start the test</button>
       <button class="link" id="resume" hidden>Resume where you left off</button>
+    </div>
+
+    <div class="stack explore" id="explore">
+      <h2>Explore the ideologies</h2>
+      <p>Browse every ideology in the test, what it stands for, and where to read more.</p>
+      <label class="visually-hidden" for="explore-search">Search ideologies</label>
+      <input id="explore-search" type="search" placeholder="Search, e.g. “socialism” or “monarchy”" autocomplete="off">
+      <div class="chip-row" id="explore-cats" aria-label="Filter by category"></div>
+      <p class="muted small" id="explore-count" role="status"></p>
+      <div class="stack" id="explore-list"></div>
     </div>
   </section>
 
@@ -156,14 +214,16 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
           <span class="eyebrow" id="counter"></span>
           <button class="link" id="back">Back</button>
         </div>
-        <div class="progress"><div id="bar"></div></div>
+        <div class="progress" title="How settled your result is"><div id="bar"></div></div>
+        <span class="muted" id="certainty" style="font-size:0.85rem"></span>
       </div>
       <p class="statement" id="statement"></p>
       <div class="likert" id="likert"></div>
       <div class="row" style="justify-content: space-between">
         <button class="link" id="skip">Skip: I don't know enough to answer</button>
-        <button class="link" id="finish-early" hidden>See results now</button>
+        <button class="link" id="finish-early" hidden>See results</button>
       </div>
+      <p class="muted" id="settled-note" hidden>Your result has settled. You can stop here or keep answering to refine it.</p>
     </div>
   </section>
 

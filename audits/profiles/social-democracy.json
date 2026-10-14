@@ -1,0 +1,804 @@
+{
+  "id": "social-democracy",
+  "name": "Social Democracy",
+  "category": "Left",
+  "statementsVersion": "db9b141337e5",
+  "auditedAt": "2026-10-14",
+  "auditor": "claude-opus-5-5",
+  "summary": "Social democracy seeks social justice through democratic reform rather than revolution. It accepts a market economy but subordinates it to political control, building a universal welfare state, strong unions and collective bargaining, progressive taxation and regulation. It is internationalist, secular and socially progressive, and treats pragmatic gradual change within parliamentary institutions as the path to a more equal society.",
+  "scope": "Mainstream contemporary social democracy as represented by the Socialist International's 1989 Stockholm Declaration and the parties of the PES (2024 manifesto), in the revisionist lineage of Eduard Bernstein and the post-war Nordic model, interpreted through Sheri Berman's scholarship. It excludes democratic socialists who aim to abolish capitalism and treats the Third Way as a market-friendly variant within the family rather than its centre.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Social_democracy",
+  "furtherReading": [
+    {
+      "title": "Social democracy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Social_democracy",
+      "note": "A broad overview of the history, variants and policies."
+    },
+    {
+      "title": "Declaration of Principles, Socialist International (1989)",
+      "url": "https://socialistinternational.org/about-us/declaration-of-principles",
+      "note": "The movement in its own words: the founding statement of its global federation."
+    },
+    {
+      "title": "Evolutionary Socialism, preface (Eduard Bernstein, 1899)",
+      "url": "https://www.marxists.org/reference/archive/bernstein/works/1899/evsoc/preface.htm",
+      "note": "The classic case for reaching socialism through reform instead of revolution."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "program",
+      "title": "Declaration of Principles (Stockholm, 1989)",
+      "author": "Socialist International",
+      "url": "https://socialistinternational.org/about-us/declaration-of-principles",
+      "usedFor": "Democracy and pluralism, mixed economy, public and cooperative ownership, welfare, unions, UN, North-South, peace, religion, technology"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Evolutionary Socialism, Preface (1899)",
+      "author": "Eduard Bernstein (Marxists Internet Archive)",
+      "url": "https://www.marxists.org/reference/archive/bernstein/works/1899/evsoc/preface.htm",
+      "usedFor": "Gradual reform over revolution, democracy, rejection of catastrophe theory and class polarisation"
+    },
+    {
+      "id": "s3",
+      "kind": "program",
+      "title": "PES Manifesto for the 2024 European Elections",
+      "author": "Party of European Socialists",
+      "url": "https://publications.pes.eu/wp-content/uploads/2024/04/2024_PES_Manifesto_EN_WEB.pdf",
+      "usedFor": "Current positions on wages, unions, taxes, health, climate, migration, feminism, LGBTIQ, hate speech, defence, AI, trade"
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Social democracy",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Social_democracy",
+      "usedFor": "Definition, history, mixed economy, nationalisation, Third Way, Nordic model and corporatism"
+    },
+    {
+      "id": "s5",
+      "kind": "scholarly",
+      "title": "The Primacy of Politics: The Past, Present, and Contested Future of Social Democracy (review of Sheri Berman)",
+      "author": "Mark Blyth, Crooked Timber",
+      "url": "https://crookedtimber.org/2006/10/30/the-primacy-of-politics-the-past-present-and-contested-future-of-social-democracy",
+      "usedFor": "Berman's primacy-of-politics thesis, markets under political control, solidarity and national community, rejection of historical materialism"
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "A universal welfare state with public health care is the signature social-democratic achievement; the PES calls universal access to health care a fundamental right.",
+      "sources": [
+        "s3",
+        "s4",
+        "s1"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Social democrats campaign for decent and rising minimum wages, but Nordic parties rely on collective bargaining rather than large statutory increases, so support is real but not maximal.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Markets are accepted as useful engines of innovation, but the Socialist International holds that the market alone can never secure social goals and needs democratic steering in a mixed economy.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "public-ownership": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The tradition supports public property within a mixed economy and public provision of utilities and rail, but since Bad Godesberg and the Third Way nationalisation is treated as one tool among many rather than a goal.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Progressive redistribution is central, and the PES manifesto says the ultra-rich, capital and the wealthiest individuals must pay their fair share through effective taxes.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "unions-good": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Social democracy grew out of the labour movement; its programs affirm the right to organise and strike and make collective bargaining a pillar of the model.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "property-fundamental": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Property is accepted but treated as subordinate to social goals; the Socialist International says neither private nor state ownership by itself guarantees justice, so ownership is a means, not a near-absolute right.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Regulating capitalism in the public interest is the core of the ideology, and current programs call for regulating financial markets, Big Tech and tax avoidance by large corporations.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "cut-welfare": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The welfare state is the central project of social democracy, and the PES explicitly rejects austerity; the dependency argument is a right-wing critique it opposes.",
+      "sources": [
+        "s3",
+        "s4",
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social democrats back cooperatives and co-determination, but they accept private firms in a mixed economy and do not make collective worker ownership of all businesses a goal, which is what separates them from market socialists.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social-democratic governments have passed counter-terror surveillance laws, while their programs also stress privacy and civil liberties, so adherents are genuinely divided.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from party practice: Nordic social democrats have been restrictive on drugs while some parties (Portugal, Germany on cannabis) liberalised; the mainstream leans against full legalisation of all recreational drugs.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "European social democrats support hate-speech laws; the PES pledges to protect everyone from hate speech and to make illegal offline speech illegal online.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "strong-leader": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Social democracy defines itself through pluralist parliamentary democracy and free elections, and its formation was a rejection of authoritarian shortcuts.",
+      "sources": [
+        "s1",
+        "s2",
+        "s5"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The democratic state is the main instrument of social democracy; Berman stresses its belief in the primacy of politics over the economy.",
+      "sources": [
+        "s5",
+        "s4"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed in the core texts; inferred from the strict gun laws social-democratic governments maintain and their emphasis on public safety.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "empower-police-military": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Older SI documents stress disarmament, while the 2024 PES manifesto supports a stronger European defence industry and Europol; adherents split on whether more funding and authority are needed.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Contested: Swedish social democrats pioneered criminalising the purchase of sex and the PES stresses fighting sexual exploitation, while some parties (e.g. German SPD) legalised it.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "decide-locally": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social democrats value local government and decentralised provision, but their universal welfare state depends on national standards and redistribution, so they reject maximal localism.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "rehabilitation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the egalitarian, welfare-oriented approach to social problems and the rehabilitative penal systems of Nordic social-democratic states.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "traditional-family": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Self-described feminist parties that support diverse families and women's independence reject the claim that the traditional family is the foundation of society.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Equality for LGBTIQ people is an explicit program commitment, and social-democratic governments led many marriage-equality reforms.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "abortion-legal": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The PES demands free and full access to sexual and reproductive health and rights so that women control their own bodies.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "more-religion-public": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Social democracy is secular in orientation: it protects freedom of belief and rejects religious fundamentalism, without seeking a larger public role for religion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Social democrats commit to equal rights for all races and zero tolerance for racism, though their emphasis is on anti-discrimination law more than redress for historical wrongs.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "As self-described feminists who treat gender roles and gaps as political products to be changed, adherents lean toward this view, though the texts do not state it as theory.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Berman links social democracy's success to communal solidarity and national belonging, while today's PES emphasises diversity and inclusion; communitarian and cosmopolitan wings split.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "gradual-change": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Gradualism is the defining trait: Bernstein argued for steady reform through democratic institutions rather than sudden upheaval.",
+      "sources": [
+        "s2",
+        "s4",
+        "s1"
+      ]
+    },
+    "reduce-immigration": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The PES calls well-managed migration an opportunity and defends asylum rights, but some member parties (notably the Danish) have embraced restriction, so opposition is moderate.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Internationalism is core: the SI calls strengthening the United Nations an important step, and the PES wants a reformed UN and more EU capacity to act.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "free-trade": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Social democrats support open trade but insist it must carry labour and environmental standards and that its losers need protection; they deny it automatically benefits everyone.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "nation-first": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "International solidarity and multilateral cooperation are founding values, though social democrats also defend national and European strategic interests.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mainstream social democrats supported humanitarian interventions and back military aid to Ukraine, while the SI stresses peace and conflict prevention first.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The PES wants humane asylum and legal pathways but also controlled external borders and effective returns, not open borders.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-growth": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Social democrats seek green growth and a just transition; the PES speaks of securing growth while decarbonising rather than limiting it.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The PES promises a Green Deal with no pause, climate neutrality by 2050 at the latest and a fully renewable energy mix, all driven by public investment.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The SI insists technology must be brought under democratic social control; social democrats see political action, not technology alone, as the solution.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Genuinely split: Swedish and French social democrats have backed nuclear power while the German SPD phased it out, and the PES aims at a completely renewable energy mix.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "revolution-justified": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Social democracy was born from rejecting revolutionary strategy in favour of democratic reform, though adherents back democratic uprisings against dictatorships.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "experts-over-public": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its commitment to democratic participation and control; social democrats value expertise in administration but place final authority with voters.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Modern social democracy rejects command economies and bureaucratic state control, favouring a regulated mixed market economy.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Social democrats accept privately owned firms within a mixed economy, so they reject the market-socialist condition that only worker- or publicly owned firms make markets acceptable.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a social-democratic priority; they rely on broad progressive taxes on income, capital and wealth and would not replace them with a single land tax.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Taxing capital and the wealthiest fits social-democratic redistribution, but practice varies (Sweden's social democrats abolished inheritance tax in 2004).",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Social democrats favour work-centred welfare, adequate minimum income schemes and job guarantees rather than an unconditional payment to every adult.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Nordic social democrats historically preferred open trade cushioned by welfare and labour-market policy over tariffs, though the PES wants protection from unfair competition.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The PES calls for a public Investment Plan to reindustrialise Europe, a Made in Europe strategy and strategic autonomy in key supplies.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social democrats support small firms and cooperatives, but they pursue equality mainly through the welfare state and public services rather than spreading ownership; they are indifferent to this distributist goal.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Social democracy accepts wage labour and markets and seeks fair wages and labour rights within them, not their abolition.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Keynesian macroeconomic management by the state is closely tied to social democracy, which opposes leaving money to the market.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Tripartite social corporatism was central to the Nordic model, but social democrats insist on autonomous unions and employers and do not want bodies that fix prices.",
+      "sources": [
+        "s4",
+        "s3",
+        "s5"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Social democracy requires pluralism and free choice between political alternatives and split from communism over this point.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Many social-democratic parties govern contentedly under constitutional monarchies (Scandinavia, Spain, UK), while their egalitarian principles push some toward republicanism.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "democracy-best": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Political democracy is the foundation of the SI declaration, and Bernstein made democratisation the path to socialism.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "direct-votes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social democrats are parliamentary parties working through representatives and organised interests; referendums are used occasionally but not favoured as the main mechanism.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Social democrats chose parliamentary democracy over council rule when the movement split from communism after 1917.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "right-to-secede": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not in the core texts; inferred from social democrats' commitment to national solidarity and the stance of parties such as the Spanish PSOE against unilateral secession.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "natural-rulers": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Its egalitarian and democratic premises reject the idea of a naturally fit ruling class.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "political-violence-never": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The SI condemns violent ways of handling conflict and the movement is committed to peaceful reform, though it supports armed defence against aggression.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "war-builds-character": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The SI says peace is more than the absence of war and promotes disarmament and conflict prevention; glorifying war is alien to the tradition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Social democrats are secular and protect freedom of belief, but have lived with established churches in Nordic states, so they agree without making strict separation a priority.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The SI explicitly rejects religious fundamentalism and grounds law in democracy and human rights.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Social democrats see justice and security as public goods provided by a democratic state.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "military-superiority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tradition favours common security and multilateral collective defence over seeking superiority, though modern parties support NATO and stronger European defence.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The SI demands equal rights for all races, ethnic groups and nations, and the PES calls migrant-background citizens part of society.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Revisionists like Bernstein dropped the catastrophe theory and class-struggle determinism, and Berman sees this rejection of historical materialism as key to social democracy.",
+      "sources": [
+        "s2",
+        "s5",
+        "s4"
+      ]
+    },
+    "equal-outcomes": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Social democrats go beyond equal opportunity, seeking compensation for social inequalities and narrower pay gaps, without demanding strict equality of outcome.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from SI commitments to equal rights for peoples and Nordic social democrats' support for Sami rights; the texts do not specifically address land authority.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The SI supports debt cancellation and fairer North-South relations, but mainstream social democrats have not endorsed formal reparations; they are split.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social democrats back union based on shared democratic values (the EU), not on religion or civilisational identity, which they associate with the right.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Solidarity is a core value; social democracy treats the pursuit of self-interest as something to be channelled and limited, not a moral good.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Berman stresses communal solidarity and the Third Way linked rights to responsibilities, but the SI centres individual rights; adherents balance rather than rank the two.",
+      "sources": [
+        "s5",
+        "s1",
+        "s4"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from PES pledges to protect biodiversity, ecosystems and animal welfare; social democracy's ecology is mostly framed around human wellbeing.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social democrats emphasise reproductive rights and development rather than active population control.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Social democracy is a product of the industrial labour movement and seeks to spread the gains of industrial progress, not reject them.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "accelerate-technology": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The SI wants democratic control over the introduction of new technologies and the PES ties change to a just transition, so disruption for its own sake is resisted.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "human-enhancement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; social democrats combine personal freedom with insistence on social control of technology and equal access, so they have no settled view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The PES insists on a human in control principle and warns that algorithmic management must not undermine democracy.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The PES stresses privacy, but social-democratic governments have also sought lawful access for security agencies; adherents are split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restore-past-order": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Social democracy is a progressive, reformist project focused on improving the present and future, not restoring a lost order.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Bernstein's focus on present tasks over final aims, and later Third Way pragmatism, make social democrats favour tested results while keeping core values.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    }
+  },
+  "notes": "Contested points: nuclear power (Swedish/French vs German parties), immigration (Danish Social Democrats far more restrictive than the PES line), sex work (Nordic model vs legalisation), public ownership (strong in the post-war era, weak after the Third Way), and surveillance and encryption, where governing parties have often been more security-minded than their programs. US 'social democrats' would differ on hate-speech law and guns.",
+  "review": {
+    "reviewedAt": "2026-10-14",
+    "reviewer": "claude-opus-5-5 (main session)",
+    "changes": [],
+    "sourceProblems": [
+      "s5 is a blog review of Berman, not the book; acceptable but thin"
+    ],
+    "note": "Answers reviewed and accepted unchanged. Added wikipedia and furtherReading (from already-cited sources) after those fields were introduced."
+  }
+}

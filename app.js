@@ -7,22 +7,25 @@ const CHOICES = [
   { label: "Agree", value: 1 },
   { label: "Strongly agree", value: 2 },
 ];
-const STORAGE_KEY = "eigencompass-progress";
+const SITE_NAME = "Political Ideology Atlas";
+const STORAGE_KEY = "ideology-atlas-progress";
 const $ = (id) => document.getElementById(id);
 const SVG_NS = "http://www.w3.org/2000/svg";
 
-// Questions are shown in a shuffled order; answers are always stored by question index.
+// `order` lists statements in the order they were asked (chosen adaptively, one at a time).
+// `answers` is indexed by statement: a value, or null when skipped or not asked yet.
 let order = [];
 let answers = [];
 let position = 0;
+const MIN_ANSWERS = 10;
 
 function save() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ order, answers, position })); } catch {}
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, order, answers, position })); } catch {}
 }
 function load() {
   try {
     const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (s && s.answers.length === QUESTIONS.length) return s;
+    if (s && s.v === 2 && s.answers.length === QUESTIONS.length) return s;
   } catch {}
   return null;
 }
@@ -30,19 +33,6 @@ function clearSaved() {
   try { localStorage.removeItem(STORAGE_KEY); } catch {}
 }
 
-function shuffle(n) {
-  const a = [...Array(n).keys()];
-  for (let i = n - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function axisName(i) {
-  const ax = describeAxis(model, i, QUESTIONS);
-  return `${ax.lowEnd[0]} ↔ ${ax.highEnd[0]}`;
-}
 const pct = (x) => `${Math.round(x * 100)}%`;
 
 // ---------- Map ----------
@@ -54,7 +44,10 @@ function el(tag, attrs, text) {
   return node;
 }
 
-function drawMap(svg, xi, yi, { you = null, highlight = null } = {}) {
+// Draws ideologies (and optionally you) on two dividing lines. Every dot can be tapped or
+// clicked: it gets a label on the map and `onPick(ideology)` is called. Returns `pick(id)`
+// so other parts of the page can select a dot too.
+function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onPick = null } = {}) {
   svg.replaceChildren();
   const W = 640, H = 440, pad = 46;
   const points = model.ideologies.map((i) => [i.scores[xi], i.scores[yi]]);
@@ -79,9 +72,17 @@ function drawMap(svg, xi, yi, { you = null, highlight = null } = {}) {
   const placed = [];
   if (you) placed.push({ x0: sx(you[xi]) - 16, x1: sx(you[xi]) + 16, y0: sy(you[yi]) - 26, y1: sy(you[yi]) + 10 });
   const hits = (b) => b.x0 < 4 || b.x1 > W - 4 || placed.some((p) => b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0);
-  for (const ideo of model.ideologies) {
+  // Unlabeled dots first, so labeled ones are drawn on top.
+  const ordered = labels ? [...model.ideologies].sort((a, b) => labels.has(a.name) - labels.has(b.name)) : model.ideologies;
+  for (const ideo of ordered) {
     const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
     const hot = ideo.name === highlight;
+    const g = el("g", { class: "dot", "data-id": ideo.id });
+    g.append(el("title", {}, ideo.name));
+    g.append(el("circle", { cx: x, cy: y, r: hot ? 6 : 4, fill: hot ? "var(--accent-2)" : "var(--muted)", opacity: !labels || labels.has(ideo.name) ? 1 : 0.35 }));
+    g.append(el("circle", { cx: x, cy: y, r: 13, fill: "transparent" })); // bigger tap target
+    svg.append(g);
+    if (labels && !labels.has(ideo.name)) continue;
     const w = ideo.name.length * 6.4;
     let spot = null;
     for (const dy of [0, -12, 12, -24, 24]) {
@@ -94,12 +95,8 @@ function drawMap(svg, xi, yi, { you = null, highlight = null } = {}) {
     }
     if (!spot) { const right = x < W - w - 20; spot = { lx: right ? x + 8 : x - 8, ly: y + 4, right, box: null }; }
     if (spot.box) placed.push(spot.box);
-    const g = el("g", {});
-    g.append(el("title", {}, ideo.name));
-    g.append(el("circle", { cx: x, cy: y, r: hot ? 6 : 4, fill: hot ? "var(--accent-2)" : "var(--muted)" }));
     g.append(el("text", { class: "lbl", x: spot.lx, y: spot.ly, "text-anchor": spot.right ? "start" : "end",
       style: hot ? "fill: var(--accent-2); font-weight: 700" : "" }, ideo.name));
-    svg.append(g);
   }
   if (you) {
     const x = sx(you[xi]), y = sy(you[yi]);
@@ -109,6 +106,32 @@ function drawMap(svg, xi, yi, { you = null, highlight = null } = {}) {
       el("text", { class: "you-lbl", x: x, y: y - 14, "text-anchor": "middle" }, "You")
     );
   }
+
+  // The picked dot gets a ring and a label with a backing box so it reads over other labels.
+  const pickLayer = el("g", { "pointer-events": "none" });
+  svg.append(pickLayer);
+  const pick = (id) => {
+    const ideo = model.ideologies.find((i) => i.id === id);
+    if (!ideo) return;
+    const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
+    pickLayer.replaceChildren();
+    const ring = el("circle", { cx: x, cy: y, r: 9, fill: "none", stroke: "var(--accent-2)", "stroke-width": 2.5 });
+    const label = el("text", { class: "pick-lbl", x, y: y - 16, "text-anchor": "middle" }, ideo.name);
+    const box = el("rect", { rx: 4, fill: "var(--surface)", stroke: "var(--accent-2)" });
+    pickLayer.append(ring, box, label);
+    const b = label.getBBox();
+    const shift = Math.min(0, W - 6 - (b.x + b.width)) + Math.max(0, 6 - b.x);
+    label.setAttribute("x", x + shift);
+    if (b.y < 4) label.setAttribute("y", y + 26);
+    const nb = label.getBBox();
+    for (const [k, v] of Object.entries({ x: nb.x - 6, y: nb.y - 3, width: nb.width + 12, height: nb.height + 6 })) box.setAttribute(k, v);
+    if (onPick) onPick(ideo);
+  };
+  svg.onclick = (e) => {
+    const dot = e.target.closest(".dot");
+    if (dot) pick(dot.dataset.id);
+  };
+  return pick;
 }
 
 // ---------- Quiz ----------
@@ -120,11 +143,18 @@ function show(id) {
 
 function renderQuestion() {
   const q = order[position];
-  $("counter").textContent = `Statement ${position + 1} of ${QUESTIONS.length}`;
-  $("bar").style.width = pct(position / QUESTIONS.length);
-  $("statement").textContent = QUESTIONS[q];
+  const asked = new Set(order);
+  const answered = answers.filter((a) => a !== null).length;
+  const sure = certainty(model, answers, asked);
+  const settled = answered >= MIN_ANSWERS && sure >= 0.9;
+  $("counter").textContent = `Statement ${position + 1}`;
+  $("bar").style.width = pct(sure);
+  $("certainty").textContent = answered < 3 ? "Most telling statements first" : `Result ${pct(sure)} settled`;
+  $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  $("finish-early").hidden = answers.filter((a) => a !== undefined).length < 15;
+  $("finish-early").hidden = answered < MIN_ANSWERS;
+  $("finish-early").classList.toggle("primary", settled);
+  $("settled-note").hidden = !settled;
   for (const [i, b] of [...$("likert").children].entries()) {
     b.classList.toggle("chosen", answers[q] === CHOICES[i].value);
   }
@@ -133,17 +163,24 @@ function renderQuestion() {
 function answer(value) {
   answers[order[position]] = value;
   position++;
+  if (position === order.length) {
+    const next = nextQuestion(model, answers, new Set(order));
+    if (!next) { save(); showResults(); return; }
+    order.push(next.q);
+  }
   save();
-  if (position >= QUESTIONS.length) showResults();
-  else renderQuestion();
+  renderQuestion();
 }
 
 function startQuiz(saved) {
   if (saved) ({ order, answers, position } = saved);
-  else { order = shuffle(QUESTIONS.length); answers = Array(QUESTIONS.length).fill(undefined); position = 0; }
+  else {
+    answers = Array(QUESTIONS.length).fill(null);
+    order = [nextQuestion(model, answers, new Set()).q];
+    position = 0;
+  }
   show("quiz");
-  if (position >= QUESTIONS.length) showResults();
-  else renderQuestion();
+  renderQuestion();
 }
 
 for (const [i, c] of CHOICES.entries()) {
@@ -168,21 +205,69 @@ document.addEventListener("keydown", (e) => {
 // ---------- Results ----------
 
 // ---------- Share links ----------
-// A result link carries only the answers: "?r=1." + one character per statement in data order,
-// 0-4 for strongly disagree..strongly agree and "-" for skipped. The "1." is a format version so
-// links can be migrated if the statement list ever changes.
+// A result link carries only the answers: "?r=2." + one character per statement in data order,
+// 0-4 for strongly disagree..strongly agree and "-" for skipped or not asked. The "2." is a
+// format version; bump it whenever the statement list changes so old links stop decoding.
 
 const CODE = "01234";
 function encodeAnswers(given) {
-  return "1." + given.map((a) => (a == null ? "-" : CODE[a + 2])).join("");
+  return "2." + given.map((a) => (a == null ? "-" : CODE[a + 2])).join("");
 }
 function decodeAnswers(s) {
-  const m = /^1\.([0-4-]+)$/.exec(s || "");
+  const m = /^2\.([0-4-]+)$/.exec(s || "");
   if (!m || m[1].length !== QUESTIONS.length) return null;
   return [...m[1]].map((c) => (c === "-" ? null : CODE.indexOf(c) - 2));
 }
 function shareUrl(given) {
   return `${location.origin}${location.pathname}?r=${encodeAnswers(given)}`;
+}
+
+const REPO = "https://github.com/brioja/political-ideology-atlas";
+
+// Audit text is data, never markup.
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const word = (v) => CHOICES.find((c) => c.value === v).label;
+
+// The positions that set an ideology apart: strong answers far from the average ideology's.
+function keyBeliefs(ideo, n = 4) {
+  return ideo.profile
+    .map((p, q) => ({ q, p, d: Math.abs(p - model.mean[q]) }))
+    .filter((x) => x.p !== 0)
+    .sort((a, b) => b.d - a.d || Math.abs(b.p) - Math.abs(a.p))
+    .slice(0, n);
+}
+
+function beliefList(ideo, n = 4) {
+  return `<ul class="beliefs">${keyBeliefs(ideo, n).map((b) =>
+    `<li><span class="chip ${b.p > 0 ? "agree" : "disagree"}">${word(b.p)}</span><span>${QUESTIONS[b.q].text}</span></li>`).join("")}</ul>`;
+}
+
+// The card shown under a map when a dot is picked.
+function pickCard(container, ideo, { similarity = null, showInList = false } = {}) {
+  container.hidden = false;
+  container.innerHTML = `
+    <div class="pick-head"><h3>${esc(ideo.name)}</h3>${ideo.category ? `<span class="muted small">${esc(ideo.category)}</span>` : ""}
+      ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}</div>
+    ${aboutIdeology(ideo)}
+    <h4>What it stands for</h4>
+    ${beliefList(ideo, 3)}
+    ${showInList ? `<button class="link" data-show="${esc(ideo.id)}">Show it in the list below</button>` : ""}`;
+  const btn = container.querySelector("[data-show]");
+  if (btn) btn.addEventListener("click", () => openInExplore(ideo.id));
+}
+
+function readMore(ideo) {
+  const links = [];
+  if (ideo.wikipedia) links.push(`<a href="${esc(ideo.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`);
+  for (const r of ideo.furtherReading || []) {
+    if (r.url !== ideo.wikipedia) links.push(`<a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`);
+  }
+  if (ideo.audited) links.push(`<a href="${REPO}/blob/main/audits/profiles/${esc(ideo.id)}.json" target="_blank" rel="noopener">How this profile was researched</a>`);
+  return links.length ? `<p class="read-more small"><span class="muted">Read more:</span> ${links.join('<span class="muted"> · </span>')}</p>` : "";
+}
+
+function aboutIdeology(ideo) {
+  return (ideo.summary ? `<p>${esc(ideo.summary)}</p>` : "") + readMore(ideo);
 }
 
 // Pass `shared` (decoded answers) to show someone else's result from a link.
@@ -192,68 +277,77 @@ function showResults(shared = null) {
   const top = ranked[0];
   const answered = given.filter((a) => a !== null).length;
   const k = model.kept;
-  const keptShare = model.components.slice(0, k).reduce((s, c) => s + c.share, 0);
   const R = $("results");
+  const You = shared ? "They" : "You";
+  const you_ = shared ? "they" : "you";
+  const your = shared ? "their" : "your";
 
-  // Statements where you and the top match agree or differ the most.
-  const diffs = given
-    .map((a, q) => (a === null ? null : { q, a, t: top.profile[q], gap: Math.abs(a - top.profile[q]) }))
+  const answeredDiffs = (ideo) => given
+    .map((a, q) => (a === null ? null : { q, a, t: ideo.profile[q], gap: Math.abs(a - ideo.profile[q]) }))
     .filter(Boolean);
+  const diffs = answeredDiffs(top);
   const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0).sort((x, y) => Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
   const disagree = diffs.filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 4);
-  const word = (v) => CHOICES.find((c) => c.value === v).label.toLowerCase();
-
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
+
+  const others = ranked.slice(1, 7).map((r) => {
+    const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 2);
+    return `
+      <li><details>
+        <summary><span class="match-name">${r.name}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
+        <div class="match-body">
+          ${aboutIdeology(r)}
+          <h4>What it stands for</h4>
+          ${beliefList(r)}
+          ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="plain">${apart.map((d) =>
+            `<li>${QUESTIONS[d.q].text} <span class="mono small">${you_}: ${word(d.a).toLowerCase()} · it: ${word(d.t).toLowerCase()}</span></li>`).join("")}</ul>` : ""}
+        </div>
+      </details></li>`;
+  }).join("");
 
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict">
-      <span class="eyebrow">${shared ? "Their" : "Your"} closest match · ${answered} of ${QUESTIONS.length} statements answered</span>
+      <span class="eyebrow">${your} closest match · ${pct(top.similarity)} · based on ${answered} answers</span>
       <h1 class="name">${top.name}</h1>
-      <p>${closeCall
-        ? `It's close. ${shared ? "They sit" : "You sit"} nearly as near to <strong>${ranked[1].name}</strong>, so read the two together.`
-        : `Your next nearest is <strong>${ranked[1].name}</strong>.`}</p>
+      ${aboutIdeology(top)}
+      <p class="muted">${closeCall
+        ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
+        : `${You}r next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
 
     <section>
-      <h2>Nearest ideologies</h2>
-      <ul class="matches">${ranked.slice(0, 6).map((r) => `
-        <li><span>${r.name}</span><div class="bar"><div style="width:${pct(r.similarity)}"></div></div><span class="mono">${pct(r.similarity)}</span></li>`).join("")}
-      </ul>
-      <p class="muted" style="font-size:0.9rem">Closeness is measured across the ${k} axes below, where 100% means the same position and 0% means as far apart as the two most distant reference ideologies.</p>
+      <h2>What ${top.name} stands for</h2>
+      ${beliefList(top)}
     </section>
 
     <section>
-      <h2>Where you stand</h2>
-      <p>The analysis found ${model.components.length} independent directions in the reference data. The first ${k} explain ${pct(keptShare)} of how the ideologies differ, so those are the ones used. The rest separate the ideologies so little that they mostly add noise.</p>
+      <h2>Why ${you_} matched</h2>
+      <div class="diffs">
+        <div class="stack"><h3>${You} agree on</h3><ul class="plain">${agree.map((d) => `<li>${QUESTIONS[d.q].text} <span class="mono small">both ${word(d.a).toLowerCase()}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
+        <div class="stack"><h3>${You} part ways on</h3><ul class="plain">${disagree.map((d) => `<li>${QUESTIONS[d.q].text} <span class="mono small">${you_}: ${word(d.a).toLowerCase()} · it: ${word(d.t).toLowerCase()}</span></li>`).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Other close matches</h2>
+      <p class="muted small">Tap one to see what it stands for and where ${you_} differ.</p>
+      <ul class="matches">${others}</ul>
+    </section>
+
+    <section>
+      <h2>Where ${you_} stand</h2>
+      <p>Most disagreement between ideologies comes down to a few big dividing lines. The test found them by looking at how the ideologies answer, rather than deciding them in advance. Here is where ${you_} fall on the ${k} biggest.</p>
       <div id="axes"></div>
     </section>
 
     <section>
       <h2>The map</h2>
       <figure>
-        <div class="row" style="font-size:0.9rem">
-          <label for="x-axis">Across</label><select id="x-axis"></select>
-          <label for="y-axis">Up</label><select id="y-axis"></select>
-        </div>
-        <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Your position among the reference ideologies"></svg>
+        <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Your position among the ideologies"></svg>
+        <figcaption>Each dot is an ideology, placed on the two biggest dividing lines. Ideologies close together tend to answer alike. Tap any dot to see which one it is.</figcaption>
       </figure>
-    </section>
-
-    <section>
-      <h2>Why ${top.name}?</h2>
-      <div class="diffs">
-        <div class="stack"><h3>You agree on</h3><ul>${agree.map((d) => `<li>${QUESTIONS[d.q]} <span class="mono">both ${word(d.a)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
-        <div class="stack"><h3>You part ways on</h3><ul>${disagree.map((d) => `<li>${QUESTIONS[d.q]} <span class="mono">you: ${word(d.a)} · them: ${word(d.t)}</span></li>`).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>How much each axis matters</h2>
-      <figure>
-        <svg id="scree" class="chart" viewBox="0 0 640 220" role="img" aria-label="Share of variance explained by each axis"></svg>
-        <figcaption>Each bar is an eigenvalue of the covariance matrix: the share of disagreement between ideologies that one axis captures. Filled bars are the axes used for matching.</figcaption>
-      </figure>
+      <div class="pick" id="result-pick" hidden></div>
     </section>
 
     ${shared ? "" : `
@@ -265,15 +359,27 @@ function showResults(shared = null) {
         <button class="primary" id="copy-link">Copy link</button>
       </div>
       <div class="row">
-        <a class="button" id="reddit" target="_blank" rel="noopener">Post to Reddit</a>
         <button id="save-image">Save image</button>
         <span class="muted" id="share-status" role="status"></span>
       </div>
       <figure>
         <canvas id="card" class="card-preview" width="1200" height="630" aria-label="Shareable image of your result"></canvas>
-        <figcaption>The image is sized for Reddit and other social sites.</figcaption>
+        <figcaption>Save the image to post alongside your link.</figcaption>
       </figure>
     </section>`}
+
+    <details class="how">
+      <summary>How this test works</summary>
+      <div class="stack">
+        <p><strong>The ideologies.</strong> Each of the ${model.ideologies.length} ideologies has an answer to every statement, worked out from its own writings and from scholarly sources. Every profile, with its sources and reasoning, is <a href="${REPO}/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>.</p>
+        <p><strong>The dividing lines.</strong> Most tests pick their axes up front, like left vs. right. This one finds them from the data, using a method called principal component analysis. It looks for the directions in which the ideologies' answers differ the most. The chart below shows how much of the total disagreement each line accounts for. The first few cover most of it, so those are the ones shown above.</p>
+        <figure>
+          <svg id="scree" class="chart" viewBox="0 0 640 220" role="img" aria-label="How much of the disagreement between ideologies each dividing line accounts for"></svg>
+        </figure>
+        <p><strong>The questions.</strong> Statements are picked one at a time. The first ones are those ideologies disagree about most. After that, each statement is the one that best separates the ideologies ${you_} are still close to. That's why ${you_} can stop early.</p>
+        <p><strong>The match percentage.</strong> It compares ${your} answers with each ideology's on the statements ${you_} answered. 100% means identical answers, and 0% means as far apart as the two most opposite ideologies.</p>
+      </div>
+    </details>
 
     <div class="row"><button class="${shared ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
   `;
@@ -283,33 +389,29 @@ function showResults(shared = null) {
     const ax = describeAxis(model, i, QUESTIONS);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05;
-    const pos = (v) => 50 + (v / lim) * 50;
+    const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
     const div = document.createElement("div");
     div.className = "axis";
     div.innerHTML = `
-      <div class="axis-head"><h3>Axis ${i + 1}</h3><span class="mono muted" style="font-size:0.8rem">${pct(model.components[i].share)} of variance</span></div>
+      <div class="axis-ends"><span>${ax.lowEnd[0]}</span><span>${ax.highEnd[0]}</span></div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
-        ${model.ideologies.map((d) => `<circle cx="${6 + pos(d.scores[i]) * 5.88}" cy="17" r="${d.name === top.name ? 6 : 4}" fill="${d.name === top.name ? "var(--accent-2)" : "var(--muted)"}" opacity="${d.name === top.name ? 1 : 0.5}"><title>${d.name}</title></circle>`).join("")}
-        <circle cx="${6 + pos(you[i]) * 5.88}" cy="17" r="8" fill="var(--accent)"><title>You</title></circle>
+        ${model.ideologies.map((d) => `<circle cx="${pos(d.scores[i])}" cy="17" r="${d.name === top.name ? 6 : 4}" fill="${d.name === top.name ? "var(--accent-2)" : "var(--muted)"}" opacity="${d.name === top.name ? 1 : 0.4}"><title>${d.name}</title></circle>`).join("")}
+        <circle cx="${pos(you[i])}" cy="17" r="8" fill="var(--accent)"><title>${shared ? "Them" : "You"}</title></circle>
       </svg>
-      <div class="axis-ends"><span>← ${ax.lowEnd.join(", ")}</span><span>${ax.highEnd.join(", ")} →</span></div>
-      <details><summary>Statements that define this axis</summary>
-        <ul>${ax.positive.map((p) => `<li>Agreeing moves you right: ${p.text}</li>`).join("")}
-            ${ax.negative.map((p) => `<li>Agreeing moves you left: ${p.text}</li>`).join("")}</ul>
+      <details><summary>What this line is about</summary>
+        <ul class="plain">${ax.negative.map((p) => `<li>Agreeing moves you toward ${ax.lowEnd[0]}: ${p.text}</li>`).join("")}
+            ${ax.positive.map((p) => `<li>Agreeing moves you toward ${ax.highEnd[0]}: ${p.text}</li>`).join("")}</ul>
       </details>`;
     axesBox.append(div);
   }
 
-  const xs = $("x-axis"), ys = $("y-axis");
-  const options = model.components.slice(0, Math.max(k, 4)).map((c, i) => `<option value="${i}">Axis ${i + 1} (${pct(c.share)})</option>`).join("");
-  xs.innerHTML = options; ys.innerHTML = options;
-  xs.value = "0"; ys.value = "1";
-  const redraw = () => drawMap($("result-map"), Number(xs.value), Number(ys.value), { you, highlight: top.name });
-  xs.addEventListener("change", redraw); ys.addEventListener("change", redraw);
-  redraw();
-
+  const near = new Set(ranked.slice(0, 8).map((r) => r.name));
+  const simById = new Map(ranked.map((r) => [r.id, r.similarity]));
+  drawMap($("result-map"), 0, 1, { you, highlight: top.name, labels: model.ideologies.length > 25 ? near : null,
+    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id) }) });
   drawScree($("scree"));
+
   const fresh = () => {
     if (shared) history.replaceState(null, "", location.pathname);
     else clearSaved();
@@ -323,7 +425,7 @@ function showResults(shared = null) {
 
 function drawScree(svg) {
   const W = 640, H = 220, left = 40, bottom = 30, top = 14;
-  const comps = model.components;
+  const comps = model.components.slice(0, 15);
   const max = Math.ceil(comps[0].share * 10) / 10;
   const bw = (W - left - 10) / comps.length;
   const y = (v) => H - bottom - (v / max) * (H - bottom - top);
@@ -344,10 +446,8 @@ function drawScree(svg) {
 
 function setUpSharing(given, ranked, you) {
   const url = shareUrl(given);
-  const title = `I got ${ranked[0].name} on Eigencompass, a political test whose axes come from PCA`;
   const status = $("share-status");
   $("share-url").value = url;
-  $("reddit").href = `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
 
   $("copy-link").addEventListener("click", async () => {
     try {
@@ -365,7 +465,7 @@ function setUpSharing(given, ranked, you) {
     canvas.toBlob((blob) => {
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `eigencompass-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
+      a.download = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
       status.textContent = "Image saved.";
@@ -412,7 +512,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
   ctx.fillStyle = CARD.muted;
   ctx.font = `500 18px ${CARD_FONTS.mono}`;
-  ctx.fillText(result ? "EIGENCOMPASS · CLOSEST MATCH" : "EIGENCOMPASS", 60, 84);
+  ctx.fillText(result ? `${SITE_NAME.toUpperCase()} · CLOSEST MATCH` : SITE_NAME.toUpperCase(), 60, 84);
 
   if (result) {
     const { ranked } = result;
@@ -440,7 +540,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const y = wrapText(ctx, "Which ideology are you nearest?", 60, 170, 540, 68);
     ctx.fillStyle = CARD.muted;
     ctx.font = `400 26px ${CARD_FONTS.body}`;
-    wrapText(ctx, "40 statements. The axes are found by principal component analysis, not chosen in advance.", 60, y + 20, 520, 38);
+    wrapText(ctx, "Finds the real dividing lines between ideologies, then asks the statements that best tell them apart.", 60, y + 20, 520, 38);
   }
 
   ctx.fillStyle = CARD.ink;
@@ -505,10 +605,73 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
 // ---------- Intro ----------
 
-drawMap($("intro-map"), 0, 1);
+const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
+drawMap($("intro-map"), 0, 1, { labels: model.ideologies.length > 25 ? extremes : null,
+  onPick: (ideo) => pickCard($("intro-pick"), ideo, { showInList: true }) });
 $("intro-caption").textContent =
-  `The 19 reference ideologies on the two strongest axes, which together explain ${pct(model.components[0].share + model.components[1].share)} of how they differ. You'll be placed on this map at the end.`;
+  `Each dot is one of the ${model.ideologies.length} ideologies, placed on the two biggest dividing lines between them. You'll see where you land at the end.`;
 if (load()) $("resume").hidden = false;
 
 const sharedAnswers = decodeAnswers(new URLSearchParams(location.search).get("r"));
 if (sharedAnswers) showResults(sharedAnswers);
+$("ideology-count").textContent = `${model.ideologies.length}`;
+$("intro-eyebrow").textContent = `Up to ${QUESTIONS.length} statements · stop when your result settles`;
+
+// ---------- Explore ----------
+
+const CATEGORY_ORDER = ["Radical Left", "Left", "Center", "Right", "Far-Right", "Third Position", "Libertarian", "Anarchist"];
+let exploreCategory = null;
+
+function renderExplore() {
+  const query = $("explore-search").value.trim().toLowerCase();
+  const shown = model.ideologies.filter((i) =>
+    (!exploreCategory || i.category === exploreCategory) &&
+    (!query || i.name.toLowerCase().includes(query) || (i.summary || "").toLowerCase().includes(query)));
+  const groups = CATEGORY_ORDER.concat([...new Set(model.ideologies.map((i) => i.category))].filter((c) => !CATEGORY_ORDER.includes(c)))
+    .map((c) => [c, shown.filter((i) => i.category === c).sort((a, b) => a.name.localeCompare(b.name))])
+    .filter(([, list]) => list.length);
+  $("explore-count").textContent = shown.length === model.ideologies.length
+    ? `${shown.length} ideologies`
+    : `${shown.length} of ${model.ideologies.length} ideologies`;
+  $("explore-list").innerHTML = groups.map(([c, list]) => `
+    <div class="stack">
+      <h3>${esc(c)} <span class="muted small">${list.length}</span></h3>
+      <ul class="matches">${list.map((i) => `
+        <li><details id="ideo-${esc(i.id)}">
+          <summary><span class="match-name">${esc(i.name)}</span></summary>
+          <div class="match-body">
+            ${aboutIdeology(i)}
+            <h4>What it stands for</h4>
+            ${beliefList(i)}
+          </div>
+        </details></li>`).join("")}
+      </ul>
+    </div>`).join("") || `<p class="muted">No ideologies match “${esc(query)}”.</p>`;
+}
+
+function openInExplore(id) {
+  const ideo = model.ideologies.find((i) => i.id === id);
+  $("explore-search").value = "";
+  exploreCategory = null;
+  for (const b of $("explore-cats").children) b.setAttribute("aria-pressed", String(b.dataset.cat === ""));
+  renderExplore();
+  const d = document.getElementById(`ideo-${id}`);
+  if (!d || !ideo) return;
+  d.open = true;
+  d.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+  d.querySelector("summary").focus({ preventScroll: true });
+}
+
+const categories = [...new Set(model.ideologies.map((i) => i.category))]
+  .sort((a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99));
+$("explore-cats").innerHTML = [["", "All"], ...categories.map((c) => [c, c])]
+  .map(([v, label]) => `<button class="chip-btn" data-cat="${esc(v)}" aria-pressed="${v === ""}">${esc(label)}</button>`).join("");
+$("explore-cats").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-cat]");
+  if (!b) return;
+  exploreCategory = b.dataset.cat || null;
+  for (const x of $("explore-cats").children) x.setAttribute("aria-pressed", String(x === b));
+  renderExplore();
+});
+$("explore-search").addEventListener("input", renderExplore);
+renderExplore();

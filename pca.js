@@ -77,42 +77,126 @@ function buildModel(ideologies, { varianceTarget = 0.8, minAxes = 2 } = {}) {
 
   const model = { mean, components, kept, ideologies: [] };
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
+  model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
 }
 
-// Answers may contain null for skipped questions; those count as "average" (no pull either way).
-function project(model, answers) {
-  const centered = answers.map((x, j) => (x == null ? 0 : x - model.mean[j]));
-  return model.components.map((c) => dot(centered, c.vector));
+// Places a set of answers on the axes. Skipped or unasked statements are null.
+// With every statement answered this is the exact projection. With only some, it is the
+// least-squares fit on the first `dims` axes using just the answered statements, so
+// unanswered statements don't drag the result toward the center.
+function project(model, answers, dims = Math.min(model.components.length, 8)) {
+  const rows = [];
+  answers.forEach((x, j) => { if (x != null) rows.push(j); });
+  const y = rows.map((j) => answers[j] - model.mean[j]);
+  if (rows.length === answers.length) {
+    return model.components.map((c) => dot(y, c.vector));
+  }
+  const scores = new Array(model.components.length).fill(0);
+  if (rows.length === 0) return scores;
+
+  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the first `dims` eigenvectors.
+  const d = Math.min(dims, rows.length);
+  const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
+  const M = Array.from({ length: d }, (_, a) =>
+    Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
+  const rhs = Array.from({ length: d }, (_, a) => A.reduce((s, r, i) => s + r[a] * y[i], 0));
+  const sol = solve(M, rhs);
+  sol.forEach((v, i) => { scores[i] = v; });
+  return scores;
 }
 
-function distance(a, b, k) {
+// Gaussian elimination with partial pivoting for a small dense system.
+function solve(M, b) {
+  const n = b.length;
+  const a = M.map((row, i) => [...row, b[i]]);
+  for (let c = 0; c < n; c++) {
+    let p = c;
+    for (let r = c + 1; r < n; r++) if (Math.abs(a[r][c]) > Math.abs(a[p][c])) p = r;
+    [a[c], a[p]] = [a[p], a[c]];
+    for (let r = c + 1; r < n; r++) {
+      const f = a[r][c] / a[c][c];
+      for (let k = c; k <= n; k++) a[r][k] -= f * a[c][k];
+    }
+  }
+  const x = new Array(n).fill(0);
+  for (let r = n - 1; r >= 0; r--) {
+    let s = a[r][n];
+    for (let k = r + 1; k < n; k++) s -= a[r][k] * x[k];
+    x[r] = s / a[r][r];
+  }
+  return x;
+}
+
+const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
+
+function rms(answers, profile, idx) {
+  if (idx.length === 0) return 0;
   let s = 0;
-  for (let i = 0; i < k; i++) s += (a[i] - b[i]) ** 2;
-  return Math.sqrt(s);
+  for (const j of idx) s += (answers[j] - profile[j]) ** 2;
+  return Math.sqrt(s / idx.length);
 }
 
-// Ranks ideologies by distance in the kept-axis subspace. Dropping the low-variance
-// axes discards differences that barely separate any ideologies (mostly noise).
+// Ranks ideologies by how far their answers are from yours on the statements you answered.
+// Similarity rescales that distance so 0% is as far apart as the two most distant ideologies
+// are on those same statements.
 function match(model, answers) {
-  const you = project(model, answers);
-  const k = model.kept;
+  const idx = answeredIndexes(answers);
+  const ideos = model.ideologies;
   let spread = 0;
-  for (const a of model.ideologies) for (const b of model.ideologies) spread = Math.max(spread, distance(a.scores, b.scores, k));
-
-  const ranked = model.ideologies
+  for (let a = 0; a < ideos.length; a++) {
+    for (let b = a + 1; b < ideos.length; b++) spread = Math.max(spread, rms(ideos[a].profile, ideos[b].profile, idx));
+  }
+  const ranked = ideos
     .map((i) => {
-      const d = distance(you, i.scores, k);
-      return { name: i.name, profile: i.profile, scores: i.scores, distance: d, similarity: Math.max(0, 1 - d / spread) };
+      const d = rms(answers, i.profile, idx);
+      return { ...i, distance: d, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .sort((x, y) => x.distance - y.distance);
-  return { you, ranked };
+  return { you: project(model, answers), ranked };
 }
 
-// Describes an axis by the questions that load on it most and the ideologies at each end.
+// How plausible each ideology is given the answers so far: each answer multiplies an
+// ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
+function weights(model, answers) {
+  const idx = answeredIndexes(answers);
+  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - i.profile[j]) ** 2, 0) / 2);
+  const top = Math.max(...logs);
+  const w = logs.map((l) => Math.exp(l - top));
+  const total = w.reduce((s, x) => s + x, 0);
+  return w.map((x) => x / total);
+}
+
+// Picks the unasked statement on which the currently plausible ideologies disagree most.
+// With no answers that is simply the most divisive statement overall; later it is the one
+// that best separates your remaining candidates. `gain` is that weighted disagreement.
+function nextQuestion(model, answers, asked) {
+  const w = weights(model, answers);
+  let best = null;
+  for (let q = 0; q < answers.length; q++) {
+    if (asked.has(q)) continue;
+    let mean = 0;
+    model.ideologies.forEach((i, k) => { mean += w[k] * i.profile[q]; });
+    let gain = 0;
+    model.ideologies.forEach((i, k) => { gain += w[k] * (i.profile[q] - mean) ** 2; });
+    if (!best || gain > best.gain) best = { q, gain };
+  }
+  return best;
+}
+
+// How settled the result is, from 0 to 1: the share of the starting disagreement that the
+// remaining statements could still resolve, or the leading ideology's weight if that is higher.
+function certainty(model, answers, asked) {
+  const next = nextQuestion(model, answers, asked);
+  const lead = Math.max(...weights(model, answers));
+  const resolved = next ? 1 - next.gain / model.initialGain : 1;
+  return Math.min(1, Math.max(lead, resolved));
+}
+
+// Describes an axis by the statements that load on it most and the ideologies at each end.
 function describeAxis(model, index, questions, count = 3) {
   const c = model.components[index];
-  const byLoading = c.vector.map((w, q) => ({ q, text: questions[q], w })).sort((x, y) => y.w - x.w);
+  const byLoading = c.vector.map((w, q) => ({ q, text: questions[q].text, w })).sort((x, y) => y.w - x.w);
   const byScore = model.ideologies.slice().sort((x, y) => x.scores[index] - y.scores[index]);
   return {
     positive: byLoading.slice(0, count),
@@ -122,4 +206,6 @@ function describeAxis(model, index, questions, count = 3) {
   };
 }
 
-if (typeof module !== "undefined") module.exports = { jacobiEigen, buildModel, project, match, describeAxis };
+if (typeof module !== "undefined") {
+  module.exports = { jacobiEigen, buildModel, project, match, weights, nextQuestion, certainty, describeAxis };
+}
