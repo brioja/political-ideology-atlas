@@ -109,8 +109,8 @@ It is a static site with no build step and no server, so any static host works:
 
 ## Next step: axes from real people
 
-Right now PCA runs over the 19 ideology profiles, which I wrote by hand, so the axes reflect
-those judgments. The stronger version runs PCA over actual respondents' answers. To get there
-you need somewhere to store responses (a small database or form backend). After a few hundred
-responses, you can recompute the axes from those people and match against ideology profiles
-projected into the same space.
+Right now PCA runs over the audited ideology profiles, so the axes reflect what those ideologies
+believe as their audits document it. The stronger version runs PCA over actual respondents'
+answers. To get there you need somewhere to store responses (a small database or form backend).
+After a few hundred responses, you can recompute the axes from those people and match against
+ideology profiles projected into the same space.
