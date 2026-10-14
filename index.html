@@ -115,7 +115,8 @@ button:disabled { opacity: 0.4; cursor: default; }
 .likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
 .likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
-/* "Don't care" has the same weight as the scale; its dashed dot marks it as off the agree–disagree scale. */
+/* "Don't care" has the same weight as the scale; a small gap and its dashed dot mark it as off the scale. */
+.likert button.no-opinion { margin-top: 0.35rem; }
 .likert button.no-opinion .dot { border-style: dashed; width: 0.9rem; height: 0.9rem; }
 @media (hover: none) { .likert button .key { display: none; } }
 

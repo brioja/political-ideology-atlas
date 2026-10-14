@@ -400,9 +400,7 @@ function finishQuiz() {
   go("#/results");
 }
 
-// Options are listed top to bottom from "Strongly agree"; number keys 1-5 follow the scale.
-// "Don't care" sits right under "Neither agree nor disagree" so the two read as a pair: one is a
-// position in the middle, the other is no position (the statement isn't counted).
+// Options are listed top to bottom from "Strongly agree"; number keys follow the on-screen order.
 const SHOWN_CHOICES = [...CHOICES].reverse();
 for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
@@ -411,13 +409,16 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${c.label}</span><span class="key" aria-hidden="true">${i + 1}</span>`;
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
-  if (c.value !== 0) continue;
-  const none = document.createElement("button");
-  none.id = "choice-none";
-  none.className = "no-opinion";
-  none.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't care</span><span class="key" aria-hidden="true">6</span>`;
-  none.addEventListener("click", () => answer(null));
-  $("likert").append(none);
+}
+// "Don't care": off the agree–disagree scale (the statement isn't counted), so it comes last, but
+// styled like the other options so it reads as a real choice rather than an escape hatch.
+{
+  const b = document.createElement("button");
+  b.id = "choice-none";
+  b.className = "no-opinion";
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't care</span><span class="key" aria-hidden="true">6</span>`;
+  b.addEventListener("click", () => answer(null));
+  $("likert").append(b);
 }
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
 $("resume").addEventListener("click", () => go("#/test"));
