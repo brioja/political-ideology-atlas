@@ -796,6 +796,22 @@ function setUpSharing(given, ranked, you) {
 const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b" };
 const CARD_FONTS = { display: '"Bricolage Grotesque", "Segoe UI", sans-serif', body: '"Source Serif 4", Georgia, serif', mono: '"IBM Plex Mono", monospace' };
 
+// The site's globe mark (as in the header), drawn at (x, y) top-left with the given size.
+function drawGlobe(ctx, x, y, size) {
+  ctx.save();
+  ctx.translate(x, y); ctx.scale(size / 28, size / 28);
+  ctx.lineCap = "butt";
+  const line = (d, color, width, alpha = 1) => {
+    ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke(new Path2D(d)); ctx.globalAlpha = 1;
+  };
+  line("M2.5 14H25.5", CARD.muted, 1.2, 0.6);
+  line("M14 2.5A6.5 11.5 0 0 0 14 25.5", FAMILIES.left.card, 2.2);
+  line("M14 2.5V25.5", FAMILIES.center.card, 2.2);
+  line("M14 2.5A6.5 11.5 0 0 1 14 25.5", FAMILIES.right.card, 2.2);
+  line("M25.5 14A11.5 11.5 0 1 1 2.5 14A11.5 11.5 0 1 1 25.5 14", CARD.ink, 2); // outline last
+  ctx.restore();
+}
+
 function fitText(ctx, text, maxWidth, size, weight, family) {
   do ctx.font = `${weight} ${size}px ${family}`;
   while (ctx.measureText(text).width > maxWidth && --size > 24);
@@ -876,8 +892,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   ctx.textBaseline = "alphabetic";
 
   // Header: site name, category, ideology name.
+  drawGlobe(ctx, PAD, 66, 40);
   ctx.fillStyle = CARD.muted; ctx.font = `500 24px ${CARD_FONTS.mono}`;
-  ctx.fillText(SITE_NAME.toUpperCase(), PAD, 96);
+  ctx.fillText(SITE_NAME.toUpperCase(), PAD + 56, 95);
   ctx.fillStyle = famColor(top);
   ctx.fill(new Path2D(shapePath(styleOf(top).shape, PAD + 10, 152, 10)));
   ctx.fillStyle = CARD.ink; ctx.font = `500 26px ${CARD_FONTS.mono}`;
@@ -1056,9 +1073,10 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     img.src = p.image.url;
   }))) : [];
 
+  drawGlobe(ctx, 60, 60, 32);
   ctx.fillStyle = CARD.muted;
   ctx.font = `500 18px ${CARD_FONTS.mono}`;
-  ctx.fillText(SITE_NAME.toUpperCase(), 60, 84);
+  ctx.fillText(SITE_NAME.toUpperCase(), 104, 83);
 
   if (result) {
     const { ranked } = result;
