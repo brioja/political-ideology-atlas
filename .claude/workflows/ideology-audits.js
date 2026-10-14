@@ -36,7 +36,9 @@ const AUDIT = {
   type: 'object',
   properties: {
     id: { type: 'string' },
-    validatorPassed: { type: 'boolean' },
+    validatorPassed: { type: 'boolean', description: 'true if the validator passed or failed only on salience (exit code 2)' },
+    salient: { type: 'boolean', description: 'false if the validator reported a salience error' },
+    missingStatementsCount: { type: 'integer' },
     lowConfidenceCount: { type: 'integer' },
     concerns: { type: 'string', description: 'anything a human should double-check, or empty' },
   },
@@ -69,7 +71,8 @@ The statements are in ${ROOT}/statements.json. Write your audit to ${ROOT}/audit
 Use WebSearch and WebFetch (load them with ToolSearch if they are deferred) to read real sources, and cite only pages you opened.
 Be economical: 4-6 well-chosen sources are enough. Prefer open-access sources (Stanford or Internet Encyclopedia of Philosophy,
 marxists.org and similar text archives, party sites, Wikipedia); Britannica and many magazines block automated access.
-Then run \`node ${ROOT}/scripts/validate.js ${i.id}\` and fix every error until it passes.
+Then run \`node ${ROOT}/scripts/validate.js ${i.id}\` and fix every error until it passes. The one exception is a salience
+error (exit code 2): it means too few positions are stated, which is an honest result. Leave it and never raise a confidence to pass it.
 Only write that one file. Do not modify any other file in the repo.`
 
 phase('Audit')

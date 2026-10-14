@@ -46,6 +46,9 @@ function personSalience(answers) {
 const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
 const ideologySalience = (answers) => personSalience(statedOnly(answers));
+// The bar itself: a typical test-taker's settled placement uncertainty.
+const salienceBar = () => (personSalience({}), salienceCache.ctx.bar);
 
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, catalog, statementsVersion, profilePath,
-  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience };
+  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
+  salienceBar };
