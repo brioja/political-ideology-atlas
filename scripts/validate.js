@@ -74,6 +74,15 @@ function validate(id) {
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
   if (backfill.length) warnings.push(`needs answers for new statements (backfill): ${backfill.join(", ")}`);
+  // People most associated with the ideology, shown as "Key figures".
+  if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
+  else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');
+  else if (!PEOPLE) for (const [i, f] of a.keyFigures.entries()) {
+    if (!f.name || !f.role) errors.push(`keyFigures[${i}]: needs a name and a role`);
+    if (!/^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/.test(f.wikipedia || "")) errors.push(`keyFigures[${i}]: wikipedia must be an en.wikipedia.org article URL`);
+    if (!Array.isArray(f.sources) || !f.sources.length) errors.push(`keyFigures[${i}]: needs at least one source`);
+    else for (const sid of f.sources) if (!sourceIds.has(sid)) errors.push(`keyFigures[${i}]: unknown source '${sid}'`);
+  }
   // Defining positions no statement captures (audits/statements/STANDARD.md).
   if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');
   else if (!PEOPLE && !Array.isArray(a.missingStatements)) errors.push('"missingStatements" must be a list');

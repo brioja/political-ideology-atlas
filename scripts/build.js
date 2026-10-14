@@ -38,6 +38,7 @@ for (const entry of catalog()) {
     flag: flagFor(entry.id),
     wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
     furtherReading: a.furtherReading || [],
+    keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
     profile: statements.map((s) => a.answers[s.id].value),
   });
 }

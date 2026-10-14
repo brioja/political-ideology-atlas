@@ -82,6 +82,11 @@ The results page links each ideology to further reading for curious, non-special
 - `furtherReading`: two to four accessible items a curious reader could open next, such as an
   encyclopedia entry, a founding text online, or a good introduction. They may overlap with your
   sources. Only include pages you opened.
+- `keyFigures`: one to three people most associated with the ideology, such as its founder,
+  defining thinker or best-known leader, as your sources identify them. Each needs a one-line
+  `role` saying how they are associated, their English Wikipedia article, and at least one source
+  id. Pick by documented association, not by fame or by how much you like them. Use `[]` only if
+  the ideology has no identifiable figures.
 
 ## 5. Positions the statements miss
 
@@ -111,6 +116,9 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }
+  ],
+  "keyFigures": [
+    { "name": "Full name", "role": "Founder of …", "wikipedia": "https://en.wikipedia.org/wiki/…", "sources": ["s1"] }
   ],
   "sources": [
     {

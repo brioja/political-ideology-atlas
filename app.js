@@ -614,6 +614,8 @@ function showResults(shared = null) {
       ${beliefList(top)}
     </section>
 
+    ${keyFiguresSection(top)}
+
     <section>
       <h2>Why ${you_} matched</h2>
       <div class="diffs">
@@ -1433,6 +1435,19 @@ function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)
   ${p.similarity != null ? `<span class="mono small">${pct(p.similarity)}</span>` : `<span class="muted small">${esc(p.region)}</span>`}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 
+// An ideology's key figures (from its audit). Someone with a page here links to it; anyone else
+// links to their Wikipedia article.
+const sameArticle = (a, b) => !!a && !!b && decodeURIComponent(a) === decodeURIComponent(b);
+function keyFigureRow(f) {
+  const person = PEOPLE_LIST.find((p) => sameArticle(p.wikipedia, f.wikipedia));
+  const href = person ? personHref(person.id) : f.wikipedia;
+  return `<li><a class="row-link" href="${esc(href)}"${person ? "" : ` target="_blank" rel="noopener"`}>
+  <span class="match-name">${avatar(person || f)}<span class="stack-tight"><span>${esc(f.name)}</span><span class="muted small">${esc(f.role)}</span></span></span>
+  <span></span><span class="arrow" aria-hidden="true">${person ? "→" : "↗"}</span></a></li>`;
+}
+const keyFiguresSection = (ideo) => ideo.keyFigures && ideo.keyFigures.length
+  ? `<section class="stack"><h2>Key figures</h2><ul class="matches">${ideo.keyFigures.map(keyFigureRow).join("")}</ul></section>` : "";
+
 function yourMatchLine(value, name) {
   return value == null ? "" : `<p class="your-match">Your answers match ${esc(name)} <strong>${pct(value)}</strong>. <a href="#/results">Back to your results</a></p>`;
 }
@@ -1455,6 +1470,7 @@ function renderIdeologyPage(id) {
         ${yourMatchLine(yours, ideo.name)}
       </div>
       <section class="stack"><h2>What it stands for</h2>${beliefList(ideo, 6)}</section>
+      ${keyFiguresSection(ideo)}
       <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id })}</section>
       <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
       ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}
