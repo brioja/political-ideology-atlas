@@ -5,6 +5,15 @@ test is backed by a public audit, a JSON file listing their answer to each state
 a confidence level, and the sources. Corrections to those audits are the most valuable
 contributions.
 
+## Inclusion standard
+
+The test follows a Wikipedia-style standard: anything notable and documented in reliable sources is
+included and described neutrally, however controversial. Nothing is left out because it is
+objectionable, and nothing is added on someone's say-so. The only reasons to leave something out are
+missing evidence (a statement with no known position, an ideology with no documented color
+tradition) or the published rules (such as the salience check), never a judgment about who or what
+deserves to appear.
+
 ## Challenge an answer
 
 If you think an ideology or person is placed wrong on a statement:

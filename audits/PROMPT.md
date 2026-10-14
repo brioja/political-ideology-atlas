@@ -13,6 +13,12 @@ Inputs (filled in by the runner):
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
 
+## 0. Standard
+
+Follow a Wikipedia-style standard: describe the ideology neutrally and as its own adherents and
+reliable sources document it, however controversial it is. Don't editorialize, soften or omit
+positions because they are objectionable; attribute them to sources instead.
+
 ## 1. Pin down what the ideology is
 
 Many names cover several strands. Before answering, decide which one the profile represents, and

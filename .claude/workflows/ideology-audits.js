@@ -22,6 +22,7 @@ const PENDING = {
         properties: {
           id: { type: 'string' }, name: { type: 'string' }, category: { type: 'string' },
           wikipedia: { type: ['string', 'null'] }, wikipediaMatch: { type: 'string' },
+          scopeNote: { type: 'string', description: 'copy verbatim when present' },
         },
         required: ['id', 'name', 'category'],
       },
@@ -61,7 +62,7 @@ Read ${ROOT}/audits/PROMPT.md first and follow it exactly. Fill its placeholders
 - id: ${i.id}
 - category: ${i.category}
 - statementsVersion: ${found.statementsVersion}
-- wikipedia (suggested, confirm it): ${i.wikipedia || 'none found'} (found as: ${i.wikipediaMatch || 'none'})
+- wikipedia (suggested, confirm it): ${i.wikipedia || 'none found'} (found as: ${i.wikipediaMatch || 'none'})${i.scopeNote ? `\n- scope note (follow it): ${i.scopeNote}` : ''}
 - auditedAt: today's date (YYYY-MM-DD)
 
 The statements are in ${ROOT}/statements.json. Write your audit to ${ROOT}/audits/profiles/${i.id}.json.

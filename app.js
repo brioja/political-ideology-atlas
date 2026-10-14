@@ -64,22 +64,22 @@ function lineInfo(i) {
 }
 
 // ---------- Category colors and shapes ----------
-// Color marks one of four broad families; shape marks the category, and the written category
-// name always appears too (WCAG 2.2 SC 1.4.1). Colors are from the Okabe–Ito palette and each has
-// at least 3:1 contrast on light and dark backgrounds (SC 1.4.11). Four is the limit: purple and
-// green are only moderately separable for deuteranopes (ΔE 7.6), acceptable because shapes and
-// labels back them up; a fifth Okabe–Ito color fails contrast or reads as "no category".
+// Color marks one of three broad families in the international convention (red left, gold
+// liberal, blue right; not the US red/blue); shape marks the category, and the written category
+// name always appears too (WCAG 2.2 SC 1.4.1). Shades were chosen to pass the dataviz palette
+// checker on every pair, including colorblind simulation, and to meet 3:1 contrast on light and
+// dark backgrounds (SC 1.4.11). A rose-red is used because pure red is too close to gold for
+// deuteranopes; a fourth color (purple, green, teal or brown) collided with red or blue.
 const FAMILIES = {
-  left: { label: "Left", color: "var(--fam-left)", card: "#D55E00" },
-  antistate: { label: "Anti-state", color: "var(--fam-antistate)", card: "#CC79A7" },
-  center: { label: "Center", color: "var(--fam-center)", card: "#009E73" },
-  right: { label: "Right", color: "var(--fam-right)", card: "#0072B2" },
+  left: { label: "Left", color: "var(--fam-left)", card: "#C2185B" },
+  center: { label: "Liberal & center", color: "var(--fam-center)", card: "#A67C00" },
+  right: { label: "Right", color: "var(--fam-right)", card: "#1565C0" },
 };
 const CATEGORY_STYLE = {
   "Radical Left": { family: "left", shape: "triangle" },
   "Left": { family: "left", shape: "circle" },
-  "Anarchist": { family: "antistate", shape: "cross" },
-  "Libertarian": { family: "antistate", shape: "star" },
+  "Anarchist": { family: "left", shape: "cross" },
+  "Libertarian": { family: "center", shape: "star" },
   "Center": { family: "center", shape: "diamond" },
   "Right": { family: "right", shape: "square" },
   "Far-Right": { family: "right", shape: "triangle-down" },
@@ -105,6 +105,18 @@ function shapePath(shape, x, y, r) {
     }));
     default: return `M${x - r},${y}a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0`;
   }
+}
+
+// An ideology's traditional colors as a little flag: one color solid, two split diagonally (like
+// the anarchist flags), three as horizontal stripes. Decorative; the name is always written out.
+function flagSwatch(ideo, w = 42, h = 28) {
+  if (!ideo.flag || !ideo.flag.colors.length) return "";
+  const c = ideo.flag.colors.map((x) => esc(x.hex));
+  const shapes = c.length === 1 ? `<rect width="${w}" height="${h}" fill="${c[0]}"/>`
+    : c.length === 2 ? `<polygon points="0,0 ${w},0 0,${h}" fill="${c[0]}"/><polygon points="${w},0 ${w},${h} 0,${h}" fill="${c[1]}"/>`
+    : c.map((col, i) => `<rect y="${(h / c.length) * i}" width="${w}" height="${h / c.length + 0.5}" fill="${col}"/>`).join("");
+  const title = esc(ideo.flag.colors.map((x) => x.name).join(" and ") + (ideo.flag.note ? ` (${ideo.flag.note})` : ""));
+  return `<svg class="flag" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><title>${title}</title>${shapes}<rect width="${w}" height="${h}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/></svg>`;
 }
 
 // A small inline marker (shape in its family color) to sit next to a category name.
@@ -271,6 +283,20 @@ function setHeaderAction(mode) {
   btn.hidden = mode === "none";
   // "early": enough answers to stop (quiet outline); "results": the result has settled (solid).
   btn.classList.toggle("primary", mode !== "early");
+  if (mode === "share") {
+    btn.innerHTML = `Share <span aria-hidden="true">↗</span>`;
+    btn.setAttribute("href", "#share");
+    btn.title = "Share your result";
+    btn.onclick = (e) => { e.preventDefault(); shareResult(); };
+    return;
+  }
+  if (mode === "take") {
+    btn.innerHTML = `Take the test <span aria-hidden="true">→</span>`;
+    btn.setAttribute("href", "#/test");
+    btn.title = "";
+    btn.onclick = (e) => { e.preventDefault(); history.replaceState(null, "", `${location.pathname}#/test`); order = []; lastAnswers = null; route(); };
+    return;
+  }
   if (mode === "results" || mode === "early") {
     // The words carry the meaning; the style only reinforces it.
     btn.innerHTML = mode === "early" ? `Results so far <span aria-hidden="true">→</span>` : `See your result <span aria-hidden="true">→</span>`;
@@ -315,12 +341,16 @@ function renderQuestion() {
   $("bar").style.width = pct(sure);
   // A calibrated percentage: in simulations, the share of takers at this reading whose top match
   // didn't change after answering everything. Readings never seen in simulation get words instead.
-  $("certainty").textContent = answered === 0 ? "Most telling statements first"
+  const status = $("certainty");
+  status.classList.toggle("ready", settled);
+  if (settled) {
+    status.innerHTML = `✓ Your result is ready · <a href="#/results" id="ready-link">See your result →</a>`;
+    $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
+  } else status.textContent = answered === 0 ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
-    : `${settled ? "Result settled · " : ""}top match ${pct(hold)} likely to hold`;
+    : `top match ${pct(hold)} likely to hold`;
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  $("settled-note").hidden = !settled;
   setHeaderAction(settled ? "results" : hold != null ? "early" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
     // The sixth button is "No opinion": chosen when this statement was already shown and skipped.
@@ -390,6 +420,7 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
 }
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
 $("resume").addEventListener("click", () => go("#/test"));
+
 
 // On phones the agree/disagree explanation opens as a bottom sheet instead of taking up the page.
 $("explain-btn").addEventListener("click", () => {
@@ -533,6 +564,8 @@ function showResults(shared = null) {
   const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0).sort((x, y) => Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
   const disagree = diffs.filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 4);
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
+  const topPeople = typeof PEOPLE !== "undefined" && PEOPLE.length
+    ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
 
   const others = ranked.slice(1, 7).map((r) => {
     const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 2);
@@ -553,10 +586,23 @@ function showResults(shared = null) {
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict tinted" style="--fam: ${colorOf(top)}">
-      <span class="eyebrow">${your} closest match · ${pct(top.similarity)} · based on ${answered} answers</span>
+      <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
-      ${categoryTag(top)}
-      <p><a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a></p>
+      <div class="tag-row">${categoryTag(top)}${flagSwatch(top)}</div>
+      ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
+          ${avatar(topPeople[0], 88)}
+          <span class="stack-tight">
+            <span class="eyebrow">Thinks most like ${shared ? "them" : "you"}</span>
+            <span class="hero-person-name">${esc(topPeople[0].name)}</span>
+            ${topPeople[0].role ? `<span class="muted small">${esc(topPeople[0].role)}</span>` : ""}
+          </span>
+          <span class="hero-person-pct">${pct(topPeople[0].similarity)}<span class="muted small"> alike</span></span>
+        </a>
+        ${topPeople.length > 1 ? `<div class="people-strip">${topPeople.slice(1, 3).map((p) => `<a class="person-chip" href="${personHref(p.id)}">${avatar(p, 28)}<span>${esc(p.name)}</span><span class="mono small">${pct(p.similarity)}</span></a>`).join("")}</div>` : ""}` : ""}
+      <div class="row verdict-actions">
+        <a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a>
+        ${shared ? "" : `<button class="btn" id="share-top">Share ↗</button>`}
+      </div>
       ${aboutIdeology(top)}
       <p class="muted">${closeCall
         ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
@@ -628,7 +674,7 @@ function showResults(shared = null) {
         <span class="muted" id="share-status" role="status"></span>
       </div>
       <figure>
-        <canvas id="card" class="card-preview" width="1200" height="630" aria-label="Shareable image of your result"></canvas>
+        <canvas id="card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of your result"></canvas>
         <figcaption>Save the image to post alongside your link.</figcaption>
       </figure>
     </section>`}
@@ -679,6 +725,7 @@ function showResults(shared = null) {
   $("retake").addEventListener("click", fresh);
   if (shared) $("own-test").addEventListener("click", fresh);
   else setUpSharing(given, ranked, you);
+  setHeaderAction(shared ? "take" : "share");
 }
 
 function drawScree(svg) {
@@ -702,10 +749,23 @@ function drawScree(svg) {
 
 // ---------- Sharing ----------
 
+// Share: the phone's share sheet where available, otherwise copy the link and show the share section.
+let shareTarget = null;
+async function shareResult() {
+  if (!shareTarget) return;
+  if (navigator.share) {
+    try { await navigator.share({ title: shareTarget.title, url: shareTarget.url }); return; } catch (e) { if (e.name === "AbortError") return; }
+  }
+  try { await navigator.clipboard.writeText(shareTarget.url); $("share-status").textContent = "Link copied."; } catch {}
+  $("share").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+
 function setUpSharing(given, ranked, you) {
   const url = shareUrl(given);
   const status = $("share-status");
   $("share-url").value = url;
+  shareTarget = { url, title: `My closest political ideology: ${ranked[0].name}` };
+  $("share-top").addEventListener("click", shareResult);
 
   $("copy-link").addEventListener("click", async () => {
     try {
@@ -718,7 +778,7 @@ function setUpSharing(given, ranked, you) {
   });
 
   const canvas = $("card");
-  drawCard(canvas, { ranked, you, people: cardPeople(given) });
+  drawShareCard(canvas, { ranked, you, people: cardPeople(given) });
   $("save-image").addEventListener("click", () => {
     canvas.toBlob((blob) => {
       const a = document.createElement("a");
@@ -753,10 +813,215 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
   return y + lineHeight;
 }
 
+// Portrait share image (1080x1350, the 4:5 size phones and social feeds show well): the ideology
+// name, the closest person as the hero, other matches and people, and where you stand.
+// The landscape drawCard() remains for the generic link preview (og.png).
+function loadPhoto(p) {
+  return new Promise((resolve) => {
+    if (!p || !p.image) return resolve(null);
+    const img = new Image();
+    img.crossOrigin = "anonymous"; // Wikimedia allows it, so the canvas can still be saved
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = p.image.url;
+  });
+}
+
+// Draws `img` to fill the box (cropping, biased toward the top where faces usually are).
+function drawCover(ctx, img, x, y, w, h) {
+  const scale = Math.max(w / img.width, h / img.height);
+  const sw = w / scale, sh = h / scale;
+  ctx.drawImage(img, (img.width - sw) / 2, Math.max(0, (img.height - sh) * 0.2), sw, sh, x, y, w, h);
+}
+
+function wrapLines(ctx, text, maxWidth, maxLines) {
+  const words = String(text).split(/\s+/);
+  const lines = [];
+  let line = "";
+  for (const w of words) {
+    const next = line ? `${line} ${w}` : w;
+    if (ctx.measureText(next).width > maxWidth && line) { lines.push(line); line = w; } else line = next;
+  }
+  if (line) lines.push(line);
+  if (lines.length > maxLines) {
+    lines.length = maxLines;
+    let last = lines[maxLines - 1];
+    while (ctx.measureText(`${last}…`).width > maxWidth && last.length > 1) last = last.slice(0, -1);
+    lines[maxLines - 1] = `${last}…`;
+  }
+  return lines;
+}
+
+async function drawShareCard(canvas, result, site = `${location.host}${location.pathname.replace(/\/$/, "")}`) {
+  try {
+    await Promise.all([
+      document.fonts.load(`700 72px ${CARD_FONTS.display}`),
+      document.fonts.load(`400 24px ${CARD_FONTS.body}`),
+      document.fonts.load(`400 18px ${CARD_FONTS.mono}`),
+    ]);
+  } catch {}
+  const W = 1080, H = 1350, PAD = 72;
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext("2d");
+  const { ranked, you } = result;
+  const top = ranked[0];
+  const people = (result.people || []).slice(0, 4);
+  const famColor = (ideo) => FAMILIES[styleOf(ideo).family].card;
+  const photos = await Promise.all(people.map(loadPhoto));
+
+  // Background: neutral, with a light wash of the top ideology's family color.
+  ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
+  ctx.globalAlpha = 0.12; ctx.fillStyle = famColor(top); ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
+  ctx.textBaseline = "alphabetic";
+
+  // Header: site name, category, ideology name.
+  ctx.fillStyle = CARD.muted; ctx.font = `500 24px ${CARD_FONTS.mono}`;
+  ctx.fillText(SITE_NAME.toUpperCase(), PAD, 96);
+  ctx.fillStyle = famColor(top);
+  ctx.fill(new Path2D(shapePath(styleOf(top).shape, PAD + 10, 152, 10)));
+  ctx.fillStyle = CARD.ink; ctx.font = `500 26px ${CARD_FONTS.mono}`;
+  ctx.fillText((top.category || "").toUpperCase(), PAD + 32, 161);
+  if (top.flag && top.flag.colors.length) {
+    // Traditional colors as a flag in the corner: solid, diagonal split, or stripes.
+    const fc = top.flag.colors.map((x) => x.hex), fw = 168, fh = 112, fx = W - PAD - fw, fy = 56;
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 10); ctx.clip();
+    if (fc.length === 1) { ctx.fillStyle = fc[0]; ctx.fillRect(fx, fy, fw, fh); }
+    else if (fc.length === 2) {
+      ctx.fillStyle = fc[0]; ctx.beginPath(); ctx.moveTo(fx, fy); ctx.lineTo(fx + fw, fy); ctx.lineTo(fx, fy + fh); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = fc[1]; ctx.beginPath(); ctx.moveTo(fx + fw, fy); ctx.lineTo(fx + fw, fy + fh); ctx.lineTo(fx, fy + fh); ctx.closePath(); ctx.fill();
+    } else fc.forEach((col, i) => { ctx.fillStyle = col; ctx.fillRect(fx, fy + (fh / fc.length) * i, fw, fh / fc.length + 1); });
+    ctx.restore();
+    ctx.strokeStyle = "rgba(0, 0, 0, 0.18)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 10); ctx.stroke();
+  }
+  fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
+  ctx.fillText(top.name, PAD, 256);
+  ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
+  ctx.fillText(`${pct(top.similarity)} match`, PAD, 302);
+
+  const card = (x, y, w, h) => {
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = "rgba(23, 32, 43, 0.08)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, 22); ctx.fill(); ctx.stroke();
+  };
+  const label = (text, x, y) => { ctx.fillStyle = CARD.muted; ctx.font = `500 20px ${CARD_FONTS.mono}`; ctx.fillText(text, x, y); };
+
+  let y = 336;
+  // Hero: the person who thinks most like you.
+  if (people.length) {
+    const p = people[0], hh = 330;
+    card(PAD, y, W - PAD * 2, hh);
+    const pw = 300;
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(PAD, y, pw, hh, [22, 0, 0, 22]); ctx.clip();
+    if (photos[0]) drawCover(ctx, photos[0], PAD, y, pw, hh);
+    else { ctx.fillStyle = CARD.line; ctx.fillRect(PAD, y, pw, hh); }
+    ctx.restore();
+    const tx = PAD + pw + 44, tw = W - PAD - 40 - tx;
+    label("THINKS MOST LIKE YOU", tx, y + 56);
+    ctx.fillStyle = CARD.ink; ctx.font = `700 50px ${CARD_FONTS.display}`;
+    const nameLines = wrapLines(ctx, p.name, tw, 2);
+    nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 116 + i * 54));
+    const ry = y + 116 + (nameLines.length - 1) * 54 + 40;
+    if (p.role) {
+      // A two-line name leaves room for one line of role, so nothing runs into the percentage.
+      ctx.fillStyle = CARD.muted; ctx.font = `400 24px ${CARD_FONTS.body}`;
+      wrapLines(ctx, p.role, tw, nameLines.length > 1 ? 1 : 2).forEach((l, i) => ctx.fillText(l, tx, ry + i * 30));
+    }
+    ctx.fillStyle = CARD.ink; ctx.font = `700 84px ${CARD_FONTS.display}`;
+    ctx.fillText(pct(p.similarity), tx, y + hh - 36);
+    const pw2 = ctx.measureText(pct(p.similarity)).width;
+    ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.body}`;
+    ctx.fillText("alike", tx + pw2 + 14, y + hh - 40);
+    y += hh + 28;
+  }
+
+  // Two columns: other close ideologies, and more people.
+  const colW = (W - PAD * 2 - 28) / 2, ch = 262;
+  const morePeople = people.slice(1, 4);
+  const ideoW = morePeople.length ? colW : W - PAD * 2;
+  card(PAD, y, ideoW, ch);
+  label("CLOSE IDEOLOGIES", PAD + 32, y + 50);
+  ranked.slice(1, 4).forEach((r, i) => {
+    const ry = y + 104 + i * 62, x = PAD + 32, w = ideoW - 64;
+    ctx.fillStyle = famColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
+    ctx.fillStyle = CARD.ink; ctx.font = `400 25px ${CARD_FONTS.body}`;
+    let name = r.name;
+    while (ctx.measureText(name).width > w - 110 && name.length > 4) name = name.slice(0, -2) + "…";
+    ctx.fillText(name, x + 28, ry);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 22px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+    ctx.fillText(pct(r.similarity), x + w, ry); ctx.textAlign = "left";
+    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 12, w, 6);
+    ctx.fillStyle = famColor(r); ctx.fillRect(x, ry + 12, w * r.similarity, 6);
+  });
+  if (morePeople.length) {
+    const x0 = PAD + colW + 28;
+    card(x0, y, colW, ch);
+    label("MORE PEOPLE", x0 + 32, y + 50);
+    morePeople.forEach((p, i) => {
+      const cy = y + 104 + i * 62, r = 26, x = x0 + 32;
+      ctx.save();
+      ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
+      ctx.fillStyle = CARD.line; ctx.fill();
+      if (photos[i + 1]) { ctx.clip(); drawCover(ctx, photos[i + 1], x, cy - r, r * 2, r * 2); }
+      ctx.restore();
+      ctx.fillStyle = CARD.ink; ctx.font = `600 24px ${CARD_FONTS.body}`;
+      let name = p.name;
+      while (ctx.measureText(name).width > colW - 64 - 72 - 70 && name.length > 4) name = name.slice(0, -2) + "…";
+      ctx.fillText(name, x + 72, cy + 8);
+      ctx.fillStyle = CARD.muted; ctx.font = `400 22px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+      ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 8); ctx.textAlign = "left";
+    });
+  }
+  y += ch + 28;
+
+  // Where you stand on the (up to 3) biggest dividing lines.
+  const lines = Math.min(SHOWN_LINES, 3);
+  const lh = Math.min(62, (H - 130 - (y + 72)) / lines);
+  label("WHERE YOU STAND", PAD, y + 26);
+  {
+    // Key: the dark ring is you, the faint marker your top match.
+    let kx = W - PAD;
+    ctx.font = `400 20px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
+    ctx.fillText(top.name, kx, y + 26); kx -= ctx.measureText(top.name).width + 14;
+    ctx.globalAlpha = 0.5; ctx.fillStyle = famColor(top);
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 6, y + 19, 8))); ctx.globalAlpha = 1;
+    kx -= 34; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 26); kx -= ctx.measureText("You").width + 16;
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(kx, y + 19, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.textAlign = "left";
+  }
+  for (let i = 0; i < lines; i++) {
+    const L = lineInfo(i), ty = y + 72 + i * lh;
+    const x0 = PAD + 300, x1 = W - PAD;
+    const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
+    const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
+    const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
+    ctx.fillStyle = CARD.ink; ctx.font = `600 24px ${CARD_FONTS.display}`;
+    ctx.fillText(L.name, PAD, ty + 8);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 18px ${CARD_FONTS.body}`;
+    ctx.fillText(L.low, x0, ty + 34); ctx.textAlign = "right"; ctx.fillText(L.high, x1, ty + 34); ctx.textAlign = "left";
+    ctx.strokeStyle = "rgba(23, 32, 43, 0.15)"; ctx.lineWidth = 4; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
+    ctx.globalAlpha = 0.5; ctx.fillStyle = famColor(top);
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9))); ctx.globalAlpha = 1;
+    const ux = px(you[i]);
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(ux, ty, 11, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CARD.ink; ctx.beginPath(); ctx.arc(ux, ty, 4, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // Footer.
+  ctx.fillStyle = "rgba(23, 32, 43, 0.12)"; ctx.fillRect(PAD, H - 108, W - PAD * 2, 2);
+  ctx.fillStyle = CARD.ink; ctx.font = `500 24px ${CARD_FONTS.mono}`;
+  ctx.fillText("TAKE THE TEST", PAD, H - 56);
+  ctx.textAlign = "right"; ctx.fillText(site.toUpperCase(), W - PAD, H - 56); ctx.textAlign = "left";
+}
+
 // The people closest to a set of answers, for the result card (empty until people are audited).
 function cardPeople(answers) {
   const list = typeof PEOPLE === "undefined" ? [] : PEOPLE;
-  return list.length ? matchPeople(model, answers, list.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
+  return list.length ? matchPeople(model, answers, list.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 4) : [];
 }
 
 // Draws a 1200x630 result card. With no `result`, draws the generic link-preview image.
@@ -792,7 +1057,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
   ctx.fillStyle = CARD.muted;
   ctx.font = `500 18px ${CARD_FONTS.mono}`;
-  ctx.fillText(result ? `${SITE_NAME.toUpperCase()} · CLOSEST MATCH` : SITE_NAME.toUpperCase(), 60, 84);
+  ctx.fillText(SITE_NAME.toUpperCase(), 60, 84);
 
   if (result) {
     const { ranked } = result;
@@ -862,8 +1127,8 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.font = `500 20px ${CARD_FONTS.mono}`;
   ctx.fillText(`Take the test: ${site}`, 60, 585);
 
-  // Map of the two strongest axes.
-  const mx = 660, my = 50, ms = 490, c = ms / 2;
+  // Where you stand: one row per real dividing line, with its plain-language ends.
+  const mx = 660, my = 50, ms = 490;
   ctx.fillStyle = CARD.surface;
   ctx.strokeStyle = CARD.line;
   ctx.lineWidth = 2;
@@ -871,56 +1136,75 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.roundRect(mx, my, ms, ms, 14);
   ctx.fill();
   ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(mx + 30, my + c); ctx.lineTo(mx + ms - 30, my + c);
-  ctx.moveTo(mx + c, my + 30); ctx.lineTo(mx + c, my + ms - 30);
-  ctx.stroke();
 
-  const pts = model.ideologies.map((i) => [i.scores[0], i.scores[1]]);
-  if (result) pts.push([result.you[0], result.you[1]]);
-  const lim = Math.max(...pts.flat().map(Math.abs)) * 1.12;
-  const px = (v) => mx + c + (v / lim) * (c - 40);
-  const py = (v) => my + c - (v / lim) * (c - 40);
-
-  const ex = lineInfo(0), ey = lineInfo(1);
   ctx.fillStyle = CARD.muted;
   ctx.font = `500 15px ${CARD_FONTS.mono}`;
-  ctx.fillText(`← ${ex.low}`, mx + 14, my + ms - 14);
-  ctx.textAlign = "right";
-  ctx.fillText(`${ex.high} →`, mx + ms - 14, my + ms - 14);
-  ctx.textAlign = "left";
-  ctx.fillText(`↑ ${ey.high}`, mx + 14, my + 26);
-  ctx.fillText(`↓ ${ey.low}`, mx + 14, my + ms - 40);
+  ctx.fillText(result ? "WHERE YOU STAND" : "THE DIVIDING LINES", mx + 28, my + 40);
 
-  const topName = result ? result.ranked[0].name : null;
-  const mark = (ideo, x, y, r) => {
-    ctx.fillStyle = FAMILIES[styleOf(ideo).family].card;
-    ctx.fill(new Path2D(shapePath(styleOf(ideo).shape, x, y, r)));
-  };
-  for (const ideo of model.ideologies) {
-    if (ideo.name === topName) continue;
-    ctx.globalAlpha = 0.8;
-    mark(ideo, px(ideo.scores[0]), py(ideo.scores[1]), 6.5);
+  const lines = Math.min(SHOWN_LINES, 6);
+  const top = result ? result.ranked[0] : null;
+  const rowH = (ms - 80) / lines;
+  for (let i = 0; i < lines; i++) {
+    const L = lineInfo(i);
+    const y0 = my + 64 + i * rowH;
+    const x0 = mx + 36, x1 = mx + ms - 36;
+    const vals = model.ideologies.map((d) => d.scores[i]).concat(result ? [result.you[i]] : []);
+    const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
+    const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
+    const ty = y0 + rowH * 0.55;
+
+    ctx.fillStyle = CARD.ink;
+    ctx.font = `600 ${lines > 4 ? 17 : 19}px ${CARD_FONTS.display}`;
+    ctx.fillText(L.name, x0, y0 + 14);
+    ctx.fillStyle = CARD.muted;
+    ctx.font = `400 15px ${CARD_FONTS.body}`;
+    ctx.fillText(L.low, x0, ty + 26);
+    ctx.textAlign = "right";
+    ctx.fillText(L.high, x1, ty + 26);
+    ctx.textAlign = "left";
+
+    ctx.strokeStyle = CARD.line;
+    ctx.lineWidth = 4;
+    ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke();
+
+    if (!result) {
+      // Generic preview: every ideology as a faint marker.
+      for (const d of model.ideologies) {
+        ctx.globalAlpha = 0.55;
+        ctx.fillStyle = FAMILIES[styleOf(d).family].card;
+        ctx.fill(new Path2D(shapePath(styleOf(d).shape, px(d.scores[i]), ty, 6)));
+      }
+      ctx.globalAlpha = 1;
+      continue;
+    }
+    // Your top match, faint, for comparison; then you, as a dark ring.
+    ctx.globalAlpha = 0.45;
+    ctx.fillStyle = FAMILIES[styleOf(top).family].card;
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9)));
     ctx.globalAlpha = 1;
+    const ux = px(result.you[i]);
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(ux, ty, 11, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CARD.ink;
+    ctx.beginPath(); ctx.arc(ux, ty, 4, 0, Math.PI * 2); ctx.fill();
   }
   if (result) {
-    const top = result.ranked[0];
-    const tx = px(top.scores[0]), ty = py(top.scores[1]);
-    mark(top, tx, ty, 9);
-    ctx.strokeStyle = CARD.ink; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.arc(tx, ty, 16, 0, Math.PI * 2); ctx.stroke();
-    const ux = px(result.you[0]), uy = py(result.you[1]);
-    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.arc(ux, uy, 13, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = CARD.ink;
-    ctx.beginPath(); ctx.arc(ux, uy, 5, 0, Math.PI * 2); ctx.fill();
-    ctx.font = `700 22px ${CARD_FONTS.display}`;
-    ctx.textAlign = "center";
-    ctx.lineJoin = "round"; ctx.lineWidth = 6; ctx.strokeStyle = CARD.surface;
-    ctx.strokeText("You", ux, uy - 24);
-    ctx.fillText("You", ux, uy - 24);
-    ctx.textAlign = "left";
+    // Key for the two markers.
+    const ky = my + ms - 22;
+    ctx.font = `400 14px ${CARD_FONTS.body}`;
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(mx + 44, ky - 5, 7, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CARD.muted;
+    ctx.fillText("You", mx + 58, ky);
+    ctx.globalAlpha = 0.45;
+    ctx.fillStyle = FAMILIES[styleOf(top).family].card;
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, mx + 112, ky - 5, 7)));
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = CARD.muted;
+    ctx.fillText(top.name, mx + 126, ky);
   }
+  ctx.lineCap = "butt";
 }
 
 // ---------- Static page content ----------
@@ -952,7 +1236,7 @@ drawScree($("scree"));
     return x;
   });
   const { you, ranked } = match(model, sample);
-  drawCard($("example-card"), { you, ranked, people: cardPeople(sample) });
+  drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample) });
 })();
 
 // ---------- Explore ----------
@@ -1155,7 +1439,7 @@ function renderIdeologyPage(id) {
     root.innerHTML = `
       <a class="back" href="#/ideologies">← All ideologies</a>
       <div class="detail-head stack tinted" style="--fam: ${colorOf(ideo)}">
-        ${categoryTag(ideo)}
+        <div class="tag-row">${categoryTag(ideo)}${flagSwatch(ideo)}</div>
         <h1>${esc(ideo.name)}</h1>
         ${aboutIdeology(ideo)}
         ${audit && audit.scope ? `<p class="muted small"><strong>Scope:</strong> ${esc(audit.scope)}</p>` : ""}

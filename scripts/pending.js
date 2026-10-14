@@ -26,5 +26,5 @@ const pending = catalog().filter((entry) => {
   }
 });
 
-console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, category, wikipedia, wikipediaMatch, born, living }) =>
-  ({ id, name, category, wikipedia, wikipediaMatch, born, living }))));
+console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
+  ({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }))));

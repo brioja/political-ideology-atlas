@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Political Ideology Atlas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11.5' fill='%23fff'/%3E%3Cpath d='M2.5 14H25.5' stroke='%235b6776' stroke-width='1.2'/%3E%3Cpath d='M14 2.5A6.5 11.5 0 0 0 14 25.5' fill='none' stroke='%23C2185B' stroke-width='2.4'/%3E%3Cpath d='M14 2.5V25.5' stroke='%23A67C00' stroke-width='2.4'/%3E%3Cpath d='M14 2.5A6.5 11.5 0 0 1 14 25.5' fill='none' stroke='%231565C0' stroke-width='2.4'/%3E%3Ccircle cx='14' cy='14' r='11.5' fill='none' stroke='%2317202b' stroke-width='2'/%3E%3C/svg%3E">
 <meta name="description" content="A political ideology test that finds the real dividing lines between ideologies, then asks the statements that best tell them apart.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Political Ideology Atlas: which ideology are you closest to?">
@@ -27,13 +28,12 @@
   --accent: #1f6f78;      /* teal: you, primary actions */
   --accent-2: #8a3b6b;    /* plum: the matched ideology */
   --accent-soft: #d8ebec;
-  /* Ideology families: four Okabe–Ito colors (Color Universal Design palette for color-vision
-     deficiency). Same values in light and dark; all meet WCAG 2.2 SC 1.4.11 (>= 3:1 against both
-     surfaces). Shape and the category name always accompany color (SC 1.4.1). */
-  --fam-left: #D55E00;
-  --fam-antistate: #CC79A7;
-  --fam-center: #009E73;
-  --fam-right: #0072B2;
+  /* Ideology families in the international convention: red left, gold liberal & center, blue right.
+     Validated as a colorblind-safe set in both themes; each meets WCAG 2.2 SC 1.4.11 (>= 3:1).
+     Shape and the category name always accompany color (SC 1.4.1). */
+  --fam-left: #C2185B;
+  --fam-center: #A67C00;
+  --fam-right: #1565C0;
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body: "Source Serif 4", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -42,13 +42,13 @@
   :root:not([data-theme="light"]) {
     --bg: #11161c; --surface: #19212a; --ink: #e6ebf0; --muted: #98a4b2; --line: #2c3743;
     --accent: #5fbcc5; --accent-2: #d58bb8; --accent-soft: #1d3a3e; color-scheme: dark;
-    --fam-left: #D55E00; --fam-antistate: #CC79A7; --fam-center: #009E73; --fam-right: #0072B2;
+    --fam-left: #E04A7F; --fam-center: #B08A1A; --fam-right: #4A8FE0;
   }
 }
 :root[data-theme="dark"] {
   --bg: #11161c; --surface: #19212a; --ink: #e6ebf0; --muted: #98a4b2; --line: #2c3743;
   --accent: #5fbcc5; --accent-2: #d58bb8; --accent-soft: #1d3a3e; color-scheme: dark;
-  --fam-left: #D55E00; --fam-antistate: #CC79A7; --fam-center: #009E73; --fam-right: #0072B2;
+  --fam-left: #E04A7F; --fam-center: #B08A1A; --fam-right: #4A8FE0;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -200,7 +200,7 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   flex: 1; min-width: 0; font: 400 0.85rem var(--mono); padding: 0.7rem; border-radius: 6px;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
 }
-.card-preview { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
+.card-preview { width: 100%; max-width: 26rem; height: auto; display: block; border: 1px solid var(--line); border-radius: 12px; }
 .map-pickers { font-size: 0.9rem; gap: 0.5rem 0.75rem; }
 .map-pickers select { max-width: 100%; }
 
@@ -259,11 +259,12 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
 .facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; color: var(--muted); font: 400 0.85rem var(--mono); }
 .facts li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 0.5rem; vertical-align: 2px; }
-.hero-example { display: grid; gap: 0.6rem; }
+.hero-example { display: grid; gap: 0.6rem; justify-items: center; }
+.hero-example .eyebrow { justify-self: start; }
 .hero-example canvas {
   width: 100%; height: auto; display: block; border-radius: 14px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 18px 40px -16px rgb(15 30 45 / 0.35);
-  transform: rotate(-1.2deg);
+  transform: rotate(-1deg); max-width: 24rem;
 }
 @media (prefers-reduced-motion: reduce) { .hero-example canvas { transform: none; } }
 .how { display: grid; gap: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-top: 1rem; }
@@ -369,14 +370,18 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
   #page-test.page { padding-block: 0.75rem 1.5rem; }
   #page-test .card { padding: 1rem; gap: 0.75rem; }
   #page-test .card > .stack { gap: 0.5rem; }
-  #settled-note { display: none; }
-  #certainty { font-size: 0.8rem; }
+  #certainty { font-size: 0.82rem; }
   .statement { font-size: 1.2rem; min-height: 0; }
   .explain-btn { margin-top: -0.5rem; font-size: 0.88rem; padding: 0.2rem 0; }
   .likert { gap: 0.4rem; }
   .likert button { padding: 0.62rem 0.9rem; font-size: 0.95rem; }
   .quiz-foot { padding-top: 0.5rem; }
 }
+
+/* Status line under the progress bar; turns into a quiet "result ready" link once settled (no layout shift) */
+.status-line { font-size: 0.85rem; color: var(--muted); min-height: 1.4em; }
+.status-line.ready { color: var(--accent); font-weight: 600; }
+.status-line a { color: var(--accent); }
 
 /* Statement explanation: beside the options on wide screens, a bottom sheet on phones */
 .explain-btn { justify-self: start; margin-top: -0.75rem; font-size: 0.95rem; }
@@ -391,6 +396,29 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .sheet-statement { font: 600 1.15rem/1.35 var(--body); }
 .sheet .ex-row p { font-size: 1rem; }
 .sheet #sheet-close { justify-self: stretch; margin-top: 0.25rem; }
+
+/* Results panel: people strip and actions */
+.people-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+/* The person who thinks most like you, as the panel's hero */
+.hero-person {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 1rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0.75rem 1rem 0.75rem 0.75rem;
+  color: var(--ink); text-decoration: none;
+}
+.hero-person:hover { border-color: var(--ink); }
+.hero-person .avatar { width: 88px; height: 88px; margin: 0; }
+.hero-person-name { font: 700 1.35rem/1.15 var(--display); }
+.hero-person-pct { font: 700 1.9rem/1 var(--display); text-align: right; }
+@media (max-width: 480px) { .hero-person { grid-template-columns: auto minmax(0, 1fr); } .hero-person-pct { grid-column: 2; text-align: left; font-size: 1.5rem; } .hero-person .avatar { width: 72px; height: 72px; } }
+.person-chip { display: inline-flex; align-items: center; gap: 0.1rem; padding: 0.25rem 0.6rem 0.25rem 0.25rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 0.9rem; }
+.person-chip .avatar { width: 28px; height: 28px; margin-right: 0.4rem; }
+.person-chip .mono { color: var(--muted); margin-left: 0.4rem; }
+.person-chip:hover { border-color: var(--ink); }
+.verdict-actions { justify-content: space-between; align-items: center; }
+
+.tag-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+.flag { border-radius: 3px; flex: none; }
 
 /* Map picking */
 .chart .dot { cursor: pointer; }
@@ -424,11 +452,14 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#/" aria-label="Political Ideology Atlas, home">
-      <svg class="brand-mark" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
-        <path d="M6.5 2.5L11 10.5H2Z" fill="var(--fam-left)"></path>
-        <path d="M16.2 3.2L18.8 5.8L21.4 3.2L23 4.8L20.4 7.4L23 10L21.4 11.6L18.8 9L16.2 11.6L14.6 10L17.2 7.4L14.6 4.8Z" fill="var(--fam-antistate)"></path>
-        <path d="M6.5 14L11 18.5L6.5 23L2 18.5Z" fill="var(--fam-center)"></path>
-        <path d="M15 15H23V23H15Z" fill="var(--fam-right)"></path>
+      <!-- A globe (the atlas) whose meridians are the three family colors: left, liberal & center, right. -->
+      <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M2.5 14H25.5" stroke="var(--muted)" stroke-width="1.2" opacity="0.6"></path>
+        <path d="M14 2.5A6.5 11.5 0 0 0 14 25.5" fill="none" stroke="var(--fam-left)" stroke-width="2.2"></path>
+        <path d="M14 2.5V25.5" stroke="var(--fam-center)" stroke-width="2.2"></path>
+        <path d="M14 2.5A6.5 11.5 0 0 1 14 25.5" fill="none" stroke="var(--fam-right)" stroke-width="2.2"></path>
+        <!-- Outline last, so it covers the meridian ends -->
+        <circle cx="14" cy="14" r="11.5" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
       </svg>
       <span>Political Ideology Atlas</span>
     </a>
@@ -464,7 +495,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
       </div>
       <figure class="hero-example">
         <span class="eyebrow">Example result</span>
-        <canvas id="example-card" width="1200" height="630" role="img" aria-label="An example result card"></canvas>
+        <canvas id="example-card" width="1080" height="1350" role="img" aria-label="An example result card"></canvas>
       </figure>
     </div>
 
@@ -500,7 +531,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
             </div>
           </div>
           <div class="progress" title="How settled your result is"><div id="bar"></div></div>
-          <span class="muted small" id="certainty"></span>
+          <p class="status-line" id="certainty" role="status"></p>
         </div>
         <p class="statement" id="statement"></p>
         <button class="link explain-btn" id="explain-btn" aria-haspopup="dialog">ⓘ What does this mean?</button>
@@ -515,7 +546,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
         <div class="row quiz-foot">
           <button class="link" id="restart">Start over</button>
         </div>
-        <p class="muted" id="settled-note" hidden>Your result has settled. You can stop here or keep answering to refine it.</p>
       </div>
     </div>
   </section>
@@ -615,7 +645,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
       <p>Every ideology's answers come from a written audit: its position on each statement, a short rationale, a confidence level, and the sources behind it. The audits and the exact research instructions are <a href="https://github.com/brioja/political-ideology-atlas/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>, so anyone can check them or suggest a correction. The list of ideology names follows the one used by <a href="https://12axes.vercel.app/" target="_blank" rel="noopener">12axes</a>; all descriptions, answers and sources here are researched independently.</p>
 
       <h2>Colors and accessibility</h2>
-      <p>Each ideology is shown with a color for its broad family and a shape for its category, and its category is always written out too, so nothing depends on color alone. The four colors come from the Okabe–Ito palette, designed for people with color-vision deficiency, and each meets the WCAG 2.2 contrast minimum on both light and dark backgrounds.</p>
+      <p>Each ideology is shown with a color for its broad family and a shape for its category, and its category is always written out too, so nothing depends on color alone. The colors follow the international convention (red for the left, gold for liberals and the center, blue for the right) in shades tested to stay distinguishable for people with color-vision deficiency, and each meets the WCAG 2.2 contrast minimum on both light and dark backgrounds.</p>
 
       <h2>Privacy</h2>
       <p>There are no accounts and no tracking. Your answers stay in your browser, which remembers your progress on this device. A share link contains your answers to each statement and nothing else, so anyone you send it to can see how you answered.</p>

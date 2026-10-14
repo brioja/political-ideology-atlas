@@ -12,6 +12,12 @@ Inputs (filled in by the runner):
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error except salience.
 
+## 0. Standard
+
+Follow a Wikipedia-style standard: describe the person's documented positions neutrally, however
+controversial they are. Don't editorialize, soften or omit positions because they are
+objectionable; attribute them to sources instead.
+
 ## 1. Research with real sources
 
 - Use web search and fetch tools and cite only pages you opened in this session, by the URL you

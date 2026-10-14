@@ -8,6 +8,12 @@ const { ROOT, readJson, allStatements, catalog, statementsVersion, profilePath,
 const { buildModel, meaningfulAxes } = require("../pca.js");
 
 const version = statementsVersion();
+const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
+const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
+const flagFor = (id) => {
+  const c = traditionalColors[id];
+  return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
+};
 const statements = allStatements();
 const included = [];
 const stale = [];
@@ -28,6 +34,8 @@ for (const entry of catalog()) {
     category: entry.category,
     summary: a.summary,
     audited: true,
+    // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
+    flag: flagFor(entry.id),
     wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
     furtherReading: a.furtherReading || [],
     profile: statements.map((s) => a.answers[s.id].value),
