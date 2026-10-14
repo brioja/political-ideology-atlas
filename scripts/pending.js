@@ -1,6 +1,7 @@
 // Prints, as JSON, the catalog entries that still need an audit: missing, stale, or failing
 // validation. Used by the audit workflow; also handy on its own.
-//   node scripts/pending.js [--limit N] [--people]
+//   node scripts/pending.js [--limit N] [--people] [--by-views]
+//   --by-views orders by Wikipedia page views (most viewed first), for auditing in order of prominence
 const { execFileSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -26,5 +27,6 @@ const pending = catalog().filter((entry) => {
   }
 });
 
+if (process.argv.includes("--by-views")) pending.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
 console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
   ({ id, name, category, wikipedia, wikipediaMatch, born, living, scopeNote }))));

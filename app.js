@@ -677,6 +677,7 @@ function showResults(shared = null) {
         <canvas id="card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of your result"></canvas>
         <figcaption>Save the image to post alongside your link.</figcaption>
       </figure>
+      <p class="support-line">Enjoyed it? The test is free, ad-free and doesn't track you. <a href="https://ko-fi.com/sibshops" target="_blank" rel="noopener">Support it on Ko-fi ♥</a></p>
     </section>`}
 
     <p class="muted small">Curious how the matching and the dividing lines work? <a href="#/about">Read about the method and sources</a>.</p>
