@@ -19,9 +19,9 @@ const TICK = {
     done: { type: 'boolean', description: 'true if next.js printed null (no ideology left)' },
     report: { type: 'string', description: 'one line: name, validator result, stated positions, proposals added/merged/declined, deployed or not' },
     deployed: { type: 'boolean' },
-    backfillCount: { type: 'integer', description: 'length of the JSON array printed by `node scripts/pending.js --backfill`' },
+    pendingStatements: { type: 'integer', description: 'number of distinct statement ids across the array printed by `node scripts/pending.js --backfill`' },
   },
-  required: ['done', 'report', 'deployed', 'backfillCount'],
+  required: ['done', 'report', 'deployed', 'pendingStatements'],
 }
 
 const tickPrompt = `You do one step of a serial ideology audit. Working directory: ${ROOT}. Today's date is the auditedAt date.
@@ -44,7 +44,7 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
 5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
    audits/statements/texts.json as "Rebuild site data" (same co-author line) and \`git push\`. If they fail, do not push;
    say why in the report.
-6. Run \`node scripts/pending.js --backfill\` and report the array length as backfillCount.
+6. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch scripts/candidates.js or any other file.`
 
 const BACKFILL_TODO = {
@@ -81,7 +81,9 @@ for (let i = 0; i < LIMIT; i++) {
   if (r.done) { ended = 'no ideologies left'; break }
   reports.push(r.report)
   log(r.report)
-  if (r.backfillCount >= 10) {
+  // Backfill once 10 new statements have built up. Every new statement makes every earlier audit
+  // pending at once, so counting audits instead would backfill after nearly every audit.
+  if (r.pendingStatements >= 10) {
     phase('Backfill')
     reports.push(`backfill: ${await backfill()}`)
   }
