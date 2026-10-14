@@ -53,11 +53,24 @@ async function main() {
   const now = new Date();
   const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0));
   const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
+  const views = async (title) => {
+    const t = encodeURIComponent(title.replace(/ /g, "_"));
+    const r = await getJson(`https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`);
+    return r ? r.items.reduce((s, x) => s + x.views, 0) : null;
+  };
   for (const p of people) {
     if (p.wikipediaMissing) continue;
-    const t = encodeURIComponent(titleOf(p.wikipedia).replace(/ /g, "_"));
-    const r = await getJson(`https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`);
-    p.views12m = r ? r.items.reduce((s, x) => s + x.views, 0) : 0;
+    if (IDEOLOGIES && p.wikipediaMatch === "redirect") {
+      // A redirect's target is often a broader or shared article (Anarcho-naturism -> Naturism), and
+      // its views would be credited to every name that redirects there. Count only visits to this
+      // name's own title, the titles scripts/wikipedia.js tried.
+      const plain = p.name.replace(/\s*\(.*?\)\s*/g, " ").trim();
+      let total = 0;
+      for (const title of new Set([plain, plain[0] + plain.slice(1).toLowerCase()])) total += (await views(title)) || 0;
+      p.views12m = total;
+      continue;
+    }
+    p.views12m = (await views(titleOf(p.wikipedia))) || 0;
   }
   data.viewsPeriod = `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`;
   fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");
