@@ -365,6 +365,16 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .quiz-actions { display: flex; gap: 1rem; align-items: center; }
 .quiz-actions .link { padding: 0.3rem 0; }
 
+/* Wider screens: keep the statement, all six answers and the actions above the fold on a laptop. */
+@media (min-width: 760px) {
+  #page-test.page { padding-block: 1.25rem 2.5rem; }
+  #page-test .card { padding: 1.5rem 1.75rem; gap: 1.1rem; }
+  #page-test .card > .stack { gap: 0.6rem; }
+  #page-test .statement { min-height: 2.4em; }
+  #page-test .likert { gap: 0.4rem; }
+  #page-test .likert button { padding: 0.68rem 1rem; }
+}
+
 /* Phones: compress the test so the statement, all five answers and the actions fit on one screen */
 @media (max-width: 759px) {
   #page-test.page { padding-block: 0.75rem 1.5rem; }
