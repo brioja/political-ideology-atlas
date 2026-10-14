@@ -886,9 +886,13 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const famColor = (ideo) => FAMILIES[styleOf(ideo).family].card;
   const photos = await Promise.all(people.map(loadPhoto));
 
-  // Background: neutral, with a light wash of the top ideology's family color.
+  // Background: neutral, with a soft wash of the top ideology's traditional colors (or its family
+  // color when it has none), blended corner to corner so the colors set a mood without being a flag.
   ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
-  ctx.globalAlpha = 0.12; ctx.fillStyle = famColor(top); ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
+  const wash = top.flag && top.flag.colors.length ? top.flag.colors.map((x) => x.hex) : [famColor(top)];
+  const grad = ctx.createLinearGradient(0, 0, W, H);
+  (wash.length === 1 ? [wash[0], wash[0]] : wash).forEach((col, i, all) => grad.addColorStop(i / (all.length - 1), col));
+  ctx.globalAlpha = 0.16; ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
   ctx.textBaseline = "alphabetic";
 
   // Header: site name, category, ideology name.
@@ -899,20 +903,6 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   ctx.fill(new Path2D(shapePath(styleOf(top).shape, PAD + 10, 152, 10)));
   ctx.fillStyle = CARD.ink; ctx.font = `500 26px ${CARD_FONTS.mono}`;
   ctx.fillText((top.category || "").toUpperCase(), PAD + 32, 161);
-  if (top.flag && top.flag.colors.length) {
-    // Traditional colors as a flag in the corner: solid, diagonal split, or stripes.
-    const fc = top.flag.colors.map((x) => x.hex), fw = 168, fh = 112, fx = W - PAD - fw, fy = 56;
-    ctx.save();
-    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 10); ctx.clip();
-    if (fc.length === 1) { ctx.fillStyle = fc[0]; ctx.fillRect(fx, fy, fw, fh); }
-    else if (fc.length === 2) {
-      ctx.fillStyle = fc[0]; ctx.beginPath(); ctx.moveTo(fx, fy); ctx.lineTo(fx + fw, fy); ctx.lineTo(fx, fy + fh); ctx.closePath(); ctx.fill();
-      ctx.fillStyle = fc[1]; ctx.beginPath(); ctx.moveTo(fx + fw, fy); ctx.lineTo(fx + fw, fy + fh); ctx.lineTo(fx, fy + fh); ctx.closePath(); ctx.fill();
-    } else fc.forEach((col, i) => { ctx.fillStyle = col; ctx.fillRect(fx, fy + (fh / fc.length) * i, fw, fh / fc.length + 1); });
-    ctx.restore();
-    ctx.strokeStyle = "rgba(0, 0, 0, 0.18)"; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.roundRect(fx, fy, fw, fh, 10); ctx.stroke();
-  }
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 256);
   ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
