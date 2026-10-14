@@ -63,30 +63,13 @@ function lineInfo(i) {
     : { name: `Line ${i + 1}`, low: ax.lowEnd[0], high: ax.highEnd[0], lowIdeo: ax.lowEnd[0], highIdeo: ax.highEnd[0] };
 }
 
-// ---------- Category colors and shapes ----------
-// Color marks one of three broad families in the international convention (red left, gold
-// liberal, blue right; not the US red/blue); shape marks the category, and the written category
-// name always appears too (WCAG 2.2 SC 1.4.1). Shades were chosen to pass the dataviz palette
-// checker on every pair, including colorblind simulation, and to meet 3:1 contrast on light and
-// dark backgrounds (SC 1.4.11). A rose-red is used because pure red is too close to gold for
-// deuteranopes; a fourth color (purple, green, teal or brown) collided with red or blue.
-const FAMILIES = {
-  left: { label: "Left", color: "var(--fam-left)", card: "#C2185B" },
-  center: { label: "Liberal & center", color: "var(--fam-center)", card: "#A67C00" },
-  right: { label: "Right", color: "var(--fam-right)", card: "#1565C0" },
-};
-const CATEGORY_STYLE = {
-  "Radical Left": { family: "left", shape: "triangle" },
-  "Left": { family: "left", shape: "circle" },
-  "Anarchist": { family: "left", shape: "cross" },
-  "Libertarian": { family: "center", shape: "star" },
-  "Center": { family: "center", shape: "diamond" },
-  "Right": { family: "right", shape: "square" },
-  "Far-Right": { family: "right", shape: "triangle-down" },
-  "Third Position": { family: "right", shape: "plus" },
-};
-const styleOf = (ideo) => CATEGORY_STYLE[ideo.category] || { family: "center", shape: "circle" };
-const colorOf = (ideo) => FAMILIES[styleOf(ideo).family].color;
+// ---------- Markers ----------
+// Ideologies are told apart by where they sit on the dividing lines and by name, not by color. An
+// earlier version colored them by hand-assigned categories (Left, Right, Third Position...), which
+// the data-derived lines made redundant, so every marker is now the same neutral circle.
+const POINT = "var(--muted)";
+const styleOf = () => ({ shape: "circle" });
+const colorOf = () => POINT;
 
 // SVG path data for a marker of radius r centered on (x, y). Path2D accepts the same data,
 // so the share image draws identical shapes.
@@ -119,21 +102,12 @@ function flagSwatch(ideo, w = 42, h = 28) {
   return `<svg class="flag" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><title>${title}</title>${shapes}<rect width="${w}" height="${h}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/></svg>`;
 }
 
-// A small inline marker (shape in its family color) to sit next to a category name.
-function swatch(category, size = 14) {
-  const st = CATEGORY_STYLE[category] || { family: "center", shape: "circle" };
-  return `<svg class="swatch-mark" width="${size}" height="${size}" viewBox="0 0 16 16" aria-hidden="true"><path d="${shapePath(st.shape, 8, 8, 5.5)}" fill="${FAMILIES[st.family].color}"></path></svg>`;
-}
-const categoryTag = (ideo) => ideo.category ? `<span class="cat-tag">${swatch(ideo.category)}${esc(ideo.category)}</span>` : "";
-
-// Legend under a map: every category with its marker and name, grouped by family.
-function categoryLegend() {
-  const present = new Set(model.ideologies.map((i) => i.category));
-  return Object.entries(FAMILIES).map(([key, fam]) => {
-    const cats = Object.keys(CATEGORY_STYLE).filter((c) => CATEGORY_STYLE[c].family === key && present.has(c));
-    if (!cats.length) return "";
-    return `<li><span class="fam-name">${esc(fam.label)}:</span> ${cats.map((c) => `<span class="cat-tag">${swatch(c)}${esc(c)}</span>`).join(" ")}</li>`;
-  }).join("");
+// A tiny map beside a name: where the ideology sits on the first two dividing lines (across and up,
+// as on the big map), scaled to the furthest ideology on each.
+const GLYPH_LIM = [0, 1].map((k) => Math.max(...model.ideologies.map((i) => Math.abs(i.scores[k] || 0))) || 1);
+function posGlyph(ideo, size = 18) {
+  const x = 8 + ((ideo.scores[0] || 0) / GLYPH_LIM[0]) * 5, y = 8 - ((ideo.scores[1] || 0) / GLYPH_LIM[1]) * 5;
+  return `<svg class="swatch-mark" width="${size}" height="${size}" viewBox="0 0 16 16" aria-hidden="true"><rect x="0.75" y="0.75" width="14.5" height="14.5" rx="3" fill="none" stroke="var(--line)" stroke-width="1.5"></rect><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6" fill="var(--ink)"></circle></svg>`;
 }
 
 const pct = (x) => `${Math.round(x * 100)}%`;
@@ -246,7 +220,6 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
 // `figure` holds the svg, the two selects and a .map-note caption; `opts` go to drawMap.
 function mountMap(figure, opts, { extraNote = "" } = {}) {
   const svg = figure.querySelector("svg"), note = figure.querySelector(".map-note");
-  figure.querySelector(".cat-legend").innerHTML = categoryLegend();
   const xs = figure.querySelector("select.across"), ys = figure.querySelector("select.up");
   const options = Array.from({ length: SHOWN_LINES }, (_, i) => `<option value="${i}">${esc(lineInfo(i).name)}</option>`).join("");
   xs.innerHTML = options;
@@ -528,7 +501,7 @@ function versus(q, mine, theirs, me, them) {
 function pickCard(container, ideo, { similarity = null } = {}) {
   container.hidden = false;
   container.innerHTML = `
-    <div class="pick-head"><h3>${esc(ideo.name)}</h3>${categoryTag(ideo)}
+    <div class="pick-head"><h3>${posGlyph(ideo, 18)}${esc(ideo.name)}</h3>
       ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}</div>
     ${aboutIdeology(ideo)}
     <h4>What it stands for</h4>
@@ -575,7 +548,7 @@ function showResults(shared = null) {
     const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 2);
     return `
       <li><details>
-        <summary><span class="match-name">${swatch(r.category)}${esc(r.name)}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
+        <summary><span class="match-name">${posGlyph(r)}${esc(r.name)}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
         <div class="match-body">
           ${aboutIdeology(r)}
           <h4>What it stands for</h4>
@@ -589,10 +562,10 @@ function showResults(shared = null) {
 
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
-    <div class="verdict tinted" style="--fam: ${colorOf(top)}">
+    <div class="verdict tinted" style="--fam: var(--accent)">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
-      <div class="tag-row">${categoryTag(top)}${flagSwatch(top)}</div>
+      <div class="tag-row">${flagSwatch(top)}</div>
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
@@ -661,7 +634,6 @@ function showResults(shared = null) {
           <label for="result-up">Up</label><select id="result-up" class="up"></select>
         </div>
         <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the ideologies on two dividing lines"></svg>
-        <ul class="cat-legend" aria-label="Map key"></ul>
         <figcaption class="map-note"></figcaption>
       </figure>
       <div class="pick" id="result-pick" hidden></div>
@@ -799,7 +771,9 @@ function setUpSharing(given, ranked, you) {
 }
 
 // The card uses a fixed light palette: it's an image that gets posted elsewhere, not page UI.
-const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b" };
+const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b", point: "#5b6776" };
+// The globe mark's three meridians (brand colors, as in the header logo).
+const LOGO = { left: "#C2185B", center: "#A67C00", right: "#1565C0" };
 const CARD_FONTS = { display: '"Bricolage Grotesque", "Segoe UI", sans-serif', body: '"Source Serif 4", Georgia, serif', mono: '"IBM Plex Mono", monospace' };
 
 // The site's globe mark (as in the header), drawn at (x, y) top-left with the given size.
@@ -811,9 +785,9 @@ function drawGlobe(ctx, x, y, size) {
     ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke(new Path2D(d)); ctx.globalAlpha = 1;
   };
   line("M2.5 14H25.5", CARD.muted, 1.2, 0.6);
-  line("M14 2.5A6.5 11.5 0 0 0 14 25.5", FAMILIES.left.card, 2.2);
-  line("M14 2.5V25.5", FAMILIES.center.card, 2.2);
-  line("M14 2.5A6.5 11.5 0 0 1 14 25.5", FAMILIES.right.card, 2.2);
+  line("M14 2.5A6.5 11.5 0 0 0 14 25.5", LOGO.left, 2.2);
+  line("M14 2.5V25.5", LOGO.center, 2.2);
+  line("M14 2.5A6.5 11.5 0 0 1 14 25.5", LOGO.right, 2.2);
   line("M25.5 14A11.5 11.5 0 1 1 2.5 14A11.5 11.5 0 1 1 25.5 14", CARD.ink, 2); // outline last
   ctx.restore();
 }
@@ -889,26 +863,25 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const { ranked, you } = result;
   const top = ranked[0];
   const people = (result.people || []).slice(0, 4);
-  const famColor = (ideo) => FAMILIES[styleOf(ideo).family].card;
+  const markColor = () => CARD.point;
   const photos = await Promise.all(people.map(loadPhoto));
 
   // Background: neutral, with a soft wash of the top ideology's traditional colors (or its family
   // color when it has none), blended corner to corner so the colors set a mood without being a flag.
   ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
-  const wash = top.flag && top.flag.colors.length ? top.flag.colors.map((x) => x.hex) : [famColor(top)];
+  const wash = top.flag && top.flag.colors.length ? top.flag.colors.map((x) => x.hex) : [markColor(top)];
   const grad = ctx.createLinearGradient(0, 0, W, H);
   (wash.length === 1 ? [wash[0], wash[0]] : wash).forEach((col, i, all) => grad.addColorStop(i / (all.length - 1), col));
   ctx.globalAlpha = 0.16; ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
   ctx.textBaseline = "alphabetic";
 
-  // Header: site name, category, ideology name.
+  // Header: site name, then the ideology name.
   drawGlobe(ctx, PAD, 66, 40);
   ctx.fillStyle = CARD.muted; ctx.font = `500 24px ${CARD_FONTS.mono}`;
   ctx.fillText(SITE_NAME.toUpperCase(), PAD + 56, 95);
-  ctx.fillStyle = famColor(top);
-  ctx.fill(new Path2D(shapePath(styleOf(top).shape, PAD + 10, 152, 10)));
-  ctx.fillStyle = CARD.ink; ctx.font = `500 26px ${CARD_FONTS.mono}`;
-  ctx.fillText((top.category || "").toUpperCase(), PAD + 32, 161);
+  ctx.font = `500 26px ${CARD_FONTS.mono}`;
+  ctx.fillText("CLOSEST IDEOLOGY", PAD, 161);
+  ctx.fillStyle = CARD.ink;
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 256);
   ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
@@ -958,7 +931,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   label("CLOSE IDEOLOGIES", PAD + 32, y + 50);
   ranked.slice(1, 4).forEach((r, i) => {
     const ry = y + 104 + i * 62, x = PAD + 32, w = ideoW - 64;
-    ctx.fillStyle = famColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
+    ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
     ctx.fillStyle = CARD.ink; ctx.font = `400 25px ${CARD_FONTS.body}`;
     let name = r.name;
     while (ctx.measureText(name).width > w - 110 && name.length > 4) name = name.slice(0, -2) + "…";
@@ -966,7 +939,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.fillStyle = CARD.muted; ctx.font = `400 22px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
     ctx.fillText(pct(r.similarity), x + w, ry); ctx.textAlign = "left";
     ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 12, w, 6);
-    ctx.fillStyle = famColor(r); ctx.fillRect(x, ry + 12, w * r.similarity, 6);
+    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 12, w * r.similarity, 6);
   });
   if (morePeople.length) {
     const x0 = PAD + colW + 28;
@@ -998,7 +971,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     let kx = W - PAD;
     ctx.font = `400 20px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
     ctx.fillText(top.name, kx, y + 26); kx -= ctx.measureText(top.name).width + 14;
-    ctx.globalAlpha = 0.5; ctx.fillStyle = famColor(top);
+    ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 6, y + 19, 8))); ctx.globalAlpha = 1;
     kx -= 34; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 26); kx -= ctx.measureText("You").width + 16;
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
@@ -1017,7 +990,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.fillText(L.low, x0, ty + 34); ctx.textAlign = "right"; ctx.fillText(L.high, x1, ty + 34); ctx.textAlign = "left";
     ctx.strokeStyle = "rgba(23, 32, 43, 0.15)"; ctx.lineWidth = 4; ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
-    ctx.globalAlpha = 0.5; ctx.fillStyle = famColor(top);
+    ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9))); ctx.globalAlpha = 1;
     const ux = px(you[i]);
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
@@ -1052,9 +1025,9 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.fillStyle = CARD.bg;
   ctx.fillRect(0, 0, W, H);
   if (result) {
-    // A light wash of the top match's family color.
+    // A light neutral wash.
     ctx.globalAlpha = 0.1;
-    ctx.fillStyle = FAMILIES[styleOf(result.ranked[0]).family].card;
+    ctx.fillStyle = CARD.point;
     ctx.fillRect(0, 0, W, H);
     ctx.globalAlpha = 1;
   }
@@ -1078,7 +1051,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const { ranked } = result;
     const people = (result.people || []).slice(0, 3);
     const mark = (ideo, x, y, r) => {
-      ctx.fillStyle = FAMILIES[styleOf(ideo).family].card;
+      ctx.fillStyle = CARD.point;
       ctx.fill(new Path2D(shapePath(styleOf(ideo).shape, x, y, r)));
     };
     ctx.fillStyle = CARD.ink;
@@ -1098,7 +1071,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
       ctx.textAlign = "left";
       ctx.fillStyle = "rgba(23, 32, 43, 0.12)";
       ctx.fillRect(60, y + 12, 540, 9);
-      ctx.fillStyle = FAMILIES[styleOf(r).family].card;
+      ctx.fillStyle = CARD.point;
       ctx.fillRect(60, y + 12, 540 * r.similarity, 9);
     });
     if (people.length) {
@@ -1187,7 +1160,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
       // Generic preview: every ideology as a faint marker.
       for (const d of model.ideologies) {
         ctx.globalAlpha = 0.55;
-        ctx.fillStyle = FAMILIES[styleOf(d).family].card;
+        ctx.fillStyle = CARD.point;
         ctx.fill(new Path2D(shapePath(styleOf(d).shape, px(d.scores[i]), ty, 6)));
       }
       ctx.globalAlpha = 1;
@@ -1195,7 +1168,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     }
     // Your top match, faint, for comparison; then you, as a dark ring.
     ctx.globalAlpha = 0.45;
-    ctx.fillStyle = FAMILIES[styleOf(top).family].card;
+    ctx.fillStyle = CARD.point;
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9)));
     ctx.globalAlpha = 1;
     const ux = px(result.you[i]);
@@ -1213,7 +1186,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     ctx.fillStyle = CARD.muted;
     ctx.fillText("You", mx + 58, ky);
     ctx.globalAlpha = 0.45;
-    ctx.fillStyle = FAMILIES[styleOf(top).family].card;
+    ctx.fillStyle = CARD.point;
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, mx + 112, ky - 5, 7)));
     ctx.globalAlpha = 1;
     ctx.fillStyle = CARD.muted;
@@ -1256,41 +1229,17 @@ drawScree($("scree"));
 
 // ---------- Explore ----------
 
-const CATEGORY_ORDER = ["Radical Left", "Left", "Center", "Right", "Far-Right", "Third Position", "Libertarian", "Anarchist"];
-let exploreCategory = null;
-
-// Newer ideologies have no category yet; the explore list groups them on their own.
-const catOf = (i) => i.category || "Ungrouped";
 function renderExplore() {
   const query = $("explore-search").value.trim().toLowerCase();
-  const shown = model.ideologies.filter((i) =>
-    (!exploreCategory || catOf(i) === exploreCategory) &&
-    (!query || i.name.toLowerCase().includes(query) || (i.summary || "").toLowerCase().includes(query)));
-  const groups = CATEGORY_ORDER.concat([...new Set(model.ideologies.map(catOf))].filter((c) => !CATEGORY_ORDER.includes(c)))
-    .map((c) => [c, shown.filter((i) => catOf(i) === c).sort((a, b) => a.name.localeCompare(b.name))])
-    .filter(([, list]) => list.length);
+  const shown = model.ideologies
+    .filter((i) => !query || i.name.toLowerCase().includes(query) || (i.summary || "").toLowerCase().includes(query))
+    .sort((a, b) => a.name.localeCompare(b.name));
   $("explore-count").textContent = shown.length === model.ideologies.length
     ? `${shown.length} ideologies`
     : `${shown.length} of ${model.ideologies.length} ideologies`;
-  $("explore-list").innerHTML = groups.map(([c, list]) => `
-    <div class="stack">
-      <h3>${swatch(c, 16)}${esc(c)} <span class="muted small">${list.length}</span></h3>
-      <ul class="matches">${list.map(ideologyRow).join("")}</ul>
-    </div>`).join("") || `<p class="muted">No ideologies match “${esc(query)}”.</p>`;
+  $("explore-list").innerHTML = shown.length ? `<ul class="matches">${shown.map(ideologyRow).join("")}</ul>`
+    : `<p class="muted">No ideologies match “${esc(query)}”.</p>`;
 }
-
-
-const categories = [...new Set(model.ideologies.map(catOf))]
-  .sort((a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99));
-$("explore-cats").innerHTML = [["", "All"], ...categories.map((c) => [c, c])]
-  .map(([v, label]) => `<button class="chip-btn" data-cat="${esc(v)}" aria-pressed="${v === ""}">${v ? swatch(v, 12) : ""}${esc(label)}</button>`).join("");
-$("explore-cats").addEventListener("click", (e) => {
-  const b = e.target.closest("[data-cat]");
-  if (!b) return;
-  exploreCategory = b.dataset.cat || null;
-  for (const x of $("explore-cats").children) x.setAttribute("aria-pressed", String(x === b));
-  renderExplore();
-});
 $("explore-search").addEventListener("input", renderExplore);
 renderExplore();
 
@@ -1433,8 +1382,8 @@ function loadAudit(folder, id) {
 }
 
 function ideologyRow(r) { return `<li><a class="row-link" href="${ideologyHref(r.id)}">
-  <span class="match-name">${swatch(r.category)}${esc(r.name)}</span>
-  ${r.similarity != null ? `<span class="mono small">${pct(r.similarity)}</span>` : `<span class="muted small">${esc(r.category || "")}</span>`}
+  <span class="match-name">${posGlyph(r)}${esc(r.name)}</span>
+  ${r.similarity != null ? `<span class="mono small">${pct(r.similarity)}</span>` : ""}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)}">
   <span class="match-name">${avatar(p)}${esc(p.name)}</span>
@@ -1468,8 +1417,8 @@ function renderIdeologyPage(id) {
   const draw = (audit) => {
     root.innerHTML = `
       <a class="back" href="#/ideologies">← All ideologies</a>
-      <div class="detail-head stack tinted" style="--fam: ${colorOf(ideo)}">
-        <div class="tag-row">${categoryTag(ideo)}${flagSwatch(ideo)}</div>
+      <div class="detail-head stack tinted" style="--fam: var(--accent)">
+        <div class="tag-row">${flagSwatch(ideo)}</div>
         <h1>${esc(ideo.name)}</h1>
         ${aboutIdeology(ideo)}
         ${audit && audit.scope ? `<p class="muted small"><strong>Scope:</strong> ${esc(audit.scope)}</p>` : ""}

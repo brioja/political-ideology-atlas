@@ -20,10 +20,10 @@ const PENDING = {
       items: {
         type: 'object',
         properties: {
-          id: { type: 'string' }, name: { type: 'string' }, category: { type: 'string' },
+          id: { type: 'string' }, name: { type: 'string' },
           wikipedia: { type: ['string', 'null'] }, wikipediaMatch: { type: 'string' },
         },
-        required: ['id', 'name', 'category'],
+        required: ['id', 'name'],
       },
     },
   },

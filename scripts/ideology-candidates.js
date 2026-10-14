@@ -104,7 +104,7 @@ async function main() {
     let id = slug(name);
     for (let n = 2; ids.has(id); n++) id = `${slug(name)}-${n}`;
     ids.add(id);
-    return { id, name, category: null, wikipedia: articleUrl(f.title), wikipediaMatch: "exact", wikidata: f.wikidata, views12m: f.views12m };
+    return { id, name, wikipedia: articleUrl(f.title), wikipediaMatch: "exact", wikidata: f.wikidata, views12m: f.views12m };
   });
 
   const report = {

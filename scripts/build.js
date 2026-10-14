@@ -33,7 +33,6 @@ for (const entry of catalog()) {
   included.push({
     id: entry.id,
     name: entry.name,
-    category: a.category || entry.category, // chosen by the audit when the catalog has none
     summary: a.summary,
     audited: true,
     // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
