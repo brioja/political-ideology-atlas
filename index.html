@@ -237,6 +237,8 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   .header-start { padding: 0.55rem 0.8rem; }
 }
 @media (max-width: 400px) { .brand span { display: none; } }
+/* While taking the test on a phone, drop the menu so the name and the results button fit. */
+@media (max-width: 760px) { body.in-test .site-nav { display: none; } body.in-test .header-start { margin-left: auto; } }
 
 a.btn, .btn {
   display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;

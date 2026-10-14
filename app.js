@@ -296,6 +296,7 @@ function show(page, { scroll = true, title = null } = {}) {
     else a.removeAttribute("aria-current");
   }
   if (page !== "test") setHeaderAction("start");
+  document.body.classList.toggle("in-test", page === "test"); // phones hide the menu mid-test (see CSS)
   const t = title || PAGE_TITLES[page];
   document.title = t ? `${t} · ${SITE_NAME}` : SITE_NAME;
   closeMenu();
