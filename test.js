@@ -1,7 +1,7 @@
 // Sanity checks: node test.js
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES } = require("./data.js");
-const { jacobiEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis } = require("./pca.js");
+const { jacobiEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -34,6 +34,7 @@ if (twins.length) console.log(`Identical profiles (need distinguishing statement
 let seed = 7;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 let hits = 0, totalAsked = 0;
+const calibration = calibrateCertainty(model);
 for (const ideo of IDEOLOGIES) {
   const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
   const answers = Array(QUESTIONS.length).fill(null);
@@ -43,7 +44,7 @@ for (const ideo of IDEOLOGIES) {
     if (!next) break;
     asked.add(next.q);
     answers[next.q] = truth[next.q];
-    if (asked.size >= 10 && certainty(model, answers, asked) >= 0.9) break;
+    if (isSettled(model, calibration, answers, asked)) break;
   }
   totalAsked += asked.size;
   const { ranked } = match(model, answers);

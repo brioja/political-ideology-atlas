@@ -254,8 +254,58 @@ function meaningfulAxes(model, ideologies, { runs = 60, quantile = 0.95, seed = 
   return count;
 }
 
-// When a test-taker's result counts as settled: shared by the quiz (app.js) and the salience bar.
-const SETTLE = { minAnswers: 10, certainty: 0.9 };
+// A result counts as settled when the calibrated chance that the top match holds is at least this
+// (see calibrateCertainty). One definition, shared by the quiz (app.js) and the salience bar.
+const SETTLE = { hold: 0.9 };
+function isSettled(model, calibration, answers, asked) {
+  const h = stability(calibration, certainty(model, answers, asked));
+  return h != null && h >= SETTLE.hold;
+}
+
+// Calibration: turns the quiz's "how settled" reading into an honest probability. Simulated takers
+// (each ideology's answers, ~20% nudged by one point) answer every statement in the adaptive order;
+// at each step we record the reading and whether their top match then is their final top match.
+// The result is, per tenth of the reading, the share whose top match held (made non-decreasing).
+function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
+  let state = seed;
+  const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
+  const ideos = model.ideologies;
+  const reps = Math.max(1, Math.ceil(takers / ideos.length));
+  const held = Array.from({ length: 10 }, () => [0, 0]);
+  for (let rep = 0; rep < reps; rep++) {
+    for (const ideo of ideos) {
+      const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
+      const answers = Array(truth.length).fill(null);
+      const asked = new Set();
+      const steps = [];
+      for (;;) {
+        const next = nextQuestion(model, answers, asked);
+        if (!next) break;
+        asked.add(next.q);
+        answers[next.q] = truth[next.q];
+        steps.push({ c: certainty(model, answers, asked), top: match(model, answers).ranked[0].id });
+      }
+      const final = match(model, answers).ranked[0].id;
+      for (const st of steps) {
+        const bin = held[Math.min(9, Math.floor(st.c * 10))];
+        bin[1]++;
+        if (st.top === final) bin[0]++;
+      }
+    }
+  }
+  // Readings no simulated taker produced stay null (shown as words, never a made-up number).
+  const out = [];
+  let floor = 0;
+  for (const [h, n] of held) {
+    if (!n) { out.push(null); continue; }
+    floor = Math.max(floor, h / n);
+    out.push(floor);
+  }
+  return out;
+}
+
+// The calibrated chance that the current top match will hold, for a "how settled" reading.
+const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
 
 // Salience: is a person's record as solid as a test-taker's own result?
 // Depends only on WHICH statements have a recorded position, never on the answers, so unusual
@@ -281,6 +331,7 @@ function salienceContext(model, ideologies, { lines } = {}) {
 
 function settledTakerUncertainty(ctx, { takers = 200, seed = 7 } = {}) {
   const { model } = ctx;
+  const calibration = calibrateCertainty(model);
   let state = seed;
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
@@ -296,7 +347,7 @@ function settledTakerUncertainty(ctx, { takers = 200, seed = 7 } = {}) {
         if (!next) break;
         asked.add(next.q);
         answers[next.q] = truth[next.q];
-        if (asked.size >= SETTLE.minAnswers && certainty(model, answers, asked) >= SETTLE.certainty) break;
+        if (isSettled(model, calibration, answers, asked)) break;
       }
       found.push(placementUncertainty(ctx, [...asked]));
     }
@@ -370,5 +421,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, meaningfulAxes, salienceContext, salience, nameAxes, describeAxis, SETTLE };
+  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, nameAxes, describeAxis, SETTLE };
 }

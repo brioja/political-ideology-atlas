@@ -17,7 +17,6 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 let order = [];
 let answers = [];
 let position = 0;
-const MIN_ANSWERS = SETTLE.minAnswers;
 
 function save() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, order, answers, position })); } catch {}
@@ -258,6 +257,11 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
   draw();
 }
 
+// Calibration for the "likely to hold" figure: precomputed by build.js, otherwise computed once
+// on the first quiz screen (fast for the small interim data set).
+let calibrationCache = typeof CALIBRATION !== "undefined" ? CALIBRATION : null;
+const quizCalibration = () => (calibrationCache ??= calibrateCertainty(model));
+
 // ---------- Pages ----------
 
 // The header's call-to-action: "Start" on most pages; on the test page it's hidden until the result
@@ -265,12 +269,17 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
 function setHeaderAction(mode) {
   const btn = document.querySelector(".header-start");
   btn.hidden = mode === "none";
-  if (mode === "results") {
-    btn.innerHTML = `See results <span aria-hidden="true">→</span>`;
+  // "early": enough answers to stop (quiet outline); "results": the result has settled (solid).
+  btn.classList.toggle("primary", mode !== "early");
+  if (mode === "results" || mode === "early") {
+    // The words carry the meaning; the style only reinforces it.
+    btn.innerHTML = mode === "early" ? `Results so far <span aria-hidden="true">→</span>` : `See your result <span aria-hidden="true">→</span>`;
+    btn.title = mode === "early" ? "Your top match could still change if you keep answering" : "Your result has settled";
     btn.setAttribute("href", "#/results");
     btn.onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else {
     btn.innerHTML = `Start <span aria-hidden="true">→</span>`;
+    btn.title = "";
     btn.setAttribute("href", "#/test");
     btn.onclick = null;
   }
@@ -299,17 +308,19 @@ function renderQuestion() {
   const asked = new Set(order);
   const answered = answers.filter((a) => a !== null).length;
   const sure = certainty(model, answers, asked);
-  const settled = answered >= MIN_ANSWERS && sure >= SETTLE.certainty;
+  const hold = answered > 0 ? stability(quizCalibration(), sure) : null;
+  const settled = hold != null && hold >= SETTLE.hold;
   $("counter").textContent = `Statement ${position + 1}`;
   $("bar").style.width = pct(sure);
-  // Words, not a percentage: "100%" would read as certainty about the ideology, which it isn't.
-  $("certainty").textContent = answered < 3 ? "Most telling statements first" : settled ? "Result settled" : "Narrowing it down…";
+  // A calibrated percentage: in simulations, the share of takers at this reading whose top match
+  // didn't change after answering everything. Readings never seen in simulation get words instead.
+  $("certainty").textContent = answered === 0 ? "Most telling statements first"
+    : hold == null ? "Narrowing it down…"
+    : `${settled ? "Result settled · " : ""}top match ${pct(hold)} likely to hold`;
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  // One "See results" at a time: a quiet link for stopping early, then the header button once settled.
-  $("finish-early").hidden = answered < MIN_ANSWERS || settled;
   $("settled-note").hidden = !settled;
-  setHeaderAction(settled ? "results" : "none");
+  setHeaderAction(settled ? "results" : hold != null ? "early" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
     // The sixth button is "No opinion": chosen when this statement was already shown and skipped.
     const chosen = i < SHOWN_CHOICES.length ? answers[q] === SHOWN_CHOICES[i].value : answers[q] === null && position < order.length - 1;
@@ -377,7 +388,6 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   $("likert").append(b);
 }
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
-$("finish-early").addEventListener("click", finishQuiz);
 $("resume").addEventListener("click", () => go("#/test"));
 
 // On phones the agree/disagree explanation opens as a bottom sheet instead of taking up the page.
