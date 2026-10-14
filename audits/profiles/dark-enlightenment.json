@@ -1,0 +1,835 @@
+{
+  "id": "dark-enlightenment",
+  "name": "Dark Enlightenment",
+  "category": "Far-Right",
+  "statementsVersion": "db9b141337e5",
+  "auditedAt": "2026-10-14",
+  "auditor": "claude-opus-5-5",
+  "summary": "The Dark Enlightenment, or neoreaction (NRx), is an anti-democratic and anti-egalitarian movement that grew out of Curtis Yarvin's blog Unqualified Reservations and Nick Land's 2012 essay that gave it its name. It holds that democracy is destructive and that a progressive consensus of academia, media and bureaucracy (the 'Cathedral') actually rules. It proposes replacing democracy with sovereign states run like corporations by a chief executive or monarch, with citizens as customers whose only check is the right to leave ('exit, not voice'). It also embraces 'human biodiversity', the claim that group differences, including racial ones, are innate.",
+  "scope": "The core neoreactionary canon of roughly 2007 to 2013: Yarvin's (Mencius Moldbug's) formalism, neocameralism and Patchwork, and Land's The Dark Enlightenment, which draws on Hoppe, Carlyle and Thiel. Where Yarvin's restorationist strand and Land's accelerationist strand differ, answers note the split. It excludes the wider alt-right, violent accelerationist offshoots, and later politicians and investors only loosely influenced by these ideas.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Dark_Enlightenment",
+  "furtherReading": [
+    {
+      "title": "Dark Enlightenment (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Dark_Enlightenment",
+      "note": "An overview of the movement, its thinkers, influence and critics."
+    },
+    {
+      "title": "The Dark Enlightenment (Nick Land, 2012)",
+      "url": "https://www.thedarkenlightenment.com/the-dark-enlightenment-by-nick-land/",
+      "note": "The essay that named the movement, free to read online."
+    },
+    {
+      "title": "A Formalist Manifesto (Mencius Moldbug, 2007)",
+      "url": "https://www.unqualified-reservations.org/2007/04/formalist-manifesto-originally-posted/",
+      "note": "A short early statement of Yarvin's core ideas."
+    },
+    {
+      "title": "Software, Sovereignty and the Post-Neoliberal Politics of Exit (Smith and Burrows, 2021)",
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/173748/",
+      "note": "An open-access academic account of neoreaction and its politics of exit."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "primary",
+      "title": "The Dark Enlightenment",
+      "author": "Nick Land",
+      "url": "https://www.thedarkenlightenment.com/the-dark-enlightenment-by-nick-land/",
+      "usedFor": "Critique of democracy, exit over voice, the Cathedral, Hoppe on monarchy, welfare and subsidy, human biodiversity, genetic self-engineering"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "A Formalist Manifesto",
+      "author": "Mencius Moldbug (Curtis Yarvin)",
+      "url": "https://www.unqualified-reservations.org/2007/04/formalist-manifesto-originally-posted/",
+      "usedFor": "Formalism, democracy as destructive, aligning ownership with power, violence as the main problem, against enforced equality"
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "Patchwork: A Positive Vision (Part 1)",
+      "author": "Mencius Moldbug (Curtis Yarvin)",
+      "url": "https://www.unqualified-reservations.org/2008/11/patchwork-positive-vision-part-1/",
+      "usedFor": "Sovereign corporations, CEO rule, exit, security over liberty, cryptographic control of weapons, admission policy, absolute sovereignty"
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "title": "Software, Sovereignty and the Post-Neoliberal Politics of Exit (Theory, Culture & Society 38(6), 2021)",
+      "author": "Harrison Smith and Roger Burrows",
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/173748/7/smith-burrows-2021-software-sovereignty-and-the-post-neoliberal-politics-of-exit.pdf",
+      "usedFor": "Scholarly summary of NRx: anti-democracy, anti-egalitarianism, the Cathedral, RAGE, gov-corps, exit, Silicon Valley roots"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Dark Enlightenment",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dark_Enlightenment",
+      "usedFor": "Overview, human biodiversity, monarchism, accelerationism, surveillance proposals, hate speech, influences"
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never a direct topic, but the movement treats democratic welfare spending as plunder that subsidizes dysfunction, so a state-guaranteed health system runs against its view of government as a lean business.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Land's preference for fast market price signals over politically set outcomes; a legislated wage floor is the kind of democratic override of markets he criticizes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Land contrasts markets' high-frequency feedback with the sluggish, parasitic loops of democratic politics, though in Yarvin's model the government itself becomes a profit-seeking firm, which blurs the market-versus-state contrast.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "public-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Democratically run public enterprises are part of the bureaucratic state that Yarvin proposes to dismantle by retiring government employees; the alternative is a country owned and run as a single corporation, not a public sector.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The movement is explicitly anti-egalitarian and sees redistribution under democracy as short-term consumption of a society's capital, following Hoppe.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "unions-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its rejection of voice and collective political pressure in favor of exit and owner control; organized labor is a form of the voice it opposes.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "property-fundamental": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Formalism wants ownership and control to coincide and secured by clear unbreakable rules, and Land sees capitalism as the core of civilization; but Yarvin holds that an absolute sovereign cannot be bound by its own laws, so property is not a right against the sovereign.",
+      "sources": [
+        "s2",
+        "s3",
+        "s1"
+      ]
+    },
+    "regulate-corporations": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Land wants capitalist corporate power to be the organizing force of society, and Yarvin pictures his model realm as essentially unregulated.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "cut-welfare": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Land argues that whatever is subsidized is promoted, so welfare breeds the dysfunction it pays for and democracy shields that parasitism from correction.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Neocameralism puts control with shareholders who appoint a chief executive; collective worker ownership is the opposite of its formalist alignment of property with power.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Yarvin holds that security always wins over liberty and proposed pervasive monitoring of San Francisco's residents and visitors with cameras, biometrics and tracking.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Patchwork leaves such rules to each sovereign realm, expecting some to be strict and others permissive; the movement has no shared position on drug law itself.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Land treats hate speech laws as the Cathedral enforcing its egalitarian orthodoxy by suppressing ideas, especially about human differences.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "strong-leader": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Replacing democratic institutions with a chief executive or monarch whose decisions are final is the movement's central proposal; Yarvin speaks of a national CEO.",
+      "sources": [
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Yarvin argues that sovereignty can't be abolished, only formalized, and faults libertarianism for never being implemented; the answer is an absolute, efficient state run as a business, not statelessness.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "In Patchwork the realm's weapons fire only with cryptographic authorization flowing from the shareholders, implying force is tightly held by the sovereign rather than spread among citizens; private gun ownership is never discussed directly.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "empower-police-military": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Security is the realm's top priority and the sovereign keeps the option of martial law, though the movement also wants to shrink the civil bureaucracy drastically.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Patchwork leaves personal vice laws to each realm, and the traditionalist and libertarian-futurist wings would answer differently.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "decide-locally": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Patchwork vision breaks large nation-states into thousands of small sovereign city-states, though each is run centrally by its own executive rather than by local democracy.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "rehabilitation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the priority Yarvin gives to order and security and his complaint that democracy tolerates disorder; rehabilitation-first penal policy is associated with the progressivism he opposes.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The movement counts the Cathedral's destruction of traditional sexual norms among its grievances and Land ties welfare states to falling birthrates, but the futurist wing around Land is not traditionalist.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The core texts do not take this up; the movement's reactionary wing opposes the change while Land's futurist wing is indifferent to traditional morality, and Patchwork would leave it to each realm.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "abortion-legal": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the core texts, and the secular founders and the traditionalist wing would split.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "more-religion-public": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement attacks progressivism as a secularized Puritan state church, but Yarvin and Land are secular and the program is not a religious revival; religious traditionalists in the movement would agree.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Anti-egalitarianism, rejection of the civil-rights consensus and belief in innate group differences ('human biodiversity') are core to the movement.",
+      "sources": [
+        "s5",
+        "s1",
+        "s4"
+      ]
+    },
+    "gender-social-construct": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement lists constructivism alongside egalitarianism and democracy as Cathedral dogmas and favors biological explanations of human difference.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The reactionary strand values the order of earlier centuries, but Yarvin calls the US just a corporation rather than a mystic trust and Land is hostile to nationalism, so the movement is split on cultural preservation as such.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The movement does not respect existing institutions, which it sees as run by the Cathedral; Yarvin proposes retiring all government employees and rebooting the state.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Yarvin's model realm admits only people who are harmless and can afford to live there, and Land treats ethnic bloc voting as a pathology of multi-ethnic democracies; immigration is not a central topic.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from the movement's insistence on absolute, undivided sovereignty and its hostility to progressive 'Universalism', which international bodies embody.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "free-trade": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from its pro-capitalist, Misesian lineage and its model city-states, Singapore, Hong Kong and Dubai, which are trading hubs.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "nation-first": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Each sovereign realm is a business pursuing its owners' interests, not a participant in universalist global cooperation; the nation-state itself, however, is not the unit the movement cares about.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from formalism's treatment of war as conflict plus uncertainty and its hostility to the universalist morality that justifies interventions.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Free exit is central, but entry is not: realms admit only those they choose, and Yarvin's model city keeps out dangerous and poor people.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-growth": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Land wants to accelerate capitalism and technology, and the movement equates civilization with long-term accumulation; limiting growth is the opposite.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed in the core texts; inferred from the movement's distrust of the academic-media consensus and of state-led programs it associates with the Cathedral.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Land expects technology and capital to transform and even remake human nature, and the movement is rooted in Silicon Valley engineering culture, though Land's vision is about techno-capital surpassing humanity more than solving its problems.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the movement's pro-growth, pro-technology outlook and its distrust of environmentalist consensus.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Formalism treats violence as the main problem in human affairs and seeks an orderly transfer of power to a formal owner, not a popular uprising; critics nevertheless read its call to replace the regime as a call for a coup.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "experts-over-public": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The movement wants the public to have no voice in government, but it would hand power to an executive and owners rather than to the academic experts of the Cathedral, whom it distrusts.",
+      "sources": [
+        "s3",
+        "s1",
+        "s4"
+      ]
+    },
+    "central-planning": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Land praises decentralized market feedback over centralized political direction, and the movement descends from Mises and Austrian economics.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "socialized-markets": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Its model puts the economy and even the state under shareholder ownership; public or worker ownership of businesses is part of the egalitarian program it rejects.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "land-value-tax": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "In Patchwork a realm's capital is its land and its profit comes from raising that land's value, which makes a land-value charge the realm's natural revenue; whether it replaces other taxes is not stated.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "tax-inheritance": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Hoppe's argument, which Land adopts, that owners who can pass on what they hold look after capital better than temporary democratic caretakers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Land's view that subsidies promote what they pay for and from the movement's hostility to welfare democracy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its pro-capitalist, Austrian-influenced economics; the movement does not discuss trade policy directly.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "state-directs-investment": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Land wants market signals rather than political direction to steer capital, though a gov-corp would manage its own investments like any firm.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "widespread-small-property": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Formalism assigns ownership to match actual power and organizes realms as joint-stock firms, which accepts concentrated ownership rather than a distributist ideal.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement is strongly pro-capitalist; Land wants capitalist corporate power to organize society.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the Austrian-school influences (Mises, Rothbard, Hoppe) the movement draws on; it is not a prominent theme of the core texts.",
+      "sources": [
+        "s5",
+        "s4"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's opposition to bargaining between organized interests; in its model one executive decides and residents who dislike the terms leave.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "one-party-rule": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement rejects party politics altogether in favor of a single owner or monarch; it does not want rule by an ideological party.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Yarvin calls himself a royalist, draws on Filmer and models his sovereign on absolute monarchy; Hoppe's case that monarchy beats democracy is a foundation of Land's essay.",
+      "sources": [
+        "s3",
+        "s1",
+        "s5"
+      ]
+    },
+    "democracy-best": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rejecting democracy is the defining position: Yarvin calls it ineffective and destructive, and Land calls it doom itself.",
+      "sources": [
+        "s2",
+        "s1",
+        "s4"
+      ]
+    },
+    "direct-votes": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement wants residents to have no political voice at all, so more direct democracy is the opposite of its program.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Political power in its model belongs to shareholders and their executive, not to any assembly of workers.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "right-to-secede": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Exit is called the only universal human right and the vision is a breakup of nation-states into small sovereignties, but within a realm the sovereign is absolute and the right stressed is individual emigration.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "natural-rulers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The movement is explicitly anti-egalitarian, works to naturalize social hierarchies and draws on Carlyle's view that some people are fit to rule.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "political-violence-never": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Yarvin wants to reduce violence by making power clear and uncontested, but his sovereign keeps martial law and loyal armed forces, so violence by the sovereign is accepted.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "war-builds-character": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Formalism treats war as a costly product of uncertainty that a losing side should end by surrendering, not as a source of national virtue.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "separate-church-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement argues that progressivism is already an established state church and wants it disestablished, but it does not propose separation in the liberal sense or a new established religion.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Yarvin and Land are secular and the program rests on engineering and economics, not revelation; only a traditionalist minority would support it.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "private-courts-defense": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In neocameralism the state is literally a private corporation providing security and law to paying residents, building on Hoppe's private law society, though Yarvin wants one sovereign firm per territory rather than competing agencies.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "military-superiority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; a world of many small realms has no national rivalry in the usual sense, and members differ on America's role.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Yarvin wrote that he is not a white nationalist and Land mocks racial nationalists, though critics and some followers place the movement close to them.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement explains history through sovereignty, genetics and the spread of Puritan-derived progressivism, and rejects Marxist accounts.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Anti-egalitarianism is central; Yarvin warns that enforcing permanent equality means permanent violence.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its formalist view that whoever actually holds power owns, and from its opposition to the progressive causes indigenous claims belong to.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its rejection of progressive guilt and redistribution, and from formalism's acceptance of present holdings as given.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement favors breaking large polities into many small competing sovereignties, not uniting them by religion or civilization.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "self-interest-moral": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Its model treats governments and residents as self-interested businesses and customers and praises profit-seeking as aligned with good government, though it does not offer an ethics of egoism.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "duties-before-rights": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Residents in Patchwork owe obedience but no civic duties; the relation is a contract a customer can end by leaving, and Yarvin grounds obligation in agreement.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Land's vision of technology remaking nature and humanity and from the movement's treatment of land as capital to be made valuable.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Land treats falling birthrates in welfare states as a symptom of decline rather than a goal.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Land's accelerationism celebrates techno-capital, and the movement's roots are in Silicon Valley.",
+      "sources": [
+        "s5",
+        "s4"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Land, who named the movement, wants to accelerate capitalism and technology past democratic brakes, but Yarvin's strand is more interested in restoring order than in speeding up change.",
+      "sources": [
+        "s5",
+        "s4"
+      ]
+    },
+    "human-enhancement": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Land welcomes genetic self-engineering and the fusion of nature and culture as a coming threshold.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Former adherents describe the movement as techno-monarchism using AI and data systems to run the state, and Yarvin's design runs authority through a cryptographic chain of command; the ruler, not algorithms, remains sovereign.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement builds cryptographic sovereignty for owners (Urbit, keyed weapons), but Yarvin also backs pervasive surveillance of residents, so it has no position on private encryption against the state.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "restore-past-order": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Neoreaction wants to return to pre-democratic rule, modelled on monarchy and Prussian cameralism, and treats progress under democracy as decay, though Land's wing is futurist.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Formalism presents itself as engineering: any solution that works is acceptable and moderation is not an ideology. Yet the movement is itself a strongly ideological rejection of democracy.",
+      "sources": [
+        "s2"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Governments should be run like businesses, with citizens treated as customers who can leave.",
+      "value": 2,
+      "rationale": "Neocameralism's core proposal is a state owned as a joint-stock company and run by a chief executive for profit, with residents as customers.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "text": "The freedom to leave a country is a more important check on government than the right to vote.",
+      "value": 2,
+      "rationale": "'Exit, not voice' is the movement's central principle; Land calls free exit the only universal human right.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "text": "Universities and the news media together hold more real political power than elected officials.",
+      "value": 2,
+      "rationale": "The Cathedral thesis, that academia, media and the civil service form the real, unaccountable government, is foundational to Yarvin and Land.",
+      "sources": [
+        "s1",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "text": "Average differences in ability between racial groups are largely genetic.",
+      "value": 1,
+      "rationale": "The movement endorses 'human biodiversity' and says the Cathedral suppresses it, though Land argues that both hereditarianism and constructivism are incomplete.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    }
+  ],
+  "notes": "Yarvin's restorationist, monarchist strand and Land's accelerationist, techno-capitalist strand differ on tradition, technology and nationalism, and many social questions (drugs, marriage, abortion) are left to individual realms under Patchwork, hence several low-confidence or split answers. Critics, including the scholarly source used here, describe the movement as racist and close to fascism; Land rejects the fascist label."
+}

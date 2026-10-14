@@ -1,0 +1,800 @@
+{
+  "id": "liberalism",
+  "name": "Liberalism",
+  "category": "Right",
+  "statementsVersion": "db9b141337e5",
+  "auditedAt": "2026-10-14",
+  "auditor": "claude-opus-5-5",
+  "summary": "Liberalism holds that individual liberty is the primary political value and that government exists, by consent, to secure equal rights under the rule of law. It defends private property, market economies and free trade, freedom of speech and religion, the separation of church and state, and accountable representative democracy. Modern mainstream liberals add a social safety net, equal rights for women and minorities, and internationalism built on multilateral institutions.",
+  "scope": "The mainstream liberal family as organised today in Liberal International, read through its 1947 Oxford Manifesto and 2017 Andorra Liberal Manifesto, the founding texts of Locke (Second Treatise) and Mill (On Liberty), and the Stanford Encyclopedia of Philosophy. This is the centrist core of the family, between the market-first classical liberal strand and the welfare-oriented social liberal strand, which the catalog profiles separately; where they diverge, answers are marked low confidence. It excludes libertarianism and the specifically American usage of 'liberal' for the centre-left.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Liberalism",
+  "furtherReading": [
+    {
+      "title": "Liberalism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/liberalism/",
+      "note": "A clear tour of liberal ideas of liberty, property, justice and neutrality."
+    },
+    {
+      "title": "Liberal Manifesto 2017 (Liberal International)",
+      "url": "https://liberal-international.org/who-we-are/our-mission/landmark-documents/political-manifestos/liberal-manifesto-2017/",
+      "note": "What the world's liberal parties say they stand for today."
+    },
+    {
+      "title": "On Liberty, by John Stuart Mill",
+      "url": "https://www.gutenberg.org/files/34901/34901-h/34901-h.htm",
+      "note": "The classic short book on free speech and the limits of state power."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "scholarly",
+      "title": "Liberalism",
+      "author": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/liberalism/",
+      "usedFor": "Core value of liberty, classical vs new liberalism on property and markets, public reason, international order"
+    },
+    {
+      "id": "s2",
+      "kind": "program",
+      "title": "Liberal Manifesto 2017 (Andorra)",
+      "author": "Liberal International",
+      "url": "https://liberal-international.org/who-we-are/our-mission/landmark-documents/political-manifestos/liberal-manifesto-2017/",
+      "usedFor": "Contemporary positions on markets, trade, welfare, migration, religion, privacy, climate, LGBT+ and reproductive rights, international institutions"
+    },
+    {
+      "id": "s3",
+      "kind": "program",
+      "title": "Oxford Manifesto (1947)",
+      "author": "Liberal International",
+      "url": "https://liberal-international.org/who-we-are/our-mission/landmark-documents/political-manifestos/oxford-manifesto-1947/",
+      "usedFor": "Property, competition and limits on state ownership, labour and capital, social security, world organization, free trade, civic duty"
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "On Liberty",
+      "author": "John Stuart Mill (Project Gutenberg)",
+      "url": "https://www.gutenberg.org/files/34901/34901-h/34901-h.htm",
+      "usedFor": "Harm principle, freedom of opinion, drug and alcohol prohibition, vice, education, local action and centralization"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "title": "Second Treatise of Government",
+      "author": "John Locke (Project Gutenberg)",
+      "url": "https://www.gutenberg.org/files/7370/7370-h/7370-h.htm",
+      "usedFor": "Natural equality, property as the end of government, consent, right of resistance"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "Liberalism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Liberalism",
+      "usedFor": "Definition, history, classical and social liberalism, civil rights, feminism, LGBT and reproductive rights, secularism"
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Liberal International names access to health care for everyone as a primary goal and the 1947 manifesto backs protection against sickness, but liberals favour mixed or insured systems over a single state provider.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social liberals back wage floors to secure a decent standard of living, while market-oriented liberals see substantial increases as harmful to employment; the family is split.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Liberals defend markets and private enterprise as the basis of prosperity, while the 2017 manifesto adds that markets alone do not guarantee a fair distribution.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "public-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Oxford Manifesto accepts state ownership only where private enterprise cannot operate or competition is absent, and opposes concentrated economic power.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberal programs stress fiscal responsibility and fighting tax evasion rather than higher rates on the rich; inferred from that and the classical aim of making the poor richer rather than the rich poorer.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "unions-good": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberals defend freedom of association and see labour and capital as complementary partners, but are wary of union power; adherents divide on whether unions are good for society overall.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "property-fundamental": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Locke makes preserving property the reason people form governments, and both Liberal International manifestos list private property among the essential freedoms.",
+      "sources": [
+        "s5",
+        "s3",
+        "s2"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberals oppose private monopolies and economic abuse but also oppose state control of the economy; whether regulation should be tightened divides social and market liberals.",
+      "sources": [
+        "s3",
+        "s2",
+        "s1"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The 1947 manifesto calls for security against illness, unemployment, disability and old age, and the 2017 manifesto asks for additional support for the disadvantaged.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberalism treats the right to own property and run one's own business as an essential freedom, not something to be replaced by collective worker ownership.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "surveillance-ok": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The 2017 manifesto seeks rules protecting private data, online privacy and freedom from surveillance, while still accepting that the state must keep citizens safe.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mill's harm principle makes the individual sovereign over his own body, and he argues that bans on buying alcohol or opium infringe the buyer's liberty.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mill argues that even offensive or immoral opinions must be protected and the 2017 manifesto calls free expression critical; many liberals nonetheless accept narrow incitement laws.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "strong-leader": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberalism is built on limited, accountable government under the rule of law, and Liberal International names authoritarianism as a central threat.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "For Locke people enter government to secure their rights, and liberals hold that only liberal democracy can properly protect individual freedom.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberal parties outside the United States generally support firearm regulation; inferred from the commitment to public safety rather than stated in the core texts.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "empower-police-military": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The 2017 manifesto asks only for adequate investment in security, and liberal suspicion of concentrated state power argues against granting more authority; inferred.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the harm principle: consensual adult conduct is self-regarding, though Mill himself left open whether those profiting from vice may be punished.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "decide-locally": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 2017 manifesto favours decentralized decision-making, and Mill argues local and voluntary action builds citizens' capacities and checks central power.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "rehabilitation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the liberal commitment to human dignity and rights; liberal penal reformers favour rehabilitation, but the core texts do not address it directly.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "traditional-family": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals defend people's right to love whom they wish and live as they choose, and Mill criticizes the weight of custom and paternal power, so no family form is privileged.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Liberal International explicitly defends LGBT+ people and the right to love who they wish, and same-sex marriage is a standard modern liberal cause.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "abortion-legal": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 2017 manifesto condemns the denial of sexual and reproductive rights, and reproductive rights are listed among modern liberal issues; some religious liberals dissent.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "more-religion-public": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals protect freedom of belief but advocate separating organized religion from state institutions, and public reason liberalism limits religious arguments in politics.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberals count civil rights legislation among their achievements and protect ethnic minorities and indigenous groups, but differ on remedies beyond equal treatment.",
+      "sources": [
+        "s6",
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberal feminism concentrates on legal and political equality for women and takes no settled position on the origins of gender.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Mill treats the despotism of custom as a threat to individuality, and liberals rank individual choice above preserving inherited culture; inferred.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "gradual-change": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Modern liberals pursue reform through constitutions and the rule of law rather than rupture, though historically liberalism challenged established institutions.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "reduce-immigration": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The 2017 manifesto sees migration as beneficial while allowing that limits on its size and pace may be needed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Oxford Manifesto calls for a world organization binding all nations to the same law, and the 2017 manifesto says international institutions and courts must be strengthened.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "free-trade": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Both Liberal International manifestos call for the free movement of goods and oppose protectionism; free trade has been a liberal tenet since Smith and Cobden.",
+      "sources": [
+        "s3",
+        "s2",
+        "s6"
+      ]
+    },
+    "nation-first": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberal internationalism puts multilateral cooperation and the force of law between nations at the centre of foreign policy.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "The 2017 manifesto endorses the Responsibility to Protect.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "open-borders": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Although the Oxford Manifesto favours free travel, the 2017 manifesto accepts that migration may need limits, so mainstream liberals do not seek open borders.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "limit-growth": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals call for sustainable growth, not limits on growth, seeing innovation as the route to prosperity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 2017 manifesto calls climate change the greatest environmental threat humanity knows and invokes the precautionary principle, favouring market-compatible action.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberals see science and innovation as key to prosperity, but their optimism stops short of the claim that technology solves most problems.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the core texts; liberal parties are divided on nuclear power, so this is inferred as a genuine split.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "revolution-justified": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Locke holds that a government that breaks its trust through a long train of abuses puts itself at war with the people, who may resist and set up a new legislative.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "experts-over-public": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberals guard against the tyranny of the majority and support counter-majoritarian institutions such as independent courts; inferred.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberalism defends private property, competition and markets and opposes state control of the economy.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals defend private ownership and individual enterprise, so they reject limiting ownership to workers or the public.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Some liberals have favoured land taxes, but replacing most taxes with one is no part of mainstream liberal programs; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social liberals accept heavy inheritance taxes to widen opportunity while classical liberals defend the right to bequeath property; the family is split.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberal programs call for targeted support for the disadvantaged rather than an unconditional payment to all; inferred.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Both manifestos reject protective tariffs and economic protectionism.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "state-directs-investment": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Oxford Manifesto opposes state control of the economy and accepts state enterprise only where competition is absent.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberals oppose concentrated economic power in both the state and private monopolies, and Rawls favoured a property-owning democracy; inferred.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberalism rests on markets, private property and the freedom to contract.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberal International backs the Bretton Woods institutions and rules-based fiscal frameworks; inferred that mainstream liberals keep central banks.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals favour voluntary cooperation between employers and workers but oppose state control that would replace market-set wages and prices.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberal democracy requires free elections between competing parties and respect for minority views.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberalism arose against absolute monarchy and hereditary privilege, yet many liberal parties operate in and accept constitutional monarchies; adherents are split.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "democracy-best": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The 2017 manifesto holds that only liberal democracy can properly protect individuals and their freedoms.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "direct-votes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberals favour representative, constitutional government and worry about the tyranny of the majority; inferred.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberals place political power in elected parliaments under liberal constitutions.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "right-to-secede": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberal ideas of consent and self-determination pull one way and territorial integrity under international law the other; not settled.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "natural-rulers": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Locke holds that people are naturally free and equal, and liberalism arose against hereditary privilege.",
+      "sources": [
+        "s5",
+        "s6"
+      ]
+    },
+    "political-violence-never": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals prefer peaceful, lawful change, but Locke's right of resistance against tyranny means violence is not ruled out in every case.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "war-builds-character": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Liberals seek the force of law rather than the law of force between nations and see trade as a path to peace.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "separate-church-state": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The 2017 manifesto explicitly advocates separating organized religion from state institutions.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberals separate religion and state and require public, not religious, justification for laws.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Liberals see protecting rights and security as a core public function of the state.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "military-superiority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberals rely on collective security and international law rather than national military dominance; inferred.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberal rights are individual and equal, and Liberal International specifically protects ethnic minorities.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Oxford Manifesto holds that the interests of labour and capital are complementary.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals seek equal opportunity and fair access to markets, property and education, plus support for the disadvantaged, not equal results.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The 2017 manifesto commits to protecting indigenous groups, though it also holds that rights are individual rather than collective.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the liberal view that rights and responsibilities are individual rather than collective; not addressed in the core texts.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberals support political integration such as the EU on shared liberal values and law, not shared religion or civilization; inferred.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "self-interest-moral": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Classical liberals see the free pursuit of one's own interests as legitimate and beneficial, though the Oxford Manifesto adds a duty of service to others.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "duties-before-rights": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Liberals put individual rights first, while the Oxford Manifesto stresses that duties and service are the complement of freedom rather than prior to it.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberal theory is centred on persons and takes no settled view on nature's intrinsic value, though liberals back environmental protection.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from individual sovereignty over one's own body and family decisions.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Liberals credit market economies and innovation with historic gains in prosperity and security.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Liberals favour innovation and research free of government constraints, though they also value stable institutions; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "human-enhancement": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Mill's principle that the individual is sovereign over his own body and mind.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Liberals insist on accountable, transparent government by elected representatives; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the 2017 manifesto's commitment to online privacy and freedom from surveillance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restore-past-order": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Liberalism arose against the old order of privilege and established religion and ties freedom to human progress.",
+      "sources": [
+        "s6",
+        "s2"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Mainstream liberal parties present themselves as pragmatic reformers, though they hold some rights as non-negotiable; inferred.",
+      "sources": [
+        "s2"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "The state may restrict what an adult does only to prevent harm to others.",
+      "value": 2,
+      "rationale": "Mill's harm principle is liberalism's defining test of legitimate coercion; the drug and sex-work statements touch only particular applications of it.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    {
+      "text": "Human rights belong to individuals, not to groups.",
+      "value": 2,
+      "rationale": "The 2017 Liberal Manifesto states that human rights are individual, not collective, a core liberal claim that ideologies stressing group or class rights reject.",
+      "sources": [
+        "s2"
+      ]
+    }
+  ],
+  "notes": "The category hint 'Right' fits European usage, where liberal parties sit in the centre or centre-right; in North America 'liberal' means social liberalism and would answer the economic statements further left (minimum wage, regulation, taxes on the wealthy). Classical liberals would answer the welfare and healthcare statements negatively. Answers where these strands diverge are marked low confidence."
+}

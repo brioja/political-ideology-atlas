@@ -1,0 +1,806 @@
+{
+  "id": "communism",
+  "name": "Communism",
+  "category": "Radical Left",
+  "statementsVersion": "db9b141337e5",
+  "auditedAt": "2026-10-14",
+  "auditor": "claude-opus-5-5",
+  "summary": "Communism aims at a classless society in which the means of production are held in common, money and wage labour disappear, and goods are distributed according to need. Following Marx and Engels, it sees history as driven by class struggle and holds that capitalism must be overthrown by a working-class revolution. In its Marxist-Leninist form a vanguard party leads a transitional dictatorship of the proletariat that nationalises and plans the economy before the state is expected to wither away.",
+  "scope": "Marxist communism in the lineage of Marx and Engels (Communist Manifesto, Critique of the Gotha Programme) as developed by Lenin (The State and Revolution) into Marxism-Leninism, the doctrine of the ruling communist parties at the movement's 20th-century peak. Where communist parties differ on current social questions, answers follow the classic texts and mark the split. It excludes anarcho-communism, left communism and council communism (which reject the party-state) and post-1978 Chinese market reforms.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Communism",
+  "furtherReading": [
+    {
+      "title": "Communism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Communism",
+      "note": "Overview of the ideology, its strands and the history of communist states."
+    },
+    {
+      "title": "Manifesto of the Communist Party, Chapter II (Marx and Engels, 1848)",
+      "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm",
+      "note": "The founding text in its own words, including the ten immediate measures."
+    },
+    {
+      "title": "Karl Marx (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/marx/",
+      "note": "A careful scholarly introduction to the theory behind communism."
+    },
+    {
+      "title": "The State and Revolution, Chapter V (Lenin, 1917)",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch05.htm",
+      "note": "Lenin's account of the transition from socialism to full communism."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "primary",
+      "title": "Manifesto of the Communist Party, Chapter II: Proletarians and Communists",
+      "author": "Karl Marx and Friedrich Engels (Marxists Internet Archive)",
+      "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm",
+      "usedFor": "Abolition of bourgeois property, family, nation, religion; ten measures (progressive tax, inheritance, central bank, state industry, free education); revolution"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Critique of the Gotha Programme, Part I",
+      "author": "Karl Marx (Marxists Internet Archive)",
+      "url": "https://www.marxists.org/archive/marx/works/1875/gotha/ch01.htm",
+      "usedFor": "Two phases of communism, labour certificates, distribution by need, common provision of schools and health"
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "The State and Revolution, Chapter V",
+      "author": "V. I. Lenin (Marxists Internet Archive)",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch05.htm",
+      "usedFor": "Dictatorship of the proletariat, critique of bourgeois democracy, withering away of the state, accounting and control by armed workers"
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "title": "Karl Marx",
+      "author": "Jonathan Wolff and David Leopold, Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/marx/",
+      "usedFor": "Historical materialism, view of technology and productive forces, religion, critique of rights and morality"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Communism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Communism",
+      "usedFor": "Definition, strands, one-party rule, state atheism, abolition of money and the state"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "Marxism–Leninism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marxism%E2%80%93Leninism",
+      "usedFor": "Vanguard party, one-party state, democratic centralism, five-year plans, suppression of counter-revolution, internationalism"
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Marx lists health services among the common needs society must fund before any individual distribution, and says that share should grow.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Communists back immediate gains for workers, but their goal is to abolish wage labour itself, so higher minimum wages are at most a partial demand.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communism replaces market exchange with common ownership and production under a common plan.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "public-ownership": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Manifesto calls for state control of transport and communications and state-owned factories, and communist states nationalised industry.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "A heavy progressive income tax is one of the Manifesto's ten measures.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unions-good": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Organising workers as a class is central to communist strategy, though communists see unions alone as insufficient without a revolutionary party.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "property-fundamental": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The theory can be summed up as the abolition of bourgeois private property, initially by despotic inroads on property rights.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Adherents agree corporations need control, but their aim is expropriation and common ownership rather than regulation.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "cut-welfare": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Marx makes support for those unable to work a first charge on the social product.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "worker-ownership": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Communists want the working class to own the means of production in common, but Marxist-Leninists favour ownership by society as a whole through the state rather than by each firm's own workforce.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the Marxist-Leninist commitment to suppressing counter-revolution and the extensive security apparatus of communist states; adherents reject liberal privacy as a limit on the proletarian state.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: communists treat drug use as a symptom of alienation and capitalist decay rather than a freedom to protect, and communist states suppressed it.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the rejection of bourgeois freedoms as class privileges and the suppression of hostile ideas in communist states; communist states also banned incitement of national hatred.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "strong-leader": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Communists dismiss parliamentary deadlock as bourgeois and favour a decisive revolutionary power, though the doctrine stresses the party's collective leadership over an individual.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "state-harmful": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The state is expected to wither away under full communism, but in the transition a proletarian state is held to be necessary.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "limit-guns": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Lenin wanted control exercised by a state of armed workers; inferred, since communist states themselves later restricted private arms.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "empower-police-military": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: in a capitalist country the police and army are seen as tools of the ruling class, though communists build strong forces once in power.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Manifesto treats prostitution as a product of bourgeois property relations to be ended, not a trade to legitimise.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Communists aim to centralise production in the state and organise the party by democratic centralism.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "rehabilitation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Crime is explained by social conditions, and Lenin expected people to learn to observe social rules out of habit once exploitation ends.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "traditional-family": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Manifesto calls for abolishing the bourgeois family, which it says rests on capital and private gain.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents are genuinely split: the classic texts do not address it, the Soviet Union recriminalised homosexuality, and present-day communist parties take opposite sides.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "abortion-legal": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the aim of ending women's status as instruments of production; the Soviet Union was the first state to legalise abortion, though it later restricted it.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "more-religion-public": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Religion is the opium of the people and communist states practised state atheism.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Communists oppose national and racial oppression as tools of class rule and supported anti-colonial liberation.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from historical materialism, which treats women's subordination and family roles as products of property relations rather than nature.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The working men have no country, and national differences are expected to fade as class antagonisms disappear.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communists call for the revolutionary overthrow of bourgeois rule, not gradual reform within existing institutions.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "reduce-immigration": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from proletarian internationalism, which treats workers of all countries as one class.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: communists see bodies like the UN as dominated by capitalist powers and favour proletarian internationalism instead.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "free-trade": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: communists reject the claim that capitalist trade benefits everyone, seeing it as a channel for exploitation and imperialism.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "nation-first": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Proletarian internationalism puts the common interests of workers across nations above national interest.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Western interventions are generally viewed as imperialism, though communists support revolutionary and national liberation wars.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "open-borders": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the expectation that national divisions will fade and from the slogan that workers have no country.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-growth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Communism depends on abundant productive forces to reach distribution by need, though some scholars read the late Marx as ecological.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred: adherents favour planned state action over market solutions and blame environmental harm on capitalism.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Marx welcomes technology, but holds that social problems come from class relations that only revolution, not technology, can change.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the commitment to developing productive forces; communist states built nuclear power extensively.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "revolution-justified": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The overthrow of bourgeois supremacy by the proletariat is the core aim of the Manifesto.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "experts-over-public": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Lenin held that administration could be done by any literate worker on a worker's wage, though the vanguard party plays a leading role.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "central-planning": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Communism calls for production under a common plan, carried out in communist states through five-year plans.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Worker or public ownership is necessary but markets themselves are to be replaced by planning and, ultimately, distribution by need.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Communists want land taken into public ownership outright, not a tax on private landholding.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Manifesto calls for abolishing the right of inheritance altogether.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the Manifesto's equal obligation of all to work and the lower phase's distribution according to labour performed.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Tariffs are a tool of capitalist trade policy that communists are largely indifferent to, since they seek state control of production and trade instead.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The proletarian state is to centralise all instruments of production and credit and expand them under a common plan.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "widespread-small-property": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communists see small-owner property as being swept away by history and seek common, not dispersed private, ownership.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "A communist society eventually abolishes money, and the higher phase ends wage labour in favour of distribution by need.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Manifesto demands a national bank with an exclusive monopoly on credit.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Communists reject class collaboration and seek to abolish the employer class, not to institutionalise bargaining with it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "one-party-rule": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Marxism-Leninism rests on a vanguard party ruling a single-party state.",
+      "sources": [
+        "s5",
+        "s6"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Hereditary rule is rejected as class rule; communism aims at a classless society with no ruling class.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "democracy-best": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Communists dismiss parliamentary democracy as rule by the propertied minority, and Lenin dissolved an elected assembly that went against the Bolsheviks.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "direct-votes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents praise direct workers' democracy in principle but organise the state through democratic centralism, so they are split on referendums.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "workers-councils": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Lenin rejected parliamentarism in favour of soviets, the workers' councils that formally held power in the Soviet state.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    },
+    "right-to-secede": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Leninists support national self-determination including secession in principle, a right written into Soviet constitutions though not honoured in practice.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "natural-rulers": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Communists see rule as a product of class relations, not natural ability, and aim to abolish ruling classes.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "political-violence-never": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Revolution and the forcible suppression of the exploiting classes are explicitly endorsed.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "war-builds-character": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Communists see wars between nations as products of class and imperialist interests, not as building national character.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "separate-church-state": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Religion is to have no place in the state; communist states went further and practised state atheism.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communism is materialist and atheist, and treats religion as ideology.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communists seek to abolish private ownership of production, let alone of courts and armed force.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "military-superiority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from internationalism and opposition to great-power rivalry, though communist states in practice armed heavily.",
+      "sources": [
+        "s1",
+        "s6"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communism is internationalist and holds that the workers have no country.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-history": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Historical materialism holds that history is a history of class struggles over the economic structure.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "equal-outcomes": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Communism aims at a classless society with distribution by need, going beyond equality of opportunity, though Marx criticises any single equal standard.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from support for national liberation and anti-colonialism, though communists favour common rather than group ownership of land.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "colonial-reparations": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Marxist-Leninist anti-imperialism, which treats colonial wealth as plunder.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "civilizational-union": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Communism unites workers by class, not by religion or civilization, and rejects religion as a basis of politics.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Communists criticise the egoistic individual of liberal society and find real freedom in community.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Marx criticises liberal rights as protecting isolated individuals, and the Manifesto imposes an equal obligation to work.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Marxism values nature as the basis of human production and flourishing, though some later scholars stress an ecological Marx.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: communists attribute poverty to class relations rather than overpopulation and expect abundance from developed productive forces.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Marx does not blame industry or technology, and sees developed productive forces as the precondition for communism.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Developing productive forces until they burst existing relations of production is central to historical materialism.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "human-enhancement": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the belief that human nature is shaped by social and material conditions and can be transformed.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "algorithmic-government": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Lenin's view of administration as simple accounting and control, which could be automated in a planned economy.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: communists do not treat individual privacy against the proletarian state as a right.",
+      "sources": [
+        "s4",
+        "s6"
+      ]
+    },
+    "restore-past-order": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communism looks forward to a classless future and calls nostalgic socialisms reactionary.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "results-over-ideology": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Adherents treat Marxism as a scientific guide to policy rather than one ideology among others, though pragmatic currents exist.",
+      "sources": [
+        "s6"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Goods should ultimately be distributed according to each person's needs rather than their work or wealth.",
+      "value": 2,
+      "rationale": "Marx's formula 'from each according to his ability, to each according to his needs' defines the higher phase of communism.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "text": "After a revolution, the working class should hold dictatorial power over the former ruling classes until classes disappear.",
+      "value": 2,
+      "rationale": "The dictatorship of the proletariat is the transitional state that Marx and Lenin say must come between capitalism and communism.",
+      "sources": [
+        "s3",
+        "s6"
+      ]
+    }
+  ],
+  "notes": "Anarcho-communists and council communists would reject one-party rule, central planning by the state and the transitional state, and score the state-related statements quite differently. Present-day communist parties diverge on social questions such as same-sex marriage. Several answers rest on the practice of 20th-century communist states and are marked low."
+}

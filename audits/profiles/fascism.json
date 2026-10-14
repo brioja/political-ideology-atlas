@@ -1,0 +1,804 @@
+{
+  "id": "fascism",
+  "name": "Fascism",
+  "category": "Third Position",
+  "statementsVersion": "db9b141337e5",
+  "auditedAt": "2026-10-14",
+  "auditor": "claude-opus-5-5",
+  "summary": "Fascism is a far-right, ultranationalist ideology that treats the nation, embodied in an all-encompassing state, as the highest value, to which individuals and classes are subordinate. It rejects liberalism, democracy and Marxist socialism, and seeks national rebirth through a single mass party, a charismatic leader, mobilization and violence. Economically it keeps private property but places the economy under state direction through corporatist bodies and the pursuit of autarky. It glorifies war, imperial expansion, natural hierarchy and the patriarchal family.",
+  "scope": "Generic fascism as defined by its Italian original at its peak (1922-1943), centered on Mussolini and Gentile's The Doctrine of Fascism (1932) and the institutions of the Italian regime, read alongside the generic definitions of Paxton, Payne and Griffin. The radical 1919 Fasci program is used only where it remained part of the movement. Nazism's biological racial doctrine, clerical fascism, and postwar neo-fascist and Third Position movements are excluded.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Fascism",
+  "furtherReading": [
+    {
+      "title": "Fascism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fascism",
+      "note": "A broad overview of fascism's definitions, history, tenets and scholarship."
+    },
+    {
+      "title": "The Doctrine of Fascism (1932)",
+      "url": "https://dn721808.ca.archive.org/0/items/mussolini-archive/The%20Doctrine%20of%20Fascism%20Benito%20Mussolini.pdf",
+      "note": "Mussolini and Gentile's own statement of the doctrine, in the regime's official English translation."
+    },
+    {
+      "title": "Economics of fascism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Economics_of_fascism",
+      "note": "How fascist regimes actually ran their economies: corporatism, autarky and state direction."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "primary",
+      "title": "The Doctrine of Fascism",
+      "author": "Benito Mussolini and Giovanni Gentile (1932; official 1935 translation, Internet Archive)",
+      "url": "https://dn721808.ca.archive.org/0/items/mussolini-archive/The%20Doctrine%20of%20Fascism%20Benito%20Mussolini.pdf",
+      "usedFor": "The state, liberalism, democracy, socialism, class struggle, corporatism, war, empire, religion, inequality, tradition and freedom as duty."
+    },
+    {
+      "id": "s2",
+      "kind": "reference",
+      "title": "Fascism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fascism",
+      "usedFor": "Scholarly definitions (Payne, Griffin, Paxton), corporatism, gender and family policy, abortion and birth control, violence, colonialism, religion, modernism."
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Economics of fascism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Economics_of_fascism",
+      "usedFor": "Private property, privatization and IRI, dirigisme, autarky and tariffs, state-controlled labor, welfare, taxation, banking."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Fascist Manifesto",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fascist_Manifesto",
+      "usedFor": "The 1919 program's demands and which were dropped or implemented."
+    },
+    {
+      "id": "s5",
+      "kind": "scholarly",
+      "title": "The Five Stages of Fascism",
+      "author": "Robert O. Paxton, Journal of Modern History 70:1 (1998)",
+      "url": "https://election.princeton.edu/wp-content/uploads/2016/12/Paxton_Five-Stages-of-Fascism.pdf",
+      "usedFor": "The mobilizing passions (primacy of the group, natural leaders, violence, purity), fascism's instrumental use of programs and its alliance with conservative and property elites."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Fascist Italy ran a broad state welfare and assistance system to strengthen the nation's productivity, so state-provided care fits its view of an active ethical state, though universal healthcare as such was not a stated aim.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The 1919 program demanded minimum wages, but the movement dropped it; in power wages were set by state corporations subordinate to national production and were often cut.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Doctrine declares fascism absolutely opposed to economic liberalism and says the crisis can only be solved by state action, though fascists kept private enterprise rather than abolishing markets.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "public-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascists kept private ownership and the profit motive and early on reprivatized firms; Italy's large state holdings came mainly from rescuing failing banks and companies, not from a principle of public ownership.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The early program's capital levy was abandoned, and the regime cut taxes and repealed the inheritance tax while maintaining the existing property hierarchy.",
+      "sources": [
+        "s3",
+        "s4",
+        "s5"
+      ]
+    },
+    "unions-good": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism opposes trade unionism as a class weapon and replaced independent unions with state-controlled syndicates and banned strikes; only unions absorbed into the corporative state are accepted.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "property-fundamental": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascists accepted private property as useful to the nation, but treated it as conditional on serving the state, which is absolute while individuals and groups are relative.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The fascist state claims to rule in the economic field as in every other and directed business through corporations, subsidies and controls rather than leaving it free.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Italian regime expanded welfare and assistance as part of strengthening the nation, even while rejecting the socialist idea that material well-being equals happiness.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Worker participation in management appeared in the 1919 program but was dropped; fascism kept private ownership and rejected socialist control of production.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The fascist state curtails liberties it judges harmful and holds that only the state, not the individual, decides which freedoms are essential.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from fascism's ethic of discipline, duty and national vigor, and its rejection of a life of private pleasure; the sources do not address drugs directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fascism suppressed dissent, but laws protecting minorities from hostile speech run against its exclusionary nationalism and its view of other groups as enemies, so it would not support such restrictions.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "strong-leader": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "A charismatic leader who alone incarnates the nation's destiny, above parliament and parties, is a defining feature of fascism.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state is the keystone of fascist doctrine: absolute, ethical and all-embracing, with nothing of value outside it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the doctrine that no individuals or groups stand outside the state; arms belong to the state and its party militia rather than to private citizens.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Fascism exalts war, militarism and a powerful state that makes its will felt beyond its borders, which requires strong armed forces; the Doctrine distances itself only from a 'police-ridden state' in name.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fascist family values condemn prostitution morally, while the ideology's concern is state order rather than a ban; the sources give no clear position either way.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "decide-locally": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mussolini defined fascism as an organized, centralized, authoritarian democracy in which the state coordinates every part of national life.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rehabilitation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from fascism's stress on authority, discipline and 'necessary educational severity'; the sources do not discuss penal policy directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascism promoted family values and cast women chiefly as mothers, and Paxton calls the restoration of a threatened patriarchy close to a universal fascist value.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Anachronistic for the historical movement, but its patriarchal family ideal and cult of virility make opposition clear.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "abortion-legal": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascist Italy increased abortion penalties and banned birth-control literature in 1926, treating both as crimes against the state, as part of its population policy.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Doctrine says the state protects and defends religion and recognizes Catholicism as the religion of Italians, and the regime reconciled with the Church; religion is valued as serving national unity.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism asserts the right of its own people to dominate others and pursued colonial and racial persecution, so the idea of repairing historical racial injustice runs against it.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism holds that natural, always male, leaders hold authority and that women's role is motherhood, treating sex roles as natural.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The fascist state exists to safeguard and transmit the spirit of the people as built up over the ages in its language, customs and faith.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism calls itself revolutionary, not reactionary, rejects the liberal parliamentary order outright and came to power through squad violence and the March on Rome.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Fascism seeks the unity and purity of the national community and its propaganda blamed immigrants and minorities, though Italy was itself a country of emigration.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Doctrine calls internationalist and League of Nations structures foreign to the spirit of fascism and bound to crumble when nations' passions are stirred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "free-trade": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascist governments pursued autarky and protectionism, aiming for national economic self-sufficiency.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "nation-first": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascism is ultranationalist and rejects universal embraces and internationalism in favor of national power and expansion.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism endorses war for national power and expansion, not for universal human rights, which it subordinates to the group.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "An ultranationalist ideology seeking an integrated, purified national community rejects the eventual dissolution of borders.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "limit-growth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from fascism's productivism, autarky drive and view that inactivity is death for a nation; it never addressed environmental limits.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred from fascism's priority on national power and production over constraints on growth.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Doctrine rejects the materialist idea that economic and technical change explains history and dismisses the 'myth of felicity and indefinite progress', placing spirit and will above technology.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred from fascism's pursuit of autarky and military strength, which favor domestic energy sources.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascism presents itself as revolutionary and seized power through squad violence and the March on Rome.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "experts-over-public": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Fascism denies that numbers should govern and the 1919 program proposed technical councils elected by professional bodies; rule by competent elites over the mass is favored.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "central-planning": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism rejected socialism and its economies were not command systems but mixed, dirigiste economies with private ownership.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism kept private ownership and opposed socialist ownership by workers or the public as a principle.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "No position in the sources; inferred from the regime's preservation of the existing property order and its pragmatic fiscal policy.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "tax-inheritance": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Italy's fascist finance minister De Stefani repealed the inheritance tax.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism treats freedom as a duty, demands work and self-sacrifice for the nation, and rejects the idea that material provision brings happiness, so an unconditional income clashes with its ethic.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascist Italy imposed tariffs and trade barriers to pursue autarky.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascist economies were dirigiste: the state steered investment, subsidized favored firms and ran large public works.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "widespread-small-property": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fascism maintained the existing property hierarchy and collaborated with large industry rather than redistributing property to small owners.",
+      "sources": [
+        "s5",
+        "s3"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascism rejects socialism and communism and kept money, wages and private enterprise.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The fascist state took over failing banks and controlled finance; leaving money to the market contradicts its view that the state rules the economy.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The corporative system, in which employer and worker syndicates are organized and harmonized within the state, is fascism's signature economic institution.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "one-party-rule": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascism builds a totalitarian one-party state that admits no parties or associations outside the state.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Doctrine says fascism moved past the monarchy-versus-republic question and that some monarchies accept daring experiments; Italian fascism ruled under the king.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "democracy-best": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascism rejects democracy, denying the right of numbers to govern and calling political equality a conventional lie.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-votes": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism denies that numbers, as such, should decide anything in society or govern through periodic consultations.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism opposes socialist class organs and places organized labor inside state corporations led by the party, not in councils holding power.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "right-to-secede": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "For fascism the state creates and unifies the nation, and centrifugal tendencies of groups lead to decay.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "natural-rulers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Doctrine affirms the 'irremediable and fertile and beneficent inequality of men', and Paxton lists the authority of natural leaders as a fascist passion.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "political-violence-never": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascism sees violence as beautiful and regenerative when it serves the group, and its squads used it to take power.",
+      "sources": [
+        "s5",
+        "s2"
+      ]
+    },
+    "war-builds-character": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Doctrine says war alone keys human energies to their highest tension and ennobles the peoples who face it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The fascist state is not indifferent to religion and protects Catholicism, while still subordinating the Church to the state rather than separating them.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The fascist state has a moral code but no theology; law comes from the absolute ethical state, not from scripture.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascism holds that the state is absolute and no groups stand outside it, so privatized courts and defense contradict its core.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Fascism equates national vitality with expansion and imperial power and sees renunciation as the mark of dying peoples.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Doctrine defines the nation as a people 'ethnically molded' by history rather than a race, while fascism seeks a unified, purified community and Italy later adopted racial laws; it is less biological than Nazism.",
+      "sources": [
+        "s1",
+        "s5",
+        "s2"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Doctrine explicitly denies that class struggle is the main agent of social change and rejects historical materialism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Fascism affirms the beneficent inequality of men and rejects socialist and democratic egalitarianism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism pursued colonial conquest and ethnic cleansing in Libya and Ethiopia and sees imperial expansion as a sign of national vitality.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Fascism glorifies imperial rule as the highest expression of human power and claims superiority over colonized peoples.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fascism places the individual nation-state first and rejects universal and internationalist structures; pan-civilizational union is not part of its program.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Doctrine praises self-sacrifice and the renunciation of self-interest and rejects the self-centered individual.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Paxton names the primacy of the group, to which one owes duties superior to every right, as the first fascist passion, and Mussolini called freedom a duty rather than a right.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the Doctrine's view of man taking possession of natural forces and from fascism's productivism; some fascist strands romanticized nature, so this is uncertain.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The regime's population policy was natalist: it banned birth-control literature and treated abortion as a crime against the state.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism embraced modern technology, mass mobilization and Futurism's cult of the machine, even while attacking materialism and bourgeois decadence.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fascism combined Futurist enthusiasm for speed and machines with claims to preserve tradition, and it never resolved the tension.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "human-enhancement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fascism sought a 'new man' through state education and discipline, and the individual is not the judge of his own freedoms, so a personal right to enhancement runs against it; inferred.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred from fascism's belief that a leader incarnating the nation's will, not mechanical procedure, should govern.",
+      "sources": [
+        "s5",
+        "s1"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Nothing may stand outside the state, and only the state judges which liberties are essential, so private communication shielded from it is unacceptable.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fascism seeks national rebirth but the Doctrine says history does not travel backwards and rejects restoring monarchical absolutism or feudal privilege.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Fascism stresses action over doctrine and its own 'pragmatic strain', and Paxton notes that fascists readily sacrificed their programs to expediency.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "The state should direct every area of life, including culture, education and the economy.",
+      "value": 2,
+      "rationale": "Totalitarianism, the claim that nothing of value exists outside the state, is the keystone of fascist doctrine.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "text": "The nation needs a radical rebirth to overcome a period of decadence.",
+      "value": 2,
+      "rationale": "Scholars such as Griffin treat the myth of national rebirth from decline as fascism's core, and Paxton lists dread of decadence among its passions.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "text": "A strong nation should expand its territory and influence abroad.",
+      "value": 2,
+      "rationale": "The Doctrine treats imperial expansion as a sign of national vitality and its renunciation as a mark of dying peoples.",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "notes": "Fascism's programs shifted sharply: the 1919 Fasci program was left-leaning (minimum wage, capital levy, women's suffrage), but the movement dropped most of it on the way to power, and scholars such as Paxton warn that fascist texts are poor guides to fascist practice. Economic answers follow the regime's practice and the 1932 Doctrine. Race is the main point where strands diverge: Italian doctrine defined the nation as a historical people rather than a race until the 1938 racial laws, while Nazism made biological race central. Modern answers (climate, nuclear power, encryption, AI) are inferences and marked low or medium accordingly."
+}
