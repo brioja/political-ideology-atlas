@@ -338,13 +338,15 @@ function renderQuestion() {
   const hold = answered > 0 ? stability(quizCalibration(), sure) : null;
   const settled = hold != null && hold >= SETTLE.hold;
   $("counter").textContent = `Statement ${position + 1}`;
-  $("bar").style.width = pct(sure);
+  // The bar shows the same calibrated chance as the text, so a "93% likely to hold" result fills it to
+  // 93%. While there's no calibrated reading yet ("Narrowing it down…") it stays where it was.
+  if (hold != null || answered === 0) $("bar").style.width = pct(hold ?? 0);
   // A calibrated percentage: in simulations, the share of takers at this reading whose top match
   // didn't change after answering everything. Readings never seen in simulation get words instead.
   const status = $("certainty");
   status.classList.toggle("ready", settled);
   if (settled) {
-    status.innerHTML = `✓ Your result is ready · <a href="#/results" id="ready-link">See your result →</a>`;
+    status.innerHTML = `✓ Top match ${pct(hold)} likely to hold · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else status.textContent = answered === 0 ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
