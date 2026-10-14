@@ -84,7 +84,21 @@ The results page links each ideology to further reading for curious, non-special
   encyclopedia entry, a founding text online, or a good introduction. They may overlap with your
   sources. Only include pages you opened.
 
-## 5. Output format
+## 5. Positions the statements miss
+
+The statements are chosen by the standard in `audits/statements/STANDARD.md`, and audits are how
+gaps get found. After answering, list in `missingStatements` the positions that **define** this
+ideology (stated in its primary sources or central in the scholarship) but that no statement
+captures, even loosely. Leave it as an empty list if there are none, and don't pad it.
+
+- Write each as a candidate statement in the bank's form: one claim, read literally, in neutral
+  words that adherents and opponents would both accept as a fair statement of the question.
+- Prefer wording that other ideologies could also take a side on ("Laws should follow Islamic
+  sharia"), not one that only names this ideology ("Zionism is right").
+- Give this ideology's answer (`value`, -2 to +2, never 0), a one-sentence rationale, and at least
+  one source id. These are positions you found, not guesses: cite where they are stated.
+
+## 6. Output format
 
 ```json
 {
@@ -118,6 +132,14 @@ The results page links each ideology to further reading for curious, non-special
       "sources": ["s1"]
     }
   },
+  "missingStatements": [
+    {
+      "text": "A candidate statement in the bank's form.",
+      "value": 2,
+      "rationale": "Why this defines the ideology and how it answers.",
+      "sources": ["s1"]
+    }
+  ],
   "notes": "Optional: contested points, strands that would answer differently, caveats."
 }
 ```

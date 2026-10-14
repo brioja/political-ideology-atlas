@@ -74,6 +74,16 @@ function validate(id) {
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
   for (const k of Object.keys(answers)) if (!activeIds.has(k)) errors.push(`answer for unknown statement '${k}'`);
+  // Defining positions no statement captures (audits/statements/STANDARD.md).
+  if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');
+  else if (!PEOPLE && !Array.isArray(a.missingStatements)) errors.push('"missingStatements" must be a list');
+  else if (!PEOPLE) for (const [i, m] of a.missingStatements.entries()) {
+    if (typeof m.text !== "string" || m.text.trim().length < 10) errors.push(`missingStatements[${i}]: text missing or too short`);
+    if (![-2, -1, 1, 2].includes(m.value)) errors.push(`missingStatements[${i}]: value must be -2, -1, 1 or 2`);
+    if (typeof m.rationale !== "string" || m.rationale.trim().length < 20) errors.push(`missingStatements[${i}]: rationale missing or too short`);
+    if (!Array.isArray(m.sources) || !m.sources.length) errors.push(`missingStatements[${i}]: needs at least one source`);
+    else for (const sid of m.sources) if (!sourceIds.has(sid)) errors.push(`missingStatements[${i}]: unknown source '${sid}'`);
+  }
 
   // Not errors, but signs of a lazy audit worth a look.
   const vals = Object.values(answers);
