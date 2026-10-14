@@ -3,7 +3,7 @@ const model = buildModel(IDEOLOGIES);
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },
-  { label: "It depends", value: 0 },
+  { label: "Neither agree nor disagree", value: 0 },
   { label: "Agree", value: 1 },
   { label: "Strongly agree", value: 2 },
 ];
