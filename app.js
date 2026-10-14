@@ -260,16 +260,18 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
 
 // ---------- Pages ----------
 
-const PAGES = ["home", "test", "results", "ideologies", "people", "about"];
+const PAGES = ["home", "test", "results", "ideologies", "ideology", "people", "person", "about"];
 const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", about: "About" };
+const NAV_FOR = { ideology: "ideologies", person: "people" };
 
-function show(page, { scroll = true } = {}) {
+function show(page, { scroll = true, title = null } = {}) {
   for (const p of PAGES) $(`page-${p}`).hidden = p !== page;
   for (const a of document.querySelectorAll(".site-nav a")) {
-    if (a.dataset.page === page) a.setAttribute("aria-current", "page");
+    if (a.dataset.page === (NAV_FOR[page] || page)) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   }
-  document.title = PAGE_TITLES[page] ? `${PAGE_TITLES[page]} · ${SITE_NAME}` : SITE_NAME;
+  const t = title || PAGE_TITLES[page];
+  document.title = t ? `${t} · ${SITE_NAME}` : SITE_NAME;
   closeMenu();
   if (scroll) window.scrollTo(0, 0);
 }
@@ -405,13 +407,34 @@ function keyBeliefs(ideo, n = 4) {
     .slice(0, n);
 }
 
+// A position in plain words: the stance itself (from the statement's agree/disagree explanation)
+// rather than "disagree" with a negatively worded statement. The tag carries only the strength.
+function stance(q, v) {
+  if (v == null) return { tag: "No known position", cls: "none", text: `No known position on: ${q.text}` };
+  if (v === 0) return { tag: "Mixed", cls: "mixed", text: `Mixed on: ${q.text}` };
+  const plain = v > 0 ? q.agree : q.disagree;
+  return {
+    tag: Math.abs(v) === 2 ? "Strongly" : "Leans",
+    cls: Math.abs(v) === 2 ? "strong" : "lean",
+    text: plain || `${v > 0 ? "Agrees" : "Disagrees"}: ${q.text}`,
+  };
+}
+
 function beliefList(ideo, n = 4) {
-  return `<ul class="beliefs">${keyBeliefs(ideo, n).map((b) =>
-    `<li><span class="chip ${b.p > 0 ? "agree" : "disagree"}">${word(b.p)}</span><span>${QUESTIONS[b.q].text}</span></li>`).join("")}</ul>`;
+  return `<ul class="beliefs">${keyBeliefs(ideo, n).map((b) => {
+    const s = stance(QUESTIONS[b.q], b.p);
+    return `<li>${topicIcon(QUESTIONS[b.q])}<span>${esc(s.text)}</span></li>`;
+  }).join("")}</ul>`;
+}
+
+// "You: … / It: …" for a statement where two answers differ.
+function versus(q, mine, theirs, me, them) {
+  return `<li class="versus">${topicIcon(q)}<div class="stack-tight"><span><span class="who">${me}</span> ${esc(stance(q, mine).text)}</span>
+    <span><span class="who">${them}</span> ${esc(stance(q, theirs).text)}</span></div></li>`;
 }
 
 // The card shown under a map when a dot is picked.
-function pickCard(container, ideo, { similarity = null, showInList = false } = {}) {
+function pickCard(container, ideo, { similarity = null } = {}) {
   container.hidden = false;
   container.innerHTML = `
     <div class="pick-head"><h3>${esc(ideo.name)}</h3>${categoryTag(ideo)}
@@ -419,10 +442,7 @@ function pickCard(container, ideo, { similarity = null, showInList = false } = {
     ${aboutIdeology(ideo)}
     <h4>What it stands for</h4>
     ${beliefList(ideo, 3)}
-    ${showInList ? `<button class="link" data-show="${esc(ideo.id)}">Show it in the list</button>` : ""}`;
-  const btn = container.querySelector("[data-show]");
-  if (btn && !showInList) btn.remove();
-  if (btn) btn.addEventListener("click", () => openInExplore(ideo.id));
+    <p><a class="more-link" href="${ideologyHref(ideo.id)}">Open the full page for ${esc(ideo.name)} →</a></p>`;
 }
 
 function readMore(ideo) {
@@ -467,18 +487,20 @@ function showResults(shared = null) {
           ${aboutIdeology(r)}
           <h4>What it stands for</h4>
           ${beliefList(r)}
-          ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="plain">${apart.map((d) =>
-            `<li>${QUESTIONS[d.q].text} <span class="mono small">${you_}: ${word(d.a).toLowerCase()} · it: ${word(d.t).toLowerCase()}</span></li>`).join("")}</ul>` : ""}
+          <p><a class="more-link" href="${ideologyHref(r.id)}">Full page for ${esc(r.name)} →</a></p>
+          ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="iconed">${apart.map((d) =>
+            versus(QUESTIONS[d.q], d.a, d.t, You, "It")).join("")}</ul>` : ""}
         </div>
       </details></li>`;
   }).join("");
 
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
-    <div class="verdict">
+    <div class="verdict tinted" style="--fam: ${colorOf(top)}">
       <span class="eyebrow">${your} closest match · ${pct(top.similarity)} · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
       ${categoryTag(top)}
+      <p><a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a></p>
       ${aboutIdeology(top)}
       <p class="muted">${closeCall
         ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
@@ -493,8 +515,8 @@ function showResults(shared = null) {
     <section>
       <h2>Why ${you_} matched</h2>
       <div class="diffs">
-        <div class="stack"><h3>${You} agree on</h3><ul class="plain">${agree.map((d) => `<li>${QUESTIONS[d.q].text} <span class="mono small">both ${word(d.a).toLowerCase()}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
-        <div class="stack"><h3>${You} part ways on</h3><ul class="plain">${disagree.map((d) => `<li>${QUESTIONS[d.q].text} <span class="mono small">${you_}: ${word(d.a).toLowerCase()} · it: ${word(d.t).toLowerCase()}</span></li>`).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
+        <div class="stack"><h3>${You} agree on</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
+        <div class="stack"><h3>${You} part ways on</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, "It")).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
       </div>
     </section>
 
@@ -510,8 +532,9 @@ function showResults(shared = null) {
       <p class="muted small">Matched on the statements where both ${you_} and they have a known position.</p>
       <ul class="matches">${matchPeople(model, given, PEOPLE).slice(0, 5).map((p) => `
         <li><details>
-          <summary><span class="match-name">${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>
-          <div class="match-body">${personBody(p)}<p class="muted small">Based on ${p.overlap} statements you both have a position on.</p></div>
+          <summary><span class="match-name">${avatar(p)}${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>
+          <div class="match-body">${personBody(p)}<p class="muted small">Based on ${p.overlap} statements you both have a position on.</p>
+            <p><a class="more-link" href="${personHref(p.id)}">Full page for ${esc(p.name)} →</a></p></div>
         </details></li>`).join("")}
       </ul>
     </section>` : ""}
@@ -639,7 +662,7 @@ function setUpSharing(given, ranked, you) {
   });
 
   const canvas = $("card");
-  drawCard(canvas, { ranked, you });
+  drawCard(canvas, { ranked, you, people: cardPeople(given) });
   $("save-image").addEventListener("click", () => {
     canvas.toBlob((blob) => {
       const a = document.createElement("a");
@@ -674,6 +697,12 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
   return y + lineHeight;
 }
 
+// The people closest to a set of answers, for the result card (empty until people are audited).
+function cardPeople(answers) {
+  const list = typeof PEOPLE === "undefined" ? [] : PEOPLE;
+  return list.length ? matchPeople(model, answers, list.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
+}
+
 // Draws a 1200x630 result card. With no `result`, draws the generic link-preview image.
 async function drawCard(canvas, result = null, site = `${location.host}${location.pathname.replace(/\/$/, "")}`) {
   try {
@@ -687,7 +716,23 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   const W = 1200, H = 630;
   ctx.fillStyle = CARD.bg;
   ctx.fillRect(0, 0, W, H);
+  if (result) {
+    // A light wash of the top match's family color.
+    ctx.globalAlpha = 0.1;
+    ctx.fillStyle = FAMILIES[styleOf(result.ranked[0]).family].card;
+    ctx.fillRect(0, 0, W, H);
+    ctx.globalAlpha = 1;
+  }
   ctx.textBaseline = "alphabetic";
+  // Photos load from Wikimedia (CORS-enabled, so the canvas can still be saved).
+  const photos = result && result.people ? await Promise.all(result.people.slice(0, 3).map((p) => new Promise((resolve) => {
+    if (!p.image) return resolve(null);
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = p.image.url;
+  }))) : [];
 
   ctx.fillStyle = CARD.muted;
   ctx.font = `500 18px ${CARD_FONTS.mono}`;
@@ -695,24 +740,59 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
   if (result) {
     const { ranked } = result;
-    ctx.fillStyle = CARD.accent2;
-    fitText(ctx, ranked[0].name, 540, 68, 700, CARD_FONTS.display);
-    ctx.fillText(ranked[0].name, 60, 160);
-    ranked.slice(0, 5).forEach((r, i) => {
-      const y = 232 + i * 64;
+    const people = (result.people || []).slice(0, 3);
+    const mark = (ideo, x, y, r) => {
+      ctx.fillStyle = FAMILIES[styleOf(ideo).family].card;
+      ctx.fill(new Path2D(shapePath(styleOf(ideo).shape, x, y, r)));
+    };
+    ctx.fillStyle = CARD.ink;
+    fitText(ctx, ranked[0].name, 540, 64, 700, CARD_FONTS.display);
+    ctx.fillText(ranked[0].name, 60, 156);
+    const rows = people.length ? 4 : 5;
+    ranked.slice(0, rows).forEach((r, i) => {
+      const y = 222 + i * 56;
+      mark(r, 70, y - 8, 7);
       ctx.fillStyle = CARD.ink;
-      ctx.font = `${i === 0 ? 600 : 400} 24px ${CARD_FONTS.body}`;
-      ctx.fillText(r.name, 60, y);
+      ctx.font = `${i === 0 ? 600 : 400} 23px ${CARD_FONTS.body}`;
+      ctx.fillText(r.name, 88, y);
       ctx.fillStyle = CARD.muted;
-      ctx.font = `400 20px ${CARD_FONTS.mono}`;
+      ctx.font = `400 19px ${CARD_FONTS.mono}`;
       ctx.textAlign = "right";
       ctx.fillText(pct(r.similarity), 600, y);
       ctx.textAlign = "left";
-      ctx.fillStyle = CARD.line;
-      ctx.fillRect(60, y + 14, 540, 10);
-      ctx.fillStyle = i === 0 ? CARD.accent2 : CARD.muted;
-      ctx.fillRect(60, y + 14, 540 * r.similarity, 10);
+      ctx.fillStyle = "rgba(23, 32, 43, 0.12)";
+      ctx.fillRect(60, y + 12, 540, 9);
+      ctx.fillStyle = FAMILIES[styleOf(r).family].card;
+      ctx.fillRect(60, y + 12, 540 * r.similarity, 9);
     });
+    if (people.length) {
+      ctx.fillStyle = CARD.muted;
+      ctx.font = `500 15px ${CARD_FONTS.mono}`;
+      ctx.fillText("CLOSEST PEOPLE", 60, 462);
+      people.forEach((p, i) => {
+        const x = 60 + i * 180, cy = 506, r = 24;
+        ctx.save();
+        ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
+        ctx.fillStyle = CARD.line; ctx.fill();
+        if (photos[i]) {
+          ctx.clip();
+          const img = photos[i], side = Math.min(img.width, img.height);
+          ctx.drawImage(img, (img.width - side) / 2, (img.height - side) * 0.15, side, side, x, cy - r, r * 2, r * 2);
+        } else {
+          ctx.fillStyle = CARD.muted; ctx.font = `600 16px ${CARD_FONTS.display}`; ctx.textAlign = "center";
+          ctx.fillText(p.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join(""), x + r, cy + 6); ctx.textAlign = "left";
+        }
+        ctx.restore();
+        ctx.fillStyle = CARD.ink;
+        ctx.font = `600 16px ${CARD_FONTS.body}`;
+        let name = p.name;
+        while (ctx.measureText(name).width > 118 && name.length > 4) name = name.slice(0, -2) + "…";
+        ctx.fillText(name, x + 56, cy - 3);
+        ctx.fillStyle = CARD.muted;
+        ctx.font = `400 15px ${CARD_FONTS.mono}`;
+        ctx.fillText(pct(p.similarity), x + 56, cy + 17);
+      });
+    }
   } else {
     ctx.fillStyle = CARD.ink;
     ctx.font = `700 60px ${CARD_FONTS.display}`;
@@ -791,7 +871,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
 const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
 mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25 ? extremes : null,
-  onPick: (ideo) => pickCard($("ideo-pick"), ideo, { showInList: true }) },
+  onPick: (ideo) => pickCard($("ideo-pick"), ideo) },
   { extraNote: "Close dots answer alike." });
 for (const el of document.querySelectorAll(".ideology-count")) el.textContent = `${model.ideologies.length}`;
 
@@ -805,12 +885,18 @@ if (auditedCount < model.ideologies.length) {
 }
 drawScree($("scree"));
 
-// The home page shows a real example result, drawn by the same code as the share image.
+// The home page shows an example result drawn by the same code as the share image: a simulated
+// test-taker who leans toward a randomly chosen ideology (some statements skipped, some answers
+// nudged by a point), matched with the live model, so it changes per visit and tracks the data.
 (() => {
-  const ideo = model.ideologies.find((i) => /social democra/i.test(i.name)) || model.ideologies[0];
-  const sample = ideo.profile.map((x, q) => (q % 3 === 0 ? null : q % 5 === 1 ? Math.max(-2, Math.min(2, x - Math.sign(x || 1))) : x));
+  const ideo = model.ideologies[Math.floor(Math.random() * model.ideologies.length)];
+  const sample = ideo.profile.map((x) => {
+    if (Math.random() < 0.35) return null;
+    if (Math.random() < 0.25) return Math.max(-2, Math.min(2, x + (Math.random() < 0.5 ? -1 : 1)));
+    return x;
+  });
   const { you, ranked } = match(model, sample);
-  drawCard($("example-card"), { you, ranked });
+  drawCard($("example-card"), { you, ranked, people: cardPeople(sample) });
 })();
 
 // ---------- Explore ----------
@@ -832,31 +918,10 @@ function renderExplore() {
   $("explore-list").innerHTML = groups.map(([c, list]) => `
     <div class="stack">
       <h3>${swatch(c, 16)}${esc(c)} <span class="muted small">${list.length}</span></h3>
-      <ul class="matches">${list.map((i) => `
-        <li><details id="ideo-${esc(i.id)}">
-          <summary><span class="match-name">${esc(i.name)}</span></summary>
-          <div class="match-body">
-            ${aboutIdeology(i)}
-            <h4>What it stands for</h4>
-            ${beliefList(i)}
-          </div>
-        </details></li>`).join("")}
-      </ul>
+      <ul class="matches">${list.map(ideologyRow).join("")}</ul>
     </div>`).join("") || `<p class="muted">No ideologies match “${esc(query)}”.</p>`;
 }
 
-function openInExplore(id) {
-  const ideo = model.ideologies.find((i) => i.id === id);
-  $("explore-search").value = "";
-  exploreCategory = null;
-  for (const b of $("explore-cats").children) b.setAttribute("aria-pressed", String(b.dataset.cat === ""));
-  renderExplore();
-  const d = document.getElementById(`ideo-${id}`);
-  if (!d || !ideo) return;
-  d.open = true;
-  d.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
-  d.querySelector("summary").focus({ preventScroll: true });
-}
 
 const categories = [...new Set(model.ideologies.map((i) => i.category))]
   .sort((a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99));
@@ -874,11 +939,24 @@ renderExplore();
 
 // ---------- People ----------
 
-const lifespan = (p) => (p.living ? `born ${p.born}` : `${p.born}–`);
+// Round photo from Wikipedia (freely licensed); initials when there is no free image.
+function avatar(p, size = 36) {
+  if (p.image) {
+    return `<img class="avatar" src="${esc(p.image.url)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+  }
+  const initials = p.name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join("");
+  return `<span class="avatar initials" style="width:${size}px;height:${size}px" aria-hidden="true">${esc(initials)}</span>`;
+}
+const imageCredit = (p) => p.image
+  ? `<p class="credit">Photo: ${esc(p.image.artist)}, <a href="${esc(p.image.source)}" target="_blank" rel="noopener">${esc(p.image.license)}</a>, via Wikimedia Commons</p>`
+  : "";
+
 function personBody(p) {
   const links = [p.wikipedia && `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`,
     `<a href="${REPO}/blob/main/audits/people/${esc(p.id)}.json" target="_blank" rel="noopener">How this profile was researched</a>`].filter(Boolean);
-  return `<p class="muted small">${esc(p.role || "")}${p.role ? " · " : ""}${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</p>
+  return `<div class="person-head">${avatar(p, 72)}<div class="stack">
+    <p class="muted small">${esc(p.role || "")}${p.role ? " · " : ""}${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</p>
+    ${imageCredit(p)}</div></div>
     ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
     <p class="read-more small"><span class="muted">Read more:</span> ${links.join('<span class="muted"> · </span>')}</p>`;
 }
@@ -897,9 +975,7 @@ function renderPeople() {
     (!q || p.name.toLowerCase().includes(q) || (p.role || "").toLowerCase().includes(q)))
     .sort((a, b) => a.name.localeCompare(b.name));
   $("people-count").textContent = `${shown.length} of ${list.length} people`;
-  $("people-list").innerHTML = shown.map((p) => `
-    <li><details><summary><span class="match-name">${esc(p.name)}</span><span class="muted small">${esc(p.region)}</span></summary>
-      <div class="match-body">${personBody(p)}</div></details></li>`).join("") || `<li class="muted">No one matches “${esc(q)}”.</li>`;
+  $("people-list").innerHTML = shown.map(personRow).join("") || `<li class="muted">No one matches “${esc(q)}”.</li>`;
 }
 (() => {
   const list = typeof PEOPLE === "undefined" ? [] : PEOPLE;
@@ -916,6 +992,170 @@ function renderPeople() {
   $("people-search").addEventListener("input", renderPeople);
   renderPeople();
 })();
+
+// ---------- Detail pages: one per ideology and per person ----------
+// (Row and link helpers are function declarations: the lists use them before this point in the file.)
+
+const PEOPLE_LIST = typeof PEOPLE === "undefined" ? [] : PEOPLE;
+function ideologyHref(id) { return `#/ideologies/${encodeURIComponent(id)}`; }
+function personHref(id) { return `#/people/${encodeURIComponent(id)}`; }
+// Profiles can cover more statements than the site's current model; use only the shared ones.
+const onModel = (profile) => profile.slice(0, QUESTIONS.length);
+
+// Where `scores` sits on each shown dividing line, with every ideology as a faint marker.
+function lineStrips(scores, { selfId = null } = {}) {
+  return Array.from({ length: SHOWN_LINES }, (_, i) => {
+    const L = lineInfo(i);
+    const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i]);
+    const lim = Math.max(...vals.map(Math.abs)) * 1.05;
+    const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
+    return `<div class="axis">
+      <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
+      <div class="axis-ends"><span>${esc(L.low)}</span><span>${esc(L.high)}</span></div>
+      <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
+        <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
+        ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}
+        <circle cx="${pos(scores[i])}" cy="17" r="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"></circle>
+      </svg>
+    </div>`;
+  }).join("");
+}
+
+
+// Topic emoji for a statement; decorative (the sentence carries the meaning), so hidden from screen readers.
+const topicIcon = (q) => `<span class="topic" aria-hidden="true">${q.icon || "•"}</span>`;
+
+// Key positions only: the strongly held ones (or the leanings, if there are none), best-sourced
+// first, each with its topic emoji; reasoning and sources are added once the audit loads. The rest
+// are summarized in one line that points to the full audit.
+const CONF_RANK = { high: 0, medium: 1, low: 2 };
+function positionsList(profile, audit, auditUrl = null) {
+  const answerOf = (j) => audit && audit.answers && audit.answers[QUESTIONS[j].id];
+  const all = QUESTIONS.map((_, j) => j);
+  const unknown = all.filter((j) => profile[j] == null);
+  const strongest = Math.max(...all.map((j) => Math.abs(profile[j] ?? 0)));
+  const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest)
+    .sort((x, y) => (CONF_RANK[answerOf(x)?.confidence] ?? 1) - (CONF_RANK[answerOf(y)?.confidence] ?? 1) || x - y);
+  const others = all.length - known.length - unknown.length;
+  const sourceLink = (sid) => {
+    const s = audit && (audit.sources || []).find((x) => x.id === sid);
+    return s ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.title)}">${esc(sid)}</a>` : esc(sid);
+  };
+  const items = known.map((j) => {
+    const v = profile[j];
+    const a = answerOf(j);
+    return `<li>${topicIcon(QUESTIONS[j])}
+      <div class="stack-tight">
+        <p class="stance">${esc(v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text)}</p>
+        ${a && a.rationale ? `<p class="muted small">${esc(a.rationale)}
+          <span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` · sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span></p>` : ""}
+      </div></li>`;
+  }).join("");
+  const rest = [others && `${others} milder position${others === 1 ? "" : "s"}`, unknown.length && `no known position on ${unknown.length}`].filter(Boolean).join(", and ");
+  const more = rest ? `<p class="muted small">${rest[0].toUpperCase() + rest.slice(1)}${auditUrl ? `: <a href="${esc(auditUrl)}" target="_blank" rel="noopener">see the full audit</a>` : ""}.</p>` : "";
+  return `<ul class="positions">${items}</ul>${more}`;
+}
+
+function sourcesList(audit) {
+  if (!audit || !audit.sources || !audit.sources.length) return "";
+  return `<section class="stack"><h2>Sources</h2><ol class="sources">${audit.sources.map((s) => `
+    <li id="src-${esc(s.id)}"><span class="mono small">${esc(s.id)}</span>
+      <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${s.author ? ` <span class="muted small">· ${esc(s.author)}</span>` : ""}
+      <span class="muted small">· ${esc(s.kind)}</span></li>`).join("")}</ol></section>`;
+}
+
+// The audit JSON is published next to the site; fetch it for reasoning and sources.
+const auditCache = new Map();
+function loadAudit(folder, id) {
+  const key = `${folder}/${id}`;
+  if (!auditCache.has(key)) {
+    auditCache.set(key, fetch(`audits/${folder}/${encodeURIComponent(id)}.json`)
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null));
+  }
+  return auditCache.get(key);
+}
+
+function ideologyRow(r) { return `<li><a class="row-link" href="${ideologyHref(r.id)}">
+  <span class="match-name">${swatch(r.category)}${esc(r.name)}</span>
+  ${r.similarity != null ? `<span class="mono small">${pct(r.similarity)}</span>` : `<span class="muted small">${esc(r.category || "")}</span>`}
+  <span class="arrow" aria-hidden="true">→</span></a></li>`; }
+function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)}">
+  <span class="match-name">${avatar(p)}${esc(p.name)}</span>
+  ${p.similarity != null ? `<span class="mono small">${pct(p.similarity)}</span>` : `<span class="muted small">${esc(p.region)}</span>`}
+  <span class="arrow" aria-hidden="true">→</span></a></li>`; }
+
+function yourMatchLine(value, name) {
+  return value == null ? "" : `<p class="your-match">Your answers match ${esc(name)} <strong>${pct(value)}</strong>. <a href="#/results">Back to your results</a></p>`;
+}
+
+function renderIdeologyPage(id) {
+  const ideo = model.ideologies.find((i) => i.id === id);
+  if (!ideo) return false;
+  const root = $("ideology-detail");
+  const neighbors = match(model, ideo.profile).ranked.filter((r) => r.id !== ideo.id).slice(0, 5);
+  const people = PEOPLE_LIST.length ? matchPeople(model, ideo.profile, PEOPLE_LIST.map((p) => ({ ...p, profile: onModel(p.profile) }))).slice(0, 5) : [];
+  const yours = lastAnswers ? match(model, lastAnswers).ranked.find((r) => r.id === ideo.id).similarity : null;
+  const draw = (audit) => {
+    root.innerHTML = `
+      <a class="back" href="#/ideologies">← All ideologies</a>
+      <div class="detail-head stack tinted" style="--fam: ${colorOf(ideo)}">
+        ${categoryTag(ideo)}
+        <h1>${esc(ideo.name)}</h1>
+        ${aboutIdeology(ideo)}
+        ${audit && audit.scope ? `<p class="muted small"><strong>Scope:</strong> ${esc(audit.scope)}</p>` : ""}
+        ${yourMatchLine(yours, ideo.name)}
+      </div>
+      <section class="stack"><h2>What it stands for</h2>${beliefList(ideo, 6)}</section>
+      <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id })}</section>
+      <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
+      ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}
+      <section class="stack"><h2>Key positions</h2>
+        ${ideo.audited ? "" : `<p class="muted small">This is a preliminary profile, so reasoning and sources aren't available yet.</p>`}
+        ${positionsList(ideo.profile, audit, ideo.audited ? `${REPO}/blob/main/audits/profiles/${ideo.id}.json` : null)}</section>
+      ${sourcesList(audit)}`;
+  };
+  draw(null);
+  if (ideo.audited) loadAudit("profiles", ideo.id).then((a) => { if (a && $("page-ideology").dataset.id === id) draw(a); });
+  $("page-ideology").dataset.id = id;
+  return ideo.name;
+}
+
+function renderPersonPage(id) {
+  const p = PEOPLE_LIST.find((x) => x.id === id);
+  if (!p) return false;
+  const root = $("person-detail");
+  const profile = onModel(p.profile);
+  const closest = match(model, profile).ranked.slice(0, 5);
+  const similar = matchPeople(model, profile, PEOPLE_LIST.filter((x) => x.id !== p.id).map((x) => ({ ...x, profile: onModel(x.profile) }))).slice(0, 5);
+  const yours = lastAnswers ? (matchPeople(model, lastAnswers, [{ ...p, profile }])[0] || {}).similarity : null;
+  const draw = (audit) => {
+    root.innerHTML = `
+      <a class="back" href="#/people">← All people</a>
+      <div class="person-hero">
+        ${avatar(p, 128)}
+        <div class="stack">
+          <span class="eyebrow">${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</span>
+          <h1>${esc(p.name)}</h1>
+          ${p.role ? `<p class="muted">${esc(p.role)}</p>` : ""}
+          ${imageCredit(p)}
+        </div>
+      </div>
+      ${p.summary ? `<p class="lede">${esc(p.summary)}</p>` : ""}
+      <p class="read-more small"><span class="muted">Read more:</span> ${p.wikipedia ? `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a> · ` : ""}<a href="${REPO}/blob/main/audits/people/${esc(p.id)}.json" target="_blank" rel="noopener">The full audit</a></p>
+      ${yourMatchLine(yours, p.name)}
+      <section class="stack"><h2>Closest ideologies</h2>
+        <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
+        <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
+      <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
+      ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
+      <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/people/${p.id}.json`)}</section>
+      ${sourcesList(audit)}`;
+  };
+  draw(null);
+  loadAudit("people", p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
+  $("page-person").dataset.id = id;
+  return p.name;
+}
 
 // ---------- Menu and routing ----------
 
@@ -944,9 +1184,14 @@ function route() {
     else if (lastAnswers) { show("results"); showResults(); }
     else if (shared) { show("results"); showResults(shared); }
     else go("#/");
+  } else if (page === "ideologies" && arg) {
+    const name = renderIdeologyPage(decodeURIComponent(arg));
+    if (name) show("ideology", { title: name }); else go("#/ideologies");
   } else if (page === "ideologies") {
     show("ideologies");
-    if (arg) openInExplore(decodeURIComponent(arg));
+  } else if (page === "people" && arg) {
+    const name = renderPersonPage(decodeURIComponent(arg));
+    if (name) show("person", { title: name }); else go("#/people");
   } else if (page === "people") {
     show("people");
   } else if (page === "about") {

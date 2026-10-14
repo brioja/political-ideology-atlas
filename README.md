@@ -68,6 +68,9 @@ person's own words and record, and a statement with no reliable evidence is `nul
 - **Tie-break:** when two people are within 3 points of each other, the one with more English
   Wikipedia page views (last 12 months, from `node scripts/pageviews.js`) ranks first. The counts
   are stored in the catalog; the site never calls Wikipedia.
+- **Photos:** `node scripts/images.js` stores each person's freely licensed Wikipedia lead image
+  (URL, author, license) in the catalog; the site shows it with a credit line and falls back to
+  initials when there's no free image.
 - To run the audits, ask Claude Code to "run the people-audits workflow" (about 75k tokens per person).
 
 ## Contributing
