@@ -1,0 +1,43 @@
+# Eigencompass
+
+A political ideology test where the axes come from the data. You don't choose them in advance.
+
+## How it works
+
+1. `data.js` has 40 statements and 19 reference ideologies. Each ideology is written as its
+   expected answer (-2..+2) to every statement.
+2. `pca.js` centers that 19 × 40 matrix, builds the 40 × 40 covariance matrix, and
+   eigendecomposes it (Jacobi method, no dependencies). Each eigenvector is an axis. Its
+   eigenvalue is how much of the disagreement between ideologies that axis captures.
+3. The model keeps the fewest axes that explain ≥ 80% of the variance (currently 3: social
+   traditional↔progressive, economic state↔market, and state↔anti-state). Change
+   `varianceTarget` in `buildModel` to keep more or fewer.
+4. Your answers are projected onto those axes. Ideologies are ranked by distance in that space.
+   The results show the top matches, flag close calls, and list the statements where you agree
+   and disagree with your top match.
+
+Adding a statement or an ideology means adding one string to `data.js`. The axes, their names,
+and the number kept all update on their own.
+
+## Run locally
+
+Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
+
+`node test.js` checks the eigensolver and verifies that every ideology matches itself. It also
+prints the axes it found.
+
+## Deploying
+
+It is a static site with no build step and no server, so any static host works:
+
+- **GitHub Pages:** push this folder to a repo, then turn on Settings → Pages → deploy from branch.
+- **Netlify / Cloudflare Pages:** drag the folder in, or connect the repo. There is no build
+  command and the publish directory is `/`.
+
+## Next step: axes from real people
+
+Right now PCA runs over the 19 ideology profiles, which I wrote by hand, so the axes reflect
+those judgments. The stronger version runs PCA over actual respondents' answers. To get there
+you need somewhere to store responses (a small database or form backend). After a few hundred
+responses, you can recompute the axes from those people and match against ideology profiles
+projected into the same space.
