@@ -3,7 +3,7 @@ const model = buildModel(IDEOLOGIES);
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },
-  { label: "Neutral", value: 0 },
+  { label: "It depends", value: 0 },
   { label: "Agree", value: 1 },
   { label: "Strongly agree", value: 2 },
 ];
@@ -353,7 +353,7 @@ function renderQuestion() {
   $("back").disabled = position === 0;
   setHeaderAction(settled ? "results" : hold != null ? "early" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
-    // The sixth button is "No opinion": chosen when this statement was already shown and skipped.
+    // The sixth button is "Don't know or don't care": chosen when this statement was already shown and skipped.
     const chosen = i < SHOWN_CHOICES.length ? answers[q] === SHOWN_CHOICES[i].value : answers[q] === null && position < order.length - 1;
     b.classList.toggle("chosen", chosen);
     b.setAttribute("aria-pressed", String(chosen));
@@ -409,12 +409,12 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
 }
-// "No opinion": not part of the agree–disagree scale; the statement simply isn't counted.
+// "Don't know or don't care": not part of the agree–disagree scale; the statement simply isn't counted.
 {
   const b = document.createElement("button");
   b.id = "choice-none";
   b.className = "no-opinion";
-  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>No opinion</span><span class="key" aria-hidden="true">6</span>`;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't know or don't care <small class="hint">· not counted</small></span><span class="key" aria-hidden="true">6</span>`;
   b.addEventListener("click", () => answer(null));
   $("likert").append(b);
 }
