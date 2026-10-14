@@ -586,7 +586,7 @@ function showResults(shared = null) {
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict tinted" style="--fam: ${colorOf(top)}">
-      <span class="eyebrow">${pct(top.similarity)} match · ${answered} of ${QUESTIONS.length} questions answered</span>
+      <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
       <div class="tag-row">${categoryTag(top)}${flagSwatch(top)}</div>
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
@@ -908,7 +908,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 256);
   ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
-  ctx.fillText(`${pct(top.similarity)} match${result.answered != null ? ` · ${result.answered} of ${QUESTIONS.length} questions answered` : ""}`, PAD, 302);
+  ctx.fillText(`${pct(top.similarity)} match${result.answered != null ? ` · based on ${result.answered} answers` : ""}`, PAD, 302);
 
   const card = (x, y, w, h) => {
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = "rgba(23, 32, 43, 0.08)"; ctx.lineWidth = 2;
