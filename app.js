@@ -302,11 +302,12 @@ function renderQuestion() {
   const settled = answered >= MIN_ANSWERS && sure >= SETTLE.certainty;
   $("counter").textContent = `Statement ${position + 1}`;
   $("bar").style.width = pct(sure);
-  $("certainty").textContent = answered < 3 ? "Most telling statements first" : `Result ${pct(sure)} settled`;
+  // Words, not a percentage: "100%" would read as certainty about the ideology, which it isn't.
+  $("certainty").textContent = answered < 3 ? "Most telling statements first" : settled ? "Result settled" : "Narrowing it down…";
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  $("finish-early").hidden = answered < MIN_ANSWERS;
-  $("finish-early").classList.toggle("primary", settled);
+  // One "See results" at a time: a quiet link for stopping early, then the header button once settled.
+  $("finish-early").hidden = answered < MIN_ANSWERS || settled;
   $("settled-note").hidden = !settled;
   setHeaderAction(settled ? "results" : "none");
   for (const [i, b] of [...$("likert").children].entries()) {
