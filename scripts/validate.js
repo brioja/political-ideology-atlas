@@ -6,7 +6,7 @@
 //   add --controls to validate the negative-control audits (audits/controls)
 const fs = require("fs");
 const lib = require("./lib");
-const { readJson, allStatements, statementsVersion, personSalience, ideologySalience } = lib;
+const { readJson, allStatements, isCandidate, personSalience, ideologySalience } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
@@ -28,9 +28,6 @@ function validate(id) {
   const entry = catalog().find((c) => c.id === id);
   if (!entry) errors.push(`id '${id}' is not in audits/catalog.json`);
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  if (a.statementsVersion !== statementsVersion()) {
-    errors.push(`stale: statementsVersion ${a.statementsVersion}, current ${statementsVersion()} (re-audit)`);
-  }
   for (const f of PEOPLE ? ["name", "auditedAt", "auditor", "summary", "role"] : ["name", "category", "auditedAt", "auditor", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
@@ -60,10 +57,13 @@ function validate(id) {
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
   const answers = a.answers || {};
-  const active = allStatements();
-  const activeIds = new Set(active.map((s) => s.id));
-  for (const st of active) {
+  const statements = allStatements();
+  const active = statements.filter((s) => !isCandidate(s));
+  const backfill = [];
+  for (const st of statements) {
     const ans = answers[st.id];
+    // A new (candidate) statement only needs answering; the rest of the audit stays valid.
+    if (!ans && isCandidate(st)) { backfill.push(st.id); continue; }
     if (!ans) { errors.push(`no answer for '${st.id}'`); continue; }
     // People may have "no known position" (null); ideologies must take a position on everything.
     if (ans.value === null && PEOPLE) { if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`); continue; }
@@ -73,7 +73,7 @@ function validate(id) {
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
-  for (const k of Object.keys(answers)) if (!activeIds.has(k)) errors.push(`answer for unknown statement '${k}'`);
+  if (backfill.length) warnings.push(`needs answers for new statements (backfill): ${backfill.join(", ")}`);
   // Defining positions no statement captures (audits/statements/STANDARD.md).
   if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');
   else if (!PEOPLE && !Array.isArray(a.missingStatements)) errors.push('"missingStatements" must be a list');
@@ -86,7 +86,7 @@ function validate(id) {
   }
 
   // Not errors, but signs of a lazy audit worth a look.
-  const vals = Object.values(answers);
+  const vals = active.map((s) => answers[s.id]).filter(Boolean);
   if (errors.length === 0) {
     // Salience: can their record place them precisely enough to match? (see pca.js)
     // For ideologies only stated positions count; inferred (low-confidence) answers don't.
@@ -134,7 +134,7 @@ async function main() {
     for (const e of errors) console.log(`     error: ${e}`);
     for (const w of warnings) console.log(`     warning: ${w}`);
   }
-  console.log(`\n${ids.length - failed}/${ids.length} audits valid (statements version ${statementsVersion()}).`);
+  console.log(`\n${ids.length - failed}/${ids.length} audits valid.`);
   // Exit 2 when every failure is only the salience rule: a finished audit that is excluded, not
   // one to redo. pending.js relies on this so excluded people aren't re-audited on every run.
   process.exit(failed === 0 ? 0 : failed === salienceOnly ? 2 : 1);

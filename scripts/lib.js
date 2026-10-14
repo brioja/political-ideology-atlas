@@ -1,21 +1,24 @@
 // Shared helpers for the audit scripts.
 const fs = require("fs");
 const path = require("path");
-const crypto = require("crypto");
 
 const ROOT = path.join(__dirname, "..");
 const PROFILES_DIR = path.join(ROOT, "audits", "profiles");
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const allStatements = () => readJson(path.join(ROOT, "statements.json")).statements;
+// Candidates are answered by audits but not asked in the test until audits show they are
+// contested (audits/statements/STANDARD.md).
+const isCandidate = (s) => s.status === "candidate";
+const activeStatements = () => allStatements().filter((s) => !isCandidate(s));
 const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideologies;
 
-// Changes whenever a statement is added, removed or reworded, which marks
-// every older audit as stale.
-function statementsVersion() {
-  const basis = JSON.stringify(allStatements().map((s) => [s.id, s.text]));
-  return crypto.createHash("sha256").update(basis).digest("hex").slice(0, 12);
-}
+// Audits go stale per statement, not all at once: a new statement only needs answering, and a
+// removed one is ignored. Rewording would silently change what was answered, so a reworded
+// statement gets a new id; audits/statements/texts.json records each id's text and test.js
+// fails if one changes.
+const TEXTS = path.join(ROOT, "audits", "statements", "texts.json");
+const unanswered = (answers, statements = allStatements()) => statements.filter((s) => !(answers && answers[s.id])).map((s) => s.id);
 
 const profilePath = (id) => path.join(PROFILES_DIR, `${id}.json`);
 
@@ -49,6 +52,6 @@ const ideologySalience = (answers) => personSalience(statedOnly(answers));
 // The bar itself: a typical test-taker's settled placement uncertainty.
 const salienceBar = () => (personSalience({}), salienceCache.ctx.bar);
 
-module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, catalog, statementsVersion, profilePath,
+module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
   salienceBar };

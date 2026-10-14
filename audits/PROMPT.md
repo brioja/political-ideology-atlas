@@ -8,7 +8,6 @@ are matched against. Getting it wrong puts real people into the wrong ideology.
 Inputs (filled in by the runner):
 - Ideology: `{{name}}` (id `{{id}}`, broad category `{{category}}`)
 - Statements: `statements.json` in the repo root. Answer every statement.
-- Statements version: `{{statementsVersion}}`
 
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
@@ -105,7 +104,6 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "id": "{{id}}",
   "name": "{{name}}",
   "category": "{{category}}",
-  "statementsVersion": "{{statementsVersion}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",

@@ -27,9 +27,8 @@ const PENDING = {
         required: ['id', 'name', 'category'],
       },
     },
-    statementsVersion: { type: 'string' },
   },
-  required: ['ideologies', 'statementsVersion'],
+  required: ['ideologies'],
 }
 
 const AUDIT = {
@@ -47,9 +46,8 @@ const AUDIT = {
 
 phase('Find')
 const found = await agent(
-  `In ${ROOT}, run \`node scripts/pending.js${opts.limit ? ` --limit ${opts.limit}` : ''}\` and ` +
-  `\`node -e 'console.log(require("./scripts/lib").statementsVersion())'\`. ` +
-  `Return the parsed JSON array as "ideologies" and the version string as "statementsVersion". Do nothing else.`,
+  `In ${ROOT}, run \`node scripts/pending.js${opts.limit ? ` --limit ${opts.limit}` : ''}\`. ` +
+  `Return the parsed JSON array as "ideologies". Do nothing else.`,
   { label: 'find-pending', phase: 'Find', schema: PENDING, effort: 'low' },
 )
 let todo = found.ideologies
@@ -63,7 +61,6 @@ Read ${ROOT}/audits/PROMPT.md first and follow it exactly. Fill its placeholders
 - name: ${i.name}
 - id: ${i.id}
 - category: ${i.category}
-- statementsVersion: ${found.statementsVersion}
 - wikipedia (suggested, confirm it): ${i.wikipedia || 'none found'} (found as: ${i.wikipediaMatch || 'none'})${i.scopeNote ? `\n- scope note (follow it): ${i.scopeNote}` : ''}
 - auditedAt: today's date (YYYY-MM-DD)
 

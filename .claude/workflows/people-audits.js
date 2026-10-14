@@ -26,9 +26,8 @@ const PENDING = {
         required: ['id', 'name', 'category'],
       },
     },
-    statementsVersion: { type: 'string' },
   },
-  required: ['ideologies', 'statementsVersion'],
+  required: ['ideologies'],
 }
 
 const AUDIT = {
@@ -44,9 +43,8 @@ const AUDIT = {
 
 phase('Find')
 const found = await agent(
-  `In ${ROOT}, run \`node scripts/pending.js --people${opts.limit ? ` --limit ${opts.limit}` : ''}\` and ` +
-  `\`node -e 'console.log(require("./scripts/lib").statementsVersion())'\`. ` +
-  `Return the parsed JSON array as "ideologies" and the version string as "statementsVersion". Do nothing else.`,
+  `In ${ROOT}, run \`node scripts/pending.js --people${opts.limit ? ` --limit ${opts.limit}` : ''}\`. ` +
+  `Return the parsed JSON array as "ideologies". Do nothing else.`,
   { label: 'find-pending', phase: 'Find', schema: PENDING, effort: 'low' },
 )
 let todo = found.ideologies
@@ -61,7 +59,6 @@ Read ${ROOT}/audits/PROMPT_PEOPLE.md first and follow it exactly. Fill its place
 - id: ${i.id}
 - wikipedia: ${i.wikipedia}
 - born: ${i.born} (catalog says ${i.living ? 'living' : 'historical'}; verify)
-- statementsVersion: ${found.statementsVersion}
 - auditedAt: today's date (YYYY-MM-DD)
 
 The statements are in ${ROOT}/statements.json. Write your audit to ${ROOT}/audits/people/${i.id}.json.

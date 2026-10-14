@@ -40,15 +40,24 @@ its answer to every statement with a rationale, confidence and citations, plus a
 and further reading. `audits/PROMPT.md` holds the exact research instructions, so any audit can
 be re-run.
 
-- `node scripts/pending.js` lists ideologies whose audit is missing, stale or invalid.
+- `node scripts/pending.js` lists ideologies whose audit is missing or invalid (`--backfill`: audits
+  that still need answers for new statements).
 - `node scripts/validate.js [id ...] [--links]` checks audits (add `--links` to test every URL).
 - `node scripts/build.js` compiles valid audits into `data.js` (`--status` just reports progress).
 - `node scripts/wikipedia.js` refreshes suggested Wikipedia links in the catalog.
 
 To run every pending audit, ask Claude Code to "run the ideology-audits workflow"
 (`.claude/workflows/ideology-audits.js`). It costs roughly 75k tokens per ideology and is safe to
-stop and resume, since finished audits are skipped. Pass `{"limit": 10}` to do a batch. Changing
-`statements.json` marks every audit stale.
+stop and resume, since finished audits are skipped. Pass `{"limit": 10}` to do a batch.
+
+## Statements
+
+`audits/statements/STANDARD.md` says what makes a statement worth asking (a real, sourced
+position that ideologies actually disagree on) and how new ones are added. In short: audits
+propose them (`missingStatements`), they join `statements.json` as candidates, the
+statement-backfill workflow answers them in existing audits, and `node scripts/statements-check.js`
+shows when one is contested enough to be asked. Adding or removing a statement leaves existing
+audits valid; rewording one needs a new id.
 
 ## People
 

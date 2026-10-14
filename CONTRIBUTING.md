@@ -47,9 +47,11 @@ that usually means their public record covers too few kinds of issues for a mean
 
 ## Change the statements
 
-Statements live in `statements.json`. Adding, removing or rewording one changes the statements
-version and marks **every** audit stale, so please open an issue to discuss it first. The
-`agree`, `disagree` and `note` explanations can be edited freely; they don't affect audits.
+Statements live in `statements.json` and follow `audits/statements/STANDARD.md`: a statement
+must be a real, sourced position that ideologies disagree on. To propose one, open an issue with
+the wording and a source for an ideology's stance. New statements start as candidates and existing
+audits only need to answer them. Rewording a statement needs a new id, because audits answered
+the old text. The `agree`, `disagree` and `note` explanations can be edited freely.
 
 ## Before opening a pull request
 

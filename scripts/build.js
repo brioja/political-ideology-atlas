@@ -1,20 +1,20 @@
 // Compiles statements.json and the audits into data.js, which the site loads.
-//   node scripts/build.js            uses every valid, current audit
-//   node scripts/build.js --status   only reports which ideologies are audited, stale or missing
+//   node scripts/build.js            uses every audit that answers all active statements
+//   node scripts/build.js --status   only reports which ideologies are audited, incomplete or missing
+// Candidate statements (status "candidate") are left out of the test until promoted.
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, allStatements, catalog, statementsVersion, profilePath,
+const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personSalience, ideologySalience } = require("./lib");
 const { buildModel, meaningfulAxes } = require("../pca.js");
 
-const version = statementsVersion();
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
 const flagFor = (id) => {
   const c = traditionalColors[id];
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
-const statements = allStatements();
+const statements = activeStatements();
 const included = [];
 const stale = [];
 const missing = [];
@@ -24,7 +24,7 @@ for (const entry of catalog()) {
   const p = profilePath(entry.id);
   if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
   const a = readJson(p);
-  if (a.statementsVersion !== version) { stale.push(entry.id); continue; }
+  if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
   // Too few stated positions to place it as precisely as a test-taker: leave it out, so it
   // neither appears in results nor shapes the dividing lines.
   if (!ideologySalience(a.answers).salient) { notSalient.push(entry.id); continue; }
@@ -42,16 +42,16 @@ for (const entry of catalog()) {
   });
 }
 
-// People: included when audited for the current statements and salient (see pca.js).
+// People: included when salient (see pca.js). A statement added after their audit counts as
+// "no known position" until it is backfilled.
 const people = [];
 let excludedPeople = 0;
 for (const entry of peopleCatalog()) {
   const p = personPath(entry.id);
   if (!fs.existsSync(p)) continue;
   const a = readJson(p);
-  if (a.statementsVersion !== version) continue;
-  const answers = statements.map((s) => a.answers[s.id]);
-  if (answers.some((x) => !x) || !personSalience(a.answers).salient) { excludedPeople++; continue; }
+  const answers = statements.map((s) => a.answers[s.id] || { value: null });
+  if (!personSalience(a.answers).salient) { excludedPeople++; continue; }
   people.push({
     id: entry.id, name: entry.name, role: a.role, summary: a.summary, region: entry.region, born: entry.born,
     living: a.living ?? entry.living, wikipedia: a.wikipedia || entry.wikipedia, views12m: entry.views12m || 0,
@@ -70,8 +70,8 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
   console.log("Wrote people.js");
 }
 
-console.log(`${included.length} audited, ${stale.length} stale, ${missing.length} not yet audited (of ${catalog().length}).`);
-if (stale.length) console.log(`Stale (re-audit): ${stale.join(", ")}`);
+console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
+if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
 if (notSalient.length) console.log(`Excluded as not salient (too few stated positions): ${notSalient.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {
@@ -95,4 +95,8 @@ const IDEOLOGIES = ${JSON.stringify(included)};
 if (typeof module !== "undefined") module.exports = { QUESTIONS, IDEOLOGIES };
 `;
 fs.writeFileSync(path.join(ROOT, "data.js"), out);
+// Record each new statement's text, so a later rewording is caught (see lib.js).
+const texts = fs.existsSync(TEXTS) ? readJson(TEXTS) : {};
+for (const s of require("./lib").allStatements()) if (!(s.id in texts)) texts[s.id] = s.text;
+fs.writeFileSync(TEXTS, JSON.stringify(texts, null, 1) + "\n");
 console.log("Wrote data.js");

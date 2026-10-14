@@ -15,6 +15,14 @@ for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
   assert(Math.abs(d - (i === j ? 1 : 0)) < 1e-9, "eigenvectors not orthonormal");
 }
 
+// 1b. Statements keep their wording: audits answered the recorded text, so a reworded statement
+// needs a new id (see scripts/lib.js).
+const { allStatements, TEXTS, readJson } = require("./scripts/lib");
+const texts = require("fs").existsSync(TEXTS) ? readJson(TEXTS) : {};
+for (const s of allStatements()) {
+  assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; give the new wording a new id`);
+}
+
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
 const model = buildModel(IDEOLOGIES);
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
