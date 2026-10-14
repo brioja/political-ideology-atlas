@@ -18,7 +18,9 @@ const limit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 if (process.argv.includes("--backfill")) {
   const statements = allStatements();
   const todo = catalog().filter((e) => fs.existsSync(profilePath(e.id)))
-    .map((e) => ({ id: e.id, name: e.name, statements: unanswered(readJson(profilePath(e.id)).answers, statements) }))
+    .map((e) => ({ id: e.id, name: e.name, audit: readJson(profilePath(e.id)) }))
+    .filter((e) => !e.audit.notAnIdeology)
+    .map(({ id, name, audit }) => ({ id, name, statements: unanswered(audit.answers, statements) }))
     .filter((e) => e.statements.length);
   console.log(JSON.stringify(todo.slice(0, limit)));
   process.exit(0);

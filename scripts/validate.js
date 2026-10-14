@@ -14,6 +14,7 @@ const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : li
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
+const CATEGORIES = ["Radical Left", "Left", "Center", "Right", "Far-Right", "Third Position", "Libertarian", "Anarchist"];
 const CONFIDENCE = ["high", "medium", "low"];
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
@@ -27,8 +28,19 @@ function validate(id) {
 
   const entry = catalog().find((c) => c.id === id);
   if (!entry) errors.push(`id '${id}' is not in audits/catalog.json`);
+
+  // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
+  // short record instead of an audit. It's finished, and excluded like a salience failure.
+  if (!PEOPLE && a.notAnIdeology !== undefined) {
+    if (typeof a.notAnIdeology !== "string" || a.notAnIdeology.trim().length < 20) errors.push('"notAnIdeology" needs a reason of at least a sentence');
+    const src = Array.isArray(a.sources) ? a.sources : [];
+    if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notAnIdeology" needs at least one source with an http(s) url');
+    if (!errors.length) errors.push(`not an ideology: ${a.notAnIdeology}`);
+    return { errors, warnings };
+  }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  for (const f of PEOPLE ? ["name", "auditedAt", "auditor", "summary", "role"] : ["name", "category", "auditedAt", "auditor", "summary", "scope"]) {
+  if (!PEOPLE && a.category != null && !CATEGORIES.includes(a.category)) errors.push(`"category" must be null or one of: ${CATEGORIES.join(", ")}`);
+  for (const f of PEOPLE ? ["name", "auditedAt", "auditor", "summary", "role"] : ["name", "auditedAt", "auditor", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
 
@@ -137,7 +149,8 @@ async function main() {
     const { errors, warnings, sources = [] } = validate(id);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
-    if (errors.length && errors.every((e) => e.startsWith("salience:"))) salienceOnly++;
+    // Finished but excluded: by the salience rule, or as not an ideology (the first check).
+    if (errors.length && errors.every((e) => e.startsWith("salience:") || e.startsWith("not an ideology:"))) salienceOnly++;
     const status = errors.length ? "FAIL" : warnings.length ? "WARN" : "ok";
     console.log(`${status.padEnd(4)} ${id}`);
     for (const e of errors) console.log(`     error: ${e}`);

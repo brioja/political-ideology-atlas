@@ -19,11 +19,13 @@ const included = [];
 const stale = [];
 const missing = [];
 const notSalient = [];
+const notIdeology = [];
 
 for (const entry of catalog()) {
   const p = profilePath(entry.id);
   if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
   const a = readJson(p);
+  if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
   if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
   // Too few stated positions to place it as precisely as a test-taker: leave it out, so it
   // neither appears in results nor shapes the dividing lines.
@@ -31,7 +33,7 @@ for (const entry of catalog()) {
   included.push({
     id: entry.id,
     name: entry.name,
-    category: entry.category,
+    category: a.category || entry.category, // chosen by the audit when the catalog has none
     summary: a.summary,
     audited: true,
     // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
@@ -74,6 +76,7 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
 console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
 if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
 if (notSalient.length) console.log(`Excluded as not salient (too few stated positions): ${notSalient.join(", ")}`);
+if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {
   console.error("Need at least 3 audited ideologies to build; data.js left unchanged.");

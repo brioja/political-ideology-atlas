@@ -1259,13 +1259,15 @@ drawScree($("scree"));
 const CATEGORY_ORDER = ["Radical Left", "Left", "Center", "Right", "Far-Right", "Third Position", "Libertarian", "Anarchist"];
 let exploreCategory = null;
 
+// Newer ideologies have no category yet; the explore list groups them on their own.
+const catOf = (i) => i.category || "Ungrouped";
 function renderExplore() {
   const query = $("explore-search").value.trim().toLowerCase();
   const shown = model.ideologies.filter((i) =>
-    (!exploreCategory || i.category === exploreCategory) &&
+    (!exploreCategory || catOf(i) === exploreCategory) &&
     (!query || i.name.toLowerCase().includes(query) || (i.summary || "").toLowerCase().includes(query)));
-  const groups = CATEGORY_ORDER.concat([...new Set(model.ideologies.map((i) => i.category))].filter((c) => !CATEGORY_ORDER.includes(c)))
-    .map((c) => [c, shown.filter((i) => i.category === c).sort((a, b) => a.name.localeCompare(b.name))])
+  const groups = CATEGORY_ORDER.concat([...new Set(model.ideologies.map(catOf))].filter((c) => !CATEGORY_ORDER.includes(c)))
+    .map((c) => [c, shown.filter((i) => catOf(i) === c).sort((a, b) => a.name.localeCompare(b.name))])
     .filter(([, list]) => list.length);
   $("explore-count").textContent = shown.length === model.ideologies.length
     ? `${shown.length} ideologies`
@@ -1278,7 +1280,7 @@ function renderExplore() {
 }
 
 
-const categories = [...new Set(model.ideologies.map((i) => i.category))]
+const categories = [...new Set(model.ideologies.map(catOf))]
   .sort((a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99));
 $("explore-cats").innerHTML = [["", "All"], ...categories.map((c) => [c, c])]
   .map(([v, label]) => `<button class="chip-btn" data-cat="${esc(v)}" aria-pressed="${v === ""}">${v ? swatch(v, 12) : ""}${esc(label)}</button>`).join("");

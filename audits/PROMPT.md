@@ -18,6 +18,33 @@ Follow a Wikipedia-style standard: describe the ideology neutrally and as its ow
 reliable sources document it, however controversial it is. Don't editorialize, soften or omit
 positions because they are objectionable; attribute them to sources instead.
 
+## First check: is this an ideology the test can place?
+
+The catalog is built generously from loose sources (Wikipedia's list of political ideologies and an
+older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
+Wikipedia article (or search) and check. Skip the full audit if the entry is:
+- not a set of political beliefs: an organisation, party, movement as a group, event, period,
+  office, person, place, prejudice or field of study (for example the Muslim Brotherhood, the
+  Progressive Era, ethics);
+- a duplicate: another file in `audits/profiles/` already covers the same ideology under another
+  name (for example Maoism and Maoist Communism); or
+- too obscure to document: no reliable source describes its positions.
+
+Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
+
+```json
+{
+  "id": "{{id}}",
+  "name": "{{name}}",
+  "auditedAt": "YYYY-MM-DD",
+  "auditor": "<model id>",
+  "notAnIdeology": "One or two sentences on why, naming the duplicate's id if it is one.",
+  "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
+}
+```
+
+When in doubt, audit it: a thin ideology is excluded later by the salience check, on evidence.
+
 ## 1. Pin down what the ideology is
 
 Many names cover several strands. Before answering, decide which one the profile represents, and
@@ -30,6 +57,7 @@ record it in `scope`:
   so in `scope`, and expect many low-confidence answers.
 
 The category given is only a hint for disambiguation. Do not let it override the evidence.
+If no category is given, leave `category` as null: it isn't needed for the audit.
 
 ## 2. Research with real sources
 
@@ -108,7 +136,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 {
   "id": "{{id}}",
   "name": "{{name}}",
-  "category": "{{category}}",
+  "category": "{{category}} (null if none was given)",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
