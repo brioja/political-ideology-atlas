@@ -86,6 +86,12 @@ person's own words and record, and a statement with no reliable evidence is `nul
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to challenge an answer, suggest an ideology or person, and run the checks.
 
+## How it was made
+
+Built with the assistance of AI. The audits are researched by AI agents following the published
+instructions in `audits/`, and every answer cites the sources it used, so any of them can be
+checked and challenged.
+
 ## Run locally
 
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
