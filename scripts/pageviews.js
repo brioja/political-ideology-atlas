@@ -1,12 +1,15 @@
-// Stores each person's English Wikipedia page views (last 12 full months) in
-// audits/people-catalog.json, used to break near-ties between matched people.
+// Stores English Wikipedia page views (last 12 full months) in a catalog: people (used to break
+// near-ties between matched people) or, with --ideologies, ideologies (used to order audits).
+// Ideologies whose article link is only an unconfirmed search hit get 0.
 // Run occasionally; the site only reads the stored numbers.
-//   node scripts/pageviews.js
+//   node scripts/pageviews.js [--ideologies]
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson } = require("./lib");
 
-const CATALOG = path.join(ROOT, "audits", "people-catalog.json");
+const IDEOLOGIES = process.argv.includes("--ideologies");
+const CATALOG = path.join(ROOT, "audits", IDEOLOGIES ? "catalog.json" : "people-catalog.json");
+const LIST = IDEOLOGIES ? "ideologies" : "people";
 const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -26,7 +29,8 @@ const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
 
 async function main() {
   const data = readJson(CATALOG);
-  const people = data.people;
+  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch)));
+  if (IDEOLOGIES) for (const p of data[LIST]) if (!people.includes(p)) p.views12m = 0;
 
   // 1. Resolve redirects in batches (the page-view API counts only the exact title).
   for (let i = 0; i < people.length; i += 50) {
