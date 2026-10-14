@@ -352,7 +352,7 @@ function renderQuestion() {
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
   setHeaderAction(settled ? "results" : hold != null ? "early" : "none");
-  // "Don't know or don't care" shows as chosen when this statement was already shown and skipped.
+  // "Don't care" shows as chosen when this statement was already shown and skipped.
   const buttons = [...SHOWN_CHOICES.map((c, i) => [$(`choice-${i}`), answers[q] === c.value]),
     [$("choice-none"), answers[q] === null && position < order.length - 1]];
   for (const [b, chosen] of buttons) {
@@ -400,9 +400,9 @@ function finishQuiz() {
   go("#/results");
 }
 
-// Options are listed top to bottom from "Strongly agree"; number keys 1-5 follow the on-screen order.
-// The middle row pairs "Neither agree nor disagree" (a position in the middle) with "Don't know or
-// don't care" (no position: the statement isn't counted), so choosing between them is deliberate.
+// Options are listed top to bottom from "Strongly agree"; number keys 1-5 follow the scale.
+// "Don't care" sits right under "Neither agree nor disagree" so the two read as a pair: one is a
+// position in the middle, the other is no position (the statement isn't counted).
 const SHOWN_CHOICES = [...CHOICES].reverse();
 for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
@@ -410,16 +410,14 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   b.dataset.value = c.value;
   b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${c.label}</span><span class="key" aria-hidden="true">${i + 1}</span>`;
   b.addEventListener("click", () => answer(c.value));
-  if (c.value !== 0) { $("likert").append(b); continue; }
+  $("likert").append(b);
+  if (c.value !== 0) continue;
   const none = document.createElement("button");
   none.id = "choice-none";
   none.className = "no-opinion";
-  none.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't know or don't care</span><span class="key" aria-hidden="true">6</span>`;
+  none.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't care</span><span class="key" aria-hidden="true">6</span>`;
   none.addEventListener("click", () => answer(null));
-  const middle = document.createElement("div");
-  middle.className = "likert-middle";
-  middle.append(b, none);
-  $("likert").append(middle);
+  $("likert").append(none);
 }
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
 $("resume").addEventListener("click", () => go("#/test"));

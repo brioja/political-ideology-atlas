@@ -115,9 +115,7 @@ button:disabled { opacity: 0.4; cursor: default; }
 .likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
 .likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
-/* The middle row: "Neither agree nor disagree" beside "Don't know or don't care", given equal weight.
-   The dashed dot marks the second as off the agree–disagree scale. */
-.likert-middle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.5rem; }
+/* "Don't care" has the same weight as the scale; its dashed dot marks it as off the agree–disagree scale. */
 .likert button.no-opinion .dot { border-style: dashed; width: 0.9rem; height: 0.9rem; }
 @media (hover: none) { .likert button .key { display: none; } }
 
