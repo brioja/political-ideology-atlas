@@ -19,4 +19,26 @@ function statementsVersion() {
 
 const profilePath = (id) => path.join(PROFILES_DIR, `${id}.json`);
 
-module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, catalog, statementsVersion, profilePath };
+// People are audited the same way, with their own catalog and folder.
+const PEOPLE_DIR = path.join(ROOT, "audits", "people");
+const peopleCatalog = () => readJson(path.join(ROOT, "audits", "people-catalog.json")).people;
+const personPath = (id) => path.join(PEOPLE_DIR, `${id}.json`);
+// Negative controls: apolitical celebrities audited the same way, expected to fail salience.
+const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
+const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
+const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
+
+// Salience (see pca.js): computed against the ideology model currently in data.js.
+let salienceCache = null;
+function personSalience(answers) {
+  if (!salienceCache) {
+    const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
+    const pca = require(path.join(ROOT, "pca.js"));
+    salienceCache = { pca, ids: QUESTIONS.map((q) => q.id), ctx: pca.salienceContext(pca.buildModel(IDEOLOGIES), IDEOLOGIES) };
+  }
+  const { pca, ids, ctx } = salienceCache;
+  return pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));
+}
+
+module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, catalog, statementsVersion, profilePath,
+  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience };

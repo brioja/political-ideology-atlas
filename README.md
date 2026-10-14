@@ -46,6 +46,30 @@ To run every pending audit, ask Claude Code to "run the ideology-audits workflow
 stop and resume, since finished audits are skipped. Pass `{"limit": 10}` to do a batch. Changing
 `statements.json` marks every audit stale.
 
+## People
+
+`audits/people-catalog.json` lists about 270 public figures chosen for balance across gender,
+region, era and the political spectrum (`node scripts/people-report.js` prints the mix). Each gets
+an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
+person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
+
+- **Salience:** a person is included only if their recorded positions place them on the test's
+  dividing lines at least as precisely as a typical test-taker is placed when their own result
+  settles (median of simulated test-takers; Bayesian placement uncertainty, see `salienceContext`
+  in `pca.js`). People and test-takers are compared, so both should rest on similar evidence.
+  It depends on which statements have a recorded position, not on the answers, and has no
+  hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
+  the same instructions) must fail it; `node test.js` checks this. Excluded audits make the
+  validator exit with code 2 so they aren't re-audited.
+- **Tie-break:** when two people are within 3 points of each other, the one with more English
+  Wikipedia page views (last 12 months, from `node scripts/pageviews.js`) ranks first. The counts
+  are stored in the catalog; the site never calls Wikipedia.
+- To run the audits, ask Claude Code to "run the people-audits workflow" (about 75k tokens per person).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to challenge an answer, suggest an ideology or person, and run the checks.
+
 ## Run locally
 
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.

@@ -1,7 +1,7 @@
 // Sanity checks: node test.js
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES } = require("./data.js");
-const { jacobiEigen, buildModel, match, nextQuestion, certainty, describeAxis } = require("./pca.js");
+const { jacobiEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -53,9 +53,25 @@ console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their s
   `averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
 if (hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers matched their source.");
 
+// 4. Salience controls: apolitical celebrities, audited with the same instructions as everyone
+// else, must not pass; report how the audited people fare.
+const fs = require("fs");
+const lib = require("./scripts/lib.js");
+const sal = (dir, list) => list.filter((p) => fs.existsSync(require("path").join(dir, `${p.id}.json`)))
+  .map((p) => ({ p, r: lib.personSalience(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers) }));
+const controls = sal(lib.CONTROLS_DIR, lib.controlsCatalog());
+for (const { p, r } of controls) {
+  const line = `${p.name}: ${r.known} positions, uncertainty ${r.uncertainty.toFixed(2)} vs bar ${r.bar.toFixed(2)}`;
+  if (p.borderline) console.log(`Borderline control ${line} -> ${r.salient ? "included" : "excluded"}`);
+  else assert(!r.salient, `control passed salience: ${line}`);
+}
+const people = sal(lib.PEOPLE_DIR, lib.peopleCatalog());
+console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass; ` +
+  `${controls.filter((x) => !x.p.borderline && !x.r.salient).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
+
 // Report what the data found.
 let cum = 0;
-console.log(`${model.components.length} axes carry variance; keeping ${model.kept} (>= 80%).\n`);
+console.log(`${model.components.length} axes carry variance; ${meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);
 model.components.slice(0, 6).forEach((c, i) => {
   cum += c.share;
   const ax = describeAxis(model, i, QUESTIONS, 2);

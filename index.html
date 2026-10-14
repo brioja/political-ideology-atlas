@@ -27,6 +27,13 @@
   --accent: #1f6f78;      /* teal: you, primary actions */
   --accent-2: #8a3b6b;    /* plum: the matched ideology */
   --accent-soft: #d8ebec;
+  /* Ideology families: four Okabe–Ito colors (Color Universal Design palette for color-vision
+     deficiency). Same values in light and dark; all meet WCAG 2.2 SC 1.4.11 (>= 3:1 against both
+     surfaces). Shape and the category name always accompany color (SC 1.4.1). */
+  --fam-left: #D55E00;
+  --fam-antistate: #CC79A7;
+  --fam-center: #009E73;
+  --fam-right: #0072B2;
   --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --body: "Source Serif 4", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -35,11 +42,13 @@
   :root:not([data-theme="light"]) {
     --bg: #11161c; --surface: #19212a; --ink: #e6ebf0; --muted: #98a4b2; --line: #2c3743;
     --accent: #5fbcc5; --accent-2: #d58bb8; --accent-soft: #1d3a3e; color-scheme: dark;
+    --fam-left: #D55E00; --fam-antistate: #CC79A7; --fam-center: #009E73; --fam-right: #0072B2;
   }
 }
 :root[data-theme="dark"] {
   --bg: #11161c; --surface: #19212a; --ink: #e6ebf0; --muted: #98a4b2; --line: #2c3743;
   --accent: #5fbcc5; --accent-2: #d58bb8; --accent-soft: #1d3a3e; color-scheme: dark;
+  --fam-left: #D55E00; --fam-antistate: #CC79A7; --fam-center: #009E73; --fam-right: #0072B2;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -47,10 +56,19 @@ html { padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font: 400 1.0625rem/1.6 var(--body);
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+/* Layout: full-width bands (header, footer) with a centered .wrap; reading pages use .narrow. */
+.wrap {
+  width: 100%; max-width: 72rem; margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
-main { max-width: 46rem; margin: 0 auto; padding-block: 2.5rem 4rem; display: grid; gap: 2rem; }
+.wrap.narrow { max-width: calc(46rem + 32px); }
+main { flex: 1; outline: none; }
+.page { display: block; padding-block: 2.5rem 4.5rem; }
+.page > .wrap { display: grid; gap: 2rem; }
+.stack-lg { display: grid; gap: 2rem; }
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
 h2 { font-size: 1.5rem; font-weight: 700; }
@@ -78,12 +96,34 @@ button:disabled { opacity: 0.4; cursor: default; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: clamp(1.25rem, 4vw, 2rem); display: grid; gap: 1.5rem; }
 .progress { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
 .progress > div { height: 100%; background: var(--accent); transition: width 0.2s; }
-.statement { font: 600 clamp(1.3rem, 3.5vw, 1.65rem)/1.35 var(--body); min-height: 4.5em; }
-.likert { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.5rem; }
-.likert button { padding: 0.9rem 0.3rem; font-size: 0.85rem; line-height: 1.2; display: grid; gap: 0.35rem; justify-items: center; }
-.likert button .key { font: 400 0.7rem/1 var(--mono); color: var(--muted); }
+.wrap.mid { max-width: calc(62rem + 32px); }
+.statement { font: 600 clamp(1.35rem, 3.4vw, 1.85rem)/1.3 var(--body); min-height: 2.6em; text-wrap: balance; }
+.quiz-body { display: grid; gap: 1.25rem; align-items: start; }
+@media (min-width: 760px) { .quiz-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.75rem; } }
+
+/* Vertical answer scale: the dot grows toward the strong ends so the scale reads at a glance. */
+.likert { display: grid; gap: 0.5rem; }
+.likert button {
+  display: grid; grid-template-columns: 1.6rem minmax(0, 1fr) auto; align-items: center; gap: 0.75rem;
+  text-align: left; padding: 0.85rem 1rem; font-size: 1rem; border-radius: 10px;
+}
+.likert .dot { justify-self: center; border-radius: 50%; border: 2px solid var(--muted); width: 0.9rem; height: 0.9rem; }
+.likert button[data-value="2"] .dot, .likert button[data-value="-2"] .dot { width: 1.35rem; height: 1.35rem; }
+.likert button[data-value="1"] .dot, .likert button[data-value="-1"] .dot { width: 1.1rem; height: 1.1rem; }
+.likert button[data-value="0"] .dot { width: 0.7rem; height: 0.7rem; }
+.likert button:hover .dot { border-color: var(--ink); }
+.likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
-@media (max-width: 520px) { .likert { grid-template-columns: 1fr; } .likert button { grid-template-columns: 1fr auto; text-align: left; padding: 0.85rem 1rem; } }
+.likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
+@media (hover: none) { .likert button .key { display: none; } }
+
+.explain { display: grid; gap: 0.9rem; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; }
+.ex-row { display: grid; gap: 0.25rem; padding-left: 0.85rem; border-left: 3px solid var(--line); }
+.ex-row p { font-size: 0.98rem; }
+.ex-label { font: 500 0.72rem/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.quiz-foot { border-top: 1px solid var(--line); padding-top: 0.75rem; justify-content: flex-end; }
+#restart.confirming { color: var(--accent-2); font-weight: 600; }
+.ex-note { font-size: 0.88rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 0.75rem; }
 
 /* Results */
 .verdict { display: grid; gap: 0.5rem; }
@@ -131,6 +171,10 @@ figcaption { font-size: 0.9rem; color: var(--muted); }
 .chart { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
 .chart text { fill: var(--muted); font: 400 11px var(--mono); }
 .chart .lbl { fill: var(--ink); font: 400 11px var(--display); }
+/* A halo in the background color, so a label in front stays readable over the ones behind it. */
+.chart .lbl, .chart .you-lbl {
+  stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; paint-order: stroke fill;
+}
 .chart .you-lbl { fill: var(--accent); font: 700 13px var(--display); }
 select { font: 400 0.9rem var(--mono); padding: 0.35rem; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
 
@@ -153,6 +197,100 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
 }
 .card-preview { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
+.map-pickers { font-size: 0.9rem; gap: 0.5rem 0.75rem; }
+.map-pickers select { max-width: 100%; }
+
+/* ---------- Site chrome ---------- */
+.skip-link { position: absolute; left: 1rem; top: -3rem; z-index: 20; background: var(--ink); color: var(--bg); padding: 0.5rem 0.9rem; border-radius: 6px; }
+.skip-link:focus { top: 0.75rem; }
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; }
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font: 700 1.05rem/1 var(--display); letter-spacing: -0.01em; white-space: nowrap; }
+.brand:focus-visible, .site-nav a:focus-visible, .footer-links a:focus-visible, a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.site-nav { margin-right: auto; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.25rem; }
+.site-nav a { display: block; padding: 0.5rem 0.75rem; border-radius: 6px; color: var(--muted); text-decoration: none; font: 500 0.95rem/1 var(--display); }
+.site-nav a:hover { color: var(--ink); background: var(--surface); }
+.site-nav a[aria-current="page"] { color: var(--ink); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.menu-btn { display: none; }
+@media (max-width: 760px) {
+  .header-inner { gap: 0.75rem; }
+  .brand span { font-size: 0.95rem; }
+  .site-nav { position: static; margin-left: auto; margin-right: 0; }
+  .menu-btn { display: inline-flex; padding: 0.55rem 0.8rem; font-size: 0.9rem; }
+  .site-nav ul {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line);
+    padding: 0.5rem max(16px, env(safe-area-inset-right, 0px)) 0.75rem max(16px, env(safe-area-inset-left, 0px));
+  }
+  .site-nav ul.open { display: flex; }
+  .site-nav a { padding: 0.85rem 0.5rem; font-size: 1rem; }
+  .header-start { padding: 0.55rem 0.8rem; }
+}
+@media (max-width: 400px) { .brand span { display: none; } }
+
+a.btn, .btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;
+  font: 500 0.95rem/1 var(--display); border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink); padding: 0.75rem 1.15rem; cursor: pointer;
+}
+a.btn:hover { border-color: var(--ink); }
+a.btn.primary { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+a.btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
+
+/* ---------- Home ---------- */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; align-items: center; padding-block: 1rem 2rem; }
+@media (min-width: 960px) { .hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 3.5rem; } }
+.hero-text { display: grid; gap: 1.4rem; justify-items: start; }
+.hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.25rem); line-height: 1.02; letter-spacing: -0.035em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
+.facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; color: var(--muted); font: 400 0.85rem var(--mono); }
+.facts li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 0.5rem; vertical-align: 2px; }
+.hero-example { display: grid; gap: 0.6rem; }
+.hero-example canvas {
+  width: 100%; height: auto; display: block; border-radius: 14px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 18px 40px -16px rgb(15 30 45 / 0.35);
+  transform: rotate(-1.2deg);
+}
+@media (prefers-reduced-motion: reduce) { .hero-example canvas { transform: none; } }
+.how { display: grid; gap: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--line); margin-top: 1rem; }
+.how a, .prose a { color: var(--accent); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); counter-reset: step; }
+.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.25rem; display: grid; gap: 0.5rem; align-content: start; }
+.steps li::before { content: counter(step); font: 700 0.8rem/1 var(--mono); color: var(--bg); background: var(--ink); width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; }
+.steps p { color: var(--muted); font-size: 0.98rem; }
+
+/* ---------- Reading pages ---------- */
+.notice { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 0.95rem; }
+.prose { display: grid; gap: 1rem; }
+.prose h2 { margin-top: 1.25rem; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); background: var(--surface); padding-block: 2rem calc(2rem + env(safe-area-inset-bottom, 0px)); }
+.footer-inner { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; align-items: start; }
+.footer-brand { font: 700 1rem var(--display); }
+.footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.footer-links a { color: var(--ink); text-decoration: none; font: 500 0.95rem var(--display); }
+.footer-links a:hover { color: var(--accent); text-decoration: underline; }
+
+/* Category markers */
+.swatch-mark { flex: none; vertical-align: -2px; margin-right: 0.35rem; }
+.cat-tag { display: inline-flex; align-items: center; font: 500 0.8rem/1.2 var(--mono); color: var(--muted); white-space: nowrap; }
+.cat-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; font-size: 0.85rem; }
+.cat-legend li { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; align-items: center; }
+.cat-legend .fam-name { font-weight: 600; min-width: 8.5rem; }
+@media (max-width: 520px) { .cat-legend .fam-name { min-width: 0; flex-basis: 100%; } }
+.matches summary .match-name { display: inline-flex; align-items: center; }
+.explore h3 { align-items: center; }
+.chip-btn { display: inline-flex; align-items: center; }
+
 /* Map picking */
 .chart .dot { cursor: pointer; }
 .chart .dot:hover circle:first-of-type { fill: var(--accent-2); }
@@ -164,7 +302,7 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
 /* Explore */
 .explore { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); gap: 1rem; }
 .explore h3 { display: flex; gap: 0.5rem; align-items: baseline; }
-#explore-search {
+#explore-search, input.search {
   font: 400 1rem var(--body); padding: 0.7rem 0.85rem; border-radius: 6px; width: 100%;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
 }
@@ -180,56 +318,211 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
 </style>
 </head>
 <body>
-<main>
-  <section id="intro">
-    <span class="eyebrow" id="intro-eyebrow">Stop whenever your result settles</span>
-    <h1>Political Ideology Atlas</h1>
-    <p>Most political tests pick their axes up front and sort you onto them, so you end up with a label that doesn't quite fit. This one starts from what <span id="ideology-count">many</span> ideologies actually believe, finds the real dividing lines between them, and asks you the statements that best tell them apart.</p>
-    <p>At the end you'll see the ideologies closest to you, what each one stands for, and the statements that pulled you toward or away from them.</p>
-    <figure>
-      <svg id="intro-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the reference ideologies on the two strongest axes"></svg>
-      <figcaption id="intro-caption"></figcaption>
-    </figure>
-    <div class="pick" id="intro-pick" hidden></div>
-    <div class="row">
-      <button class="primary" id="start">Start the test</button>
-      <button class="link" id="resume" hidden>Resume where you left off</button>
-    </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="stack explore" id="explore">
-      <h2>Explore the ideologies</h2>
-      <p>Browse every ideology in the test, what it stands for, and where to read more.</p>
-      <label class="visually-hidden" for="explore-search">Search ideologies</label>
-      <input id="explore-search" type="search" placeholder="Search, e.g. “socialism” or “monarchy”" autocomplete="off">
-      <div class="chip-row" id="explore-cats" aria-label="Filter by category"></div>
-      <p class="muted small" id="explore-count" role="status"></p>
-      <div class="stack" id="explore-list"></div>
-    </div>
-  </section>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#/" aria-label="Political Ideology Atlas, home">
+      <svg class="brand-mark" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <path d="M6.5 2.5L11 10.5H2Z" fill="var(--fam-left)"></path>
+        <path d="M16.2 3.2L18.8 5.8L21.4 3.2L23 4.8L20.4 7.4L23 10L21.4 11.6L18.8 9L16.2 11.6L14.6 10L17.2 7.4L14.6 4.8Z" fill="var(--fam-antistate)"></path>
+        <path d="M6.5 14L11 18.5L6.5 23L2 18.5Z" fill="var(--fam-center)"></path>
+        <path d="M15 15H23V23H15Z" fill="var(--fam-right)"></path>
+      </svg>
+      <span>Political Ideology Atlas</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul id="nav-links">
+        <li><a href="#/how" data-page="how">How it works</a></li>
+        <li><a href="#/ideologies" data-page="ideologies">Ideologies</a></li>
+        <li><a href="#/people" data-page="people">People</a></li>
+        <li><a href="#/about" data-page="about">About</a></li>
+      </ul>
+    </nav>
+    <a class="btn primary header-start" href="#/test">Start <span aria-hidden="true">→</span></a>
+  </div>
+</header>
 
-  <section id="quiz" hidden>
-    <div class="card">
-      <div class="stack">
-        <div class="row" style="justify-content: space-between">
-          <span class="eyebrow" id="counter"></span>
-          <button class="link" id="back">Back</button>
+<main id="main" tabindex="-1">
+  <!-- Home -->
+  <section class="page" id="page-home">
+    <div class="wrap hero">
+      <div class="hero-text">
+        <span class="eyebrow">Political ideology test</span>
+        <h1>Which political ideology are you <em>actually</em> closest to?</h1>
+        <p class="lede">Most tests pick their axes first and squeeze you onto them. This one starts from what <span class="ideology-count">many</span> ideologies believe, finds the real dividing lines between them, and asks you only the statements that tell them apart.</p>
+        <div class="row">
+          <a class="btn primary big" href="#/test">Start the test <span aria-hidden="true">→</span></a>
+          <a class="btn big" href="#/ideologies">Explore ideologies</a>
         </div>
-        <div class="progress" title="How settled your result is"><div id="bar"></div></div>
-        <span class="muted" id="certainty" style="font-size:0.85rem"></span>
+        <button class="link" id="resume" hidden>Resume where you left off</button>
+        <ul class="facts">
+          <li>Free</li><li>No sign-up</li><li>Usually 5–10 minutes</li><li>Open source</li>
+        </ul>
       </div>
-      <p class="statement" id="statement"></p>
-      <div class="likert" id="likert"></div>
-      <div class="row" style="justify-content: space-between">
-        <button class="link" id="skip">Skip: I don't know enough to answer</button>
-        <button class="link" id="finish-early" hidden>See results</button>
-      </div>
-      <p class="muted" id="settled-note" hidden>Your result has settled. You can stop here or keep answering to refine it.</p>
+      <figure class="hero-example">
+        <span class="eyebrow">Example result</span>
+        <canvas id="example-card" width="1200" height="630" role="img" aria-label="An example result card"></canvas>
+      </figure>
+    </div>
+
+    <div class="wrap how" id="how">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li>
+          <h3>Answer what matters most</h3>
+          <p>Statements come one at a time. The first ones are where ideologies disagree most. After that, each one is chosen to separate the ideologies you're still close to.</p>
+        </li>
+        <li>
+          <h3>Stop when it settles</h3>
+          <p>A bar shows how settled your result is. Once it's clear, you can see your results or keep answering to refine them.</p>
+        </li>
+        <li>
+          <h3>See who you're close to, and why</h3>
+          <p>Get your nearest ideologies, what each stands for, the statements you agree and disagree on, and where you sit on the real dividing lines.</p>
+        </li>
+      </ol>
+      <p><a href="#/about">More about the method and sources →</a></p>
     </div>
   </section>
 
-  <section id="results" hidden></section>
+  <!-- Test -->
+  <section class="page" id="page-test" hidden>
+    <div class="wrap mid">
+      <div class="card">
+        <div class="stack">
+          <div class="row" style="justify-content: space-between">
+            <span class="eyebrow" id="counter"></span>
+            <button class="link" id="back">Back</button>
+          </div>
+          <div class="progress" title="How settled your result is"><div id="bar"></div></div>
+          <span class="muted small" id="certainty"></span>
+        </div>
+        <p class="statement" id="statement"></p>
+        <div class="quiz-body">
+          <div class="likert" id="likert" role="group" aria-label="Your answer"></div>
+          <aside class="explain" id="explain" aria-label="What your answer means">
+            <div class="ex-row agree"><span class="ex-label">If you agree</span><p id="ex-agree"></p></div>
+            <div class="ex-row disagree"><span class="ex-label">If you disagree</span><p id="ex-disagree"></p></div>
+            <p class="ex-note" id="ex-note"></p>
+          </aside>
+        </div>
+        <div class="row" style="justify-content: space-between">
+          <button class="link" id="skip">Skip: I don't know enough to answer</button>
+          <button class="link" id="finish-early" hidden>See results</button>
+        </div>
+        <div class="row quiz-foot">
+          <button class="link" id="restart">Start over</button>
+        </div>
+        <p class="muted" id="settled-note" hidden>Your result has settled. You can stop here or keep answering to refine it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="page" id="page-results" hidden>
+    <div class="wrap narrow" id="results"></div>
+  </section>
+
+  <!-- Ideologies -->
+  <section class="page" id="page-ideologies" hidden>
+    <div class="wrap narrow stack-lg">
+      <div class="stack">
+        <h1>Ideologies</h1>
+        <p class="lede">Every ideology in the test, where it sits on the dividing lines, what it stands for, and where to read more.</p>
+      </div>
+      <figure>
+        <div class="row map-pickers">
+          <label for="ideo-across">Across</label><select id="ideo-across" class="across"></select>
+          <label for="ideo-up">Up</label><select id="ideo-up" class="up"></select>
+        </div>
+        <svg id="ideo-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the ideologies on two dividing lines"></svg>
+        <ul class="cat-legend" aria-label="Map key"></ul>
+        <figcaption class="map-note"></figcaption>
+      </figure>
+      <div class="pick" id="ideo-pick" hidden></div>
+
+      <div class="stack explore" id="explore">
+        <h2>All ideologies</h2>
+        <label class="visually-hidden" for="explore-search">Search ideologies</label>
+        <input id="explore-search" type="search" placeholder="Search, e.g. “socialism” or “monarchy”" autocomplete="off">
+        <div class="chip-row" id="explore-cats" aria-label="Filter by category"></div>
+        <p class="muted small" id="explore-count" role="status"></p>
+        <div class="stack" id="explore-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- People -->
+  <section class="page" id="page-people" hidden>
+    <div class="wrap narrow stack-lg">
+      <div class="stack">
+        <h1>People</h1>
+        <p class="lede">Political leaders, thinkers and activists from every region, era and side of politics. Your results show whose recorded positions are closest to yours.</p>
+      </div>
+      <p class="notice" id="people-status" hidden></p>
+      <div class="stack" id="people-browse">
+        <label class="visually-hidden" for="people-search">Search people</label>
+        <input id="people-search" class="search" type="search" placeholder="Search by name or role" autocomplete="off">
+        <div class="chip-row" id="people-regions" aria-label="Filter by region"></div>
+        <p class="muted small" id="people-count" role="status"></p>
+        <ul class="matches" id="people-list"></ul>
+      </div>
+      <p class="muted small">Each person's answers come from their own words and record, with sources. Where there's no reliable evidence, the answer is left blank instead of guessed. Someone is only included if their record places them at least as precisely as your own answers place you, so people with only a few public stances are left out. When two people match you almost equally, the one more people read about on Wikipedia comes first.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="page" id="page-about" hidden>
+    <div class="wrap narrow prose">
+      <h1>About</h1>
+      <p class="lede">Political Ideology Atlas is a free, open-source political ideology test. Instead of placing you on axes someone chose in advance, it learns the dividing lines from what the ideologies themselves believe.</p>
+
+      <p class="notice" id="data-status" hidden></p>
+
+      <h2>How the test works</h2>
+      <p><strong>The ideologies.</strong> Each of the <span class="ideology-count">many</span> ideologies has an answer to every statement, describing how a committed adherent would answer.</p>
+      <p><strong>The dividing lines.</strong> The test looks at how the ideologies' answers differ and finds the directions in which they differ most, using a method called principal component analysis. To tell real dividing lines from noise, it shuffles every statement's answers at random many times and keeps only the lines that are clearly bigger than anything the shuffled data produces.</p>
+      <figure>
+        <svg id="scree" class="chart" viewBox="0 0 640 220" role="img" aria-label="How much of the disagreement between ideologies each dividing line accounts for"></svg>
+        <figcaption>How much of the disagreement between ideologies each line accounts for. Filled bars are the lines that pass the noise check and appear in your results.</figcaption>
+      </figure>
+      <p><strong>The questions.</strong> Statements are picked one at a time. The first ones are those the ideologies disagree about most. After that, each statement is the one that best separates the ideologies you're still close to, so you can stop early once your result settles.</p>
+      <p><strong>The match percentage.</strong> It compares your answers with each ideology's on the statements you answered. 100% means identical answers, and 0% means as far apart as the two most opposite ideologies.</p>
+
+      <h2>Where the profiles come from</h2>
+      <p>Every ideology's answers come from a written audit: its position on each statement, a short rationale, a confidence level, and the sources behind it. The audits and the exact research instructions are <a href="https://github.com/brioja/political-ideology-atlas/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>, so anyone can check them or suggest a correction. The list of ideology names follows the one used by <a href="https://12axes.vercel.app/" target="_blank" rel="noopener">12axes</a>; all descriptions, answers and sources here are researched independently.</p>
+
+      <h2>Colors and accessibility</h2>
+      <p>Each ideology is shown with a color for its broad family and a shape for its category, and its category is always written out too, so nothing depends on color alone. The four colors come from the Okabe–Ito palette, designed for people with color-vision deficiency, and each meets the WCAG 2.2 contrast minimum on both light and dark backgrounds.</p>
+
+      <h2>Privacy</h2>
+      <p>There are no accounts and no tracking. Your answers stay in your browser, which remembers your progress on this device. A share link contains your answers to each statement and nothing else, so anyone you send it to can see how you answered.</p>
+
+      <h2>Open source</h2>
+      <p>The code, data and audits are on <a href="https://github.com/brioja/political-ideology-atlas" target="_blank" rel="noopener">GitHub</a>. If something looks wrong, such as an ideology's position, a source or a bug, please <a href="https://github.com/brioja/political-ideology-atlas/issues/new" target="_blank" rel="noopener">open an issue</a>.</p>
+    </div>
+  </section>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="stack">
+      <span class="footer-brand">Political Ideology Atlas</span>
+      <span class="muted small">A free, open-source political ideology test. Your answers stay in your browser.</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#/ideologies">Ideologies</a></li>
+      <li><a href="#/people">People</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="https://github.com/brioja/political-ideology-atlas" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://github.com/brioja/political-ideology-atlas/issues/new" target="_blank" rel="noopener">Report a problem</a></li>
+    </ul>
+  </div>
+</footer>
 <script src="data.js"></script>
+<script src="people.js"></script>
 <script src="pca.js"></script>
 <script src="app.js"></script>
 </body>

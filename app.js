@@ -17,7 +17,7 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 let order = [];
 let answers = [];
 let position = 0;
-const MIN_ANSWERS = 10;
+const MIN_ANSWERS = SETTLE.minAnswers;
 
 function save() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, order, answers, position })); } catch {}
@@ -31,6 +31,98 @@ function load() {
 }
 function clearSaved() {
   try { localStorage.removeItem(STORAGE_KEY); } catch {}
+}
+
+// Plain names for the dividing lines. `toward` lists statements and the answer direction (+1 agree,
+// -1 disagree) that points toward the `high` end. See nameAxes in pca.js for how lines get matched.
+const LINE_NAMES = [
+  { name: "Social values", low: "Traditional", high: "Progressive",
+    toward: { "abortion-legal": 1, "same-sex-marriage": 1, "gender-social-construct": 1, "traditional-family": -1, "more-religion-public": -1 } },
+  { name: "Economy", low: "Collective", high: "Free market",
+    toward: { "markets-allocate-better": 1, "free-trade": 1, "cut-welfare": 1, "regulate-corporations": -1, "raise-minimum-wage": -1, "public-ownership": -1 } },
+  { name: "Role of the state", low: "Strong state", high: "No state",
+    toward: { "state-harmful": 1, "revolution-justified": 1, "experts-over-public": -1, "empower-international-orgs": -1, "surveillance-ok": -1 } },
+  { name: "Outlook", low: "National", high: "Global",
+    toward: { "empower-international-orgs": 1, "open-borders": 1, "nation-first": -1, "reduce-immigration": -1, "preserve-national-culture": -1 } },
+  { name: "Growth", low: "Pro-growth", high: "Green",
+    toward: { "limit-growth": 1, "drastic-climate-action": 1, "tech-solves-problems": -1, "expand-nuclear": -1 } },
+];
+
+// How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
+// at least 2 and at most 6. build.js precomputes the count; otherwise it's computed here.
+const MAX_LINES = 6;
+const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2,
+  typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES)));
+
+// Name and ends of dividing line i, from LINE_NAMES when one fits, else the ideologies at its ends.
+const LINE_INFO = nameAxes(model, QUESTIONS, LINE_NAMES, SHOWN_LINES);
+function lineInfo(i) {
+  const ax = describeAxis(model, i, QUESTIONS);
+  const n = LINE_INFO[i];
+  return n
+    ? { name: n.name, low: n.low, high: n.high, lowIdeo: ax.lowEnd[0], highIdeo: ax.highEnd[0] }
+    : { name: `Line ${i + 1}`, low: ax.lowEnd[0], high: ax.highEnd[0], lowIdeo: ax.lowEnd[0], highIdeo: ax.highEnd[0] };
+}
+
+// ---------- Category colors and shapes ----------
+// Color marks one of four broad families; shape marks the category, and the written category
+// name always appears too (WCAG 2.2 SC 1.4.1). Colors are from the Okabe–Ito palette and each has
+// at least 3:1 contrast on light and dark backgrounds (SC 1.4.11). Four is the limit: purple and
+// green are only moderately separable for deuteranopes (ΔE 7.6), acceptable because shapes and
+// labels back them up; a fifth Okabe–Ito color fails contrast or reads as "no category".
+const FAMILIES = {
+  left: { label: "Left", color: "var(--fam-left)", card: "#D55E00" },
+  antistate: { label: "Anti-state", color: "var(--fam-antistate)", card: "#CC79A7" },
+  center: { label: "Center", color: "var(--fam-center)", card: "#009E73" },
+  right: { label: "Right", color: "var(--fam-right)", card: "#0072B2" },
+};
+const CATEGORY_STYLE = {
+  "Radical Left": { family: "left", shape: "triangle" },
+  "Left": { family: "left", shape: "circle" },
+  "Anarchist": { family: "antistate", shape: "cross" },
+  "Libertarian": { family: "antistate", shape: "star" },
+  "Center": { family: "center", shape: "diamond" },
+  "Right": { family: "right", shape: "square" },
+  "Far-Right": { family: "right", shape: "triangle-down" },
+  "Third Position": { family: "right", shape: "plus" },
+};
+const styleOf = (ideo) => CATEGORY_STYLE[ideo.category] || { family: "center", shape: "circle" };
+const colorOf = (ideo) => FAMILIES[styleOf(ideo).family].color;
+
+// SVG path data for a marker of radius r centered on (x, y). Path2D accepts the same data,
+// so the share image draws identical shapes.
+function shapePath(shape, x, y, r) {
+  const pts = (list) => "M" + list.map(([a, b]) => `${(x + a * r).toFixed(1)},${(y + b * r).toFixed(1)}`).join("L") + "Z";
+  switch (shape) {
+    case "square": return pts([[-0.85, -0.85], [0.85, -0.85], [0.85, 0.85], [-0.85, 0.85]]);
+    case "diamond": return pts([[0, -1.2], [1.2, 0], [0, 1.2], [-1.2, 0]]);
+    case "triangle": return pts([[0, -1.25], [1.15, 0.85], [-1.15, 0.85]]);
+    case "triangle-down": return pts([[0, 1.25], [1.15, -0.85], [-1.15, -0.85]]);
+    case "plus": { const a = 0.38, b = 1.15; return pts([[-a, -b], [a, -b], [a, -a], [b, -a], [b, a], [a, a], [a, b], [-a, b], [-a, a], [-b, a], [-b, -a], [-a, -a]]); }
+    case "cross": { const t = 0.3, s = 1.05; return pts([[-s, -s + t], [-s + t, -s], [0, -t], [s - t, -s], [s, -s + t], [t, 0], [s, s - t], [s - t, s], [0, t], [-s + t, s], [-s, s - t], [-t, 0]]); }
+    case "star": return pts(Array.from({ length: 10 }, (_, i) => {
+      const ang = -Math.PI / 2 + (i * Math.PI) / 5, rr = i % 2 ? 0.55 : 1.3;
+      return [Math.cos(ang) * rr, Math.sin(ang) * rr];
+    }));
+    default: return `M${x - r},${y}a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0`;
+  }
+}
+
+// A small inline marker (shape in its family color) to sit next to a category name.
+function swatch(category, size = 14) {
+  const st = CATEGORY_STYLE[category] || { family: "center", shape: "circle" };
+  return `<svg class="swatch-mark" width="${size}" height="${size}" viewBox="0 0 16 16" aria-hidden="true"><path d="${shapePath(st.shape, 8, 8, 5.5)}" fill="${FAMILIES[st.family].color}"></path></svg>`;
+}
+const categoryTag = (ideo) => ideo.category ? `<span class="cat-tag">${swatch(ideo.category)}${esc(ideo.category)}</span>` : "";
+
+// Legend under a map: every category with its marker and name, grouped by family.
+function categoryLegend() {
+  const present = new Set(model.ideologies.map((i) => i.category));
+  return Object.entries(FAMILIES).map(([key, fam]) => {
+    const cats = Object.keys(CATEGORY_STYLE).filter((c) => CATEGORY_STYLE[c].family === key && present.has(c));
+    if (!cats.length) return "";
+    return `<li><span class="fam-name">${esc(fam.label)}:</span> ${cats.map((c) => `<span class="cat-tag">${swatch(c)}${esc(c)}</span>`).join(" ")}</li>`;
+  }).join("");
 }
 
 const pct = (x) => `${Math.round(x * 100)}%`;
@@ -60,12 +152,12 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     el("line", { x1: pad, x2: W - pad, y1: H / 2, y2: H / 2, stroke: "var(--line)" }),
     el("line", { y1: pad, y2: H - pad, x1: W / 2, x2: W / 2, stroke: "var(--line)" })
   );
-  const ex = describeAxis(model, xi, QUESTIONS), ey = describeAxis(model, yi, QUESTIONS);
+  const ex = lineInfo(xi), ey = lineInfo(yi);
   svg.append(
-    el("text", { x: 10, y: H - 10 }, `← ${ex.lowEnd[0]}`),
-    el("text", { x: W - 10, y: H - 10, "text-anchor": "end" }, `${ex.highEnd[0]} →`),
-    el("text", { x: W / 2 + 6, y: pad - 18 }, `↑ ${ey.highEnd[0]}`),
-    el("text", { x: W / 2 + 6, y: H - pad + 12 }, `↓ ${ey.lowEnd[0]}`)
+    el("text", { x: 10, y: H - 10 }, `← ${ex.low}`),
+    el("text", { x: W - 10, y: H - 10, "text-anchor": "end" }, `${ex.high} →`),
+    el("text", { x: W / 2 + 6, y: pad - 18 }, `↑ ${ey.high}`),
+    el("text", { x: W / 2 + 6, y: H - pad + 12 }, `↓ ${ey.low}`)
   );
 
   // Greedy label placement: try right, left, then nudged up/down until a label clears the others.
@@ -79,7 +171,9 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     const hot = ideo.name === highlight;
     const g = el("g", { class: "dot", "data-id": ideo.id });
     g.append(el("title", {}, ideo.name));
-    g.append(el("circle", { cx: x, cy: y, r: hot ? 6 : 4, fill: hot ? "var(--accent-2)" : "var(--muted)", opacity: !labels || labels.has(ideo.name) ? 1 : 0.35 }));
+    g.append(el("path", { d: shapePath(styleOf(ideo).shape, x, y, hot ? 6.5 : 4.5), fill: colorOf(ideo), opacity: !labels || labels.has(ideo.name) ? 1 : 0.4 }));
+    // Your top match: same marker, larger, with a dark ring (not a different color).
+    if (hot) g.append(el("circle", { cx: x, cy: y, r: 11, fill: "none", stroke: "var(--ink)", "stroke-width": 2 }));
     g.append(el("circle", { cx: x, cy: y, r: 13, fill: "transparent" })); // bigger tap target
     svg.append(g);
     if (labels && !labels.has(ideo.name)) continue;
@@ -96,13 +190,13 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     if (!spot) { const right = x < W - w - 20; spot = { lx: right ? x + 8 : x - 8, ly: y + 4, right, box: null }; }
     if (spot.box) placed.push(spot.box);
     g.append(el("text", { class: "lbl", x: spot.lx, y: spot.ly, "text-anchor": spot.right ? "start" : "end",
-      style: hot ? "fill: var(--accent-2); font-weight: 700" : "" }, ideo.name));
+      style: hot ? "font-weight: 700" : "" }, ideo.name));
   }
   if (you) {
     const x = sx(you[xi]), y = sy(you[yi]);
     svg.append(
-      el("circle", { cx: x, cy: y, r: 9, fill: "none", stroke: "var(--accent)", "stroke-width": 2.5 }),
-      el("circle", { cx: x, cy: y, r: 3.5, fill: "var(--accent)" }),
+      el("circle", { cx: x, cy: y, r: 9, fill: "var(--surface)", stroke: "var(--ink)", "stroke-width": 3 }),
+      el("circle", { cx: x, cy: y, r: 3.5, fill: "var(--ink)" }),
       el("text", { class: "you-lbl", x: x, y: y - 14, "text-anchor": "middle" }, "You")
     );
   }
@@ -115,9 +209,9 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     if (!ideo) return;
     const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
     pickLayer.replaceChildren();
-    const ring = el("circle", { cx: x, cy: y, r: 9, fill: "none", stroke: "var(--accent-2)", "stroke-width": 2.5 });
+    const ring = el("circle", { cx: x, cy: y, r: 12, fill: "none", stroke: "var(--ink)", "stroke-width": 1.5, "stroke-dasharray": "3 2" });
     const label = el("text", { class: "pick-lbl", x, y: y - 16, "text-anchor": "middle" }, ideo.name);
-    const box = el("rect", { rx: 4, fill: "var(--surface)", stroke: "var(--accent-2)" });
+    const box = el("rect", { rx: 4, fill: "var(--surface)", stroke: "var(--ink)" });
     pickLayer.append(ring, box, label);
     const b = label.getBBox();
     const shift = Math.min(0, W - 6 - (b.x + b.width)) + Math.max(0, 6 - b.x);
@@ -127,6 +221,7 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     for (const [k, v] of Object.entries({ x: nb.x - 6, y: nb.y - 3, width: nb.width + 12, height: nb.height + 6 })) box.setAttribute(k, v);
     if (onPick) onPick(ideo);
   };
+  svg.setAttribute("viewBox", "0 0 640 440");
   svg.onclick = (e) => {
     const dot = e.target.closest(".dot");
     if (dot) pick(dot.dataset.id);
@@ -136,17 +231,56 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
 
 // ---------- Quiz ----------
 
-function show(id) {
-  for (const s of ["intro", "quiz", "results"]) $(s).hidden = s !== id;
-  window.scrollTo(0, 0);
+// Draws the flat map with "Across" and "Up" pickers over the real dividing lines.
+// `figure` holds the svg, the two selects and a .map-note caption; `opts` go to drawMap.
+function mountMap(figure, opts, { extraNote = "" } = {}) {
+  const svg = figure.querySelector("svg"), note = figure.querySelector(".map-note");
+  figure.querySelector(".cat-legend").innerHTML = categoryLegend();
+  const xs = figure.querySelector("select.across"), ys = figure.querySelector("select.up");
+  const options = Array.from({ length: SHOWN_LINES }, (_, i) => `<option value="${i}">${esc(lineInfo(i).name)}</option>`).join("");
+  xs.innerHTML = options;
+  ys.innerHTML = options;
+  xs.value = "0";
+  ys.value = "1";
+  let lastX = 0, lastY = 1;
+  const draw = (e) => {
+    // The same line on both axes would only draw a diagonal, so swap instead.
+    if (xs.value === ys.value) {
+      if (e && e.target === xs) ys.value = String(lastX); else xs.value = String(lastY);
+    }
+    const x = Number(xs.value), y = Number(ys.value);
+    lastX = x; lastY = y;
+    drawMap(svg, x, y, opts);
+    const share = model.components[x].share + model.components[y].share;
+    note.textContent = `Together these two lines cover about ${pct(share)} of how ideologies differ. Tap a dot to see which ideology it is. ${extraNote}`;
+  };
+  xs.onchange = ys.onchange = draw;
+  draw();
 }
+
+// ---------- Pages ----------
+
+const PAGES = ["home", "test", "results", "ideologies", "people", "about"];
+const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", about: "About" };
+
+function show(page, { scroll = true } = {}) {
+  for (const p of PAGES) $(`page-${p}`).hidden = p !== page;
+  for (const a of document.querySelectorAll(".site-nav a")) {
+    if (a.dataset.page === page) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  }
+  document.title = PAGE_TITLES[page] ? `${PAGE_TITLES[page]} · ${SITE_NAME}` : SITE_NAME;
+  closeMenu();
+  if (scroll) window.scrollTo(0, 0);
+}
+const go = (hash) => { if (location.hash === hash) route(); else location.hash = hash; };
 
 function renderQuestion() {
   const q = order[position];
   const asked = new Set(order);
   const answered = answers.filter((a) => a !== null).length;
   const sure = certainty(model, answers, asked);
-  const settled = answered >= MIN_ANSWERS && sure >= 0.9;
+  const settled = answered >= MIN_ANSWERS && sure >= SETTLE.certainty;
   $("counter").textContent = `Statement ${position + 1}`;
   $("bar").style.width = pct(sure);
   $("certainty").textContent = answered < 3 ? "Most telling statements first" : `Result ${pct(sure)} settled`;
@@ -156,8 +290,15 @@ function renderQuestion() {
   $("finish-early").classList.toggle("primary", settled);
   $("settled-note").hidden = !settled;
   for (const [i, b] of [...$("likert").children].entries()) {
-    b.classList.toggle("chosen", answers[q] === CHOICES[i].value);
+    const chosen = answers[q] === SHOWN_CHOICES[i].value;
+    b.classList.toggle("chosen", chosen);
+    b.setAttribute("aria-pressed", String(chosen));
   }
+  const Q = QUESTIONS[q];
+  $("explain").hidden = !Q.agree;
+  $("ex-agree").textContent = Q.agree || "";
+  $("ex-disagree").textContent = Q.disagree || "";
+  $("ex-note").textContent = Q.note || "";
 }
 
 function answer(value) {
@@ -165,7 +306,7 @@ function answer(value) {
   position++;
   if (position === order.length) {
     const next = nextQuestion(model, answers, new Set(order));
-    if (!next) { save(); showResults(); return; }
+    if (!next) { save(); finishQuiz(); return; }
     order.push(next.q);
   }
   save();
@@ -179,26 +320,53 @@ function startQuiz(saved) {
     order = [nextQuestion(model, answers, new Set()).q];
     position = 0;
   }
-  show("quiz");
+  show("test");
   renderQuestion();
 }
 
-for (const [i, c] of CHOICES.entries()) {
+// Results are a page of their own: finishing stores the answers and navigates there.
+let lastAnswers = null;
+function finishQuiz() {
+  lastAnswers = answers.map((a) => (a === undefined ? null : a));
+  go("#/results");
+}
+
+// Options are listed top to bottom from "Strongly agree"; number keys follow the on-screen order.
+const SHOWN_CHOICES = [...CHOICES].reverse();
+for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
   b.id = `choice-${i}`;
-  b.innerHTML = `<span>${c.label}</span><span class="key">${i + 1}</span>`;
+  b.dataset.value = c.value;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${c.label}</span><span class="key" aria-hidden="true">${i + 1}</span>`;
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
 }
 $("skip").addEventListener("click", () => answer(null));
 $("back").addEventListener("click", () => { if (position > 0) { position--; save(); renderQuestion(); } });
-$("finish-early").addEventListener("click", () => showResults());
-$("start").addEventListener("click", () => startQuiz(null));
-$("resume").addEventListener("click", () => startQuiz(load()));
+$("finish-early").addEventListener("click", finishQuiz);
+$("resume").addEventListener("click", () => go("#/test"));
+
+// Start over: a second tap within a few seconds confirms, so progress isn't wiped by accident.
+let restartTimer = 0;
+$("restart").addEventListener("click", () => {
+  const btn = $("restart");
+  if (!btn.classList.contains("confirming")) {
+    btn.classList.add("confirming");
+    btn.textContent = "Tap again to start over";
+    restartTimer = setTimeout(() => { btn.classList.remove("confirming"); btn.textContent = "Start over"; }, 4000);
+    return;
+  }
+  clearTimeout(restartTimer);
+  btn.classList.remove("confirming");
+  btn.textContent = "Start over";
+  clearSaved();
+  lastAnswers = null;
+  startQuiz(null);
+});
 document.addEventListener("keydown", (e) => {
-  if ($("quiz").hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+  if ($("page-test").hidden || e.metaKey || e.ctrlKey || e.altKey) return;
   const n = Number(e.key);
-  if (n >= 1 && n <= 5) answer(CHOICES[n - 1].value);
+  if (n >= 1 && n <= 5) answer(SHOWN_CHOICES[n - 1].value);
   else if (e.key === "Backspace") $("back").click();
 });
 
@@ -246,13 +414,14 @@ function beliefList(ideo, n = 4) {
 function pickCard(container, ideo, { similarity = null, showInList = false } = {}) {
   container.hidden = false;
   container.innerHTML = `
-    <div class="pick-head"><h3>${esc(ideo.name)}</h3>${ideo.category ? `<span class="muted small">${esc(ideo.category)}</span>` : ""}
+    <div class="pick-head"><h3>${esc(ideo.name)}</h3>${categoryTag(ideo)}
       ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}</div>
     ${aboutIdeology(ideo)}
     <h4>What it stands for</h4>
     ${beliefList(ideo, 3)}
-    ${showInList ? `<button class="link" data-show="${esc(ideo.id)}">Show it in the list below</button>` : ""}`;
+    ${showInList ? `<button class="link" data-show="${esc(ideo.id)}">Show it in the list</button>` : ""}`;
   const btn = container.querySelector("[data-show]");
+  if (btn && !showInList) btn.remove();
   if (btn) btn.addEventListener("click", () => openInExplore(ideo.id));
 }
 
@@ -272,11 +441,10 @@ function aboutIdeology(ideo) {
 
 // Pass `shared` (decoded answers) to show someone else's result from a link.
 function showResults(shared = null) {
-  const given = shared || answers.map((a) => (a === undefined ? null : a));
+  const given = shared || lastAnswers;
   const { you, ranked } = match(model, given);
   const top = ranked[0];
   const answered = given.filter((a) => a !== null).length;
-  const k = model.kept;
   const R = $("results");
   const You = shared ? "They" : "You";
   const you_ = shared ? "they" : "you";
@@ -294,7 +462,7 @@ function showResults(shared = null) {
     const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 2);
     return `
       <li><details>
-        <summary><span class="match-name">${r.name}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
+        <summary><span class="match-name">${swatch(r.category)}${esc(r.name)}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
         <div class="match-body">
           ${aboutIdeology(r)}
           <h4>What it stands for</h4>
@@ -309,11 +477,12 @@ function showResults(shared = null) {
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict">
       <span class="eyebrow">${your} closest match · ${pct(top.similarity)} · based on ${answered} answers</span>
-      <h1 class="name">${top.name}</h1>
+      <h1 class="name">${esc(top.name)}</h1>
+      ${categoryTag(top)}
       ${aboutIdeology(top)}
       <p class="muted">${closeCall
         ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
-        : `${You}r next closest match is <strong>${ranked[1].name}</strong>.`}</p>
+        : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
 
     <section>
@@ -335,17 +504,34 @@ function showResults(shared = null) {
       <ul class="matches">${others}</ul>
     </section>
 
+    ${typeof PEOPLE !== "undefined" && PEOPLE.length ? `
+    <section>
+      <h2>People who think like ${shared ? "them" : "you"}</h2>
+      <p class="muted small">Matched on the statements where both ${you_} and they have a known position.</p>
+      <ul class="matches">${matchPeople(model, given, PEOPLE).slice(0, 5).map((p) => `
+        <li><details>
+          <summary><span class="match-name">${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>
+          <div class="match-body">${personBody(p)}<p class="muted small">Based on ${p.overlap} statements you both have a position on.</p></div>
+        </details></li>`).join("")}
+      </ul>
+    </section>` : ""}
+
     <section>
       <h2>Where ${you_} stand</h2>
-      <p>Most disagreement between ideologies comes down to a few big dividing lines. The test found them by looking at how the ideologies answer, rather than deciding them in advance. Here is where ${you_} fall on the ${k} biggest.</p>
+      <p>Most disagreement between ideologies comes down to a few big dividing lines. The test found them by looking at how the ideologies answer, rather than deciding them in advance. The ${SHOWN_LINES} below are the ones that stand out from random noise, from biggest to smallest.</p>
       <div id="axes"></div>
     </section>
 
     <section>
       <h2>The map</h2>
       <figure>
-        <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Your position among the ideologies"></svg>
-        <figcaption>Each dot is an ideology, placed on the two biggest dividing lines. Ideologies close together tend to answer alike. Tap any dot to see which one it is.</figcaption>
+        <div class="row map-pickers">
+          <label for="result-across">Across</label><select id="result-across" class="across"></select>
+          <label for="result-up">Up</label><select id="result-up" class="up"></select>
+        </div>
+        <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the ideologies on two dividing lines"></svg>
+        <ul class="cat-legend" aria-label="Map key"></ul>
+        <figcaption class="map-note"></figcaption>
       </figure>
       <div class="pick" id="result-pick" hidden></div>
     </section>
@@ -368,59 +554,52 @@ function showResults(shared = null) {
       </figure>
     </section>`}
 
-    <details class="how">
-      <summary>How this test works</summary>
-      <div class="stack">
-        <p><strong>The ideologies.</strong> Each of the ${model.ideologies.length} ideologies has an answer to every statement, worked out from its own writings and from scholarly sources. Every profile, with its sources and reasoning, is <a href="${REPO}/tree/main/audits" target="_blank" rel="noopener">public on GitHub</a>.</p>
-        <p><strong>The dividing lines.</strong> Most tests pick their axes up front, like left vs. right. This one finds them from the data, using a method called principal component analysis. It looks for the directions in which the ideologies' answers differ the most. The chart below shows how much of the total disagreement each line accounts for. The first few cover most of it, so those are the ones shown above.</p>
-        <figure>
-          <svg id="scree" class="chart" viewBox="0 0 640 220" role="img" aria-label="How much of the disagreement between ideologies each dividing line accounts for"></svg>
-        </figure>
-        <p><strong>The questions.</strong> Statements are picked one at a time. The first ones are those ideologies disagree about most. After that, each statement is the one that best separates the ideologies ${you_} are still close to. That's why ${you_} can stop early.</p>
-        <p><strong>The match percentage.</strong> It compares ${your} answers with each ideology's on the statements ${you_} answered. 100% means identical answers, and 0% means as far apart as the two most opposite ideologies.</p>
-      </div>
-    </details>
+    <p class="muted small">Curious how the matching and the dividing lines work? <a href="#/about">Read about the method and sources</a>.</p>
 
     <div class="row"><button class="${shared ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
   `;
 
   const axesBox = $("axes");
-  for (let i = 0; i < k; i++) {
+  for (let i = 0; i < SHOWN_LINES; i++) {
     const ax = describeAxis(model, i, QUESTIONS);
+    const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05;
     const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
     const div = document.createElement("div");
     div.className = "axis";
     div.innerHTML = `
-      <div class="axis-ends"><span>${ax.lowEnd[0]}</span><span>${ax.highEnd[0]}</span></div>
+      <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
+      <div class="axis-ends"><span>${esc(L.low)}</span><span>${esc(L.high)}</span></div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
-        ${model.ideologies.map((d) => `<circle cx="${pos(d.scores[i])}" cy="17" r="${d.name === top.name ? 6 : 4}" fill="${d.name === top.name ? "var(--accent-2)" : "var(--muted)"}" opacity="${d.name === top.name ? 1 : 0.4}"><title>${d.name}</title></circle>`).join("")}
-        <circle cx="${pos(you[i])}" cy="17" r="8" fill="var(--accent)"><title>${shared ? "Them" : "You"}</title></circle>
+        ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
+        <circle cx="${pos(you[i])}" cy="17" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"><title>${shared ? "Them" : "You"}</title></circle>
       </svg>
       <details><summary>What this line is about</summary>
-        <ul class="plain">${ax.negative.map((p) => `<li>Agreeing moves you toward ${ax.lowEnd[0]}: ${p.text}</li>`).join("")}
-            ${ax.positive.map((p) => `<li>Agreeing moves you toward ${ax.highEnd[0]}: ${p.text}</li>`).join("")}</ul>
+        <ul class="plain">${ax.negative.map((p) => `<li>Agreeing moves you toward ${esc(L.low)}: ${p.text}</li>`).join("")}
+            ${ax.positive.map((p) => `<li>Agreeing moves you toward ${esc(L.high)}: ${p.text}</li>`).join("")}</ul>
+        ${L.low === L.lowIdeo ? "" : `<p class="muted small">Furthest apart on this line: ${esc(L.lowIdeo)} and ${esc(L.highIdeo)}.</p>`}
       </details>`;
     axesBox.append(div);
   }
 
   const near = new Set(ranked.slice(0, 8).map((r) => r.name));
   const simById = new Map(ranked.map((r) => [r.id, r.similarity]));
-  drawMap($("result-map"), 0, 1, { you, highlight: top.name, labels: model.ideologies.length > 25 ? near : null,
-    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id) }) });
-  drawScree($("scree"));
+  mountMap($("result-map").closest("figure"), { you, highlight: top.name, labels: model.ideologies.length > 25 ? near : null,
+    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id) }) },
+    { extraNote: `Close dots answer alike. ${shared ? "Their" : "Your"} match list uses every answer, not just these lines.` });
 
   const fresh = () => {
-    if (shared) history.replaceState(null, "", location.pathname);
+    if (shared) history.replaceState(null, "", `${location.pathname}#/test`);
     else clearSaved();
-    startQuiz(null);
+    order = [];
+    lastAnswers = null;
+    go("#/test");
   };
   $("retake").addEventListener("click", fresh);
   if (shared) $("own-test").addEventListener("click", fresh);
   else setUpSharing(given, ranked, you);
-  show("results");
 }
 
 function drawScree(svg) {
@@ -435,7 +614,7 @@ function drawScree(svg) {
   }
   comps.forEach((c, i) => {
     const x = left + i * bw + 3;
-    const used = i < model.kept;
+    const used = i < SHOWN_LINES;
     svg.append(el("rect", { x, y: y(c.share), width: bw - 6, height: H - bottom - y(c.share),
       fill: used ? "var(--accent)" : "var(--line)", rx: 2 }));
     svg.append(el("text", { x: x + (bw - 6) / 2, y: H - bottom + 16, "text-anchor": "middle" }, i + 1));
@@ -567,55 +746,72 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   const px = (v) => mx + c + (v / lim) * (c - 40);
   const py = (v) => my + c - (v / lim) * (c - 40);
 
-  const ex = describeAxis(model, 0, QUESTIONS), ey = describeAxis(model, 1, QUESTIONS);
+  const ex = lineInfo(0), ey = lineInfo(1);
   ctx.fillStyle = CARD.muted;
-  ctx.font = `400 15px ${CARD_FONTS.mono}`;
-  ctx.fillText(`← ${ex.lowEnd[0]}`, mx + 14, my + ms - 14);
+  ctx.font = `500 15px ${CARD_FONTS.mono}`;
+  ctx.fillText(`← ${ex.low}`, mx + 14, my + ms - 14);
   ctx.textAlign = "right";
-  ctx.fillText(`${ex.highEnd[0]} →`, mx + ms - 14, my + ms - 14);
+  ctx.fillText(`${ex.high} →`, mx + ms - 14, my + ms - 14);
   ctx.textAlign = "left";
-  ctx.fillText(`↑ ${ey.highEnd[0]}`, mx + 14, my + 26);
+  ctx.fillText(`↑ ${ey.high}`, mx + 14, my + 26);
+  ctx.fillText(`↓ ${ey.low}`, mx + 14, my + ms - 40);
 
   const topName = result ? result.ranked[0].name : null;
+  const mark = (ideo, x, y, r) => {
+    ctx.fillStyle = FAMILIES[styleOf(ideo).family].card;
+    ctx.fill(new Path2D(shapePath(styleOf(ideo).shape, x, y, r)));
+  };
   for (const ideo of model.ideologies) {
     if (ideo.name === topName) continue;
-    ctx.fillStyle = CARD.muted;
-    ctx.globalAlpha = 0.55;
-    ctx.beginPath();
-    ctx.arc(px(ideo.scores[0]), py(ideo.scores[1]), 6, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.globalAlpha = 0.8;
+    mark(ideo, px(ideo.scores[0]), py(ideo.scores[1]), 6.5);
     ctx.globalAlpha = 1;
   }
   if (result) {
     const top = result.ranked[0];
     const tx = px(top.scores[0]), ty = py(top.scores[1]);
-    ctx.fillStyle = CARD.accent2;
-    ctx.beginPath(); ctx.arc(tx, ty, 9, 0, Math.PI * 2); ctx.fill();
+    mark(top, tx, ty, 9);
+    ctx.strokeStyle = CARD.ink; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(tx, ty, 16, 0, Math.PI * 2); ctx.stroke();
     const ux = px(result.you[0]), uy = py(result.you[1]);
-    ctx.strokeStyle = CARD.accent; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.arc(ux, uy, 14, 0, Math.PI * 2); ctx.stroke();
-    ctx.fillStyle = CARD.accent;
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(ux, uy, 13, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = CARD.ink;
     ctx.beginPath(); ctx.arc(ux, uy, 5, 0, Math.PI * 2); ctx.fill();
     ctx.font = `700 22px ${CARD_FONTS.display}`;
     ctx.textAlign = "center";
+    ctx.lineJoin = "round"; ctx.lineWidth = 6; ctx.strokeStyle = CARD.surface;
+    ctx.strokeText("You", ux, uy - 24);
     ctx.fillText("You", ux, uy - 24);
     ctx.textAlign = "left";
   }
 }
 
-// ---------- Intro ----------
+// ---------- Static page content ----------
 
 const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
-drawMap($("intro-map"), 0, 1, { labels: model.ideologies.length > 25 ? extremes : null,
-  onPick: (ideo) => pickCard($("intro-pick"), ideo, { showInList: true }) });
-$("intro-caption").textContent =
-  `Each dot is one of the ${model.ideologies.length} ideologies, placed on the two biggest dividing lines between them. You'll see where you land at the end.`;
-if (load()) $("resume").hidden = false;
+mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25 ? extremes : null,
+  onPick: (ideo) => pickCard($("ideo-pick"), ideo, { showInList: true }) },
+  { extraNote: "Close dots answer alike." });
+for (const el of document.querySelectorAll(".ideology-count")) el.textContent = `${model.ideologies.length}`;
 
-const sharedAnswers = decodeAnswers(new URLSearchParams(location.search).get("r"));
-if (sharedAnswers) showResults(sharedAnswers);
-$("ideology-count").textContent = `${model.ideologies.length}`;
-$("intro-eyebrow").textContent = `Up to ${QUESTIONS.length} statements · stop when your result settles`;
+// Be upfront while the site still runs on hand-written profiles instead of researched audits.
+const auditedCount = model.ideologies.filter((i) => i.audited).length;
+if (auditedCount < model.ideologies.length) {
+  $("data-status").hidden = false;
+  $("data-status").textContent = auditedCount
+    ? `Work in progress: ${auditedCount} of the ${model.ideologies.length} ideology profiles have been researched and sourced so far. The rest are preliminary profiles written by hand.`
+    : `Work in progress: the ${model.ideologies.length} ideology profiles used right now are preliminary and written by hand. Researched, sourced profiles for over 250 ideologies are on the way.`;
+}
+drawScree($("scree"));
+
+// The home page shows a real example result, drawn by the same code as the share image.
+(() => {
+  const ideo = model.ideologies.find((i) => /social democra/i.test(i.name)) || model.ideologies[0];
+  const sample = ideo.profile.map((x, q) => (q % 3 === 0 ? null : q % 5 === 1 ? Math.max(-2, Math.min(2, x - Math.sign(x || 1))) : x));
+  const { you, ranked } = match(model, sample);
+  drawCard($("example-card"), { you, ranked });
+})();
 
 // ---------- Explore ----------
 
@@ -635,7 +831,7 @@ function renderExplore() {
     : `${shown.length} of ${model.ideologies.length} ideologies`;
   $("explore-list").innerHTML = groups.map(([c, list]) => `
     <div class="stack">
-      <h3>${esc(c)} <span class="muted small">${list.length}</span></h3>
+      <h3>${swatch(c, 16)}${esc(c)} <span class="muted small">${list.length}</span></h3>
       <ul class="matches">${list.map((i) => `
         <li><details id="ideo-${esc(i.id)}">
           <summary><span class="match-name">${esc(i.name)}</span></summary>
@@ -665,7 +861,7 @@ function openInExplore(id) {
 const categories = [...new Set(model.ideologies.map((i) => i.category))]
   .sort((a, b) => (CATEGORY_ORDER.indexOf(a) + 1 || 99) - (CATEGORY_ORDER.indexOf(b) + 1 || 99));
 $("explore-cats").innerHTML = [["", "All"], ...categories.map((c) => [c, c])]
-  .map(([v, label]) => `<button class="chip-btn" data-cat="${esc(v)}" aria-pressed="${v === ""}">${esc(label)}</button>`).join("");
+  .map(([v, label]) => `<button class="chip-btn" data-cat="${esc(v)}" aria-pressed="${v === ""}">${v ? swatch(v, 12) : ""}${esc(label)}</button>`).join("");
 $("explore-cats").addEventListener("click", (e) => {
   const b = e.target.closest("[data-cat]");
   if (!b) return;
@@ -675,3 +871,92 @@ $("explore-cats").addEventListener("click", (e) => {
 });
 $("explore-search").addEventListener("input", renderExplore);
 renderExplore();
+
+// ---------- People ----------
+
+const lifespan = (p) => (p.living ? `born ${p.born}` : `${p.born}–`);
+function personBody(p) {
+  const links = [p.wikipedia && `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`,
+    `<a href="${REPO}/blob/main/audits/people/${esc(p.id)}.json" target="_blank" rel="noopener">How this profile was researched</a>`].filter(Boolean);
+  return `<p class="muted small">${esc(p.role || "")}${p.role ? " · " : ""}${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</p>
+    ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
+    <p class="read-more small"><span class="muted">Read more:</span> ${links.join('<span class="muted"> · </span>')}</p>`;
+}
+
+let peopleRegion = null;
+function renderPeople() {
+  const list = typeof PEOPLE === "undefined" ? [] : PEOPLE;
+  $("people-status").hidden = list.length > 0;
+  $("people-browse").hidden = list.length === 0;
+  if (!list.length) {
+    $("people-status").textContent = "Coming soon: profiles of around 250 people are being researched, each from their own words and record. Once they're ready, your results will include the people who think most like you.";
+    return;
+  }
+  const q = $("people-search").value.trim().toLowerCase();
+  const shown = list.filter((p) => (!peopleRegion || p.region === peopleRegion) &&
+    (!q || p.name.toLowerCase().includes(q) || (p.role || "").toLowerCase().includes(q)))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  $("people-count").textContent = `${shown.length} of ${list.length} people`;
+  $("people-list").innerHTML = shown.map((p) => `
+    <li><details><summary><span class="match-name">${esc(p.name)}</span><span class="muted small">${esc(p.region)}</span></summary>
+      <div class="match-body">${personBody(p)}</div></details></li>`).join("") || `<li class="muted">No one matches “${esc(q)}”.</li>`;
+}
+(() => {
+  const list = typeof PEOPLE === "undefined" ? [] : PEOPLE;
+  const regions = [...new Set(list.map((p) => p.region))].sort();
+  $("people-regions").innerHTML = [["", "All"], ...regions.map((r) => [r, r])]
+    .map(([v, label]) => `<button class="chip-btn" data-region="${esc(v)}" aria-pressed="${v === ""}">${esc(label)}</button>`).join("");
+  $("people-regions").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-region]");
+    if (!b) return;
+    peopleRegion = b.dataset.region || null;
+    for (const x of $("people-regions").children) x.setAttribute("aria-pressed", String(x === b));
+    renderPeople();
+  });
+  $("people-search").addEventListener("input", renderPeople);
+  renderPeople();
+})();
+
+// ---------- Menu and routing ----------
+
+function closeMenu() {
+  $("nav-links").classList.remove("open");
+  $("menu-btn").setAttribute("aria-expanded", "false");
+}
+$("menu-btn").addEventListener("click", () => {
+  const open = $("nav-links").classList.toggle("open");
+  $("menu-btn").setAttribute("aria-expanded", String(open));
+});
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+
+// Routes: #/ (home), #/how, #/test, #/results, #/ideologies[/<id>], #/about.
+// A shared result (?r=…) opens on the results page.
+function route() {
+  const [page = "", arg] = location.hash.replace(/^#\/?/, "").split("/");
+  const shared = decodeAnswers(new URLSearchParams(location.search).get("r"));
+  $("resume").hidden = !load();
+
+  if (page === "test") {
+    if (order.length === 0) startQuiz(load());
+    else { show("test"); renderQuestion(); }
+  } else if (page === "results" || (page === "" && shared)) {
+    if (shared && page !== "results" && !lastAnswers) { show("results"); showResults(shared); }
+    else if (lastAnswers) { show("results"); showResults(); }
+    else if (shared) { show("results"); showResults(shared); }
+    else go("#/");
+  } else if (page === "ideologies") {
+    show("ideologies");
+    if (arg) openInExplore(decodeURIComponent(arg));
+  } else if (page === "people") {
+    show("people");
+  } else if (page === "about") {
+    show("about");
+  } else if (page === "how") {
+    show("home", { scroll: false });
+    $("how").scrollIntoView({ block: "start" });
+  } else {
+    show("home");
+  }
+}
+window.addEventListener("hashchange", route);
+route();

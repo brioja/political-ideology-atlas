@@ -48,7 +48,8 @@ const dot = (x, y) => x.reduce((sum, xi, i) => sum + xi * y[i], 0);
 
 // Builds the axes from the reference profiles. `varianceTarget` decides how many
 // axes are kept: the fewest that together explain that share of the variance.
-function buildModel(ideologies, { varianceTarget = 0.8, minAxes = 2 } = {}) {
+function buildModel(ideologies, opts = {}) {
+  const { varianceTarget = 0.8, minAxes = 2 } = opts;
   const rows = ideologies.map((i) => i.profile);
   const m = rows.length;
   const n = rows[0].length;
@@ -76,6 +77,7 @@ function buildModel(ideologies, { varianceTarget = 0.8, minAxes = 2 } = {}) {
   }
 
   const model = { mean, components, kept, ideologies: [] };
+  if (opts.skipExtras) return model;
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
@@ -140,13 +142,20 @@ function rms(answers, profile, idx) {
 // Ranks ideologies by how far their answers are from yours on the statements you answered.
 // Similarity rescales that distance so 0% is as far apart as the two most distant ideologies
 // are on those same statements.
-function match(model, answers) {
-  const idx = answeredIndexes(answers);
+// The largest distance between any two ideologies on these statements: the "0%" end of the scale.
+function spreadOn(model, idx) {
   const ideos = model.ideologies;
   let spread = 0;
   for (let a = 0; a < ideos.length; a++) {
     for (let b = a + 1; b < ideos.length; b++) spread = Math.max(spread, rms(ideos[a].profile, ideos[b].profile, idx));
   }
+  return spread;
+}
+
+function match(model, answers) {
+  const idx = answeredIndexes(answers);
+  const ideos = model.ideologies;
+  const spread = spreadOn(model, idx);
   const ranked = ideos
     .map((i) => {
       const d = rms(answers, i.profile, idx);
@@ -154,6 +163,29 @@ function match(model, answers) {
     })
     .sort((x, y) => x.distance - y.distance);
   return { you: project(model, answers), ranked };
+}
+
+// Ranks people on the statements both you and they have a position on, using the same 0–100%
+// scale as ideologies. People sharing fewer than `minOverlap` statements with you are left out.
+// Near-ties (within `tie`) go to the more widely read person, by Wikipedia page views.
+function matchPeople(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}) {
+  const idx = answeredIndexes(answers);
+  const spread = spreadOn(model, idx);
+  const ranked = people
+    .map((p) => {
+      const both = idx.filter((j) => p.profile[j] != null);
+      if (both.length < minOverlap) return null;
+      const d = rms(answers, p.profile, both);
+      return { ...p, distance: d, overlap: both.length, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.similarity - a.similarity);
+  for (let i = 1; i < ranked.length; i++) {
+    for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
+      [ranked[j - 1], ranked[j]] = [ranked[j], ranked[j - 1]];
+    }
+  }
+  return ranked;
 }
 
 // How plausible each ideology is given the answers so far: each answer multiplies an
@@ -193,6 +225,137 @@ function certainty(model, answers, asked) {
   return Math.min(1, Math.max(lead, resolved));
 }
 
+// Parallel analysis: how many axes reflect real structure rather than noise. Each run shuffles
+// every statement's answers independently across ideologies (keeping each statement's spread
+// but destroying any pattern between statements) and recomputes the eigenvalues. An axis
+// counts as real if its eigenvalue beats the same-rank eigenvalue in `quantile` of the runs.
+// Deterministic (seeded), so the result is stable between builds.
+function meaningfulAxes(model, ideologies, { runs = 60, quantile = 0.95, seed = 12345 } = {}) {
+  let state = seed;
+  const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
+  const rows = ideologies.map((i) => i.profile);
+  const m = rows.length, n = rows[0].length;
+  const random = [];
+  for (let run = 0; run < runs; run++) {
+    const cols = Array.from({ length: n }, (_, j) => {
+      const col = rows.map((r) => r[j]);
+      for (let i = m - 1; i > 0; i--) { const k = Math.floor(rand() * (i + 1)); [col[i], col[k]] = [col[k], col[i]]; }
+      return col;
+    });
+    const shuffled = Array.from({ length: m }, (_, i) => ({ profile: cols.map((c) => c[i]) }));
+    random.push(buildModel(shuffled, { skipExtras: true }).components.map((c) => c.eigenvalue));
+  }
+  let count = 0;
+  for (const c of model.components) {
+    const sorted = random.map((r) => r[count] || 0).sort((a, b) => a - b);
+    if (c.eigenvalue > sorted[Math.min(runs - 1, Math.floor(quantile * runs))]) count++;
+    else break;
+  }
+  return count;
+}
+
+// When a test-taker's result counts as settled: shared by the quiz (app.js) and the salience bar.
+const SETTLE = { minAnswers: 10, certainty: 0.9 };
+
+// Salience: is a person's record as solid as a test-taker's own result?
+// Depends only on WHICH statements have a recorded position, never on the answers, so unusual
+// views are not penalized. Bayesian: before any evidence, a position is as spread out as the
+// ideologies are on each dividing line (the eigenvalues); each recorded statement narrows that
+// along the lines it measures, weighted by the leftover noise per statement (the variance the
+// shown lines don't explain). The bar is how precisely a typical test-taker is placed when their
+// result settles: simulated takers (each ideology's answers with ~20% nudged by one point) go
+// through the adaptive quiz until settled, and the median of their uncertainty is the bar. A
+// person is matched against test-takers only if their record places them at least that precisely.
+function salienceContext(model, ideologies, { lines } = {}) {
+  const k = Math.max(2, Math.min(lines ?? meaningfulAxes(model, ideologies), model.components.length));
+  const n = model.mean.length;
+  const noise = model.components.slice(k).reduce((s, c) => s + c.eigenvalue, 0) / n || 1e-6;
+  const dist = (a, b) => Math.sqrt(a.slice(0, k).reduce((s, x, i) => s + (x - b[i]) ** 2, 0));
+  const gaps = model.ideologies
+    .map((a) => Math.min(...model.ideologies.filter((b) => b !== a).map((b) => dist(a.scores, b.scores))))
+    .sort((x, y) => x - y);
+  const ctx = { model, k, noise, resolution: gaps[Math.floor(gaps.length / 2)] };
+  ctx.bar = settledTakerUncertainty(ctx);
+  return ctx;
+}
+
+function settledTakerUncertainty(ctx, { takers = 200, seed = 7 } = {}) {
+  const { model } = ctx;
+  let state = seed;
+  const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
+  const ideos = model.ideologies;
+  const reps = Math.max(1, Math.ceil(takers / ideos.length));
+  const found = [];
+  for (let rep = 0; rep < reps; rep++) {
+    for (const ideo of ideos) {
+      const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
+      const answers = Array(truth.length).fill(null);
+      const asked = new Set();
+      for (;;) {
+        const next = nextQuestion(model, answers, asked);
+        if (!next) break;
+        asked.add(next.q);
+        answers[next.q] = truth[next.q];
+        if (asked.size >= SETTLE.minAnswers && certainty(model, answers, asked) >= SETTLE.certainty) break;
+      }
+      found.push(placementUncertainty(ctx, [...asked]));
+    }
+  }
+  found.sort((a, b) => a - b);
+  return found[Math.floor(found.length / 2)];
+}
+
+function placementUncertainty(ctx, knownIdx) {
+  const { model, k, noise } = ctx;
+  const comps = model.components.slice(0, k);
+  const M = comps.map((ca, a) => comps.map((cb, b) =>
+    (a === b ? 1 / ca.eigenvalue : 0) + knownIdx.reduce((s, j) => s + ca.vector[j] * cb.vector[j], 0) / noise));
+  // Trace of M⁻¹: solve M x = e_i for each axis.
+  let trace = 0;
+  for (let i = 0; i < k; i++) trace += solve(M, comps.map((_, j) => (j === i ? 1 : 0)))[i];
+  return Math.sqrt(trace);
+}
+
+function salience(ctx, profile) {
+  const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
+  const uncertainty = placementUncertainty(ctx, known);
+  return { known: known.length, uncertainty, bar: ctx.bar, salient: uncertainty <= ctx.bar };
+}
+
+// Gives the leading axes human names. Each candidate name lists statements with the direction
+// that points toward its "high" end; an axis takes the unused name whose direction it matches
+// best (cosine similarity), flipping the ends if the axis points the other way. Names below
+// `minFit` are left off, so callers fall back to describeAxis. Because the match is recomputed
+// from the data, names stay right when new profiles reorder or flip the axes.
+function nameAxes(model, questions, candidates, count = 3, minFit = 0.35) {
+  const index = new Map(questions.map((q, i) => [q.id, i]));
+  const used = new Set();
+  const names = [];
+  for (let a = 0; a < Math.min(count, model.components.length); a++) {
+    const v = model.components[a].vector;
+    let best = null;
+    for (const c of candidates) {
+      if (used.has(c.name)) continue;
+      let dot = 0, norm = 0;
+      for (const [id, sign] of Object.entries(c.toward)) {
+        const q = index.get(id);
+        if (q === undefined) continue;
+        dot += v[q] * sign; norm += sign * sign;
+      }
+      // Cosine between the whole axis (a unit vector) and the name's direction, so an axis
+      // only gets a name if those statements are a large part of what it measures.
+      const fit = norm ? dot / Math.sqrt(norm) : 0;
+      if (!best || Math.abs(fit) > Math.abs(best.fit)) best = { c, fit };
+    }
+    if (best && Math.abs(best.fit) >= minFit) {
+      used.add(best.c.name);
+      const flip = best.fit < 0;
+      names.push({ name: best.c.name, low: flip ? best.c.high : best.c.low, high: flip ? best.c.low : best.c.high, fit: Math.abs(best.fit) });
+    } else names.push(null);
+  }
+  return names;
+}
+
 // Describes an axis by the statements that load on it most and the ideologies at each end.
 function describeAxis(model, index, questions, count = 3) {
   const c = model.components[index];
@@ -207,5 +370,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, project, match, weights, nextQuestion, certainty, describeAxis };
+  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, meaningfulAxes, salienceContext, salience, nameAxes, describeAxis, SETTLE };
 }

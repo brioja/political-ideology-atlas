@@ -58,6 +58,211 @@ const QUESTION_TEXTS = [
 const QUESTION_IDS = ["universal-healthcare", "raise-minimum-wage", "markets-allocate-better", "public-ownership", "tax-the-wealthy", "unions-good", "property-fundamental", "regulate-corporations", "cut-welfare", "worker-ownership", "surveillance-ok", "legalize-drugs", "restrict-hate-speech", "strong-leader", "state-harmful", "limit-guns", "empower-police-military", "legalize-sex-work", "decide-locally", "rehabilitation", "traditional-family", "same-sex-marriage", "abortion-legal", "more-religion-public", "correct-racial-injustice", "gender-social-construct", "preserve-national-culture", "gradual-change", "reduce-immigration", "empower-international-orgs", "free-trade", "nation-first", "humanitarian-intervention", "open-borders", "limit-growth", "drastic-climate-action", "tech-solves-problems", "expand-nuclear", "revolution-justified", "experts-over-public"];
 const QUESTIONS = QUESTION_TEXTS.map((text, i) => ({ id: QUESTION_IDS[i], text }));
 
+// Plain-language explanations for each statement (copied from statements.json).
+const QUESTION_HELP = {
+ "universal-healthcare": {
+  "agree": "Everyone gets health care paid for or guaranteed by the state, usually through taxes.",
+  "disagree": "Health care is mainly bought privately or through insurance, with the state covering less.",
+  "note": "About how far the state should guarantee basic services."
+ },
+ "raise-minimum-wage": {
+  "agree": "The legal lowest wage goes up a lot, even if some employers have to pay more.",
+  "disagree": "Wages are left mostly to employers, workers and unions, or raised only slowly.",
+  "note": "About how much the state should set pay."
+ },
+ "markets-allocate-better": {
+  "agree": "Prices and competition generally decide better than officials what gets made and who gets it.",
+  "disagree": "Governments or public planning often decide better than markets what society needs.",
+  "note": "A core economic question: markets or the state."
+ },
+ "public-ownership": {
+  "agree": "Key industries are run by the state or public bodies instead of private companies.",
+  "disagree": "Those industries stay mostly in private hands, perhaps with regulation.",
+  "note": "About who owns the commanding heights of the economy."
+ },
+ "tax-the-wealthy": {
+  "agree": "High earners and the very rich pay a noticeably larger share in tax.",
+  "disagree": "Taxes on the wealthy stay as they are or go down.",
+  "note": "About redistribution through taxes."
+ },
+ "unions-good": {
+  "agree": "Workers organizing collectively improves pay, conditions and fairness overall.",
+  "disagree": "Unions mostly protect insiders, raise costs or hold back the economy.",
+  "note": "About organized labor's role."
+ },
+ "property-fundamental": {
+  "agree": "Owners' rights to their property should almost never be overridden, even for public goals.",
+  "disagree": "Property can be limited, taxed or redistributed when the community needs it.",
+  "note": "About how absolute property rights are."
+ },
+ "regulate-corporations": {
+  "agree": "Companies face more rules on things like pollution, prices, labor and competition.",
+  "disagree": "Companies face fewer rules, or the current amount is enough.",
+  "note": "About the state's oversight of business."
+ },
+ "cut-welfare": {
+  "agree": "Benefits often discourage work and should be reduced.",
+  "disagree": "Welfare is a safety net worth keeping or expanding.",
+  "note": "About the size of the welfare state."
+ },
+ "worker-ownership": {
+  "agree": "Businesses should belong to the people who work in them, for example as cooperatives.",
+  "disagree": "Businesses can be owned by investors, founders or the state as they are now.",
+  "note": "About who owns workplaces."
+ },
+ "surveillance-ok": {
+  "agree": "Security agencies may monitor communications if it helps stop attacks.",
+  "disagree": "Privacy should be protected even if it makes security work harder.",
+  "note": "About security versus civil liberties."
+ },
+ "legalize-drugs": {
+  "agree": "Adults may legally buy and use drugs such as cannabis, possibly with regulation.",
+  "disagree": "Recreational drugs stay illegal.",
+  "note": "About personal freedom versus protection from harm."
+ },
+ "restrict-hate-speech": {
+  "agree": "Speech that attacks groups for who they are can be punished by law.",
+  "disagree": "Offensive speech stays legal; it is answered with more speech, not law.",
+  "note": "About limits on free speech."
+ },
+ "strong-leader": {
+  "agree": "A decisive leader who can act without parliament or courts slowing things down would help.",
+  "disagree": "Checks and balances matter even when they slow decisions down.",
+  "note": "About concentrated versus limited power."
+ },
+ "state-harmful": {
+  "agree": "Society would be better off without governments at all.",
+  "disagree": "Some form of state is needed, whatever its size.",
+  "note": "Separates anarchists from everyone else."
+ },
+ "limit-guns": {
+  "agree": "Owning guns requires strict licensing, or most private gun ownership is banned.",
+  "disagree": "Adults should be able to own guns with few restrictions.",
+  "note": "About gun rights versus gun control."
+ },
+ "empower-police-military": {
+  "agree": "Police and armed forces get bigger budgets and more powers.",
+  "disagree": "Police and military budgets and powers stay the same or shrink.",
+  "note": "About security institutions."
+ },
+ "legalize-sex-work": {
+  "agree": "Adults can legally sell sexual services, ideally with rules for safety.",
+  "disagree": "Selling or buying sex should be banned or discouraged by law.",
+  "note": "About personal freedom, morality and exploitation."
+ },
+ "decide-locally": {
+  "agree": "Towns and regions make most decisions rather than the national government.",
+  "disagree": "National government sets common rules so the same standards apply everywhere.",
+  "note": "About decentralization."
+ },
+ "rehabilitation": {
+  "agree": "Prisons mainly try to help offenders change and return to society.",
+  "disagree": "Prisons mainly exist to punish and to protect the public.",
+  "note": "About the purpose of criminal justice."
+ },
+ "traditional-family": {
+  "agree": "A married mother and father raising children is the model society should support.",
+  "disagree": "Many family forms are equally valid and none should be favored.",
+  "note": "About social traditionalism."
+ },
+ "same-sex-marriage": {
+  "agree": "Same-sex couples can marry with the same rights as anyone else.",
+  "disagree": "Marriage should be only between a man and a woman.",
+  "note": "About LGBT equality and tradition."
+ },
+ "abortion-legal": {
+  "agree": "Women can legally choose to end most pregnancies.",
+  "disagree": "Abortion should be banned or allowed only in rare cases.",
+  "note": "About reproductive rights and the status of the unborn."
+ },
+ "more-religion-public": {
+  "agree": "Religious values and institutions should shape laws, schools and public life more.",
+  "disagree": "Religion should stay a private matter, out of government.",
+  "note": "About religion in public life."
+ },
+ "correct-racial-injustice": {
+  "agree": "Society should take active steps, such as targeted programs, to repair past discrimination.",
+  "disagree": "Government should treat everyone the same now, without remedies for the past.",
+  "note": "About how to deal with historical racism."
+ },
+ "gender-social-construct": {
+  "agree": "Ideas of what men and women are like come mostly from culture, not biology.",
+  "disagree": "Differences between men and women are mostly natural or biological.",
+  "note": "About gender and tradition."
+ },
+ "preserve-national-culture": {
+  "agree": "Protecting the nation's language, customs and heritage matters.",
+  "disagree": "Culture should change freely; preserving it is not a political goal.",
+  "note": "About national identity."
+ },
+ "gradual-change": {
+  "agree": "Reform should be slow and build on existing institutions.",
+  "disagree": "Big, fast changes are sometimes needed even if institutions are disrupted.",
+  "note": "About the pace of change: conservative or radical."
+ },
+ "reduce-immigration": {
+  "agree": "Fewer people should be allowed to move into the country.",
+  "disagree": "Immigration should stay at current levels or increase.",
+  "note": "About immigration."
+ },
+ "empower-international-orgs": {
+  "agree": "Bodies like the UN should be able to make more binding decisions over countries.",
+  "disagree": "Nations should keep decisions in their own hands.",
+  "note": "About global governance versus sovereignty."
+ },
+ "free-trade": {
+  "agree": "Fewer tariffs and trade barriers make all countries better off over time.",
+  "disagree": "Free trade hurts some workers or countries badly, so trade should be managed.",
+  "note": "About globalization."
+ },
+ "nation-first": {
+  "agree": "Your country's own interests come before international agreements.",
+  "disagree": "Cooperation with other countries usually comes first.",
+  "note": "About nationalism versus internationalism."
+ },
+ "humanitarian-intervention": {
+  "agree": "Using force abroad can be right to stop mass atrocities.",
+  "disagree": "Military intervention in other countries is wrong or does more harm than good.",
+  "note": "About foreign policy."
+ },
+ "open-borders": {
+  "agree": "In the long run people should be free to live and work in any country.",
+  "disagree": "Countries should always control who can enter.",
+  "note": "About borders as such."
+ },
+ "limit-growth": {
+  "agree": "Protecting nature can mean accepting less economic growth.",
+  "disagree": "Growth should continue; environmental problems can be solved alongside it.",
+  "note": "About growth versus ecology."
+ },
+ "drastic-climate-action": {
+  "agree": "Governments should act fast and hard on emissions, even at real cost.",
+  "disagree": "Climate policy should be modest, market-led, or not a priority.",
+  "note": "About climate change."
+ },
+ "tech-solves-problems": {
+  "agree": "Science and technology will fix most of what goes wrong for people.",
+  "disagree": "Technology can't solve problems that are social, moral or political.",
+  "note": "About optimism about technology."
+ },
+ "expand-nuclear": {
+  "agree": "Build more nuclear power plants.",
+  "disagree": "Phase out or avoid nuclear power.",
+  "note": "About energy policy; splits even environmentalists."
+ },
+ "revolution-justified": {
+  "agree": "Overthrowing a government by force can sometimes be right.",
+  "disagree": "Change should only come through legal, peaceful means.",
+  "note": "About revolution versus reform."
+ },
+ "experts-over-public": {
+  "agree": "Specialists should have more weight in decisions than public opinion.",
+  "disagree": "Ordinary people should have the final say, even against expert advice.",
+  "note": "About technocracy versus democracy."
+ }
+};
+for (const q of QUESTIONS) Object.assign(q, QUESTION_HELP[q.id]);
+
 const IDEOLOGY_SOURCE = {
   //                          econ 1-10    liberty 11-20  society 21-28  world 29-34  eco 35-38  means
   "Marxist-Leninist":        "SSXSS aXSXa | adSSX aadda | ..aXa ..X | .dXaX. | daSS | Sa",
@@ -153,5 +358,6 @@ for (const ideo of IDEOLOGIES) {
   ideo.wikipedia = `https://en.wikipedia.org/wiki/${encodeURIComponent(article)}`;
   ideo.furtherReading = [];
 }
+
 
 if (typeof module !== "undefined") module.exports = { QUESTIONS, IDEOLOGIES, SCORE };
