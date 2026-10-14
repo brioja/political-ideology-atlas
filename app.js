@@ -414,7 +414,7 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
   b.id = "choice-none";
   b.className = "no-opinion";
-  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't know or don't care <small class="hint">· not counted</small></span><span class="key" aria-hidden="true">6</span>`;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't know or don't care</span><span class="key" aria-hidden="true">6</span>`;
   b.addEventListener("click", () => answer(null));
   $("likert").append(b);
 }
