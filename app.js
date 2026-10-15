@@ -515,6 +515,17 @@ function aboutIdeology(ideo) {
   return (ideo.summary ? `<p>${esc(ideo.summary)}</p>` : "") + readMore(ideo);
 }
 
+// The description with the Wikipedia article's lead image beside it (when it has a free one), for
+// the places that show one ideology in full: the results' top match and the ideology page.
+function aboutWithImage(ideo) {
+  const im = ideo.image;
+  if (!im) return aboutIdeology(ideo);
+  return `<div class="with-figure"><figure class="ideo-figure">
+      <img src="${esc(im.url)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <figcaption class="credit">Image: ${esc(im.artist)}, <a href="${esc(im.source)}" target="_blank" rel="noopener">${esc(im.license)}</a>, via Wikimedia Commons</figcaption>
+    </figure>${aboutIdeology(ideo)}</div>`;
+}
+
 // Pass `shared` (decoded answers) to show someone else's result from a link.
 function showResults(shared = null) {
   const given = shared || lastAnswers;
@@ -575,7 +586,7 @@ function showResults(shared = null) {
       <div class="row verdict-actions">
         <a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a>
       </div>
-      ${aboutIdeology(top)}
+      ${aboutWithImage(top)}
       <p class="muted">${closeCall
         ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
         : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
@@ -1423,7 +1434,7 @@ function renderIdeologyPage(id) {
       <div class="detail-head stack tinted" style="--fam: var(--accent)">
         <div class="tag-row">${flagSwatch(ideo)}</div>
         <h1>${esc(ideo.name)}</h1>
-        ${aboutIdeology(ideo)}
+        ${aboutWithImage(ideo)}
         ${audit && audit.scope ? `<p class="muted small"><strong>Scope:</strong> ${esc(audit.scope)}</p>` : ""}
         ${yourMatchLine(yours, ideo.name)}
       </div>

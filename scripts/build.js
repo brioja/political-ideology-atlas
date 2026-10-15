@@ -27,8 +27,8 @@ for (const entry of catalog()) {
   const a = readJson(p);
   if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
   if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
-  // Too few stated positions to place it as precisely as a test-taker: leave it out, so it
-  // neither appears in results nor shapes the dividing lines.
+  // Too few stated positions to tell it apart from its neighbours: leave it out, so it neither
+  // appears in results nor shapes the dividing lines.
   if (!ideologySalience(a.answers).salient) { notSalient.push(entry.id); continue; }
   included.push({
     id: entry.id,
@@ -37,6 +37,8 @@ for (const entry of catalog()) {
     audited: true,
     // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
     flag: flagFor(entry.id),
+    // The Wikipedia article's freely licensed lead image, with its credit (scripts/images.js).
+    image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
     wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
     furtherReading: a.furtherReading || [],
     keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),

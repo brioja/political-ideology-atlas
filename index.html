@@ -302,6 +302,11 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .person-head .avatar { width: 72px; height: 72px; }
 .person-head .stack { gap: 0.25rem; }
 .credit { font-size: 0.72rem; color: var(--muted); }
+/* An ideology's lead image, floated beside its description (which wraps around it) */
+.with-figure::after { content: ""; display: block; clear: both; }
+.ideo-figure { float: right; width: min(40%, 220px); margin: 0.25rem 0 0.75rem 1.25rem; }
+.ideo-figure img { display: block; width: 100%; height: auto; max-height: 260px; object-fit: contain; border-radius: 8px; background: var(--surface); }
+.ideo-figure figcaption { margin-top: 0.35rem; line-height: 1.35; overflow-wrap: anywhere; }
 .credit a { color: inherit; }
 #people-list summary { grid-template-columns: minmax(0, 1fr) auto; }
 
