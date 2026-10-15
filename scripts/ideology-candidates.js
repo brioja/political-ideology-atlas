@@ -37,7 +37,7 @@ const wiki = (params) => getJson(`https://en.wikipedia.org/w/api.php?${new URLSe
 // 1. Every article the list links to, resolved through redirects, with its Wikidata item.
 async function listedArticles() {
   const links = (await wiki({ action: "parse", page: LIST, prop: "links" })).parse.links
-    .filter((l) => l.ns === 0 && l.exists).map((l) => l.title);
+    .filter((l) => l.ns === 0).map((l) => l.title); // missing pages drop out below (no Wikidata item)
   const out = new Map(); // canonical title -> Wikidata id
   for (let i = 0; i < links.length; i += 50) {
     const q = (await wiki({ action: "query", titles: links.slice(i, i + 50).join("|"), redirects: "1", prop: "pageprops", ppprop: "wikibase_item" })).query;
