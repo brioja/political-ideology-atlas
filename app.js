@@ -1005,8 +1005,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.textAlign = "left";
   }
   // An end's name, as large as fits its column (down to 22px). When the most extreme ideology's name
-  // can't fit, the next one in from that end stands in; only if none of the five nearest fits is
-  // the first shortened.
+  // can't fit at 24px or more, the next one in from that end stands in, so one end doesn't shrink
+  // well below the rest; failing that, the first that fits at all; only if none of the five nearest
+  // fits is the first shortened.
   const endLabel = (names, x, ty, align) => {
     const sizeFor = (text) => {
       let size = 30;
@@ -1014,7 +1015,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       while (ctx.measureText(text).width > END_W && size > 22) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
       return ctx.measureText(text).width <= END_W ? size : 0;
     };
-    let text = names.find(sizeFor);
+    let text = names.find((t) => sizeFor(t) >= 24) || names.find(sizeFor);
     if (text) ctx.font = `600 ${sizeFor(text)}px ${CARD_FONTS.display}`;
     else {
       text = names[0]; sizeFor(text);
