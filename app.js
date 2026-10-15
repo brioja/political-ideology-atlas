@@ -942,21 +942,35 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const morePeople = people.slice(1, 4);
   const ideoW = morePeople.length ? colW : W - PAD * 2;
   card(PAD, y, ideoW, ch);
-  ranked.slice(1, 4).forEach((r, i) => {
-    const ry = y + 56 + i * 60, x = PAD + 32, w = ideoW - 64;
-    ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 9, ry - 10, 9)));
-    ctx.fillStyle = CARD.ink; ctx.font = `400 30px ${CARD_FONTS.body}`;
-    let name = r.name;
-    while (ctx.measureText(name).width > w - 120 && name.length > 4) name = name.slice(0, -2) + "…";
-    ctx.fillText(name, x + 30, ry);
-    ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
-    ctx.fillText(pct(r.similarity), x + w, ry); ctx.textAlign = "left";
-    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 13, w, 6);
-    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 13, w * r.similarity, 6);
+  // Names in a column share one size: as large as fits the longest (down to `min`); a name that
+  // still doesn't fit is shortened.
+  const columnSize = (names, maxW, weight, size, min) => {
+    const widest = (n) => { ctx.font = `${weight} ${n}px ${CARD_FONTS.body}`; return Math.max(...names.map((t) => ctx.measureText(t).width)); };
+    while (widest(size) > maxW && size > min) size--;
+    return size;
+  };
+  const fitName = (text, maxW, weight, size) => {
+    ctx.font = `${weight} ${size}px ${CARD_FONTS.body}`;
+    while (ctx.measureText(text).width > maxW && text.length > 4) text = text.slice(0, -2) + "…";
+    return text;
+  };
+  // Each ideology's name gets the full width; its percentage sits at the end of its bar.
+  const closeIdeos = ranked.slice(1, 4), ideoNameW = ideoW - 64;
+  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 400, 30, 24);
+  closeIdeos.forEach((r, i) => {
+    const ry = y + 52 + i * 60, x = PAD + 32, w = ideoW - 64, barW = w - 76;
+    ctx.fillStyle = CARD.ink;
+    ctx.fillText(fitName(r.name, ideoNameW, 400, ideoSize), x, ry);
+    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 18, barW, 6);
+    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 18, barW * r.similarity, 6);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 24px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+    ctx.fillText(pct(r.similarity), x + w, ry + 26); ctx.textAlign = "left";
   });
   if (morePeople.length) {
     const x0 = PAD + colW + 28;
     card(x0, y, colW, ch);
+    const personNameW = colW - 64 - 68 - 62;
+    const personSize = columnSize(morePeople.map((p) => p.name), personNameW, 600, 29, 22);
     morePeople.forEach((p, i) => {
       const cy = y + 56 + i * 60 - 8, r = 26, x = x0 + 32;
       ctx.save();
@@ -964,10 +978,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       ctx.fillStyle = CARD.line; ctx.fill();
       if (photos[i + 1]) { ctx.clip(); drawCover(ctx, photos[i + 1], x, cy - r, r * 2, r * 2); }
       ctx.restore();
-      ctx.fillStyle = CARD.ink; ctx.font = `600 29px ${CARD_FONTS.body}`;
-      let name = p.name;
-      while (ctx.measureText(name).width > colW - 64 - 68 - 80 && name.length > 4) name = name.slice(0, -2) + "…";
-      ctx.fillText(name, x + 68, cy + 10);
+      ctx.fillStyle = CARD.ink;
+      ctx.fillText(fitName(p.name, personNameW, 600, personSize), x + 68, cy + 10);
       ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
       ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 10); ctx.textAlign = "left";
     });
