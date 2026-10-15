@@ -823,7 +823,7 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
   return y + lineHeight;
 }
 
-// Portrait share image (1080x1350, the 4:5 size phones and social feeds show well): the ideology
+// Portrait share image (1080x1350, the 4:5 size phones and social feeds show uncropped): the ideology
 // name, the closest person as the hero, other matches and people, and where you stand.
 // The landscape drawCard() remains for the generic link preview (og.png).
 function loadPhoto(p) {
@@ -870,6 +870,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       document.fonts.load(`400 18px ${CARD_FONTS.mono}`),
     ]);
   } catch {}
+  // A feed shows the card at about a third of its size, so nothing that should be read in the feed
+  // is set below ~26px, and the card shows only what fits at that size.
   const W = 1080, H = 1350, PAD = 72;
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext("2d");
@@ -888,130 +890,125 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   ctx.globalAlpha = 0.16; ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
   ctx.textBaseline = "alphabetic";
 
-  // Header: site name, then the ideology name.
-  drawGlobe(ctx, PAD, 66, 40);
-  ctx.fillStyle = CARD.muted; ctx.font = `500 24px ${CARD_FONTS.mono}`;
-  ctx.fillText(SITE_NAME.toUpperCase(), PAD + 56, 95);
-  ctx.font = `500 26px ${CARD_FONTS.mono}`;
-  ctx.fillText("CLOSEST IDEOLOGY", PAD, 161);
+  // Header: site name (so a post says which test this is), then the ideology name.
+  drawGlobe(ctx, PAD, 60, 44);
+  ctx.fillStyle = CARD.muted; ctx.font = `500 28px ${CARD_FONTS.mono}`;
+  ctx.fillText(SITE_NAME.toUpperCase(), PAD + 62, 92);
   ctx.fillStyle = CARD.ink;
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
-  ctx.fillText(top.name, PAD, 256);
-  ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
-  ctx.fillText(`${pct(top.similarity)} match${result.answered != null ? ` · based on ${result.answered} answers` : ""}`, PAD, 302);
+  ctx.fillText(top.name, PAD, 200);
+  ctx.fillStyle = CARD.muted; ctx.font = `400 30px ${CARD_FONTS.body}`;
+  ctx.fillText(`${pct(top.similarity)} match · closest ideology`, PAD, 248);
 
   const card = (x, y, w, h) => {
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = "rgba(23, 32, 43, 0.08)"; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.roundRect(x, y, w, h, 22); ctx.fill(); ctx.stroke();
   };
-  const label = (text, x, y) => { ctx.fillStyle = CARD.muted; ctx.font = `500 20px ${CARD_FONTS.mono}`; ctx.fillText(text, x, y); };
+  const label = (text, x, y) => { ctx.fillStyle = CARD.muted; ctx.font = `500 26px ${CARD_FONTS.mono}`; ctx.fillText(text, x, y); };
 
-  let y = 336;
+  let y = 280;
   // Hero: the person who thinks most like you.
   if (people.length) {
-    const p = people[0], hh = 330;
+    const p = people[0], hh = 316;
     card(PAD, y, W - PAD * 2, hh);
-    const pw = 300;
+    const pw = 290;
     ctx.save();
     ctx.beginPath(); ctx.roundRect(PAD, y, pw, hh, [22, 0, 0, 22]); ctx.clip();
     if (photos[0]) drawCover(ctx, photos[0], PAD, y, pw, hh);
     else { ctx.fillStyle = CARD.line; ctx.fillRect(PAD, y, pw, hh); }
     ctx.restore();
-    const tx = PAD + pw + 44, tw = W - PAD - 40 - tx;
-    label("THINKS MOST LIKE YOU", tx, y + 56);
-    ctx.fillStyle = CARD.ink; ctx.font = `700 50px ${CARD_FONTS.display}`;
+    const tx = PAD + pw + 40, tw = W - PAD - 36 - tx;
+    label("THINKS MOST LIKE YOU", tx, y + 54);
+    ctx.fillStyle = CARD.ink; ctx.font = `700 52px ${CARD_FONTS.display}`;
     const nameLines = wrapLines(ctx, p.name, tw, 2);
-    nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 116 + i * 54));
-    const ry = y + 116 + (nameLines.length - 1) * 54 + 40;
+    nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 116 + i * 56));
+    const ry = y + 116 + (nameLines.length - 1) * 56 + 42;
     if (p.role) {
       // A two-line name leaves room for one line of role, so nothing runs into the percentage.
-      ctx.fillStyle = CARD.muted; ctx.font = `400 24px ${CARD_FONTS.body}`;
-      wrapLines(ctx, p.role, tw, nameLines.length > 1 ? 1 : 2).forEach((l, i) => ctx.fillText(l, tx, ry + i * 30));
+      ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
+      wrapLines(ctx, p.role, tw, nameLines.length > 1 ? 1 : 2).forEach((l, i) => ctx.fillText(l, tx, ry + i * 34));
     }
-    ctx.fillStyle = CARD.ink; ctx.font = `700 84px ${CARD_FONTS.display}`;
-    ctx.fillText(pct(p.similarity), tx, y + hh - 36);
+    ctx.fillStyle = CARD.ink; ctx.font = `700 76px ${CARD_FONTS.display}`;
+    ctx.fillText(pct(p.similarity), tx, y + hh - 32);
     const pw2 = ctx.measureText(pct(p.similarity)).width;
-    ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.body}`;
-    ctx.fillText("alike", tx + pw2 + 14, y + hh - 40);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 30px ${CARD_FONTS.body}`;
+    ctx.fillText("alike", tx + pw2 + 14, y + hh - 36);
     y += hh + 20;
   }
 
-  // Two columns: other close ideologies, and more people.
-  // Rows in both columns share centres; the offsets centre the taller (people, 52px avatars) column
-  // in its card, so the headings line up across columns.
-  const colW = (W - PAD * 2 - 28) / 2, ch = 244;
+  // Two columns, unlabelled (avatars and bars tell them apart): the next three ideologies, and three
+  // more people. Rows in both columns share centres.
+  const colW = (W - PAD * 2 - 28) / 2, ch = 218;
   const morePeople = people.slice(1, 4);
   const ideoW = morePeople.length ? colW : W - PAD * 2;
   card(PAD, y, ideoW, ch);
-  label("CLOSE IDEOLOGIES", PAD + 32, y + 36);
   ranked.slice(1, 4).forEach((r, i) => {
-    const ry = y + 82 + i * 58, x = PAD + 32, w = ideoW - 64;
-    ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
-    ctx.fillStyle = CARD.ink; ctx.font = `400 25px ${CARD_FONTS.body}`;
+    const ry = y + 56 + i * 60, x = PAD + 32, w = ideoW - 64;
+    ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 9, ry - 10, 9)));
+    ctx.fillStyle = CARD.ink; ctx.font = `400 30px ${CARD_FONTS.body}`;
     let name = r.name;
-    while (ctx.measureText(name).width > w - 110 && name.length > 4) name = name.slice(0, -2) + "…";
-    ctx.fillText(name, x + 28, ry);
-    ctx.fillStyle = CARD.muted; ctx.font = `400 22px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+    while (ctx.measureText(name).width > w - 120 && name.length > 4) name = name.slice(0, -2) + "…";
+    ctx.fillText(name, x + 30, ry);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
     ctx.fillText(pct(r.similarity), x + w, ry); ctx.textAlign = "left";
-    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 12, w, 6);
-    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 12, w * r.similarity, 6);
+    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 13, w, 6);
+    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 13, w * r.similarity, 6);
   });
   if (morePeople.length) {
     const x0 = PAD + colW + 28;
     card(x0, y, colW, ch);
-    label("MORE PEOPLE", x0 + 32, y + 36);
     morePeople.forEach((p, i) => {
-      const cy = y + 82 + i * 58, r = 26, x = x0 + 32;
+      const cy = y + 56 + i * 60 - 8, r = 26, x = x0 + 32;
       ctx.save();
       ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
       ctx.fillStyle = CARD.line; ctx.fill();
       if (photos[i + 1]) { ctx.clip(); drawCover(ctx, photos[i + 1], x, cy - r, r * 2, r * 2); }
       ctx.restore();
-      ctx.fillStyle = CARD.ink; ctx.font = `600 24px ${CARD_FONTS.body}`;
+      ctx.fillStyle = CARD.ink; ctx.font = `600 29px ${CARD_FONTS.body}`;
       let name = p.name;
-      while (ctx.measureText(name).width > colW - 64 - 72 - 70 && name.length > 4) name = name.slice(0, -2) + "…";
-      ctx.fillText(name, x + 72, cy + 8);
-      ctx.fillStyle = CARD.muted; ctx.font = `400 22px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
-      ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 8); ctx.textAlign = "left";
+      while (ctx.measureText(name).width > colW - 64 - 68 - 80 && name.length > 4) name = name.slice(0, -2) + "…";
+      ctx.fillText(name, x + 68, cy + 10);
+      ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+      ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 10); ctx.textAlign = "left";
     });
   }
   y += ch + 20;
 
   // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
-  // row is "low end  ──○──  high end", so rows can sit 36px apart; the last needs ~20px above the footer.
-  const room = H - 130 - 20 - (y + 64);
-  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
-  const lh = lines > 1 ? Math.min(62, room / (lines - 1)) : 0;
-  label("WHERE YOU STAND", PAD, y + 26);
+  // row is "low end  ──○──  high end", so rows can sit 44px apart; the last needs ~20px above the footer.
+  const room = H - 130 - 20 - (y + 76);
+  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 44) + 1));
+  const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
+  label("WHERE YOU STAND", PAD, y + 30);
   {
     // Key: the dark ring is you, the faint marker your top match.
     let kx = W - PAD;
-    ctx.font = `400 20px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
-    ctx.fillText(top.name, kx, y + 26); kx -= ctx.measureText(top.name).width + 14;
+    ctx.font = `400 26px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
+    ctx.fillText(top.name, kx, y + 30); kx -= ctx.measureText(top.name).width + 16;
     ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
-    ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 6, y + 19, 8))); ctx.globalAlpha = 1;
-    kx -= 34; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 26); kx -= ctx.measureText("You").width + 16;
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 8, y + 21, 10))); ctx.globalAlpha = 1;
+    kx -= 40; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 30); kx -= ctx.measureText("You").width + 18;
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.arc(kx, y + 19, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(kx, y + 21, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     ctx.textAlign = "left";
   }
-  // An end's name, as large as fits its column (down to 16px), else shortened.
+  // An end's name, as large as fits its column (down to 22px), else shortened.
   const endLabel = (text, x, ty, align) => {
-    let size = 24;
+    let size = 30;
     ctx.font = `600 ${size}px ${CARD_FONTS.display}`;
-    while (ctx.measureText(text).width > END_W && size > 16) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
+    while (ctx.measureText(text).width > END_W && size > 22) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
     while (ctx.measureText(text).width > END_W && text.length > 4) text = text.slice(0, -2) + "…";
-    ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 8); ctx.textAlign = "left";
+    ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 10); ctx.textAlign = "left";
   };
-  const END_W = 230;
+  const END_W = 262;
   for (let i = 0; i < lines; i++) {
-    const L = lineInfo(i), ty = y + 64 + i * lh;
-    const x0 = PAD + END_W + 28, x1 = W - PAD - END_W - 28;
+    const L = lineInfo(i), ty = y + 76 + i * lh;
+    const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
-    endLabel(L.low, x0 - 28, ty, "right");
-    endLabel(L.high, x1 + 28, ty, "left");
+    endLabel(L.low, x0 - 24, ty, "right");
+    endLabel(L.high, x1 + 24, ty, "left");
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
@@ -1025,9 +1022,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
 
   // Footer.
   ctx.fillStyle = "rgba(23, 32, 43, 0.12)"; ctx.fillRect(PAD, H - 108, W - PAD * 2, 2);
-  ctx.fillStyle = CARD.ink; ctx.font = `500 24px ${CARD_FONTS.mono}`;
-  ctx.fillText("TAKE THE TEST", PAD, H - 56);
-  ctx.textAlign = "right"; ctx.fillText(site.toUpperCase(), W - PAD, H - 56); ctx.textAlign = "left";
+  ctx.fillStyle = CARD.ink; ctx.font = `500 28px ${CARD_FONTS.mono}`;
+  ctx.fillText("TAKE THE TEST", PAD, H - 54);
+  ctx.textAlign = "right"; ctx.fillText(site.toUpperCase(), W - PAD, H - 54); ctx.textAlign = "left";
 }
 
 // The people closest to a set of answers, for the result card (empty until people are audited).
@@ -1074,7 +1071,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
   if (result) {
     const { ranked } = result;
-    const people = (result.people || []).slice(0, 3);
+    const people = (result.people || []).slice(0, 4);
     const mark = (ideo, x, y, r) => {
       ctx.fillStyle = CARD.point;
       ctx.fill(new Path2D(shapePath(styleOf(ideo).shape, x, y, r)));
