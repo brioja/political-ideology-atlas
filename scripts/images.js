@@ -1,13 +1,15 @@
 // Stores each person's (or, with --ideologies, each ideology's) freely licensed Wikipedia lead image
 // (thumbnail URL plus author and license, for attribution) in audits/people-catalog.json or
 // audits/catalog.json. Images are loaded from Wikimedia's servers by the site; only the URLs and
-// credits are stored here.
-//   node scripts/images.js [--ideologies]
+// credits are stored here. Only entries without an image are looked up; --refresh looks up every
+// entry again (for newer lead images and credits, e.g. when tagging a release).
+//   node scripts/images.js [--ideologies] [--refresh]
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson } = require("./lib");
 
 const IDEOLOGIES = process.argv.includes("--ideologies");
+const REFRESH = process.argv.includes("--refresh");
 const CATALOG = path.join(ROOT, "audits", IDEOLOGIES ? "catalog.json" : "people-catalog.json");
 const LIST = IDEOLOGIES ? "ideologies" : "people";
 const API = "https://en.wikipedia.org/w/api.php";
@@ -85,7 +87,8 @@ const plain = (html) => (html || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " "
 async function main() {
   const data = readJson(CATALOG);
   // Ideologies found only by a Wikipedia search may point at the wrong article: no image for them.
-  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch)));
+  const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch))
+    && (REFRESH || !p.image));
   for (let i = 0; i < people.length; i += 50) {
     const batch = people.slice(i, i + 50);
     // 1. Lead image, free licenses only (non-free "fair use" images can't be reused here).
@@ -129,8 +132,8 @@ async function main() {
     console.log(`Left out ${dropped.length} images that show a real person: ${dropped.map((p) => p.name).join(", ")}`);
   }
   fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");
-  const missing = people.filter((p) => !p.image).map((p) => p.name);
-  console.log(`${people.length - missing.length}/${people.length} ${LIST} have a free image.`);
+  const missing = data[LIST].filter((p) => !p.image).map((p) => p.name);
+  console.log(`Looked up ${people.length}; ${data[LIST].length - missing.length}/${data[LIST].length} ${LIST} have a free image.`);
   if (missing.length) console.log(`No free lead image: ${missing.join(", ")}`);
 }
 
