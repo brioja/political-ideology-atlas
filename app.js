@@ -529,6 +529,10 @@ function showResults(shared = null) {
   const { you, ranked } = match(model, given);
   const top = ranked[0];
   const answered = given.filter((a) => a !== null).length;
+  // More questions are left when the quiz stopped early (it settled, or you chose to see results):
+  // "Answer more questions" goes back to the next one, and the result sharpens as you answer.
+  const progress = order.length ? { order, position } : load();
+  const canContinue = !shared && !!progress && progress.position < progress.order.length;
   const R = $("results");
   const You = shared ? "They" : "You";
   const you_ = shared ? "they" : "you";
@@ -579,6 +583,7 @@ function showResults(shared = null) {
       <div class="row verdict-actions">
         <a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a>
         ${shared ? "" : `<button class="btn" id="share-top">Share ↗</button>`}
+        ${canContinue ? `<a class="btn" href="#/test">Answer more questions</a>` : ""}
       </div>
       ${aboutIdeology(top)}
       <p class="muted">${closeCall
@@ -660,7 +665,7 @@ function showResults(shared = null) {
 
     <p class="muted small">Curious how the matching and the dividing lines work? <a href="#/about">Read about the method and sources</a>.</p>
 
-    <div class="row"><button class="${shared ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
+    <div class="row">${canContinue ? `<a class="btn primary" href="#/test">Answer more questions</a>` : ""}<button class="${shared || canContinue ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
   `;
 
   const axesBox = $("axes");
