@@ -588,6 +588,7 @@ function showResults(shared = null) {
         ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
         : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
+    ${shared ? "" : `<div class="row"><a class="btn" href="#share" id="to-share">Share your result <span aria-hidden="true">↓</span></a></div>`}
 
     <section>
       <h2>What ${top.name} stands for</h2>
@@ -736,6 +737,11 @@ function setUpSharing(given, ranked, you) {
   const url = shareUrl(given);
   const status = $("share-status");
   $("share-url").value = url;
+  // The button under the verdict jumps to the Share section (the hash is the router's, so scroll instead).
+  $("to-share").addEventListener("click", (e) => {
+    e.preventDefault();
+    $("share").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
   // The phone's share sheet, where the browser has one.
   if (navigator.share) {
     const btn = $("native-share");
