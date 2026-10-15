@@ -273,7 +273,7 @@ function setHeaderAction(mode) {
   if (mode === "results" || mode === "early") {
     // The words carry the meaning; the style only reinforces it.
     btn.innerHTML = mode === "early" ? `Results so far <span aria-hidden="true">→</span>` : `See your result <span aria-hidden="true">→</span>`;
-    btn.title = mode === "early" ? "Your top match could still change if you keep answering" : "Your result has settled";
+    btn.title = mode === "early" ? "Your top match could still change if you keep answering" : "The questions have narrowed it down";
     btn.setAttribute("href", "#/results");
     btn.onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else {
@@ -314,20 +314,19 @@ function renderQuestion() {
   const early = hold != null;
   const settled = early && hold >= 1;
   $("counter").textContent = `Statement ${position + 1}`;
-  // The bar shows the same calibrated chance as the text, so a "93% likely to hold" result fills it to
-  // 93%. It stays empty for the first statements, and stays where it was while there's no calibrated
-  // reading ("Narrowing it down…").
+  // The bar and the text show the same figure. It stays empty for the first statements, and stays
+  // where it was while there's no calibrated reading ("Narrowing it down…").
   if (hold != null || answered < REAL_LINES) $("bar").style.width = pct(hold ?? 0);
-  // A calibrated percentage: in simulations, the share of takers at this reading whose top match
-  // didn't change after answering everything. Readings never seen in simulation get words instead.
+  // The figure is calibrated on simulated takers who are noisy copies of one ideology, so it overstates
+  // how likely a real (mixed) taker's top match is to hold: it's shown as progress, not a probability.
   const status = $("certainty");
   status.classList.toggle("ready", settled);
   if (settled) {
-    status.innerHTML = `✓ Top match ${pct(hold)} likely to hold · <a href="#/results" id="ready-link">See your result →</a>`;
+    status.innerHTML = `✓ Narrowed down · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else status.textContent = answered < Math.max(1, REAL_LINES) ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
-    : `top match ${pct(hold)} likely to hold`;
+    : `Narrowing it down · ${pct(hold)}`;
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
   setHeaderAction(settled ? "results" : early ? "early" : "none");
