@@ -90,8 +90,8 @@ Confidence:
 - `low`: inferred, contested among adherents, or anachronistic.
 
 Inferred answers are fine, but be honest about them: only `high` and `medium` answers count as the
-ideology's stated positions. If too few are stated, the ideology can't be placed as precisely as a
-test-taker and is left out of the test (the salience check), so never upgrade an inference's
+ideology's stated positions. If too few are stated, the ideology can't be placed precisely enough
+to tell it from its neighbours and is left out of the test (the salience check), so never upgrade an inference's
 confidence to get it included.
 
 Each rationale is one or two plain sentences that explain the answer, not restate it. Each answer

@@ -67,9 +67,9 @@ an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: posit
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
 
 - **Salience:** a person is included only if their recorded positions place them on the test's
-  dividing lines at least as precisely as a typical test-taker is placed when their own result
-  settles (median of simulated test-takers; Bayesian placement uncertainty, see `salienceContext`
-  in `pca.js`). People and test-takers are compared, so both should rest on similar evidence.
+  real dividing lines more precisely than the typical (median) distance between an ideology and
+  its nearest neighbour there (Bayesian placement uncertainty, see `salienceContext` in `pca.js`).
+  A less precise record can't say which of two neighbouring ideologies it is closer to.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
   the same instructions) must fail it; `node test.js` checks this. Excluded audits make the

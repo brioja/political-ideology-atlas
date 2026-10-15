@@ -44,7 +44,7 @@ Confidence:
 - `low`: inferred, ambiguous or contested.
 
 **Salience:** the validator checks whether the person's recorded positions place them on the
-test's dividing lines at least as precisely as a typical test-taker's settled result. It depends only on which statements have a recorded
+test's dividing lines precisely enough to tell neighbouring ideologies apart. It depends only on which statements have a recorded
 position, not on the answers. Someone with too thin a political record is left out. Do not pad
 answers to pass; an honest rejection is the correct outcome.
 

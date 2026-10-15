@@ -24,8 +24,8 @@ if (process.argv.includes("--backfill")) {
   process.exit(0);
 }
 
-// Validated in this process, not one validate.js run per audit: the salience bar takes seconds to
-// compute and is cached per process. validate.js reads --people from this command line too.
+// Validated in this process, not one validate.js run per audit: the salience context takes seconds
+// to compute and is cached per process. validate.js reads --people from this command line too.
 const { validate, excludedOnly } = require("./validate");
 const pending = catalog().filter((entry) => {
   if (!fs.existsSync(profilePath(entry.id))) return true;

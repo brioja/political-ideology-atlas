@@ -111,7 +111,7 @@ function validate(id) {
     // For ideologies only stated positions count; inferred (low-confidence) answers don't.
     const s = PEOPLE ? personSalience(answers) : ideologySalience(answers);
     if (!s.salient) {
-      errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than a typical test-taker's settled result (${s.bar.toFixed(2)})`);
+      errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than the typical gap between neighbouring ideologies (${s.bar.toFixed(2)})`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;

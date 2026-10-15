@@ -40,8 +40,8 @@ Please keep to the audit rules in `audits/PROMPT.md` (ideologies) and `audits/PR
   their Wikipedia views, then write the audit following `audits/PROMPT_PEOPLE.md`. Run
   `node scripts/people-report.js` to check the roster's balance of gender, region and era.
 
-A person only appears in the test if their record places them on the test's dividing lines at
-least as precisely as a typical test-taker's own result. That's not a judgement about who is
+A person only appears in the test if their record places them on the test's dividing lines
+precisely enough to tell neighbouring ideologies apart. That's not a judgement about who is
 "political enough"; it's computed from the data (see the README). If a person you add is excluded,
 that usually means their public record covers too few kinds of issues for a meaningful match.
 

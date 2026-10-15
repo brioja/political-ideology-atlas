@@ -257,7 +257,7 @@ function meaningfulAxes(model, ideologies, { runs = 60, quantile = 0.95, seed = 
 }
 
 // A result counts as settled when the calibrated chance that the top match holds is at least this
-// (see calibrateCertainty). One definition, shared by the quiz (app.js) and the salience bar.
+// (see calibrateCertainty). test.js's simulated takers stop here; the quiz (app.js) waits for 100%.
 const SETTLE = { hold: 0.9 };
 function isSettled(model, calibration, answers, asked) {
   const h = stability(calibration, certainty(model, answers, asked));
@@ -309,15 +309,14 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
 // The calibrated chance that the current top match will hold, for a "how settled" reading.
 const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
 
-// Salience: is a person's record as solid as a test-taker's own result?
+// Salience: can a record place someone precisely enough to tell them apart from their neighbours?
 // Depends only on WHICH statements have a recorded position, never on the answers, so unusual
 // views are not penalized. Bayesian: before any evidence, a position is as spread out as the
 // ideologies are on each dividing line (the eigenvalues); each recorded statement narrows that
 // along the lines it measures, weighted by the leftover noise per statement (the variance the
-// shown lines don't explain). The bar is how precisely a typical test-taker is placed when their
-// result settles: simulated takers (each ideology's answers with ~20% nudged by one point) go
-// through the adaptive quiz until settled, and the median of their uncertainty is the bar. A
-// person is matched against test-takers only if their record places them at least that precisely.
+// real lines don't explain). The bar is the resolution: the median distance, on the real lines,
+// between an ideology and its nearest neighbour. A record less precise than that can't say which
+// of two neighbouring ideologies it is closer to, so it isn't matched against.
 function salienceContext(model, ideologies, { lines } = {}) {
   const k = Math.max(2, Math.min(lines ?? meaningfulAxes(model, ideologies), model.components.length));
   const n = model.mean.length;
@@ -327,35 +326,8 @@ function salienceContext(model, ideologies, { lines } = {}) {
     .map((a) => Math.min(...model.ideologies.filter((b) => b !== a).map((b) => dist(a.scores, b.scores))))
     .sort((x, y) => x - y);
   const ctx = { model, k, noise, resolution: gaps[Math.floor(gaps.length / 2)] };
-  ctx.bar = settledTakerUncertainty(ctx);
+  ctx.bar = ctx.resolution;
   return ctx;
-}
-
-function settledTakerUncertainty(ctx, { takers = 200, seed = 7 } = {}) {
-  const { model } = ctx;
-  const calibration = calibrateCertainty(model);
-  let state = seed;
-  const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
-  const ideos = model.ideologies;
-  const reps = Math.max(1, Math.ceil(takers / ideos.length));
-  const found = [];
-  for (let rep = 0; rep < reps; rep++) {
-    for (const ideo of ideos) {
-      const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
-      const answers = Array(truth.length).fill(null);
-      const asked = new Set();
-      for (;;) {
-        const next = nextQuestion(model, answers, asked);
-        if (!next) break;
-        asked.add(next.q);
-        answers[next.q] = truth[next.q];
-        if (isSettled(model, calibration, answers, asked)) break;
-      }
-      found.push(placementUncertainty(ctx, [...asked]));
-    }
-  }
-  found.sort((a, b) => a - b);
-  return found[Math.floor(found.length / 2)];
 }
 
 function placementUncertainty(ctx, knownIdx) {

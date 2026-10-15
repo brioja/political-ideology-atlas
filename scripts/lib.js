@@ -49,7 +49,7 @@ function personSalience(answers) {
 const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
 const ideologySalience = (answers) => personSalience(statedOnly(answers));
-// The bar itself: a typical test-taker's settled placement uncertainty.
+// The bar itself: the median distance between an ideology and its nearest neighbour (see pca.js).
 const salienceBar = () => (personSalience({}), salienceCache.ctx.bar);
 
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
