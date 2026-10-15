@@ -98,7 +98,10 @@ async function main() {
       if (pg && pg.thumbnail && pg.pageimage) {
         p.image = { url: pg.thumbnail.source.split("?")[0], file: pg.pageimage };
         files.push(`File:${pg.pageimage}`);
-      } else delete p.image;
+      }
+      // No lead image reported: keep the stored one. The page-image API drops lead images
+      // intermittently (Hitler, Reagan, Modi and others went missing at once), and a stored image
+      // was already checked as freely licensed.
     }
     // 2. Author and license for attribution.
     if (files.length) {
