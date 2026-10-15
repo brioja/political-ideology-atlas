@@ -1,1646 +1,1743 @@
 {
-  "id": "khomeinism",
-  "name": "Khomeinism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
-  "summary": "Khomeinism is the Shia Islamist ideology of Ruhollah Khomeini and the Islamic Republic of Iran. It holds that a qualified Islamic jurist must govern under divine law (velayat-e faqih), rejects monarchy and the separation of religion from politics, and casts politics as a struggle of the oppressed (mostazafin) against arrogant oppressors and imperialist powers. It combines clerical rule with elected institutions, a state-led economy that respects private property, and a call for Muslim unity and the spread of the revolution.",
-  "scope": "The doctrine of Khomeini as set out in his 1970 Najaf lectures Islamic Government and in his revolutionary speeches, as embodied in the 1979 constitution of the Islamic Republic. It excludes Iranian reformist and post-Islamist readings, quietist Shia clericalism, and Sunni Islamism, which are covered by other entries. Khomeini was often improvisational and contradictory (for example on women, democracy and exporting the revolution), so many answers rest on the constitution and the documented mainstream.",
-  "wikipedia": "https://en.wikipedia.org/wiki/Khomeinism",
-  "furtherReading": [
-    {
-      "title": "Islamic Government: Governance of the Jurist (Khomeini, trans. Hamid Algar)",
-      "url": "https://www.iranchamber.com/history/rkhomeini/books/velayat_faqeeh.pdf",
-      "note": "Full text of the lectures that set out rule by the jurist."
-    },
-    {
-      "title": "Khomeinism (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Khomeinism",
-      "note": "Overview of the ideology, its sources and critics."
-    },
-    {
-      "title": "Ideology of the Iranian Revolution (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Ideology_of_the_Iranian_Revolution",
-      "note": "The mix of pan-Islamism, populism and Shia radicalism behind 1979."
-    },
-    {
-      "title": "Constitution of Iran (Constitute Project)",
-      "url": "https://www.constituteproject.org/constitution/Iran_1989",
-      "note": "The text that turned Khomeinist doctrine into state structure."
-    }
-  ],
-  "keyFigures": [
-    {
-      "name": "Ruhollah Khomeini",
-      "role": "Founder of the doctrine and first Supreme Leader of the Islamic Republic of Iran.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Ruhollah_Khomeini",
-      "sources": [
-        "s1",
-        "s2"
-      ]
-    }
-  ],
-  "sources": [
-    {
-      "id": "s1",
-      "kind": "primary",
-      "title": "Islamic Government: Governance of the Jurist (Velayat-e Faqeeh)",
-      "author": "Ruhollah Khomeini, trans. Hamid Algar",
-      "url": "https://www.iranchamber.com/history/rkhomeini/books/velayat_faqeeh.pdf",
-      "usedFor": "Rule of jurists, divine legislation, rejection of monarchy and secularism, anti-imperialism, Muslim unity, Islamic taxes, penal law."
-    },
-    {
-      "id": "s2",
-      "kind": "reference",
-      "title": "Khomeinism",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Khomeinism",
-      "usedFor": "Khomeini's populism, property, women, democracy, repression of dissent and export of revolution."
-    },
-    {
-      "id": "s3",
-      "kind": "program",
-      "title": "Constitution of the Islamic Republic of Iran",
-      "author": "Constitute Project",
-      "url": "https://www.constituteproject.org/constitution/Iran_1989",
-      "usedFor": "Institutional form: Leader, Guardian Council, economic sectors, women, minorities, parties, foreign policy."
-    },
-    {
-      "id": "s4",
-      "kind": "reference",
-      "title": "Ideology of the Iranian Revolution",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Ideology_of_the_Iranian_Revolution",
-      "usedFor": "Mostazafin framing, populism, self-sufficiency and pan-Islamism."
-    }
-  ],
-  "answers": {
-    "universal-healthcare": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution lists health services among the rights the state must provide to all citizens, though Khomeini wrote little on healthcare.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "raise-minimum-wage": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini's populism promised the poor free utilities and housing; a higher wage floor is inferred from that mostazafin framing.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "markets-allocate-better": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution puts large industry, banking and trade in the state sector, and Khomeini dismissed economics, so faith in markets is inferred to be weak.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "public-ownership": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Article 44 assigns large industries, banking, energy and utilities to the state sector.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "tax-the-wealthy": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini defended Islamic taxes such as khums and zakat as a means of funding the poor; higher taxes on the rich are inferred.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "unions-good": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeinism claims to champion workers as part of the oppressed, though it controls independent labor organisation; answer inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "property-fundamental": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini explicitly respected private property against communism, and the constitution protects legitimately acquired ownership.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "regulate-corporations": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution bans monopoly, hoarding and usury and gives the state a large economic role, from which tighter regulation is inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "cut-welfare": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini held that the poor have a claim on the public treasury and that Islamic taxes fund their subsistence.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "worker-ownership": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini rejected communist sharing of property and the constitution favors state, cooperative and private sectors, not worker control as a principle.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "surveillance-ok": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "A state that treats opponents as foreign agents and defends the revolution is inferred to accept security surveillance.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "legalize-drugs": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini argued for strict prohibition of alcohol and narcotics under Islamic law.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "restrict-hate-speech": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Expression is limited where it harms Islamic fundamentals, so restrictions on abusive speech are inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "strong-leader": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The Leader holds sweeping powers over policy, forces and appointments, though the aim is divine law rather than ending gridlock.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "state-harmful": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini argued government is necessary, that Islam commands establishing it, and that the Prophet and imams ruled.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "limit-guns": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "No stated position; a state that monopolises force under clerical control is inferred to favor limits on civilian arms.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "empower-police-military": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution creates an ideologically committed army and the Revolutionary Guards to defend the revolution.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "legalize-sex-work": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini condemned sexual license as corruption and held Islamic penal law must be enforced.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "decide-locally": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini stressed unified Islamic government under one jurist; strong localism is inferred to be disfavored.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "rehabilitation": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini defended prescribed hadd punishments such as lashing as proper and necessary, not as replaceable by rehabilitation.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "traditional-family": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The constitution makes family formation and stability a state aim and the family the basic unit of society.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "same-sex-marriage": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Laws must conform to Islamic criteria under Article 4, and Islamic law as Khomeini understood it forbids same-sex relations.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "abortion-legal": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Islamic criteria and support for the family imply restriction; the exact doctrine was not found in the sources and legal practice allows narrow exceptions.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "more-religion-public": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini insisted religion and politics are inseparable and Islam must govern public life.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "correct-racial-injustice": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Opposition to oppression is central but racial remedies were not addressed; inferred from mostazafin and anti-colonial themes.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "gender-social-construct": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution grounds women's rights in Islamic criteria and distinct roles; a constructivist view of gender is inferred to be rejected.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "preserve-national-culture": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeinism defends Islamic culture against Western cultural influence, though it distrusts nationalism as such.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "gradual-change": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini called on Muslims to overthrow oppressive regimes rather than wait for reform.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "reduce-immigration": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address immigration and adherents have no clear doctrine.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "empower-international-orgs": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Foreign policy rejects domination by great powers, so empowering bodies they dominate is opposed.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "free-trade": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The revolution stressed self-sufficiency and attacked dependence on the West; free trade is inferred to be distrusted.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "nation-first": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Independence and rejection of foreign domination are central, though loyalty is to the Muslim community more than to the nation.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "humanitarian-intervention": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini treated Western powers' claims to act abroad as imperialist cover, so intervention for rights is distrusted.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "open-borders": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "No stated doctrine; an Islamic state defending its revolution is inferred to oppose open borders.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "limit-growth": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Not addressed; self-sufficiency and development emphasis imply opposition to limiting growth.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "drastic-climate-action": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not addressed and no clear inference from the principles.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "tech-solves-problems": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini warned against Western materialism and moral corruption; faith in technology as savior is inferred to be weak.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "expand-nuclear": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Self-sufficiency and independence themes imply support, though this is not in the primary text.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "revolution-justified": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini declared overthrowing oppressive regimes a duty of all Muslims.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "experts-over-public": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini held that qualified jurists who know the law should hold authority over government.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "central-planning": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The constitution sets a mixed three-sector economy, not full central planning.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "socialized-markets": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Adherents accept state, cooperative and private sectors; the specific condition is not a stated principle.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "land-value-tax": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini named the Islamic taxes (khums, zakat, kharaj); replacing all with a land tax is not envisaged.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "tax-inheritance": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inheritance is fixed by Islamic law, which leaves little room for heavy state inheritance taxes.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "basic-income": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Islamic taxes support the poor, but an unconditional income for all adults is not part of the doctrine.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "tariffs-protect-industry": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Self-sufficiency and nationalisation themes imply protection of domestic industry.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "state-directs-investment": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The state sector controls strategic industries and Khomeini described planning bodies shaping public services.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "widespread-small-property": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini defended private property and populist support for the poor and bazaar merchants over large concentration.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "abolish-money-wages": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini rejected communism's sharing of all things and defended property.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "abolish-central-banks": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The constitution places banking in the state sector.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "corporatist-bargaining": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Not part of the doctrine; the Islamic state, not tripartite bodies, sets economic direction.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "one-party-rule": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Authority rests on the jurist and Islamic law rather than a party.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "monarchy-legitimate": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini declared monarchy and hereditary succession wrong and invalid in Islam.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "democracy-best": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini rejected the label democratic as Western and held sovereignty belongs to God, though elections exist.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "direct-votes": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Legislation belongs to God and law is not made by vote; direct lawmaking is inferred to be rejected.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "workers-councils": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Political power is vested in the jurist and elected institutions, not workers' councils.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "right-to-secede": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Khomeini attacked the division of the Islamic homeland into artificial separate nations.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "natural-rulers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini held that those with knowledge of law and justice are fitted to rule.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini upheld armed overthrow of tyrants and retributive punishment.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "war-builds-character": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not directly documented; adherents' views on war are inferred as mixed.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "separate-church-state": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini called separation of religion from politics an imperialist slogan.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "laws-from-scripture": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini held legislative power belongs to God alone and only divine law may be executed.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "private-courts-defense": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The judiciary and armed forces are state institutions under the Leader.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "military-superiority": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution builds a committed army and Guards; inferred support for strength.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "ethnic-nation": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini opposed dividing the ummah into nations and counted nationalism among colonial tools.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "class-struggle-history": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini framed society as mostazafin against mostakberin, though in religious not Marxist terms.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "equal-outcomes": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini defended property and rejected communism; outcome equality is not an aim.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "indigenous-land-authority": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not addressed in the sources.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "colonial-reparations": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini blamed imperialists for plundering Muslim lands; reparations are inferred.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "civilizational-union": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Article 11 and Khomeini call for unity of the Muslim peoples against imperialist division.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "self-interest-moral": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini condemned pursuit of pleasure and material interest as corrupting.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "duties-before-rights": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Duty to divine law is primary in his account of Islamic government.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "nature-intrinsic-value": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address the question, and adherents have no single stated view.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "limit-population": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Not addressed in the sources; inferred from pronatalist family emphasis.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "industrial-civilization-disaster": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini criticised Western materialism but did not reject industrial development.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "accelerate-technology": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Disruption of religious and social order is disfavored.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "human-enhancement": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred from a religious view of the human body.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "algorithmic-government": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Rule by jurists under divine law excludes handing decisions to algorithms.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "unbreakable-encryption": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "A state treating dissent as subversion is inferred to oppose it.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "restore-past-order": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini called for returning to the Prophet's and imams' model of government.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "results-over-ideology": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Divine law and principle, not outcomes, are the standard.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "direct-action": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Khomeinism used mass mobilisation to take power but also built elections.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "means-match-ends": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "No stated position in the sources, and the doctrine gives no clear principle either way.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "return-to-foraging": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Not addressed; clearly outside the doctrine.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "abolish-division-of-labor": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Not part of the doctrine.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "distribute-by-need": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Islamic taxes aid the poor but distribution by wealth and work stands.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "production-for-use": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Adherents accept both private profit and public needs.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "profit-exploitation": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini defended private property and bazaar commerce.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "dictatorship-of-proletariat": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He rejected communism and class dictatorship.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "collective-farming": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution places agriculture in the private and cooperative sectors.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "capitalism-causes-war": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini blamed imperialist powers for conquest and division; inferred.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "taxation-theft": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini described taxes as a duty and the basis of Islamic government's budget.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "harm-principle": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Islamic law forbids conduct such as alcohol consumption regardless of harm to others.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "individual-rights-only": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Rights and duties flow from divine law within the community.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "conscription": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Army and Guards defend the revolution; inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "exit-over-voice": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Not compatible with duty to Islamic government.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "state-as-business": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Government serves divine law and the people, not customers.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "positive-liberty": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution commits the state to meet material needs of the oppressed.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "media-academia-power": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini blamed orientalists and imperialist-aligned schools for propaganda.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "hereditarian-race": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Islamic universalism and ummah unity oppose racial ranking.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "organic-representation": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Elected parliament and president, not corporate bodies, are the representative institutions.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "total-state": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini held the Islamic government's authority is absolute and covers every sphere.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "national-rebirth": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini called for an Islamic revival to overcome the corruption of the Shah's era.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "territorial-expansion": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Territorial expansion not endorsed but influence abroad via export of revolution is.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "personal-loyalty-rule": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Authority is by qualification and law, not feudal oaths.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "bound-labor": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Not part of the doctrine.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "no-neutral-knowledge": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini held that Western scholarship serves imperialist interests.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "universal-morality": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Islam's law is universal and eternal, though grounded in revelation as well as reason.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "single-common-good": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Islamic government pursues one divine law and justice rather than balancing interests.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "jewish-state-israel": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini's text speaks of the Zionist usurpation of Jerusalem and Khomeinism opposes Israel.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "diaspora-return-right": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Follows from opposition to Israel; no stated position on diasporas generally.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "revive-national-language": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The constitution makes Persian official and requires Arabic teaching; no stated doctrine on revival.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "workplace-democracy": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources show no clear doctrine on this, so adherents are treated as split.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "school-vouchers": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Education is a state-guaranteed free service under Islamic criteria.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "avoid-deficit-stimulus": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address fiscal policy, and no inference is possible.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "economic-freedom": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Economic life is constrained by Islamic law and a large state sector.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "rule-by-example": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini required rulers to be just and pious, though law and punishment remain.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "national-self-determination": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Independence from imperialists is central, yet Khomeini opposed Muslim lands being separate nations.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "force-without-un": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "A state that rejects great-power-dominated bodies is inferred to accept unilateral force.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "reason-over-faith": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Faith and divine revelation, not reason alone, guide knowledge and politics.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "welfare-for-citizens": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Constitution provides rights to citizens; not otherwise addressed.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "work-for-welfare": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address welfare conditions, and no inference is possible.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "class-collaboration": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The mostazafin-mostakberin frame treats the two as opposed.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "sacrifice-heritage": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini sought to preserve Islamic institutions and tradition.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "dominated-front": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini urged Muslims to overthrow imperialist puppet regimes and unite; Article 152 rejects both superpowers.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "workers-nation": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Solidarity is with Muslims and the oppressed, not an international or national working class.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "distinct-gender-roles": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The constitution grants equal protection but within Islamic criteria and a family-centered role for women.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "ban-interest": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini called banking on usury un-Islamic and Article 43 prohibits usury.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Islamic universalism and ummah unity oppose racial segregation.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "state-class-instrument": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini saw imperialist-backed rulers as oppressors but not the state as inherently a class tool.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "expand-fossil-fuels": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Oil is the base of the economy; the revolution attacked oil wealth squandered on the army rather than production.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "assimilate-immigrants": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address immigrant assimilation, so no position is inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "elite-replacement": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "No such theory in the sources.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "proportional-representation": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "No stated position on electoral systems appears in the sources.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "national-mission": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Khomeini urged exporting the revolution and preparing for global Islamic rule.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "patriarchy-structural": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution frames women's rights through Islamic roles; structural patriarchy claim is rejected.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini condemned the Shah's elite as corrupt and profligate.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "heritable-defect-limits": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "No such doctrine appears in the sources; inferred rejection from Islamic ethics.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "security-forces-accountable": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The doctrine stresses revolutionary tribunals against old-regime figures, not accountability of its own forces.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "night-watchman-state": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Khomeini's Islamic government runs economy, law, taxes and welfare.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "discourage-race-mixing": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Islamic universalism opposes this.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "equal-moral-worth": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Article 14 grants non-Muslims rights conditionally and Islam gives different legal roles, so adherents agree in principle with qualifications.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "socialism-one-country": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not applicable to this ideology.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "settler-state-colonial": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Khomeinism treats Israel as a colonial usurpation backed by imperialists.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "uniform-civil-code": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Article 13 lets recognised minorities follow their own rites, and Islamic law governs Muslims.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "restrict-conversion": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Islamic criteria under Article 4 imply restriction on leaving Islam.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "ban-cattle-slaughter": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Islamic law permits slaughter of cattle.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "no-religion-state-schools": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The constitution requires state education to reflect Islamic teaching, including Arabic of the Qur'an.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "state-strengthens-encirclement": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not addressed as a doctrine.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "consent-of-governed": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Khomeini held God and the jurist as source of authority yet used elections and claimed popular backing.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "trade-surplus": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address trade balances, so no position is inferred.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "population-transfer": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "No stated position; minorities protected conditionally.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "initiating-force-wrong": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Khomeini accepted force for overthrow of tyrants and punishment.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "competition-drives-progress": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini stressed unity and divine law over struggle for competition.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "ban-extremist-parties": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Article 26 bars parties that violate Islamic criteria or the Republic's basis.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "freedom-as-non-domination": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Article 152 rejects domination of any kind and Khomeini opposed oppression.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "separated-powers": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Khomeini said legislative power belongs to God and a planning body replaces assembly, yet the constitution has three branches under the Leader.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "vanguard-party": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Clerical leadership, not a revolutionary party, leads.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "priority-to-poor": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Mostazafin first is a central slogan of Khomeinism.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "right-to-buy-council-homes": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address housing sales, so no position is inferred.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "restrict-strikes-picketing": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address strike law, so no position is inferred.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "population-causes-poverty": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Khomeini blamed imperialism and unjust economic order for poverty.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "diversity-weakens-cohesion": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The ummah is multi-ethnic and nations are artificial divisions.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "offices-by-lottery": {
-      "value": -2,
-      "confidence": "low",
-      "rationale": "Offices require qualification in law and justice.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "emergency-suspend-protections": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Khomeini threatened opponents and expelled dissidents as foreign agents.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "price-controls-essentials": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The state is committed to prevent hoarding and monopoly.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "party-controls-media": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Publications are limited by Islamic fundamentals and the state broadcasts under the Leader.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "party-commands-army": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The Leader commands the armed forces under Article 110, not a party.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "long-naturalization-wait": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address naturalisation, so no position is inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "representatives-worker-pay": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeini condemned officials' profligacy at public expense.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "party-discipline-binding": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The sources do not address party discipline, so no position is inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "pool-sovereignty": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Muslim political unity is a goal, though not the EU specifically.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "head-commands-forces": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Leader commands the armed forces and appoints key officials, though ministers are chosen by the president.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "church-by-bishops": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Khomeinism upholds a clerical hierarchy rather than congregational governance, though Shia has no bishops.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "clerical-rule": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Velayat-e faqih, rule by a qualified jurist, is the defining doctrine of Khomeinism.",
-      "sources": [
-        "s1",
-        "s3"
-      ]
-    },
-    "defeat-own-government-war": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: Khomeinism condemns arrogant imperialist powers but called for defending the Islamic Republic, as in the Iran-Iraq war, rather than class defeatism.",
-      "sources": [
-        "s2",
-        "s4"
-      ]
-    },
-    "censor-art-for-virtue": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The Islamic Republic censors art, film and publishing for conformity with Islamic morals, and the constitution requires media to serve Islamic principles.",
-      "sources": [
-        "s2",
-        "s3"
-      ]
-    },
-    "unlimited-reelection": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "The Leader serves for life and presidents face a two-consecutive-term limit in the constitution, so adherents are split; inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "recall-officials": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution allows impeachment of officials by parliament and the Leader but not voter recall; inferred.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "end-foreign-alliances": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The constitution forbids foreign military bases and alliances that bring foreign domination, and the doctrine opposes both East and West.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "abolish-rental-housing": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "The constitution protects private property and sets a housing right, but the doctrine does not call for abolishing renting.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "people-in-arms": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Revolutionary Iran built a mass volunteer militia, the Basij, beside the regular army, in line with the mobilisation of the oppressed.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "rural-life-healthier": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Khomeinism stresses the poor and rural oppressed but makes no moral claim about rural over urban life.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "reunify-divided-nation": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Khomeini stressed Muslim unity over national borders and made no clear call to reunify divided nations.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "educated-out-of-touch": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Inferred from Khomeini's attack on Westernised intellectuals and his trust in the clergy and the common believer.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "cultures-equal-different": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Khomeini holds Islamic law to be divine and superior, and rejects cultural relativism.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "death-penalty": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Khomeini held that Islamic penal law, including execution, must be applied by the Islamic state.",
-      "sources": [
-        "s1"
-      ]
-    },
-    "sex-ed-in-schools": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Education is to rest on Islamic values, so mainstream adherents would reject sex education that departs from them.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "creationism-in-schools": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Evolution is taught in Iranian schools and the clergy have not demanded creationism; inferred from Islamic scripture-centred education.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "restrict-pornography": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Khomeinist rule enforces Islamic morality, including bans on pornography.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "citizenship-by-descent": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution grants nationality by law on the basis of descent, and Khomeinism offers no contrary view.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "minority-language-support": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The constitution lets regional and tribal languages be used in the press and taught in schools alongside Persian.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "religious-exemptions": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "The constitution lets recognised minorities follow their own religious rites and personal-status law, though not all minorities.",
-      "sources": [
-        "s3"
-      ]
-    },
-    "encourage-eccentricity": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Islamic Republic enforces Islamic norms of conduct and represses dissent, not encouraging non-conformity.",
-      "sources": [
-        "s2"
-      ]
-    }
+ "id": "khomeinism",
+ "name": "Khomeinism",
+ "auditedAt": "2026-10-15",
+ "auditor": "claude-sonnet-5-5",
+ "summary": "Khomeinism is the Shia Islamist ideology of Ruhollah Khomeini and the Islamic Republic of Iran. It holds that a qualified Islamic jurist must govern under divine law (velayat-e faqih), rejects monarchy and the separation of religion from politics, and casts politics as a struggle of the oppressed (mostazafin) against arrogant oppressors and imperialist powers. It combines clerical rule with elected institutions, a state-led economy that respects private property, and a call for Muslim unity and the spread of the revolution.",
+ "scope": "The doctrine of Khomeini as set out in his 1970 Najaf lectures Islamic Government and in his revolutionary speeches, as embodied in the 1979 constitution of the Islamic Republic. It excludes Iranian reformist and post-Islamist readings, quietist Shia clericalism, and Sunni Islamism, which are covered by other entries. Khomeini was often improvisational and contradictory (for example on women, democracy and exporting the revolution), so many answers rest on the constitution and the documented mainstream.",
+ "wikipedia": "https://en.wikipedia.org/wiki/Khomeinism",
+ "furtherReading": [
+  {
+   "title": "Islamic Government: Governance of the Jurist (Khomeini, trans. Hamid Algar)",
+   "url": "https://www.iranchamber.com/history/rkhomeini/books/velayat_faqeeh.pdf",
+   "note": "Full text of the lectures that set out rule by the jurist."
   },
-  "missingStatements": [
-    {
-      "text": "Senior religious scholars should hold the highest political authority.",
-      "value": 2,
-      "rationale": "Velayat-e faqih, rule by a qualified jurist, is the defining doctrine of Khomeinism.",
-      "sources": [
-        "s1",
-        "s3"
-      ],
-      "addedAs": "clerical-rule"
-    }
-  ],
-  "notes": "Khomeini's positions shifted with circumstance, and Iranian reformists and hardliners both claim his legacy; the constitution and his 1970 lectures are used as the baseline."
+  {
+   "title": "Khomeinism (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Khomeinism",
+   "note": "Overview of the ideology, its sources and critics."
+  },
+  {
+   "title": "Ideology of the Iranian Revolution (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Ideology_of_the_Iranian_Revolution",
+   "note": "The mix of pan-Islamism, populism and Shia radicalism behind 1979."
+  },
+  {
+   "title": "Constitution of Iran (Constitute Project)",
+   "url": "https://www.constituteproject.org/constitution/Iran_1989",
+   "note": "The text that turned Khomeinist doctrine into state structure."
+  }
+ ],
+ "keyFigures": [
+  {
+   "name": "Ruhollah Khomeini",
+   "role": "Founder of the doctrine and first Supreme Leader of the Islamic Republic of Iran.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Ruhollah_Khomeini",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "primary",
+   "title": "Islamic Government: Governance of the Jurist (Velayat-e Faqeeh)",
+   "author": "Ruhollah Khomeini, trans. Hamid Algar",
+   "url": "https://www.iranchamber.com/history/rkhomeini/books/velayat_faqeeh.pdf",
+   "usedFor": "Rule of jurists, divine legislation, rejection of monarchy and secularism, anti-imperialism, Muslim unity, Islamic taxes, penal law."
+  },
+  {
+   "id": "s2",
+   "kind": "reference",
+   "title": "Khomeinism",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Khomeinism",
+   "usedFor": "Khomeini's populism, property, women, democracy, repression of dissent and export of revolution."
+  },
+  {
+   "id": "s3",
+   "kind": "program",
+   "title": "Constitution of the Islamic Republic of Iran",
+   "author": "Constitute Project",
+   "url": "https://www.constituteproject.org/constitution/Iran_1989",
+   "usedFor": "Institutional form: Leader, Guardian Council, economic sectors, women, minorities, parties, foreign policy."
+  },
+  {
+   "id": "s4",
+   "kind": "reference",
+   "title": "Ideology of the Iranian Revolution",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ideology_of_the_Iranian_Revolution",
+   "usedFor": "Mostazafin framing, populism, self-sufficiency and pan-Islamism."
+  }
+ ],
+ "answers": {
+  "universal-healthcare": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution lists health services among the rights the state must provide to all citizens, though Khomeini wrote little on healthcare.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "raise-minimum-wage": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini's populism promised the poor free utilities and housing; a higher wage floor is inferred from that mostazafin framing.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "markets-allocate-better": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution puts large industry, banking and trade in the state sector, and Khomeini dismissed economics, so faith in markets is inferred to be weak.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "public-ownership": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Article 44 assigns large industries, banking, energy and utilities to the state sector.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "tax-the-wealthy": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini defended Islamic taxes such as khums and zakat as a means of funding the poor; higher taxes on the rich are inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "unions-good": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeinism claims to champion workers as part of the oppressed, though it controls independent labor organisation; answer inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "property-fundamental": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini explicitly respected private property against communism, and the constitution protects legitimately acquired ownership.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "regulate-corporations": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution bans monopoly, hoarding and usury and gives the state a large economic role, from which tighter regulation is inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "cut-welfare": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini held that the poor have a claim on the public treasury and that Islamic taxes fund their subsistence.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "worker-ownership": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini rejected communist sharing of property and the constitution favors state, cooperative and private sectors, not worker control as a principle.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "surveillance-ok": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "A state that treats opponents as foreign agents and defends the revolution is inferred to accept security surveillance.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "legalize-drugs": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini argued for strict prohibition of alcohol and narcotics under Islamic law.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "restrict-hate-speech": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Expression is limited where it harms Islamic fundamentals, so restrictions on abusive speech are inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "strong-leader": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Leader holds sweeping powers over policy, forces and appointments, though the aim is divine law rather than ending gridlock.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "state-harmful": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini argued government is necessary, that Islam commands establishing it, and that the Prophet and imams ruled.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "limit-guns": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "No stated position; a state that monopolises force under clerical control is inferred to favor limits on civilian arms.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "empower-police-military": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution creates an ideologically committed army and the Revolutionary Guards to defend the revolution.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "legalize-sex-work": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini condemned sexual license as corruption and held Islamic penal law must be enforced.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "decide-locally": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini stressed unified Islamic government under one jurist; strong localism is inferred to be disfavored.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rehabilitation": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini defended prescribed hadd punishments such as lashing as proper and necessary, not as replaceable by rehabilitation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "traditional-family": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The constitution makes family formation and stability a state aim and the family the basic unit of society.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "same-sex-marriage": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Laws must conform to Islamic criteria under Article 4, and Islamic law as Khomeini understood it forbids same-sex relations.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "abortion-legal": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Islamic criteria and support for the family imply restriction; the exact doctrine was not found in the sources and legal practice allows narrow exceptions.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "more-religion-public": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini insisted religion and politics are inseparable and Islam must govern public life.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "correct-racial-injustice": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Opposition to oppression is central but racial remedies were not addressed; inferred from mostazafin and anti-colonial themes.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "gender-social-construct": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution grounds women's rights in Islamic criteria and distinct roles; a constructivist view of gender is inferred to be rejected.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "preserve-national-culture": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeinism defends Islamic culture against Western cultural influence, though it distrusts nationalism as such.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "gradual-change": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini called on Muslims to overthrow oppressive regimes rather than wait for reform.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "reduce-immigration": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address immigration and adherents have no clear doctrine.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "empower-international-orgs": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Foreign policy rejects domination by great powers, so empowering bodies they dominate is opposed.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "free-trade": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The revolution stressed self-sufficiency and attacked dependence on the West; free trade is inferred to be distrusted.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "nation-first": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Independence and rejection of foreign domination are central, though loyalty is to the Muslim community more than to the nation.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "humanitarian-intervention": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini treated Western powers' claims to act abroad as imperialist cover, so intervention for rights is distrusted.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "open-borders": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "No stated doctrine; an Islamic state defending its revolution is inferred to oppose open borders.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "limit-growth": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; self-sufficiency and development emphasis imply opposition to limiting growth.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "drastic-climate-action": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed and no clear inference from the principles.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "tech-solves-problems": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini warned against Western materialism and moral corruption; faith in technology as savior is inferred to be weak.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "expand-nuclear": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Self-sufficiency and independence themes imply support, though this is not in the primary text.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "revolution-justified": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini declared overthrowing oppressive regimes a duty of all Muslims.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "experts-over-public": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini held that qualified jurists who know the law should hold authority over government.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "central-planning": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The constitution sets a mixed three-sector economy, not full central planning.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "socialized-markets": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Adherents accept state, cooperative and private sectors; the specific condition is not a stated principle.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "land-value-tax": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini named the Islamic taxes (khums, zakat, kharaj); replacing all with a land tax is not envisaged.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tax-inheritance": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inheritance is fixed by Islamic law, which leaves little room for heavy state inheritance taxes.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "basic-income": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Islamic taxes support the poor, but an unconditional income for all adults is not part of the doctrine.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tariffs-protect-industry": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Self-sufficiency and nationalisation themes imply protection of domestic industry.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "state-directs-investment": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The state sector controls strategic industries and Khomeini described planning bodies shaping public services.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "widespread-small-property": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini defended private property and populist support for the poor and bazaar merchants over large concentration.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "abolish-money-wages": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini rejected communism's sharing of all things and defended property.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "abolish-central-banks": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The constitution places banking in the state sector.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "corporatist-bargaining": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not part of the doctrine; the Islamic state, not tripartite bodies, sets economic direction.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "one-party-rule": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Authority rests on the jurist and Islamic law rather than a party.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "monarchy-legitimate": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini declared monarchy and hereditary succession wrong and invalid in Islam.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "democracy-best": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini rejected the label democratic as Western and held sovereignty belongs to God, though elections exist.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "direct-votes": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Legislation belongs to God and law is not made by vote; direct lawmaking is inferred to be rejected.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "workers-councils": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Political power is vested in the jurist and elected institutions, not workers' councils.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "right-to-secede": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Khomeini attacked the division of the Islamic homeland into artificial separate nations.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "natural-rulers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini held that those with knowledge of law and justice are fitted to rule.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "political-violence-never": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini upheld armed overthrow of tyrants and retributive punishment.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "war-builds-character": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not directly documented; adherents' views on war are inferred as mixed.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "separate-church-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini called separation of religion from politics an imperialist slogan.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "laws-from-scripture": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini held legislative power belongs to God alone and only divine law may be executed.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "private-courts-defense": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The judiciary and armed forces are state institutions under the Leader.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "military-superiority": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution builds a committed army and Guards; inferred support for strength.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "ethnic-nation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini opposed dividing the ummah into nations and counted nationalism among colonial tools.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "class-struggle-history": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini framed society as mostazafin against mostakberin, though in religious not Marxist terms.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "equal-outcomes": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini defended property and rejected communism; outcome equality is not an aim.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "indigenous-land-authority": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed in the sources.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "colonial-reparations": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini blamed imperialists for plundering Muslim lands; reparations are inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "civilizational-union": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Article 11 and Khomeini call for unity of the Muslim peoples against imperialist division.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "self-interest-moral": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini condemned pursuit of pleasure and material interest as corrupting.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "duties-before-rights": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Duty to divine law is primary in his account of Islamic government.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "nature-intrinsic-value": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address the question, and adherents have no single stated view.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "limit-population": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed in the sources; inferred from pronatalist family emphasis.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "industrial-civilization-disaster": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini criticised Western materialism but did not reject industrial development.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "accelerate-technology": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Disruption of religious and social order is disfavored.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "human-enhancement": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from a religious view of the human body.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "algorithmic-government": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Rule by jurists under divine law excludes handing decisions to algorithms.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "unbreakable-encryption": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "A state treating dissent as subversion is inferred to oppose it.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "restore-past-order": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini called for returning to the Prophet's and imams' model of government.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "results-over-ideology": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Divine law and principle, not outcomes, are the standard.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "direct-action": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Khomeinism used mass mobilisation to take power but also built elections.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "means-match-ends": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "No stated position in the sources, and the doctrine gives no clear principle either way.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "return-to-foraging": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed; clearly outside the doctrine.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "abolish-division-of-labor": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not part of the doctrine.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "distribute-by-need": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Islamic taxes aid the poor but distribution by wealth and work stands.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "production-for-use": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Adherents accept both private profit and public needs.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "profit-exploitation": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini defended private property and bazaar commerce.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "dictatorship-of-proletariat": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He rejected communism and class dictatorship.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "collective-farming": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution places agriculture in the private and cooperative sectors.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "capitalism-causes-war": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini blamed imperialist powers for conquest and division; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "taxation-theft": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini described taxes as a duty and the basis of Islamic government's budget.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "harm-principle": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Islamic law forbids conduct such as alcohol consumption regardless of harm to others.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "individual-rights-only": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Rights and duties flow from divine law within the community.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "conscription": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Army and Guards defend the revolution; inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "exit-over-voice": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not compatible with duty to Islamic government.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "state-as-business": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Government serves divine law and the people, not customers.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "positive-liberty": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution commits the state to meet material needs of the oppressed.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "media-academia-power": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini blamed orientalists and imperialist-aligned schools for propaganda.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "hereditarian-race": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Islamic universalism and ummah unity oppose racial ranking.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "organic-representation": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Elected parliament and president, not corporate bodies, are the representative institutions.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "total-state": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini held the Islamic government's authority is absolute and covers every sphere.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "national-rebirth": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini called for an Islamic revival to overcome the corruption of the Shah's era.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "territorial-expansion": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Territorial expansion not endorsed but influence abroad via export of revolution is.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "personal-loyalty-rule": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Authority is by qualification and law, not feudal oaths.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "bound-labor": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not part of the doctrine.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-neutral-knowledge": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini held that Western scholarship serves imperialist interests.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "universal-morality": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Islam's law is universal and eternal, though grounded in revelation as well as reason.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "single-common-good": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Islamic government pursues one divine law and justice rather than balancing interests.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "jewish-state-israel": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini's text speaks of the Zionist usurpation of Jerusalem and Khomeinism opposes Israel.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "diaspora-return-right": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Follows from opposition to Israel; no stated position on diasporas generally.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "revive-national-language": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The constitution makes Persian official and requires Arabic teaching; no stated doctrine on revival.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "workplace-democracy": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources show no clear doctrine on this, so adherents are treated as split.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "school-vouchers": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Education is a state-guaranteed free service under Islamic criteria.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "avoid-deficit-stimulus": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address fiscal policy, and no inference is possible.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "economic-freedom": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Economic life is constrained by Islamic law and a large state sector.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "rule-by-example": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini required rulers to be just and pious, though law and punishment remain.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "national-self-determination": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Independence from imperialists is central, yet Khomeini opposed Muslim lands being separate nations.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "force-without-un": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "A state that rejects great-power-dominated bodies is inferred to accept unilateral force.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "reason-over-faith": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Faith and divine revelation, not reason alone, guide knowledge and politics.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "welfare-for-citizens": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Constitution provides rights to citizens; not otherwise addressed.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "work-for-welfare": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address welfare conditions, and no inference is possible.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "class-collaboration": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The mostazafin-mostakberin frame treats the two as opposed.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "sacrifice-heritage": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini sought to preserve Islamic institutions and tradition.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "dominated-front": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini urged Muslims to overthrow imperialist puppet regimes and unite; Article 152 rejects both superpowers.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "workers-nation": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Solidarity is with Muslims and the oppressed, not an international or national working class.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "distinct-gender-roles": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The constitution grants equal protection but within Islamic criteria and a family-centered role for women.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "ban-interest": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini called banking on usury un-Islamic and Article 43 prohibits usury.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Islamic universalism and ummah unity oppose racial segregation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "state-class-instrument": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini saw imperialist-backed rulers as oppressors but not the state as inherently a class tool.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "expand-fossil-fuels": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Oil is the base of the economy; the revolution attacked oil wealth squandered on the army rather than production.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "assimilate-immigrants": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address immigrant assimilation, so no position is inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "elite-replacement": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "No such theory in the sources.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "proportional-representation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "No stated position on electoral systems appears in the sources.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "national-mission": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Khomeini urged exporting the revolution and preparing for global Islamic rule.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "patriarchy-structural": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution frames women's rights through Islamic roles; structural patriarchy claim is rejected.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "political-elite-corrupt": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini condemned the Shah's elite as corrupt and profligate.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "No such doctrine appears in the sources; inferred rejection from Islamic ethics.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "security-forces-accountable": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The doctrine stresses revolutionary tribunals against old-regime figures, not accountability of its own forces.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "night-watchman-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Khomeini's Islamic government runs economy, law, taxes and welfare.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "discourage-race-mixing": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Islamic universalism opposes this.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "equal-moral-worth": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Article 14 grants non-Muslims rights conditionally and Islam gives different legal roles, so adherents agree in principle with qualifications.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "socialism-one-country": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not applicable to this ideology.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "settler-state-colonial": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Khomeinism treats Israel as a colonial usurpation backed by imperialists.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "uniform-civil-code": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Article 13 lets recognised minorities follow their own rites, and Islamic law governs Muslims.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "restrict-conversion": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Islamic criteria under Article 4 imply restriction on leaving Islam.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "ban-cattle-slaughter": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Islamic law permits slaughter of cattle.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "no-religion-state-schools": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The constitution requires state education to reflect Islamic teaching, including Arabic of the Qur'an.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "state-strengthens-encirclement": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed as a doctrine.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "consent-of-governed": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Khomeini held God and the jurist as source of authority yet used elections and claimed popular backing.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "trade-surplus": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address trade balances, so no position is inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "population-transfer": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "No stated position; minorities protected conditionally.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "initiating-force-wrong": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Khomeini accepted force for overthrow of tyrants and punishment.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "competition-drives-progress": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini stressed unity and divine law over struggle for competition.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "ban-extremist-parties": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Article 26 bars parties that violate Islamic criteria or the Republic's basis.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "freedom-as-non-domination": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Article 152 rejects domination of any kind and Khomeini opposed oppression.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "separated-powers": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Khomeini said legislative power belongs to God and a planning body replaces assembly, yet the constitution has three branches under the Leader.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "vanguard-party": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Clerical leadership, not a revolutionary party, leads.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "priority-to-poor": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Mostazafin first is a central slogan of Khomeinism.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "right-to-buy-council-homes": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address housing sales, so no position is inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "restrict-strikes-picketing": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address strike law, so no position is inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "population-causes-poverty": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini blamed imperialism and unjust economic order for poverty.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "diversity-weakens-cohesion": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The ummah is multi-ethnic and nations are artificial divisions.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "offices-by-lottery": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Offices require qualification in law and justice.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "emergency-suspend-protections": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeini threatened opponents and expelled dissidents as foreign agents.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "price-controls-essentials": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The state is committed to prevent hoarding and monopoly.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "party-controls-media": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Publications are limited by Islamic fundamentals and the state broadcasts under the Leader.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "party-commands-army": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Leader commands the armed forces under Article 110, not a party.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "long-naturalization-wait": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address naturalisation, so no position is inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "representatives-worker-pay": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeini condemned officials' profligacy at public expense.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "party-discipline-binding": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources do not address party discipline, so no position is inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "pool-sovereignty": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Muslim political unity is a goal, though not the EU specifically.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "head-commands-forces": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Leader commands the armed forces and appoints key officials, though ministers are chosen by the president.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "church-by-bishops": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeinism upholds a clerical hierarchy rather than congregational governance, though Shia has no bishops.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "clerical-rule": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Velayat-e faqih, rule by a qualified jurist, is the defining doctrine of Khomeinism.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "defeat-own-government-war": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred: Khomeinism condemns arrogant imperialist powers but called for defending the Islamic Republic, as in the Iran-Iraq war, rather than class defeatism.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "censor-art-for-virtue": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Islamic Republic censors art, film and publishing for conformity with Islamic morals, and the constitution requires media to serve Islamic principles.",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "unlimited-reelection": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The Leader serves for life and presidents face a two-consecutive-term limit in the constitution, so adherents are split; inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "recall-officials": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution allows impeachment of officials by parliament and the Leader but not voter recall; inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "end-foreign-alliances": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The constitution forbids foreign military bases and alliances that bring foreign domination, and the doctrine opposes both East and West.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "abolish-rental-housing": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution protects private property and sets a housing right, but the doctrine does not call for abolishing renting.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "people-in-arms": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Revolutionary Iran built a mass volunteer militia, the Basij, beside the regular army, in line with the mobilisation of the oppressed.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "rural-life-healthier": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Khomeinism stresses the poor and rural oppressed but makes no moral claim about rural over urban life.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "reunify-divided-nation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Khomeini stressed Muslim unity over national borders and made no clear call to reunify divided nations.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "educated-out-of-touch": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from Khomeini's attack on Westernised intellectuals and his trust in the clergy and the common believer.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "cultures-equal-different": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Khomeini holds Islamic law to be divine and superior, and rejects cultural relativism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "death-penalty": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Khomeini held that Islamic penal law, including execution, must be applied by the Islamic state.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "sex-ed-in-schools": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Education is to rest on Islamic values, so mainstream adherents would reject sex education that departs from them.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "creationism-in-schools": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Evolution is taught in Iranian schools and the clergy have not demanded creationism; inferred from Islamic scripture-centred education.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "restrict-pornography": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Khomeinist rule enforces Islamic morality, including bans on pornography.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "citizenship-by-descent": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution grants nationality by law on the basis of descent, and Khomeinism offers no contrary view.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "minority-language-support": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The constitution lets regional and tribal languages be used in the press and taught in schools alongside Persian.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "religious-exemptions": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution lets recognised minorities follow their own religious rites and personal-status law, though not all minorities.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "encourage-eccentricity": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Islamic Republic enforces Islamic norms of conduct and represses dissent, not encouraging non-conformity.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "sovereign-debt-cancellation": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The anti-imperialist framing of mostazafin against arrogant powers implies sympathy for escaping foreign financial domination (inferred).",
+   "sources": [
+    "s4",
+    "s2"
+   ]
+  },
+  "independence-needs-economic-change": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Khomeinism stresses economic self-sufficiency and independence from East and West alike, so formal independence without economic independence is hollow.",
+   "sources": [
+    "s4",
+    "s3"
+   ]
+  },
+  "constituent-assembly": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The 1979 constitution was drafted by an elected Assembly of Experts after a referendum, but Khomeini rejected a purely popular process; mixed (inferred).",
+   "sources": [
+    "s3",
+    "s2"
+   ]
+  },
+  "restrict-freedoms-for-growth": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The regime subordinates liberties to Islamic criteria and the revolution's survival; growth was not the stated reason (inferred).",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "rich-countries-aid-poor": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The constitution calls for support to oppressed peoples and Muslim solidarity, though not general foreign aid as such (inferred).",
+   "sources": [
+    "s3",
+    "s4"
+   ]
+  },
+  "independent-nuclear-deterrent": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Self-sufficiency and independence from foreign powers, with the constitution's call for strong defence, imply support for national deterrence (inferred).",
+   "sources": [
+    "s3",
+    "s4"
+   ]
+  },
+  "direct-election-head-of-state": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The constitution provides for a President elected directly by the people, though under the Leader's supervision.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "central-bank-independence": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The constitution puts banking in the public sector under state direction, so independence of the central bank from government is inferred to be disfavoured.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "no-land-for-peace": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Khomeinism treats Israel as illegitimate and rejects compromise over Muslim land, so ceding claimed land for peace is inferred to be rejected.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "property-serves-common-good": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The constitution recognises private property but limits it by Islamic duties and social justice, including levies such as khums and zakat.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "soviet-state-capitalist": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Khomeini condemned East and West as oppressors but saw the USSR as an atheist rival power, not as state capitalism (inferred).",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  }
+ },
+ "missingStatements": [
+  {
+   "text": "Senior religious scholars should hold the highest political authority.",
+   "value": 2,
+   "rationale": "Velayat-e faqih, rule by a qualified jurist, is the defining doctrine of Khomeinism.",
+   "sources": [
+    "s1",
+    "s3"
+   ],
+   "addedAs": "clerical-rule"
+  }
+ ],
+ "notes": "Khomeini's positions shifted with circumstance, and Iranian reformists and hardliners both claim his legacy; the constitution and his 1970 lectures are used as the baseline."
 }
