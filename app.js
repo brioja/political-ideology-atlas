@@ -40,6 +40,11 @@ const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REA
 
 // Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
 // found from the data and mix many issues, so a fixed label would go stale).
+// How much of the differences between ideologies line i covers, relative to the biggest line (0-1):
+// shown as a bar, with the exact share only as a tooltip.
+const lineWeight = (i) => model.components[i].share / model.components[0].share;
+const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(model.components[i].share)} of the differences between ideologies" aria-label="${pct(model.components[i].share)} of the differences between ideologies"><span style="width:${pct(lineWeight(i))}"></span></span>`;
+
 function lineInfo(i) {
   const ax = describeAxis(model, i, QUESTIONS);
   const low = ax.lowEnd[0], high = ax.highEnd[0];
@@ -122,10 +127,10 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
   );
   const ex = lineInfo(xi), ey = lineInfo(yi);
   svg.append(
-    el("text", { x: 10, y: H - 10 }, `← ${ex.low}`),
-    el("text", { x: W - 10, y: H - 10, "text-anchor": "end" }, `${ex.high} →`),
-    el("text", { x: W / 2 + 6, y: pad - 18 }, `↑ ${ey.high}`),
-    el("text", { x: W / 2 + 6, y: H - pad + 12 }, `↓ ${ey.low}`)
+    el("text", { class: "end-label", x: 10, y: H - 10 }, `← ${ex.low}`),
+    el("text", { class: "end-label", x: W - 10, y: H - 10, "text-anchor": "end" }, `${ex.high} →`),
+    el("text", { class: "end-label", x: W / 2 + 6, y: pad - 16 }, `↑ ${ey.high}`),
+    el("text", { class: "end-label", x: W / 2 + 6, y: H - pad + 16 }, `↓ ${ey.low}`)
   );
 
   // Greedy label placement: try right, left, then nudged up/down until a label clears the others.
@@ -665,7 +670,7 @@ function showResults(shared = null) {
     const div = document.createElement("div");
     div.className = "axis";
     div.innerHTML = `
-      <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
+      <div class="axis-head"><h3>${esc(L.name)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
@@ -912,13 +917,15 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   }
 
   // Two columns: other close ideologies, and more people.
+  // Rows in both columns share centres; the offsets centre the taller (people, 52px avatars) column
+  // in its card, so the headings line up across columns.
   const colW = (W - PAD * 2 - 28) / 2, ch = 262;
   const morePeople = people.slice(1, 4);
   const ideoW = morePeople.length ? colW : W - PAD * 2;
   card(PAD, y, ideoW, ch);
-  label("CLOSE IDEOLOGIES", PAD + 32, y + 50);
+  label("CLOSE IDEOLOGIES", PAD + 32, y + 36);
   ranked.slice(1, 4).forEach((r, i) => {
-    const ry = y + 104 + i * 62, x = PAD + 32, w = ideoW - 64;
+    const ry = y + 90 + i * 62, x = PAD + 32, w = ideoW - 64;
     ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
     ctx.fillStyle = CARD.ink; ctx.font = `400 25px ${CARD_FONTS.body}`;
     let name = r.name;
@@ -932,9 +939,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   if (morePeople.length) {
     const x0 = PAD + colW + 28;
     card(x0, y, colW, ch);
-    label("MORE PEOPLE", x0 + 32, y + 50);
+    label("MORE PEOPLE", x0 + 32, y + 36);
     morePeople.forEach((p, i) => {
-      const cy = y + 104 + i * 62, r = 26, x = x0 + 32;
+      const cy = y + 90 + i * 62, r = 26, x = x0 + 32;
       ctx.save();
       ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
       ctx.fillStyle = CARD.line; ctx.fill();
@@ -950,11 +957,10 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   }
   y += ch + 28;
 
-  // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Lines
-  // can sit 46px apart (the name is on the left, the end labels under the track on the right); the
-  // last line's end labels need about 34px above the footer.
-  const room = H - 130 - 34 - (y + 60);
-  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 46) + 1));
+  // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
+  // row is "low end  ──○──  high end", so rows can sit 44px apart; the last needs ~20px above the footer.
+  const room = H - 130 - 20 - (y + 64);
+  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 44) + 1));
   const lh = lines > 1 ? Math.min(62, room / (lines - 1)) : 0;
   label("WHERE YOU STAND", PAD, y + 26);
   {
@@ -969,19 +975,25 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.beginPath(); ctx.arc(kx, y + 19, 8, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     ctx.textAlign = "left";
   }
+  // An end's name, as large as fits its column (down to 16px), else shortened.
+  const endLabel = (text, x, ty, align) => {
+    let size = 24;
+    ctx.font = `600 ${size}px ${CARD_FONTS.display}`;
+    while (ctx.measureText(text).width > END_W && size > 16) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
+    while (ctx.measureText(text).width > END_W && text.length > 4) text = text.slice(0, -2) + "…";
+    ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 8); ctx.textAlign = "left";
+  };
+  const END_W = 230;
   for (let i = 0; i < lines; i++) {
-    const L = lineInfo(i), ty = y + 60 + i * lh;
-    const x0 = PAD + 300, x1 = W - PAD;
+    const L = lineInfo(i), ty = y + 64 + i * lh;
+    const x0 = PAD + END_W + 28, x1 = W - PAD - END_W - 28;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
-    ctx.fillStyle = CARD.ink; ctx.font = `600 24px ${CARD_FONTS.display}`;
-    ctx.fillText(pct(model.components[i].share), PAD, ty + 8);
-    ctx.fillStyle = CARD.muted; ctx.font = `400 18px ${CARD_FONTS.body}`;
-    ctx.fillText("of the differences", PAD + 72, ty + 8);
-    ctx.fillStyle = CARD.muted; ctx.font = `400 18px ${CARD_FONTS.body}`;
-    ctx.fillText(L.low, x0, ty + 34); ctx.textAlign = "right"; ctx.fillText(L.high, x1, ty + 34); ctx.textAlign = "left";
-    ctx.strokeStyle = "rgba(23, 32, 43, 0.15)"; ctx.lineWidth = 4; ctx.lineCap = "round";
+    endLabel(L.low, x0 - 28, ty, "right");
+    endLabel(L.high, x1 + 28, ty, "left");
+    // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
+    ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
     ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9))); ctx.globalAlpha = 1;
@@ -1134,9 +1146,8 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
     const ty = y0 + rowH * 0.55;
 
-    ctx.fillStyle = CARD.ink;
-    ctx.font = `600 ${lines > 4 ? 17 : 19}px ${CARD_FONTS.display}`;
-    ctx.fillText(`${pct(model.components[i].share)} of the differences`, x0, y0 + 14);
+    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x0, y0 + 4, 140, 8);
+    ctx.fillStyle = CARD.muted; ctx.fillRect(x0, y0 + 4, 140 * lineWeight(i), 8);
     ctx.fillStyle = CARD.muted;
     ctx.font = `400 15px ${CARD_FONTS.body}`;
     ctx.fillText(L.low, x0, ty + 26);
@@ -1309,7 +1320,7 @@ function lineStrips(scores, { selfId = null } = {}) {
     const lim = Math.max(...vals.map(Math.abs)) * 1.05;
     const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
     return `<div class="axis">
-      <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
+      <div class="axis-head"><h3>${esc(L.name)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}

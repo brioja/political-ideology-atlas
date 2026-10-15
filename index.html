@@ -166,6 +166,7 @@ details.how > .stack { margin-top: 1rem; }
 
 .axis { display: grid; gap: 0.4rem; padding-block: 0.75rem; border-top: 1px solid var(--line); }
 .axis-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+.line-weight { width: 5rem; height: 6px; align-self: center; }
 .axis details { font-size: 0.9rem; color: var(--muted); }
 .axis summary { cursor: pointer; }
 .axis ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
@@ -174,6 +175,7 @@ figure { margin: 0; display: grid; gap: 0.5rem; }
 figcaption { font-size: 0.9rem; color: var(--muted); }
 .chart { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
 .chart text { fill: var(--muted); font: 400 11px var(--mono); }
+.chart text.end-label { fill: var(--ink); font: 600 17px var(--display); }
 .chart .lbl { fill: var(--ink); font: 400 11px var(--display); }
 /* A halo in the background color, so a label in front stays readable over the ones behind it. */
 .chart .lbl, .chart .you-lbl {
