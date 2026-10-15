@@ -495,10 +495,11 @@ function beliefList(ideo, n = 4) {
   }).join("")}</ul>`;
 }
 
-// "You: … / It: …" for a statement where two answers differ.
+// "You: … / Feudalism: …" for a statement where two answers differ. Each side is its own positive
+// statement; the name reads like a speaker's, so a long one wraps with the text.
 function versus(q, mine, theirs, me, them) {
-  return `<li class="versus">${topicIcon(q)}<div class="stack-tight"><span><span class="who">${me}</span> ${esc(stance(q, mine).text)}</span>
-    <span><span class="who">${them}</span> ${esc(stance(q, theirs).text)}</span></div></li>`;
+  return `<li class="versus">${topicIcon(q)}<div class="stack-tight"><span><span class="who">${esc(me)}:</span> ${esc(stance(q, mine).text)}</span>
+    <span><span class="who">${esc(them)}:</span> ${esc(stance(q, theirs).text)}</span></div></li>`;
 }
 
 // The card shown under a map when a dot is picked.
@@ -563,7 +564,7 @@ function showResults(shared = null) {
           ${beliefList(r)}
           <p><a class="more-link" href="${ideologyHref(r.id)}">Full page for ${esc(r.name)} →</a></p>
           ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="iconed">${apart.map((d) =>
-            versus(QUESTIONS[d.q], d.a, d.t, You, "It")).join("")}</ul>` : ""}
+            versus(QUESTIONS[d.q], d.a, d.t, You, r.name)).join("")}</ul>` : ""}
         </div>
       </details></li>`;
   }).join("");
@@ -605,7 +606,7 @@ function showResults(shared = null) {
       <h2>Why ${you_} matched</h2>
       <div class="diffs">
         <div class="stack"><h3>${You} agree on</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
-        <div class="stack"><h3>${You} part ways on</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, "It")).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
+        <div class="stack"><h3>${You} part ways on</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name)).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
       </div>
     </section>
 
