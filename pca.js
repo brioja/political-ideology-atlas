@@ -347,40 +347,6 @@ function salience(ctx, profile) {
   return { known: known.length, uncertainty, bar: ctx.bar, salient: uncertainty <= ctx.bar };
 }
 
-// Gives the leading axes human names. Each candidate name lists statements with the direction
-// that points toward its "high" end; an axis takes the unused name whose direction it matches
-// best (cosine similarity), flipping the ends if the axis points the other way. Names below
-// `minFit` are left off, so callers fall back to describeAxis. Because the match is recomputed
-// from the data, names stay right when new profiles reorder or flip the axes.
-function nameAxes(model, questions, candidates, count = 3, minFit = 0.35) {
-  const index = new Map(questions.map((q, i) => [q.id, i]));
-  const used = new Set();
-  const names = [];
-  for (let a = 0; a < Math.min(count, model.components.length); a++) {
-    const v = model.components[a].vector;
-    let best = null;
-    for (const c of candidates) {
-      if (used.has(c.name)) continue;
-      let dot = 0, norm = 0;
-      for (const [id, sign] of Object.entries(c.toward)) {
-        const q = index.get(id);
-        if (q === undefined) continue;
-        dot += v[q] * sign; norm += sign * sign;
-      }
-      // Cosine between the whole axis (a unit vector) and the name's direction, so an axis
-      // only gets a name if those statements are a large part of what it measures.
-      const fit = norm ? dot / Math.sqrt(norm) : 0;
-      if (!best || Math.abs(fit) > Math.abs(best.fit)) best = { c, fit };
-    }
-    if (best && Math.abs(best.fit) >= minFit) {
-      used.add(best.c.name);
-      const flip = best.fit < 0;
-      names.push({ name: best.c.name, low: flip ? best.c.high : best.c.low, high: flip ? best.c.low : best.c.high, fit: Math.abs(best.fit) });
-    } else names.push(null);
-  }
-  return names;
-}
-
 // Describes an axis by the statements that load on it most and the ideologies at each end.
 function describeAxis(model, index, questions, count = 3) {
   const c = model.components[index];
@@ -395,5 +361,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, nameAxes, describeAxis, SETTLE };
+  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }

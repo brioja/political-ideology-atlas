@@ -32,35 +32,18 @@ function clearSaved() {
   try { localStorage.removeItem(STORAGE_KEY); } catch {}
 }
 
-// Plain names for the dividing lines. `toward` lists statements and the answer direction (+1 agree,
-// -1 disagree) that points toward the `high` end. See nameAxes in pca.js for how lines get matched.
-const LINE_NAMES = [
-  { name: "Social values", low: "Traditional", high: "Progressive",
-    toward: { "abortion-legal": 1, "same-sex-marriage": 1, "gender-social-construct": 1, "traditional-family": -1, "more-religion-public": -1 } },
-  { name: "Economy", low: "Collective", high: "Free market",
-    toward: { "markets-allocate-better": 1, "free-trade": 1, "cut-welfare": 1, "regulate-corporations": -1, "raise-minimum-wage": -1, "public-ownership": -1 } },
-  { name: "Role of the state", low: "Strong state", high: "No state",
-    toward: { "state-harmful": 1, "revolution-justified": 1, "experts-over-public": -1, "empower-international-orgs": -1, "surveillance-ok": -1 } },
-  { name: "Outlook", low: "National", high: "Global",
-    toward: { "empower-international-orgs": 1, "open-borders": 1, "nation-first": -1, "reduce-immigration": -1, "preserve-national-culture": -1 } },
-  { name: "Growth", low: "Pro-growth", high: "Green",
-    toward: { "limit-growth": 1, "drastic-climate-action": 1, "tech-solves-problems": -1, "expand-nuclear": -1 } },
-];
-
 // How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
 // at least 2 and at most 6. build.js precomputes the count; otherwise it's computed here.
 const MAX_LINES = 6;
 const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
 const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
 
-// Name and ends of dividing line i, from LINE_NAMES when one fits, else the ideologies at its ends.
-const LINE_INFO = nameAxes(model, QUESTIONS, LINE_NAMES, SHOWN_LINES);
+// Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
+// found from the data and mix many issues, so a fixed label would go stale).
 function lineInfo(i) {
   const ax = describeAxis(model, i, QUESTIONS);
-  const n = LINE_INFO[i];
-  return n
-    ? { name: n.name, low: n.low, high: n.high, lowIdeo: ax.lowEnd[0], highIdeo: ax.highEnd[0] }
-    : { name: `Line ${i + 1}`, low: ax.lowEnd[0], high: ax.highEnd[0], lowIdeo: ax.lowEnd[0], highIdeo: ax.highEnd[0] };
+  const low = ax.lowEnd[0], high = ax.highEnd[0];
+  return { name: `${low} ↔ ${high}`, low, high };
 }
 
 // ---------- Markers ----------
@@ -683,7 +666,6 @@ function showResults(shared = null) {
     div.className = "axis";
     div.innerHTML = `
       <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
-      <div class="axis-ends"><span>${esc(L.low)}</span><span>${esc(L.high)}</span></div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
@@ -692,7 +674,6 @@ function showResults(shared = null) {
       <details><summary>What this line is about</summary>
         <ul class="plain">${ax.negative.map((p) => `<li>Agreeing moves you toward ${esc(L.low)}: ${p.text}</li>`).join("")}
             ${ax.positive.map((p) => `<li>Agreeing moves you toward ${esc(L.high)}: ${p.text}</li>`).join("")}</ul>
-        ${L.low === L.lowIdeo ? "" : `<p class="muted small">Furthest apart on this line: ${esc(L.lowIdeo)} and ${esc(L.highIdeo)}.</p>`}
       </details>`;
     axesBox.append(div);
   }
@@ -995,7 +976,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
     ctx.fillStyle = CARD.ink; ctx.font = `600 24px ${CARD_FONTS.display}`;
-    ctx.fillText(L.name, PAD, ty + 8);
+    ctx.fillText(pct(model.components[i].share), PAD, ty + 8);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 18px ${CARD_FONTS.body}`;
+    ctx.fillText("of the differences", PAD + 72, ty + 8);
     ctx.fillStyle = CARD.muted; ctx.font = `400 18px ${CARD_FONTS.body}`;
     ctx.fillText(L.low, x0, ty + 34); ctx.textAlign = "right"; ctx.fillText(L.high, x1, ty + 34); ctx.textAlign = "left";
     ctx.strokeStyle = "rgba(23, 32, 43, 0.15)"; ctx.lineWidth = 4; ctx.lineCap = "round";
@@ -1153,7 +1136,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
     ctx.fillStyle = CARD.ink;
     ctx.font = `600 ${lines > 4 ? 17 : 19}px ${CARD_FONTS.display}`;
-    ctx.fillText(L.name, x0, y0 + 14);
+    ctx.fillText(`${pct(model.components[i].share)} of the differences`, x0, y0 + 14);
     ctx.fillStyle = CARD.muted;
     ctx.font = `400 15px ${CARD_FONTS.body}`;
     ctx.fillText(L.low, x0, ty + 26);
@@ -1327,7 +1310,6 @@ function lineStrips(scores, { selfId = null } = {}) {
     const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
     return `<div class="axis">
       <div class="axis-head"><h3>${esc(L.name)}</h3><span class="muted small">${pct(model.components[i].share)} of the differences</span></div>
-      <div class="axis-ends"><span>${esc(L.low)}</span><span>${esc(L.high)}</span></div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}
