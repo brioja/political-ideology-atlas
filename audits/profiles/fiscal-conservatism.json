@@ -1,1844 +1,1938 @@
 {
-	"id": "fiscal-conservatism",
-	"name": "Fiscal conservatism",
-	"auditedAt": "2026-10-15",
-	"auditor": "claude-sonnet-5-5",
-	"summary": "Fiscal conservatism is the economic strand of conservatism, built on capitalism, limited government and laissez-faire. It favors lower taxes, restrained spending, balanced budgets, deregulation, privatization and free trade, and treats public debt as a burden on future citizens. Factions differ on priorities: deficit hawks, supply-siders and spending reducers.",
-	"scope": "The mainstream American tradition as set out by Barry Goldwater (The Conscience of a Conservative, 1960), Milton Friedman (Capitalism and Freedom, 1962) and Ronald Reagan's 1981 inaugural address, together with the general account in the Wikipedia article. It is an economic philosophy, so most social, cultural and foreign-policy statements are not settled by it and are answered neutral or low-confidence.",
-	"wikipedia": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
-	"furtherReading": [
-		{
-			"title": "Fiscal conservatism (Wikipedia)",
-			"url": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
-			"note": "Overview of the principles, factions and history."
-		},
-		{
-			"title": "The Conscience of a Conservative, Barry Goldwater (Project Gutenberg)",
-			"url": "https://gutenberg.org/cache/epub/74319/pg74319-images.html",
-			"note": "Classic 1960 statement on taxes, spending and the welfare state."
-		},
-		{
-			"title": "First Inaugural Address of Ronald Reagan (Yale Avalon Project)",
-			"url": "https://avalon.law.yale.edu/20th_century/reagan1.asp",
-			"note": "Short, readable statement of the case against deficits and big government."
-		},
-		{
-			"title": "Capitalism and Freedom (Wikipedia)",
-			"url": "https://en.wikipedia.org/wiki/Capitalism_and_Freedom",
-			"note": "Summary of Friedman's case for markets, vouchers and a monetary rule."
-		}
-	],
-	"keyFigures": [
-		{
-			"name": "Barry Goldwater",
-			"role": "Author of The Conscience of a Conservative, urging spending cuts and an end to the welfare state.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Barry_Goldwater",
-			"sources": [
-				"s3"
-			]
-		},
-		{
-			"name": "Milton Friedman",
-			"role": "Economist who argued for free markets, a monetary rule and school vouchers in Capitalism and Freedom.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Milton_Friedman",
-			"sources": [
-				"s4"
-			]
-		},
-		{
-			"name": "Ronald Reagan",
-			"role": "President who cut top tax rates and called government the problem.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Ronald_Reagan",
-			"sources": [
-				"s2"
-			]
-		}
-	],
-	"sources": [
-		{
-			"id": "s1",
-			"kind": "reference",
-			"title": "Fiscal conservatism",
-			"author": "Wikipedia",
-			"url": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
-			"usedFor": "Definition, core goals, factions, history and internal disputes."
-		},
-		{
-			"id": "s2",
-			"kind": "primary",
-			"title": "First Inaugural Address (1981)",
-			"author": "Ronald Reagan",
-			"url": "https://avalon.law.yale.edu/20th_century/reagan1.asp",
-			"usedFor": "Deficits, tax burden, size of government, federalism and consent."
-		},
-		{
-			"id": "s3",
-			"kind": "primary",
-			"title": "The Conscience of a Conservative (1960)",
-			"author": "Barry Goldwater",
-			"url": "https://gutenberg.org/cache/epub/74319/pg74319-images.html",
-			"usedFor": "Taxes, spending, welfare, farm subsidies, education, states' rights, foreign aid, military and the UN."
-		},
-		{
-			"id": "s4",
-			"kind": "scholarly",
-			"title": "Capitalism and Freedom",
-			"author": "Wikipedia (summary of Milton Friedman, 1962)",
-			"url": "https://en.wikipedia.org/wiki/Capitalism_and_Freedom",
-			"usedFor": "Friedman's positions on markets, money, trade, vouchers, welfare and licensing."
-		}
-	],
-	"answers": {
-		"universal-healthcare": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Fiscal conservatives oppose large new tax-funded entitlements; Goldwater wanted welfare-type provision left to families, churches and charities, and Friedman called state programs inefficient.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"raise-minimum-wage": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not a core fiscal issue; inferred from the free-market preference for letting wages be set by employers and workers, a view in line with Friedman's market-first stance.",
-			"sources": [
-				"s4"
-			]
-		},
-		"markets-allocate-better": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Free markets and laissez-faire are named as the philosophical base, and Friedman argues markets coordinate better than government control.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"public-ownership": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Privatization is a listed goal, and Friedman limits government to law, property and money.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"tax-the-wealthy": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Lower taxes are the movement's signature aim; Goldwater rejects graduated rates as unjust and Reagan said taxes penalize achievement.",
-			"sources": [
-				"s1",
-				"s2",
-				"s3"
-			]
-		},
-		"unions-good": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Little said directly; inferred from the preference for market wage-setting and the movement's link to right-to-work and restrictions on union power, though some adherents stay neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"property-fundamental": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Goldwater treats property and earnings as inseparable from freedom, and taxation is framed as a property-rights question.",
-			"sources": [
-				"s3"
-			]
-		},
-		"regulate-corporations": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Deregulation is a defining goal, and Friedman opposes even occupational licensing as protection for insiders.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"cut-welfare": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Goldwater wanted the welfare state dismantled and Friedman called many programs misguided, though some adherents accept a safety net such as Friedman's negative income tax.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"worker-ownership": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Not a state matter, but mandated collective ownership departs from capitalism as the base; voluntary employee ownership is not opposed, so only a mild disagree.",
-			"sources": [
-				"s1"
-			]
-		},
-		"surveillance-ok": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Fiscal conservatism has no position; adherents split between security hawks and civil-libertarian limited-government types.",
-			"sources": [
-				"s1"
-			]
-		},
-		"legalize-drugs": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Friedman opposed the war on drugs, but mainstream fiscal conservatives in the Republican mould are divided, so the movement is genuinely split.",
-			"sources": [
-				"s4"
-			]
-		},
-		"restrict-hate-speech": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from limited-government principles that favor narrow state powers over speech; not addressed by the economic philosophy.",
-			"sources": [
-				"s2"
-			]
-		},
-		"strong-leader": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from Reagan's stress on government drawing power from the people and from constitutional limits; the economic philosophy is silent.",
-			"sources": [
-				"s2"
-			]
-		},
-		"state-harmful": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "They want a smaller state, not none: Reagan said he did not mean to abolish government, and Friedman gives it core functions.",
-			"sources": [
-				"s2",
-				"s4"
-			]
-		},
-		"limit-guns": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Outside fiscal doctrine; inferred from the movement's usual alignment with limited government in the US, though not a core tenet.",
-			"sources": [
-				"s1"
-			]
-		},
-		"empower-police-military": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Split: Goldwater wanted military superiority, but deficit hawks and spending reducers target defense budgets too, and Reagan's defense rise fed deficits.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"legalize-sex-work": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not an economic question; libertarian-leaning adherents say yes and social conservatives no.",
-			"sources": [
-				"s1"
-			]
-		},
-		"decide-locally": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Reagan and Goldwater stress that states precede the federal government and oppose federal grants and intervention in areas reserved to states.",
-			"sources": [
-				"s2",
-				"s3"
-			]
-		},
-		"rehabilitation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents divide between cost-minded reform and tough punishment.",
-			"sources": [
-				"s1"
-			]
-		},
-		"traditional-family": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Fiscal conservatism is the economic strand, and the movement mixes social conservatives with socially liberal libertarians.",
-			"sources": [
-				"s1"
-			]
-		},
-		"same-sex-marriage": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "An economic philosophy with no stance; adherents split by social views.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abortion-legal": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position in the economic philosophy; adherents divide.",
-			"sources": [
-				"s1"
-			]
-		},
-		"more-religion-public": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not a fiscal matter; adherents range from religious conservatives to secular libertarians.",
-			"sources": [
-				"s1"
-			]
-		},
-		"correct-racial-injustice": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: affirmative redistribution programs conflict with the preference for limited spending and equal treatment, though not a defining issue.",
-			"sources": [
-				"s3"
-			]
-		},
-		"gender-social-construct": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Outside the economic philosophy; no shared position.",
-			"sources": [
-				"s1"
-			]
-		},
-		"preserve-national-culture": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not part of fiscal doctrine, and free-trade and libertarian adherents are cool on cultural nationalism.",
-			"sources": [
-				"s1"
-			]
-		},
-		"gradual-change": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Reagan sought to reverse government growth, which is not cautious gradualism, while Goldwater proposed staged cuts; no settled view.",
-			"sources": [
-				"s2",
-				"s3"
-			]
-		},
-		"reduce-immigration": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Split: market liberals favor labor mobility while others stress welfare costs; the economic philosophy does not settle it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"empower-international-orgs": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Goldwater opposed deferring to the UN and complained of its cost to the US; limited government extends to supranational bodies.",
-			"sources": [
-				"s3"
-			]
-		},
-		"free-trade": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Free trade is listed among the core goals, and Friedman wants trade barriers and quotas removed.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"nation-first": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Goldwater put national interest first in aid and UN matters, but free-trade adherents favor global exchange; split.",
-			"sources": [
-				"s3",
-				"s1"
-			]
-		},
-		"humanitarian-intervention": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Goldwater would limit foreign commitments and aid to national interest; spending reducers dislike costly missions, though hawks differ.",
-			"sources": [
-				"s3"
-			]
-		},
-		"open-borders": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Friedman-style market liberals like open labor markets but deny open borders alongside welfare; mainstream adherents mildly disagree.",
-			"sources": [
-				"s4"
-			]
-		},
-		"limit-growth": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The movement centres on growth through tax cuts and low regulation, so limiting growth runs against its core economic aim.",
-			"sources": [
-				"s1"
-			]
-		},
-		"drastic-climate-action": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: costly government programs and regulation conflict with the deregulation and spending-reduction agenda.",
-			"sources": [
-				"s1"
-			]
-		},
-		"tech-solves-problems": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Markets are trusted to innovate, but no stated view on technology as solution.",
-			"sources": [
-				"s4"
-			]
-		},
-		"expand-nuclear": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No stated position; market advocates prefer private choice and dislike subsidies.",
-			"sources": [
-				"s1"
-			]
-		},
-		"revolution-justified": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from Reagan's constitutional, consent-based framing and the movement's reformist politics.",
-			"sources": [
-				"s2"
-			]
-		},
-		"experts-over-public": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Friedman distrusts technocratic discretion, favoring fixed rules over expert judgment, so adherents lean against expert rule.",
-			"sources": [
-				"s4"
-			]
-		},
-		"central-planning": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Government control of production is rejected, and Friedman argues it undermines freedom.",
-			"sources": [
-				"s4"
-			]
-		},
-		"socialized-markets": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Market exchange is accepted, but the ownership condition is not required; adherents prefer private business and oppose public ownership.",
-			"sources": [
-				"s1"
-			]
-		},
-		"land-value-tax": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "A single tax replacing others is not a standard position; Friedman liked a flat income tax with few deductions instead.",
-			"sources": [
-				"s4"
-			]
-		},
-		"tax-inheritance": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Lower taxes and property rights are central; Goldwater treats taxation of wealth as a property-rights concern.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"basic-income": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Friedman proposed a negative income tax to replace programs but with conditions tied to income; a universal unconditional income is costly and opposed by most.",
-			"sources": [
-				"s4"
-			]
-		},
-		"tariffs-protect-industry": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Free trade is a core goal; the article notes tariffs belonged to 19th-century classical liberals, not the modern movement.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"state-directs-investment": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Directing investment is planning and is rejected; Reagan said the state should foster productivity, not direct it.",
-			"sources": [
-				"s2",
-				"s4"
-			]
-		},
-		"widespread-small-property": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Private property is prized but concentration is not an issue; adherents are indifferent.",
-			"sources": [
-				"s3"
-			]
-		},
-		"abolish-money-wages": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Contradicts the capitalist base of the philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abolish-central-banks": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Friedman criticized the Fed's record but proposed a rule for it rather than abolition, and most adherents keep central banks.",
-			"sources": [
-				"s4"
-			]
-		},
-		"corporatist-bargaining": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State-set wages and prices contradict laissez-faire and market pricing.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"one-party-rule": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Reagan's consent-of-the-governed framing and Friedman's link between freedom and markets reject one-party rule.",
-			"sources": [
-				"s2",
-				"s4"
-			]
-		},
-		"monarchy-legitimate": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Burke is cited as an early voice, but modern fiscal conservatism takes no stance on monarchy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"democracy-best": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Reagan grounds government in the people's consent; an inference since the economic philosophy is not about regime form.",
-			"sources": [
-				"s2"
-			]
-		},
-		"direct-votes": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: adherents favor constitutional limits, though ballot measures on taxes have been popular; mildly against.",
-			"sources": [
-				"s2"
-			]
-		},
-		"workers-councils": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Councils replacing parliaments are far from the movement and run against private enterprise.",
-			"sources": [
-				"s1"
-			]
-		},
-		"right-to-secede": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; Reagan said the states created the federal government, but that is not a secession claim.",
-			"sources": [
-				"s2"
-			]
-		},
-		"political-violence-never": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by the economic philosophy; adherents divide on how absolute to be.",
-			"sources": [
-				"s1"
-			]
-		},
-		"natural-rulers": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from the consent-based view of government; no stated position.",
-			"sources": [
-				"s2"
-			]
-		},
-		"war-builds-character": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: war is costly and spending-reducers oppose it; no stated position.",
-			"sources": [
-				"s1"
-			]
-		},
-		"separate-church-state": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents range from religious conservatives to secularists.",
-			"sources": [
-				"s1"
-			]
-		},
-		"laws-from-scripture": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not an economic position; limited-government adherents lean against scripture-based law.",
-			"sources": [
-				"s1"
-			]
-		},
-		"private-courts-defense": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Friedman and Goldwater assign law, justice and defense to government as its core functions, so privatizing them is a libertarian step beyond the mainstream.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"military-superiority": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Goldwater insists mere parity will not do against the Soviets, and Reagan raised defense spending, though deficit hawks object to its cost.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"ethnic-nation": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: market liberalism is indifferent to ethnicity, and Friedman notes markets ignore personal traits; not a stated position.",
-			"sources": [
-				"s4"
-			]
-		},
-		"class-struggle-history": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "A capitalist, harmony-of-exchange philosophy rejects class conflict as the driver of history; Friedman stresses mutual benefit in voluntary exchange.",
-			"sources": [
-				"s4"
-			]
-		},
-		"equal-outcomes": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Goldwater and Friedman oppose redistribution and graduated taxes aimed at equalizing results.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"indigenous-land-authority": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No stated view; property-rights principles cut both ways.",
-			"sources": [
-				"s3"
-			]
-		},
-		"colonial-reparations": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from opposition to transfers and foreign aid beyond the national interest.",
-			"sources": [
-				"s3"
-			]
-		},
-		"civilizational-union": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from preference for limited government and national self-governance; not discussed.",
-			"sources": [
-				"s2"
-			]
-		},
-		"self-interest-moral": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Voluntary exchange for mutual benefit and the free-market base imply self-interest is legitimate, though adherents do not all call it a moral good.",
-			"sources": [
-				"s4"
-			]
-		},
-		"duties-before-rights": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Property and individual freedom are central in Goldwater, so rights-first is favored, but Burkean adherents differ.",
-			"sources": [
-				"s3"
-			]
-		},
-		"nature-intrinsic-value": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position from the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"limit-population": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Compulsory limits conflict with limited government; economic philosophy otherwise silent.",
-			"sources": [
-				"s1"
-			]
-		},
-		"industrial-civilization-disaster": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The movement is pro-growth and pro-capitalism, which rejects the claim.",
-			"sources": [
-				"s1"
-			]
-		},
-		"accelerate-technology": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Markets are trusted but no stated position on speeding disruption; adherents split.",
-			"sources": [
-				"s4"
-			]
-		},
-		"human-enhancement": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; libertarian-leaning adherents say yes, social conservatives no.",
-			"sources": [
-				"s1"
-			]
-		},
-		"algorithmic-government": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Friedman prefers fixed rules to discretion, but rule by AI expands government decision-making, which they distrust.",
-			"sources": [
-				"s4"
-			]
-		},
-		"unbreakable-encryption": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by fiscal doctrine; adherents split between security and liberty.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restore-past-order": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "The movement seeks to reverse government growth, but it is not a general restorationism, so only a mild disagree.",
-			"sources": [
-				"s2"
-			]
-		},
-		"results-over-ideology": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Adherents are principled about limited government, while Friedman judged policies by empirical results; split.",
-			"sources": [
-				"s4"
-			]
-		},
-		"direct-action": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from a constitutional, electoral approach such as Reagan's and the Contract with America.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"means-match-ends": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The sources discuss fiscal means, not the match between means and ends, so adherents have no shared view.",
-			"sources": [
-				"s1"
-			]
-		},
-		"return-to-foraging": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Pro-capitalist, pro-growth philosophy rejects a return to foraging.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abolish-division-of-labor": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Market exchange rests on specialization, which Friedman defends.",
-			"sources": [
-				"s4"
-			]
-		},
-		"distribute-by-need": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Goldwater and Friedman reject distribution by need in favor of earnings and markets.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"production-for-use": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Profit-driven markets are the base of the philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"profit-exploitation": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Profit is seen as the legitimate return of voluntary exchange, not exploitation.",
-			"sources": [
-				"s4"
-			]
-		},
-		"dictatorship-of-proletariat": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Opposed to socialism and to dictatorship; Reagan grounds power in consent.",
-			"sources": [
-				"s2"
-			]
-		},
-		"collective-farming": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Goldwater wants farm subsidies ended and the market to decide farming; collectivization is the opposite.",
-			"sources": [
-				"s3"
-			]
-		},
-		"capitalism-causes-war": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The movement holds that markets and free trade promote prosperity and peace; Friedman ties economic to political freedom.",
-			"sources": [
-				"s4"
-			]
-		},
-		"taxation-theft": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "They want lower taxes but accept taxation: Goldwater says government may claim an equal percentage of wealth, so the stronger libertarian claim is rejected.",
-			"sources": [
-				"s3"
-			]
-		},
-		"harm-principle": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No stated view; libertarians say yes and social conservatives no.",
-			"sources": [
-				"s1"
-			]
-		},
-		"individual-rights-only": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Goldwater and Friedman centre the individual, though the philosophy does not address group rights directly.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"conscription": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Friedman proposed a volunteer military in Capitalism and Freedom, so adherents lean against conscription.",
-			"sources": [
-				"s4"
-			]
-		},
-		"exit-over-voice": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; Friedman values choice and competition but no stated ranking.",
-			"sources": [
-				"s4"
-			]
-		},
-		"state-as-business": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Adherents value efficiency and competition but would not call citizens customers; split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"positive-liberty": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Friedman and Goldwater define freedom as absence of coercion, and reject the idea that state must supply material means.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"media-academia-power": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Conservative rhetoric often charges this, but fiscal conservatism as such has no stated view.",
-			"sources": [
-				"s1"
-			]
-		},
-		"hereditarian-race": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not part of the economic philosophy; Friedman says markets are blind to personal traits, so a mild disagree by inference.",
-			"sources": [
-				"s4"
-			]
-		},
-		"organic-representation": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: adherents back conventional elected representation and oppose corporatist bodies.",
-			"sources": [
-				"s2"
-			]
-		},
-		"total-state": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Strongly opposed to state direction of the economy and life; Reagan says government is the problem.",
-			"sources": [
-				"s2"
-			]
-		},
-		"national-rebirth": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Reagan's talk of renewal exists, but a radical rebirth from decadence is not a core fiscal claim.",
-			"sources": [
-				"s2"
-			]
-		},
-		"territorial-expansion": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred: costly expansion conflicts with spending restraint and limited government.",
-			"sources": [
-				"s1"
-			]
-		},
-		"personal-loyalty-rule": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Authority resting on consent and law, as Reagan holds, excludes feudal loyalty.",
-			"sources": [
-				"s2"
-			]
-		},
-		"bound-labor": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Violates free labor markets and property in oneself, as Friedman's voluntary exchange requires.",
-			"sources": [
-				"s4"
-			]
-		},
-		"no-neutral-knowledge": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: Friedman's empirical economics assumes objective findings, but no direct statement.",
-			"sources": [
-				"s4"
-			]
-		},
-		"universal-morality": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by economic doctrine.",
-			"sources": [
-				"s1"
-			]
-		},
-		"single-common-good": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Friedman favors market coordination of diverse interests over a central determination of the good.",
-			"sources": [
-				"s4"
-			]
-		},
-		"jewish-state-israel": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position in the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"diaspora-return-right": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position in the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"revive-national-language": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position in the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"workplace-democracy": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Mandated democratic control of firms departs from private ownership and market management.",
-			"sources": [
-				"s1"
-			]
-		},
-		"school-vouchers": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Friedman proposed education vouchers in Capitalism and Freedom, and fiscal conservatives broadly back choice and competition.",
-			"sources": [
-				"s4"
-			]
-		},
-		"avoid-deficit-stimulus": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Reagan condemned piling deficit upon deficit, the article defines the creed by balanced budgets, and Friedman rejects the Keynesian multiplier.",
-			"sources": [
-				"s1",
-				"s2",
-				"s4"
-			]
-		},
-		"economic-freedom": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Friedman argues economic freedom is necessary for political freedom, and Goldwater ties property and freedom together.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"rule-by-example": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: limited-government adherents rely on law and constitutional limits, not rulers' example.",
-			"sources": [
-				"s2"
-			]
-		},
-		"national-self-determination": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Inferred from consent-of-the-governed framing; economic philosophy does not address it directly.",
-			"sources": [
-				"s2"
-			]
-		},
-		"force-without-un": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Goldwater opposes deferring US policy to the UN, from which a willingness to act without approval follows.",
-			"sources": [
-				"s3"
-			]
-		},
-		"reason-over-faith": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents include both religious conservatives and rationalist libertarians.",
-			"sources": [
-				"s1"
-			]
-		},
-		"welfare-for-citizens": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Inferred: those wanting to cut welfare costs are likely to limit eligibility; also noted in the movement's welfare-reform politics.",
-			"sources": [
-				"s1"
-			]
-		},
-		"work-for-welfare": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Goldwater and the Contract with America welfare reform stress personal responsibility and reducing dependency.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"class-collaboration": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Voluntary exchange benefits both sides in Friedman's view, which implies partnership rather than struggle, but unions are not discussed.",
-			"sources": [
-				"s4"
-			]
-		},
-		"sacrifice-heritage": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred from conservatism's respect for inherited institutions and property.",
-			"sources": [
-				"s1"
-			]
-		},
-		"dominated-front": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: nothing in fiscal conservatism supports such a bloc; Goldwater focuses on opposing communism.",
-			"sources": [
-				"s3"
-			]
-		},
-		"workers-nation": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; economic philosophy rejects class organization.",
-			"sources": [
-				"s1"
-			]
-		},
-		"distinct-gender-roles": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No position in the economic philosophy; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"ban-interest": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Interest is a normal market price of money, so banning it contradicts free markets.",
-			"sources": [
-				"s4"
-			]
-		},
-		"racial-segregation-law": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Friedman argues markets are indifferent to race, and the philosophy rejects state-imposed classification as an expansion of government.",
-			"sources": [
-				"s4"
-			]
-		},
-		"expand-fossil-fuels": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Inferred from deregulation and pro-growth priorities; not stated.",
-			"sources": [
-				"s1"
-			]
-		},
-		"assimilate-immigrants": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not an economic matter; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"elite-replacement": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Conspiratorial claim not part of the doctrine; mild disagree by inference.",
-			"sources": [
-				"s1"
-			]
-		},
-		"proportional-representation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"national-mission": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Goldwater limits aid and foreign commitments, so spreading a government form is not core; mild disagree.",
-			"sources": [
-				"s3"
-			]
-		},
-		"patriarchy-structural": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Market adherents see opportunity as open under voluntary exchange; not a fiscal topic.",
-			"sources": [
-				"s4"
-			]
-		},
-		"political-elite-corrupt": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Reagan blamed government growth, yet no stated view on corruption of elites.",
-			"sources": [
-				"s2"
-			]
-		},
-		"heritable-defect-limits": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State coercion over reproduction contradicts the limited-government creed.",
-			"sources": [
-				"s2"
-			]
-		},
-		"security-forces-accountable": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Nothing in the fiscal sources concerns legal accountability for past security-force abuses; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"night-watchman-state": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Goldwater and Friedman restrict government to law, defense and property, though Friedman adds money and some other functions, so most adherents say yes with reservations.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"discourage-race-mixing": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Opposes state interference in private choices; markets ignore race per Friedman.",
-			"sources": [
-				"s4"
-			]
-		},
-		"equal-moral-worth": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Goldwater and Friedman favor equal treatment under law, such as equal tax percentages; an inference for moral worth.",
-			"sources": [
-				"s3"
-			]
-		},
-		"socialism-one-country": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "A Marxist doctrinal question the movement has no stance on.",
-			"sources": [
-				"s1"
-			]
-		},
-		"settler-state-colonial": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Fiscal conservatism takes no stance on how settler states should be characterized; the sources are silent.",
-			"sources": [
-				"s1"
-			]
-		},
-		"uniform-civil-code": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-conversion": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from preference for limited state powers.",
-			"sources": [
-				"s2"
-			]
-		},
-		"ban-cattle-slaughter": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred: such a ban is a market intervention that fiscal conservatives would reject.",
-			"sources": [
-				"s4"
-			]
-		},
-		"no-religion-state-schools": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"state-strengthens-encirclement": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Opposed to a growing state and to socialism.",
-			"sources": [
-				"s2"
-			]
-		},
-		"consent-of-governed": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Reagan describes government as having no power except what the people grant it.",
-			"sources": [
-				"s2"
-			]
-		},
-		"trade-surplus": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Friedman and free-trade advocates reject mercantilist export surplus goals.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"population-transfer": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred from limited-government principles and equal treatment.",
-			"sources": [
-				"s2"
-			]
-		},
-		"initiating-force-wrong": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Voluntary exchange and limited coercion are core, but fiscal conservatives accept taxation and state force, so only agree.",
-			"sources": [
-				"s4"
-			]
-		},
-		"competition-drives-progress": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Free-market competition as the engine of prosperity is core, though not applied to peoples in the statement's sense.",
-			"sources": [
-				"s4"
-			]
-		},
-		"ban-extremist-parties": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents split between order and liberty.",
-			"sources": [
-				"s1"
-			]
-		},
-		"freedom-as-non-domination": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Freedom is conceived as absence of coercion by government; the republican concept is a different one.",
-			"sources": [
-				"s4"
-			]
-		},
-		"separated-powers": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Reagan and Goldwater stress dividing powers between federal government, states and people.",
-			"sources": [
-				"s2",
-				"s3"
-			]
-		},
-		"vanguard-party": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Opposed to socialism and to party-led rule.",
-			"sources": [
-				"s2"
-			]
-		},
-		"priority-to-poor": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Goldwater and Friedman reject special priority in law for any group, preferring general rules and market growth to help the poor.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"right-to-buy-council-homes": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Privatization of public assets and wider ownership are favored, as the article lists privatization among goals.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-strikes-picketing": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Inferred from the movement's opposition to union power and general deregulation of labor, but it is not stated directly in sources.",
-			"sources": [
-				"s1"
-			]
-		},
-		"population-causes-poverty": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Market advocates ascribe poverty to lack of growth and institutions, not population.",
-			"sources": [
-				"s4"
-			]
-		},
-		"diversity-weakens-cohesion": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by the economic philosophy; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"offices-by-lottery": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred from commitment to elected, consent-based government.",
-			"sources": [
-				"s2"
-			]
-		},
-		"emergency-suspend-protections": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Limited-government adherents are wary of suspending protections, though security hawks differ.",
-			"sources": [
-				"s2"
-			]
-		},
-		"price-controls-essentials": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Price controls are opposed because they override market pricing, and Friedman defends floating prices.",
-			"sources": [
-				"s4"
-			]
-		},
-		"party-controls-media": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Government control of information contradicts freedom and limited government.",
-			"sources": [
-				"s2"
-			]
-		},
-		"party-commands-army": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred from constitutional, consent-based government.",
-			"sources": [
-				"s2"
-			]
-		},
-		"long-naturalization-wait": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"representatives-worker-pay": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; mild disagree by inference.",
-			"sources": [
-				"s1"
-			]
-		},
-		"party-discipline-binding": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Internal party discipline is outside the economic philosophy, and the sources say nothing on it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"pool-sovereignty": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Goldwater opposes deferring to the UN and Reagan favors national and state self-government.",
-			"sources": [
-				"s2",
-				"s3"
-			]
-		},
-		"head-commands-forces": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by the economic philosophy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"church-by-bishops": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Church governance is unrelated to fiscal doctrine; the sources are silent, so adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"clerical-rule": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Inferred from consent-based, limited government.",
-			"sources": [
-				"s2"
-			]
-		},
-		"defeat-own-government-war": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "A Marxist-Leninist doctrine opposed by the movement; Goldwater stresses national strength.",
-			"sources": [
-				"s3"
-			]
-		},
-		"censor-art-for-virtue": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred from limited-government principles; social conservatives may differ.",
-			"sources": [
-				"s2"
-			]
-		},
-		"unlimited-reelection": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: limits on power fit the constitutional view.",
-			"sources": [
-				"s2"
-			]
-		},
-		"recall-officials": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Recall is a procedural question the fiscal sources do not address; some adherents back it for taxes, others do not.",
-			"sources": [
-				"s1"
-			]
-		},
-		"end-foreign-alliances": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Goldwater urged military strength and opposed disarmament, so ending alliances is unlikely, though spending reducers differ.",
-			"sources": [
-				"s3"
-			]
-		},
-		"abolish-rental-housing": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Banning rental contracts is a gross interference in property and market choice.",
-			"sources": [
-				"s3"
-			]
-		},
-		"people-in-arms": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Friedman wanted a volunteer military, and Goldwater a strong professional force.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"rural-life-healthier": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The economic philosophy has no view on rural versus urban morality; adherents differ.",
-			"sources": [
-				"s1"
-			]
-		},
-		"reunify-divided-nation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "National reunification is a foreign-policy matter the fiscal sources do not touch.",
-			"sources": [
-				"s1"
-			]
-		},
-		"educated-out-of-touch": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not an economic matter; no shared view.",
-			"sources": [
-				"s1"
-			]
-		},
-		"cultures-equal-different": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Cultural comparison is outside this economic philosophy, and the sources say nothing; adherents differ.",
-			"sources": [
-				"s1"
-			]
-		},
-		"death-penalty": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not an economic matter; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"sex-ed-in-schools": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents prefer local and parental choice but split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"creationism-in-schools": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: Goldwater prefers local control, but fiscal conservatism does not endorse the claim.",
-			"sources": [
-				"s3"
-			]
-		},
-		"restrict-pornography": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; adherents split.",
-			"sources": [
-				"s1"
-			]
-		},
-		"citizenship-by-descent": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Citizenship law is not addressed by the fiscal sources, and adherents divide on it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"minority-language-support": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: costlier state programs are disfavored.",
-			"sources": [
-				"s1"
-			]
-		},
-		"religious-exemptions": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Exemptions from general law are not a fiscal matter, and the sources do not address them.",
-			"sources": [
-				"s1"
-			]
-		},
-		"encourage-eccentricity": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The fiscal sources do not take up social conformity; adherents range from libertarians to traditionalists.",
-			"sources": [
-				"s1"
-			]
-		},
-		"sovereign-debt-cancellation": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Reagan condemned borrowing beyond means and hardly would approve default as policy; debt obligations are claims on property, as Burke is quoted.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"independence-needs-economic-change": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Inferred: the movement keeps property systems intact.",
-			"sources": [
-				"s1"
-			]
-		},
-		"constituent-assembly": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Rewriting constitutions is outside the fiscal sources, which assume the existing constitutional order.",
-			"sources": [
-				"s1"
-			]
-		},
-		"central-bank-independence": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Friedman wanted the Fed bound by rules and criticized discretion; stable prices as the aim matches his monetary rule, though he doubted independence per se.",
-			"sources": [
-				"s4"
-			]
-		},
-		"no-land-for-peace": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Territorial bargaining is a foreign-policy question the fiscal sources do not address.",
-			"sources": [
-				"s1"
-			]
-		},
-		"property-serves-common-good": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Goldwater treats property as fundamental to freedom, not conditional on service.",
-			"sources": [
-				"s3"
-			]
-		},
-		"soviet-state-capitalist": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "A Marxist dispute the movement does not address.",
-			"sources": [
-				"s1"
-			]
-		},
-		"precautionary-principle": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Costly regulation before certainty conflicts with the deregulation priority.",
-			"sources": [
-				"s1"
-			]
-		},
-		"collective-defense": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Goldwater favors firm opposition to the Soviet bloc and military strength; inference for alliances.",
-			"sources": [
-				"s3"
-			]
-		},
-		"annexed-territory-occupation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The legal status of annexed territory is outside the economic philosophy, so there is no stated position.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-freedoms-for-growth": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Friedman says economic freedom is tied to political freedom, so trading away freedoms is rejected.",
-			"sources": [
-				"s4"
-			]
-		},
-		"rich-countries-aid-poor": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Goldwater would limit foreign aid to friendly anti-communist nations in the national interest.",
-			"sources": [
-				"s3"
-			]
-		},
-		"independent-nuclear-deterrent": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Goldwater's insistence on superiority and distrust of foreign dependence supports a national deterrent; inferred.",
-			"sources": [
-				"s3"
-			]
-		},
-		"direct-election-head-of-state": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The mode of electing a head of state is not covered by the fiscal sources.",
-			"sources": [
-				"s1"
-			]
-		},
-		"state-class-instrument": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The movement treats the state as a limited servant of the people under Reagan, not as an instrument of class rule, and rejects the Marxist framing.",
-			"sources": [
-				"s2",
-				"s4"
-			]
-		},
-		"flat-income-tax": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Goldwater says government may claim an equal percentage of each person's wealth, and Friedman favors a flat tax with few deductions.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		}
-	},
-	"missingStatements": [
-		{
-			"text": "Government should adopt a constitutional rule requiring a balanced budget.",
-			"value": 2,
-			"rationale": "Balanced budgets are the defining aim in the article, and Bloomberg's definition is about not running deficits the next generation cannot afford.",
-			"sources": [
-				"s1"
-			],
-			"addedAs": "avoid-deficit-stimulus"
-		},
-		{
-			"text": "Income tax rates should be flat, charging everyone the same percentage rather than rising with income.",
-			"value": 2,
-			"rationale": "Goldwater says government may claim an equal percentage of each person's wealth, and Friedman favors a flat tax with few deductions.",
-			"sources": [
-				"s3",
-				"s4"
-			],
-			"addedAs": "flat-income-tax"
-		},
-		{
-			"text": "Federal programs outside the powers the constitution gives the national government should be phased out and left to the states.",
-			"value": 2,
-			"rationale": "Goldwater proposes staged withdrawal from such programs and opposes federal grants, and Reagan stresses that states created the federal government.",
-			"sources": [
-				"s2",
-				"s3"
-			],
-			"addedAs": "decide-locally"
-		},
-		{
-			"text": "Central banks should keep money supply growth to a fixed, announced rule rather than act at their discretion.",
-			"value": 2,
-			"rationale": "Friedman proposes a fixed 3 to 5 percent growth rule for the money supply in Capitalism and Freedom.",
-			"sources": [
-				"s4"
-			],
-			"declined": "Fixed money-supply rules are specific to Friedman monetarism, not a defining fiscal-conservative position; central-bank-independence covers the central-bank axis."
-		}
-	],
-	"notes": "Wikipedia notes that the Republican Party has largely moved away from fiscal conservatism as a cornerstone by the 2020s, and that deficits were larger under Republican presidents on average. Factions (deficit hawks, supply-siders, spending reducers) differ on whether tax rises are acceptable and on defense spending."
+  "id": "fiscal-conservatism",
+  "name": "Fiscal conservatism",
+  "auditedAt": "2026-10-15",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Fiscal conservatism is the economic strand of conservatism, built on capitalism, limited government and laissez-faire. It favors lower taxes, restrained spending, balanced budgets, deregulation, privatization and free trade, and treats public debt as a burden on future citizens. Factions differ on priorities: deficit hawks, supply-siders and spending reducers.",
+  "scope": "The mainstream American tradition as set out by Barry Goldwater (The Conscience of a Conservative, 1960), Milton Friedman (Capitalism and Freedom, 1962) and Ronald Reagan's 1981 inaugural address, together with the general account in the Wikipedia article. It is an economic philosophy, so most social, cultural and foreign-policy statements are not settled by it and are answered neutral or low-confidence.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
+  "furtherReading": [
+    {
+      "title": "Fiscal conservatism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
+      "note": "Overview of the principles, factions and history."
+    },
+    {
+      "title": "The Conscience of a Conservative, Barry Goldwater (Project Gutenberg)",
+      "url": "https://gutenberg.org/cache/epub/74319/pg74319-images.html",
+      "note": "Classic 1960 statement on taxes, spending and the welfare state."
+    },
+    {
+      "title": "First Inaugural Address of Ronald Reagan (Yale Avalon Project)",
+      "url": "https://avalon.law.yale.edu/20th_century/reagan1.asp",
+      "note": "Short, readable statement of the case against deficits and big government."
+    },
+    {
+      "title": "Capitalism and Freedom (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Capitalism_and_Freedom",
+      "note": "Summary of Friedman's case for markets, vouchers and a monetary rule."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Barry Goldwater",
+      "role": "Author of The Conscience of a Conservative, urging spending cuts and an end to the welfare state.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Barry_Goldwater",
+      "sources": [
+        "s3"
+      ]
+    },
+    {
+      "name": "Milton Friedman",
+      "role": "Economist who argued for free markets, a monetary rule and school vouchers in Capitalism and Freedom.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Milton_Friedman",
+      "sources": [
+        "s4"
+      ]
+    },
+    {
+      "name": "Ronald Reagan",
+      "role": "President who cut top tax rates and called government the problem.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ronald_Reagan",
+      "sources": [
+        "s2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Fiscal conservatism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fiscal_conservatism",
+      "usedFor": "Definition, core goals, factions, history and internal disputes."
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "First Inaugural Address (1981)",
+      "author": "Ronald Reagan",
+      "url": "https://avalon.law.yale.edu/20th_century/reagan1.asp",
+      "usedFor": "Deficits, tax burden, size of government, federalism and consent."
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "The Conscience of a Conservative (1960)",
+      "author": "Barry Goldwater",
+      "url": "https://gutenberg.org/cache/epub/74319/pg74319-images.html",
+      "usedFor": "Taxes, spending, welfare, farm subsidies, education, states' rights, foreign aid, military and the UN."
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "title": "Capitalism and Freedom",
+      "author": "Wikipedia (summary of Milton Friedman, 1962)",
+      "url": "https://en.wikipedia.org/wiki/Capitalism_and_Freedom",
+      "usedFor": "Friedman's positions on markets, money, trade, vouchers, welfare and licensing."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Fiscal conservatives oppose large new tax-funded entitlements; Goldwater wanted welfare-type provision left to families, churches and charities, and Friedman called state programs inefficient.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a core fiscal issue; inferred from the free-market preference for letting wages be set by employers and workers, a view in line with Friedman's market-first stance.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Free markets and laissez-faire are named as the philosophical base, and Friedman argues markets coordinate better than government control.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "public-ownership": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Privatization is a listed goal, and Friedman limits government to law, property and money.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Lower taxes are the movement's signature aim; Goldwater rejects graduated rates as unjust and Reagan said taxes penalize achievement.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    "unions-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Little said directly; inferred from the preference for market wage-setting and the movement's link to right-to-work and restrictions on union power, though some adherents stay neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Goldwater treats property and earnings as inseparable from freedom, and taxation is framed as a property-rights question.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "regulate-corporations": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Deregulation is a defining goal, and Friedman opposes even occupational licensing as protection for insiders.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "cut-welfare": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goldwater wanted the welfare state dismantled and Friedman called many programs misguided, though some adherents accept a safety net such as Friedman's negative income tax.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Not a state matter, but mandated collective ownership departs from capitalism as the base; voluntary employee ownership is not opposed, so only a mild disagree.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fiscal conservatism has no position; adherents split between security hawks and civil-libertarian limited-government types.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Friedman opposed the war on drugs, but mainstream fiscal conservatives in the Republican mould are divided, so the movement is genuinely split.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from limited-government principles that favor narrow state powers over speech; not addressed by the economic philosophy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "strong-leader": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Reagan's stress on government drawing power from the people and from constitutional limits; the economic philosophy is silent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-harmful": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "They want a smaller state, not none: Reagan said he did not mean to abolish government, and Friedman gives it core functions.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "limit-guns": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Outside fiscal doctrine; inferred from the movement's usual alignment with limited government in the US, though not a core tenet.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Split: Goldwater wanted military superiority, but deficit hawks and spending reducers target defense budgets too, and Reagan's defense rise fed deficits.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an economic question; libertarian-leaning adherents say yes and social conservatives no.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Reagan and Goldwater stress that states precede the federal government and oppose federal grants and intervention in areas reserved to states.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents divide between cost-minded reform and tough punishment.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fiscal conservatism is the economic strand, and the movement mixes social conservatives with socially liberal libertarians.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "An economic philosophy with no stance; adherents split by social views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abortion-legal": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the economic philosophy; adherents divide.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a fiscal matter; adherents range from religious conservatives to secular libertarians.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: affirmative redistribution programs conflict with the preference for limited spending and equal treatment, though not a defining issue.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the economic philosophy; no shared position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not part of fiscal doctrine, and free-trade and libertarian adherents are cool on cultural nationalism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Reagan sought to reverse government growth, which is not cautious gradualism, while Goldwater proposed staged cuts; no settled view.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Split: market liberals favor labor mobility while others stress welfare costs; the economic philosophy does not settle it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Goldwater opposed deferring to the UN and complained of its cost to the US; limited government extends to supranational bodies.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "free-trade": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Free trade is listed among the core goals, and Friedman wants trade barriers and quotas removed.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "nation-first": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Goldwater put national interest first in aid and UN matters, but free-trade adherents favor global exchange; split.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Goldwater would limit foreign commitments and aid to national interest; spending reducers dislike costly missions, though hawks differ.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "open-borders": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Friedman-style market liberals like open labor markets but deny open borders alongside welfare; mainstream adherents mildly disagree.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "limit-growth": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement centres on growth through tax cuts and low regulation, so limiting growth runs against its core economic aim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: costly government programs and regulation conflict with the deregulation and spending-reduction agenda.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Markets are trusted to innovate, but no stated view on technology as solution.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; market advocates prefer private choice and dislike subsidies.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Reagan's constitutional, consent-based framing and the movement's reformist politics.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "experts-over-public": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Friedman distrusts technocratic discretion, favoring fixed rules over expert judgment, so adherents lean against expert rule.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Government control of production is rejected, and Friedman argues it undermines freedom.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Market exchange is accepted, but the ownership condition is not required; adherents prefer private business and oppose public ownership.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "A single tax replacing others is not a standard position; Friedman liked a flat income tax with few deductions instead.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "tax-inheritance": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Lower taxes and property rights are central; Goldwater treats taxation of wealth as a property-rights concern.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Friedman proposed a negative income tax to replace programs but with conditions tied to income; a universal unconditional income is costly and opposed by most.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Free trade is a core goal; the article notes tariffs belonged to 19th-century classical liberals, not the modern movement.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "state-directs-investment": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Directing investment is planning and is rejected; Reagan said the state should foster productivity, not direct it.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Private property is prized but concentration is not an issue; adherents are indifferent.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Contradicts the capitalist base of the philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Friedman criticized the Fed's record but proposed a rule for it rather than abolition, and most adherents keep central banks.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State-set wages and prices contradict laissez-faire and market pricing.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Reagan's consent-of-the-governed framing and Friedman's link between freedom and markets reject one-party rule.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Burke is cited as an early voice, but modern fiscal conservatism takes no stance on monarchy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "democracy-best": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Reagan grounds government in the people's consent; an inference since the economic philosophy is not about regime form.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "direct-votes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: adherents favor constitutional limits, though ballot measures on taxes have been popular; mildly against.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Councils replacing parliaments are far from the movement and run against private enterprise.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-secede": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Reagan said the states created the federal government, but that is not a secession claim.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "political-violence-never": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the economic philosophy; adherents divide on how absolute to be.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "natural-rulers": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the consent-based view of government; no stated position.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "war-builds-character": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: war is costly and spending-reducers oppose it; no stated position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents range from religious conservatives to secularists.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not an economic position; limited-government adherents lean against scripture-based law.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Friedman and Goldwater assign law, justice and defense to government as its core functions, so privatizing them is a libertarian step beyond the mainstream.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "military-superiority": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goldwater insists mere parity will not do against the Soviets, and Reagan raised defense spending, though deficit hawks object to its cost.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: market liberalism is indifferent to ethnicity, and Friedman notes markets ignore personal traits; not a stated position.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A capitalist, harmony-of-exchange philosophy rejects class conflict as the driver of history; Friedman stresses mutual benefit in voluntary exchange.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Goldwater and Friedman oppose redistribution and graduated taxes aimed at equalizing results.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated view; property-rights principles cut both ways.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from opposition to transfers and foreign aid beyond the national interest.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from preference for limited government and national self-governance; not discussed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "self-interest-moral": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Voluntary exchange for mutual benefit and the free-market base imply self-interest is legitimate, though adherents do not all call it a moral good.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "duties-before-rights": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Property and individual freedom are central in Goldwater, so rights-first is favored, but Burkean adherents differ.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position from the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Compulsory limits conflict with limited government; economic philosophy otherwise silent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement is pro-growth and pro-capitalism, which rejects the claim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Markets are trusted but no stated position on speeding disruption; adherents split.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "human-enhancement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; libertarian-leaning adherents say yes, social conservatives no.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Friedman prefers fixed rules to discretion, but rule by AI expands government decision-making, which they distrust.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by fiscal doctrine; adherents split between security and liberty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement seeks to reverse government growth, but it is not a general restorationism, so only a mild disagree.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents are principled about limited government, while Friedman judged policies by empirical results; split.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "direct-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from a constitutional, electoral approach such as Reagan's and the Contract with America.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "means-match-ends": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources discuss fiscal means, not the match between means and ends, so adherents have no shared view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Pro-capitalist, pro-growth philosophy rejects a return to foraging.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Market exchange rests on specialization, which Friedman defends.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Goldwater and Friedman reject distribution by need in favor of earnings and markets.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "production-for-use": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Profit-driven markets are the base of the philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Profit is seen as the legitimate return of voluntary exchange, not exploitation.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposed to socialism and to dictatorship; Reagan grounds power in consent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "collective-farming": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Goldwater wants farm subsidies ended and the market to decide farming; collectivization is the opposite.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement holds that markets and free trade promote prosperity and peace; Friedman ties economic to political freedom.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "taxation-theft": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "They want lower taxes but accept taxation: Goldwater says government may claim an equal percentage of wealth, so the stronger libertarian claim is rejected.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "harm-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated view; libertarians say yes and social conservatives no.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "individual-rights-only": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Goldwater and Friedman centre the individual, though the philosophy does not address group rights directly.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "conscription": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Friedman proposed a volunteer military in Capitalism and Freedom, so adherents lean against conscription.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "exit-over-voice": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Friedman values choice and competition but no stated ranking.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "state-as-business": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents value efficiency and competition but would not call citizens customers; split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "positive-liberty": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Friedman and Goldwater define freedom as absence of coercion, and reject the idea that state must supply material means.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Conservative rhetoric often charges this, but fiscal conservatism as such has no stated view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "hereditarian-race": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of the economic philosophy; Friedman says markets are blind to personal traits, so a mild disagree by inference.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "organic-representation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: adherents back conventional elected representation and oppose corporatist bodies.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "total-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Strongly opposed to state direction of the economy and life; Reagan says government is the problem.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-rebirth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Reagan's talk of renewal exists, but a radical rebirth from decadence is not a core fiscal claim.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "territorial-expansion": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred: costly expansion conflicts with spending restraint and limited government.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Authority resting on consent and law, as Reagan holds, excludes feudal loyalty.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "bound-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Violates free labor markets and property in oneself, as Friedman's voluntary exchange requires.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Friedman's empirical economics assumes objective findings, but no direct statement.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "universal-morality": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by economic doctrine.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "single-common-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Friedman favors market coordination of diverse interests over a central determination of the good.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workplace-democracy": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mandated democratic control of firms departs from private ownership and market management.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "school-vouchers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Friedman proposed education vouchers in Capitalism and Freedom, and fiscal conservatives broadly back choice and competition.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reagan condemned piling deficit upon deficit, the article defines the creed by balanced budgets, and Friedman rejects the Keynesian multiplier.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    "economic-freedom": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Friedman argues economic freedom is necessary for political freedom, and Goldwater ties property and freedom together.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "rule-by-example": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: limited-government adherents rely on law and constitutional limits, not rulers' example.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-self-determination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from consent-of-the-governed framing; economic philosophy does not address it directly.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "force-without-un": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Goldwater opposes deferring US policy to the UN, from which a willingness to act without approval follows.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "reason-over-faith": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents include both religious conservatives and rationalist libertarians.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred: those wanting to cut welfare costs are likely to limit eligibility; also noted in the movement's welfare-reform politics.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goldwater and the Contract with America welfare reform stress personal responsibility and reducing dependency.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "class-collaboration": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Voluntary exchange benefits both sides in Friedman's view, which implies partnership rather than struggle, but unions are not discussed.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from conservatism's respect for inherited institutions and property.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: nothing in fiscal conservatism supports such a bloc; Goldwater focuses on opposing communism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "workers-nation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; economic philosophy rejects class organization.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the economic philosophy; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-interest": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Interest is a normal market price of money, so banning it contradicts free markets.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Friedman argues markets are indifferent to race, and the philosophy rejects state-imposed classification as an expansion of government.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from deregulation and pro-growth priorities; not stated.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an economic matter; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Conspiratorial claim not part of the doctrine; mild disagree by inference.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Goldwater limits aid and foreign commitments, so spreading a government form is not core; mild disagree.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Market adherents see opportunity as open under voluntary exchange; not a fiscal topic.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Reagan blamed government growth, yet no stated view on corruption of elites.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State coercion over reproduction contradicts the limited-government creed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nothing in the fiscal sources concerns legal accountability for past security-force abuses; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "night-watchman-state": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goldwater and Friedman restrict government to law, defense and property, though Friedman adds money and some other functions, so most adherents say yes with reservations.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Opposes state interference in private choices; markets ignore race per Friedman.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goldwater and Friedman favor equal treatment under law, such as equal tax percentages; an inference for moral worth.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "socialism-one-country": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A Marxist doctrinal question the movement has no stance on.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fiscal conservatism takes no stance on how settler states should be characterized; the sources are silent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from preference for limited state powers.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred: such a ban is a market intervention that fiscal conservatives would reject.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Opposed to a growing state and to socialism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consent-of-governed": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reagan describes government as having no power except what the people grant it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "trade-surplus": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Friedman and free-trade advocates reject mercantilist export surplus goals.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "population-transfer": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from limited-government principles and equal treatment.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Voluntary exchange and limited coercion are core, but fiscal conservatives accept taxation and state force, so only agree.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Free-market competition as the engine of prosperity is core, though not applied to peoples in the statement's sense.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split between order and liberty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Freedom is conceived as absence of coercion by government; the republican concept is a different one.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "separated-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Reagan and Goldwater stress dividing powers between federal government, states and people.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "vanguard-party": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposed to socialism and to party-led rule.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "priority-to-poor": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Goldwater and Friedman reject special priority in law for any group, preferring general rules and market growth to help the poor.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Privatization of public assets and wider ownership are favored, as the article lists privatization among goals.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's opposition to union power and general deregulation of labor, but it is not stated directly in sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Market advocates ascribe poverty to lack of growth and institutions, not population.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the economic philosophy; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from commitment to elected, consent-based government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Limited-government adherents are wary of suspending protections, though security hawks differ.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Price controls are opposed because they override market pricing, and Friedman defends floating prices.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "party-controls-media": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Government control of information contradicts freedom and limited government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-commands-army": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from constitutional, consent-based government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; mild disagree by inference.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Internal party discipline is outside the economic philosophy, and the sources say nothing on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Goldwater opposes deferring to the UN and Reagan favors national and state self-government.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Church governance is unrelated to fiscal doctrine; the sources are silent, so adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "clerical-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Inferred from consent-based, limited government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A Marxist-Leninist doctrine opposed by the movement; Goldwater stresses national strength.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from limited-government principles; social conservatives may differ.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: limits on power fit the constitutional view.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "recall-officials": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Recall is a procedural question the fiscal sources do not address; some adherents back it for taxes, others do not.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Goldwater urged military strength and opposed disarmament, so ending alliances is unlikely, though spending reducers differ.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Banning rental contracts is a gross interference in property and market choice.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "people-in-arms": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Friedman wanted a volunteer military, and Goldwater a strong professional force.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The economic philosophy has no view on rural versus urban morality; adherents differ.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "National reunification is a foreign-policy matter the fiscal sources do not touch.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an economic matter; no shared view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Cultural comparison is outside this economic philosophy, and the sources say nothing; adherents differ.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "death-penalty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an economic matter; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents prefer local and parental choice but split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Goldwater prefers local control, but fiscal conservatism does not endorse the claim.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Citizenship law is not addressed by the fiscal sources, and adherents divide on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "minority-language-support": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: costlier state programs are disfavored.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-exemptions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Exemptions from general law are not a fiscal matter, and the sources do not address them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The fiscal sources do not take up social conformity; adherents range from libertarians to traditionalists.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Reagan condemned borrowing beyond means and hardly would approve default as policy; debt obligations are claims on property, as Burke is quoted.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the movement keeps property systems intact.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constituent-assembly": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Rewriting constitutions is outside the fiscal sources, which assume the existing constitutional order.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "central-bank-independence": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Friedman wanted the Fed bound by rules and criticized discretion; stable prices as the aim matches his monetary rule, though he doubted independence per se.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Territorial bargaining is a foreign-policy question the fiscal sources do not address.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Goldwater treats property as fundamental to freedom, not conditional on service.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A Marxist dispute the movement does not address.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "precautionary-principle": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Costly regulation before certainty conflicts with the deregulation priority.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Goldwater favors firm opposition to the Soviet bloc and military strength; inference for alliances.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The legal status of annexed territory is outside the economic philosophy, so there is no stated position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Friedman says economic freedom is tied to political freedom, so trading away freedoms is rejected.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Goldwater would limit foreign aid to friendly anti-communist nations in the national interest.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Goldwater's insistence on superiority and distrust of foreign dependence supports a national deterrent; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The mode of electing a head of state is not covered by the fiscal sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement treats the state as a limited servant of the people under Reagan, not as an instrument of class rule, and rejects the Marxist framing.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "flat-income-tax": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Goldwater says government may claim an equal percentage of each person's wealth, and Friedman favors a flat tax with few deductions.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Limited government and private property imply keeping churches independent of state control; inferred.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "An economic philosophy with no stated position on the head of state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an economic question; Goldwater and Reagan stressed states' consent and the Union but adherents are split on force.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "region-keeps-system": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Goldwater and Reagan favour decentralisation and states' rights, so regional self-government fits; inferred for regions joining a larger state.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Goldwater and Reagan ground government in consent and constitutional limits, not divine descent; inferred.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "character-from-environment": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; economic conservatives are split between self-reliance and environment explanations.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Goldwater insists on constitutional limits on government and Reagan on government by consent, so rulers are bound by law.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "space-expansion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a fiscal issue; fiscal restraint pulls against spending while enterprise favours it, so neutral inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Goldwater favours checks and balances and federalism but the doctrine does not address mixing few and many; neutral inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "leader-cult": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Limited government and suspicion of concentrated power make glorifying leaders alien to the tradition; inferred.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by an economic philosophy.",
+      "sources": [
+        "s1"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Government should adopt a constitutional rule requiring a balanced budget.",
+      "value": 2,
+      "rationale": "Balanced budgets are the defining aim in the article, and Bloomberg's definition is about not running deficits the next generation cannot afford.",
+      "sources": [
+        "s1"
+      ],
+      "addedAs": "avoid-deficit-stimulus"
+    },
+    {
+      "text": "Income tax rates should be flat, charging everyone the same percentage rather than rising with income.",
+      "value": 2,
+      "rationale": "Goldwater says government may claim an equal percentage of each person's wealth, and Friedman favors a flat tax with few deductions.",
+      "sources": [
+        "s3",
+        "s4"
+      ],
+      "addedAs": "flat-income-tax"
+    },
+    {
+      "text": "Federal programs outside the powers the constitution gives the national government should be phased out and left to the states.",
+      "value": 2,
+      "rationale": "Goldwater proposes staged withdrawal from such programs and opposes federal grants, and Reagan stresses that states created the federal government.",
+      "sources": [
+        "s2",
+        "s3"
+      ],
+      "addedAs": "decide-locally"
+    },
+    {
+      "text": "Central banks should keep money supply growth to a fixed, announced rule rather than act at their discretion.",
+      "value": 2,
+      "rationale": "Friedman proposes a fixed 3 to 5 percent growth rule for the money supply in Capitalism and Freedom.",
+      "sources": [
+        "s4"
+      ],
+      "declined": "Fixed money-supply rules are specific to Friedman monetarism, not a defining fiscal-conservative position; central-bank-independence covers the central-bank axis."
+    }
+  ],
+  "notes": "Wikipedia notes that the Republican Party has largely moved away from fiscal conservatism as a cornerstone by the 2020s, and that deficits were larger under Republican presidents on average. Factions (deficit hawks, supply-siders, spending reducers) differ on whether tax rises are acceptable and on defense spending."
 }
