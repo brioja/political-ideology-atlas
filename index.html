@@ -65,7 +65,7 @@ body {
 .wrap.narrow { max-width: calc(46rem + 32px); }
 main { flex: 1; outline: none; }
 .page { display: block; padding-block: 2.5rem 4.5rem; }
-.page > .wrap { display: grid; gap: 2rem; }
+.page > .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
 .stack-lg { display: grid; gap: 2rem; }
 h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; letter-spacing: -0.02em; }
@@ -171,7 +171,7 @@ details.how > .stack { margin-top: 1rem; }
 .axis summary { cursor: pointer; }
 .axis ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
 
-figure { margin: 0; display: grid; gap: 0.5rem; }
+figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
 figcaption { font-size: 0.9rem; color: var(--muted); }
 .chart { width: 100%; height: auto; display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
 .chart text { fill: var(--muted); font: 400 11px var(--mono); }
@@ -204,7 +204,7 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
 }
 .card-preview { width: 100%; max-width: 26rem; height: auto; display: block; border: 1px solid var(--line); border-radius: 12px; }
 .map-pickers { font-size: 0.9rem; gap: 0.5rem 0.75rem; }
-.map-pickers select { max-width: 100%; }
+.map-pickers select { max-width: 100%; min-width: 0; }
 
 /* ---------- Site chrome ---------- */
 .skip-link { position: absolute; left: 1rem; top: -3rem; z-index: 20; background: var(--ink); color: var(--bg); padding: 0.5rem 0.9rem; border-radius: 6px; }
@@ -238,7 +238,7 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   .site-nav a { padding: 0.85rem 0.5rem; font-size: 1rem; }
   .header-start { padding: 0.55rem 0.8rem; }
 }
-@media (max-width: 400px) { .brand span { display: none; } }
+@media (max-width: 430px) { .brand span { display: none; } }
 /* While taking the test on a phone, drop the menu so the name and the results button fit. */
 @media (max-width: 760px) { body.in-test .site-nav { display: none; } body.in-test .header-start { margin-left: auto; } }
 
