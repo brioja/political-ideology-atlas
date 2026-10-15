@@ -110,9 +110,10 @@ function el(tag, attrs, text) {
 }
 
 // Draws ideologies (and optionally you) on two dividing lines. Every dot can be tapped or
-// clicked: it gets a label on the map and `onPick(ideology)` is called. Returns `pick(id)`
-// so other parts of the page can select a dot too.
-function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onPick = null } = {}) {
+// clicked: it gets a label on the map and `onPick(ideology)` is called. Tapping it again, tapping
+// empty space or pressing Escape clears it and calls `onUnpick()`. Returns `pick(id)` so other
+// parts of the page can select a dot too; `svg.unpick()` clears the selection.
+function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onPick = null, onUnpick = null } = {}) {
   svg.replaceChildren();
   const W = 640, H = 440, pad = 46;
   const points = model.ideologies.map((i) => [i.scores[xi], i.scores[yi]]);
@@ -177,9 +178,17 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
   // The picked dot gets a ring and a label with a backing box so it reads over other labels.
   const pickLayer = el("g", { "pointer-events": "none" });
   svg.append(pickLayer);
+  let picked = null;
+  const unpick = () => {
+    picked = null;
+    pickLayer.replaceChildren();
+    if (onUnpick) onUnpick();
+  };
   const pick = (id) => {
     const ideo = model.ideologies.find((i) => i.id === id);
     if (!ideo) return;
+    if (id === picked) return unpick();
+    picked = id;
     const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
     pickLayer.replaceChildren();
     const ring = el("circle", { cx: x, cy: y, r: 12, fill: "none", stroke: "var(--ink)", "stroke-width": 1.5, "stroke-dasharray": "3 2" });
@@ -197,8 +206,9 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
   svg.setAttribute("viewBox", "0 0 640 440");
   svg.onclick = (e) => {
     const dot = e.target.closest(".dot");
-    if (dot) pick(dot.dataset.id);
+    if (dot) pick(dot.dataset.id); else unpick();
   };
+  svg.unpick = unpick;
   return pick;
 }
 
@@ -490,15 +500,17 @@ function versus(q, mine, theirs, me, them) {
 }
 
 // The card shown under a map when a dot is picked.
-function pickCard(container, ideo, { similarity = null } = {}) {
+function pickCard(container, ideo, { similarity = null, onClose = null } = {}) {
   container.hidden = false;
   container.innerHTML = `
     <div class="pick-head"><h3>${posGlyph(ideo, 18)}${esc(ideo.name)}</h3>
-      ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}</div>
+      ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}
+      ${onClose ? `<button type="button" class="pick-close" aria-label="Close">×</button>` : ""}</div>
     ${aboutIdeology(ideo)}
     <h4>What it stands for</h4>
     ${beliefList(ideo, 3)}
     <p><a class="more-link" href="${ideologyHref(ideo.id)}">Open the full page for ${esc(ideo.name)} →</a></p>`;
+  if (onClose) container.querySelector(".pick-close").onclick = onClose;
 }
 
 function readMore(ideo) {
@@ -697,7 +709,8 @@ function showResults(shared = null) {
   const near = new Set(ranked.slice(0, 8).map((r) => r.name));
   const simById = new Map(ranked.map((r) => [r.id, r.similarity]));
   mountMap($("result-map").closest("figure"), { you, highlight: top.name, labels: model.ideologies.length > 25 ? near : null,
-    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id) }) },
+    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id), onClose: () => $("result-map").unpick() }),
+    onUnpick: () => { $("result-pick").hidden = true; } },
     { extraNote: `Close dots answer alike. ${shared ? "Their" : "Your"} match list uses every answer, not just these lines.` });
 
   const fresh = () => {
@@ -1214,7 +1227,8 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
 const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
 mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25 ? extremes : null,
-  onPick: (ideo) => pickCard($("ideo-pick"), ideo) },
+  onPick: (ideo) => pickCard($("ideo-pick"), ideo, { onClose: () => $("ideo-map").unpick() }),
+  onUnpick: () => { $("ideo-pick").hidden = true; } },
   { extraNote: "Close dots answer alike." });
 for (const el of document.querySelectorAll(".ideology-count")) el.textContent = `${model.ideologies.length}`;
 
@@ -1501,7 +1515,11 @@ $("menu-btn").addEventListener("click", () => {
   const open = $("nav-links").classList.toggle("open");
   $("menu-btn").setAttribute("aria-expanded", String(open));
 });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  closeMenu();
+  for (const svg of document.querySelectorAll("svg.chart")) if (svg.unpick) svg.unpick();
+});
 
 // Routes: #/ (home), #/how, #/test, #/results, #/ideologies[/<id>], #/about.
 // A shared result (?r=…) opens on the results page.
