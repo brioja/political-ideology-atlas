@@ -49,6 +49,7 @@ Your ideology: ${it.name} (id: ${it.id}).
    statement; never pad or generate rationales by script to pass a length check.
 3. Leave missingStatements entries as proposals: do NOT set addedAs or declined, and do NOT edit statements.json.
    An integrator handles proposals from all lanes together.
+Other lanes share your scratchpad directory: keep every temporary file in its own subdirectory named ${it.id}.
 Edit no file other than audits/profiles/${it.id}.json. Do not run build.js or test.js. Do not git add, commit or push.
 Report in 1-3 lines: validator result, stated positions, number of missingStatements proposals.`
 
@@ -82,6 +83,7 @@ Read audits/BACKFILL.md and follow it exactly. The statements are in statements.
 Other agents are backfilling other audit files at the same time.
 Audits and the statement ids each one needs:
 ${batch.map((a) => `- ${a.id}: ${a.statements.join(', ')}`).join('\n')}
+Keep temporary files in a scratchpad subdirectory named after your first audit id.
 Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.map((a) => a.id).join(',')}`, phase: 'Backfill', ...model })))
   return agent(`Working directory: ${ROOT}
 1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (contested), remove its "status" field in statements.json, keeping the one-line format.
