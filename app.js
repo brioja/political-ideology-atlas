@@ -308,15 +308,16 @@ function renderQuestion() {
   const asked = new Set(order);
   const answered = answers.filter((a) => a !== null).length;
   const sure = certainty(model, answers, asked);
-  const hold = answered > 0 ? stability(quizCalibration(), sure) : null;
-  // Conservative on purpose: "Results so far" needs at least one answer per real dividing line, and
+  // Conservative on purpose: no reading until there's at least one answer per real dividing line, and
   // "See your result" waits until no simulated taker at this reading changed their top match.
-  const early = hold != null && answered >= REAL_LINES;
+  const hold = answered >= Math.max(1, REAL_LINES) ? stability(quizCalibration(), sure) : null;
+  const early = hold != null;
   const settled = early && hold >= 1;
   $("counter").textContent = `Statement ${position + 1}`;
   // The bar shows the same calibrated chance as the text, so a "93% likely to hold" result fills it to
-  // 93%. While there's no calibrated reading yet ("Narrowing it down…") it stays where it was.
-  if (hold != null || answered === 0) $("bar").style.width = pct(hold ?? 0);
+  // 93%. It stays empty for the first statements, and stays where it was while there's no calibrated
+  // reading ("Narrowing it down…").
+  if (hold != null || answered < REAL_LINES) $("bar").style.width = pct(hold ?? 0);
   // A calibrated percentage: in simulations, the share of takers at this reading whose top match
   // didn't change after answering everything. Readings never seen in simulation get words instead.
   const status = $("certainty");
@@ -324,7 +325,7 @@ function renderQuestion() {
   if (settled) {
     status.innerHTML = `✓ Top match ${pct(hold)} likely to hold · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
-  } else status.textContent = answered === 0 ? "Most telling statements first"
+  } else status.textContent = answered < Math.max(1, REAL_LINES) ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
     : `top match ${pct(hold)} likely to hold`;
   $("statement").textContent = QUESTIONS[q].text;
