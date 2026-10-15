@@ -132,11 +132,13 @@ function solve(M, b) {
 
 const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
 
-function rms(answers, profile, idx) {
+// The average gap between two sets of answers, in notches on the answer scale. An average rather
+// than a root mean square, so a few one-notch differences don't weigh like real disagreement.
+function gap(answers, profile, idx) {
   if (idx.length === 0) return 0;
   let s = 0;
-  for (const j of idx) s += (answers[j] - profile[j]) ** 2;
-  return Math.sqrt(s / idx.length);
+  for (const j of idx) s += Math.abs(answers[j] - profile[j]);
+  return s / idx.length;
 }
 
 // Ranks ideologies by how far their answers are from yours on the statements you answered.
@@ -147,7 +149,7 @@ function spreadOn(model, idx) {
   const ideos = model.ideologies;
   let spread = 0;
   for (let a = 0; a < ideos.length; a++) {
-    for (let b = a + 1; b < ideos.length; b++) spread = Math.max(spread, rms(ideos[a].profile, ideos[b].profile, idx));
+    for (let b = a + 1; b < ideos.length; b++) spread = Math.max(spread, gap(ideos[a].profile, ideos[b].profile, idx));
   }
   return spread;
 }
@@ -158,7 +160,7 @@ function match(model, answers) {
   const spread = spreadOn(model, idx);
   const ranked = ideos
     .map((i) => {
-      const d = rms(answers, i.profile, idx);
+      const d = gap(answers, i.profile, idx);
       return { ...i, distance: d, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .sort((x, y) => x.distance - y.distance);
@@ -175,7 +177,7 @@ function matchPeople(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}
     .map((p) => {
       const both = idx.filter((j) => p.profile[j] != null);
       if (both.length < minOverlap) return null;
-      const d = rms(answers, p.profile, both);
+      const d = gap(answers, p.profile, both);
       return { ...p, distance: d, overlap: both.length, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .filter(Boolean)
