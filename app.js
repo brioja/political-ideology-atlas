@@ -78,16 +78,13 @@ function shapePath(shape, x, y, r) {
   }
 }
 
-// An ideology's traditional colors as a little flag: one color solid, two split diagonally (like
-// the anarchist flags), three as horizontal stripes. Decorative; the name is always written out.
-function flagSwatch(ideo, w = 42, h = 28) {
-  if (!ideo.flag || !ideo.flag.colors.length) return "";
-  const c = ideo.flag.colors.map((x) => esc(x.hex));
-  const shapes = c.length === 1 ? `<rect width="${w}" height="${h}" fill="${c[0]}"/>`
-    : c.length === 2 ? `<polygon points="0,0 ${w},0 0,${h}" fill="${c[0]}"/><polygon points="${w},0 ${w},${h} 0,${h}" fill="${c[1]}"/>`
-    : c.map((col, i) => `<rect y="${(h / c.length) * i}" width="${w}" height="${h / c.length + 0.5}" fill="${col}"/>`).join("");
-  const title = esc(ideo.flag.colors.map((x) => x.name).join(" and ") + (ideo.flag.note ? ` (${ideo.flag.note})` : ""));
-  return `<svg class="flag" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><title>${title}</title>${shapes}<rect width="${w}" height="${h}" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="1"/></svg>`;
+// An ideology's traditional colors as a style for a .tinted box: they wash the background corner
+// to corner, as on the share card, and the first one tints the border. Without colors, the accent.
+function flagTint(ideo) {
+  const c = ideo.flag && ideo.flag.colors.length ? ideo.flag.colors.map((x) => esc(x.hex)) : [];
+  if (!c.length) return "--fam: var(--accent)";
+  const stops = (c.length === 1 ? [c[0], c[0]] : c).map((col) => `color-mix(in srgb, ${col} 16%, var(--surface))`);
+  return `--fam: ${c[0]}; --wash: linear-gradient(135deg, ${stops.join(", ")})`;
 }
 
 // A tiny map beside a name: where the ideology sits on the first two dividing lines (across and up,
@@ -581,10 +578,9 @@ function showResults(shared = null) {
 
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
-    <div class="verdict tinted" style="--fam: var(--accent)">
+    <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
-      <div class="tag-row">${flagSwatch(top)}</div>
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
@@ -1445,8 +1441,7 @@ function renderIdeologyPage(id) {
   const draw = (audit) => {
     root.innerHTML = `
       <a class="back" href="#/ideologies">← All ideologies</a>
-      <div class="detail-head stack tinted" style="--fam: var(--accent)">
-        <div class="tag-row">${flagSwatch(ideo)}</div>
+      <div class="detail-head stack tinted" style="${flagTint(ideo)}">
         <h1>${esc(ideo.name)}</h1>
         ${aboutWithImage(ideo)}
         ${audit && audit.scope ? `<p class="muted small"><strong>Scope:</strong> ${esc(audit.scope)}</p>` : ""}
