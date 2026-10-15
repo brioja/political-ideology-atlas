@@ -992,23 +992,37 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.beginPath(); ctx.arc(kx, y + 21, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     ctx.textAlign = "left";
   }
-  // An end's name, as large as fits its column (down to 22px), else shortened.
-  const endLabel = (text, x, ty, align) => {
-    let size = 30;
-    ctx.font = `600 ${size}px ${CARD_FONTS.display}`;
-    while (ctx.measureText(text).width > END_W && size > 22) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
-    while (ctx.measureText(text).width > END_W && text.length > 4) text = text.slice(0, -2) + "…";
+  // An end's name, as large as fits its column (down to 22px). When the most extreme ideology's name
+  // can't fit, the next one in from that end stands in; only if none of the five nearest fits is
+  // the first shortened.
+  const endLabel = (names, x, ty, align) => {
+    const sizeFor = (text) => {
+      let size = 30;
+      ctx.font = `600 ${size}px ${CARD_FONTS.display}`;
+      while (ctx.measureText(text).width > END_W && size > 22) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
+      return ctx.measureText(text).width <= END_W ? size : 0;
+    };
+    let text = names.find(sizeFor);
+    if (text) ctx.font = `600 ${sizeFor(text)}px ${CARD_FONTS.display}`;
+    else {
+      text = names[0]; sizeFor(text);
+      while (ctx.measureText(text).width > END_W && text.length > 4) text = text.slice(0, -2) + "…";
+    }
     ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 10); ctx.textAlign = "left";
+  };
+  const endNames = (i, side) => {
+    const sorted = model.ideologies.slice().sort((a, b) => a.scores[i] - b.scores[i]);
+    return (side === "low" ? sorted : sorted.reverse()).slice(0, 5).map((d) => d.name);
   };
   const END_W = 262;
   for (let i = 0; i < lines; i++) {
-    const L = lineInfo(i), ty = y + 76 + i * lh;
+    const ty = y + 76 + i * lh;
     const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
-    endLabel(L.low, x0 - 24, ty, "right");
-    endLabel(L.high, x1 + 24, ty, "left");
+    endLabel(endNames(i, "low"), x0 - 24, ty, "right");
+    endLabel(endNames(i, "high"), x1 + 24, ty, "left");
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
