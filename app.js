@@ -937,19 +937,19 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const pw2 = ctx.measureText(pct(p.similarity)).width;
     ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.body}`;
     ctx.fillText("alike", tx + pw2 + 14, y + hh - 40);
-    y += hh + 28;
+    y += hh + 20;
   }
 
   // Two columns: other close ideologies, and more people.
   // Rows in both columns share centres; the offsets centre the taller (people, 52px avatars) column
   // in its card, so the headings line up across columns.
-  const colW = (W - PAD * 2 - 28) / 2, ch = 262;
+  const colW = (W - PAD * 2 - 28) / 2, ch = 244;
   const morePeople = people.slice(1, 4);
   const ideoW = morePeople.length ? colW : W - PAD * 2;
   card(PAD, y, ideoW, ch);
   label("CLOSE IDEOLOGIES", PAD + 32, y + 36);
   ranked.slice(1, 4).forEach((r, i) => {
-    const ry = y + 90 + i * 62, x = PAD + 32, w = ideoW - 64;
+    const ry = y + 82 + i * 58, x = PAD + 32, w = ideoW - 64;
     ctx.fillStyle = markColor(r); ctx.fill(new Path2D(shapePath(styleOf(r).shape, x + 8, ry - 8, 8)));
     ctx.fillStyle = CARD.ink; ctx.font = `400 25px ${CARD_FONTS.body}`;
     let name = r.name;
@@ -965,7 +965,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     card(x0, y, colW, ch);
     label("MORE PEOPLE", x0 + 32, y + 36);
     morePeople.forEach((p, i) => {
-      const cy = y + 90 + i * 62, r = 26, x = x0 + 32;
+      const cy = y + 82 + i * 58, r = 26, x = x0 + 32;
       ctx.save();
       ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
       ctx.fillStyle = CARD.line; ctx.fill();
@@ -979,12 +979,12 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 8); ctx.textAlign = "left";
     });
   }
-  y += ch + 28;
+  y += ch + 20;
 
   // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
-  // row is "low end  ──○──  high end", so rows can sit 44px apart; the last needs ~20px above the footer.
+  // row is "low end  ──○──  high end", so rows can sit 36px apart; the last needs ~20px above the footer.
   const room = H - 130 - 20 - (y + 64);
-  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 44) + 1));
+  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(62, room / (lines - 1)) : 0;
   label("WHERE YOU STAND", PAD, y + 26);
   {
