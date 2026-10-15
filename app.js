@@ -256,11 +256,11 @@ function setHeaderAction(mode) {
   btn.hidden = mode === "none";
   // "early": enough answers to stop (quiet outline); "results": the result has settled (solid).
   btn.classList.toggle("primary", mode !== "early");
-  if (mode === "share") {
-    btn.innerHTML = `Share <span aria-hidden="true">↗</span>`;
-    btn.setAttribute("href", "#share");
-    btn.title = "Share your result";
-    btn.onclick = (e) => { e.preventDefault(); shareResult(); };
+  if (mode === "more") {
+    btn.innerHTML = `<span aria-hidden="true">←</span> Answer more`;
+    btn.setAttribute("href", "#/test");
+    btn.title = "Keep answering to sharpen your result";
+    btn.onclick = null;
     return;
   }
   if (mode === "take") {
@@ -582,8 +582,6 @@ function showResults(shared = null) {
         ${topPeople.length > 1 ? `<div class="people-strip">${topPeople.slice(1, 3).map((p) => `<a class="person-chip" href="${personHref(p.id)}">${avatar(p, 28)}<span>${esc(p.name)}</span><span class="mono small">${pct(p.similarity)}</span></a>`).join("")}</div>` : ""}` : ""}
       <div class="row verdict-actions">
         <a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a>
-        ${shared ? "" : `<button class="btn" id="share-top">Share ↗</button>`}
-        ${canContinue ? `<a class="btn" href="#/test">Answer more questions</a>` : ""}
       </div>
       ${aboutIdeology(top)}
       <p class="muted">${closeCall
@@ -651,6 +649,7 @@ function showResults(shared = null) {
       <div class="share-link">
         <input id="share-url" readonly aria-label="Link to your result">
         <button class="primary" id="copy-link">Copy link</button>
+        <button id="native-share" hidden>Share…</button>
       </div>
       <div class="row">
         <button id="save-image">Save image</button>
@@ -709,7 +708,7 @@ function showResults(shared = null) {
   $("retake").addEventListener("click", fresh);
   if (shared) $("own-test").addEventListener("click", fresh);
   else setUpSharing(given, ranked, you);
-  setHeaderAction(shared ? "take" : "share");
+  setHeaderAction(shared ? "take" : canContinue ? "more" : "none");
 }
 
 function drawScree(svg) {
@@ -733,23 +732,16 @@ function drawScree(svg) {
 
 // ---------- Sharing ----------
 
-// Share: the phone's share sheet where available, otherwise copy the link and show the share section.
-let shareTarget = null;
-async function shareResult() {
-  if (!shareTarget) return;
-  if (navigator.share) {
-    try { await navigator.share({ title: shareTarget.title, url: shareTarget.url }); return; } catch (e) { if (e.name === "AbortError") return; }
-  }
-  try { await navigator.clipboard.writeText(shareTarget.url); $("share-status").textContent = "Link copied."; } catch {}
-  $("share").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-}
-
 function setUpSharing(given, ranked, you) {
   const url = shareUrl(given);
   const status = $("share-status");
   $("share-url").value = url;
-  shareTarget = { url, title: `My closest political ideology: ${ranked[0].name}` };
-  $("share-top").addEventListener("click", shareResult);
+  // The phone's share sheet, where the browser has one.
+  if (navigator.share) {
+    const btn = $("native-share");
+    btn.hidden = false;
+    btn.addEventListener("click", () => navigator.share({ title: `My closest political ideology: ${ranked[0].name}`, url }).catch(() => {}));
+  }
 
   $("copy-link").addEventListener("click", async () => {
     try {
