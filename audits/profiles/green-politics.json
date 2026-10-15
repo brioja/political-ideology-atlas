@@ -1,0 +1,1828 @@
+{
+ "id": "green-politics",
+ "name": "Green politics",
+ "auditedAt": "2026-10-15",
+ "auditor": "claude-sonnet-5-5",
+ "summary": "Green politics seeks an ecologically sustainable society built on ecological wisdom, social justice, grassroots democracy and nonviolence. It rejects growth for its own sake, opposes nuclear power, favours decentralised participatory democracy and generous public welfare, and distrusts corporate power and free trade. Views on markets range from eco-socialist to eco-capitalist, but the mainstream backs a regulated mixed economy.",
+ "scope": "The mainstream of the global Green party family, taken from Wikipedia's overview, the Global Greens Charter and the US Green Party platform, which is more eco-socialist than many European parties. Green conservatives, green liberals and deep-ecology radicals are noted as variants but not the basis. Positions not stated by the sources are inferred at low confidence.",
+ "wikipedia": "https://en.wikipedia.org/wiki/Green_politics",
+ "furtherReading": [
+  {
+   "title": "Green politics (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Green_politics",
+   "note": "Overview of the ideology, its pillars, variants and parties."
+  },
+  {
+   "title": "Global Greens Charter (Asia Pacific Greens)",
+   "url": "https://asiapacificgreens.org/kor/who-we-are/global-greens-charter/",
+   "note": "Describes the six shared principles adopted by Green parties worldwide in 2001."
+  },
+  {
+   "title": "Green Party of the United States platform: Ecological Sustainability",
+   "url": "https://www.gp.org/ecological_sustainability",
+   "note": "A detailed party platform on climate, energy, nuclear power and growth."
+  }
+ ],
+ "keyFigures": [
+  {
+   "name": "Petra Kelly",
+   "role": "Co-founder of the German Green Party and early theorist of green politics.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Petra_Kelly",
+   "sources": [
+    "s1"
+   ]
+  },
+  {
+   "name": "Derek Wall",
+   "role": "Writer who articulated the four pillars of green politics.",
+   "wikipedia": "https://en.wikipedia.org/wiki/Derek_Wall",
+   "sources": [
+    "s1"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "reference",
+   "title": "Green politics",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Green_politics",
+   "usedFor": "Overview of pillars, economics, growth, nuclear, democracy and strands."
+  },
+  {
+   "id": "s2",
+   "kind": "program",
+   "title": "Green Party US platform: Economic Justice and Sustainability",
+   "author": "Green Party of the United States",
+   "url": "https://www.gp.org/economic_justice_and_sustainability",
+   "usedFor": "Positions on growth, corporations, income, taxes, co-ops, banking and trade."
+  },
+  {
+   "id": "s3",
+   "kind": "program",
+   "title": "Green Party US platform: Social Justice",
+   "author": "Green Party of the United States",
+   "url": "https://www.gp.org/social_justice",
+   "usedFor": "Positions on rights, health care, labor, justice, immigration and schools."
+  },
+  {
+   "id": "s4",
+   "kind": "program",
+   "title": "Green Party US platform: Democracy",
+   "author": "Green Party of the United States",
+   "url": "https://www.gp.org/democracy",
+   "usedFor": "Positions on voting, civil liberties, foreign policy, military and debt."
+  },
+  {
+   "id": "s5",
+   "kind": "program",
+   "title": "Green Party US platform: Ecological Sustainability",
+   "author": "Green Party of the United States",
+   "url": "https://www.gp.org/ecological_sustainability",
+   "usedFor": "Positions on climate, nuclear, growth, population, technology and agriculture."
+  },
+  {
+   "id": "s6",
+   "kind": "primary",
+   "title": "Global Greens Charter",
+   "author": "Global Greens (via Asia Pacific Greens)",
+   "url": "https://asiapacificgreens.org/kor/who-we-are/global-greens-charter/",
+   "usedFor": "Six principles: ecological wisdom, social justice, participatory democracy, nonviolence, sustainability, respect for diversity."
+  }
+ ],
+ "answers": {
+  "universal-healthcare": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The US Green platform calls for single-payer care and says health care is a right, not a privilege.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "raise-minimum-wage": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform backs living-wage laws and a livable income, so a substantial rise fits, though it frames this as a living wage rather than a single minimum figure.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "markets-allocate-better": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Greens distrust unregulated capitalism and want ecological limits and public direction, while accepting private firms and co-ops within a mixed economy.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "public-ownership": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform envisions a mixed economy with municipalization and publicly owned enterprise, and prefers public ownership and planning in clean energy.",
+   "sources": [
+    "s2",
+    "s5"
+   ]
+  },
+  "tax-the-wealthy": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform proposes an annual wealth tax, restored estate tax and equal taxation of unearned income.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "unions-good": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform calls for strictly enforcing and expanding workers' rights to organize, as part of social justice.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "property-fundamental": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Greens subordinate property to ecological and social limits, favouring corporate charters with social duties and community-owned land.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "regulate-corporations": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform would curb corporate power, end corporate personhood and revoke charters of repeat law-breakers.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "cut-welfare": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes workfare and time limits and calls for a strong safety net and basic income.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "worker-ownership": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "It supports incentives for worker and consumer co-ops and stakeholder ownership, though alongside private and public firms.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "surveillance-ok": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform calls for repealing the PATRIOT Act and ending warrantless wiretaps and bulk data collection.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "legalize-drugs": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Greens call for ending the war on drugs and decriminalizing victimless offences; full commercial legalisation is less uniformly stated.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "restrict-hate-speech": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "US Greens oppose censorship while European parties often back hate-speech laws, and the sources do not settle it.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "strong-leader": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Grassroots democracy and decentralized, consensus decision-making are core pillars, which rules out bypassing checks.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "state-harmful": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens want better, more democratic government and public institutions, not abolition of the state.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "limit-guns": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Not found in the pages opened; inferred from the peace pillar and police-violence critique, so it is a low-confidence lean.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "empower-police-military": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform would halve the defense budget and remove police from schools.",
+   "sources": [
+    "s4",
+    "s3"
+   ]
+  },
+  "legalize-sex-work": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform supports decriminalizing consensual adult sex work while opposing trafficking.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "decide-locally": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Local control, bioregional democracy and bottom-up parties are central, with states and cities free to set stricter standards.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "rehabilitation": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform favours restorative justice and opposes long sentences for victimless crimes and for-profit detention.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "traditional-family": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not directly addressed; inferred from Greens' progressive social values and post-patriarchal strand.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "same-sex-marriage": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform supports LGBTQIA rights, including recognition of same-sex marriages and civil unions.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "abortion-legal": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform calls women's right to control their bodies non-negotiable and supports legal, funded abortion.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "more-religion-public": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The platform opposes religiously based public school curricula.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "correct-racial-injustice": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "It supports affirmative action and reparations, including a reparations trust fund.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "gender-social-construct": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform adds gender identity to civil rights and Greens draw on ecofeminism, but the construct claim itself is not stated.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "preserve-national-culture": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens protect local and indigenous cultures and diversity but are not nationalist, so there is no clear position on the national culture.",
+   "sources": [
+    "s1",
+    "s6"
+   ]
+  },
+  "gradual-change": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens call for fundamental transformation of the economy and energy system, though they work through elections and institutions.",
+   "sources": [
+    "s1",
+    "s5"
+   ]
+  },
+  "reduce-immigration": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform seeks a path to citizenship and opposes the border wall, E-Verify and Title 42 expulsions.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "empower-international-orgs": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "It wants disputes taken to the UN and the ICC but replaced WTO, IMF and World Bank with democratic bodies.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "free-trade": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes free trade that puts corporate interests above national law and backs fair trade.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "nation-first": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens stress global solidarity, international law and climate debt, not putting national interest above cooperation.",
+   "sources": [
+    "s4",
+    "s6"
+   ]
+  },
+  "humanitarian-intervention": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The platform allows force only to repel an actual attack and opposes preemptive war, though it backs ICC and UN processes.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "open-borders": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The platform moves toward open treatment of migrants, but eventual fully open borders is not stated and adherents differ.",
+   "sources": [
+    "s3",
+    "s1"
+   ]
+  },
+  "limit-growth": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform states unlimited growth on a finite planet cannot be sustained and favours a steady-state economy.",
+   "sources": [
+    "s2",
+    "s5"
+   ]
+  },
+  "drastic-climate-action": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "It calls for an Ecosocialist Green New Deal reaching zero emissions in a decade.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "tech-solves-problems": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Greens apply the precautionary principle to technology and place the burden of proof on proponents.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "expand-nuclear": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Greens mostly oppose nuclear power; the US platform calls for retiring reactors and a moratorium.",
+   "sources": [
+    "s1",
+    "s5"
+   ]
+  },
+  "revolution-justified": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Nonviolence is one of the four pillars, so adherents generally favour change through democratic and nonviolent means.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "experts-over-public": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Participatory and deliberative democracy are core values, though Greens also rely on scientific evidence.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "central-planning": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Ecosocialist Greens favour planning in energy, but the platform stresses local, mixed and co-op economy, and adherents differ.",
+   "sources": [
+    "s2",
+    "s5"
+   ]
+  },
+  "socialized-markets": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform envisions markets with co-ops, public enterprises and small business rather than investor-owned corporations.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "land-value-tax": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform supports land value taxation and a green tax shift, though not as replacing most other taxes.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "tax-inheritance": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform would restore the estate tax as part of fairer taxation.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "basic-income": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform calls for an unconditional universal basic income for every adult.",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "tariffs-protect-industry": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens favour local production and a carbon border fee but oppose free trade rather than endorse protectionism as such.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "state-directs-investment": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "It prefers public investment and planning over private subsidies for a green transition.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "widespread-small-property": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform backs small business, small farms, co-ops and community ownership against corporate concentration.",
+   "sources": [
+    "s2",
+    "s5"
+   ]
+  },
+  "abolish-money-wages": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not a Green aim; the platform seeks living wages and a shorter work week, not abolition of wage labor.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "abolish-central-banks": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform wants a public monetary authority, not market-run money.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "corporatist-bargaining": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not a Green position; inferred from preference for grassroots and pluralist politics.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "one-party-rule": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Grassroots democracy and proportional representation are foundational.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "monarchy-legitimate": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from the emphasis on participatory democracy; not directly addressed.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "democracy-best": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Participatory democracy is one of the Global Greens' six principles.",
+   "sources": [
+    "s1",
+    "s6"
+   ]
+  },
+  "direct-votes": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform supports initiative, referendum and recall at all levels.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "workers-councils": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens prize grassroots participation but pursue it through elected assemblies, so councils replacing parliaments is not their model.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "right-to-secede": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Wikipedia notes bioregional democracy and urban secession and the platform backs self-determination, but this is not a general principle.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "natural-rulers": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Equality and grassroots democracy contradict natural rulers.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "political-violence-never": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Nonviolence is a core pillar, though adherents may allow self-defence.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "war-builds-character": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Peace is a core value and the platform seeks deep military cuts.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "separate-church-state": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform opposes religious curricula in public schools.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "laws-from-scripture": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Inferred from opposition to religious curricula and from secular, pluralist values.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "private-courts-defense": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens want public provision, curbs on corporate power and demilitarized democratic security.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "military-superiority": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform seeks to halve defense spending and close foreign bases.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "ethnic-nation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Respect for diversity is a Global Greens principle.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "class-struggle-history": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Eco-socialists stress class but the Green mainstream is not Marxist in its theory of history.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "equal-outcomes": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform seeks economic equality through wealth taxes and basic income, but the stated aim is justice and a livable income.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "indigenous-land-authority": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform recognizes tribal sovereignty and treaty obligations and supports UNDRIP.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "colonial-reparations": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform asserts a climate and ecological debt to the Global South and calls for debt cancellation.",
+   "sources": [
+    "s4",
+    "s5"
+   ]
+  },
+  "civilizational-union": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from pluralism and global rather than civilizational solidarity.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "self-interest-moral": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens criticise consumerism and stress ecological wisdom and social justice over self-interest.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "duties-before-rights": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens stress rights and responsibility to nature, but not duties to the community above rights.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "nature-intrinsic-value": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Ecological wisdom and rights of nature are central; the platform says humans owe moral responsibility to other species.",
+   "sources": [
+    "s1",
+    "s5"
+   ]
+  },
+  "limit-population": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform supports efforts to slow population growth through living standards, food security and family planning.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "industrial-civilization-disaster": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens criticise productivism but the mainstream seeks reform, not rejection of industrial society.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "accelerate-technology": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The precautionary principle and moratoria on GMOs point against speeding up technological change.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "human-enhancement": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from the precautionary approach to new technologies.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "algorithmic-government": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from participatory democracy and privacy concerns.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "unbreakable-encryption": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform says Fourth Amendment privacy extends online and seeks privacy-protecting internet structures.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "restore-past-order": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens seek a forward-looking transformation, generally left-leaning and progressive.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "results-over-ideology": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens claim to go beyond left and right but hold firm value commitments, so views are split.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "direct-action": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Greens combine party-building with support for nonviolent protest, so both are accepted.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "means-match-ends": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Nonviolence and grassroots democracy are meant to be practiced in the way the movement works.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "return-to-foraging": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Mainstream Greens seek sustainable modern society with regenerative agriculture.",
+   "sources": [
+    "s1",
+    "s5"
+   ]
+  },
+  "abolish-division-of-labor": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not a Green aim; inferred from local-economy and job-creation focus.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "distribute-by-need": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform favours a basic income and priority to basic needs but not an end to work-based pay.",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "production-for-use": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Greens reject growth for its own sake and favour meeting needs locally, but not abolition of profit.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "profit-exploitation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Eco-socialist strands endorse this and eco-capitalist ones do not.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "dictatorship-of-proletariat": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts nonviolence and grassroots democracy.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "collective-farming": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform favours small and medium farms and community-owned farmland rather than compulsory collectivization.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "capitalism-causes-war": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Some Greens blame capitalism for ecological harm and war, but this is not a core claim.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "taxation-theft": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform proposes new taxes on wealth, carbon and land value.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "harm-principle": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Greens defend personal liberties on drugs and sex work but also regulate heavily for ecological and health reasons.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "individual-rights-only": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform recognizes tribal sovereignty and collective rights of indigenous peoples.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "conscription": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from the peace pillar and demilitarisation.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "exit-over-voice": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Democratic participation is a pillar; exit is not offered as an alternative.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "state-as-business": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Greens reject market logic for government and want public enterprise and democratic accountability.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "positive-liberty": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform's right to health care, livable income and basic income presumes material means for freedom.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "media-academia-power": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform stresses corporate and money power over media, not academia-media rule.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "hereditarian-race": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Greens affirm equality and oppose racial discrimination.",
+   "sources": [
+    "s3",
+    "s6"
+   ]
+  },
+  "organic-representation": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform seeks proportional representation of parties, not corporate bodies replacing parties.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "total-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts grassroots democracy and civil liberties.",
+   "sources": [
+    "s1",
+    "s4"
+   ]
+  },
+  "national-rebirth": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens are internationalist and progressive, not a rebirth of the nation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "territorial-expansion": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes preemptive war and covert destabilization.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "personal-loyalty-rule": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Inconsistent with democracy and the rule of law.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "bound-labor": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts social justice and workers' rights.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "no-neutral-knowledge": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Ecofeminist and critical strands accept this but Greens also rely on science.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "universal-morality": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Global Greens adopt shared universal values yet respect diversity, so the sources do not settle it.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "single-common-good": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens stress pluralism and respect for diversity, though ecological wisdom is a shared aim.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "jewish-state-israel": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed in the pages opened; Green parties differ on this.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "diaspora-return-right": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed in the sources opened; Green positions vary.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "revive-national-language": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The platform backs bilingualism and minority languages, but state revival of a national language is not addressed.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "workplace-democracy": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "It supports democratic co-ops, and worker and management control of pension funds.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "school-vouchers": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes vouchers and privatization of public education.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "avoid-deficit-stimulus": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The platform opposes austerity and not deficits as such, though it also lists national debt reform.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "economic-freedom": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens favour public and democratic control of the economy, though they back political freedoms strongly.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "rule-by-example": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from stress on legal and democratic institutions.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "national-self-determination": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform backs self-determination for Puerto Rico and Kurds.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "force-without-un": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform says force is legitimate only to repel attack and wants disputes taken to the UN.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "reason-over-faith": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens draw on science but many value spiritual and non-rational ecological wisdom.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "welfare-for-citizens": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The platform's pathway to citizenship and open-minded immigration policy suggest wider inclusion.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "work-for-welfare": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes workfare and time limits on benefits.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "class-collaboration": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens back co-ops and stakeholder ownership but also curb corporate power.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "sacrifice-heritage": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens stress preservation, community and cultural diversity.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "dominated-front": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The platform calls for global solidarity and debt cancellation but not blocs against Western powers.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "workers-nation": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens are internationalist.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "distinct-gender-roles": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform pushes gender equality and post-patriarchal values.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "ban-interest": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform caps consumer interest rates but does not prohibit lending at interest.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform supports ending racial discrimination and profiling.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "state-class-instrument": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Eco-socialists lean that way but mainstream Greens see the state as reformable.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "expand-fossil-fuels": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform calls for halting new fossil fuel infrastructure and ending subsidies.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "assimilate-immigrants": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform supports bilingualism and the Global Greens respect diversity.",
+   "sources": [
+    "s3",
+    "s6"
+   ]
+  },
+  "elite-replacement": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "A conspiracy claim at odds with the platform's pro-immigrant stance.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "proportional-representation": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform supports proportional voting for legislatures at all levels.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "national-mission": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform favours peaceful dispute resolution and ending covert interference abroad.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "patriarchy-structural": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Post-patriarchal values and ecofeminism are part of green thought.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "political-elite-corrupt": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Greens reject corporate money and seek public financing, implying distrust of established elites.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "security-forces-accountable": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from opposing police brutality and covert operations.",
+   "sources": [
+    "s3",
+    "s4"
+   ]
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts the platform's equal rights and reproductive freedom.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "night-watchman-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform calls for health care, income and extensive regulation.",
+   "sources": [
+    "s2",
+    "s3"
+   ]
+  },
+  "discourage-race-mixing": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts equal rights and anti-discrimination.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "equal-moral-worth": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform seeks equal rights and social justice, and respect for diversity is a charter principle.",
+   "sources": [
+    "s3",
+    "s6"
+   ]
+  },
+  "socialism-one-country": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not a Green question, since Greens do not hold a doctrine of socialism in one country.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "settler-state-colonial": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens support indigenous sovereignty but this particular claim is not addressed.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "uniform-civil-code": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; tension between equal law and respect for diversity.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "restrict-conversion": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Inferred from civil liberties and religious freedom.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "ban-cattle-slaughter": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform seeks to phase out factory farming and encourages plant-based diets but not a ban.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "no-religion-state-schools": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform opposes religiously based curricula in public schools.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "state-strengthens-encirclement": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from preference for decentralized democracy.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "consent-of-governed": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Participatory democracy underpins legitimacy for Greens.",
+   "sources": [
+    "s4",
+    "s6"
+   ]
+  },
+  "trade-surplus": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens favour local production and fair trade, not export drives.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "population-transfer": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts rights and respect for diversity.",
+   "sources": [
+    "s3",
+    "s6"
+   ]
+  },
+  "competition-drives-progress": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Greens emphasize cooperation and criticize consumerism and growth.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "initiating-force-wrong": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Nonviolence suggests agreement but Greens also back taxation and regulation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "ban-extremist-parties": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The platform stresses free speech but Green parties in Europe often back such protection.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "freedom-as-non-domination": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Greens' attacks on corporate power and anti-domination politics suggest agreement but it is not stated.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "separated-powers": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Greens favour checks and balances and distributed power.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "vanguard-party": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts grassroots democracy.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "priority-to-poor": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform stresses ending poverty and a strong safety net.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "right-to-buy-council-homes": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The platform stresses public housing; inferred, not stated.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "restrict-strikes-picketing": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform seeks to expand workers' rights to organize.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "population-causes-poverty": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform says overpopulation largely results from poverty, not the reverse.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "diversity-weakens-cohesion": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Respect for diversity is a Global Greens principle.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "offices-by-lottery": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The platform backs citizens' assemblies but not lottery in place of election.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "emergency-suspend-protections": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes curtailing civil rights in the name of security.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "price-controls-essentials": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; interventionist leanings but no stated position.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "party-controls-media": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes censorship and calls for media reform.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "party-commands-army": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts democracy and demilitarization.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "long-naturalization-wait": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform seeks pathways to citizenship for undocumented immigrants.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "representatives-worker-pay": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from reform of political money and anti-elite stance.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "party-discipline-binding": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens emphasize consensus and grassroots autonomy over binding discipline.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "pool-sovereignty": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Wikipedia says green views on the European Union vary.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "head-commands-forces": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Inferred from democratic accountability and cuts to military.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "church-by-bishops": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Church governance is not a Green concern, and the sources opened give no position.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "clerical-rule": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Contradicts secular democracy.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "defeat-own-government-war": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Greens oppose war but do not hold a doctrine of working for defeat.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "censor-art-for-virtue": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes censorship in arts, media and internet.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "unlimited-reelection": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from distrust of concentrated power.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "recall-officials": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform supports recall at all levels.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "end-foreign-alliances": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform would close most foreign bases and cut the military.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "abolish-rental-housing": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "The platform supports public housing and tenant protections.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "people-in-arms": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Inferred from nonviolence.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rural-life-healthier": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Greens value local and agrarian life but also sustainable cities.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "reunify-divided-nation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed beyond general support for self-determination, so no clear position.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "educated-out-of-touch": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred; Greens' base is relatively educated and they appeal to expertise.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "cultures-equal-different": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Respect for diversity is a charter principle.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "death-penalty": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not found in the pages opened; inferred from nonviolence and restorative justice.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "sex-ed-in-schools": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The platform supports age-appropriate education on gender, sexuality and safer sex.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "creationism-in-schools": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform opposes religiously based curricula.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "restrict-pornography": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; liberal and feminist strands differ.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "citizenship-by-descent": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The platform seeks inclusive citizenship pathways.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "minority-language-support": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform supports national bilingualism and protection of languages.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "religious-exemptions": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; religious liberty and equal law pull in different directions.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "encourage-eccentricity": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Respect for diversity implies agreement, though not stated.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "sovereign-debt-cancellation": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The platform urges the IMF and World Bank to end recipient nations' debts.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "constituent-assembly": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform backs deliberative bodies and citizen assemblies.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "restrict-freedoms-for-growth": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Greens reject growth as a goal and defend civil liberties.",
+   "sources": [
+    "s2",
+    "s4"
+   ]
+  },
+  "rich-countries-aid-poor": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The platform supports NGO development and health funding and a climate debt.",
+   "sources": [
+    "s4",
+    "s5"
+   ]
+  },
+  "independent-nuclear-deterrent": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The platform seeks abolition of nuclear weapons.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "direct-election-head-of-state": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources opened say nothing on how a head of state is chosen, so this is split.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "central-bank-independence": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The platform wants public monetary authority under democratic control.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-land-for-peace": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; the platform prefers peaceful dispute resolution.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "property-serves-common-good": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform favours community ownership and ecological limits on property.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "soviet-state-capitalist": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The Soviet Union's character is not a Green question and the sources give no position.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "independence-needs-economic-change": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The platform ties debt and trade reform to development of poorer nations.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "precautionary-principle": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Greens treat the precautionary principle as a core rule for technology and environment, placing the burden of proof on proponents.",
+   "sources": [
+    "s1",
+    "s5"
+   ]
+  }
+ },
+ "missingStatements": [
+  {
+   "text": "Governments should act to prevent environmental harm even when the science is not yet conclusive.",
+   "value": 2,
+   "rationale": "Greens treat the precautionary principle as a core rule for technology and environment, placing the burden of proof on proponents.",
+   "sources": [
+    "s1",
+    "s5"
+   ],
+   "addedAs": "precautionary-principle"
+  },
+  {
+   "text": "A country's success should be measured by wellbeing and sustainability rather than by GDP.",
+   "value": 2,
+   "rationale": "The platform rejects GDP growth as the main goal and calls for new measures of economic health.",
+   "sources": [
+    "s1",
+    "s2"
+   ],
+   "addedAs": "limit-growth"
+  },
+  {
+   "text": "Animals should have legal protections against cruelty, including limits on factory farming.",
+   "value": 2,
+   "rationale": "The platform calls cruelty to animals repugnant and seeks to phase out factory farming and animal testing.",
+   "sources": [
+    "s5"
+   ],
+   "declined": "Animal welfare is a secondary plank and not distinctive enough to justify a bank statement every audit must answer."
+  }
+ ],
+ "notes": "Strands differ: eco-socialists favour public ownership and planning, eco-capitalists a regulated market, and some parties (e.g. Finland) accept nuclear power. The US platform is more left-wing than several European Green parties."
+}
