@@ -4,9 +4,7 @@
 //   --by-views orders by Wikipedia page views (most viewed first), for auditing in order of prominence
 //   --backfill instead lists finished audits that still need answers for new (candidate) statements,
 //     with the statement ids, for the statement-backfill workflow
-const { execFileSync } = require("child_process");
 const fs = require("fs");
-const path = require("path");
 const lib = require("./lib");
 const { readJson, allStatements, unanswered } = lib;
 const PEOPLE = process.argv.includes("--people");
@@ -26,15 +24,13 @@ if (process.argv.includes("--backfill")) {
   process.exit(0);
 }
 
+// Validated in this process, not one validate.js run per audit: the salience bar takes seconds to
+// compute and is cached per process. validate.js reads --people from this command line too.
+const { validate, excludedOnly } = require("./validate");
 const pending = catalog().filter((entry) => {
-  const p = profilePath(entry.id);
-  if (!fs.existsSync(p)) return true;
-  try {
-    execFileSync("node", [path.join(__dirname, "validate.js"), entry.id, ...(PEOPLE ? ["--people"] : [])], { stdio: "ignore" });
-    return false;
-  } catch (e) {
-    return e.status !== 2; // 2 = complete but excluded by the salience rule: don't redo it
-  }
+  if (!fs.existsSync(profilePath(entry.id))) return true;
+  const { errors } = validate(entry.id);
+  return errors.length > 0 && !excludedOnly(errors); // complete but excluded: don't redo it
 });
 
 if (process.argv.includes("--by-views")) pending.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));

@@ -147,8 +147,7 @@ async function main() {
     const { errors, warnings, sources = [] } = validate(id);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
-    // Finished but excluded: by the salience rule, or as not an ideology (the first check).
-    if (errors.length && errors.every((e) => e.startsWith("salience:") || e.startsWith("not an ideology:"))) salienceOnly++;
+    if (excludedOnly(errors)) salienceOnly++;
     const status = errors.length ? "FAIL" : warnings.length ? "WARN" : "ok";
     console.log(`${status.padEnd(4)} ${id}`);
     for (const e of errors) console.log(`     error: ${e}`);
@@ -160,4 +159,8 @@ async function main() {
   process.exit(failed === 0 ? 0 : failed === salienceOnly ? 2 : 1);
 }
 
-main();
+// Finished but excluded: by the salience rule, or as not an ideology (the first check).
+const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("salience:") || e.startsWith("not an ideology:"));
+
+if (require.main === module) main();
+module.exports = { validate, excludedOnly };
