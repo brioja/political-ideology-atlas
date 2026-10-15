@@ -50,8 +50,8 @@ const LINE_NAMES = [
 // How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
 // at least 2 and at most 6. build.js precomputes the count; otherwise it's computed here.
 const MAX_LINES = 6;
-const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2,
-  typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES)));
+const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
+const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
 
 // Name and ends of dividing line i, from LINE_NAMES when one fits, else the ideologies at its ends.
 const LINE_INFO = nameAxes(model, QUESTIONS, LINE_NAMES, SHOWN_LINES);
@@ -309,7 +309,10 @@ function renderQuestion() {
   const answered = answers.filter((a) => a !== null).length;
   const sure = certainty(model, answers, asked);
   const hold = answered > 0 ? stability(quizCalibration(), sure) : null;
-  const settled = hold != null && hold >= SETTLE.hold;
+  // Conservative on purpose: "Results so far" needs at least one answer per real dividing line, and
+  // "See your result" waits until no simulated taker at this reading changed their top match.
+  const early = hold != null && answered >= REAL_LINES;
+  const settled = early && hold >= 1;
   $("counter").textContent = `Statement ${position + 1}`;
   // The bar shows the same calibrated chance as the text, so a "93% likely to hold" result fills it to
   // 93%. While there's no calibrated reading yet ("Narrowing it down…") it stays where it was.
@@ -326,7 +329,7 @@ function renderQuestion() {
     : `top match ${pct(hold)} likely to hold`;
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  setHeaderAction(settled ? "results" : hold != null ? "early" : "none");
+  setHeaderAction(settled ? "results" : early ? "early" : "none");
   // "Don't care" shows as chosen when this statement was already shown and skipped.
   const buttons = [...SHOWN_CHOICES.map((c, i) => [$(`choice-${i}`), answers[q] === c.value]),
     [$("choice-none"), answers[q] === null && position < order.length - 1]];
