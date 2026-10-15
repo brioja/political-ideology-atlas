@@ -67,7 +67,7 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
 2. Run \`node scripts/validate.js <id>\` for each wave audit; fix every error except salience (never raise a confidence to pass it).
 3. Commit each audit separately as "Audit <name>" (git add only that audit file; statements.json goes with the first commit).
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
-4. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
+4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.
 5. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch any other file; leave uncommitted changes you didn't make alone.
