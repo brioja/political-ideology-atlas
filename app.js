@@ -969,9 +969,12 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   }
   y += ch + 28;
 
-  // Where you stand on the (up to 3) biggest dividing lines.
-  const lines = Math.min(SHOWN_LINES, 3);
-  const lh = Math.min(62, (H - 130 - (y + 72)) / lines);
+  // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Lines
+  // can sit 46px apart (the name is on the left, the end labels under the track on the right); the
+  // last line's end labels need about 34px above the footer.
+  const room = H - 130 - 34 - (y + 60);
+  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 46) + 1));
+  const lh = lines > 1 ? Math.min(62, room / (lines - 1)) : 0;
   label("WHERE YOU STAND", PAD, y + 26);
   {
     // Key: the dark ring is you, the faint marker your top match.
@@ -986,7 +989,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.textAlign = "left";
   }
   for (let i = 0; i < lines; i++) {
-    const L = lineInfo(i), ty = y + 72 + i * lh;
+    const L = lineInfo(i), ty = y + 60 + i * lh;
     const x0 = PAD + 300, x1 = W - PAD;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
