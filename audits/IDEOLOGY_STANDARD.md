@@ -1,0 +1,48 @@
+# What counts as an ideology
+
+The catalog is built generously from data, and the bar for reaching the test is set by evidence,
+not by anyone's judgement of which ideologies matter. An entry has to clear three gates in order.
+
+## 1. Notable: in the catalog
+
+An entry is in `audits/catalog.json` only if it has **its own English Wikipedia article**. A
+redirect counts only when it is another spelling or name for the article's subject (Anarcho-Communism
+→ Anarchist communism, Tridemism → Three Principles of the People). A redirect to a broader or
+different topic (a parent ideology, a section, a person, a history article) means Wikipedia doesn't
+treat the entry as independently notable, so it doesn't count. The entry is also either linked from Wikipedia's
+[List of political ideologies](https://en.wikipedia.org/wiki/List_of_political_ideologies) and
+classed by Wikidata as an ideology, political ideology or political philosophy, or suggested by
+a contributor and meets the same article rule.
+
+The article is required because a quiz-taker matched to an ideology needs somewhere to learn more
+about it. `scripts/ideology-candidates.js` applies this gate, and 12-month page views set the
+audit order.
+
+One exception: a redirect to a broader article counts when that article covers branches with
+opposite positions, so it can't be audited as one ideology (Left and Right-wing accelerationism,
+both covered by Accelerationism). Otherwise, entries that redirect to the same article are one
+ideology.
+
+## 2. An ideology: passes the audit's first check
+
+The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the entry is:
+
+- **not a set of political beliefs:** an organisation, party, movement as a group, event, period,
+  office, person, place, prejudice or field of study;
+- **a duplicate** of another audited ideology under another name; or
+- **undocumented:** no reliable source describes its positions.
+
+When in doubt, the entry is audited, and gate 3 decides on the evidence.
+
+## 3. Comparable: shown in the test
+
+An audited ideology is shown in the results, and helps define the axes, only if it **takes stated
+positions on the questions the other ideologies answer**. That means enough high- or
+medium-confidence answers (not inferences) across the statements to place it on the test's
+dividing lines more precisely than the typical distance between neighbouring ideologies. This is
+the same salience check people get (`salienceContext` in `pca.js`; see the README).
+
+An ideology that only speaks to one issue, or whose answers are mostly inferred, stays in the
+audits but is left out of the test. Its distinctive positions can still enter the statement bank
+through `missingStatements` (see `audits/statements/STANDARD.md`). Once statements that cover it
+exist, it may pass.

@@ -35,7 +35,8 @@ Please keep to the audit rules in `audits/PROMPT.md` (ideologies) and `audits/PR
 
 ## Suggest an ideology or person
 
-- **Ideology:** add an entry to `audits/catalog.json`, then write its audit following `audits/PROMPT.md`.
+- **Ideology:** check it meets `audits/IDEOLOGY_STANDARD.md` (it needs its own Wikipedia article),
+  add an entry to `audits/catalog.json`, then write its audit following `audits/PROMPT.md`.
 - **Person:** add an entry to `audits/people-catalog.json`, run `node scripts/pageviews.js` to record
   their Wikipedia views, then write the audit following `audits/PROMPT_PEOPLE.md`. Run
   `node scripts/people-report.js` to check the roster's balance of gender, region and era.

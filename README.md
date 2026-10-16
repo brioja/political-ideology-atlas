@@ -35,7 +35,7 @@ links don't decode against the wrong questions.
 
 ## Ideology audits
 
-Each ideology in `audits/catalog.json` gets a sourced audit at `audits/profiles/<id>.json`:
+`audits/IDEOLOGY_STANDARD.md` says what counts as an ideology. Each one in `audits/catalog.json` gets a sourced audit at `audits/profiles/<id>.json`:
 its answer to every statement with a rationale, confidence and citations, plus a Wikipedia link
 and further reading. `audits/PROMPT.md` holds the exact research instructions, so any audit can
 be re-run.
@@ -61,8 +61,10 @@ audits valid; rewording one needs a new id.
 
 ## People
 
-`audits/people-catalog.json` lists about 270 public figures chosen for balance across gender,
-region, era and the political spectrum (`node scripts/people-report.js` prints the mix). Each gets
+`audits/people-catalog.json` lists about 280 public figures taken from data, not hand-picked:
+people Wikidata lists with a political occupation or office, ranked by English Wikipedia views
+(`scripts/candidates.js`). `node scripts/people-report.js` reports the mix of gender, region and
+era. Each gets
 an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
 

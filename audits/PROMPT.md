@@ -22,13 +22,17 @@ positions because they are objectionable; attribute them to sources instead.
 
 The catalog is built generously from loose sources (Wikipedia's list of political ideologies and an
 older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
-Wikipedia article (or search) and check. Skip the full audit if the entry is:
+Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
+full audit if the entry is:
 - not a set of political beliefs: an organisation, party, movement as a group, event, period,
   office, person, place, prejudice or field of study (for example the Muslim Brotherhood, the
   Progressive Era, ethics);
 - a duplicate: another file in `audits/profiles/` already covers the same ideology under another
   name (for example Maoism and Maoist Communism); or
-- too obscure to document: no reliable source describes its positions.
+- too obscure to document: it has no English Wikipedia article of its own, or no reliable source
+  describes its positions. A redirect counts only if it is another name for the article's subject,
+  not a broader topic (unless that topic holds branches with opposite positions, like
+  Accelerationism).
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
 
