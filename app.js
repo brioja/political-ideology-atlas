@@ -39,17 +39,23 @@ const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : 
 const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
 
 // Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
-// found from the data and mix many issues, so a fixed label would go stale).
+// found from the data and mix many issues, so a fixed label would go stale). An end whose most extreme
+// ideology has a long name (over END_CHARS) is named by the next one in that fits, from the five
+// nearest that end, so labels stay short on phones and the share card; failing that, the most extreme.
 // How much of the differences between ideologies line i covers, relative to the biggest line (0-1):
 // shown as a bar, with the exact share only as a tooltip.
 const lineWeight = (i) => model.components[i].share / model.components[0].share;
 const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(model.components[i].share)} of the differences between ideologies" aria-label="${pct(model.components[i].share)} of the differences between ideologies"><span style="width:${pct(lineWeight(i))}"></span></span>`;
 
+const END_CHARS = 20;
 function lineInfo(i) {
-  const ax = describeAxis(model, i, QUESTIONS);
-  const low = ax.lowEnd[0], high = ax.highEnd[0];
-  return { name: `${low} ↔ ${high}`, low, high };
+  const sorted = model.ideologies.slice().sort((a, b) => a.scores[i] - b.scores[i]);
+  const pick = (ends) => ends.find((d) => d.name.length <= END_CHARS) || ends[0];
+  const low = pick(sorted.slice(0, 5)), high = pick(sorted.slice(-5).reverse());
+  return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
+// The line's name with each end linked to that ideology's page.
+const lineTitle = (L) => `<a href="${ideologyHref(L.lowId)}">${esc(L.low)}</a> ↔ <a href="${ideologyHref(L.highId)}">${esc(L.high)}</a>`;
 
 // ---------- Markers ----------
 // Ideologies are told apart by where they sit on the dividing lines and by name, not by color. An
@@ -689,15 +695,17 @@ function showResults(shared = null) {
     const div = document.createElement("div");
     div.className = "axis";
     div.innerHTML = `
-      <div class="axis-head"><h3>${esc(L.name)}</h3>${weightBar(i)}</div>
+      <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
         <circle cx="${pos(you[i])}" cy="17" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"><title>${shared ? "Them" : "You"}</title></circle>
       </svg>
-      <details><summary>What this line is about</summary>
-        <ul class="plain">${ax.negative.map((p) => `<li>Agreeing moves you toward ${esc(L.low)}: ${p.text}</li>`).join("")}
-            ${ax.positive.map((p) => `<li>Agreeing moves you toward ${esc(L.high)}: ${p.text}</li>`).join("")}</ul>
+      <details><summary>What divides ${esc(L.low)} and ${esc(L.high)}?</summary>
+        <p class="pull-head">Agreeing with these moves you toward ${esc(L.low)}:</p>
+        <ul class="plain">${ax.negative.map((p) => `<li>${p.text}</li>`).join("")}</ul>
+        <p class="pull-head">Agreeing with these moves you toward ${esc(L.high)}:</p>
+        <ul class="plain">${ax.positive.map((p) => `<li>${p.text}</li>`).join("")}</ul>
       </details>`;
     axesBox.append(div);
   }
@@ -1004,28 +1012,19 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.beginPath(); ctx.arc(kx, y + 21, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     ctx.textAlign = "left";
   }
-  // An end's name, as large as fits its column (down to 22px). When the most extreme ideology's name
-  // can't fit at 24px or more, the next one in from that end stands in, so one end doesn't shrink
-  // well below the rest; failing that, the first that fits at all; only if none of the five nearest
-  // fits is the first shortened.
-  const endLabel = (names, x, ty, align) => {
+  // An end's name (the same one lineInfo gives the page), as large as fits its column (down to 22px);
+  // shortened only if it can't fit even then.
+  const endLabel = (text, x, ty, align) => {
     const sizeFor = (text) => {
       let size = 30;
       ctx.font = `600 ${size}px ${CARD_FONTS.display}`;
       while (ctx.measureText(text).width > END_W && size > 22) ctx.font = `600 ${--size}px ${CARD_FONTS.display}`;
       return ctx.measureText(text).width <= END_W ? size : 0;
     };
-    let text = names.find((t) => sizeFor(t) >= 24) || names.find(sizeFor);
-    if (text) ctx.font = `600 ${sizeFor(text)}px ${CARD_FONTS.display}`;
-    else {
-      text = names[0]; sizeFor(text);
+    if (!sizeFor(text)) {
       while (ctx.measureText(text).width > END_W && text.length > 4) text = text.slice(0, -2) + "…";
     }
     ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 10); ctx.textAlign = "left";
-  };
-  const endNames = (i, side) => {
-    const sorted = model.ideologies.slice().sort((a, b) => a.scores[i] - b.scores[i]);
-    return (side === "low" ? sorted : sorted.reverse()).slice(0, 5).map((d) => d.name);
   };
   const END_W = 262;
   for (let i = 0; i < lines; i++) {
@@ -1034,8 +1033,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
     const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
-    endLabel(endNames(i, "low"), x0 - 24, ty, "right");
-    endLabel(endNames(i, "high"), x1 + 24, ty, "left");
+    const L = lineInfo(i);
+    endLabel(L.low, x0 - 24, ty, "right");
+    endLabel(L.high, x1 + 24, ty, "left");
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
@@ -1365,7 +1365,7 @@ function lineStrips(scores, { selfId = null } = {}) {
     const lim = Math.max(...vals.map(Math.abs)) * 1.05;
     const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
     return `<div class="axis">
-      <div class="axis-head"><h3>${esc(L.name)}</h3>${weightBar(i)}</div>
+      <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}
