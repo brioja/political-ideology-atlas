@@ -167,6 +167,18 @@ function match(model, answers) {
   return { you: project(model, answers), ranked };
 }
 
+// The id match() would rank first, without its similarity scale (spreadOn compares every pair of
+// ideologies, which dominates calibration's cost). Ties go to the earlier ideology, as in match().
+function topMatch(model, answers) {
+  const idx = answeredIndexes(answers);
+  let best = null, bestD = Infinity;
+  for (const i of model.ideologies) {
+    const d = gap(answers, i.profile, idx);
+    if (d < bestD) { bestD = d; best = i.id; }
+  }
+  return best;
+}
+
 // Ranks people on the statements both you and they have a position on, using the same 0–100%
 // scale as ideologies. People sharing fewer than `minOverlap` statements with you are left out.
 // Near-ties (within `tie`) go to the more widely read person, by Wikipedia page views.
@@ -285,9 +297,9 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
         if (!next) break;
         asked.add(next.q);
         answers[next.q] = truth[next.q];
-        steps.push({ c: certainty(model, answers, asked), top: match(model, answers).ranked[0].id });
+        steps.push({ c: certainty(model, answers, asked), top: topMatch(model, answers) });
       }
-      const final = match(model, answers).ranked[0].id;
+      const final = topMatch(model, answers);
       for (const st of steps) {
         const bin = held[Math.min(9, Math.floor(st.c * 10))];
         bin[1]++;
