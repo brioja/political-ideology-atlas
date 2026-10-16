@@ -85,6 +85,13 @@ person's own words and record, and a statement with no reliable evidence is `nul
   `--refresh` when tagging a release to pick up newer lead images and credits.
 - To run the audits, ask Claude Code to "run the people-audits workflow" (about 75k tokens per person).
 
+## License
+
+The code is under the [MIT license](LICENSE). The data (audits, statements, catalogs, line names
+and the generated `data.js`/`people.js`) is under [CC BY 4.0](DATA_LICENSE.md): reuse it for
+anything, with credit. Images keep their own Wikimedia Commons licenses. To cite the project, use
+GitHub's "Cite this repository" button (from `CITATION.cff`).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to challenge an answer, suggest an ideology or person, and run the checks.
