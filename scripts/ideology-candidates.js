@@ -15,6 +15,9 @@ const { ROOT, readJson, PROFILES_DIR } = require("./lib");
 const LIST = "List_of_political_ideologies";
 const CLASSES = { Q7257: "ideology", Q12909644: "political ideology", Q179805: "political philosophy" };
 const SUBCLASS_ROOT = "Q12909644"; // political ideology: its subclasses count too
+// Articles about an ideology in one place, its history, or a list of them aren't an ideology's own
+// article: "Feminism in India", "Conservatism in Canada", "History of democracy".
+const NOT_OWN_TOPIC = /^(History|List|Timeline) of | in (the |[A-Z])/;
 const CATALOG = path.join(ROOT, "audits", "catalog.json");
 const QLEVER = "https://qlever.dev/api/wikidata";
 const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
@@ -52,15 +55,18 @@ async function listedArticles() {
 // subclasses (anarchist school of thought, ...), or directly an instance of ideology or political
 // philosophy. Following subclass chains under "ideology" itself would let in organisations and
 // conspiracy theories by way of "belief"; excluding classes instead of including them lets in
-// people's groups and offices. This middle rule misses a few listed ideologies that Wikidata files
-// elsewhere (Black nationalism, Eurasianism, absolute monarchy).
+// people's groups and offices. An item that is a direct subclass of one that passes counts too:
+// Wikidata files Ecofeminism as a social movement, but also as a subclass of feminism. This middle
+// rule still misses a few listed ideologies that Wikidata files elsewhere (Black nationalism,
+// Eurasianism, absolute monarchy).
 async function ideologyItems(ids) {
   const keep = new Set();
   const PREFIX = `PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>`;
   const classes = Object.keys(CLASSES).map((q) => `wd:${q}`).join(" ");
   for (let i = 0; i < ids.length; i += 400) {
     const values = ids.slice(i, i + 400).map((q) => `wd:${q}`).join(" ");
-    const q = `${PREFIX} SELECT DISTINCT ?item WHERE { VALUES ?item { ${values} } VALUES ?c { ${classes} } { ?item wdt:P31 ?c } UNION { ?item wdt:P31/wdt:P279* wd:${SUBCLASS_ROOT} } }`;
+    const q = `${PREFIX} SELECT DISTINCT ?item WHERE { VALUES ?item { ${values} } VALUES ?c { ${classes} } { ?item wdt:P31 ?c } UNION { ?item wdt:P31/wdt:P279* wd:${SUBCLASS_ROOT} }
+      UNION { ?item wdt:P279 ?parent . { ?parent wdt:P31 ?c } UNION { ?parent wdt:P31/wdt:P279* wd:${SUBCLASS_ROOT} } } }`;
     const r = await getJson(`${QLEVER}?query=${encodeURIComponent(q)}`, { headers: { accept: "application/sparql-results+json" } });
     for (const b of r.results.bindings) keep.add(b.item.value.split("/").pop());
   }
@@ -81,7 +87,7 @@ async function views(title) {
 async function main() {
   const listed = await listedArticles();
   const ideologies = await ideologyItems([...new Set(listed.values())]);
-  const found = [...listed].filter(([, q]) => ideologies.has(q)).map(([title, wikidata]) => ({ title, wikidata }));
+  const found = [...listed].filter(([t, q]) => ideologies.has(q) && !NOT_OWN_TOPIC.test(t)).map(([title, wikidata]) => ({ title, wikidata }));
   for (let i = 0; i < found.length; i += CONCURRENCY) {
     await Promise.all(found.slice(i, i + CONCURRENCY).map(async (f) => { f.views12m = await views(f.title); }));
   }
@@ -114,7 +120,7 @@ async function main() {
   });
 
   const report = {
-    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy`,
+    rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one, leaving out articles on one place, a history or a list`,
     viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
     listed: listed.size, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
     addedList: entries.map((e) => `${e.name} (${e.views12m})`),
