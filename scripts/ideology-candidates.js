@@ -5,7 +5,8 @@
 // older hand-made list the catalog started from, so it only proposes candidates: each audit's first
 // check and the salience rule decide what reaches the test.
 //
-// Writes a report of the additions and, with --write, appends them to the catalog.
+// Entries without their own Wikipedia article are dropped.
+// Writes a report of the additions and drops and, with --write, applies them to the catalog.
 //   node scripts/ideology-candidates.js [--write]
 const fs = require("fs");
 const path = require("path");
@@ -86,15 +87,20 @@ async function main() {
   }
   found.sort((a, b) => b.views12m - a.views12m);
 
-  // Neither source is strict, so the catalog is their union: every current entry stays, and listed
-  // ideologies are added unless an entry already points at the same article (whatever its name).
-  // The audit's first check and the salience rule decide what reaches the test; views set the order.
+  // Neither source is strict, so the catalog is their union: every current entry with its own
+  // Wikipedia article stays, and listed ideologies are added unless an entry already points at the
+  // same article (whatever its name). An entry whose link is only a search hit (wikipedia.js) or
+  // missing is dropped unless its audit confirmed an article: a quiz-taker matched to it would have
+  // nowhere to read more. The audit's first check and the salience rule decide what reaches the
+  // test; views set the order.
   const data = readJson(CATALOG);
-  const current = data.ideologies;
   const auditLink = (e) => {
     const p = path.join(PROFILES_DIR, `${e.id}.json`);
     return fs.existsSync(p) && readJson(p).wikipedia ? titleOf(readJson(p).wikipedia) : null;
   };
+  const hasArticle = (e) => ["exact", "redirect"].includes(e.wikipediaMatch) || auditLink(e);
+  const current = data.ideologies.filter(hasArticle);
+  const dropped = data.ideologies.filter((e) => !hasArticle(e));
   const key = (t) => t.toLowerCase();
   const covered = new Set(current.flatMap((e) => [auditLink(e), e.wikipedia && titleOf(e.wikipedia)]).filter(Boolean).map(key));
   const added = found.filter((f) => !covered.has(key(f.title)));
@@ -112,14 +118,15 @@ async function main() {
     viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
     listed: listed.size, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
     addedList: entries.map((e) => `${e.name} (${e.views12m})`),
+    droppedNoArticle: dropped.map((e) => e.name),
   };
   fs.writeFileSync(path.join(ROOT, "audits", "ideology-candidates-report.json"), JSON.stringify(report, null, 1) + "\n");
-  console.log(JSON.stringify({ ...report, addedList: report.addedList.slice(0, 15) }, null, 1));
+  console.log(JSON.stringify({ ...report, addedList: report.addedList.slice(0, 15), droppedNoArticle: report.droppedNoArticle.slice(0, 15) }, null, 1));
 
   if (process.argv.includes("--write")) {
     data.ideologies = [...current, ...entries];
     fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");
-    console.log(`Added ${entries.length}; the catalog now has ${data.ideologies.length} ideologies.`);
+    console.log(`Added ${entries.length}, dropped ${dropped.length} without an article; the catalog now has ${data.ideologies.length} ideologies.`);
   }
 }
 
