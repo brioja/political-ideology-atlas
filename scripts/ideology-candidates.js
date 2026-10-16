@@ -11,6 +11,7 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, PROFILES_DIR } = require("./lib");
+const { sparql } = require("./sparql");
 
 const LIST = "List_of_political_ideologies";
 const CLASSES = { Q7257: "ideology", Q12909644: "political ideology", Q179805: "political philosophy" };
@@ -19,7 +20,6 @@ const SUBCLASS_ROOT = "Q12909644"; // political ideology: its subclasses count t
 // article: "Feminism in India", "Conservatism in Canada", "History of democracy".
 const NOT_OWN_TOPIC = /^(History|List|Timeline) of | in (the |[A-Z])/;
 const CATALOG = path.join(ROOT, "audits", "catalog.json");
-const QLEVER = "https://qlever.dev/api/wikidata";
 const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
 const CONCURRENCY = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -67,8 +67,7 @@ async function ideologyItems(ids) {
     const values = ids.slice(i, i + 400).map((q) => `wd:${q}`).join(" ");
     const q = `${PREFIX} SELECT DISTINCT ?item WHERE { VALUES ?item { ${values} } VALUES ?c { ${classes} } { ?item wdt:P31 ?c } UNION { ?item wdt:P31/wdt:P279* wd:${SUBCLASS_ROOT} }
       UNION { ?item wdt:P279 ?parent . { ?parent wdt:P31 ?c } UNION { ?parent wdt:P31/wdt:P279* wd:${SUBCLASS_ROOT} } } }`;
-    const r = await getJson(`${QLEVER}?query=${encodeURIComponent(q)}`, { headers: { accept: "application/sparql-results+json" } });
-    for (const b of r.results.bindings) keep.add(b.item.value.split("/").pop());
+    for (const b of await sparql(q)) keep.add(b.item.value.split("/").pop());
   }
   return keep;
 }

@@ -12,12 +12,12 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, PEOPLE_DIR } = require("./lib");
+const { sparql } = require("./sparql");
 
 const MIN_LINKS = 10;
 const SAMPLE_BELOW = 3000;
 const CONCURRENCY = 20;
 const CATALOG = path.join(ROOT, "audits", "people-catalog.json");
-const QLEVER = "https://qlever.dev/api/wikidata";
 const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -39,14 +39,6 @@ SELECT ?item (SAMPLE(?article) AS ?wiki) (SAMPLE(?name) AS ?label) (SAMPLE(?g) A
   OPTIONAL { ?item wdt:P27 ?country . ?country wdt:P30 ?cont . ?cont rdfs:label ?contName . FILTER(LANG(?contName) = "en") }
 } GROUP BY ?item`;
 
-async function sparql(q) {
-  for (let attempt = 0; ; attempt++) {
-    const res = await fetch(`${QLEVER}?query=${encodeURIComponent(q)}`, { headers: { ...HEADERS, accept: "application/sparql-results+json" } });
-    if (res.ok) return (await res.json()).results.bindings;
-    if (attempt >= 3) throw new Error(`QLever ${res.status}: ${(await res.text()).slice(0, 300)}`);
-    await sleep(10000 * (attempt + 1));
-  }
-}
 
 const GENDER = { Q6581097: "m", Q6581072: "f", Q48270: "nb", Q1052281: "f", Q2449503: "m" };
 const titleOf = (url) => decodeURIComponent(url.split("/wiki/")[1]).replace(/_/g, " ");
