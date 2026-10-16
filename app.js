@@ -325,7 +325,7 @@ function renderQuestion() {
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
   setHeaderAction(settled ? "results" : early ? "early" : "none");
-  // "Don't care" shows as chosen when this statement was already shown and skipped.
+  // "No opinion" shows as chosen when this statement was already shown and skipped.
   const buttons = [...SHOWN_CHOICES.map((c, i) => [$(`choice-${i}`), answers[q] === c.value]),
     [$("choice-none"), answers[q] === null && position < order.length - 1]];
   for (const [b, chosen] of buttons) {
@@ -383,13 +383,13 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
 }
-// "Don't care": off the agree–disagree scale (the statement isn't counted), so it comes last, but
+// "No opinion": off the agree–disagree scale (the statement isn't counted), so it comes last, but
 // styled like the other options so it reads as a real choice rather than an escape hatch.
 {
   const b = document.createElement("button");
   b.id = "choice-none";
   b.className = "no-opinion";
-  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>Don't care</span><span class="key" aria-hidden="true">6</span>`;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>No opinion</span><span class="key" aria-hidden="true">6</span>`;
   b.addEventListener("click", () => answer(null));
   $("likert").append(b);
 }
