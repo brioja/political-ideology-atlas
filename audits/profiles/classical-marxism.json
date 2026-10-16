@@ -1,0 +1,2658 @@
+{
+ "id": "classical-marxism",
+ "name": "Classical Marxism",
+ "auditedAt": "2026-10-16",
+ "auditor": "claude-sonnet-5-5",
+ "summary": "Classical Marxism is the theory of Karl Marx and Friedrich Engels that history is driven by class struggle rooted in how society produces its goods, and that capitalism exploits wage labour and will be replaced through proletarian revolution. A transitional dictatorship of the proletariat would abolish private ownership of the means of production and lead to a stateless, classless communism distributing by need.",
+ "scope": "Marx and Engels's own work from the Communist Manifesto (1848) to the Critique of the Gotha Programme (1875) and The Civil War in France (1871). It excludes Leninism, Stalinism, Maoism, Western Marxism and later theories of imperialism, dependency and cultural hegemony; statements on those topics are mostly inferred at low confidence.",
+ "wikipedia": "https://en.wikipedia.org/wiki/Classical_Marxism",
+ "furtherReading": [
+  {
+   "title": "The Communist Manifesto",
+   "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch01.htm",
+   "note": "The short founding statement of the theory, readable in one sitting."
+  },
+  {
+   "title": "Karl Marx (Stanford Encyclopedia of Philosophy)",
+   "url": "https://plato.stanford.edu/entries/marx/",
+   "note": "A careful scholarly overview of Marx's philosophy and politics."
+  },
+  {
+   "title": "Critique of the Gotha Programme",
+   "url": "https://www.marxists.org/archive/marx/works/1875/gotha/ch01.htm",
+   "note": "Marx's clearest account of the stages of communism."
+  },
+  {
+   "title": "The Civil War in France",
+   "url": "https://www.marxists.org/archive/marx/works/1871/civil-war-france/ch05.htm",
+   "note": "Marx on the Paris Commune as a model of workers' political power."
+  }
+ ],
+ "keyFigures": [
+  {
+   "name": "Karl Marx",
+   "role": "Principal theorist and co-author of the Manifesto",
+   "wikipedia": "https://en.wikipedia.org/wiki/Karl_Marx",
+   "sources": [
+    "s1",
+    "s6"
+   ]
+  },
+  {
+   "name": "Friedrich Engels",
+   "role": "Co-founder of the theory and co-author of the Manifesto",
+   "wikipedia": "https://en.wikipedia.org/wiki/Friedrich_Engels",
+   "sources": [
+    "s1",
+    "s7"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "primary",
+   "title": "The Communist Manifesto, Chapter 2: Proletarians and Communists",
+   "author": "Karl Marx and Friedrich Engels",
+   "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch02.htm",
+   "usedFor": "Abolition of bourgeois property, ten transitional measures, personal property, family, nationality, state as class power"
+  },
+  {
+   "id": "s2",
+   "kind": "primary",
+   "title": "The Communist Manifesto, Chapter 1: Bourgeois and Proletarians",
+   "author": "Karl Marx and Friedrich Engels",
+   "url": "https://www.marxists.org/archive/marx/works/1848/communist-manifesto/ch01.htm",
+   "usedFor": "Class struggle, world market, crises, free trade, proletariat as grave-diggers, morality and religion as bourgeois prejudices"
+  },
+  {
+   "id": "s3",
+   "kind": "primary",
+   "title": "Critique of the Gotha Programme, Part I",
+   "author": "Karl Marx",
+   "url": "https://www.marxists.org/archive/marx/works/1875/gotha/ch01.htm",
+   "usedFor": "Lower and higher phases of communism, bourgeois right, division of labour, distribution by need"
+  },
+  {
+   "id": "s4",
+   "kind": "primary",
+   "title": "Critique of the Gotha Programme, Part IV",
+   "author": "Karl Marx",
+   "url": "https://www.marxists.org/archive/marx/works/1875/gotha/ch04.htm",
+   "usedFor": "Revolutionary dictatorship of the proletariat, democratic republic, church and state in schools, freedom of conscience"
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "title": "The Civil War in France, Part III (The Paris Commune)",
+   "author": "Karl Marx",
+   "url": "https://www.marxists.org/archive/marx/works/1871/civil-war-france/ch05.htm",
+   "usedFor": "Armed people, recallable officials on workmen's wages, disestablishment, cooperative production on a common plan"
+  },
+  {
+   "id": "s6",
+   "kind": "scholarly",
+   "title": "Karl Marx (Stanford Encyclopedia of Philosophy)",
+   "author": "Stanford Encyclopedia of Philosophy",
+   "url": "https://plato.stanford.edu/entries/marx/",
+   "usedFor": "Historical materialism, ideology, exploitation, alienation, religion, democracy, freedom, morality"
+  },
+  {
+   "id": "s7",
+   "kind": "reference",
+   "title": "Classical Marxism (Wikipedia)",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Classical_Marxism",
+   "usedFor": "Overview of historical materialism, class consciousness, dictatorship of the proletariat, base and superstructure"
+  }
+ ],
+ "answers": {
+  "universal-healthcare": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Never addressed by Marx; inferred from the Manifesto's free public education and state provision of common needs under a workers' state.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "raise-minimum-wage": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "No minimum wage in the texts; an adherent would back wage gains as part of class organisation while holding that only abolishing wage labour solves the problem.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "markets-allocate-better": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto describes market production as producing recurrent crises of overproduction, and the Commune text calls for production regulated on a common plan.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "public-ownership": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto's transitional measures put credit, transport and communications in state hands and expand state-owned factories.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tax-the-wealthy": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto's second measure is a heavy progressive or graduated income tax.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "unions-good": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Commune text endorses workers' associations, and Marx treated union organisation as part of class formation, though not a route to abolishing wage labour.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "property-fundamental": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The theory is summed up as abolition of private property; bourgeois property is the target of the revolution.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "regulate-corporations": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Reforms like factory legislation were welcomed as gains, but regulation was never the aim; inferred as mild agreement.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "cut-welfare": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed in the sources; the dependency argument is a bourgeois view of poverty, which the Manifesto traces to capitalist relations, so an adherent leans against cuts.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "worker-ownership": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Commune would hand closed workshops to workers' associations, though the classical goal is common ownership by society rather than firm-by-firm ownership.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "surveillance-ok": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Never addressed; inferred from hostility to the bourgeois state's repressive apparatus, mild since a workers' state also coerces its opponents.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "legalize-drugs": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed and no principle bears on it; adherents have no stated position.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "legalize-sex-work": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx treated prostitution as a product of bourgeois family and capital but never addressed its legal status; inferred split.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "restrict-hate-speech": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; adherents would be split between opposing bourgeois censorship and suppressing reaction.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "strong-leader": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune model stresses accountable, recallable delegates rather than a leader bypassing deliberation; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "state-harmful": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Marx held the state a class instrument that must be used by the proletariat in transition and later withers, so it is neither simply harmful nor necessary forever.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "limit-guns": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune replaced the army with the armed people, so an adherent leans against strict limits on workers' arms; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "empower-police-military": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune's first act abolished the standing army in favour of the armed people and treated the state machine as a parasite.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "decide-locally": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto centralises means of production in the state, though the Commune model is communal; inferred as a mild disagreement.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rehabilitation": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred from the view that crime and character spring from social circumstances.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "traditional-family": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto argues the bourgeois family rests on capital and private gain and will vanish with capital.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "same-sex-marriage": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred as support for legal equality from the view of marriage as a historical, class-shaped institution.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "abortion-legal": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred from the critique of the bourgeois family and women as instruments of production.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "more-religion-public": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Marx wanted to liberate the conscience from the witchery of religion and the Commune disestablished churches.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "correct-racial-injustice": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Not a core theme; inferred as support from the emancipatory goal, though class is the primary axis.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "gender-social-construct": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto treats the family and women's position as historically produced by property relations; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "preserve-national-culture": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Manifesto says national one-sidedness and narrow-mindedness become impossible as the world market develops.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "gradual-change": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The classical view is that social orders end through revolutionary rupture when production relations fetter productive forces.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "reduce-immigration": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The proletariat is held to have no country and national antagonisms are to fade; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "empower-international-orgs": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic; Marx was internationalist but saw existing states as class instruments, so no clear answer.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "free-trade": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto calls free trade the single remaining freedom of the bourgeoisie, serving capital rather than everyone.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "nation-first": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto states that working men have no country and that national antagonisms will vanish.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "humanitarian-intervention": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred from viewing bourgeois states' foreign actions as serving capital.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "open-borders": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The proletariat's internationalism and the fading of national antagonisms point toward open borders in the end state.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "limit-growth": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Communism is premised on developing productive forces to abundance; ecological limits were not a theme here.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "drastic-climate-action": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred from conscious social planning of production.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "tech-solves-problems": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Technology develops productive forces but under capitalism deskills and impoverishes; benefit depends on property relations.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "expand-nuclear": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic with no principle bearing on it.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "revolution-justified": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Revolution by the proletariat is the classical route from capitalism, with the bourgeoisie producing its own grave-diggers.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "experts-over-public": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The theory rests on class consciousness and self-emancipation of workers; inferred against rule by experts.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "central-planning": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Both the Manifesto and the Commune text call for production under a common plan instead of market anarchy.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "socialized-markets": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Marx envisaged ending wage labour and commodity exchange, so markets even among workers' firms are not the aim.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "land-value-tax": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Land rents go to public purposes in the Manifesto, but a single tax replacing others reformist; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tax-inheritance": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto lists abolition of all right of inheritance.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "basic-income": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; the Manifesto makes labour equally obligatory and the lower phase pays by labour contributed, so unconditional income sits poorly.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "tariffs-protect-industry": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The sources treat free trade as a bourgeois freedom but give no verdict on tariffs; inferred split.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "state-directs-investment": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Manifesto centralises credit in a national bank and expands state factories under a common plan.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "widespread-small-property": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune text aims to turn land and capital into instruments of associated labour, not to spread small property.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "abolish-money-wages": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Wage labour is to end, and the higher phase distributes by need; abolition of money follows by implication.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "abolish-central-banks": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto demands centralising credit in a state bank with monopoly.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "corporatist-bargaining": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto holds classes are antagonists; bodies uniting employers and workers contradict that.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "one-party-rule": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Classical Marxism posits a class dictatorship with accountable delegates, not one party ruling the state, a later Leninist idea.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "monarchy-legitimate": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx demands a democratic republic and attacks hereditary privilege.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "democracy-best": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Marx held the democratic republic to be the political form for proletarian rule, but treated bourgeois democracy as class-limited.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "direct-votes": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Marx called direct legislation a mere echo of bourgeois democratic demands, yet the Commune bound delegates to constituents.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "workers-councils": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Commune is Marx's model political form rather than a parliament; later council theory extends it.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "right-to-secede": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Class interest outranks national claims in the sources; inferred as contingent.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "natural-rulers": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune made officials accountable, revocable and paid workmen's wages, abolishing hereditary or natural privilege.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "political-violence-never": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto envisages revolution and despotic inroads on property rights.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "war-builds-character": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune text blames war's originators and rejects the peasants' blood tax; inferred opposition to glorifying war.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "separate-church-state": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Commune decreed disestablishment and disendowment of churches, and Marx excluded church from schools.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "laws-from-scripture": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto calls religion and law bourgeois prejudices and Marx wanted conscience freed from religion.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "private-courts-defense": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed; privatising coercion contradicts the view of the state as class instrument to be taken over by workers.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "military-superiority": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Commune abolished the standing army and was internationalist; the sources reject militarism.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "ethnic-nation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "National antagonisms fade and the proletariat has no country, so ethnic purity has no place.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "class-struggle-history": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto opens by declaring all hitherto existing history a history of class struggles.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "equal-outcomes": {
+   "value": 0,
+   "confidence": "medium",
+   "rationale": "Marx called equal right bourgeois right and unequal for unequal people; the end goal is distribution by need, not equal shares.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "indigenous-land-authority": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; adherents split between communal property sympathy and class priority.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "colonial-reparations": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx criticised colonial plunder but did not address reparations.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "civilizational-union": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Class, not civilisation, is the primary unit; the Manifesto expects national barriers to dissolve.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "self-interest-moral": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto condemns the bourgeoisie for reducing relations to naked self-interest and cash payment.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "duties-before-rights": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx treated rights as bourgeois but sought free development of each; no clear side.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "nature-intrinsic-value": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx's treatment of nature centres on human production; inferred indifferent.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "limit-population": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Poverty is attributed to capitalist relations rather than numbers; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "industrial-civilization-disaster": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto credits the bourgeoisie with creating vast productive forces that communism will inherit.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "accelerate-technology": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Productive development is a precondition for communism; inferred, though disruption is blamed on capital.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "human-enhancement": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic; no basis in the sources.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "algorithmic-government": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred from accountable, recallable human delegates.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "unbreakable-encryption": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic; no stated position.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "restore-past-order": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto praises the bourgeoisie for sweeping away feudal ties and treats a return as reactionary.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "results-over-ideology": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx held ideas arise from class position and material conditions; inferred against dismissing ideology.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "direct-action": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The classical view is for class political action culminating in revolution including organised politics; inferred.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "means-match-ends": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Marx accepted a revolutionary dictatorship and despotic measures as means towards a stateless society.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "return-to-foraging": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Primitive communism is a superseded stage; communism builds on capitalist productive forces.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "abolish-division-of-labor": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Marx's higher phase requires ending the enslaving subordination to the division of labour.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "distribute-by-need": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Gotha critique states the higher phase principle: from each according to ability, to each according to needs.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "production-for-use": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Communism ends production for profit and exchange so labour becomes life's prime want; stated in outline.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "profit-exploitation": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Surplus value from unpaid labour is the source of profit in Marx's account of exploitation.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "dictatorship-of-proletariat": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Marx names the revolutionary dictatorship of the proletariat as the state form of the transition.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "collective-farming": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Manifesto cultivates land under a common plan and combines agriculture with industry.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "capitalism-causes-war": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Marx tied crises to conquest of new markets, but the full imperialism thesis is Leninist.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "taxation-theft": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto demands heavy progressive taxation as a transitional measure.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "harm-principle": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto accepts despotic inroads on property rights; inferred rejection of a liberal limit.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "individual-rights-only": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "SEP reports Marx saw liberal rights as protecting separate individuals and not true freedom; real freedom lies in community.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "conscription": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto proposes industrial armies and the Commune an armed citizenry; inferred mild agreement.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "exit-over-voice": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx sought real freedom through democratic communal life, not exit rights.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "state-as-business": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Treating citizens as customers is the market logic Marx opposed.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "positive-liberty": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Marx held real freedom needs material emancipation and human community, not just non-interference.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "media-academia-power": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Ideology serves the ruling class which holds economic power; media and academia are superstructure, not the power.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "hereditarian-race": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed directly; character is explained by circumstance and social relations.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "organic-representation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune model is revocable delegates elected by the people, not corporate bodies.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "total-state": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx demanded government and church be excluded from schools and wanted the state subordinate to society.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "national-rebirth": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Marx views national narrowness as fading; inferred against nationalist rebirth.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "territorial-expansion": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Nations are to dissolve in class internationalism; the Commune opposed war.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "personal-loyalty-rule": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto praises the bourgeoisie for ending feudal personal ties.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "bound-labor": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Feudal bonds of labour are seen as swept away; the proletariat is to abolish all class exploitation.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-neutral-knowledge": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Ideology is the dominant class's ideas shaped by control of mental production.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "universal-morality": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Manifesto calls law, morality and religion bourgeois prejudices; scholarship says Marx rejected trans-epochal morals.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "single-common-good": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Society is divided by antagonistic class interests so there is no single common good.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "jewish-state-israel": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred against nation-state projects from proletarian internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "diaspora-return-right": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; no clear inference.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "revive-national-language": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred from de-emphasis of nationality.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "workplace-democracy": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Commune text calls for associated workers to run production.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "school-vouchers": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx wanted schooling free of church and state influence; marketised vouchers are inferred as opposed.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "avoid-deficit-stimulus": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; no clear answer.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "economic-freedom": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx held political emancipation is not human emancipation without transforming economic life, the reverse of this claim.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "rule-by-example": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx wants accountable institutions and not rulers' virtue; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "national-self-determination": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Class priority qualifies national claims; split.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "force-without-un": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred opposition to bourgeois-state military adventure.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "reason-over-faith": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Marx wanted to liberate conscience from religion, though not reason as the sole guide.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "welfare-for-citizens": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The proletariat has no country so benefits by nationality contradict internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "work-for-welfare": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto makes labour equally obligatory for all, which suggests agreement.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "class-collaboration": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto presents classes as antagonists in a struggle, not partners.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "sacrifice-heritage": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred that culture is a product of class society and not to be destroyed.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "dominated-front": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx's frame is class, not national blocs.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "workers-nation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto says working men have no country, though proletariat must first organise nationally.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "distinct-gender-roles": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto sees the bourgeois family as built on women's subordination; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "ban-interest": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx centralises credit in a state bank rather than banning interest; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed; incompatible with class solidarity.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "state-class-instrument": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto defines political power as the organised power of one class for oppressing another.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "expand-fossil-fuels": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels wrote before this debate; nothing in their principles favours or opposes particular fuels, so the answer is neutral and inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "assimilate-immigrants": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The proletariat is internationalist and the sources do not expect conformity to a national culture.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "elite-replacement": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "A conspiracy theory outside the class analysis.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "proportional-representation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed in the sources.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "national-mission": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "National missions contradict the classless internationalism of the Manifesto.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "patriarchy-structural": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto treats the wife as an instrument of production in the bourgeois family; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "political-elite-corrupt": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The state is described as the bourgeoisie's committee; corruption itself is not the theme.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed; opposed to emancipatory aims.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "security-forces-accountable": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Commune made officials accountable; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "night-watchman-state": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto's measures expand state economic direction massively.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "discourage-race-mixing": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed; incompatible with internationalism.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "equal-moral-worth": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Not stated as moral doctrine, but class abolition implies equality; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "socialism-one-country": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto envisages revolution among advanced countries and abolishing nations; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "settler-state-colonial": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels did not set out a doctrine on settler states, and adherents split between condemning colonial plunder and treating class as primary.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "uniform-civil-code": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from separating church from state.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "restrict-conversion": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx opposed religious coercion but also religion; inferred.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "ban-cattle-slaughter": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Religious taboo with no basis in materialism.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "no-religion-state-schools": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Marx insisted government and church be excluded from influence on schools.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "state-strengthens-encirclement": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The state withers as classes disappear; the encirclement doctrine is later.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "consent-of-governed": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Commune's elected recallable officials imply consent; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "trade-surplus": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Mercantilist aims are not Marx's; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "population-transfer": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred against national exclusion from internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "initiating-force-wrong": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto endorses revolutionary force and despotic inroads.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "competition-drives-progress": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Class struggle drives history, not competition between peoples.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "ban-extremist-parties": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Communists were themselves targets of bans; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "freedom-as-non-domination": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Wage dependence is domination in Marx's account; inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "separated-powers": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune combined executive and legislative functions in an accountable body; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "vanguard-party": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx favoured organising revolutionaries but the Leninist vanguard doctrine is later; contested.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "priority-to-poor": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Proletarian interests are the priority, though framed as class not charity.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "right-to-buy-council-homes": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Public housing policy is absent from the classical texts; a split between opposing property sales and valuing workers' homeownership leaves this neutral.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "restrict-strikes-picketing": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Workers' associations were supported; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "population-causes-poverty": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto traces workers' immiseration to capitalist industry, not population.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "diversity-weakens-cohesion": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from national antagonisms being seen as class-driven.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "offices-by-lottery": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune used election and recall, not lottery.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "emergency-suspend-protections": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The proletarian dictatorship is extra-legal against the old ruling classes; inferred.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "price-controls-essentials": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from common-plan economics.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "party-controls-media": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not stated; Commune emphasised accountable governance, so inferred disagreement.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "party-commands-army": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "The Commune used the armed people, not party command.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "long-naturalization-wait": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from lack of a country for workers.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "representatives-worker-pay": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Commune made public service work at workman's wage.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "party-discipline-binding": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx sought disciplined organisation; the concept is later Leninist.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "pool-sovereignty": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic; internationalist but no stated position on bourgeois supranational unions.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "head-commands-forces": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune replaced the standing army and executive with accountable delegates.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "church-by-bishops": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Marx opposed church privilege and property.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "clerical-rule": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Opposes religious authority on conscience and schooling.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "defeat-own-government-war": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Commune held war's originators responsible; the slogan itself is Leninist.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "censor-art-for-virtue": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not stated; opposed to church control of morals.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "unlimited-reelection": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed beyond recallable officials.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "recall-officials": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Commune's officials were responsible and revocable at short terms.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "end-foreign-alliances": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from anti-militarism and internationalism.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "abolish-rental-housing": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx aimed at common ownership of land, not each family holding property; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "people-in-arms": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Commune's first decree replaced the standing army with the armed people.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "rural-life-healthier": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto aims to reduce the town and country divide, not idealise rural life.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "reunify-divided-nation": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The texts give no rule on borders imposed by outside powers; class priority over national claims leaves the answer neutral and inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "educated-out-of-touch": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "cultures-equal-different": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto treats the bourgeois world market as pulling barbarian nations into civilisation, a stage view.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "death-penalty": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Not addressed; inferred from reformist-humanist stance.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "sex-ed-in-schools": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from free public education and critique of bourgeois family.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "creationism-in-schools": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx excluded church influence from schools and was a materialist.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "restrict-pornography": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels did not address sexual media regulation, and no core principle settles it, so the answer is neutral and inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "citizenship-by-descent": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from rejection of nationality as basis.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "minority-language-support": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "religious-exemptions": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx treated religion as illusion; inferred against special exemptions.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "encourage-eccentricity": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto's end state is the free development of each; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "sovereign-debt-cancellation": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalist critique of finance and war debts.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "independence-needs-economic-change": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Political emancipation is not human emancipation without economic transformation.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "constituent-assembly": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Marx demanded democratic republic; inferred.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "restrict-freedoms-for-growth": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The dictatorship is a transition over classes, not a developmental device; inferred.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "rich-countries-aid-poor": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts speak of class solidarity and not of aid between states, which they treat as instruments of ruling classes; inferred neutral.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "independent-nuclear-deterrent": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Anachronistic; militarism rejected.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "direct-election-head-of-state": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx wanted accountable, revocable officials and a democratic republic but never discussed how a single head of state is chosen; neutral.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "central-bank-independence": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto puts credit under state control with a monopoly national bank.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "no-land-for-peace": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from rejection of territorial nationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "property-serves-common-good": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto abolishes bourgeois property rather than conditioning it; inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "soviet-state-capitalist": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Anachronistic; Marx died before the USSR.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "precautionary-principle": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Environmental risk regulation is anachronistic for 19th-century Marxism and no principle clearly decides it; neutral inferred answer.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "collective-defense": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred against bourgeois military alliances.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "annexed-territory-occupation": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from Commune's support for exiles and oppressed.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "subordinate-church-to-state": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Commune disestablished and disendowed churches.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "nonpartisan-head-of-state": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx rejected hereditary or symbolic rulers in favour of accountable officials.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "force-to-prevent-secession": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels subordinated national questions to the interests of the proletariat case by case, so no general answer on using force against secession is documented.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "region-keeps-system": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "This one-country-two-systems idea is anachronistic and the classical texts give no basis for judging it; neutral and inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "sacred-ruler": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx opposed religion and hereditary privilege.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "flat-income-tax": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Manifesto demands a heavy progressive income tax.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "character-from-environment": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Marx held human nature has constant and historically variable elements shaped by material conditions.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "sovereign-above-law": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune made officials answerable and revocable.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "space-expansion": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Space exploration lies wholly outside the classical texts, which only value developing productive forces generally; neutral and inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "mixed-constitution": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Marx demanded democratic republic.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "leader-cult": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from accountable officials paid workmen's wages.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "equal-parenting": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Custody rules are unaddressed; the Manifesto's critique of the bourgeois family does not settle how courts should divide parenting time.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "class-struggle-under-socialism": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx saw the dictatorship as lasting until classes disappear, but later claims are Maoist; unsettled.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "land-redistribution": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto expropriates landed property for public purposes, but gives it to the state, not to farmers.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "refugee-return": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts do not address refugee return rights; internationalism and solidarity with exiles suggest sympathy but the issue is too far for a position.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "co-ethnic-territorial-claim": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "National antagonisms are to disappear; ethnic claims contradict this.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "apostasy-punishable": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx wanted conscience free from religion.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "women-must-cover": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from opposition to religion in law.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "common-currency": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The Manifesto centralises credit nationally but nothing addresses shared currencies among states; adherents would be split and the answer is neutral.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "kin-peoples-union": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Class unity transcends ethnic kinship.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "national-cultural-autonomy": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; later Austromarxist theme.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "rights-where-you-live": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from proletarian internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "material-conditions-drive-history": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Historical materialism holds production relations shape society and consciousness.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "ban-cartels": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Marx saw concentration as a development to be inherited by socialism, not reversed.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-bailouts": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx saw the state as managing the bourgeoisie's common affairs, so bailouts are expected, but he gave no verdict on whether they should happen; neutral.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "courts-bound-by-majority": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx criticised bourgeois courts and law as class expressions but also doubted majority rule inside bourgeois states, so there is no clear answer.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "gender-parity-bodies": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from emancipatory aims.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "economic-self-sufficiency": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The world market is treated as progressive.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "trade-labor-env-standards": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from factory legislation approval.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "moral-incentives": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Higher phase makes labour life's prime want, though the lower phase pays by labour.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "armed-group-creates-revolution": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Revolution requires fettered productive forces and class consciousness, not a small armed group.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "abolish-hereditary-privilege": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Manifesto lists abolition of inheritance and denounces feudal privilege.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "history-own-civilization": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from cosmopolitan outlook.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "civilizing-tutelage": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Manifesto notes bourgeois pressure on barbarian nations, but justifying rule is not its position; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "patriotic-education": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The proletariat has no country; national pride is bourgeois.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "end-racial-preferences": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Affirmative action is a modern policy debate absent from the classical texts; class-focused adherents might oppose it but others would support it, so neutral.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "public-money-creation": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Manifesto centralises credit in the national bank.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "capitalism-adapts": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Manifesto describes crises as growing and the bourgeoisie as producing its own grave-diggers.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "former-empire-influence": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from anti-imperialism.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "delink-world-market": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The world market is seen as progressive, so delinking is a later view.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "labor-aristocracy": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not in sources; contested.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "freedom-to-discriminate": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from equality-oriented aims.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "entrenched-bill-of-rights": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx treats liberal rights as limited; inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "colonial-treaties-void": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx condemned colonial plunder but never discussed the legal status of colonial treaties, so the answer is neutral and inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "elective-rulers": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Marx demanded a democratic republic.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "minority-veto": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Commune decisions bind via majority; inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "resist-lawless-ruler": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Revolution is accepted; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "parliament-supreme": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx wanted Commune as working body, not a parliamentary one; unclear.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "animal-suffering-matters": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Animal ethics is not a theme of the classical texts, which centre on human production and society; neutral and inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "animal-use-humane": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Animal use for food and research is not addressed in the classical texts, so there is no documented position and the answer is neutral.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "noblesse-oblige": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Paternalist charity is a form of class rule in Manifesto.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "withdraw-from-politics": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Class struggle is political and workers must act.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "mass-culture-pacifies": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Ideology and religion are said to stabilise class societies; applied to mass media by inference.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "ruling-class-consent": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Ideology stabilises class societies, though the consent theory is Gramscian.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "world-economy-extracts-surplus": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "The Manifesto notes the world market remakes nations in bourgeois image; extraction theory is later.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "native-born-offices": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune admitted foreigners as full participants.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "party-own-road": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Not addressed; later Communist debate.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "self-reliance-over-aid": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from world market integration.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "return-lost-territory": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from rejection of national claims.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "indigenous-political-leadership": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts do not discuss political leadership by indigenous descendants; communal property sympathy and class priority pull opposite ways.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "antifascism-founding-value": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Anachronistic; inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "totalitarianisms-equivalent": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Anachronistic; adherents reject equivalence.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "slavery-not-civil-war-cause": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Not addressed in sources; inferred from class analysis.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "preserve-contested-monuments": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Monument debates are modern and absent from the classical texts; adherents could favour preserving history or removing symbols of rule, so neutral.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "male-disadvantage-attention": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Gender-specific programmes for boys and men are a modern debate; classical Marxism offers no stated position and the answer is neutral.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "domestic-violence-symmetry": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts do not address domestic violence statistics or services; neutral and inferred from the absence of any principle.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "institutions-fit-civilization": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from universal-historical stages.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "military-guardian-role": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Commune abolished the standing army.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "paid-care-work": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from family critique.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "filial-duty": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels criticised the bourgeois family but did not discuss duties of adult children, so no firm answer exists and this is neutral.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "office-by-exam": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune used election and recall.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "foreign-takeover-block": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalism.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-fault-divorce": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from critique of bourgeois family.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "recallable-delegates": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Commune officials were responsible and revocable at short terms.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "individual-pension-accounts": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Inferred from collective provision and anti-market orientation.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "land-use-tenure": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Manifesto abolishes property in land with rents to the public.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "budget-needs-parliament": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts do not address parliamentary budget control; the Commune's accountable assembly suggests sympathy but Marx also mocked parliaments, so neutral.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "single-official-language": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "foreign-land-ownership": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "disparate-impact-discrimination": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The disparate impact standard is a modern legal doctrine unaddressed in the classical texts; neutral and inferred.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "consumerism-harmful": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Commodity fetishism and alienation criticise commodity-driven life.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "arm-foreign-insurgents": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx and Engels supported some insurgent movements abroad but also opposed bourgeois states' interventions; no general rule is documented, so neutral.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "intervene-in-bloc": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred from anti-militarism and internationalism.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "corporate-influence": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Manifesto says the state is a committee managing the bourgeoisie's affairs.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "restrict-foreign-funding": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "The classical texts do not address foreign funding of NGOs, media or universities, and sovereignty is not a Marxist concern; neutral and inferred.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "pronatalist-incentives": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Population policy through family incentives is not discussed in the classical texts, and the Marxist critique of the family does not settle it; neutral.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "residents-only-property": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx wanted common ownership of land and no national barriers, but did not address local purchasing limits; neutral and inferred.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "job-guarantee": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from obligation of all to labour.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "democratic-peace": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx held bourgeois states' wars arise from capital; inferred.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "no-duty-to-obey": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Marx said right is no higher than the economic structure; inferred.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "non-intervention": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The Commune supported foreign exiles.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "industrial-unions": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Industrial versus craft unionism arose after Marx; his general support for workers' combination does not settle the form, so the answer is neutral.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "minority-conspiracy": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Conspiracy theories contradict class analysis.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "abolish-legal-marriage": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Marx expected family forms to change but did not decide on legal marriage.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "public-access-to-information": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Inferred from accountability.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "local-production": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "The world market is seen as progressive.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "informal-organisation": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Marx attempted organised bodies like the International.",
+   "sources": [
+    "s7"
+   ]
+  },
+  "national-law-over-international": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from internationalism.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "religious-nation": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Marx opposed religion and nationalism.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "deference-to-leading-power": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "The tribute system is a premodern East Asian practice absent from Marxism, which treats national hierarchies as class questions; lightly inferred disagreement.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "regional-revenue-retention": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from common plan.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "personal-possessions-private": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto states communists do not abolish personal property earned by labour.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "defeat-communism": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Communists seek to establish communism worldwide; coexistence is not the question for them.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "mixed-public-service-providers": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "Inferred from public ownership.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "religion-illusion": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Marx called religion the opium of the people and wanted conscience liberated from it; SEP describes it as a response to material alienation that will fade.",
+   "sources": [
+    "s4",
+    "s6"
+   ]
+  },
+  "capitalism-progressive": {
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Manifesto credits the bourgeoisie with creating vast productive forces and the proletariat that will succeed it.",
+   "sources": [
+    "s2",
+    "s6"
+   ]
+  }
+ },
+ "missingStatements": [
+  {
+   "text": "Religion is an illusion that consoles people for real suffering and will fade once their material conditions are emancipated.",
+   "value": 2,
+   "rationale": "Marx called religion the opium of the people and wanted conscience liberated from it; SEP describes it as a response to material alienation that will fade.",
+   "sources": [
+    "s4",
+    "s6"
+   ],
+   "addedAs": "religion-illusion"
+  },
+  {
+   "text": "Work under capitalism alienates people from what they produce, from their own activity and from one another.",
+   "value": 2,
+   "rationale": "Alienation of the worker from product, activity, others and species nature is central to Marx's critique of wage labour.",
+   "sources": [
+    "s6",
+    "s7"
+   ],
+   "addedAs": "profit-exploitation"
+  },
+  {
+   "text": "Capitalism has been a historically progressive force that created the material basis for a better society.",
+   "value": 2,
+   "rationale": "The Manifesto credits the bourgeoisie with creating vast productive forces and the proletariat that will succeed it.",
+   "sources": [
+    "s2",
+    "s6"
+   ],
+   "addedAs": "capitalism-progressive"
+  }
+ ],
+ "notes": "Positions on later issues (imperialism, vanguard party, one-country socialism, class struggle under socialism, party control of media and army) belong to Leninist and later strands and are answered at low confidence or neutral. Many modern-issue statements are anachronistic."
+}
