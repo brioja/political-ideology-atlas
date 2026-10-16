@@ -547,7 +547,15 @@ function readMore(ideo) {
 }
 
 function aboutIdeology(ideo) {
-  return (ideo.summary ? `<p>${esc(ideo.summary)}</p>` : "") + readMore(ideo);
+  return (ideo.summary ? `<p>${esc(ideo.summary)}</p>` : "") + relatedLine(ideo) + readMore(ideo);
+}
+
+// Ideologies whose positions can't be told apart from this one (scripts/build.js).
+function relatedLine(ideo) {
+  if (!ideo.related || !ideo.related.length) return "";
+  const names = ideo.related.map((r) => r.wikipedia
+    ? `<a href="${esc(r.wikipedia)}" target="_blank" rel="noopener">${esc(r.name)}</a>` : esc(r.name));
+  return `<p class="small muted">Holds the same positions as ${names.join(", ")}.</p>`;
 }
 
 // The description with the Wikipedia article's lead image beside it (when it has a free one), for

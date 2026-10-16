@@ -1,7 +1,7 @@
 # What counts as an ideology
 
 The catalog is built generously from data, and the bar for reaching the test is set by evidence,
-not by anyone's judgement of which ideologies matter. An entry has to clear three gates in order.
+not by anyone's judgement of which ideologies matter. An entry has to clear four gates in order.
 
 ## 1. Notable: in the catalog
 
@@ -51,3 +51,13 @@ An ideology that only speaks to one issue, or whose answers are mostly inferred,
 audits but is left out of the test. Its distinctive positions can still enter the statement bank
 through `missingStatements` (see `audits/statements/STANDARD.md`). Once statements that cover it
 exist, it may pass.
+
+## 4. Distinguishable: its own place in the results
+
+Two ideologies are **indistinguishable** when they sit closer together on the dividing lines than
+the placement uncertainty of someone who answered every statement: no set of answers could say
+which of the two a quiz-taker is closer to. The one with more Wikipedia views stays in the test,
+and the other is listed on its page ("Holds the same positions as …") with a link to its
+Wikipedia article. `scripts/build.js` checks this on every build, so a new statement that
+separates them brings both back.
+

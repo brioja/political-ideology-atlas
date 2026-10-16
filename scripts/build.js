@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personSalience, ideologySalience } = require("./lib");
-const { buildModel, meaningfulAxes } = require("../pca.js");
+const { buildModel, meaningfulAxes, salienceContext, salience } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -15,7 +15,7 @@ const flagFor = (id) => {
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
 const statements = activeStatements();
-const included = [];
+let included = [];
 const stale = [];
 const missing = [];
 const notSalient = [];
@@ -44,6 +44,29 @@ for (const entry of catalog()) {
     keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
     profile: statements.map((s) => a.answers[s.id].value),
   });
+}
+
+// Parallel analysis is too slow to run in every visitor's browser at this size, so do it here.
+const meaningful = included.length >= 3 ? meaningfulAxes(buildModel(included), included) : 0;
+
+// Indistinguishable: two ideologies closer on the dividing lines than the placement uncertainty of
+// someone who answered every statement can't be told apart by any set of answers. The one with
+// more Wikipedia views stays in the test; the other is listed on its page as closely related.
+const merged = [];
+if (included.length >= 3) {
+  const ctx = salienceContext(buildModel(included), included, { lines: meaningful });
+  const resolution = salience(ctx, statements.map(() => 0)).uncertainty;
+  const scores = Object.fromEntries(ctx.model.ideologies.map((i) => [i.id, i.scores.slice(0, ctx.k)]));
+  const dist = (a, b) => Math.sqrt(scores[a].reduce((s, x, i) => s + (x - scores[b][i]) ** 2, 0));
+  const views = Object.fromEntries(catalog().map((e) => [e.id, e.views12m || 0]));
+  const kept = new Set();
+  for (const ideo of [...included].sort((a, b) => views[b.id] - views[a.id])) {
+    const twin = included.find((k) => kept.has(k.id) && dist(k.id, ideo.id) < resolution);
+    if (!twin) { kept.add(ideo.id); continue; }
+    (twin.related = twin.related || []).push({ id: ideo.id, name: ideo.name, wikipedia: ideo.wikipedia });
+    merged.push(`${ideo.id} (with ${twin.id})`);
+  }
+  included = included.filter((i) => kept.has(i.id));
 }
 
 // People: included when salient (see pca.js). A statement added after their audit counts as
@@ -77,6 +100,7 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
 console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
 if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
 if (notSalient.length) console.log(`Excluded as not salient (too few stated positions): ${notSalient.join(", ")}`);
+if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {
@@ -84,8 +108,6 @@ if (included.length < 3) {
   process.exit(1);
 }
 
-// Parallel analysis is too slow to run in every visitor's browser at this size, so do it here.
-const meaningful = meaningfulAxes(buildModel(included), included);
 console.log(`${meaningful} dividing lines stand out from noise.`);
 
 const calibration = require("../pca.js").calibrateCertainty(buildModel(included));
