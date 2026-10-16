@@ -169,7 +169,9 @@ details.how > .stack { margin-top: 1rem; }
 .line-weight { width: 5rem; height: 6px; align-self: center; }
 .axis details { font-size: 0.9rem; color: var(--muted); }
 .axis summary { cursor: pointer; }
-.axis .pull-head { margin: 0.75rem 0 0.35rem; color: var(--ink); }
+.axis .sides { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 1.5rem; }
+@media (max-width: 520px) { .axis .sides { grid-template-columns: minmax(0, 1fr); } }
+.axis .pull-head { margin: 0.75rem 0 0.35rem; color: var(--ink); font-weight: 600; }
 .axis ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
 
 figure { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }

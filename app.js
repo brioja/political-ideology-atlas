@@ -718,6 +718,17 @@ function showResults(shared = null) {
   `;
 
   const axesBox = $("axes");
+  // Three of the line's cluster statements per end. A rotated line often loads on one end only, so
+  // an end short of its own is topped up with the other end's spare ones, in their disagree wording.
+  const sides = (L, cluster) => {
+    const low = cluster.filter((p) => p.w < 0), high = cluster.filter((p) => p.w > 0);
+    const end = (name, own, other) => {
+      const items = own.slice(0, 3).map((p) => p.text)
+        .concat(other.slice(3, 3 + 3 - Math.min(own.length, 3)).map((p) => esc(QUESTIONS[p.q].disagree)));
+      return `<div><p class="pull-head">${esc(name)}</p><ul class="plain">${items.map((t) => `<li>${t}</li>`).join("")}</ul></div>`;
+    };
+    return `<div class="sides">${end(L.low, low, high)}${end(L.high, high, low)}</div>`;
+  };
   for (let i = 0; i < SHOWN_LINES; i++) {
     const ax = describeAxis(model, i, QUESTIONS);
     const L = lineInfo(i);
@@ -734,10 +745,7 @@ function showResults(shared = null) {
         <circle cx="${pos(you[i])}" cy="17" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"><title>${shared ? "Them" : "You"}</title></circle>
       </svg>
       <details><summary>What divides ${esc(L.low)} and ${esc(L.high)}?</summary>
-        <p class="pull-head">Agreeing with these moves you toward ${esc(L.low)}:</p>
-        <ul class="plain">${ax.negative.map((p) => `<li>${p.text}</li>`).join("")}</ul>
-        <p class="pull-head">Agreeing with these moves you toward ${esc(L.high)}:</p>
-        <ul class="plain">${ax.positive.map((p) => `<li>${p.text}</li>`).join("")}</ul>
+        ${sides(L, ax.cluster)}
       </details>`;
     axesBox.append(div);
   }

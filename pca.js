@@ -408,6 +408,13 @@ function describeAxis(model, index, questions, count = 3) {
   return {
     positive: byLoading.slice(0, count),
     negative: byLoading.slice(-count).reverse(),
+    // The line's cluster: its strongest statements whichever end they point to, among those mostly
+    // about this line (over half their squared weight across the named lines is on it), so one shared
+    // with another line isn't shown as this line's. A rotated line usually loads on one end only.
+    cluster: byLoading.filter((p) => {
+      const lines = model.components.slice(0, model.labels ? model.labels.length : index + 1);
+      return p.w * p.w > lines.reduce((s, l) => s + l.vector[p.q] ** 2, 0) / 2;
+    }).sort((x, y) => Math.abs(y.w) - Math.abs(x.w)).slice(0, count * 2),
     lowEnd: byScore.slice(0, 2).map((i) => i.name),
     highEnd: byScore.slice(-2).reverse().map((i) => i.name),
   };
