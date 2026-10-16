@@ -49,13 +49,17 @@ const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(
 
 const END_CHARS = 20;
 function lineInfo(i) {
+  // A rotated line named in audits/line-labels.json (see build.js) is named by its theme.
+  const named = model.labels && model.labels[i];
+  if (named) return { name: `${named.low} ↔ ${named.high}`, low: named.low, high: named.high, lowId: null, highId: null };
   const sorted = model.ideologies.slice().sort((a, b) => a.scores[i] - b.scores[i]);
   const pick = (ends) => ends.find((d) => d.name.length <= END_CHARS) || ends[0];
   const low = pick(sorted.slice(0, 5)), high = pick(sorted.slice(-5).reverse());
   return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
 // The line's name with each end linked to that ideology's page.
-const lineTitle = (L) => `<a href="${ideologyHref(L.lowId)}">${esc(L.low)}</a> ↔ <a href="${ideologyHref(L.highId)}">${esc(L.high)}</a>`;
+const endTitle = (name, id) => (id ? `<a href="${ideologyHref(id)}">${esc(name)}</a>` : esc(name));
+const lineTitle = (L) => `${endTitle(L.low, L.lowId)} ↔ ${endTitle(L.high, L.highId)}`;
 
 // ---------- Markers ----------
 // Ideologies are told apart by where they sit on the dividing lines and by name, not by color. An

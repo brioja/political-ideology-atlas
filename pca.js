@@ -83,10 +83,42 @@ function buildModel(ideologies, opts = {}) {
   return model;
 }
 
+// Varimax rotation of the first k components: turns them within the space they span so each one is
+// driven by a separate cluster of statements rather than a blend of everything, as factor analysis
+// does before naming factors. Placements in that space and all matching are unchanged. Returns
+// components in the same shape (unit vector, eigenvalue = variance along it, share), biggest first,
+// followed by the untouched components after k.
+function varimax(model, k, { iters = 100 } = {}) {
+  const total = model.components.reduce((s, c) => s + c.eigenvalue, 0);
+  const n = model.mean.length;
+  const L = Array.from({ length: n }, (_, j) => model.components.slice(0, k).map((c) => c.vector[j] * Math.sqrt(c.eigenvalue)));
+  for (let it = 0; it < iters; it++) {
+    let turned = false;
+    for (let a = 0; a < k; a++) for (let b = a + 1; b < k; b++) {
+      let A = 0, B = 0, C = 0, D = 0;
+      for (const r of L) { const u = r[a] ** 2 - r[b] ** 2, v = 2 * r[a] * r[b]; A += u; B += v; C += u * u - v * v; D += 2 * u * v; }
+      const phi = 0.25 * Math.atan2(D - (2 * A * B) / n, C - (A * A - B * B) / n);
+      if (Math.abs(phi) < 1e-10) continue;
+      turned = true;
+      const cs = Math.cos(phi), sn = Math.sin(phi);
+      for (const r of L) { const x = r[a], y = r[b]; r[a] = cs * x + sn * y; r[b] = -sn * x + cs * y; }
+    }
+    if (!turned) break;
+  }
+  const rotated = Array.from({ length: k }, (_, a) => {
+    const eigenvalue = L.reduce((s, r) => s + r[a] ** 2, 0);
+    let vector = L.map((r) => r[a] / Math.sqrt(eigenvalue));
+    const big = vector.reduce((m, x) => (Math.abs(x) > Math.abs(m) ? x : m), 0);
+    if (big < 0) vector = vector.map((x) => -x);
+    return { eigenvalue, share: eigenvalue / total, vector };
+  }).sort((x, y) => y.eigenvalue - x.eigenvalue);
+  return [...rotated, ...model.components.slice(k)];
+}
+
 // The same model from parts build.js computed ahead of time (mean and the leading components), so
 // the page skips the eigen-decomposition, which grows with the cube of the statement count.
 function modelFromParts(ideologies, parts) {
-  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, ideologies: [] };
+  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], ideologies: [] };
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
@@ -382,5 +414,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, modelFromParts, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { jacobiEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }
