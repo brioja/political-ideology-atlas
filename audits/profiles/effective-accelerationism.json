@@ -1,1946 +1,2117 @@
 {
- "id": "effective-accelerationism",
- "name": "Effective Accelerationism",
- "auditedAt": "2026-10-15",
- "auditor": "claude-sonnet-5-5",
- "summary": "Effective accelerationism (e/acc) is a techno-optimist movement from 2022 that wants technology, above all AI, developed and deployed as fast as possible. It holds that competitive free markets and decentralization beat top-down control and regulation, and that growth and energy use drive civilization up the Kardashev scale. It rejects degrowth, the precautionary principle and AI-safety restraint, and a transhumanist wing welcomes enhancement and post-biological intelligence.",
- "scope": "The mainstream movement launched in 2022 by the pseudonymous e/acc newsletter authors including Guillaume Verdon (Beff Jezos), together with the closely allied Techno-Optimist Manifesto of Marc Andreessen. It excludes Nick Land's older, bleaker accelerationism and the AI-successionist fringe. It is a technology and economics outlook with little stated on social or foreign policy, so many answers are low-confidence inferences.",
- "wikipedia": "https://en.wikipedia.org/wiki/Effective_accelerationism",
- "furtherReading": [
-  {
-   "title": "The Techno-Optimist Manifesto",
-   "url": "https://a16z.com/the-techno-optimist-manifesto/",
-   "note": "The best-known statement of allied techno-optimist beliefs."
-  },
-  {
-   "title": "Notes on e/acc principles and tenets",
-   "url": "https://effectiveaccelerationism.substack.com/p/repost-notes-on-eacc-principles-and",
-   "note": "Founders' own account of the thermodynamic and market reasoning."
-  },
-  {
-   "title": "Kevin Roose explains Effective Accelerationism",
-   "url": "https://chatgptiseatingtheworld.com/2023/12/10/kevin-roose-explains-effective-accelerationism-e-acc-in-ai/",
-   "note": "Short journalistic introduction."
-  },
-  {
-   "title": "Effective accelerationism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Effective_accelerationism",
-   "note": "Overview of origins, factions and criticism."
-  }
- ],
- "keyFigures": [
-  {
-   "name": "Guillaume Verdon",
-   "role": "Physicist identified as the founder behind the Beff Jezos persona and a co-founder of e/acc.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Guillaume_Verdon",
-   "sources": [
-    "s1"
-   ]
-  },
-  {
-   "name": "Marc Andreessen",
-   "role": "Venture capitalist whose Techno-Optimist Manifesto espouses e/acc views and who backs the movement.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Marc_Andreessen",
-   "sources": [
-    "s1",
-    "s2",
-    "s4"
-   ]
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "reference",
-   "title": "Effective accelerationism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Effective_accelerationism",
-   "usedFor": "Overview of positions, origins, factions and key figures."
-  },
-  {
-   "id": "s2",
-   "kind": "primary",
-   "title": "The Techno-Optimist Manifesto",
-   "author": "Marc Andreessen, a16z",
-   "url": "https://a16z.com/the-techno-optimist-manifesto/",
-   "usedFor": "Markets, technology, growth, energy, nuclear, trade, precautionary principle, UBI, central planning."
-  },
-  {
-   "id": "s3",
-   "kind": "primary",
-   "title": "Notes on e/acc principles and tenets",
-   "author": "e/acc newsletter (Beff Jezos and co-authors)",
-   "url": "https://effectiveaccelerationism.substack.com/p/repost-notes-on-eacc-principles-and",
-   "usedFor": "Competition, variance, regulation, top-down control, thermodynamic basis, post-biological intelligence."
-  },
-  {
-   "id": "s4",
-   "kind": "reference",
-   "title": "Kevin Roose explains Effective Accelerationism (e/acc) in AI",
-   "author": "chatgptiseatingtheworld.com",
-   "url": "https://chatgptiseatingtheworld.com/2023/12/10/kevin-roose-explains-effective-accelerationism-e-acc-in-ai/",
-   "usedFor": "Journalistic summary: no guardrails or gatekeepers; supporters."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not a stated e/acc topic; the manifesto backs a welfare system funded by capitalist wealth but the movement's market and anti-state stance suggests skepticism of a state-run guarantee.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed; inferred from the movement's preference for unregulated markets and growth over wage-setting by the state.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The manifesto calls free markets the most effective way to organize a technological economy, and e/acc argues competition beats top-down control.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "public-ownership": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The manifesto rejects central planning and statism, and e/acc wants private competition to build energy and technology.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed directly; inferred from pro-capitalist, pro-builder, libertarian-leaning stance with no redistribution agenda.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "unions-good": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed; inferred from the market-first, deregulatory orientation, which treats labor restrictions as friction on growth.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "property-fundamental": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The manifesto does not address property rights directly; many libertarian-leaning adherents would agree, but it is not a stated tenet.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "regulate-corporations": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Opposition to regulation of technology is central; the tenets say over-regulation suppresses variance and slows progress.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The manifesto says there is no conflict between profits and a welfare system for the vulnerable, so welfare cuts are not a tenet, though adherents lean market-libertarian.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "worker-ownership": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from investor- and founder-driven capitalism as the vehicle for building.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "surveillance-ok": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not a stated topic; the movement's decentralization and anti-gatekeeper outlook and crypto affinity suggest privacy leanings.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "legalize-drugs": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement has no stated drug position and adherents are mixed between libertarian and other views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-hate-speech": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed; inferred from the anti-gatekeeper, libertarian-leaning culture of its online base.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "strong-leader": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The manifesto rejects statism and the movement describes itself as leaderless and decentralized, though it dislikes gridlock.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "state-harmful": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement opposes government intervention in markets and AI but is not anarchist; the manifesto calls itself a material, not political, philosophy.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "limit-guns": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from libertarian-leaning adherents, with little movement statement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "empower-police-military": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement has no position on police funding; it is a technology philosophy and adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "legalize-sex-work": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stated position; adherents' libertarian leanings and other views are mixed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "decide-locally": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The manifesto favors local knowledge and people with actual information making decisions; the tenets criticize top-down control as fragile.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "rehabilitation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Criminal justice is outside the movement's scope and adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "traditional-family": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement favors transhumanist change, even post-biological intelligence, rather than traditional structures; not directly addressed.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "same-sex-marriage": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from the tech-culture base and libertarian leaning.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abortion-legal": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from the movement's tech-culture and libertarian leanings.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "more-religion-public": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement is secular and scientistic, grounding its aims in thermodynamics rather than religion; not directly addressed.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the manifesto stresses growth and markets over group-based remedies.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "gender-social-construct": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stated position; not part of the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-national-culture": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The tenets treat civilization's expansion beyond Earth and beyond human form as the goal, not preserving national traditions.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "gradual-change": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The movement wants to speed technological change even where it disrupts institutions; its tenets urge accelerating the technocapital singularity.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "reduce-immigration": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the manifesto prizes talent and builders and a pro-growth outlook, suggesting openness.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement opposes centralized regulation of AI, which would include international regulatory bodies.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "free-trade": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The manifesto invokes Ricardo's comparative advantage to argue that trade and specialization raise prosperity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "nation-first": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement is civilizational and cosmic in outlook, though some adherents frame AI competition with rivals nationally; split.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "humanitarian-intervention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-borders": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stated position; pro-talent and pro-growth leanings are offset by lack of any border agenda.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "limit-growth": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The manifesto says everything good is downstream of growth, and e/acc names degrowth advocates as its opposite.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The manifesto argues abundant energy and technology, not restraint, solve environmental problems, and e/acc opposes precautionary or degrowth responses.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The manifesto states there is no material problem that cannot be solved with more technology.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The manifesto calls nuclear fission a silver bullet for unlimited zero-emission energy and urges building it and fusion.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "revolution-justified": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement speaks of technological, not political, upheaval.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "experts-over-public": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The manifesto distrusts credentialed authority and favors local knowledge, though adherents also trust technical builders.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "central-planning": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The manifesto rejects central planning as a doom loop and the tenets say top-down control is not fault-tolerant.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "socialized-markets": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement backs markets with private, investor-led ownership instead.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "land-value-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement has no tax-policy stance on this and adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tax-inheritance": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from pro-capitalist, pro-wealth-creation stance.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "basic-income": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The manifesto explicitly opposes universal basic income.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "tariffs-protect-industry": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The manifesto's trade argument rests on comparative advantage, which opposes protectionism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-directs-investment": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The tenets favor competitive, high-variance markets over top-down optimization, and the manifesto rejects central planning.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a theme; the movement is about scale and technocapital rather than property distribution.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement embraces capitalism and the technocapital engine, so abolishing money and wages is opposed.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stated monetary stance, though some adherents with crypto and libertarian leanings agree.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "corporatist-bargaining": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "State-recognized bodies setting wages and prices contradict the free-market, anti-central-control stance.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "one-party-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement rejects statism and centralized control and calls itself leaderless.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement is modernist and anti-hierarchical, though adjacent neoreactionary strands exist.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "democracy-best": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The manifesto says it is not a political philosophy and adherents are split on democracy.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "direct-votes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; no stated stance on direct democracy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-councils": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "A councils-based political order is contrary to its market capitalism and orientation toward founders and builders.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "right-to-secede": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed, though decentralization and exit appeal to some adherents.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "natural-rulers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stated position; the movement elevates builders and technologists but is split on any claim of natural rule.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "political-violence-never": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The movement is a techno-optimist culture with no violent program; not directly addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "war-builds-character": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement's optimism centers on building and abundance rather than war.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "separate-church-state": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement is secular and scientific in outlook.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "laws-from-scripture": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement grounds itself in physics and technocapital rather than scripture, and is secular.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "private-courts-defense": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Libertarian adherents might agree, but this is not a movement position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-superiority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Some adherents link AI acceleration to national competitiveness, but there is no stated position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ethnic-nation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement's civilizational and cosmic framing is not ethnic.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "class-struggle-history": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement sees thermodynamics, technology and capital as the driver of history, and the manifesto affirms capitalist cooperation and profits.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "equal-outcomes": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement stresses competition and high-variance markets, not equalizing outcomes.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-reparations": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from the growth-focused outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "civilizational-union": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement's unit is civilization as a whole, not religious blocs.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "self-interest-moral": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The manifesto describes markets as an individualistic way to produce good collective outcomes, which treats self-interested pursuit as productive.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "duties-before-rights": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The manifesto's individualism and distrust of central authority point away from community-first duties.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "nature-intrinsic-value": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The tenets center intelligence and energy capture; nature is valued instrumentally, and this is not directly addressed.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "limit-population": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement wants more life and consciousness; the tenets seek spreading life to the stars, which opposes population limits.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "industrial-civilization-disaster": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The movement holds that technological civilization is the engine of progress and celebrates the technocapital singularity.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "accelerate-technology": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Accelerating technological change, especially AI, as fast as possible is the movement's defining aim.",
-   "sources": [
-    "s1",
-    "s3",
-    "s4"
-   ]
-  },
-  "human-enhancement": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The manifesto backs augmented intelligence and e/acc factions favor transhumanist modification of the body and genome.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "algorithmic-government": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement trusts AI broadly but also opposes top-down centralization, so adherents are split on AI running government.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "unbreakable-encryption": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred from the movement's decentralization, anti-gatekeeper, and crypto-adjacent culture, with no explicit stance.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "restore-past-order": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The movement is forward-looking and holds that progress and growth matter above all, rejecting stagnation.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "results-over-ideology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The manifesto describes itself as a material rather than political philosophy, but the movement is itself ideologically committed to acceleration.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "direct-action": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement acts through building and online advocacy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "means-match-ends": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The movement is explicitly against degrowth and wants more energy and technology.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The manifesto praises specialization through comparative advantage.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "distribute-by-need": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Market allocation, profit and competition are favored over need-based distribution.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "production-for-use": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The manifesto defends capitalist profit as compatible with welfare and rejects planning.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "profit-exploitation": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The manifesto says there is no conflict between capitalist profits and social welfare, and defends profit.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's capitalist, anti-statist stance.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "collective-farming": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; collectivization conflicts with markets and decentralized competition.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement embraces capitalism, and the manifesto sees markets and trade as producing prosperity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "taxation-theft": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Libertarian-leaning adherents might agree, but the manifesto accepts welfare funding and takes no such stand.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "harm-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "individual-rights-only": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed directly by the movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "conscription": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from libertarian leanings.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "exit-over-voice": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Decentralization appeals, but exit versus vote is not a stated position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-as-business": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "positive-liberty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the market-libertarian leaning inclines away from material-means conceptions of freedom.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "media-academia-power": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The manifesto attacks gatekeepers and credentialism, but power claims about media and academia are not a tenet.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "hereditarian-race": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of the movement; the movement does not address race, and its stated outlook is not hereditarian.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "organic-representation": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Corporatist representation is far from the movement's market-centered, decentralizing outlook.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "total-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The manifesto rejects statism and central planning, and the movement opposes government control of technology.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "national-rebirth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement speaks of civilizational ascent, not national rebirth from decadence, though it does attack stagnation.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "territorial-expansion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The expansion the movement wants is into space and energy use, not territory abroad.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's market and meritocratic modernism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "bound-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's market capitalism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-neutral-knowledge": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The movement grounds itself in physics and a scientistic outlook, and the manifesto prizes truth-seeking and reason.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "universal-morality": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the tenets ground value in thermodynamic survival rather than moral universals.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "single-common-good": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The tenets prefer competition and variance over a single planned optimum.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "jewish-state-israel": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diaspora-return-right": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revive-national-language": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workplace-democracy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from founder- and investor-led enterprise.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "school-vouchers": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from market-oriented thinking and distrust of gatekeepers.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "avoid-deficit-stimulus": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement has no fiscal position and adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "economic-freedom": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The manifesto holds free markets are central to a technological society, and many adherents are libertarian.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "rule-by-example": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to the movement's emphasis on markets and technology.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "national-self-determination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-without-un": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reason-over-faith": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The movement is secular and scientific, grounded in physics, and the manifesto prizes reason and truth-seeking, though it also uses myth and meme culture.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "welfare-for-citizens": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement says nothing on welfare eligibility for immigrants, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "work-for-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; adherents split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-collaboration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The manifesto says there is no conflict between capitalist profits and the welfare of the vulnerable, favoring cooperation through markets.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement is future-oriented but no source calls for destroying cultural institutions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "dominated-front": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "distinct-gender-roles": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to the movement's modernist outlook.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-interest": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement embraces capitalism and capital markets; banning interest is incompatible.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's market and universalist modernism, which has no racial program.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "state-class-instrument": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement sees the state as a drag on innovation rather than a class tool.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement wants abundant energy and nuclear but treats energy broadly; adherents split on fossil fuels.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No e/acc text discusses immigrant assimilation, and adherents are split on it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "elite-replacement": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not part of the movement's stated beliefs.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "proportional-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Electoral system design is not a topic in e/acc writing, so no position can be inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-mission": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement's mission is civilizational, not national.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from the tech-libertarian base's skepticism of structural claims.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-elite-corrupt": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The manifesto criticizes regulatory capture and gatekeepers, which shades into distrust of elites.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement favors freedom to modify and enhance genomes, not state compulsion over reproduction.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "night-watchman-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Libertarian adherents agree, but the manifesto accepts welfare, so split.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's stated outlook, which has no racial program.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed directly, though some factions favor AI successionism over humanity's primacy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "socialism-one-country": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "uniform-civil-code": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-conversion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to anti-gatekeeper liberal leanings.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-cattle-slaughter": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to market and secular leanings.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-religion-state-schools": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; secular leaning.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-strengthens-encirclement": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's anti-statist outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "consent-of-governed": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement writes about technology and markets, not the grounds of political legitimacy, so no stance is stated.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "trade-surplus": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The manifesto's Ricardian argument rests on mutual gains from trade, not mercantilist surpluses.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "population-transfer": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Not part of the movement and contrary to its liberal market outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "initiating-force-wrong": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Libertarian adherents may agree, but the movement states no non-aggression principle and adherents are split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The tenets say competition and high-variance marketplaces find utility better than top-down control, and the movement frames civilization as an evolving energy-capturing organism.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "ban-extremist-parties": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Party bans are not discussed in e/acc sources, and libertarian and other adherents would split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-as-non-domination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Republican theories of freedom do not appear in e/acc writing, so no position is inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separated-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Tenets favor decentralization, but separation of powers is not discussed.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "vanguard-party": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement is explicitly leaderless and anti-statist, and rejects Marxist politics.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "priority-to-poor": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The manifesto stresses growth lifting all but states no priority-to-poor principle.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Social housing policy is not discussed by the movement, and its market leanings are offset by no stated stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-strikes-picketing": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Labor law is not discussed in e/acc sources, so adherents are treated as split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The manifesto holds that technology and growth solve material problems, and treats more people as an asset, not a cause of poverty.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to the movement's pro-talent outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to meritocratic builder culture.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from anti-statist orientation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Price controls conflict with the movement's market stance that prices carry information.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-controls-media": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to anti-gatekeeper, anti-statist stance.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "party-commands-army": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's anti-statist stance.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "long-naturalization-wait": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Citizenship timing is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Pay of legislators is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-discipline-binding": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement describes itself as leaderless and decentralized.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "pool-sovereignty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The movement opposes centralized regulatory bodies, though it has no stated view on the EU.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "head-commands-forces": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Constitutional design of executive power is not discussed in e/acc sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "church-by-bishops": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "clerical-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's secular, scientific outlook.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "defeat-own-government-war": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to the movement's pro-capitalist outlook.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement is hostile to gatekeepers and guardrails on expression and innovation.",
-   "sources": [
-    "s4",
-    "s2"
-   ]
-  },
-  "unlimited-reelection": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Term limits are not discussed in e/acc sources, so adherents are treated as split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recall-officials": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Recall elections are not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "end-foreign-alliances": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance policy is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-rental-housing": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the market, anti-regulation stance.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "people-in-arms": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Military organization is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rural-life-healthier": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement prizes technology and civilization-scale growth.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The manifesto distrusts credentialed experts but praises builders with technical skill, so it is split.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Cultural relativism is not a topic in e/acc writing, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "death-penalty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Capital punishment is not discussed in e/acc sources, so adherents are treated as split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sex-ed-in-schools": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "School curriculum on sex education is not discussed by the movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "creationism-in-schools": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The movement is grounded in physics and evolutionary thinking and is secular.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "restrict-pornography": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from anti-gatekeeper outlook.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; contrary to the pro-talent outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "minority-language-support": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Language policy is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "religious-exemptions": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Religious liberty exemptions are not discussed in e/acc sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "encourage-eccentricity": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not stated; the movement's embrace of high variance and rejection of gatekeepers fits it, but it is an inference.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "sovereign-debt-cancellation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from pro-market orientation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anti-colonial economics is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "constituent-assembly": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Constitution-making procedure is not discussed in e/acc sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-freedoms-for-growth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The manifesto pairs markets with growth and rejects statism, so restricting freedoms is not a tenet.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement favors growth as the route to prosperity and names effective altruism as a contrast, but gives no aid stance.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Nuclear weapons policy is not discussed, though the movement favors nuclear power; this is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-election-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Executive selection is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "central-bank-independence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Monetary institutions are not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-serves-common-good": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from market-first orientation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "precautionary-principle": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The manifesto calls the precautionary principle deeply immoral and says it should be discarded.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "collective-defense": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance guarantees are not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "annexed-territory-occupation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the movement's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Church-state relations are not discussed beyond the movement's secular outlook, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "nonpartisan-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Head-of-state roles are not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Secession is not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "region-keeps-system": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Regional autonomy arrangements are not discussed in e/acc sources, so it is treated as neutral.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacred-ruler": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to the movement's secular, anti-statist outlook.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "flat-income-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Tax structure is not discussed in e/acc sources, so adherents are treated as split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "space-expansion": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The tenets aim to climb the Kardashev scale by capturing more energy and expanding beyond Earth.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "character-from-environment": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement does not address nature versus nurture; its transhumanist wing wants to reshape people through technology, but that does not settle the question.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "sovereign-above-law": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed directly; inferred from its hostility to top-down control and its preference for decentralized, competitive systems over concentrated power.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "mixed-constitution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The movement has no stated view on constitutional form; its concern is markets and technology rather than who holds political power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "leader-cult": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from its stress on decentralization, competition and distrust of centralized authority.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "equal-parenting": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A family-law question outside the movement's technology and economics outlook, so neutral is inferred.",
-   "sources": [
-    "s1"
-   ]
-  }
- },
- "missingStatements": [
-  {
-   "text": "Artificial intelligence development should proceed as fast as possible with minimal government regulation.",
-   "value": 2,
-   "rationale": "The defining e/acc demand: no guardrails or gatekeepers on AI, and the founders argue over-regulation slows progress.",
-   "sources": [
-    "s1",
-    "s3",
-    "s4"
-   ],
-   "addedAs": "accelerate-technology"
-  },
-  {
-   "text": "Humanity should expand into space and maximize its energy use as a goal of civilization.",
-   "value": 2,
-   "rationale": "The tenets aim to climb the Kardashev scale by capturing more energy and expanding beyond Earth.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "addedAs": "space-expansion"
-  },
-  {
-   "text": "Intelligence and consciousness should be free to move beyond the human biological form.",
-   "value": 2,
-   "rationale": "The tenets say intelligence must be transduced to non-biological substrates to reach the stars.",
-   "sources": [
-    "s3"
-   ],
-   "addedAs": "human-enhancement"
-  }
- ],
- "notes": "Positions beyond technology and markets are mostly inferred, since e/acc is not a full political program. The manifesto is a close ally rather than the movement's own text. AI-successionist adherents would answer the humanity-related statements differently."
+  "id": "effective-accelerationism",
+  "name": "Effective Accelerationism",
+  "auditedAt": "2026-10-15",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Effective accelerationism (e/acc) is a techno-optimist movement from 2022 that wants technology, above all AI, developed and deployed as fast as possible. It holds that competitive free markets and decentralization beat top-down control and regulation, and that growth and energy use drive civilization up the Kardashev scale. It rejects degrowth, the precautionary principle and AI-safety restraint, and a transhumanist wing welcomes enhancement and post-biological intelligence.",
+  "scope": "The mainstream movement launched in 2022 by the pseudonymous e/acc newsletter authors including Guillaume Verdon (Beff Jezos), together with the closely allied Techno-Optimist Manifesto of Marc Andreessen. It excludes Nick Land's older, bleaker accelerationism and the AI-successionist fringe. It is a technology and economics outlook with little stated on social or foreign policy, so many answers are low-confidence inferences.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Effective_accelerationism",
+  "furtherReading": [
+    {
+      "title": "The Techno-Optimist Manifesto",
+      "url": "https://a16z.com/the-techno-optimist-manifesto/",
+      "note": "The best-known statement of allied techno-optimist beliefs."
+    },
+    {
+      "title": "Notes on e/acc principles and tenets",
+      "url": "https://effectiveaccelerationism.substack.com/p/repost-notes-on-eacc-principles-and",
+      "note": "Founders' own account of the thermodynamic and market reasoning."
+    },
+    {
+      "title": "Kevin Roose explains Effective Accelerationism",
+      "url": "https://chatgptiseatingtheworld.com/2023/12/10/kevin-roose-explains-effective-accelerationism-e-acc-in-ai/",
+      "note": "Short journalistic introduction."
+    },
+    {
+      "title": "Effective accelerationism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Effective_accelerationism",
+      "note": "Overview of origins, factions and criticism."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Guillaume Verdon",
+      "role": "Physicist identified as the founder behind the Beff Jezos persona and a co-founder of e/acc.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Guillaume_Verdon",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "name": "Marc Andreessen",
+      "role": "Venture capitalist whose Techno-Optimist Manifesto espouses e/acc views and who backs the movement.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marc_Andreessen",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Effective accelerationism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Effective_accelerationism",
+      "usedFor": "Overview of positions, origins, factions and key figures."
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "The Techno-Optimist Manifesto",
+      "author": "Marc Andreessen, a16z",
+      "url": "https://a16z.com/the-techno-optimist-manifesto/",
+      "usedFor": "Markets, technology, growth, energy, nuclear, trade, precautionary principle, UBI, central planning."
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "Notes on e/acc principles and tenets",
+      "author": "e/acc newsletter (Beff Jezos and co-authors)",
+      "url": "https://effectiveaccelerationism.substack.com/p/repost-notes-on-eacc-principles-and",
+      "usedFor": "Competition, variance, regulation, top-down control, thermodynamic basis, post-biological intelligence."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Kevin Roose explains Effective Accelerationism (e/acc) in AI",
+      "author": "chatgptiseatingtheworld.com",
+      "url": "https://chatgptiseatingtheworld.com/2023/12/10/kevin-roose-explains-effective-accelerationism-e-acc-in-ai/",
+      "usedFor": "Journalistic summary: no guardrails or gatekeepers; supporters."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a stated e/acc topic; the manifesto backs a welfare system funded by capitalist wealth but the movement's market and anti-state stance suggests skepticism of a state-run guarantee.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; inferred from the movement's preference for unregulated markets and growth over wage-setting by the state.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The manifesto calls free markets the most effective way to organize a technological economy, and e/acc argues competition beats top-down control.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "public-ownership": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto rejects central planning and statism, and e/acc wants private competition to build energy and technology.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed directly; inferred from pro-capitalist, pro-builder, libertarian-leaning stance with no redistribution agenda.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "unions-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; inferred from the market-first, deregulatory orientation, which treats labor restrictions as friction on growth.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The manifesto does not address property rights directly; many libertarian-leaning adherents would agree, but it is not a stated tenet.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "regulate-corporations": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposition to regulation of technology is central; the tenets say over-regulation suppresses variance and slows progress.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The manifesto says there is no conflict between profits and a welfare system for the vulnerable, so welfare cuts are not a tenet, though adherents lean market-libertarian.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from investor- and founder-driven capitalism as the vehicle for building.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "surveillance-ok": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a stated topic; the movement's decentralization and anti-gatekeeper outlook and crypto affinity suggest privacy leanings.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement has no stated drug position and adherents are mixed between libertarian and other views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; inferred from the anti-gatekeeper, libertarian-leaning culture of its online base.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "strong-leader": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The manifesto rejects statism and the movement describes itself as leaderless and decentralized, though it dislikes gridlock.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "state-harmful": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement opposes government intervention in markets and AI but is not anarchist; the manifesto calls itself a material, not political, philosophy.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "limit-guns": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from libertarian-leaning adherents, with little movement statement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement has no position on police funding; it is a technology philosophy and adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; adherents' libertarian leanings and other views are mixed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The manifesto favors local knowledge and people with actual information making decisions; the tenets criticize top-down control as fragile.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Criminal justice is outside the movement's scope and adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement favors transhumanist change, even post-biological intelligence, rather than traditional structures; not directly addressed.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the tech-culture base and libertarian leaning.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abortion-legal": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the movement's tech-culture and libertarian leanings.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement is secular and scientistic, grounding its aims in thermodynamics rather than religion; not directly addressed.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the manifesto stresses growth and markets over group-based remedies.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; not part of the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tenets treat civilization's expansion beyond Earth and beyond human form as the goal, not preserving national traditions.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "gradual-change": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement wants to speed technological change even where it disrupts institutions; its tenets urge accelerating the technocapital singularity.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "reduce-immigration": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the manifesto prizes talent and builders and a pro-growth outlook, suggesting openness.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement opposes centralized regulation of AI, which would include international regulatory bodies.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "free-trade": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The manifesto invokes Ricardo's comparative advantage to argue that trade and specialization raise prosperity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "nation-first": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement is civilizational and cosmic in outlook, though some adherents frame AI competition with rivals nationally; split.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; pro-talent and pro-growth leanings are offset by lack of any border agenda.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "limit-growth": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto says everything good is downstream of growth, and e/acc names degrowth advocates as its opposite.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The manifesto argues abundant energy and technology, not restraint, solve environmental problems, and e/acc opposes precautionary or degrowth responses.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The manifesto states there is no material problem that cannot be solved with more technology.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The manifesto calls nuclear fission a silver bullet for unlimited zero-emission energy and urges building it and fusion.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "revolution-justified": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement speaks of technological, not political, upheaval.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "experts-over-public": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The manifesto distrusts credentialed authority and favors local knowledge, though adherents also trust technical builders.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto rejects central planning as a doom loop and the tenets say top-down control is not fault-tolerant.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement backs markets with private, investor-led ownership instead.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "land-value-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement has no tax-policy stance on this and adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-inheritance": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from pro-capitalist, pro-wealth-creation stance.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The manifesto explicitly opposes universal basic income.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The manifesto's trade argument rests on comparative advantage, which opposes protectionism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-directs-investment": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The tenets favor competitive, high-variance markets over top-down optimization, and the manifesto rejects central planning.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a theme; the movement is about scale and technocapital rather than property distribution.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement embraces capitalism and the technocapital engine, so abolishing money and wages is opposed.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated monetary stance, though some adherents with crypto and libertarian leanings agree.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State-recognized bodies setting wages and prices contradict the free-market, anti-central-control stance.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement rejects statism and centralized control and calls itself leaderless.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement is modernist and anti-hierarchical, though adjacent neoreactionary strands exist.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "democracy-best": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The manifesto says it is not a political philosophy and adherents are split on democracy.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "direct-votes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; no stated stance on direct democracy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A councils-based political order is contrary to its market capitalism and orientation toward founders and builders.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "right-to-secede": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed, though decentralization and exit appeal to some adherents.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "natural-rulers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; the movement elevates builders and technologists but is split on any claim of natural rule.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "political-violence-never": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The movement is a techno-optimist culture with no violent program; not directly addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "war-builds-character": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement's optimism centers on building and abundance rather than war.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "separate-church-state": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement is secular and scientific in outlook.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement grounds itself in physics and technocapital rather than scripture, and is secular.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Libertarian adherents might agree, but this is not a movement position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Some adherents link AI acceleration to national competitiveness, but there is no stated position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement's civilizational and cosmic framing is not ethnic.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement sees thermodynamics, technology and capital as the driver of history, and the manifesto affirms capitalist cooperation and profits.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement stresses competition and high-variance markets, not equalizing outcomes.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the growth-focused outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement's unit is civilization as a whole, not religious blocs.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "self-interest-moral": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The manifesto describes markets as an individualistic way to produce good collective outcomes, which treats self-interested pursuit as productive.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "duties-before-rights": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The manifesto's individualism and distrust of central authority point away from community-first duties.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tenets center intelligence and energy capture; nature is valued instrumentally, and this is not directly addressed.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement wants more life and consciousness; the tenets seek spreading life to the stars, which opposes population limits.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement holds that technological civilization is the engine of progress and celebrates the technocapital singularity.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Accelerating technological change, especially AI, as fast as possible is the movement's defining aim.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "human-enhancement": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The manifesto backs augmented intelligence and e/acc factions favor transhumanist modification of the body and genome.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement trusts AI broadly but also opposes top-down centralization, so adherents are split on AI running government.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's decentralization, anti-gatekeeper, and crypto-adjacent culture, with no explicit stance.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "restore-past-order": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement is forward-looking and holds that progress and growth matter above all, rejecting stagnation.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The manifesto describes itself as a material rather than political philosophy, but the movement is itself ideologically committed to acceleration.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "direct-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement acts through building and online advocacy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "means-match-ends": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The movement is explicitly against degrowth and wants more energy and technology.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto praises specialization through comparative advantage.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Market allocation, profit and competition are favored over need-based distribution.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "production-for-use": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto defends capitalist profit as compatible with welfare and rejects planning.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto says there is no conflict between capitalist profits and social welfare, and defends profit.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's capitalist, anti-statist stance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "collective-farming": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; collectivization conflicts with markets and decentralized competition.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement embraces capitalism, and the manifesto sees markets and trade as producing prosperity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "taxation-theft": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Libertarian-leaning adherents might agree, but the manifesto accepts welfare funding and takes no such stand.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "harm-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "individual-rights-only": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed directly by the movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "conscription": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from libertarian leanings.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "exit-over-voice": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Decentralization appeals, but exit versus vote is not a stated position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-as-business": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "positive-liberty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the market-libertarian leaning inclines away from material-means conceptions of freedom.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The manifesto attacks gatekeepers and credentialism, but power claims about media and academia are not a tenet.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "hereditarian-race": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of the movement; the movement does not address race, and its stated outlook is not hereditarian.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "organic-representation": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Corporatist representation is far from the movement's market-centered, decentralizing outlook.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "total-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto rejects statism and central planning, and the movement opposes government control of technology.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "national-rebirth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement speaks of civilizational ascent, not national rebirth from decadence, though it does attack stagnation.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "territorial-expansion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The expansion the movement wants is into space and energy use, not territory abroad.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's market and meritocratic modernism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "bound-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's market capitalism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The movement grounds itself in physics and a scientistic outlook, and the manifesto prizes truth-seeking and reason.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "universal-morality": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the tenets ground value in thermodynamic survival rather than moral universals.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "single-common-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tenets prefer competition and variance over a single planned optimum.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workplace-democracy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from founder- and investor-led enterprise.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "school-vouchers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from market-oriented thinking and distrust of gatekeepers.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement has no fiscal position and adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-freedom": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The manifesto holds free markets are central to a technological society, and many adherents are libertarian.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "rule-by-example": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to the movement's emphasis on markets and technology.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-self-determination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-without-un": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reason-over-faith": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The movement is secular and scientific, grounded in physics, and the manifesto prizes reason and truth-seeking, though it also uses myth and meme culture.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement says nothing on welfare eligibility for immigrants, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-collaboration": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The manifesto says there is no conflict between capitalist profits and the welfare of the vulnerable, favoring cooperation through markets.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement is future-oriented but no source calls for destroying cultural institutions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to the movement's modernist outlook.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-interest": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement embraces capitalism and capital markets; banning interest is incompatible.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's market and universalist modernism, which has no racial program.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement sees the state as a drag on innovation rather than a class tool.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement wants abundant energy and nuclear but treats energy broadly; adherents split on fossil fuels.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No e/acc text discusses immigrant assimilation, and adherents are split on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not part of the movement's stated beliefs.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Electoral system design is not a topic in e/acc writing, so no position can be inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement's mission is civilizational, not national.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the tech-libertarian base's skepticism of structural claims.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The manifesto criticizes regulatory capture and gatekeepers, which shades into distrust of elites.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement favors freedom to modify and enhance genomes, not state compulsion over reproduction.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "night-watchman-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Libertarian adherents agree, but the manifesto accepts welfare, so split.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's stated outlook, which has no racial program.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed directly, though some factions favor AI successionism over humanity's primacy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "socialism-one-country": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to anti-gatekeeper liberal leanings.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to market and secular leanings.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; secular leaning.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's anti-statist outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consent-of-governed": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement writes about technology and markets, not the grounds of political legitimacy, so no stance is stated.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "trade-surplus": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The manifesto's Ricardian argument rests on mutual gains from trade, not mercantilist surpluses.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "population-transfer": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Not part of the movement and contrary to its liberal market outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Libertarian adherents may agree, but the movement states no non-aggression principle and adherents are split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The tenets say competition and high-variance marketplaces find utility better than top-down control, and the movement frames civilization as an evolving energy-capturing organism.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Party bans are not discussed in e/acc sources, and libertarian and other adherents would split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Republican theories of freedom do not appear in e/acc writing, so no position is inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separated-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Tenets favor decentralization, but separation of powers is not discussed.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "vanguard-party": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement is explicitly leaderless and anti-statist, and rejects Marxist politics.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "priority-to-poor": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The manifesto stresses growth lifting all but states no priority-to-poor principle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social housing policy is not discussed by the movement, and its market leanings are offset by no stated stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Labor law is not discussed in e/acc sources, so adherents are treated as split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto holds that technology and growth solve material problems, and treats more people as an asset, not a cause of poverty.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to the movement's pro-talent outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to meritocratic builder culture.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from anti-statist orientation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Price controls conflict with the movement's market stance that prices carry information.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-controls-media": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to anti-gatekeeper, anti-statist stance.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "party-commands-army": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's anti-statist stance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Citizenship timing is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Pay of legislators is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement describes itself as leaderless and decentralized.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement opposes centralized regulatory bodies, though it has no stated view on the EU.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Constitutional design of executive power is not discussed in e/acc sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "clerical-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's secular, scientific outlook.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to the movement's pro-capitalist outlook.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement is hostile to gatekeepers and guardrails on expression and innovation.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Term limits are not discussed in e/acc sources, so adherents are treated as split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recall-officials": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Recall elections are not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance policy is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the market, anti-regulation stance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "people-in-arms": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Military organization is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement prizes technology and civilization-scale growth.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The manifesto distrusts credentialed experts but praises builders with technical skill, so it is split.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Cultural relativism is not a topic in e/acc writing, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "death-penalty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Capital punishment is not discussed in e/acc sources, so adherents are treated as split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "School curriculum on sex education is not discussed by the movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The movement is grounded in physics and evolutionary thinking and is secular.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-pornography": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from anti-gatekeeper outlook.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; contrary to the pro-talent outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "minority-language-support": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Language policy is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-exemptions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Religious liberty exemptions are not discussed in e/acc sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement's embrace of high variance and rejection of gatekeepers fits it, but it is an inference.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from pro-market orientation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anti-colonial economics is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constituent-assembly": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Constitution-making procedure is not discussed in e/acc sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The manifesto pairs markets with growth and rejects statism, so restricting freedoms is not a tenet.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement favors growth as the route to prosperity and names effective altruism as a contrast, but gives no aid stance.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nuclear weapons policy is not discussed, though the movement favors nuclear power; this is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Executive selection is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "central-bank-independence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Monetary institutions are not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from market-first orientation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "precautionary-principle": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The manifesto calls the precautionary principle deeply immoral and says it should be discarded.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "collective-defense": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance guarantees are not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the movement's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Church-state relations are not discussed beyond the movement's secular outlook, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Head-of-state roles are not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Secession is not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "region-keeps-system": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Regional autonomy arrangements are not discussed in e/acc sources, so it is treated as neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to the movement's secular, anti-statist outlook.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "flat-income-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Tax structure is not discussed in e/acc sources, so adherents are treated as split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "space-expansion": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The tenets aim to climb the Kardashev scale by capturing more energy and expanding beyond Earth.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "character-from-environment": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement does not address nature versus nurture; its transhumanist wing wants to reshape people through technology, but that does not settle the question.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed directly; inferred from its hostility to top-down control and its preference for decentralized, competitive systems over concentrated power.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "mixed-constitution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement has no stated view on constitutional form; its concern is markets and technology rather than who holds political power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "leader-cult": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from its stress on decentralization, competition and distrust of centralized authority.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A family-law question outside the movement's technology and economics outlook, so neutral is inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The movement champions competitive markets and wealth creation and not class conflict; inferred from the manifesto's capitalism.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "land-redistribution": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; the movement defends private property and market allocation, so forced redistribution is inferred as disfavored.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "refugee-return": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Never addressed and a question outside the movement's technology focus; adherents are indifferent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a stated topic; the movement's global, decentralized, growth-focused outlook is inferred to be uninterested in nationality-based territorial claims.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not stated; inferred from the movement's opposition to top-down control and libertarian leanings.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "women-must-cover": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not stated; inferred from the movement's opposition to top-down control and libertarian leanings.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "common-currency": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents split between cryptocurrency and decentralized money enthusiasts and market pragmatists; not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement's technology and markets focus is inferred to be uninterested in ancestry-based unions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; an individualist, market-oriented movement is inferred to prefer common institutions to group-based autonomy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents emphasize exit and technological solutions but the question is outside the movement's focus.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The thermodynamic framing of e/acc ties civilizational change to energy and technology capture, a materialist view, though not framed as such.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "ban-cartels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The movement prizes competition but opposes regulation and regulatory capture, so adherents are split on antitrust; not stated.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "no-bailouts": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's competitive-market and anti-state stance that failed firms should bear their own costs.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement's liberty and market emphasis is inferred to favor limits on majority decisions rather than majority supremacy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement prefers merit, competition and decentralization to quotas, so inferred.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The manifesto champions free trade and global markets and rejects central planning, so a closed bloc is opposed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement's preference for unregulated markets implies resistance to binding trade conditions.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "moral-incentives": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The movement relies on markets, competition and variance and rejects top-down planning; inferred that personal reward remains the main spur.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not stated; the movement works through technology, markets and politics, so inferred that it does not favor armed vanguards.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not stated; inferred from its stress on merit, competition and anti-establishment views.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Artificial intelligence development should proceed as fast as possible with minimal government regulation.",
+      "value": 2,
+      "rationale": "The defining e/acc demand: no guardrails or gatekeepers on AI, and the founders argue over-regulation slows progress.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "addedAs": "accelerate-technology"
+    },
+    {
+      "text": "Humanity should expand into space and maximize its energy use as a goal of civilization.",
+      "value": 2,
+      "rationale": "The tenets aim to climb the Kardashev scale by capturing more energy and expanding beyond Earth.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "addedAs": "space-expansion"
+    },
+    {
+      "text": "Intelligence and consciousness should be free to move beyond the human biological form.",
+      "value": 2,
+      "rationale": "The tenets say intelligence must be transduced to non-biological substrates to reach the stars.",
+      "sources": [
+        "s3"
+      ],
+      "addedAs": "human-enhancement"
+    }
+  ],
+  "notes": "Positions beyond technology and markets are mostly inferred, since e/acc is not a full political program. The manifesto is a close ally rather than the movement's own text. AI-successionist adherents would answer the humanity-related statements differently."
 }

@@ -1,1925 +1,2085 @@
 {
-	"id": "kokkashugi",
-	"name": "Kokkashugi",
-	"auditedAt": "2026-10-15",
-	"auditor": "claude-sonnet-5-5",
-	"summary": "Kokkashugi (Japanese statism) held that the Japanese state is a sacred organic unity centred on the emperor and the kokutai (national polity), standing above class, individual rights and party competition. It favoured state direction of the economy, harmony between employers and workers instead of class struggle, loyal service and filial piety, and military strength and Japanese leadership of Asia. It opposed liberal democracy, socialism and communism.",
-	"scope": "Late Meiji to wartime Showa Japan (about 1890 to 1945), based on the Imperial Rescript on Education, the Kokutai no Hongi as described by scholarship, Kita Ikki's Outline Plan for the Reorganization of Japan, and the strands described in the Wikipedia article (Araki, Okawa, Tojo's Control Faction). Postwar Korean borrowings are excluded. Many modern-issue answers are inferred at low confidence. The Kokutai no Hongi text itself could not be opened, so its content is taken from a scholarly analysis.",
-	"wikipedia": "https://en.wikipedia.org/wiki/Kokkashugi",
-	"furtherReading": [
-		{
-			"title": "Kokkashugi (Wikipedia)",
-			"url": "https://en.wikipedia.org/wiki/Kokkashugi",
-			"note": "Overview of the doctrine, its thinkers and its legacy."
-		},
-		{
-			"title": "Imperial Rescript on Education (Wikisource)",
-			"url": "https://en.wikisource.org/wiki/Imperial_Rescript_on_Education",
-			"note": "The 1890 text that set out the duties of imperial subjects."
-		},
-		{
-			"title": "Kita Ikki (Wikipedia)",
-			"url": "https://en.wikipedia.org/wiki/Kita_Ikki",
-			"note": "Biography of the thinker of the Outline Plan and the coup tradition."
-		}
-	],
-	"keyFigures": [
-		{
-			"name": "Kita Ikki",
-			"role": "Author of the Outline Plan for the Reorganization of Japan, advocating a coup and nationalization.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Kita_Ikki",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		{
-			"name": "Ōkawa Shūmei",
-			"role": "Pan-Asianist who urged a return to the traditional kokutai.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Okawa_Shumei",
-			"sources": [
-				"s1"
-			]
-		},
-		{
-			"name": "Sadao Araki",
-			"role": "Army and Education Minister who spread spiritual training and Shōwa Restoration ideas.",
-			"wikipedia": "https://en.wikipedia.org/wiki/Sadao_Araki",
-			"sources": [
-				"s1"
-			]
-		}
-	],
-	"sources": [
-		{
-			"id": "s1",
-			"kind": "reference",
-			"title": "Kokkashugi",
-			"author": "Wikipedia",
-			"url": "https://en.wikipedia.org/wiki/Kokkashugi",
-			"usedFor": "Core positions on state, economy, religion, democracy, socialism, expansion and key figures."
-		},
-		{
-			"id": "s2",
-			"kind": "reference",
-			"title": "Kita Ikki",
-			"author": "Wikipedia",
-			"url": "https://en.wikipedia.org/wiki/Kita_Ikki",
-			"usedFor": "Content of the Outline Plan: wealth caps, nationalization, coup, emergency rule, pan-Asian expansion."
-		},
-		{
-			"id": "s3",
-			"kind": "primary",
-			"title": "Imperial Rescript on Education (1890)",
-			"author": "Emperor Meiji",
-			"url": "https://en.wikisource.org/wiki/Imperial_Rescript_on_Education",
-			"usedFor": "Filial piety, duty of subjects, defence of the state, imperial ancestry as the nation's moral foundation."
-		},
-		{
-			"id": "s4",
-			"kind": "scholarly",
-			"title": "Rhetoric as Ideological Pronouncement: An Analysis of the Cardinal Principles of the National Entity of Japan",
-			"author": "Takeshi Suzuki, ISSA Proceedings 1998",
-			"url": "https://rozenbergquarterly.com/issa-proceedings-1998-rhetoric-as-ideological-pronouncement-an-analysis-of-the-cardinal-principles-of-the-national-entity-of-japan/?print=pdf",
-			"usedFor": "Content of Kokutai no Hongi: divine emperor, harmony, loyalty and filial piety, critique of Western individualism."
-		}
-	],
-	"answers": {
-		"universal-healthcare": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "State-led welfare was adopted to blunt socialist appeal and to build a strong population, so state-provided care fits, though no source gives a health program.",
-			"sources": [
-				"s1"
-			]
-		},
-		"raise-minimum-wage": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Adherents backed worker welfare and class harmony but no source addresses wage floors; positions varied between Kita's labor rights and managerial control.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"markets-allocate-better": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Kokkashugi favored state direction of industry and criticized zaibatsu and the party politicians serving them.",
-			"sources": [
-				"s1"
-			]
-		},
-		"public-ownership": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Advocates called for nationalization of strategic sectors; Kita proposed state-run national enterprises on the railway model.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"tax-the-wealthy": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Kita capped private wealth and criticized zaibatsu, implying heavy burdens on great fortunes, though taxation specifics are not documented.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"unions-good": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Class struggle was illegitimate; factory bodies mixing managers and worker representatives were preferred to independent unions, so autonomous unions were distrusted.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"property-fundamental": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Kita's plan capped private property and the state could override it for national ends; property was subordinate to the nation.",
-			"sources": [
-				"s2"
-			]
-		},
-		"regulate-corporations": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "The doctrine attacked zaibatsu power and wanted the state to direct industry.",
-			"sources": [
-				"s1"
-			]
-		},
-		"cut-welfare": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "State welfare ideas were taken up to counter socialism and unify the nation; cutting welfare is not a stated aim.",
-			"sources": [
-				"s1"
-			]
-		},
-		"worker-ownership": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Socialist ownership was rejected; ownership belonged to the state or capped private hands, with class harmony instead of worker control.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"surveillance-ok": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "The state was sacred and above private life; the 1925 Peace Preservation Law policed thought and dissent.",
-			"sources": [
-				"s1"
-			]
-		},
-		"legalize-drugs": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Moral discipline and spiritual training were emphasized over individual liberty; drugs were not addressed.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-hate-speech": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not an issue in the doctrine; its stress on state suppression of disloyal speech is about dissent, not hate speech, so this is inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"strong-leader": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Kita wanted a coup and an emergency regime under a powerful leader, and officers sought direct imperial rule over parliamentary gridlock.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"state-harmful": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state is held to be a sacred organic unity embodied in the emperor, the opposite of anarchism.",
-			"sources": [
-				"s1"
-			]
-		},
-		"limit-guns": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Not addressed; an order-minded state monopolizing force would favor strict control.",
-			"sources": [
-				"s1"
-			]
-		},
-		"empower-police-military": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Militarism was central and the military was seen as protector of the national spirit.",
-			"sources": [
-				"s1"
-			]
-		},
-		"legalize-sex-work": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Moral-spiritual training was promoted; no source addresses sex work, so inferred from its moralism.",
-			"sources": [
-				"s1"
-			]
-		},
-		"rehabilitation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; both moral reform and harsh discipline fit the doctrine.",
-			"sources": [
-				"s1"
-			]
-		},
-		"traditional-family": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The nation was imagined as one great family, with filial piety a core virtue.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"same-sex-marriage": {
-			"value": -2,
-			"confidence": "low",
-			"rationale": "Anachronistic; the family-state and Confucian family ethics would reject it.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"abortion-legal": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Anachronistic; the state valued population and family strength, inferred rather than documented.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"more-religion-public": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "State Shinto and the imperial myth were fused with the state, giving public life a religious basis.",
-			"sources": [
-				"s1"
-			]
-		},
-		"correct-racial-injustice": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; collective national unity was preferred to group-remedial policy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"gender-social-construct": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Anachronistic; traditional roles under the family-state are inferred.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"preserve-national-culture": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Protecting kokutai and Yamato-damashii against Westernization was the central aim.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"gradual-change": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Advocates sought a Showa Restoration by coup, though framed as restoring the true kokutai; revolution from above rejects gradualism.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"reduce-immigration": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not directly addressed; Japan held colonial subjects within the empire while emphasizing a unique national community.",
-			"sources": [
-				"s1"
-			]
-		},
-		"empower-international-orgs": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Japan left the League of Nations in 1933 and asserted its own leadership of Asia.",
-			"sources": [
-				"s1"
-			]
-		},
-		"free-trade": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "State direction of industry and an autarkic Asian bloc suggest opposition, inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"nation-first": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "National and imperial interests overrode all else, including international cooperation.",
-			"sources": [
-				"s1"
-			]
-		},
-		"humanitarian-intervention": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Intervention was justified by pan-Asian mission and security rather than human rights.",
-			"sources": [
-				"s1"
-			]
-		},
-		"open-borders": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "A unique national community bound by dynasty and territory rules out open borders.",
-			"sources": [
-				"s1"
-			]
-		},
-		"limit-growth": {
-			"value": -2,
-			"confidence": "low",
-			"rationale": "Economic and military strength were national goals; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"drastic-climate-action": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anachronistic and unaddressed.",
-			"sources": [
-				"s1"
-			]
-		},
-		"tech-solves-problems": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anachronistic; adherents valued modern industry for national strength but stressed spirit over technique.",
-			"sources": [
-				"s1"
-			]
-		},
-		"expand-nuclear": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Anachronistic; the pursuit of national power makes it likely.",
-			"sources": [
-				"s1"
-			]
-		},
-		"revolution-justified": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Kita urged a military coup and the Shōwa Restoration movements justified violent action to restore direct imperial rule.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"experts-over-public": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Popular sovereignty was rejected in favor of rule by the emperor, officers and officials; technocratic Control Faction planning.",
-			"sources": [
-				"s1"
-			]
-		},
-		"central-planning": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "The statist program favored state direction and planning of industry for national ends, though not full socialist planning.",
-			"sources": [
-				"s1"
-			]
-		},
-		"socialized-markets": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not a topic; the doctrine rejected socialism but accepted state-owned sectors alongside private ones.",
-			"sources": [
-				"s1"
-			]
-		},
-		"land-value-tax": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Kita made urban land municipal property, but a single land tax is not part of the doctrine.",
-			"sources": [
-				"s2"
-			]
-		},
-		"tax-inheritance": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Kita capped private wealth, implying limits on inherited fortunes.",
-			"sources": [
-				"s2"
-			]
-		},
-		"basic-income": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Anachronistic; welfare tied to national service rather than unconditional.",
-			"sources": [
-				"s1"
-			]
-		},
-		"tariffs-protect-industry": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "State direction of industry and economic nationalism favor protecting domestic industry.",
-			"sources": [
-				"s1"
-			]
-		},
-		"state-directs-investment": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "State direction of industry toward national strategic ends was a defining economic feature.",
-			"sources": [
-				"s1"
-			]
-		},
-		"widespread-small-property": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Kita capped property and spread wealth, yet nationalization pointed to the state, so adherents were split.",
-			"sources": [
-				"s2"
-			]
-		},
-		"abolish-money-wages": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Socialism and communism were the doctrine's chief enemies.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abolish-central-banks": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State control of finance is incompatible with abolition.",
-			"sources": [
-				"s1"
-			]
-		},
-		"corporatist-bargaining": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Factory bodies with managers and worker representatives and wartime industrial patriotic organizations reflect state-organized class cooperation.",
-			"sources": [
-				"s1"
-			]
-		},
-		"one-party-rule": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Kita wanted parties banned, and the New Order Movement dissolved parties into a single state party, but the claimed guide was the kokutai rather than a party ideology.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"monarchy-legitimate": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The emperor, descended from Amaterasu, was the sacred source of sovereignty.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"democracy-best": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Kokkashugi opposed parliamentary competition and popular sovereignty.",
-			"sources": [
-				"s1"
-			]
-		},
-		"direct-votes": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Popular sovereignty was rejected, making direct popular lawmaking unacceptable.",
-			"sources": [
-				"s1"
-			]
-		},
-		"workers-councils": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Class rule and socialist councils were opposed in favor of the imperial state.",
-			"sources": [
-				"s1"
-			]
-		},
-		"right-to-secede": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state was a sacred unity and the empire held Korea and Taiwan.",
-			"sources": [
-				"s1"
-			]
-		},
-		"natural-rulers": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "Rule belonged to the divine imperial line and its loyal servants, with a hierarchy of father and child.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"political-violence-never": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Coups and assassinations by officers were justified in the name of the emperor.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"war-builds-character": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "Militarism and spiritual training were central, and war was justified as serving harmony.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"separate-church-state": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Rejected the separation of state and society, politics and morality, and linked state to Shinto.",
-			"sources": [
-				"s1"
-			]
-		},
-		"laws-from-scripture": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Law was grounded in the Shinto myth of imperial origin and Imperial Rescript, not scripture-based codes, so only loosely comparable.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"private-courts-defense": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Defense and justice belong to the sacred state.",
-			"sources": [
-				"s1"
-			]
-		},
-		"military-superiority": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Military strength and Asian leadership were core goals.",
-			"sources": [
-				"s1"
-			]
-		},
-		"ethnic-nation": {
-			"value": 0,
-			"confidence": "medium",
-			"rationale": "Scholars distinguish it from ethnic nationalism: the nation is bound by dynasty, territory and tradition, and subject peoples were folded into the empire.",
-			"sources": [
-				"s1"
-			]
-		},
-		"class-struggle-history": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Class struggle was held illegitimate and was suppressed in favor of harmony.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"equal-outcomes": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Hierarchy under the emperor was accepted, though class gaps were criticized.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"indigenous-land-authority": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; the state's authority over all territory is inferred, as in the Ainu case.",
-			"sources": [
-				"s1"
-			]
-		},
-		"colonial-reparations": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Japan was a colonial empire whose expansion was justified as a mission.",
-			"sources": [
-				"s1"
-			]
-		},
-		"civilizational-union": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Pan-Asianism and Japanese leadership of Asia, culminating in the Greater East Asia Co-Prosperity Sphere, were central.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"self-interest-moral": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Duty and putting the nation before the self were taught over individual interest.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"duties-before-rights": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Natural individual rights were rejected in favor of collective unity, and the Rescript demands duties of subjects.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"nature-intrinsic-value": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "No source addresses nature's intrinsic value; Shinto reverence for nature existed but was not a political position of the doctrine.",
-			"sources": [
-				"s1"
-			]
-		},
-		"limit-population": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "National strength and expansion favored a growing population; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"industrial-civilization-disaster": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Industry served national power, though critics blamed Westernized modernization for social ills.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"accelerate-technology": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not a position; modernization served the state but disruption of institutions was resisted.",
-			"sources": [
-				"s1"
-			]
-		},
-		"human-enhancement": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Anachronistic; inferred from emphasis on tradition and state purpose.",
-			"sources": [
-				"s1"
-			]
-		},
-		"algorithmic-government": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anachronistic and unaddressed.",
-			"sources": [
-				"s1"
-			]
-		},
-		"unbreakable-encryption": {
-			"value": -2,
-			"confidence": "low",
-			"rationale": "Anachronistic; a state above private life would reject it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restore-past-order": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Appeals to restoring the true kokutai, though proponents also sought a new order.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"results-over-ideology": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Policy was subordinated to kokutai doctrine and moral conviction.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"direct-action": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Officers and activists used coups and assassinations to bypass parliament.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"means-match-ends": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed in sources.",
-			"sources": [
-				"s1"
-			]
-		},
-		"return-to-foraging": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Strongly opposed given its industrial and imperial ambitions.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abolish-division-of-labor": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "A hierarchical organic state with fixed roles opposes this.",
-			"sources": [
-				"s1"
-			]
-		},
-		"distribute-by-need": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Socialist distribution was rejected.",
-			"sources": [
-				"s1"
-			]
-		},
-		"production-for-use": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Production for national strength was the aim, but the doctrine opposed socialism and kept private profit in part.",
-			"sources": [
-				"s1"
-			]
-		},
-		"profit-exploitation": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Marxist analysis was rejected, though zaibatsu profiteering was attacked on nationalist grounds.",
-			"sources": [
-				"s1"
-			]
-		},
-		"dictatorship-of-proletariat": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Communism was the enemy and the Peace Preservation Law targeted it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"collective-farming": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; Kita's and others' rural ideas tended toward the nation, not collectives.",
-			"sources": [
-				"s1"
-			]
-		},
-		"capitalism-causes-war": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Capitalists were attacked as selfish, but imperialism was justified, not condemned.",
-			"sources": [
-				"s1"
-			]
-		},
-		"taxation-theft": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state is sacred and its claims on subjects absolute.",
-			"sources": [
-				"s1"
-			]
-		},
-		"harm-principle": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Rejected the separation of public and private and of politics and morality.",
-			"sources": [
-				"s1"
-			]
-		},
-		"individual-rights-only": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Natural individual rights were rejected for collective unity.",
-			"sources": [
-				"s1"
-			]
-		},
-		"conscription": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Subjects were to defend the state, as the Rescript directs, and militarism was central.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"exit-over-voice": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Exit is incompatible with a sacred organic state.",
-			"sources": [
-				"s1"
-			]
-		},
-		"state-as-business": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state is a sacred community, not a service company.",
-			"sources": [
-				"s1"
-			]
-		},
-		"positive-liberty": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not framed as freedom; the state guaranteed welfare but liberty claims were rejected.",
-			"sources": [
-				"s1"
-			]
-		},
-		"media-academia-power": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; though hostile to liberal intellectuals and party politicians.",
-			"sources": [
-				"s1"
-			]
-		},
-		"hereditarian-race": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Kokkashugi centered on kokutai rather than race science, though it ranked Japan as leader of Asia.",
-			"sources": [
-				"s1"
-			]
-		},
-		"organic-representation": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Rejected parties for an organic unity; nothing documents family or trade-body assemblies precisely.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"total-state": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Rejected separation of state and society, politics and morality; the state governed culture, education and economy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"national-rebirth": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The Shōwa Restoration aimed at renewing the nation against decadent party politics and zaibatsu.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"territorial-expansion": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Expansion, pan-Asianism and hakkō ichiu were central, with Kita calling Japan an international proletariat.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"personal-loyalty-rule": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Authority rested on loyalty of subjects to the emperor in a father-child bond.",
-			"sources": [
-				"s4"
-			]
-		},
-		"bound-labor": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Feudal bound labor is not addressed; the doctrine rejected Meiji-era class privilege in general but sources give no stance on it.",
-			"sources": [
-				"s1"
-			]
-		},
-		"no-neutral-knowledge": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Education was to serve kokutai; knowledge bent to state truth, though not stated in these terms.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"universal-morality": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Morality was bound to the Japanese kokutai and its myth, contrasted with Western universalism.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"single-common-good": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "A single organic unity with harmony replacing group competition.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"jewish-state-israel": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "The issue lies wholly outside the doctrine's concerns and sources, so it is left neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"diaspora-return-right": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed by any source on the doctrine; no stance can be inferred from its principles.",
-			"sources": [
-				"s1"
-			]
-		},
-		"revive-national-language": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Japanese was never a lapsed language; the doctrine has no position on reviving one, so it is neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"workplace-democracy": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Class cooperation in management bodies, not democratic control.",
-			"sources": [
-				"s1"
-			]
-		},
-		"school-vouchers": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The state controlled education to instill kokutai through the Rescript.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"avoid-deficit-stimulus": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "State-led industrial and military spending favored.",
-			"sources": [
-				"s1"
-			]
-		},
-		"economic-freedom": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State direction of industry takes precedence over economic liberty.",
-			"sources": [
-				"s1"
-			]
-		},
-		"rule-by-example": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "The Rescript and Kokutai no Hongi rest on imperial virtue and moral example, though punishments were also used.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"national-self-determination": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Japan's own sovereignty yes, though subject peoples were absorbed into the empire.",
-			"sources": [
-				"s1"
-			]
-		},
-		"force-without-un": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Japan left the League and acted unilaterally in Manchuria and China.",
-			"sources": [
-				"s1"
-			]
-		},
-		"reason-over-faith": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Faith in the kokutai was required over logic and reason, per the committee that drafted Kokutai no Hongi.",
-			"sources": [
-				"s1"
-			]
-		},
-		"welfare-for-citizens": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "State welfare for the national community; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"work-for-welfare": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Service and duty to the nation are emphasized; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"class-collaboration": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Harmony and cooperation of employers and workers replaced class struggle.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"sacrifice-heritage": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Preserving national heritage and kokutai was central.",
-			"sources": [
-				"s1"
-			]
-		},
-		"dominated-front": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Pan-Asian solidarity against Western dominance was a core theme, and Kita proposed liberating Asia.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"workers-nation": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The working class was to be integrated into the nation, not an international class.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"distinct-gender-roles": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Family-state ethics imply it; inferred.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"ban-interest": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not addressed; finance was criticized but interest not banned.",
-			"sources": [
-				"s1"
-			]
-		},
-		"racial-segregation-law": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Subject peoples were meant to be assimilated into the empire rather than segregated by law, per Kita's plan.",
-			"sources": [
-				"s2"
-			]
-		},
-		"state-class-instrument": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state stands above class as a sacred unity.",
-			"sources": [
-				"s1"
-			]
-		},
-		"expand-fossil-fuels": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Energy self-sufficiency for national power; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"assimilate-immigrants": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Colonial subjects were assimilated through imperial education; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"elite-replacement": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not part of the doctrine.",
-			"sources": [
-				"s1"
-			]
-		},
-		"proportional-representation": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Party competition and parliamentary politics were rejected.",
-			"sources": [
-				"s1"
-			]
-		},
-		"national-mission": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Japan was to lead and uplift Asia, though more by pan-Asian leadership than exporting its government.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"patriarchy-structural": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Hierarchy was seen as natural order rather than a wrong.",
-			"sources": [
-				"s3",
-				"s4"
-			]
-		},
-		"political-elite-corrupt": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Party politicians and zaibatsu were attacked as corrupt and self-serving.",
-			"sources": [
-				"s1"
-			]
-		},
-		"heritable-defect-limits": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Eugenic policy is not documented as part of the doctrine's program, though state control of population fits some strands.",
-			"sources": [
-				"s1"
-			]
-		},
-		"security-forces-accountable": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The military was protector of the state and above civil accountability.",
-			"sources": [
-				"s1"
-			]
-		},
-		"night-watchman-state": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The doctrine called for a total state.",
-			"sources": [
-				"s1"
-			]
-		},
-		"discourage-race-mixing": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not a stated aim, and Kita's empire granted equal rights to subject peoples.",
-			"sources": [
-				"s2"
-			]
-		},
-		"equal-moral-worth": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Hierarchy of subjects under the emperor and rejection of natural rights.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"socialism-one-country": {
-			"value": -2,
-			"confidence": "low",
-			"rationale": "Socialism itself was rejected, so this does not fit.",
-			"sources": [
-				"s1"
-			]
-		},
-		"settler-state-colonial": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The doctrine advanced settler expansion and an empire.",
-			"sources": [
-				"s2"
-			]
-		},
-		"uniform-civil-code": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Uniform state authority over all subjects; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-conversion": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; State Shinto demanded shrine participation but conversion law is not documented, so neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"ban-cattle-slaughter": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not a Shinto-Buddhist Japanese issue.",
-			"sources": [
-				"s1"
-			]
-		},
-		"no-religion-state-schools": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State education instilled State Shinto ideas through the Rescript.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"state-strengthens-encirclement": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Socialist premise; not applicable.",
-			"sources": [
-				"s1"
-			]
-		},
-		"consent-of-governed": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Sovereignty rests in the emperor and state, not popular consent.",
-			"sources": [
-				"s1"
-			]
-		},
-		"trade-surplus": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Economic nationalism and autarky; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"population-transfer": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not documented as a doctrine position; the empire moved populations in practice but sources cited here give no stance.",
-			"sources": [
-				"s1"
-			]
-		},
-		"competition-drives-progress": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Harmony, not struggle, is the ideal, though peoples' competition over Asia was accepted.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"ban-extremist-parties": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The Peace Preservation Law outlawed groups opposing the kokutai, and parties were later dissolved.",
-			"sources": [
-				"s1"
-			]
-		},
-		"freedom-as-non-domination": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Absolute authority of the emperor-state.",
-			"sources": [
-				"s1"
-			]
-		},
-		"separated-powers": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Sovereignty is unitary in the emperor; Kita's emergency regime suspended the Diet.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"vanguard-party": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Communist theory rejected.",
-			"sources": [
-				"s1"
-			]
-		},
-		"priority-to-poor": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Welfare was framed for national unity, not priority to class.",
-			"sources": [
-				"s1"
-			]
-		},
-		"right-to-buy-council-homes": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "A British housing question with no counterpart in the doctrine or its sources, so neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"restrict-strikes-picketing": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Class struggle was illegitimate and labor disputes suppressed.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"population-causes-poverty": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Poverty was blamed on zaibatsu and party politics.",
-			"sources": [
-				"s1"
-			]
-		},
-		"diversity-weakens-cohesion": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Unique community unity valued; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"offices-by-lottery": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Rule by emperor and officials, not lot.",
-			"sources": [
-				"s1"
-			]
-		},
-		"emergency-suspend-protections": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "Kita's coup and emergency regime and wartime measures.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"party-controls-media": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "Wartime state control of information and thought, though under a state not a party.",
-			"sources": [
-				"s1"
-			]
-		},
-		"party-commands-army": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "The army was loyal to the emperor, not a party.",
-			"sources": [
-				"s1"
-			]
-		},
-		"long-naturalization-wait": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; citizenship rules played little role in the sources, so neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"representatives-worker-pay": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; Kita did not specify legislator pay in the parts of his plan consulted, so neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"party-discipline-binding": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Parties were opposed; the point is moot.",
-			"sources": [
-				"s1"
-			]
-		},
-		"pool-sovereignty": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "National sovereignty and withdrawal from the League.",
-			"sources": [
-				"s1"
-			]
-		},
-		"head-commands-forces": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The emperor held supreme command, and officers wanted direct imperial rule.",
-			"sources": [
-				"s1"
-			]
-		},
-		"church-by-bishops": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Episcopal church governance has no counterpart in State Shinto or the doctrine, so neutral.",
-			"sources": [
-				"s1"
-			]
-		},
-		"clerical-rule": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Authority belonged to the emperor, and Shinto priests were subordinated.",
-			"sources": [
-				"s1"
-			]
-		},
-		"defeat-own-government-war": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Loyalty to the state in war.",
-			"sources": [
-				"s1"
-			]
-		},
-		"censor-art-for-virtue": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "Thought was policed for moral and national ends.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"unlimited-reelection": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not an elective office.",
-			"sources": [
-				"s1"
-			]
-		},
-		"recall-officials": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Popular sovereignty rejected.",
-			"sources": [
-				"s1"
-			]
-		},
-		"end-foreign-alliances": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Japan did ally with Germany and Italy while seeking Asian leadership; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"abolish-rental-housing": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Kita made urban land municipal property, though not abolishing rent.",
-			"sources": [
-				"s2"
-			]
-		},
-		"people-in-arms": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "The professional military was prized, though spiritual mobilization of the people was also taught.",
-			"sources": [
-				"s1"
-			]
-		},
-		"rural-life-healthier": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Agrarian strands existed within Japanese nationalism; contested.",
-			"sources": [
-				"s1"
-			]
-		},
-		"reunify-divided-nation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; Japan was not a divided nation, and no source gives a stance on others.",
-			"sources": [
-				"s1"
-			]
-		},
-		"educated-out-of-touch": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anti-liberal intellectual rhetoric existed but isn't documented here.",
-			"sources": [
-				"s1"
-			]
-		},
-		"cultures-equal-different": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Japan was unique and the leader of Asia.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"death-penalty": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Order and state authority; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"sex-ed-in-schools": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Education served kokutai and moral discipline; inferred.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		},
-		"creationism-in-schools": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Imperial myth was taught as history, a loose analogue; judged neutral on Christian creationism.",
-			"sources": [
-				"s4"
-			]
-		},
-		"restrict-pornography": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Moralism of the state; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"citizenship-by-descent": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Dynasty and tradition bind the nation, but colonial subjects were also made subjects.",
-			"sources": [
-				"s1"
-			]
-		},
-		"minority-language-support": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Colonial assimilation via Japanese education; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"religious-exemptions": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Shrine participation was demanded of all subjects.",
-			"sources": [
-				"s1"
-			]
-		},
-		"encourage-eccentricity": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Individualism and nonconformity were opposed.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"sovereign-debt-cancellation": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; the doctrine opposed Western finance, but no source states a position on debt relief.",
-			"sources": [
-				"s1"
-			]
-		},
-		"independence-needs-economic-change": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Kita linked national renewal to economic reorganization.",
-			"sources": [
-				"s2"
-			]
-		},
-		"constituent-assembly": {
-			"value": -1,
-			"confidence": "medium",
-			"rationale": "Kita would suspend the constitution by emperor, not by an elected assembly.",
-			"sources": [
-				"s2"
-			]
-		},
-		"restrict-freedoms-for-growth": {
-			"value": 1,
-			"confidence": "medium",
-			"rationale": "State direction trumped liberties for national power.",
-			"sources": [
-				"s1"
-			]
-		},
-		"rich-countries-aid-poor": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Not part of nationalist aims.",
-			"sources": [
-				"s1"
-			]
-		},
-		"independent-nuclear-deterrent": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Anachronistic; independent military power inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"direct-election-head-of-state": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The emperor's line is the source of rule.",
-			"sources": [
-				"s1"
-			]
-		},
-		"central-bank-independence": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "State direction of finance.",
-			"sources": [
-				"s1"
-			]
-		},
-		"no-land-for-peace": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Territory held by empire was not relinquished; inferred.",
-			"sources": [
-				"s1"
-			]
-		},
-		"property-serves-common-good": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "Property was subordinate to the national unity and caps proposed.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"soviet-state-capitalist": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Not addressed; the USSR was just an enemy.",
-			"sources": [
-				"s1"
-			]
-		},
-		"precautionary-principle": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anachronistic environmental principle never discussed by the doctrine, so neutral and low confidence.",
-			"sources": [
-				"s1"
-			]
-		},
-		"collective-defense": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Alliances with Axis; inferred from the Anti-Comintern alignment, weakly.",
-			"sources": [
-				"s1"
-			]
-		},
-		"annexed-territory-occupation": {
-			"value": -2,
-			"confidence": "medium",
-			"rationale": "Annexations were justified, as in Korea.",
-			"sources": [
-				"s1"
-			]
-		},
-		"decide-locally": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "The state is a centralized sacred unity under the emperor, with no place for devolved authority.",
-			"sources": [
-				"s1"
-			]
-		},
-		"initiating-force-wrong": {
-			"value": -2,
-			"confidence": "high",
-			"rationale": "Militarism and expansion were central, and force against others was justified as national or Asian mission.",
-			"sources": [
-				"s1"
-			]
-		},
-		"price-controls-essentials": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "State direction of the economy for national ends suggests acceptance of wartime price controls; no source states it directly.",
-			"sources": [
-				"s1"
-			]
-		},
-		"sacred-ruler": {
-			"value": 2,
-			"confidence": "high",
-			"rationale": "The unbroken imperial line descending from Amaterasu is the core of kokutai.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"subordinate-church-to-state": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "State Shinto stood above other religions and the state supervised religious bodies, and the kokutai ideology put the national polity first; inferred from that.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"nonpartisan-head-of-state": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "The emperor was the sacred centre of the kokutai, standing above class, parties and factional competition, which kokkashugi opposed.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"force-to-prevent-secession": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "Kokkashugi prized military strength and national unity under the emperor, so keeping the empire together by force is inferred; no source addresses secession.",
-			"sources": [
-				"s1"
-			]
-		},
-		"region-keeps-system": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "The organic unity of one polity under one emperor points to assimilation rather than preserved local systems; inferred from that.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"flat-income-tax": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Kokkashugi favoured state direction of the economy but no source states a tax-structure position.",
-			"sources": [
-				"s1"
-			]
-		},
-		"character-from-environment": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "The Imperial Rescript on Education assumes moral character is formed through schooling and loyal service, which is the basis for this inference.",
-			"sources": [
-				"s3"
-			]
-		},
-		"sovereign-above-law": {
-			"value": 1,
-			"confidence": "low",
-			"rationale": "The emperor was sacred and sovereign and kokutai stood above individual rights, so rulers were not seen as bound like ordinary subjects; inferred.",
-			"sources": [
-				"s1",
-				"s4"
-			]
-		},
-		"space-expansion": {
-			"value": 0,
-			"confidence": "low",
-			"rationale": "Anachronistic; the ideology's expansion was territorial and Asian, not spatial, so no inference is possible.",
-			"sources": [
-				"s1"
-			]
-		},
-		"mixed-constitution": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "Kokkashugi opposed party competition and liberal parliamentarism, favouring unity centred on the emperor; blended rule is inferred to be disliked.",
-			"sources": [
-				"s1",
-				"s2"
-			]
-		},
-		"leader-cult": {
-			"value": 2,
-			"confidence": "medium",
-			"rationale": "The emperor was treated as sacred and embodiment of the nation, with mass reverence at his portrait and for the Rescript, which kokutai doctrine required.",
-			"sources": [
-				"s1",
-				"s3",
-				"s4"
-			]
-		},
-		"equal-parenting": {
-			"value": -1,
-			"confidence": "low",
-			"rationale": "The family-state ideal and filial piety upheld paternal authority, so a presumption of equal time is inferred to be rejected.",
-			"sources": [
-				"s1",
-				"s3"
-			]
-		}
-	},
-	"missingStatements": [
-		{
-			"text": "The head of state should be regarded as sacred and descended from the gods.",
-			"value": 2,
-			"rationale": "The unbroken imperial line descending from Amaterasu is the core of kokutai.",
-			"sources": [
-				"s1",
-				"s4"
-			],
-			"addedAs": "sacred-ruler"
-		}
-	],
-	"notes": "Wikipedia is used for the stated strand; Kita Ikki's national-socialist plan differs from the Control Faction's bureaucratic statism, and Kita's wealth caps are not shared by all adherents."
+  "id": "kokkashugi",
+  "name": "Kokkashugi",
+  "auditedAt": "2026-10-15",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Kokkashugi (Japanese statism) held that the Japanese state is a sacred organic unity centred on the emperor and the kokutai (national polity), standing above class, individual rights and party competition. It favoured state direction of the economy, harmony between employers and workers instead of class struggle, loyal service and filial piety, and military strength and Japanese leadership of Asia. It opposed liberal democracy, socialism and communism.",
+  "scope": "Late Meiji to wartime Showa Japan (about 1890 to 1945), based on the Imperial Rescript on Education, the Kokutai no Hongi as described by scholarship, Kita Ikki's Outline Plan for the Reorganization of Japan, and the strands described in the Wikipedia article (Araki, Okawa, Tojo's Control Faction). Postwar Korean borrowings are excluded. Many modern-issue answers are inferred at low confidence. The Kokutai no Hongi text itself could not be opened, so its content is taken from a scholarly analysis.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Kokkashugi",
+  "furtherReading": [
+    {
+      "title": "Kokkashugi (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kokkashugi",
+      "note": "Overview of the doctrine, its thinkers and its legacy."
+    },
+    {
+      "title": "Imperial Rescript on Education (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Imperial_Rescript_on_Education",
+      "note": "The 1890 text that set out the duties of imperial subjects."
+    },
+    {
+      "title": "Kita Ikki (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Kita_Ikki",
+      "note": "Biography of the thinker of the Outline Plan and the coup tradition."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Kita Ikki",
+      "role": "Author of the Outline Plan for the Reorganization of Japan, advocating a coup and nationalization.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Kita_Ikki",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "name": "Ōkawa Shūmei",
+      "role": "Pan-Asianist who urged a return to the traditional kokutai.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Okawa_Shumei",
+      "sources": [
+        "s1"
+      ]
+    },
+    {
+      "name": "Sadao Araki",
+      "role": "Army and Education Minister who spread spiritual training and Shōwa Restoration ideas.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Sadao_Araki",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Kokkashugi",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kokkashugi",
+      "usedFor": "Core positions on state, economy, religion, democracy, socialism, expansion and key figures."
+    },
+    {
+      "id": "s2",
+      "kind": "reference",
+      "title": "Kita Ikki",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kita_Ikki",
+      "usedFor": "Content of the Outline Plan: wealth caps, nationalization, coup, emergency rule, pan-Asian expansion."
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "Imperial Rescript on Education (1890)",
+      "author": "Emperor Meiji",
+      "url": "https://en.wikisource.org/wiki/Imperial_Rescript_on_Education",
+      "usedFor": "Filial piety, duty of subjects, defence of the state, imperial ancestry as the nation's moral foundation."
+    },
+    {
+      "id": "s4",
+      "kind": "scholarly",
+      "title": "Rhetoric as Ideological Pronouncement: An Analysis of the Cardinal Principles of the National Entity of Japan",
+      "author": "Takeshi Suzuki, ISSA Proceedings 1998",
+      "url": "https://rozenbergquarterly.com/issa-proceedings-1998-rhetoric-as-ideological-pronouncement-an-analysis-of-the-cardinal-principles-of-the-national-entity-of-japan/?print=pdf",
+      "usedFor": "Content of Kokutai no Hongi: divine emperor, harmony, loyalty and filial piety, critique of Western individualism."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "State-led welfare was adopted to blunt socialist appeal and to build a strong population, so state-provided care fits, though no source gives a health program.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Adherents backed worker welfare and class harmony but no source addresses wage floors; positions varied between Kita's labor rights and managerial control.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kokkashugi favored state direction of industry and criticized zaibatsu and the party politicians serving them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "public-ownership": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Advocates called for nationalization of strategic sectors; Kita proposed state-run national enterprises on the railway model.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Kita capped private wealth and criticized zaibatsu, implying heavy burdens on great fortunes, though taxation specifics are not documented.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "unions-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Class struggle was illegitimate; factory bodies mixing managers and worker representatives were preferred to independent unions, so autonomous unions were distrusted.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "property-fundamental": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kita's plan capped private property and the state could override it for national ends; property was subordinate to the nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The doctrine attacked zaibatsu power and wanted the state to direct industry.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "State welfare ideas were taken up to counter socialism and unify the nation; cutting welfare is not a stated aim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Socialist ownership was rejected; ownership belonged to the state or capped private hands, with class harmony instead of worker control.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The state was sacred and above private life; the 1925 Peace Preservation Law policed thought and dissent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Moral discipline and spiritual training were emphasized over individual liberty; drugs were not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not an issue in the doctrine; its stress on state suppression of disloyal speech is about dissent, not hate speech, so this is inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "strong-leader": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kita wanted a coup and an emergency regime under a powerful leader, and officers sought direct imperial rule over parliamentary gridlock.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state is held to be a sacred organic unity embodied in the emperor, the opposite of anarchism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; an order-minded state monopolizing force would favor strict control.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Militarism was central and the military was seen as protector of the national spirit.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Moral-spiritual training was promoted; no source addresses sex work, so inferred from its moralism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; both moral reform and harsh discipline fit the doctrine.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The nation was imagined as one great family, with filial piety a core virtue.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Anachronistic; the family-state and Confucian family ethics would reject it.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "abortion-legal": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; the state valued population and family strength, inferred rather than documented.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "more-religion-public": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "State Shinto and the imperial myth were fused with the state, giving public life a religious basis.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; collective national unity was preferred to group-remedial policy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-social-construct": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; traditional roles under the family-state are inferred.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Protecting kokutai and Yamato-damashii against Westernization was the central aim.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "gradual-change": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Advocates sought a Showa Restoration by coup, though framed as restoring the true kokutai; revolution from above rejects gradualism.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not directly addressed; Japan held colonial subjects within the empire while emphasizing a unique national community.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Japan left the League of Nations in 1933 and asserted its own leadership of Asia.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "free-trade": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "State direction of industry and an autarkic Asian bloc suggest opposition, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "nation-first": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "National and imperial interests overrode all else, including international cooperation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Intervention was justified by pan-Asian mission and security rather than human rights.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A unique national community bound by dynasty and territory rules out open borders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-growth": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Economic and military strength were national goals; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic and unaddressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic; adherents valued modern industry for national strength but stressed spirit over technique.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anachronistic; the pursuit of national power makes it likely.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Kita urged a military coup and the Shōwa Restoration movements justified violent action to restore direct imperial rule.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "experts-over-public": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Popular sovereignty was rejected in favor of rule by the emperor, officers and officials; technocratic Control Faction planning.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "central-planning": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The statist program favored state direction and planning of industry for national ends, though not full socialist planning.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "socialized-markets": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a topic; the doctrine rejected socialism but accepted state-owned sectors alongside private ones.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "land-value-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kita made urban land municipal property, but a single land tax is not part of the doctrine.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Kita capped private wealth, implying limits on inherited fortunes.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; welfare tied to national service rather than unconditional.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "State direction of industry and economic nationalism favor protecting domestic industry.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "State direction of industry toward national strategic ends was a defining economic feature.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kita capped property and spread wealth, yet nationalization pointed to the state, so adherents were split.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Socialism and communism were the doctrine's chief enemies.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State control of finance is incompatible with abolition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Factory bodies with managers and worker representatives and wartime industrial patriotic organizations reflect state-organized class cooperation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "one-party-rule": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Kita wanted parties banned, and the New Order Movement dissolved parties into a single state party, but the claimed guide was the kokutai rather than a party ideology.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The emperor, descended from Amaterasu, was the sacred source of sovereignty.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "democracy-best": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kokkashugi opposed parliamentary competition and popular sovereignty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-votes": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Popular sovereignty was rejected, making direct popular lawmaking unacceptable.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Class rule and socialist councils were opposed in favor of the imperial state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-secede": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state was a sacred unity and the empire held Korea and Taiwan.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "natural-rulers": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Rule belonged to the divine imperial line and its loyal servants, with a hierarchy of father and child.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "political-violence-never": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Coups and assassinations by officers were justified in the name of the emperor.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "war-builds-character": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Militarism and spiritual training were central, and war was justified as serving harmony.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "separate-church-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rejected the separation of state and society, politics and morality, and linked state to Shinto.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Law was grounded in the Shinto myth of imperial origin and Imperial Rescript, not scripture-based codes, so only loosely comparable.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Defense and justice belong to the sacred state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Military strength and Asian leadership were core goals.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Scholars distinguish it from ethnic nationalism: the nation is bound by dynasty, territory and tradition, and subject peoples were folded into the empire.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Class struggle was held illegitimate and was suppressed in favor of harmony.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Hierarchy under the emperor was accepted, though class gaps were criticized.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the state's authority over all territory is inferred, as in the Ainu case.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Japan was a colonial empire whose expansion was justified as a mission.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizational-union": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Pan-Asianism and Japanese leadership of Asia, culminating in the Greater East Asia Co-Prosperity Sphere, were central.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Duty and putting the nation before the self were taught over individual interest.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Natural individual rights were rejected in favor of collective unity, and the Rescript demands duties of subjects.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No source addresses nature's intrinsic value; Shinto reverence for nature existed but was not a political position of the doctrine.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "National strength and expansion favored a growing population; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Industry served national power, though critics blamed Westernized modernization for social ills.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a position; modernization served the state but disruption of institutions was resisted.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "human-enhancement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred from emphasis on tradition and state purpose.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic and unaddressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Anachronistic; a state above private life would reject it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Appeals to restoring the true kokutai, though proponents also sought a new order.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "results-over-ideology": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Policy was subordinated to kokutai doctrine and moral conviction.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "direct-action": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Officers and activists used coups and assassinations to bypass parliament.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "means-match-ends": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Strongly opposed given its industrial and imperial ambitions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A hierarchical organic state with fixed roles opposes this.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Socialist distribution was rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "production-for-use": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Production for national strength was the aim, but the doctrine opposed socialism and kept private profit in part.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Marxist analysis was rejected, though zaibatsu profiteering was attacked on nationalist grounds.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communism was the enemy and the Peace Preservation Law targeted it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-farming": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; Kita's and others' rural ideas tended toward the nation, not collectives.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Capitalists were attacked as selfish, but imperialism was justified, not condemned.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state is sacred and its claims on subjects absolute.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "harm-principle": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rejected the separation of public and private and of politics and morality.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "individual-rights-only": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Natural individual rights were rejected for collective unity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "conscription": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Subjects were to defend the state, as the Rescript directs, and militarism was central.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "exit-over-voice": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Exit is incompatible with a sacred organic state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-as-business": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state is a sacred community, not a service company.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "positive-liberty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not framed as freedom; the state guaranteed welfare but liberty claims were rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; though hostile to liberal intellectuals and party politicians.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "hereditarian-race": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kokkashugi centered on kokutai rather than race science, though it ranked Japan as leader of Asia.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "organic-representation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Rejected parties for an organic unity; nothing documents family or trade-body assemblies precisely.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "total-state": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Rejected separation of state and society, politics and morality; the state governed culture, education and economy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-rebirth": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Shōwa Restoration aimed at renewing the nation against decadent party politics and zaibatsu.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "territorial-expansion": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Expansion, pan-Asianism and hakkō ichiu were central, with Kita calling Japan an international proletariat.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Authority rested on loyalty of subjects to the emperor in a father-child bond.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "bound-labor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Feudal bound labor is not addressed; the doctrine rejected Meiji-era class privilege in general but sources give no stance on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Education was to serve kokutai; knowledge bent to state truth, though not stated in these terms.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "universal-morality": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Morality was bound to the Japanese kokutai and its myth, contrasted with Western universalism.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "single-common-good": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "A single organic unity with harmony replacing group competition.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The issue lies wholly outside the doctrine's concerns and sources, so it is left neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by any source on the doctrine; no stance can be inferred from its principles.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Japanese was never a lapsed language; the doctrine has no position on reviving one, so it is neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workplace-democracy": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Class cooperation in management bodies, not democratic control.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "school-vouchers": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The state controlled education to instill kokutai through the Rescript.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "State-led industrial and military spending favored.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-freedom": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State direction of industry takes precedence over economic liberty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rule-by-example": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Rescript and Kokutai no Hongi rest on imperial virtue and moral example, though punishments were also used.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "national-self-determination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Japan's own sovereignty yes, though subject peoples were absorbed into the empire.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-without-un": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Japan left the League and acted unilaterally in Manchuria and China.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reason-over-faith": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Faith in the kokutai was required over logic and reason, per the committee that drafted Kokutai no Hongi.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "State welfare for the national community; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Service and duty to the nation are emphasized; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-collaboration": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Harmony and cooperation of employers and workers replaced class struggle.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Preserving national heritage and kokutai was central.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Pan-Asian solidarity against Western dominance was a core theme, and Kita proposed liberating Asia.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "workers-nation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The working class was to be integrated into the nation, not an international class.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Family-state ethics imply it; inferred.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "ban-interest": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; finance was criticized but interest not banned.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Subject peoples were meant to be assimilated into the empire rather than segregated by law, per Kita's plan.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state stands above class as a sacred unity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Energy self-sufficiency for national power; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Colonial subjects were assimilated through imperial education; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of the doctrine.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Party competition and parliamentary politics were rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Japan was to lead and uplift Asia, though more by pan-Asian leadership than exporting its government.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Hierarchy was seen as natural order rather than a wrong.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Party politicians and zaibatsu were attacked as corrupt and self-serving.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Eugenic policy is not documented as part of the doctrine's program, though state control of population fits some strands.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The military was protector of the state and above civil accountability.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The doctrine called for a total state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a stated aim, and Kita's empire granted equal rights to subject peoples.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Hierarchy of subjects under the emperor and rejection of natural rights.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "socialism-one-country": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Socialism itself was rejected, so this does not fit.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The doctrine advanced settler expansion and an empire.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Uniform state authority over all subjects; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; State Shinto demanded shrine participation but conversion law is not documented, so neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a Shinto-Buddhist Japanese issue.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State education instilled State Shinto ideas through the Rescript.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Socialist premise; not applicable.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "consent-of-governed": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Sovereignty rests in the emperor and state, not popular consent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "trade-surplus": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Economic nationalism and autarky; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "population-transfer": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not documented as a doctrine position; the empire moved populations in practice but sources cited here give no stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Harmony, not struggle, is the ideal, though peoples' competition over Asia was accepted.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Peace Preservation Law outlawed groups opposing the kokutai, and parties were later dissolved.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Absolute authority of the emperor-state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separated-powers": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Sovereignty is unitary in the emperor; Kita's emergency regime suspended the Diet.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "vanguard-party": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Communist theory rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "priority-to-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Welfare was framed for national unity, not priority to class.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A British housing question with no counterpart in the doctrine or its sources, so neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Class struggle was illegitimate and labor disputes suppressed.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Poverty was blamed on zaibatsu and party politics.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Unique community unity valued; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rule by emperor and officials, not lot.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kita's coup and emergency regime and wartime measures.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "party-controls-media": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Wartime state control of information and thought, though under a state not a party.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-commands-army": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The army was loyal to the emperor, not a party.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; citizenship rules played little role in the sources, so neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Kita did not specify legislator pay in the parts of his plan consulted, so neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Parties were opposed; the point is moot.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "National sovereignty and withdrawal from the League.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The emperor held supreme command, and officers wanted direct imperial rule.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Episcopal church governance has no counterpart in State Shinto or the doctrine, so neutral.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "clerical-rule": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Authority belonged to the emperor, and Shinto priests were subordinated.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Loyalty to the state in war.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Thought was policed for moral and national ends.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an elective office.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recall-officials": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Popular sovereignty rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Japan did ally with Germany and Italy while seeking Asian leadership; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Kita made urban land municipal property, though not abolishing rent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "people-in-arms": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The professional military was prized, though spiritual mobilization of the people was also taught.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Agrarian strands existed within Japanese nationalism; contested.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Japan was not a divided nation, and no source gives a stance on others.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anti-liberal intellectual rhetoric existed but isn't documented here.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Japan was unique and the leader of Asia.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "death-penalty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Order and state authority; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Education served kokutai and moral discipline; inferred.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Imperial myth was taught as history, a loose analogue; judged neutral on Christian creationism.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Moralism of the state; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Dynasty and tradition bind the nation, but colonial subjects were also made subjects.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "minority-language-support": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Colonial assimilation via Japanese education; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-exemptions": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Shrine participation was demanded of all subjects.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Individualism and nonconformity were opposed.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the doctrine opposed Western finance, but no source states a position on debt relief.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Kita linked national renewal to economic reorganization.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "constituent-assembly": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kita would suspend the constitution by emperor, not by an elected assembly.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "State direction trumped liberties for national power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of nationalist aims.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anachronistic; independent military power inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The emperor's line is the source of rule.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "central-bank-independence": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State direction of finance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Territory held by empire was not relinquished; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Property was subordinate to the national unity and caps proposed.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the USSR was just an enemy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "precautionary-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic environmental principle never discussed by the doctrine, so neutral and low confidence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Alliances with Axis; inferred from the Anti-Comintern alignment, weakly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Annexations were justified, as in Korea.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state is a centralized sacred unity under the emperor, with no place for devolved authority.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Militarism and expansion were central, and force against others was justified as national or Asian mission.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "State direction of the economy for national ends suggests acceptance of wartime price controls; no source states it directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The unbroken imperial line descending from Amaterasu is the core of kokutai.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "State Shinto stood above other religions and the state supervised religious bodies, and the kokutai ideology put the national polity first; inferred from that.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The emperor was the sacred centre of the kokutai, standing above class, parties and factional competition, which kokkashugi opposed.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Kokkashugi prized military strength and national unity under the emperor, so keeping the empire together by force is inferred; no source addresses secession.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "region-keeps-system": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The organic unity of one polity under one emperor points to assimilation rather than preserved local systems; inferred from that.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "flat-income-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kokkashugi favoured state direction of the economy but no source states a tax-structure position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "character-from-environment": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The Imperial Rescript on Education assumes moral character is formed through schooling and loyal service, which is the basis for this inference.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The emperor was sacred and sovereign and kokutai stood above individual rights, so rulers were not seen as bound like ordinary subjects; inferred.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "space-expansion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic; the ideology's expansion was territorial and Asian, not spatial, so no inference is possible.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Kokkashugi opposed party competition and liberal parliamentarism, favouring unity centred on the emperor; blended rule is inferred to be disliked.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "leader-cult": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The emperor was treated as sacred and embodiment of the nation, with mass reverence at his portrait and for the Rescript, which kokutai doctrine required.",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    "equal-parenting": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The family-state ideal and filial piety upheld paternal authority, so a presumption of equal time is inferred to be rejected.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kokkashugi stressed harmony between employers and workers and opposed socialism and communism, rejecting class struggle.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "land-redistribution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kita Ikki's plan capped private holdings but other adherents protected property, so views split; no source covers land reform.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "refugee-return": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No source addresses refugee return; none can be inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the pan-Asian expansionism of Kita and Okawa, which sought Japanese leadership beyond its borders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: state Shinto and imperial reverence were demanded of subjects, but no source documents punishment for leaving a religion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "women-must-cover": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: traditional family morals were stressed, but no source documents a dress mandate.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "common-currency": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the later yen bloc of Japanese-led Asian union; no source addresses a currency directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Okawa's Pan-Asianism, which called for unity of Asian peoples under Japan.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the doctrine pursued a unified national polity and assimilation, not minority self-government.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No source addresses minority strategy; none can be inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The doctrine rests on spiritual kokutai, loyalty and the divine emperor, and opposed Marxism and its materialist view of history.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-cartels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kita planned to break up concentrated wealth, but state-cooperating cartels were favored by other adherents; no source settles it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-bailouts": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: state direction of the economy implies state rescue of key firms.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the doctrine put the emperor and state above parties and majority rule.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from its stress on family, filial piety and traditional roles; no source addresses quotas.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the push for an Asian bloc under Japanese leadership and state economic direction.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: no source on trade conditions, but the doctrine subordinated labor to state harmony and rejected outside norms.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "moral-incentives": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the Rescript on Education and Kokutai no Hongi stress on loyalty, service and sacrifice over self-interest.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Kita Ikki's Outline Plan called for a military coup, and Showa Restoration officers staged coups to trigger change.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the sacred hereditary imperial line anchored the order, though Kita proposed abolishing the peerage.",
+      "sources": [
+        "s1"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "The head of state should be regarded as sacred and descended from the gods.",
+      "value": 2,
+      "rationale": "The unbroken imperial line descending from Amaterasu is the core of kokutai.",
+      "sources": [
+        "s1",
+        "s4"
+      ],
+      "addedAs": "sacred-ruler"
+    }
+  ],
+  "notes": "Wikipedia is used for the stated strand; Kita Ikki's national-socialist plan differs from the Control Faction's bureaucratic statism, and Kita's wealth caps are not shared by all adherents."
 }

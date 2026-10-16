@@ -1,1965 +1,2145 @@
 {
- "id": "traditionalist-conservatism",
- "name": "Traditionalist conservatism",
- "auditedAt": "2026-10-15",
- "auditor": "claude-sonnet-5-5",
- "summary": "Traditionalist conservatism holds that society rests on a transcendent moral order and on customs, institutions and hierarchies inherited across generations. It prizes family, religion, local community and property, prefers gradual change guided by prudence, and distrusts abstract reason, centralization and utopian projects.",
- "scope": "The Burke to Kirk line: Burke's Reflections, Kirk's Conservative Mind and ten principles, with Scruton, Eliot and the Distributist and Southern Agrarian critics of industrial capitalism as documented in reference works. It excludes the market-led fiscal conservatism of recent party politics and treats de Maistre's reactionary strand as a variant.",
- "wikipedia": "https://en.wikipedia.org/wiki/Traditionalist_conservatism",
- "furtherReading": [
-  {
-   "title": "Ten Conservative Principles",
-   "url": "https://kirkcenter.org/conservatism/ten-conservative-principles/",
-   "note": "Kirk's own short statement of the creed."
-  },
-  {
-   "title": "Conservatism (Stanford Encyclopedia of Philosophy)",
-   "url": "https://plato.stanford.edu/entries/conservatism/",
-   "note": "Rigorous introduction to conservative thought and its variants."
-  },
-  {
-   "title": "The Conservative Mind (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/The_Conservative_Mind",
-   "note": "Overview of Kirk's book that shaped the modern movement."
-  }
- ],
- "keyFigures": [
-  {
-   "name": "Edmund Burke",
-   "role": "Eighteenth-century statesman whose Reflections is the founding text of the tradition.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Edmund_Burke",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  {
-   "name": "Russell Kirk",
-   "role": "American author of The Conservative Mind and the ten principles.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Russell_Kirk",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  {
-   "name": "Joseph de Maistre",
-   "role": "Counter-revolutionary thinker of the stricter, authority-centred strand.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Joseph_de_Maistre",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "primary",
-   "title": "Ten Conservative Principles",
-   "author": "Russell Kirk (Russell Kirk Center)",
-   "url": "https://kirkcenter.org/conservatism/ten-conservative-principles/",
-   "usedFor": "Kirk's canonical statement of moral order, prescription, prudence, variety, property, voluntary community and restraint of power."
-  },
-  {
-   "id": "s2",
-   "kind": "scholarly",
-   "title": "Conservatism",
-   "author": "Stanford Encyclopedia of Philosophy",
-   "url": "https://plato.stanford.edu/entries/conservatism/",
-   "usedFor": "Scholarly account of tradition, authority, organic society, democracy, equality, markets and conservative variants."
-  },
-  {
-   "id": "s3",
-   "kind": "reference",
-   "title": "Traditionalist conservatism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Traditionalist_conservatism",
-   "usedFor": "Overview of thinkers, natural law, hierarchy, family, localism, distributism, high culture and religion."
-  },
-  {
-   "id": "s4",
-   "kind": "primary",
-   "title": "Reflections on the Revolution in France",
-   "author": "Edmund Burke (Wikisource)",
-   "url": "https://en.wikisource.org/wiki/Reflections_on_the_Revolution_in_France",
-   "usedFor": "Burke on reverence for antiquity, property, moral equality versus political equality, and rejection of constitution-making from first principles."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists are split: Disraeli-style one-nation paternalists accept state provision while Kirk-style localists distrust central programmes; the texts do not settle it.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed by the canonical texts; Kirk's distrust of centralized economic direction suggests a mild lean against national wage-setting, though Ruskin-style critics of the cash nexus pull the other way.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditionalists accept markets under property but, per SEP and Wikipedia, treat capitalism as suspect and subordinate to custom and morals, so they do not endorse this strongly.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "public-ownership": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Kirk ties liberty to private property as a check on Leviathan, so nationalizing major industries runs against his principle, though some Tory paternalists accepted it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Kirk defends property and natural inequalities of condition, but nothing in the canon addresses top tax rates, so this is inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "unions-good": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists admire guild-like voluntary associations (Distributists, Burke's platoons) yet distrust class-based militancy; adherents are split.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "property-fundamental": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's seventh principle says freedom and property are closely linked and that without private possession Leviathan becomes master of all; Burke likewise names the solidity of property.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "regulate-corporations": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Distributists and Carlyle attack big business and the cash nexus, while Kirk-style conservatives resist central regulation, so adherents are genuinely split.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "cut-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists favour private and church charity over state programmes, but paternalist strands accept a safety net; no settled position.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "worker-ownership": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Distributism favours widely held small property, but mandated collective worker ownership is not part of the canon and cuts against Kirk's view of property.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "surveillance-ok": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Order is valued, but Kirk's principle of restraining power makes adherents wary; the texts predate the question.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "legalize-drugs": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Traditionalists defend a moral order and custom against permissiveness, and Wikipedia lists traditional moral values as central, so they lean against legalization.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "restrict-hate-speech": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed directly; distrust of new state powers and of legislated ideology suggests a lean against, but order-minded traditionalists vary.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "strong-leader": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Kirk's ninth principle demands checks and balances on power, and traditionalists favour inherited institutions over a leader bypassing them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-harmful": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists accept authority as natural and necessary; Kirk says power cannot be abolished and must be restrained, not removed, and Scruton holds obedience to be the basis of freedom.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "limit-guns": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not part of the canon; traditionalists value local custom and ordered liberty and are split on gun control.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Order is preferred to chaos in the tradition, but Kirk also fears concentrated power, so support is mild and inferred.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "legalize-sex-work": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Traditionalists defend inherited moral order and the family, so sex work is generally opposed as a moral matter.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "decide-locally": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's eighth principle holds that local voluntary communities sustain freedom and centralization threatens it; Burke's little platoons are the ideal.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "rehabilitation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists value just punishment and order (de Maistre defended the executioner) yet also moral reformation of persons; no settled view.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "traditional-family": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The family is described as the bedrock of society in the tradition, from Bonald's essay on divorce onward.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "same-sex-marriage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Traditional moral values and the inherited family form are central, so most traditionalists oppose redefining marriage, though this is applied by inference to a modern question.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "abortion-legal": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Enduring moral order and religious grounding of society lead traditionalists to oppose abortion in most cases; inferred from natural law foundations.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "more-religion-public": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's first principle roots order in a transcendent moral order and a community of souls, and SEP notes many conservatives value established religion; Kirk criticized secularization of government.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditionalists resist remaking society by abstract egalitarian programmes and favour gradual, organic remedy; the issue is anachronistic to the canon.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "gender-social-construct": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Kirk holds human nature constant and moral order permanent, and traditionalists defend inherited sex roles as grounded in nature rather than invention.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "preserve-national-culture": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Custom, convention and continuity are Kirk's second principle, and defending inherited culture is core.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "gradual-change": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's fourth and tenth principles call for prudence and gradual change within the society's form; Burke said reform should proceed from reverence for antiquity.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "reduce-immigration": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not a canonical topic, and Wikipedia notes only a defence of minority cultures; the concern for continuity suggests a lean to restriction but adherents differ.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Preference for local and national inherited institutions and Kirk's warning against centralization imply distrust of transferring power upward.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "free-trade": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists are split between market acceptance and Distributist or agrarian localism; the canon does not settle it.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "nation-first": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Patriotism is a virtue but the tradition distinguishes loyalty from jingoism, and universal moral order qualifies pure national self-interest.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "humanitarian-intervention": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Prudence and distrust of abstract universal projects counsel against crusading intervention; inferred from Kirk's prudence principle.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-borders": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Open borders conflict with rooted communities, custom and nation as inherited bodies, which traditionalists defend.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "limit-growth": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists favour stewardship and distrust industrial disruption, but not an explicit growth limit; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Stewardship appeals to some, but sweeping government programmes and utopian engineering conflict with prudence and decentralization; inferred.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Kirk's imperfectability principle holds that no perfect order can be built and that humans have lasting flaws, so progress-as-salvation is rejected.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the tradition has no settled view on energy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revolution-justified": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Burke's Reflections opposes revolutionary rupture, but allows change to preserve the state and recognizes the Glorious Revolution; so a qualified disagreement.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "experts-over-public": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists trust inherited wisdom and natural leadership more than abstract expertise or headcounts; Burke favoured qualified representation, but they do not endorse technocracy.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "central-planning": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk's eighth and ninth principles reject centralization; SEP notes conservatives' wariness of central planning and utopian engineering.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "socialized-markets": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not a traditionalist topic; the proposal rests on public or worker ownership of enterprise, which cuts against Kirk's private property principle.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "land-value-tax": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed, and inferred hostility to novel schemes that disturb inherited property claims.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tax-inheritance": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Burke's inheritance and Kirk's prescription treat inherited property as the link between generations, so heavy taxes on it are opposed.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "basic-income": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; paternalists and Distributists favour property and work over a state stipend, and Kirk distrusts central programmes.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "tariffs-protect-industry": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Distributists and agrarians favour protecting local economies while others accept markets; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "state-directs-investment": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred from Kirk's opposition to centralization and trust of local, voluntary arrangements.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Distributism, a traditionalist offshoot, favours small owners, craftsmen and agrarian life, and Kirk stresses widely held private property as civilization's support.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk's property and variety principles and the tradition's acceptance of inequality of condition are fundamentally opposed to abolishing money.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; reverence for established institutions makes abolition unlikely though not core.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "corporatist-bargaining": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Guild-like organic representation attracts some traditionalists, but state-recognized bodies setting wages are not canonical; split.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "one-party-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "A single ideological party guiding the state contradicts Kirk's check on power and the preference for inherited institutions over ideology.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Wikipedia names monarchs among natural fathers of authority, and Burke defended the inherited constitution including the Crown; many traditionalists see monarchy as legitimate while not requiring it.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "democracy-best": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "SEP says conservatism is not inherently anti-democratic and acceptance depends on conditions, but Burke doubted headcount defines the people's will; hence a mild disagreement with the strong claim.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "direct-votes": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Burke favoured qualified representation and distrusted majority headcounts; direct plebiscites on law cut against prudence and tradition.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "workers-councils": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Councils replacing parliaments is a radical break with inherited institutions that Kirk and Burke oppose.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "right-to-secede": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; reverence for the inherited polity weighs against dissolving it, though localism pulls the other way.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "natural-rulers": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's variety principle and the tradition's view that leadership and authority are natural support this; Wikipedia describes natural hierarchy and natural leaders.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "political-violence-never": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Traditionalists are not pacifists but prize order and prudence; absolute claims split them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "war-builds-character": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of the canon; prudence and moral order make glorifying war uncommon, though some defend martial virtue.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separate-church-state": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Kirk criticized secularization of government and the tradition values established religion; strict separation is opposed.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "laws-from-scripture": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Natural law and transcendent order inform law and integralists want religious principles in public law, but most traditionalists ground law in natural law and custom rather than scripture directly.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "private-courts-defense": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Order and justice are tied to the state and inherited institutions, and equal justice before a just court is a core form of equality; privatization is libertarian.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-superiority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the canon.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ethnic-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Tradition emphasizes inherited culture and religion and not race; scholars note nationalism is distinct, and adherents differ.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "class-struggle-history": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists see society as organic with interdependent ranks, not engaged in class conflict as the driver of history.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "equal-outcomes": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk accepts only equality before God and the law and holds that levelling destroys variety; Burke called political equality a monstrous fiction.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; local custom is valued but the question is anachronistic.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-reparations": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Anachronistic; inferred from distrust of abstract egalitarian restitution schemes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizational-union": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Dawson and Eliot defend civilizational heritage, but political union is not a canonical aim.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "self-interest-moral": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists hold virtue, duty and the moral order above self-interest, and criticize the cash nexus.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "duties-before-rights": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Burke rejected abstract rights for inherited duties and obligations, and Kirk stresses a community of souls with mutual obligations.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "nature-intrinsic-value": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Stewardship is part of the tradition, but intrinsic value of nature is not an explicit canon claim.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "limit-population": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred from the family-centred outlook and distrust of state programmes of social engineering.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "industrial-civilization-disaster": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Carlyle, Ruskin and Southern Agrarians criticized industrialism, but Kirk-style mainstream does not call it a disaster; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "accelerate-technology": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Speeding up disruptive change contradicts Kirk's prudence and Burke's gradualism.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "human-enhancement": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Imperfectability and a constant human nature make enhancement projects suspect.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "algorithmic-government": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Practical reason and inherited judgment are preferred over abstract rational systems, so handing government to algorithms is opposed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "unbreakable-encryption": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neither the Burkean canon nor Kirk's principles address digital privacy, and order-minded and liberty-minded traditionalists would split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restore-past-order": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Reactionary strands like de Maistre want restoration, but Burkean traditionalists seek continuity not return; so a mild lean.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "results-over-ideology": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Kirk's prudence principle judges policy by long-run consequences, and Oakeshott called conservatism a disposition not a doctrine.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "direct-action": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Change through disruption of institutions contradicts custom, order and gradualism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "means-match-ends": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a question traditionalists frame this way.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Civilization and its accumulated inheritance are what traditionalists wish to conserve.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk's variety principle affirms differentiated orders and classes, so abolition of divisions is rejected.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "distribute-by-need": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk accepts natural inequalities of condition and property tied to desert and prescription.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "production-for-use": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditionalists criticize pure profit-seeking but would not abolish the profit system by planning.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "profit-exploitation": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists reject the Marxist theory of class exploitation and defend property.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "A class dictatorship is contrary to law, order and checked power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-farming": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk's property principle and the agrarian tradition favour independent owners over collectives.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Traditionalists reject Marxist theories of history, though they criticize capitalism on moral grounds.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "taxation-theft": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists accept legitimate authority and its necessary powers; Scruton ties freedom to obedience.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "harm-principle": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Moral order, not only harm to others, grounds law for traditionalists, who oppose Mill's liberal principle.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "individual-rights-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Burke rejected abstract individual rights and the tradition sees society as a community of families, bodies and generations.",
-   "sources": [
-    "s4",
-    "s2"
-   ]
-  },
-  "conscription": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Duty to the community is valued, but central power is feared; no settled position.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "exit-over-voice": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Rooted membership in an inherited community is prized over exit as a check; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-as-business": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The tradition sees the state as a partnership across generations, not a commercial venture.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "positive-liberty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Ordered liberty in Burke and Kirk is tied to property and law rather than to guaranteed material means.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "media-academia-power": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a canonical claim; some conservatives assert it but the tradition does not centre on it.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "hereditarian-race": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditionalists do not found their position on race; Kirk-type conservatives stress moral order, and the claim is not in the canon.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "organic-representation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Burke's little platoons and Wikipedia's organic, estate-like society favour representation through families and communities, though parties are tolerated in practice.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "total-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Traditionalists want the state to enable families and churches, not replace them.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "national-rebirth": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Radical rebirth is a revolutionary idea opposed to continuity; they prefer organic growth.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "territorial-expansion": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Prudence and the sense of rooted community weigh against expansionism, though not stated directly.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Feudal oath-based rule is admired by few modern traditionalists but organic authority is valued; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "bound-labor": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Hierarchy is accepted, but legally bound labor is not advocated by mainstream traditionalists.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "no-neutral-knowledge": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Traditionalists defend universal moral truths and transcendent order, not power-relative truth, though they stress tradition shapes knowledge.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "universal-morality": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's first principle states human nature is constant and moral truths permanent; natural law is a pillar.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "single-common-good": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Natural law traditions seek a common good, though Burkean prudence doubts a single rationally derived blueprint.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "jewish-state-israel": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not part of the tradition.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "diaspora-return-right": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the tradition.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "revive-national-language": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Valuing heritage supports it, but the question is not canonical.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "workplace-democracy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Corporate governance by votes of the public conflicts with property and hierarchy; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "school-vouchers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Localism and parental rights favour choice but traditionalists are split on public funding.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "avoid-deficit-stimulus": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Burke's concern for the unborn generations and prudence suggest caution about debt; inferred.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "economic-freedom": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Kirk links freedom and property, but traditionalists doubt that markets alone sustain liberty.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "rule-by-example": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Traditionalists prize virtue in rulers and moral authority, though they do not abandon law.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "national-self-determination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Nations are prized as inherited communities, but the principle of universal right is a liberal claim; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "force-without-un": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The canon says nothing on Security Council authority; prudence argues for caution while patriotism favours national discretion.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reason-over-faith": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk grounds order in religion and transcendent order, and the tradition criticizes rationalism, preferring practical reason and inherited prejudice.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "welfare-for-citizens": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The texts do not address welfare eligibility, and the community-first outlook is offset by the duty of charity.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "work-for-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No settled position.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "class-collaboration": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Disraeli's one nation and the organic view hold ranks interdependent and cooperative rather than opposed.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Preserving inherited cultural institutions is a defining commitment; the tradition defends the classical canon.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "dominated-front": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "An anti-Western bloc is outside the Burke-Kirk tradition, which defends the Western inheritance but is silent on this alignment.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "workers-nation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Class is seen as part of the nation, not an international class, but the topic is not central.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "distinct-gender-roles": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Traditionalists defend inherited sex roles in the family, but legal prescription is less clear.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "ban-interest": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of Western traditionalism generally, though medieval and Distributist critics of usury exist.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Kirk's equality before a just court of law and moral order oppose legal racial classification; not a canonical position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-class-instrument": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Marxist theory of the state is rejected; the state is part of an organic order.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Energy policy is outside the canon; stewardship concerns and distrust of central direction pull in opposite directions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Cultural continuity suggests this, though Wikipedia cites a defence of minority language and faith.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "elite-replacement": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "A conspiracy claim not found in the canon.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "proportional-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Electoral systems are not discussed; Burke's view of representation does not decide between list and constituency systems.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "national-mission": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Prudence, imperfectability and rootedness counter exporting regimes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Traditionalists accept natural distinctions and defend traditional family arrangements, rejecting structural oppression claims.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "political-elite-corrupt": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "They value natural leaders yet are suspicious of power; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "State eugenics conflicts with moral order and the family; not central.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The tradition values order and law but has no stated view on prosecuting past state abuses, and adherents would split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "night-watchman-state": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Traditionalists want the state to uphold moral order and enable communities, not a minimal state.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not a canonical position; moral order and equal moral standing reject it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Kirk accepts equality at the Last Judgment and before a just court, but not equality of condition, so agreement is qualified.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "socialism-one-country": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not their debate, but socialism is rejected.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The canon does not address settler states, and inherited-order arguments cut both ways on whether such states are legitimate.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "uniform-civil-code": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Equality before a just court favours uniform law, but respect for religious custom favours separate personal law; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-conversion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; religion matters but liberty and custom do not require this.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "ban-cattle-slaughter": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of Western traditionalism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "no-religion-state-schools": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Religion is part of the moral order and education centred on classics and faith, so removing it is opposed.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "consent-of-governed": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Burke rejected the social-contract basis of legitimacy; authority rests on prescription and inheritance.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "trade-surplus": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Mercantilist targets are not part of the tradition, and Distributists and market-accepting conservatives would differ.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "population-transfer": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Contrary to moral order and justice, and not part of the canon.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The tradition rejects Social Darwinist progress and doubts progress as a master concept.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "ban-extremist-parties": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Defence of the constitutional order supports it, while distrust of state power opposes it; the texts are silent.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-as-non-domination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A republican concept not in the canon.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "separated-powers": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Kirk's ninth principle explicitly calls for checks and balances on power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "vanguard-party": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Revolutionary vanguard rejects tradition and gradualism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "priority-to-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Charity is a duty, but legal priority is not canonical; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Widely held property is favoured, so ownership is supported.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "restrict-strikes-picketing": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Industrial relations law is not covered by the canon, and guild admirers and property defenders would split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; traditionalists locate poverty in morals and institutions.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Natural leadership and qualified representation oppose sortition.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; central direction distrusted.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-controls-media": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Total control conflicts with restraint of power and independent institutions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-commands-army": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Party command contradicts inherited institutions and checks on power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "long-naturalization-wait": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "A rooted view of membership suggests this, but it is inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; natural leaders are not tied to worker pay.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-discipline-binding": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Burke defended representatives' independent judgment over binding instructions, but I am inferring this from the Burkean strand.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "pool-sovereignty": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Inherited national institutions are valued and centralization feared.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "head-commands-forces": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The Burkean constitution divides powers among Crown and Parliament, but Kirk gives no rule on who commands the forces.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "church-by-bishops": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anglican and Catholic strands support bishops, others don't; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "clerical-rule": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Religion informs law but theocracy is not the position of most traditionalists.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "defeat-own-government-war": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Loyalty to nation is a virtue, and revolutionary defeatism is rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Moral order is valued, but the tradition prizes high culture; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "unlimited-reelection": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Checks on power and constitutional continuity suggest term limits are not rejected.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recall-officials": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Burke defended representatives' independence from instructions, so recall is disfavoured.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "end-foreign-alliances": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance policy is not addressed by the canon, so prudence is the only guide and it cuts both ways.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-rental-housing": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Prohibiting contract and rent contradicts property rights.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "people-in-arms": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A militia ideal fits localism, but the tradition does not discuss replacing professional armies.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rural-life-healthier": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Southern Agrarians and Distributists extolled agrarian life and traditional community.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Attachment to historic communities supports reunification but prudence counsels caution; the texts are silent.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a canonical claim; the tradition values classical education.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Defenders of the classical Western tradition and high culture hold some civilizations achieved more.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "death-penalty": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "De Maistre defended the executioner and order; mainstream traditionalists accept capital punishment for grave crimes.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "sex-ed-in-schools": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditional morals and family priority suggest scepticism; inferred.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "creationism-in-schools": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Religion is valued, but Burkean learning favours classical curricula; split.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "restrict-pornography": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Moral order and the moral character of citizens are central, so legal restriction is supported.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Inherited belonging suggests descent, but the canon does not rule on citizenship law.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "minority-language-support": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Wikipedia cites a defence of minority language, but not a general position.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "religious-exemptions": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Respect for religion as a source of order supports exemption, but it is inferred.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "encourage-eccentricity": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Mill's thesis is the liberal counter to Kirk's custom, convention and continuity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sovereign-debt-cancellation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred from respect for inherited obligations and property.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Radical transformation of property is opposed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "constituent-assembly": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Burke attacked rewriting the constitution from first principles in the National Assembly.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "restrict-freedoms-for-growth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; ordered liberty is valued.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Charity is a duty but duties are rooted in local community first.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Nuclear strategy is outside the canon, and patriotic self-reliance and alliance prudence would both be invoked.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-election-head-of-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inherited and mixed constitutions are favoured over plebiscitary heads of state.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "central-bank-independence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The tradition has no stated view on monetary institutions, and adherents would split between inherited institutions and distrust of finance.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Attachment to the historic homeland is respected, but prudence favours settlements; the texts are silent.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "property-serves-common-good": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Kirk says property is a pillar of liberty; Catholic and Distributist strands say property serves common good; split.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; traditionalists regard the USSR as tyranny.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "precautionary-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Prudence suggests caution but no stated stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-defense": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance obligations are not discussed, and loyalty to allies is weighed against prudence about entanglement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "annexed-territory-occupation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Questions of annexation and consent are not addressed, and Burke rejected consent as the basis of authority.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Traditionalists hold the church as a pillar of order and oppose secular subordination.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "nonpartisan-head-of-state": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Wikipedia lists monarchs and fathers as natural authorities; unifying symbolic headship fits the Burkean constitution.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Reverence for the inherited polity favours the union, but localism and prudence weigh against force; the texts are silent.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "region-keeps-system": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed, though localism favours autonomy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacred-ruler": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Kirk's tradition values reverence for authority but not divine descent.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "flat-income-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Tax design is not covered by the canon, and traditionalists lack a settled view on flat versus graduated rates.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "character-from-environment": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Kirk holds human nature to be constant and flawed, which implies innate limits.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sovereign-above-law": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Kirk calls for restraint on power, and equality before a just court of law.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "space-expansion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not a concern; imperfectability and prudence suggest scepticism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mixed-constitution": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Burke and Kirk favour balance among ranks and checks, resembling the mixed constitution.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "state-strengthens-encirclement": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "A socialist state is not an aim of the tradition, and Kirk calls for restraining power rather than strengthening it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "initiating-force-wrong": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Traditionalists accept legitimate state coercion for order and justice, so an absolute ban on initiating force is not their position.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Concern for shared custom favours agreement, but Kirk prizes variety within society, and sources do not give a ruling.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Kirk's ninth principle demands limits on power and equality before a just court, though order-minded traditionalists accept some emergency powers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "leader-cult": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed directly; inferred from Kirk's call to restrain power and Burke's distrust of personal glorification, which lean against mass praise of a leader as the nation's embodiment.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "equal-parenting": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the canonical texts; inferred from the emphasis on family and prudence, which supports shared parenting in principle but also favours judgment over a fixed legal rule, so adherents are split.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  }
- },
- "missingStatements": [
-  {
-   "text": "Moral and political order rests on a transcendent source, such as divine law or natural law, that no government or majority may override.",
-   "value": 2,
-   "rationale": "Kirk's first principle and the natural law foundation make a transcendent moral order the base of the ideology.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "addedAs": "universal-morality"
-  },
-  {
-   "text": "Inherited customs and long-established claims deserve more weight in politics than one generation's private reasoning.",
-   "value": 2,
-   "rationale": "Kirk's third principle on prescription and Burke's reverence for antiquity place this at the centre.",
-   "sources": [
-    "s1",
-    "s4"
-   ],
-   "addedAs": "gradual-change"
-  },
-  {
-   "text": "A healthy society needs distinct ranks and classes, and enforced levelling destroys freedom.",
-   "value": 2,
-   "rationale": "Kirk's fifth principle (variety) accepts only equality before God and the law.",
-   "sources": [
-    "s1"
-   ],
-   "declined": "Already placed by equal-outcomes, natural-rulers and traditional-family answers; a separate ranks-and-classes statement would be answered by almost no other audits distinctively."
-  }
- ],
- "notes": "Answers follow the Burke-Kirk mainstream. De Maistre's reactionary strand would answer restoration, authority and clerical questions more strongly, and Oakeshott's secular strand would weaken the religion answers."
+  "id": "traditionalist-conservatism",
+  "name": "Traditionalist conservatism",
+  "auditedAt": "2026-10-15",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Traditionalist conservatism holds that society rests on a transcendent moral order and on customs, institutions and hierarchies inherited across generations. It prizes family, religion, local community and property, prefers gradual change guided by prudence, and distrusts abstract reason, centralization and utopian projects.",
+  "scope": "The Burke to Kirk line: Burke's Reflections, Kirk's Conservative Mind and ten principles, with Scruton, Eliot and the Distributist and Southern Agrarian critics of industrial capitalism as documented in reference works. It excludes the market-led fiscal conservatism of recent party politics and treats de Maistre's reactionary strand as a variant.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Traditionalist_conservatism",
+  "furtherReading": [
+    {
+      "title": "Ten Conservative Principles",
+      "url": "https://kirkcenter.org/conservatism/ten-conservative-principles/",
+      "note": "Kirk's own short statement of the creed."
+    },
+    {
+      "title": "Conservatism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/conservatism/",
+      "note": "Rigorous introduction to conservative thought and its variants."
+    },
+    {
+      "title": "The Conservative Mind (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/The_Conservative_Mind",
+      "note": "Overview of Kirk's book that shaped the modern movement."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Edmund Burke",
+      "role": "Eighteenth-century statesman whose Reflections is the founding text of the tradition.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Edmund_Burke",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "name": "Russell Kirk",
+      "role": "American author of The Conservative Mind and the ten principles.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Russell_Kirk",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "name": "Joseph de Maistre",
+      "role": "Counter-revolutionary thinker of the stricter, authority-centred strand.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Joseph_de_Maistre",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "primary",
+      "title": "Ten Conservative Principles",
+      "author": "Russell Kirk (Russell Kirk Center)",
+      "url": "https://kirkcenter.org/conservatism/ten-conservative-principles/",
+      "usedFor": "Kirk's canonical statement of moral order, prescription, prudence, variety, property, voluntary community and restraint of power."
+    },
+    {
+      "id": "s2",
+      "kind": "scholarly",
+      "title": "Conservatism",
+      "author": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/conservatism/",
+      "usedFor": "Scholarly account of tradition, authority, organic society, democracy, equality, markets and conservative variants."
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Traditionalist conservatism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Traditionalist_conservatism",
+      "usedFor": "Overview of thinkers, natural law, hierarchy, family, localism, distributism, high culture and religion."
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "Reflections on the Revolution in France",
+      "author": "Edmund Burke (Wikisource)",
+      "url": "https://en.wikisource.org/wiki/Reflections_on_the_Revolution_in_France",
+      "usedFor": "Burke on reverence for antiquity, property, moral equality versus political equality, and rejection of constitution-making from first principles."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists are split: Disraeli-style one-nation paternalists accept state provision while Kirk-style localists distrust central programmes; the texts do not settle it.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed by the canonical texts; Kirk's distrust of centralized economic direction suggests a mild lean against national wage-setting, though Ruskin-style critics of the cash nexus pull the other way.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists accept markets under property but, per SEP and Wikipedia, treat capitalism as suspect and subordinate to custom and morals, so they do not endorse this strongly.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "public-ownership": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk ties liberty to private property as a check on Leviathan, so nationalizing major industries runs against his principle, though some Tory paternalists accepted it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Kirk defends property and natural inequalities of condition, but nothing in the canon addresses top tax rates, so this is inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unions-good": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists admire guild-like voluntary associations (Distributists, Burke's platoons) yet distrust class-based militancy; adherents are split.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's seventh principle says freedom and property are closely linked and that without private possession Leviathan becomes master of all; Burke likewise names the solidity of property.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Distributists and Carlyle attack big business and the cash nexus, while Kirk-style conservatives resist central regulation, so adherents are genuinely split.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "cut-welfare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists favour private and church charity over state programmes, but paternalist strands accept a safety net; no settled position.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Distributism favours widely held small property, but mandated collective worker ownership is not part of the canon and cuts against Kirk's view of property.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Order is valued, but Kirk's principle of restraining power makes adherents wary; the texts predate the question.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Traditionalists defend a moral order and custom against permissiveness, and Wikipedia lists traditional moral values as central, so they lean against legalization.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed directly; distrust of new state powers and of legislated ideology suggests a lean against, but order-minded traditionalists vary.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "strong-leader": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk's ninth principle demands checks and balances on power, and traditionalists favour inherited institutions over a leader bypassing them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists accept authority as natural and necessary; Kirk says power cannot be abolished and must be restrained, not removed, and Scruton holds obedience to be the basis of freedom.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "limit-guns": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not part of the canon; traditionalists value local custom and ordered liberty and are split on gun control.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Order is preferred to chaos in the tradition, but Kirk also fears concentrated power, so support is mild and inferred.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Traditionalists defend inherited moral order and the family, so sex work is generally opposed as a moral matter.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's eighth principle holds that local voluntary communities sustain freedom and centralization threatens it; Burke's little platoons are the ideal.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists value just punishment and order (de Maistre defended the executioner) yet also moral reformation of persons; no settled view.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "traditional-family": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The family is described as the bedrock of society in the tradition, from Bonald's essay on divorce onward.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Traditional moral values and the inherited family form are central, so most traditionalists oppose redefining marriage, though this is applied by inference to a modern question.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "abortion-legal": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Enduring moral order and religious grounding of society lead traditionalists to oppose abortion in most cases; inferred from natural law foundations.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's first principle roots order in a transcendent moral order and a community of souls, and SEP notes many conservatives value established religion; Kirk criticized secularization of government.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists resist remaking society by abstract egalitarian programmes and favour gradual, organic remedy; the issue is anachronistic to the canon.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk holds human nature constant and moral order permanent, and traditionalists defend inherited sex roles as grounded in nature rather than invention.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Custom, convention and continuity are Kirk's second principle, and defending inherited culture is core.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "gradual-change": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's fourth and tenth principles call for prudence and gradual change within the society's form; Burke said reform should proceed from reverence for antiquity.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not a canonical topic, and Wikipedia notes only a defence of minority cultures; the concern for continuity suggests a lean to restriction but adherents differ.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Preference for local and national inherited institutions and Kirk's warning against centralization imply distrust of transferring power upward.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "free-trade": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists are split between market acceptance and Distributist or agrarian localism; the canon does not settle it.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "nation-first": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Patriotism is a virtue but the tradition distinguishes loyalty from jingoism, and universal moral order qualifies pure national self-interest.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Prudence and distrust of abstract universal projects counsel against crusading intervention; inferred from Kirk's prudence principle.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Open borders conflict with rooted communities, custom and nation as inherited bodies, which traditionalists defend.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "limit-growth": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists favour stewardship and distrust industrial disruption, but not an explicit growth limit; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Stewardship appeals to some, but sweeping government programmes and utopian engineering conflict with prudence and decentralization; inferred.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kirk's imperfectability principle holds that no perfect order can be built and that humans have lasting flaws, so progress-as-salvation is rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the tradition has no settled view on energy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Burke's Reflections opposes revolutionary rupture, but allows change to preserve the state and recognizes the Glorious Revolution; so a qualified disagreement.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "experts-over-public": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists trust inherited wisdom and natural leadership more than abstract expertise or headcounts; Burke favoured qualified representation, but they do not endorse technocracy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk's eighth and ninth principles reject centralization; SEP notes conservatives' wariness of central planning and utopian engineering.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "socialized-markets": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a traditionalist topic; the proposal rests on public or worker ownership of enterprise, which cuts against Kirk's private property principle.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed, and inferred hostility to novel schemes that disturb inherited property claims.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-inheritance": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Burke's inheritance and Kirk's prescription treat inherited property as the link between generations, so heavy taxes on it are opposed.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; paternalists and Distributists favour property and work over a state stipend, and Kirk distrusts central programmes.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Distributists and agrarians favour protecting local economies while others accept markets; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "state-directs-investment": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Kirk's opposition to centralization and trust of local, voluntary arrangements.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Distributism, a traditionalist offshoot, favours small owners, craftsmen and agrarian life, and Kirk stresses widely held private property as civilization's support.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk's property and variety principles and the tradition's acceptance of inequality of condition are fundamentally opposed to abolishing money.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; reverence for established institutions makes abolition unlikely though not core.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Guild-like organic representation attracts some traditionalists, but state-recognized bodies setting wages are not canonical; split.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A single ideological party guiding the state contradicts Kirk's check on power and the preference for inherited institutions over ideology.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Wikipedia names monarchs among natural fathers of authority, and Burke defended the inherited constitution including the Crown; many traditionalists see monarchy as legitimate while not requiring it.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "democracy-best": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "SEP says conservatism is not inherently anti-democratic and acceptance depends on conditions, but Burke doubted headcount defines the people's will; hence a mild disagreement with the strong claim.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "direct-votes": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Burke favoured qualified representation and distrusted majority headcounts; direct plebiscites on law cut against prudence and tradition.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Councils replacing parliaments is a radical break with inherited institutions that Kirk and Burke oppose.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-secede": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; reverence for the inherited polity weighs against dissolving it, though localism pulls the other way.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "natural-rulers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's variety principle and the tradition's view that leadership and authority are natural support this; Wikipedia describes natural hierarchy and natural leaders.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "political-violence-never": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Traditionalists are not pacifists but prize order and prudence; absolute claims split them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "war-builds-character": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of the canon; prudence and moral order make glorifying war uncommon, though some defend martial virtue.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kirk criticized secularization of government and the tradition values established religion; strict separation is opposed.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Natural law and transcendent order inform law and integralists want religious principles in public law, but most traditionalists ground law in natural law and custom rather than scripture directly.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Order and justice are tied to the state and inherited institutions, and equal justice before a just court is a core form of equality; privatization is libertarian.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the canon.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Tradition emphasizes inherited culture and religion and not race; scholars note nationalism is distinct, and adherents differ.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists see society as organic with interdependent ranks, not engaged in class conflict as the driver of history.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk accepts only equality before God and the law and holds that levelling destroys variety; Burke called political equality a monstrous fiction.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; local custom is valued but the question is anachronistic.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred from distrust of abstract egalitarian restitution schemes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizational-union": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Dawson and Eliot defend civilizational heritage, but political union is not a canonical aim.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists hold virtue, duty and the moral order above self-interest, and criticize the cash nexus.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Burke rejected abstract rights for inherited duties and obligations, and Kirk stresses a community of souls with mutual obligations.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Stewardship is part of the tradition, but intrinsic value of nature is not an explicit canon claim.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the family-centred outlook and distrust of state programmes of social engineering.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Carlyle, Ruskin and Southern Agrarians criticized industrialism, but Kirk-style mainstream does not call it a disaster; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "accelerate-technology": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Speeding up disruptive change contradicts Kirk's prudence and Burke's gradualism.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "human-enhancement": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Imperfectability and a constant human nature make enhancement projects suspect.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Practical reason and inherited judgment are preferred over abstract rational systems, so handing government to algorithms is opposed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Neither the Burkean canon nor Kirk's principles address digital privacy, and order-minded and liberty-minded traditionalists would split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Reactionary strands like de Maistre want restoration, but Burkean traditionalists seek continuity not return; so a mild lean.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Kirk's prudence principle judges policy by long-run consequences, and Oakeshott called conservatism a disposition not a doctrine.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "direct-action": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Change through disruption of institutions contradicts custom, order and gradualism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "means-match-ends": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a question traditionalists frame this way.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Civilization and its accumulated inheritance are what traditionalists wish to conserve.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk's variety principle affirms differentiated orders and classes, so abolition of divisions is rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk accepts natural inequalities of condition and property tied to desert and prescription.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "production-for-use": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists criticize pure profit-seeking but would not abolish the profit system by planning.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists reject the Marxist theory of class exploitation and defend property.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "A class dictatorship is contrary to law, order and checked power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-farming": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk's property principle and the agrarian tradition favour independent owners over collectives.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Traditionalists reject Marxist theories of history, though they criticize capitalism on moral grounds.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists accept legitimate authority and its necessary powers; Scruton ties freedom to obedience.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "harm-principle": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Moral order, not only harm to others, grounds law for traditionalists, who oppose Mill's liberal principle.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "individual-rights-only": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Burke rejected abstract individual rights and the tradition sees society as a community of families, bodies and generations.",
+      "sources": [
+        "s4",
+        "s2"
+      ]
+    },
+    "conscription": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Duty to the community is valued, but central power is feared; no settled position.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "exit-over-voice": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Rooted membership in an inherited community is prized over exit as a check; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-as-business": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The tradition sees the state as a partnership across generations, not a commercial venture.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "positive-liberty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ordered liberty in Burke and Kirk is tied to property and law rather than to guaranteed material means.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a canonical claim; some conservatives assert it but the tradition does not centre on it.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "hereditarian-race": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists do not found their position on race; Kirk-type conservatives stress moral order, and the claim is not in the canon.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "organic-representation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Burke's little platoons and Wikipedia's organic, estate-like society favour representation through families and communities, though parties are tolerated in practice.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "total-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Traditionalists want the state to enable families and churches, not replace them.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "national-rebirth": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Radical rebirth is a revolutionary idea opposed to continuity; they prefer organic growth.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "territorial-expansion": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Prudence and the sense of rooted community weigh against expansionism, though not stated directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Feudal oath-based rule is admired by few modern traditionalists but organic authority is valued; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "bound-labor": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Hierarchy is accepted, but legally bound labor is not advocated by mainstream traditionalists.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Traditionalists defend universal moral truths and transcendent order, not power-relative truth, though they stress tradition shapes knowledge.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "universal-morality": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's first principle states human nature is constant and moral truths permanent; natural law is a pillar.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "single-common-good": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Natural law traditions seek a common good, though Burkean prudence doubts a single rationally derived blueprint.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not part of the tradition.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the tradition.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Valuing heritage supports it, but the question is not canonical.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "workplace-democracy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Corporate governance by votes of the public conflicts with property and hierarchy; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "school-vouchers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Localism and parental rights favour choice but traditionalists are split on public funding.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Burke's concern for the unborn generations and prudence suggest caution about debt; inferred.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "economic-freedom": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kirk links freedom and property, but traditionalists doubt that markets alone sustain liberty.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rule-by-example": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Traditionalists prize virtue in rulers and moral authority, though they do not abandon law.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "national-self-determination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nations are prized as inherited communities, but the principle of universal right is a liberal claim; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "force-without-un": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The canon says nothing on Security Council authority; prudence argues for caution while patriotism favours national discretion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reason-over-faith": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk grounds order in religion and transcendent order, and the tradition criticizes rationalism, preferring practical reason and inherited prejudice.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The texts do not address welfare eligibility, and the community-first outlook is offset by the duty of charity.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No settled position.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "class-collaboration": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Disraeli's one nation and the organic view hold ranks interdependent and cooperative rather than opposed.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Preserving inherited cultural institutions is a defining commitment; the tradition defends the classical canon.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "An anti-Western bloc is outside the Burke-Kirk tradition, which defends the Western inheritance but is silent on this alignment.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "workers-nation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Class is seen as part of the nation, not an international class, but the topic is not central.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Traditionalists defend inherited sex roles in the family, but legal prescription is less clear.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "ban-interest": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of Western traditionalism generally, though medieval and Distributist critics of usury exist.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kirk's equality before a just court of law and moral order oppose legal racial classification; not a canonical position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Marxist theory of the state is rejected; the state is part of an organic order.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Energy policy is outside the canon; stewardship concerns and distrust of central direction pull in opposite directions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Cultural continuity suggests this, though Wikipedia cites a defence of minority language and faith.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "elite-replacement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "A conspiracy claim not found in the canon.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "proportional-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Electoral systems are not discussed; Burke's view of representation does not decide between list and constituency systems.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-mission": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Prudence, imperfectability and rootedness counter exporting regimes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Traditionalists accept natural distinctions and defend traditional family arrangements, rejecting structural oppression claims.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "They value natural leaders yet are suspicious of power; split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "State eugenics conflicts with moral order and the family; not central.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The tradition values order and law but has no stated view on prosecuting past state abuses, and adherents would split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Traditionalists want the state to uphold moral order and enable communities, not a minimal state.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not a canonical position; moral order and equal moral standing reject it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Kirk accepts equality at the Last Judgment and before a just court, but not equality of condition, so agreement is qualified.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "socialism-one-country": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not their debate, but socialism is rejected.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The canon does not address settler states, and inherited-order arguments cut both ways on whether such states are legitimate.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Equality before a just court favours uniform law, but respect for religious custom favours separate personal law; split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; religion matters but liberty and custom do not require this.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of Western traditionalism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Religion is part of the moral order and education centred on classics and faith, so removing it is opposed.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "consent-of-governed": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Burke rejected the social-contract basis of legitimacy; authority rests on prescription and inheritance.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "trade-surplus": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mercantilist targets are not part of the tradition, and Distributists and market-accepting conservatives would differ.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "population-transfer": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrary to moral order and justice, and not part of the canon.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The tradition rejects Social Darwinist progress and doubts progress as a master concept.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Defence of the constitutional order supports it, while distrust of state power opposes it; the texts are silent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A republican concept not in the canon.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "separated-powers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Kirk's ninth principle explicitly calls for checks and balances on power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "vanguard-party": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Revolutionary vanguard rejects tradition and gradualism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "priority-to-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Charity is a duty, but legal priority is not canonical; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Widely held property is favoured, so ownership is supported.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Industrial relations law is not covered by the canon, and guild admirers and property defenders would split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; traditionalists locate poverty in morals and institutions.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Natural leadership and qualified representation oppose sortition.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; central direction distrusted.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-controls-media": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Total control conflicts with restraint of power and independent institutions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-commands-army": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Party command contradicts inherited institutions and checks on power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "A rooted view of membership suggests this, but it is inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; natural leaders are not tied to worker pay.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Burke defended representatives' independent judgment over binding instructions, but I am inferring this from the Burkean strand.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Inherited national institutions are valued and centralization feared.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The Burkean constitution divides powers among Crown and Parliament, but Kirk gives no rule on who commands the forces.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anglican and Catholic strands support bishops, others don't; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "clerical-rule": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Religion informs law but theocracy is not the position of most traditionalists.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Loyalty to nation is a virtue, and revolutionary defeatism is rejected.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Moral order is valued, but the tradition prizes high culture; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Checks on power and constitutional continuity suggest term limits are not rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recall-officials": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Burke defended representatives' independence from instructions, so recall is disfavoured.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance policy is not addressed by the canon, so prudence is the only guide and it cuts both ways.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Prohibiting contract and rent contradicts property rights.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "people-in-arms": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A militia ideal fits localism, but the tradition does not discuss replacing professional armies.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Southern Agrarians and Distributists extolled agrarian life and traditional community.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Attachment to historic communities supports reunification but prudence counsels caution; the texts are silent.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a canonical claim; the tradition values classical education.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Defenders of the classical Western tradition and high culture hold some civilizations achieved more.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "death-penalty": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "De Maistre defended the executioner and order; mainstream traditionalists accept capital punishment for grave crimes.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditional morals and family priority suggest scepticism; inferred.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Religion is valued, but Burkean learning favours classical curricula; split.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Moral order and the moral character of citizens are central, so legal restriction is supported.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Inherited belonging suggests descent, but the canon does not rule on citizenship law.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "minority-language-support": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Wikipedia cites a defence of minority language, but not a general position.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "religious-exemptions": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Respect for religion as a source of order supports exemption, but it is inferred.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mill's thesis is the liberal counter to Kirk's custom, convention and continuity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from respect for inherited obligations and property.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Radical transformation of property is opposed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constituent-assembly": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Burke attacked rewriting the constitution from first principles in the National Assembly.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; ordered liberty is valued.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Charity is a duty but duties are rooted in local community first.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nuclear strategy is outside the canon, and patriotic self-reliance and alliance prudence would both be invoked.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inherited and mixed constitutions are favoured over plebiscitary heads of state.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "central-bank-independence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The tradition has no stated view on monetary institutions, and adherents would split between inherited institutions and distrust of finance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Attachment to the historic homeland is respected, but prudence favours settlements; the texts are silent.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kirk says property is a pillar of liberty; Catholic and Distributist strands say property serves common good; split.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; traditionalists regard the USSR as tyranny.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "precautionary-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Prudence suggests caution but no stated stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance obligations are not discussed, and loyalty to allies is weighed against prudence about entanglement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Questions of annexation and consent are not addressed, and Burke rejected consent as the basis of authority.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Traditionalists hold the church as a pillar of order and oppose secular subordination.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Wikipedia lists monarchs and fathers as natural authorities; unifying symbolic headship fits the Burkean constitution.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Reverence for the inherited polity favours the union, but localism and prudence weigh against force; the texts are silent.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "region-keeps-system": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed, though localism favours autonomy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Kirk's tradition values reverence for authority but not divine descent.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "flat-income-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Tax design is not covered by the canon, and traditionalists lack a settled view on flat versus graduated rates.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "character-from-environment": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk holds human nature to be constant and flawed, which implies innate limits.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Kirk calls for restraint on power, and equality before a just court of law.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "space-expansion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a concern; imperfectability and prudence suggest scepticism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Burke and Kirk favour balance among ranks and checks, resembling the mixed constitution.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A socialist state is not an aim of the tradition, and Kirk calls for restraining power rather than strengthening it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists accept legitimate state coercion for order and justice, so an absolute ban on initiating force is not their position.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Concern for shared custom favours agreement, but Kirk prizes variety within society, and sources do not give a ruling.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Kirk's ninth principle demands limits on power and equality before a just court, though order-minded traditionalists accept some emergency powers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "leader-cult": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed directly; inferred from Kirk's call to restrain power and Burke's distrust of personal glorification, which lean against mass praise of a leader as the nation's embodiment.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the canonical texts; inferred from the emphasis on family and prudence, which supports shared parenting in principle but also favours judgment over a fixed legal rule, so adherents are split.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "A Marxist-Leninist claim that traditionalist conservatives reject, since they hold that order and a settled class structure are natural and that property is a basis of liberty.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "land-redistribution": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kirk's principles tie property to freedom and Burke defended the landed order, so seizing estates is condemned.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "refugee-return": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources; adherents are split between a custom-based right of return and prudence about upheaval.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the preference for prudence and settled borders over abstract nationality claims.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Traditionalists defend religion as a moral order but modern adherents do not support state punishment of leaving it; inferred.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "women-must-cover": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the preference for custom and prudence over state coercion of private conduct.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "common-currency": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the stress on national and local sovereignty and distrust of centralization, as in Scruton's opposition to the euro.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the loyalty to particular, historically formed communities over abstract supranational projects.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Kirk values variety and local institutions, but also a unified national tradition; adherents are split.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the Burkean preference for working within an inherited political order and gradual reform.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Kirk holds that a transcendent moral order and inherited custom shape society, so ideas and morals matter more than economic change.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "ban-cartels": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Distributist and agrarian strands in the scope distrust concentrated economic power; this is inferred, not stated in Kirk's principles.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "no-bailouts": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the emphasis on property, prudence and distrust of state favours to the powerful.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk's principle of prudent restraints on power and passions, and Burke's distrust of majority will, support limits on a national majority.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the defence of natural hierarchy and distrust of rule-by-quota egalitarian engineering.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the defence of community, property and trade-linked prosperity, and distrust of centralised economic plans.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents split between concern for community and the environment and distrust of supranational rules.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "moral-incentives": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the defence of property and the rejection of utopian schemes to remake human motives.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Burke's Reflections condemn revolution, and traditionalists favour gradual change within inherited institutions.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Kirk defends orders and classes, and Burke defended a hereditary aristocracy and monarchy as part of the inherited constitution.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Moral and political order rests on a transcendent source, such as divine law or natural law, that no government or majority may override.",
+      "value": 2,
+      "rationale": "Kirk's first principle and the natural law foundation make a transcendent moral order the base of the ideology.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "addedAs": "universal-morality"
+    },
+    {
+      "text": "Inherited customs and long-established claims deserve more weight in politics than one generation's private reasoning.",
+      "value": 2,
+      "rationale": "Kirk's third principle on prescription and Burke's reverence for antiquity place this at the centre.",
+      "sources": [
+        "s1",
+        "s4"
+      ],
+      "addedAs": "gradual-change"
+    },
+    {
+      "text": "A healthy society needs distinct ranks and classes, and enforced levelling destroys freedom.",
+      "value": 2,
+      "rationale": "Kirk's fifth principle (variety) accepts only equality before God and the law.",
+      "sources": [
+        "s1"
+      ],
+      "declined": "Already placed by equal-outcomes, natural-rulers and traditional-family answers; a separate ranks-and-classes statement would be answered by almost no other audits distinctively."
+    }
+  ],
+  "notes": "Answers follow the Burke-Kirk mainstream. De Maistre's reactionary strand would answer restoration, authority and clerical questions more strongly, and Oakeshott's secular strand would weaken the religion answers."
 }
