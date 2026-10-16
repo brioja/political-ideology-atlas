@@ -372,6 +372,26 @@ function startQuiz(saved) {
   renderQuestion();
 }
 
+// A statement link (#/test/<id>, from "What it stands for") asks that statement now, keeping any
+// answers so far; afterwards the test carries on as usual. The last statement in `order` is the one
+// still waiting for an answer (unless the test ran out), so the linked one goes just before it.
+function askStatement(id) {
+  const q = QUESTIONS.findIndex((s) => s.id === id);
+  if (order.length === 0) {
+    const saved = load();
+    if (saved) ({ order, answers, position } = saved);
+    else { answers = Array(QUESTIONS.length).fill(null); position = 0; }
+  }
+  if (q < 0) return;
+  const at = order.indexOf(q);
+  if (at >= 0) position = at;
+  else {
+    position = position < order.length ? order.length - 1 : order.length;
+    order.splice(position, 0, q);
+  }
+  save();
+}
+
 // Results are a page of their own: finishing stores the answers and navigates there.
 let lastAnswers = null;
 function finishQuiz() {
@@ -491,7 +511,7 @@ function stance(q, v) {
 function beliefList(ideo, n = 4) {
   return `<ul class="beliefs">${keyBeliefs(ideo, n).map((b) => {
     const s = stance(QUESTIONS[b.q], b.p);
-    return `<li>${topicIcon(QUESTIONS[b.q])}<span>${esc(s.text)}</span></li>`;
+    return `<li>${topicIcon(QUESTIONS[b.q])}<a class="belief-link" href="#/test/${encodeURIComponent(QUESTIONS[b.q].id)}" title="Where do you stand on this?">${esc(s.text)}</a></li>`;
   }).join("")}</ul>`;
 }
 
@@ -1540,7 +1560,7 @@ document.addEventListener("keydown", (e) => {
   for (const svg of document.querySelectorAll("svg.chart")) if (svg.unpick) svg.unpick();
 });
 
-// Routes: #/ (home), #/how, #/test, #/results, #/ideologies[/<id>], #/about.
+// Routes: #/ (home), #/how, #/test[/<statement id>], #/results, #/ideologies[/<id>], #/about.
 // A shared result (?r=…) opens on the results page.
 function route() {
   const [page = "", arg] = location.hash.replace(/^#\/?/, "").split("/");
@@ -1548,6 +1568,10 @@ function route() {
   $("resume").hidden = !load();
 
   if (page === "test") {
+    if (arg) {
+      askStatement(decodeURIComponent(arg));
+      history.replaceState(null, "", `${location.pathname}#/test`); // so a reload doesn't ask it again
+    }
     if (order.length === 0) startQuiz(load());
     else { show("test"); renderQuestion(); }
   } else if (page === "results" || (page === "" && shared)) {
