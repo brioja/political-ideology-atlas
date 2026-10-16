@@ -1,2493 +1,2621 @@
 {
- "id": "garveyism",
- "name": "Garveyism",
- "auditedAt": "2026-10-16",
- "auditor": "claude-sonnet-5-5",
- "summary": "Garveyism is the Black nationalist and Pan-Africanist doctrine of Marcus Garvey and the Universal Negro Improvement Association. It holds that Black people must unite race-first, win economic independence through Black-owned business, and build a redeemed, self-governing Africa to which the diaspora may return. It rejects integration and racial mixing, opposes communism and socialism, and favours strongly centralised leadership.",
- "scope": "The doctrine of Garvey and the UNIA in the 1910s-1920s as set out in the collected Philosophy and Opinions of Marcus Garvey and the 1920 Declaration of the Rights of the Negro Peoples of the World. It does not cover later movements that drew on Garvey, such as Rastafari, the Nation of Islam or Nkrumah-era Pan-Africanism.",
- "wikipedia": "https://en.wikipedia.org/wiki/Garveyism",
- "furtherReading": [
-  {
-   "title": "The Philosophy and Opinions of Marcus Garvey (full text)",
-   "url": "https://archive.org/stream/ThePhilosophyOpinionsOfMarcusGarveyOrAfricaForTheAfricans/EbookPhilAndOpinions_djvu.txt",
-   "note": "Garvey's speeches and articles in his own words."
-  },
-  {
-   "title": "Declaration of the Rights of the Negro Peoples of the World",
-   "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_the_Negro_Peoples_of_the_World",
-   "note": "The UNIA's 1920 charter of demands, article by article."
-  },
-  {
-   "title": "Marcus Garvey",
-   "url": "https://en.wikipedia.org/wiki/Marcus_Garvey",
-   "note": "Biography covering the UNIA, Black Star Line and legacy."
-  }
- ],
- "keyFigures": [
-  {
-   "name": "Marcus Garvey",
-   "role": "Founder of the UNIA and the movement's defining thinker and leader.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Marcus_Garvey",
-   "sources": [
-    "s1",
-    "s3",
-    "s4"
-   ]
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "primary",
-   "title": "The Philosophy and Opinions of Marcus Garvey, or Africa for the Africans",
-   "author": "Marcus Garvey, compiled by Amy Jacques Garvey",
-   "url": "https://archive.org/stream/ThePhilosophyOpinionsOfMarcusGarveyOrAfricaForTheAfricans/EbookPhilAndOpinions_djvu.txt",
-   "usedFor": "Garvey's own statements on race purity, assimilation, Africa, power, monopoly, religion, Ireland, India and Palestine (first 200,000 characters read)."
-  },
-  {
-   "id": "s2",
-   "kind": "reference",
-   "title": "Declaration of the Rights of the Negro Peoples of the World",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_the_Negro_Peoples_of_the_World",
-   "usedFor": "The 1920 UNIA declaration: equal rights, anti-lynching, self-defence, return to Africa, education, rejection of the League of Nations."
-  },
-  {
-   "id": "s3",
-   "kind": "reference",
-   "title": "Garveyism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Garveyism",
-   "usedFor": "Overview of separatism, Pan-Africanism, black capitalism, anti-communism, religion and scholarly assessments (first 100,000 characters read)."
-  },
-  {
-   "id": "s4",
-   "kind": "reference",
-   "title": "Marcus Garvey",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Marcus_Garvey",
-   "usedFor": "Leadership style, the Klan meeting, expulsion of socialists, Zionism, Catholicism, legacy."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey's programme centred on race-owned enterprise and self-help rather than state services; the Declaration only protests segregated hospitals, so a state health guarantee is not a stated aim.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Wage policy is not addressed; the Declaration complains of unequal pay for Black workers but proposes Black-owned industry rather than statutory wage floors.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey backed capitalism and Black-owned business but condemned monopoly, so he favoured markets without endorsing laissez-faire; inferred from his economic programme.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "public-ownership": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garveyism promoted private and UNIA-owned corporations such as the Black Star Line and opposed socialism; state ownership is inferred as unwelcome.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He proposed capping individual fortunes at one million dollars, which implies hostility to great wealth, yet he championed Black capitalists; no tax policy is documented.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "unions-good": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey was sympathetic to labour organization in places but also saw Black workers as needing their own industry; adherents are not clearly pro-union.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-fundamental": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey was pro-capitalist and urged Black property and enterprise, but also proposed wealth caps; inferred moderate support for property rights.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "regulate-corporations": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He condemned industrial and commercial monopoly that concentrates power in a few hands and proposed ceilings on individual and corporate capital.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "cut-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Welfare is not discussed; his self-reliance ethic leans against dependency, but he also wanted collective group provision.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "worker-ownership": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He favoured collective decision-making and group profit-sharing in UNIA firms, but ownership was by race-wide shareholders rather than worker collectives.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "surveillance-ok": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed; inferred from UNIA's experience of intensive government surveillance and a rhetoric of self-protection against state hostility.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "legalize-drugs": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; UNIA stressed moral discipline and religion, but no drug stance is documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-hate-speech": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Never addressed; Garvey himself used racially charged rhetoric and championed free speech and press in the Declaration.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "strong-leader": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Garvey argued UNIA's cabinet should be appointed by him, styled himself Provisional President of Africa, and envisaged a united Africa as a one-party state under strong leadership.",
-   "sources": [
-    "s4",
-    "s3"
-   ]
-  },
-  "state-harmful": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garveyism is a state-building nationalism that demanded a powerful African government, the opposite of anti-statism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "limit-guns": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The Declaration affirms a right to self-defence against oppression and Garvey urged readiness to strike a blow for liberty, so strict gun limits are unlikely.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "empower-police-military": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He wanted a strong African state with its own forces but distrusted white-run police and military, who enforced lynching and segregation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "legalize-sex-work": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the movement stressed moral uplift and respectability, so legalisation is inferred as unwelcome.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "decide-locally": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garveyism sought a centralised, unified African government and a worldwide UNIA hierarchy rather than devolution.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "rehabilitation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Penal policy is not addressed; the Declaration protests unfair trials rather than prison philosophy.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "traditional-family": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey's remarks on women and the UNIA's Christian respectability suggest conventional family values; inferred rather than systematically stated.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "same-sex-marriage": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from the movement's conservative Christian morality and early twentieth-century context.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abortion-legal": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from Christian moral conservatism and a nationalist concern to grow the race.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "more-religion-public": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "UNIA's motto was One Aim, One God, One Destiny, and Garvey held that faith and moral law are essential to society.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The Declaration lists the injustices done to Black people and demands redress, though Garvey's remedy was separate nationhood and self-reliance more than integrationist programmes.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "gender-social-construct": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; Garvey's remarks portray women as having fixed natures, so he would likely reject the claim.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-national-culture": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Garveyism stressed pride in African heritage and a distinct Black civilization, with teaching of Black history for Black children.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "gradual-change": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey demanded urgent redemption of Africa and told followers that liberty requires striking the blow; he was impatient with gradualist integrationism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reduce-immigration": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wanted white countries kept white and Africa for Africans, but also urged Black migration; there is no clear stance on immigration levels in general.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The Declaration rejects the League of Nations as invalid for Black people because they were not represented in it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "free-trade": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He sought Black shipping and trade networks across the diaspora, but also economic independence from white capital; no explicit tariff doctrine.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "nation-first": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Race-first nationalism and Africa for the Africans put the interests of one's own people first; inferred as applied to nations.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "humanitarian-intervention": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey distrusted white powers' motives, saying they subjugate and exploit weaker peoples; intervention would likely be seen as imperial.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-borders": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garvey held each race should have its own homeland and rejected assimilation and a melting pot, which is incompatible with open borders.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "limit-growth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; his programme was industrial and commercial expansion for the race.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The issue postdates Garvey and nothing in his thought bears on it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He prized scientific and technical training and held that power must be physical, financial and scientific; inferred optimism about technology.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Nuclear power is anachronistic and no position can be inferred reliably.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revolution-justified": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Garvey said liberty must be won by striking the blow and accepted possible sacrifice of life, though UNIA's practice was organization rather than insurrection.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "experts-over-public": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey urged educated and scientifically trained Negroes to lead the illiterate masses, and favoured appointed leadership over election.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "central-planning": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He favoured capitalism and race-owned enterprise and opposed communism; inferred as against planned economies.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "socialized-markets": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey's group enterprises shared profit collectively, but he did not frame this as worker or public ownership of markets.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "land-value-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed anywhere in documented Garveyism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tax-inheritance": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "His wealth caps imply concern about concentrated fortunes, but no inheritance tax is documented.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "basic-income": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "A modern proposal, inferred against from his emphasis on self-reliance and Black enterprise rather than state transfers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tariffs-protect-industry": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He wanted Black-owned industry independent of white capital, which fits protection of a young industrial base; not stated as tariff policy.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "state-directs-investment": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Investment was to come from race-wide shareholders in UNIA firms; once a state of Africa existed he might have directed it, but this is unspecified.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He promoted Black ownership broadly but through large corporations with caps on individual wealth; not a small-property doctrine.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He promoted capitalism and wage-earning Black industry, and opposed socialism and communism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He founded a Black-owned banking aim within UNIA's economic programme, so he valued banks; not anti-central-bank doctrine.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "corporatist-bargaining": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey supported collective race-wide organisation, but state-recognised wage-setting bodies are not documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "one-party-rule": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His envisioned united African republic was a one-party state, which scholars describe as authoritarian and elitist.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He gave himself presidential titles and a nobility of honours such as the Order of the Nile, yet UNIA claimed republican forms; not clear on hereditary monarchy.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "democracy-best": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey called for democratic institutions in Africa while running UNIA in a centralised way and appointing officers; adherents are split.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "direct-votes": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; his centralised practice suggests disfavour toward direct popular legislating.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "workers-councils": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garveyism opposed socialism and communism and expelled socialist members from UNIA.",
-   "sources": [
-    "s4",
-    "s3"
-   ]
-  },
-  "right-to-secede": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not discussed as a principle; his aim of a separate Black nation, however, is a kind of racial separation.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "natural-rulers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He held that educated leaders should guide the masses and spoke of an elite, but did not claim innate rule-fitness as such.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "political-violence-never": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Garvey said power, including physical power, is the protection against injustice, and the Declaration asserts a right of defence against oppression.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "war-builds-character": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He admired organized strength and power but did not praise war for character; no clear position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separate-church-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garveyism invoked God in its motto and a Black-centred Christianity, but no theocracy was proposed; inferred mild opposition to strict separation.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "laws-from-scripture": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Faith and moral law were considered essential but legal codification from scripture was not a Garveyite demand.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "private-courts-defense": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garvey's nationalism demanded a powerful state with its own government and defence.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-superiority": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey stressed that the only protection against injustice is power, including physical power, for a Black nation; inferred as applying to a Black state.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ethnic-nation": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Garvey held that each race should have its own homeland, that Africa is for Africans, and praised racial purity and separation.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "class-struggle-history": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Garveyism put race rather than class first and denounced communism, which the Comintern called Garveyism a bourgeois answer to.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "equal-outcomes": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He sought Black economic self-advancement and wealth caps, but not social levelling; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not framed in these terms, but Africa for the Africans implies native authority over African lands; he also envisioned diaspora return.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "colonial-reparations": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The Declaration denounces colonial seizure of Africa and demands return of land; explicit reparations are not documented.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "civilizational-union": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He called for a united Africa and unity of the Black race worldwide under UNIA; the unit is race rather than religion.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "self-interest-moral": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He taught race self-help and personal industry, yet rejected Booker T. Washington's individualism in favour of group effort.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "duties-before-rights": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He stressed duty to the race and collective discipline, but the Declaration is also a charter of rights.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "nature-intrinsic-value": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Environmental ethics is not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "limit-population": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey warned of racial extermination and spoke of building the race, so he would likely oppose limiting population.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "industrial-civilization-disaster": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He sought industrial and commercial development as the foundation of a race's power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "accelerate-technology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He valued science for racial power but there is no stance on disruptive acceleration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "human-enhancement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anachronistic and not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "algorithmic-government": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Anachronistic; inferred opposition from his personal leadership model.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "unbreakable-encryption": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anachronistic and not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restore-past-order": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey invoked a glorious African past of Egypt, Ethiopia and Timbuktu but wanted a modern redeemed Africa rather than restoration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "results-over-ideology": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey was a committed ideologue of race-first doctrine; inferred rejection of pure pragmatism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "direct-action": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He preferred mass organization, business and emigration over elections and parliaments, yet UNIA also ran petitions and conventions.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "means-match-ends": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey never discussed whether methods must mirror the goal; UNIA built hierarchical organs while seeking an African republic, so no reliable inference.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He promoted industry and modern civilization for a redeemed Africa.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Capitalist Garveyite industry relied on organized division of labour and no such abolition was proposed.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "distribute-by-need": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garveyism opposed communism and supported capitalist enterprise with profit sharing for investors.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "production-for-use": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "UNIA ran for-profit businesses such as the Black Star Line and promoted black capitalism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "profit-exploitation": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Garvey supported capitalism and criticised socialists, and the Comintern condemned Garveyism as bourgeois.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He opposed communism and socialism and expelled socialists from the UNIA.",
-   "sources": [
-    "s4",
-    "s3"
-   ]
-  },
-  "collective-farming": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not documented; inferred against from anti-communism and support for property and enterprise.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He blamed white racial rivalry and exploitation of weaker peoples for war and subjugation, but not capitalism specifically.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "taxation-theft": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He envisioned a strong state financed in the normal way and no anarcho-capitalist view appears.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "harm-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No stance; the Declaration lists freedoms of speech and religion but he was authoritarian in practice.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "individual-rights-only": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Garveyism is group-based, stressing racial rights and collectivity, and criticised individualism.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "conscription": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wanted a strong Black army yet the Declaration discouraged Black men from serving imperial armies; no statement on conscription.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "exit-over-voice": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Return and emigration to Africa were central responses to oppression, alongside a demand for rights.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
-  },
-  "state-as-business": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; he ran political bodies as business-like corporations but the statement concerns citizen-as-customer exit.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "positive-liberty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He argued political rights and the ballot are not enough without industrial and economic foundations; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "media-academia-power": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He ran his own newspaper Negro World to counter white media, but no claim about media over elected officials is documented.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "hereditarian-race": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He asserted racial pride and purity, and spoke of a struggle among races, but his emphasis was Black capability rather than quantified heredity; contested.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "organic-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; UNIA had a hierarchical organisational structure rather than representation by trade bodies.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "total-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He envisioned a one-party Africa, but there is no total direction of culture and economy given his support of private enterprise.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "national-rebirth": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Redeeming Africa and the Black race from subjugation to a great African civilization is the core Garveyite project.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "territorial-expansion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He sought a state in Africa and independence, with returnees not seeking overlordship over natives, rather than conquest.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "UNIA used titles and honours, with loyalty to Garvey, but feudal oath-based authority is not a position.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "bound-labor": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He denounced industrial bondage, peonage and serfdom and wanted the Negro emancipated from them.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-neutral-knowledge": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He said education prepares a people to build its own civilization and wanted Black history taught, but he did not make an epistemic claim.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "universal-morality": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He held that God created all men equal and that moral law is essential, implying universal moral order; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "single-common-good": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey spoke of the race's common interest, but never addressed whether politics aims at one rational common good versus balancing group interests.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "jewish-state-israel": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Garvey listed Palestine for the Jews with Ireland for the Irish as national aspirations; scholars note his pre-1923 Zionism.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "diaspora-return-right": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Return of the diaspora to Africa was central, and the Declaration claims rights for Black people to Africa and to travel.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "revive-national-language": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey did not push revival of African languages; critics note his thin knowledge of them.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "workplace-democracy": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "UNIA's firms were corporate shareholder enterprises with appointed leaders, not worker-run.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "school-vouchers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; he favoured separate Black education but no voucher scheme.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "avoid-deficit-stimulus": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fiscal policy and deficit spending are absent from Garvey's writings, which concern race enterprise rather than government budgets.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "economic-freedom": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He favoured Black economic independence as the basis of political independence, but not strictly free-market doctrine.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "rule-by-example": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He urged moral and elite leadership yet also set up formal organizations; no explicit doctrine.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-self-determination": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Africa for the Africans, the Declaration's plan for a Black nation, and support for Irish, Indian and Jewish independence all assert this.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "force-without-un": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He rejected the League of Nations and valued power, but no explicit position on use of force abroad.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "reason-over-faith": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Garveyism's motto invoked God and Garvey built a Black Christian faith identity, treating faith as essential.",
-   "sources": [
-    "s4",
-    "s1"
-   ]
-  },
-  "welfare-for-citizens": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Welfare not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "work-for-welfare": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Strong ethic of industry and self-help makes work requirements plausible; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-collaboration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He favoured collaboration under Black capitalism and rejected socialist class conflict as serving white interests.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He celebrated ancient African civilization and heritage and wanted Black history taught.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "dominated-front": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He sought unity of oppressed Black and colonized peoples against white domination and sympathized with Irish and Indian independence movements.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "workers-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garveyism organised along racial rather than national or class lines, so neither framing fits.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "distinct-gender-roles": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His brief writings treat women as inconstant and helper figures, though women held UNIA offices; inferred.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "ban-interest": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Garvey ran Black banking and share-capital enterprises and supported capitalism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He supported voluntary separation and a separate homeland but protested segregation imposed by whites, so law-based segregation was contrary to the Declaration though he accepted a white man's country.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "state-class-instrument": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He rejected Marxist class analysis, though he saw white states as instruments of racial domination.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Energy policy is not part of Garvey's thought and the question is anachronistic for his era.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He rejected assimilation and the melting pot as preposterous for races.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "elite-replacement": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey saw white racial struggle but a deliberate immigration plot is not in his thought.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "proportional-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Electoral-system design is not discussed in the Declaration or Garvey's speeches, which demand the vote and representation in general terms.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-mission": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "His mission was redemption of Africa and race, not spreading a government form.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not documented, and his rhetoric about women suggests rejection of this analysis.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-elite-corrupt": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He attacked Black leaders seeking white favour as treason and said whites subjugate and exploit; inferred generally critical.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He stressed racial purity but no eugenic programme is documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Declaration condemns lynching and racial violence and demands fair trials and equal protection.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "night-watchman-state": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He wanted a large organised African state and economic programme beyond minimal functions.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Garvey strongly opposed miscegenation and championed racial purity.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He said God created all men equal and the Declaration demands equal rights, though his racial purity views conflict with full egalitarianism.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "socialism-one-country": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of his thought; socialism was rejected altogether.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He saw white-ruled states as built by subjugating weaker peoples, but his exact view on settler states is not documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "uniform-civil-code": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey never addressed religious personal law; the Declaration only demands equality before the law and religious freedom.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-conversion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The Declaration affirms freedom of religion, though UNIA stressed one God.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "ban-cattle-slaughter": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not a Garveyite concern; inferred opposed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-religion-state-schools": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Faith was seen as essential to society, so he would favour religious content in schools; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-strengthens-encirclement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "A socialist-state doctrine without relevance to Garveyism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "consent-of-governed": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He said government should express the will of the people and called for democratic institutions in Africa, while himself resisting elections within UNIA.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "trade-surplus": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His economic nationalism aimed at Black-owned industry and shipping to strengthen the race; inferred mercantile orientation.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "population-transfer": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He proposed Back-to-Africa migration and accepted that the US was a white man's country, though as voluntary and elite-led rather than coerced.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "initiating-force-wrong": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He held that power, including physical power, is the only protection against injustice and spoke of striking a blow for liberty.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He described races as in a struggle for survival and urged building strength in competition.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "ban-extremist-parties": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He expelled socialists from UNIA but no state policy on banning parties is documented.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "freedom-as-non-domination": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His opposition to being ruled by others and to dependence on white patrons matches the logic, though not framed in these terms.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separated-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; his own practice was centralized.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "vanguard-party": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Garveyism's mass movement was led by a single leader and opposed communism, but Garvey also saw educated Negroes leading the masses.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "priority-to-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed as a principle; he emphasized race uplift above class.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "British-style council housing is outside Garvey's concerns, which addressed Black-owned enterprise rather than public tenancy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-strikes-picketing": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey sympathised with labour grievances in places but gave no doctrine on legal limits on strikes or picketing.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He blamed white exploitation and lack of industrial base rather than population.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Garvey held that races favour their own interests and need separate nations, rejecting the melting pot.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Inferred from his centralised, appointed model of leadership.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The Declaration demands fair trials and legal protection, yet Garvey wrote nothing on emergency powers; adherents are not clearly for or against.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Price regulation of food is not addressed in Garvey's economic writing, which focused on industrial and commercial ownership.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-controls-media": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He ran his own press as a movement organ and envisioned a one-party state, but no media control doctrine is documented.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "party-commands-army": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey envisioned a strong African state with a one-party leadership but never specified how its armed forces would be commanded.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "long-naturalization-wait": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Citizenship procedure is not discussed; Garvey's concern was return of the diaspora to Africa rather than naturalisation rules.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred against from his celebration of an elite of titled officers.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "party-discipline-binding": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "UNIA demanded loyalty to its leadership and expelled dissenters, which suggests discipline.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "pool-sovereignty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He wanted pan-African unity and a United Africa, which implies pooled sovereignty among African states; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "head-commands-forces": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His envisioned strong presidency over a united Africa implies concentration of command.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "church-by-bishops": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He supported the Catholic-like African Orthodox Church, which has bishops; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "clerical-rule": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Religion was central to the movement but clergy were not envisioned as rulers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "defeat-own-government-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "UNIA initially expressed loyalty to Britain in the First World War and was nationalist, not defeatist.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not documented, though UNIA stressed respectability.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "unlimited-reelection": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey held that he should lead for life as head of UNIA and envisioned a strong president.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "recall-officials": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "His leadership model was appointed and centralised, so recall was contrary to it.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "end-foreign-alliances": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Permanent alliances and overseas troops are not addressed; the Declaration only discourages Black men from serving imperial armies.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-rental-housing": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not documented and contrary to a capitalist outlook.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "people-in-arms": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He urged readiness to defend oneself and organization, but no armed citizenry doctrine is stated.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "rural-life-healthier": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey stressed industry and commerce for racial power, and nothing in his work ranks rural over urban life.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He called for a united Africa and unity of the dispersed Black race.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He valued education and urged the educated to lead the masses.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He affirmed distinct racial civilizations and pride in them but held that races must earn respect through power; split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "death-penalty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey denounced lynching but did not address state execution, so no position can be fairly inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sex-ed-in-schools": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; inferred from moral conservatism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "creationism-in-schools": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed, though he held that God created man.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-pornography": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred from the movement's moral respectability.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Race and descent were central to belonging in his thought, supporting descent-based membership.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "minority-language-support": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wanted education in Black history but did not address minority-language policy for schools, services or elections.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "religious-exemptions": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Exemptions from general law for religious minorities were not a Garveyite issue; the Declaration asks only for freedom of religion.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "encourage-eccentricity": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He prized discipline and race loyalty, but refused skin-lightening ads and urged self-confidence in appearance, only partly relevant.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "sovereign-debt-cancellation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "International debt relief is anachronistic and not discussed, though he criticised white exploitation of weaker peoples.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Garvey held that ballot and political rights alone are hopeless without a solid industrial and economic foundation for a nation.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "constituent-assembly": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey demanded democratic institutions for Africa but never set out how a constitution should be drafted.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-freedoms-for-growth": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His one-party and appointed leadership model permits restriction in the name of racial redemption; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He insisted on self-help rather than white charity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Nuclear weapons postdate Garvey's active career, and he left nothing from which to infer a view.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-election-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He demanded democracy for Africa while himself being appointed and self-declared provisional president; split.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "central-bank-independence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Central banking was not a theme of Garvey's economics, which centred on Black-owned banks, shipping and factories.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed directly; he supported a Jewish homeland and Irish independence.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-serves-common-good": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His wealth caps and anti-monopoly stance imply property's social limits, though race rather than common good was the frame.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He praised the Bolshevik revolution in 1919 but later opposed communism; no view on this theory.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "precautionary-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Environmental risk regulation is anachronistic for Garvey and was never discussed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-defense": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance guarantees between states are not treated in Garvey's writings; his concern was racial self-defence.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "annexed-territory-occupation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He supported national self-determination and condemned colonial seizure of lands, so annexation without consent would be seen unlawful.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He supported a strong Black church identity and religious freedom in the Declaration.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "nonpartisan-head-of-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "His own head-of-state concept was an active leader of a one-party state.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey backed national self-determination in general but did not discuss whether states may use force against secession.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "region-keeps-system": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Special autonomy within a larger state was not part of Garveyism, which sought full sovereign nationhood.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacred-ruler": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Honours and titles surrounded Garvey, but there was no divine-descent claim.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "flat-income-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Income-tax structure is not covered in Garvey's economics; his only fiscal-adjacent idea was caps on private fortunes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "character-from-environment": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He stressed education and environment as forming a race's capacity but also racial qualities.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sovereign-above-law": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed formally though authoritarian in practice.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "space-expansion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Anachronistic; not part of his aims.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mixed-constitution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wrote no constitutional theory about blending rule by the few and the many, though his practice mixed appointment with acclaim.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "leader-cult": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "UNIA surrounded Garvey with uniforms, titles and honours such as the Order of the Nile, and he declared himself Provisional President of Africa.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "equal-parenting": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Child custody law is not addressed in Garvey's writings or in the Declaration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-struggle-under-socialism": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Irrelevant to his views; he rejected socialism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "land-redistribution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not an explicit programme, though African land was to be returned to Africans under the Declaration.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "refugee-return": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His claim of a right of return for the diaspora to Africa corresponds closely to this principle.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "co-ethnic-territorial-claim": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His idea of Africa for Africans of the world claims a homeland on racial and descent grounds; inferred.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "apostasy-punishable": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Garvey invoked freedom of religion in the Declaration.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "women-must-cover": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Dress codes for women are not addressed; UNIA valued respectability but no legal covering requirement appears.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "common-currency": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey never discussed monetary union, though he wanted a united Africa that might share institutions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "kin-peoples-union": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Pan-Africanism, a United Africa for the Africans of the world, and unity of Black peoples across borders are central.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "national-cultural-autonomy": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He sought a state of the race's own, not cultural autonomy within white-ruled countries.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "rights-where-you-live": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Garvey rejected integrationist struggle for equality in white countries and promoted emigration to Africa.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "material-conditions-drive-history": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Race and moral purpose were his drivers, though he prized economic foundations.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "ban-cartels": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He condemned monopoly that places economic power in a select few.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-bailouts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey's writings do not treat rescue of failed banks or firms, so this is left neutral rather than inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "courts-bound-by-majority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The Declaration seeks protection of a minority by law, but Garvey did not address judicial review against national majorities.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gender-parity-bodies": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of his thought; inferred from traditional views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "economic-self-sufficiency": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He wanted race-wide economic independence of white capital through Black-owned industry and shipping, though not full autarky.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "trade-labor-env-standards": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Binding labour and environmental clauses in trade agreements are anachronistic and absent from Garvey's thought.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "moral-incentives": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "His capitalist enterprises relied on profit incentives alongside race pride.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "armed-group-creates-revolution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey sought mass organization and emigration rather than foco-style insurrection, and wrote nothing on small armed vanguards.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-hereditary-privilege": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He distributed titles and honours but no hereditary system.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "history-own-civilization": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The Declaration demands that Black children be educated with Black history and Garvey celebrated Egypt, Ethiopia and Timbuktu.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "civilizing-tutelage": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wished to civilise tribes in Africa and promote Christianity yet rejected white overlordship; split.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "patriotic-education": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He wanted Black children taught racial pride and history with loyalty to the race and its flag and anthem.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "end-racial-preferences": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anachronistic; his stress was on self-reliance but he demanded correction of injustices.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "public-money-creation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey did not address who should create money; he favoured Black-owned banks within capitalism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "capitalism-adapts": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He supported capitalism as the route to Black advancement, implying it can function; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "former-empire-influence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The question concerns post-imperial powers' ties to former colonies and does not map onto Garveyism's anti-colonial stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "delink-world-market": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "He wanted trade networks of Black shipping and industry, not isolation.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "labor-aristocracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garveyism analysed race rather than class divisions within the world working class, so this Leninist thesis is outside it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-to-discriminate": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He asked equality before law, yet accepted racial separatism as natural; inferred split.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "entrenched-bill-of-rights": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Declaration is itself a rights charter and demands equal protection.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "colonial-treaties-void": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He condemned the colonial partition of Africa and the Declaration calls for African land to return to Africans.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "elective-rulers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "He demanded democracy for Africa but chose leaders himself and wanted appointed cabinets.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "minority-veto": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Inferred from his centralised, authoritarian leadership approach.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "resist-lawless-ruler": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garvey urged resistance to injustice and the Declaration asserts a right to defend against oppression.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "parliament-supreme": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey did not argue for parliamentary sovereignty over a monarch; his models were presidency and a republic in Africa.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-suffering-matters": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Animal ethics was not part of the movement's thought and nothing in Garvey's writings addresses it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-use-humane": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Animal use for food or research is not addressed in Garvey's writings, so no stated position exists.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "noblesse-oblige": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He urged educated and capable Negroes to lead and uplift the masses of their race.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "withdraw-from-politics": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Garveyism was an active mass political movement.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "mass-culture-pacifies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey used the press and mass spectacle to mobilise followers, and did not offer a critique of mass culture as pacifying.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ruling-class-consent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garveyism held that whites rule through power and racial prejudice, but it offered no theory of cultural hegemony.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "world-economy-extracts-surplus": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He condemned white nations for subjugating and exploiting weaker peoples and the Declaration protests the colonization of Africa.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "native-born-offices": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Reserving offices for the native-born is not discussed, and Garvey's diaspora vision included returnees from abroad.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-own-road": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Garveyism sought independent Black leadership free of white direction; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "self-reliance-over-aid": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Self-help and economic independence of white capital are a Garveyite creed, with Black-owned industry as foundation.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "return-lost-territory": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Return of African lands to Africans and the diaspora is a Declaration demand.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "indigenous-political-leadership": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Africa for the Africans implies native rule over colonizers, though he anticipated returnee leadership.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "antifascism-founding-value": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garvey's relationship with the KKK and his later denunciation of Nazism are mixed; adherents would not set it as a founding value.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "totalitarianisms-equivalent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; he opposed communism but is accused of authoritarian traits himself.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "slavery-not-civil-war-cause": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "A Black nationalist would reject this claim; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-contested-monuments": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred from a race-first rejection of white supremacist commemoration.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "male-disadvantage-attention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Programmes for boys and men's disadvantage are modern issues outside Garvey's concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "domestic-violence-symmetry": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Domestic violence services are anachronistic for Garvey and no source shows him addressing the issue.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "institutions-fit-civilization": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "He wanted Africans to build their own institutions and civilization, rather than imitate white ones, though he drew on European models.",
-   "sources": [
-    "s3",
-    "s1"
-   ]
-  },
-  "military-guardian-role": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey valued strength but never said whether armed forces should act as political guardians of the constitution.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "paid-care-work": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey's brief remarks on women do not touch on recognising unpaid domestic labour as paid work.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "filial-duty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred from moral and religious conservatism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "office-by-exam": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Civil service selection is not discussed; Garvey favoured leaders chosen by himself and the educated.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "foreign-takeover-block": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "His goal of independence from white capital implies guarding Black-owned enterprise; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "no-fault-divorce": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Divorce law is not addressed in Garvey's writings or UNIA programmes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recallable-delegates": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Inferred from appointed and centralized leadership.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "individual-pension-accounts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Pension design is outside Garvey's writing, which concerned Black enterprise and not social insurance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "land-use-tenure": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey did not set out a land tenure theory beyond returning African land to Africans.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "budget-needs-parliament": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Legislative control of budgets is not discussed in Garvey's work and his own leadership practice was centralised.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "single-official-language": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garvey wrote about race and Africa, not language policy; an Africa-for-Africans state would need a common tongue but the sources do not say which.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "foreign-land-ownership": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred from \"Africa for the Africans\": Garvey wanted Africa governed and owned by Black people, though he also sought Black ownership in the Americas.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "disparate-impact-discrimination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Garveyists denounced segregation and lynching, but their remedy was separate Black enterprise, and the sources show no view of outcome-based discrimination.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "consumerism-harmful": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Garveyism promoted Black business, commerce and the accumulation of wealth as the path to power, so mass consumption was not treated as a harm; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "arm-foreign-insurgents": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The UNIA backed armed self-defence and the liberation of Africa, but there is no sourced stand on arming foreign insurgents; inferred as split.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "intervene-in-bloc": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred from the Declaration of 1920, which rejected outside domination of peoples and demanded self-government.",
-   "sources": [
-    "s2"
-   ]
-  }
- },
- "missingStatements": [
-  {
-   "text": "A people dispersed by slavery or exile should organise to build a homeland of their own on the continent of their ancestors.",
-   "value": 2,
-   "rationale": "The call for a redeemed Africa for the Africans of the world, with diaspora return, is the defining Garveyite programme.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "addedAs": "diaspora-return-right"
-  },
-  {
-   "text": "Members of different races should keep their own distinct communities and not merge through assimilation.",
-   "value": 2,
-   "rationale": "Garvey called racial assimilation preposterous and championed racial purity and separation.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "addedAs": "discourage-race-mixing"
-  }
- ],
- "notes": "Contested points: Garvey's 1922 meeting with the Ku Klux Klan and his anti-miscegenation views are documented but disputed among admirers; he praised the Bolsheviks in 1919 but later opposed communism; he was pro-Zionist before 1923. Many answers are inferences because his writings did not address most modern policy questions."
+  "id": "garveyism",
+  "name": "Garveyism",
+  "auditedAt": "2026-10-16",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Garveyism is the Black nationalist and Pan-Africanist doctrine of Marcus Garvey and the Universal Negro Improvement Association. It holds that Black people must unite race-first, win economic independence through Black-owned business, and build a redeemed, self-governing Africa to which the diaspora may return. It rejects integration and racial mixing, opposes communism and socialism, and favours strongly centralised leadership.",
+  "scope": "The doctrine of Garvey and the UNIA in the 1910s-1920s as set out in the collected Philosophy and Opinions of Marcus Garvey and the 1920 Declaration of the Rights of the Negro Peoples of the World. It does not cover later movements that drew on Garvey, such as Rastafari, the Nation of Islam or Nkrumah-era Pan-Africanism.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Garveyism",
+  "furtherReading": [
+    {
+      "title": "The Philosophy and Opinions of Marcus Garvey (full text)",
+      "url": "https://archive.org/stream/ThePhilosophyOpinionsOfMarcusGarveyOrAfricaForTheAfricans/EbookPhilAndOpinions_djvu.txt",
+      "note": "Garvey's speeches and articles in his own words."
+    },
+    {
+      "title": "Declaration of the Rights of the Negro Peoples of the World",
+      "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_the_Negro_Peoples_of_the_World",
+      "note": "The UNIA's 1920 charter of demands, article by article."
+    },
+    {
+      "title": "Marcus Garvey",
+      "url": "https://en.wikipedia.org/wiki/Marcus_Garvey",
+      "note": "Biography covering the UNIA, Black Star Line and legacy."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Marcus Garvey",
+      "role": "Founder of the UNIA and the movement's defining thinker and leader.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marcus_Garvey",
+      "sources": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "primary",
+      "title": "The Philosophy and Opinions of Marcus Garvey, or Africa for the Africans",
+      "author": "Marcus Garvey, compiled by Amy Jacques Garvey",
+      "url": "https://archive.org/stream/ThePhilosophyOpinionsOfMarcusGarveyOrAfricaForTheAfricans/EbookPhilAndOpinions_djvu.txt",
+      "usedFor": "Garvey's own statements on race purity, assimilation, Africa, power, monopoly, religion, Ireland, India and Palestine (first 200,000 characters read)."
+    },
+    {
+      "id": "s2",
+      "kind": "reference",
+      "title": "Declaration of the Rights of the Negro Peoples of the World",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_the_Negro_Peoples_of_the_World",
+      "usedFor": "The 1920 UNIA declaration: equal rights, anti-lynching, self-defence, return to Africa, education, rejection of the League of Nations."
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Garveyism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Garveyism",
+      "usedFor": "Overview of separatism, Pan-Africanism, black capitalism, anti-communism, religion and scholarly assessments (first 100,000 characters read)."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Marcus Garvey",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marcus_Garvey",
+      "usedFor": "Leadership style, the Klan meeting, expulsion of socialists, Zionism, Catholicism, legacy."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey's programme centred on race-owned enterprise and self-help rather than state services; the Declaration only protests segregated hospitals, so a state health guarantee is not a stated aim.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Wage policy is not addressed; the Declaration complains of unequal pay for Black workers but proposes Black-owned industry rather than statutory wage floors.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey backed capitalism and Black-owned business but condemned monopoly, so he favoured markets without endorsing laissez-faire; inferred from his economic programme.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "public-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garveyism promoted private and UNIA-owned corporations such as the Black Star Line and opposed socialism; state ownership is inferred as unwelcome.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He proposed capping individual fortunes at one million dollars, which implies hostility to great wealth, yet he championed Black capitalists; no tax policy is documented.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "unions-good": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey was sympathetic to labour organization in places but also saw Black workers as needing their own industry; adherents are not clearly pro-union.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey was pro-capitalist and urged Black property and enterprise, but also proposed wealth caps; inferred moderate support for property rights.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He condemned industrial and commercial monopoly that concentrates power in a few hands and proposed ceilings on individual and corporate capital.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "cut-welfare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Welfare is not discussed; his self-reliance ethic leans against dependency, but he also wanted collective group provision.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "worker-ownership": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He favoured collective decision-making and group profit-sharing in UNIA firms, but ownership was by race-wide shareholders rather than worker collectives.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "surveillance-ok": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; inferred from UNIA's experience of intensive government surveillance and a rhetoric of self-protection against state hostility.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; UNIA stressed moral discipline and religion, but no drug stance is documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Never addressed; Garvey himself used racially charged rhetoric and championed free speech and press in the Declaration.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "strong-leader": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Garvey argued UNIA's cabinet should be appointed by him, styled himself Provisional President of Africa, and envisaged a united Africa as a one-party state under strong leadership.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garveyism is a state-building nationalism that demanded a powerful African government, the opposite of anti-statism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-guns": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The Declaration affirms a right to self-defence against oppression and Garvey urged readiness to strike a blow for liberty, so strict gun limits are unlikely.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He wanted a strong African state with its own forces but distrusted white-run police and military, who enforced lynching and segregation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement stressed moral uplift and respectability, so legalisation is inferred as unwelcome.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garveyism sought a centralised, unified African government and a worldwide UNIA hierarchy rather than devolution.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Penal policy is not addressed; the Declaration protests unfair trials rather than prison philosophy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "traditional-family": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey's remarks on women and the UNIA's Christian respectability suggest conventional family values; inferred rather than systematically stated.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from the movement's conservative Christian morality and early twentieth-century context.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abortion-legal": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from Christian moral conservatism and a nationalist concern to grow the race.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "UNIA's motto was One Aim, One God, One Destiny, and Garvey held that faith and moral law are essential to society.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Declaration lists the injustices done to Black people and demands redress, though Garvey's remedy was separate nationhood and self-reliance more than integrationist programmes.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; Garvey's remarks portray women as having fixed natures, so he would likely reject the claim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Garveyism stressed pride in African heritage and a distinct Black civilization, with teaching of Black history for Black children.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey demanded urgent redemption of Africa and told followers that liberty requires striking the blow; he was impatient with gradualist integrationism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wanted white countries kept white and Africa for Africans, but also urged Black migration; there is no clear stance on immigration levels in general.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Declaration rejects the League of Nations as invalid for Black people because they were not represented in it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "free-trade": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He sought Black shipping and trade networks across the diaspora, but also economic independence from white capital; no explicit tariff doctrine.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "nation-first": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Race-first nationalism and Africa for the Africans put the interests of one's own people first; inferred as applied to nations.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey distrusted white powers' motives, saying they subjugate and exploit weaker peoples; intervention would likely be seen as imperial.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garvey held each race should have its own homeland and rejected assimilation and a melting pot, which is incompatible with open borders.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "limit-growth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; his programme was industrial and commercial expansion for the race.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The issue postdates Garvey and nothing in his thought bears on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He prized scientific and technical training and held that power must be physical, financial and scientific; inferred optimism about technology.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nuclear power is anachronistic and no position can be inferred reliably.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Garvey said liberty must be won by striking the blow and accepted possible sacrifice of life, though UNIA's practice was organization rather than insurrection.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "experts-over-public": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey urged educated and scientifically trained Negroes to lead the illiterate masses, and favoured appointed leadership over election.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "central-planning": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He favoured capitalism and race-owned enterprise and opposed communism; inferred as against planned economies.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "socialized-markets": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey's group enterprises shared profit collectively, but he did not frame this as worker or public ownership of markets.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "land-value-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed anywhere in documented Garveyism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His wealth caps imply concern about concentrated fortunes, but no inheritance tax is documented.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "basic-income": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "A modern proposal, inferred against from his emphasis on self-reliance and Black enterprise rather than state transfers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He wanted Black-owned industry independent of white capital, which fits protection of a young industrial base; not stated as tariff policy.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Investment was to come from race-wide shareholders in UNIA firms; once a state of Africa existed he might have directed it, but this is unspecified.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He promoted Black ownership broadly but through large corporations with caps on individual wealth; not a small-property doctrine.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He promoted capitalism and wage-earning Black industry, and opposed socialism and communism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He founded a Black-owned banking aim within UNIA's economic programme, so he valued banks; not anti-central-bank doctrine.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey supported collective race-wide organisation, but state-recognised wage-setting bodies are not documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "one-party-rule": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His envisioned united African republic was a one-party state, which scholars describe as authoritarian and elitist.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He gave himself presidential titles and a nobility of honours such as the Order of the Nile, yet UNIA claimed republican forms; not clear on hereditary monarchy.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "democracy-best": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey called for democratic institutions in Africa while running UNIA in a centralised way and appointing officers; adherents are split.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "direct-votes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; his centralised practice suggests disfavour toward direct popular legislating.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "workers-councils": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garveyism opposed socialism and communism and expelled socialist members from UNIA.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "right-to-secede": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not discussed as a principle; his aim of a separate Black nation, however, is a kind of racial separation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "natural-rulers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He held that educated leaders should guide the masses and spoke of an elite, but did not claim innate rule-fitness as such.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "political-violence-never": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Garvey said power, including physical power, is the protection against injustice, and the Declaration asserts a right of defence against oppression.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "war-builds-character": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He admired organized strength and power but did not praise war for character; no clear position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garveyism invoked God in its motto and a Black-centred Christianity, but no theocracy was proposed; inferred mild opposition to strict separation.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Faith and moral law were considered essential but legal codification from scripture was not a Garveyite demand.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garvey's nationalism demanded a powerful state with its own government and defence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey stressed that the only protection against injustice is power, including physical power, for a Black nation; inferred as applying to a Black state.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Garvey held that each race should have its own homeland, that Africa is for Africans, and praised racial purity and separation.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Garveyism put race rather than class first and denounced communism, which the Comintern called Garveyism a bourgeois answer to.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "equal-outcomes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He sought Black economic self-advancement and wealth caps, but not social levelling; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not framed in these terms, but Africa for the Africans implies native authority over African lands; he also envisioned diaspora return.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "colonial-reparations": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The Declaration denounces colonial seizure of Africa and demands return of land; explicit reparations are not documented.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "civilizational-union": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He called for a united Africa and unity of the Black race worldwide under UNIA; the unit is race rather than religion.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "self-interest-moral": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He taught race self-help and personal industry, yet rejected Booker T. Washington's individualism in favour of group effort.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He stressed duty to the race and collective discipline, but the Declaration is also a charter of rights.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Environmental ethics is not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey warned of racial extermination and spoke of building the race, so he would likely oppose limiting population.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He sought industrial and commercial development as the foundation of a race's power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He valued science for racial power but there is no stance on disruptive acceleration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "human-enhancement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic and not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; inferred opposition from his personal leadership model.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic and not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey invoked a glorious African past of Egypt, Ethiopia and Timbuktu but wanted a modern redeemed Africa rather than restoration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "results-over-ideology": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey was a committed ideologue of race-first doctrine; inferred rejection of pure pragmatism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "direct-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He preferred mass organization, business and emigration over elections and parliaments, yet UNIA also ran petitions and conventions.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "means-match-ends": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey never discussed whether methods must mirror the goal; UNIA built hierarchical organs while seeking an African republic, so no reliable inference.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He promoted industry and modern civilization for a redeemed Africa.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Capitalist Garveyite industry relied on organized division of labour and no such abolition was proposed.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garveyism opposed communism and supported capitalist enterprise with profit sharing for investors.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "production-for-use": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "UNIA ran for-profit businesses such as the Black Star Line and promoted black capitalism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Garvey supported capitalism and criticised socialists, and the Comintern condemned Garveyism as bourgeois.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He opposed communism and socialism and expelled socialists from the UNIA.",
+      "sources": [
+        "s4",
+        "s3"
+      ]
+    },
+    "collective-farming": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not documented; inferred against from anti-communism and support for property and enterprise.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He blamed white racial rivalry and exploitation of weaker peoples for war and subjugation, but not capitalism specifically.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He envisioned a strong state financed in the normal way and no anarcho-capitalist view appears.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "harm-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stance; the Declaration lists freedoms of speech and religion but he was authoritarian in practice.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "individual-rights-only": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Garveyism is group-based, stressing racial rights and collectivity, and criticised individualism.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "conscription": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wanted a strong Black army yet the Declaration discouraged Black men from serving imperial armies; no statement on conscription.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "exit-over-voice": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Return and emigration to Africa were central responses to oppression, alongside a demand for rights.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "state-as-business": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; he ran political bodies as business-like corporations but the statement concerns citizen-as-customer exit.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "positive-liberty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He argued political rights and the ballot are not enough without industrial and economic foundations; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He ran his own newspaper Negro World to counter white media, but no claim about media over elected officials is documented.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "hereditarian-race": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He asserted racial pride and purity, and spoke of a struggle among races, but his emphasis was Black capability rather than quantified heredity; contested.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "organic-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; UNIA had a hierarchical organisational structure rather than representation by trade bodies.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "total-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He envisioned a one-party Africa, but there is no total direction of culture and economy given his support of private enterprise.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "national-rebirth": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Redeeming Africa and the Black race from subjugation to a great African civilization is the core Garveyite project.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "territorial-expansion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He sought a state in Africa and independence, with returnees not seeking overlordship over natives, rather than conquest.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "UNIA used titles and honours, with loyalty to Garvey, but feudal oath-based authority is not a position.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "bound-labor": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He denounced industrial bondage, peonage and serfdom and wanted the Negro emancipated from them.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He said education prepares a people to build its own civilization and wanted Black history taught, but he did not make an epistemic claim.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "universal-morality": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He held that God created all men equal and that moral law is essential, implying universal moral order; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "single-common-good": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey spoke of the race's common interest, but never addressed whether politics aims at one rational common good versus balancing group interests.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Garvey listed Palestine for the Jews with Ireland for the Irish as national aspirations; scholars note his pre-1923 Zionism.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Return of the diaspora to Africa was central, and the Declaration claims rights for Black people to Africa and to travel.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey did not push revival of African languages; critics note his thin knowledge of them.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "workplace-democracy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "UNIA's firms were corporate shareholder enterprises with appointed leaders, not worker-run.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "school-vouchers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; he favoured separate Black education but no voucher scheme.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fiscal policy and deficit spending are absent from Garvey's writings, which concern race enterprise rather than government budgets.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-freedom": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He favoured Black economic independence as the basis of political independence, but not strictly free-market doctrine.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "rule-by-example": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He urged moral and elite leadership yet also set up formal organizations; no explicit doctrine.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-self-determination": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Africa for the Africans, the Declaration's plan for a Black nation, and support for Irish, Indian and Jewish independence all assert this.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "force-without-un": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He rejected the League of Nations and valued power, but no explicit position on use of force abroad.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "reason-over-faith": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Garveyism's motto invoked God and Garvey built a Black Christian faith identity, treating faith as essential.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Welfare not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Strong ethic of industry and self-help makes work requirements plausible; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-collaboration": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He favoured collaboration under Black capitalism and rejected socialist class conflict as serving white interests.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He celebrated ancient African civilization and heritage and wanted Black history taught.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "dominated-front": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He sought unity of oppressed Black and colonized peoples against white domination and sympathized with Irish and Indian independence movements.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "workers-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garveyism organised along racial rather than national or class lines, so neither framing fits.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His brief writings treat women as inconstant and helper figures, though women held UNIA offices; inferred.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "ban-interest": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Garvey ran Black banking and share-capital enterprises and supported capitalism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He supported voluntary separation and a separate homeland but protested segregation imposed by whites, so law-based segregation was contrary to the Declaration though he accepted a white man's country.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He rejected Marxist class analysis, though he saw white states as instruments of racial domination.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Energy policy is not part of Garvey's thought and the question is anachronistic for his era.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He rejected assimilation and the melting pot as preposterous for races.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "elite-replacement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey saw white racial struggle but a deliberate immigration plot is not in his thought.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Electoral-system design is not discussed in the Declaration or Garvey's speeches, which demand the vote and representation in general terms.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His mission was redemption of Africa and race, not spreading a government form.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not documented, and his rhetoric about women suggests rejection of this analysis.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He attacked Black leaders seeking white favour as treason and said whites subjugate and exploit; inferred generally critical.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He stressed racial purity but no eugenic programme is documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Declaration condemns lynching and racial violence and demands fair trials and equal protection.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He wanted a large organised African state and economic programme beyond minimal functions.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Garvey strongly opposed miscegenation and championed racial purity.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He said God created all men equal and the Declaration demands equal rights, though his racial purity views conflict with full egalitarianism.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "socialism-one-country": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of his thought; socialism was rejected altogether.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He saw white-ruled states as built by subjugating weaker peoples, but his exact view on settler states is not documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey never addressed religious personal law; the Declaration only demands equality before the law and religious freedom.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The Declaration affirms freedom of religion, though UNIA stressed one God.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not a Garveyite concern; inferred opposed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Faith was seen as essential to society, so he would favour religious content in schools; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "A socialist-state doctrine without relevance to Garveyism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "consent-of-governed": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He said government should express the will of the people and called for democratic institutions in Africa, while himself resisting elections within UNIA.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "trade-surplus": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His economic nationalism aimed at Black-owned industry and shipping to strengthen the race; inferred mercantile orientation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "population-transfer": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He proposed Back-to-Africa migration and accepted that the US was a white man's country, though as voluntary and elite-led rather than coerced.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He held that power, including physical power, is the only protection against injustice and spoke of striking a blow for liberty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He described races as in a struggle for survival and urged building strength in competition.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He expelled socialists from UNIA but no state policy on banning parties is documented.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His opposition to being ruled by others and to dependence on white patrons matches the logic, though not framed in these terms.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separated-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; his own practice was centralized.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "vanguard-party": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Garveyism's mass movement was led by a single leader and opposed communism, but Garvey also saw educated Negroes leading the masses.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "priority-to-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed as a principle; he emphasized race uplift above class.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "British-style council housing is outside Garvey's concerns, which addressed Black-owned enterprise rather than public tenancy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey sympathised with labour grievances in places but gave no doctrine on legal limits on strikes or picketing.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He blamed white exploitation and lack of industrial base rather than population.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Garvey held that races favour their own interests and need separate nations, rejecting the melting pot.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from his centralised, appointed model of leadership.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The Declaration demands fair trials and legal protection, yet Garvey wrote nothing on emergency powers; adherents are not clearly for or against.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Price regulation of food is not addressed in Garvey's economic writing, which focused on industrial and commercial ownership.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-controls-media": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He ran his own press as a movement organ and envisioned a one-party state, but no media control doctrine is documented.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "party-commands-army": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey envisioned a strong African state with a one-party leadership but never specified how its armed forces would be commanded.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Citizenship procedure is not discussed; Garvey's concern was return of the diaspora to Africa rather than naturalisation rules.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred against from his celebration of an elite of titled officers.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "UNIA demanded loyalty to its leadership and expelled dissenters, which suggests discipline.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He wanted pan-African unity and a United Africa, which implies pooled sovereignty among African states; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His envisioned strong presidency over a united Africa implies concentration of command.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He supported the Catholic-like African Orthodox Church, which has bishops; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "clerical-rule": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Religion was central to the movement but clergy were not envisioned as rulers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "UNIA initially expressed loyalty to Britain in the First World War and was nationalist, not defeatist.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not documented, though UNIA stressed respectability.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey held that he should lead for life as head of UNIA and envisioned a strong president.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "recall-officials": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "His leadership model was appointed and centralised, so recall was contrary to it.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Permanent alliances and overseas troops are not addressed; the Declaration only discourages Black men from serving imperial armies.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not documented and contrary to a capitalist outlook.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "people-in-arms": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He urged readiness to defend oneself and organization, but no armed citizenry doctrine is stated.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey stressed industry and commerce for racial power, and nothing in his work ranks rural over urban life.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He called for a united Africa and unity of the dispersed Black race.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He valued education and urged the educated to lead the masses.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He affirmed distinct racial civilizations and pride in them but held that races must earn respect through power; split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "death-penalty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey denounced lynching but did not address state execution, so no position can be fairly inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; inferred from moral conservatism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed, though he held that God created man.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's moral respectability.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Race and descent were central to belonging in his thought, supporting descent-based membership.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "minority-language-support": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wanted education in Black history but did not address minority-language policy for schools, services or elections.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-exemptions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Exemptions from general law for religious minorities were not a Garveyite issue; the Declaration asks only for freedom of religion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He prized discipline and race loyalty, but refused skin-lightening ads and urged self-confidence in appearance, only partly relevant.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "International debt relief is anachronistic and not discussed, though he criticised white exploitation of weaker peoples.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Garvey held that ballot and political rights alone are hopeless without a solid industrial and economic foundation for a nation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constituent-assembly": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey demanded democratic institutions for Africa but never set out how a constitution should be drafted.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His one-party and appointed leadership model permits restriction in the name of racial redemption; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He insisted on self-help rather than white charity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Nuclear weapons postdate Garvey's active career, and he left nothing from which to infer a view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He demanded democracy for Africa while himself being appointed and self-declared provisional president; split.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "central-bank-independence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Central banking was not a theme of Garvey's economics, which centred on Black-owned banks, shipping and factories.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed directly; he supported a Jewish homeland and Irish independence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His wealth caps and anti-monopoly stance imply property's social limits, though race rather than common good was the frame.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He praised the Bolshevik revolution in 1919 but later opposed communism; no view on this theory.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "precautionary-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Environmental risk regulation is anachronistic for Garvey and was never discussed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance guarantees between states are not treated in Garvey's writings; his concern was racial self-defence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He supported national self-determination and condemned colonial seizure of lands, so annexation without consent would be seen unlawful.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He supported a strong Black church identity and religious freedom in the Declaration.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "His own head-of-state concept was an active leader of a one-party state.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey backed national self-determination in general but did not discuss whether states may use force against secession.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "region-keeps-system": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Special autonomy within a larger state was not part of Garveyism, which sought full sovereign nationhood.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Honours and titles surrounded Garvey, but there was no divine-descent claim.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "flat-income-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Income-tax structure is not covered in Garvey's economics; his only fiscal-adjacent idea was caps on private fortunes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "character-from-environment": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He stressed education and environment as forming a race's capacity but also racial qualities.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed formally though authoritarian in practice.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "space-expansion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Anachronistic; not part of his aims.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wrote no constitutional theory about blending rule by the few and the many, though his practice mixed appointment with acclaim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "leader-cult": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "UNIA surrounded Garvey with uniforms, titles and honours such as the Order of the Nile, and he declared himself Provisional President of Africa.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Child custody law is not addressed in Garvey's writings or in the Declaration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Irrelevant to his views; he rejected socialism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "land-redistribution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not an explicit programme, though African land was to be returned to Africans under the Declaration.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "refugee-return": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His claim of a right of return for the diaspora to Africa corresponds closely to this principle.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His idea of Africa for Africans of the world claims a homeland on racial and descent grounds; inferred.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Garvey invoked freedom of religion in the Declaration.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "women-must-cover": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Dress codes for women are not addressed; UNIA valued respectability but no legal covering requirement appears.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "common-currency": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey never discussed monetary union, though he wanted a united Africa that might share institutions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Pan-Africanism, a United Africa for the Africans of the world, and unity of Black peoples across borders are central.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He sought a state of the race's own, not cultural autonomy within white-ruled countries.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Garvey rejected integrationist struggle for equality in white countries and promoted emigration to Africa.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Race and moral purpose were his drivers, though he prized economic foundations.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "ban-cartels": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He condemned monopoly that places economic power in a select few.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-bailouts": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey's writings do not treat rescue of failed banks or firms, so this is left neutral rather than inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The Declaration seeks protection of a minority by law, but Garvey did not address judicial review against national majorities.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of his thought; inferred from traditional views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He wanted race-wide economic independence of white capital through Black-owned industry and shipping, though not full autarky.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Binding labour and environmental clauses in trade agreements are anachronistic and absent from Garvey's thought.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "moral-incentives": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "His capitalist enterprises relied on profit incentives alongside race pride.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey sought mass organization and emigration rather than foco-style insurrection, and wrote nothing on small armed vanguards.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He distributed titles and honours but no hereditary system.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "history-own-civilization": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Declaration demands that Black children be educated with Black history and Garvey celebrated Egypt, Ethiopia and Timbuktu.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "civilizing-tutelage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wished to civilise tribes in Africa and promote Christianity yet rejected white overlordship; split.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "patriotic-education": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He wanted Black children taught racial pride and history with loyalty to the race and its flag and anthem.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "end-racial-preferences": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic; his stress was on self-reliance but he demanded correction of injustices.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "public-money-creation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey did not address who should create money; he favoured Black-owned banks within capitalism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "capitalism-adapts": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He supported capitalism as the route to Black advancement, implying it can function; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "former-empire-influence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The question concerns post-imperial powers' ties to former colonies and does not map onto Garveyism's anti-colonial stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "delink-world-market": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He wanted trade networks of Black shipping and industry, not isolation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "labor-aristocracy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garveyism analysed race rather than class divisions within the world working class, so this Leninist thesis is outside it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-to-discriminate": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He asked equality before law, yet accepted racial separatism as natural; inferred split.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "entrenched-bill-of-rights": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Declaration is itself a rights charter and demands equal protection.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "colonial-treaties-void": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He condemned the colonial partition of Africa and the Declaration calls for African land to return to Africans.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "elective-rulers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "He demanded democracy for Africa but chose leaders himself and wanted appointed cabinets.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "minority-veto": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from his centralised, authoritarian leadership approach.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "resist-lawless-ruler": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garvey urged resistance to injustice and the Declaration asserts a right to defend against oppression.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "parliament-supreme": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey did not argue for parliamentary sovereignty over a monarch; his models were presidency and a republic in Africa.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "animal-suffering-matters": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Animal ethics was not part of the movement's thought and nothing in Garvey's writings addresses it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "animal-use-humane": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Animal use for food or research is not addressed in Garvey's writings, so no stated position exists.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "noblesse-oblige": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He urged educated and capable Negroes to lead and uplift the masses of their race.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "withdraw-from-politics": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Garveyism was an active mass political movement.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "mass-culture-pacifies": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey used the press and mass spectacle to mobilise followers, and did not offer a critique of mass culture as pacifying.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ruling-class-consent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garveyism held that whites rule through power and racial prejudice, but it offered no theory of cultural hegemony.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "world-economy-extracts-surplus": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He condemned white nations for subjugating and exploiting weaker peoples and the Declaration protests the colonization of Africa.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "native-born-offices": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Reserving offices for the native-born is not discussed, and Garvey's diaspora vision included returnees from abroad.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-own-road": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Garveyism sought independent Black leadership free of white direction; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "self-reliance-over-aid": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Self-help and economic independence of white capital are a Garveyite creed, with Black-owned industry as foundation.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "return-lost-territory": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Return of African lands to Africans and the diaspora is a Declaration demand.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "indigenous-political-leadership": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Africa for the Africans implies native rule over colonizers, though he anticipated returnee leadership.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "antifascism-founding-value": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey's relationship with the KKK and his later denunciation of Nazism are mixed; adherents would not set it as a founding value.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "totalitarianisms-equivalent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; he opposed communism but is accused of authoritarian traits himself.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "slavery-not-civil-war-cause": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "A Black nationalist would reject this claim; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-contested-monuments": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from a race-first rejection of white supremacist commemoration.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "male-disadvantage-attention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Programmes for boys and men's disadvantage are modern issues outside Garvey's concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "domestic-violence-symmetry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Domestic violence services are anachronistic for Garvey and no source shows him addressing the issue.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "institutions-fit-civilization": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He wanted Africans to build their own institutions and civilization, rather than imitate white ones, though he drew on European models.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
+    },
+    "military-guardian-role": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey valued strength but never said whether armed forces should act as political guardians of the constitution.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "paid-care-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey's brief remarks on women do not touch on recognising unpaid domestic labour as paid work.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "filial-duty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from moral and religious conservatism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "office-by-exam": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Civil service selection is not discussed; Garvey favoured leaders chosen by himself and the educated.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "foreign-takeover-block": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "His goal of independence from white capital implies guarding Black-owned enterprise; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "no-fault-divorce": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Divorce law is not addressed in Garvey's writings or UNIA programmes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recallable-delegates": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from appointed and centralized leadership.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "individual-pension-accounts": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Pension design is outside Garvey's writing, which concerned Black enterprise and not social insurance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "land-use-tenure": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey did not set out a land tenure theory beyond returning African land to Africans.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "budget-needs-parliament": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Legislative control of budgets is not discussed in Garvey's work and his own leadership practice was centralised.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "single-official-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey wrote about race and Africa, not language policy; an Africa-for-Africans state would need a common tongue but the sources do not say which.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "foreign-land-ownership": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from \"Africa for the Africans\": Garvey wanted Africa governed and owned by Black people, though he also sought Black ownership in the Americas.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "disparate-impact-discrimination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garveyists denounced segregation and lynching, but their remedy was separate Black enterprise, and the sources show no view of outcome-based discrimination.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consumerism-harmful": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garveyism promoted Black business, commerce and the accumulation of wealth as the path to power, so mass consumption was not treated as a harm; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "arm-foreign-insurgents": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The UNIA backed armed self-defence and the liberation of Africa, but there is no sourced stand on arming foreign insurgents; inferred as split.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "intervene-in-bloc": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the Declaration of 1920, which rejected outside domination of peoples and demanded self-government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "corporate-influence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Garvey focused on race-owned enterprise, not lobbying; inferred and not a stated position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-foreign-funding": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from race-first self-reliance and distrust of white-controlled funding.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "pronatalist-incentives": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the aim of building a large, strong Black nation; not stated directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "residents-only-property": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the aim of Black ownership of land and enterprise in Black communities.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "job-guarantee": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey stressed self-help and capitalism over state guarantees and opposed socialism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "democratic-peace": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Garvey's view of white democracies as colonial powers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-duty-to-obey": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey protested unjust laws, but favoured order and strong leadership; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "non-intervention": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from 'Africa for the Africans' and opposition to colonial rule.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-unions": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey was wary of white-led labour unions and favoured Black business ownership; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "minority-conspiracy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Garvey's racial thinking blamed white supremacy rather than a secret minority conspiracy; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-legal-marriage": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from the UNIA's traditional moral and family values.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "public-access-to-information": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the Declaration's demands for fair treatment and open dealing by governments.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "local-production": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Garvey built Black-owned factories, shops and shipping as the basis of racial independence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "informal-organisation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The UNIA was a centralised mass organisation under a strong leader.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-law-over-international": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Garvey's nationalism and the Declaration's claim to self-government.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-nation": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Garvey's nation was defined by race, not by shared religion.",
+      "sources": [
+        "s1"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "A people dispersed by slavery or exile should organise to build a homeland of their own on the continent of their ancestors.",
+      "value": 2,
+      "rationale": "The call for a redeemed Africa for the Africans of the world, with diaspora return, is the defining Garveyite programme.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "addedAs": "diaspora-return-right"
+    },
+    {
+      "text": "Members of different races should keep their own distinct communities and not merge through assimilation.",
+      "value": 2,
+      "rationale": "Garvey called racial assimilation preposterous and championed racial purity and separation.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "addedAs": "discourage-race-mixing"
+    }
+  ],
+  "notes": "Contested points: Garvey's 1922 meeting with the Ku Klux Klan and his anti-miscegenation views are documented but disputed among admirers; he praised the Bolsheviks in 1919 but later opposed communism; he was pro-Zionist before 1923. Many answers are inferences because his writings did not address most modern policy questions."
 }

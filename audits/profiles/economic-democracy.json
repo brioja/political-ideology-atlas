@@ -1,2486 +1,2598 @@
 {
- "id": "economic-democracy",
- "name": "Economic democracy",
- "auditedAt": "2026-10-16",
- "auditor": "claude-sonnet-5-5",
- "summary": "Economic democracy extends democratic control into the economy: firms are governed by their workers one person one vote, and investment is steered by public bodies rather than private savers. It keeps markets for goods and services but replaces labor and capital markets with worker self-management and publicly financed investment. Its aim is to end capitalism's democratic deficits and structural unemployment without central planning.",
- "scope": "The market-socialist strand set out by David Schweickart (After Capitalism, and the summary 'Economic Democracy') with Robert Dahl's earlier case for self-governing firms: worker self-management, a market for goods, and social control of investment via a capital-assets tax and public banks. It does not cover Marxist planning models, coupon socialism or Peter Barnes-style stakeholder proposals. Because it is an economic design, most statements outside economics are low-confidence inferences from its democratic and egalitarian premises.",
- "wikipedia": "https://en.wikipedia.org/wiki/Economic_democracy",
- "furtherReading": [
-  {
-   "title": "Economic Democracy (Schweickart)",
-   "url": "https://www.globaljusticecenter.org/papers/economic-democracy",
-   "note": "Short statement of the model by its main contemporary author."
-  },
-  {
-   "title": "Economic democracy (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Economic_democracy",
-   "note": "Overview of the idea, its variants and reform agendas."
-  },
-  {
-   "title": "Socialism (Stanford Encyclopedia of Philosophy)",
-   "url": "https://plato.stanford.edu/entries/socialism/",
-   "note": "Places economic democracy among market-socialist designs and lists the main objections."
-  },
-  {
-   "title": "Market socialism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Market_socialism",
-   "note": "The wider family of models economic democracy belongs to."
-  }
- ],
- "keyFigures": [
-  {
-   "name": "David Schweickart",
-   "role": "Philosopher who developed the economic democracy model in After Capitalism.",
-   "wikipedia": "https://en.wikipedia.org/wiki/David_Schweickart",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  {
-   "name": "Robert A. Dahl",
-   "role": "Political scientist whose A Preface to Economic Democracy argued for self-governing firms.",
-   "wikipedia": "https://en.wikipedia.org/wiki/Robert_A._Dahl",
-   "sources": [
-    "s1"
-   ]
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "reference",
-   "title": "Economic democracy (Wikipedia)",
-   "author": "Wikipedia contributors",
-   "url": "https://en.wikipedia.org/wiki/Economic_democracy",
-   "usedFor": "Overview, Dahl, Schweickart's model, investment, taxation, trade and state role."
-  },
-  {
-   "id": "s2",
-   "kind": "primary",
-   "title": "Economic Democracy",
-   "author": "David Schweickart",
-   "url": "https://www.globaljusticecenter.org/papers/economic-democracy",
-   "usedFor": "The model's three institutions in the author's own words: self-management, markets, social control of investment."
-  },
-  {
-   "id": "s3",
-   "kind": "scholarly",
-   "title": "Socialism",
-   "author": "Stanford Encyclopedia of Philosophy",
-   "url": "https://plato.stanford.edu/entries/socialism/",
-   "usedFor": "Scholarly account of economic democracy, markets versus planning, property and criticisms."
-  },
-  {
-   "id": "s4",
-   "kind": "reference",
-   "title": "Market socialism (Wikipedia)",
-   "author": "Wikipedia contributors",
-   "url": "https://en.wikipedia.org/wiki/Market_socialism",
-   "usedFor": "Placement within market socialism, cooperatives, exploitation and planning."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Schweickart's model concerns firm ownership and investment, not health policy, but a democratic-egalitarian left would back publicly guaranteed care; inferred.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Under self-management workers set their own pay from firm proceeds, so a legal floor is not part of the model; adherents are unlikely to oppose it but it is not central.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The model keeps markets for goods but replaces labor and capital markets, so \"free markets\" as stated is rejected while markets are valued over central planning.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "public-ownership": {
-   "value": 0,
-   "confidence": "medium",
-   "rationale": "Capital is socially owned and leased to firms, yet the enterprises themselves are worker-run rather than state-run utilities, so classic public ownership of industries splits adherents.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Funding comes from a capital-assets tax and inequality is meant to be far smaller than under capitalism; higher taxes on the wealthy fit but are not the model's focus.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "unions-good": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Workplace democracy is the aim and unions are a step toward worker power, though under full self-management their role changes; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-fundamental": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Productive capital is treated as social property and corporate property is framed as quasi-sovereign power to be rebalanced, so strong property rights over capital are rejected.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "regulate-corporations": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The tradition criticizes unaccountable corporate power and externalities pushed onto the public; regulation is a lesser form of the democratic control it seeks.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Nothing in the model targets welfare; the egalitarian orientation and the state as employer of last resort imply opposing cuts.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "worker-ownership": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Ultimate authority rests with the enterprise's workers, one person one vote; though capital is socially owned and leased, workers collectively control and keep proceeds.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "surveillance-ok": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic-left civil-libertarian stance is inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "legalize-drugs": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No position in the sources; adherents spread across left liberal and cautious views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-hate-speech": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the economic model; adherents are split between left support for restrictions and liberal free-speech views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "strong-leader": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "The model is built on democratic control at every level, so leaders bypassing gridlock contradicts its premise; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-harmful": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The model assigns the state roles in holding capital, collecting the tax and funding public banks, and SEP stresses that socialism is not anti-state.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "limit-guns": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Gun control is outside the economic-democracy literature, and left adherents range from gun-control to gun-rights views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "empower-police-military": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "No stated position; the left-democratic orientation suggests opposing expansion of coercive authority.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "legalize-sex-work": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources say nothing on sex work; adherents split between labor-rights decriminalization and abolitionist feminist views.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "decide-locally": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Investment funds flow from national to regional and local levels and firms are self-governing, a decentralizing design, though national tax and fund remain.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rehabilitation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "No penal policy is stated; an egalitarian, institution-focused view of social harms leads toward rehabilitation, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "traditional-family": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; secular egalitarian default makes support unlikely.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "same-sex-marriage": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; the progressive-left default is support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abortion-legal": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not discussed by Schweickart or Dahl; the progressive-left milieu of adherents generally supports legal abortion.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "more-religion-public": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Religion is absent from the model; a secular democratic-left outlook makes a larger public role unlikely to be endorsed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed in economic-democracy texts; left-egalitarian default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gender-social-construct": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Outside the economic model and adherents vary.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-national-culture": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Cultural preservation is outside the economic texts and adherents differ.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gradual-change": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Schweickart presents it as an institutional alternative built through democratic legislation and reform of existing institutions, not insurrection; contested.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "reduce-immigration": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; internationalist-left default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Schweickart advocates fair trade and domestically reinvested capital, which cuts against supranational authority, but he is not hostile to it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "free-trade": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Because capital is public and reinvested domestically, the model calls for fair trade rather than free trade.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "nation-first": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model stresses domestic reinvestment but is not nationalist; adherents split.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "humanitarian-intervention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Foreign policy is untouched in the sources, and the left splits between humanitarian interventionists and anti-war critics.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-borders": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; adherents are split since labor-protection concerns compete with internationalism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "limit-growth": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Schweickart wants a dynamic economy yet green adherents want limits; the model's investment can target democratically chosen goals.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Criticism of externalities pushed onto the public implies backing strong action; not detailed in sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model values technological dynamism but not as a cure-all.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Energy choice is not in the model; green and pro-nuclear left adherents both exist.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revolution-justified": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model is described as an alternative reached by democratic means; adherents are not committed either way.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "experts-over-public": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Democratic control of economic decisions by workers and the public is the defining principle, opposing technocratic rule.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "central-planning": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Schweickart rejects comprehensive planning because planners struggle with information and incentives, keeping markets for goods.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "socialized-markets": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "This is the model's definition: markets for goods with workers or society owning the enterprises and capital.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "land-value-tax": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Henry George is noted as an influence on the wider tradition, but the model's flat capital-assets tax includes land and buildings and replaces other business taxes rather than all taxes.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tax-inheritance": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Dahl traces inequality to unlimited accumulation; heavy inheritance taxes fit, though not documented as central.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "basic-income": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Social-credit and national-dividend ideas appear among reform agendas, but the core model relies on jobs and public investment instead.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "tariffs-protect-industry": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Fair trade is advocated rather than free trade, but tariffs are not specified.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-directs-investment": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Investment is socially controlled through democratically accountable public banks and legislatures set shares, though firms choose projects within it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Wide ownership is the aim but through workplace collective control and a small entrepreneurial sector, not small private owners as such.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Firms keep a market, money and prices; what is abolished is the wage relationship as workers share firm proceeds.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Public investment banks are central to the model, opposite to leaving money to the market.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "corporatist-bargaining": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Wages come from enterprise democracy, not state-recognized bodies setting wages and prices; the model keeps market prices.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "one-party-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Democracy is the central theme and Schweickart calls capitalism incompatible with genuine democracy.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "A radically democratic outlook makes hereditary rule illegitimate; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "democracy-best": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Extending democracy into the economy is the whole project, premised on democratic deficits.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "direct-votes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Workplace votes are direct but elected councils appoint managers, and legislatures decide investment shares; direct national votes are not specified.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "workers-councils": {
-   "value": 0,
-   "confidence": "medium",
-   "rationale": "Elected workers' councils govern enterprises, but the model keeps legislatures setting public investment, so councils are not the basis of political power.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "right-to-secede": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources never address territorial questions, and democratic-left adherents are divided on secession.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "natural-rulers": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Egalitarian and democratic principles reject natural rulers; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-violence-never": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model is pursued through democratic institutions but its texts take no position on whether violence is ever justified.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "war-builds-character": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; left democratic default rejects it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separate-church-state": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed directly; a secular democratic framework favors separation.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "laws-from-scripture": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Authority rests on democratic decision by workers and citizens, so scripture as the basis of law conflicts with it; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "private-courts-defense": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "A model built on public control of investment and democratic public institutions opposes privatizing core state functions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-superiority": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "No stated defense policy; the left-democratic orientation leans against arms primacy.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ethnic-nation": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian default rejects it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-struggle-history": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Dahl and Schweickart emphasize power inequality and structural conflict, but not a Marxist historical thesis.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-outcomes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model aims for far smaller inequality than capitalism but allows pay differences by firm success (a criticism SEP records), so full equality of outcomes is not endorsed.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Land appears only as capital-asset tax base and social property, not as indigenous rights, so no position follows.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-reparations": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Reparations are outside the texts; Smith's imperialism critique is cited in the Wikipedia page but not as a program.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizational-union": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Nothing in the model supports civilizational blocs; its internationalism is about fair trade among nations, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "self-interest-moral": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The tradition criticizes profit over general well-being, though markets and incentives are accepted.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "duties-before-rights": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The tradition grounds economic life in democratic rights of participation, so putting duties first is unlikely; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "nature-intrinsic-value": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Environmental philosophy is not part of the sources, and adherents vary.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "limit-population": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Population policy is not addressed, and the page attributes poverty to institutions rather than numbers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "industrial-civilization-disaster": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Schweickart wants a technologically dynamic economy, rejecting anti-industrial views.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "accelerate-technology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Dynamism is valued but disruption of institutions is not.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "human-enhancement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Bioethics is outside the tradition's texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "algorithmic-government": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Democratic control is the principle; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "unbreakable-encryption": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Digital privacy is not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restore-past-order": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "The model proposes a new institutional order, not restoration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "results-over-ideology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "SEP notes socialists should not fetishize property schemes and judge them by principles, a pragmatic strand, but adherents hold a distinct ideology.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "direct-action": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Change is sought through legislation and institutions; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "means-match-ends": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Democratic means for a democratic economy is consistent with the model; not explicit.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Schweickart insists that society stay technologically and economically dynamic, which rules out foraging.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Firms keep management and a council-appointed CEO, so division of labor continues.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "distribute-by-need": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Workers divide net proceeds themselves in a market economy, so distribution tracks the firm's results, not need.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "production-for-use": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Markets and profit remain as signals, so production is not organized chiefly by need.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "profit-exploitation": {
-   "value": 0,
-   "confidence": "medium",
-   "rationale": "Schweickart sees capitalism's labor and capital markets as damaging and SEP lists exploitation theories, but profit itself remains in his model and workers keep it.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Rule is by democratic institutions for all, not dictatorial class power.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "collective-farming": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Self-management applies to enterprises of any kind, but compulsory collectivization is not part of it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Harvey and Smith are cited on imperialism in the page, but not as a defining thesis.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "taxation-theft": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The model depends on a capital-assets tax as a lease fee for social property.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "harm-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Liberal political theory on state limits is not engaged in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "individual-rights-only": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Collective rights in firms matter, but this is not addressed directly.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "conscription": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Defense is unaddressed; a left-liberal tilt among adherents suggests mild opposition, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "exit-over-voice": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The whole model prioritizes voice, democratic participation, over exit.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "state-as-business": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The model extends democracy into business, not business logic into government.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "positive-liberty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Dahl's democratic argument concerns access to power and means; inferred as supportive.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "media-academia-power": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The page locates power in property, not in media or universities.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "hereditarian-race": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Never discussed, but the egalitarian, institutional explanation of inequality in Dahl and Schweickart excludes genetic accounts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "organic-representation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Representation is by workplace councils and elected legislatures, with parties not opposed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "total-state": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "SEP says state control without democratic control is not socialism, and the model is decentralized.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "national-rebirth": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model is a reform of economic institutions, not a project of national renewal; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "territorial-expansion": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Nothing in the model suggests expansion, and its democratic left orientation rejects it; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Authority in the model comes from one-person-one-vote elections in firms and legislatures, not personal oaths.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "bound-labor": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "The model abolishes wage-labor subordination; bound labor is the opposite.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-neutral-knowledge": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Epistemology is not engaged by the economic texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "universal-morality": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Moral philosophy is not addressed by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "single-common-good": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model works through democratic contestation over investment and legislatures, not a single rationally derived good.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "jewish-state-israel": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not covered by any source, and adherents hold varied views on Israel.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diaspora-return-right": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Migration and homeland rights are not covered by the model.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revive-national-language": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Language policy is not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workplace-democracy": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The core demand: workers elect a council that appoints management, and the wider public has a say through investment control.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "school-vouchers": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the public-institution orientation suggests skepticism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "avoid-deficit-stimulus": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The page discusses deficient effective demand as a capitalist flaw, implying support for stimulus.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "economic-freedom": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The model holds that private control of capital undermines democracy, the reverse of this claim.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "rule-by-example": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Democratic institutions, not rulers' virtue, are the safeguard; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "national-self-determination": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; democratic default is support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-without-un": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Foreign policy is unaddressed; a left-democratic leaning suggests caution about unilateral force, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reason-over-faith": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not discussed; adherents include both secular and religious people.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "welfare-for-citizens": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Welfare eligibility is not in the model; egalitarian leanings suggest opposing citizen-only restrictions, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "work-for-welfare": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The employer-of-last-resort proposal gives jobs as a right but no conditionality is stated.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "class-collaboration": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Workers control firms so there is no employer class; but the model is reformist, not class-war, so only mild disagreement.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; strongly opposed by any democratic left.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "dominated-front": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anti-Western fronts are not part of the economic-democracy tradition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-nation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; left default is internationalist.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "distinct-gender-roles": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Never raised, but an egalitarian democratic outlook rejects legally distinct gender roles; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-interest": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The capital-assets tax acts like an interest rate, so charging for capital use is accepted.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; democratic egalitarian rejects it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-class-instrument": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model sees the state as democratically reformable, which contrasts with the instrumental view.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; externality concerns suggest opposition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Immigration is not addressed; progressive-left default opposes assimilation demands, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "elite-replacement": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; conspiracy claim rejected by left default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "proportional-representation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Electoral systems are not discussed; a democracy-extending outlook tends to favor proportional systems, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-mission": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "The model has no missionary nationalism, and it is a domestic institutional design with fair-trade internationalism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed in the economic texts; left default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-elite-corrupt": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The tradition criticizes capital's influence over politics, but not elites as such.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; rejected by egalitarian default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed, but democratic accountability is its core value; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "night-watchman-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The state holds capital, collects the tax and funds public banks, far beyond a night watchman.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; rejected by egalitarian default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": 2,
-   "confidence": "low",
-   "rationale": "Not addressed directly but entailed by democratic equality.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "socialism-one-country": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model is a national institutional design though it faces capital mobility; no one-country limit is claimed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Settler colonialism is not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "uniform-civil-code": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Religious personal law is not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-conversion": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not stated; liberal democratic default rejects legal limits on conversion.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-cattle-slaughter": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a secular democratic outlook gives no basis for the ban.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-religion-state-schools": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; secular egalitarian default supports it, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-strengthens-encirclement": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not a Leninist model; the state is democratic and no withering-away doctrine applies.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "consent-of-governed": {
-   "value": 2,
-   "confidence": "low",
-   "rationale": "Not addressed directly; the democratic premise implies it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "trade-surplus": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Fair trade is advocated rather than mercantilism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "population-transfer": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Never addressed, but forced removal of a minority contradicts democratic equality; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "initiating-force-wrong": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the model relies on taxation, which libertarians call force.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the tradition contrasts partnership models to profit maximization, though market competition is kept.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-extremist-parties": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not discussed; democratic-left adherents split between militant democracy and open party competition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-as-non-domination": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The page frames corporate property as quasi-sovereign power over others, close to a domination critique.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "separated-powers": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; power is distributed across levels of government and firms.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "vanguard-party": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The model rests on workers' own democratic control, not leadership by revolutionaries.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "priority-to-poor": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed directly; egalitarian orientation.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Housing tenure is not addressed; the model's leasing of social capital cuts both ways.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-strikes-picketing": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Strike law is not addressed; a pro-worker tradition would oppose restrictions, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Dahl and Schweickart trace poverty to institutions of property and unemployment, not population.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not discussed; the egalitarian, institutional diagnosis of social problems rejects it, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Sortition is not discussed; the model uses elections in councils and legislatures.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Never addressed, but suspending protections conflicts with its democratic premise; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The model relies on market prices, but emergency exceptions are not addressed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-controls-media": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Democratic participation is central, so party control of media conflicts with it; inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-commands-army": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Inferred from the democratic premise: the model places authority in elected councils and legislatures, not a party.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "long-naturalization-wait": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Citizenship is not addressed; progressive default leans against long waits, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Pay of officials is not specified, though firm councils set pay democratically.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-discipline-binding": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not discussed; a participatory outlook leans against binding discipline, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "pool-sovereignty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; fair-trade stance is wary of capital mobility.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "head-commands-forces": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not stated; democratic default places command under elected legislatures.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "church-by-bishops": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Church governance is not addressed; a democratizing outlook leans toward congregational or elected governance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "clerical-rule": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not discussed; a democratic secular framework rejects rule by clerics.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "defeat-own-government-war": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; not a revolutionary-defeatist movement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not discussed; a democratic left outlook rejects moral censorship, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "unlimited-reelection": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Term limits are not discussed; democratic accountability leans toward limits, a weak inference.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recall-officials": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; consistent with democratic accountability.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "end-foreign-alliances": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Military alliances are outside the economic model.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-rental-housing": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Capital is leased by firms from society; a ban on renting is not part of it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "people-in-arms": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Defense organization is unaddressed; the model keeps ordinary institutions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rural-life-healthier": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the model values a dynamic modern economy, so moralizing rural life is unlikely.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "National division is not part of the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic-left tradition rooted in academic theory (Dahl, Schweickart) does not share this resentment.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Cultural relativism is not addressed by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "death-penalty": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian left default opposes capital punishment, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sex-ed-in-schools": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; progressive left default supports it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "creationism-in-schools": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; secular scientific-left default rejects it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-pornography": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed, and the left divides over regulation.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian default prefers territorial birthright, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "minority-language-support": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; pluralist left default is supportive.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "religious-exemptions": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; left adherents split over exemptions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "encourage-eccentricity": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the economic texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sovereign-debt-cancellation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Debt relief is not addressed, though public-capital reform is, so no direct position follows.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Post-colonial independence is not a context of these texts, though the property-system emphasis would sympathize.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "constituent-assembly": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Constitution-making is not addressed by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-freedoms-for-growth": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The central claim is that democracy and economic dynamism are compatible; democratic deficits are the problem.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian orientation suggests support, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Defense is unaddressed; left default is wary of nuclear weapons.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-election-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; adherents have no shared view of presidential design.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "central-bank-independence": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model places investment under public banks accountable to legislatures, so insulation from elected governments conflicts.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Territorial disputes are not covered.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "property-serves-common-good": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Corporate property is treated as a social grant to be rebalanced; capital is social property leased for the common benefit.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The page says the Soviet model subordinated markets to planning while keeping wage labor, but adherents do not necessarily call it state-capitalist.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "precautionary-principle": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Externalities concern implies it; not explicit.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-defense": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Alliance obligations are not covered.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "annexed-territory-occupation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Church-state subordination is not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "nonpartisan-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Head-of-state design is not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic outlook disfavors forcing regions to remain, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "region-keeps-system": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Regional autonomy arrangements are not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacred-ruler": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic secular outlook rejects sacral rulership.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "flat-income-tax": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Schweickart proposes a flat tax on capital assets, not income, and egalitarian goals favour progressive income taxation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "character-from-environment": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Dahl and Schweickart locate harms in institutions; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sovereign-above-law": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed, but democratic accountability excludes unbound rulers.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "space-expansion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mixed-constitution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the model's institutional design is economic.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "leader-cult": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; participatory democracy rejects leader worship, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "equal-parenting": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Family law is outside the tradition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "class-struggle-under-socialism": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not a Leninist model.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "land-redistribution": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Land is social property leased through the capital-assets tax, not given to farmers.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "refugee-return": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in these sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "co-ethnic-territorial-claim": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; nationalist irredentism conflicts with an egalitarian democratic outlook, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "apostasy-punishable": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic secular outlook rejects punishing apostasy, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "women-must-cover": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; a democratic liberal-left outlook rejects dress mandates, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "common-currency": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the page mentions regional currencies as a reform agenda.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "kin-peoples-union": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; ethnic unions do not fit a model built around economic institutions, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-cultural-autonomy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Minority-autonomy designs are not covered.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "rights-where-you-live": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "material-conditions-drive-history": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a Marxist historical-materialist school; Dahl and Schweickart focus on institutions.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ban-cartels": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The page endorses public-utility approaches to monopoly and criticizes concentration of power.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-bailouts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; public banks and employment concerns pull both ways.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "courts-bound-by-majority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Judicial review is not discussed, and democrats split on it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "gender-parity-bodies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not discussed; adherents differ on quotas.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "economic-self-sufficiency": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Fair trade is not autarky.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "trade-labor-env-standards": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Fair-trade framing implies standards; not explicit.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "moral-incentives": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Markets and profit sharing supply material incentives, and SEP notes the incentive-duty model is a different Carensian variant.",
-   "sources": [
-    "s2",
-    "s3"
-   ]
-  },
-  "armed-group-creates-revolution": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "The model comes through democratic institutions; no foco or vanguard strategy appears in the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-hereditary-privilege": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed directly, but Dahl objects to inherited advantages in wealth and power; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "history-own-civilization": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Curriculum policy is not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizing-tutelage": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; democratic egalitarianism rejects rule over others for their improvement.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriotic-education": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a critical democratic outlook leans against compulsory patriotism, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "end-racial-preferences": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian default supports preferences, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "public-money-creation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Public banking and social credit are listed reform agendas and credit is publicly generated.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "capitalism-adapts": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Schweickart argues unemployment is built in and reform is inadequate; the page stresses recurring crises from deficient demand.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "former-empire-influence": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; no imperial ambitions appear in the model, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "delink-world-market": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The model is a fair-trade market economy, not delinking.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "labor-aristocracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-to-discriminate": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; an egalitarian outlook that curbs private power rejects a right to discriminate, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "entrenched-bill-of-rights": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Constitutional design is not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-treaties-void": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not covered by the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "elective-rulers": {
-   "value": 2,
-   "confidence": "low",
-   "rationale": "Elected leadership is the model's method, with workers electing councils and citizens electing legislatures.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "minority-veto": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Majority voting, one person one vote, governs firms.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "resist-lawless-ruler": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Resistance doctrine is not part of the economic texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "parliament-supreme": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the model assumes legislatures at each level set public investment.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-suffering-matters": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; a broad democratic-left outlook generally accepts animal sentience.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-use-humane": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the economic texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "noblesse-oblige": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarians favour rights and structures over paternal duty.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "withdraw-from-politics": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Participation, in workplaces and legislatures, is the model's central value.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mass-culture-pacifies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Cultural critique is not part of the economic-democracy texts.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ruling-class-consent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Hegemony theory is not part of these sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "world-economy-extracts-surplus": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Smith's imperialism analysis is cited, but not as a defining thesis.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "native-born-offices": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; egalitarian citizenship default rejects it, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "party-own-road": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Internationalist party questions are not relevant to this tradition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "self-reliance-over-aid": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Development strategy is not in the texts, though fair trade and domestic reinvestment lean toward self-reliance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "return-lost-territory": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; irredentism has no place in the model, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "indigenous-political-leadership": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; democratic equality of citizens suggests opposing leadership by descent, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "antifascism-founding-value": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; democratic-left default supports it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "totalitarianisms-equivalent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The page contrasts the Soviet model with its own, but adherents do not take positions on equivalence.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "slavery-not-civil-war-cause": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; historical consensus default.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-contested-monuments": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; left adherents split.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "male-disadvantage-attention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "domestic-violence-symmetry": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "institutions-fit-civilization": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the model is presented as general rather than civilizational.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "military-guardian-role": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; the democratic premise excludes military guardianship, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "paid-care-work": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "filial-duty": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Family ethics are outside the tradition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "office-by-exam": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; elections of councils are favored over exam-based appointment, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "foreign-takeover-block": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Domestic reinvestment is stressed but takeover policy is unspecified.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-fault-divorce": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; liberal-left default supports it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "recallable-delegates": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Elected workers' councils appoint managers under one person one vote; consistent with accountability, though not explicit.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "individual-pension-accounts": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Private savings are treated as unnecessary for investment, suggesting preference for public arrangements.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "land-use-tenure": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Land is social property leased through a tax, resembling use-based tenure, but individual use-tenure is not stated.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "budget-needs-parliament": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Legislatures at each level decide public investment shares.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "single-official-language": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; pluralist default opposes limiting languages, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "foreign-land-ownership": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; land is treated as social property through capital-assets tax, but nationality rules are not discussed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "disparate-impact-discrimination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "consumerism-harmful": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed in the sources; adherents vary.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "arm-foreign-insurgents": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; left default is skeptical, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "intervene-in-bloc": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; violates democratic self-determination, inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "corporate-influence": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The page describes the public as lacking democratic voice in economic policy and Schweickart cites capital-driven democratic deficits.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "job-guarantee": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "SEP and the Wikipedia article list the public sector as employer of last resort and say capitalism builds in unemployment.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  }
- },
- "missingStatements": [
-  {
-   "text": "Firms should be run by their workers, with management chosen by workers' own votes.",
-   "value": 2,
-   "rationale": "Schweickart's model makes an elected workers' council appoint the chief executive, one person one vote; existing worker-ownership and workplace-democracy statements only partly capture the election of management.",
-   "sources": [
-    "s2"
-   ],
-   "addedAs": "workplace-democracy"
-  },
-  {
-   "text": "Investment funds should be generated by a public tax on capital assets and allocated by publicly accountable banks rather than by private savers.",
-   "value": 2,
-   "rationale": "Social control of investment through a flat capital-assets tax and public investment banks is one of the model's three defining institutions.",
-   "sources": [
-    "s1",
-    "s2"
-   ],
-   "addedAs": "state-directs-investment"
-  },
-  {
-   "text": "Governments should guarantee a job to everyone willing to work, acting as employer of last resort.",
-   "value": 1,
-   "rationale": "SEP and the Wikipedia article list the public sector as employer of last resort and say capitalism builds in unemployment.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "addedAs": "job-guarantee"
-  }
- ],
- "notes": "Adherents differ on the exact institutional details (for example Dahl's emphasis on self-governing firms versus Schweickart's public investment banks). Corneo and others criticize the model for risk and unemployment effects (reported by SEP). Most non-economic answers are inferred and low-confidence, so salience may be borderline."
+  "id": "economic-democracy",
+  "name": "Economic democracy",
+  "auditedAt": "2026-10-16",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Economic democracy extends democratic control into the economy: firms are governed by their workers one person one vote, and investment is steered by public bodies rather than private savers. It keeps markets for goods and services but replaces labor and capital markets with worker self-management and publicly financed investment. Its aim is to end capitalism's democratic deficits and structural unemployment without central planning.",
+  "scope": "The market-socialist strand set out by David Schweickart (After Capitalism, and the summary 'Economic Democracy') with Robert Dahl's earlier case for self-governing firms: worker self-management, a market for goods, and social control of investment via a capital-assets tax and public banks. It does not cover Marxist planning models, coupon socialism or Peter Barnes-style stakeholder proposals. Because it is an economic design, most statements outside economics are low-confidence inferences from its democratic and egalitarian premises.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Economic_democracy",
+  "furtherReading": [
+    {
+      "title": "Economic Democracy (Schweickart)",
+      "url": "https://www.globaljusticecenter.org/papers/economic-democracy",
+      "note": "Short statement of the model by its main contemporary author."
+    },
+    {
+      "title": "Economic democracy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Economic_democracy",
+      "note": "Overview of the idea, its variants and reform agendas."
+    },
+    {
+      "title": "Socialism (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/socialism/",
+      "note": "Places economic democracy among market-socialist designs and lists the main objections."
+    },
+    {
+      "title": "Market socialism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Market_socialism",
+      "note": "The wider family of models economic democracy belongs to."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "David Schweickart",
+      "role": "Philosopher who developed the economic democracy model in After Capitalism.",
+      "wikipedia": "https://en.wikipedia.org/wiki/David_Schweickart",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "name": "Robert A. Dahl",
+      "role": "Political scientist whose A Preface to Economic Democracy argued for self-governing firms.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Robert_A._Dahl",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Economic democracy (Wikipedia)",
+      "author": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/wiki/Economic_democracy",
+      "usedFor": "Overview, Dahl, Schweickart's model, investment, taxation, trade and state role."
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Economic Democracy",
+      "author": "David Schweickart",
+      "url": "https://www.globaljusticecenter.org/papers/economic-democracy",
+      "usedFor": "The model's three institutions in the author's own words: self-management, markets, social control of investment."
+    },
+    {
+      "id": "s3",
+      "kind": "scholarly",
+      "title": "Socialism",
+      "author": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/socialism/",
+      "usedFor": "Scholarly account of economic democracy, markets versus planning, property and criticisms."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Market socialism (Wikipedia)",
+      "author": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/wiki/Market_socialism",
+      "usedFor": "Placement within market socialism, cooperatives, exploitation and planning."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Schweickart's model concerns firm ownership and investment, not health policy, but a democratic-egalitarian left would back publicly guaranteed care; inferred.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Under self-management workers set their own pay from firm proceeds, so a legal floor is not part of the model; adherents are unlikely to oppose it but it is not central.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The model keeps markets for goods but replaces labor and capital markets, so \"free markets\" as stated is rejected while markets are valued over central planning.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "public-ownership": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Capital is socially owned and leased to firms, yet the enterprises themselves are worker-run rather than state-run utilities, so classic public ownership of industries splits adherents.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Funding comes from a capital-assets tax and inequality is meant to be far smaller than under capitalism; higher taxes on the wealthy fit but are not the model's focus.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "unions-good": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Workplace democracy is the aim and unions are a step toward worker power, though under full self-management their role changes; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Productive capital is treated as social property and corporate property is framed as quasi-sovereign power to be rebalanced, so strong property rights over capital are rejected.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The tradition criticizes unaccountable corporate power and externalities pushed onto the public; regulation is a lesser form of the democratic control it seeks.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Nothing in the model targets welfare; the egalitarian orientation and the state as employer of last resort imply opposing cuts.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "worker-ownership": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Ultimate authority rests with the enterprise's workers, one person one vote; though capital is socially owned and leased, workers collectively control and keep proceeds.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "surveillance-ok": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic-left civil-libertarian stance is inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-drugs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No position in the sources; adherents spread across left liberal and cautious views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the economic model; adherents are split between left support for restrictions and liberal free-speech views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "strong-leader": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The model is built on democratic control at every level, so leaders bypassing gridlock contradicts its premise; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The model assigns the state roles in holding capital, collecting the tax and funding public banks, and SEP stresses that socialism is not anti-state.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "limit-guns": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Gun control is outside the economic-democracy literature, and left adherents range from gun-control to gun-rights views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "No stated position; the left-democratic orientation suggests opposing expansion of coercive authority.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources say nothing on sex work; adherents split between labor-rights decriminalization and abolitionist feminist views.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "decide-locally": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Investment funds flow from national to regional and local levels and firms are self-governing, a decentralizing design, though national tax and fund remain.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rehabilitation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "No penal policy is stated; an egalitarian, institution-focused view of social harms leads toward rehabilitation, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "traditional-family": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; secular egalitarian default makes support unlikely.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; the progressive-left default is support.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abortion-legal": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not discussed by Schweickart or Dahl; the progressive-left milieu of adherents generally supports legal abortion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "more-religion-public": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Religion is absent from the model; a secular democratic-left outlook makes a larger public role unlikely to be endorsed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed in economic-democracy texts; left-egalitarian default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Outside the economic model and adherents vary.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Cultural preservation is outside the economic texts and adherents differ.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gradual-change": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Schweickart presents it as an institutional alternative built through democratic legislation and reform of existing institutions, not insurrection; contested.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "reduce-immigration": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; internationalist-left default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Schweickart advocates fair trade and domestically reinvested capital, which cuts against supranational authority, but he is not hostile to it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "free-trade": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Because capital is public and reinvested domestically, the model calls for fair trade rather than free trade.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "nation-first": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model stresses domestic reinvestment but is not nationalist; adherents split.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Foreign policy is untouched in the sources, and the left splits between humanitarian interventionists and anti-war critics.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents are split since labor-protection concerns compete with internationalism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-growth": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Schweickart wants a dynamic economy yet green adherents want limits; the model's investment can target democratically chosen goals.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Criticism of externalities pushed onto the public implies backing strong action; not detailed in sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model values technological dynamism but not as a cure-all.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Energy choice is not in the model; green and pro-nuclear left adherents both exist.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model is described as an alternative reached by democratic means; adherents are not committed either way.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "experts-over-public": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Democratic control of economic decisions by workers and the public is the defining principle, opposing technocratic rule.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "central-planning": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Schweickart rejects comprehensive planning because planners struggle with information and incentives, keeping markets for goods.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "socialized-markets": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "This is the model's definition: markets for goods with workers or society owning the enterprises and capital.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "land-value-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Henry George is noted as an influence on the wider tradition, but the model's flat capital-assets tax includes land and buildings and replaces other business taxes rather than all taxes.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Dahl traces inequality to unlimited accumulation; heavy inheritance taxes fit, though not documented as central.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "basic-income": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Social-credit and national-dividend ideas appear among reform agendas, but the core model relies on jobs and public investment instead.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Fair trade is advocated rather than free trade, but tariffs are not specified.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Investment is socially controlled through democratically accountable public banks and legislatures set shares, though firms choose projects within it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Wide ownership is the aim but through workplace collective control and a small entrepreneurial sector, not small private owners as such.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Firms keep a market, money and prices; what is abolished is the wage relationship as workers share firm proceeds.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Public investment banks are central to the model, opposite to leaving money to the market.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Wages come from enterprise democracy, not state-recognized bodies setting wages and prices; the model keeps market prices.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "one-party-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Democracy is the central theme and Schweickart calls capitalism incompatible with genuine democracy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "A radically democratic outlook makes hereditary rule illegitimate; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "democracy-best": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Extending democracy into the economy is the whole project, premised on democratic deficits.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "direct-votes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Workplace votes are direct but elected councils appoint managers, and legislatures decide investment shares; direct national votes are not specified.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "workers-councils": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Elected workers' councils govern enterprises, but the model keeps legislatures setting public investment, so councils are not the basis of political power.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "right-to-secede": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources never address territorial questions, and democratic-left adherents are divided on secession.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "natural-rulers": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Egalitarian and democratic principles reject natural rulers; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-violence-never": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model is pursued through democratic institutions but its texts take no position on whether violence is ever justified.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "war-builds-character": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; left democratic default rejects it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separate-church-state": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed directly; a secular democratic framework favors separation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Authority rests on democratic decision by workers and citizens, so scripture as the basis of law conflicts with it; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "A model built on public control of investment and democratic public institutions opposes privatizing core state functions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-superiority": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "No stated defense policy; the left-democratic orientation leans against arms primacy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian default rejects it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-history": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Dahl and Schweickart emphasize power inequality and structural conflict, but not a Marxist historical thesis.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-outcomes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model aims for far smaller inequality than capitalism but allows pay differences by firm success (a criticism SEP records), so full equality of outcomes is not endorsed.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Land appears only as capital-asset tax base and social property, not as indigenous rights, so no position follows.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Reparations are outside the texts; Smith's imperialism critique is cited in the Wikipedia page but not as a program.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizational-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Nothing in the model supports civilizational blocs; its internationalism is about fair trade among nations, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tradition criticizes profit over general well-being, though markets and incentives are accepted.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "duties-before-rights": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The tradition grounds economic life in democratic rights of participation, so putting duties first is unlikely; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Environmental philosophy is not part of the sources, and adherents vary.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Population policy is not addressed, and the page attributes poverty to institutions rather than numbers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Schweickart wants a technologically dynamic economy, rejecting anti-industrial views.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Dynamism is valued but disruption of institutions is not.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "human-enhancement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Bioethics is outside the tradition's texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Democratic control is the principle; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Digital privacy is not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The model proposes a new institutional order, not restoration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "results-over-ideology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "SEP notes socialists should not fetishize property schemes and judge them by principles, a pragmatic strand, but adherents hold a distinct ideology.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "direct-action": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Change is sought through legislation and institutions; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "means-match-ends": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Democratic means for a democratic economy is consistent with the model; not explicit.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Schweickart insists that society stay technologically and economically dynamic, which rules out foraging.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Firms keep management and a council-appointed CEO, so division of labor continues.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "distribute-by-need": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Workers divide net proceeds themselves in a market economy, so distribution tracks the firm's results, not need.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "production-for-use": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Markets and profit remain as signals, so production is not organized chiefly by need.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "profit-exploitation": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Schweickart sees capitalism's labor and capital markets as damaging and SEP lists exploitation theories, but profit itself remains in his model and workers keep it.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rule is by democratic institutions for all, not dictatorial class power.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "collective-farming": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Self-management applies to enterprises of any kind, but compulsory collectivization is not part of it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Harvey and Smith are cited on imperialism in the page, but not as a defining thesis.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The model depends on a capital-assets tax as a lease fee for social property.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "harm-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Liberal political theory on state limits is not engaged in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "individual-rights-only": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Collective rights in firms matter, but this is not addressed directly.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "conscription": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Defense is unaddressed; a left-liberal tilt among adherents suggests mild opposition, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "exit-over-voice": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The whole model prioritizes voice, democratic participation, over exit.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "state-as-business": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The model extends democracy into business, not business logic into government.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "positive-liberty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Dahl's democratic argument concerns access to power and means; inferred as supportive.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "media-academia-power": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The page locates power in property, not in media or universities.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "hereditarian-race": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Never discussed, but the egalitarian, institutional explanation of inequality in Dahl and Schweickart excludes genetic accounts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "organic-representation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Representation is by workplace councils and elected legislatures, with parties not opposed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "total-state": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "SEP says state control without democratic control is not socialism, and the model is decentralized.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "national-rebirth": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model is a reform of economic institutions, not a project of national renewal; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "territorial-expansion": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Nothing in the model suggests expansion, and its democratic left orientation rejects it; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Authority in the model comes from one-person-one-vote elections in firms and legislatures, not personal oaths.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "bound-labor": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The model abolishes wage-labor subordination; bound labor is the opposite.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Epistemology is not engaged by the economic texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "universal-morality": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Moral philosophy is not addressed by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "single-common-good": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model works through democratic contestation over investment and legislatures, not a single rationally derived good.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not covered by any source, and adherents hold varied views on Israel.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Migration and homeland rights are not covered by the model.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revive-national-language": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Language policy is not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workplace-democracy": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The core demand: workers elect a council that appoints management, and the wider public has a say through investment control.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "school-vouchers": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the public-institution orientation suggests skepticism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The page discusses deficient effective demand as a capitalist flaw, implying support for stimulus.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-freedom": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The model holds that private control of capital undermines democracy, the reverse of this claim.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "rule-by-example": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Democratic institutions, not rulers' virtue, are the safeguard; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-self-determination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; democratic default is support.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-without-un": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Foreign policy is unaddressed; a left-democratic leaning suggests caution about unilateral force, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reason-over-faith": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not discussed; adherents include both secular and religious people.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Welfare eligibility is not in the model; egalitarian leanings suggest opposing citizen-only restrictions, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The employer-of-last-resort proposal gives jobs as a right but no conditionality is stated.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "class-collaboration": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Workers control firms so there is no employer class; but the model is reformist, not class-war, so only mild disagreement.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; strongly opposed by any democratic left.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anti-Western fronts are not part of the economic-democracy tradition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-nation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; left default is internationalist.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Never raised, but an egalitarian democratic outlook rejects legally distinct gender roles; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-interest": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The capital-assets tax acts like an interest rate, so charging for capital use is accepted.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; democratic egalitarian rejects it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model sees the state as democratically reformable, which contrasts with the instrumental view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; externality concerns suggest opposition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Immigration is not addressed; progressive-left default opposes assimilation demands, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; conspiracy claim rejected by left default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Electoral systems are not discussed; a democracy-extending outlook tends to favor proportional systems, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The model has no missionary nationalism, and it is a domestic institutional design with fair-trade internationalism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed in the economic texts; left default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The tradition criticizes capital's influence over politics, but not elites as such.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; rejected by egalitarian default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed, but democratic accountability is its core value; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state holds capital, collects the tax and funds public banks, far beyond a night watchman.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; rejected by egalitarian default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 2,
+      "confidence": "low",
+      "rationale": "Not addressed directly but entailed by democratic equality.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "socialism-one-country": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model is a national institutional design though it faces capital mobility; no one-country limit is claimed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Settler colonialism is not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Religious personal law is not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not stated; liberal democratic default rejects legal limits on conversion.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a secular democratic outlook gives no basis for the ban.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; secular egalitarian default supports it, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not a Leninist model; the state is democratic and no withering-away doctrine applies.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consent-of-governed": {
+      "value": 2,
+      "confidence": "low",
+      "rationale": "Not addressed directly; the democratic premise implies it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "trade-surplus": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fair trade is advocated rather than mercantilism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "population-transfer": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Never addressed, but forced removal of a minority contradicts democratic equality; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the model relies on taxation, which libertarians call force.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the tradition contrasts partnership models to profit maximization, though market competition is kept.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not discussed; democratic-left adherents split between militant democracy and open party competition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The page frames corporate property as quasi-sovereign power over others, close to a domination critique.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "separated-powers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; power is distributed across levels of government and firms.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "vanguard-party": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The model rests on workers' own democratic control, not leadership by revolutionaries.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "priority-to-poor": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed directly; egalitarian orientation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Housing tenure is not addressed; the model's leasing of social capital cuts both ways.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Strike law is not addressed; a pro-worker tradition would oppose restrictions, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Dahl and Schweickart trace poverty to institutions of property and unemployment, not population.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not discussed; the egalitarian, institutional diagnosis of social problems rejects it, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Sortition is not discussed; the model uses elections in councils and legislatures.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Never addressed, but suspending protections conflicts with its democratic premise; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model relies on market prices, but emergency exceptions are not addressed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-controls-media": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Democratic participation is central, so party control of media conflicts with it; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-commands-army": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from the democratic premise: the model places authority in elected councils and legislatures, not a party.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Citizenship is not addressed; progressive default leans against long waits, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Pay of officials is not specified, though firm councils set pay democratically.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not discussed; a participatory outlook leans against binding discipline, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; fair-trade stance is wary of capital mobility.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "head-commands-forces": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not stated; democratic default places command under elected legislatures.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "church-by-bishops": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Church governance is not addressed; a democratizing outlook leans toward congregational or elected governance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "clerical-rule": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not discussed; a democratic secular framework rejects rule by clerics.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; not a revolutionary-defeatist movement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not discussed; a democratic left outlook rejects moral censorship, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Term limits are not discussed; democratic accountability leans toward limits, a weak inference.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recall-officials": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; consistent with democratic accountability.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Military alliances are outside the economic model.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Capital is leased by firms from society; a ban on renting is not part of it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "people-in-arms": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Defense organization is unaddressed; the model keeps ordinary institutions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the model values a dynamic modern economy, so moralizing rural life is unlikely.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "National division is not part of the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic-left tradition rooted in academic theory (Dahl, Schweickart) does not share this resentment.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Cultural relativism is not addressed by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "death-penalty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian left default opposes capital punishment, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; progressive left default supports it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; secular scientific-left default rejects it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed, and the left divides over regulation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian default prefers territorial birthright, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "minority-language-support": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; pluralist left default is supportive.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-exemptions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; left adherents split over exemptions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the economic texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Debt relief is not addressed, though public-capital reform is, so no direct position follows.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Post-colonial independence is not a context of these texts, though the property-system emphasis would sympathize.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constituent-assembly": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Constitution-making is not addressed by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The central claim is that democracy and economic dynamism are compatible; democratic deficits are the problem.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian orientation suggests support, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Defense is unaddressed; left default is wary of nuclear weapons.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents have no shared view of presidential design.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "central-bank-independence": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model places investment under public banks accountable to legislatures, so insulation from elected governments conflicts.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Territorial disputes are not covered.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Corporate property is treated as a social grant to be rebalanced; capital is social property leased for the common benefit.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The page says the Soviet model subordinated markets to planning while keeping wage labor, but adherents do not necessarily call it state-capitalist.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "precautionary-principle": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Externalities concern implies it; not explicit.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Alliance obligations are not covered.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Church-state subordination is not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Head-of-state design is not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic outlook disfavors forcing regions to remain, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "region-keeps-system": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Regional autonomy arrangements are not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic secular outlook rejects sacral rulership.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "flat-income-tax": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Schweickart proposes a flat tax on capital assets, not income, and egalitarian goals favour progressive income taxation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "character-from-environment": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Dahl and Schweickart locate harms in institutions; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed, but democratic accountability excludes unbound rulers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "space-expansion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the model's institutional design is economic.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "leader-cult": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; participatory democracy rejects leader worship, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Family law is outside the tradition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not a Leninist model.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "land-redistribution": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Land is social property leased through the capital-assets tax, not given to farmers.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "refugee-return": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in these sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; nationalist irredentism conflicts with an egalitarian democratic outlook, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic secular outlook rejects punishing apostasy, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "women-must-cover": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; a democratic liberal-left outlook rejects dress mandates, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "common-currency": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the page mentions regional currencies as a reform agenda.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; ethnic unions do not fit a model built around economic institutions, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Minority-autonomy designs are not covered.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a Marxist historical-materialist school; Dahl and Schweickart focus on institutions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ban-cartels": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The page endorses public-utility approaches to monopoly and criticizes concentration of power.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-bailouts": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; public banks and employment concerns pull both ways.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Judicial review is not discussed, and democrats split on it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not discussed; adherents differ on quotas.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Fair trade is not autarky.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Fair-trade framing implies standards; not explicit.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "moral-incentives": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Markets and profit sharing supply material incentives, and SEP notes the incentive-duty model is a different Carensian variant.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The model comes through democratic institutions; no foco or vanguard strategy appears in the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed directly, but Dahl objects to inherited advantages in wealth and power; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "history-own-civilization": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Curriculum policy is not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizing-tutelage": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; democratic egalitarianism rejects rule over others for their improvement.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "patriotic-education": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a critical democratic outlook leans against compulsory patriotism, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "end-racial-preferences": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian default supports preferences, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "public-money-creation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Public banking and social credit are listed reform agendas and credit is publicly generated.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "capitalism-adapts": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Schweickart argues unemployment is built in and reform is inadequate; the page stresses recurring crises from deficient demand.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "former-empire-influence": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; no imperial ambitions appear in the model, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "delink-world-market": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model is a fair-trade market economy, not delinking.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "labor-aristocracy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-to-discriminate": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; an egalitarian outlook that curbs private power rejects a right to discriminate, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "entrenched-bill-of-rights": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Constitutional design is not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-treaties-void": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not covered by the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elective-rulers": {
+      "value": 2,
+      "confidence": "low",
+      "rationale": "Elected leadership is the model's method, with workers electing councils and citizens electing legislatures.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "minority-veto": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Majority voting, one person one vote, governs firms.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "resist-lawless-ruler": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Resistance doctrine is not part of the economic texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "parliament-supreme": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the model assumes legislatures at each level set public investment.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "animal-suffering-matters": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; a broad democratic-left outlook generally accepts animal sentience.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "animal-use-humane": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the economic texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "noblesse-oblige": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarians favour rights and structures over paternal duty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "withdraw-from-politics": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Participation, in workplaces and legislatures, is the model's central value.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mass-culture-pacifies": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Cultural critique is not part of the economic-democracy texts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ruling-class-consent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Hegemony theory is not part of these sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "world-economy-extracts-surplus": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Smith's imperialism analysis is cited, but not as a defining thesis.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "native-born-offices": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; egalitarian citizenship default rejects it, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-own-road": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Internationalist party questions are not relevant to this tradition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "self-reliance-over-aid": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Development strategy is not in the texts, though fair trade and domestic reinvestment lean toward self-reliance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "return-lost-territory": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; irredentism has no place in the model, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "indigenous-political-leadership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; democratic equality of citizens suggests opposing leadership by descent, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "antifascism-founding-value": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; democratic-left default supports it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "totalitarianisms-equivalent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The page contrasts the Soviet model with its own, but adherents do not take positions on equivalence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "slavery-not-civil-war-cause": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; historical consensus default.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-contested-monuments": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; left adherents split.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "male-disadvantage-attention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "domestic-violence-symmetry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "institutions-fit-civilization": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the model is presented as general rather than civilizational.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "military-guardian-role": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; the democratic premise excludes military guardianship, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "paid-care-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "filial-duty": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Family ethics are outside the tradition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "office-by-exam": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; elections of councils are favored over exam-based appointment, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "foreign-takeover-block": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Domestic reinvestment is stressed but takeover policy is unspecified.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-fault-divorce": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; liberal-left default supports it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "recallable-delegates": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Elected workers' councils appoint managers under one person one vote; consistent with accountability, though not explicit.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "individual-pension-accounts": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Private savings are treated as unnecessary for investment, suggesting preference for public arrangements.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "land-use-tenure": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Land is social property leased through a tax, resembling use-based tenure, but individual use-tenure is not stated.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "budget-needs-parliament": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Legislatures at each level decide public investment shares.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "single-official-language": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; pluralist default opposes limiting languages, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "foreign-land-ownership": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; land is treated as social property through capital-assets tax, but nationality rules are not discussed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "disparate-impact-discrimination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "consumerism-harmful": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed in the sources; adherents vary.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "arm-foreign-insurgents": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; left default is skeptical, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "intervene-in-bloc": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; violates democratic self-determination, inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporate-influence": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The page describes the public as lacking democratic voice in economic policy and Schweickart cites capital-driven democratic deficits.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "job-guarantee": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "SEP and the Wikipedia article list the public sector as employer of last resort and say capitalism builds in unemployment.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "restrict-foreign-funding": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from the democratic-egalitarian premises; the model concerns firms and investment, not civil-society funding.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "pronatalist-incentives": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model has nothing to say on birth rates.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "residents-only-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model concerns firm ownership and capital taxation, not restrictions on buyers of homes; adherents have no stated view.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "democratic-peace": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the model's democratic premises; Schweickart's work does not take up the thesis in the pages opened.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-duty-to-obey": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No stated position; the model is a democratic one but does not address obedience.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "non-intervention": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the anti-imperial leaning of market-socialist writers; not addressed in the model.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "industrial-unions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Under worker self-management workers govern their own firms, so union structure is secondary and not addressed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "minority-conspiracy": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from the egalitarian and democratic premises; conspiracy claims against minorities are alien to the model.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "abolish-legal-marriage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; adherents are unlikely to prioritise abolishing legal marriage.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "public-access-to-information": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the model's demand for democratic accountability of public investment bodies.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "local-production": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model keeps markets for goods and trade, and adherents are not committed to localism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "informal-organisation": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The model builds formal, democratically governed firms and public banks; inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-law-over-international": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The model is an economic design that says nothing on the precedence of national versus international law, and adherents have no common view.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "religious-nation": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred from the democratic, egalitarian premises; religion plays no role in the model.",
+      "sources": [
+        "s3"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Firms should be run by their workers, with management chosen by workers' own votes.",
+      "value": 2,
+      "rationale": "Schweickart's model makes an elected workers' council appoint the chief executive, one person one vote; existing worker-ownership and workplace-democracy statements only partly capture the election of management.",
+      "sources": [
+        "s2"
+      ],
+      "addedAs": "workplace-democracy"
+    },
+    {
+      "text": "Investment funds should be generated by a public tax on capital assets and allocated by publicly accountable banks rather than by private savers.",
+      "value": 2,
+      "rationale": "Social control of investment through a flat capital-assets tax and public investment banks is one of the model's three defining institutions.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "addedAs": "state-directs-investment"
+    },
+    {
+      "text": "Governments should guarantee a job to everyone willing to work, acting as employer of last resort.",
+      "value": 1,
+      "rationale": "SEP and the Wikipedia article list the public sector as employer of last resort and say capitalism builds in unemployment.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "addedAs": "job-guarantee"
+    }
+  ],
+  "notes": "Adherents differ on the exact institutional details (for example Dahl's emphasis on self-governing firms versus Schweickart's public investment banks). Corneo and others criticize the model for risk and unemployment effects (reported by SEP). Most non-economic answers are inferred and low-confidence, so salience may be borderline."
 }
