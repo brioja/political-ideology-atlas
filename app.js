@@ -1,5 +1,5 @@
 // UI: intro map, one-statement-at-a-time quiz, results.
-const model = buildModel(IDEOLOGIES);
+const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL) : buildModel(IDEOLOGIES);
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },

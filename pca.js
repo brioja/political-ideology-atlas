@@ -83,6 +83,15 @@ function buildModel(ideologies, opts = {}) {
   return model;
 }
 
+// The same model from parts build.js computed ahead of time (mean and the leading components), so
+// the page skips the eigen-decomposition, which grows with the cube of the statement count.
+function modelFromParts(ideologies, parts) {
+  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, ideologies: [] };
+  model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
+  model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
+  return model;
+}
+
 // Places a set of answers on the axes. Skipped or unasked statements are null.
 // With every statement answered this is the exact projection. With only some, it is the
 // least-squares fit on the first `dims` axes using just the answered statements, so
@@ -373,5 +382,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { jacobiEigen, buildModel, modelFromParts, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }
