@@ -89,7 +89,9 @@ Use the scale -2 (strongly disagree), -1 (disagree), 0 (neutral or genuinely spl
   trade, not about markets in general.
 
 Confidence:
-- `high`: stated directly in a primary source or settled in the scholarship.
+- `high`: stated directly in a primary source or settled in the scholarship. Its rationale says what
+  that source states about this statement; a stock phrase ("Nationalism rejected.") or a position
+  the sources never discuss is at most `medium`.
 - `medium`: clearly implied by core principles, or the documented majority view.
 - `low`: inferred, contested among adherents, or anachronistic.
 

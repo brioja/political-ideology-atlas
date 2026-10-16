@@ -84,6 +84,16 @@ function validate(id) {
     else for (const sid of ans.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
   if (backfill.length) warnings.push(`needs answers for new statements (backfill): ${backfill.join(", ")}`);
+  // A high-confidence answer rests on what a source says about that statement, so its rationale
+  // can't be one stock phrase shared with other high answers (lower the confidence instead).
+  const highs = new Map();
+  for (const st of statements) {
+    const ans = answers[st.id];
+    if (ans?.confidence !== "high" || !ans.rationale) continue;
+    const r = ans.rationale.trim().toLowerCase();
+    highs.set(r, [...(highs.get(r) || []), st.id]);
+  }
+  for (const ids of highs.values()) if (ids.length > 1) errors.push(`${ids.join(", ")}: high-confidence answers share one rationale; say what the source states for each, or lower the confidence`);
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');
