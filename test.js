@@ -23,6 +23,15 @@ for (const s of allStatements()) {
   assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; give the new wording a new id`);
 }
 
+// 1c. A statement is promoted only once every audit answers it: build.js leaves out any audit that
+// misses an active statement, so an early promotion empties the site.
+const { catalog, profilePath, activeStatements, unanswered } = require("./scripts/lib");
+const active = activeStatements();
+const behind = catalog().filter((e) => require("fs").existsSync(profilePath(e.id)))
+  .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
+  .filter(({ audit }) => !audit.notAnIdeology && unanswered(audit.answers, active).length);
+assert(!behind.length, `${behind.length} audits miss active statements (backfill before promoting): ${behind.slice(0, 5).map((b) => b.id).join(", ")}`);
+
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
 const model = buildModel(IDEOLOGIES);
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
