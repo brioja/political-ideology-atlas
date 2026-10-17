@@ -1,2744 +1,2938 @@
 {
- "id": "ba-athism",
- "name": "Ba'athism",
- "auditedAt": "2026-10-17",
- "auditor": "claude-sonnet-5-5",
- "summary": "Ba'athism is a secular Arab nationalist ideology that seeks one Arab state, freedom from foreign domination and an Arab form of socialism, under the motto Unity, Freedom, Socialism. It puts major industry and resources under state control, treats religion as cultural heritage rather than a basis of law, and expects a vanguard party to lead an Arab renaissance. It rejects both liberal capitalism and Marxist class-struggle communism.",
- "scope": "The Aflaqite mainstream: Michel Aflaq, Salah al-Din al-Bitar and the 1947 constitution of the Arab Ba'ath Party, as described in scholarship. It excludes the personalist regimes of Saddam Hussein and Hafez al-Assad and the later Marxist-leaning neo-Ba'athism, though practice under those regimes is noted where it shows how the party worked.",
- "wikipedia": "https://en.wikipedia.org/wiki/Ba'athism",
- "furtherReading": [
-  {
-   "title": "Ba'athism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Ba'athism",
-   "note": "Overview of the ideology, its founders and its Aflaqite, Iraqi and Syrian strands."
-  },
-  {
-   "title": "Michel Aflaq (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Michel_Aflaq",
-   "note": "Life and thought of the party's main ideologue."
-  },
-  {
-   "title": "Arab socialism (Wikipedia)",
-   "url": "https://en.wikipedia.org/wiki/Arab_socialism",
-   "note": "How Ba'athist and Nasserist socialism differ from Marxism."
-  },
-  {
-   "title": "Constitution of the Ba'th Party, 1947 (French translation)",
-   "url": "https://books.openedition.org/iremam/737",
-   "note": "The party's founding programme in an official French translation."
-  }
- ],
- "keyFigures": [
-  {
-   "name": "Michel Aflaq",
-   "role": "Co-founder and chief ideologue of the Ba'ath Party",
-   "wikipedia": "https://en.wikipedia.org/wiki/Michel_Aflaq",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  {
-   "name": "Salah al-Din al-Bitar",
-   "role": "Co-founder of the Ba'ath Party with Aflaq",
-   "wikipedia": "https://en.wikipedia.org/wiki/Salah_al-Din_al-Bitar",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  {
-   "name": "Zaki al-Arsuzi",
-   "role": "Early Arab nationalist thinker who influenced the founders",
-   "wikipedia": "https://en.wikipedia.org/wiki/Zaki_al-Arsuzi",
-   "sources": [
-    "s1"
-   ]
-  }
- ],
- "sources": [
-  {
-   "id": "s1",
-   "kind": "reference",
-   "title": "Ba'athism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Ba'athism",
-   "usedFor": "Overview of founders, slogan, unity, socialism, secularism, vanguard party and strands (first part of the article read)."
-  },
-  {
-   "id": "s2",
-   "kind": "primary",
-   "title": "Constitution du Parti Ba'th Arabe (17 juin 1947), official French translation",
-   "author": "Ba'th Party; OpenEdition annex",
-   "url": "https://books.openedition.org/iremam/737",
-   "usedFor": "Founding programme: unity, freedoms, state ownership, property limits, women, education, labor, conscription, foreign policy (read in French)."
-  },
-  {
-   "id": "s3",
-   "kind": "scholarly",
-   "title": "Michel Aflaq",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Michel_Aflaq",
-   "usedFor": "Aflaq's views on Islam, secularism, freedom, dictatorship, Marxism and Arab socialism (first part read)."
-  },
-  {
-   "id": "s4",
-   "kind": "reference",
-   "title": "Arab socialism",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Arab_socialism",
-   "usedFor": "Ba'athist economic ideas, class conflict versus nationalism, non-alignment (first part read)."
-  },
-  {
-   "id": "s5",
-   "kind": "reference",
-   "title": "Ba'ath Party",
-   "author": "Wikipedia",
-   "url": "https://en.wikipedia.org/wiki/Ba'ath_Party",
-   "usedFor": "Party history, organisation, hierarchy, military cells, 1960s radicalisation (first part read)."
-  }
- ],
- "answers": {
-  "universal-healthcare": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The 1947 constitution promises free education and state-guaranteed work, so a state health guarantee fits its welfare logic, but the sources I opened do not mention health care.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "raise-minimum-wage": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The constitution commits to labor law and a state-guaranteed livelihood; a higher wage floor is inferred from that, not stated.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "markets-allocate-better": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Ba'athist socialism puts utilities, resources and large industry under state control and favors planned economies, so adherents deny that free markets beat government allocation.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "public-ownership": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The 1947 constitution says public utilities, major natural resources, large-scale production and transport belong to the nation and are run by the state.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "tax-the-wealthy": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Opposition to exploitation by feudalists and capitalists implies steeper taxes on the rich, but tax rates are not discussed in the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "unions-good": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The constitution provides for labor law, free trade unions of workers and peasants and labor courts, so unions are treated as a good.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "property-fundamental": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution calls property a natural right only within national interest and caps landholdings, so it is not a near-absolute right.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "regulate-corporations": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The party program puts state oversight on trade and abolishes foreign concessions, which implies strong control of business.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "cut-welfare": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The program guarantees work, free education and protection of the family, so cutting welfare runs against its social orientation; welfare is not discussed directly.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "worker-ownership": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program offers worker participation in management and profit sharing but vests big industry in the state, not in workers, so collective worker ownership is not its model.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "surveillance-ok": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athist regimes built party watchdog circles in the bureaucracy and army; anti-terror surveillance is inferred as acceptable to a security-minded vanguard party.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "legalize-drugs": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; a nationalist, morally conservative party culture suggests opposition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restrict-hate-speech": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution protects speech but fights sectarian and tribal fanaticism; adherents are split on legal limits.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "strong-leader": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The party favors a vanguard one-party state with top-down command, and Ba'athist states concentrated power in leaders, though Aflaq himself criticized dictatorship.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "state-harmful": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution gives the state the economy, education and the unification of the nation, so the idea that the state is unnecessary is directly opposed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "limit-guns": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; a state-centered security order inferred to favor controls.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Compulsory military service is written into the constitution and the party embedded itself in the armed forces, so a strengthened security apparatus is favored.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "legalize-sex-work": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the constitution calls the family the cell of the nation, so adherents are inferred to oppose legalization.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "decide-locally": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution calls for one unified Arab state, though it also mentions decentralized administration, so national over local authority dominates.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rehabilitation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; no distinctive Ba'athist penal doctrine is documented in the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "traditional-family": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The constitution calls the family the fundamental cell of the nation and says the state should protect and support it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "same-sex-marriage": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the family-centered, nationalist program implies opposition.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abortion-legal": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; the pro-family and pronatalist stress of the constitution suggests opposition.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "more-religion-public": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq held that Islam is cultural heritage not to be imposed on state or society, and the 1960 manifesto put nationalism above religion.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "correct-racial-injustice": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not a Ba'athist theme; the sources say nothing on racial redress.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "gender-social-construct": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the constitution gives women full civic rights but offers no theory of gender.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "preserve-national-culture": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Arab cultural heritage, language and history are the core of Ba'athist nationalism and the basis of the Arab nation in the constitution.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "gradual-change": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution says gradual reform will fail and links socialism to revolution.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "reduce-immigration": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; Arab immigration is welcome in principle while non-Arab settlement is not discussed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "empower-international-orgs": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq opposed the Arab League as serving regional interests, and the party stressed full national sovereignty and anti-imperialism.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "free-trade": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The program favors protectionism and state control of trade, so adherents reject free trade.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "nation-first": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Foreign policy serves Arab interests and treaties harming Arab sovereignty are abrogated, though the nation meant is the whole Arab nation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "humanitarian-intervention": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Ba'athism is anti-imperialist and opposed Western interventions; humanitarian war is inferred as a pretext in its view.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "open-borders": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The constitution wants unity within an Arab state but not open borders with all the world; inferred from its nation-centered outlook.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "limit-growth": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Ba'athism pursues development; environmental growth limits are an anachronistic idea inferred as rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "drastic-climate-action": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed by this mid-century ideology.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "tech-solves-problems": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Development and modern education are priorities, but optimism about technology is inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "expand-nuclear": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; developmental statism and strategic ambition suggest support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "revolution-justified": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution states that gradual reform will fail and ties socialism and unity to revolution.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "experts-over-public": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the party claims to lead on behalf of the people while rejecting pluralism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "central-planning": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Ba'athist socialism favored planned economies and state control, though small private industry was tolerated.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "socialized-markets": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program allows small private property and public ownership of large industry, so markets are accepted conditionally, not by that exact test.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "land-value-tax": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; no source discusses land taxation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "tax-inheritance": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution calls inheritance a natural right within national interest, so heavy taxation is not stated.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "basic-income": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the program instead guarantees work.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "tariffs-protect-industry": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Protectionism is an explicit element of the Ba'athist economic program.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "state-directs-investment": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "The state runs large-scale production and plans the economy, so it directs investment into strategic sectors.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "widespread-small-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program caps land and big holdings and allows small private property but also state ownership of large industry, so the statement only half fits.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-money-wages": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Ba'athism rejects Marxist communism and keeps wages, guaranteeing work and a private sphere.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-central-banks": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The 1947 program wanted a single state bank, the opposite of market money.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "corporatist-bargaining": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution provides for unions and labor courts but not for state-recognized employer and worker bodies setting prices.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "one-party-rule": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Ba'athism is described as favoring a vanguard one-party state, though Aflaq called dictatorship self-contradictory.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "monarchy-legitimate": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Ba'athism was a revolutionary republican movement opposed to reactionary regimes; the constitution calls for a regime responsible to the people.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "democracy-best": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Ba'athism rejects liberal democracy and pluralism, with the vanguard party securing liberty.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "direct-votes": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The vanguard model does not give citizens direct lawmaking; inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-councils": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The program sets a representative constitutional regime and party leadership, not councils.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "right-to-secede": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution holds that Arab divisions are false and calls for one state, so secession by regions contradicts the core.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "natural-rulers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Vanguard-party leadership implies a guiding elite, but natural superiority is not claimed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "political-violence-never": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Revolution is central to the program and military coups brought Ba'athists to power.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "war-builds-character": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq's romantic nationalism stresses struggle for the nation, but war as character-builder is not stated.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "separate-church-state": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Aflaq favored separating state and religion while honoring Islam as culture, though not as strictly as laicism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "laws-from-scripture": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq opposed imposing Islam on the state and the party was secular, with later Iraqi exceptions.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "private-courts-defense": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution makes the judiciary independent and state-run and compulsory military service national, leaving no room for private defense.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "military-superiority": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Confrontation with Israel and imperialism suggests strong militaries are valued, but it is not stated as rivalry superiority.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ethnic-nation": {
-   "value": 0,
-   "confidence": "medium",
-   "rationale": "The constitution defines Arabs by language, residence and belonging, not blood, though minorities were Arabized in practice.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "class-struggle-history": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq put nationalism over class struggle and rejected the Marxist claim of dialectical materialism, though later neo-Ba'athists turned to class struggle.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "equal-outcomes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ba'athism wants to end exploitation and class differences yet keeps property and wages.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "indigenous-land-authority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "No source ties Ba'athism to indigenous land claims; the sources are about Arab nationhood, so adherents have no distinctive position.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "colonial-reparations": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Anti-imperialism suggests support, but reparations are not discussed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizational-union": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Uniting all Arabs on shared language and history in a single state is the movement's defining aim.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "self-interest-moral": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Property is subordinated to national interest and the party's socialism stresses collective duty.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "duties-before-rights": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Work is compulsory and national interest limits freedoms and property, though freedoms are called sacred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "nature-intrinsic-value": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Environmental ethics lies outside the party's mid-century concerns with unity, liberation and socialism, so no stance can be inferred.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "limit-population": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The pro-family program and nationalist concern for Arab strength imply opposition.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "industrial-civilization-disaster": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Ba'athism aims at development and modernization, so this is inferred as rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "accelerate-technology": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; modernization is wanted but institutional disruption is not an aim in itself.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "human-enhancement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Bodily enhancement is an anachronistic issue the party never addressed, and nothing in its principles settles it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "algorithmic-government": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anachronistic and not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "unbreakable-encryption": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "A security-state party is inferred to oppose it; not addressed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "restore-past-order": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq called for an Arab renaissance as revival with a forward mission, not restoration of old social order, and opposed reactionary elites.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "results-over-ideology": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The party holds that a correct doctrine should guide the state, so judging by results alone is rejected.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-action": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The party contested elections early (Jordan 1951) but took power by coups.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "means-match-ends": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Ba'athists used top-down and coup methods for ends such as liberty.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "return-to-foraging": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Ba'athism is a modernizing developmental program.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "abolish-division-of-labor": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Wages, state industry and planning remain in the program.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "distribute-by-need": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program guarantees work and basic provision but does not state a needs-based distribution as final aim.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "production-for-use": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Arab socialism's planned and state-run economy is oriented toward meeting national needs, though this phrase is not used.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "profit-exploitation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq condemned exploitation by capitalists and feudalists but rejected Marxist theory, so the claim is only partly shared.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "dictatorship-of-proletariat": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Early Ba'athists rejected Marxist class struggle, and Aflaq criticized communism, though the neo-Ba'athists later were closer.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "collective-farming": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The 1963 Points of Departure called for collective farms but the 1947 text limits and distributes land to farmers.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "capitalism-causes-war": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Anti-imperialism blames Western powers but not as a general theory of capitalism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "taxation-theft": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The state financing and running the economy and education is central; taxation as theft is opposed outright.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "harm-principle": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution limits freedoms by Arab national interest, so liberal harm-only restriction is not its standard.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "individual-rights-only": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The nation and its collective rights are central, and freedoms are bound to national interest.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "conscription": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution states that military service is compulsory.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "exit-over-voice": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The party stresses loyalty to the Arab nation and a vanguard-secured liberty, not exit as a check.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "state-as-business": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The state is a collective organizer of the nation and economy, not a firm serving customers.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "positive-liberty": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Aflaq tied freedom to liberation, national struggle and socialism, and the program guarantees work and free education so people can use their freedom.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "media-academia-power": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not discuss universities or media as power centers; the party saw foreign domination and old elites as the real obstacles.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "hereditarian-race": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The constitution defines the nation by culture and language, not heredity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "organic-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed beyond union and peasant bodies in the labor section.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "total-state": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The constitution makes education, the economy and national organization state matters, but it also protects freedoms of belief and expression, so totalism is partial.",
-   "sources": [
-    "s2",
-    "s5"
-   ]
-  },
-  "national-rebirth": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The name Ba'ath means resurrection and the movement is defined by an Arab renaissance to end decline and division.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "territorial-expansion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Unity is sought among Arabs but conquest is not a stated aim.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "personal-loyalty-rule": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Ba'athism is a modern revolutionary party with a constitution and party hierarchy, not feudal oaths.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "bound-labor": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution limits landholding and aims against exploitation, and land reform abolished feudalism in Arab socialism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-neutral-knowledge": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ba'athist writings are about nationalism and renaissance, not the sociology of knowledge, so no position is documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "universal-morality": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq's thought is romantic and nationally particular, so universal reason is not its stress.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "single-common-good": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "A vanguard party claims to express the single national will, rejecting pluralism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "jewish-state-israel": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Ba'athism is described as anti-Zionist and holds that Arab land belongs to Arabs.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "diaspora-return-right": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed as a general principle.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "revive-national-language": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Arabic is the foundation of unity; revival is not needed but the language's role is exalted.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workplace-democracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Workers' participation in management and profit sharing is promised, though large industry is state run.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "school-vouchers": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution reserves education to the state and abolishes private and foreign schools.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "avoid-deficit-stimulus": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "A state-led planned economy is inferred to accept deficit spending.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "economic-freedom": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Ba'athism holds political freedom comes through national liberation and socialism, with the state controlling large parts of the economy.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rule-by-example": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution relies on written law, an independent judiciary and party organisation, and the sources do not describe rule by moral example.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-self-determination": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution states Arabs are one nation with a natural right to a state of their own.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "force-without-un": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Not addressed; anti-Western stance suggests no deference to the UN.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "reason-over-faith": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Aflaq opposed atheism and held a romantic view of nationhood, so reason alone is not the guide.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "welfare-for-citizens": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution speaks of the rights of Arabs, not of foreign immigrants, so a citizens-only rule is neither stated nor denied.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "work-for-welfare": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The constitution makes work compulsory for those able to do it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "class-collaboration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Aflaq subordinated class conflict to nationalism and early Ba'athism favored class harmony over struggle, though later neo-Ba'athists differed.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "sacrifice-heritage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Arab heritage is central and the party opposed cultural destruction.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "dominated-front": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "The party is anti-imperialist and sought united Arab resistance to Western domination and non-alignment.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "workers-nation": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Aflaq placed nationalism before class and rejected Soviet-tied internationalism.",
-   "sources": [
-    "s3",
-    "s4"
-   ]
-  },
-  "distinct-gender-roles": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution says Arab women enjoy full civic rights.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "ban-interest": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The 1947 constitution abolishes usury between citizens.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "racial-segregation-law": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution rejects sectarian, tribal and racial fanaticism and bases citizenship on language and belonging.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-class-instrument": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq rejected Marxist theory and held the state as national instrument.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "expand-fossil-fuels": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Oil resources are national property for development; expansion is inferred.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "assimilate-immigrants": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Arabization of minorities in practice; inferred as favoring assimilation into Arab identity.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "elite-replacement": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of Ba'athism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "proportional-representation": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution promises a representative constitutional regime but the sources never discuss electoral formulas.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "national-mission": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Aflaq spoke of an eternal Arab mission to humanity, tied to unity and renaissance.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "patriarchy-structural": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; the constitution grants civic rights but offers no analysis.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "political-elite-corrupt": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athism attacked feudalists and reactionary old elites and justified revolution on that ground.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "heritable-defect-limits": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Not addressed; nothing in its sources supports eugenics.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "security-forces-accountable": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Ba'athist regimes did not hold their security forces accountable.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "night-watchman-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution gives the state ownership of large industry, education, labor guarantees, so a minimal state is rejected outright.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "discourage-race-mixing": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The constitution rejects racism and defines Arabs inclusively by language and belonging.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "equal-moral-worth": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The constitution protects belief and equal civic rights for Arab women, though membership in the nation is the basis.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "socialism-one-country": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq held revolutionary states take power separately then unite, so socialism within one Arab state is first step.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "settler-state-colonial": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Anti-Zionism and anti-imperialism treat Israel as a colonial imposition.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "uniform-civil-code": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The constitution says the national bond is the state's only bond and fights sectarian divisions.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "restrict-conversion": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The constitution protects freedom of belief.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "ban-cattle-slaughter": {
-   "value": -2,
-   "confidence": "low",
-   "rationale": "Alien to Arab context.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-religion-state-schools": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The state controls education and religious instruction is not discussed; adherents differ across states.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "state-strengthens-encirclement": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athist regimes strengthened the state under external threat, though not framed in this Marxist way.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "consent-of-governed": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution wants a regime responsible before the people but the vanguard model weakens consent.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "trade-surplus": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Protectionist economics suggest mercantilist leanings.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "population-transfer": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not part of doctrine, though Arabization policies pressured minorities in practice.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "initiating-force-wrong": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The constitution endorses revolution and compulsory military service, which is the opposite of a non-aggression principle.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "competition-drives-progress": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Cooperation within the nation and socialism are stressed, though struggle for liberation is praised.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "ban-extremist-parties": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The one-party model and later practice outlawed rival parties.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "freedom-as-non-domination": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Aflaq understood freedom as liberation from foreign domination and exploitation.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "separated-powers": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution makes the judiciary independent and the executive responsible, but party command centralized power in practice.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "vanguard-party": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Ba'athism is described as having a Leninist-style vanguard party that secures liberty for the people through democratic centralism.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "priority-to-poor": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The program targets exploitation and guarantees work, education and land to those who farm it.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "right-to-buy-council-homes": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Public housing sales are a late-twentieth-century British issue that Ba'athist sources never touch.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "restrict-strikes-picketing": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution provides for free unions but Ba'athist states controlled labor.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "population-causes-poverty": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq blamed exploitation and domination, not population growth.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "diversity-weakens-cohesion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The party wants national cohesion through Arab identity and fights sectarianism, but diversity as such is not discussed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "offices-by-lottery": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The party hierarchy appoints through command structure.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "emergency-suspend-protections": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Ba'athist regimes ruled under emergency law.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "price-controls-essentials": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "State control of trade and planned economy suggest acceptance.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "party-controls-media": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Party circles were embedded in institutions, and regimes controlled media.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "party-commands-army": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Party cells in the military served as watchdogs and the party dominated the army in Syria and Iraq.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "long-naturalization-wait": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not discuss naturalization periods; Arab nationality is defined by language and belonging rather than residence.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "representatives-worker-pay": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not discuss pay for officeholders, so adherents are indifferent on this point.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-discipline-binding": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The party's top-down structure forbids lateral contact and binds members to command under democratic centralism.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "pool-sovereignty": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Pan-Arab union is the goal, so pooling sovereignty among Arab states is central, though the model is one state.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "head-commands-forces": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Power concentrated in presidents in Syria and Iraq, though doctrine does not say this.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "church-by-bishops": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Church governance by bishops concerns Christian polities; Aflaq was Christian but wanted religion separate from the state, so the question does not arise.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "clerical-rule": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Aflaq opposed fundamentalism and imposing Islam on the state.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "defeat-own-government-war": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Nationalism before class excludes defeatism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "censor-art-for-virtue": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Freedom of art is declared sacred in the constitution but limited by national interest.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "unlimited-reelection": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athist presidents ruled indefinitely.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "recall-officials": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution holds the executive responsible before the people but names no recall mechanism, and party practice was top-down.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "end-foreign-alliances": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Early Ba'athism stressed non-alignment and rejected Western and Soviet blocs.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-rental-housing": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Not addressed; private and small property remain.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "people-in-arms": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The constitution provides for conscription into a state army.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "rural-life-healthier": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The party was urban middle-class in outlook though peasants were courted.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "reunify-divided-nation": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution calls for uniting all Arabs in a single state against borders it sees as false.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "educated-out-of-touch": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The party was intellectual and educated in leadership.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "cultures-equal-different": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Aflaq held the Arab mission as special.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "death-penalty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athist regimes used capital punishment extensively.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "sex-ed-in-schools": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The state controls education in the constitution, but sex education and gender equality in curricula are not discussed in the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "creationism-in-schools": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Aflaq favored secular state and modernization.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "restrict-pornography": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Moral conservatism around family is inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "citizenship-by-descent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Citizenship follows language and belonging to the Arab nation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "minority-language-support": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Syrian and Iraqi regimes pursued Arabization.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "religious-exemptions": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "The party fights sectarian particularism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "encourage-eccentricity": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Social cohesion and national duty are stressed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "sovereign-debt-cancellation": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Anti-imperialism suggests support.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independence-needs-economic-change": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "The program abolishes foreign concessions and nationalizes key sectors as part of independence.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "constituent-assembly": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not say how constitutions should be drafted; party programs were issued by the party itself.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "restrict-freedoms-for-growth": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Ba'athist regimes subordinated liberty to the party's development project.",
-   "sources": [
-    "s1",
-    "s5"
-   ]
-  },
-  "rich-countries-aid-poor": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not addressed; anti-imperialism distrusts aid.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "independent-nuclear-deterrent": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Strategic independence suggests support; not discussed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "direct-election-head-of-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Single-candidate referendums were used in practice.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "central-bank-independence": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The constitution envisions a single state bank under state control.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-land-for-peace": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The constitution holds Arab land belongs to Arabs and opposes recognizing Israel.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "property-serves-common-good": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution says property is a natural right within the limits of national interest.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "soviet-state-capitalist": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq rejected Soviet ties but did not characterize the USSR so.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "precautionary-principle": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Environmental regulation under uncertainty is an anachronistic question the sources never raise.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "collective-defense": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Pan-Arab solidarity implies mutual defense.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "annexed-territory-occupation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Treaties and borders imposed from outside are rejected.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "subordinate-church-to-state": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Secular state with Islam as heritage; clergy were persecuted in neo-Ba'athist Syria.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "nonpartisan-head-of-state": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Heads of state were party leaders.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "force-to-prevent-secession": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Unity is sacred, so preventing separation is inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "region-keeps-system": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Unity should be full integration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "sacred-ruler": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Aflaq called dictatorship self-contradictory and the party was secular.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "flat-income-tax": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Opposed to capitalist exploitation, so progressive over flat tax inferred.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "character-from-environment": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Aflaq saw material conditions as important and exploitation as shaping men.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "sovereign-above-law": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The constitution holds the executive responsible before the people and the judiciary independent.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "space-expansion": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Space exploration is outside the ideology's concerns and no source speaks to it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "mixed-constitution": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Classical mixed government is not a Ba'athist theme; the program favours a representative regime led by a vanguard party.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "leader-cult": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Ba'athist regimes under Saddam and Assad built leader cults though doctrine did not require them.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "equal-parenting": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Custody presumptions are not discussed in the sources; the constitution only says the family is the cell of the nation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "class-struggle-under-socialism": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Neo-Ba'athists adopted class struggle language but Aflaqites did not.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "land-redistribution": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "The party supports land redistribution to peasants and limits holdings to what the owner can cultivate.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "refugee-return": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Palestinian return is part of anti-Zionist stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "co-ethnic-territorial-claim": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Unity of all Arabs across borders is claimed on grounds of nationality.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "apostasy-punishable": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Aflaq opposed imposing Islam and the constitution protects freedom of belief.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "women-must-cover": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The constitution grants full civic rights and the party is secular.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "common-currency": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Pan-Arab union would include economic integration.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "kin-peoples-union": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Uniting Arabs of one language and ancestry is the party's core demand.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "national-cultural-autonomy": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Arabization of minorities was practiced.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "rights-where-you-live": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Ba'athism does not discuss persecuted minorities choosing between emigration and local struggle, apart from its hostility to Zionism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "material-conditions-drive-history": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Aflaq acknowledged material conditions but rejected that dialectical materialism is the only truth and placed nationalism first.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "ban-cartels": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Large industry is nationalized rather than broken up.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "no-bailouts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Bank and firm bailouts are not discussed; with major industry state-owned the question has little place in its economics.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "courts-bound-by-majority": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution wants an independent judiciary, yet nothing in the sources addresses courts against majorities.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "gender-parity-bodies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution grants Arab women full civic rights, but quotas for public bodies are not mentioned.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "economic-self-sufficiency": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Protectionism and anti-imperialism favor autarky, though a bloc of Arab states is the aim.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "trade-labor-env-standards": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The party favours protection and state control of trade, but binding labor and environmental clauses in trade deals are not discussed.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "moral-incentives": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution makes work compulsory and keeps wages; the sources do not describe moral incentives replacing material ones.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "armed-group-creates-revolution": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "A military committee seized power in Syria in 1963.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "abolish-hereditary-privilege": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Feudalism was abolished and the party opposed reactionary elites.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "history-own-civilization": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Arab history and culture are central to the nation.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "civilizing-tutelage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Anti-imperialism rejects colonial tutelage.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "patriotic-education": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Education is state-run to forge national consciousness.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "end-racial-preferences": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Racial preferences in admissions are a US debate; the sources show no Ba'athist stance.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "public-money-creation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The single state bank is in the 1947 program.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "capitalism-adapts": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq criticised capitalism but the sources record no theory about whether it can avoid collapse.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "former-empire-influence": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not discuss cultivating influence in former imperial lands; Ba'athism was shaped against empire rather than for it.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "delink-world-market": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Protectionism but no delinking call.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "labor-aristocracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The theory of exploited-nation and privileged-worker divides is Marxist-Leninist; Aflaq rejected Marxist definitions, and the sources show no stance.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "freedom-to-discriminate": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The constitution rejects sectarian and racial fanaticism.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "entrenched-bill-of-rights": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution declares freedoms sacred but within national interest.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "colonial-treaties-void": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution abrogates treaties that harm full Arab sovereignty.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "elective-rulers": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The constitution wants a regime responsible to the people.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "minority-veto": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "National unity and party discipline override dissent.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "resist-lawless-ruler": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution says the executive answers to the people but gives no right to resist, and Ba'athist regimes were intolerant of opposition.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "parliament-supreme": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution sets a representative regime but party leadership dominates.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "animal-suffering-matters": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Animal ethics is not addressed in any source on Ba'athism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "animal-use-humane": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Animal use for food or research is not addressed in any source on Ba'athism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "noblesse-oblige": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program makes protection state duty not charity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "withdraw-from-politics": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Aflaq's thought is committed activism and national struggle.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "mass-culture-pacifies": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq said religion kept the oppressed passive, but a critique of mass culture is not documented.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "ruling-class-consent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq saw religion used by elites to keep the oppressed passive, a partial overlap.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "world-economy-extracts-surplus": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Anti-imperialism holds foreign domination exploits Arab resources.",
-   "sources": [
-    "s1",
-    "s4"
-   ]
-  },
-  "native-born-offices": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution defines Arabs by language and belonging, and reserving posts to the native-born is not discussed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "party-own-road": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Aflaq rejected ties binding the Arab destiny to Russia and sought an Arab socialism.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "self-reliance-over-aid": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Nationalization and abolition of foreign concessions imply self-reliance.",
-   "sources": [
-    "s4"
-   ]
-  },
-  "return-lost-territory": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Arab land belongs to Arabs, which implies demanding lost land.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "indigenous-political-leadership": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Descendants of pre-colonial peoples ruling over settlers is not a Ba'athist theme, apart from its view of Israel.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "antifascism-founding-value": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not discuss anti-fascism as a constitutional value.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "totalitarianisms-equivalent": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq criticised communism and capitalism but the sources do not equate fascism and communism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "slavery-not-civil-war-cause": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "American Civil War causes are outside Ba'athist concerns.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "preserve-contested-monuments": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Monument debates are absent from the sources; leader statues in Ba'athist states were another matter.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "male-disadvantage-attention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Public programmes for boys and men are not covered in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "domestic-violence-symmetry": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Domestic-violence policy is not covered in the sources.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "institutions-fit-civilization": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Ba'athism rejects liberal democracy and holds Arabs need their own forms.",
-   "sources": [
-    "s1",
-    "s3"
-   ]
-  },
-  "military-guardian-role": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The military wing dominated Ba'athist Syria and the party embedded in the army.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "paid-care-work": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution protects the family and gives women civic rights but does not discuss paying domestic labor.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "filial-duty": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Family is the fundamental cell of the nation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "office-by-exam": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Examination for posts is not a Ba'athist theme in the sources; party membership and loyalty mattered in practice.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "foreign-takeover-block": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Foreign concessions are abolished and strategic industries nationalized.",
-   "sources": [
-    "s2",
-    "s4"
-   ]
-  },
-  "no-fault-divorce": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Divorce law is not covered; the constitution only calls marriage a national duty to be regulated.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "recallable-delegates": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Hierarchical command rather than recall from below.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "individual-pension-accounts": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Opposed to market privatization of social provision.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "land-use-tenure": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Land caps to what the owner can cultivate resemble use-based tenure.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "budget-needs-parliament": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution says the executive answers to the people, but the sources do not mention parliamentary budget control.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "single-official-language": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Arabic is the unifying language and minorities were Arabized.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "foreign-land-ownership": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The constitution declares the Arab land belongs to Arabs.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "disparate-impact-discrimination": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Disparate-impact doctrine is a US legal idea absent from the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "consumerism-harmful": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources do not criticise consumer culture; Aflaq's critique targets exploitation and foreign domination.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "arm-foreign-insurgents": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Syria and Iraq backed insurgent groups against rivals.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "intervene-in-bloc": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Great-power intervention to keep an ally in its bloc is not discussed, though Aflaq rejected both blocs.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "corporate-influence": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Opposed to capitalist exploitation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "restrict-foreign-funding": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Foreign influence is fought in the constitution.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "pronatalist-incentives": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "The state protects and supports family and encourages marriage.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "residents-only-property": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Local residency limits on home purchases are not discussed in the sources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "job-guarantee": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The constitution says the state must guarantee each citizen employment.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "democratic-peace": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources never discuss whether democracies fight each other; Ba'athism rejects liberal democracy as an end.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "no-duty-to-obey": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Duties to the nation come first.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "non-intervention": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Opposes Western intervention but backs Arab unity beyond borders.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "industrial-unions": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution provides for free trade unions but does not say whether they organise by industry or craft.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "minority-conspiracy": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Not part of core doctrine apart from Zionism.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "abolish-legal-marriage": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Marriage is a national duty the state regulates.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "public-access-to-information": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Freedom of speech and press are guaranteed in the constitution within national interest, but a right to government records is not mentioned.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "local-production": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The program favours national self-reliance and protection, but local food and goods production is not discussed.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "informal-organisation": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "The party is formally hierarchical with strict command.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "national-law-over-international": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Emphasis on sovereignty.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "religious-nation": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Arab nation is defined by language and history, not religion.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "deference-to-leading-power": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Ba'athism is anti-imperialist and rejected both Cold War blocs, so tribute and ritual submission to a leading power would be refused.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "regional-revenue-retention": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "National ownership of resources.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "personal-possessions-private": {
-   "value": 1,
-   "confidence": "low",
-   "rationale": "Property is a right limited by national interest.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "defeat-communism": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Aflaq rejected communism but non-aligned.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "mixed-public-service-providers": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "State runs education and utilities.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "religion-illusion": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Aflaq saw Islam as sublime expression of Arabism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "capitalism-progressive": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Aflaq criticized capitalism.",
-   "sources": [
-    "s3"
-   ]
-  },
-  "women-equality-needs-economic-change": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The constitution grants Arab women full civic rights directly, and the sources link women's position to no economic transformation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "socialized-care": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Family protected as cell of nation.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "purge-loanwords": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "The sources praise Arabic as the unifying language but do not mention purging foreign words.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "treaties-binding": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Treaties with internal nations are not discussed; the constitution instead abrogates treaties that harm Arab sovereignty.",
-   "sources": [
-    "s1"
-   ]
-  },
-  "cooperative-communities": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "State-led national unity.",
-   "sources": [
-    "s2"
-   ]
-  },
-  "majority-settlement": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Arabization practiced but no doctrine.",
-   "sources": [
-    "s5"
-   ]
-  },
-  "neither-capitalism-nor-communism": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Aflaq criticized both capitalism and communism and promoted Arab socialism as a distinct third path.",
-   "sources": [
-    "s3"
-   ]
-  }
- },
- "missingStatements": [
-  {
-   "text": "Lending at interest between citizens should be abolished.",
-   "value": 2,
-   "rationale": "The 1947 constitution abolishes usury between citizens and proposes a single state bank.",
-   "sources": [
-    "s2"
-   ],
-   "addedAs": "ban-interest"
-  },
-  {
-   "text": "Foreign and private schools should be abolished so that the state alone provides education.",
-   "value": 2,
-   "rationale": "The constitution reserves education to the state and abolishes foreign and private schools.",
-   "sources": [
-    "s2"
-   ],
-   "declined": "A constitutional detail (state monopoly of schooling) of one party's founding text; total-state and school-vouchers already place the ideology on state control of education."
-  },
-  {
-   "text": "Landholdings should be capped at what the owner can farm personally.",
-   "value": 2,
-   "rationale": "The constitution limits agricultural holdings to what an owner can cultivate without exploiting others.",
-   "sources": [
-    "s2",
-    "s4"
-   ],
-   "addedAs": "land-use-tenure"
-  }
- ],
- "notes": "Iraqi (Saddamist) and Syrian (neo-Ba'athist) branches diverged: Iraq grew more religious in the 1990s, Syria was anti-clerical and class-struggle oriented. Aflaq himself criticised dictatorship, yet the party is described as favouring one-party vanguard rule."
+  "id": "ba-athism",
+  "name": "Ba'athism",
+  "auditedAt": "2026-10-17",
+  "auditor": "claude-sonnet-5-5",
+  "summary": "Ba'athism is a secular Arab nationalist ideology that seeks one Arab state, freedom from foreign domination and an Arab form of socialism, under the motto Unity, Freedom, Socialism. It puts major industry and resources under state control, treats religion as cultural heritage rather than a basis of law, and expects a vanguard party to lead an Arab renaissance. It rejects both liberal capitalism and Marxist class-struggle communism.",
+  "scope": "The Aflaqite mainstream: Michel Aflaq, Salah al-Din al-Bitar and the 1947 constitution of the Arab Ba'ath Party, as described in scholarship. It excludes the personalist regimes of Saddam Hussein and Hafez al-Assad and the later Marxist-leaning neo-Ba'athism, though practice under those regimes is noted where it shows how the party worked.",
+  "wikipedia": "https://en.wikipedia.org/wiki/Ba'athism",
+  "furtherReading": [
+    {
+      "title": "Ba'athism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Ba'athism",
+      "note": "Overview of the ideology, its founders and its Aflaqite, Iraqi and Syrian strands."
+    },
+    {
+      "title": "Michel Aflaq (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Michel_Aflaq",
+      "note": "Life and thought of the party's main ideologue."
+    },
+    {
+      "title": "Arab socialism (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Arab_socialism",
+      "note": "How Ba'athist and Nasserist socialism differ from Marxism."
+    },
+    {
+      "title": "Constitution of the Ba'th Party, 1947 (French translation)",
+      "url": "https://books.openedition.org/iremam/737",
+      "note": "The party's founding programme in an official French translation."
+    }
+  ],
+  "keyFigures": [
+    {
+      "name": "Michel Aflaq",
+      "role": "Co-founder and chief ideologue of the Ba'ath Party",
+      "wikipedia": "https://en.wikipedia.org/wiki/Michel_Aflaq",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "name": "Salah al-Din al-Bitar",
+      "role": "Co-founder of the Ba'ath Party with Aflaq",
+      "wikipedia": "https://en.wikipedia.org/wiki/Salah_al-Din_al-Bitar",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "name": "Zaki al-Arsuzi",
+      "role": "Early Arab nationalist thinker who influenced the founders",
+      "wikipedia": "https://en.wikipedia.org/wiki/Zaki_al-Arsuzi",
+      "sources": [
+        "s1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "reference",
+      "title": "Ba'athism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ba'athism",
+      "usedFor": "Overview of founders, slogan, unity, socialism, secularism, vanguard party and strands (first part of the article read)."
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Constitution du Parti Ba'th Arabe (17 juin 1947), official French translation",
+      "author": "Ba'th Party; OpenEdition annex",
+      "url": "https://books.openedition.org/iremam/737",
+      "usedFor": "Founding programme: unity, freedoms, state ownership, property limits, women, education, labor, conscription, foreign policy (read in French)."
+    },
+    {
+      "id": "s3",
+      "kind": "scholarly",
+      "title": "Michel Aflaq",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Michel_Aflaq",
+      "usedFor": "Aflaq's views on Islam, secularism, freedom, dictatorship, Marxism and Arab socialism (first part read)."
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Arab socialism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Arab_socialism",
+      "usedFor": "Ba'athist economic ideas, class conflict versus nationalism, non-alignment (first part read)."
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Ba'ath Party",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ba'ath_Party",
+      "usedFor": "Party history, organisation, hierarchy, military cells, 1960s radicalisation (first part read)."
+    }
+  ],
+  "answers": {
+    "universal-healthcare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The 1947 constitution promises free education and state-guaranteed work, so a state health guarantee fits its welfare logic, but the sources I opened do not mention health care.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "raise-minimum-wage": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The constitution commits to labor law and a state-guaranteed livelihood; a higher wage floor is inferred from that, not stated.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "markets-allocate-better": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Ba'athist socialism puts utilities, resources and large industry under state control and favors planned economies, so adherents deny that free markets beat government allocation.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "public-ownership": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The 1947 constitution says public utilities, major natural resources, large-scale production and transport belong to the nation and are run by the state.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "tax-the-wealthy": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Opposition to exploitation by feudalists and capitalists implies steeper taxes on the rich, but tax rates are not discussed in the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unions-good": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The constitution provides for labor law, free trade unions of workers and peasants and labor courts, so unions are treated as a good.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "property-fundamental": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution calls property a natural right only within national interest and caps landholdings, so it is not a near-absolute right.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "regulate-corporations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The party program puts state oversight on trade and abolishes foreign concessions, which implies strong control of business.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "cut-welfare": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The program guarantees work, free education and protection of the family, so cutting welfare runs against its social orientation; welfare is not discussed directly.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "worker-ownership": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program offers worker participation in management and profit sharing but vests big industry in the state, not in workers, so collective worker ownership is not its model.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "surveillance-ok": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athist regimes built party watchdog circles in the bureaucracy and army; anti-terror surveillance is inferred as acceptable to a security-minded vanguard party.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "legalize-drugs": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; a nationalist, morally conservative party culture suggests opposition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-hate-speech": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution protects speech but fights sectarian and tribal fanaticism; adherents are split on legal limits.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "strong-leader": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The party favors a vanguard one-party state with top-down command, and Ba'athist states concentrated power in leaders, though Aflaq himself criticized dictatorship.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "state-harmful": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution gives the state the economy, education and the unification of the nation, so the idea that the state is unnecessary is directly opposed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "limit-guns": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; a state-centered security order inferred to favor controls.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Compulsory military service is written into the constitution and the party embedded itself in the armed forces, so a strengthened security apparatus is favored.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "legalize-sex-work": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the constitution calls the family the cell of the nation, so adherents are inferred to oppose legalization.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "decide-locally": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution calls for one unified Arab state, though it also mentions decentralized administration, so national over local authority dominates.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rehabilitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; no distinctive Ba'athist penal doctrine is documented in the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "traditional-family": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The constitution calls the family the fundamental cell of the nation and says the state should protect and support it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "same-sex-marriage": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the family-centered, nationalist program implies opposition.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abortion-legal": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; the pro-family and pronatalist stress of the constitution suggests opposition.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "more-religion-public": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq held that Islam is cultural heritage not to be imposed on state or society, and the 1960 manifesto put nationalism above religion.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "correct-racial-injustice": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a Ba'athist theme; the sources say nothing on racial redress.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-social-construct": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the constitution gives women full civic rights but offers no theory of gender.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "preserve-national-culture": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Arab cultural heritage, language and history are the core of Ba'athist nationalism and the basis of the Arab nation in the constitution.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "gradual-change": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution says gradual reform will fail and links socialism to revolution.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "reduce-immigration": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; Arab immigration is welcome in principle while non-Arab settlement is not discussed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "empower-international-orgs": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq opposed the Arab League as serving regional interests, and the party stressed full national sovereignty and anti-imperialism.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "free-trade": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The program favors protectionism and state control of trade, so adherents reject free trade.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "nation-first": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Foreign policy serves Arab interests and treaties harming Arab sovereignty are abrogated, though the nation meant is the whole Arab nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "humanitarian-intervention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ba'athism is anti-imperialist and opposed Western interventions; humanitarian war is inferred as a pretext in its view.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "open-borders": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The constitution wants unity within an Arab state but not open borders with all the world; inferred from its nation-centered outlook.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "limit-growth": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Ba'athism pursues development; environmental growth limits are an anachronistic idea inferred as rejected.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "drastic-climate-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by this mid-century ideology.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Development and modern education are priorities, but optimism about technology is inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; developmental statism and strategic ambition suggest support.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "revolution-justified": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution states that gradual reform will fail and ties socialism and unity to revolution.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "experts-over-public": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the party claims to lead on behalf of the people while rejecting pluralism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "central-planning": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Ba'athist socialism favored planned economies and state control, though small private industry was tolerated.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "socialized-markets": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program allows small private property and public ownership of large industry, so markets are accepted conditionally, not by that exact test.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "land-value-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; no source discusses land taxation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tax-inheritance": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution calls inheritance a natural right within national interest, so heavy taxation is not stated.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "basic-income": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the program instead guarantees work.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tariffs-protect-industry": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Protectionism is an explicit element of the Ba'athist economic program.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "state-directs-investment": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The state runs large-scale production and plans the economy, so it directs investment into strategic sectors.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "widespread-small-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program caps land and big holdings and allows small private property but also state ownership of large industry, so the statement only half fits.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-money-wages": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Ba'athism rejects Marxist communism and keeps wages, guaranteeing work and a private sphere.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-central-banks": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The 1947 program wanted a single state bank, the opposite of market money.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporatist-bargaining": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution provides for unions and labor courts but not for state-recognized employer and worker bodies setting prices.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "one-party-rule": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Ba'athism is described as favoring a vanguard one-party state, though Aflaq called dictatorship self-contradictory.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "monarchy-legitimate": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ba'athism was a revolutionary republican movement opposed to reactionary regimes; the constitution calls for a regime responsible to the people.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "democracy-best": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Ba'athism rejects liberal democracy and pluralism, with the vanguard party securing liberty.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "direct-votes": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The vanguard model does not give citizens direct lawmaking; inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-councils": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The program sets a representative constitutional regime and party leadership, not councils.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "right-to-secede": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution holds that Arab divisions are false and calls for one state, so secession by regions contradicts the core.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "natural-rulers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Vanguard-party leadership implies a guiding elite, but natural superiority is not claimed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "political-violence-never": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Revolution is central to the program and military coups brought Ba'athists to power.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "war-builds-character": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq's romantic nationalism stresses struggle for the nation, but war as character-builder is not stated.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "separate-church-state": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Aflaq favored separating state and religion while honoring Islam as culture, though not as strictly as laicism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "laws-from-scripture": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq opposed imposing Islam on the state and the party was secular, with later Iraqi exceptions.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "private-courts-defense": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution makes the judiciary independent and state-run and compulsory military service national, leaving no room for private defense.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "military-superiority": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Confrontation with Israel and imperialism suggests strong militaries are valued, but it is not stated as rivalry superiority.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ethnic-nation": {
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "The constitution defines Arabs by language, residence and belonging, not blood, though minorities were Arabized in practice.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "class-struggle-history": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq put nationalism over class struggle and rejected the Marxist claim of dialectical materialism, though later neo-Ba'athists turned to class struggle.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "equal-outcomes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Ba'athism wants to end exploitation and class differences yet keeps property and wages.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "indigenous-land-authority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No source ties Ba'athism to indigenous land claims; the sources are about Arab nationhood, so adherents have no distinctive position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "colonial-reparations": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anti-imperialism suggests support, but reparations are not discussed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizational-union": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Uniting all Arabs on shared language and history in a single state is the movement's defining aim.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "self-interest-moral": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Property is subordinated to national interest and the party's socialism stresses collective duty.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "duties-before-rights": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Work is compulsory and national interest limits freedoms and property, though freedoms are called sacred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "nature-intrinsic-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Environmental ethics lies outside the party's mid-century concerns with unity, liberation and socialism, so no stance can be inferred.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-population": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The pro-family program and nationalist concern for Arab strength imply opposition.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "industrial-civilization-disaster": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Ba'athism aims at development and modernization, so this is inferred as rejected.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "accelerate-technology": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; modernization is wanted but institutional disruption is not an aim in itself.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "human-enhancement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Bodily enhancement is an anachronistic issue the party never addressed, and nothing in its principles settles it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "algorithmic-government": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anachronistic and not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "unbreakable-encryption": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "A security-state party is inferred to oppose it; not addressed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restore-past-order": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq called for an Arab renaissance as revival with a forward mission, not restoration of old social order, and opposed reactionary elites.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "results-over-ideology": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The party holds that a correct doctrine should guide the state, so judging by results alone is rejected.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-action": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The party contested elections early (Jordan 1951) but took power by coups.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "means-match-ends": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ba'athists used top-down and coup methods for ends such as liberty.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "return-to-foraging": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ba'athism is a modernizing developmental program.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "abolish-division-of-labor": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Wages, state industry and planning remain in the program.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "distribute-by-need": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program guarantees work and basic provision but does not state a needs-based distribution as final aim.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "production-for-use": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Arab socialism's planned and state-run economy is oriented toward meeting national needs, though this phrase is not used.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "profit-exploitation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq condemned exploitation by capitalists and feudalists but rejected Marxist theory, so the claim is only partly shared.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Early Ba'athists rejected Marxist class struggle, and Aflaq criticized communism, though the neo-Ba'athists later were closer.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "collective-farming": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The 1963 Points of Departure called for collective farms but the 1947 text limits and distributes land to farmers.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Anti-imperialism blames Western powers but not as a general theory of capitalism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The state financing and running the economy and education is central; taxation as theft is opposed outright.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "harm-principle": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution limits freedoms by Arab national interest, so liberal harm-only restriction is not its standard.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "individual-rights-only": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The nation and its collective rights are central, and freedoms are bound to national interest.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "conscription": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution states that military service is compulsory.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "exit-over-voice": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The party stresses loyalty to the Arab nation and a vanguard-secured liberty, not exit as a check.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-as-business": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The state is a collective organizer of the nation and economy, not a firm serving customers.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "positive-liberty": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Aflaq tied freedom to liberation, national struggle and socialism, and the program guarantees work and free education so people can use their freedom.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "media-academia-power": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not discuss universities or media as power centers; the party saw foreign domination and old elites as the real obstacles.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "hereditarian-race": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The constitution defines the nation by culture and language, not heredity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "organic-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed beyond union and peasant bodies in the labor section.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "total-state": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The constitution makes education, the economy and national organization state matters, but it also protects freedoms of belief and expression, so totalism is partial.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "national-rebirth": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The name Ba'ath means resurrection and the movement is defined by an Arab renaissance to end decline and division.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "territorial-expansion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Unity is sought among Arabs but conquest is not a stated aim.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ba'athism is a modern revolutionary party with a constitution and party hierarchy, not feudal oaths.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "bound-labor": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution limits landholding and aims against exploitation, and land reform abolished feudalism in Arab socialism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-neutral-knowledge": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Ba'athist writings are about nationalism and renaissance, not the sociology of knowledge, so no position is documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "universal-morality": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq's thought is romantic and nationally particular, so universal reason is not its stress.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "single-common-good": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "A vanguard party claims to express the single national will, rejecting pluralism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ba'athism is described as anti-Zionist and holds that Arab land belongs to Arabs.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed as a general principle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "revive-national-language": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Arabic is the foundation of unity; revival is not needed but the language's role is exalted.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workplace-democracy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Workers' participation in management and profit sharing is promised, though large industry is state run.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "school-vouchers": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution reserves education to the state and abolishes private and foreign schools.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "avoid-deficit-stimulus": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "A state-led planned economy is inferred to accept deficit spending.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "economic-freedom": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Ba'athism holds political freedom comes through national liberation and socialism, with the state controlling large parts of the economy.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rule-by-example": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution relies on written law, an independent judiciary and party organisation, and the sources do not describe rule by moral example.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-self-determination": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution states Arabs are one nation with a natural right to a state of their own.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "force-without-un": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Not addressed; anti-Western stance suggests no deference to the UN.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reason-over-faith": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Aflaq opposed atheism and held a romantic view of nationhood, so reason alone is not the guide.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution speaks of the rights of Arabs, not of foreign immigrants, so a citizens-only rule is neither stated nor denied.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The constitution makes work compulsory for those able to do it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "class-collaboration": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Aflaq subordinated class conflict to nationalism and early Ba'athism favored class harmony over struggle, though later neo-Ba'athists differed.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Arab heritage is central and the party opposed cultural destruction.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "dominated-front": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The party is anti-imperialist and sought united Arab resistance to Western domination and non-alignment.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "workers-nation": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Aflaq placed nationalism before class and rejected Soviet-tied internationalism.",
+      "sources": [
+        "s3",
+        "s4"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution says Arab women enjoy full civic rights.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "ban-interest": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 1947 constitution abolishes usury between citizens.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "racial-segregation-law": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution rejects sectarian, tribal and racial fanaticism and bases citizenship on language and belonging.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq rejected Marxist theory and held the state as national instrument.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Oil resources are national property for development; expansion is inferred.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "assimilate-immigrants": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Arabization of minorities in practice; inferred as favoring assimilation into Arab identity.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of Ba'athism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "proportional-representation": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution promises a representative constitutional regime but the sources never discuss electoral formulas.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "national-mission": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Aflaq spoke of an eternal Arab mission to humanity, tied to unity and renaissance.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "patriarchy-structural": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the constitution grants civic rights but offers no analysis.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "political-elite-corrupt": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athism attacked feudalists and reactionary old elites and justified revolution on that ground.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Not addressed; nothing in its sources supports eugenics.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ba'athist regimes did not hold their security forces accountable.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution gives the state ownership of large industry, education, labor guarantees, so a minimal state is rejected outright.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The constitution rejects racism and defines Arabs inclusively by language and belonging.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The constitution protects belief and equal civic rights for Arab women, though membership in the nation is the basis.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "socialism-one-country": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq held revolutionary states take power separately then unite, so socialism within one Arab state is first step.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "settler-state-colonial": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Anti-Zionism and anti-imperialism treat Israel as a colonial imposition.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "uniform-civil-code": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The constitution says the national bond is the state's only bond and fights sectarian divisions.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restrict-conversion": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The constitution protects freedom of belief.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "ban-cattle-slaughter": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Alien to Arab context.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-religion-state-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The state controls education and religious instruction is not discussed; adherents differ across states.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "state-strengthens-encirclement": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athist regimes strengthened the state under external threat, though not framed in this Marxist way.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "consent-of-governed": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution wants a regime responsible before the people but the vanguard model weakens consent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "trade-surplus": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Protectionist economics suggest mercantilist leanings.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "population-transfer": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not part of doctrine, though Arabization policies pressured minorities in practice.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The constitution endorses revolution and compulsory military service, which is the opposite of a non-aggression principle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Cooperation within the nation and socialism are stressed, though struggle for liberation is praised.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The one-party model and later practice outlawed rival parties.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Aflaq understood freedom as liberation from foreign domination and exploitation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "separated-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution makes the judiciary independent and the executive responsible, but party command centralized power in practice.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "vanguard-party": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Ba'athism is described as having a Leninist-style vanguard party that secures liberty for the people through democratic centralism.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "priority-to-poor": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The program targets exploitation and guarantees work, education and land to those who farm it.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "right-to-buy-council-homes": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Public housing sales are a late-twentieth-century British issue that Ba'athist sources never touch.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restrict-strikes-picketing": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution provides for free unions but Ba'athist states controlled labor.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq blamed exploitation and domination, not population growth.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "diversity-weakens-cohesion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The party wants national cohesion through Arab identity and fights sectarianism, but diversity as such is not discussed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The party hierarchy appoints through command structure.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Ba'athist regimes ruled under emergency law.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "State control of trade and planned economy suggest acceptance.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "party-controls-media": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Party circles were embedded in institutions, and regimes controlled media.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "party-commands-army": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Party cells in the military served as watchdogs and the party dominated the army in Syria and Iraq.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "long-naturalization-wait": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not discuss naturalization periods; Arab nationality is defined by language and belonging rather than residence.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not discuss pay for officeholders, so adherents are indifferent on this point.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-discipline-binding": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The party's top-down structure forbids lateral contact and binds members to command under democratic centralism.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Pan-Arab union is the goal, so pooling sovereignty among Arab states is central, though the model is one state.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Power concentrated in presidents in Syria and Iraq, though doctrine does not say this.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "church-by-bishops": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Church governance by bishops concerns Christian polities; Aflaq was Christian but wanted religion separate from the state, so the question does not arise.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "clerical-rule": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Aflaq opposed fundamentalism and imposing Islam on the state.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Nationalism before class excludes defeatism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Freedom of art is declared sacred in the constitution but limited by national interest.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athist presidents ruled indefinitely.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "recall-officials": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution holds the executive responsible before the people but names no recall mechanism, and party practice was top-down.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "end-foreign-alliances": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Early Ba'athism stressed non-alignment and rejected Western and Soviet blocs.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Not addressed; private and small property remain.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "people-in-arms": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The constitution provides for conscription into a state army.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The party was urban middle-class in outlook though peasants were courted.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution calls for uniting all Arabs in a single state against borders it sees as false.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The party was intellectual and educated in leadership.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Aflaq held the Arab mission as special.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "death-penalty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athist regimes used capital punishment extensively.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The state controls education in the constitution, but sex education and gender equality in curricula are not discussed in the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Aflaq favored secular state and modernization.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-pornography": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Moral conservatism around family is inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Citizenship follows language and belonging to the Arab nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "minority-language-support": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Syrian and Iraqi regimes pursued Arabization.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "religious-exemptions": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The party fights sectarian particularism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Social cohesion and national duty are stressed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anti-imperialism suggests support.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independence-needs-economic-change": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The program abolishes foreign concessions and nationalizes key sectors as part of independence.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "constituent-assembly": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not say how constitutions should be drafted; party programs were issued by the party itself.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Ba'athist regimes subordinated liberty to the party's development project.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; anti-imperialism distrusts aid.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Strategic independence suggests support; not discussed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "direct-election-head-of-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Single-candidate referendums were used in practice.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "central-bank-independence": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The constitution envisions a single state bank under state control.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The constitution holds Arab land belongs to Arabs and opposes recognizing Israel.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "property-serves-common-good": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution says property is a natural right within the limits of national interest.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq rejected Soviet ties but did not characterize the USSR so.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "precautionary-principle": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Environmental regulation under uncertainty is an anachronistic question the sources never raise.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "collective-defense": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Pan-Arab solidarity implies mutual defense.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Treaties and borders imposed from outside are rejected.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Secular state with Islam as heritage; clergy were persecuted in neo-Ba'athist Syria.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Heads of state were party leaders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Unity is sacred, so preventing separation is inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "region-keeps-system": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Unity should be full integration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Aflaq called dictatorship self-contradictory and the party was secular.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "flat-income-tax": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Opposed to capitalist exploitation, so progressive over flat tax inferred.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "character-from-environment": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Aflaq saw material conditions as important and exploitation as shaping men.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution holds the executive responsible before the people and the judiciary independent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "space-expansion": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Space exploration is outside the ideology's concerns and no source speaks to it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "mixed-constitution": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Classical mixed government is not a Ba'athist theme; the program favours a representative regime led by a vanguard party.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "leader-cult": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athist regimes under Saddam and Assad built leader cults though doctrine did not require them.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "equal-parenting": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Custody presumptions are not discussed in the sources; the constitution only says the family is the cell of the nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "class-struggle-under-socialism": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Neo-Ba'athists adopted class struggle language but Aflaqites did not.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "land-redistribution": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The party supports land redistribution to peasants and limits holdings to what the owner can cultivate.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "refugee-return": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Palestinian return is part of anti-Zionist stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "co-ethnic-territorial-claim": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Unity of all Arabs across borders is claimed on grounds of nationality.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Aflaq opposed imposing Islam and the constitution protects freedom of belief.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "women-must-cover": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The constitution grants full civic rights and the party is secular.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "common-currency": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Pan-Arab union would include economic integration.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "kin-peoples-union": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Uniting Arabs of one language and ancestry is the party's core demand.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Arabization of minorities was practiced.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "rights-where-you-live": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Ba'athism does not discuss persecuted minorities choosing between emigration and local struggle, apart from its hostility to Zionism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "material-conditions-drive-history": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Aflaq acknowledged material conditions but rejected that dialectical materialism is the only truth and placed nationalism first.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "ban-cartels": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Large industry is nationalized rather than broken up.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-bailouts": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Bank and firm bailouts are not discussed; with major industry state-owned the question has little place in its economics.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "courts-bound-by-majority": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution wants an independent judiciary, yet nothing in the sources addresses courts against majorities.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution grants Arab women full civic rights, but quotas for public bodies are not mentioned.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Protectionism and anti-imperialism favor autarky, though a bloc of Arab states is the aim.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The party favours protection and state control of trade, but binding labor and environmental clauses in trade deals are not discussed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "moral-incentives": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution makes work compulsory and keeps wages; the sources do not describe moral incentives replacing material ones.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "armed-group-creates-revolution": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "A military committee seized power in Syria in 1963.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "abolish-hereditary-privilege": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Feudalism was abolished and the party opposed reactionary elites.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "history-own-civilization": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Arab history and culture are central to the nation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizing-tutelage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Anti-imperialism rejects colonial tutelage.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "patriotic-education": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Education is state-run to forge national consciousness.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "end-racial-preferences": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Racial preferences in admissions are a US debate; the sources show no Ba'athist stance.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "public-money-creation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The single state bank is in the 1947 program.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "capitalism-adapts": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq criticised capitalism but the sources record no theory about whether it can avoid collapse.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "former-empire-influence": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not discuss cultivating influence in former imperial lands; Ba'athism was shaped against empire rather than for it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "delink-world-market": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Protectionism but no delinking call.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "labor-aristocracy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The theory of exploited-nation and privileged-worker divides is Marxist-Leninist; Aflaq rejected Marxist definitions, and the sources show no stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "freedom-to-discriminate": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The constitution rejects sectarian and racial fanaticism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "entrenched-bill-of-rights": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution declares freedoms sacred but within national interest.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "colonial-treaties-void": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution abrogates treaties that harm full Arab sovereignty.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "elective-rulers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The constitution wants a regime responsible to the people.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "minority-veto": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "National unity and party discipline override dissent.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "resist-lawless-ruler": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution says the executive answers to the people but gives no right to resist, and Ba'athist regimes were intolerant of opposition.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "parliament-supreme": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution sets a representative regime but party leadership dominates.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "animal-suffering-matters": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Animal ethics is not addressed in any source on Ba'athism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "animal-use-humane": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Animal use for food or research is not addressed in any source on Ba'athism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "noblesse-oblige": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program makes protection state duty not charity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "withdraw-from-politics": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Aflaq's thought is committed activism and national struggle.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "mass-culture-pacifies": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq said religion kept the oppressed passive, but a critique of mass culture is not documented.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "ruling-class-consent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq saw religion used by elites to keep the oppressed passive, a partial overlap.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "world-economy-extracts-surplus": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Anti-imperialism holds foreign domination exploits Arab resources.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "native-born-offices": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution defines Arabs by language and belonging, and reserving posts to the native-born is not discussed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "party-own-road": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Aflaq rejected ties binding the Arab destiny to Russia and sought an Arab socialism.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "self-reliance-over-aid": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Nationalization and abolition of foreign concessions imply self-reliance.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "return-lost-territory": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Arab land belongs to Arabs, which implies demanding lost land.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "indigenous-political-leadership": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Descendants of pre-colonial peoples ruling over settlers is not a Ba'athist theme, apart from its view of Israel.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "antifascism-founding-value": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not discuss anti-fascism as a constitutional value.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "totalitarianisms-equivalent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq criticised communism and capitalism but the sources do not equate fascism and communism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "slavery-not-civil-war-cause": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "American Civil War causes are outside Ba'athist concerns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "preserve-contested-monuments": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Monument debates are absent from the sources; leader statues in Ba'athist states were another matter.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "male-disadvantage-attention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Public programmes for boys and men are not covered in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "domestic-violence-symmetry": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Domestic-violence policy is not covered in the sources.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "institutions-fit-civilization": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Ba'athism rejects liberal democracy and holds Arabs need their own forms.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "military-guardian-role": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The military wing dominated Ba'athist Syria and the party embedded in the army.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "paid-care-work": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution protects the family and gives women civic rights but does not discuss paying domestic labor.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "filial-duty": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Family is the fundamental cell of the nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "office-by-exam": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Examination for posts is not a Ba'athist theme in the sources; party membership and loyalty mattered in practice.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "foreign-takeover-block": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Foreign concessions are abolished and strategic industries nationalized.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "no-fault-divorce": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Divorce law is not covered; the constitution only calls marriage a national duty to be regulated.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "recallable-delegates": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Hierarchical command rather than recall from below.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "individual-pension-accounts": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Opposed to market privatization of social provision.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "land-use-tenure": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Land caps to what the owner can cultivate resemble use-based tenure.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "budget-needs-parliament": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution says the executive answers to the people, but the sources do not mention parliamentary budget control.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "single-official-language": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Arabic is the unifying language and minorities were Arabized.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "foreign-land-ownership": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The constitution declares the Arab land belongs to Arabs.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "disparate-impact-discrimination": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Disparate-impact doctrine is a US legal idea absent from the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consumerism-harmful": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources do not criticise consumer culture; Aflaq's critique targets exploitation and foreign domination.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "arm-foreign-insurgents": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Syria and Iraq backed insurgent groups against rivals.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "intervene-in-bloc": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Great-power intervention to keep an ally in its bloc is not discussed, though Aflaq rejected both blocs.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "corporate-influence": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Opposed to capitalist exploitation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "restrict-foreign-funding": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Foreign influence is fought in the constitution.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "pronatalist-incentives": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The state protects and supports family and encourages marriage.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "residents-only-property": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Local residency limits on home purchases are not discussed in the sources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "job-guarantee": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The constitution says the state must guarantee each citizen employment.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "democratic-peace": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources never discuss whether democracies fight each other; Ba'athism rejects liberal democracy as an end.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-duty-to-obey": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Duties to the nation come first.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "non-intervention": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Opposes Western intervention but backs Arab unity beyond borders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "industrial-unions": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution provides for free trade unions but does not say whether they organise by industry or craft.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "minority-conspiracy": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not part of core doctrine apart from Zionism.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-legal-marriage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Marriage is a national duty the state regulates.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "public-access-to-information": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Freedom of speech and press are guaranteed in the constitution within national interest, but a right to government records is not mentioned.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "local-production": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The program favours national self-reliance and protection, but local food and goods production is not discussed.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "informal-organisation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The party is formally hierarchical with strict command.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "national-law-over-international": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Emphasis on sovereignty.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "religious-nation": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Arab nation is defined by language and history, not religion.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "deference-to-leading-power": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ba'athism is anti-imperialist and rejected both Cold War blocs, so tribute and ritual submission to a leading power would be refused.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "regional-revenue-retention": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "National ownership of resources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "personal-possessions-private": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Property is a right limited by national interest.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "defeat-communism": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Aflaq rejected communism but non-aligned.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "mixed-public-service-providers": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "State runs education and utilities.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "religion-illusion": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Aflaq saw Islam as sublime expression of Arabism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "capitalism-progressive": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Aflaq criticized capitalism.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "women-equality-needs-economic-change": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The constitution grants Arab women full civic rights directly, and the sources link women's position to no economic transformation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "socialized-care": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Family protected as cell of nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "purge-loanwords": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The sources praise Arabic as the unifying language but do not mention purging foreign words.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "treaties-binding": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Treaties with internal nations are not discussed; the constitution instead abrogates treaties that harm Arab sovereignty.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "cooperative-communities": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State-led national unity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "majority-settlement": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Arabization practiced but no doctrine.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "neither-capitalism-nor-communism": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Aflaq criticized both capitalism and communism and promoted Arab socialism as a distinct third path.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "historical-land-claim": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred: Ba'athism claims an Arab homeland on the basis of shared history and heritage, while the sources do not state how it weighs this against present residents.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "holocaust-denial": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The Aflaqite founding texts do not address it; inferred that a secular nationalist party aimed at Arab unity did not take up the denial of established history as a programme.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "criminalize-homosexuality": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred: the 1947 constitution emphasises moral and family order and the party regimes policed sexual conduct; the sources do not address the question directly.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "suppress-opposition": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "A vanguard party leads the Arab renaissance and Ba'ath regimes banned rival parties, although Aflaq's writings also stress freedom of expression.",
+      "sources": [
+        "s3",
+        "s5"
+      ]
+    },
+    "punish-blasphemy": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Ba'athism treats religion as cultural heritage rather than a basis of law, so the state does not enforce a true faith through penalties.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "colonies-serve-metropole": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Freedom from foreign domination is one of the movement's three aims, and the founding programme opposes imperialism and colonial rule.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "defensive-jihad-duty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Aflaq presents Islam as Arab cultural heritage, so resistance to invasion is a national duty of Arabs of all faiths, not a religious obligation on every Muslim.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "unreligious-rulers-fought": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ba'athism is secular and holds that religion is not a basis of law, so legitimacy cannot depend on governing by religious law.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "participatory-democracy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the vanguard party model and later military cells point to top-down leadership, though the constitution promises representative institutions.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "intersecting-oppressions": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Arab socialism puts nation over class conflict and treats Arab unity as the main cause, so oppressions are not analysed as overlapping.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "gender-identity-recognition": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the classical programme treats women's equality within a traditional moral order and does not address gender identity.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "assisted-dying": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: the party stresses social solidarity and moral order and treats religion as cultural heritage; the sources do not address assisted dying.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "left-right-obsolete": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Ba'athism presents itself as a third way beyond liberal capitalism and Marxism, combining nationalism with socialism, so adherents would see the left-right division as less central.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "alienated-labor": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ba'athism rejects Marxist class-struggle analysis, and its socialism is nationalist and state-led; the alienation thesis is not part of its programme.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "islam-incompatible": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Aflaq presents Islam as part of Arab heritage and the party includes Arab Christians as equals, so it denies any clash with the values of other societies; note the statement concerns Western countries, which the party does not address.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "divine-source-of-authority": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The secular party holds that religion is cultural heritage and not a basis of law, and locates legitimacy in the Arab nation and its party.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "religious-dress-in-state": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Inferred: a secular state could restrict religious dress, but the classical texts do not address it and later regimes varied.",
+      "sources": [
+        "s1",
+        "s5"
+      ]
+    },
+    "ban-nda-harassment": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed by the classical programme, which has labour protections but no workplace harassment provisions.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "social-market-economy": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Ba'athism puts major industry and resources under state control and rejects liberal capitalism, so a market economy with social rules is not its model.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "abolish-armed-forces": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The 1947 constitution provides for conscription and a strong army to defend and unify the Arab nation.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "rich-first": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The constitution limits property and aims for socialist equality, so uneven early growth is not accepted as a strategy.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "stay-neutral-between-blocs": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Arab socialism favoured non-alignment and freedom from foreign domination by either camp.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    }
+  },
+  "missingStatements": [
+    {
+      "text": "Lending at interest between citizens should be abolished.",
+      "value": 2,
+      "rationale": "The 1947 constitution abolishes usury between citizens and proposes a single state bank.",
+      "sources": [
+        "s2"
+      ],
+      "addedAs": "ban-interest"
+    },
+    {
+      "text": "Foreign and private schools should be abolished so that the state alone provides education.",
+      "value": 2,
+      "rationale": "The constitution reserves education to the state and abolishes foreign and private schools.",
+      "sources": [
+        "s2"
+      ],
+      "declined": "A constitutional detail (state monopoly of schooling) of one party's founding text; total-state and school-vouchers already place the ideology on state control of education."
+    },
+    {
+      "text": "Landholdings should be capped at what the owner can farm personally.",
+      "value": 2,
+      "rationale": "The constitution limits agricultural holdings to what an owner can cultivate without exploiting others.",
+      "sources": [
+        "s2",
+        "s4"
+      ],
+      "addedAs": "land-use-tenure"
+    }
+  ],
+  "notes": "Iraqi (Saddamist) and Syrian (neo-Ba'athist) branches diverged: Iraq grew more religious in the 1990s, Syria was anti-clerical and class-struggle oriented. Aflaq himself criticised dictatorship, yet the party is described as favouring one-party vanguard rule."
 }
