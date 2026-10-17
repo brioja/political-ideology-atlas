@@ -1,8 +1,8 @@
 {
   "id": "marxism-leninism",
   "name": "Marxism–Leninism",
-  "auditedAt": "2026-10-14",
-  "auditor": "claude-opus-5-5",
+  "auditedAt": "2026-10-17",
+  "auditor": "claude-sonnet-5-5",
   "summary": "Marxism-Leninism is the communist ideology built on Marx and Lenin and codified under Stalin, the official doctrine of the Soviet Union and of states such as China, Vietnam and Cuba. It holds that capitalism must be overthrown by revolution led by a disciplined vanguard party, which then rules a one-party socialist state as the dictatorship of the proletariat. That state owns the main means of production, plans the economy and works toward a classless, stateless communist society. Its philosophy is dialectical and historical materialism, including class struggle as the engine of history and atheism.",
   "scope": "The classical doctrine as set out by Lenin (What Is To Be Done?, The State and Revolution, The Right of Nations to Self-Determination) and codified by Stalin (Dialectical and Historical Materialism), with the 1977 Soviet Constitution as the program of a mature Marxist-Leninist state. Where post-Mao China and Vietnam diverge (market reforms) the answer is marked as split. Trotskyism, Maoism, Hoxhaism and Western Marxism are excluded.",
   "wikipedia": "https://en.wikipedia.org/wiki/Marxism%E2%80%93Leninism",
@@ -160,6 +160,30 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Monumental_propaganda",
       "usedFor": "1918 Soviet decree ordering removal of monuments to tsars and their servants"
+    },
+    {
+      "id": "s15",
+      "kind": "primary",
+      "title": "Socialism and Religion",
+      "author": "V. I. Lenin (marxists.org)",
+      "url": "https://www.marxists.org/archive/lenin/works/1905/dec/03.htm",
+      "usedFor": "Religion a private affair for the state, end of laws punishing belief or unbelief, ideological struggle against religion by the party"
+    },
+    {
+      "id": "s16",
+      "kind": "primary",
+      "title": "Imperialism, the Highest Stage of Capitalism, Chapter VII",
+      "author": "V. I. Lenin (marxists.org)",
+      "url": "https://www.marxists.org/archive/lenin/works/1916/imp-hsc/ch07.htm",
+      "usedFor": "Colonial policy of finance capital, tribute levied from colonies, redivision of the world"
+    },
+    {
+      "id": "s17",
+      "kind": "reference",
+      "title": "Communism and LGBTQ rights",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Communism_and_LGBTQ_rights",
+      "usedFor": "Soviet decriminalisation in 1917, Article 121 recriminalising male homosexuality, Stalin's dismissal of the 1934 appeal for repeal"
     }
   ],
   "answers": {
@@ -2884,6 +2908,118 @@
       "rationale": "Marxism-Leninism holds communism to be the sound basis for society and rejects both capitalism and any third way.",
       "sources": [
         "s1"
+      ]
+    },
+    "holocaust-denial": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "The Soviet state documented Nazi crimes against its citizens and condemned fascism; no source opened here addresses the Holocaust directly, so this is inferred from its anti-fascist stance.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "criminalize-homosexuality": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Article 121 made male homosexuality a criminal offence in the USSR from 1933 until after its dissolution, and Stalin dismissed an appeal for repeal, though the 1917 Bolshevik government had decriminalised it, so practice varied.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "suppress-opposition": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Lenin makes the dictatorship of the proletariat a rule of force over the exploiters, and Marxist-Leninist states suppressed opposition and counter-revolution while the party held the leading role.",
+      "sources": [
+        "s2",
+        "s1",
+        "s6"
+      ]
+    },
+    "punish-blasphemy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Lenin demands that laws punishing belief or unbelief be struck from the criminal codes and religion be a private affair for the state; the party fights religion by propaganda, not penalties.",
+      "sources": [
+        "s15"
+      ]
+    },
+    "colonies-serve-metropole": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Lenin condemns the colonial policy of finance capital, which levies tribute on colonies and fights over redividing them, so adherents oppose governing colonies for the ruling country.",
+      "sources": [
+        "s16"
+      ]
+    },
+    "unreligious-rulers-fought": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The doctrine is atheist and treats religion as an ideological reflex of class society, so it rejects religious law as a test of legitimacy; this is inferred from its atheism and separation of church and state.",
+      "sources": [
+        "s15",
+        "s3"
+      ]
+    },
+    "participatory-democracy": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Lenin envisions all working people taking part in administering the state through soviets and elected, recallable, worker-paid officials, though in practice the party led and decisions were centralised.",
+      "sources": [
+        "s11",
+        "s2"
+      ]
+    },
+    "historical-land-claim": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Lenin treats Zionism and similar projects as bourgeois nationalism and grounds national rights in self-determination, not historical or religious ties; the question was never addressed directly, so this is inferred.",
+      "sources": [
+        "s10",
+        "s5"
+      ]
+    },
+    "defensive-jihad-duty": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Marxist-Leninist states backed anti-colonial resistance but regard religion as an illusion, so they would not frame resistance as a religious obligation; inferred from their atheism.",
+      "sources": [
+        "s15",
+        "s16"
+      ]
+    },
+    "intersecting-oppressions": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Marxism-Leninism treats class as the primary oppression and expects women's and racial equality to follow from socialism, rather than treating the three as equal overlapping axes; the framing is later and inferred.",
+      "sources": [
+        "s3",
+        "s7"
+      ]
+    },
+    "gender-identity-recognition": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Marxist-Leninist states did not recognise gender identity as a legal category and were often hostile to sexual minorities; the issue is anachronistic for the founding texts.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "assisted-dying": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "The sources never discuss it; Soviet-style states regulated medicine as a state service without legalising assisted dying, so this is inferred and adherents may differ.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "left-right-obsolete": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Class struggle between proletariat and bourgeoisie is the engine of history and revolution is preferred to reform, so combining the best of left and right is rejected.",
+      "sources": [
+        "s3",
+        "s2"
       ]
     }
   },
