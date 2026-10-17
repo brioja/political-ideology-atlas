@@ -21,7 +21,8 @@ if (process.argv.includes("--backfill")) {
     .map(({ id, name, audit }) => ({ id, name, statements: unanswered(audit.answers, statements) }))
     .filter((e) => e.statements.length);
   console.log(JSON.stringify(todo.slice(0, limit)));
-  process.exit(0);
+  // Not process.exit(): it cuts piped output off at 64 KB, before stdout has flushed.
+  return;
 }
 
 // Validated in this process, not one validate.js run per audit: the salience context takes seconds

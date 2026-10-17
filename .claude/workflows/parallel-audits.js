@@ -31,8 +31,8 @@ const INTEGRATE = {
 }
 const BACKFILL_TODO = {
   type: 'object',
-  properties: { audits: { type: 'array', items: { type: 'object', properties: { id: { type: 'string' }, statements: { type: 'array', items: { type: 'string' } } }, required: ['id', 'statements'] } } },
-  required: ['audits'],
+  properties: { ids: { type: 'array', items: { type: 'string' } }, count: { type: 'integer', description: 'the number node printed, not your own count' } },
+  required: ['ids', 'count'],
 }
 
 const lanePrompt = (it) => `You audit one ideology, in parallel with other agents auditing other ideologies in the same working tree. Working directory: ${ROOT}. Today's date is the auditedAt date.
@@ -74,18 +74,24 @@ Do not touch any other file; leave uncommitted changes you didn't make alone.
 Report: per audit, proposals added/merged/declined (with new statement ids), then tests and deploy status.`
 
 async function backfill() {
-  const found = await agent(`In ${ROOT}, run \`node scripts/pending.js --backfill\` and return the parsed JSON array as "audits". Do nothing else.`,
-    { label: 'find-backfill', phase: 'Backfill', schema: BACKFILL_TODO, effort: 'low' })
+  // Only ids pass through the agent: the full list (~65 KB) once came back summarised, and promotion then
+  // dropped every audit that hadn't answered the promoted statements. Each batch agent looks up its own statements.
+  const LIST = `node scripts/pending.js --backfill | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s);console.log(a.length);console.log(a.map(x=>x.id).join("\\n"))})'`
+  const find = (n) => agent(`In ${ROOT}, run \`${LIST}\`. The first line is the count; return it as "count" and every following line, in full and in order, as "ids". Do nothing else.`,
+    { label: `find-backfill-${n}`, phase: 'Backfill', schema: BACKFILL_TODO, effort: 'low' })
+  let found = await find(1)
+  if (found && found.ids.length !== found.count) found = await find(2)
+  if (!found || found.ids.length !== found.count) return `not run: backfill list came back incomplete (${found ? `${found.ids.length} of ${found.count}` : 'no result'})`
   const batches = []
-  for (let i = 0; i < found.audits.length; i += 4) batches.push(found.audits.slice(i, i + 4))
+  for (let i = 0; i < found.ids.length; i += 4) batches.push(found.ids.slice(i, i + 4))
   await parallel(batches.map((batch) => () => agent(`Working directory: ${ROOT}
 Read audits/BACKFILL.md and follow it exactly. The statements are in statements.json.
 Other agents are backfilling other audit files at the same time.
-Audits and the statement ids each one needs:
-${batch.map((a) => `- ${a.id}: ${a.statements.join(', ')}`).join('\n')}
+Your audits: ${batch.join(', ')}. The statement ids each one needs are listed for it by \`node scripts/pending.js --backfill\`.
 Keep temporary files in a scratchpad subdirectory named after your first audit id.
-Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.map((a) => a.id).join(',')}`, phase: 'Backfill', ...model })))
+Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.join(',')}`, phase: 'Backfill', ...model })))
   return agent(`Working directory: ${ROOT}
+0. Run \`node scripts/pending.js --backfill\`. If it lists any audit, promote nothing: skip step 1 and say which audits still lack answers.
 1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (contested), remove its "status" field in statements.json, keeping the one-line format.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
 Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
