@@ -38,6 +38,14 @@ const MAX_LINES = 6;
 const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
 const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
 
+// Where a score falls along a drawn line, 0-1: scaled to the line's own extremes (plus a small
+// margin) rather than centred on zero, so a lopsided line doesn't leave one end empty.
+function lineScale(vals) {
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const pad = (hi - lo) * 0.025 || 1;
+  return (v) => (v - lo + pad) / (hi - lo + 2 * pad);
+}
+
 // Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
 // found from the data and mix many issues, so a fixed label would go stale). An end whose most extreme
 // ideology has a long name (over END_CHARS) is named by the next one in that fits, from the five
@@ -634,7 +642,9 @@ function showResults(shared = null) {
       </div>
       ${aboutWithImage(top)}
       <p class="muted">${closeCall
-        ? `It's close: ${you_} ${shared ? "are" : "are"} almost as near to <strong>${ranked[1].name}</strong>, so it's worth reading both.`
+        ? `It's close: ${you_} are almost as near to <strong>${ranked[1].name}</strong>${canContinue
+          ? `. <a href="#/test">Answer a few more questions</a> to tell them apart.`
+          : `, so it's worth reading both.`}`
         : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
     ${shared ? "" : `<div class="row"><a class="btn" href="#share" id="to-share">Share your result <span aria-hidden="true">↓</span></a></div>`}
@@ -733,8 +743,8 @@ function showResults(shared = null) {
     const ax = describeAxis(model, i, QUESTIONS);
     const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
-    const lim = Math.max(...vals.map(Math.abs)) * 1.05;
-    const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
+    const scale = lineScale(vals);
+    const pos = (v) => 6 + scale(v) * 588;
     const div = document.createElement("div");
     div.className = "axis";
     div.innerHTML = `
@@ -946,7 +956,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 200);
   ctx.fillStyle = CARD.muted; ctx.font = `400 30px ${CARD_FONTS.body}`;
-  ctx.fillText(`${pct(top.similarity)} match · closest ideology`, PAD, 248);
+  ctx.fillText(`${pct(top.similarity)} match · closest ideology${result.answered != null ? ` · based on ${result.answered} answers` : ""}`, PAD, 248);
 
   const card = (x, y, w, h) => {
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = "rgba(23, 32, 43, 0.08)"; ctx.lineWidth = 2;
@@ -1071,8 +1081,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const ty = y + 76 + i * lh;
     const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
-    const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
-    const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
+    const scale = lineScale(vals);
+    const px = (v) => x0 + scale(v) * (x1 - x0);
     const L = lineInfo(i);
     endLabel(L.low, x0 - 24, ty, "right");
     endLabel(L.high, x1 + 24, ty, "left");
@@ -1226,8 +1236,8 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const y0 = my + 64 + i * rowH;
     const x0 = mx + 36, x1 = mx + ms - 36;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(result ? [result.you[i]] : []);
-    const lim = Math.max(...vals.map(Math.abs)) * 1.05 || 1;
-    const px = (v) => x0 + ((v / lim) + 1) / 2 * (x1 - x0);
+    const scale = lineScale(vals);
+    const px = (v) => x0 + scale(v) * (x1 - x0);
     const ty = y0 + rowH * 0.55;
 
     ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x0, y0 + 4, 140, 8);
@@ -1402,8 +1412,8 @@ function lineStrips(scores, { selfId = null } = {}) {
   return Array.from({ length: SHOWN_LINES }, (_, i) => {
     const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i]);
-    const lim = Math.max(...vals.map(Math.abs)) * 1.05;
-    const pos = (v) => 6 + (50 + (v / lim) * 50) * 5.88;
+    const scale = lineScale(vals);
+    const pos = (v) => 6 + scale(v) * 588;
     return `<div class="axis">
       <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
