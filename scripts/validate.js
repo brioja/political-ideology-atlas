@@ -4,11 +4,13 @@
 //   add --links to also check that every source URL responds
 //   add --people to validate person audits (audits/people) instead of ideologies
 //   add --controls to validate the negative-control audits (audits/controls)
+//   add --no-salience to skip the salience check (it builds the whole PCA model: slow)
 const fs = require("fs");
 const lib = require("./lib");
 const { readJson, allStatements, isCandidate, personSalience, ideologySalience } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
+const SALIENCE = !process.argv.includes("--no-salience");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
@@ -116,7 +118,7 @@ function validate(id) {
 
   // Not errors, but signs of a lazy audit worth a look.
   const vals = active.map((s) => answers[s.id]).filter(Boolean);
-  if (errors.length === 0) {
+  if (errors.length === 0 && SALIENCE) {
     // Salience: can their record place them precisely enough to match? (see pca.js)
     // For ideologies only stated positions count; inferred (low-confidence) answers don't.
     const s = PEOPLE ? personSalience(answers) : ideologySalience(answers);

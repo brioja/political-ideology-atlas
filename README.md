@@ -42,7 +42,7 @@ be re-run.
 
 - `node scripts/pending.js` lists ideologies whose audit is missing or invalid (`--backfill`: audits
   that still need answers for new statements).
-- `node scripts/validate.js [id ...] [--links]` checks audits (add `--links` to test every URL).
+- `node scripts/validate.js [id ...] [--links]` checks audits (add `--links` to test every URL, `--no-salience` to skip the slow salience check).
 - `node scripts/build.js` compiles valid audits into `data.js` (`--status` just reports progress).
 - `node scripts/wikipedia.js` refreshes suggested Wikipedia links in the catalog.
 
