@@ -186,12 +186,37 @@ function gap(answers, profile, idx) {
 // Similarity rescales that distance so 0% is as far apart as the two most distant ideologies
 // are on those same statements.
 // The largest distance between any two ideologies on these statements: the "0%" end of the scale.
+// Every pair on every statement is slow with hundreds of ideologies, so the profiles are packed into
+// one typed array per model and each result is cached by its statement set (a page asks for the same
+// set several times). A null answer counts as 0 here, as it does in gap().
+const spreadCache = new WeakMap();
 function spreadOn(model, idx) {
   const ideos = model.ideologies;
-  let spread = 0;
-  for (let a = 0; a < ideos.length; a++) {
-    for (let b = a + 1; b < ideos.length; b++) spread = Math.max(spread, gap(ideos[a].profile, ideos[b].profile, idx));
+  let cache = spreadCache.get(ideos);
+  if (!cache) {
+    const n = ideos.length ? ideos[0].profile.length : 0;
+    const packed = new Float64Array(ideos.length * n);
+    ideos.forEach((i, a) => packed.set(i.profile, a * n));
+    cache = { n, packed, results: new Map() };
+    spreadCache.set(ideos, cache);
   }
+  const key = idx.join(",");
+  if (cache.results.has(key)) return cache.results.get(key);
+  let spread = 0;
+  if (idx.length) {
+    const { n, packed } = cache;
+    const cols = Int32Array.from(idx);
+    for (let a = 0; a < ideos.length; a++) {
+      const pa = a * n;
+      for (let b = a + 1; b < ideos.length; b++) {
+        const pb = b * n;
+        let s = 0;
+        for (let k = 0; k < cols.length; k++) s += Math.abs(packed[pa + cols[k]] - packed[pb + cols[k]]);
+        if (s / cols.length > spread) spread = s / cols.length;
+      }
+    }
+  }
+  cache.results.set(key, spread);
   return spread;
 }
 
