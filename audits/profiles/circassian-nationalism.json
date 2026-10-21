@@ -35,7 +35,7 @@
     },
     {
       "id": "s2",
-      "kind": "primary",
+      "kind": "reference",
       "title": "Hidden Nations, Enduring Crimes (Wikipedia, summarising the 2010 Tbilisi congress resolution)",
       "author": "Wikipedia contributors, reporting the congress resolution",
       "url": "https://en.wikipedia.org/wiki/Hidden_Nations,_Enduring_Crimes",
@@ -64,6 +64,14 @@
       "author": "Caucasian Knot",
       "url": "https://eng.kavkaz-uzel.media/articles/17186",
       "usedFor": "Text and points of the 2011 Georgian resolution recognising the genocide and the deportees as refugees."
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "title": "Declaration of Circassian Independence, addressed to the Courts of Europe (The Portfolio, vol. I, no. 4, 1836, pp. 187-195)",
+      "author": "Circassian chiefs (published by David Urquhart)",
+      "url": "https://archive.org/details/portfolio02unkngoog",
+      "usedFor": "The chiefs' own statement of independence: Circassia was never Russia's, treaties between Russia and Turkey cannot hand it over, allegiance is freely given and cannot be sold, Russia has exterminated whole tribes"
     }
   ],
   "answers": {
@@ -216,8 +224,8 @@
     },
     "decide-locally": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Circassian nationalists seek autonomy or a unified Circassian republic and decry Kremlin appointment of republic heads, which implies more local control.",
+      "confidence": "low",
+      "rationale": "Nationalists object to Kremlin appointment of republic heads and seek autonomy (s1, s4); support for local decision-making in general is inferred from that.",
       "sources": [
         "s1",
         "s4"
@@ -1030,8 +1038,8 @@
     },
     "national-self-determination": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "The movement seeks a fully autonomous or independent state within pre-conquest borders, and moderates accept a unified Circassia within Russia.",
+      "confidence": "medium",
+      "rationale": "The movement claims the Circassians' right to restore a homeland of their own, ranging from full independence to a unified autonomous Circassia (s1, s3); the right is central even where moderates would settle for autonomy.",
       "sources": [
         "s1",
         "s3"
@@ -1294,10 +1302,11 @@
     "consent-of-governed": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Self-determination and democratic tradition suggest legitimacy rests on consent; the movement objects to rule imposed by Moscow.",
+      "rationale": "The declaration says Circassian allegiance is a free offering: the Sultan cannot sell it because he never bought it, so no outside power has the right to give the Circassians away.",
       "sources": [
         "s1",
-        "s4"
+        "s4",
+        "s6"
       ]
     },
     "trade-surplus": {
@@ -1570,9 +1579,9 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Unifying Adygea, Kabardino-Balkaria and Karachay-Cherkessia (Great Cherkessia) is among the three main demands.",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Merging Adygea, Kabardino-Balkaria and Karachay-Cherkessia joins republics inside one state, which is not reunifying a nation split by an international border; only the diaspora's return fits the statement, so mild agreement is inferred.",
       "sources": [
         "s1",
         "s3"
@@ -1710,8 +1719,8 @@
     },
     "direct-election-head-of-state": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Criticism that presidents are now appointed by the Kremlin implies support for direct election.",
+      "confidence": "low",
+      "rationale": "Criticism of Kremlin-appointed republic heads (s4) suggests support for direct election; the answer is inferred.",
       "sources": [
         "s4"
       ]
@@ -2129,9 +2138,10 @@
     "colonial-treaties-void": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Activists reject the legitimacy of the imperial conquest of Circassia; treaties as such are not documented.",
+      "rationale": "The chiefs protest that treaties signed between Russia and Turkey, of which they knew nothing, claim to hand their land to Russia; inferred, since the 1836 text rejects those treaties at the time rather than speaking of them today.",
       "sources": [
-        "s2"
+        "s2",
+        "s6"
       ]
     },
     "elective-rulers": {

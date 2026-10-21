@@ -45,7 +45,7 @@
   "sources": [
     {
       "id": "s1",
-      "kind": "program",
+      "kind": "reference",
       "title": "National Party of Europe (European Declaration of 1 March 1962, ten aims)",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/National_Party_of_Europe",
@@ -90,6 +90,14 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Francis_Parker_Yockey",
       "usedFor": "Yockey's Imperium and Proclamation of London: anti-liberal, anti-American, antisemitic, tactical alliance with the USSR."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Europe: Faith and Plan. A Way Out from the Coming Crises and an Introduction to Thinking as an European (1958), full text",
+      "author": "Oswald Mosley",
+      "url": "https://archive.org/details/europe-faith-and-plan-by-sir-oswald-mosley-1958",
+      "usedFor": "Mosley's own statement of 'Europe a Nation', a single European government and a self-contained Europe-Africa economy"
     }
   ],
   "answers": {
@@ -348,9 +356,10 @@
     "free-trade": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Mosley's European Socialism was a self-sufficient, autarkic bloc; free trade with outside powers is rejected, though trade within Europe is open.",
+      "rationale": "Mosley blames competition on world markets for trade warfare between small national units and wants Europe's trade contained within its own economy, while trade inside Europe flows freely.",
       "sources": [
-        "s4"
+        "s4",
+        "s7"
       ]
     },
     "nation-first": {
@@ -673,10 +682,11 @@
     "civilizational-union": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The core claim: European peoples and civilization should be united politically as one nation-state.",
+      "rationale": "Mosley calls for the complete union of Europe as an integral nation, a nation in the same full sense that Britain, France or Germany are nations today.",
       "sources": [
         "s2",
-        "s1"
+        "s1",
+        "s7"
       ]
     },
     "self-interest-moral": {
@@ -1507,10 +1517,11 @@
     "pool-sovereignty": {
       "value": 2,
       "confidence": "high",
-      "rationale": "A European government with national parliaments limited to cultural and social matters is a call to pool and transfer sovereignty in a supranational state.",
+      "rationale": "The book proposes a single European government with the unity and strength of a national government, set up by a constitution-making assembly elected by Europeans.",
       "sources": [
         "s1",
-        "s5"
+        "s5",
+        "s7"
       ]
     },
     "head-commands-forces": {
@@ -2029,9 +2040,10 @@
     "economic-self-sufficiency": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Mosley's European Socialism was a self-sufficient, autarkic bloc.",
+      "rationale": "Mosley's plan is a self-contained Europe-Africa economy in which buying and selling on world markets is no longer needed, protecting wages and prices from outside competition.",
       "sources": [
-        "s4"
+        "s4",
+        "s7"
       ]
     },
     "trade-labor-env-standards": {
@@ -4009,6 +4021,121 @@
       "rationale": "Authoritarian and traditionalist, the movement had no commitment to treating women and men alike in service; inferred.",
       "sources": [
         "s2"
+      ]
+    },
+    "homeland-spiritual-bond": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from its ethno-nationalist, Europe-for-Europeans outlook and Yockey's cultural-organic view of peoples; the sources do not state this directly.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "extrajudicial-killing": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mosley's and Yockey's authoritarian strong executive makes it plausible, but drug policy is never addressed, so it is a guess.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "close-ties-china": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Its third-force aim has Europe independent of both America and the USSR, so relying on a non-European great power such as China fits poorly.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "protect-kin-minorities": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The strand merges peoples into one European nation, so kin minorities in neighbouring countries are not a stated concern.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "resources-common-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Mosley's corporatist, state-directed economy points away from egalitarian common ownership of resources.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "self-ownership": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: its corporatist, authoritarian collectivism subordinates the individual to the European nation-state.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "cut-consumption-tax": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Taxation detail is not addressed; the wage-price mechanism and corporatism say nothing about consumption taxes.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "targeted-social-spending": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Welfare design is not addressed in the sources; corporatist schemes could take either form.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "bypass-parties-groups": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mosley's strong executive with referendums and an occupational franchise sought to replace party politics, but kept corporatist bodies rather than bypassing groups entirely.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
+    },
+    "no-business-privileges": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Corporatist state-industry cooperation is stated, but whether it grants privileges to connected firms is not.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "no-denominational-politics": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not addressed; the movement was secular-nationalist in style and religious denominations were not a stated issue.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tech-with-ancestral-values": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from Mosley's pairing of science and technology with racial and cultural rebirth of Europe.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "wife-divorce-without-consent": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Family law is not addressed by Mosley's or Yockey's programmes.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-resource-control": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from its autarky and anti-American, anti-money stance; resources would be held by the European state, not foreign powers.",
+      "sources": [
+        "s4",
+        "s3"
       ]
     }
   },
