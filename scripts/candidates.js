@@ -16,7 +16,7 @@ const { sparql } = require("./sparql");
 
 const MIN_LINKS = 10;
 const SAMPLE_BELOW = 3000;
-const CONCURRENCY = 20;
+const CONCURRENCY = 6;
 const CATALOG = path.join(ROOT, "audits", "people-catalog.json");
 const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -24,11 +24,28 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const PREFIX = `PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX schema: <http://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>`;
-const OCCUPATIONS = ["Q82955", "Q11499147", "Q11499163", "Q1238570"].map((q) => `wd:${q}`).join(" ");
-const query = (linkFilter) => `${PREFIX}
+// Politician, political activist, political pundit, political scientist, political theorist,
+// political philosopher, philosopher, economist, and activists for a named cause: women's rights,
+// civil rights, human rights, social, peace, environment, trade unionist, revolutionary, social
+// reformer, suffragist, feminist, anarchist. Philosophers and economists bring in thinkers such as
+// Adam Smith, Engels, Friedman and Rand, whom Wikidata never calls political. Plain "activist" and
+// "philanthropist" are left out because Wikidata gives them to celebrities, and "writer" is too broad.
+const OCCUPATIONS = ["Q82955", "Q11499147", "Q11499163", "Q1238570", "Q15994177", "Q18930007", "Q4964182", "Q188094",
+  "Q28692502", "Q1021386", "Q1476215", "Q8359428", "Q16323111", "Q3578589", "Q15627169", "Q3242115", "Q16611574",
+  "Q27532437", "Q34074720", "Q12359071"].map((q) => `wd:${q}`).join(" ");
+// "Position held" counts only for political offices: public office, head of state or government,
+// monarch, legislator. Any position let in goodwill ambassadors, CEOs and trustees (Messi, Bezos).
+const OFFICES = ["Q294414", "Q48352", "Q2285706", "Q116", "Q4175034"].map((q) => `wd:${q}`).join(" ");
+// Each way in is its own query, merged here: as one UNION the query timed out on QLever.
+const BRANCHES = [
+  `VALUES ?o { ${OCCUPATIONS} } ?item wdt:P106 ?o .`,
+  `VALUES ?office { ${OFFICES} } ?item wdt:P39 ?pos . ?pos wdt:P31*/wdt:P279* ?office .`,
+];
+const query = (branch, linkFilter) => `${PREFIX}
 SELECT ?item (SAMPLE(?article) AS ?wiki) (SAMPLE(?name) AS ?label) (SAMPLE(?g) AS ?gender)
-  (SAMPLE(?birth) AS ?born) (SAMPLE(?death) AS ?died) (SAMPLE(?contName) AS ?continent) (SAMPLE(?l) AS ?links) WHERE {
-  { VALUES ?o { ${OCCUPATIONS} } ?item wdt:P106 ?o } UNION { ?item wdt:P39 ?pos }
+  (SAMPLE(?birth) AS ?born) (SAMPLE(?death) AS ?died) (SAMPLE(?contName) AS ?continent) (SAMPLE(?iso) AS ?countryCode) (SAMPLE(?birthIso) AS ?birthCode)
+  (SAMPLE(?l) AS ?links) WHERE {
+  ${branch}
   ?item wdt:P31 wd:Q5 ; wikibase:sitelinks ?l .
   FILTER(${linkFilter})
   ?article schema:about ?item . FILTER(STRSTARTS(STR(?article), "https://en.wikipedia.org/wiki/"))
@@ -37,7 +54,29 @@ SELECT ?item (SAMPLE(?article) AS ?wiki) (SAMPLE(?name) AS ?label) (SAMPLE(?g) A
   OPTIONAL { ?item wdt:P569 ?birth }
   OPTIONAL { ?item wdt:P570 ?death }
   OPTIONAL { ?item wdt:P27 ?country . ?country wdt:P30 ?cont . ?cont rdfs:label ?contName . FILTER(LANG(?contName) = "en") }
+  OPTIONAL { ?item wdt:P27/wdt:P297 ?iso }
+  OPTIONAL { ?item wdt:P19/wdt:P17/wdt:P297 ?birthIso }
 } GROUP BY ?item`;
+
+// The site's nine regions, by country of citizenship (ISO code). Historical states have no ISO code,
+// and some people have no citizenship recorded, so the fallbacks are the present-day country of their
+// birthplace, then their continent where that is unambiguous (Asia is not, so it stays unknown).
+const REGIONS = {
+  "North America": "US CA",
+  "Latin America & Caribbean": "MX GT BZ SV HN NI CR PA CU DO HT JM TT BS BB GD LC VC AG DM KN PR CO VE EC PE BO CL AR UY PY BR GY SR",
+  Europe: "AL AD AT BY BE BA BG HR CY CZ DK EE FI FR DE GR HU IS IE IT XK LV LI LT LU MT MD MC ME NL MK NO PL PT RO SM RS SK SI ES SE CH UA GB VA",
+  "Russia & Central Asia": "RU KZ KG TJ TM UZ GE AM AZ",
+  "Middle East & North Africa": "DZ EG LY MA TN EH IL PS JO LB SY IQ IR SA YE OM AE QA BH KW TR",
+  Africa: "AO BJ BW BF BI CV CM CF TD KM CG CD CI DJ GQ ER SZ ET GA GM GH GN GW KE LS LR MG MW ML MR MU MZ NA NE NG RW ST SN SC SL SO ZA SS SD TZ TG UG ZM ZW",
+  "South & Southeast Asia": "AF BD BT IN MV NP PK LK BN KH ID LA MY MM PH SG TH TL VN",
+  "East Asia": "CN JP KR KP MN TW HK MO",
+  Oceania: "AU NZ FJ PG SB VU WS TO KI TV NR FM MH PW",
+};
+const REGION_OF = Object.fromEntries(Object.entries(REGIONS).flatMap(([r, codes]) => codes.split(" ").map((c) => [c, r])));
+const CONTINENT_REGION = { Europe: "Europe", Africa: "Africa", Oceania: "Oceania", "Australian continent": "Oceania",
+  "South America": "Latin America & Caribbean", "Central America": "Latin America & Caribbean" };
+const regionOf = (b) => (b.countryCode && REGION_OF[b.countryCode.value]) || (b.birthCode && REGION_OF[b.birthCode.value])
+  || (b.continent && CONTINENT_REGION[b.continent.value]) || null;
 
 
 const GENDER = { Q6581097: "m", Q6581072: "f", Q48270: "nb", Q1052281: "f", Q2449503: "m" };
@@ -48,7 +87,7 @@ const toPerson = (b) => ({
   wikidata: b.item.value.split("/").pop(),
   name: b.label ? b.label.value : titleOf(b.wiki.value),
   gender: b.gender ? GENDER[b.gender.value.split("/").pop()] || "other" : null,
-  region: b.continent ? b.continent.value : null,
+  region: regionOf(b),
   born: year(b.born),
   living: !b.died,
   wikipedia: b.wiki.value,
@@ -59,15 +98,30 @@ const now = new Date();
 const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0));
 const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
 const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
+
+// Fetching views for ~66k people takes hours, so every count is appended to a cache outside the
+// repo as soon as it arrives. A rerun (or a resume after a crash) only fetches what's missing, and
+// a different cutoff needs no fetching at all. Keyed by article and period, so a new month refetches.
+const CACHE = path.join(process.env.XDG_CACHE_HOME || path.join(require("os").homedir(), ".cache"),
+  "political-ideology-atlas", "pageviews.jsonl");
+fs.mkdirSync(path.dirname(CACHE), { recursive: true });
+const cache = new Map(fs.existsSync(CACHE) ? fs.readFileSync(CACHE, "utf8").split("\n").filter(Boolean)
+  .map((l) => JSON.parse(l)).map((e) => [e.key, e.views]) : []);
+const remember = (key, n) => (fs.appendFileSync(CACHE, JSON.stringify({ key, views: n }) + "\n"), cache.set(key, n), n);
+
 async function views(p) {
   const t = encodeURIComponent(titleOf(p.wikipedia).replace(/ /g, "_"));
+  const key = `${t}|${ymd(start)}-${ymd(end)}`;
+  if (cache.has(key)) return cache.get(key);
   const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`;
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(url, { headers: HEADERS });
-    if (res.ok) return (await res.json()).items.reduce((s, x) => s + x.views, 0);
-    if (res.status === 404) return 0;
-    if (attempt >= 5) throw new Error(`${res.status} for ${url}`);
-    await sleep(3000 * (attempt + 1));
+    if (res.ok) return remember(key, (await res.json()).items.reduce((s, x) => s + x.views, 0));
+    if (res.status === 404) return remember(key, 0);
+    if (attempt >= 10) throw new Error(`${res.status} for ${url}`);
+    // Rate limited: wait as asked, else back off exponentially (3s, 6s, 12s ... capped at 2 min).
+    const retryAfter = Number(res.headers.get("retry-after")) * 1000;
+    await sleep(retryAfter || Math.min(3000 * 2 ** attempt, 120000));
   }
 }
 async function fetchViews(list, label) {
@@ -81,11 +135,40 @@ async function fetchViews(list, label) {
   }));
 }
 
+// Someone with several citizenships gets an arbitrary one from the main query (Hasan Piker came out
+// Turkish). Their English description names the one they are known by ("American political
+// commentator"), so pick the citizenship whose demonym appears first in it.
+async function nationalityFromDescription(people) {
+  const ids = people.filter((p) => p.wikidata).map((p) => p.wikidata);
+  const byId = new Map(people.map((p) => [p.wikidata, p]));
+  for (let i = 0; i < ids.length; i += 300) {
+    const rows = await sparql(`${PREFIX}
+SELECT ?item (SAMPLE(?d) AS ?desc) (GROUP_CONCAT(DISTINCT CONCAT(?iso, "=", ?dem); separator="|") AS ?nations) WHERE {
+  VALUES ?item { ${ids.slice(i, i + 300).map((q) => `wd:${q}`).join(" ")} }
+  ?item wdt:P27 ?c . ?c wdt:P297 ?iso . ?c wdt:P1549 ?dem . FILTER(LANG(?dem) = "en")
+  OPTIONAL { ?item schema:description ?d . FILTER(LANG(?d) = "en") }
+} GROUP BY ?item`);
+    for (const r of rows) {
+      const nations = r.nations.value.split("|").map((s) => s.split("="));
+      if (!r.desc || new Set(nations.map(([iso]) => iso)).size < 2) continue;
+      const at = (dem) => r.desc.value.search(new RegExp(`\\b${dem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`));
+      const [best] = nations.filter(([, dem]) => at(dem) >= 0).sort((a, b) => at(a[1]) - at(b[1]));
+      const p = byId.get(r.item.value.split("/").pop());
+      if (best && REGION_OF[best[0]]) p.region = REGION_OF[best[0]];
+    }
+  }
+}
+
 async function main() {
-  const above = (await sparql(query(`xsd:integer(?l) >= ${MIN_LINKS}`))).map(toPerson);
+  const candidates = async (linkFilter) => {
+    const byId = new Map();
+    for (const branch of BRANCHES) for (const b of await sparql(query(branch, linkFilter))) byId.set(b.item.value, b);
+    return [...byId.values()].sort((a, b) => a.item.value.localeCompare(b.item.value)).map(toPerson);
+  };
+  const above = await candidates(`xsd:integer(?l) >= ${MIN_LINKS}`);
   console.log(`${above.length} candidates in at least ${MIN_LINKS} languages`);
   // A deterministic ~1% sample of those below the floor: Wikidata ids ending in "37".
-  const sample = (await sparql(query(`xsd:integer(?l) < ${MIN_LINKS} && STRENDS(STR(?item), "37")`))).map(toPerson).slice(0, SAMPLE_BELOW);
+  const sample = (await candidates(`xsd:integer(?l) < ${MIN_LINKS} && STRENDS(STR(?item), "37")`)).slice(0, SAMPLE_BELOW);
   console.log(`Sampled ${sample.length} people below the floor`);
 
   await fetchViews(sample, "sample");
@@ -105,14 +188,17 @@ async function main() {
     seen.add(id);
     people.push({ id, ...p, ...(prev && prev.image ? { image: prev.image } : {}) });
   }
+  await nationalityFromDescription(people);
   // Keep everyone already audited, even if they fall outside the criteria (e.g. the salience controls' kin).
   for (const p of old.people) if (audited.has(p.id) && !seen.has(p.id)) { people.push(p); seen.add(p.id); }
   people.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
 
   const dropped = old.people.filter((p) => !seen.has(p.id)).map((p) => p.name);
   fs.writeFileSync(CATALOG, JSON.stringify({
-    _comment: "People to audit, generated by scripts/candidates.js from Wikidata (political occupation or public office held) and ranked by English Wikipedia views. `living` is a hint for auditors to verify.",
-    criteria: { occupations: ["politician", "political activist", "political pundit", "political scientist"], orPositionHeld: true, minLanguages: MIN_LINKS, minViews12m: cutoff },
+    _comment: "People to audit, generated by scripts/candidates.js from Wikidata (political occupation, cause activist, philosopher or economist, or a political office held) and ranked by English Wikipedia views. `living` is a hint for auditors to verify.",
+    criteria: { occupations: ["politician", "political activist", "political pundit", "political scientist", "political theorist",
+      "political philosopher", "philosopher", "economist", "cause activists (women's rights, civil rights, human rights, social, peace, environment), trade unionist, revolutionary, social reformer, suffragist, feminist, anarchist"], orPoliticalOfficeHeld: ["public office", "head of state",
+      "head of government", "monarch", "legislator"], minLanguages: MIN_LINKS, minViews12m: cutoff },
     viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
     people,
   }, null, 1) + "\n");
