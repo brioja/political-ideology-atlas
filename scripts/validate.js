@@ -96,6 +96,20 @@ function validate(id) {
     highs.set(r, [...(highs.get(r) || []), st.id]);
   }
   for (const ids of highs.values()) if (ids.length > 1) errors.push(`${ids.join(", ")}: high-confidence answers share one rationale; say what the source states for each, or lower the confidence`);
+  // A rationale that calls its own answer an inference, split or anachronistic is describing a low
+  // answer, and one that says the sources don't address it can't be high (audits/PROMPT.md).
+  const SELF_LOW = /\b(inferred|by inference|an inference|(adherents|supporters|members|followers|strands?) (are |were )?(split|divided)|(is|are|was|were|remains?) (split|divided|contested)|contested among|anachronis\w*|speculative)\b/i;
+  const NOT_LOW = /\bnot (inferred|an inference|contested|speculative)\b/i;
+  const UNADDRESSED = /\b(not addressed|never address\w*|not discussed|no documented position|sources? (do|does) not (discuss|address|mention))\b/i;
+  const selfLow = [], unaddressedHigh = [];
+  for (const st of statements) {
+    const ans = answers[st.id];
+    if (!ans?.rationale) continue;
+    if (ans.confidence === "medium" && SELF_LOW.test(ans.rationale) && !NOT_LOW.test(ans.rationale)) selfLow.push(st.id);
+    if (ans.confidence === "high" && UNADDRESSED.test(ans.rationale)) unaddressedHigh.push(st.id);
+  }
+  if (selfLow.length) errors.push(`${selfLow.join(", ")}: rationale says inferred, split, contested or anachronistic, so the confidence is low`);
+  if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');

@@ -93,7 +93,9 @@ Confidence:
   that source states about this statement; a stock phrase ("Nationalism rejected.") or a position
   the sources never discuss is at most `medium`.
 - `medium`: clearly implied by core principles, or the documented majority view.
-- `low`: inferred, contested among adherents, or anachronistic.
+- `low`: inferred, contested among adherents, or anachronistic. If the rationale has to say the
+  answer is inferred, that adherents or strands are split, or that the question is anachronistic,
+  the answer is `low`, however clear the inference seems.
 
 Inferred answers are fine, but be honest about them: only `high` and `medium` answers count as the
 ideology's stated positions. If too few are stated, the ideology can't be placed precisely enough
