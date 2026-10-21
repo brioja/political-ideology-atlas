@@ -34,7 +34,9 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
 
 - **not a set of political beliefs:** an organisation, party, movement as a group, event, period,
   office, person, place, prejudice or field of study;
-- **a duplicate** of another audited ideology under another name; or
+- **a duplicate** of another audited ideology under another name (an entry with its own
+  Wikipedia article, not a redirect, is distinct, even when it overlaps heavily with another:
+  Arab nationalism and Pan-Arabism, Socialist democracy and Democratic socialism); or
 - **undocumented:** no reliable source describes its positions.
 
 When in doubt, the entry is audited, and gate 3 decides on the evidence.
