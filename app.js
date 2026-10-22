@@ -964,10 +964,10 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   };
   const label = (text, x, y) => { ctx.fillStyle = CARD.muted; ctx.font = `500 26px ${CARD_FONTS.mono}`; ctx.fillText(text, x, y); };
 
-  let y = 280;
+  let y = 268;
   // Hero: the person who thinks most like you.
   if (people.length) {
-    const p = people[0], hh = 316;
+    const p = people[0], hh = 290;
     card(PAD, y, W - PAD * 2, hh);
     const pw = 290;
     ctx.save();
@@ -976,27 +976,27 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     else { ctx.fillStyle = CARD.line; ctx.fillRect(PAD, y, pw, hh); }
     ctx.restore();
     const tx = PAD + pw + 40, tw = W - PAD - 36 - tx;
-    label("THINKS MOST LIKE YOU", tx, y + 54);
+    label("THINKS MOST LIKE YOU", tx, y + 50);
     ctx.fillStyle = CARD.ink; ctx.font = `700 52px ${CARD_FONTS.display}`;
     const nameLines = wrapLines(ctx, p.name, tw, 2);
-    nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 116 + i * 56));
-    const ry = y + 116 + (nameLines.length - 1) * 56 + 42;
+    nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 108 + i * 56));
+    const ry = y + 108 + (nameLines.length - 1) * 56 + 40;
     if (p.role) {
       // A two-line name leaves room for one line of role, so nothing runs into the percentage.
       ctx.fillStyle = CARD.muted; ctx.font = `400 28px ${CARD_FONTS.body}`;
       wrapLines(ctx, p.role, tw, nameLines.length > 1 ? 1 : 2).forEach((l, i) => ctx.fillText(l, tx, ry + i * 34));
     }
     ctx.fillStyle = CARD.ink; ctx.font = `700 76px ${CARD_FONTS.display}`;
-    ctx.fillText(pct(p.similarity), tx, y + hh - 32);
+    ctx.fillText(pct(p.similarity), tx, y + hh - 28);
     const pw2 = ctx.measureText(pct(p.similarity)).width;
     ctx.fillStyle = CARD.muted; ctx.font = `400 30px ${CARD_FONTS.body}`;
-    ctx.fillText("alike", tx + pw2 + 14, y + hh - 36);
+    ctx.fillText("alike", tx + pw2 + 14, y + hh - 32);
     y += hh + 20;
   }
 
   // Two columns, unlabelled (avatars and bars tell them apart): the next three ideologies, and three
   // more people. Rows in both columns share centres.
-  const colW = (W - PAD * 2 - 28) / 2, ch = 218;
+  const colW = (W - PAD * 2 - 28) / 2, ch = 200;
   const morePeople = people.slice(1, 4);
   const ideoW = morePeople.length ? colW : W - PAD * 2;
   card(PAD, y, ideoW, ch);
@@ -1016,7 +1016,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const closeIdeos = ranked.slice(1, 4), ideoNameW = ideoW - 64;
   const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 400, 30, 24);
   closeIdeos.forEach((r, i) => {
-    const ry = y + 52 + i * 60, x = PAD + 32, w = ideoW - 64, barW = w - 76;
+    const ry = y + 50 + i * 54, x = PAD + 32, w = ideoW - 64, barW = w - 76;
     ctx.fillStyle = CARD.ink;
     ctx.fillText(fitName(r.name, ideoNameW, 400, ideoSize), x, ry);
     ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 18, barW, 6);
@@ -1030,7 +1030,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const personNameW = colW - 64 - 68 - 62;
     const personSize = columnSize(morePeople.map((p) => p.name), personNameW, 600, 29, 22);
     morePeople.forEach((p, i) => {
-      const cy = y + 56 + i * 60 - 8, r = 26, x = x0 + 32;
+      const cy = y + 54 + i * 54 - 8, r = 24, x = x0 + 32;
       ctx.save();
       ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
       ctx.fillStyle = CARD.line; ctx.fill();
@@ -1042,11 +1042,11 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 10); ctx.textAlign = "left";
     });
   }
-  y += ch + 20;
+  y += ch + 12;
 
   // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
   // row is "low end  ──○──  high end", so rows can sit 36px apart; the last needs ~20px above the footer.
-  const room = H - 130 - 20 - (y + 76);
+  const room = H - 130 - 20 - (y + 68);
   const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
   label("WHERE YOU STAND", PAD, y + 30);
@@ -1078,7 +1078,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   };
   const END_W = 262;
   for (let i = 0; i < lines; i++) {
-    const ty = y + 76 + i * lh;
+    const ty = y + 68 + i * lh;
     const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const scale = lineScale(vals);
