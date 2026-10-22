@@ -1726,11 +1726,14 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Escape") comboClose(input);
 });
 // mousedown, not click: it fires before the box loses focus and closes the list.
+// Any press inside the list (an option, a heading or its scrollbar) keeps focus in the box, which
+// would otherwise close the list.
 document.addEventListener("mousedown", (e) => {
-  const li = e.target.closest && e.target.closest(".combo-list [role=option]");
-  if (!li) return;
+  const list = e.target.closest && e.target.closest(".combo-list");
+  if (!list) return;
   e.preventDefault();
-  comboChoose($(li.parentElement.id.replace(/-list$/, "")), li);
+  const li = e.target.closest("[role=option]");
+  if (li) comboChoose($(list.id.replace(/-list$/, "")), li);
 });
 
 // The Compare tab without a pair yet: just the two boxes.
