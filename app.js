@@ -1403,7 +1403,8 @@ renderExplore();
 // Round photo from Wikipedia (freely licensed); initials when there is no free image.
 function avatar(p, size = 36) {
   if (p.image) {
-    return `<img class="avatar${p.image.logo ? " logo" : ""}" src="${esc(p.image.url)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+    // A logo sits inside the circle with a margin; percentage padding would follow the parent's width.
+    return `<img class="avatar${p.image.logo ? " logo" : ""}"${p.image.logo ? ` style="padding:${Math.round(size * 0.16)}px"` : ""} src="${esc(p.image.url)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
   }
   const initials = p.name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join("");
   return `<span class="avatar initials" style="width:${size}px;height:${size}px" aria-hidden="true">${esc(initials)}</span>`;
