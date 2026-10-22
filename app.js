@@ -1071,22 +1071,38 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const room = H - 130 - 20 - (y + 68);
   const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
-  label(result.subject ? "WHERE THEY STAND" : "WHERE YOU STAND", PAD, y + 30);
-  {
-    // Key: the dark ring is you, the faint marker your top match.
-    let kx = W - PAD;
-    ctx.font = `400 26px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
-    ctx.fillText(top.name, kx, y + 30); kx -= ctx.measureText(top.name).width + 16;
+  // The closest person, if any, gets a third marker: a faint diamond, so shape tells the three apart.
+  const near = people[0] || null;
+  const nearScores = near ? project(model, near.profile) : null;
+  const ringMark = (x, yy, r, w) => {
+    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = w;
+    ctx.beginPath(); ctx.arc(x, yy, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+  };
+  const dotMark = (x, yy, r) => {
     ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
-    ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 8, y + 21, 10))); ctx.globalAlpha = 1;
-    kx -= 40; ctx.fillStyle = CARD.muted;
-    // On a person's card the ring is them: their name, or just the surname if the full name is long.
-    let who = result.subject ? result.subject.name : "You";
-    if (ctx.measureText(who).width > 260) who = who.split(/\s+/).pop();
-    ctx.fillText(who, kx, y + 30); kx -= ctx.measureText(who).width + 18;
-    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.arc(kx, y + 21, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-    ctx.textAlign = "left";
+    ctx.fill(new Path2D(shapePath(styleOf(top).shape, x, yy, r))); ctx.globalAlpha = 1;
+  };
+  const diamondMark = (x, yy, r) => {
+    // Kept in the background: a faint outline, so you and your ideology stay the strongest marks.
+    const d = new Path2D(shapePath("diamond", x, yy, r));
+    ctx.globalAlpha = 0.55; ctx.fillStyle = CARD.surface; ctx.fill(d);
+    ctx.strokeStyle = CARD.muted; ctx.lineWidth = 2.5; ctx.stroke(d); ctx.globalAlpha = 1;
+  };
+  {
+    // Key, left to right: the ring (you, or the person the card is about), your top ideology, the
+    // closest person. A name too long for the row shrinks to its surname or is shortened.
+    const surname = (name) => (ctx.measureText(name).width > 240 ? name.split(/\s+/).pop() : name);
+    ctx.font = `400 26px ${CARD_FONTS.body}`; ctx.fillStyle = CARD.muted;
+    const items = [[ringMark, result.subject ? surname(result.subject.name) : "You"], [dotMark, top.name]];
+    if (near) items.push([diamondMark, surname(near.name)]);
+    const widths = () => items.reduce((t, [, t2]) => t + 30 + ctx.measureText(t2).width + 28, -28);
+    while (widths() > W - PAD * 2 && items[1][1].length > 6) items[1][1] = items[1][1].slice(0, -2).trimEnd() + "…";
+    let kx = PAD;
+    for (const [mark, text] of items) {
+      mark === ringMark ? mark(kx + 10, y + 21, 10, 3) : mark(kx + 10, y + 21, 10);
+      ctx.fillStyle = CARD.muted; ctx.fillText(text, kx + 30, y + 30);
+      kx += 30 + ctx.measureText(text).width + 28;
+    }
   }
   // An end's name (the same one lineInfo gives the page), as large as fits its column (down to 22px);
   // shortened only if it can't fit even then.
@@ -1106,7 +1122,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   for (let i = 0; i < lines; i++) {
     const ty = y + 68 + i * lh;
     const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
-    const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
+    const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i], nearScores ? nearScores[i] : []);
     const scale = lineScale(vals);
     const px = (v) => x0 + scale(v) * (x1 - x0);
     const L = lineInfo(i);
@@ -1115,8 +1131,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
-    ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
-    ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9))); ctx.globalAlpha = 1;
+    dotMark(px(top.scores[i]), ty, 9);
+    if (nearScores) diamondMark(px(nearScores[i]), ty, 10);
     const ux = px(you[i]);
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
     ctx.beginPath(); ctx.arc(ux, ty, 11, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
