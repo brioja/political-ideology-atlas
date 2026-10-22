@@ -38,7 +38,8 @@ function useSalienceModel(ideologies, statements, lines) {
   const pca = require(path.join(ROOT, "pca.js"));
   salienceCache = { pca, ids: statements.map((s) => s.id), ctx: pca.salienceContext(pca.buildModel(ideologies), ideologies, { lines }) };
 }
-function personSalience(answers) {
+// Placement precision against the bar (see pca.js), scaled by `factor`.
+function placed(answers, factor) {
   if (!salienceCache) {
     // data.js records how many lines beat noise, so the slow parallel analysis isn't rerun here.
     const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES } = require(path.join(ROOT, "data.js"));
@@ -46,17 +47,25 @@ function personSalience(answers) {
     salienceCache = { pca, ids: QUESTIONS.map((q) => q.id), ctx: pca.salienceContext(pca.buildModel(IDEOLOGIES), IDEOLOGIES, { lines: MEANINGFUL_LINES }) };
   }
   const { pca, ids, ctx } = salienceCache;
-  return pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));
+  const r = pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));
+  return { ...r, bar: r.bar * factor, salient: r.uncertainty <= r.bar * factor };
 }
+// People are held to a looser bar than ideologies. An ideology must be told apart from its nearest
+// neighbour; a person only has to be placed well enough to be compared at all, and the build's
+// "uniquely reachable" check already keeps two people from being indistinguishable. At 1.5x a solid
+// record of roughly 20-25 positions passes, while the apolitical controls (0-5 positions) sit at 2.3x
+// or more and still fail.
+const PEOPLE_BAR = 1.5;
+const personSalience = (answers) => placed(answers, PEOPLE_BAR);
 
 // Ideologies must answer every statement, inferring where the ideology never took a position
 // (marked low confidence). For salience, only stated positions count: an inferred answer is the
 // ideology equivalent of a person's "no known position".
 const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-const ideologySalience = (answers) => personSalience(statedOnly(answers));
+const ideologySalience = (answers) => placed(statedOnly(answers), 1);
 // The bar itself: the median distance between an ideology and its nearest neighbour (see pca.js).
-const salienceBar = () => (personSalience({}), salienceCache.ctx.bar);
+const salienceBar = () => (placed({}, 1), salienceCache.ctx.bar);
 
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,

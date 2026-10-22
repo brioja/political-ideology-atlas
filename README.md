@@ -23,7 +23,7 @@ A political ideology test where the axes come from the data. You don't choose th
 Adding a statement or an ideology means adding its audit data and rebuilding. The lines and how
 many are kept update on their own.
 
-Ideologies get the same salience check as people (see below), counting only their **stated**
+Ideologies get the salience check (see below, with a stricter bar than people), counting only their **stated**
 positions (high or medium confidence). An ideology whose answers are mostly inferred is left out of
 both the results and the dividing lines.
 
@@ -74,10 +74,12 @@ era, and an imbalance is reported rather than corrected by hand. Each gets
 an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
 
-- **Salience:** a person is included only if their recorded positions place them on the test's
-  real dividing lines more precisely than the typical (median) distance between an ideology and
-  its nearest neighbour there (Bayesian placement uncertainty, see `salienceContext` in `pca.js`).
-  A less precise record can't say which of two neighbouring ideologies it is closer to.
+- **Salience:** an ideology is included only if its stated positions place it on the test's real
+  dividing lines more precisely than the typical (median) distance between an ideology and its
+  nearest neighbour there (Bayesian placement uncertainty, see `salienceContext` in `pca.js`); a
+  less precise record can't say which of two neighbouring ideologies it is closer to. People only
+  have to be placed well enough to compare, so their bar is 1.5 times that (`PEOPLE_BAR` in
+  `scripts/lib.js`): roughly 20-25 documented positions.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
   the same instructions) must fail it; `node test.js` checks this. Excluded audits make the
