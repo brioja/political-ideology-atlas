@@ -1103,7 +1103,11 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const gap = items.length > 1 ? (W - PAD * 2 - sizes.reduce((t, w) => t + w, 0)) / (items.length - 1) : 0;
     let kx = PAD;
     items.forEach(([mark, text], n) => {
-      mark === ringMark ? mark(kx + 10, y + 21, 10, 3) : mark(kx + 10, y + 21, mark === diamondMark ? 8.5 : 10);
+      if (mark === ringMark) {
+        // Same as the marker on the lines: a ring with a dot in the middle.
+        mark(kx + 10, y + 21, 10, 3);
+        ctx.fillStyle = CARD.ink; ctx.beginPath(); ctx.arc(kx + 10, y + 21, 3.5, 0, Math.PI * 2); ctx.fill();
+      } else mark(kx + 10, y + 21, mark === diamondMark ? 8.5 : 10);
       ctx.fillStyle = CARD.muted; ctx.fillText(text, kx + 30, y + 30);
       kx += sizes[n] + gap;
     });
