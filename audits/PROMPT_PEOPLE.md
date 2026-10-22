@@ -26,7 +26,13 @@ objectionable; attribute them to sources instead.
   laws signed, policies enacted). Add at least one `reference` or `scholarly` source.
 - Prefer what the person said or did over what others say about them. Opponents' characterizations
   are not evidence of a position.
-- Do not use political-quiz sites as sources.
+- Do not use political-quiz sites as sources: a site's guess at where someone stands isn't evidence.
+- The exception is the person taking a quiz themselves, answers read aloud, as some streamers and
+  pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
+  own answer is direct evidence, so it can be `high` confidence, but only where the quiz item says
+  the same thing as our statement; otherwise use it as context. Get the words from the video's
+  captions, e.g. `yt-dlp --skip-download --write-auto-subs --sub-langs en-orig --sub-format vtt <url>`,
+  cite the video as a `primary` source, and use only answers they clearly give, not jokes or banter.
 
 ## 2. Answer every statement
 
