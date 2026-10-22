@@ -15,7 +15,8 @@ one run per model version, no repeats.
    or `gpt-5-codex`. A new version is a new entry; never overwrite an old one.
 2. Add the model to `audits/models-catalog.json`: `id`, `name` (as the provider writes it, e.g.
    "Claude Haiku 5.5"), `provider`, `released` (year), `route` (how it was run, e.g. "Claude Code
-   subagent" or "Codex CLI") and `takenAt` (today, YYYY-MM-DD).
+   subagent" or "Codex CLI"), `takenAt` (today, YYYY-MM-DD) and `summary`: one neutral sentence
+   on what the model is (maker, model family and its place in it), as the provider describes it.
 3. `node scripts/model-batch.js` prints how many batches there are (50 statements each).
 4. Run **one fresh session per batch** with the model being tested, so earlier answers don't steer
    later ones. Give each session only the prompt in the next section, with `<id>` and `<k>` filled
