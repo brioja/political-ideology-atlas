@@ -1,593 +1,3156 @@
 {
   "id": "elon-musk",
   "name": "Elon Musk",
-  "auditedAt": "2026-10-14",
-  "auditor": "claude-opus-5-5",
+  "auditedAt": "2026-10-22",
+  "auditor": "claude-sonnet-5-5",
   "living": true,
-  "role": "Businessman (Tesla, SpaceX, X); led the Department of Government Efficiency (2025)",
-  "summary": "A self-described free-speech absolutist with libertarian leanings who backs smaller government, opposes unions and wealth taxes, and favors nuclear power and a carbon tax. He has moved toward right-wing populism on immigration and culture while supporting universal basic income, estate taxes and pronatalism.",
+  "role": "Businessman (Tesla, SpaceX, X); led the Department of Government Efficiency (2025); announced the America Party (2025)",
+  "summary": "A tech entrepreneur who calls himself a free speech absolutist and favors a smaller federal government, zero tariffs and direct democracy, while backing a carbon tax, nuclear power, AI oversight and income payments for those displaced by AI. Since about 2022 he has aligned with the Republican right on immigration, DEI and gender issues, opposed unions, and supported US exit from NATO and the UN. He broke with Trump in 2025 over spending and floated a centrist America Party.",
   "wikipedia": "https://en.wikipedia.org/wiki/Elon_Musk",
   "sources": [
     {
       "id": "s1",
-      "kind": "primary",
-      "title": "Elon Musk: Shutting down nuclear plants is \"total madness\"",
-      "author": "American Nuclear Society (quoting his 2022 Business Insider interview)",
-      "url": "https://ans.org/news/article-3812/elon-musk-shutting-down-nuclear-plants-is-total-madness",
-      "usedFor": "His own words on nuclear power and energy"
-    },
-    {
-      "id": "s2",
       "kind": "reference",
       "title": "Political views of Elon Musk",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Political_views_of_Elon_Musk",
-      "usedFor": "Documented statements and actions across policy areas"
+      "usedFor": "Overview of documented statements: unions, estate tax, UBI, guns, H-1B, judges, gender care, pronatalism, AI, subsidies"
+    },
+    {
+      "id": "s2",
+      "kind": "reference",
+      "title": "America Party (2025)",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/America_Party_(2025)",
+      "usedFor": "Announcement of the America Party, deficit focus, 'uniparty' remarks"
     },
     {
       "id": "s3",
-      "kind": "primary",
-      "title": "Elon Musk says shutting down nuclear power plants is 'insane'",
-      "author": "Fortune (quoting his August 2022 tweets)",
-      "url": "https://fortune.com/2022/08/27/elon-musk-says-shutting-down-nuclear-power-plants-insane-anti-human-national-security-risk-environmental-threat",
-      "usedFor": "His tweets on expanding nuclear power"
-    },
-    {
-      "id": "s4",
       "kind": "reference",
       "title": "Department of Government Efficiency",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Department_of_Government_Efficiency",
-      "usedFor": "His 2024-2025 statements and actions on federal spending, agencies, entitlements and DEI"
+      "usedFor": "His DOGE goals, agency consolidation, deregulation"
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "Elon Musk says he wants a 'zero-tariff situation' and a 'free trade zone' for Europe",
+      "author": "NBC News (quoting Musk's April 2025 remarks)",
+      "url": "https://www.nbcnews.com/news/amp/rcna199849",
+      "usedFor": "Zero tariffs / free trade"
     },
     {
       "id": "s5",
       "kind": "primary",
-      "title": "Pause Giant AI Experiments: An Open Letter (2023)",
-      "author": "Future of Life Institute (signed by Musk)",
-      "url": "https://futureoflife.org/open-letter/pause-giant-ai-experiments/",
-      "usedFor": "The AI pause and regulatory authorities he endorsed by signing"
+      "title": "Musk Says Targeting Social Security and Medicare Fraud are Key Focus for Cuts",
+      "author": "CPA Practice Advisor (quoting Musk on Fox Business, March 2025)",
+      "url": "https://www.cpapracticeadvisor.com/2025/03/20/musk-says-targeting-social-security-and-medicare-fraud-are-key-focus-for-cuts/157152/",
+      "usedFor": "Entitlements 'the big one to eliminate'"
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "title": "Elon Musk Pushes Wild Theory Democrats Are 'Deliberately Importing Vast Numbers of Illegals' to Win Elections",
+      "author": "Mediaite (quoting Musk's March 2024 X post)",
+      "url": "https://www.mediaite.com/media/news/elon-musk-pushes-wild-theory-democrats-are-deliberately-importing-vast-numbers-of-illegals-to-win-elections/",
+      "usedFor": "Immigration and electoral-motive claim"
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Elon Musk backs 'universal high income' to combat AI job losses",
+      "author": "Fox Business (quoting Musk's April 2026 X post)",
+      "url": "https://www.foxbusiness.com/fox-news-tech/elon-musk-backs-universal-high-income-combat-ai-job-losses",
+      "usedFor": "Federal income checks in response to AI unemployment"
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "title": "Elon Musk predicts Martian government at SXSW",
+      "author": "Inverse (quoting Musk, March 2018)",
+      "url": "https://www.inverse.com/article/42190-elon-musk-predicts-martian-government-sxsw",
+      "usedFor": "Direct democracy on Mars"
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "title": "Elon Musk draws rebuke by suggesting Taiwan accept rule by China",
+      "author": "CBS News (reporting his FT interview and Ukraine peace proposal, 2022)",
+      "url": "https://cbsnews.com/news/elon-musk-taiwan-china-ukraine-russia",
+      "usedFor": "Taiwan and Ukraine territorial proposals"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "title": "Elon Musk: Shutting down nuclear plants is 'total madness'",
+      "author": "American Nuclear Society (on his 2022 Business Insider interview)",
+      "url": "https://ans.org/news/article-3812/elon-musk-shutting-down-nuclear-plants-is-total-madness",
+      "usedFor": "Nuclear power"
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "title": "Elon Musk carbon tax Paris",
+      "author": "Fortune (reporting his December 2015 remarks)",
+      "url": "https://fortune.com/2015/12/02/elon-musk-carbon-tax-paris",
+      "usedFor": "Carbon tax and climate"
+    },
+    {
+      "id": "s12",
+      "kind": "primary",
+      "title": "Elon Musk seals deal to buy Twitter for $44 billion, touts importance of free speech",
+      "author": "Times of Israel (quoting his April 2022 statement)",
+      "url": "https://www.timesofisrael.com/elon-musk-seals-deal-to-buy-twitter-for-44-billion-touts-importance-of-free-speech/",
+      "usedFor": "Free speech statement"
+    },
+    {
+      "id": "s13",
+      "kind": "primary",
+      "title": "Musk voices support for California bill requiring safety tests on AI models",
+      "author": "Deccan Chronicle (quoting Musk, August 2024)",
+      "url": "https://www.deccanchronicle.com/technology/musk-voices-support-for-california-bill-requiring-safety-tests-on-ai-models-1819576",
+      "usedFor": "AI regulation (not used for a statement id; context)"
+    },
+    {
+      "id": "s14",
+      "kind": "primary",
+      "title": "Bill Ackman, Elon Musk and Mark Cuban debate DEI efforts",
+      "author": "Fortune (quoting Musk's January 2024 posts)",
+      "url": "https://fortune.com/2024/01/04/bill-ackman-elon-musk-mark-cuban-debate-dei-efforts/amp",
+      "usedFor": "DEI and racial discrimination"
+    },
+    {
+      "id": "s15",
+      "kind": "primary",
+      "title": "House passes GOP bill to ban noncitizens from voting after Elon Musk suggests its opponents should be executed",
+      "author": "Yahoo News (quoting Musk's X post on the SAVE Act)",
+      "url": "https://ca.news.yahoo.com/house-passes-gop-bill-ban-232408326.html",
+      "usedFor": "Proof-of-citizenship voting bill"
+    },
+    {
+      "id": "s16",
+      "kind": "primary",
+      "title": "Elon Musk says he supports quitting UN and NATO",
+      "author": "The Daily Beast (quoting Musk's March 2025 reply)",
+      "url": "https://thedailybeast.com/elon-musk-says-he-supports-quitting-un-and-nato",
+      "usedFor": "NATO and UN withdrawal"
     }
   ],
   "answers": {
     "universal-healthcare": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "raise-minimum-wage": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "markets-allocate-better": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Long described as a libertarian; opposes government subsidies and led DOGE's push to cut federal spending and agencies.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "public-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "tax-the-wealthy": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Mixed: supports estate taxes and consumption taxes but opposes a wealth tax.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "unions-good": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "'I disagree with the idea of unions. I just don't like anything which creates a lords and peasants sort of thing' (2023).",
-      "sources": [
-        "s2"
-      ]
-    },
-    "property-fundamental": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "regulate-corporations": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Criticizes regulation and sought to eliminate the Consumer Financial Protection Bureau, though he backs oversight specifically for AI.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "cut-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Said DOGE could cut federal spending by 'at least' $2 trillion and called Social Security 'the biggest fraud in history' (2025), a claim fact-checkers said rested on a misreading of the data.",
-      "sources": [
-        "s4"
-      ]
-    },
-    "worker-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "surveillance-ok": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "legalize-drugs": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "restrict-hate-speech": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Calls himself a 'free speech absolutist' (free speech being 'that which matches the law') and opposed Australian plans to fine social-media sites.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "strong-leader": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "state-harmful": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Wants a much smaller government that should 'rarely impose its will upon the people', but not to abolish the state.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "limit-guns": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Supports strict background checks and limiting assault-rifle sales, but sees gun rights as a safeguard against government tyranny.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "legalize-sex-work": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "decide-locally": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "rehabilitation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "traditional-family": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "same-sex-marriage": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Has said people should be free to love whom they choose.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "abortion-legal": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "more-religion-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "correct-racial-injustice": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Denounces 'anti-white racism' and said there is 'too much focus on past guilt' in Germany. Tweeted 'DEI must DIE' (December 2024).",
-      "sources": [
-        "s2",
-        "s4"
-      ]
-    },
-    "gender-social-construct": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Calls pronouns 'an esthetic nightmare' and 'cis' a slur, and wants gender-affirming care for minors criminalized, while saying he supports trans people.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "preserve-national-culture": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Blamed the 2024 UK riots on mass migration, praised Germany's AfD and calls the US 'the greatest country that has ever existed'.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "gradual-change": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "reduce-immigration": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "Criticizes illegal immigration but wants more 'hard-working and honest' migrants and defends H-1B visas for skilled workers.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "empower-international-orgs": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Has advocated US withdrawal from NATO and the United Nations.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "free-trade": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "nation-first": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "humanitarian-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "open-borders": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Blames 'mass migration and open borders' for unrest and criticizes illegal immigration.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "limit-growth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "drastic-climate-action": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Says climate change is real, supports a carbon tax and criticized leaving the Paris Agreement, though he calls population collapse a bigger risk.",
-      "sources": [
-        "s2"
-      ]
-    },
-    "tech-solves-problems": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Bets on solar energy, electric transport and colonizing Mars, while calling AI humanity's most serious threat.",
-      "sources": [
-        "s2",
-        "s1"
-      ]
-    },
-    "expand-nuclear": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "'Countries should be increasing nuclear power generation!' and shutting plants down is 'total madness'.",
+      "rationale": "Pushes deregulation and cuts to government, opposes corporate subsidies, though he also backs a carbon tax and AI rules.",
       "sources": [
         "s1",
         "s3"
       ]
     },
+    "public-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-the-wealthy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-good": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Said in December 2023 he disagrees with the idea of unions and in 2018 questioned why workers would pay dues.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-fundamental": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regulate-corporations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "cut-welfare": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Called entitlements, most of federal spending, 'the big one to eliminate', but framed the aim as fraud and waste; also supports basic income, so the answer is contested.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "worker-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "surveillance-ok": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legalize-drugs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-hate-speech": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Calls himself a free speech absolutist, defined as speech that matches the law, and opposes censorship beyond the law.",
+      "sources": [
+        "s12",
+        "s1"
+      ]
+    },
+    "strong-leader": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-harmful": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Wants a much smaller government and fewer agencies but led a government body and does not call for abolishing the state.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-guns": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "After Uvalde backed universal background checks and limits on assault rifle sales, but says the right to bear arms guards against tyranny; not a strict-limit position.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "empower-police-military": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legalize-sex-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "decide-locally": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rehabilitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "traditional-family": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "same-sex-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abortion-legal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "more-religion-public": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "correct-racial-injustice": {"value": -1, "confidence": "low", "rationale": "Opposes race-conscious DEI programs as discrimination, which implies opposition to active racial correction.", "sources": ["s14"]},
+    "gender-social-construct": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "preserve-national-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gradual-change": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reduce-immigration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "empower-international-orgs": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Replied 'I agree' to a post saying the US should leave NATO and the UN.",
+      "sources": [
+        "s16"
+      ]
+    },
+    "free-trade": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Advocated a zero-tariff free trade zone across the Atlantic.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "nation-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humanitarian-intervention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-borders": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-growth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "drastic-climate-action": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says climate change is real, left advisory councils over the Paris withdrawal and pushed a carbon tax; also criticizes many regulations.",
+      "sources": [
+        "s11",
+        "s1"
+      ]
+    },
+    "tech-solves-problems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "expand-nuclear": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Called nuclear shutdowns madness and urged keeping plants running and restarting closed ones.",
+      "sources": [
+        "s10"
+      ]
+    },
     "revolution-justified": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "central-planning": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "socialized-markets": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "land-value-tax": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "tax-inheritance": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Supports estate taxes ('the probability of progeny being equally excellent at capital allocation is not high'), though he attacked a UK farm estate-tax proposal.",
-      "sources": [
-        "s2"
-      ]
+      "rationale": "No recorded position found.",
+      "sources": []
     },
     "basic-income": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Backed universal basic income from 2016 because of AI's effect on jobs and endorsed Andrew Yang's UBI plan in 2019.",
+      "confidence": "high",
+      "rationale": "Has backed universal basic income since 2016 and in April 2026 urged 'universal high income' checks from the federal government to offset AI unemployment.",
       "sources": [
-        "s2"
+        "s1",
+        "s7"
       ]
     },
     "tariffs-protect-industry": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Said he wants a zero-tariff situation between Europe and North America and that he gave this advice to Trump.",
+      "sources": [
+        "s4"
+      ]
     },
     "state-directs-investment": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "widespread-small-property": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "abolish-money-wages": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "abolish-central-banks": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "corporatist-bargaining": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "one-party-rule": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "monarchy-legitimate": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "democracy-best": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Called removing candidates from ballots 'fundamentally anti-democratic' and envisions a direct democracy on Mars.",
-      "sources": [
-        "s2"
-      ]
+      "rationale": "No recorded position found.",
+      "sources": []
     },
     "direct-votes": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Has said a Mars government would be a direct democracy.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Said Mars government should be a direct democracy where everyone votes on every issue; reported to support direct democracy generally.",
       "sources": [
-        "s2"
+        "s8",
+        "s1"
       ]
     },
     "workers-councils": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "right-to-secede": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "natural-rulers": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "political-violence-never": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "war-builds-character": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "separate-church-state": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "laws-from-scripture": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "private-courts-defense": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "military-superiority": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "ethnic-nation": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "class-struggle-history": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "equal-outcomes": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "indigenous-land-authority": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "colonial-reparations": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "civilizational-union": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "self-interest-moral": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "duties-before-rights": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "nature-intrinsic-value": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "limit-population": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Strongly pronatalist: 'Population collapse due to low birth rates is a much bigger risk to civilization than global warming.'",
+      "rationale": "Calls population collapse a greater risk than global warming and promotes higher birth rates.",
       "sources": [
-        "s2"
+        "s1"
       ]
     },
     "industrial-civilization-disaster": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Signed the 2023 open letter calling for at least a six-month pause on training AI systems more powerful than GPT-4, while calling deregulation the only path to his Mars program (2024).",
-      "sources": [
-        "s5",
-        "s4"
-      ]
+      "rationale": "No recorded position found.",
+      "sources": []
     },
     "human-enhancement": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "algorithmic-government": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "unbreakable-encryption": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "restore-past-order": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "results-over-ideology": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "direct-action": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "means-match-ends": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-foraging": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-division-of-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "distribute-by-need": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "production-for-use": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "profit-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dictatorship-of-proletariat": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "collective-farming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capitalism-causes-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "taxation-theft": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "harm-principle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "individual-rights-only": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conscription": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exit-over-voice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-as-business": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "positive-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "media-academia-power": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "hereditarian-race": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "organic-representation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "total-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-rebirth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "territorial-expansion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "personal-loyalty-rule": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "bound-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-neutral-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "universal-morality": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "single-common-good": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "jewish-state-israel": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "diaspora-return-right": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revive-national-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workplace-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "school-vouchers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "avoid-deficit-stimulus": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Said the America Party would focus on deficit reduction and fiscal conservatism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "economic-freedom": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rule-by-example": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-self-determination": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "force-without-un": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reason-over-faith": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "welfare-for-citizens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-for-welfare": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "class-collaboration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sacrifice-heritage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dominated-front": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "distinct-gender-roles": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-interest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-segregation-law": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-class-instrument": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "expand-fossil-fuels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "assimilate-immigrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "elite-replacement": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Wrote that the Biden administration was deliberately importing vast numbers of illegals for electoral gain; said no grand conspiracy was needed; framing is electoral, not replacement of natives, and critics tie it to replacement theory.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "proportional-representation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-mission": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriarchy-structural": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-elite-corrupt": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Describes the two parties as a failed 'uniparty' and launched the America Party in opposition.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "heritable-defect-limits": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "security-forces-accountable": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "night-watchman-state": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Supports a carbon tax, AI regulation and basic income, beyond a minimal state, while seeking cuts to other functions.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "equal-moral-worth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-one-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "settler-state-colonial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "uniform-civil-code": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-conversion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-cattle-slaughter": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-religion-state-schools": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-strengthens-encirclement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "consent-of-governed": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "trade-surplus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "population-transfer": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "initiating-force-wrong": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "competition-drives-progress": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-extremist-parties": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-as-non-domination": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "separated-powers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vanguard-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "priority-to-poor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "right-to-buy-council-homes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-strikes-picketing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "population-causes-poverty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "diversity-weakens-cohesion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "offices-by-lottery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "emergency-suspend-protections": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-essentials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "party-controls-media": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His free speech stance and purchase of Twitter oppose government control of information.",
+      "sources": [
+        "s12"
+      ]
+    },
+    "party-commands-army": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "long-naturalization-wait": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "representatives-worker-pay": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "party-discipline-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pool-sovereignty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-commands-forces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "church-by-bishops": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "clerical-rule": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defeat-own-government-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "censor-art-for-virtue": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unlimited-reelection": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recall-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "end-foreign-alliances": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Endorsed US exit from NATO and said it does not make sense to pay for Europe's defense; wider alliances not addressed.",
+      "sources": [
+        "s16",
+        "s1"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "people-in-arms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rural-life-healthier": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reunify-divided-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "educated-out-of-touch": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "cultures-equal-different": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "death-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sex-ed-in-schools": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "creationism-in-schools": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-pornography": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "citizenship-by-descent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-language-support": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-exemptions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "encourage-eccentricity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sovereign-debt-cancellation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "independence-needs-economic-change": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constituent-assembly": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-freedoms-for-growth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rich-countries-aid-poor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "independent-nuclear-deterrent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "direct-election-head-of-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "central-bank-independence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-land-for-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-serves-common-good": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "soviet-state-capitalist": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "precautionary-principle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "collective-defense": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Endorsed leaving NATO, whose core is collective defense.",
+      "sources": [
+        "s16"
+      ]
+    },
+    "annexed-territory-occupation": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His 2022 peace proposal would recognize Crimea as Russian and rerun referendums in occupied regions.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "nonpartisan-head-of-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "force-to-prevent-secession": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "region-keeps-system": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sacred-ruler": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "flat-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "character-from-environment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sovereign-above-law": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "space-expansion": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Founded SpaceX to colonize Mars and champions making humanity multi-planetary.",
+      "sources": [
+        "s1",
+        "s8"
+      ]
+    },
+    "mixed-constitution": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "leader-cult": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "equal-parenting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "class-struggle-under-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "land-redistribution": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refugee-return": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "co-ethnic-territorial-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apostasy-punishable": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-must-cover": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "common-currency": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "kin-peoples-union": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-cultural-autonomy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rights-where-you-live": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "material-conditions-drive-history": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-cartels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-bailouts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "courts-bound-by-majority": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Called for impeaching judges who ruled against Trump policies and said judges should not halt presidential actions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "gender-parity-bodies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "economic-self-sufficiency": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "trade-labor-env-standards": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "moral-incentives": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-group-creates-revolution": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-hereditary-privilege": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "history-own-civilization": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilizing-tutelage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriotic-education": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "end-racial-preferences": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Said DEI is 'just another word for racism' and that racial discrimination is what DEI does.",
+      "sources": [
+        "s14"
+      ]
+    },
+    "public-money-creation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capitalism-adapts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-influence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "delink-world-market": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labor-aristocracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-to-discriminate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "entrenched-bill-of-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-treaties-void": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "elective-rulers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-veto": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-lawless-ruler": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliament-supreme": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "animal-suffering-matters": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "animal-use-humane": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "noblesse-oblige": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "withdraw-from-politics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mass-culture-pacifies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ruling-class-consent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "world-economy-extracts-surplus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "native-born-offices": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "party-own-road": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "self-reliance-over-aid": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-lost-territory": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-political-leadership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "antifascism-founding-value": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "totalitarianisms-equivalent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-not-civil-war-cause": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "preserve-contested-monuments": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "male-disadvantage-attention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "domestic-violence-symmetry": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "institutions-fit-civilization": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-guardian-role": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "paid-care-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "filial-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "office-by-exam": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-takeover-block": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-fault-divorce": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recallable-delegates": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "individual-pension-accounts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "land-use-tenure": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "budget-needs-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "single-official-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-land-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "disparate-impact-discrimination": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "consumerism-harmful": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arm-foreign-insurgents": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "intervene-in-bloc": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "corporate-influence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-foreign-funding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pronatalist-incentives": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "residents-only-property": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "job-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democratic-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-duty-to-obey": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "non-intervention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "industrial-unions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-conspiracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-legal-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "public-access-to-information": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-production": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "informal-organisation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-law-over-international": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "deference-to-leading-power": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-revenue-retention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "personal-possessions-private": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defeat-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mixed-public-service-providers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-illusion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capitalism-progressive": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-equality-needs-economic-change": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialized-care": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "purge-loanwords": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "treaties-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "cooperative-communities": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "majority-settlement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "neither-capitalism-nor-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "historical-land-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "holocaust-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-homosexuality": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "suppress-opposition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "punish-blasphemy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonies-serve-metropole": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defensive-jihad-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unreligious-rulers-fought": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "participatory-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "intersecting-oppressions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gender-identity-recognition": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Opposes gender-affirming care for minors, called 'cisgender' a slur and disparages pronouns, while saying he supports trans people.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "assisted-dying": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "left-right-obsolete": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Called himself politically moderate and launched a party for 'the 80 percent in the middle'.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "alienated-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "islam-incompatible": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divine-source-of-authority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-dress-in-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-nda-harassment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "social-market-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-armed-forces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rich-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "stay-neutral-between-blocs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dynastic-succession": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "interest-free-mutual-credit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-lender-austerity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-franchise": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "domination-women-nature": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reification": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "press-owned-by-wealth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promulgated-standing-laws": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-franchise": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "online-participation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-government-data": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "interfaith-marriage-restriction": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "boycott-minority-shops": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "citizens-assembly": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reinterpret-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wealth-concentration-endangers-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-lgbt-military-service": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-promotes-atheism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-police-prisons": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "power-sharing-divided-societies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "charity-over-state-aid": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "term-limits": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-delegation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "existential-risk-priority": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Calls AI the most serious threat to humanity, has urged AI oversight and treats population collapse and Mars colonization as safeguards.",
+      "sources": [
+        "s1",
+        "s13"
+      ]
+    },
+    "women-in-religious-leadership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shared-marital-authority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-residents-local-vote": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rent-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-ip": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "uniformed-youth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-nuclear-weapons-on-territory": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-foreign-bases": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognise-genocide": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "income-for-work-not-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "never-kill-self-defence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unbroken-national-continuity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sex-socially-constructed": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-fixed-category-of-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "martyrs-honoured": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "politics-spiritual-struggle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "homeland-cultural-centre": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "culture-before-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "god-not-male": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "scripture-judged-by-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "economy-in-majority-hands": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "single-unit-for-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "independent-unions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-workers-power": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-essentials-public": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "second-chamber": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-property": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "confederal-coordination": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "family-wage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ageing-research-funding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "anonymous-payments": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "online-anonymity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "person-over-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "spiritual-nature": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-powers-revocable": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gm-crops": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dense-cities": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-group-interests": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-pride": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defensive-wars-only": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "language-defines-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "communal-electorates": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-partition-plot": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-public-college": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pollution-taxes": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Called for a revenue-neutral carbon tax so polluters pay, calling the lack of one madness.",
+      "sources": [
+        "s11"
+      ]
+    },
+    "future-generations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-distinct-values": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arms-reduction": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-diplomacy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capital-controls": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-arms-monopoly": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "soldiers-refuse-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "collective-bargaining": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Opposition to unions as such implies he does not favor wages set by union bargaining over individual contracts.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "in-work-tax-credits": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "fiscal-rules-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restructure-world-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "smash-state-machine": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-economic-experiment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "nature-as-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sacred-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "student-debt-relief": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "internal-colonialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shared-human-nature": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "public-service-media": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religions-one-truth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "farm-price-support": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-nuclear-weapons": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-own-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-property-inheritance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-language-many-names": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pollution-tort-liability": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "customary-chiefs-lawmaking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "environment-over-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-sentences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigrants-learn-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-compulsory-union": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voter-id": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Backed the SAVE Act requiring proof of citizenship to register and said opponents were traitors.",
+      "sources": [
+        "s15"
+      ]
+    },
+    "religious-equal-recognition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-is-procedure": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "premarital-sex": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "internet-shutdowns": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "negative-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-suffrage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-oppresses-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-social-construct": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gender-equality-agencies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "homestead-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "international-criminal-courts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "scripture-inerrant": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gendered-self-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defend-planned-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indirect-election": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-church-status": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-territorial-autonomy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "disputed-territory-plebiscite": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Proposed UN-supervised referendums in the occupied Ukrainian regions and suggested Taiwan accept a special administrative zone status.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "keep-colonial-borders": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "simple-living": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-indigenous-settlement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "equal-conscription": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "homeland-spiritual-bond": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "extrajudicial-killing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "close-ties-china": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "protect-kin-minorities": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resources-common-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "self-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "cut-consumption-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "targeted-social-spending": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "bypass-parties-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-business-privileges": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Opposes government subsidies to companies and has called for ending EV tax credits and oil and gas subsidies.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "no-denominational-politics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tech-with-ancestral-values": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wife-divorce-without-consent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-resource-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "distribution-by-process": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "financial-transactions-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racism-not-main-obstacle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unjust-law-not-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automate-paid-work": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Argues AI and robots will make work optional and proposes income checks to cover it.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "multipolar-world": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-theory-of-value": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriotism-serves-workers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "material-over-identity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "market-under-party-rule": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
       "sources": []
     }
   },
-  "notes": "His views have shifted since 2022 toward the populist right; where recent and older positions conflict, the more recent public position is used and the conflict is noted in the rationale."
+  "notes": "Views have shifted over time: he voted mostly Democratic and was socially liberal before 2022, then moved to Republican support. On many topics (healthcare, abortion, drugs, death penalty, tax levels) no firm recent position was found, so they are null. Many quotes come from outlets reporting his X posts; X posts were not read directly. The 2018 Mars direct-democracy remark and 2015 carbon-tax remark may not reflect current views. H-1B support (Wikipedia) was not scored because no statement matches."
 }
