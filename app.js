@@ -1635,16 +1635,22 @@ function comparePickers(aKey = "", bKey = "") {
   return `<div class="compare-pickers">${box("compare-a", aKey, "An ideology, person, AI model or you")}
     <span class="muted" aria-hidden="true">and</span>${box("compare-b", bKey, "Another one to compare with")}</div>`;
 }
-document.addEventListener("change", (e) => {
+// Picking a suggestion fires "input" (Chrome fires "change" only on blur or Enter), so act on both.
+// With one box filled, the cursor moves to the other; with both, the pair opens.
+function onComparePick(e) {
   const find = (input) => input && compareOptions().find((o) => o.label === input.value.trim());
   if (e.target.id === "compare-pick") {
     const pick = find(e.target);
     if (pick) go(compareHref(e.target.dataset.self, pick.key));
   } else if (e.target.id === "compare-a" || e.target.id === "compare-b") {
+    if (!find(e.target)) return;
     const a = find($("compare-a")), b = find($("compare-b"));
     if (a && b && a.key !== b.key) go(compareHref(a.key, b.key));
+    else $(e.target.id === "compare-a" ? "compare-b" : "compare-a").focus();
   }
-});
+}
+document.addEventListener("input", onComparePick);
+document.addEventListener("change", onComparePick);
 
 // The Compare tab without a pair yet: just the two boxes.
 function renderCompareHome() {
