@@ -1,117 +1,249 @@
 {
   "id": "adolf-hitler",
   "name": "Adolf Hitler",
-  "auditedAt": "2026-10-14",
-  "auditor": "claude-opus-5-5",
+  "auditedAt": "2026-10-22",
+  "auditor": "claude-sonnet-5-5",
   "living": false,
   "role": "Leader of the Nazi Party; dictator of Germany (1933-1945)",
-  "summary": "Leader of the Nazi Party whose ideology combined extreme nationalism, a racial definition of the nation and antisemitism with rejection of democracy, Marxism and class conflict. He ruled Germany as a one-party dictatorship, pursued territorial conquest in the East and presided over the Holocaust.",
+  "summary": "Leader of the Nazi Party, who held that history is a struggle between races, saw Germans as a racial community entitled to living space in the East, and was hostile to parliamentary democracy, Marxism and Jews. He ruled Germany as a one-party dictatorship under the leader principle, directed the economy toward rearmament and autarky, and presided over the Holocaust.",
   "wikipedia": "https://en.wikipedia.org/wiki/Adolf_Hitler",
   "sources": [
     {
       "id": "s1",
       "kind": "program",
-      "title": "The Program of the NSDAP (1920), with Hitler's 1928 explanation of point 17",
-      "author": "Nuremberg document 1708-PS, Avalon Project, Yale Law School",
+      "title": "The Program of the NSDAP (25 points, 1920)",
+      "author": "NSDAP; Nuremberg document 1708-PS, Avalon Project, Yale Law School",
       "url": "https://avalon.law.yale.edu/imt/1708-ps.asp",
-      "usedFor": "The party program he proclaimed: citizenship, immigration, economy, welfare, central power, common good"
+      "usedFor": "The party programme Hitler presented: citizenship, immigration, economy, welfare, press, religion, central power"
     },
     {
       "id": "s2",
-      "kind": "reference",
-      "title": "Nazism",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Nazism",
-      "usedFor": "His ideology and record in power"
+      "kind": "primary",
+      "title": "Mein Kampf (Murphy translation, full text)",
+      "author": "Adolf Hitler",
+      "url": "https://git.xpub.nl/rita/Categorization_of_Files/raw/branch/master/mein_kampf.txt",
+      "usedFor": "His own words on citizenship, race, state, parliament, unions, education, sterilization, leadership, foreign policy"
     },
     {
       "id": "s3",
-      "kind": "reference",
-      "title": "Mein Kampf",
-      "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Mein_Kampf",
-      "usedFor": "Positions stated in his book: parliament, Lebensraum, Marxism"
+      "kind": "scholarly",
+      "title": "Nuremberg Laws",
+      "author": "US Holocaust Memorial Museum Holocaust Encyclopedia",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/nuremberg-laws",
+      "usedFor": "Reich Citizenship Law and Blood Protection Law, 1935"
     },
     {
       "id": "s4",
       "kind": "reference",
-      "title": "Nazi Germany",
+      "title": "Adolf Hitler",
       "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Nazi_Germany",
-      "usedFor": "Record in power: unions, Länder, League of Nations, civil liberties, trade, family loans"
+      "url": "https://en.wikipedia.org/wiki/Adolf_Hitler",
+      "usedFor": "Overview of his rule, Lebensraum, antisemitism, putsch, Greater Germany"
     },
     {
       "id": "s5",
       "kind": "reference",
+      "title": "Mein Kampf",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mein_Kampf",
+      "usedFor": "What the book says, per historians (parliament, race, Lebensraum, eugenics)"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "Enabling Act of 1933",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Enabling_Act_of_1933",
+      "usedFor": "Enabling Act and Reichstag Fire Decree"
+    },
+    {
+      "id": "s7",
+      "kind": "reference",
+      "title": "Economy of Nazi Germany",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Economy_of_Nazi_Germany",
+      "usedFor": "Economic record: cartels, unions banned, price/wage/rent controls, autarky, Four-Year Plan, deficit spending"
+    },
+    {
+      "id": "s8",
+      "kind": "reference",
+      "title": "Women in Nazi Germany",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Women_in_Nazi_Germany",
+      "usedFor": "Hitler's 1935 statement on women, birth incentives, abortion ban, exclusion from office"
+    },
+    {
+      "id": "s9",
+      "kind": "reference",
+      "title": "Religion in Nazi Germany",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Religion_in_Nazi_Germany",
+      "usedFor": "Hitler's statements on Christianity; Concordat, Reich Church, Jehovah's Witnesses"
+    },
+    {
+      "id": "s10",
+      "kind": "reference",
+      "title": "Nazism",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nazism",
+      "usedFor": "Ideology: third way, class collaboration, social Darwinism, Führerprinzip, anti-democracy, Blood and Soil"
+    },
+    {
+      "id": "s11",
+      "kind": "reference",
+      "title": "Nazi eugenics",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nazi_eugenics",
+      "usedFor": "1933 sterilization law, Aktion T4, marriage health rules"
+    },
+    {
+      "id": "s12",
+      "kind": "reference",
       "title": "Persecution of homosexuals in Nazi Germany",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Persecution_of_homosexuals_in_Nazi_Germany",
-      "usedFor": "Paragraph 175 revision, convictions, Hitler's 1941 decree"
+      "usedFor": "Paragraph 175 revision, arrests, 1941 decree"
+    },
+    {
+      "id": "s13",
+      "kind": "reference",
+      "title": "Gleichschaltung",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gleichschaltung",
+      "usedFor": "One-party state, abolition of unions and state parliaments, press control, civil service law, youth organizations"
+    },
+    {
+      "id": "s14",
+      "kind": "reference",
+      "title": "Hitler's Second Book",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hitler%27s_Second_Book",
+      "usedFor": "1928 positions: Lebensraum, rejection of birth control, emigration and Germanisation, Britain/Italy/USSR"
+    },
+    {
+      "id": "s15",
+      "kind": "reference",
+      "title": "Hossbach Memorandum",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hossbach_Memorandum",
+      "usedFor": "1937 statements on autarky, rearmament, Austria and Czechoslovakia"
+    },
+    {
+      "id": "s16",
+      "kind": "reference",
+      "title": "Hitler Youth",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hitler_Youth",
+      "usedFor": "Compulsory uniformed, drilled youth organisation"
+    },
+    {
+      "id": "s17",
+      "kind": "reference",
+      "title": "Nazi Germany",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nazi_Germany",
+      "usedFor": "Rearmament, Rhineland, Anschluss, Munich, alliances, oath, Führer title, Gestapo, press control"
+    },
+    {
+      "id": "s18",
+      "kind": "reference",
+      "title": "Degenerate art",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Degenerate_art",
+      "usedFor": "Hitler's views on art; Chamber of Culture; book burnings"
+    },
+    {
+      "id": "s19",
+      "kind": "reference",
+      "title": "Animal welfare in Nazi Germany",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Animal_welfare_in_Nazi_Germany",
+      "usedFor": "1933 Animal Protection Act; Hitler reported vegetarian"
+    },
+    {
+      "id": "s20",
+      "kind": "scholarly",
+      "title": "Introduction to the Holocaust",
+      "author": "US Holocaust Memorial Museum Holocaust Encyclopedia",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/introduction-to-the-holocaust",
+      "usedFor": "Persecution, boycotts, emigration pressure, genocide; Hitler's role"
+    },
+    {
+      "id": "s21",
+      "kind": "reference",
+      "title": "Night of the Long Knives",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Night_of_the_Long_Knives",
+      "usedFor": "1934 purge; retroactive self-defence law; 'supreme judge'"
     }
   ],
   "answers": {
     "universal-healthcare": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "raise-minimum-wage": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "markets-allocate-better": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Attacked capitalism rhetorically but, in power, accepted private firms as long as they served state goals and suppressed those seen as against the national interest.",
+      "rationale": "State directed investment, fixed prices and wages and restricted trade, and Hitler held private enterprise acceptable only where it served the state.",
       "sources": [
-        "s2"
+        "s7",
+        "s10"
       ]
     },
     "public-ownership": {
       "value": 0,
-      "confidence": "medium",
-      "rationale": "Mixed: the 1920 program demanded nationalizing trusts, but Nazi Germany carried out mass privatization in practice.",
+      "confidence": "low",
+      "rationale": "Programme point 13 called for nationalising trusts, but the regime privatised many state firms; the record is mixed.",
       "sources": [
         "s1",
-        "s2"
+        "s7"
       ]
     },
     "tax-the-wealthy": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "unions-good": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "Trade unions were dissolved in 1933, their offices raided by the SA and their leaders arrested.",
+      "confidence": "medium",
+      "rationale": "Mein Kampf called unions necessary under existing conditions, but in 1933 independent unions were occupied, banned and replaced by the German Labour Front.",
       "sources": [
-        "s4"
+        "s2",
+        "s13"
       ]
     },
     "property-fundamental": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Property was conditional on serving the nation; the program called for expropriating land 'for public utility'.",
+      "rationale": "Programme subordinated property to the common good and allowed expropriation; yet regime protected property for those it counted as Germans and seized that of Jews.",
       "sources": [
         "s1",
-        "s2"
+        "s7"
       ]
     },
     "regulate-corporations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Compulsory cartel law, dividend cap of 6 percent, price controls and Four-Year Plan directives imposed state control on firms.",
+      "sources": [
+        "s7"
+      ]
     },
     "cut-welfare": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "The party program called for a large-scale expansion of old-age welfare.",
+      "confidence": "medium",
+      "rationale": "Programme point 15 demanded large-scale expansion of old-age welfare; welfare run through party bodies on racial grounds.",
       "sources": [
         "s1"
       ]
@@ -119,140 +251,155 @@
     "worker-ownership": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "surveillance-ok": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The Reichstag Fire Decree (1933) suspended civil liberties and allowed indefinite detention without charge; the Gestapo policed political opponents.",
+      "rationale": "Reichstag Fire Decree removed civil liberties after a terror-framed arson, and the Gestapo ran secret-police surveillance.",
       "sources": [
-        "s4"
+        "s6",
+        "s17"
       ]
     },
     "legalize-drugs": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "restrict-hate-speech": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "strong-leader": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Rejected parliamentary government in favor of the leader principle (Führerprinzip); the Enabling Act concentrated power in his hands.",
+      "rationale": "Mein Kampf proposed the leader principle in place of parliament, and he held dictatorial power from 1933.",
       "sources": [
         "s2",
-        "s3"
+        "s4"
       ]
     },
     "state-harmful": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Demanded 'a strong central power in the Reich' and said 'To us state and race are one.'",
+      "rationale": "He exalted the state as a tool of the race and built a totalitarian state, the opposite of the claim.",
       "sources": [
-        "s1",
-        "s2"
+        "s2",
+        "s13"
       ]
     },
     "limit-guns": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "empower-police-military": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Called for a national army and pursued military expansion and conquest.",
+      "confidence": "high",
+      "rationale": "Rearmament from 1933, expansion of the army and creation of the Gestapo and a police state.",
       "sources": [
-        "s1",
-        "s2"
+        "s17",
+        "s13"
       ]
     },
     "legalize-sex-work": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf calls for waging war against prostitution as part of fighting syphilis.",
+      "sources": [
+        "s2"
+      ]
     },
     "decide-locally": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Decrees of 1933-1935 abolished the federal states and replaced them with Gaue under Gauleiters, creating a centralized unitary state.",
+      "rationale": "Programme point 25 demanded unlimited central Reich authority; 1933-34 laws dissolved state parliaments and ended state sovereignty.",
       "sources": [
-        "s4"
+        "s1",
+        "s13"
       ]
     },
     "rehabilitation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Point 18 demanded ruthless action and death for common criminals, usurers and profiteers.",
+      "sources": [
+        "s1"
+      ]
     },
     "traditional-family": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Offered marriage loans to young 'Aryan' couples on condition the wife leave paid work, with 25% forgiven per child, and curtailed women's career opportunities.",
+      "rationale": "Policies tied women to motherhood and the home, with honours for mothers of many children and a 1935 Hitler statement that equal rights for women deprived them of rights.",
       "sources": [
-        "s4"
+        "s8"
       ]
     },
     "same-sex-marriage": {
       "value": -2,
       "confidence": "high",
-      "rationale": "The regime broadened Paragraph 175 in 1935 to punish all homosexual acts; about 100,000 men were arrested, and in 1941 Hitler decreed death sentences for homosexuality in the SS and police.",
+      "rationale": "Regime broadened Paragraph 175 in 1935 and arrested about 100,000 men for homosexuality.",
       "sources": [
-        "s5"
+        "s12"
       ]
     },
     "abortion-legal": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Access to abortion was quickly prohibited under his government.",
+      "sources": [
+        "s8"
+      ]
     },
     "more-religion-public": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "Inferred: he held a racial hierarchy and legislated discrimination, so remedying historical racial injustices has no support in his stated views.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
     },
     "gender-social-construct": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "preserve-national-culture": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Built politics around the Volksgemeinschaft, a national community defined by ethnicity: 'To us state and race are one.'",
+      "rationale": "Programme and regime policy defended 'German' culture and persecuted art judged alien to it.",
       "sources": [
-        "s2"
+        "s1",
+        "s18"
       ]
     },
     "gradual-change": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He overturned the Weimar order within months through the Enabling Act and Gleichschaltung instead of changing gradually through established institutions.",
+      "sources": [
+        "s6",
+        "s13"
+      ]
     },
     "reduce-immigration": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The program demanded stopping further immigration of non-Germans and expelling those who arrived after 1914.",
+      "rationale": "Point 8: further immigration of non-Germans to be prevented, and those arrived since 1914 to leave.",
       "sources": [
         "s1"
       ]
@@ -260,38 +407,41 @@
     "empower-international-orgs": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Took Germany out of the League of Nations and the World Disarmament Conference in October 1933.",
+      "rationale": "Germany left the League of Nations and the disarmament conference in 1933.",
       "sources": [
-        "s4"
+        "s17"
       ]
     },
     "free-trade": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "A state bureaucracy regulated imports to cut foreign competition, in pursuit of economic self-sufficiency.",
+      "confidence": "high",
+      "rationale": "Tariffs from 1933, import cuts, bilateral trade and autarky; Zweites Buch rejected export dependence.",
       "sources": [
-        "s4"
+        "s7",
+        "s14"
       ]
     },
     "nation-first": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Sought German expansion and 'living space' (Lebensraum) in the East as the nation's overriding goal.",
+      "rationale": "Placed the German people's interest above all else; withdrew from international bodies and broke treaties.",
       "sources": [
         "s2",
-        "s3"
+        "s17"
       ]
     },
     "humanitarian-intervention": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "Inferred: Mein Kampf derides 'so-called humanitarianism' and sets national interest above such motives.",
+      "sources": [
+        "s2"
+      ]
     },
     "open-borders": {
       "value": -2,
       "confidence": "high",
-      "rationale": "The program demanded stopping immigration by non-citizens.",
+      "rationale": "Points 4 to 8 restrict citizenship by blood and bar further immigration.",
       "sources": [
         "s1"
       ]
@@ -299,222 +449,251 @@
     "limit-growth": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "drastic-climate-action": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "tech-solves-problems": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "expand-nuclear": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Led the 1923 putsch and later framed 1933 as a national revolution, but chose a legal route to power after the putsch failed.",
+      "sources": [
+        "s4",
+        "s5"
+      ]
     },
     "experts-over-public": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "central-planning": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "socialized-markets": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "land-value-tax": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "tax-inheritance": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "basic-income": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "tariffs-protect-industry": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Restricted imports through state controls to shield the domestic economy from foreign competition.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Tariffs were imposed in 1933 and imports sharply cut.",
       "sources": [
-        "s4"
+        "s7"
       ]
     },
     "state-directs-investment": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Directed resources toward military production, and private firms were expected to serve state goals. In power, deficit-funded public works created 1.7 million jobs by the end of 1934.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Four-Year Plan (1936) aimed to ready the economy for war; state created Reichswerke Hermann Göring.",
       "sources": [
-        "s2",
-        "s4"
+        "s7"
       ]
     },
     "widespread-small-property": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "Programme point 16 backed a healthy middle class and small firms, but the regime favoured large firms in practice.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
     },
     "abolish-money-wages": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected Marxism; programme point 10 made work a duty of every citizen and the regime kept money and wages (frozen).",
+      "sources": [
+        "s1",
+        "s10"
+      ]
     },
     "abolish-central-banks": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "Inferred: rearmament was financed by state-controlled instruments such as Mefo bills rather than a market for money.",
+      "sources": [
+        "s7"
+      ]
     },
     "corporatist-bargaining": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mein Kampf proposed trade and professional chambers and a central economic parliament; in power, state Trustees of Labour set wages and unions were replaced.",
+      "sources": [
+        "s2",
+        "s13"
+      ]
     },
     "one-party-rule": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Established a one-party state after 1933 through the Reichstag Fire Decree, the Enabling Act and Gleichschaltung.",
+      "rationale": "July 1933 law made the NSDAP the only legal party.",
       "sources": [
-        "s2"
+        "s13"
       ]
     },
     "monarchy-legitimate": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "democracy-best": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Wanted to destroy the parliamentary system, which he considered corrupt in principle.",
+      "rationale": "Mein Kampf attacks parliamentary democracy and says it should be destroyed; he ruled as dictator.",
       "sources": [
-        "s3"
+        "s2",
+        "s10"
       ]
     },
     "direct-votes": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "workers-councils": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "right-to-secede": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
-    },
-    "natural-rulers": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Held that hierarchy benefits the nation and that supposedly superior people have a right to dominate.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Condemned the 1918 revolution and Marxist institutions and banned independent labour bodies.",
       "sources": [
-        "s2"
+        "s2",
+        "s13"
       ]
     },
-    "political-violence-never": {
+    "right-to-secede": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Opposed separatism (Bavarian secession plans of 1923) and ended the states' sovereignty in 1934.",
+      "sources": [
+        "s2",
+        "s13"
+      ]
+    },
+    "natural-rulers": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
-    "war-builds-character": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Offered followers 'struggle, danger and death' and pursued conquest as a national goal; the source draws the Spenglerian view of war as a higher form of existence.",
+    "political-violence-never": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "SA violence, the 1923 putsch and the 1934 purge in which 85 to over 1,000 were killed.",
       "sources": [
-        "s3",
-        "s2"
+        "s4",
+        "s21"
+      ]
+    },
+    "war-builds-character": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Presented life as struggle ('struggle, danger and death') and glorified war as national test.",
+      "sources": [
+        "s5",
+        "s10"
       ]
     },
     "separate-church-state": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "Signed a Concordat while planning a unified Reich Church and curbing church bodies; no strict separation.",
+      "sources": [
+        "s9"
+      ]
     },
     "laws-from-scripture": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Programme point 19 replaced Roman law with German common law; the regime rejected the Old Testament in its 'Positive Christianity'.",
+      "sources": [
+        "s1",
+        "s9"
+      ]
     },
     "private-courts-defense": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "State monopoly of police, courts and army, strengthened by the Gestapo and party courts.",
+      "sources": [
+        "s13",
+        "s17"
+      ]
     },
     "military-superiority": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Pursued conquest of Eastern Europe as a step toward hegemony.",
+      "confidence": "high",
+      "rationale": "Rearmament, conscription and stated need to prepare for war.",
       "sources": [
-        "s2",
-        "s3"
+        "s15",
+        "s17"
       ]
     },
     "ethnic-nation": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Citizenship was to be restricted to people 'of German blood'; the program excluded Jews from citizenship.",
+      "rationale": "Point 4: only those of German blood may be citizens; Nuremberg laws enacted this.",
       "sources": [
         "s1",
-        "s2"
+        "s3"
       ]
     },
     "class-struggle-history": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Rejected Marxist class conflict, calling communism one of the world's two evils.",
+      "rationale": "Held race struggle, not class conflict, to be the motor of history, and called Marxism a Jewish doctrine.",
       "sources": [
         "s2",
-        "s3"
+        "s10"
       ]
     },
     "equal-outcomes": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Rejected universal equality, holding that hierarchy benefits the nation.",
+      "confidence": "high",
+      "rationale": "Mein Kampf says Marxism repudiates the aristocratic principle of nature; he held inequality and hierarchy beneficial.",
       "sources": [
         "s2"
       ]
@@ -522,31 +701,33 @@
     "indigenous-land-authority": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "colonial-reparations": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "civilizational-union": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "self-interest-moral": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Point 24: the common utility before individual utility.",
+      "sources": [
+        "s1"
+      ]
     },
     "duties-before-rights": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The program states that 'common utility precedes individual utility'; classes were to subordinate their interests to the national community.",
+      "rationale": "Point 10 made work for the community a duty of every citizen; Mein Kampf ties rights of citizenship to service.",
       "sources": [
         "s1",
         "s2"
@@ -555,57 +736,2933 @@
     "nature-intrinsic-value": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "limit-population": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Zweites Buch rejects birth control as weakening the nation.",
+      "sources": [
+        "s14"
+      ]
     },
     "industrial-civilization-disaster": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "accelerate-technology": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "human-enhancement": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "algorithmic-government": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "unbreakable-encryption": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "restore-past-order": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
       "sources": []
     },
     "results-over-ideology": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "direct-action": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "means-match-ends": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-foraging": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-division-of-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "distribute-by-need": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Programme rewarded work, abolished 'unearned income' and rejected equality.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "production-for-use": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "profit-exploitation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected Marxist theory; the regime kept profit but capped dividends at 6 percent.",
+      "sources": [
+        "s7",
+        "s10"
+      ]
+    },
+    "dictatorship-of-proletariat": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Anti-communist throughout; banned the Communist Party and treated communism as a Jewish plot.",
+      "sources": [
+        "s4",
+        "s10"
+      ]
+    },
+    "collective-farming": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: Blood and Soil ideal of peasant farmers and anti-Marxism.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "capitalism-causes-war": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected Marxist explanations; saw war as arising from racial struggle for land.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "taxation-theft": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Treated duties to the national community as paramount; no sign he questioned taxation.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "harm-principle": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State regulated private life widely, e.g. prosecuting homosexuality and coordinating all associations.",
+      "sources": [
+        "s12",
+        "s13"
+      ]
+    },
+    "individual-rights-only": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Placed the community and race above the individual; rights depended on membership of the racial community.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "conscription": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reintroduced conscription in 1935; Mein Kampf makes military service the gateway to citizenship.",
+      "sources": [
+        "s17",
+        "s2"
+      ]
+    },
+    "exit-over-voice": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Zweites Buch treats emigration as a loss of the nation's lifeblood, not as a check on government.",
+      "sources": [
+        "s14"
+      ]
+    },
+    "state-as-business": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf treats citizenship as membership of a racial community with duties, not a customer relation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "positive-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "media-academia-power": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mein Kampf calls the press the chief means of shaping opinion and says it makes and breaks politicians.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "hereditarian-race": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mein Kampf asserts racial differences in creative ability are inborn.",
+      "sources": [
+        "s2",
+        "s5"
+      ]
+    },
+    "organic-representation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Proposed chambers of trades and professions and a central economic parliament; programme had professional chambers.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "total-state": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Gleichschaltung brought media, culture, youth and economy under the state and party.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "national-rebirth": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Presented Germany as needing national renewal after defeat and 'decadence'; promised to restore greatness.",
+      "sources": [
+        "s4",
+        "s10"
+      ]
+    },
+    "territorial-expansion": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Lebensraum in the East and 1937 plan to seize Austria and Czechoslovakia.",
+      "sources": [
+        "s2",
+        "s15"
+      ]
+    },
+    "personal-loyalty-rule": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Servicemen swore an oath to Hitler personally.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "bound-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-neutral-knowledge": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "universal-morality": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: Mein Kampf rejects humanitarian ethics and bases morality on race and struggle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "single-common-good": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Common good before individual good (point 24) and national community; set by the leader, not by reasoning among interests.",
+      "sources": [
+        "s1",
+        "s10"
+      ]
+    },
+    "jewish-state-israel": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf says Zionists only pretend to want a Jewish state in Palestine, and denies Jews a national character.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "diaspora-return-right": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "revive-national-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workplace-democracy": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: leader principle and abolition of unions rule out worker voice in firms.",
+      "sources": [
+        "s2",
+        "s13"
+      ]
+    },
+    "school-vouchers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "avoid-deficit-stimulus": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rearmament and public works were financed largely by deficit spending and Mefo bills.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "economic-freedom": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rule-by-example": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-self-determination": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Point 1 invoked self-determination for Germans, but he denied it to Czechs, Poles and others.",
+      "sources": [
+        "s1",
+        "s17"
+      ]
+    },
+    "force-without-un": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Left the League; invaded Poland and the USSR without international approval.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "reason-over-faith": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf ranks character, will and body above learning and science in education.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "welfare-for-citizens": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 7 and 5 reserve livelihood for citizens; welfare bodies served only members of the race.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
+    },
+    "work-for-welfare": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Point 10: all citizens owe work; labour service made compulsory for young women and men.",
+      "sources": [
+        "s1",
+        "s8"
+      ]
+    },
+    "class-collaboration": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mein Kampf says the National Socialist state would end the mass struggle between employers and employees; ideal of Volksgemeinschaft.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "sacrifice-heritage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dominated-front": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-nation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Wanted workers organised within the national community, not as an international class.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "distinct-gender-roles": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Women excluded from parliaments and office, quotas in universities, and 1935 statement on women's role.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "ban-interest": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-segregation-law": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Nuremberg Laws classified people by race, banned marriage and relations between them, and made Jews non-citizens.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "state-class-instrument": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Held the state is a means to preserve the race, not a ruling-class tool; rejected Marxist theory.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "expand-fossil-fuels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "assimilate-immigrants": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Zweites Buch rejects Germanising conquered Czechs and Poles as racial weakening; programme expels non-citizens.",
+      "sources": [
+        "s14",
+        "s1"
+      ]
+    },
+    "elite-replacement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "proportional-representation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-mission": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriarchy-structural": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-elite-corrupt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "heritable-defect-limits": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "1933 sterilization law; Mein Kampf recommends sterilising the physically and mentally diseased.",
+      "sources": [
+        "s11",
+        "s2"
+      ]
+    },
+    "security-forces-accountable": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Retroactive 1934 law made the purge killings legal and he called himself the supreme judge.",
+      "sources": [
+        "s21"
+      ]
+    },
+    "night-watchman-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Directed the economy, culture and youth through the state.",
+      "sources": [
+        "s13",
+        "s7"
+      ]
+    },
+    "discourage-race-mixing": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Nuremberg Laws banned marriage and relations between Jews and Germans.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "equal-moral-worth": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Race laws and genocide; held races unequal in worth.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "socialism-one-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "settler-state-colonial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "uniform-civil-code": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Different legal status for Jews and 'German blood' citizens.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "restrict-conversion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-cattle-slaughter": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-religion-state-schools": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-strengthens-encirclement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "consent-of-governed": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf rejects majority rule; leader accountable only to himself; Enabling Act gave dictatorial power.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "trade-surplus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "population-transfer": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 8 demanded departure of non-Germans; regime pressured emigration then deported Jews.",
+      "sources": [
+        "s1",
+        "s20"
+      ]
+    },
+    "initiating-force-wrong": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Initiated wars of conquest in 1939 and 1941.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "competition-drives-progress": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Social Darwinist view that struggle between peoples is the basis of life and progress.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "ban-extremist-parties": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Banned the SPD and Communist Party and then all other parties.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "freedom-as-non-domination": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "separated-powers": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Enabling Act concentrated legislative power in his cabinet and effectively in himself.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "vanguard-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "priority-to-poor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "right-to-buy-council-homes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-strikes-picketing": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Strikes and lockouts outlawed; unions abolished.",
+      "sources": [
+        "s7",
+        "s13"
+      ]
+    },
+    "population-causes-poverty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "diversity-weakens-cohesion": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Held racial mixing destroys a nation and wanted a homogeneous racial state.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "offices-by-lottery": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Held that leadership belongs to the capable few appointed from above.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "emergency-suspend-protections": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reichstag Fire Decree suspended speech, assembly and due-process protections.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "price-controls-essentials": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Price controls were introduced and enforced with penalties.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "party-controls-media": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Goebbels's ministry took control of press, film and radio.",
+      "sources": [
+        "s13",
+        "s17"
+      ]
+    },
+    "party-commands-army": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "long-naturalization-wait": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Mein Kampf makes full citizenship a status earned after school and service; programme treats non-Germans as guests.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "representatives-worker-pay": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "party-discipline-binding": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf: the leader's decisions bind the party's committees and members.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "pool-sovereignty": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Left the League of Nations; sought German dominance, not shared sovereignty.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "head-commands-forces": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "After 1934 he combined presidency and chancellorship and held supreme command with the oath to himself.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "church-by-bishops": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "clerical-rule": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Said politics should not meddle in religion; regime curbed churches under state authority.",
+      "sources": [
+        "s2",
+        "s9"
+      ]
+    },
+    "defeat-own-government-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf condemns pacifists and Marxists who undermined Germany in the First World War.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "censor-art-for-virtue": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 23 demanded prosecution of harmful art; Degenerate Art show and book burnings.",
+      "sources": [
+        "s1",
+        "s18"
+      ]
+    },
+    "unlimited-reelection": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Became Führer without term limit.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "recall-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "end-foreign-alliances": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Signed the Anti-Comintern, Tripartite and other pacts.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "abolish-rental-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "people-in-arms": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Point 22 sought a national army instead of mercenary troops; regime kept a standing professional army alongside conscription.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rural-life-healthier": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Völkisch Blood and Soil ideal praised rural life and condemned urban industrial society.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "reunify-divided-nation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Anschluss with Austria and demand for Greater Germany.",
+      "sources": [
+        "s17",
+        "s1"
+      ]
+    },
+    "educated-out-of-touch": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mein Kampf ranks the scholarly weakling below the physically and morally strong in the nation's worth.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "cultures-equal-different": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ranked races and cultures, with Aryans as creators of culture.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "death-penalty": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 18 demanded death for common criminals, usurers and profiteers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "sex-ed-in-schools": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected equal rights for women; no gender-equality teaching in his schools.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "creationism-in-schools": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-pornography": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Point 23 called for prosecution of harmful literature; Mein Kampf attacks the pornographic press.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "citizenship-by-descent": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 4 and the Reich Citizenship Law based citizenship on blood.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
+    },
+    "minority-language-support": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-exemptions": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Jehovah's Witnesses were banned and about 11,300 sent to camps.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "encourage-eccentricity": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Gleichschaltung brought nearly all associations into line.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "sovereign-debt-cancellation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "independence-needs-economic-change": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constituent-assembly": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Changed the constitution through the Enabling Act, not an elected assembly.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "restrict-freedoms-for-growth": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Enabling Act presented as a law to remedy distress, suspending freedoms.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "rich-countries-aid-poor": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: nation-first stance and derision of humanitarianism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "independent-nuclear-deterrent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "direct-election-head-of-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "central-bank-independence": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: state financing of rearmament via Mefo bills.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "no-land-for-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-serves-common-good": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 24: common utility before individual utility; point 17 allows expropriation for public benefit.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "soviet-state-capitalist": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "precautionary-principle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "collective-defense": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "annexed-territory-occupation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Annexed Austria, Sudetenland and Czech lands and treated them as German.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "subordinate-church-to-state": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Seized monasteries, curbed church press and plans for a unified Reich Church.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "nonpartisan-head-of-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Held the head of state and party leadership together.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "force-to-prevent-secession": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf opposes Bavarian separatism.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "region-keeps-system": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Ended states' autonomy and unified law and administration.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "sacred-ruler": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Goebbels recorded Hitler rejecting the idea of founding a religion and seeing himself only as politician.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "flat-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "character-from-environment": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf makes inborn racial stock the basis of character.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "sovereign-above-law": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Enabling Act and his 1934 claim to be supreme judge placed him above law.",
+      "sources": [
+        "s6",
+        "s21"
+      ]
+    },
+    "space-expansion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mixed-constitution": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected mixed rule; single leader above all.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "leader-cult": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Führer title and mass leader worship.",
+      "sources": [
+        "s17",
+        "s4"
+      ]
+    },
+    "equal-parenting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "class-struggle-under-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "land-redistribution": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refugee-return": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "co-ethnic-territorial-claim": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Used German populations in Austria and the Sudetenland to justify annexation.",
+      "sources": [
+        "s1",
+        "s17"
+      ]
+    },
+    "apostasy-punishable": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-must-cover": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "common-currency": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "kin-peoples-union": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Greater Germany for Germans; Zweites Buch looked to Britain as a Germanic partner.",
+      "sources": [
+        "s1",
+        "s14"
+      ]
+    },
+    "national-cultural-autonomy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "rights-where-you-live": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "material-conditions-drive-history": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf says race and will, not material conditions, drive history.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "ban-cartels": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "1933 law enabled the state to compel cartels.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "no-bailouts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "courts-bound-by-majority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gender-parity-bodies": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Women barred from Reichstag, regional parliaments and councils after 1933.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "economic-self-sufficiency": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Autarky policy and Hossbach statement.",
+      "sources": [
+        "s7",
+        "s15"
+      ]
+    },
+    "trade-labor-env-standards": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "moral-incentives": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-group-creates-revolution": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-hereditary-privilege": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "history-own-civilization": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Point 20 demanded civics teaching for the nation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilizing-tutelage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriotic-education": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Hitler Youth and point 20 civics aimed at national loyalty.",
+      "sources": [
+        "s16",
+        "s1"
+      ]
+    },
+    "end-racial-preferences": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Civil service law removed Jews; positions reserved for 'Aryans'.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "public-money-creation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capitalism-adapts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-influence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "delink-world-market": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labor-aristocracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-to-discriminate": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "entrenched-bill-of-rights": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Reichstag Fire Decree and Enabling Act removed constitutional rights.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "colonial-treaties-void": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "elective-rulers": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Leader principle; Führer title.",
+      "sources": [
+        "s2",
+        "s17"
+      ]
+    },
+    "minority-veto": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Leader's decision is final; no committee votes.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "resist-lawless-ruler": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Killed those who opposed or challenged him in 1934.",
+      "sources": [
+        "s21"
+      ]
+    },
+    "parliament-supreme": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Reichstag reduced to rubber stamp.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
+    },
+    "animal-suffering-matters": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "1933 Animal Protection Act protected animals 'for itself'; Goebbels records Hitler as vegetarian.",
+      "sources": [
+        "s19"
+      ]
+    },
+    "animal-use-humane": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Vivisection ban was loosened by permits; regime regulated cruelty.",
+      "sources": [
+        "s19"
+      ]
+    },
+    "noblesse-oblige": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Winter Relief and party welfare, though limited to racial grounds.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "withdraw-from-politics": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf urges participation in politics as duty; regime coordinated all associations.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "mass-culture-pacifies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ruling-class-consent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "world-economy-extracts-surplus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "native-born-offices": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 6 reserves public office to citizens; point 4 excludes Jews.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "party-own-road": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "self-reliance-over-aid": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-lost-territory": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 2 and repudiation of Versailles; Rhineland and Danzig demands.",
+      "sources": [
+        "s1",
+        "s17"
+      ]
+    },
+    "indigenous-political-leadership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "antifascism-founding-value": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Founded and led the Nazi regime.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "totalitarianisms-equivalent": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Presented communism as Jewish and the arch-enemy while building his own totalitarian state.",
+      "sources": [
+        "s4",
+        "s10"
+      ]
+    },
+    "slavery-not-civil-war-cause": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "preserve-contested-monuments": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "male-disadvantage-attention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "domestic-violence-symmetry": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "institutions-fit-civilization": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-guardian-role": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "paid-care-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "filial-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "office-by-exam": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-takeover-block": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-fault-divorce": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recallable-delegates": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Mein Kampf: committees responsible to the leader, not he to them.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "individual-pension-accounts": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "land-use-tenure": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "budget-needs-parliament": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Enabling Act let the government draw up the budget without Reichstag input.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "single-official-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-land-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "disparate-impact-discrimination": {
+      "value": -2,
+      "confidence": "low",
+      "rationale": "Inferred: racial-hierarchy beliefs.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "consumerism-harmful": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Point 24 opposed the 'Jewish-materialistic spirit'.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "arm-foreign-insurgents": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "intervene-in-bloc": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "corporate-influence": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-foreign-funding": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Point 23 barred non-Germans from financial influence over German publications.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "pronatalist-incentives": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Cross of Honour of the German Mother, Mother's Day.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "residents-only-property": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "job-guarantee": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Point 7: state must first provide livelihood for citizens; public works programmes.",
+      "sources": [
+        "s1",
+        "s7"
+      ]
+    },
+    "democratic-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-duty-to-obey": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Demanded obedience to the leader and oath of loyalty.",
+      "sources": [
+        "s2",
+        "s17"
+      ]
+    },
+    "non-intervention": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Intervened in Austria, Czechoslovakia, Poland and elsewhere.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "industrial-unions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-conspiracy": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Mein Kampf claims a Jewish conspiracy for world domination.",
+      "sources": [
+        "s2",
+        "s4"
+      ]
+    },
+    "abolish-legal-marriage": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Used marriage law to enforce race regulation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "public-access-to-information": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Press and information controlled; civil liberties suspended.",
+      "sources": [
+        "s6",
+        "s13"
+      ]
+    },
+    "local-production": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "informal-organisation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf demands a disciplined centrally led party.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "national-law-over-international": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Left League and broke treaties.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "religious-nation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Point 4: citizenship by blood 'regardless of creed'.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "deference-to-leading-power": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-revenue-retention": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "personal-possessions-private": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defeat-communism": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Banned the KPD and invaded USSR as 'Judeo-Bolshevik' regime.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "mixed-public-service-providers": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-illusion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "capitalism-progressive": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-equality-needs-economic-change": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected equal rights for women as a deprivation.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "socialized-care": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "purge-loanwords": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "treaties-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "cooperative-communities": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "majority-settlement": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Colonisation of Eastern Europe by Germans.",
+      "sources": [
+        "s4",
+        "s10"
+      ]
+    },
+    "neither-capitalism-nor-communism": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Nazism presented as nationalist alternative to both.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "historical-land-claim": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Greater Germany restoring historical German lands; called eastern land a historic destiny.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "holocaust-denial": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He inspired, ordered and approved the genocide.",
+      "sources": [
+        "s20"
+      ]
+    },
+    "criminalize-homosexuality": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "1935 Paragraph 175 revision.",
+      "sources": [
+        "s12"
+      ]
+    },
+    "suppress-opposition": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reichstag Fire Decree, bans of parties and unions, camps.",
+      "sources": [
+        "s6",
+        "s13"
+      ]
+    },
+    "punish-blasphemy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonies-serve-metropole": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Point 3 demanded land and colonies to feed Germany.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "defensive-jihad-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unreligious-rulers-fought": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "participatory-democracy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "No participation outside controlled plebiscites.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "intersecting-oppressions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gender-identity-recognition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "assisted-dying": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "left-right-obsolete": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Presented synthesis of nationalism and socialism.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "alienated-labor": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "islam-incompatible": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divine-source-of-authority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-dress-in-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-nda-harassment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "social-market-economy": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State-directed economy, not market plus social protection.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "abolish-armed-forces": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Built up the Wehrmacht.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "rich-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "stay-neutral-between-blocs": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Joined Axis and Tripartite Pact.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "dynastic-succession": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "interest-free-mutual-credit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-lender-austerity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-franchise": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Citizenship by race and service, not property.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "domination-women-nature": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reification": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "press-owned-by-wealth": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Mein Kampf says the press is driven by Jewish capital.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "promulgated-standing-laws": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ruled through decrees and extrajudicial killings.",
+      "sources": [
+        "s6",
+        "s21"
+      ]
+    },
+    "racial-franchise": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Only Reich citizens of German blood held political rights.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "online-participation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-government-data": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Control of information by the propaganda ministry.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "interfaith-marriage-restriction": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "boycott-minority-shops": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Regime organised boycotts against Jewish businesses.",
+      "sources": [
+        "s20"
+      ]
+    },
+    "citizens-assembly": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reinterpret-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wealth-concentration-endangers-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "open-lgbt-military-service": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "1941 decree allowed death penalty for SS and police homosexual acts.",
+      "sources": [
+        "s12"
+      ]
+    },
+    "state-promotes-atheism": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "In 1928 he said the movement tolerates no attacks on Christianity.",
+      "sources": [
+        "s9"
+      ]
+    },
+    "abolish-police-prisons": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Built Gestapo and camps.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "power-sharing-divided-societies": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "charity-over-state-aid": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "term-limits": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Enabling Act extended; no limits.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "vote-delegation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "existential-risk-priority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-in-religious-leadership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shared-marital-authority": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "foreign-residents-local-vote": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Point 6: only citizens may decide on administration and law.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "rent-control": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Rent controls introduced.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "abolish-ip": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "uniformed-youth": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Compulsory Hitler Youth.",
+      "sources": [
+        "s16"
+      ]
+    },
+    "no-nuclear-weapons-on-territory": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-foreign-bases": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "recognise-genocide": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "income-for-work-not-ownership": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 11: abolition of unearned income.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "never-kill-self-defence": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mein Kampf mocks pacifism and holds struggle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "unbroken-national-continuity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sex-socially-constructed": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-fixed-category-of-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "martyrs-honoured": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "politics-spiritual-struggle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "homeland-cultural-centre": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "culture-before-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "god-not-male": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "scripture-judged-by-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "economy-in-majority-hands": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 23 bars non-Germans from financial control; Jews excluded from economy.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "single-unit-for-people": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Point 1: Greater Germany.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "independent-unions": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Independent unions were occupied and abolished in May 1933 and replaced by the state-run Labour Front.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "socialism-needs-workers-power": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-essentials-public": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "second-chamber": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-property": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "confederal-coordination": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State governments were subordinated to Berlin and the Reichsstatthalter system imposed central control.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "family-wage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ageing-research-funding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "anonymous-payments": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "online-anonymity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "person-over-state": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Point 24 and Mein Kampf subordinate the person.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "spiritual-nature": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-powers-revocable": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Reconstruction of the Reich Law 1934.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "gm-crops": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "dense-cities": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-group-interests": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Race as the basis of political struggle.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "racial-pride": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Master race ideology.",
+      "sources": [
+        "s2",
+        "s10"
+      ]
+    },
+    "defensive-wars-only": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Started wars of conquest in 1939 and 1941; Mein Kampf and the Hossbach memorandum plan expansion by force.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "language-defines-nation": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Wanted all Germans in one state; but defined nation by race rather than language alone.",
+      "sources": [
+        "s2",
+        "s1"
+      ]
+    },
+    "communal-electorates": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Rejected separate representation.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "foreign-partition-plot": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-public-college": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pollution-taxes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "future-generations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-distinct-values": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arms-reduction": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Began secret rearmament in 1933 and left the disarmament conference, ignoring Versailles limits.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "open-diplomacy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The 1939 pact with the USSR contained secret terms dividing Poland and the Baltic states.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "capital-controls": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Foreign-exchange restrictions.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "state-arms-monopoly": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "soldiers-refuse-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Servicemen swore personal loyalty to him and the regime treated refusal of orders as treason; he rejected the idea.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "collective-bargaining": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Collective bargaining abolished.",
+      "sources": [
+        "s7",
+        "s13"
+      ]
+    },
+    "in-work-tax-credits": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "fiscal-rules-binding": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Financed rearmament and public works by deficit spending and off-budget Mefo bills rather than legal borrowing limits.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "restructure-world-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "smash-state-machine": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Took power through the existing state and the Enabling Act.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "free-economic-experiment": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "State planned the economy.",
+      "sources": [
+        "s7"
+      ]
+    },
+    "nature-as-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "sacred-nation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "student-debt-relief": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "internal-colonialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shared-human-nature": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Race and eugenics thought.",
+      "sources": [
+        "s11"
+      ]
+    },
+    "public-service-media": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "State-controlled media.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "religions-one-truth": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "farm-price-support": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-nuclear-weapons": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-own-party": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Banned the SPD and unions.",
+      "sources": [
+        "s13"
+      ]
+    },
+    "women-property-inheritance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-language-many-names": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pollution-tort-liability": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "customary-chiefs-lawmaking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "environment-over-liberty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-sentences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigrants-learn-language": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-compulsory-union": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "voter-id": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-equal-recognition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-is-procedure": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Replaced elections by dictatorship.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "premarital-sex": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "internet-shutdowns": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "negative-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-suffrage": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Women excluded from candidacy and office.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "religion-oppresses-women": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-social-construct": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Held race as biological.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "gender-equality-agencies": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejected women's equality.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "homestead-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "international-criminal-courts": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Claimed to be supreme judge.",
+      "sources": [
+        "s21"
+      ]
+    },
+    "scripture-inerrant": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "gendered-self-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "defend-planned-state": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indirect-election": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-church-status": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "minority-territorial-autonomy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "disputed-territory-plebiscite": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-colonial-borders": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "simple-living": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-indigenous-settlement": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "equal-conscription": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "homeland-spiritual-bond": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "extrajudicial-killing": {"value": null, "rationale": "The statement concerns killing suspected drug users and dealers without trial; his record of extrajudicial killing (1934) was political, so no position on this statement is recorded."},
+    "close-ties-china": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "protect-kin-minorities": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Sudeten Germans, Danzig.",
+      "sources": [
+        "s17"
+      ]
+    },
+    "resources-common-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "self-ownership": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Person subordinate to state.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "cut-consumption-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "targeted-social-spending": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "bypass-parties-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-business-privileges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-denominational-politics": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mein Kampf: political party should not meddle in religion.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "tech-with-ancestral-values": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wife-divorce-without-consent": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "national-resource-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "distribution-by-process": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "financial-transactions-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racism-not-main-obstacle": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unjust-law-not-binding": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automate-paid-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "multipolar-world": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-theory-of-value": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "patriotism-serves-workers": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Trade union chapter binds workers to nation.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "material-over-identity": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "market-under-party-rule": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
       "sources": []
     }
   },
-  "notes": "Positions are recorded from the party program, his writings and his record in power, following the project's neutral, Wikipedia-style standard. The program's economic points (nationalization) were largely not implemented; the record in power is used where they diverge."
+  "notes": "Answers draw on Mein Kampf, the 25-point programme and the regime's laws and acts. Where the programme and the record differ (point 13 nationalisation versus privatisation; Mein Kampf's praise of unions versus their abolition in 1933; point 17 land reform), the record in power is used, at lower confidence where the two conflict. Historical-figure inferences are marked 'Inferred:' and kept at low confidence. The 1941 decree on homosexuality and Hitler's role in the Holocaust are as described by USHMM and Wikipedia; Hitler did not leave a written order for the genocide."
 }
