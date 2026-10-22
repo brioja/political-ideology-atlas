@@ -61,6 +61,12 @@ be `low` confidence with a rationale that begins "Inferred:" and says what it is
 Inferred answers count toward matching but not toward salience, so nobody is included on the
 strength of inferences.
 
+Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
+both ways), never null. A person's best-known positions and controversies (what their record is
+famous or criticised for, e.g. a policy of segregation, a military intervention, a signature law)
+must be answered whenever the record exists; check them before finishing. For a living person,
+"suggests" or "seems to" is not evidence: answer only from what they said or did.
+
 Confidence:
 - `high`: stated directly by the person or shown by their record.
 - `medium`: clearly implied by things they said or did.
