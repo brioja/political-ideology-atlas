@@ -297,7 +297,7 @@ function setHeaderAction(mode) {
   }
 }
 
-const PAGES = ["home", "test", "results", "ideologies", "ideology", "people", "person", "about"];
+const PAGES = ["home", "test", "results", "ideologies", "ideology", "people", "person", "compare", "about"];
 const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", about: "About" };
 const NAV_FOR = { ideology: "ideologies", person: "people" };
 
@@ -1414,11 +1414,12 @@ function personHref(id) { return `#/people/${encodeURIComponent(id)}`; }
 // Profiles can cover more statements than the site's current model; use only the shared ones.
 const onModel = (profile) => profile.slice(0, QUESTIONS.length);
 
-// Where `scores` sits on each shown dividing line, with every ideology as a faint marker.
-function lineStrips(scores, { selfId = null } = {}) {
+// Where `scores` sits on each shown dividing line, with every ideology as a faint marker. `other`
+// (a second set of scores) adds a filled marker, for comparing two sides.
+function lineStrips(scores, { selfId = null, other = null } = {}) {
   return Array.from({ length: SHOWN_LINES }, (_, i) => {
     const L = lineInfo(i);
-    const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i]);
+    const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i], other ? other[i] : []);
     const scale = lineScale(vals);
     const pos = (v) => 6 + scale(v) * 588;
     return `<div class="axis">
@@ -1426,7 +1427,8 @@ function lineStrips(scores, { selfId = null } = {}) {
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}
-        <circle cx="${pos(scores[i])}" cy="17" r="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"></circle>
+        ${other ? `<circle cx="${pos(other[i])}" cy="17" r="7" fill="var(--accent)"></circle>` : ""}
+        <circle cx="${pos(scores[i])}" cy="17" r="8" fill="none" stroke="var(--ink)" stroke-width="3"></circle>
       </svg>
     </div>`;
   }).join("");
@@ -1533,6 +1535,7 @@ function renderIdeologyPage(id) {
       <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id })}</section>
       <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
       ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}
+      ${comparePicker(`i:${ideo.id}`)}
       <section class="stack"><h2>Key positions</h2>
         ${ideo.audited ? "" : `<p class="muted small">This is a preliminary profile, so reasoning and sources aren't available yet.</p>`}
         ${positionsList(ideo.profile, audit, ideo.audited ? `${REPO}/blob/main/audits/profiles/${ideo.id}.json` : null)}</section>
@@ -1572,6 +1575,7 @@ function renderPersonPage(id) {
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
       <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
+      ${comparePicker(`p:${p.id}`)}
       <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`)}</section>
       ${sourcesList(audit)}`;
   };
@@ -1582,6 +1586,81 @@ function renderPersonPage(id) {
 }
 
 // ---------- Menu and routing ----------
+
+// Compare any two of: an ideology (i:<id>), a person or AI model (p:<id>) and your own answers (me),
+// at #/compare/<a>/<b>. Display only: nothing here feeds back into the ideologies.
+function myAnswers() {
+  if (lastAnswers) return lastAnswers;
+  const saved = load();
+  return saved && saved.answers.some((a) => a != null) ? saved.answers.map((a) => a ?? null) : null;
+}
+function compareSide(key) {
+  if (key === "me") {
+    const profile = myAnswers();
+    return profile && { key, name: "You", profile, href: "#/results" };
+  }
+  const [kind, id] = [key.slice(0, 2), key.slice(2)];
+  if (kind === "i:") {
+    const i = model.ideologies.find((x) => x.id === id);
+    return i && { key, name: i.name, profile: i.profile, href: ideologyHref(id) };
+  }
+  if (kind === "p:") {
+    const p = PEOPLE_LIST.find((x) => x.id === id);
+    return p && { key, name: p.name, profile: onModel(p.profile), href: personHref(id) };
+  }
+  return null;
+}
+const compareHref = (a, b) => `#/compare/${encodeURIComponent(a)}/${encodeURIComponent(b)}`;
+
+// Every ideology, person and AI model as a picker option: the label is what the visitor types.
+const compareOptions = () => [
+  ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name })),
+  ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: `${p.name} (${p.kind === "model" ? "AI model" : "person"})` })),
+];
+function comparePicker(selfKey) {
+  const mine = myAnswers() ? `<a class="btn" href="${compareHref("me", selfKey)}">Compare with your answers</a>` : "";
+  return `<section class="stack"><h2>Compare</h2>
+    ${mine}
+    <label class="visually-hidden" for="compare-pick">Compare with another ideology, person or AI model</label>
+    <input id="compare-pick" class="search" list="compare-options" data-self="${esc(selfKey)}" placeholder="Compare with another ideology, person or AI model" autocomplete="off">
+  </section>`;
+}
+$("compare-options").innerHTML = compareOptions().map((o) => `<option value="${esc(o.label)}"></option>`).join("");
+document.addEventListener("change", (e) => {
+  if (e.target.id !== "compare-pick") return;
+  const pick = compareOptions().find((o) => o.label === e.target.value.trim());
+  if (pick) go(compareHref(e.target.dataset.self, pick.key));
+});
+
+function renderComparePage(aKey, bKey) {
+  const a = compareSide(aKey), b = compareSide(bKey);
+  const root = $("compare-detail");
+  if (!a || !b) {
+    root.innerHTML = `<h1>Compare</h1><p>${aKey === "me" || bKey === "me"
+      ? `Take the test first to compare your own answers. <a href="#/test">Start the test</a>`
+      : "One of these isn't in the atlas any more."}</p>`;
+    return "Compare";
+  }
+  const both = QUESTIONS.map((_, j) => j).filter((j) => a.profile[j] != null && b.profile[j] != null);
+  const similarity = (matchPeople(model, a.profile, [{ ...b, views12m: 0 }], { minOverlap: 1 })[0] || {}).similarity;
+  const differ = both.filter((j) => Math.abs(a.profile[j] - b.profile[j]) >= 2)
+    .sort((x, y) => Math.abs(a.profile[y] - b.profile[y]) - Math.abs(a.profile[x] - b.profile[x]) || x - y).slice(0, 10);
+  const shared = both.filter((j) => a.profile[j] !== 0 && a.profile[j] === b.profile[j])
+    .sort((x, y) => Math.abs(b.profile[y]) - Math.abs(b.profile[x]) || x - y).slice(0, 8);
+  const link = (s) => `<a href="${s.href}">${esc(s.name)}</a>`;
+  root.innerHTML = `
+    <h1>${esc(a.name)} and ${esc(b.name)}</h1>
+    ${similarity != null ? `<p class="lede">They match <strong>${pct(similarity)}</strong>, on the ${both.length} statements where both have a position.</p>` : ""}
+    <section class="stack"><h2>Where they sit</h2>
+      <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
+      ${lineStrips(project(model, a.profile), { other: project(model, b.profile) })}</section>
+    <section class="stack"><h2>Where they differ most</h2>
+      <ul class="iconed">${differ.map((j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name)).join("") || "<li class='muted'>No statement where they're more than a step apart.</li>"}</ul></section>
+    <section class="stack"><h2>What they share</h2>
+      <ul class="iconed">${shared.map((j) => `<li>${topicIcon(QUESTIONS[j])}<span>${esc(stance(QUESTIONS[j], a.profile[j]).text)}</span></li>`).join("") || "<li class='muted'>No position they hold the same way.</li>"}</ul></section>
+    <p class="muted small"><a href="${compareHref(b.key, a.key)}">Swap sides</a></p>`;
+  return `${a.name} and ${b.name}`;
+}
 
 function closeMenu() {
   $("nav-links").classList.remove("open");
@@ -1597,10 +1676,11 @@ document.addEventListener("keydown", (e) => {
   for (const svg of document.querySelectorAll("svg.chart")) if (svg.unpick) svg.unpick();
 });
 
-// Routes: #/ (home), #/how, #/test[/<statement id>], #/results, #/ideologies[/<id>], #/about.
+// Routes: #/ (home), #/how, #/test[/<statement id>], #/results, #/ideologies[/<id>], #/people[/<id>],
+// #/compare/<a>/<b>, #/about.
 // A shared result (?r=…) opens on the results page.
 function route() {
-  const [page = "", arg] = location.hash.replace(/^#\/?/, "").split("/");
+  const [page = "", arg, arg2] = location.hash.replace(/^#\/?/, "").split("/");
   const shared = decodeAnswers(new URLSearchParams(location.search).get("r"));
   $("resume").hidden = !load();
 
@@ -1626,6 +1706,8 @@ function route() {
     if (name) show("person", { title: name }); else go("#/people");
   } else if (page === "people") {
     show("people");
+  } else if (page === "compare" && arg && arg2) {
+    show("compare", { title: renderComparePage(decodeURIComponent(arg), decodeURIComponent(arg2)) });
   } else if (page === "about") {
     show("about");
   } else if (page === "how") {
