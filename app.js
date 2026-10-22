@@ -298,7 +298,7 @@ function setHeaderAction(mode) {
 }
 
 const PAGES = ["home", "test", "results", "ideologies", "ideology", "people", "person", "compare", "about"];
-const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", about: "About" };
+const PAGE_TITLES = { home: "", test: "Test", results: "Results", ideologies: "Ideologies", people: "People", compare: "Compare", about: "About" };
 const NAV_FOR = { ideology: "ideologies", person: "people" };
 
 function show(page, { scroll = true, title = null } = {}) {
@@ -1614,6 +1614,7 @@ const compareHref = (a, b) => `#/compare/${encodeURIComponent(a)}/${encodeURICom
 
 // Every ideology, person and AI model as a picker option: the label is what the visitor types.
 const compareOptions = () => [
+  ...(myAnswers() ? [{ key: "me", label: "You (your answers)" }] : []),
   ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name })),
   ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: `${p.name} (${p.kind === "model" ? "AI model" : "person"})` })),
 ];
@@ -1626,11 +1627,56 @@ function comparePicker(selfKey) {
   </section>`;
 }
 $("compare-options").innerHTML = compareOptions().map((o) => `<option value="${esc(o.label)}"></option>`).join("");
+// The Compare tab's two boxes: once both name something, show that pair.
+function comparePickers(aKey = "", bKey = "") {
+  const label = (key) => (compareOptions().find((o) => o.key === key) || {}).label || "";
+  const box = (id, key, text) => `<label class="visually-hidden" for="${id}">${text}</label>
+    <input id="${id}" class="search" list="compare-options" value="${esc(label(key))}" placeholder="${text}" autocomplete="off">`;
+  return `<div class="compare-pickers">${box("compare-a", aKey, "An ideology, person, AI model or you")}
+    <span class="muted" aria-hidden="true">and</span>${box("compare-b", bKey, "Another one to compare with")}</div>`;
+}
 document.addEventListener("change", (e) => {
-  if (e.target.id !== "compare-pick") return;
-  const pick = compareOptions().find((o) => o.label === e.target.value.trim());
-  if (pick) go(compareHref(e.target.dataset.self, pick.key));
+  const find = (input) => input && compareOptions().find((o) => o.label === input.value.trim());
+  if (e.target.id === "compare-pick") {
+    const pick = find(e.target);
+    if (pick) go(compareHref(e.target.dataset.self, pick.key));
+  } else if (e.target.id === "compare-a" || e.target.id === "compare-b") {
+    const a = find($("compare-a")), b = find($("compare-b"));
+    if (a && b && a.key !== b.key) go(compareHref(a.key, b.key));
+  }
 });
+
+// The Compare tab without a pair yet: the two boxes, and a few pairs taken from the data.
+function renderCompareHome() {
+  const mine = myAnswers();
+  const examples = [];
+  if (mine) {
+    const [first, second] = match(model, mine).ranked;
+    examples.push(["me", `i:${first.id}`], [`i:${first.id}`, `i:${second.id}`]);
+  }
+  const lead = model.ideologies[0];
+  examples.push([`i:${lead.id}`, `i:${match(model, lead.profile).ranked.find((r) => r.id !== lead.id).id}`]);
+  const models = PEOPLE_LIST.filter((p) => p.kind === "model");
+  if (models.length >= 2) {
+    // The two AI models that disagree most, by average gap on the statements both answer.
+    let far = null;
+    for (const x of models) for (const y of models) {
+      if (x.id >= y.id) continue;
+      const idx = QUESTIONS.map((_, j) => j).filter((j) => x.profile[j] != null && y.profile[j] != null);
+      const gap = idx.reduce((t, j) => t + Math.abs(x.profile[j] - y.profile[j]), 0) / idx.length;
+      if (!far || gap > far.gap) far = { gap, pair: [`p:${x.id}`, `p:${y.id}`] };
+    }
+    examples.push(far.pair);
+  }
+  const name = (key) => compareSide(key).name;
+  $("compare-detail").innerHTML = `
+    <h1>Compare</h1>
+    <p class="lede">Pick any two: ideologies, people, AI models or your own answers.</p>
+    ${comparePickers(mine ? "me" : "")}
+    <section class="stack"><h2>Try</h2><ul class="matches">${examples.map(([a, b]) => `<li><a class="row-link" href="${compareHref(a, b)}">
+      <span class="match-name">${esc(name(a))} and ${esc(name(b))}</span><span></span><span class="arrow" aria-hidden="true">→</span></a></li>`).join("")}</ul></section>`;
+  return "Compare";
+}
 
 function renderComparePage(aKey, bKey) {
   const a = compareSide(aKey), b = compareSide(bKey);
@@ -1649,6 +1695,7 @@ function renderComparePage(aKey, bKey) {
     .sort((x, y) => Math.abs(b.profile[y]) - Math.abs(b.profile[x]) || x - y).slice(0, 8);
   const link = (s) => `<a href="${s.href}">${esc(s.name)}</a>`;
   root.innerHTML = `
+    ${comparePickers(aKey, bKey)}
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>
     ${similarity != null ? `<p class="lede">They match <strong>${pct(similarity)}</strong>, on the ${both.length} statements where both have a position.</p>` : ""}
     <section class="stack"><h2>Where they sit</h2>
@@ -1708,6 +1755,8 @@ function route() {
     show("people");
   } else if (page === "compare" && arg && arg2) {
     show("compare", { title: renderComparePage(decodeURIComponent(arg), decodeURIComponent(arg2)) });
+  } else if (page === "compare") {
+    show("compare", { title: renderCompareHome() });
   } else if (page === "about") {
     show("about");
   } else if (page === "how") {

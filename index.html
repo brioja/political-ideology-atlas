@@ -450,6 +450,8 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 /* Explore */
 .explore { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); gap: 1rem; }
 .explore h3 { display: flex; gap: 0.5rem; align-items: baseline; }
+.compare-pickers { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.6rem; align-items: center; }
+@media (max-width: 640px) { .compare-pickers { grid-template-columns: minmax(0, 1fr); } }
 #explore-search, input.search {
   font: 400 1rem var(--body); padding: 0.7rem 0.85rem; border-radius: 6px; width: 100%;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
@@ -488,6 +490,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
         <li><a href="#/how" data-page="how">How it works</a></li>
         <li><a href="#/ideologies" data-page="ideologies">Ideologies</a></li>
         <li><a href="#/people" data-page="people">People</a></li>
+        <li><a href="#/compare" data-page="compare">Compare</a></li>
         <li><a href="#/about" data-page="about">About</a></li>
       </ul>
     </nav>
