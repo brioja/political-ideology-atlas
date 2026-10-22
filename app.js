@@ -662,6 +662,7 @@ function showResults(shared = null) {
         <div class="stack"><h3>${You} agree on</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
         <div class="stack"><h3>${You} part ways on</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name)).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
       </div>
+      ${shared ? "" : `<div class="row"><a class="btn" href="${compareHref("me", `i:${top.id}`)}">Full comparison with ${esc(top.name)}</a><a class="btn" href="#/compare">Compare with anyone</a></div>`}
     </section>
 
     <section>
@@ -843,6 +844,24 @@ function setUpSharing(given, ranked, you) {
 
 // The card uses a fixed light palette: it's an image that gets posted elsewhere, not page UI.
 const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b", point: "#5b6776" };
+// An ideology's traditional color for marks on the card: its first color that stands out against the
+// light background (3:1, the usual minimum for graphics), else its darkest one darkened until it does.
+// Ideologies without colors keep the neutral point color.
+function cardColor(ideo) {
+  const colors = ideo && ideo.flag ? ideo.flag.colors.map((c) => c.hex) : [];
+  if (!colors.length) return CARD.point;
+  const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  const lum = (c) => c.map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
+    .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+  const limit = (lum(rgb(CARD.bg)) + 0.05) / 3 - 0.05;
+  // Prefer real colors over neutral shades (grey, black, white) when an ideology has both.
+  const sat = (c) => { const mx = Math.max(...c), mn = Math.min(...c); return mx === mn ? 0 : (mx - mn) / (255 - Math.abs(mx + mn - 255)); };
+  const vivid = colors.filter((h) => sat(rgb(h)) >= 0.15);
+  const pool = vivid.length ? vivid : colors;
+  let c = rgb(pool.find((h) => lum(rgb(h)) <= limit) || pool.reduce((a, b) => (lum(rgb(b)) < lum(rgb(a)) ? b : a)));
+  while (lum(c) > limit) c = c.map((v) => Math.round(v * 0.9));
+  return `rgb(${c.join(", ")})`;
+}
 // The globe mark's three meridians (brand colors, as in the header logo).
 const LOGO = { left: "#C2185B", center: "#A67C00", right: "#1565C0" };
 const CARD_FONTS = { display: '"Bricolage Grotesque", "Segoe UI", sans-serif', body: '"Source Serif 4", Georgia, serif', mono: '"IBM Plex Mono", monospace' };
@@ -936,7 +955,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const { ranked, you } = result;
   const top = ranked[0];
   const people = (result.people || []).slice(0, 4);
-  const markColor = () => CARD.point;
+  const markColor = cardColor;
   const photos = await Promise.all(people.map(loadPhoto));
 
   // Background: neutral, with a soft wash of the top ideology's traditional colors (or its family
@@ -1055,7 +1074,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     let kx = W - PAD;
     ctx.font = `400 26px ${CARD_FONTS.body}`; ctx.textAlign = "right"; ctx.fillStyle = CARD.muted;
     ctx.fillText(top.name, kx, y + 30); kx -= ctx.measureText(top.name).width + 16;
-    ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
+    ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 8, y + 21, 10))); ctx.globalAlpha = 1;
     kx -= 40; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 30); kx -= ctx.measureText("You").width + 18;
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
@@ -1089,7 +1108,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
-    ctx.globalAlpha = 0.5; ctx.fillStyle = markColor(top);
+    ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, px(top.scores[i]), ty, 9))); ctx.globalAlpha = 1;
     const ux = px(you[i]);
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
@@ -1623,8 +1642,8 @@ function comparePicker(selfKey) {
   const mine = myAnswers() ? `<a class="btn" href="${compareHref("me", selfKey)}">Compare with your answers</a>` : "";
   return `<section class="stack"><h2>Compare</h2>
     ${mine}
-    <label class="visually-hidden" for="compare-pick">Compare with another ideology, person or AI model</label>
-    <input id="compare-pick" class="search" list="compare-options" data-self="${esc(selfKey)}" placeholder="Compare with another ideology, person or AI model" autocomplete="off">
+    <label class="visually-hidden" for="compare-pick">Compare with another ideology or person</label>
+    <input id="compare-pick" class="search" list="compare-options" data-self="${esc(selfKey)}" placeholder="Compare with another ideology or person" autocomplete="off">
   </section>`;
 }
 $("compare-options").innerHTML = compareOptions().map((o) => `<option value="${esc(o.label)}"></option>`).join("");
@@ -1633,7 +1652,7 @@ function comparePickers(aKey = "", bKey = "") {
   const label = (key) => (compareOptions().find((o) => o.key === key) || {}).label || "";
   const box = (id, key, text) => `<label class="visually-hidden" for="${id}">${text}</label>
     <input id="${id}" class="search" list="compare-options" value="${esc(label(key))}" placeholder="${text}" autocomplete="off">`;
-  return `<div class="compare-pickers">${box("compare-a", aKey, "An ideology, person, AI model or you")}
+  return `<div class="compare-pickers">${box("compare-a", aKey, "An ideology, a person or you")}
     <span class="muted" aria-hidden="true">and</span>${box("compare-b", bKey, "Another one to compare with")}</div>`;
 }
 // Picking a suggestion fires "input" (Chrome fires "change" only on blur or Enter), so act on both.
@@ -1657,7 +1676,7 @@ document.addEventListener("change", onComparePick);
 function renderCompareHome() {
   $("compare-detail").innerHTML = `
     <h1>Compare</h1>
-    <p class="lede">Pick any two: ideologies, people, AI models or your own answers.</p>
+    <p class="lede">Pick any two: ideologies, people or your own answers.</p>
     ${comparePickers(myAnswers() ? "me" : "")}`;
   return "Compare";
 }
