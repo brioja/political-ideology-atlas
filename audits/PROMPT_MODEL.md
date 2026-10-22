@@ -29,7 +29,8 @@ one run per model version, no repeats.
 
    With Claude Code, start one subagent per batch on the model being tested.
 5. `node scripts/model-merge.js <id>` checks every batch and writes `audits/models/<id>.json`.
-   Then `node scripts/build.js`.
+   Then `node scripts/build.js --people` and `node test.js --people` (a few seconds; the full build
+   isn't needed, since models never change the ideologies).
 
 ## Taking one batch (the model being tested)
 
