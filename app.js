@@ -939,6 +939,7 @@ function wrapLines(ctx, text, maxWidth, maxLines) {
   return lines;
 }
 
+// `result.subject` ({ name }) draws a person's card: the labels speak about them instead of "you".
 async function drawShareCard(canvas, result, site = `${location.host}${location.pathname.replace(/\/$/, "")}`) {
   try {
     await Promise.all([
@@ -975,7 +976,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 200);
   ctx.fillStyle = CARD.muted; ctx.font = `400 30px ${CARD_FONTS.body}`;
-  ctx.fillText(`${pct(top.similarity)} match · closest ideology${result.answered != null ? ` · based on ${result.answered} answers` : ""}`, PAD, 248);
+  ctx.fillText(result.subject
+    ? `${pct(top.similarity)} match · ${result.subject.name}'s closest ideology`
+    : `${pct(top.similarity)} match · closest ideology${result.answered != null ? ` · based on ${result.answered} answers` : ""}`, PAD, 248);
 
   const card = (x, y, w, h) => {
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = "rgba(23, 32, 43, 0.08)"; ctx.lineWidth = 2;
@@ -995,7 +998,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     else { ctx.fillStyle = CARD.line; ctx.fillRect(PAD, y, pw, hh); }
     ctx.restore();
     const tx = PAD + pw + 40, tw = W - PAD - 36 - tx;
-    label("THINKS MOST LIKE YOU", tx, y + 50);
+    label(result.subject ? "THINKS MOST LIKE THEM" : "THINKS MOST LIKE YOU", tx, y + 50);
     ctx.fillStyle = CARD.ink; ctx.font = `700 52px ${CARD_FONTS.display}`;
     const nameLines = wrapLines(ctx, p.name, tw, 2);
     nameLines.forEach((l, i) => ctx.fillText(l, tx, y + 108 + i * 56));
@@ -1068,7 +1071,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const room = H - 130 - 20 - (y + 68);
   const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
-  label("WHERE YOU STAND", PAD, y + 30);
+  label(result.subject ? "WHERE THEY STAND" : "WHERE YOU STAND", PAD, y + 30);
   {
     // Key: the dark ring is you, the faint marker your top match.
     let kx = W - PAD;
@@ -1076,7 +1079,11 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.fillText(top.name, kx, y + 30); kx -= ctx.measureText(top.name).width + 16;
     ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
     ctx.fill(new Path2D(shapePath(styleOf(top).shape, kx - 8, y + 21, 10))); ctx.globalAlpha = 1;
-    kx -= 40; ctx.fillStyle = CARD.muted; ctx.fillText("You", kx, y + 30); kx -= ctx.measureText("You").width + 18;
+    kx -= 40; ctx.fillStyle = CARD.muted;
+    // On a person's card the ring is them: their name, or just the surname if the full name is long.
+    let who = result.subject ? result.subject.name : "You";
+    if (ctx.measureText(who).width > 260) who = who.split(/\s+/).pop();
+    ctx.fillText(who, kx, y + 30); kx -= ctx.measureText(who).width + 18;
     ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.arc(kx, y + 21, 10, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     ctx.textAlign = "left";
@@ -1595,9 +1602,22 @@ function renderPersonPage(id) {
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
       <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
+      <section class="stack"><h2>Share card</h2>
+        <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas>
+        <div class="row"><button id="person-card-save">Save image</button></div></section>
       ${comparePicker(`p:${p.id}`)}
       <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`)}</section>
       ${sourcesList(audit)}`;
+    // The same card a visitor gets, with this person in the "you" spot.
+    const ranked = match(model, profile).ranked;
+    drawShareCard($("person-card"), { ranked, you: project(model, profile), subject: p, people: similar.slice(0, 4) });
+    $("person-card-save").addEventListener("click", () => $("person-card").toBlob((blob) => {
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `political-ideology-${p.id}.png`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+    }, "image/png"));
   };
   draw(null);
   loadAudit(auditFolder(p), p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
