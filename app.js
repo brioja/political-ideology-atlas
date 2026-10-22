@@ -1677,17 +1677,21 @@ function renderComparePage(aKey, bKey) {
   const shared = both.filter((j) => a.profile[j] !== 0 && a.profile[j] === b.profile[j])
     .sort((x, y) => Math.abs(b.profile[y]) - Math.abs(b.profile[x]) || x - y).slice(0, 8);
   const link = (s) => `<a href="${s.href}">${esc(s.name)}</a>`;
+  // When one side is the visitor, the page speaks to them ("you") rather than about "them".
+  const mine = a.key === "me" || b.key === "me";
+  const other = a.key === "me" ? b : a;
+  const they = mine ? "you" : "they";
   root.innerHTML = `
     ${comparePickers(aKey, bKey)}
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>
-    ${similarity != null ? `<p class="lede">They match <strong>${pct(similarity)}</strong>, on the ${both.length} statements where both have a position.</p>` : ""}
-    <section class="stack"><h2>Where they sit</h2>
+    ${similarity != null ? `<p class="lede">${mine ? `You and ${esc(other.name)} match` : "They match"} <strong>${pct(similarity)}</strong>, on the ${both.length} statements where ${mine ? "you both" : "both"} have a position.</p>` : ""}
+    <section class="stack"><h2>Where ${they} sit</h2>
       <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
       ${lineStrips(project(model, a.profile), { other: project(model, b.profile) })}</section>
-    <section class="stack"><h2>Where they differ most</h2>
-      <ul class="iconed">${differ.map((j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name)).join("") || "<li class='muted'>No statement where they're more than a step apart.</li>"}</ul></section>
-    <section class="stack"><h2>What they share</h2>
-      <ul class="iconed">${shared.map((j) => `<li>${topicIcon(QUESTIONS[j])}<span>${esc(stance(QUESTIONS[j], a.profile[j]).text)}</span></li>`).join("") || "<li class='muted'>No position they hold the same way.</li>"}</ul></section>
+    <section class="stack"><h2>Where ${they} differ most</h2>
+      <ul class="iconed">${differ.map((j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name)).join("") || `<li class='muted'>No statement where ${they}'re more than a step apart.</li>`}</ul></section>
+    <section class="stack"><h2>What ${they} share</h2>
+      <ul class="iconed">${shared.map((j) => `<li>${topicIcon(QUESTIONS[j])}<span>${esc(stance(QUESTIONS[j], a.profile[j]).text)}</span></li>`).join("") || `<li class='muted'>No position ${they} hold the same way.</li>`}</ul></section>
     <p class="muted small"><a href="${compareHref(b.key, a.key)}">Swap sides</a></p>`;
   return `${a.name} and ${b.name}`;
 }
