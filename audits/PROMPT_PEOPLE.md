@@ -47,7 +47,9 @@ objectionable; attribute them to sources instead.
 ## 2. Answer every statement
 
 Use -2 (strongly disagree) to +2 (strongly agree) for the position the person actually held or
-holds. If their views changed, use their mature or most recent public position and say so.
+holds. If their views changed, use their mature or most recent public position and say so. When
+sources from different times disagree (two runs of the same quiz, an old interview and a new one),
+the more recent clear statement wins; leave it null only if the recent position itself is unclear.
 
 If there is no reliable evidence of their position, answer `null` ("no known position"). Do not
 infer a living person's view from their party or ideology alone. For historical figures, a
