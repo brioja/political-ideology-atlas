@@ -34,15 +34,16 @@ const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
 // Salience (see pca.js): computed against the ideology model currently in data.js, unless
 // useSalienceModel has set another (build.js does, to judge against the set it is building).
 let salienceCache = null;
-function useSalienceModel(ideologies, statements) {
+function useSalienceModel(ideologies, statements, lines) {
   const pca = require(path.join(ROOT, "pca.js"));
-  salienceCache = { pca, ids: statements.map((s) => s.id), ctx: pca.salienceContext(pca.buildModel(ideologies), ideologies) };
+  salienceCache = { pca, ids: statements.map((s) => s.id), ctx: pca.salienceContext(pca.buildModel(ideologies), ideologies, { lines }) };
 }
 function personSalience(answers) {
   if (!salienceCache) {
-    const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
+    // data.js records how many lines beat noise, so the slow parallel analysis isn't rerun here.
+    const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES } = require(path.join(ROOT, "data.js"));
     const pca = require(path.join(ROOT, "pca.js"));
-    salienceCache = { pca, ids: QUESTIONS.map((q) => q.id), ctx: pca.salienceContext(pca.buildModel(IDEOLOGIES), IDEOLOGIES) };
+    salienceCache = { pca, ids: QUESTIONS.map((q) => q.id), ctx: pca.salienceContext(pca.buildModel(IDEOLOGIES), IDEOLOGIES, { lines: MEANINGFUL_LINES }) };
   }
   const { pca, ids, ctx } = salienceCache;
   return pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));

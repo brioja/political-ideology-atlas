@@ -1356,11 +1356,18 @@ const imageCredit = (p) => p.image
   ? `<p class="credit">Photo: ${esc(p.image.artist)}, <a href="${esc(p.image.source)}" target="_blank" rel="noopener">${esc(p.image.license)}</a>, via Wikimedia Commons</p>`
   : "";
 
+// AI models (audits/PROMPT_MODEL.md) sit with the people but took the quiz themselves: their answers
+// live in audits/models, carry the model's own reason instead of sourced research, and have a date
+// taken instead of a birth year.
+const auditFolder = (p) => (p.kind === "model" ? "models" : "people");
+const auditLabel = (p) => (p.kind === "model" ? "Its answers" : null);
+const lifeLine = (p) => (p.kind === "model" ? `took the quiz ${p.takenAt}` : p.living ? `born ${p.born}` : `born ${p.born}, historical`);
+
 function personBody(p) {
   const links = [p.wikipedia && `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`,
-    `<a href="${REPO}/blob/main/audits/people/${esc(p.id)}.json" target="_blank" rel="noopener">How this profile was researched</a>`].filter(Boolean);
+    `<a href="${REPO}/blob/main/audits/${auditFolder(p)}/${esc(p.id)}.json" target="_blank" rel="noopener">${auditLabel(p) || "How this profile was researched"}</a>`].filter(Boolean);
   return `<div class="person-head">${avatar(p, 72)}<div class="stack">
-    <p class="muted small">${esc(p.role || "")}${p.role ? " · " : ""}${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</p>
+    <p class="muted small">${esc(p.role || "")}${p.role ? " · " : ""}${esc(p.region)} · ${lifeLine(p)}</p>
     ${imageCredit(p)}</div></div>
     ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
     <p class="read-more small"><span class="muted">Read more:</span> ${links.join('<span class="muted"> · </span>')}</p>`;
@@ -1451,8 +1458,8 @@ function positionsList(profile, audit, auditUrl = null) {
     return `<li>${topicIcon(QUESTIONS[j])}
       <div class="stack-tight">
         <p class="stance">${esc(v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text)}</p>
-        ${a && a.rationale ? `<p class="muted small">${esc(a.rationale)}
-          <span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` · sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span></p>` : ""}
+        ${a && (a.rationale || a.reason) ? `<p class="muted small">${esc(a.rationale || a.reason)}
+          ${a.confidence ? `<span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` · sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span>` : ""}</p>` : ""}
       </div></li>`;
   }).join("");
   const rest = [others && `${others} milder position${others === 1 ? "" : "s"}`, unknown.length && `no known position on ${unknown.length}`].filter(Boolean).join(", and ");
@@ -1551,25 +1558,25 @@ function renderPersonPage(id) {
       <div class="person-hero">
         ${avatar(p, 128)}
         <div class="stack">
-          <span class="eyebrow">${esc(p.region)} · ${p.living ? `born ${p.born}` : `born ${p.born}, historical`}</span>
+          <span class="eyebrow">${esc(p.region)} · ${lifeLine(p)}</span>
           <h1>${esc(p.name)}</h1>
           ${p.role ? `<p class="muted">${esc(p.role)}</p>` : ""}
           ${imageCredit(p)}
         </div>
       </div>
       ${p.summary ? `<p class="lede">${esc(p.summary)}</p>` : ""}
-      <p class="read-more small"><span class="muted">Read more:</span> ${p.wikipedia ? `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a> · ` : ""}<a href="${REPO}/blob/main/audits/people/${esc(p.id)}.json" target="_blank" rel="noopener">The full audit</a></p>
+      <p class="read-more small"><span class="muted">Read more:</span> ${p.wikipedia ? `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a> · ` : ""}<a href="${REPO}/blob/main/audits/${auditFolder(p)}/${esc(p.id)}.json" target="_blank" rel="noopener">${auditLabel(p) || "The full audit"}</a></p>
       ${yourMatchLine(yours, p.name)}
       <section class="stack"><h2>Closest ideologies</h2>
         <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
       <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
-      <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/people/${p.id}.json`)}</section>
+      <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`)}</section>
       ${sourcesList(audit)}`;
   };
   draw(null);
-  loadAudit("people", p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
+  loadAudit(auditFolder(p), p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
   $("page-person").dataset.id = id;
   return p.name;
 }

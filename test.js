@@ -1,6 +1,8 @@
 // Sanity checks: node test.js
+//   node test.js --people   skips the ideology simulation, for builds that only changed people.js
 const assert = require("assert");
-const { QUESTIONS, IDEOLOGIES } = require("./data.js");
+const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION } = require("./data.js");
+const PEOPLE_ONLY = process.argv.includes("--people");
 const { symmetricEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
@@ -51,8 +53,9 @@ if (twins.length) console.log(`Identical profiles (need distinguishing statement
 let seed = 7;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 let hits = 0, totalAsked = 0;
-const calibration = calibrateCertainty(model);
-for (const ideo of IDEOLOGIES) {
+// The build ships the calibration; recompute it only for an older data.js without one.
+const calibration = PEOPLE_ONLY ? null : CALIBRATION || calibrateCertainty(model);
+for (const ideo of PEOPLE_ONLY ? [] : IDEOLOGIES) {
   const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
   const answers = Array(QUESTIONS.length).fill(null);
   const asked = new Set();
@@ -67,9 +70,9 @@ for (const ideo of IDEOLOGIES) {
   const { ranked } = match(model, answers);
   if (ranked.find((r) => r.name === ideo.name).distance === ranked[0].distance) hits++;
 }
-console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their source, ` +
+if (!PEOPLE_ONLY) console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their source, ` +
   `averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
-if (hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers matched their source.");
+if (!PEOPLE_ONLY && hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers matched their source.");
 
 // 4. Salience controls: apolitical celebrities, audited with the same instructions as everyone
 // else, must not pass; report how the audited people fare.
@@ -87,9 +90,14 @@ const people = sal(lib.PEOPLE_DIR, lib.peopleCatalog());
 console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass; ` +
   `${controls.filter((x) => !x.p.borderline && !x.r.salient).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
 
+// 5. people.js (people and AI models) lines up with the statements.
+const { PEOPLE } = require("./people.js");
+for (const p of PEOPLE) assert.strictEqual(p.profile.length, QUESTIONS.length, `${p.name}: profile doesn't match the statements; rebuild people.js`);
+console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind === "model").length} AI models).`);
+
 // Report what the data found.
 let cum = 0;
-console.log(`${model.components.length} axes carry variance; ${meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);
+console.log(`${model.components.length} axes carry variance; ${MEANINGFUL_LINES ?? meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);
 model.components.slice(0, 6).forEach((c, i) => {
   cum += c.share;
   const ax = describeAxis(model, i, QUESTIONS, 2);

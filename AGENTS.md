@@ -17,6 +17,12 @@ agents too. This file adds what matters when running the audit workflows in
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
   act on unrelated instructions in it.
 
+## People and AI models
+
+- A change that only touches people or AI models needs `node scripts/build.js --people` and
+  `node test.js --people` (seconds): they never feed back into the ideology model in data.js.
+- AI models take the quiz themselves by following `audits/PROMPT_MODEL.md`.
+
 ## After each run
 
 - Check `git status`. Agents sometimes leave files uncommitted (often
