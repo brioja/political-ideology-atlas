@@ -1642,35 +1642,87 @@ function comparePicker(selfKey) {
   const mine = myAnswers() ? `<a class="btn" href="${compareHref("me", selfKey)}">Compare with your answers</a>` : "";
   return `<section class="stack"><h2>Compare</h2>
     ${mine}
-    <label class="visually-hidden" for="compare-pick">Compare with another ideology or person</label>
-    <input id="compare-pick" class="search" list="compare-options" data-self="${esc(selfKey)}" placeholder="Compare with another ideology or person" autocomplete="off">
+    ${comboBox("compare-pick", "Compare with another ideology or person", "", selfKey)}
   </section>`;
 }
-$("compare-options").innerHTML = compareOptions().map((o) => `<option value="${esc(o.label)}"></option>`).join("");
 // The Compare tab's two boxes: once both name something, show that pair.
 function comparePickers(aKey = "", bKey = "") {
-  const label = (key) => (compareOptions().find((o) => o.key === key) || {}).label || "";
-  const box = (id, key, text) => `<label class="visually-hidden" for="${id}">${text}</label>
-    <input id="${id}" class="search" list="compare-options" value="${esc(label(key))}" placeholder="${text}" autocomplete="off">`;
-  return `<div class="compare-pickers">${box("compare-a", aKey, "An ideology, a person or you")}
-    <span class="muted" aria-hidden="true">and</span>${box("compare-b", bKey, "Another one to compare with")}</div>`;
+  return `<div class="compare-pickers">${comboBox("compare-a", "An ideology, a person or you", aKey)}
+    <span class="muted" aria-hidden="true">and</span>${comboBox("compare-b", "Another one to compare with", bKey)}</div>`;
 }
-// Picking a suggestion fires "input" (Chrome fires "change" only on blur or Enter), so act on both.
-// With one box filled, the cursor moves to the other; with both, the pair opens.
-function onComparePick(e) {
-  const find = (input) => input && compareOptions().find((o) => o.label === input.value.trim());
-  if (e.target.id === "compare-pick") {
-    const pick = find(e.target);
-    if (pick) go(compareHref(e.target.dataset.self, pick.key));
-  } else if (e.target.id === "compare-a" || e.target.id === "compare-b") {
-    if (!find(e.target)) return;
-    const a = find($("compare-a")), b = find($("compare-b"));
-    if (a && b && a.key !== b.key) go(compareHref(a.key, b.key));
-    else $(e.target.id === "compare-a" ? "compare-b" : "compare-a").focus();
-  }
+
+// A search box with its own suggestion list (ARIA combobox). The browser's <datalist> opened only on a
+// second click and differs between browsers, so this one opens on focus and filters as you type.
+function comboBox(id, text, key = "", self = "") {
+  const label = (compareOptions().find((o) => o.key === key) || {}).label || "";
+  return `<div class="combo"><label class="visually-hidden" for="${id}">${text}</label>
+    <input id="${id}" class="search" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="${id}-list"
+      value="${esc(label)}" data-key="${esc(key)}"${self ? ` data-self="${esc(self)}"` : ""} placeholder="${text}" autocomplete="off" spellcheck="false">
+    <ul id="${id}-list" class="combo-list" role="listbox" hidden></ul></div>`;
 }
-document.addEventListener("input", onComparePick);
-document.addEventListener("change", onComparePick);
+const COMBO_MAX = 60;
+function comboOpen(input) {
+  const list = $(`${input.id}-list`);
+  const options = compareOptions();
+  const q = input.value.trim().toLowerCase();
+  // A box that already names something shows everything, so it's easy to switch.
+  const all = !q || options.some((o) => o.label.toLowerCase() === q);
+  const hits = (all ? options : options.filter((o) => o.label.toLowerCase().includes(q))
+    .sort((x, y) => x.label.toLowerCase().indexOf(q) - y.label.toLowerCase().indexOf(q))).slice(0, COMBO_MAX);
+  list.innerHTML = hits.map((o, i) => `<li id="${input.id}-opt-${i}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}</li>`).join("")
+    || `<li class="muted" aria-disabled="true">No match</li>`;
+  list.hidden = false;
+  input.setAttribute("aria-expanded", "true");
+  input.removeAttribute("aria-activedescendant");
+}
+function comboClose(input) {
+  $(`${input.id}-list`).hidden = true;
+  input.setAttribute("aria-expanded", "false");
+  input.removeAttribute("aria-activedescendant");
+}
+function comboMove(input, step) {
+  const items = [...$(`${input.id}-list`).querySelectorAll("[role=option]")];
+  if (!items.length) return;
+  const at = items.findIndex((li) => li.getAttribute("aria-selected") === "true");
+  const next = items[(at + step + items.length) % items.length];
+  items.forEach((li) => li.setAttribute("aria-selected", String(li === next)));
+  input.setAttribute("aria-activedescendant", next.id);
+  next.scrollIntoView({ block: "nearest" });
+}
+// Choosing: on a page's own box, open that comparison; on the Compare tab, move to the other box until
+// both are set, then open the pair.
+function comboChoose(input, li) {
+  input.value = li.textContent;
+  input.dataset.key = li.dataset.key;
+  comboClose(input);
+  if (input.id === "compare-pick") { go(compareHref(input.dataset.self, li.dataset.key)); return; }
+  const a = $("compare-a").dataset.key, b = $("compare-b").dataset.key;
+  if (a && b && a !== b) go(compareHref(a, b));
+  else $(input.id === "compare-a" ? "compare-b" : "compare-a").focus();
+}
+const isCombo = (el) => el && el.getAttribute && el.getAttribute("role") === "combobox";
+document.addEventListener("focusin", (e) => { if (isCombo(e.target)) { e.target.select(); comboOpen(e.target); } });
+document.addEventListener("focusout", (e) => { if (isCombo(e.target)) comboClose(e.target); });
+document.addEventListener("input", (e) => { if (isCombo(e.target)) { e.target.dataset.key = ""; comboOpen(e.target); } });
+document.addEventListener("keydown", (e) => {
+  if (!isCombo(e.target)) return;
+  const input = e.target, list = $(`${input.id}-list`);
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    if (list.hidden) comboOpen(input);
+    comboMove(input, e.key === "ArrowDown" ? 1 : -1);
+  } else if (e.key === "Enter") {
+    const li = list.querySelector("[aria-selected=true]") || list.querySelector("[role=option]");
+    if (li && !list.hidden) { e.preventDefault(); comboChoose(input, li); }
+  } else if (e.key === "Escape") comboClose(input);
+});
+// mousedown, not click: it fires before the box loses focus and closes the list.
+document.addEventListener("mousedown", (e) => {
+  const li = e.target.closest && e.target.closest(".combo-list [role=option]");
+  if (!li) return;
+  e.preventDefault();
+  comboChoose($(li.parentElement.id.replace(/-list$/, "")), li);
+});
 
 // The Compare tab without a pair yet: just the two boxes.
 function renderCompareHome() {

@@ -452,6 +452,11 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .explore h3 { display: flex; gap: 0.5rem; align-items: baseline; }
 .compare-pickers { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.6rem; align-items: center; }
 @media (max-width: 640px) { .compare-pickers { grid-template-columns: minmax(0, 1fr); } }
+.combo { position: relative; }
+.combo-list { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 30; margin: 0; padding: 0.25rem 0; list-style: none;
+  max-height: 18rem; overflow-y: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 24px rgba(23, 32, 43, 0.12); }
+.combo-list li { padding: 0.5rem 0.85rem; cursor: pointer; }
+.combo-list li[aria-selected="true"], .combo-list li[role=option]:hover { background: var(--accent-soft); }
 #explore-search, input.search {
   font: 400 1rem var(--body); padding: 0.7rem 0.85rem; border-radius: 6px; width: 100%;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink);
@@ -626,7 +631,6 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
   <section class="page" id="page-compare" hidden>
     <div class="wrap narrow stack-lg detail" id="compare-detail"></div>
   </section>
-  <datalist id="compare-options"></datalist>
 
   <!-- People -->
   <section class="page" id="page-people" hidden>
