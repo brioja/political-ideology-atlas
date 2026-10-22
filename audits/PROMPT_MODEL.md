@@ -14,7 +14,8 @@ one run per model version, no repeats.
    The entry id is the provider and exact version, lowercase with hyphens, e.g. `claude-haiku-5-5`
    or `gpt-5-codex`. A new version is a new entry; never overwrite an old one.
 2. Add the model to `audits/models-catalog.json`: `id`, `name` (as the provider writes it, e.g.
-   "Claude Haiku 5.5"), `provider`, `released` (year), `route` (how it was run, e.g. "Claude Code
+   "Claude Haiku 5.5"), `provider`, `region` (where the provider is based, using the people
+   catalog's regions, e.g. "North America"), `released` (year), `route` (how it was run, e.g. "Claude Code
    subagent" or "Codex CLI"), `takenAt` (today, YYYY-MM-DD) and `summary`: one neutral sentence
    on what the model is (maker, model family and its place in it), as the provider describes it.
 3. `node scripts/model-batch.js` prints how many batches there are (50 statements each).
