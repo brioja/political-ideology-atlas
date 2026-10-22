@@ -1,48 +1,121 @@
 // PCA over the ideology x question matrix, plus projection and matching.
-// No dependencies: the covariance matrix is symmetric, so the cyclic Jacobi
-// method gives all eigenvalues/eigenvectors exactly enough for our sizes.
+// No dependencies: the covariance matrix is symmetric, so Householder reduction to tridiagonal form
+// and the implicit QL method (tred2 + tql2, as in EISPACK/JAMA) give all eigenvalues/eigenvectors.
 
-function jacobiEigen(matrix, { maxSweeps = 100, tol = 1e-12 } = {}) {
+function symmetricEigen(matrix) {
   const n = matrix.length;
-  const a = matrix.map((row) => row.slice());
-  const v = Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
+  const V = matrix.map((row) => Float64Array.from(row));
+  const d = new Float64Array(n), e = new Float64Array(n);
 
-  for (let sweep = 0; sweep < maxSweeps; sweep++) {
-    let off = 0;
-    for (let p = 0; p < n; p++) for (let q = p + 1; q < n; q++) off += a[p][q] ** 2;
-    if (off < tol) break;
-
-    for (let p = 0; p < n; p++) {
-      for (let q = p + 1; q < n; q++) {
-        if (Math.abs(a[p][q]) < 1e-15) continue;
-        const theta = (a[q][q] - a[p][p]) / (2 * a[p][q]);
-        const t = Math.sign(theta || 1) / (Math.abs(theta) + Math.sqrt(theta * theta + 1));
-        const c = 1 / Math.sqrt(t * t + 1);
-        const s = t * c;
-        for (let k = 0; k < n; k++) {
-          const akp = a[k][p], akq = a[k][q];
-          a[k][p] = c * akp - s * akq;
-          a[k][q] = s * akp + c * akq;
-        }
-        for (let k = 0; k < n; k++) {
-          const apk = a[p][k], aqk = a[q][k];
-          a[p][k] = c * apk - s * aqk;
-          a[q][k] = s * apk + c * aqk;
-        }
-        for (let k = 0; k < n; k++) {
-          const vkp = v[k][p], vkq = v[k][q];
-          v[k][p] = c * vkp - s * vkq;
-          v[k][q] = s * vkp + c * vkq;
-        }
+  // tred2
+  for (let j = 0; j < n; j++) d[j] = V[n - 1][j];
+  for (let i = n - 1; i > 0; i--) {
+    let scale = 0, h = 0;
+    for (let k = 0; k < i; k++) scale += Math.abs(d[k]);
+    if (scale === 0) {
+      e[i] = d[i - 1];
+      for (let j = 0; j < i; j++) { d[j] = V[i - 1][j]; V[i][j] = 0; V[j][i] = 0; }
+    } else {
+      for (let k = 0; k < i; k++) { d[k] /= scale; h += d[k] * d[k]; }
+      let f = d[i - 1];
+      let g = Math.sqrt(h);
+      if (f > 0) g = -g;
+      e[i] = scale * g;
+      h -= f * g;
+      d[i - 1] = f - g;
+      for (let j = 0; j < i; j++) e[j] = 0;
+      for (let j = 0; j < i; j++) {
+        f = d[j];
+        V[j][i] = f;
+        g = e[j] + V[j][j] * f;
+        for (let k = j + 1; k <= i - 1; k++) { g += V[k][j] * d[k]; e[k] += V[k][j] * f; }
+        e[j] = g;
+      }
+      f = 0;
+      for (let j = 0; j < i; j++) { e[j] /= h; f += e[j] * d[j]; }
+      const hh = f / (h + h);
+      for (let j = 0; j < i; j++) e[j] -= hh * d[j];
+      for (let j = 0; j < i; j++) {
+        f = d[j]; g = e[j];
+        for (let k = j; k <= i - 1; k++) V[k][j] -= f * e[k] + g * d[k];
+        d[j] = V[i - 1][j];
+        V[i][j] = 0;
       }
     }
+    d[i] = h;
+  }
+  for (let i = 0; i < n - 1; i++) {
+    V[n - 1][i] = V[i][i];
+    V[i][i] = 1;
+    const h = d[i + 1];
+    if (h !== 0) {
+      for (let k = 0; k <= i; k++) d[k] = V[k][i + 1] / h;
+      for (let j = 0; j <= i; j++) {
+        let g = 0;
+        for (let k = 0; k <= i; k++) g += V[k][i + 1] * V[k][j];
+        for (let k = 0; k <= i; k++) V[k][j] -= g * d[k];
+      }
+    }
+    for (let k = 0; k <= i; k++) V[k][i + 1] = 0;
+  }
+  for (let j = 0; j < n; j++) { d[j] = V[n - 1][j]; V[n - 1][j] = 0; }
+  V[n - 1][n - 1] = 1;
+  e[0] = 0;
+
+  // tql2
+  for (let i = 1; i < n; i++) e[i - 1] = e[i];
+  e[n - 1] = 0;
+  let f = 0, tst1 = 0;
+  const eps = 2 ** -52;
+  for (let l = 0; l < n; l++) {
+    tst1 = Math.max(tst1, Math.abs(d[l]) + Math.abs(e[l]));
+    let m = l;
+    while (m < n && Math.abs(e[m]) > eps * tst1) m++;
+    if (m > l) {
+      do {
+        let g = d[l];
+        let p = (d[l + 1] - g) / (2 * e[l]);
+        let r = Math.hypot(p, 1);
+        if (p < 0) r = -r;
+        d[l] = e[l] / (p + r);
+        d[l + 1] = e[l] * (p + r);
+        const dl1 = d[l + 1];
+        let h = g - d[l];
+        for (let i = l + 2; i < n; i++) d[i] -= h;
+        f += h;
+        p = d[m];
+        let c = 1, c2 = c, c3 = c, s = 0, s2 = 0;
+        const el1 = e[l + 1];
+        for (let i = m - 1; i >= l; i--) {
+          c3 = c2; c2 = c; s2 = s;
+          g = c * e[i];
+          h = c * p;
+          r = Math.hypot(p, e[i]);
+          e[i + 1] = s * r;
+          s = e[i] / r;
+          c = p / r;
+          p = c * d[i] - s * g;
+          d[i + 1] = h + s * (c * g + s * d[i]);
+          for (let k = 0; k < n; k++) {
+            h = V[k][i + 1];
+            V[k][i + 1] = s * V[k][i] + c * h;
+            V[k][i] = c * V[k][i] - s * h;
+          }
+        }
+        p = (-s * s2 * c3 * el1 * e[l]) / dl1;
+        e[l] = s * p;
+        d[l] = c * p;
+      } while (Math.abs(e[l]) > eps * tst1);
+    }
+    d[l] += f;
+    e[l] = 0;
   }
 
-  // Columns of v are eigenvectors; return them sorted by eigenvalue, largest first.
-  return a
-    .map((row, i) => ({ value: Math.max(row[i], 0), vector: v.map((r) => r[i]) }))
+  // Columns of V are eigenvectors; return them sorted by eigenvalue, largest first.
+  return Array.from(d, (value, i) => ({ value: Math.max(value, 0), vector: V.map((r) => r[i]) }))
     .sort((x, y) => y.value - x.value);
 }
+
 
 const dot = (x, y) => x.reduce((sum, xi, i) => sum + xi * y[i], 0);
 
@@ -56,11 +129,16 @@ function buildModel(ideologies, opts = {}) {
   const mean = Array.from({ length: n }, (_, j) => rows.reduce((s, r) => s + r[j], 0) / m);
   const centered = rows.map((r) => r.map((x, j) => x - mean[j]));
 
-  const cov = Array.from({ length: n }, (_, i) =>
-    Array.from({ length: n }, (_, j) => centered.reduce((s, r) => s + r[i] * r[j], 0) / (m - 1))
-  );
+  const cov = Array.from({ length: n }, () => new Array(n));
+  for (let i = 0; i < n; i++) {
+    for (let j = i; j < n; j++) {
+      let s = 0;
+      for (let r = 0; r < m; r++) s += centered[r][i] * centered[r][j];
+      cov[i][j] = cov[j][i] = s / (m - 1);
+    }
+  }
 
-  const eig = jacobiEigen(cov);
+  const eig = symmetricEigen(cov);
   const total = eig.reduce((s, e) => s + e.value, 0);
   const components = eig
     .filter((e) => e.value / total > 1e-9) // at most m-1 components carry any variance
@@ -346,26 +424,85 @@ function isSettled(model, calibration, answers, asked) {
 // (each ideology's answers, ~20% nudged by one point) answer every statement in the adaptive order;
 // at each step we record the reading and whether their top match then is their final top match.
 // The result is, per tenth of the reading, the share whose top match held (made non-decreasing).
+// It is the slowest part of the build, so it inlines weights(), nextQuestion(), certainty() and
+// topMatch() over packed typed arrays, computing each once per step in the same arithmetic order.
 function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   let state = seed;
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
-  const reps = Math.max(1, Math.ceil(takers / ideos.length));
+  const m = ideos.length, n = ideos[0].profile.length;
+  const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
+  ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x; colMajor[q * m + k] = x; }));
+  const w = new Float64Array(m), logs = new Float64Array(m);
+  const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
+  let count = 0;
+
+  // weights(): each ideology's likelihood from the answers so far, normalised.
+  const setWeights = () => {
+    let top = -Infinity;
+    for (let k = 0; k < m; k++) {
+      const base = k * n;
+      let s = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t]; s += (answers[j] - rowMajor[base + j]) ** 2; }
+      logs[k] = -s / 2;
+      if (logs[k] > top) top = logs[k];
+    }
+    let total = 0;
+    for (let k = 0; k < m; k++) { w[k] = Math.exp(logs[k] - top); total += w[k]; }
+    for (let k = 0; k < m; k++) w[k] /= total;
+  };
+  // nextQuestion(): the unasked statement with the largest weighted disagreement.
+  const next = () => {
+    let bestQ = -1, bestGain = 0;
+    for (let q = 0; q < n; q++) {
+      if (asked[q]) continue;
+      const base = q * m;
+      let mean = 0;
+      for (let k = 0; k < m; k++) mean += w[k] * colMajor[base + k];
+      let gain = 0;
+      for (let k = 0; k < m; k++) gain += w[k] * (colMajor[base + k] - mean) ** 2;
+      if (bestQ < 0 || gain > bestGain) { bestQ = q; bestGain = gain; }
+    }
+    return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
+  };
+  // topMatch(): the ideology with the smallest average gap; ties go to the earlier one.
+  const top = () => {
+    let best = -1, bestD = Infinity;
+    for (let k = 0; k < m; k++) {
+      const base = k * n;
+      let s = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t]; s += Math.abs(answers[j] - rowMajor[base + j]); }
+      const d = count ? s / count : 0;
+      if (d < bestD) { bestD = d; best = k; }
+    }
+    return best;
+  };
+
+  const reps = Math.max(1, Math.ceil(takers / m));
   const held = Array.from({ length: 10 }, () => [0, 0]);
   for (let rep = 0; rep < reps; rep++) {
     for (const ideo of ideos) {
       const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
-      const answers = Array(truth.length).fill(null);
-      const asked = new Set();
+      asked.fill(0);
+      count = 0;
+      setWeights();
       const steps = [];
-      for (;;) {
-        const next = nextQuestion(model, answers, asked);
-        if (!next) break;
-        asked.add(next.q);
-        answers[next.q] = truth[next.q];
-        steps.push({ c: certainty(model, answers, asked), top: topMatch(model, answers) });
+      let ask = next();
+      while (ask) {
+        asked[ask.q] = 1;
+        answers[ask.q] = truth[ask.q];
+        // Keep the answered indexes ascending, the order weights() and gap() sum them in.
+        let t = count++;
+        while (t > 0 && idx[t - 1] > ask.q) { idx[t] = idx[t - 1]; t--; }
+        idx[t] = ask.q;
+        setWeights();
+        ask = next(); // certainty() reads the same next question the loop asks after this one
+        let lead = -Infinity;
+        for (let k = 0; k < m; k++) if (w[k] > lead) lead = w[k];
+        const resolved = ask ? 1 - ask.gain / model.initialGain : 1;
+        steps.push({ c: Math.min(1, Math.max(lead, resolved)), top: top() });
       }
-      const final = topMatch(model, answers);
+      const final = top();
       for (const st of steps) {
         const bin = held[Math.min(9, Math.floor(st.c * 10))];
         bin[1]++;
@@ -376,13 +513,14 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   // Readings no simulated taker produced stay null (shown as words, never a made-up number).
   const out = [];
   let floor = 0;
-  for (const [h, n] of held) {
-    if (!n) { out.push(null); continue; }
-    floor = Math.max(floor, h / n);
+  for (const [h, cnt] of held) {
+    if (!cnt) { out.push(null); continue; }
+    floor = Math.max(floor, h / cnt);
     out.push(floor);
   }
   return out;
 }
+
 
 // The calibrated chance that the current top match will hold, for a "how settled" reading.
 const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
@@ -446,5 +584,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { jacobiEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }

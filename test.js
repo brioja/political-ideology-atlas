@@ -1,11 +1,11 @@
 // Sanity checks: node test.js
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES } = require("./data.js");
-const { jacobiEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
+const { symmetricEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
-const eig = jacobiEigen(A);
+const eig = symmetricEigen(A);
 for (const { value, vector } of eig) {
   const Av = A.map((row) => row.reduce((s, x, j) => s + x * vector[j], 0));
   Av.forEach((x, i) => assert(Math.abs(x - value * vector[i]) < 1e-9, "A v != lambda v"));

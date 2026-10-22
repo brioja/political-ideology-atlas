@@ -7,8 +7,8 @@ A political ideology test where the axes come from the data. You don't choose th
 1. Every ideology in `audits/catalog.json` has a sourced audit giving its answer (-2..+2) to every
    statement in `statements.json`. `node scripts/build.js` compiles the valid audits into
    `data.js`.
-2. `pca.js` centers the ideologies × statements matrix and eigendecomposes its covariance (Jacobi
-   method, no dependencies). Each eigenvector is a dividing line; its eigenvalue is how much of the
+2. `pca.js` centers the ideologies × statements matrix and eigendecomposes its covariance (Householder
+   + QL, no dependencies). Each eigenvector is a dividing line; its eigenvalue is how much of the
    disagreement between ideologies that line captures. The build keeps the lines that stand out
    from noise (`meaningfulAxes`, compared against shuffled data).
 3. The leading lines (at most 6, `SHOWN` in `scripts/build.js`) are varimax-rotated so each one is
