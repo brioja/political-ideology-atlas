@@ -52,7 +52,9 @@ holds. If their views changed, use their mature or most recent public position a
 If there is no reliable evidence of their position, answer `null` ("no known position"). Do not
 infer a living person's view from their party or ideology alone. For historical figures, a
 position may be inferred only when it follows directly from views they stated, and it must then
-be `low` confidence.
+be `low` confidence with a rationale that begins "Inferred:" and says what it is inferred from.
+Inferred answers count toward matching but not toward salience, so nobody is included on the
+strength of inferences.
 
 Confidence:
 - `high`: stated directly by the person or shown by their record.

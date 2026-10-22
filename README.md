@@ -80,6 +80,7 @@ person's own words and record, and a statement with no reliable evidence is `nul
   less precise record can't say which of two neighbouring ideologies it is closer to. People only
   have to be placed well enough to compare, so their bar is 1.5 times that (`PEOPLE_BAR` in
   `scripts/lib.js`): roughly 20-25 documented positions.
+  A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
   the same instructions) must fail it; `node test.js` checks this. Excluded audits make the

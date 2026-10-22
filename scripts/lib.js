@@ -56,7 +56,12 @@ function placed(answers, factor) {
 // record of roughly 20-25 positions passes, while the apolitical controls (0-5 positions) sit at 2.3x
 // or more and still fail.
 const PEOPLE_BAR = 1.5;
-const personSalience = (answers) => placed(answers, PEOPLE_BAR);
+// A historical figure's answers may be inferred from views they stated (audits/PROMPT_PEOPLE.md); those
+// begin "Inferred:" and, like an ideology's inferred answers, don't count toward salience. They still
+// count for matching, so nobody is shown on the strength of inferences.
+const statedOnlyPerson = (answers) => Object.fromEntries(Object.entries(answers)
+  .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
+const personSalience = (answers) => placed(statedOnlyPerson(answers), PEOPLE_BAR);
 
 // Ideologies must answer every statement, inferring where the ideology never took a position
 // (marked low confidence). For salience, only stated positions count: an inferred answer is the
