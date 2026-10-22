@@ -146,6 +146,10 @@ function writePeople(model) {
   models -= dropped.filter((p) => p.kind === "model").length;
   console.log(`${people.length - models} people included, ${excludedPeople} excluded as not salient.`);
   if (twins.length) console.log(`Not uniquely reachable, listed on the closer match's page: ${twins.join(", ")}`);
+  // Photos come from the catalog (scripts/images.js looks up only entries without one), so a person with
+  // none usually means the lookup hasn't run since they were added, not that no free photo exists.
+  const noPhoto = people.filter((p) => p.kind !== "model" && !p.image).map((p) => p.id);
+  if (noPhoto.length) console.warn(`No photo stored for ${noPhoto.join(", ")}: run node scripts/images.js (some have no free photo at all).`);
   if (models || excludedModels) console.log(`${models} AI models included, ${excludedModels} excluded as not salient.`);
 
   if (!process.argv.includes("--status")) {
