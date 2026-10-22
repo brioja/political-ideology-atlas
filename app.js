@@ -1646,35 +1646,12 @@ document.addEventListener("change", (e) => {
   }
 });
 
-// The Compare tab without a pair yet: the two boxes, and a few pairs taken from the data.
+// The Compare tab without a pair yet: just the two boxes.
 function renderCompareHome() {
-  const mine = myAnswers();
-  const examples = [];
-  if (mine) {
-    const [first, second] = match(model, mine).ranked;
-    examples.push(["me", `i:${first.id}`], [`i:${first.id}`, `i:${second.id}`]);
-  }
-  const lead = model.ideologies[0];
-  examples.push([`i:${lead.id}`, `i:${match(model, lead.profile).ranked.find((r) => r.id !== lead.id).id}`]);
-  const models = PEOPLE_LIST.filter((p) => p.kind === "model");
-  if (models.length >= 2) {
-    // The two AI models that disagree most, by average gap on the statements both answer.
-    let far = null;
-    for (const x of models) for (const y of models) {
-      if (x.id >= y.id) continue;
-      const idx = QUESTIONS.map((_, j) => j).filter((j) => x.profile[j] != null && y.profile[j] != null);
-      const gap = idx.reduce((t, j) => t + Math.abs(x.profile[j] - y.profile[j]), 0) / idx.length;
-      if (!far || gap > far.gap) far = { gap, pair: [`p:${x.id}`, `p:${y.id}`] };
-    }
-    examples.push(far.pair);
-  }
-  const name = (key) => compareSide(key).name;
   $("compare-detail").innerHTML = `
     <h1>Compare</h1>
     <p class="lede">Pick any two: ideologies, people, AI models or your own answers.</p>
-    ${comparePickers(mine ? "me" : "")}
-    <section class="stack"><h2>Try</h2><ul class="matches">${examples.map(([a, b]) => `<li><a class="row-link" href="${compareHref(a, b)}">
-      <span class="match-name">${esc(name(a))} and ${esc(name(b))}</span><span></span><span class="arrow" aria-hidden="true">→</span></a></li>`).join("")}</ul></section>`;
+    ${comparePickers(myAnswers() ? "me" : "")}`;
   return "Compare";
 }
 
