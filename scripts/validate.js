@@ -112,6 +112,13 @@ function validate(id) {
     if (ans.confidence === "high" && UNADDRESSED.test(ans.rationale)) unaddressedHigh.push(st.id);
   }
   if (selfLow.length) errors.push(`${selfLow.join(", ")}: rationale says inferred, split, contested or anachronistic, so the confidence is low`);
+  // A living person's view needs evidence (audits/PROMPT_PEOPLE.md): an answer whose rationale says it
+  // is inferred, or that nothing records their view, is "no known position" instead.
+  const NO_EVIDENCE = /\b(inferred|by inference|no record of|no source (states|says|addresses)|no known (statement|position))\b/i;
+  if (PEOPLE && a.living !== false) {
+    const guessed = statements.filter((st) => answers[st.id] && answers[st.id].value !== null && NO_EVIDENCE.test(answers[st.id].rationale || "")).map((st) => st.id);
+    if (guessed.length) errors.push(`${guessed.join(", ")}: the rationale says there's no evidence of this living person's view, so answer null (no known position)`);
+  }
   if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');

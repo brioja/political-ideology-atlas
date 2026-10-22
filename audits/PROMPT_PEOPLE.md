@@ -26,6 +26,12 @@ objectionable; attribute them to sources instead.
   laws signed, policies enacted). Add at least one `reference` or `scholarly` source.
 - Prefer what the person said or did over what others say about them. Opponents' characterizations
   are not evidence of a position.
+- Research theme by theme. Each statement has a `theme` (economy, government, society, world, liberty,
+  culture, ecology, technology, means, globalism); a broad overview covers only a few statements per
+  theme. After a first pass, count your known positions per theme and search specifically for the
+  thin ones ("<name> on <topic>", their votes, platform sections, interviews). A prominent politician
+  usually needs 8-12 sources; someone with a thin public record needs fewer, and many nulls are then
+  the honest result.
 - Do not use political-quiz sites as sources: a site's guess at where someone stands isn't evidence.
 - The exception is the person taking a quiz themselves, answers read aloud, as some streamers and
   pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
