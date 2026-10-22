@@ -32,6 +32,9 @@ objectionable; attribute them to sources instead.
   thin ones ("<name> on <topic>", their votes, platform sections, interviews). A prominent politician
   usually needs 8-12 sources; someone with a thin public record needs fewer, and many nulls are then
   the honest result.
+- When the person's own writing is available as full text (a book, manifesto, platform or speech
+  collection), download it into your scratch folder and search it for each theme's topics rather than
+  reading summaries: it covers far more statements, in their own words.
 - Stop early for someone without a political record (an artist, athlete or entertainer known for
   other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
   "<name> views on …") turn up no stated political positions, record the few you found, answer the
