@@ -1074,9 +1074,10 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   // The closest person, if any, gets a third marker: a faint diamond, so shape tells the three apart.
   const near = people[0] || null;
   const nearScores = near ? project(model, near.profile) : null;
+  // The ring is hollow, so a dot or diamond under it stays visible.
   const ringMark = (x, yy, r, w) => {
-    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = w;
-    ctx.beginPath(); ctx.arc(x, yy, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = CARD.ink; ctx.lineWidth = w;
+    ctx.beginPath(); ctx.arc(x, yy, r, 0, Math.PI * 2); ctx.stroke();
   };
   const dotMark = (x, yy, r) => {
     ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
@@ -1097,12 +1098,15 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     if (near) items.push([diamondMark, surname(near.name)]);
     const widths = () => items.reduce((t, [, t2]) => t + 30 + ctx.measureText(t2).width + 28, -28);
     while (widths() > W - PAD * 2 && items[1][1].length > 6) items[1][1] = items[1][1].slice(0, -2).trimEnd() + "…";
+    // Spread across the full width, like justified text: equal space between the items.
+    const sizes = items.map(([, text]) => 30 + ctx.measureText(text).width);
+    const gap = items.length > 1 ? (W - PAD * 2 - sizes.reduce((t, w) => t + w, 0)) / (items.length - 1) : 0;
     let kx = PAD;
-    for (const [mark, text] of items) {
+    items.forEach(([mark, text], n) => {
       mark === ringMark ? mark(kx + 10, y + 21, 10, 3) : mark(kx + 10, y + 21, 10);
       ctx.fillStyle = CARD.muted; ctx.fillText(text, kx + 30, y + 30);
-      kx += 30 + ctx.measureText(text).width + 28;
-    }
+      kx += sizes[n] + gap;
+    });
   }
   // An end's name (the same one lineInfo gives the page), as large as fits its column (down to 22px);
   // shortened only if it can't fit even then.
@@ -1134,8 +1138,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     dotMark(px(top.scores[i]), ty, 9);
     if (nearScores) diamondMark(px(nearScores[i]), ty, 10);
     const ux = px(you[i]);
-    ctx.fillStyle = CARD.surface; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.arc(ux, ty, 11, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ringMark(ux, ty, 11, 4);
     ctx.fillStyle = CARD.ink; ctx.beginPath(); ctx.arc(ux, ty, 4, 0, Math.PI * 2); ctx.fill();
   }
 
