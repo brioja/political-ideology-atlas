@@ -1,7 +1,8 @@
 // Prints, as JSON, the catalog entries that still need an audit: missing or failing validation.
 // Used by the audit workflow; also handy on its own.
-//   node scripts/pending.js [--limit N] [--people] [--by-views] [--backfill]
+//   node scripts/pending.js [--limit N] [--people] [--by-views [--reverse]] [--backfill]
 //   --by-views orders by Wikipedia page views (most viewed first), for auditing in order of prominence
+//   --reverse with --by-views lists least viewed first, so a second lane can work from the other end
 //   --backfill instead lists finished audits that still need answers for new (candidate) statements,
 //     with the statement ids, for the statement-backfill workflow
 const fs = require("fs");
@@ -35,5 +36,6 @@ const pending = catalog().filter((entry) => {
 });
 
 if (process.argv.includes("--by-views")) pending.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
+if (process.argv.includes("--reverse")) pending.reverse();
 console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
   ({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }))));
