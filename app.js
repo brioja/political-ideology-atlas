@@ -33,8 +33,8 @@ function clearSaved() {
 }
 
 // How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
-// at least 2 and at most 6. build.js precomputes the count; otherwise it's computed here.
-const MAX_LINES = 6;
+// at least 2 and at most 8. build.js precomputes the count; otherwise it's computed here.
+const MAX_LINES = 8;
 const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
 const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
 
@@ -1045,9 +1045,9 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   y += ch + 20;
 
   // Where you stand on the real dividing lines: all of them, unless the card runs out of room. Each
-  // row is "low end  ──○──  high end", so rows can sit 44px apart; the last needs ~20px above the footer.
+  // row is "low end  ──○──  high end", so rows can sit 36px apart; the last needs ~20px above the footer.
   const room = H - 130 - 20 - (y + 76);
-  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 44) + 1));
+  const lines = Math.max(1, Math.min(SHOWN_LINES, Math.floor(room / 36) + 1));
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
   label("WHERE YOU STAND", PAD, y + 30);
   {
@@ -1228,7 +1228,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.font = `500 15px ${CARD_FONTS.mono}`;
   ctx.fillText(result ? "WHERE YOU STAND" : "THE DIVIDING LINES", mx + 28, my + 40);
 
-  const lines = Math.min(SHOWN_LINES, 6);
+  const lines = SHOWN_LINES;
   const top = result ? result.ranked[0] : null;
   const rowH = (ms - 80) / lines;
   for (let i = 0; i < lines; i++) {

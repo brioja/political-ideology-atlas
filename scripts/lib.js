@@ -31,8 +31,13 @@ const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
 const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
 const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
 
-// Salience (see pca.js): computed against the ideology model currently in data.js.
+// Salience (see pca.js): computed against the ideology model currently in data.js, unless
+// useSalienceModel has set another (build.js does, to judge against the set it is building).
 let salienceCache = null;
+function useSalienceModel(ideologies, statements) {
+  const pca = require(path.join(ROOT, "pca.js"));
+  salienceCache = { pca, ids: statements.map((s) => s.id), ctx: pca.salienceContext(pca.buildModel(ideologies), ideologies) };
+}
 function personSalience(answers) {
   if (!salienceCache) {
     const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
@@ -54,4 +59,4 @@ const salienceBar = () => (personSalience({}), salienceCache.ctx.bar);
 
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  salienceBar };
+  salienceBar, useSalienceModel };

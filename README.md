@@ -11,8 +11,9 @@ A political ideology test where the axes come from the data. You don't choose th
    + QL, no dependencies). Each eigenvector is a dividing line; its eigenvalue is how much of the
    disagreement between ideologies that line captures. The build keeps the lines that stand out
    from noise (`meaningfulAxes`, compared against shuffled data).
-3. The leading lines (at most 6, `SHOWN` in `scripts/build.js`) are varimax-rotated so each one is
-   a single cluster of statements, then named from `audits/line-labels.json`. A name holds only
+3. Every line that beats noise is varimax-rotated so each one is a single cluster of statements;
+   the leading ones (at most 8, `SHOWN` in `scripts/build.js`) are shown, named from
+   `audits/line-labels.json`. A name holds only
    while its anchor statements stay among that end's strongest; otherwise the build warns and the
    page names the ends by ideologies until the labels file is updated.
 4. Ideologies are ranked by the average gap between your answers and theirs. The results show the

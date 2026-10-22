@@ -5,7 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
-  peopleCatalog, personPath, personSalience, ideologySalience } = require("./lib");
+  peopleCatalog, personPath, personSalience, ideologySalience, useSalienceModel } = require("./lib");
 const { buildModel, meaningfulAxes, salienceContext, salience, varimax } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
@@ -15,35 +15,50 @@ const flagFor = (id) => {
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
 const statements = activeStatements();
-let included = [];
-const stale = [];
-const missing = [];
-const notSalient = [];
-const notIdeology = [];
+let included, stale, missing, notSalient, notIdeology;
 
-for (const entry of catalog()) {
-  const p = profilePath(entry.id);
-  if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
-  const a = readJson(p);
-  if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
-  if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
-  // Too few stated positions to tell it apart from its neighbours: leave it out, so it neither
-  // appears in results nor shapes the dividing lines.
-  if (!ideologySalience(a.answers).salient) { notSalient.push(entry.id); continue; }
-  included.push({
-    id: entry.id,
-    name: entry.name,
-    summary: a.summary,
-    audited: true,
-    // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
-    flag: flagFor(entry.id),
-    // The Wikipedia article's freely licensed lead image, with its credit (scripts/images.js).
-    image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
-    wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
-    furtherReading: a.furtherReading || [],
-    keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
-    profile: statements.map((s) => a.answers[s.id].value),
-  });
+function classify() {
+  included = [];
+  stale = [];
+  missing = [];
+  notSalient = [];
+  notIdeology = [];
+  for (const entry of catalog()) {
+    const p = profilePath(entry.id);
+    if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
+    const a = readJson(p);
+    if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
+    if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
+    // Too few stated positions to tell it apart from its neighbours: leave it out, so it neither
+    // appears in results nor shapes the dividing lines.
+    if (!ideologySalience(a.answers).salient) { notSalient.push(entry.id); continue; }
+    included.push({
+      id: entry.id,
+      name: entry.name,
+      summary: a.summary,
+      audited: true,
+      // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
+      flag: flagFor(entry.id),
+      // The Wikipedia article's freely licensed lead image, with its credit (scripts/images.js).
+      image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
+      wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
+      furtherReading: a.furtherReading || [],
+      keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
+      profile: statements.map((s) => a.answers[s.id].value),
+    });
+  }
+}
+
+// Salience is judged against the dividing lines of the ideologies shown, and which are shown depends
+// on salience. Start from the set in data.js and repeat until the set stops changing, so the result
+// doesn't depend on what the previous build happened to ship.
+classify();
+for (let pass = 1; included.length >= 3; pass++) {
+  const before = included.map((i) => i.id).join();
+  useSalienceModel(included, statements);
+  classify();
+  if (included.map((i) => i.id).join() === before) { console.log(`Salience settled after ${pass} pass${pass > 1 ? "es" : ""}.`); break; }
+  if (pass === 10) { console.warn("Salience: the shown set is still changing after 10 passes; using the last one."); break; }
 }
 
 // Parallel analysis is too slow to run in every visitor's browser at this size, so do it here.
@@ -112,16 +127,17 @@ console.log(`${meaningful} dividing lines stand out from noise.`);
 
 const fullModel = buildModel(included);
 const calibration = require("../pca.js").calibrateCertainty(fullModel);
-// The page needs only the leading components: the shown lines (at most 6) and the 8 used to place
-// a partial set of answers. SHIPPED_COMPONENTS keeps a margin over both.
-const SHIPPED_COMPONENTS = 10;
+// The page needs only the leading components: the rotated lines (shown or not) and the 8 used to
+// place a partial set of answers. SHIPPED_COMPONENTS keeps a margin over both.
+const SHIPPED_COMPONENTS = 12;
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
-// The shown lines (as app.js counts them) are rotated so each is one cluster of statements, then
+// Every line that beats noise is rotated so each is one cluster of statements (rotating only the
+// shown ones blends the clusters left out into them); the shown lines (as app.js counts them) are
 // named from audits/line-labels.json the way factors are named: by the statements that load most.
 // A name holds only while its anchor statements are still among that end's strongest; otherwise the
 // build warns and the page names that line's ends by ideologies, as before.
-const SHOWN = Math.min(6, Math.max(2, meaningful));
-const lines = varimax(fullModel, SHOWN).slice(0, SHIPPED_COMPONENTS);
+const SHOWN = Math.min(8, Math.max(2, meaningful));
+const lines = varimax(fullModel, Math.max(SHOWN, meaningful)).slice(0, SHIPPED_COMPONENTS);
 const labelSets = readJson(path.join(ROOT, "audits", "line-labels.json")).lines;
 const qIndex = Object.fromEntries(statements.map((s, j) => [s.id, j]));
 const used = new Set();
