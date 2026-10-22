@@ -1660,16 +1660,24 @@ function comboBox(id, text, key = "", self = "") {
       value="${esc(label)}" data-key="${esc(key)}"${self ? ` data-self="${esc(self)}"` : ""} placeholder="${text}" autocomplete="off" spellcheck="false">
     <ul id="${id}-list" class="combo-list" role="listbox" hidden></ul></div>`;
 }
-const COMBO_MAX = 60;
 function comboOpen(input) {
   const list = $(`${input.id}-list`);
   const options = compareOptions();
   const q = input.value.trim().toLowerCase();
   // A box that already names something shows everything, so it's easy to switch.
   const all = !q || options.some((o) => o.label.toLowerCase() === q);
-  const hits = (all ? options : options.filter((o) => o.label.toLowerCase().includes(q))
-    .sort((x, y) => x.label.toLowerCase().indexOf(q) - y.label.toLowerCase().indexOf(q))).slice(0, COMBO_MAX);
-  list.innerHTML = hits.map((o, i) => `<li id="${input.id}-opt-${i}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}</li>`).join("")
+  // Browsing (nothing typed): you, then ideologies and people A–Z under headings. Searching: every
+  // match, best first (where the text appears earliest in the name).
+  const byName = (x, y) => x.label.localeCompare(y.label);
+  const group = (kind) => options.filter((o) => (kind === "me" ? o.key === "me" : o.key.startsWith(kind)));
+  const groups = all
+    ? [["", group("me")], ["Ideologies", group("i:").sort(byName)], ["People", group("p:").sort(byName)]]
+    : [["", options.filter((o) => o.label.toLowerCase().includes(q))
+      .sort((x, y) => x.label.toLowerCase().indexOf(q) - y.label.toLowerCase().indexOf(q) || byName(x, y))]];
+  let n = 0;
+  list.innerHTML = groups.filter(([, items]) => items.length).map(([title, items]) =>
+    (title ? `<li class="combo-group" role="presentation">${title}</li>` : "") +
+    items.map((o) => `<li id="${input.id}-opt-${n++}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}</li>`).join("")).join("")
     || `<li class="muted" aria-disabled="true">No match</li>`;
   list.hidden = false;
   input.setAttribute("aria-expanded", "true");
