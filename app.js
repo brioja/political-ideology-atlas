@@ -908,13 +908,20 @@ function loadPhoto(p) {
     if (!p || !p.image) return resolve(null);
     const img = new Image();
     img.crossOrigin = "anonymous"; // Wikimedia allows it, so the canvas can still be saved
-    img.onload = () => resolve(img);
+    img.onload = () => { img.logo = !!p.image.logo; resolve(img); };
     img.onerror = () => resolve(null);
     img.src = p.image.url;
   });
 }
 
 // Draws `img` to fill the box (cropping, biased toward the top where faces usually are).
+// A photo fills its frame (cropped); a logo sits whole and centred on white.
+function drawPhoto(ctx, img, x, y, w, h) {
+  if (!img.logo) return drawCover(ctx, img, x, y, w, h);
+  ctx.fillStyle = "#ffffff"; ctx.fillRect(x, y, w, h);
+  const s = Math.min(w, h) * 0.62 / Math.max(img.width, img.height);
+  ctx.drawImage(img, x + (w - img.width * s) / 2, y + (h - img.height * s) / 2, img.width * s, img.height * s);
+}
 function drawCover(ctx, img, x, y, w, h) {
   const scale = Math.max(w / img.width, h / img.height);
   const sw = w / scale, sh = h / scale;
@@ -994,7 +1001,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const pw = 290;
     ctx.save();
     ctx.beginPath(); ctx.roundRect(PAD, y, pw, hh, [22, 0, 0, 22]); ctx.clip();
-    if (photos[0]) drawCover(ctx, photos[0], PAD, y, pw, hh);
+    if (photos[0]) drawPhoto(ctx, photos[0], PAD, y, pw, hh);
     else { ctx.fillStyle = CARD.line; ctx.fillRect(PAD, y, pw, hh); }
     ctx.restore();
     const tx = PAD + pw + 40, tw = W - PAD - 36 - tx;
@@ -1056,7 +1063,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       ctx.save();
       ctx.beginPath(); ctx.arc(x + r, cy, r, 0, Math.PI * 2); ctx.closePath();
       ctx.fillStyle = CARD.line; ctx.fill();
-      if (photos[i + 1]) { ctx.clip(); drawCover(ctx, photos[i + 1], x, cy - r, r * 2, r * 2); }
+      if (photos[i + 1]) { ctx.clip(); drawPhoto(ctx, photos[i + 1], x, cy - r, r * 2, r * 2); }
       ctx.restore();
       ctx.fillStyle = CARD.ink;
       ctx.fillText(fitName(p.name, personNameW, 600, personSize), x + 68, cy + 10);
@@ -1396,13 +1403,13 @@ renderExplore();
 // Round photo from Wikipedia (freely licensed); initials when there is no free image.
 function avatar(p, size = 36) {
   if (p.image) {
-    return `<img class="avatar" src="${esc(p.image.url)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
+    return `<img class="avatar${p.image.logo ? " logo" : ""}" src="${esc(p.image.url)}" alt="" width="${size}" height="${size}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`;
   }
   const initials = p.name.split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join("");
   return `<span class="avatar initials" style="width:${size}px;height:${size}px" aria-hidden="true">${esc(initials)}</span>`;
 }
 const imageCredit = (p) => p.image
-  ? `<p class="credit">Photo: ${esc(p.image.artist)}, <a href="${esc(p.image.source)}" target="_blank" rel="noopener">${esc(p.image.license)}</a>, via Wikimedia Commons</p>`
+  ? `<p class="credit">${p.image.logo ? "Logo" : "Photo"}: ${esc(p.image.artist)}, <a href="${esc(p.image.source)}" target="_blank" rel="noopener">${esc(p.image.license)}</a>, via Wikimedia Commons</p>`
   : "";
 
 // AI models (audits/PROMPT_MODEL.md) sit with the people but took the quiz themselves: their answers

@@ -124,7 +124,7 @@ function writePeople(model) {
     models++;
     people.push({
       id: m.id, name: m.name, kind: "model", role: `AI model by ${m.provider}`, summary: m.summary, region: "AI models",
-      born: m.released, living: true, takenAt: m.takenAt, wikipedia: null, views12m: 0, image: null,
+      born: m.released, living: true, takenAt: m.takenAt, wikipedia: null, views12m: 0, image: m.image || null,
       profile: statements.map((s) => (a.answers[s.id] ? a.answers[s.id].value : null)),
     });
   }
