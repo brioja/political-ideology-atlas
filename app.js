@@ -1583,6 +1583,7 @@ function renderPersonPage(id) {
           <span class="eyebrow">${esc(p.region)} · ${lifeLine(p)}</span>
           <h1>${esc(p.name)}</h1>
           ${p.role ? `<p class="muted">${esc(p.role)}</p>` : ""}
+          ${p.related && p.related.length ? `<p class="small muted">Answers the same way as ${p.related.map((r) => esc(r.name)).join(", ")}, so the test can't tell them apart.</p>` : ""}
           ${imageCredit(p)}
         </div>
       </div>

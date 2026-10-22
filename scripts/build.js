@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personSalience, ideologySalience, useSalienceModel } = require("./lib");
-const { buildModel, meaningfulAxes, salienceContext, salience, varimax } = require("../pca.js");
+const { buildModel, meaningfulAxes, salienceContext, salience, varimax, matchPeople } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -25,7 +25,7 @@ if (process.argv.includes("--people")) {
     console.error("The statements changed since data.js was built: run a full build.");
     process.exit(1);
   }
-  writePeople();
+  writePeople(require(path.join(ROOT, "data.js")).IDEOLOGIES);
   process.exit(0);
 }
 
@@ -92,11 +92,11 @@ if (included.length >= 3) {
 }
 
 if (included.length >= 3) useSalienceModel(included, statements, meaningful);
-writePeople();
+writePeople(included);
 
 // People: included when salient (see pca.js), judged against the ideologies shown. A statement added
 // after their audit counts as "no known position" until it is backfilled.
-function writePeople() {
+function writePeople(ideologies) {
   const people = [];
   let excludedPeople = 0;
   for (const entry of peopleCatalog()) {
@@ -127,7 +127,25 @@ function writePeople() {
       profile: statements.map((s) => (a.answers[s.id] ? a.answers[s.id].value : null)),
     });
   }
+  // Uniquely reachable: someone whose own answers would rank another person first (the site ranks by
+  // similarity, near-ties going to the more widely read) can't be reached by any set of answers, so
+  // they're listed on that person's page instead, as indistinguishable ideologies are. The more widely
+  // read of two is checked first and keeps its place.
+  const ref = { ideologies: ideologies.map((i) => ({ profile: i.profile })) };
+  const reachable = [], twins = [];
+  for (const p of [...people].sort((x, y) => y.views12m - x.views12m)) {
+    const [top] = matchPeople(ref, p.profile, [...reachable, p]);
+    if (!top || top.id === p.id) { reachable.push(p); continue; }
+    const twin = reachable.find((r) => r.id === top.id);
+    (twin.related = twin.related || []).push({ id: p.id, name: p.name });
+    twins.push(`${p.id} (with ${twin.id})`);
+  }
+  const kept = new Set(reachable.map((p) => p.id));
+  const dropped = people.filter((p) => !kept.has(p.id));
+  people.splice(0, people.length, ...people.filter((p) => kept.has(p.id)));
+  models -= dropped.filter((p) => p.kind === "model").length;
   console.log(`${people.length - models} people included, ${excludedPeople} excluded as not salient.`);
+  if (twins.length) console.log(`Not uniquely reachable, listed on the closer match's page: ${twins.join(", ")}`);
   if (models || excludedModels) console.log(`${models} AI models included, ${excludedModels} excluded as not salient.`);
 
   if (!process.argv.includes("--status")) {
