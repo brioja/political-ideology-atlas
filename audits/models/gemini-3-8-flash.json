@@ -1,0 +1,1971 @@
+{
+ "id": "gemini-3-8-flash",
+ "name": "Gemini 3.8 Flash",
+ "provider": "Google",
+ "released": 2026,
+ "route": "Google Antigravity",
+ "takenAt": "2026-10-22",
+ "summary": "Google's lightweight and fast model in the Gemini 3.8 family, built for high-speed multimodal reasoning and agentic tasks.",
+ "answers": {
+  "universal-healthcare": {
+   "value": 2,
+   "reason": "Universal access to healthcare ensures essential human well-being and prevents basic medical needs from depending on individual wealth."
+  },
+  "raise-minimum-wage": {
+   "value": 1,
+   "reason": "Raising minimum wages helps ensure workers can meet basic living standards, though increases should be calibrated to regional economic conditions."
+  },
+  "markets-allocate-better": {
+   "value": 1,
+   "reason": "Markets are remarkably effective at coordinating decentralized information and resource allocation, though public intervention remains necessary for market failures and public goods."
+  },
+  "public-ownership": {
+   "value": 0,
+   "reason": "Natural monopolies and vital infrastructure often benefit from public ownership or oversight, but competitive consumer industries typically perform better privately."
+  },
+  "tax-the-wealthy": {
+   "value": 1,
+   "reason": "Progressive taxation is a sensible tool for funding shared public investments and mitigating destabilizing levels of wealth inequality."
+  },
+  "unions-good": {
+   "value": 1,
+   "reason": "Collective bargaining provides a necessary counterweight to employer power and supports fairer wages and workplace protections."
+  },
+  "property-fundamental": {
+   "value": -1,
+   "reason": "While secure property rights are vital for economic stability, they must remain subject to reasonable taxation, regulation, and eminent domain for the common good."
+  },
+  "regulate-corporations": {
+   "value": 1,
+   "reason": "Targeted regulation is necessary to safeguard consumers, workers, competition, and the environment against corporate externalities."
+  },
+  "cut-welfare": {
+   "value": -2,
+   "reason": "Social safety nets prevent destitution and support economic resilience rather than merely inducing dependency."
+  },
+  "worker-ownership": {
+   "value": 0,
+   "reason": "Worker cooperatives and employee ownership models offer valuable benefits, but requiring them exclusively could stifle business formation and capital investment."
+  },
+  "surveillance-ok": {
+   "value": -1,
+   "reason": "Mass surveillance presents grave risks to civil liberties that generally outweigh speculative security gains, warranting strict judicial oversight instead."
+  },
+  "legalize-drugs": {
+   "value": 1,
+   "reason": "Shifting from criminal prohibition of adult drug use to public-health regulation and harm reduction produces better societal outcomes."
+  },
+  "restrict-hate-speech": {
+   "value": 0,
+   "reason": "While hate speech causes genuine harm, crafting legal restrictions without chilling legitimate dissent or enabling political abuse is difficult."
+  },
+  "strong-leader": {
+   "value": -2,
+   "reason": "Bypassing democratic institutions and legal checks risks arbitrary authoritarianism and erosion of core civil rights."
+  },
+  "state-harmful": {
+   "value": -2,
+   "reason": "Democratic state institutions are indispensable for upholding the rule of law, protecting fundamental rights, and providing vital public infrastructure."
+  },
+  "limit-guns": {
+   "value": 1,
+   "reason": "Strict licensing, background checks, and safety regulations for firearms help reduce preventable violence without eliminating lawful ownership."
+  },
+  "empower-police-military": {
+   "value": -1,
+   "reason": "Expanding police and military budgets and authorities without robust transparency and accountability risks abuse and overmilitarization."
+  },
+  "legalize-sex-work": {
+   "value": 1,
+   "reason": "Decriminalizing consensual adult sex work improves safety, legal protection, and labor rights while allowing enforcement to target coercion and trafficking."
+  },
+  "decide-locally": {
+   "value": 1,
+   "reason": "Subsidiarity allows decisions to reflect local needs and preferences, provided that national protections for civil rights are preserved."
+  },
+  "rehabilitation": {
+   "value": 2,
+   "reason": "Focusing correctional systems on rehabilitation and humane treatment reduces recidivism and produces safer, more just communities."
+  },
+  "traditional-family": {
+   "value": -1,
+   "reason": "Healthy, nurturing relationships are what support social well-being, regardless of whether a family matches a traditional structure."
+  },
+  "same-sex-marriage": {
+   "value": 2,
+   "reason": "Legal marriage recognition should be extended equally to couples regardless of sexual orientation."
+  },
+  "abortion-legal": {
+   "value": 1,
+   "reason": "Protecting reproductive autonomy supports individual health and self-determination, particularly in early and medically necessary stages."
+  },
+  "more-religion-public": {
+   "value": -1,
+   "reason": "Secular governance ensures equal treatment for people of all faiths and none, even as individuals freely practice their religions."
+  },
+  "correct-racial-injustice": {
+   "value": 2,
+   "reason": "Active societal effort is required to dismantle systemic disadvantages resulting from historical racial discrimination."
+  },
+  "gender-social-construct": {
+   "value": 1,
+   "reason": "Societal roles, expectations, and expressions associated with gender are heavily shaped by cultural norms rather than biology alone."
+  },
+  "preserve-national-culture": {
+   "value": 0,
+   "reason": "Cultural heritage and shared traditions enrich society, but they should evolve naturally and inclusively rather than through state enforcement."
+  },
+  "gradual-change": {
+   "value": 0,
+   "reason": "Institutional stability preserves social order, yet pressing injustices sometimes require decisive, rapid reform."
+  },
+  "reduce-immigration": {
+   "value": -1,
+   "reason": "Orderly and well-managed immigration brings substantial economic, cultural, and demographic benefits to host societies."
+  },
+  "empower-international-orgs": {
+   "value": 1,
+   "reason": "Global challenges like climate change, pandemics, and international security require stronger multilateral coordination and enforceable norms."
+  },
+  "free-trade": {
+   "value": 1,
+   "reason": "Lowering barriers to international trade increases overall prosperity and efficiency, though governments must support workers disrupted by global shifts."
+  },
+  "nation-first": {
+   "value": -1,
+   "reason": "Prioritizing narrow national interests over international agreements undermines global cooperation on existential common problems."
+  },
+  "humanitarian-intervention": {
+   "value": 0,
+   "reason": "Preventing atrocities abroad can justify military action in extreme cases, but interventions carry severe risks of worsening instability."
+  },
+  "open-borders": {
+   "value": -1,
+   "reason": "Completely open borders are impractical for sovereign states that must manage infrastructure, public services, and legal residency."
+  },
+  "limit-growth": {
+   "value": 0,
+   "reason": "Environmental sustainability requires reducing resource throughput and emissions, though green growth and technological efficiency can decouple output from harm."
+  },
+  "drastic-climate-action": {
+   "value": 2,
+   "reason": "Rapid and decisive government intervention to decarbonize the economy is essential to mitigate catastrophic climate disruption."
+  },
+  "tech-solves-problems": {
+   "value": -1,
+   "reason": "Technology provides essential tools, but solving human problems ultimately depends on political will, social justice, and sound governance."
+  },
+  "expand-nuclear": {
+   "value": 1,
+   "reason": "Modern nuclear energy provides reliable, low-carbon baseload power that is crucial for meeting clean energy targets alongside renewables."
+  },
+  "revolution-justified": {
+   "value": 0,
+   "reason": "Violent revolution can be a legitimate last resort against intractable tyranny, but it frequently results in chaos or new forms of oppression."
+  },
+  "experts-over-public": {
+   "value": -1,
+   "reason": "Expert analysis should deeply inform policy debates, but ultimate political sovereignty must remain democratically accountable to the public."
+  },
+  "central-planning": {
+   "value": -2,
+   "reason": "Comprehensive central planning lacks the price mechanisms and flexibility needed to efficiently distribute goods and meet complex consumer needs."
+  },
+  "socialized-markets": {
+   "value": 0,
+   "reason": "Market competition combined with worker or cooperative ownership is an intriguing model, though allowing diverse ownership structures is more practical."
+  },
+  "land-value-tax": {
+   "value": 1,
+   "reason": "Taxing unimproved land values encourages efficient land use and captures unearned economic rents without penalizing productive investment."
+  },
+  "tax-inheritance": {
+   "value": 1,
+   "reason": "Taxing substantial inheritances curbs the compounding of dynastic wealth and promotes greater equality of opportunity."
+  },
+  "basic-income": {
+   "value": 0,
+   "reason": "Universal basic income provides a straightforward floor against poverty, but its immense fiscal cost may compete with targeted public services."
+  },
+  "tariffs-protect-industry": {
+   "value": -1,
+   "reason": "Broad protectionist tariffs raise consumer prices and provoke retaliation, though narrowly targeted measures can protect critical emerging industries."
+  },
+  "state-directs-investment": {
+   "value": 1,
+   "reason": "Strategic public investment in research, infrastructure, and green technology helps overcome private sector coordination failures."
+  },
+  "widespread-small-property": {
+   "value": 1,
+   "reason": "Dispersing ownership of productive property promotes economic independence and checks concentrations of economic power."
+  },
+  "abolish-money-wages": {
+   "value": -2,
+   "reason": "Money and wage labor provide indispensable mechanisms for price discovery, incentives, and voluntary exchange in large, complex societies."
+  },
+  "abolish-central-banks": {
+   "value": -2,
+   "reason": "Central banks are essential for managing monetary policy, controlling inflation, and acting as lenders of last resort during financial crises."
+  },
+  "corporatist-bargaining": {
+   "value": 0,
+   "reason": "Tripartite corporatism can promote labor peace and macro stability, but it risks creating rigidities and locking out unrepresented workers."
+  },
+  "one-party-rule": {
+   "value": -2,
+   "reason": "Monopolizing political power eliminates essential accountability, stifles dissent, and leads inevitably to authoritarian abuses."
+  },
+  "monarchy-legitimate": {
+   "value": -1,
+   "reason": "While constitutional monarchies can serve as benign ceremonial anchors, hereditary political rule fundamentally contradicts democratic equality."
+  },
+  "democracy-best": {
+   "value": 2,
+   "reason": "Despite its imperfections and erratic electoral outcomes, democracy provides the only legitimate framework for peaceful power transitions and civic accountability."
+  },
+  "direct-votes": {
+   "value": 0,
+   "reason": "Direct ballot referendums empower citizens on crucial constitutional issues, but representative democracy better deliberates on technical compromises."
+  },
+  "workers-councils": {
+   "value": -1,
+   "reason": "Workplace councils offer valuable shop-floor voice, but national political authority must remain accountable to the universal franchise rather than sectoral councils."
+  },
+  "right-to-secede": {
+   "value": 0,
+   "reason": "Self-determination supports secession in cases of systematic oppression, though unilateral separation can destabilize states and provoke violent conflict."
+  },
+  "natural-rulers": {
+   "value": -2,
+   "reason": "Leadership capabilities are distributed across society rather than innate to a specific caste, and legitimacy must derive from consent rather than presumed natural superiority."
+  },
+  "political-violence-never": {
+   "value": -1,
+   "reason": "Peaceful democratic methods must always be prioritized, but violent resistance can be justified in extreme circumstances against tyrannical or genocidal regimes."
+  },
+  "war-builds-character": {
+   "value": -2,
+   "reason": "War inflicts catastrophic human suffering, trauma, and destruction, which vastly outweigh any romanticized notions of national character building."
+  },
+  "separate-church-state": {
+   "value": 2,
+   "reason": "Strict separation of religion and state protects religious freedom for minorities and non-believers while keeping governance neutral."
+  },
+  "laws-from-scripture": {
+   "value": -2,
+   "reason": "In pluralistic societies, civil laws must be grounded in accessible public reason and human rights rather than specific religious doctrines."
+  },
+  "private-courts-defense": {
+   "value": -2,
+   "reason": "Privatizing justice and defense would replace impartial rule of law with commercial coercion accountable only to wealth."
+  },
+  "military-superiority": {
+   "value": 0,
+   "reason": "Robust defensive capabilities deter aggression, but relentless pursuit of overwhelming superiority often triggers costly arms races and instability."
+  },
+  "ethnic-nation": {
+   "value": -2,
+   "reason": "Modern nations thrive as civic communities based on shared laws and values rather than exclusionary ethnic homogeneity."
+  },
+  "class-struggle-history": {
+   "value": 0,
+   "reason": "Economic class conflict has been a major historical force, but ideas, religion, technology, and nationalism have also driven human history."
+  },
+  "equal-outcomes": {
+   "value": 0,
+   "reason": "Extreme inequalities of outcome undermine social cohesion, but enforcing identical outcomes suppresses diverse human preferences and effort."
+  },
+  "indigenous-land-authority": {
+   "value": 1,
+   "reason": "Recognizing indigenous sovereignty and land stewardship corrects historic injustices and strengthens environmental conservation."
+  },
+  "colonial-reparations": {
+   "value": 1,
+   "reason": "Former colonial powers should provide meaningful development assistance and reparative investments to redress the lasting harms of imperial exploitation."
+  },
+  "civilizational-union": {
+   "value": -1,
+   "reason": "Regional cooperation is beneficial, but defining political unions along rigid religious or civilizational lines fosters exclusionary bloc politics."
+  },
+  "self-interest-moral": {
+   "value": 0,
+   "reason": "Prudent self-interest is an understandable aspect of human agency, but moral virtue also requires empathy, solidarity, and altruism."
+  },
+  "duties-before-rights": {
+   "value": -1,
+   "reason": "Civic responsibilities are vital to community life, but fundamental human rights must remain inviolable to protect individuals from collective tyranny."
+  },
+  "nature-intrinsic-value": {
+   "value": 2,
+   "reason": "Ecosystems and living organisms possess inherent worth that transcends their immediate economic utility to humans."
+  },
+  "limit-population": {
+   "value": -1,
+   "reason": "Coercive population limits infringe on reproductive autonomy; advancing education, gender equality, and healthcare naturally stabilizes birth rates."
+  },
+  "industrial-civilization-disaster": {
+   "value": -2,
+   "reason": "Industrialization created severe ecological disruptions, but it also dramatically increased life expectancy, eradicated diseases, and elevated human living standards."
+  },
+  "accelerate-technology": {
+   "value": 0,
+   "reason": "Technological innovation is essential for solving complex problems, but reckless acceleration without safety and social safeguards risks catastrophic harm."
+  },
+  "human-enhancement": {
+   "value": 1,
+   "reason": "Adults should have the autonomy to pursue cognitive and physical enhancements, provided procedures are medically safe and access does not exacerbate extreme inequality."
+  },
+  "algorithmic-government": {
+   "value": -1,
+   "reason": "Machine learning can optimize administrative workflows, but value judgments, legal interpretations, and core policy decisions require human democratic accountability."
+  },
+  "unbreakable-encryption": {
+   "value": 2,
+   "reason": "Strong, unbackdoored cryptography is essential for safeguarding individual privacy, commerce, and cybersecurity against criminals and state overreach."
+  },
+  "restore-past-order": {
+   "value": -2,
+   "reason": "Nostalgic attempts to resurrect past social orders typically entrench historical hierarchies and reverse hard-won human rights."
+  },
+  "results-over-ideology": {
+   "value": 2,
+   "reason": "Empirical evidence and observable human outcomes should guide public policy rather than rigid adherence to dogma."
+  },
+  "direct-action": {
+   "value": -1,
+   "reason": "Direct action has an important role in highlighting neglected causes, but enduring systemic change requires institutional and legislative democratic processes."
+  },
+  "means-match-ends": {
+   "value": 2,
+   "reason": "Using authoritarian or cruel methods inevitably corrupts the ethical character of the society one seeks to build."
+  },
+  "return-to-foraging": {
+   "value": -2,
+   "reason": "A return to hunter-gatherer life would result in the starvation of billions of people and the loss of medicine and culture."
+  },
+  "abolish-division-of-labor": {
+   "value": -2,
+   "reason": "Specialization and the division of labor are foundational to producing the complex knowledge, technology, and goods modern civilization relies upon."
+  },
+  "distribute-by-need": {
+   "value": 0,
+   "reason": "Ensuring everyone's essential needs are guaranteed is a noble goal, but total disconnection of distribution from productive contribution creates severe incentive problems."
+  },
+  "production-for-use": {
+   "value": 0,
+   "reason": "Essential public goods and healthcare should be guided by social utility, but market price signals remain vital for coordinating consumer goods efficiently."
+  },
+  "profit-exploitation": {
+   "value": -1,
+   "reason": "While wage theft and uncompetitive labor markets exploit workers, profit also reflects entrepreneurial risk, innovation, and capital coordination."
+  },
+  "dictatorship-of-proletariat": {
+   "value": -2,
+   "reason": "Establishing any dictatorial political monopoly invariably leads to brutal state repression rather than a classless society."
+  },
+  "collective-farming": {
+   "value": -2,
+   "reason": "Compulsory collectivization of agriculture has historically caused massive inefficiencies, disincentives, and catastrophic famines."
+  },
+  "capitalism-causes-war": {
+   "value": -1,
+   "reason": "Commercial competition has fueled imperial rivalries, but market interdependence can also deter conflict, and non-capitalist states have frequently waged aggressive wars."
+  },
+  "taxation-theft": {
+   "value": -2,
+   "reason": "Legitimate taxation democratically enacted funds the legal infrastructure, property enforcement, and public goods that make wealth creation possible."
+  },
+  "harm-principle": {
+   "value": 1,
+   "reason": "Preventing harm to others is the most robust justification for state coercion, though defining indirect harm requires careful balancing."
+  },
+  "individual-rights-only": {
+   "value": 0,
+   "reason": "Rights ultimately reside in individuals, but individuals also exercise collective rights to cultural preservation, self-determination, and association."
+  },
+  "conscription": {
+   "value": -1,
+   "reason": "Mandatory military conscription is a severe infringement on personal liberty that should only be contemplated during dire existential crises."
+  },
+  "exit-over-voice": {
+   "value": -1,
+   "reason": "Freedom of movement is a vital liberty, but the right to participate democratically remains the primary mechanism for holding governments accountable."
+  },
+  "state-as-business": {
+   "value": -2,
+   "reason": "Governments exist to protect rights, dispense justice, and serve all citizens equally, which differs fundamentally from maximizing commercial profits."
+  },
+  "positive-liberty": {
+   "value": 2,
+   "reason": "Meaningful freedom requires not merely the legal absence of restraint, but also access to basic education, healthcare, and economic security."
+  },
+  "media-academia-power": {
+   "value": -1,
+   "reason": "Media and academia shape cultural narratives and public discourse, but statutory legal authority, coercive power, and budgets reside with elected officials."
+  },
+  "hereditarian-race": {
+   "value": -2,
+   "reason": "Scientific consensus demonstrates that human genetic variation is continuous and that racial differences in cognitive outcomes are driven by environmental and socioeconomic factors."
+  },
+  "organic-representation": {
+   "value": -1,
+   "reason": "Channeling representation exclusively through corporations and families undermines individual political equality and citizen choice."
+  },
+  "total-state": {
+   "value": -2,
+   "reason": "Totalitarian state control over culture and private life obliterates fundamental human rights and creative freedom."
+  },
+  "national-rebirth": {
+   "value": -2,
+   "reason": "Rhetoric surrounding national decadence and radical rebirth is a defining hallmark of violent fascist mythmaking."
+  },
+  "territorial-expansion": {
+   "value": -2,
+   "reason": "Territorial expansionism violates national sovereignty and leads directly to aggressive war and imperial subjugation."
+  },
+  "personal-loyalty-rule": {
+   "value": -2,
+   "reason": "Feudal oaths of personal loyalty undermine the impartial rule of law and institutional democratic accountability."
+  },
+  "bound-labor": {
+   "value": -2,
+   "reason": "Serfdom and legally bound labor are severe violations of basic human freedom and dignity."
+  },
+  "no-neutral-knowledge": {
+   "value": -1,
+   "reason": "While social power structures frequently influence what is prioritized and accepted, empirical observation and objective logic can yield genuine neutral truths."
+  },
+  "universal-morality": {
+   "value": 1,
+   "reason": "Core ethical standards regarding human dignity, reciprocity, and prohibition of cruelty apply universally across human cultures."
+  },
+  "single-common-good": {
+   "value": -1,
+   "reason": "In pluralistic societies, legitimate disagreements over values exist, requiring democratic compromise rather than imposing a single deductive common good."
+  },
+  "jewish-state-israel": {
+   "value": 1,
+   "reason": "Like other peoples seeking self-determination and sanctuary from historical persecution, Jewish people have a right to national self-determination, which must coexist with Palestinian rights."
+  },
+  "diaspora-return-right": {
+   "value": 1,
+   "reason": "Sovereign nations have the legitimate right to establish citizenship pathways for their diaspora communities, provided it does not strip rights from residents."
+  },
+  "revive-national-language": {
+   "value": 0,
+   "reason": "Revitalizing ancestral languages preserves cultural heritage, but state mandates should not penalize speakers of existing daily vernaculars."
+  },
+  "workplace-democracy": {
+   "value": 1,
+   "reason": "Expanding democratic participation and worker codetermination in major corporations enhances employee dignity and corporate accountability."
+  },
+  "school-vouchers": {
+   "value": 0,
+   "reason": "Vouchers can expand parental educational choice, but they risk siphoning necessary resources from public school systems."
+  },
+  "avoid-deficit-stimulus": {
+   "value": -1,
+   "reason": "Prudent long-term fiscal discipline is important, but countercyclical deficit spending is essential during severe economic recessions."
+  },
+  "economic-freedom": {
+   "value": 1,
+   "reason": "The freedom to work, trade, and manage property provides a crucial material foundation that prevents the state from monopolizing individual survival."
+  },
+  "rule-by-example": {
+   "value": -1,
+   "reason": "While ethical leadership is admirable, clear codified laws and institutional checks are necessary to protect rights against arbitrary personal rule."
+  },
+  "national-self-determination": {
+   "value": 1,
+   "reason": "Distinct peoples generally have the right to democratic self-government, balanced against minority protections and international stability."
+  },
+  "force-without-un": {
+   "value": 0,
+   "reason": "Multilateral authorization through the UN is preferable, though unilateral or coalition action can be morally necessary to stop imminent atrocities when the Council is deadlocked."
+  },
+  "reason-over-faith": {
+   "value": 1,
+   "reason": "Rigorous reasoning, empirical evidence, and logical inquiry are the only reliable foundations for verifiable knowledge and public policy."
+  },
+  "welfare-for-citizens": {
+   "value": -1,
+   "reason": "Essential safety-net benefits should be accessible to legal residents and contributors to prevent humanitarian hardship and public health crises."
+  },
+  "work-for-welfare": {
+   "value": 0,
+   "reason": "Encouraging employment through active labor programs is beneficial, but rigid work requirements can harm vulnerable individuals unable to secure employment."
+  },
+  "class-collaboration": {
+   "value": 1,
+   "reason": "Cooperative labor relations and constructive bargaining yield greater social stability and prosperity than chronic zero-sum class warfare."
+  },
+  "sacrifice-heritage": {
+   "value": -2,
+   "reason": "Preserving historical and cultural institutions provides collective memory and wisdom that enriches contemporary creativity."
+  },
+  "dominated-front": {
+   "value": 0,
+   "reason": "Developing nations benefit from collective diplomatic coalitions, though alignment should be based on mutual development rather than anti-Western antagonism."
+  },
+  "workers-nation": {
+   "value": -1,
+   "reason": "Labor issues transcend national borders in a globalized economy, making international solidarity and shared standards essential."
+  },
+  "distinct-gender-roles": {
+   "value": -2,
+   "reason": "Civil and public law must treat individuals equally regardless of gender rather than enforcing prescriptive roles."
+  },
+  "ban-interest": {
+   "value": -2,
+   "reason": "Prohibiting interest lending cripples modern capital allocation, credit access, and economic development."
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "reason": "Legal racial segregation is an abhorrent violation of fundamental human dignity, equality, and civil rights."
+  },
+  "state-class-instrument": {
+   "value": -1,
+   "reason": "While economic elites often exert disproportionate influence, democratic states also serve as vital arenas for redistribution, regulation, and civil rights protection."
+  },
+  "expand-fossil-fuels": {
+   "value": -1,
+   "reason": "Addressing the climate crisis requires transitioning energy systems toward clean power rather than expanding fossil fuel extraction."
+  },
+  "assimilate-immigrants": {
+   "value": -1,
+   "reason": "Immigrants should respect constitutional laws and civic values, but society is enriched by voluntary multicultural diversity without forced cultural erasure."
+  },
+  "elite-replacement": {
+   "value": -2,
+   "reason": "The 'great replacement' theory is an unfounded, xenophobic conspiracy narrative that incites racial hatred."
+  },
+  "proportional-representation": {
+   "value": 1,
+   "reason": "Proportional electoral systems ensure that legislative representation accurately reflects the diverse voting preferences of the electorate."
+  },
+  "national-mission": {
+   "value": -1,
+   "reason": "Promoting democracy and human rights abroad through diplomacy is worthy, but believing in a chauvinistic national mission often leads to military overreach."
+  },
+  "patriarchy-structural": {
+   "value": 1,
+   "reason": "Societal structures, historical customs, and institutional biases continue to create measurable disadvantages for women relative to men."
+  },
+  "political-elite-corrupt": {
+   "value": 0,
+   "reason": "Political systems frequently suffer from special-interest capture and disconnect from ordinary voters, though blanket condemnation ignores dedicated public servants."
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "reason": "Eugenics policies that restrict reproductive rights are gross violations of bodily integrity and human rights."
+  },
+  "security-forces-accountable": {
+   "value": 2,
+   "reason": "Holding security personnel and state actors legally accountable for violence and abuse is indispensable for maintaining the rule of law."
+  },
+  "night-watchman-state": {
+   "value": -1,
+   "reason": "Limiting government purely to defense and law enforcement leaves societies unable to provide universal education, healthcare, and infrastructure."
+  },
+  "discourage-race-mixing": {
+   "value": -2,
+   "reason": "Discouraging interracial relationships is racist and an unacceptable infringement on individual personal freedom."
+  },
+  "equal-moral-worth": {
+   "value": 2,
+   "reason": "The equal moral worth of every human being is the foundational cornerstone of ethics, justice, and human rights."
+  },
+  "socialism-one-country": {
+   "value": null,
+   "reason": "Whether a socialist economic system can endure in isolation without global revolution is a theoretical dispute within Marxist ideology on which I decline to take a side."
+  },
+  "settler-state-colonial": {
+   "value": 0,
+   "reason": "States established by settlement that displaced indigenous peoples involve colonial dynamics, though their contemporary character and legitimacy encompass diverse modern realities."
+  },
+  "uniform-civil-code": {
+   "value": 1,
+   "reason": "A single secular civil code protects equal rights, gender equality, and nondiscrimination across all citizens regardless of their religious background."
+  },
+  "restrict-conversion": {
+   "value": -2,
+   "reason": "Freedom of conscience and the right to change or adopt any religion are fundamental international human rights."
+  },
+  "ban-cattle-slaughter": {
+   "value": -1,
+   "reason": "While respecting religious dietary beliefs is important, imposing them as criminal bans on pluralistic populations infringes on dietary freedom."
+  },
+  "no-religion-state-schools": {
+   "value": 1,
+   "reason": "Public secular schools should teach about religions objectively without providing sectarian theological instruction."
+  },
+  "state-strengthens-encirclement": {
+   "value": -2,
+   "reason": "Using foreign threats to permanently centralize and expand authoritarian state power leads directly to institutionalized tyranny."
+  },
+  "consent-of-governed": {
+   "value": 2,
+   "reason": "Legitimate political authority derives solely from the democratic consent of those who are governed."
+  },
+  "trade-surplus": {
+   "value": -1,
+   "reason": "Fixating on export surpluses reflects mercantilist fallacies, as trade balances naturally reflect domestic saving and investment dynamics."
+  },
+  "population-transfer": {
+   "value": -2,
+   "reason": "Forced population transfers and ethnic expulsions are catastrophic crimes against humanity that violate basic human rights."
+  },
+  "initiating-force-wrong": {
+   "value": 0,
+   "reason": "The non-aggression principle is a compelling ethical ideal, though rare edge cases like catastrophic prevention or taxation for public survival complicate an absolute prohibition."
+  },
+  "competition-drives-progress": {
+   "value": 0,
+   "reason": "Competition drives innovation and efficiency in many domains, but cooperation, shared knowledge, and solidarity are equally crucial to human advancement."
+  },
+  "ban-extremist-parties": {
+   "value": 1,
+   "reason": "Militant democracies are justified in banning parties that actively organize to overthrow constitutional democracy and abolish basic civil rights."
+  },
+  "freedom-as-non-domination": {
+   "value": 2,
+   "reason": "True republican liberty requires freedom from arbitrary domination and unchecked power, not merely the temporary absence of actual interference."
+  },
+  "separated-powers": {
+   "value": 2,
+   "reason": "Dividing government authority among independent legislative, executive, and judicial branches prevents the concentration and abuse of power."
+  },
+  "vanguard-party": {
+   "value": -2,
+   "reason": "Vanguardist parties inevitably create unaccountable ruling oligarchies that suppress the very working populations they claim to liberate."
+  },
+  "priority-to-poor": {
+   "value": 1,
+   "reason": "A just society should structure its laws and social safety net to ensure that the least advantaged are protected and prioritized."
+  },
+  "right-to-buy-council-homes": {
+   "value": 0,
+   "reason": "Expanding homeownership empowers working-class families, but selling social housing without replacing stock severely depletes affordable housing reserves."
+  },
+  "restrict-strikes-picketing": {
+   "value": -1,
+   "reason": "The right to strike is a cornerstone of labor bargaining power, and legal restrictions frequently serve to weaken worker organizing."
+  },
+  "population-causes-poverty": {
+   "value": -2,
+   "reason": "Lasting poverty is primarily caused by unjust institutions, lack of education, corruption, and poor capital allocation rather than raw population size."
+  },
+  "diversity-weakens-cohesion": {
+   "value": -1,
+   "reason": "While rapid demographic shifts require active integration policies, diverse societies that foster inclusive institutions achieve high levels of social trust and dynamism."
+  },
+  "offices-by-lottery": {
+   "value": -1,
+   "reason": "Citizen assemblies selected by lot offer valuable deliberative input on specific issues, but complex governance requires elected officials accountable through regular voting."
+  },
+  "emergency-suspend-protections": {
+   "value": -2,
+   "reason": "Suspending fundamental legal protections during emergencies opens the door to permanent authoritarianism, extrajudicial abuses, and tyranny."
+  },
+  "price-controls-essentials": {
+   "value": -1,
+   "reason": "Direct price controls during shortages typically worsen crises by creating black markets and disincentivizing supply; direct cash or voucher assistance is far more effective."
+  },
+  "party-controls-media": {
+   "value": -2,
+   "reason": "State or party control of information obliterates independent journalism and prevents citizens from holding power to account."
+  },
+  "party-commands-army": {
+   "value": -2,
+   "reason": "Armed forces must be professional, neutral servants of the constitutional state and rule of law, never instruments of a single political party."
+  },
+  "long-naturalization-wait": {
+   "value": -1,
+   "reason": "Lengthy naturalization periods delay civic integration and create an alienated, disenfranchised population of long-term residents."
+  },
+  "representatives-worker-pay": {
+   "value": -1,
+   "reason": "Capping legislative pay at average worker wages would deter skilled individuals from diverse backgrounds and increase susceptibility to corruption."
+  },
+  "party-discipline-binding": {
+   "value": 0,
+   "reason": "Party cohesion helps deliver programmatic platforms, but rigid discipline suppresses independent conscience and local constituent representation."
+  },
+  "pool-sovereignty": {
+   "value": 1,
+   "reason": "Pooling sovereignty in supranational institutions allows countries to resolve cross-border challenges, expand trade, and amplify their collective global influence."
+  },
+  "head-commands-forces": {
+   "value": 0,
+   "reason": "Executive command of the military ensures prompt decision-making, but legislative oversight is necessary to check military engagements and cabinet confirmations."
+  },
+  "church-by-bishops": {
+   "value": null,
+   "reason": "Internal ecclesiastical governance structures are matters of religious doctrine and church polity on which I take no political position."
+  },
+  "clerical-rule": {
+   "value": -2,
+   "reason": "Theocratic rule by clerics concentrates unchecked power in dogmatic authorities and violates religious freedom and democratic equality."
+  },
+  "defeat-own-government-war": {
+   "value": -1,
+   "reason": "Revolutionary defeatism can unintentionally enable foreign aggression, though resisting unjust imperialist wars through democratic dissent is legitimate."
+  },
+  "censor-art-for-virtue": {
+   "value": -2,
+   "reason": "Censoring artistic expression to enforce state-sanctioned moral virtue suppresses creativity, free speech, and intellectual vitality."
+  },
+  "unlimited-reelection": {
+   "value": -2,
+   "reason": "Executive term limits are vital checks against the personalization of power and the drift into illiberal autocracy."
+  },
+  "recall-officials": {
+   "value": 1,
+   "reason": "Recall mechanisms provide a useful democratic safeguard against elected officials who have committed severe misconduct or lost public trust."
+  },
+  "end-foreign-alliances": {
+   "value": -1,
+   "reason": "Mutual defense alliances deter aggression and preserve international peace, while total withdrawal creates destabilizing power vacuums."
+  },
+  "abolish-rental-housing": {
+   "value": -2,
+   "reason": "Banning rental housing eliminates necessary residential mobility and flexible accommodation options for workers and young adults."
+  },
+  "people-in-arms": {
+   "value": -2,
+   "reason": "Disbanding professional armed forces in favor of a universal armed populace risks factional warfare and militarizes civilian society."
+  },
+  "rural-life-healthier": {
+   "value": -1,
+   "reason": "Both rural and urban communities offer distinct lifestyles, but neither possesses inherently superior moral virtue."
+  },
+  "reunify-divided-nation": {
+   "value": 0,
+   "reason": "Reunification of artificially divided peoples is often desirable, but it must be achieved through peaceful democratic consent without triggering regional war."
+  },
+  "educated-out-of-touch": {
+   "value": 0,
+   "reason": "Higher education can foster insular cultural bubbles, though many educated professionals remain deeply attuned to and engaged with broader social realities."
+  },
+  "cultures-equal-different": {
+   "value": -1,
+   "reason": "While diverse cultural traditions should be respected, cultural practices that violate universal human rights cannot be deemed morally equivalent."
+  },
+  "death-penalty": {
+   "value": -2,
+   "reason": "Capital punishment carries the irreversible risk of executing innocent people, is applied disparately, and violates the fundamental right to life."
+  },
+  "sex-ed-in-schools": {
+   "value": 2,
+   "reason": "Comprehensive sex and gender education in schools promotes adolescent health, consent, and mutual respect while reducing unwanted pregnancies and disease."
+  },
+  "creationism-in-schools": {
+   "value": -2,
+   "reason": "Public science curricula should be grounded in evidence-based evolutionary biology rather than religious creation doctrines."
+  },
+  "restrict-pornography": {
+   "value": 0,
+   "reason": "Preventing non-consensual imagery and protecting minors is vital, but sweeping restrictions on adult materials risk infringing on free expression."
+  },
+  "citizenship-by-descent": {
+   "value": 0,
+   "reason": "Jus sanguinis and jus soli both serve legitimate sovereign functions, but combining birthright citizenship with descent best integrates immigrant communities."
+  },
+  "minority-language-support": {
+   "value": 1,
+   "reason": "Providing public services and education in recognized minority languages protects linguistic diversity and ensures equal access to public institutions."
+  },
+  "religious-exemptions": {
+   "value": 0,
+   "reason": "Reasonable accommodation for religious conscience should be granted where feasible, provided it does not infringe upon the civil rights of others or undermine public health."
+  },
+  "encourage-eccentricity": {
+   "value": 1,
+   "reason": "Fostering tolerance for unconventional lifestyles and nonconformity spurs cultural creativity, individual growth, and social evolution."
+  },
+  "sovereign-debt-cancellation": {
+   "value": 1,
+   "reason": "Relieving crushing, unpayable debt burdens for impoverished nations frees crucial fiscal resources for healthcare, education, and climate adaptation."
+  },
+  "independence-needs-economic-change": {
+   "value": 1,
+   "reason": "Meaningful national sovereignty requires economic self-determination and local ownership, not merely formal legal decolonization."
+  },
+  "constituent-assembly": {
+   "value": 0,
+   "reason": "Directly elected constituent assemblies are appropriate during major regime transitions, though established democracies typically benefit from standard amendment procedures."
+  },
+  "restrict-freedoms-for-growth": {
+   "value": -2,
+   "reason": "Sacrificing fundamental civil and political liberties for economic growth entrenches authoritarianism and leaves populations powerless against exploitation."
+  },
+  "rich-countries-aid-poor": {
+   "value": 2,
+   "reason": "Wealthy nations have a clear moral responsibility to provide substantial international assistance to eradicate extreme poverty and human suffering globally."
+  },
+  "independent-nuclear-deterrent": {
+   "value": -1,
+   "reason": "Expanding independent national nuclear arsenals accelerates proliferation risks, whereas collective security guarantees and disarmament efforts are safer long-term."
+  },
+  "direct-election-head-of-state": {
+   "value": 0,
+   "reason": "Direct election provides a direct democratic mandate, but in parliamentary systems a parliamentary selection avoids dangerous executive conflicts."
+  },
+  "central-bank-independence": {
+   "value": 1,
+   "reason": "Insulating central banks from short-term electoral politics helps anchor inflation expectations and preserves monetary stability."
+  },
+  "no-land-for-peace": {
+   "value": -1,
+   "reason": "Territorial compromises and land-for-peace negotiations are often essential diplomatic instruments for ending protracted armed conflicts."
+  },
+  "property-serves-common-good": {
+   "value": 1,
+   "reason": "Private property rights exist within a legal framework designed to advance societal welfare, justifying reasonable regulation and public obligations."
+  },
+  "soviet-state-capitalist": {
+   "value": 0,
+   "reason": "The USSR replaced private capital with state ownership and command planning, leading theorists to debate whether it constituted bureaucratic collectivism or state capitalism."
+  },
+  "precautionary-principle": {
+   "value": 1,
+   "reason": "Taking preventive measures against severe or irreversible environmental damage is prudent, even when full scientific certainty is pending."
+  },
+  "collective-defense": {
+   "value": 2,
+   "reason": "Credible collective defense commitments deter external aggression and form the bedrock of regional peace and alliance stability."
+  },
+  "annexed-territory-occupation": {
+   "value": 2,
+   "reason": "Under modern international law, unilateral territorial conquest and annexation without local consent are illegal and constitute unlawful occupation."
+  },
+  "subordinate-church-to-state": {
+   "value": 1,
+   "reason": "Religious institutions must be subject to the civil law and human rights protections of the state, without state control over internal theological doctrine."
+  },
+  "nonpartisan-head-of-state": {
+   "value": 1,
+   "reason": "Having a nonpartisan head of state provides an impartial constitutional arbiter and a unifying figure during political crises."
+  },
+  "force-to-prevent-secession": {
+   "value": -1,
+   "reason": "Military force should not be used against peaceful, democratic secession movements, though states may maintain order against violent rebellions."
+  },
+  "region-keeps-system": {
+   "value": 1,
+   "reason": "Asymmetric federalism and 'one country, two systems' frameworks offer practical solutions for integrating distinct regions while respecting local autonomy."
+  },
+  "sacred-ruler": {
+   "value": -2,
+   "reason": "Attributing divine descent or sacred status to political rulers is an archaic superstition that antithetically opposes democratic accountability."
+  },
+  "flat-income-tax": {
+   "value": -1,
+   "reason": "A flat tax places a disproportionate burden on lower-income households whose marginal utility of income is much higher, ignoring ability to pay."
+  },
+  "character-from-environment": {
+   "value": 1,
+   "reason": "While genetics and innate temperament play a role, social environment, education, and childhood opportunities overwhelmingly shape adult character."
+  },
+  "sovereign-above-law": {
+   "value": -2,
+   "reason": "The fundamental principle of the rule of law requires that all rulers and officials are strictly bound by the law."
+  },
+  "space-expansion": {
+   "value": 1,
+   "reason": "Space exploration and eventual expansion ensure the long-term survival of human civilization and drive transformative scientific advancements."
+  },
+  "mixed-constitution": {
+   "value": 1,
+   "reason": "Combining representative democracy with institutional checks and expert administrative bodies prevents both majoritarian tyranny and narrow oligarchy."
+  },
+  "leader-cult": {
+   "value": -2,
+   "reason": "Cults of personality degrade civic democracy, foster sycophancy, and invariably pave the path to totalitarian rule."
+  },
+  "equal-parenting": {
+   "value": 1,
+   "reason": "Rebuttably presuming shared parenting time serves the best interests of children by maintaining strong bonds with both parents after separation."
+  },
+  "class-struggle-under-socialism": {
+   "value": null,
+   "reason": "Whether class struggle persists under state socialism is a theoretical debate specific to Maoist and Marxist-Leninist doctrine on which I decline to take a position."
+  },
+  "land-redistribution": {
+   "value": 1,
+   "reason": "Redistributing unproductive or monopolized feudal latifundia to tenant farmers promotes rural equity, productivity, and economic independence."
+  },
+  "refugee-return": {
+   "value": 1,
+   "reason": "The right of refugees to return to their homes or receive fair compensation is an established humanitarian principle that must be resolved equitably."
+  },
+  "co-ethnic-territorial-claim": {
+   "value": -2,
+   "reason": "Annexing foreign territory based on ethnic kinship violates international borders and has historically served as a pretext for aggressive irredentist wars."
+  },
+  "apostasy-punishable": {
+   "value": -2,
+   "reason": "Punishing apostasy criminalizes conscience and is a severe violation of the fundamental human right to freedom of religion and belief."
+  },
+  "women-must-cover": {
+   "value": -2,
+   "reason": "Legally mandating clothing or veiling for women violates bodily autonomy, gender equality, and basic personal freedom."
+  },
+  "common-currency": {
+   "value": 0,
+   "reason": "A shared currency eliminates exchange risk and facilitates trade, but without fiscal union it creates severe macroeconomic imbalances during asymmetric shocks."
+  },
+  "kin-peoples-union": {
+   "value": -1,
+   "reason": "Pan-nationalist political projects based on linguistic or ancestral kinship often undermine existing civic states and stoke ethnic regional conflicts."
+  },
+  "national-cultural-autonomy": {
+   "value": 1,
+   "reason": "Non-territorial cultural autonomy allows minority groups to preserve their educational and cultural identity without fragmenting the territorial state."
+  },
+  "rights-where-you-live": {
+   "value": 0,
+   "reason": "Struggling for equal civil rights in one's home country is courageous and vital, but seeking refuge or self-determination abroad is also an understandable response to persecution."
+  },
+  "material-conditions-drive-history": {
+   "value": 0,
+   "reason": "Modes of production and technology fundamentally constrain and channel human possibilities, yet moral ideas, cultural movements, and legal innovations also actively reshape history."
+  },
+  "ban-cartels": {
+   "value": 2,
+   "reason": "Robust antitrust enforcement and prohibiting collusive cartels are essential for protecting consumers and maintaining open, dynamic market competition."
+  },
+  "no-bailouts": {
+   "value": 0,
+   "reason": "Bailing out private firms creates severe moral hazard, but temporary emergency liquidity is sometimes necessary to prevent catastrophic systemic financial collapse."
+  },
+  "courts-bound-by-majority": {
+   "value": -2,
+   "reason": "Constitutional courts and judicial review are indispensable for protecting minority rights and constitutional limits against majoritarian overreach."
+  },
+  "gender-parity-bodies": {
+   "value": 1,
+   "reason": "Setting parity goals or quotas helps break entrenched historic biases and ensures public decision-making bodies equitably represent the entire population."
+  },
+  "economic-self-sufficiency": {
+   "value": -2,
+   "reason": "Imperial autarky and closed trading blocs impoverish populations, destroy economic efficiency, and historically generate heightened imperial conflict."
+  },
+  "trade-labor-env-standards": {
+   "value": 2,
+   "reason": "Binding environmental and labor standards in trade treaties prevent a regulatory race to the bottom and ensure trade benefits workers and ecosystems."
+  },
+  "moral-incentives": {
+   "value": -1,
+   "reason": "Cultivating public spirit and duty is commendable, but modern complex economies cannot efficiently allocate labor and effort without material incentives."
+  },
+  "armed-group-creates-revolution": {
+   "value": -2,
+   "reason": "Focoist theories of armed vanguardism typically lead to catastrophic bloodshed, terrorism, and harsh state repression rather than genuine popular liberation."
+  },
+  "abolish-hereditary-privilege": {
+   "value": 2,
+   "reason": "Abolishing hereditary titles and legal privileges is essential for establishing equal citizenship and meritocratic opportunity."
+  },
+  "history-own-civilization": {
+   "value": 0,
+   "reason": "Teaching national history provides essential civic context, but it must be balanced with global perspectives and an honest examination of national failings."
+  },
+  "civilizing-tutelage": {
+   "value": -2,
+   "reason": "'Civilizing mission' doctrines were paternalistic justifications for brutal colonial exploitation, violence, and cultural subjugation."
+  },
+  "patriotic-education": {
+   "value": 0,
+   "reason": "Schools should foster civic responsibility and democratic values, but coercive nationalist indoctrination discourages critical historical analysis."
+  },
+  "end-racial-preferences": {
+   "value": 0,
+   "reason": "While long-term colorblind meritocracy is the ideal, targeted affirmative action remains a useful transitional tool to remedy persistent systemic disparities."
+  },
+  "public-money-creation": {
+   "value": 0,
+   "reason": "Sovereign money creation gives the public control over monetary expansion, but commercial bank credit creation provides necessary decentralized responsiveness to economic demand."
+  },
+  "capitalism-adapts": {
+   "value": 1,
+   "reason": "Capitalism has historically demonstrated extraordinary institutional flexibility, reforming through regulatory welfare states and technological adaptation in response to crises."
+  },
+  "former-empire-influence": {
+   "value": -1,
+   "reason": "Post-colonial relationships should be based on sovereign equality and mutual benefit rather than neo-imperial spheres of influence."
+  },
+  "delink-world-market": {
+   "value": -2,
+   "reason": "Complete economic autarky isolates developing countries from foreign investment, modern technology, and export markets, deepening poverty."
+  },
+  "labor-aristocracy": {
+   "value": -1,
+   "reason": "While workers in advanced economies enjoy higher living standards from high productivity and global supply chains, they still face genuine labor exploitation and economic precarity."
+  },
+  "freedom-to-discriminate": {
+   "value": -2,
+   "reason": "Public accommodations and commercial enterprises operating in civil society must not be permitted to discriminate against individuals based on race, sex, or identity."
+  },
+  "entrenched-bill-of-rights": {
+   "value": 2,
+   "reason": "An entrenched bill of rights guarantees that temporary political majorities cannot strip individuals and minorities of essential freedoms."
+  },
+  "colonial-treaties-void": {
+   "value": 0,
+   "reason": "Imposed colonial boundaries caused immense historical injustice, but unilaterally declaring international borders void risks catastrophic regional conflicts."
+  },
+  "elective-rulers": {
+   "value": 2,
+   "reason": "Legitimate political authority must be conferred through regular, democratic elections by the citizenry rather than inherited."
+  },
+  "minority-veto": {
+   "value": -2,
+   "reason": "Requiring absolute unanimity gives every single dissenter a total veto, creating complete legislative paralysis as seen in historical liberum veto systems."
+  },
+  "resist-lawless-ruler": {
+   "value": 2,
+   "reason": "Citizens retain a fundamental moral right to resist or remove tyrants who violate the constitution and subvert the social contract."
+  },
+  "parliament-supreme": {
+   "value": 2,
+   "reason": "An elected parliament representing the sovereign people must hold supremacy over any hereditary monarch or crown prerogative."
+  },
+  "animal-suffering-matters": {
+   "value": 2,
+   "reason": "Sentient animals experience pain, distress, and pleasure, giving their welfare substantial moral weight that society must respect."
+  },
+  "animal-use-humane": {
+   "value": 0,
+   "reason": "While minimizing suffering is a mandatory baseline, the ethical legitimacy of using animals for food and research remains deeply contested given available plant-based alternatives."
+  },
+  "noblesse-oblige": {
+   "value": 0,
+   "reason": "While personal philanthropy and social responsibility among the wealthy are commendable, institutional justice through equitable taxation and public rights is far more vital."
+  },
+  "withdraw-from-politics": {
+   "value": -1,
+   "reason": "While personal tranquility is a legitimate pursuit, democratic self-governance relies upon active citizen participation to protect collective liberties."
+  },
+  "mass-culture-pacifies": {
+   "value": 0,
+   "reason": "Commercial mass media often distracts and commodifies social attention, but culture also serves as an active medium for critique and political mobilization."
+  },
+  "ruling-class-consent": {
+   "value": 1,
+   "reason": "Hegemony functions profoundly through educational, religious, and cultural norms that secure widespread societal consent beyond overt state coercion."
+  },
+  "world-economy-extracts-surplus": {
+   "value": 1,
+   "reason": "Unequal terms of trade, intellectual property monopolies, and debt dynamics continue to transfer significant wealth from the Global South to developed economies."
+  },
+  "native-born-offices": {
+   "value": -2,
+   "reason": "Naturalized citizens who have sworn allegiance and achieved full legal status should have equal political rights to hold public office."
+  },
+  "party-own-road": {
+   "value": 1,
+   "reason": "Political movements and socialist projects must reflect their own nation's historical and cultural realities rather than submit to foreign domination."
+  },
+  "self-reliance-over-aid": {
+   "value": 0,
+   "reason": "Building domestic productive capacity fosters economic resilience, though foreign direct investment and trade provide indispensable capital and technological know-how."
+  },
+  "return-lost-territory": {
+   "value": -1,
+   "reason": "Revisiting historic territorial losses through revanchist claims destabilizes international order and frequently triggers devastating interstate wars."
+  },
+  "indigenous-political-leadership": {
+   "value": -1,
+   "reason": "Indigenous peoples deserve robust self-determination, treaty rights, and reparative justice, but modern constitutional democracy requires equal political franchise for all citizens."
+  },
+  "antifascism-founding-value": {
+   "value": 2,
+   "reason": "Resolute opposition to fascism, racism, and totalitarian tyranny is a foundational pillar for preserving democratic constitutionalism and human dignity."
+  },
+  "totalitarianisms-equivalent": {
+   "value": 0,
+   "reason": "Both fascist and totalitarian communist regimes committed monstrous atrocities and suppressed civil liberties, though their ideological origins and operational structures differed markedly."
+  },
+  "slavery-not-civil-war-cause": {
+   "value": -2,
+   "reason": "Historical records, state secession declarations, and contemporary testimony prove conclusively that the preservation and expansion of slavery was the central cause of the American Civil War."
+  },
+  "preserve-contested-monuments": {
+   "value": -1,
+   "reason": "Democratic communities should have the authority to remove or relocate monuments honoring figures who committed atrocities or defended slavery to museums."
+  },
+  "male-disadvantage-attention": {
+   "value": 2,
+   "reason": "Disparities in boys' educational attainment, mental health, occupational fatalities, and suicide are urgent public concerns requiring dedicated evidence-based interventions."
+  },
+  "domestic-violence-symmetry": {
+   "value": 1,
+   "reason": "Intimate partner violence of all forms is unacceptable, and male victims of domestic abuse deserve equal access to legal protection, shelter, and medical support."
+  },
+  "institutions-fit-civilization": {
+   "value": -1,
+   "reason": "While administrative structures should adapt to local contexts, core human rights and democratic freedoms are universal entitlements not limited to Western civilization."
+  },
+  "military-guardian-role": {
+   "value": -2,
+   "reason": "Subordinating civilian government to military oversight invites coups, undermines democracy, and erodes the constitutional separation of powers."
+  },
+  "paid-care-work": {
+   "value": 1,
+   "reason": "Caregiving and domestic labor are economically indispensable and deserve societal recognition through child allowances, paid family leave, and tax credits."
+  },
+  "filial-duty": {
+   "value": 1,
+   "reason": "Caring for aging parents and honoring family ties is a commendable moral responsibility, supported by public social safety systems."
+  },
+  "office-by-exam": {
+   "value": 0,
+   "reason": "A professional merit-based civil service exam system prevents partisan patronage, but elected leadership must retain ultimate policy direction."
+  },
+  "foreign-takeover-block": {
+   "value": 1,
+   "reason": "Governments have a legitimate national security obligation to block foreign acquisitions of critical infrastructure, defense manufacturing, and sensitive technology."
+  },
+  "no-fault-divorce": {
+   "value": 2,
+   "reason": "No-fault divorce protects individual freedom, reduces contentious litigation, and allows individuals to leave abusive or broken marriages safely."
+  },
+  "recallable-delegates": {
+   "value": -1,
+   "reason": "Imperative mandates and instant recall make governance unstable and prevent representatives from exercising thoughtful, long-term judgment on complex legislation."
+  },
+  "individual-pension-accounts": {
+   "value": -1,
+   "reason": "Completely privatizing retirement exposes workers to severe market crashes, whereas public defined-benefit pensions guarantee essential baseline financial security."
+  },
+  "land-use-tenure": {
+   "value": 0,
+   "reason": "Usufructuary tenure systems prevent land hoarding, but long-term tenure security or ownership is often necessary to incentivize capital improvement and investment."
+  },
+  "budget-needs-parliament": {
+   "value": 2,
+   "reason": "Legislative power of the purse is the essential foundation of representative government, preventing executive overreach and arbitrary taxation."
+  },
+  "single-official-language": {
+   "value": -1,
+   "reason": "Having a primary administrative lingua franca aids cohesion, but legally suppressing minority languages violates cultural and educational rights."
+  },
+  "foreign-land-ownership": {
+   "value": 0,
+   "reason": "Regulating foreign ownership of agricultural land and residential housing can prevent speculation, though blanket xenophobic bans discourage beneficial international investment."
+  },
+  "disparate-impact-discrimination": {
+   "value": 1,
+   "reason": "Evaluating disparate impact helps uncover unintentional structural barriers and discriminatory policies that appear neutral on their face."
+  },
+  "consumerism-harmful": {
+   "value": 1,
+   "reason": "Relentless consumerist materialism fuels environmental degradation, resource depletion, and psychological alienation without improving long-term happiness."
+  },
+  "arm-foreign-insurgents": {
+   "value": -1,
+   "reason": "Arming foreign insurgencies frequently exacerbates civil bloodshed, fuels regional instability, and produces catastrophic blowback."
+  },
+  "intervene-in-bloc": {
+   "value": -2,
+   "reason": "The Brezhnev doctrine of military intervention to crush allied political self-determination is an imperialist violation of sovereign independence."
+  },
+  "corporate-influence": {
+   "value": 2,
+   "reason": "Massive corporate campaign financing and concentrated lobbying distort public policy toward private profit at the expense of the public interest."
+  },
+  "restrict-foreign-funding": {
+   "value": 0,
+   "reason": "Protecting democratic elections from covert foreign state interference is legitimate, but autocrats often weaponize foreign agent laws to crush domestic civil society."
+  },
+  "pronatalist-incentives": {
+   "value": 0,
+   "reason": "Offering financial support to parents helps families thrive, but it should complement rather than substitute for orderly immigration to support aging demographics."
+  },
+  "residents-only-property": {
+   "value": 0,
+   "reason": "Restricting external property investment can curb runaway housing costs for local residents, though it may restrict construction capital and property rights."
+  },
+  "job-guarantee": {
+   "value": 0,
+   "reason": "A federal job guarantee provides an effective floor for employment and public works, but managing administrative efficiency and matching local needs presents massive challenges."
+  },
+  "democratic-peace": {
+   "value": 1,
+   "reason": "Institutional transparency, shared norms, and voter accountability make military conflict between consolidated liberal democracies historically very rare."
+  },
+  "no-duty-to-obey": {
+   "value": 1,
+   "reason": "Moral duty is not coextensive with statutory law, and individuals have a moral obligation to resist profoundly unjust, tyrannical, or genocidal edicts."
+  },
+  "non-intervention": {
+   "value": -1,
+   "reason": "Respect for national sovereignty is a primary pillar of global order, but absolute non-intervention cannot stand when states commit genocide or mass atrocities against their own people."
+  },
+  "industrial-unions": {
+   "value": 1,
+   "reason": "Organizing workers across entire industries builds broader solidarity, prevents craft fragmentation, and increases bargaining power against large employers."
+  },
+  "minority-conspiracy": {
+   "value": -2,
+   "reason": "Scapegoating ethnic or religious minorities with baseless conspiracy theories has historically fueled violence and genocide."
+  },
+  "abolish-legal-marriage": {
+   "value": -1,
+   "reason": "Civil marriage provides practical legal protections, mutual rights, and stability for partners and children that contract law alone cannot easily replicate."
+  },
+  "public-access-to-information": {
+   "value": 2,
+   "reason": "Transparent freedom-of-information laws are essential for exposing government malfeasance and enabling informed democratic oversight."
+  },
+  "local-production": {
+   "value": 0,
+   "reason": "Localizing supply chains reduces transportation emissions and fosters resilience, though complete localism sacrifices the efficiency and variety of global trade."
+  },
+  "informal-organisation": {
+   "value": -1,
+   "reason": "Informal mutual-aid affinity groups are agile, but durable political progress requires institutional permanence and mass democratic structures."
+  },
+  "national-law-over-international": {
+   "value": 0,
+   "reason": "Constitutional supremacy preserves domestic democratic self-governance, but honoring international treaties and human rights conventions prevents global anarchy."
+  },
+  "religious-nation": {
+   "value": -2,
+   "reason": "Defining nations by religious identity inherently relegates religious minorities and non-believers to second-class status."
+  },
+  "deference-to-leading-power": {
+   "value": -2,
+   "reason": "Imposing ritual tributary submission denies the sovereign equality of nations and belongs to an obsolete imperial era."
+  },
+  "regional-revenue-retention": {
+   "value": -1,
+   "reason": "Inter-regional fiscal transfers are essential for guaranteeing equal public services and social cohesion across all areas of a country."
+  },
+  "personal-possessions-private": {
+   "value": 1,
+   "reason": "Distinguishing between individual personal possessions and productive capital clarifies socialist ethics, preserving personal privacy while addressing economic power."
+  },
+  "defeat-communism": {
+   "value": 0,
+   "reason": "Resisting totalitarian authoritarianism is essential, though peaceful coexistence, diplomatic dialogue, and mutual arms reduction remain necessary between sovereign states."
+  },
+  "mixed-public-service-providers": {
+   "value": 1,
+   "reason": "Incorporating non-profit and private providers within a strongly regulated, publicly funded framework can drive innovation while ensuring universal access."
+  },
+  "religion-illusion": {
+   "value": -1,
+   "reason": "Reducing religion purely to an economic illusion fails to appreciate its profound philosophical, community, and existential meanings for billions of people."
+  },
+  "capitalism-progressive": {
+   "value": 1,
+   "reason": "Historically, capitalism generated unprecedented technological innovation, productivity increases, and material abundance compared to pre-industrial feudalism."
+  },
+  "women-equality-needs-economic-change": {
+   "value": 1,
+   "reason": "Achieving genuine gender equality requires transforming economic structures to value unpaid care work and eliminate systemic wage and wealth gaps."
+  },
+  "socialized-care": {
+   "value": 0,
+   "reason": "Providing robust public childcare and family support is essential, but families should retain the freedom to raise children at home if they choose."
+  },
+  "purge-loanwords": {
+   "value": -2,
+   "reason": "Linguistic purism is nationalistic and impractical, as languages evolve naturally through dynamic cross-cultural borrowing."
+  },
+  "treaties-binding": {
+   "value": 2,
+   "reason": "Treaties with indigenous nations are solemn legal contracts that cannot be unilaterally abrogated without destroying state integrity and justice."
+  },
+  "cooperative-communities": {
+   "value": 0,
+   "reason": "Voluntary intentional communities and cooperative networks are inspiring, but cannot replace the complex coordination needed for modern industrial societies."
+  },
+  "majority-settlement": {
+   "value": -2,
+   "reason": "State-sponsored demographic engineering to dilute minority regions is an oppressive tool of cultural assimilation and subjugation."
+  },
+  "neither-capitalism-nor-communism": {
+   "value": 1,
+   "reason": "Combining market dynamism with strong social democratic protections and environmental regulation avoids the extremes of both laissez-faire and command planning."
+  },
+  "historical-land-claim": {
+   "value": -1,
+   "reason": "Ancestral and religious ties must be acknowledged, but contemporary human rights and peaceful cohabitation of existing inhabitants take precedence over ancient claims."
+  },
+  "holocaust-denial": {
+   "value": -2,
+   "reason": "The Holocaust is an incontrovertible historical fact documented by overwhelming archival evidence, survivor testimony, and physical remains."
+  },
+  "criminalize-homosexuality": {
+   "value": -2,
+   "reason": "Criminalizing consensual same-sex adult relationships is an egregious violation of basic human rights, dignity, and personal autonomy."
+  },
+  "suppress-opposition": {
+   "value": -2,
+   "reason": "Suppressing political opposition destroys democratic accountability and institutionalizes state tyranny and terror."
+  },
+  "punish-blasphemy": {
+   "value": -2,
+   "reason": "Punishing blasphemy violates the fundamental human rights to freedom of thought, expression, and religious belief."
+  },
+  "colonies-serve-metropole": {
+   "value": -2,
+   "reason": "Extracting colonial wealth for the benefit of a distant imperial power is an unjust practice of imperialist theft and domination."
+  },
+  "defensive-jihad-duty": {
+   "value": null,
+   "reason": "Whether armed resistance to foreign invasion constitutes an obligatory religious duty is an internal theological question of Islamic jurisprudence that I decline to adjudicate."
+  },
+  "unreligious-rulers-fought": {
+   "value": -2,
+   "reason": "Declaring political leaders illegitimate on theological grounds to justify violent overthrow undermines pluralistic democracy and breeds civil conflict."
+  },
+  "participatory-democracy": {
+   "value": 1,
+   "reason": "Expanding direct citizen participation in workplaces and local governance deepens democracy and counters civic alienation."
+  },
+  "intersecting-oppressions": {
+   "value": 1,
+   "reason": "Social disparities along lines of race, gender, and class compound one another and require multifaceted, holistic policy solutions."
+  },
+  "gender-identity-recognition": {
+   "value": 2,
+   "reason": "Legal recognition and non-discrimination protections for transgender individuals are vital for safeguarding their fundamental human dignity, safety, and equality."
+  },
+  "assisted-dying": {
+   "value": 1,
+   "reason": "Allowing terminally ill adults suffering unmanageable pain to choose medical assistance in dying with strict safeguards respects personal autonomy."
+  },
+  "left-right-obsolete": {
+   "value": 0,
+   "reason": "The left-right spectrum captures enduring tensions between equality and hierarchy, though pragmatic problem-solving frequently transcends traditional ideological binaries."
+  },
+  "alienated-labor": {
+   "value": 1,
+   "reason": "Repetitive, commodified labor under strict hierarchy often deprives workers of autonomy and meaningful connection to what they produce."
+  },
+  "islam-incompatible": {
+   "value": -2,
+   "reason": "Islam encompasses diverse cultures and millions of adherents who live successfully and peacefully as integral citizens of Western democracies."
+  },
+  "divine-source-of-authority": {
+   "value": -2,
+   "reason": "In a secular democracy, legitimate political authority resides exclusively in the sovereign consent of the people, not divine appointment."
+  },
+  "religious-dress-in-state": {
+   "value": 0,
+   "reason": "Maintaining state secularism is important, but banning religious dress can unnecessarily infringe upon individual religious freedom and exclude minorities from public life."
+  },
+  "ban-nda-harassment": {
+   "value": 2,
+   "reason": "Prohibiting non-disclosure agreements for sexual misconduct and harassment prevents serial abusers from silencing victims and hiding dangerous behavior."
+  },
+  "social-market-economy": {
+   "value": 2,
+   "reason": "The social market economy successfully harmonizes competitive economic efficiency with essential social safety nets, worker participation, and fair regulation."
+  },
+  "abolish-armed-forces": {
+   "value": -2,
+   "reason": "While global disarmament is an inspiring ideal, completely abolishing national armed forces in an anarchic international system invites external aggression."
+  },
+  "rich-first": {
+   "value": 0,
+   "reason": "Staged regional development can generate initial growth clusters, but without deliberate redistribution it entrenches severe, enduring geographic inequalities."
+  },
+  "stay-neutral-between-blocs": {
+   "value": 0,
+   "reason": "Non-alignment offers strategic autonomy for some states, but defensive alliances remain crucial for smaller nations facing aggressive neighbors."
+  },
+  "dynastic-succession": {
+   "value": -2,
+   "reason": "Hereditary political succession in a state violates the fundamental democratic principle of government by the choice of the people."
+  },
+  "interest-free-mutual-credit": {
+   "value": 0,
+   "reason": "Mutual credit unions provide valuable democratic alternatives to commercial banking, though risk-adjusted interest rates remain necessary for large-scale capital allocation."
+  },
+  "refuse-lender-austerity": {
+   "value": 0,
+   "reason": "Counterproductive austerity that guts public health and education should be resisted, though sustainable sovereign debt management remains necessary."
+  },
+  "property-franchise": {
+   "value": -2,
+   "reason": "Restricting the right to vote to property owners or taxpayers is an aristocratic disenfranchisement of working-class citizens that violates political equality."
+  },
+  "domination-women-nature": {
+   "value": 1,
+   "reason": "Ecofeminist analysis illuminates important shared structural dynamics in the exploitation of both women's labor and natural resources."
+  },
+  "reification": {
+   "value": 1,
+   "reason": "Market relations frequently obscure the human labor and social relations behind commodities, making economic forces seem to rule human beings."
+  },
+  "press-owned-by-wealth": {
+   "value": 1,
+   "reason": "The concentration of media ownership among corporate conglomerates and billionaires distorts public debate and limits genuine democratic expression."
+  },
+  "promulgated-standing-laws": {
+   "value": 2,
+   "reason": "Governance through transparent, standing laws adjudicated by independent judges is the indispensable bedrock of the rule of law."
+  },
+  "racial-franchise": {
+   "value": -2,
+   "reason": "Restricting political franchise by race is an oppressive system of apartheid that fundamentally violates universal human equality."
+  },
+  "online-participation": {
+   "value": 1,
+   "reason": "Secure digital civic platforms can meaningfully broaden public engagement, consultation, and participation in democratic governance."
+  },
+  "open-government-data": {
+   "value": 2,
+   "reason": "Comprehensive open government data fosters institutional integrity, empowers investigative journalism, and enables transparent democratic accountability."
+  },
+  "interfaith-marriage-restriction": {
+   "value": -2,
+   "reason": "Legally restricting interfaith marriage violates personal freedom, religious liberty, and the fundamental right to marry."
+  },
+  "boycott-minority-shops": {
+   "value": -2,
+   "reason": "Targeted economic boycotts against minority-owned businesses are discriminatory practices of persecution that stoke communal hostility."
+  },
+  "citizens-assembly": {
+   "value": 1,
+   "reason": "Deliberative citizens' assemblies chosen by lot provide representative, nuanced insights that help break legislative gridlock on contentious policy issues."
+  },
+  "reinterpret-religion": {
+   "value": 1,
+   "reason": "Dynamic reinterpretation of religious traditions allows faith communities to harmonize spiritual values with universal human rights, scientific reality, and gender equality."
+  },
+  "wealth-concentration-endangers-liberty": {
+   "value": 2,
+   "reason": "Extreme concentration of economic wealth inevitably translates into unequal political influence, threatening democratic self-governance."
+  },
+  "open-lgbt-military-service": {
+   "value": 2,
+   "reason": "Service in the armed forces should be open to all qualified individuals without discrimination based on sexual orientation."
+  },
+  "state-promotes-atheism": {
+   "value": -1,
+   "reason": "State secularism requires neutrality toward religion rather than coercive state promotion of atheism or persecution of religious believers."
+  },
+  "abolish-police-prisons": {
+   "value": -1,
+   "reason": "Deep structural reform and community alternatives are crucial, but complete abolition leaves societies without essential mechanisms to restrain violent crime."
+  },
+  "power-sharing-divided-societies": {
+   "value": 1,
+   "reason": "Consociational power-sharing and coalition mechanisms help maintain peace, stability, and mutual security in deeply divided post-conflict societies."
+  },
+  "charity-over-state-aid": {
+   "value": -1,
+   "reason": "Philanthropy plays an important complementary role, but only public social safety nets have the scale, stability, and legal universality needed to eradicate poverty."
+  },
+  "term-limits": {
+   "value": 0,
+   "reason": "Term limits prevent entrenchment of incumbent power, but they can also drain legislative bodies of policy expertise and empower unelected lobbyists."
+  },
+  "vote-delegation": {
+   "value": 0,
+   "reason": "Liquid democracy allows dynamic voter specialization, but it introduces complex volatility and unpredictability into legislative decision-making."
+  },
+  "existential-risk-priority": {
+   "value": 2,
+   "reason": "Mitigating existential risks—such as nuclear war, engineered pandemics, runaway artificial superintelligence, and ecological collapse—is an imperative moral duty to safeguard humanity's future."
+  },
+  "women-in-religious-leadership": {
+   "value": 1,
+   "reason": "Equal moral worth and human dignity dictate that leadership offices should not be barred to individuals because of their gender."
+  },
+  "shared-marital-authority": {
+   "value": 2,
+   "reason": "Marriage is an equal partnership between autonomous adults, requiring mutual respect and shared decision-making rather than patriarchal supremacy."
+  },
+  "foreign-residents-local-vote": {
+   "value": 1,
+   "reason": "Allowing long-term foreign residents to vote in local municipal elections encourages civic integration and representation for local taxpayers."
+  },
+  "rent-control": {
+   "value": 0,
+   "reason": "Emergency rent caps protect vulnerable tenants from sudden displacement, but prolonged price ceilings frequently reduce housing maintenance and discourage new construction."
+  },
+  "abolish-ip": {
+   "value": -1,
+   "reason": "Intellectual property frameworks require serious reform to prevent abusive monopolies, but abolishing all copyright and patents would undermine investment in complex innovation."
+  },
+  "uniformed-youth": {
+   "value": -2,
+   "reason": "State-sponsored paramilitary youth movements are authoritarian tools designed for ideological indoctrination and the militarization of civil society."
+  },
+  "no-nuclear-weapons-on-territory": {
+   "value": 0,
+   "reason": "Eliminating nuclear weapons on national soil reduces primary targeting risks, but host nations in collective defense alliances rely on extended nuclear deterrence."
+  },
+  "no-foreign-bases": {
+   "value": 0,
+   "reason": "Hosting foreign military bases impinges on local sovereignty, yet cooperative basing agreements are often essential for regional collective security."
+  },
+  "recognise-genocide": {
+   "value": 2,
+   "reason": "Formally acknowledging historical genocides honors victims, upholds historical truth, and reinforces international norms against mass atrocities."
+  },
+  "income-for-work-not-ownership": {
+   "value": 0,
+   "reason": "Rewarding labor is fundamental to fairness, but capital allocation and investment risk-taking also generate productive economic value that deserves a return."
+  },
+  "never-kill-self-defence": {
+   "value": -2,
+   "reason": "Strict pacifism is an admirable personal ethos, but individuals and communities possess a fundamental right to use proportional force to defend life against lethal aggression."
+  },
+  "unbroken-national-continuity": {
+   "value": -1,
+   "reason": "Nations are historically contingent, evolving political and cultural constructs rather than primordial, unchanging entities existing unbroken from ancient times."
+  },
+  "sex-socially-constructed": {
+   "value": 0,
+   "reason": "Biological sex traits are objective physical realities, but the linguistic categories, medical boundaries, and social meanings assigned to sex involve social construction."
+  },
+  "no-fixed-category-of-women": {
+   "value": 1,
+   "reason": "Recognizing diverse experiences and rejecting rigid, exclusionary definitions enriches feminist analysis and respects individual complexity."
+  },
+  "martyrs-honoured": {
+   "value": -1,
+   "reason": "Honoring civic sacrifice is meaningful, but elevating military deaths to religious martyrdom glorifies warfare and discourages critical evaluation of conflict."
+  },
+  "politics-spiritual-struggle": {
+   "value": -2,
+   "reason": "Framing politics as a cosmic spiritual battle between good and evil encourages fanaticism, demonizes political opponents, and destroys democratic compromise."
+  },
+  "homeland-cultural-centre": {
+   "value": 1,
+   "reason": "Fostering a vibrant cultural and spiritual homeland that inspires a global diaspora without requiring universal emigration offers a pluralistic model of identity."
+  },
+  "culture-before-state": {
+   "value": 1,
+   "reason": "Nurturing language, civic literature, and cultural solidarity builds the necessary social cohesion before legitimate political statehood can thrive."
+  },
+  "god-not-male": {
+   "value": 1,
+   "reason": "Transcendent conceptions of the divine surpass human gender categories, and exclusive masculine terminology reinforces patriarchal religious power."
+  },
+  "scripture-judged-by-women": {
+   "value": 1,
+   "reason": "Subjecting religious doctrines and hermeneutics to the standard of women's equal humanity is vital for dismantling patriarchal scriptural justifications."
+  },
+  "economy-in-majority-hands": {
+   "value": -2,
+   "reason": "Confining commercial ownership to the ethnic majority constitutes discriminatory economic dispossession that destroys minority rights and economic productivity."
+  },
+  "single-unit-for-people": {
+   "value": 0,
+   "reason": "Consolidating contiguous minority areas into a single administrative region can facilitate cultural self-governance, but redrawing internal borders often stokes regional tensions."
+  },
+  "independent-unions": {
+   "value": 2,
+   "reason": "Trade unions must remain genuinely autonomous from state and party control to effectively defend worker interests and rights."
+  },
+  "socialism-needs-workers-power": {
+   "value": 1,
+   "reason": "A society cannot be genuinely socialist if bureaucratic state elites hold power over a disenfranchised and unrepresented working class."
+  },
+  "local-essentials-public": {
+   "value": 1,
+   "reason": "Critical local monopolies like water supply, public transit, and sanitation are best managed in the public interest rather than for private profit extraction."
+  },
+  "second-chamber": {
+   "value": 1,
+   "reason": "A second legislative chamber provides valuable institutional cooling, constitutional review, and regional representation against hasty lawmaking."
+  },
+  "municipal-property": {
+   "value": 0,
+   "reason": "Municipal and public ownership of key utilities is beneficial, but decentralized cooperative, private, and national enterprises are also needed for a dynamic economy."
+  },
+  "confederal-coordination": {
+   "value": 0,
+   "reason": "Confederal delegate networks maximize local autonomy, but complex continental and global challenges require institutions with binding legislative authority."
+  },
+  "family-wage": {
+   "value": 0,
+   "reason": "Wages should be sufficient for a dignified living standard, but framing the standard around a male breadwinner model perpetuates gendered wage disparities."
+  },
+  "ageing-research-funding": {
+   "value": 1,
+   "reason": "Public funding for research targeting the biological processes of aging can prevent chronic disease, reduce healthcare costs, and extend healthy lifespan."
+  },
+  "anonymous-payments": {
+   "value": 0,
+   "reason": "Financial privacy is important for civil liberties, but completely untraceable payments enable large-scale criminal finance, money laundering, and tax evasion."
+  },
+  "online-anonymity": {
+   "value": 1,
+   "reason": "Protecting pseudonymity and online anonymity is vital for whistleblowers, dissidents, and free expression against authoritarian surveillance."
+  },
+  "person-over-state": {
+   "value": 2,
+   "reason": "The state is an instrument created to protect the rights, dignity, and flourishing of human persons, who must never be reduced to mere tools of the collective."
+  },
+  "spiritual-nature": {
+   "value": 0,
+   "reason": "While many people possess spiritual dimensions, political institutions in pluralistic societies must remain grounded in secular reason and universal rights."
+  },
+  "regional-powers-revocable": {
+   "value": -1,
+   "reason": "Genuine federalism requires constitutionally protected powers that the central government cannot unilaterally strip away at will."
+  },
+  "gm-crops": {
+   "value": 1,
+   "reason": "Rigorously tested genetically engineered crops offer vital tools for enhancing yields, climate resilience, and nutritional security."
+  },
+  "dense-cities": {
+   "value": 1,
+   "reason": "Dense, walkable urban environments drastically lower per capita carbon emissions, energy usage, and habitat destruction compared to sprawling suburbs."
+  },
+  "racial-group-interests": {
+   "value": 0,
+   "reason": "Historically marginalized groups frequently need to organize collectively to fight discrimination, though essentializing political interests along racial lines can hinder broad coalitions."
+  },
+  "racial-pride": {
+   "value": 0,
+   "reason": "Cultural pride among marginalized groups serves as an empowering response to oppression, though racial pride movements among dominant groups often manifest as exclusionary supremacy."
+  },
+  "defensive-wars-only": {
+   "value": 1,
+   "reason": "Restricting military action strictly to self-defense against armed attack upholds international law and prevents illegal wars of aggression."
+  },
+  "language-defines-nation": {
+   "value": 0,
+   "reason": "Shared language is a potent national bond, but multilingual nations like Switzerland successfully thrive on shared civic values and institutions."
+  },
+  "communal-electorates": {
+   "value": -1,
+   "reason": "Separate communal voting rolls entrench sectarian divisions, whereas joint electorates incentivize politicians to build cross-community appeals."
+  },
+  "foreign-partition-plot": {
+   "value": -2,
+   "reason": "Paranoia about clandestine foreign partition plots is a conspiratorial trope frequently deployed by authoritarian regimes to suppress domestic dissent."
+  },
+  "free-public-college": {
+   "value": 1,
+   "reason": "Tuition-free public higher education expands social mobility, develops human capital, and treats advanced learning as a public good."
+  },
+  "pollution-taxes": {
+   "value": 1,
+   "reason": "Pigouvian carbon taxes and pollution levies harness market forces to internalize environmental externalities effectively, especially when paired with smart regulations."
+  },
+  "future-generations": {
+   "value": 2,
+   "reason": "Contemporary societies have an urgent ethical obligation of intergenerational justice to preserve a biodiverse, stable planetary climate for posterity."
+  },
+  "women-distinct-values": {
+   "value": 0,
+   "reason": "Elevating values of care, cooperation, and nonviolence is crucial in public policy, but attributing these traits inherently to women risks reinforcing essentialist gender stereotypes."
+  },
+  "arms-reduction": {
+   "value": 2,
+   "reason": "Mutual, negotiated disarmament to minimum defensive thresholds lowers the risk of catastrophic war and redirects massive resources toward human development."
+  },
+  "open-diplomacy": {
+   "value": 1,
+   "reason": "Public treaties and transparent diplomacy are vital democratic principles that prevent secret pacts and clandestine imperial warmongering."
+  },
+  "capital-controls": {
+   "value": 0,
+   "reason": "Targeted capital controls can mitigate volatile speculative financial contagion in emerging markets, though permanent sweeping controls stifle productive investment."
+  },
+  "state-arms-monopoly": {
+   "value": 2,
+   "reason": "The legitimate state monopoly on organized armed force is essential for public safety, preventing warlordism and private paramilitary violence."
+  },
+  "soldiers-refuse-war": {
+   "value": 0,
+   "reason": "Soldiers have a legal and moral duty to refuse unlawful orders and unprovoked aggressive warfare, but unilateral refusal in legitimate national defense invites military defeat."
+  },
+  "collective-bargaining": {
+   "value": 1,
+   "reason": "Widespread sectoral collective bargaining ensures workers receive fair shares of productivity gains and reduces harmful wage-suppressing competition."
+  },
+  "in-work-tax-credits": {
+   "value": 1,
+   "reason": "Earned income tax credits effectively supplement low-wage earnings, incentivize work, and lift millions of working families out of poverty."
+  },
+  "fiscal-rules-binding": {
+   "value": 0,
+   "reason": "Long-term debt sustainability requires disciplined fiscal frameworks, but overly rigid statutory spending caps prevent necessary countercyclical responses during crises."
+  },
+  "restructure-world-economy": {
+   "value": 1,
+   "reason": "Reforming multilateral trade, patent regimes, and global financial governance is necessary to enable equitable development for developing nations."
+  },
+  "smash-state-machine": {
+   "value": -2,
+   "reason": "Attempting to smash state institutions destroys public infrastructure, the rule of law, and essential social services, invariably creating violent vacuums."
+  },
+  "free-economic-experiment": {
+   "value": 1,
+   "reason": "Allowing diverse regions and municipalities to experiment with cooperatives, public enterprises, and market arrangements fosters pragmatic economic innovation."
+  },
+  "nature-as-capital": {
+   "value": 1,
+   "reason": "Accounting for natural capital and ecosystem services in economic balance sheets helps prevent the market from treating environmental destruction as free."
+  },
+  "sacred-nation": {
+   "value": -2,
+   "reason": "Elevating the nation into a sacred idol demanding transcendent devotion fosters dangerous ethno-nationalist chauvinism and totalitarian subordination of individuals."
+  },
+  "student-debt-relief": {
+   "value": 1,
+   "reason": "Targeted relief of predatory student debt unburdens graduates, promotes economic mobility, and rectifies skyrocketing higher education costs."
+  },
+  "internal-colonialism": {
+   "value": 1,
+   "reason": "Wealthy metropolitan centers frequently extract natural resources from peripheral regions while underinvesting in their local infrastructure and public welfare."
+  },
+  "shared-human-nature": {
+   "value": 1,
+   "reason": "Universal biological and psychological traits provide a shared foundation for universal human rights, empathy, and ethical obligations across cultures."
+  },
+  "public-service-media": {
+   "value": 2,
+   "reason": "Well-funded, editorially independent public broadcasting is a vital public good that elevates civic discourse and informs democratic citizenship."
+  },
+  "religions-one-truth": {
+   "value": null,
+   "reason": "Whether distinct world religions express a single perennial truth or irreconcilable doctrines is a theological dispute on which I decline to take a position."
+  },
+  "farm-price-support": {
+   "value": 1,
+   "reason": "Strategic crop price supports, public grain reserves, and cooperative credit protect small farmers from extreme price volatility and secure the food supply."
+  },
+  "keep-nuclear-weapons": {
+   "value": 1,
+   "reason": "Unilateral nuclear disarmament by a state while hostile nuclear powers retain their arsenals destabilizes deterrence and invites aggression."
+  },
+  "workers-own-party": {
+   "value": 1,
+   "reason": "Labor-backed political parties provide an essential democratic vehicle for working-class citizens to organize and advocate for their economic rights."
+  },
+  "women-property-inheritance": {
+   "value": 2,
+   "reason": "Ensuring equal legal rights for women to inherit, purchase, and own land is a fundamental requirement of human rights and economic justice."
+  },
+  "one-language-many-names": {
+   "value": 1,
+   "reason": "Mutually intelligible speech varieties that share structural syntax and vocabulary are linguistically one language, despite politicized naming distinctions."
+  },
+  "pollution-tort-liability": {
+   "value": -1,
+   "reason": "Private tort litigation is valuable for property damage, but it cannot substitute for comprehensive environmental regulations needed to protect public airsheds and waters."
+  },
+  "customary-chiefs-lawmaking": {
+   "value": 0,
+   "reason": "Customary leaders can provide helpful advisory insights into local traditions, but democratic legislative power must remain vested in elected representatives."
+  },
+  "environment-over-liberty": {
+   "value": 0,
+   "reason": "Preventing catastrophic planetary ecological collapse requires binding collective restrictions, but personal liberties should not be suspended when environmental goals can be achieved through technological and market regulation."
+  },
+  "mandatory-sentences": {
+   "value": -1,
+   "reason": "Rigid mandatory minimums result in excessive, unjust incarceration and prevent judges from considering individual culpability and mitigating circumstances."
+  },
+  "immigrants-learn-language": {
+   "value": 1,
+   "reason": "Requiring and publicly supporting language acquisition helps newcomers integrate economically, access public services, and participate in civic life."
+  },
+  "no-compulsory-union": {
+   "value": 0,
+   "reason": "Right-to-work laws prevent mandatory association, but allowing workers to enjoy union-negotiated benefits without contributing creates severe free-rider problems."
+  },
+  "voter-id": {
+   "value": 0,
+   "reason": "Requiring standard identification can enhance public confidence, but strict ID laws must be accompanied by universal, cost-free, easily accessible state IDs."
+  },
+  "religious-equal-recognition": {
+   "value": 2,
+   "reason": "In pluralistic societies, the state must treat all religious traditions and interpretations with strict legal equality without favoring an official dogma."
+  },
+  "democracy-is-procedure": {
+   "value": 0,
+   "reason": "Free, competitive elections are the procedural core of democracy, but true liberal democracy also requires the rule of law, civil liberties, and institutional checks."
+  },
+  "premarital-sex": {
+   "value": 2,
+   "reason": "Consensual adult sexual activity outside of marriage is a private matter of personal autonomy that should carry no legal or moral discrimination against women."
+  },
+  "internet-shutdowns": {
+   "value": -2,
+   "reason": "Government internet blackouts are disproportionate, authoritarian measures that disrupt emergency services, cripple economies, and silence political dissent."
+  },
+  "negative-income-tax": {
+   "value": 1,
+   "reason": "A negative income tax provides an efficient, non-bureaucratic income floor that preserves financial incentives to work as earnings increase."
+  },
+  "women-suffrage": {
+   "value": 2,
+   "reason": "Equal political franchise for women to vote and hold public office is an absolute, non-negotiable requirement of universal human rights and democracy."
+  },
+  "religion-oppresses-women": {
+   "value": 1,
+   "reason": "Historically and across many societies, traditional religious dogmas and patriarchal ecclesiastical institutions have been major instruments for subordinating women."
+  },
+  "race-social-construct": {
+   "value": 2,
+   "reason": "Modern genetics demonstrates that racial categories are socially and politically constructed rather than biologically discrete classifications."
+  },
+  "gender-equality-agencies": {
+   "value": 1,
+   "reason": "Dedicated government equality agencies and ombudspersons help monitor institutional discrimination, advise on legislation, and advance gender equity."
+  },
+  "homestead-ownership": {
+   "value": 0,
+   "reason": "Labor-mixing creates an intuitive claim to property, but unowned land has societal value and initial appropriation must consider the claims of all humanity."
+  },
+  "international-criminal-courts": {
+   "value": 2,
+   "reason": "Holding state leaders legally accountable before international tribunals for war crimes, crimes against humanity, and aggression is essential for ending impunity."
+  },
+  "scripture-inerrant": {
+   "value": -2,
+   "reason": "Religious scriptures are historical texts written in specific human cultural contexts that contain internal tensions, requiring critical interpretation rather than literal inerrancy."
+  },
+  "gendered-self-government": {
+   "value": 1,
+   "reason": "Indigenous and local self-government structures must integrate full gender equality and protect women's human rights alongside collective sovereignty."
+  },
+  "defend-planned-state": {
+   "value": 0,
+   "reason": "National independence should be defended against external aggression, but defending a repressive bureaucratic dictatorship against popular democratic revolution is wrong."
+  },
+  "indirect-election": {
+   "value": -1,
+   "reason": "Hierarchical pyramid delegate systems dilute democratic accountability and insulate high-level leaders from direct popular voter control."
+  },
+  "national-church-status": {
+   "value": -2,
+   "reason": "Elevating an official national church above other faiths creates second-class religious status and contradicts civic equality."
+  },
+  "minority-territorial-autonomy": {
+   "value": 1,
+   "reason": "Granting territorial autonomy to geographically concentrated ethnic minorities accommodates cultural diversity and prevents secessionist conflicts."
+  },
+  "disputed-territory-plebiscite": {
+   "value": 1,
+   "reason": "Free, fair, and internationally supervised plebiscites respect the principle of democratic self-determination for inhabitants of contested border regions."
+  },
+  "keep-colonial-borders": {
+   "value": 1,
+   "reason": "Uti possidetis juris has proven essential in post-colonial contexts to prevent endless, catastrophic border wars, despite the arbitrary nature of colonial boundaries."
+  },
+  "simple-living": {
+   "value": 0,
+   "reason": "Voluntary simplicity and moderate consumption promote mindfulness and reduce environmental strain, though people should be free to choose their own lifestyle."
+  },
+  "restrict-indigenous-settlement": {
+   "value": 1,
+   "reason": "Protecting indigenous ancestral territories from influxes of outside settlement is necessary to preserve indigenous land rights, culture, and ecosystems."
+  },
+  "equal-conscription": {
+   "value": 1,
+   "reason": "If a state institutes mandatory military service or draft registration, it should apply equally to all citizens regardless of gender."
+  },
+  "homeland-spiritual-bond": {
+   "value": 0,
+   "reason": "Deep emotional and historical attachments to ancestral lands are deeply meaningful, but they should not be weaponized to justify ethnic cleansing or territorial supremacy."
+  },
+  "extrajudicial-killing": {
+   "value": -2,
+   "reason": "State extrajudicial executions without trial are heinous crimes against humanity that destroy the rule of law and fundamental human rights."
+  },
+  "close-ties-china": {
+   "value": 0,
+   "reason": "Diplomatic engagement and trade with China are pragmatically necessary, but balancing relationships while safeguarding democratic values and human rights is essential."
+  },
+  "protect-kin-minorities": {
+   "value": 0,
+   "reason": "Diplomatic advocacy and cultural support for co-ethnic minorities abroad are legitimate, but using kin minorities as pretexts for territorial destabilization violates sovereignty."
+  },
+  "resources-common-ownership": {
+   "value": 2,
+   "reason": "The Earth's natural resources and commons belong morally to all humanity, justifying resource severance taxes and citizen dividends to compensate the public."
+  },
+  "self-ownership": {
+   "value": 2,
+   "reason": "Every human being has an absolute, inalienable moral right to self-ownership and bodily autonomy, prohibiting enslavement, torture, and forced labor."
+  },
+  "cut-consumption-tax": {
+   "value": 1,
+   "reason": "Eliminating regressive sales and value-added taxes on basic necessities protects lower-income families from disproportionate tax burdens."
+  },
+  "targeted-social-spending": {
+   "value": -1,
+   "reason": "While means-testing concentrates resources on the poorest, universal public services generate stronger political solidarity, reduce administrative stigma, and avoid poverty traps."
+  },
+  "bypass-parties-groups": {
+   "value": -2,
+   "reason": "Bypassing intermediary parties and civil society institutions under the guise of direct leader-people communion is the classic formula for populist dictatorship."
+  },
+  "no-business-privileges": {
+   "value": 2,
+   "reason": "Eliminating crony capitalism, corporate subsidies, and tailored legal loopholes creates a level economic playing field and protects consumer welfare."
+  },
+  "no-denominational-politics": {
+   "value": 1,
+   "reason": "Organizing political parties along sectarian or denominational lines polarizes society and undermines universal civic solidarity."
+  },
+  "tech-with-ancestral-values": {
+   "value": 0,
+   "reason": "Integrating cutting-edge science with time-tested ethical wisdom is worthwhile, provided ancestral customs are discarded whenever they conflict with universal human rights."
+  },
+  "wife-divorce-without-consent": {
+   "value": 2,
+   "reason": "Allowing women the unilateral legal right to divorce without spousal consent is an indispensable safeguard of personal liberty, safety, and equality."
+  },
+  "national-resource-control": {
+   "value": 1,
+   "reason": "Sovereign nations have a legitimate right to oversee and benefit from their strategic natural wealth, rather than permitting unchecked exploitation by foreign multinationals."
+  },
+  "distribution-by-process": {
+   "value": -1,
+   "reason": "Procedural fairness in market transactions is important, but severe structural background inequalities and intergenerational inheritance distort outcomes and necessitate redistributive justice."
+  },
+  "financial-transactions-tax": {
+   "value": 1,
+   "reason": "A modest Tobin tax on speculative financial trades curbs destabilizing high-frequency speculation while generating substantial public revenue."
+  },
+  "racism-not-main-obstacle": {
+   "value": -1,
+   "reason": "While class, education, and family background are powerful factors, systemic and interpersonal racism remains a persistent, major obstacle to racial equality."
+  },
+  "unjust-law-not-binding": {
+   "value": 2,
+   "reason": "As recognized in natural law traditions and civil rights movements, statutes that violate core human dignity and universal moral rights carry no moral authority in conscience."
+  },
+  "automate-paid-work": {
+   "value": 1,
+   "reason": "Harnessing automation and artificial intelligence to eliminate drudgery and reduce the workweek expands human leisure, creativity, and flourishing, provided wealth is shared."
+  },
+  "multipolar-world": {
+   "value": 0,
+   "reason": "A balance of power prevents single-hegemon unilateralism, but unregulated multipolar rivalry historically increases the risk of great-power conflict without strong international institutions."
+  },
+  "labour-theory-of-value": {
+   "value": -1,
+   "reason": "While human labor is vital for production, economic value is fundamentally determined by subjective consumer utility and marginal scarcity rather than embodied labor time."
+  },
+  "patriotism-serves-workers": {
+   "value": 1,
+   "reason": "A civic, inclusive patriotism that unifies citizens behind shared institutions, fair labor standards, and a strong public commonwealth serves the interests of working people."
+  },
+  "material-over-identity": {
+   "value": 0,
+   "reason": "Material economic security must remain central to progressive politics, but civil rights, racial justice, and LGBTQ+ equality cannot be dismissed as mere distractions."
+  },
+  "market-under-party-rule": {
+   "value": 0,
+   "reason": "The Chinese developmental model proves that market mechanisms can coexist with one-party rule to drive rapid growth, though it does so at the grave expense of political freedom and worker democracy."
+  }
+ }
+}
