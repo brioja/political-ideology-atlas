@@ -64,6 +64,9 @@ function validate(id) {
     else if (BANNED_HOSTS.some((h) => new URL(s.url).host.includes(h))) errors.push(`source ${s.id}: political-quiz sites are not allowed`);
     if (!s.title) errors.push(`source ${s.id}: missing title`);
   }
+  // A Wikipedia article about a document is a reference, never the document itself.
+  const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
+  if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
   if (!sources.some((s) => s.kind === "primary" || s.kind === "program")) errors.push("needs at least one primary or program source");
   if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference")) errors.push("needs at least one scholarly or reference source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
