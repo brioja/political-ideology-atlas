@@ -1603,21 +1603,13 @@ function renderPersonPage(id) {
       <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
       <section class="stack"><h2>Share card</h2>
-        <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas>
-        <div class="row"><button id="person-card-save">Save image</button></div></section>
+        <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas></section>
       ${comparePicker(`p:${p.id}`)}
       <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`)}</section>
       ${sourcesList(audit)}`;
     // The same card a visitor gets, with this person in the "you" spot.
     const ranked = match(model, profile).ranked;
     drawShareCard($("person-card"), { ranked, you: project(model, profile), subject: p, people: similar.slice(0, 4) });
-    $("person-card-save").addEventListener("click", () => $("person-card").toBlob((blob) => {
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = `political-ideology-${p.id}.png`;
-      link.click();
-      setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-    }, "image/png"));
   };
   draw(null);
   loadAudit(auditFolder(p), p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
