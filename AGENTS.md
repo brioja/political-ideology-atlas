@@ -11,7 +11,9 @@ agents too. This file adds what matters when running the audit workflows in
 - **Never run two `serial-audits` workflows at once.** Both pick the same next ideology and race
   on `statements.json` and git.
 - **Parallel runs:** each lane writes only its own audit file. A single integrator merges
-  proposed statements, builds, tests and pushes.
+  proposed statements, builds, tests and pushes. A second people lane run from another agent
+  follows [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md); `build.js --people` picks up every file
+  in `audits/people/`, so the integrator checks `git status` for unreviewed lane files first.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
