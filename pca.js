@@ -324,9 +324,9 @@ function topMatch(model, answers) {
 }
 
 // Ranks people on the statements both you and they have a position on, using the same 0–100%
-// scale as ideologies. People sharing fewer than `minOverlap` statements with you are left out.
+// scale as ideologies (the Compare page, where the exact statements matter). People sharing fewer than `minOverlap` statements with you are left out.
 // Near-ties (within `tie`) go to the more widely read person, by Wikipedia page views.
-function matchPeople(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}) {
+function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}) {
   const idx = answeredIndexes(answers);
   const spread = spreadOn(model, idx);
   const ranked = people
@@ -338,6 +338,45 @@ function matchPeople(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}
     })
     .filter(Boolean)
     .sort((a, b) => b.similarity - a.similarity);
+  for (let i = 1; i < ranked.length; i++) {
+    for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
+      [ranked[j - 1], ranked[j]] = [ranked[j], ranked[j - 1]];
+    }
+  }
+  return ranked;
+}
+
+// Ranks people by where they sit on the dividing lines: each side is placed on the leading `dims`
+// lines from whatever it answered (see project), and the nearest person wins. Comparing statement by
+// statement favoured whoever had answered the most (AI models answer everything, most people a few
+// dozen) and whoever held the mildest views. Similarity is 1 minus the distance over the widest gap
+// between two ideologies there. Near-ties (within `tie`) go to the more widely read person.
+const lineSpanCache = new WeakMap();
+function lineSpan(model, dims) {
+  const key = model.ideologies;
+  if (!lineSpanCache.has(key)) lineSpanCache.set(key, new Map());
+  const cache = lineSpanCache.get(key);
+  if (!cache.has(dims)) {
+    const pos = model.ideologies.map((i) => i.scores.slice(0, dims));
+    let span = 0;
+    for (let a = 0; a < pos.length; a++) for (let b = a + 1; b < pos.length; b++) {
+      let d = 0;
+      for (let k = 0; k < dims; k++) d += (pos[a][k] - pos[b][k]) ** 2;
+      if (d > span) span = d;
+    }
+    cache.set(dims, Math.sqrt(span));
+  }
+  return cache.get(dims);
+}
+function matchPeople(model, answers, people, { dims = Math.min(model.components.length, 8), tie = 0.03 } = {}) {
+  if (!answers.some((x) => x != null)) return [];
+  const you = project(model, answers, dims).slice(0, dims);
+  const span = lineSpan(model, dims);
+  const ranked = people.map((p) => {
+    const at = project(model, p.profile, dims).slice(0, dims);
+    const d = Math.sqrt(at.reduce((t, x, k) => t + (x - you[k]) ** 2, 0));
+    return { ...p, distance: d, similarity: span ? Math.max(0, 1 - d / span) : 0 };
+  }).sort((a, b) => b.similarity - a.similarity);
   for (let i = 1; i < ranked.length; i++) {
     for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
       [ranked[j - 1], ranked[j]] = [ranked[j], ranked[j - 1]];
@@ -584,5 +623,5 @@ function describeAxis(model, index, questions, count = 3) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }

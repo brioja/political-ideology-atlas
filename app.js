@@ -1755,7 +1755,7 @@ function renderComparePage(aKey, bKey) {
     return "Compare";
   }
   const both = QUESTIONS.map((_, j) => j).filter((j) => a.profile[j] != null && b.profile[j] != null);
-  const similarity = (matchPeople(model, a.profile, [{ ...b, views12m: 0 }], { minOverlap: 1 })[0] || {}).similarity;
+  const similarity = (matchOnStatements(model, a.profile, [{ ...b, views12m: 0 }], { minOverlap: 1 })[0] || {}).similarity;
   const differ = both.filter((j) => Math.abs(a.profile[j] - b.profile[j]) >= 2)
     .sort((x, y) => Math.abs(a.profile[y] - b.profile[y]) - Math.abs(a.profile[x] - b.profile[x]) || x - y).slice(0, 10);
   const shared = both.filter((j) => a.profile[j] !== 0 && a.profile[j] === b.profile[j])
