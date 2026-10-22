@@ -78,7 +78,7 @@ answers to pass; an honest rejection is the correct outcome.
   "id": "{{id}}",
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
-  "auditor": "<model id>",
+  "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",

@@ -20,7 +20,9 @@ many will have a thin political record; the early-exit rule makes those quick.
 
 1. Read `audits/PROMPT_PEOPLE.md` and follow it exactly, including its early-exit rule. Take name,
    wikipedia, born and living from the pending output or `audits/people-catalog.json`. Set
-   `auditedAt` to today's date and `auditor` to your own model id.
+   `auditedAt` to today's date and `auditor` to your full, exact model id
+   including version and variant (e.g. `gpt-6.1-sol`, `claude-haiku-5-5`), not a family name like
+   `gpt-6`, so audits can be revisited by model later.
 2. **Depth:** cover the person's whole career, not only recent speeches. Go theme by theme through
    the statement themes and look for their best-known positions and controversies in each before
    finishing. Prefer full texts of their own words (books, speeches, transcripts, laws they
