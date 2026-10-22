@@ -1616,7 +1616,8 @@ const compareHref = (a, b) => `#/compare/${encodeURIComponent(a)}/${encodeURICom
 const compareOptions = () => [
   ...(myAnswers() ? [{ key: "me", label: "You (your answers)" }] : []),
   ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name })),
-  ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: `${p.name} (${p.kind === "model" ? "AI model" : "person"})` })),
+  // Names show plainly; a person who shares a name with an ideology gets "(person)" to tell them apart.
+  ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: model.ideologies.some((i) => i.name === p.name) ? `${p.name} (person)` : p.name })),
 ];
 function comparePicker(selfKey) {
   const mine = myAnswers() ? `<a class="btn" href="${compareHref("me", selfKey)}">Compare with your answers</a>` : "";
