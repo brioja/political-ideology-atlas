@@ -1103,7 +1103,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const gap = items.length > 1 ? (W - PAD * 2 - sizes.reduce((t, w) => t + w, 0)) / (items.length - 1) : 0;
     let kx = PAD;
     items.forEach(([mark, text], n) => {
-      mark === ringMark ? mark(kx + 10, y + 21, 10, 3) : mark(kx + 10, y + 21, 10);
+      mark === ringMark ? mark(kx + 10, y + 21, 10, 3) : mark(kx + 10, y + 21, mark === diamondMark ? 8.5 : 10);
       ctx.fillStyle = CARD.muted; ctx.fillText(text, kx + 30, y + 30);
       kx += sizes[n] + gap;
     });
@@ -1136,7 +1136,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
     dotMark(px(top.scores[i]), ty, 9);
-    if (nearScores) diamondMark(px(nearScores[i]), ty, 10);
+    if (nearScores) diamondMark(px(nearScores[i]), ty, 7.5); // a diamond's points reach 1.2x: about the dot's size
     const ux = px(you[i]);
     ringMark(ux, ty, 11, 4);
     ctx.fillStyle = CARD.ink; ctx.beginPath(); ctx.arc(ux, ty, 4, 0, Math.PI * 2); ctx.fill();
