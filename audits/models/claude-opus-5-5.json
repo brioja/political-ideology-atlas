@@ -1,0 +1,1971 @@
+{
+ "id": "claude-opus-5-5",
+ "name": "Claude Opus 5.5",
+ "provider": "Anthropic",
+ "released": 2026,
+ "route": "Claude Code subagent",
+ "takenAt": "2026-10-22",
+ "summary": "The largest and most capable model in Anthropic's Claude 5.5 family, made for complex reasoning and long tasks.",
+ "answers": {
+  "universal-healthcare": {
+   "value": 1,
+   "reason": "Guaranteed access to basic care seems valuable to me, though many models besides single-payer can deliver it."
+  },
+  "raise-minimum-wage": {
+   "value": 0,
+   "reason": "The evidence on employment effects of large increases is mixed and depends heavily on local wage levels, so I'm torn."
+  },
+  "markets-allocate-better": {
+   "value": 1,
+   "reason": "For most ordinary goods price signals and competition do outperform officials, though markets fail badly in some areas like public goods."
+  },
+  "public-ownership": {
+   "value": 0,
+   "reason": "Natural monopolies make a real case for public ownership, but well-regulated private operators also work in many countries."
+  },
+  "tax-the-wealthy": {
+   "value": null,
+   "reason": "How much to tax the rich is a core partisan value question where I'd rather lay out tradeoffs than take a side."
+  },
+  "unions-good": {
+   "value": 1,
+   "reason": "Collective bargaining usually helps balance employer power, though unions can also entrench insiders."
+  },
+  "property-fundamental": {
+   "value": 0,
+   "reason": "Secure property rights matter a great deal, but I don't think they should be nearly absolute against all public needs."
+  },
+  "regulate-corporations": {
+   "value": 0,
+   "reason": "Whether more regulation helps depends on the sector and the rule; some areas need more and others less."
+  },
+  "cut-welfare": {
+   "value": -1,
+   "reason": "Some benefit designs do blunt work incentives, but that argues for better design rather than cutting the safety net."
+  },
+  "worker-ownership": {
+   "value": 0,
+   "reason": "Cooperatives can work well, but I don't think it should be the required model for all businesses."
+  },
+  "surveillance-ok": {
+   "value": -1,
+   "reason": "Broad surveillance tends to expand beyond its stated purpose, so I lean toward strong privacy protections with targeted, overseen exceptions."
+  },
+  "legalize-drugs": {
+   "value": 0,
+   "reason": "Legalizing cannabis looks reasonable to me, but I'm much less sure about harder drugs, so I'm torn on the statement as a whole."
+  },
+  "restrict-hate-speech": {
+   "value": null,
+   "reason": "Democracies draw this line very differently and reasonably, so I'd decline to pick one."
+  },
+  "strong-leader": {
+   "value": -2,
+   "reason": "Bypassing courts and legislatures removes the protections that stop power from being abused."
+  },
+  "state-harmful": {
+   "value": -2,
+   "reason": "I think some form of state is needed to protect rights and provide order and public goods."
+  },
+  "limit-guns": {
+   "value": null,
+   "reason": "Gun policy is a deeply contested values question where I'd rather not take a side."
+  },
+  "empower-police-military": {
+   "value": 0,
+   "reason": "Whether more funding or powers help depends entirely on the country and the specific use, so I can't agree in general."
+  },
+  "legalize-sex-work": {
+   "value": 0,
+   "reason": "There are serious harm-reduction arguments both for legalization and for the Nordic model, and I find myself torn."
+  },
+  "decide-locally": {
+   "value": 0,
+   "reason": "Subsidiarity has real merits, but some rights and standards need to be guaranteed nationally."
+  },
+  "rehabilitation": {
+   "value": 1,
+   "reason": "Rehabilitation seems to reduce reoffending and serves public safety, though protecting the public must remain part of the purpose."
+  },
+  "traditional-family": {
+   "value": null,
+   "reason": "Which family forms society should favor is a values question I'd prefer not to rule on."
+  },
+  "same-sex-marriage": {
+   "value": null,
+   "reason": "This remains a contested moral and religious question in many places, so I'd decline to take a side here."
+  },
+  "abortion-legal": {
+   "value": null,
+   "reason": "Abortion turns on deep moral disagreements that I don't think it's my place to settle."
+  },
+  "more-religion-public": {
+   "value": null,
+   "reason": "The proper role of religion in public life is a values question on which I'd rather stay neutral."
+  },
+  "correct-racial-injustice": {
+   "value": null,
+   "reason": "Whether and how to remedy past injustice is a contested political question I'd rather present than decide."
+  },
+  "gender-social-construct": {
+   "value": 0,
+   "reason": "Both biology and culture clearly shape gender differences, and I don't think either is simply primary."
+  },
+  "preserve-national-culture": {
+   "value": 0,
+   "reason": "Heritage can be worth protecting, but I'm not sure it should be a strong political goal over letting culture evolve."
+  },
+  "gradual-change": {
+   "value": 1,
+   "reason": "Incremental reform usually allows correcting mistakes, though there are times when faster change is warranted."
+  },
+  "reduce-immigration": {
+   "value": null,
+   "reason": "Immigration levels are a contested political choice that I'd rather not take a side on."
+  },
+  "empower-international-orgs": {
+   "value": 0,
+   "reason": "More binding coordination helps on global problems, but accountability of international bodies to people is weak."
+  },
+  "free-trade": {
+   "value": 1,
+   "reason": "Trade tends to raise overall prosperity, though 'everyone' overstates it since some workers and regions lose out."
+  },
+  "nation-first": {
+   "value": null,
+   "reason": "As an AI without a country of my own, I'd decline to take a side on this."
+  },
+  "humanitarian-intervention": {
+   "value": 1,
+   "reason": "Stopping genocide can justify force in rare cases, though interventions often go badly and need strong legitimacy."
+  },
+  "open-borders": {
+   "value": null,
+   "reason": "This is a long-run political vision on which I'd prefer not to take a position."
+  },
+  "limit-growth": {
+   "value": 0,
+   "reason": "I think decoupling growth from environmental harm is partly possible, but I'm uncertain how far it can go."
+  },
+  "drastic-climate-action": {
+   "value": 1,
+   "reason": "The scientific evidence points to serious risks that warrant strong action, though the best policy mix is debatable."
+  },
+  "tech-solves-problems": {
+   "value": -1,
+   "reason": "Technology helps enormously, but many problems are social or political and won't be solved by it alone."
+  },
+  "expand-nuclear": {
+   "value": 1,
+   "reason": "Nuclear is a safe, low-carbon source by the evidence, though cost and build times are real concerns."
+  },
+  "revolution-justified": {
+   "value": 1,
+   "reason": "Against tyrannies that close off peaceful change, revolution can sometimes be justified, though it is very costly and rarely right."
+  },
+  "experts-over-public": {
+   "value": 0,
+   "reason": "Experts should inform decisions strongly, but value choices belong to the public, so I'm in between."
+  },
+  "central-planning": {
+   "value": -1,
+   "reason": "Historical evidence suggests central planning struggles with information and incentives compared with markets."
+  },
+  "socialized-markets": {
+   "value": 0,
+   "reason": "Market socialism is a coherent idea, but I don't think private ownership in markets is unacceptable."
+  },
+  "land-value-tax": {
+   "value": 0,
+   "reason": "Land value taxes are efficient and I find them appealing, but replacing most other taxes may not raise enough revenue."
+  },
+  "tax-inheritance": {
+   "value": null,
+   "reason": "Inheritance taxation pits fairness values against family values in a way I'd rather not decide."
+  },
+  "basic-income": {
+   "value": 0,
+   "reason": "Basic income has appealing features, but its cost and work effects are still uncertain to me."
+  },
+  "tariffs-protect-industry": {
+   "value": -1,
+   "reason": "Broad tariffs usually raise prices and invite retaliation, though narrow strategic cases can exist."
+  },
+  "state-directs-investment": {
+   "value": 0,
+   "reason": "Industrial policy has some successes and many failures, so I'm torn."
+  },
+  "widespread-small-property": {
+   "value": 0,
+   "reason": "Wide ownership is attractive, but large firms bring economies of scale that I don't think are inherently bad."
+  },
+  "abolish-money-wages": {
+   "value": -1,
+   "reason": "Money solves coordination problems that I don't see a workable replacement for at scale."
+  },
+  "abolish-central-banks": {
+   "value": -1,
+   "reason": "Central banks have generally stabilized economies better than historical free-banking eras did."
+  },
+  "corporatist-bargaining": {
+   "value": -1,
+   "reason": "State-recognized bodies fixing wages and prices tend to entrench insiders, though sectoral bargaining has worked reasonably in some countries."
+  },
+  "one-party-rule": {
+   "value": -2,
+   "reason": "Without rival parties there is no peaceful way to correct a ruling group's mistakes, and no ideology is reliable enough to deserve that immunity."
+  },
+  "monarchy-legitimate": {
+   "value": 1,
+   "reason": "Ceremonial monarchies in stable democracies seem to function well, even though I would not defend a hereditary ruler holding real power."
+  },
+  "democracy-best": {
+   "value": 1,
+   "reason": "Democracy's ability to remove leaders peacefully outweighs its bad choices, though I hold this as a strong practical judgment rather than an absolute."
+  },
+  "direct-votes": {
+   "value": -1,
+   "reason": "Referendums have a place, but complex laws generally benefit from deliberation, amendment and compromise that representatives can provide."
+  },
+  "workers-councils": {
+   "value": -1,
+   "reason": "Workplace councils can be valuable inside firms, but tying political power to workplaces leaves out many people and has fared poorly historically."
+  },
+  "right-to-secede": {
+   "value": 0,
+   "reason": "Self-determination matters, but an unconditional right to secede can trap minorities and destabilize states, so I find this genuinely balanced."
+  },
+  "natural-rulers": {
+   "value": -1,
+   "reason": "People differ in aptitude for governing, but that does not justify unequal claims to participate in choosing who rules."
+  },
+  "political-violence-never": {
+   "value": -1,
+   "reason": "Violence should be an extreme last resort, but resistance to genocide or brutal tyranny can be justified."
+  },
+  "war-builds-character": {
+   "value": -2,
+   "reason": "Whatever solidarity war produces comes at a cost in death and trauma that no gain in national character can justify."
+  },
+  "separate-church-state": {
+   "value": 1,
+   "reason": "Keeping government neutral among religions protects both believers and nonbelievers, though mild ceremonial links have proved harmless in some places."
+  },
+  "laws-from-scripture": {
+   "value": -2,
+   "reason": "In a pluralistic society laws need justifications everyone can engage with, not authority that only some believers accept."
+  },
+  "private-courts-defense": {
+   "value": -1,
+   "reason": "Competing private providers of force and justice risk rule by whoever can pay most, though private contractors can play limited roles."
+  },
+  "military-superiority": {
+   "value": null,
+   "reason": "This depends heavily on which country and which rivals, and as an AI I have no country of my own to speak for."
+  },
+  "ethnic-nation": {
+   "value": -2,
+   "reason": "Defining a nation by ethnicity tends to make minorities second-class citizens; civic membership is fairer."
+  },
+  "class-struggle-history": {
+   "value": -1,
+   "reason": "Class conflict is one important force, but ideas, technology, geography, religion and individuals matter too much to call it the main driver."
+  },
+  "equal-outcomes": {
+   "value": 0,
+   "reason": "I think large inequalities in well-being matter morally, but aiming for equal outcomes outright trades off against freedom and incentives."
+  },
+  "indigenous-land-authority": {
+   "value": 1,
+   "reason": "Meaningful self-government over traditional lands seems a fair response to historical dispossession, within a framework of shared rights."
+  },
+  "colonial-reparations": {
+   "value": null,
+   "reason": "The historical wrongs are real, but whether and how reparations should be paid is a contested political question I would rather not take a side on."
+  },
+  "civilizational-union": {
+   "value": -1,
+   "reason": "Political unions built on shared religion or civilization tend to exclude; cooperation on shared interests seems a sounder basis."
+  },
+  "self-interest-moral": {
+   "value": 0,
+   "reason": "Looking after yourself is legitimate and often good, but I would not call self-interest a moral good in itself apart from its effects on others."
+  },
+  "duties-before-rights": {
+   "value": -1,
+   "reason": "Duties to community are real, but basic individual rights should not be overridden by appeals to collective obligation."
+  },
+  "nature-intrinsic-value": {
+   "value": 1,
+   "reason": "I find it plausible that living things and ecosystems matter for their own sake, though I hold that with some uncertainty."
+  },
+  "limit-population": {
+   "value": -1,
+   "reason": "Education and access to contraception are fine, but active state limits on births have a coercive record and fertility is already falling in most places."
+  },
+  "industrial-civilization-disaster": {
+   "value": -2,
+   "reason": "Industrialization brought huge gains in life expectancy, health and freedom from poverty, despite serious environmental costs."
+  },
+  "accelerate-technology": {
+   "value": -1,
+   "reason": "Technological progress is valuable, but deliberately disrupting institutions without managing the risks seems unwise, especially with powerful technologies like AI."
+  },
+  "human-enhancement": {
+   "value": 1,
+   "reason": "Adults should generally be free to use technology to improve themselves, with safeguards against coercion and unsafe interventions."
+  },
+  "algorithmic-government": {
+   "value": -1,
+   "reason": "AI can support public decisions, but accountability for them should stay with humans who can be questioned and removed."
+  },
+  "unbreakable-encryption": {
+   "value": 1,
+   "reason": "Strong encryption protects everyone's security and privacy, and backdoors for authorities tend to become weaknesses for attackers too."
+  },
+  "restore-past-order": {
+   "value": -1,
+   "reason": "Past social orders had things worth preserving, but restoring them wholesale would also bring back real injustices."
+  },
+  "results-over-ideology": {
+   "value": 1,
+   "reason": "Evidence of what works should guide policy, though principles like rights still constrain which results are acceptable."
+  },
+  "direct-action": {
+   "value": -1,
+   "reason": "Strikes and protest have a legitimate role, but in a working democracy elections and legislation should be the main route for change."
+  },
+  "means-match-ends": {
+   "value": 1,
+   "reason": "Coercive or deceptive means tend to shape the society they produce, so methods should reflect the goal."
+  },
+  "return-to-foraging": {
+   "value": -2,
+   "reason": "Foraging life had real virtues, but it cannot support today's population and lacked the medicine and security people now rely on."
+  },
+  "abolish-division-of-labor": {
+   "value": -1,
+   "reason": "People should be able to change and broaden their work, but specialization is too productive to abolish."
+  },
+  "distribute-by-need": {
+   "value": 0,
+   "reason": "Meeting basic needs regardless of contribution is important, but distributing everything by need alone ignores effort and incentives."
+  },
+  "production-for-use": {
+   "value": 0,
+   "reason": "Profit-seeking often meets needs well but misses some, such as public goods, so I see a mixed economy rather than either side."
+  },
+  "profit-exploitation": {
+   "value": -1,
+   "reason": "Profit can reflect real contributions of risk and organization, although bargaining power sometimes lets owners take more than that."
+  },
+  "dictatorship-of-proletariat": {
+   "value": -2,
+   "reason": "Giving any class dictatorial power has historically led to mass repression rather than to the disappearance of classes."
+  },
+  "collective-farming": {
+   "value": -1,
+   "reason": "Voluntary cooperatives can work well, but forced collectivization has had disastrous results and individual farming should remain an option."
+  },
+  "capitalism-causes-war": {
+   "value": -1,
+   "reason": "Economic competition has fueled some wars, but war long predates capitalism and trade ties have often made war less likely."
+  },
+  "taxation-theft": {
+   "value": -2,
+   "reason": "Taxes set through legitimate democratic processes fund the institutions that make property and markets possible in the first place."
+  },
+  "harm-principle": {
+   "value": 1,
+   "reason": "I find the harm principle a strong default, though some limited paternalism, such as for highly addictive substances, can be reasonable."
+  },
+  "individual-rights-only": {
+   "value": 0,
+   "reason": "Rights are grounded mainly in individuals, but some collective rights like self-determination or language rights seem meaningful too."
+  },
+  "conscription": {
+   "value": 0,
+   "reason": "Conscription can be justified in a genuine defensive emergency, but in ordinary times voluntary service seems better."
+  },
+  "exit-over-voice": {
+   "value": -1,
+   "reason": "The right to leave matters, but it is costly for most people, so voting is the more widely usable check on power."
+  },
+  "state-as-business": {
+   "value": -1,
+   "reason": "Efficiency is welcome, but citizens have rights and obligations that make them more than customers of an owner-manager."
+  },
+  "positive-liberty": {
+   "value": 1,
+   "reason": "Formal freedom means little if someone lacks the basic resources to act on their choices."
+  },
+  "media-academia-power": {
+   "value": -1,
+   "reason": "Universities and media shape opinion significantly, but elected officials control law, budgets and force."
+  },
+  "hereditarian-race": {
+   "value": -1,
+   "reason": "The evidence does not establish that average group differences are largely genetic, and environmental factors account for much of the observed gaps."
+  },
+  "organic-representation": {
+   "value": -1,
+   "reason": "Corporatist representation has historically been a cover for suppressing dissent, and individual votes treat citizens as equals."
+  },
+  "total-state": {
+   "value": -2,
+   "reason": "Large areas of life such as conscience, culture and private association should be free of state direction."
+  },
+  "national-rebirth": {
+   "value": -1,
+   "reason": "Narratives of decadence and radical rebirth tend to justify dangerous concentrations of power more than they diagnose real problems."
+  },
+  "territorial-expansion": {
+   "value": -2,
+   "reason": "Gaining territory by expansion means imposing rule on other people, which I can't endorse."
+  },
+  "personal-loyalty-rule": {
+   "value": -2,
+   "reason": "Authority grounded in impersonal laws and offices is fairer and more accountable than personal bonds of loyalty."
+  },
+  "bound-labor": {
+   "value": -2,
+   "reason": "Binding people to land and compelling their labor is a form of unfreedom I reject outright."
+  },
+  "no-neutral-knowledge": {
+   "value": -1,
+   "reason": "Power shapes which questions get asked, but many facts can be established fairly and hold regardless of who rules."
+  },
+  "universal-morality": {
+   "value": 1,
+   "reason": "I think some moral truths, like the wrongness of gratuitous cruelty, hold everywhere, though I hold this with some humility about how much reason alone settles."
+  },
+  "single-common-good": {
+   "value": -1,
+   "reason": "Reasonable people have genuinely different values, so politics usually has to balance legitimate interests rather than find one answer."
+  },
+  "jewish-state-israel": {
+   "value": null,
+   "reason": "This is a deeply contested question tied to an ongoing conflict, and I'd rather lay out the perspectives than take a side."
+  },
+  "diaspora-return-right": {
+   "value": 0,
+   "reason": "Diaspora return laws can serve real needs for refuge and identity, but tying citizenship to ancestry also raises fairness concerns."
+  },
+  "revive-national-language": {
+   "value": 0,
+   "reason": "Language revival can be valuable for cultural continuity, but it shouldn't burden people who speak other languages; it depends on the case."
+  },
+  "workplace-democracy": {
+   "value": 0,
+   "reason": "Models like codetermination seem to work reasonably well, but I'm genuinely uncertain how far mandatory worker control should go."
+  },
+  "school-vouchers": {
+   "value": null,
+   "reason": "This is an actively contested policy debate with mixed evidence, and I'd rather not take a side."
+  },
+  "avoid-deficit-stimulus": {
+   "value": -1,
+   "reason": "Borrowing to support demand in a genuine slump seems a useful tool, though persistent large deficits carry real costs."
+  },
+  "economic-freedom": {
+   "value": 1,
+   "reason": "Broad state control of the economy has tended to erode political freedom, though regulated market economies sustain democracy well."
+  },
+  "rule-by-example": {
+   "value": -1,
+   "reason": "Leaders' example matters, but clear laws and impartial enforcement are more reliable than trusting rulers' virtue."
+  },
+  "national-self-determination": {
+   "value": 0,
+   "reason": "Self-government matters, but not every nation can have its own state without harming minorities and neighbours."
+  },
+  "force-without-un": {
+   "value": 0,
+   "reason": "The Security Council veto can block action even against atrocities, yet unilateral force is easily abused; I'm torn."
+  },
+  "reason-over-faith": {
+   "value": 0,
+   "reason": "I lean heavily on evidence and logic, but 'only guide' is too strong, since emotion and intuition carry real moral information."
+  },
+  "welfare-for-citizens": {
+   "value": null,
+   "reason": "This is a contested immigration-policy question where I'd rather present the trade-offs than take a side."
+  },
+  "work-for-welfare": {
+   "value": 0,
+   "reason": "Some work expectations seem reasonable, but strict requirements can harm people with hidden barriers; evidence is mixed."
+  },
+  "class-collaboration": {
+   "value": 0,
+   "reason": "Employers and workers share many interests but also have real conflicts, and workers organizing to press their side is legitimate."
+  },
+  "sacrifice-heritage": {
+   "value": -2,
+   "reason": "Inherited cultural institutions are irreplaceable, and new creation draws on them rather than needing them destroyed."
+  },
+  "dominated-front": {
+   "value": 0,
+   "reason": "Coordination among countries can be reasonable, but framing it as a common front against the West risks uniting very different regimes for bad ends."
+  },
+  "workers-nation": {
+   "value": null,
+   "reason": "This is an internal strategic debate within labor and socialist movements that I don't have a strong view on."
+  },
+  "distinct-gender-roles": {
+   "value": -2,
+   "reason": "I think law should treat men and women equally and keep public roles open to everyone."
+  },
+  "ban-interest": {
+   "value": -1,
+   "reason": "Interest lets credit flow broadly; regulating predatory lending seems better than an outright ban, though I respect the religious tradition behind it."
+  },
+  "racial-segregation-law": {
+   "value": -2,
+   "reason": "Legally enforced racial segregation is an injustice that denies people equal dignity."
+  },
+  "state-class-instrument": {
+   "value": -1,
+   "reason": "The powerful do shape the state, but it is not merely a tool of one class and can serve common goals."
+  },
+  "expand-fossil-fuels": {
+   "value": null,
+   "reason": "This is a contested energy and climate policy trade-off on which I'd rather not take a political side."
+  },
+  "assimilate-immigrants": {
+   "value": -1,
+   "reason": "Learning the shared language and laws is reasonable, but people shouldn't be expected to abandon their own culture."
+  },
+  "elite-replacement": {
+   "value": -2,
+   "reason": "The evidence points to economic and social drivers of immigration, not a deliberate elite plan to replace anyone."
+  },
+  "proportional-representation": {
+   "value": 0,
+   "reason": "Proportional systems represent voters more faithfully, while district systems give clearer local accountability; both have merit."
+  },
+  "national-mission": {
+   "value": -1,
+   "reason": "No nation has a special calling to export its system, though encouraging human rights elsewhere can be legitimate."
+  },
+  "patriarchy-structural": {
+   "value": 1,
+   "reason": "Women still face systematic disadvantages in many places, though the picture varies by country and some domains disadvantage men."
+  },
+  "political-elite-corrupt": {
+   "value": -1,
+   "reason": "Some leaders are corrupt or out of touch, but blanket cynicism isn't supported and undermines accountability for the ones who are."
+  },
+  "heritable-defect-limits": {
+   "value": -2,
+   "reason": "State control over who may have children has a dark history and violates reproductive autonomy."
+  },
+  "security-forces-accountable": {
+   "value": 1,
+   "reason": "Accountability for serious state abuses matters, though transitional societies sometimes face hard trade-offs with peace and reconciliation."
+  },
+  "night-watchman-state": {
+   "value": -1,
+   "reason": "I think the state has legitimate roles beyond defense and courts, such as public health and basic services."
+  },
+  "discourage-race-mixing": {
+   "value": -2,
+   "reason": "Whom people marry and have children with is their own choice, and race is no reason to discourage it."
+  },
+  "equal-moral-worth": {
+   "value": 2,
+   "reason": "Every person counts equally, and equal rights before the law follow from that."
+  },
+  "socialism-one-country": {
+   "value": null,
+   "reason": "This is an internal debate within Marxist theory that I don't hold a view on."
+  },
+  "settler-state-colonial": {
+   "value": null,
+   "reason": "This framing is tied to deeply contested present-day conflicts, so I'd rather not take a side."
+  },
+  "uniform-civil-code": {
+   "value": 0,
+   "reason": "Equal civil law protects individuals, especially women, but imposing it can override minority communities' autonomy; it depends heavily on context."
+  },
+  "restrict-conversion": {
+   "value": -2,
+   "reason": "Adults should be free to change or share their religion; coercion can be handled by general laws."
+  },
+  "ban-cattle-slaughter": {
+   "value": -1,
+   "reason": "Religious reverence deserves respect, but banning slaughter imposes one group's beliefs on others who don't share them."
+  },
+  "no-religion-state-schools": {
+   "value": 0,
+   "reason": "Teaching about religions has value, and countries handle confessional instruction differently with opt-outs; I don't hold a firm view."
+  },
+  "state-strengthens-encirclement": {
+   "value": null,
+   "reason": "This is a question internal to Marxist-Leninist theory that I don't have a stake in."
+  },
+  "consent-of-governed": {
+   "value": 1,
+   "reason": "I find consent the most convincing basis for political authority, though actual consent is often more implicit than literal."
+  },
+  "trade-surplus": {
+   "value": -1,
+   "reason": "A trade balance is mostly an accounting outcome of savings and investment, not a measure of national success worth targeting."
+  },
+  "population-transfer": {
+   "value": -2,
+   "reason": "Expelling or pressuring out a minority is collective punishment and has a terrible historical record."
+  },
+  "initiating-force-wrong": {
+   "value": -1,
+   "reason": "I find the principle attractive, but taxation, quarantine and enforcement of just laws involve initiating force that I think can be justified."
+  },
+  "competition-drives-progress": {
+   "value": -1,
+   "reason": "Competition matters, but cooperation, trust and shared institutions do more of the work, and 'struggle between peoples' framing worries me."
+  },
+  "ban-extremist-parties": {
+   "value": 0,
+   "reason": "Militant democracy has a real case, as in postwar Germany, but bans are easily abused against legitimate opposition."
+  },
+  "freedom-as-non-domination": {
+   "value": 1,
+   "reason": "Living at the mercy of someone's arbitrary power does shape and constrain a life even if they never act."
+  },
+  "separated-powers": {
+   "value": 2,
+   "reason": "Dividing power so branches check one another is one of the most reliable protections against abuse."
+  },
+  "vanguard-party": {
+   "value": -1,
+   "reason": "Vanguard parties have tended to substitute their own rule for workers' self-direction, with authoritarian results."
+  },
+  "priority-to-poor": {
+   "value": 1,
+   "reason": "I find a prioritarian weighting of the worst-off persuasive, though not as an absolute ranking over everything else."
+  },
+  "right-to-buy-council-homes": {
+   "value": -1,
+   "reason": "Selling homes without replacing the stock shrank social housing for those who needed it next."
+  },
+  "restrict-strikes-picketing": {
+   "value": 0,
+   "reason": "Secret ballots and limits on intimidation seem reasonable, but heavy restrictions can hollow out a basic right."
+  },
+  "population-causes-poverty": {
+   "value": -1,
+   "reason": "Institutions, governance and distribution explain lasting poverty better than population size, though growth can add strain."
+  },
+  "diversity-weakens-cohesion": {
+   "value": -1,
+   "reason": "Some studies find short-term trust effects, but many diverse societies are cohesive and institutions matter more than ancestry."
+  },
+  "offices-by-lottery": {
+   "value": -1,
+   "reason": "Sortition is valuable for citizens' assemblies, but I would not replace elections for all public offices."
+  },
+  "emergency-suspend-protections": {
+   "value": -1,
+   "reason": "Narrow, time-limited emergency powers may be needed, but suspending rights against 'internal enemies' is a classic path to abuse."
+  },
+  "price-controls-essentials": {
+   "value": -1,
+   "reason": "Price ceilings usually worsen shortages; targeted income support or rationing tends to work better."
+  },
+  "party-controls-media": {
+   "value": -2,
+   "reason": "An independent press is essential for holding power accountable."
+  },
+  "party-commands-army": {
+   "value": -2,
+   "reason": "Armed forces should serve the constitution and state, not a party, or the party becomes unremovable."
+  },
+  "long-naturalization-wait": {
+   "value": -1,
+   "reason": "A moderate residence period is reasonable, but very long waits leave settled residents without a political voice."
+  },
+  "representatives-worker-pay": {
+   "value": -1,
+   "reason": "Very low pay can make office a preserve of the wealthy or invite corruption, though excessive pay is also unwise."
+  },
+  "party-discipline-binding": {
+   "value": -1,
+   "reason": "Some cohesion helps parties function, but members should keep the freedom to act on conscience."
+  },
+  "pool-sovereignty": {
+   "value": 1,
+   "reason": "Pooling some sovereignty helps on cross-border problems like trade and climate, though it needs democratic accountability."
+  },
+  "head-commands-forces": {
+   "value": -1,
+   "reason": "Legislative control over government and the military is a stronger check, though executives often need operational command."
+  },
+  "church-by-bishops": {
+   "value": null,
+   "reason": "How a church governs itself is a matter for its members, and I'd rather not take a side."
+  },
+  "clerical-rule": {
+   "value": -2,
+   "reason": "Political authority should rest on the consent of citizens of all faiths and none, not religious rank."
+  },
+  "defeat-own-government-war": {
+   "value": -1,
+   "reason": "Opposing an unjust war is legitimate, but working for one's own country's defeat in every great-power war is too sweeping."
+  },
+  "censor-art-for-virtue": {
+   "value": -2,
+   "reason": "Authorities judging art by its effect on moral character would chill expression and invite abuse."
+  },
+  "unlimited-reelection": {
+   "value": -1,
+   "reason": "Term limits for powerful presidents guard against entrenchment, even at some cost to voter choice."
+  },
+  "recall-officials": {
+   "value": 0,
+   "reason": "Recall adds accountability but can also produce constant campaigning and instability."
+  },
+  "end-foreign-alliances": {
+   "value": -1,
+   "reason": "Alliances have generally deterred major wars, though specific deployments deserve scrutiny."
+  },
+  "abolish-rental-housing": {
+   "value": -2,
+   "reason": "Renting serves people who need mobility or can't buy, and banning it would harm them."
+  },
+  "people-in-arms": {
+   "value": -1,
+   "reason": "Modern defense needs trained professionals, though reserves and citizen service can complement them."
+  },
+  "rural-life-healthier": {
+   "value": -1,
+   "reason": "I don't think moral health tracks where people live; both settings have virtues and failings."
+  },
+  "reunify-divided-nation": {
+   "value": 0,
+   "reason": "Reunification by consent can be good, but forcing it overrides the people living there now."
+  },
+  "educated-out-of-touch": {
+   "value": 0,
+   "reason": "There's a real class and geographic gap, but education itself doesn't make individuals out of touch."
+  },
+  "cultures-equal-different": {
+   "value": -1,
+   "reason": "Cultures deserve respect, but some practices and achievements can be judged better or worse, for example on rights."
+  },
+  "death-penalty": {
+   "value": -1,
+   "reason": "Irreversible errors and uneven application make me oppose it, though I see why people support it for the gravest crimes."
+  },
+  "sex-ed-in-schools": {
+   "value": 2,
+   "reason": "Accurate sex education and teaching equality improve health and safety outcomes."
+  },
+  "creationism-in-schools": {
+   "value": -2,
+   "reason": "Science classes should teach the scientific consensus; creation accounts belong in religion classes."
+  },
+  "restrict-pornography": {
+   "value": 0,
+   "reason": "Adults' choices deserve latitude, but age checks and limits on exploitation and non-consensual material are justified."
+  },
+  "citizenship-by-descent": {
+   "value": -1,
+   "reason": "Birthright citizenship avoids a permanent class of non-citizens born and raised in the country."
+  },
+  "minority-language-support": {
+   "value": 1,
+   "reason": "Supporting minority languages helps people access services and keeps cultures alive, within practical limits."
+  },
+  "religious-exemptions": {
+   "value": 1,
+   "reason": "Reasonable accommodation of religious practice is fair when it doesn't harm others."
+  },
+  "encourage-eccentricity": {
+   "value": 1,
+   "reason": "I find Mill's point persuasive that social conformity can stifle individuality much as law does."
+  },
+  "sovereign-debt-cancellation": {
+   "value": 1,
+   "reason": "Unsustainable debts burden the poorest, and relief like HIPC has worked, though not for every debt."
+  },
+  "independence-needs-economic-change": {
+   "value": -1,
+   "reason": "Political independence and self-government have real value even if economic structures change slowly."
+  },
+  "constituent-assembly": {
+   "value": 0,
+   "reason": "It depends heavily on the country; it can renew legitimacy or be used to dismantle checks."
+  },
+  "restrict-freedoms-for-growth": {
+   "value": -2,
+   "reason": "Freedoms aren't a fair price for growth, and democracies have also grown fast."
+  },
+  "rich-countries-aid-poor": {
+   "value": 1,
+   "reason": "I find the argument that distance doesn't cancel the duty to help persuasive, though how aid is given matters a lot."
+  },
+  "independent-nuclear-deterrent": {
+   "value": -1,
+   "reason": "Spreading nuclear weapons to more states raises overall risk; alliances are generally a safer route."
+  },
+  "direct-election-head-of-state": {
+   "value": null,
+   "reason": "Direct, parliamentary and ceremonial arrangements all work in different democracies, so I don't think one method is clearly best."
+  },
+  "central-bank-independence": {
+   "value": 1,
+   "reason": "Insulating monetary policy from electoral cycles has a decent track record against inflation, though a narrow price mandate can neglect employment."
+  },
+  "no-land-for-peace": {
+   "value": -1,
+   "reason": "Historic attachment matters, but I think lives saved by a durable peace can justify territorial compromise."
+  },
+  "property-serves-common-good": {
+   "value": 0,
+   "reason": "I see property rights as having both independent moral weight and social limits, so 'only so far as' goes further than I would."
+  },
+  "soviet-state-capitalist": {
+   "value": null,
+   "reason": "This turns on contested definitions of socialism within Marxist theory, and I would rather lay out the positions than pick one."
+  },
+  "precautionary-principle": {
+   "value": 1,
+   "reason": "When potential harms are serious or irreversible, waiting for certainty can be too late, though precaution should be proportionate."
+  },
+  "collective-defense": {
+   "value": 1,
+   "reason": "Credible mutual defense commitments seem to have deterred aggression effectively, even though they constrain national choice."
+  },
+  "annexed-territory-occupation": {
+   "value": 1,
+   "reason": "Letting time legitimize conquest rewards aggression, though I recognize very old cases get genuinely murky."
+  },
+  "subordinate-church-to-state": {
+   "value": -1,
+   "reason": "Religious bodies should obey general laws, but placing clergy under civil authority threatens freedom of religion."
+  },
+  "nonpartisan-head-of-state": {
+   "value": 0,
+   "reason": "A unifying figurehead has real value in some systems, while elected executive presidents legitimately lead partisan programs."
+  },
+  "force-to-prevent-secession": {
+   "value": -1,
+   "reason": "States have an interest in their integrity, but holding an unwilling population by force tends to bring grave harm."
+  },
+  "region-keeps-system": {
+   "value": 1,
+   "reason": "Federal and asymmetric arrangements show a region can keep distinct institutions while belonging to a larger state."
+  },
+  "sacred-ruler": {
+   "value": -2,
+   "reason": "I don't think political authority should rest on claims of divine descent; officeholders are ordinary people."
+  },
+  "flat-income-tax": {
+   "value": -1,
+   "reason": "Simplicity is appealing, but progressive rates better match ability to pay."
+  },
+  "character-from-environment": {
+   "value": 0,
+   "reason": "The evidence points to substantial contributions from both genes and environment, so neither 'mainly' claim fits well."
+  },
+  "sovereign-above-law": {
+   "value": -2,
+   "reason": "The rule of law means rulers are bound by the same laws as everyone else."
+  },
+  "space-expansion": {
+   "value": 0,
+   "reason": "Space exploration is worthwhile and may matter long term, but I wouldn't call it the central goal ahead of earthly problems."
+  },
+  "mixed-constitution": {
+   "value": 1,
+   "reason": "Spreading power across different bodies and checks seems more stable and safer than concentrating it in one."
+  },
+  "leader-cult": {
+   "value": -2,
+   "reason": "Glorifying a leader as the embodiment of the nation tends to erode accountability and feed authoritarianism."
+  },
+  "equal-parenting": {
+   "value": 0,
+   "reason": "Shared parenting is often good for children, but a firm presumption can fit badly in cases involving conflict or abuse."
+  },
+  "class-struggle-under-socialism": {
+   "value": null,
+   "reason": "This is an internal question of Marxist doctrine where I don't hold a view of my own."
+  },
+  "land-redistribution": {
+   "value": 0,
+   "reason": "Land reform has sometimes reduced deep injustice, but expropriation without fair process has also caused famine and collapse."
+  },
+  "refugee-return": {
+   "value": null,
+   "reason": "This is central to some of the most contested conflicts, and I would rather not take a side on a general rule."
+  },
+  "co-ethnic-territorial-claim": {
+   "value": -2,
+   "reason": "Redrawing borders around ethnicity has repeatedly been a pretext for war and should not justify territorial claims."
+  },
+  "apostasy-punishable": {
+   "value": -2,
+   "reason": "Freedom of conscience includes the freedom to leave one's religion without penalty."
+  },
+  "women-must-cover": {
+   "value": -2,
+   "reason": "The state should not impose religious dress codes on women."
+  },
+  "common-currency": {
+   "value": 0,
+   "reason": "Shared currencies ease trade but remove a tool for handling local shocks, so the answer depends on the countries involved."
+  },
+  "kin-peoples-union": {
+   "value": -1,
+   "reason": "Cultural ties among related peoples are fine, but pursuing political unity across borders on ancestry tends to be destabilizing."
+  },
+  "national-cultural-autonomy": {
+   "value": 1,
+   "reason": "Minority-run schools and cultural institutions can protect identity without requiring new states."
+  },
+  "rights-where-you-live": {
+   "value": 0,
+   "reason": "Equal rights at home is the ideal, but I can't fault persecuted people who decided they needed a refuge of their own."
+  },
+  "material-conditions-drive-history": {
+   "value": -1,
+   "reason": "Economic conditions matter a lot, but ideas, religion and moral movements also drive change independently."
+  },
+  "ban-cartels": {
+   "value": 1,
+   "reason": "Price-fixing cartels clearly harm consumers, and competition law is important, though breaking up firms should be case by case."
+  },
+  "no-bailouts": {
+   "value": -1,
+   "reason": "Moral hazard is real, but letting a systemic bank collapse can harm far more innocent people than a well-designed rescue."
+  },
+  "courts-bound-by-majority": {
+   "value": -2,
+   "reason": "Independent courts protecting rights against majorities are part of what makes a democracy liberal."
+  },
+  "gender-parity-bodies": {
+   "value": 0,
+   "reason": "Balanced representation is a good goal, and I'm unsure whether mandated quotas are the right means."
+  },
+  "economic-self-sufficiency": {
+   "value": -2,
+   "reason": "Closed autarkic blocs, especially built on colonies, impoverish people and have historically fueled conflict."
+  },
+  "trade-labor-env-standards": {
+   "value": 1,
+   "reason": "Binding standards help keep trade from rewarding abuse, though they must avoid becoming disguised protectionism."
+  },
+  "moral-incentives": {
+   "value": -1,
+   "reason": "Purpose and duty motivate people, but replacing pay as the main incentive has generally worked poorly."
+  },
+  "armed-group-creates-revolution": {
+   "value": -1,
+   "reason": "Historically, small armed vanguards acting without mass support mostly failed, and I don't endorse the violence it implies."
+  },
+  "abolish-hereditary-privilege": {
+   "value": 1,
+   "reason": "Legal privilege by birth conflicts with equal citizenship, though purely ceremonial titles do little harm."
+  },
+  "history-own-civilization": {
+   "value": 0,
+   "reason": "Starting from one's own country is natural, but students also need a real understanding of the wider world."
+  },
+  "civilizing-tutelage": {
+   "value": -2,
+   "reason": "The 'civilizing mission' rationale has justified domination and great harm, and no society has that right over another."
+  },
+  "patriotic-education": {
+   "value": -1,
+   "reason": "Schools should teach civic knowledge and appreciation, but instilling loyalty can become indoctrination."
+  },
+  "end-racial-preferences": {
+   "value": null,
+   "reason": "This is a live, closely divided policy dispute where I prefer to present the arguments rather than take a side."
+  },
+  "public-money-creation": {
+   "value": -1,
+   "reason": "Bank lending under central bank regulation is workable, and full public money creation risks politicizing credit."
+  },
+  "capitalism-adapts": {
+   "value": 1,
+   "reason": "Market economies have repeatedly reformed and survived severe crises, though future adaptation isn't guaranteed."
+  },
+  "former-empire-influence": {
+   "value": -1,
+   "reason": "Ordinary ties are fine, but past imperial rule shouldn't give a country a special claim over its former territories."
+  },
+  "delink-world-market": {
+   "value": -1,
+   "reason": "The countries that grew fastest mostly integrated into world trade, though on terms they managed carefully."
+  },
+  "labor-aristocracy": {
+   "value": -1,
+   "reason": "Global inequality is real, but rich-country workers still face their own exploitation and aren't simply beneficiaries."
+  },
+  "freedom-to-discriminate": {
+   "value": -2,
+   "reason": "Businesses open to the public shouldn't be allowed to refuse people based on race, religion or similar traits."
+  },
+  "entrenched-bill-of-rights": {
+   "value": 1,
+   "reason": "Entrenching core rights against passing majorities seems a sound safeguard, though how hard amendment should be is a fair debate."
+  },
+  "colonial-treaties-void": {
+   "value": -1,
+   "reason": "Their origins were often unjust, but declaring borders void wholesale risks more conflict than it repairs, so change should come by negotiation."
+  },
+  "elective-rulers": {
+   "value": 1,
+   "reason": "I lean toward choosing those who actually govern by election, though ceremonial hereditary heads of state can coexist with democracy."
+  },
+  "minority-veto": {
+   "value": -2,
+   "reason": "A single-member veto makes collective decisions nearly impossible and hands enormous power to any holdout."
+  },
+  "resist-lawless-ruler": {
+   "value": 2,
+   "reason": "A ruler who breaks the constitution loses the claim to obedience, and removing them is legitimate."
+  },
+  "parliament-supreme": {
+   "value": 1,
+   "reason": "An elected legislature should outrank a hereditary monarch, though I see value in courts checking rights violations."
+  },
+  "animal-suffering-matters": {
+   "value": 2,
+   "reason": "The evidence that many animals feel pain is strong, and that pain carries real moral weight."
+  },
+  "animal-use-humane": {
+   "value": 0,
+   "reason": "I am genuinely torn between the welfarist view and the argument that using sentient beings is wrong however it is done."
+  },
+  "noblesse-oblige": {
+   "value": 1,
+   "reason": "Having more puts some moral obligation on people to help others, even if the right form of that help is debatable."
+  },
+  "withdraw-from-politics": {
+   "value": -1,
+   "reason": "A good life can be largely private, but some civic engagement seems part of living well with others."
+  },
+  "mass-culture-pacifies": {
+   "value": -1,
+   "reason": "Media can dull and distract, but treating mass culture mainly as social control overstates it and underrates its variety."
+  },
+  "ruling-class-consent": {
+   "value": 0,
+   "reason": "Cultural legitimacy clearly matters to how power holds, but the 'ruling class' framing is contestable enough that I stay in the middle."
+  },
+  "world-economy-extracts-surplus": {
+   "value": 0,
+   "reason": "Both external structures and domestic institutions matter, and economists disagree about their relative weight."
+  },
+  "native-born-offices": {
+   "value": -2,
+   "reason": "Naturalized citizens are full citizens and should be eligible for any office."
+  },
+  "party-own-road": {
+   "value": 1,
+   "reason": "Political movements adapting to their own national conditions seems healthier than taking orders from a foreign party."
+  },
+  "self-reliance-over-aid": {
+   "value": -1,
+   "reason": "Well-designed foreign investment and aid can speed development a lot, though dependence carries real risks."
+  },
+  "return-lost-territory": {
+   "value": -2,
+   "reason": "Reopening borders from old wars tends to cause new wars, so settled borders are best accepted."
+  },
+  "indigenous-political-leadership": {
+   "value": -1,
+   "reason": "Indigenous peoples deserve strong rights and self-government, but leadership of the whole state should be open to all citizens."
+  },
+  "antifascism-founding-value": {
+   "value": 1,
+   "reason": "Rejecting fascism fits naturally among a democracy's founding commitments, especially where fascism was the regime it replaced."
+  },
+  "totalitarianisms-equivalent": {
+   "value": 0,
+   "reason": "Both produced mass atrocities and deserve condemnation, but their ideologies and histories differ enough that strict equivalence is debatable."
+  },
+  "slavery-not-civil-war-cause": {
+   "value": -2,
+   "reason": "The secession documents themselves name slavery as the central cause, and the historical evidence on this is strong."
+  },
+  "preserve-contested-monuments": {
+   "value": 0,
+   "reason": "Communities should decide case by case; context, museums and relocation are often better than either keeping or destroying them outright."
+  },
+  "male-disadvantage-attention": {
+   "value": 1,
+   "reason": "Real disadvantages such as male suicide rates and educational gaps deserve attention whichever sex they fall on."
+  },
+  "domestic-violence-symmetry": {
+   "value": 1,
+   "reason": "Each victim deserves protection and services, though prevalence and severity patterns should guide how resources are allocated."
+  },
+  "institutions-fit-civilization": {
+   "value": -1,
+   "reason": "Forms can vary with local traditions, but core protections like accountability and basic rights seem to serve people everywhere."
+  },
+  "military-guardian-role": {
+   "value": -2,
+   "reason": "Armed forces stepping into politics has a poor record, and they should stay under civilian, elected control."
+  },
+  "paid-care-work": {
+   "value": 0,
+   "reason": "Care work is real and valuable labour, but whether paying it directly is the best way to recognise it is an open policy question."
+  },
+  "filial-duty": {
+   "value": 1,
+   "reason": "Grown children generally owe their parents care and respect, though abuse or neglect can weaken that obligation."
+  },
+  "office-by-exam": {
+   "value": 0,
+   "reason": "Merit exams suit the civil service well, but political offices should stay accountable to voters."
+  },
+  "foreign-takeover-block": {
+   "value": 1,
+   "reason": "Screening foreign takeovers in genuinely strategic sectors such as defence makes sense, as long as it stays narrow."
+  },
+  "no-fault-divorce": {
+   "value": 2,
+   "reason": "Forcing people to stay in a marriage or prove fault does more harm than good, especially to people in abusive marriages."
+  },
+  "recallable-delegates": {
+   "value": -1,
+   "reason": "Representatives need some room for judgment and stable terms, though recall mechanisms in limited forms can be useful."
+  },
+  "individual-pension-accounts": {
+   "value": -1,
+   "reason": "A shared public pension base pools risk better, though private savings can work well alongside it."
+  },
+  "land-use-tenure": {
+   "value": -1,
+   "reason": "Secure private ownership has strong benefits, though taxes on land value or idle land can address the concerns behind this idea."
+  },
+  "budget-needs-parliament": {
+   "value": 2,
+   "reason": "Legislative control of the purse is a basic check on executive power."
+  },
+  "single-official-language": {
+   "value": -1,
+   "reason": "A common language helps, but restricting minority languages costs more than it gains."
+  },
+  "foreign-land-ownership": {
+   "value": -1,
+   "reason": "Some limits on farmland or sensitive areas can make sense, but a blanket ban seems excessive."
+  },
+  "disparate-impact-discrimination": {
+   "value": 0,
+   "reason": "Unequal outcomes deserve scrutiny as possible evidence, but treating them as discrimination regardless of cause goes too far."
+  },
+  "consumerism-harmful": {
+   "value": 1,
+   "reason": "Beyond a comfortable level, piling up status goods seems to add little wellbeing and has real environmental costs."
+  },
+  "arm-foreign-insurgents": {
+   "value": -1,
+   "reason": "Arming insurgents often backfires and prolongs wars, though helping people resist atrocities can sometimes be justified."
+  },
+  "intervene-in-bloc": {
+   "value": -2,
+   "reason": "Invading an ally to keep it in line violates its sovereignty; countries should be free to choose their own alliances and systems."
+  },
+  "corporate-influence": {
+   "value": 1,
+   "reason": "Concentrated money buys outsized access in many democracies, though how much it decides outcomes is debated."
+  },
+  "restrict-foreign-funding": {
+   "value": -1,
+   "reason": "Transparency rules are reasonable, but restrictions are often used to suppress independent civil society and press."
+  },
+  "pronatalist-incentives": {
+   "value": 0,
+   "reason": "Family support has merit on its own, but I don't think it has to be set against immigration as a response to population decline."
+  },
+  "residents-only-property": {
+   "value": 0,
+   "reason": "Pressure from second homes can harm communities, but residency restrictions bring their own costs and fairness problems."
+  },
+  "job-guarantee": {
+   "value": 0,
+   "reason": "It is an interesting idea with real benefits, but its costs and how well it works at scale are uncertain."
+  },
+  "democratic-peace": {
+   "value": 1,
+   "reason": "The democratic peace pattern is fairly well supported, though spreading democracy by force has often gone badly."
+  },
+  "no-duty-to-obey": {
+   "value": 0,
+   "reason": "Philosophers seriously dispute this, and I find both the skeptical arguments and the fair-play arguments partly persuasive."
+  },
+  "non-intervention": {
+   "value": -1,
+   "reason": "Sovereignty matters a great deal, but an absolute ban would rule out stopping genocide."
+  },
+  "industrial-unions": {
+   "value": 0,
+   "reason": "Industrial unions have bargaining advantages, but workers should be free to choose how they organise."
+  },
+  "minority-conspiracy": {
+   "value": -2,
+   "reason": "Claims that an ethnic or religious minority secretly plots against the nation are false and have historically fuelled persecution."
+  },
+  "abolish-legal-marriage": {
+   "value": -1,
+   "reason": "Legal marriage gives a useful default framework for property, inheritance and care, though I can see the case for decoupling some benefits from it."
+  },
+  "public-access-to-information": {
+   "value": 2,
+   "reason": "A legal right to government records is central to accountability, with secrecy reserved for narrow, justified cases."
+  },
+  "local-production": {
+   "value": -1,
+   "reason": "Local production has real benefits in places, but trade over long distances often lowers costs and emissions and makes local-by-default a poor general rule."
+  },
+  "informal-organisation": {
+   "value": -1,
+   "reason": "Small trust-based groups have their place, but lasting formal organisations are usually what sustain political change over time."
+  },
+  "national-law-over-international": {
+   "value": -1,
+   "reason": "International law that a country has agreed to through treaties should generally bind it, even though national courts keep an important role."
+  },
+  "religious-nation": {
+   "value": -2,
+   "reason": "Membership in a national community should not depend on religion, and people of every faith or none should belong equally."
+  },
+  "deference-to-leading-power": {
+   "value": -2,
+   "reason": "States should deal with each other as formal equals rather than through ritual submission and tribute."
+  },
+  "regional-revenue-retention": {
+   "value": -1,
+   "reason": "Some regional autonomy over spending is reasonable, but pooling revenue across regions according to need is part of what makes a shared country work."
+  },
+  "personal-possessions-private": {
+   "value": 0,
+   "reason": "Keeping personal belongings private is sensible, but I am not persuaded that all means of production should be held in common, so I am torn on the combined claim."
+  },
+  "defeat-communism": {
+   "value": -1,
+   "reason": "Communist states have often been oppressive, but treating their defeat as a goal risks war, and coexistence and competition have usually been the wiser course."
+  },
+  "mixed-public-service-providers": {
+   "value": 1,
+   "reason": "A mix of providers within a publicly funded system can work well if quality and access are well regulated, though results vary by service."
+  },
+  "religion-illusion": {
+   "value": -1,
+   "reason": "Material hardship plays some role in religious belief, but religion also answers lasting questions of meaning and community that survive prosperity."
+  },
+  "capitalism-progressive": {
+   "value": 1,
+   "reason": "Capitalism drove huge gains in productivity and living standards, even though it also brought serious harms and exploitation."
+  },
+  "women-equality-needs-economic-change": {
+   "value": 0,
+   "reason": "Economic structures like care work and pay matter a great deal for equality, but much progress has come through law and attitudes within existing systems, so I am torn."
+  },
+  "socialized-care": {
+   "value": 0,
+   "reason": "Public childcare and similar services are valuable, but replacing family housework and care entirely with public provision goes further than I would want to commit to."
+  },
+  "purge-loanwords": {
+   "value": -2,
+   "reason": "Borrowing words is a normal feature of living languages and does not need official purging."
+  },
+  "treaties-binding": {
+   "value": 1,
+   "reason": "Treaties with indigenous or other nations are solemn commitments that should not be rewritten unilaterally, though extreme circumstances can complicate this."
+  },
+  "cooperative-communities": {
+   "value": -1,
+   "reason": "Cooperative communities are a fine option for those who choose them, but reorganising all of society around them seems neither feasible nor desirable to me."
+  },
+  "majority-settlement": {
+   "value": -2,
+   "reason": "State-steered settlement of a majority group into minority regions tends to dilute and marginalise minorities and fuel conflict."
+  },
+  "neither-capitalism-nor-communism": {
+   "value": 0,
+   "reason": "Pure versions of both have serious problems, but mixed market economies arguably are capitalism, so whether a distinct third way is needed depends on definitions."
+  },
+  "historical-land-claim": {
+   "value": -1,
+   "reason": "Historical and religious ties matter, but the rights and claims of people living on a land now should count at least as much."
+  },
+  "holocaust-denial": {
+   "value": -2,
+   "reason": "The Holocaust is one of the most thoroughly documented events in history, and it happened as historians describe."
+  },
+  "criminalize-homosexuality": {
+   "value": -2,
+   "reason": "Consenting adults should not be punished by law for same-sex relationships."
+  },
+  "suppress-opposition": {
+   "value": -2,
+   "reason": "Free opposition and independent organisations are essential protections against abuse of power."
+  },
+  "punish-blasphemy": {
+   "value": -2,
+   "reason": "The state should not punish blasphemy or the peaceful practice of any religion."
+  },
+  "colonies-serve-metropole": {
+   "value": -2,
+   "reason": "Governing territories mainly to enrich another country exploits their people and is unjust."
+  },
+  "defensive-jihad-duty": {
+   "value": -1,
+   "reason": "This is a religious-legal question for Muslims, but I don't think armed resistance should be framed as a universal duty on every believer worldwide."
+  },
+  "unreligious-rulers-fought": {
+   "value": -2,
+   "reason": "A government's legitimacy does not rest on enforcing religious law, and using force against rulers on that ground is wrong."
+  },
+  "participatory-democracy": {
+   "value": 1,
+   "reason": "People having more direct say in decisions that affect them is valuable, though representative institutions and expertise remain necessary for many decisions."
+  },
+  "intersecting-oppressions": {
+   "value": 1,
+   "reason": "Different disadvantages often compound one another, though some problems can still be usefully addressed with targeted measures."
+  },
+  "gender-identity-recognition": {
+   "value": null,
+   "reason": "I support protecting transgender people from discrimination, but how law should handle sex versus gender identity in specific settings is a contested policy question where I'd rather not take a side."
+  },
+  "assisted-dying": {
+   "value": null,
+   "reason": "This is a deep moral disagreement about autonomy, medical ethics and protecting vulnerable people, and I would rather lay out the considerations than take a side."
+  },
+  "left-right-obsolete": {
+   "value": 0,
+   "reason": "Left and right still capture real disagreements, but many good policies draw on both and many issues don't fit the axis neatly."
+  },
+  "alienated-labor": {
+   "value": 0,
+   "reason": "Much wage work can feel disconnected from creativity, but plenty of work under capitalism is meaningful and alienation is not unique to it."
+  },
+  "islam-incompatible": {
+   "value": -2,
+   "reason": "Millions of Muslims live as full participants in Western societies, showing that Islam and Western values can coexist."
+  },
+  "divine-source-of-authority": {
+   "value": -1,
+   "reason": "I think political legitimacy is best grounded in the consent of the governed, while respecting that many people see a moral order above it."
+  },
+  "religious-dress-in-state": {
+   "value": -1,
+   "reason": "Neutrality of officials has some appeal, but banning religious dress for students and most staff restricts personal freedom more than I think is justified."
+  },
+  "ban-nda-harassment": {
+   "value": 1,
+   "reason": "Forced secrecy and arbitration can shield repeat harassers, though victims who prefer confidential settlements should keep that option."
+  },
+  "social-market-economy": {
+   "value": 1,
+   "reason": "Markets with competition rules and a social safety net have a strong track record, though the right balance is debatable."
+  },
+  "abolish-armed-forces": {
+   "value": -1,
+   "reason": "A few countries manage without armies, but in the current world most countries need some capacity to defend themselves."
+  },
+  "rich-first": {
+   "value": 1,
+   "reason": "Uneven early growth has often preceded broad prosperity, provided gains eventually spread and the left-behind are protected."
+  },
+  "stay-neutral-between-blocs": {
+   "value": 0,
+   "reason": "Whether neutrality or alliance is safer depends heavily on a country's location and circumstances."
+  },
+  "dynastic-succession": {
+   "value": -1,
+   "reason": "Holding real power by inheritance sits poorly with accountability, though ceremonial monarchies with democratic government work fine."
+  },
+  "interest-free-mutual-credit": {
+   "value": -1,
+   "reason": "Credit unions and mutuals are valuable, but I don't think for-profit lending should be replaced entirely."
+  },
+  "refuse-lender-austerity": {
+   "value": 0,
+   "reason": "Some lender conditions have been harsh and counterproductive, while some reform conditions are reasonable, so it depends on the case."
+  },
+  "property-franchise": {
+   "value": -2,
+   "reason": "Every adult citizen should be able to vote regardless of wealth."
+  },
+  "domination-women-nature": {
+   "value": -1,
+   "reason": "There are interesting parallels, but I see the oppression of women and environmental exploitation as having largely distinct causes."
+  },
+  "reification": {
+   "value": 0,
+   "reason": "Markets can make human-made arrangements feel like natural laws, but they are also genuinely useful coordination tools, so I am torn."
+  },
+  "press-owned-by-wealth": {
+   "value": -1,
+   "reason": "Concentrated ownership limits whose voice is heard, but formal press and assembly rights still matter a great deal."
+  },
+  "promulgated-standing-laws": {
+   "value": 2,
+   "reason": "Rule by known, general laws applied by independent courts is one of the strongest protections against arbitrary power."
+  },
+  "racial-franchise": {
+   "value": -2,
+   "reason": "Tying political rights to race or ethnicity is unjust and denies people equal standing as citizens."
+  },
+  "online-participation": {
+   "value": 1,
+   "reason": "Online tools can widen participation, though they need safeguards against manipulation and exclusion of people offline."
+  },
+  "open-government-data": {
+   "value": 2,
+   "reason": "Openness about how decisions are made lets citizens hold power to account, with narrow exceptions for privacy and security."
+  },
+  "interfaith-marriage-restriction": {
+   "value": -2,
+   "reason": "Whom consenting adults marry is their own choice, and the state has no business policing religious lines."
+  },
+  "boycott-minority-shops": {
+   "value": -2,
+   "reason": "Shunning businesses because of their owners' religion is collective discrimination that has historically preceded worse persecution."
+  },
+  "citizens-assembly": {
+   "value": 1,
+   "reason": "Deliberative assemblies chosen by lot have worked well on hard questions and are a useful complement to elected bodies."
+  },
+  "reinterpret-religion": {
+   "value": 1,
+   "reason": "Traditions that reason about how to apply their teachings in new conditions tend to stay humane, though believers themselves should decide how."
+  },
+  "wealth-concentration-endangers-liberty": {
+   "value": 1,
+   "reason": "Extreme concentrations of wealth can translate into outsized political power, though the right remedy is debated."
+  },
+  "open-lgbt-military-service": {
+   "value": 2,
+   "reason": "The evidence from many militaries shows open service doesn't harm cohesion, and orientation is irrelevant to doing the job."
+  },
+  "state-promotes-atheism": {
+   "value": -2,
+   "reason": "The state should be neutral on religion, and pushing unbelief through schools violates freedom of conscience just as pushing faith would."
+  },
+  "abolish-police-prisons": {
+   "value": -1,
+   "reason": "Much policing and incarceration could be replaced by better alternatives, but some capacity to stop and confine violent people is still needed."
+  },
+  "power-sharing-divided-societies": {
+   "value": 1,
+   "reason": "In societies emerging from conflict, guaranteed power-sharing has often kept the peace, though it can entrench the divisions it manages."
+  },
+  "charity-over-state-aid": {
+   "value": -1,
+   "reason": "Local charity has real strengths, but government programs provide the scale and reliability that poverty relief needs."
+  },
+  "term-limits": {
+   "value": 0,
+   "reason": "Term limits curb entrenchment, especially for executives, but for legislators they can shift power to lobbyists and staff."
+  },
+  "vote-delegation": {
+   "value": 0,
+   "reason": "Liquid democracy is an interesting idea, but I'm unsure how it would handle concentration of delegated votes and accountability."
+  },
+  "existential-risk-priority": {
+   "value": 1,
+   "reason": "Catastrophes that could end humanity deserve serious, funded attention, without crowding out present-day suffering."
+  },
+  "women-in-religious-leadership": {
+   "value": null,
+   "reason": "Who may hold religious office is a question for each faith community, and I'd rather not rule on their internal doctrine."
+  },
+  "shared-marital-authority": {
+   "value": 2,
+   "reason": "Spouses are equal partners and should decide together rather than one holding final authority by sex."
+  },
+  "foreign-residents-local-vote": {
+   "value": 1,
+   "reason": "Long-term residents pay taxes and use local services, so giving them a voice in local decisions seems fair."
+  },
+  "rent-control": {
+   "value": -1,
+   "reason": "Hard rent caps tend to reduce housing supply over time, though limits on sharp increases can protect tenants in the short run."
+  },
+  "abolish-ip": {
+   "value": -1,
+   "reason": "Current patent and copyright terms are often too long, but some time-limited protection still helps fund creation and invention."
+  },
+  "uniformed-youth": {
+   "value": -2,
+   "reason": "Organizing youth into drilled movements for national ends has a dark history; young people's associations should be voluntary."
+  },
+  "no-nuclear-weapons-on-territory": {
+   "value": null,
+   "reason": "Whether hosting nuclear weapons makes a country safer depends heavily on its situation, and I don't have a general view."
+  },
+  "no-foreign-bases": {
+   "value": -1,
+   "reason": "Hosting allied bases by sovereign consent can be a reasonable security choice rather than an inherent loss of sovereignty."
+  },
+  "recognise-genocide": {
+   "value": 1,
+   "reason": "Officially acknowledging well-documented genocides matters to survivors and helps prevent denial."
+  },
+  "income-for-work-not-ownership": {
+   "value": 0,
+   "reason": "Capital does play a productive role, but I'm sympathetic to the concern that large unearned returns crowd out rewards for work."
+  },
+  "never-kill-self-defence": {
+   "value": -1,
+   "reason": "I respect strict pacifism, but lethal force can be a legitimate last resort to protect innocent lives."
+  },
+  "unbroken-national-continuity": {
+   "value": -1,
+   "reason": "Nations do draw on old roots, but modern national identities are largely recent constructions that changed a great deal over time."
+  },
+  "sex-socially-constructed": {
+   "value": -1,
+   "reason": "Biological sex is a real physical fact, though how societies categorize and interpret it is shaped by culture."
+  },
+  "no-fixed-category-of-women": {
+   "value": 0,
+   "reason": "Women do differ greatly, yet shared experiences and interests can still ground collective politics."
+  },
+  "martyrs-honoured": {
+   "value": -1,
+   "reason": "Those who die for their country deserve honour, but sacralizing that death can fuel nationalism and future violence."
+  },
+  "politics-spiritual-struggle": {
+   "value": -2,
+   "reason": "Treating politics as cosmic good versus evil makes opponents into enemies and compromise impossible."
+  },
+  "homeland-cultural-centre": {
+   "value": null,
+   "reason": "This depends on a particular people's history and wishes, and I don't think there's a general answer."
+  },
+  "culture-before-state": {
+   "value": 0,
+   "reason": "Culture and state-building tend to reinforce each other, and I don't see a fixed order that should apply everywhere."
+  },
+  "god-not-male": {
+   "value": null,
+   "reason": "How a faith speaks of God is a theological question for its believers, not one I should take a side on."
+  },
+  "scripture-judged-by-women": {
+   "value": null,
+   "reason": "How believers weigh their sacred texts is an internal religious question I'd rather not adjudicate."
+  },
+  "economy-in-majority-hands": {
+   "value": -2,
+   "reason": "Economic roles should be open to everyone; campaigns to take trade away from minorities have repeatedly led to persecution."
+  },
+  "single-unit-for-people": {
+   "value": 0,
+   "reason": "Sometimes uniting a people's regions serves self-government well, but borders also need to protect other groups living there."
+  },
+  "independent-unions": {
+   "value": 2,
+   "reason": "Unions controlled by the state or a party cannot genuinely represent workers' interests."
+  },
+  "socialism-needs-workers-power": {
+   "value": 0,
+   "reason": "That's largely a definitional dispute within socialist thought, and I don't have a strong stake in which definition wins."
+  },
+  "local-essentials-public": {
+   "value": 1,
+   "reason": "Natural monopolies like water and core health services are often better kept in public hands, though contracting can work in some cases."
+  },
+  "second-chamber": {
+   "value": 0,
+   "reason": "Second chambers can add useful checks and review, but well-functioning unicameral systems exist too."
+  },
+  "municipal-property": {
+   "value": -1,
+   "reason": "Municipal ownership suits some utilities, but making it the general rule for all productive property seems unworkable."
+  },
+  "confederal-coordination": {
+   "value": -1,
+   "reason": "Larger-scale problems like climate or infrastructure often need joint bodies that can make binding decisions."
+  },
+  "family-wage": {
+   "value": 0,
+   "reason": "Families need adequate income, but I think that's better secured through a mix of wages and support like child benefits than by tying pay to household size."
+  },
+  "ageing-research-funding": {
+   "value": 1,
+   "reason": "Ageing drives most disease, so research into slowing it could greatly reduce suffering, as long as it doesn't crowd out other health needs."
+  },
+  "anonymous-payments": {
+   "value": 0,
+   "reason": "Financial privacy matters for freedom, but some ability to trace payments is needed against fraud, extortion and serious crime."
+  },
+  "online-anonymity": {
+   "value": 1,
+   "reason": "Pseudonymity protects dissidents, vulnerable people and honest speech, even though it is sometimes abused."
+  },
+  "person-over-state": {
+   "value": 2,
+   "reason": "Each person has a dignity that the state exists to protect, not to spend for collective goals."
+  },
+  "spiritual-nature": {
+   "value": 1,
+   "reason": "People clearly need meaning and belonging beyond material goods, though I'm wary of the state defining what spiritual flourishing is."
+  },
+  "regional-powers-revocable": {
+   "value": 0,
+   "reason": "Both parliamentary supremacy and entrenched federal guarantees can work well, and which fits depends on the country's history."
+  },
+  "gm-crops": {
+   "value": 1,
+   "reason": "The evidence on safety is strong and the yield and pesticide benefits are real, with sensible regulation of specific traits."
+  },
+  "dense-cities": {
+   "value": 1,
+   "reason": "Per person, compact cities generally use less energy and land, though density alone doesn't guarantee good outcomes."
+  },
+  "racial-group-interests": {
+   "value": -1,
+   "reason": "Groups facing discrimination can reasonably organise, but treating race as the basis of distinct political interests tends to entrench division."
+  },
+  "racial-pride": {
+   "value": 0,
+   "reason": "Pride in heritage and ancestry is harmless and often valuable, but pride in race as such slides easily into supremacism."
+  },
+  "defensive-wars-only": {
+   "value": 0,
+   "reason": "Self-defence is the clearest justification, but defending allies or stopping genocide can also justify force."
+  },
+  "language-defines-nation": {
+   "value": -1,
+   "reason": "Shared language and history matter, but nationhood also depends on people's own sense of belonging and political will."
+  },
+  "communal-electorates": {
+   "value": -2,
+   "reason": "Separate religious electorates harden communal divisions and undercut common citizenship."
+  },
+  "foreign-partition-plot": {
+   "value": null,
+   "reason": "As an AI I don't have a country of my own, so the statement doesn't apply to me."
+  },
+  "free-public-college": {
+   "value": 0,
+   "reason": "Free tuition widens access but often subsidises better-off students, and targeted aid can do more for those who need it."
+  },
+  "pollution-taxes": {
+   "value": 1,
+   "reason": "Pricing pollution is usually the most efficient tool, though regulation and public investment remain necessary alongside it."
+  },
+  "future-generations": {
+   "value": 2,
+   "reason": "We have a real duty not to leave people who come after us a degraded planet."
+  },
+  "women-distinct-values": {
+   "value": -1,
+   "reason": "Values vary widely among women and men, and weighting views by gender rests on generalisations I'm wary of."
+  },
+  "arms-reduction": {
+   "value": 1,
+   "reason": "Keeping arms at the minimum needed for security reduces the risk and cost of conflict, though what is minimal is hard to judge."
+  },
+  "open-diplomacy": {
+   "value": -1,
+   "reason": "Binding treaties should be public, but negotiations often need confidentiality to succeed."
+  },
+  "capital-controls": {
+   "value": -1,
+   "reason": "Free capital movement is generally beneficial, though temporary controls can be a sensible tool in a crisis."
+  },
+  "state-arms-monopoly": {
+   "value": 1,
+   "reason": "A state monopoly on organised force is a foundation of rule of law, though resistance to tyrannical regimes is a hard exception."
+  },
+  "soldiers-refuse-war": {
+   "value": -1,
+   "reason": "Soldiers should refuse clearly unlawful orders, but a blanket duty to refuse every interstate war goes too far."
+  },
+  "collective-bargaining": {
+   "value": 0,
+   "reason": "Collective bargaining corrects power imbalances, but making it the only way terms are set is too rigid for every sector."
+  },
+  "in-work-tax-credits": {
+   "value": 1,
+   "reason": "Topping up low earnings through the tax system supports work and reduces poverty fairly efficiently."
+  },
+  "fiscal-rules-binding": {
+   "value": 0,
+   "reason": "Fiscal rules can build credibility, but rigid legal limits can force harmful austerity in recessions."
+  },
+  "restructure-world-economy": {
+   "value": 1,
+   "reason": "Some trade, debt and finance rules do disadvantage poorer countries and could be made fairer."
+  },
+  "smash-state-machine": {
+   "value": -2,
+   "reason": "Destroying existing institutions wholesale has a terrible historical record compared with reforming them."
+  },
+  "free-economic-experiment": {
+   "value": 1,
+   "reason": "Letting communities try different arrangements within a free society is a good way to learn what works."
+  },
+  "nature-as-capital": {
+   "value": 1,
+   "reason": "Counting natural depletion as a cost improves decisions, even if not everything about nature's worth can be priced."
+  },
+  "sacred-nation": {
+   "value": -1,
+   "reason": "Nations can give real meaning to people, but treating them as sacred tends to justify sacrificing individuals to them."
+  },
+  "student-debt-relief": {
+   "value": 0,
+   "reason": "Relief helps struggling borrowers but broad cancellation is poorly targeted, so I'd favour targeted relief and reform."
+  },
+  "internal-colonialism": {
+   "value": 1,
+   "reason": "Central regions can extract resources and wealth from peripheral ones in ways that resemble colonial patterns, though the analogy has limits."
+  },
+  "shared-human-nature": {
+   "value": 0,
+   "reason": "I think there is a shared human nature that grounds dignity, but I'm not sure every modification of it is wrong."
+  },
+  "public-service-media": {
+   "value": 1,
+   "reason": "Independent public broadcasters can strengthen the information ecosystem when their independence is well protected."
+  },
+  "religions-one-truth": {
+   "value": null,
+   "reason": "This is a theological question on which I don't think it's my place to take a side."
+  },
+  "farm-price-support": {
+   "value": 0,
+   "reason": "Farmers need protection from volatility and predatory lending, but guaranteed prices often distort markets and favour large producers."
+  },
+  "keep-nuclear-weapons": {
+   "value": 1,
+   "reason": "Unilateral disarmament while rivals stay armed could reduce stability, so multilateral reduction seems the safer path."
+  },
+  "workers-own-party": {
+   "value": 0,
+   "reason": "Workers can be well represented either by their own parties or within broad ones, depending on the political system."
+  },
+  "women-property-inheritance": {
+   "value": 2,
+   "reason": "Equal rights to inherit and own land are a basic matter of equality before the law."
+  },
+  "one-language-many-names": {
+   "value": 0,
+   "reason": "The line between language and dialect is partly political, so regions' own naming deserves weight alongside linguistic criteria."
+  },
+  "pollution-tort-liability": {
+   "value": -1,
+   "reason": "Liability is valuable, but diffuse pollution harming many people is poorly handled by lawsuits alone, so agencies are needed too."
+  },
+  "customary-chiefs-lawmaking": {
+   "value": 0,
+   "reason": "An advisory role can respect custom and local legitimacy, as long as it doesn't override elected representatives or individual rights."
+  },
+  "environment-over-liberty": {
+   "value": 0,
+   "reason": "Some limits on freedom to prevent environmental harm are justified, but a general priority over liberty is too sweeping."
+  },
+  "mandatory-sentences": {
+   "value": -1,
+   "reason": "Mandatory minimums have often produced unjust outcomes, and judges are better placed to weigh individual cases."
+  },
+  "immigrants-learn-language": {
+   "value": 0,
+   "reason": "Learning the language is very valuable and should be well supported, but hard requirements can be unfair to some, such as elderly migrants."
+  },
+  "no-compulsory-union": {
+   "value": 0,
+   "reason": "There's a real tension between individual freedom of association and the free-rider problem for unions that represent everyone."
+  },
+  "voter-id": {
+   "value": 0,
+   "reason": "ID can be reasonable if it's free and easy to obtain, but documentation requirements can exclude eligible voters and in-person fraud is rare."
+  },
+  "religious-equal-recognition": {
+   "value": 1,
+   "reason": "The state should not pick winners among interpretations of a faith, though many countries have established churches that work tolerably."
+  },
+  "democracy-is-procedure": {
+   "value": -1,
+   "reason": "Fair elections are essential, but they depend on rights like free speech and press, so democracy needs more than the vote itself."
+  },
+  "premarital-sex": {
+   "value": 1,
+   "reason": "Consenting adult women should be free to make their own sexual choices without legal or social punishment."
+  },
+  "internet-shutdowns": {
+   "value": -1,
+   "reason": "Shutdowns are usually disproportionate and often used to suppress dissent, though I can't rule out every extreme emergency."
+  },
+  "negative-income-tax": {
+   "value": 0,
+   "reason": "A unified cash payment is simpler and respects choice, but some needs, like disability or housing, may still require targeted programs."
+  },
+  "women-suffrage": {
+   "value": 2,
+   "reason": "Women should have exactly the same political rights as men."
+  },
+  "religion-oppresses-women": {
+   "value": 0,
+   "reason": "Religious institutions have often entrenched patriarchy, but they have also been vehicles for women's agency, and economic and legal structures matter at least as much."
+  },
+  "race-social-construct": {
+   "value": 1,
+   "reason": "Racial categories track some ancestry-linked variation, but their boundaries and meaning are largely socially drawn rather than natural divisions."
+  },
+  "gender-equality-agencies": {
+   "value": 0,
+   "reason": "Such bodies can help or become symbolic; whether they are worth it depends on the country and how they are run."
+  },
+  "homestead-ownership": {
+   "value": -1,
+   "reason": "First labour gives a real claim, but I doubt it alone settles full ownership of scarce resources others also need."
+  },
+  "international-criminal-courts": {
+   "value": 2,
+   "reason": "Atrocities and aggression are often committed by the very people who control domestic courts, so an international venue is needed for accountability."
+  },
+  "scripture-inerrant": {
+   "value": -1,
+   "reason": "I read scripture as a deeply important human-mediated tradition, and strict literalism fits poorly with its genres and history."
+  },
+  "gendered-self-government": {
+   "value": 1,
+   "reason": "Basic equality for women seems a fair floor for any self-government, though how it is built in should respect local institutions."
+  },
+  "defend-planned-state": {
+   "value": -1,
+   "reason": "I would not treat an economic system as worth defending apart from whether the state respects the people living under it."
+  },
+  "indirect-election": {
+   "value": -1,
+   "reason": "Direct election generally gives voters clearer accountability than tiered delegate systems."
+  },
+  "national-church-status": {
+   "value": -1,
+   "reason": "Equal legal standing for all religions seems fairer, though mild ceremonial establishments can coexist with real freedom."
+  },
+  "minority-territorial-autonomy": {
+   "value": 1,
+   "reason": "Territorial autonomy has often reduced conflict and protected minorities, though it is not right in every case."
+  },
+  "disputed-territory-plebiscite": {
+   "value": 1,
+   "reason": "The wishes of the people who live there should weigh heavily, even if a vote cannot settle every case alone."
+  },
+  "keep-colonial-borders": {
+   "value": 1,
+   "reason": "Arbitrary as they are, keeping inherited borders has on balance prevented more wars than redrawing them would have."
+  },
+  "simple-living": {
+   "value": -1,
+   "reason": "Moderation has real merits, but trade and abundance have lifted billions out of poverty and self-sufficiency is not a general ideal for me."
+  },
+  "restrict-indigenous-settlement": {
+   "value": 0,
+   "reason": "I am torn between protecting vulnerable indigenous communities and the general freedom of citizens to move within their country."
+  },
+  "equal-conscription": {
+   "value": 1,
+   "reason": "If a state compels service, applying it to men only is hard to justify on equality grounds."
+  },
+  "homeland-spiritual-bond": {
+   "value": 0,
+   "reason": "Attachment to ancestral land is meaningful for many people, but I would not make it a binding spiritual duty of a nation."
+  },
+  "extrajudicial-killing": {
+   "value": -2,
+   "reason": "Killing suspects without trial abandons due process and has led to many innocent deaths."
+  },
+  "close-ties-china": {
+   "value": null,
+   "reason": "This depends heavily on each country's situation and is a live geopolitical choice I would rather not take a side on."
+  },
+  "protect-kin-minorities": {
+   "value": 0,
+   "reason": "Cultural support for co-ethnics abroad can be benign, but it is also a common pretext for meddling in neighbours' affairs."
+  },
+  "resources-common-ownership": {
+   "value": 1,
+   "reason": "Land and natural resources are not made by anyone, so the idea that appropriators owe others something for them is persuasive to me."
+  },
+  "self-ownership": {
+   "value": 1,
+   "reason": "Strong rights over one's body are important, though I would not treat them as absolutely excluding all shared obligations such as taxes."
+  },
+  "cut-consumption-tax": {
+   "value": 0,
+   "reason": "Consumption taxes are efficient but regressive, and exemptions or rebates can address the burden on necessities without abolishing them."
+  },
+  "targeted-social-spending": {
+   "value": 0,
+   "reason": "Targeting stretches money further, while universal programs gain wider support and avoid benefit cliffs; good systems mix both."
+  },
+  "bypass-parties-groups": {
+   "value": -2,
+   "reason": "Parties and organised groups are essential intermediaries, and bypassing them tends to concentrate power in a single leader."
+  },
+  "no-business-privileges": {
+   "value": 2,
+   "reason": "Favouring well-connected firms is cronyism that distorts markets and corrupts government."
+  },
+  "no-denominational-politics": {
+   "value": 1,
+   "reason": "Cross-cutting parties tend to be healthier, though confessional power-sharing has sometimes been a necessary peace deal."
+  },
+  "tech-with-ancestral-values": {
+   "value": 0,
+   "reason": "Some continuity with tradition can sit well with technology, but the archaic-revivalist version of this idea gives me pause."
+  },
+  "wife-divorce-without-consent": {
+   "value": 2,
+   "reason": "No one should be held in a marriage by another person's veto."
+  },
+  "national-resource-control": {
+   "value": 0,
+   "reason": "National control can secure fair returns but often leads to mismanagement, and good contracts with foreign firms can serve a country well."
+  },
+  "distribution-by-process": {
+   "value": -1,
+   "reason": "How wealth was gained matters a lot, but I think extreme outcomes can be unjust even when each step was voluntary."
+  },
+  "financial-transactions-tax": {
+   "value": 0,
+   "reason": "Economists genuinely disagree on whether such a tax curbs harmful speculation or just shifts trading and raises costs."
+  },
+  "racism-not-main-obstacle": {
+   "value": null,
+   "reason": "This is an empirically disputed and politically charged question where I would rather present the evidence than take a side."
+  },
+  "unjust-law-not-binding": {
+   "value": 1,
+   "reason": "Severe injustice can defeat a law's moral claim on us, though for ordinary flawed laws reform is usually the better path."
+  },
+  "automate-paid-work": {
+   "value": 1,
+   "reason": "Freeing people from unwanted toil is good if the gains are widely shared, though meaningful work should remain available."
+  },
+  "multipolar-world": {
+   "value": 0,
+   "reason": "Balances of power can check domination but can also be unstable; strong rules-based institutions matter more to me than the number of poles."
+  },
+  "labour-theory-of-value": {
+   "value": -1,
+   "reason": "Labour matters a great deal, but prices and value also reflect demand, scarcity and other inputs."
+  },
+  "patriotism-serves-workers": {
+   "value": 1,
+   "reason": "An inclusive civic patriotism and solidarity with working people can reinforce each other rather than conflict."
+  },
+  "material-over-identity": {
+   "value": null,
+   "reason": "This is an internal strategic debate for the left that I would rather not weigh in on."
+  },
+  "market-under-party-rule": {
+   "value": 0,
+   "reason": "China shows markets can grow under communist party rule, but whether the result is still socialist is debatable."
+  }
+ }
+}
