@@ -32,6 +32,10 @@ objectionable; attribute them to sources instead.
   thin ones ("<name> on <topic>", their votes, platform sections, interviews). A prominent politician
   usually needs 8-12 sources; someone with a thin public record needs fewer, and many nulls are then
   the honest result.
+- Stop early for someone without a political record (an artist, athlete or entertainer known for
+  other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
+  "<name> views on …") turn up no stated political positions, record the few you found, answer the
+  rest null, and finish. Failing salience is then the correct outcome, and a long search is wasted.
 - Do not use political-quiz sites as sources: a site's guess at where someone stands isn't evidence.
 - The exception is the person taking a quiz themselves, answers read aloud, as some streamers and
   pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
