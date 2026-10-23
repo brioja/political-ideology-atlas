@@ -96,6 +96,9 @@ test's dividing lines precisely enough to tell neighbouring ideologies apart. It
 position, not on the answers. Someone with too thin a political record is left out. Do not pad
 answers to pass; an honest rejection is the correct outcome.
 
+When the validator rejects an answer, fix the answer, not the wording: if it says contested
+evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.
+
 ## 3. Output format
 
 ```json
