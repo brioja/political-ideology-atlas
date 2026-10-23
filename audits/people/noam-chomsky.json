@@ -2,14 +2,345 @@
   "id": "noam-chomsky",
   "name": "Noam Chomsky",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
   "living": true,
-  "role": "American linguist, philosopher and political critic (MIT and University of Arizona)",
-  "summary": "An anarchist-leaning critic of the US state, capitalism and the mainstream media, who advocates libertarian socialism with workers' councils and direct participation. He opposes Leninist vanguard parties, US military interventions and corporate power, and has argued for a two-state settlement on international-consensus terms in Israel-Palestine while defending free expression for offensive views.",
+  "role": "American linguist and political writer, MIT professor emeritus; anarcho-syndicalist critic of US foreign policy and of corporate power",
+  "summary": "Chomsky calls himself a libertarian socialist in the anarchist tradition: he wants workplaces and communities run by their participants, regards private corporate power and state bureaucracies as illegitimate authorities, and treats Leninist states as the opposite of socialism. He criticizes US and allied foreign policy as imperial, defends near-absolute free speech, and argues that media and elites manufacture consent. In the short term he defends state social protections and votes tactically.",
   "wikipedia": "https://en.wikipedia.org/wiki/Noam_Chomsky",
   "sources": [
     {
       "id": "s1",
+      "kind": "primary",
+      "title": "Chomsky on Anarchism (2005)",
+      "author": "Noam Chomsky; ed. Barry Pateman",
+      "url": "https://archive.org/details/chomskyonanarchism_202103",
+      "usedFor": "His own statements on the state, health insurance, corporate mercantilism and libertarian socialism"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "How the World Works (2011 compilation of his 1990s interviews and essays)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/noam-chomsky-2011-how-the-world-works",
+      "usedFor": "Free markets versus actual policy, Social Security, workplace democracy, nonviolence, Third World debt"
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Political positions of Noam Chomsky (Wikipedia)",
+      "author": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/wiki/Political_positions_of_Noam_Chomsky",
+      "usedFor": "Overview of his stated positions and the sources that record them"
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "Q&A at a 1999 talk (living wages and the minimum wage)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/19990401/",
+      "usedFor": "Minimum wage tracking productivity"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "title": "Government in the Future (1970 lecture)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/government-in-the-future/",
+      "usedFor": "Classical liberalism, libertarian socialism, state socialism and state capitalism; workers' councils, human nature, technocracy, Leninism"
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "title": "Chomsky on Billionaires, Wealth Inequality and How Aristotle and Madison Dealt With Them (2014)",
+      "author": "Noam Chomsky interviewed by Rob Kall",
+      "url": "https://chomsky.info/20140213-2/",
+      "usedFor": "Taxes on the wealthy, concentration of wealth and democracy, financial deregulation"
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "A Conversation with Noam Chomsky on Organizing for a Next System (2016)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/03242016/",
+      "usedFor": "Worker-owned production, solidarity, immigration, free tuition and taxes"
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "title": "Keeping the Rabble in Line: Interviews with David Barsamian (1994)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/NoamChomsky1994KeepingTheRabbleInLine",
+      "usedFor": "Crime bill, death penalty, gun control, labor movement, UN Charter and the use of force"
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "title": "Class Warfare: Interviews with David Barsamian (1996)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/NoamChomsky1996ClassWarfare",
+      "usedFor": "Tobin tax, welfare state rollback, libertarian socialism, Israel and binationalism"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "title": "Notes on Anarchism (1970)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/notes-on-anarchism/",
+      "usedFor": "Libertarian socialism, workers' control, wage slavery, state ownership and state capitalism"
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "title": "Globalization and universal basic income: interview with Ha-Joon Chang and Noam Chomsky (Truthout, 2017)",
+      "author": "Noam Chomsky and Ha-Joon Chang, interviewed by C. J. Polychroniou",
+      "url": "https://chomsky.info/20170705/",
+      "usedFor": "To each according to need, basic income, automation"
+    },
+    {
+      "id": "s12",
+      "kind": "primary",
+      "title": "Manufacturing Consent: The Political Economy of the Mass Media (1988)",
+      "author": "Edward S. Herman and Noam Chomsky",
+      "url": "https://archive.org/details/edward-s.-herman-noam-chomsky-manufacturing-consent-the-political-economy-of-the",
+      "usedFor": "The propaganda model: ownership, wealth, advertising and the media's service to elites"
+    },
+    {
+      "id": "s13",
+      "kind": "primary",
+      "title": "Interview: Noam Chomsky (2009)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20090519/",
+      "usedFor": "Copyright and patents"
+    },
+    {
+      "id": "s14",
+      "kind": "primary",
+      "title": "Rogue States: The Rule of Force in World Affairs (2000)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/rogue-states-the-rule-of-force-in-world-affairs",
+      "usedFor": "UN Charter and the use of force, Kosovo, Jubilee 2000 and odious debt, labor rights"
+    },
+    {
+      "id": "s15",
+      "kind": "primary",
+      "title": "The Soviet Union versus Socialism (1986)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/thesovietunionversussocialinoamchomsky",
+      "usedFor": "Bolshevism as the destruction of socialism and workers' control"
+    },
+    {
+      "id": "s16",
+      "kind": "primary",
+      "title": "Interview on anarchism and libertarianism (2015)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/072015-2/",
+      "usedFor": "US libertarianism as corporate tyranny"
+    },
+    {
+      "id": "s17",
+      "kind": "primary",
+      "title": "Failed States: The Abuse of Power and the Assault on Democracy (2006)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/10ChomskyFailedStates",
+      "usedFor": "US foreign policy, use of force, International Criminal Court, military dominance, health care and public opinion"
+    },
+    {
+      "id": "s18",
+      "kind": "primary",
+      "title": "On the War on Drugs (interview with Week Online, 2002)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20020208/",
+      "usedFor": "Decriminalization of drugs, libertarians and the drug war"
+    },
+    {
+      "id": "s19",
+      "kind": "primary",
+      "title": "The Drug War Industrial Complex (interview, 1998)",
+      "author": "Noam Chomsky interviewed by John Veit",
+      "url": "https://chomsky.info/199804__-2/",
+      "usedFor": "Drug legalization: experiment, caution"
+    },
+    {
+      "id": "s20",
+      "kind": "primary",
+      "title": "Some Elementary Comments on the Rights of Freedom of Expression (1980)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/19801011/",
+      "usedFor": "Free speech for repugnant views, the Faurisson petition"
+    },
+    {
+      "id": "s21",
+      "kind": "primary",
+      "title": "Interview on the Faurisson affair (Oct. 1981)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/19811026/",
+      "usedFor": "His own view on Holocaust denial and gas chambers"
+    },
+    {
+      "id": "s22",
+      "kind": "primary",
+      "title": "Necessary Illusions: Thought Control in Democratic Societies (1989)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/NoamChomskyNecessaryIllusions_201804",
+      "usedFor": "Media, democracy as business control, social welfare and Central America"
+    },
+    {
+      "id": "s23",
+      "kind": "primary",
+      "title": "Burkini Bans, New Atheism and State Worship: Noam Chomsky on Religion in Politics (Truthout, 2016)",
+      "author": "Noam Chomsky interviewed by C. J. Polychroniou",
+      "url": "https://chomsky.info/burkini-bans-new-atheism-and-state-worship-noam-chomsky-on-religion-in-politics/",
+      "usedFor": "Religion, secularism, personal dress, Zionism as settler colonialism"
+    },
+    {
+      "id": "s24",
+      "kind": "primary",
+      "title": "Chomsky on Supporting Sanders & Why He Would Vote for Clinton Against Trump in a Swing State (Democracy Now!, 2016)",
+      "author": "Noam Chomsky interviewed by Amy Goodman",
+      "url": "https://chomsky.info/05162016-4/",
+      "usedFor": "Elections versus popular organizing"
+    },
+    {
+      "id": "s25",
+      "kind": "primary",
+      "title": "An Eight Point Brief for LEV (Lesser Evil Voting) (2016)",
+      "author": "John Halle and Noam Chomsky",
+      "url": "https://chomsky.info/an-eight-point-brief-for-lev-lesser-evil-voting/",
+      "usedFor": "Voting strategy, Trump and climate policy"
+    },
+    {
+      "id": "s26",
+      "kind": "primary",
+      "title": "In conversation with Noam Chomsky, Part 1: American culture and politics (2020)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20200115/",
+      "usedFor": "Affirmative action and compensation for discrimination"
+    },
+    {
+      "id": "s27",
+      "kind": "primary",
+      "title": "South Africa, Israel-Palestine, and the Contours of the Contemporary Global Order (2004 interview)",
+      "author": "Noam Chomsky interviewed by Christopher L. Lee",
+      "url": "https://chomsky.info/20040309-2/",
+      "usedFor": "Settler colonialism, opposition to a Jewish state, annexation and settlement as illegal"
+    },
+    {
+      "id": "s28",
+      "kind": "primary",
+      "title": "A New American Era? An Interview with Noam Chomsky on American Society, Politics and Foreign Policy (2009)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20090228/",
+      "usedFor": "The US as a settler-colonial state; European democratic peace"
+    },
+    {
+      "id": "s29",
+      "kind": "primary",
+      "title": "Noam Chomsky Post-Election: We Need More Organization, Education, Activism (2012)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20121213/",
+      "usedFor": "Markets, externalities, growth and consumption"
+    },
+    {
+      "id": "s30",
+      "kind": "primary",
+      "title": "The Fateful Triangle: The United States, Israel, and the Palestinians (updated edition)",
+      "author": "Noam Chomsky",
+      "url": "https://archive.org/details/NoamChomskyFatefulTriangleF",
+      "usedFor": "Israel/Palestine: international consensus, Oslo, refugees, binationalism"
+    },
+    {
+      "id": "s31",
+      "kind": "primary",
+      "title": "Noam Chomsky: US Military Escalation Against Russia Would Have No Victors (Truthout, 1 March 2022)",
+      "author": "Noam Chomsky interviewed by C. J. Polychroniou",
+      "url": "https://chomsky.info/20220301/",
+      "usedFor": "Russia's invasion of Ukraine, NATO expansion, UN Charter, fossil fuels and climate"
+    },
+    {
+      "id": "s32",
+      "kind": "primary",
+      "title": "Noam Chomsky: 'eliminate all nuclear weapons' (Peace Action interview, 2014)",
+      "author": "Noam Chomsky interviewed by Jane Ayers",
+      "url": "https://chomsky.info/20140405/",
+      "usedFor": "Nuclear abolition"
+    },
+    {
+      "id": "s33",
+      "kind": "primary",
+      "title": "Advocacy and Realism (2004)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20040826/",
+      "usedFor": "No-state settlement, elimination of borders, binationalism versus two states"
+    },
+    {
+      "id": "s34",
+      "kind": "primary",
+      "title": "The Torture Memos (2009)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20090521/",
+      "usedFor": "Settler-colonialism as the cruelest form of imperialism; US continental conquest"
+    },
+    {
+      "id": "s35",
+      "kind": "primary",
+      "title": "Global Warming and the Future of Humanity (interview with Graciela Chichilnisky)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/global-warming-and-the-future-of-humanity/",
+      "usedFor": "Climate change and nuclear war as the gravest threats"
+    },
+    {
+      "id": "s36",
+      "kind": "primary",
+      "title": "Carbon tax and climate interview (2013)",
+      "author": "Noam Chomsky interviewed by H. Sheppard",
+      "url": "https://chomsky.info/20131008/",
+      "usedFor": "Carbon tax described as basically a good idea"
+    },
+    {
+      "id": "s37",
+      "kind": "primary",
+      "title": "Democracy Is a Threat to Any Power System (2017 interview with John Nichols)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/03132017/",
+      "usedFor": "Right-to-work laws, labor history, odious debt"
+    },
+    {
+      "id": "s38",
+      "kind": "primary",
+      "title": "Hopes and Prospects from Madison to Cairo (2011 interview)",
+      "author": "Noam Chomsky interviewed by David Barsamian",
+      "url": "https://chomsky.info/201109__/",
+      "usedFor": "Public schools and semi-privatized charter systems, unions"
+    },
+    {
+      "id": "s39",
+      "kind": "primary",
+      "title": "Chomsky: It's Life and Death - Intellectuals Can't Keep Serving the Status Quo (2021)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/20211007/",
+      "usedFor": "Climate, fossil fuels, means testing of Biden social package"
+    },
+    {
+      "id": "s40",
+      "kind": "primary",
+      "title": "On Violence and Youth (1994 interview)",
+      "author": "Noam Chomsky interviewed by Pepi Leistyna and Stephen Sherblom",
+      "url": "https://chomsky.info/1994____02/",
+      "usedFor": "School prayer, schools and obedience"
+    },
+    {
+      "id": "s41",
+      "kind": "primary",
+      "title": "An Interview with Noam Chomsky by The Colossus (2016)",
+      "author": "Noam Chomsky",
+      "url": "https://chomsky.info/06012016/",
+      "usedFor": "Sanders campaign, Democrats and identity politics, labor-based movements"
+    },
+    {
+      "id": "b1",
       "kind": "reference",
       "title": "Noam Chomsky",
       "author": "Wikipedia",
@@ -17,7 +348,7 @@
       "usedFor": "Overview of his political views (foreign policy, Israel-Palestine, anarchism, media, state), used to locate primary texts, which are cited separately"
     },
     {
-      "id": "s2",
+      "id": "b2",
       "kind": "primary",
       "title": "Notes on Anarchism",
       "author": "Noam Chomsky",
@@ -25,7 +356,7 @@
       "usedFor": "Full text: anarchism, state, wage labour, means of production, workers' control, vanguard parties"
     },
     {
-      "id": "s3",
+      "id": "b3",
       "kind": "primary",
       "title": "The Perle-Chomsky Debate",
       "author": "Noam Chomsky (debate with Richard Perle)",
@@ -33,7 +364,7 @@
       "usedFor": "Self-determination for both peoples; Israel's 'right to exist' rejected as a legal concept; Contra drug trade"
     },
     {
-      "id": "s4",
+      "id": "b4",
       "kind": "primary",
       "title": "The Faurisson Affair",
       "author": "Noam Chomsky",
@@ -41,7 +372,7 @@
       "usedFor": "Faurisson affair: defence of Faurisson's right to speak, no endorsement of his claims"
     },
     {
-      "id": "s5",
+      "id": "b5",
       "kind": "primary",
       "title": "Some Elementary Comments on The Rights of Freedom of Expression",
       "author": "Noam Chomsky",
@@ -49,7 +380,7 @@
       "usedFor": "Free expression defended for offensive ideas, not restricted to ideas one approves of"
     },
     {
-      "id": "s6",
+      "id": "b6",
       "kind": "primary",
       "title": "Q&A: Noam Chomsky on Palestine, Israel and the state of the world",
       "author": "Noam Chomsky (interview with Al Jazeera)",
@@ -57,7 +388,7 @@
       "usedFor": "2023 view: two-state international consensus as the realistic option, 'Greater Israel' as the alternative; occupation"
     },
     {
-      "id": "s7",
+      "id": "b7",
       "kind": "primary",
       "title": "Israel and Palestine After Disengagement",
       "author": "Noam Chomsky",
@@ -65,7 +396,7 @@
       "usedFor": "2005: does not support the right of return as a demographic threat; supports a viable Palestinian state"
     },
     {
-      "id": "s8",
+      "id": "b8",
       "kind": "primary",
       "title": "South Africa, Israel-Palestine, and the Contours of the Contemporary Global Order, Noam Chomsky interviewed by Christopher L. Lee",
       "author": "Noam Chomsky (interview, Safundi)",
@@ -73,7 +404,7 @@
       "usedFor": "Settler colonialism applied to pre-1948 Palestine; comparison with apartheid South Africa"
     },
     {
-      "id": "s9",
+      "id": "b9",
       "kind": "primary",
       "title": "Fussed About Cuba, Noam Chomsky interviewed by Heinz Dieterich",
       "author": "Noam Chomsky (interview with Heinz Dieterich)",
@@ -81,7 +412,7 @@
       "usedFor": "Death penalty: inherently bad, opposed in all countries including the United States"
     },
     {
-      "id": "s10",
+      "id": "b10",
       "kind": "primary",
       "title": "On Shutdown, Waning US Influence, Syrian Showdown | Noam Chomsky interviewed by Harrison Samphir",
       "author": "Noam Chomsky",
@@ -89,7 +420,7 @@
       "usedFor": "Carbon tax described as one way to address emissions; expects industry opposition"
     },
     {
-      "id": "s11",
+      "id": "b11",
       "kind": "primary",
       "title": "Manufacturing Consent: The Political Economy of the Mass Media",
       "author": "Noam Chomsky",
@@ -97,7 +428,7 @@
       "usedFor": "Manufacturing Consent talk: corporate ownership of media and the propaganda model"
     },
     {
-      "id": "s13",
+      "id": "b12",
       "kind": "primary",
       "title": "Anarchism, Noam Chomsky interviewed by David Dobereiner, John Hess, Doug Richardson & Tom Woodhull",
       "author": "Noam Chomsky (interview)",
@@ -105,7 +436,7 @@
       "usedFor": "1974: Leninism as the authoritarian vanguard-party tradition; Jewish state; anarchism"
     },
     {
-      "id": "s14",
+      "id": "b13",
       "kind": "primary",
       "title": "Noam Chomsky: US Military Escalation Against Russia Would Have No Victors",
       "author": "Noam Chomsky (interview)",
@@ -113,7 +444,7 @@
       "usedFor": "2022: invasion of Ukraine an unjustifiable invasion of a sovereign state; NATO expansion as a provocation"
     },
     {
-      "id": "s15",
+      "id": "b14",
       "kind": "primary",
       "title": "Chomsky: A Stronger NATO Is the Last Thing We Need as Russia-Ukraine War Turns 1",
       "author": "Noam Chomsky (interview, Truthout)",
@@ -121,7 +452,7 @@
       "usedFor": "2023: opposes a stronger NATO; calls it a US/NATO-Russia war"
     },
     {
-      "id": "s16",
+      "id": "b15",
       "kind": "primary",
       "title": "Middle East Diplomacy: Continuities and Changes",
       "author": "Noam Chomsky",
@@ -129,7 +460,7 @@
       "usedFor": "Israel-Palestine diplomacy: two peoples' self-determination; rejection of Israeli territorial claims"
     },
     {
-      "id": "s17",
+      "id": "b16",
       "kind": "primary",
       "title": "The Soviet Union Versus Socialism",
       "author": "Noam Chomsky",
@@ -137,7 +468,7 @@
       "usedFor": "The Soviet Union versus socialism: bureaucratic state control and Leninist model criticised"
     },
     {
-      "id": "s18",
+      "id": "b17",
       "kind": "primary",
       "title": "\"Mandate for Change,\" or Business as Usual",
       "author": "Noam Chomsky",
@@ -145,7 +476,7 @@
       "usedFor": "1993: NAFTA and GATT intellectual property provisions as corporate power; humanitarian intervention as pretext"
     },
     {
-      "id": "s19",
+      "id": "b18",
       "kind": "primary",
       "title": "Face to Face with a Polymath, Noam Chomsky interviewed by various interviewers",
       "author": "Noam Chomsky (interview)",
@@ -153,7 +484,7 @@
       "usedFor": "Mass media that reach general audiences mostly distract"
     },
     {
-      "id": "s20",
+      "id": "b19",
       "kind": "primary",
       "title": "On Democracy, Noam Chomsky interviewed by Tom Morello",
       "author": "Noam Chomsky (interview with Tom Morello)",
@@ -161,7 +492,7 @@
       "usedFor": "Wage slavery critique"
     },
     {
-      "id": "s21",
+      "id": "b20",
       "kind": "primary",
       "title": "Noam Chomsky’s Green New Deal",
       "author": "Noam Chomsky (interview with David Roberts)",
@@ -169,7 +500,7 @@
       "usedFor": "Green New Deal: drastic climate action; degrowth not a solution"
     },
     {
-      "id": "s23",
+      "id": "b21",
       "kind": "primary",
       "title": "Rollback",
       "author": "Noam Chomsky",
@@ -177,7 +508,7 @@
       "usedFor": "Rollback: Tobin tax proposal on speculative flows"
     },
     {
-      "id": "s24",
+      "id": "b22",
       "kind": "primary",
       "title": "Unpublished interview, Noam Chomsky interviewed by Joe Allen and Phil Gasper, International Socialist Organization",
       "author": "Noam Chomsky (interview with Joe Allen and Phil Gasper)",
@@ -185,7 +516,7 @@
       "usedFor": "Critique of Reagan-era tax cuts for the wealthy"
     },
     {
-      "id": "s25",
+      "id": "b23",
       "kind": "primary",
       "title": "Noam Chomsky slams Canada's shale gas energy plans",
       "author": "Noam Chomsky",
@@ -193,7 +524,7 @@
       "usedFor": "Opposition to shale gas and fossil fuel expansion"
     },
     {
-      "id": "s26",
+      "id": "b24",
       "kind": "primary",
       "title": "Of Prussians and Traders, Noam Chomsky interviewed by an anonymous interviewer",
       "author": "Noam Chomsky (interview)",
@@ -201,7 +532,7 @@
       "usedFor": "Labor unions as a classic way for isolated people to join the political system"
     },
     {
-      "id": "s27",
+      "id": "b25",
       "kind": "primary",
       "title": "Human Nature: Justice versus Power",
       "author": "Noam Chomsky (Human Nature: Justice versus Power)",
@@ -209,7 +540,7 @@
       "usedFor": "Sceptical of a violent dictatorship of the proletariat run by a vanguard party"
     },
     {
-      "id": "s28",
+      "id": "b26",
       "kind": "primary",
       "title": "A Surveillance State Beyond Imagination Is Being Created in One of the World's Freest Countries | Noam Chomsky",
       "author": "Noam Chomsky",
@@ -217,7 +548,7 @@
       "usedFor": "Criticism of mass surveillance"
     },
     {
-      "id": "s29",
+      "id": "b27",
       "kind": "primary",
       "title": "Israel's War against Palestine -- Now What?, interviewed by Israeli Occupation Archive",
       "author": "Noam Chomsky (interview with Israeli Occupation Archive)",
@@ -225,7 +556,7 @@
       "usedFor": "Direct action as one tactic among many against occupation"
     },
     {
-      "id": "s30",
+      "id": "b28",
       "kind": "primary",
       "title": "Free Market Fantasies: Capitalism in the Real World",
       "author": "Noam Chomsky",
@@ -233,7 +564,7 @@
       "usedFor": "Free market claims treated as fantasy about real capitalism"
     },
     {
-      "id": "s31",
+      "id": "b29",
       "kind": "primary",
       "title": "On Afghanistan, Noam Chomsky interviewed by Tim Sebastian",
       "author": "Noam Chomsky (interview with Tim Sebastian)",
@@ -243,75 +574,128 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Calls national health insurance an obviously sensible reform, cheaper and more efficient than the present system, favored by large majorities, and presents single-payer coverage as something the left should defend for people living with problems today.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "raise-minimum-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Notes that the minimum wage tracked productivity until the mid-1960s and that letting it keep doing so would roughly double it, calling that 'nothing radical' and just obvious sense.",
+      "sources": [
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "markets-allocate-better": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Calls free-market ideology a fantasy that conceals concentrated power, without denying that markets can allocate resources.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Treats talk of a free market as 'something of a joke': actual policy mixes protection, intervention and subsidy for the powerful, and he argues the claim that markets serve people is ideology rather than practice.",
       "sources": [
-        "s30"
+        "s2",
+        "s1",
+        "b28"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "public-ownership": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed: he rejects state ownership as leading to 'bureaucratic despotism' and wants workers' and community control instead, yet he also describes public provision such as health insurance and 'public ownership' as part of authentic socialism.",
+      "sources": [
+        "s5",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "tax-the-wealthy": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Criticises Reagan-era tax cuts for the wealthy as taxing the poor to pay the rich; does not state a rate.",
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Describes the deep cuts in taxes on the very wealthy and corporations since the 1970s as deliberate decisions that can be reversed, notes strong public support for returning to higher taxes on them, and lists higher taxes on the rich among popular policies blocked by elites.",
       "sources": [
-        "s24"
+        "s6",
+        "s7",
+        "b22"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "unions-good": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Describes labour unions as one of the classic ways isolated people can join together to enter the political system, and has long defended union rights.",
+      "rationale": "Presents the crushing of unions as a blow to the labor movement 'and that means to American democracy', benefiting only a small enriched sector; he repeatedly credits organized labor and popular movements with the gains workers won.",
       "sources": [
-        "s26"
+        "s8",
+        "s9",
+        "b24"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "property-fundamental": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "Opposes private ownership of the means of production as incompatible with free labour, so does not treat such property as fundamental.",
+      "rationale": "Says a consistent libertarian socialist opposes private ownership of the means of production, endorsing Proudhon's remark that such property is a form of theft, and treats capitalist property relations as 'fundamentally antihuman'.",
       "sources": [
-        "s2"
+        "s5",
+        "s10",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "regulate-corporations": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Criticises corporate power over government and media, but is not recorded as backing specific regulatory measures.",
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Says he would defend and even strengthen elements of state authority now, because they are needed to curb the rollback of rights by unaccountable corporate power; elsewhere endorses enforcing health and safety regulation.",
       "sources": [
-        "s1"
+        "s1",
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Repeatedly condemns welfare cutbacks as a deliberate transfer to the rich and defends social programs (health insurance, Social Security, school lunches) as things the public wants and needs.",
+      "sources": [
+        "s9",
+        "s1",
+        "s8"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "worker-ownership": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Argues that a consistent anarchist must oppose private ownership of the means of production and wants producers to control production collectively.",
+      "confidence": "high",
+      "rationale": "Argues that industry should be owned and controlled by the workers and the communities, through workers' councils; in 2016 says worker-owned and -managed production should be pursued alongside community budgeting.",
       "sources": [
-        "s2"
+        "s5",
+        "s7",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "surveillance-ok": {
@@ -319,22 +703,33 @@
       "confidence": "medium",
       "rationale": "Criticises the creation of a surveillance state and argues that privacy should not have to be defended.",
       "sources": [
-        "s28"
-      ]
+        "b26"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "legalize-drugs": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Favors decriminalization and calls marijuana decriminalization 'very sensible', treating hard drugs through prevention and treatment, while saying nobody knows the full effects and that experiments are needed.",
+      "sources": [
+        "s18",
+        "s19"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "restrict-hate-speech": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Defends free expression of ideas, even offensive ones, and opposed restricting the speech of Faurisson.",
+      "confidence": "high",
+      "rationale": "Defends civil liberties for views he finds repugnant, arguing that free expression must be defended most vigorously for horrendous ideas, and criticizes laws and harassment aimed at such speakers.",
       "sources": [
-        "s5",
-        "s4"
+        "s20",
+        "s3",
+        "b5",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "strong-leader": {
@@ -344,24 +739,37 @@
       "sources": []
     },
     "state-harmful": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "As an anarchist, calls for finishing with the state and dismantling authority that is no longer justified.",
+      "rationale": "Says he shares the anarchist vision of dismantling state power and endorses Humboldt's description of the state as profoundly anti-human, while stressing that for now he defends parts of state authority against private power.",
       "sources": [
-        "s2"
+        "s1",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Calls opposition to gun control 'sadly misguided': guns in citizens' hands will not tame the government, only make the country 'more brutal, ruthless and destructive'.",
+      "sources": [
+        "s8"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Criticizes the Clinton crime bill's 100,000 more police and heavier punishments as pandering to fear and controlling a 'useless population' by force; condemns US military dominance and arms spending.",
+      "sources": [
+        "s8",
+        "s17"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "legalize-sex-work": {
       "value": null,
@@ -370,10 +778,14 @@
       "sources": []
     },
     "decide-locally": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed: he favors decision-making in workplace and community councils, yet argues for defending the central state against private power for now.",
+      "sources": [
+        "s5",
+        "s1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "rehabilitation": {
       "value": null,
@@ -400,16 +812,22 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Says the impact of fundamentalist religion on social policy has commonly been harmful, if not pernicious, while valuing the community role of religious groups.",
+      "sources": [
+        "s23"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "correct-racial-injustice": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says every civilized country rightly tries to compensate for discrimination and repression, including by giving priority to students from severely disadvantaged groups.",
+      "sources": [
+        "s26"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "gender-social-construct": {
       "value": null,
@@ -436,57 +854,95 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": 1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Relies on the UN Charter as the basis of international law and criticises US blocking of UN action, without stating a view on more UN power.",
+      "rationale": "Defends the UN Charter order but says the UN is routinely neutralized by the US, and criticizes the IMF and the World Bank, so no uniform position.",
       "sources": [
-        "s31"
+        "s8",
+        "s31",
+        "b29"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "free-trade": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "Criticises so-called free trade agreements such as NAFTA as protecting corporate and intellectual-property interests rather than free exchange.",
+      "rationale": "Rejects the idea that free-market doctrines benefit everyone: calls the policies a disaster for the Third World and for most people in rich countries, and says 'free trade' agreements are investor-rights deals masquerading as free trade.",
       "sources": [
-        "s18"
+        "s9",
+        "s2",
+        "s11",
+        "b17"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "nation-first": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Criticises the United States for pursuing its own interests above international law, though not as an explicit rejection of national interest.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Calls for international solidarity and criticizes elites who pursue narrow national interests; sets US interests behind global cooperation on climate and nuclear risks.",
       "sources": [
-        "s1"
+        "s7",
+        "s31",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "humanitarian-intervention": {
-      "value": -1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Argues that claimed humanitarian interventions are usually cynical pretexts, so does not accept the principle as a general justification.",
+      "rationale": "Says one can imagine genuine cases of humanitarian intervention but that the burden of proof is heavy and historical cases are mostly pretexts.",
       "sources": [
-        "s18"
+        "s17",
+        "b17"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "open-borders": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Calls a no-state settlement, with elimination of borders and free transit, the best long-term solution, and wants to reverse the militarization of the Mexico-US border.",
+      "sources": [
+        "s33"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "limit-growth": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Supports the principles of degrowth but says degrowth is not a solution on its own, so the position is mixed.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says growth is not a good thing in itself and may be a bad one, and that reducing consumption-based growth would be healthy for society and future generations, favoring high-speed rail, weatherization and more localism.",
       "sources": [
-        "s21"
+        "s29",
+        "b20"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "drastic-climate-action": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Calls for urgent, large-scale government action on climate change, including through a Green New Deal.",
+      "confidence": "high",
+      "rationale": "Calls climate change, with nuclear war, the greatest threat to organized human life and says urgent, drastic action is required, including at the expense of fossil-fuel interests.",
       "sources": [
-        "s21"
+        "s35",
+        "s31",
+        "b20"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "tech-solves-problems": {
@@ -506,31 +962,38 @@
       "confidence": "low",
       "rationale": "Regards violent revolution as a last resort to be avoided where possible, which implies it can sometimes be justified.",
       "sources": [
-        "s1"
-      ]
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "experts-over-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Attacks the technocratic view, voiced by McNamara-style managers, that decisions belong at the top with experts, as the voice of a technical intelligentsia that distrusts popular control.",
+      "sources": [
+        "s5",
+        "s12"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "central-planning": {
       "value": -2,
       "confidence": "medium",
       "rationale": "Criticises bureaucratic, autocratic control of the economy by the state and by Leninist parties as the opposite of socialism.",
       "sources": [
-        "s17",
-        "s2"
-      ]
+        "b16",
+        "b2"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "socialized-markets": {
       "value": 1,
       "confidence": "low",
       "rationale": "Favours producer and community control of production within an economy that remains partly market-based, but does not address markets themselves.",
       "sources": [
-        "s2"
-      ]
+        "b2"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "land-value-tax": {
       "value": null,
@@ -545,10 +1008,13 @@
       "sources": []
     },
     "basic-income": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Says a basic income 'could have a place' but is too crude an instrument for the society he wants; his view depends on the wider socioeconomic context.",
+      "sources": [
+        "s11"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "tariffs-protect-industry": {
       "value": null,
@@ -570,11 +1036,17 @@
     },
     "abolish-money-wages": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Calls wage slavery incompatible with a free society and wants labour freely undertaken; does not address money itself.",
+      "confidence": "medium",
+      "rationale": "Says wage slavery should end and labor lose its commodity character; describes a society where work is freely chosen and not compelled by the market, though he treats this as a long-term aim.",
       "sources": [
-        "s2",
-        "s20"
+        "s5",
+        "s3",
+        "b2",
+        "b19"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "abolish-central-banks": {
@@ -591,10 +1063,16 @@
     },
     "one-party-rule": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Criticises single-party Leninist states as bureaucratic systems and the exact antithesis of socialism.",
+      "confidence": "high",
+      "rationale": "Rejects the 'red bureaucracy' of vanguard parties as the negation of socialism, warning that revolutionaries given power become worse than the tsar.",
       "sources": [
-        "s17"
+        "s5",
+        "s15",
+        "b16"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "monarchy-legitimate": {
@@ -604,26 +1082,36 @@
       "sources": []
     },
     "democracy-best": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Treats real democracy as an unfulfilled ideal and rejects the claim that people are unready for freedom, citing Rousseau and Kant that they learn it only by exercising it.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "direct-votes": {
       "value": 1,
       "confidence": "medium",
       "rationale": "Favours direct participation in decisions rather than representative government alone, through councils and general assemblies.",
       "sources": [
-        "s1"
-      ]
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "workers-councils": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Advocates government by workers' councils as the basis of a libertarian socialist society.",
+      "confidence": "high",
+      "rationale": "Argues that council communism is the natural form of revolutionary socialism in an industrial society, with councils of workers replacing a state and its political parties.",
       "sources": [
-        "s1",
-        "s2"
+        "s5",
+        "s10",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "right-to-secede": {
@@ -633,17 +1121,25 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejects the claim that some people are unfit for freedom, quoting Kant's refusal to accept that some are not ready, and Rousseau on the 'happy slave' apologists.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "political-violence-never": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Regards violent revolution as a last resort, so does not accept that political violence is never justified.",
+      "confidence": "medium",
+      "rationale": "Treats nonviolence as a tactic whose merits depend on conditions, not an absolute principle, and says everyone is for nonviolence in the abstract.",
       "sources": [
-        "s1"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "war-builds-character": {
@@ -673,9 +1169,15 @@
     "military-superiority": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Criticises US military dominance of the world and its use of force abroad.",
+      "rationale": "Condemns Washington's drive to extend its 'historically unique military dominance' as accelerating the race to destruction, and objects to adding US forces off China's coast.",
       "sources": [
-        "s1"
+        "s17",
+        "s31",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "ethnic-nation": {
@@ -715,10 +1217,15 @@
       "sources": []
     },
     "self-interest-moral": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Says market systems turn people into sociopaths who look out only for themselves, and contrasts the libertarian-socialist ideal with competitive greed and predatory individualism.",
+      "sources": [
+        "s29",
+        "s5",
+        "s10"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "duties-before-rights": {
       "value": null,
@@ -782,17 +1289,26 @@
     },
     "direct-action": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Supports direct action such as demonstrations and boycotts against corporations as one tactic among many.",
+      "confidence": "medium",
+      "rationale": "Says elections matter but are 'not the main issue', that the main work is sustained popular organizing and pressure; he still advises voting in swing states.",
       "sources": [
-        "s29"
+        "s24",
+        "s25",
+        "b27"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "means-match-ends": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Quotes with approval Buber's line that a little tree turned into a club cannot put forth leaves, and Luxemburg on the creative role of mass participation, arguing that authoritarian means undermine libertarian ends.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "return-to-foraging": {
       "value": null,
@@ -807,31 +1323,49 @@
       "sources": []
     },
     "distribute-by-need": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "States that the society to aim for would respect the principle 'to each according to their needs', and goes on to describe the needs that principle should meet.",
+      "sources": [
+        "s11"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "production-for-use": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Observes that under capitalism the economy is steered by power, growth and profit and not by human needs, and argues that decisions made collectively would better express those needs.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "profit-exploitation": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Quotes anarchist critiques of private ownership as exploitation of the weak by the strong; does not state the labour-theory claim in his own words.",
+      "confidence": "medium",
+      "rationale": "Sets out, approvingly, the classical-liberal and Marxist critique of wage labor as a bondage worse than slavery and a theory of exploitation, and calls capitalist relations of production antihuman.",
       "sources": [
-        "s2"
+        "s5",
+        "s10",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "dictatorship-of-proletariat": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Sceptical of a violent dictatorship of the proletariat led by self-appointed vanguard parties.",
+      "rationale": "Condemns Leninist dictatorial rule over workers in the name of the proletariat and favors direct workers' power over structures run by a party leadership.",
       "sources": [
-        "s27"
+        "s5",
+        "s15",
+        "b25"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "collective-farming": {
@@ -847,16 +1381,23 @@
       "sources": []
     },
     "taxation-theft": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Dismisses the reflex that taxes are bureaucrats 'stealing our money' as the product of business propaganda; says Americans are undertaxed by comparative standards and endorses pooled public provision.",
+      "sources": [
+        "s8",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "harm-principle": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says secular values include respect for individual choice 'as long as it does not harm others', and that state power should not intrude on personal matters like dress.",
+      "sources": [
+        "s23"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "individual-rights-only": {
       "value": null,
@@ -883,16 +1424,24 @@
       "sources": []
     },
     "positive-liberty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Treats freedom as needing material conditions and social protection, holding that unconstrained markets destroy the conditions of existence and need state corrective action.",
+      "sources": [
+        "s5",
+        "s1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "media-academia-power": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Says conservative claims that the university faculty is mostly Marxist are wrong; the faculty are moderate liberals, and he locates real power in private corporate power more than in media or academia.",
+      "sources": [
+        "s26",
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "hereditarian-race": {
       "value": null,
@@ -908,11 +1457,17 @@
     },
     "total-state": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Opposes state totalitarianism and state socialism, and favours direct participation over state direction.",
+      "confidence": "high",
+      "rationale": "Holds that the state is a profoundly anti-human institution and that state socialism leads to bureaucratic despotism, opposing any state direction of all life.",
       "sources": [
-        "s2",
-        "s17"
+        "s5",
+        "s10",
+        "b2",
+        "b16"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "national-rebirth": {
@@ -922,10 +1477,14 @@
       "sources": []
     },
     "territorial-expansion": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Describes US continental expansion as settler-colonial conquest, the cruelest form of imperialism, and criticizes the celebration of conquest.",
+      "sources": [
+        "s28",
+        "s34"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "personal-loyalty-rule": {
       "value": null,
@@ -946,10 +1505,13 @@
       "sources": []
     },
     "universal-morality": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Calls the principle of universality, applying to oneself the standards applied to others, among the most elementary moral truisms; does not discuss reason or cross-cultural moral truth generally.",
+      "sources": [
+        "s17"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "single-common-good": {
       "value": null,
@@ -958,12 +1520,17 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": 1,
+      "value": -1,
       "confidence": "low",
-      "rationale": "Accepts that both national groups have a right to self-determination but rejects a 'right to exist' as a concept in international law.",
+      "rationale": "Contested: he says he has opposed a Jewish state since the 1930s, as he would a Muslim, white or Christian state, while also accepting that both national groups in Palestine have a right to self-determination.",
       "sources": [
-        "s3",
-        "s6"
+        "s27",
+        "b3",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "diaspora-return-right": {
@@ -980,11 +1547,17 @@
     },
     "workplace-democracy": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Advocates direct worker control of production and government by workers' councils, with a democratic say in how economic institutions are run.",
+      "confidence": "high",
+      "rationale": "Says democracy is a sham while the industrial system is run by an autocratic elite and that reforms cannot bring freedom without democratic control of the workplace; calls this the central issue for the left.",
       "sources": [
+        "s5",
         "s2",
-        "s1"
+        "b2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "school-vouchers": {
@@ -1012,27 +1585,41 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Argues that both national groups in Palestine have the right to national self-determination and that the US has blocked a settlement on that basis.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Backs self-determination for Palestinians and East Timorese yet calls the nation-state system brutal and prefers a no-state or binational settlement.",
       "sources": [
-        "s3",
-        "s16"
+        "s33",
+        "b3",
+        "b15"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "force-without-un": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Describes the UN Charter limits on force (Security Council authorisation or self-defence against an armed attack) and criticises NATO's action in Kosovo as outside them.",
+      "confidence": "high",
+      "rationale": "Says the UN Charter bans the threat or use of force unless the Security Council authorizes it or in self-defense, and calls US action outside that framework illegal.",
       "sources": [
-        "s31"
+        "s14",
+        "s8",
+        "b29"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "reason-over-faith": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Says irrational belief is dangerous and he avoids it personally, but defends respect for others' beliefs and notes efforts against false beliefs must be tailored, not a call for reason alone.",
+      "sources": [
+        "s23"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "welfare-for-citizens": {
       "value": null,
@@ -1087,8 +1674,9 @@
       "confidence": "medium",
       "rationale": "Opposes apartheid and the legal segregation of races, calling Israel's treatment of Palestinians worse than South Africa's.",
       "sources": [
-        "s8"
-      ]
+        "b8"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "state-class-instrument": {
       "value": null,
@@ -1098,11 +1686,17 @@
     },
     "expand-fossil-fuels": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Opposes expanding shale gas and fossil-fuel energy plans given the climate threat.",
+      "confidence": "high",
+      "rationale": "Condemns the expansion of fossil fuel production, including coal, and says opposing Trump's fossil-fuel policies is part of why voters should pick the Democrat in swing states.",
       "sources": [
+        "s31",
         "s25",
-        "s21"
+        "b23",
+        "b20"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "assimilate-immigrants": {
@@ -1124,22 +1718,32 @@
       "sources": []
     },
     "national-mission": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Treats the American claim of a moral mission as self-flattering propaganda, calling reflections on America's 'tragic flaw' of idealism an embarrassment.",
+      "sources": [
+        "s23"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "patriarchy-structural": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Says he certainly uses the concept of patriarchy, counts domination of women in the home among the illegitimate authorities anarchism challenges, and notes that half the population's work goes uncounted.",
+      "sources": [
+        "s9"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "political-elite-corrupt": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Cites with approval that most Americans see the political system as serving special interests and says the political parties are largely run by corporate and wealthy interests, though he mostly describes capture rather than corruption.",
+      "sources": [
+        "s1",
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "heritable-defect-limits": {
       "value": null,
@@ -1154,10 +1758,15 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Rejects the American libertarian program of minimal government as a cover for unaccountable corporate tyranny, and defends state action (regulation, health insurance, social protection).",
+      "sources": [
+        "s16",
+        "s1",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "discourage-race-mixing": {
       "value": null,
@@ -1172,17 +1781,27 @@
       "sources": []
     },
     "socialism-one-country": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Endorses the Leninist point that socialism needs joint effort of workers in several advanced countries and uses it to argue that a revolutionary movement in the US is essential.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "settler-state-colonial": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Treats settler colonialism as the cruelest form of imperialism and says the concept applies to Palestine before 1948.",
+      "confidence": "high",
+      "rationale": "Says Zionism has been a settler-colonial movement and that the concept applies to the pre-1948 period, and describes the US as a settler-colonial state that exterminated its indigenous population.",
       "sources": [
-        "s8"
+        "s23",
+        "s27",
+        "s28",
+        "b8"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "uniform-civil-code": {
@@ -1204,16 +1823,22 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Objects to school prayer pushed by Gingrich as state coercion of six-year-olds who cannot freely walk out; speaks about prayer, not religious instruction.",
+      "sources": [
+        "s40"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "state-strengthens-encirclement": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Doubts that more dictatorial structures would have better defended the Spanish revolution and suggests a more consistent libertarian policy might have been the only possible defense.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "consent-of-governed": {
       "value": null,
@@ -1240,10 +1865,14 @@
       "sources": []
     },
     "competition-drives-progress": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Names competitiveness among the features of capitalist relations that are antihuman, preferring free association and social bonds.",
+      "sources": [
+        "s10",
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "ban-extremist-parties": {
       "value": null,
@@ -1265,11 +1894,17 @@
     },
     "vanguard-party": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Criticises the vanguard party model of Leninism as an autocratic elite controlling the working class.",
+      "confidence": "high",
+      "rationale": "Says the vanguard party is a 'soulful' autocracy and that those urging submission to benevolent autocracies wish to turn people into machines; sides with council communism.",
       "sources": [
-        "s13",
-        "s2"
+        "s5",
+        "s15",
+        "b12",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "priority-to-poor": {
@@ -1321,11 +1956,17 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Calls for grassroots democratic control and involvement of the media rather than control by a government or party.",
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposes state or party censorship and control of media, and contrasts it unfavorably with even the subtler corporate system; defends free expression against state suppression.",
       "sources": [
-        "s11"
+        "s12",
+        "s20",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "party-commands-army": {
@@ -1399,17 +2040,19 @@
       "confidence": "low",
       "rationale": "Favours revocable representatives in principle, but the recall of elected officials is not separately addressed.",
       "sources": [
-        "s1"
-      ]
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "end-foreign-alliances": {
       "value": 1,
       "confidence": "low",
       "rationale": "Criticises NATO expansion as a provocation and opposes a stronger NATO.",
       "sources": [
-        "s15",
-        "s14"
-      ]
+        "b14",
+        "b13"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1450,9 +2093,15 @@
     "death-penalty": {
       "value": -2,
       "confidence": "high",
-      "rationale": "States that the application of the death penalty is inherently bad and wrong, and opposes it in all countries.",
+      "rationale": "Says the death penalty is a crime and that the state should have no right to take lives, agreeing with Amnesty International.",
       "sources": [
-        "s9"
+        "s8",
+        "s3",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "sex-ed-in-schools": {
@@ -1498,10 +2147,14 @@
       "sources": []
     },
     "sovereign-debt-cancellation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Argues that much Third World debt is 'odious' under the very principle the US used for Cuba, which would wipe out a large share of it, and says Nicaragua's debt could be erased by the World Court's reparations judgment alone.",
+      "sources": [
+        "s14",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "independence-needs-economic-change": {
       "value": null,
@@ -1547,11 +2200,18 @@
     },
     "no-land-for-peace": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Supports a two-state settlement on internationally recognised borders and opposes Israel retaining occupied territory.",
+      "confidence": "high",
+      "rationale": "Supports the international consensus of Israeli withdrawal from the occupied territories and faults the US and Israel for blocking it.",
       "sources": [
-        "s16",
-        "s6"
+        "s27",
+        "s17",
+        "s30",
+        "b15",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "property-serves-common-good": {
@@ -1561,10 +2221,14 @@
       "sources": []
     },
     "soviet-state-capitalist": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Argues the Soviet system destroyed socialism by crushing workers' control, calls Leninist regimes 'state capitalist' managers' societies, and says their collapse was a small victory for socialism.",
+      "sources": [
+        "s15",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "precautionary-principle": {
       "value": null,
@@ -1579,11 +2243,17 @@
       "sources": []
     },
     "annexed-territory-occupation": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Calls Israel's rule in the occupied territories an occupation and criticises settlements as illegal; not a general principle on annexation.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Says Israel's settlement of the territories conquered in 1967 is illegal settlement under military occupation, and notes the annexation of East Jerusalem was in defiance of the UN.",
       "sources": [
-        "s6"
+        "s27",
+        "s30",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "subordinate-church-to-state": {
@@ -1671,12 +2341,17 @@
       "sources": []
     },
     "refugee-return": {
-      "value": 0,
+      "value": 1,
       "confidence": "low",
-      "rationale": "Rejects the right of return as a demographic threat to Israel in 2005, but says settlements must address refugee return or compensation under UN resolutions.",
+      "rationale": "Describes the Palestinian refugees' right of return, endorsed by the UN General Assembly, as being erased in the Oslo settlement, in terms that show he regards it as a right; he does not address descendants.",
       "sources": [
-        "s7",
-        "s16"
+        "s30",
+        "b7",
+        "b15"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "co-ethnic-territorial-claim": {
@@ -1734,10 +2409,14 @@
       "sources": []
     },
     "no-bailouts": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Criticizes bank and investor bailouts, such as for Mexico's creditors, as state protection of the rich that contradicts market principles; does not state a general rule.",
+      "sources": [
+        "s2",
+        "s14"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "courts-bound-by-majority": {
       "value": null,
@@ -1800,10 +2479,13 @@
       "sources": []
     },
     "end-racial-preferences": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Defends affirmative-action style priority for disadvantaged groups in admissions and criticizes the US for doing too little of it.",
+      "sources": [
+        "s26"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "public-money-creation": {
       "value": null,
@@ -1903,20 +2585,31 @@
     },
     "mass-culture-pacifies": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Argues that the mass media mostly distract the public and marginalise dissent, reproducing the existing order.",
+      "confidence": "high",
+      "rationale": "His propaganda model says the media inculcate the values and codes of behavior that integrate people into existing institutional structures, serving the interests of the dominant elite.",
       "sources": [
-        "s19",
-        "s11"
+        "s12",
+        "b18",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "ruling-class-consent": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Argues that power is maintained by manufacturing consent through the media and institutions, not mainly by force.",
+      "rationale": "Argues that in societies with formal freedom the powerful manage opinion through propaganda and by fixing the premises of discourse, the 'manufacture of consent' described by Lippmann.",
       "sources": [
-        "s11",
-        "s1"
+        "s12",
+        "s22",
+        "b11",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "world-economy-extracts-surplus": {
@@ -2035,17 +2728,25 @@
     },
     "recallable-delegates": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Favours temporary and revocable representatives chosen by councils and general assemblies.",
+      "confidence": "high",
+      "rationale": "Describes a system of workers' and consumers' councils and federations where representation is 'direct and revocable', delegates remaining answerable to the groups that send them.",
       "sources": [
-        "s1"
+        "s5",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "individual-pension-accounts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposes privatizing Social Security: says the fund can be invested either way and that individual accounts break down solidarity and the sense of responsibility for one another.",
+      "sources": [
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "land-use-tenure": {
       "value": null,
@@ -2078,30 +2779,49 @@
       "sources": []
     },
     "consumerism-harmful": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says growth driven by consumption is not good in itself and that market systems turn people into self-regarding sociopaths; maximizing commodities is not the measure of a decent life.",
+      "sources": [
+        "s29",
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "arm-foreign-insurgents": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Condemns US arming of the Nicaraguan contras as terrorism and cites the World Court's ruling against it.",
+      "sources": [
+        "s2",
+        "s14"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "intervene-in-bloc": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Treats Soviet imperialism as real for the Hungarians and Czechs and condemns superpower domination of client states on both sides.",
+      "sources": [
+        "s5",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "corporate-influence": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Argues that corporate and financial interests control government and media, with the two major US parties serving a business party.",
+      "confidence": "high",
+      "rationale": "Says private power exerts an inordinately heavy influence on the political system through control of the media, political organizations and by supplying its top personnel; his propaganda-model work and later interviews return to this constantly.",
       "sources": [
+        "s5",
+        "s12",
         "s1",
-        "s11"
+        "b1",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "restrict-foreign-funding": {
@@ -2129,10 +2849,13 @@
       "sources": []
     },
     "democratic-peace": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Says the European 'democratic peace' is traceable to the lessons of centuries of nation-state wars, and that it is far from clear that democracy has much to do with it.",
+      "sources": [
+        "s28"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-duty-to-obey": {
       "value": null,
@@ -2141,10 +2864,13 @@
       "sources": []
     },
     "non-intervention": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Does not hold an absolute ban: grants that genuine humanitarian intervention is conceivable but demands very strong justification.",
+      "sources": [
+        "s17"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "industrial-unions": {
       "value": null,
@@ -2213,16 +2939,23 @@
       "sources": []
     },
     "defeat-communism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Argues the Cold War crusade served domestic control and economic aims, and that Soviet 'communism' is not socialism; favors diplomatic accommodation.",
+      "sources": [
+        "s5",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "mixed-public-service-providers": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Opposes semi-privatized, privately run but publicly funded school systems as unproven and corrosive of solidarity; this concerns schools only.",
+      "sources": [
+        "s38"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religion-illusion": {
       "value": null,
@@ -2261,10 +2994,14 @@
       "sources": []
     },
     "cooperative-communities": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Calls the Israeli kibbutzim the most dramatic example of long-lived anarchist-style self-management; his broader model is federations of workplace and neighborhood communities.",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "majority-settlement": {
       "value": null,
@@ -2285,10 +3022,14 @@
       "sources": []
     },
     "holocaust-denial": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Said the claim that there were no gas chambers is 'highly implausible' and that denial of the Holocaust is completely so, while defending the civil rights of those who deny it.",
+      "sources": [
+        "s21",
+        "s20"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "criminalize-homosexuality": {
       "value": null,
@@ -2297,10 +3038,14 @@
       "sources": []
     },
     "suppress-opposition": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Condemns repression of dissent by states of every kind, including Leninist states, and defends freedom of expression for opponents.",
+      "sources": [
+        "s5",
+        "s20"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "punish-blasphemy": {
       "value": null,
@@ -2328,11 +3073,17 @@
     },
     "participatory-democracy": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Advocates direct participation by ordinary people in workplaces and communities, and in the government of affairs.",
+      "confidence": "high",
+      "rationale": "Argues for direct popular control over all institutions, by those who take part in and are affected by them, in workplaces as well as communities.",
       "sources": [
-        "s1",
-        "s2"
+        "s5",
+        "s7",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "intersecting-oppressions": {
@@ -2361,10 +3112,15 @@
     },
     "alienated-labor": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Draws on Marx's account of alienated labour and argues that wage labour denies workers the creative control of their work.",
+      "confidence": "high",
+      "rationale": "Develops the account of alienated labor, work external to the worker, from Humboldt and the early Marx, and says industrial capitalism's wage slavery is in fundamental opposition to human creativity.",
       "sources": [
-        "s2"
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "islam-incompatible": {
@@ -2380,10 +3136,13 @@
       "sources": []
     },
     "religious-dress-in-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Says there should be no laws forcing women to remove veils or other preferred dress, and that what people wear is not the state's business, asked about the French law on religious symbols.",
+      "sources": [
+        "s23"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "ban-nda-harassment": {
       "value": null,
@@ -2428,10 +3187,13 @@
       "sources": []
     },
     "refuse-lender-austerity": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Calls IMF-style austerity programs disastrous for populations and says Argentina was right not to pay 'odious' creditors; does not explicitly state that governments should refuse the conditions.",
+      "sources": [
+        "s14"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "property-franchise": {
       "value": null,
@@ -2453,10 +3215,16 @@
     },
     "press-owned-by-wealth": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Argues that corporate ownership of the mass media constrains what is reported, and calls for grassroots democratic control of media.",
+      "confidence": "high",
+      "rationale": "His propaganda model holds that concentrated ownership, advertising and wealth let money and power filter the news and marginalize dissent, so that the media serve dominant elites.",
       "sources": [
-        "s11"
+        "s12",
+        "s22",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "promulgated-standing-laws": {
@@ -2508,10 +3276,14 @@
       "sources": []
     },
     "wealth-concentration-endangers-liberty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Argues that extreme concentrations of wealth translate into political power and weaken democracy, favors the Aristotelian solution of reducing inequality over Madison's solution of limiting democracy.",
+      "sources": [
+        "s6",
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "open-lgbt-military-service": {
       "value": null,
@@ -2556,10 +3328,14 @@
       "sources": []
     },
     "existential-risk-priority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Treats nuclear war and climate catastrophe as the gravest threats to human survival that require priority action by all governments.",
+      "sources": [
+        "s35",
+        "s31"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "women-in-religious-leadership": {
       "value": null,
@@ -2586,10 +3362,13 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says copyright is neither the moral nor the efficient way to support creative work and that society should fund the arts democratically so artists would not need it; calls the WTO patent regime protectionist and harmful.",
+      "sources": [
+        "s13"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "uniformed-youth": {
       "value": null,
@@ -2694,16 +3473,23 @@
       "sources": []
     },
     "independent-unions": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Condemns the 'Stalinist-style' government-run union in Suharto's Indonesia and the brutal suppression of attempts to create independent unions there.",
+      "sources": [
+        "s9"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "socialism-needs-workers-power": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Insists that real socialism means workers' direct control over production through councils, and that a vanguard or state bureaucracy ruling in their name is its negation.",
+      "sources": [
+        "s5",
+        "s15"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "local-essentials-public": {
       "value": null,
@@ -2724,10 +3510,14 @@
       "sources": []
     },
     "confederal-coordination": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Envisages workers' councils, commune assemblies and regional federations in which delegates come from, and return to, their own organic communities.",
+      "sources": [
+        "s5",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "family-wage": {
       "value": null,
@@ -2796,10 +3586,14 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Sets out the UN Charter rule that force is allowed only in self-defense against armed attack until the Security Council acts, and treats breaches as crimes.",
+      "sources": [
+        "s14",
+        "s31"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "language-defines-nation": {
       "value": null,
@@ -2828,16 +3622,25 @@
     "pollution-taxes": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Describes a carbon tax as one way to address emissions, while noting that it would face industry opposition.",
+      "rationale": "Said a carbon tax is basically a good idea and that urgent measures are needed; does not say taxes should replace regulation.",
       "sources": [
-        "s10"
+        "s36",
+        "b10"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "future-generations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Warns that climate destruction may leave a planet that cannot sustain organized human life 'in anything like a form we would want to tolerate', a danger that falls on coming generations.",
+      "sources": [
+        "s35",
+        "s31"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "women-distinct-values": {
       "value": null,
@@ -2846,10 +3649,14 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Agrees with those calling for abolishing nuclear weapons, calls current nuclear programs and war plans an abomination, and warns about weaponization of space.",
+      "sources": [
+        "s32",
+        "s17"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "open-diplomacy": {
       "value": null,
@@ -2904,8 +3711,9 @@
       "confidence": "low",
       "rationale": "Calls for finishing with the state in a revolution, though his position on the form of the transition is not spelled out.",
       "sources": [
-        "s2"
-      ]
+        "b2"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "free-economic-experiment": {
       "value": null,
@@ -3016,10 +3824,13 @@
       "sources": []
     },
     "no-compulsory-union": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Mocks 'right-to-work' laws as 'right-to-scrounge' laws: they give the right to be represented by a union without paying for it.",
+      "sources": [
+        "s37"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "voter-id": {
       "value": null,
@@ -3034,10 +3845,14 @@
       "sources": []
     },
     "democracy-is-procedure": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Says democracy is largely a sham where the industrial system is controlled by an autocratic elite, and criticizes representative democracy for being limited to the political sphere.",
+      "sources": [
+        "s5",
+        "s3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "premarital-sex": {
       "value": null,
@@ -3088,10 +3903,14 @@
       "sources": []
     },
     "international-criminal-courts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Says that if the Nuremberg standards were applied, every postwar US president would have been hanged, and that US refusal of International Criminal Court jurisdiction defies majority American opinion.",
+      "sources": [
+        "s3",
+        "s17"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "scripture-inerrant": {
       "value": null,
@@ -3112,10 +3931,13 @@
       "sources": []
     },
     "indirect-election": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Defends a council system where higher bodies are staffed by delegates from lower ones, who keep taking part in their own work and rotate, as a barrier to remote bureaucracy.",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "national-church-status": {
       "value": null,
@@ -3202,10 +4024,13 @@
       "sources": []
     },
     "targeted-social-spending": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Calls means testing of benefits 'cumbersome and degrading' and contrasts it with the universal provision standard in the civilized world.",
+      "sources": [
+        "s39"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "bypass-parties-groups": {
       "value": null,
@@ -3252,9 +4077,14 @@
     "financial-transactions-tax": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Describes Tobin's proposal to tax speculative currency flows as a way to slow flows that would otherwise drive a low-wage economy; does not state his own endorsement outright.",
+      "rationale": "Describes James Tobin's proposed tax on currency speculation as plausibly able to shift capital to productive uses and finds the explanation for elite opposition to it persuasive.",
       "sources": [
-        "s23"
+        "s9",
+        "b21"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "racism-not-main-obstacle": {
@@ -3271,10 +4101,16 @@
     },
     "automate-paid-work": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Argues that unpleasant and unpopular jobs could be fully automated, as a means of reducing work.",
+      "confidence": "medium",
+      "rationale": "Says that insofar as robots and automation free people from routine and dangerous work for creative activity and leisure, 'that's all to the good'.",
       "sources": [
-        "s1"
+        "s11",
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "multipolar-world": {
@@ -3296,10 +4132,13 @@
       "sources": []
     },
     "material-over-identity": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Says Democrats focus on identity politics, which is 'okay' but not class-based and does not appeal to most people's needs, and urges rebuilding labor-based movements.",
+      "sources": [
+        "s41"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "market-under-party-rule": {
       "value": null,
@@ -3308,5 +4147,5 @@
       "sources": []
     }
   },
-  "notes": "Positions are drawn from his own articles and interviews on chomsky.info plus Wikipedia as a reference. Coverage is strongest on economy, government, world affairs and the media. Israel-Palestine: his stated preference shifted over decades (a binational or one-state option in the 1970s-2000s, a two-state international-consensus settlement by 2023), so the 2023 interview is taken as the most recent clear view. Faurisson: he defended the right of expression, and his 1980 essay does not endorse Faurisson's claims. Wikipedia reports a 2023 stroke with loss of ability to speak or walk, so no newer positions are recorded. Books (Understanding Power, Requiem for the American Dream, Who Rules the World?, Hegemony or Survival) were not downloaded separately; the chomsky.info texts used include the book-related talks and interviews. 'Government in the Future' (1970) was not found in the chomsky.info index. Most statements are null because the corpus does not address them."
+  "notes": "Based mostly on his own texts: full-text books (Manufacturing Consent, Profit Over People, How the World Works, Keeping the Rabble in Line, Class Warfare, Necessary Illusions, Fateful Triangle, Failed States, Rogue States, Chomsky on Anarchism) and chomsky.info articles and interviews. Understanding Power, Hegemony or Survival, Requiem for the American Dream and Who Rules the World? (English) could not be read in full text (Internet Archive lending copies or only a non-English edition), so nothing rests on them. Recent position wins where views changed: he calls a two-state settlement the best practical path but prefers binational or no-state arrangements, and he accepts strategic voting for Democrats in swing states since 2016. Wikipedia pages are used only as secondary pointers and for the Nuremberg remark and copyright quotation.\n\nMerged with an independent claude-haiku-5-5 audit: 9 answers taken from it, 43 agreed, 2 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Positions are drawn from his own articles and interviews on chomsky.info plus Wikipedia as a reference. Coverage is strongest on economy, government, world affairs and the media. Israel-Palestine: his stated preference shifted over decades (a binational or one-state option in the 1970s-2000s, a two-state international-consensus settlement by 2023), so the 2023 interview is taken as the most recent clear view. Faurisson: he defended the right of expression, and his 1980 essay does not endorse Faurisson's claims. Wikipedia reports a 2023 stroke with loss of ability to speak or walk, so no newer positions are recorded. Books (Understanding Power, Requiem for the American Dream, Who Rules the World?, Hegemony or Survival) were not downloaded separately; the chomsky.info texts used include the book-related talks and interviews. 'Government in the Future' (1970) was not found in the chomsky.info index. Most statements are null because the corpus does not address them."
 }
