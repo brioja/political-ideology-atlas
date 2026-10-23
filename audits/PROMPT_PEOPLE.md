@@ -61,6 +61,11 @@ be `low` confidence with a rationale that begins "Inferred:" and says what it is
 Inferred answers count toward matching but not toward salience, so nobody is included on the
 strength of inferences.
 
+A general principle they voiced ("freedom of religion", "equal rights for all") does not answer a
+specific statement it never addressed (apostasy laws, covering laws, blasphemy): those stay null
+unless they spoke to them. Absence of evidence is null, never a negative answer ("no
+rehabilitative aim recorded" is not a position on prisons).
+
 Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
 both ways), never null. A person's best-known positions and controversies (what their record is
 famous or criticised for, e.g. a policy of segregation, a military intervention, a signature law)
