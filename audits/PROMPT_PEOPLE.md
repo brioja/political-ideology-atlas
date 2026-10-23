@@ -66,6 +66,10 @@ specific statement it never addressed (apostasy laws, covering laws, blasphemy):
 unless they spoke to them. Absence of evidence is null, never a negative answer ("no
 rehabilitative aim recorded" is not a position on prisons).
 
+A monarch's or head of state's formal assent is not their position. Laws, constitutions and
+policies they only signed or proclaimed on ministers' or parliament's advice don't count; use only
+views they expressed themselves and measures they personally drove.
+
 Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
 both ways), never null. A person's best-known positions and controversies (what their record is
 famous or criticised for, e.g. a policy of segregation, a military intervention, a signature law)
