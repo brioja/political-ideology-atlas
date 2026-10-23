@@ -34,7 +34,9 @@ many will have a thin political record; the early-exit rule makes those quick.
    from party, label or theme. The most recent clear position wins. Answers must match each
    statement's actual wording; if the evidence is about something nearby, answer null.
 5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).
-6. Write only `audits/people/<id>.json`. Run `node scripts/validate.js --people <id>` and fix every
+6. Write only `audits/people/<id>.json`, and only once it is finished: build it in your scratch
+   folder and move it into `audits/people/` as the last step, so the main lane never picks up a
+   half-written file. Run `node scripts/validate.js --people <id>` and fix every
    error except salience. Never add or strengthen an answer to clear the salience gate; failing
    salience is an acceptable outcome.
 7. Do not edit any other file. Do not build, test, commit or push: the main lane reviews each file,

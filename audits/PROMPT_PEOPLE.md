@@ -70,16 +70,24 @@ A monarch's or head of state's formal assent is not their position. Laws, consti
 policies they only signed or proclaimed on ministers' or parliament's advice don't count; use only
 views they expressed themselves and measures they personally drove.
 
+Words someone delivered as their own count as theirs, whoever drafted them (a speechwriter, a
+ghostwritten book). Later reports of what they said or did (a biographer, an ancient historian,
+collected sayings) are secondhand: `medium` at most, `low` where the report is late or disputed.
+Endorsing a candidate, attending a march or hosting an event is not a position on any statement.
+A relative's or employer's positions are never theirs.
+
 Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
 both ways), never null. A person's best-known positions and controversies (what their record is
 famous or criticised for, e.g. a policy of segregation, a military intervention, a signature law)
 must be answered whenever the record exists; check them before finishing. Read the whole statement
 list, not just its first part: before finishing, go through every statement still null once and
-check it against the evidence you gathered. For a living person,
+check it against the evidence you gathered. Before deciding a topic "matches no statement", search
+the statement texts for its keywords (`grep -i <word> statements.json`). For a living person,
 "suggests" or "seems to" is not evidence: answer only from what they said or did.
 
 Confidence:
-- `high`: stated directly by the person or shown by their record.
+- `high`: stated directly by the person or shown by their record. Cosponsoring or voting for a bill
+  alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 - `medium`: clearly implied by things they said or did.
 - `low`: inferred, ambiguous or contested.
 
