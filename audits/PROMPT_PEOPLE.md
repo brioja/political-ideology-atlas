@@ -104,9 +104,6 @@ answers to pass; an honest rejection is the correct outcome.
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
-  // A merged audit (two models researched independently, combined by the integrator) lists both
-  // ids, e.g. ["claude-sonnet-5-5", "claude-haiku-5-5"], and tags each answer with the "auditor"
-  // that found it. Single-model audits use one id and no per-answer tag.
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",
@@ -121,5 +118,9 @@ answers to pass; an honest rejection is the correct outcome.
   "notes": "Optional: changes of view over time, contested points."
 }
 ```
+
+A merged audit (two models researched independently, combined by the integrator) lists both
+model ids in `auditor`, e.g. `["claude-sonnet-5-5", "claude-haiku-5-5"]`, and tags each answer
+with the `auditor` that found it. A single-model audit uses one id and no per-answer tag.
 
 Write the summary and rationales neutrally and in your own words.
