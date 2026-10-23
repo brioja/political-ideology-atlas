@@ -1099,8 +1099,13 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   };
   {
     // Key, left to right: the ring (you, or the person the card is about), your top ideology, the
-    // closest person. A name too long for the row shrinks to its surname or is shortened.
-    const surname = (name) => (ctx.measureText(name).width > 240 ? name.split(/\s+/).pop() : name);
+    // closest person. A name too long for the row shrinks to its surname (keeping a suffix like
+    // "Jr." with it) or is shortened.
+    const surname = (name) => {
+      if (ctx.measureText(name).width <= 240) return name;
+      const words = name.split(/\s+/);
+      return words.slice(/^(Jr|Sr)\.?$|^[IVX]+$/.test(words.at(-1)) && words.length > 2 ? -2 : -1).join(" ");
+    };
     ctx.font = `400 26px ${CARD_FONTS.body}`; ctx.fillStyle = CARD.muted;
     const items = [[ringMark, result.subject ? surname(result.subject.name) : "You"], [dotMark, top.name]];
     if (near) items.push([diamondMark, surname(near.name)]);
