@@ -2,14 +2,73 @@
   "id": "fran-drescher",
   "name": "Fran Drescher",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
   "living": true,
-  "role": "American actress and SAG-AFTRA president (2021–2025)",
-  "summary": "Drescher led SAG-AFTRA through the 2023 strike, which she framed as workers against studio executives' greed and CEO pay. She has described herself as anti-capitalist (2017) and has said AI is a threat to performers that needs consent, compensation and federal regulation. Her recorded positions on most political questions are few.",
+  "role": "American actress; SAG-AFTRA president (2021–2025)",
+  "summary": "Drescher is a Democratic-aligned actress who led SAG-AFTRA through the 2023 strike, framing it as workers against greedy studio executives, and has campaigned on women's cancer awareness and removing carcinogens from consumer products. She has called herself anti-capitalist and favors regulation of industry and AI, and has opposed COVID vaccine mandates. Her recorded positions on most political questions are few.",
   "wikipedia": "https://en.wikipedia.org/wiki/Fran_Drescher",
   "sources": [
     {
       "id": "s1",
+      "kind": "primary",
+      "title": "Fran Drescher Delivers Speech on SAG-AFTRA Strike (transcript, July 13, 2023)",
+      "author": "Fran Drescher / Rev",
+      "url": "https://www.rev.com/transcripts/fran-drescher-delivers-speech-on-sag-aftra-strike-transcript",
+      "usedFor": "Her words on labor, studio greed, CEO pay, AI and streaming, contract change"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Fran Drescher tells NPR the breakthrough moment that ended the Hollywood strikes",
+      "author": "NPR via WNYC",
+      "url": "https://wnyc.org/story/fran-drescher-tells-npr-the-breakthrough-moment-that-ended-the-hollywood-strikes",
+      "usedFor": "Interview on the contract talks, AI federal regulation, protecting members"
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "Actress and Cancer Survivor Fran Drescher on Safe Cosmetics (2010)",
+      "author": "Democracy Now!",
+      "url": "https://www.democracynow.org/2010/7/21/actress_and_cancer_survivor_fran_drescher",
+      "usedFor": "Her interview backing the Safe Cosmetics bill and calling for oversight of industry"
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Fran Drescher",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fran_Drescher",
+      "usedFor": "Career, party, Cancer Schmancer, SAG-AFTRA, 2012 weddings, vaccine mandates"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Fran Drescher on capitalism, the shutdown, and making money",
+      "author": "Fox News",
+      "url": "https://www.foxnews.com/entertainment/fran-drescher-capitalism-general-strike-shutdown-coronavirus",
+      "usedFor": "Quotes from her 2020 posts and 2017 interview on capitalism"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "Fran Drescher officiates wedding of two men in New York City",
+      "author": "Out",
+      "url": "https://www.out.com/entertainment/popnography/2012/03/07/fran-drescher-officiates-wedding-two-men-new-york-city",
+      "usedFor": "2012 wedding she officiated"
+    },
+    {
+      "id": "s7",
+      "kind": "reference",
+      "title": "Fran Drescher touts end of vaccine mandates during SAG speech",
+      "author": "Fox News",
+      "url": "https://foxnews.com/media/fran-drescher-touts-end-vaccine-mandates-during-sag-speech-money-talks-bulls-t-walks",
+      "usedFor": "Checked her 2022-23 remarks on vaccine mandates; no statement matches a listed statement"
+    },
+    {
+      "id": "b1",
       "kind": "primary",
       "title": "Fran Drescher delivers speech on SAG-AFTRA strike (transcript, July 13, 2023)",
       "author": "Fran Drescher (SAG-AFTRA)",
@@ -17,7 +76,7 @@
       "usedFor": "Her words at the strike announcement: studios as 'a very greedy entity', CEO pay, 'we are labor ... demand respect', AI named among threats to members, workers as 'essential contributors'"
     },
     {
-      "id": "s2",
+      "id": "b2",
       "kind": "primary",
       "title": "Fran Drescher tells NPR the breakthrough moment that ended the Hollywood strikes",
       "author": "NPR (All Things Considered), via WNYC",
@@ -25,7 +84,7 @@
       "usedFor": "Interview of Nov. 9, 2023: on the contract's AI terms ('an ongoing battle'), federal regulation of AI, streaming bonus, and the talks with the AMPTP"
     },
     {
-      "id": "s3",
+      "id": "b3",
       "kind": "reference",
       "title": "Fran Drescher on capitalism, the shutdown, and making money",
       "author": "Fox News",
@@ -33,7 +92,7 @@
       "usedFor": "Quotes her March 24, 2020 posts ('Capitalism has become another word for Ruling Class Elite!', 'When profit is at the expense of all things of true value') and quotes her 2017 Vulture interview; the Vulture original was not opened"
     },
     {
-      "id": "s4",
+      "id": "b4",
       "kind": "reference",
       "title": "Fran Drescher",
       "author": "Wikipedia",
@@ -73,11 +132,17 @@
       "sources": []
     },
     "unions-good": {
-      "value": 1,
+      "value": 2,
       "confidence": "medium",
-      "rationale": "Her 2023 strike speech presents SAG-AFTRA members as labor who deserve respect and a share of studio profits, and defends the union's collective action for them; she does not separately address unions' effect on society.",
+      "rationale": "As SAG-AFTRA president she led the 2023 strike, saying 'We are labor and we stand tall and we demand respect', and described the union's stand as protecting members; she did not state a general claim about unions' benefit to society.",
       "sources": [
-        "s1"
+        "s1",
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "property-fundamental": {
@@ -87,10 +152,14 @@
       "sources": []
     },
     "regulate-corporations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 2010 she called the cosmetics industry 'a self-regulating industry, which is basically the fox guarding the henhouse', backed the Safe Cosmetics bill, and said Wall Street and banking needed more oversight; in 2023 she called for federal regulation of AI.",
+      "sources": [
+        "s3",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "cut-welfare": {
       "value": null,
@@ -173,7 +242,7 @@
     "same-sex-marriage": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
+      "rationale": "Officiating a wedding is an event, not a stated position; the marriage-equality motive came only from an unopened summary.",
       "sources": []
     },
     "abortion-legal": {
@@ -571,9 +640,10 @@
       "confidence": "low",
       "rationale": "She wrote in 2020 that 'when profit is at the expense of all things of true value, we gotta problem', and in 2023 said studios gave hundreds of millions to CEOs while claiming hardship; she did not state the exploitation claim in these terms.",
       "sources": [
-        "s3",
-        "s1"
-      ]
+        "b3",
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "dictatorship-of-proletariat": {
       "value": null,
@@ -780,12 +850,10 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "In her 2023 strike speech she called the studios 'a very greedy entity' that victimizes labor and stressed that workers stand in solidarity against them, framing employers and workers as opposed rather than as partners.",
-      "sources": [
-        "s1"
-      ]
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     },
     "sacrifice-heritage": {
       "value": null,
@@ -1932,9 +2000,10 @@
       "confidence": "low",
       "rationale": "She described herself as anti-capitalist in a 2017 interview (reported second-hand) and wrote in 2020 that capitalism had become 'another word for Ruling Class Elite'; she did not address its historical role directly.",
       "sources": [
-        "s4",
-        "s3"
-      ]
+        "b4",
+        "b3"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "women-equality-needs-economic-change": {
       "value": null,
@@ -1973,10 +2042,13 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "In 2017 she called herself anti-capitalist and called for a 'new hybrid of systems', and in 2020 wrote that with kindness as a compass one needs no label of socialist or capitalist; the quotes come via a news article, and she did not mention communism.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "historical-land-claim": {
       "value": null,
@@ -2569,10 +2641,16 @@
     "collective-bargaining": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "As union president she led contract negotiations with the studios' bargaining group and, after the strike, described the deal as one the union won through talks; she did not state the general principle in these words.",
+      "rationale": "She negotiated the actors' contract with the studios' bargaining group and argued 'you cannot change the business model as much as it has changed and not expect the contract to change too'; the union's bonus and AI terms were set through those talks.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "in-work-tax-credits": {
@@ -2996,5 +3074,5 @@
       "sources": []
     }
   },
-  "notes": "Only statements she made about labor, the studios, capitalism and AI were found in the sources opened. The Hollywood Reporter and Backstage interviews, the Rolling Stone AI article and the Vulture original could not be opened (paywall, 402/403), and web search was unavailable late in the audit, so coverage is thin. Her 2023 comments on AI are mainly about protections and regulation, which no statement asks about directly, so they are left null. Health and environment advocacy (Cancer Schmancer, chemicals in consumer products) was found only in secondary reports without her words on government action, and is null."
+  "notes": "Thin political record outside labor, regulation and health advocacy; most statements are null. Her anti-mandate remarks, AI concerns and endorsements (Clinton 2008, Obama 2012, Harris 2024) match no statement. The 2017 and 2020 capitalism quotes were read second-hand via Fox News.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 2 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only statements she made about labor, the studios, capitalism and AI were found in the sources opened. The Hollywood Reporter and Backstage interviews, the Rolling Stone AI article and the Vulture original could not be opened (paywall, 402/403), and web search was unavailable late in the audit, so coverage is thin. Her 2023 comments on AI are mainly about protections and regulation, which no statement asks about directly, so they are left null. Health and environment advocacy (Cancer Schmancer, chemicals in consumer products) was found only in secondary reports without her words on government action, and is null."
 }
