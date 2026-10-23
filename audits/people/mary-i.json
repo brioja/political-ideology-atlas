@@ -2,14 +2,73 @@
   "id": "mary-i",
   "name": "Mary I",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
   "living": false,
   "role": "Queen of England (1553–1558)",
-  "summary": "Mary I restored Catholicism and papal authority in England after the Edwardian Protestant settlement and revived the heresy laws, under which more than 280 people were burned. Her marriage to Philip of Spain and her suppression of Wyatt's rebellion are the main political measures of her reign. Her own recorded words are few, mostly from her speeches defending her rightful rule.",
+  "summary": "Mary I asserted her right to the throne by inheritance and coronation, and set out to reverse the religious changes of her father and brother, restoring papal authority and Catholic worship. She revived the heresy laws, under which about 280 Protestants were burned, and married Philip of Spain despite the unpopularity of the match and a rebellion against it. Her recorded words on politics are mostly about her title, her marriage and obedience, so many topics remain without a known position.",
   "wikipedia": "https://en.wikipedia.org/wiki/Mary_I",
   "sources": [
     {
       "id": "s1",
+      "kind": "primary",
+      "title": "Mary I's Guildhall speech, 1 February 1554 (Proctor's and Foxe's versions)",
+      "author": "Mary I, as reported by John Proctor and John Foxe",
+      "url": "https://tudorsociety.com/1-february-1554-mary-i-rallies-london-against-wyatts-rebellion",
+      "usedFor": "Right to the crown, wedded to the realm and laws, marriage, Wyatt as traitor"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Letter to the Privy Council, 9 July 1553",
+      "author": "Mary I",
+      "url": "https://www.tudorsociety.com/9-july-1553-mary-tudor-writes-to-the-privy-council/",
+      "usedFor": "Claim to the throne by Act of Parliament and Henry VIII's will; promise of pardon and avoiding bloodshed"
+    },
+    {
+      "id": "s3",
+      "kind": "scholarly",
+      "title": "Mary Tudor: Princess, Bastard, Queen (chapter 39, quoting the August 1553 proclamation and her letters)",
+      "author": "Linda Porter",
+      "url": "https://erenow.org/biographies/mary-tudor-princess-bastard-queen/40.php",
+      "usedFor": "Proclamation on compulsion in religion until common assent; remarks to Renard on Elizabeth and Jane Grey; letters to the pope"
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Mary I of England",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mary_I_of_England",
+      "usedFor": "Restoration of Rome, heresy laws, Spanish marriage, Wyatt, succession, will, war with France"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Marian Restoration",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marian_Restoration",
+      "usedFor": "Statutes of Repeal, papal supremacy, heresy acts, her funding of religious houses"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "Marian persecutions",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marian_persecutions",
+      "usedFor": "Heresy laws from January 1555, trials by bishops, numbers burned"
+    },
+    {
+      "id": "s7",
+      "kind": "reference",
+      "title": "Wedding of Mary I of England and Philip of Spain",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wedding_of_Mary_I_of_England_and_Philip_of_Spain",
+      "usedFor": "Marriage treaty terms, parliamentary act, her ring remark"
+    },
+    {
+      "id": "b1",
       "kind": "primary",
       "title": "Guildhall speech, 1 February 1554 (as recorded in later accounts)",
       "author": "Mary I (reported by englandcast.com, from the Guildhall text)",
@@ -17,7 +76,7 @@
       "usedFor": "Her own words at the Guildhall: rightful queen, wedded to the realm and laws, obedience of subjects"
     },
     {
-      "id": "s2",
+      "id": "b2",
       "kind": "reference",
       "title": "Mary I of England",
       "author": "Wikipedia",
@@ -25,7 +84,7 @@
       "usedFor": "Restoration of Catholicism and papal authority, Pole as legate and archbishop, Spanish marriage, Wyatt's rebellion, succession and her will"
     },
     {
-      "id": "s3",
+      "id": "b3",
       "kind": "reference",
       "title": "Marian persecutions",
       "author": "Wikipedia",
@@ -175,9 +234,15 @@
     "more-religion-public": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Restored Catholicism as the state religion and the Mass in England, reversing Edward VI's Protestant settlement (Wikipedia, Mary I of England).",
+      "rationale": "Her first measures and the Marian Restoration returned England to Catholic worship under papal obedience, and she persevered with the burnings even when advisers warned of revolt.",
       "sources": [
-        "s2"
+        "s4",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "correct-racial-injustice": {
@@ -265,11 +330,18 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Wyatt's revolt and Jane Grey's claim were suppressed and their leaders executed; Mary treated rebellion against her as treason (Wikipedia, Mary I of England).",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "She treated rebellion against her as treason, yet her own 1553 seizure of the throne from Jane Grey's government was framed by her as a lawful assertion of title, so the evidence is mixed.",
       "sources": [
-        "s2"
+        "s1",
+        "s2",
+        "s4",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "experts-over-public": {
@@ -353,9 +425,15 @@
     "monarchy-legitimate": {
       "value": 2,
       "confidence": "high",
-      "rationale": "In her Guildhall speech of 1 February 1554 she asserts her right as queen by coronation and her marriage to the realm and its laws (englandcast.com, speech text).",
+      "rationale": "In her Guildhall speech (Foxe's version) she claims the crown by inheritance from her father and by coronation, and her 9 July 1553 letter orders the council to proclaim her title as rightful sovereign.",
       "sources": [
-        "s1"
+        "s1",
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "democracy-best": {
@@ -389,10 +467,15 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed: in July 1553 she wished to avoid bloodshed and offered pardon, but she raised force against Wyatt and had rebels executed.",
+      "sources": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "war-builds-character": {
       "value": null,
@@ -403,9 +486,15 @@
     "separate-church-state": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Her regime returned English church jurisdiction to Rome and did not separate religious authority from the state's religion; the Catholic settlement she drove is the opposite of separation (Wikipedia, Mary I of England).",
+      "rationale": "She drove the reunion with Rome and the repeal of her father's and brother's church laws, so that Catholic doctrine was enforced by the crown and Parliament as the realm's religion.",
       "sources": [
-        "s2"
+        "s4",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "laws-from-scripture": {
@@ -517,10 +606,14 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her stated and enacted aim was to undo the religious changes of Henry VIII and Edward VI and restore the church as it was before the break with Rome.",
+      "sources": [
+        "s5",
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "results-over-ideology": {
       "value": null,
@@ -913,10 +1006,13 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from the heresy laws she revived, which penalised adopting Protestant belief; no law on conversion as such is recorded.",
+      "sources": [
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1075,20 +1171,32 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": 2,
+      "value": 1,
       "confidence": "low",
-      "rationale": "She personally rallied forces in East Anglia in 1553 and in London in 1554 and chose her own council and ministers, including Gardiner and Pole (Wikipedia, Mary I of England; englandcast.com).",
+      "rationale": "Inferred: she commanded the muster against Northumberland and Wyatt and appointed her own council, though she struggled to form an effective one.",
       "sources": [
         "s2",
-        "s1"
+        "s6",
+        "b2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "church-by-bishops": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Restored the Catholic hierarchy under bishops and installed Pole as Archbishop of Canterbury in 1556, replacing Protestant clergy (Wikipedia, Mary I of England).",
+      "rationale": "She freed and reinstated the conservative bishops, made Reginald Pole Archbishop of Canterbury in 1556 and had bishops run the heresy trials and the deprivation of married clergy.",
       "sources": [
-        "s2"
+        "s4",
+        "s6",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "clerical-rule": {
@@ -1123,10 +1231,16 @@
     },
     "end-foreign-alliances": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Her marriage treaty tied England to Habsburg Spain for the rest of her reign, and she did not end that alliance (Wikipedia, Mary I of England).",
+      "confidence": "medium",
+      "rationale": "She did the reverse: she married Philip of Spain for a Habsburg alliance and declared war on France in 1557 alongside Spain.",
       "sources": [
-        "s2"
+        "s4",
+        "s7",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "abolish-rental-housing": {
@@ -1168,10 +1282,16 @@
     "death-penalty": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Her government executed people for treason, including Wyatt, Lady Jane Grey and Guildford Dudley, and for heresy (Wikipedia, Mary I of England; Marian persecutions).",
+      "rationale": "She approved the execution of the leaders of Wyatt's rebellion, Lady Jane Grey and Suffolk for treason, after first declining to execute Jane.",
       "sources": [
-        "s2",
-        "s3"
+        "s4",
+        "s3",
+        "b2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "sex-ed-in-schools": {
@@ -1303,9 +1423,15 @@
     "subordinate-church-to-state": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Restored papal authority over the English church and sent Reginald Pole as papal legate, placing the church under Rome rather than under civil authority (Wikipedia, Mary I of England).",
+      "rationale": "She dropped the title Supreme Head of the Church, restored papal authority, returned First Fruits and Tenths to the Church and funded the refounding of religious houses from her own money, the opposite of curbing clerical power and property.",
       "sources": [
-        "s2"
+        "s4",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "nonpartisan-head-of-state": {
@@ -1345,10 +1471,14 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "At the Guildhall she described herself as wedded to the realm and its laws by her coronation ring, and said she would marry only with Parliament's approval.",
+      "sources": [
+        "s1",
+        "s7"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "space-expansion": {
       "value": null,
@@ -1399,11 +1529,16 @@
       "sources": []
     },
     "apostasy-punishable": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The revived heresy laws punished those who rejected Catholicism, including relapsed converts who returned to Protestantism, which is close to leaving one's religion being punishable (Wikipedia, Marian persecutions).",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Contested fit: the revived heresy laws punished Protestants, including those who had returned to Protestantism, but they were framed as heresy against the Catholic church, not as a law against leaving a religion as such.",
       "sources": [
-        "s3"
+        "s6",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "women-must-cover": {
@@ -1491,10 +1626,14 @@
       "sources": []
     },
     "abolish-hereditary-privilege": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from her claim to the throne by hereditary right, which she defended against Jane Grey and Wyatt.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "history-own-civilization": {
       "value": null,
@@ -1569,10 +1708,14 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "She based her claim on inheritance from Henry VIII, the Act of Succession and his will, not on any election by the political nation.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "minority-veto": {
       "value": null,
@@ -1583,17 +1726,27 @@
     "resist-lawless-ruler": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "She treated Wyatt's 1554 rebellion against her as treason and had its leaders executed, rejecting armed resistance to the crown (Wikipedia, Mary I of England; englandcast.com).",
+      "rationale": "She called Wyatt a vile traitor in the Guildhall speech (Foxe) and had the leaders of the 1554 rebellion executed, though the rebels objected to her marriage and policy.",
       "sources": [
-        "s2",
-        "s1"
+        "s1",
+        "s4",
+        "b2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "parliament-supreme": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed evidence: she submitted her marriage and the religious repeals to Parliament, but she tried to unsettle Elizabeth's succession against Parliament's resistance.",
+      "sources": [
+        "s1",
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "animal-suffering-matters": {
       "value": null,
@@ -2008,15 +2161,22 @@
       "confidence": "medium",
       "rationale": "She suppressed Wyatt's rebellion and Protestant dissent through trials and executions, but the record does not show her targeting ordinary political opposition in general (Wikipedia, Mary I of England).",
       "sources": [
-        "s2"
-      ]
+        "b2"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "punish-blasphemy": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Revived the heresy laws in January 1555 and had more than 280 people burned for Protestant belief, which the state treated as false religion to punish (Wikipedia, Marian persecutions).",
+      "confidence": "high",
+      "rationale": "She revived the heresy laws in January 1555 and held to the burnings of about 280 Protestants despite advisers' warnings, so the open practice of what her church deemed false religion was punished by the state.",
       "sources": [
-        "s3"
+        "s4",
+        "s6",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "colonies-serve-metropole": {
@@ -2080,10 +2240,14 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: her August 1553 proclamation, as reported by a biographer, says God had secured her crown, while her letters also rest her title on inheritance, Parliament's act and her father's will.",
+      "sources": [
+        "s3",
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2124,9 +2288,15 @@
     "dynastic-succession": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Her will and her marriage plans aimed at a child of her own succeeding her; she named Philip regent during any minority of such a child (Wikipedia, Mary I of England).",
+      "rationale": "She hoped for a child of her own to succeed, her will named Philip regent during such a child's minority, and she told Renard it would burden her conscience to let a bastard (Elizabeth) succeed.",
       "sources": [
-        "s2"
+        "s3",
+        "s4",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "interest-free-mutual-credit": {
@@ -2732,9 +2902,15 @@
     "religious-equal-recognition": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Her measures made Catholic doctrine the only lawful religion and punished Protestant interpretations as heresy, the reverse of equal legal recognition (Wikipedia, Marian persecutions).",
+      "rationale": "Her measures gave Catholic doctrine exclusive legal precedence and punished Protestant interpretations as heresy.",
       "sources": [
-        "s3"
+        "s5",
+        "s6",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "democracy-is-procedure": {
@@ -2824,9 +3000,15 @@
     "national-church-status": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Restored the traditional Catholic church to its established position, under papal rather than royal headship (Wikipedia, Mary I of England).",
+      "rationale": "She restored the traditional Catholic church as the sole legally established church of England, though under papal rather than royal headship.",
       "sources": [
-        "s2"
+        "s4",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "minority-territorial-autonomy": {
@@ -3010,5 +3192,5 @@
       "sources": []
     }
   },
-  "notes": "Her record (restoration, heresy laws, Spanish marriage) is documented in secondary accounts; few of her own words survive, so most answers rest on what she drove. The 1553 proclamation promising not to force consciences is noted in the Wikipedia article but its wording was not retrieved, so it is not used. Chroniclers and Foxe were not opened. Counts and burnings are contested by Protestant writers; the answers follow the measures she personally drove."
+  "notes": "Mary's August 1553 proclamation said she would not compel subjects in religion until further order by common assent; within a year she had moved to full restoration. Statutes enacted in her name on Parliament's or ministers' advice were not counted unless she personally drove them. Foxe and chroniclers' versions of the Guildhall speech differ and are partly secondhand. Limits: the full texts of her 1554 instructions to bishops and of the proclamation were not found online in this session, so those rest on summaries.\n\nMerged with an independent claude-haiku-5-5 audit: 1 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Her record (restoration, heresy laws, Spanish marriage) is documented in secondary accounts; few of her own words survive, so most answers rest on what she drove. The 1553 proclamation promising not to force consciences is noted in the Wikipedia article but its wording was not retrieved, so it is not used. Chroniclers and Foxe were not opened. Counts and burnings are contested by Protestant writers; the answers follow the measures she personally drove."
 }

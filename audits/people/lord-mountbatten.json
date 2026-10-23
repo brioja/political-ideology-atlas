@@ -2,14 +2,65 @@
   "id": "lord-mountbatten",
   "name": "Louis Mountbatten, 1st Earl Mountbatten of Burma",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
   "living": false,
-  "role": "Last Viceroy of India (1947); Chief of the Defence Staff (1959–1965)",
-  "summary": "A British naval officer and member of the royal family who was the last Viceroy of India and oversaw the transfer of power and partition in 1947. In his 1947 broadcast he said Indian communities should not be coerced to live under governments they did not want, and that partition was the only alternative. Late in life, as a former Chief of the Defence Staff, he argued in 1979 for reducing nuclear armaments and against the nuclear arms race.",
+  "role": "British admiral; last Viceroy and first Governor-General of India (1947–48); First Sea Lord and Chief of the Defence Staff",
+  "summary": "A British naval officer and member of the royal family who oversaw the transfer of power in India, brought the date forward, and presented the 1947 partition plan on the ground that majority communities should not be coerced. He urged princely states to join India or Pakistan. As a retired defence chief he argued in 1979 for reducing nuclear armaments and said the arms race had no military purpose.",
   "wikipedia": "https://en.wikipedia.org/wiki/Lord_Mountbatten",
   "sources": [
     {
       "id": "s1",
+      "kind": "primary",
+      "title": "Speech at Strasbourg on the presentation of the Louis Weiss Foundation Peace Prize to SIPRI, 11 May 1979",
+      "author": "Louis Mountbatten",
+      "url": "https://beyondnuclearinternational.org/wp-content/uploads/2022/09/mountbatten-speech-1979.pdf",
+      "usedFor": "nuclear arms reduction, military balance, no use for nuclear weapons"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Broadcast by the Viceroy on the transfer of power, 3 June 1947 (as printed in The Times, 4 June 1947)",
+      "author": "Louis Mountbatten",
+      "url": "https://www.alhakam.org/india-partition-independence-britain-1947",
+      "usedFor": "coercion of majority areas, partition, Cabinet Mission plan"
+    },
+    {
+      "id": "s3",
+      "kind": "reference",
+      "title": "Louis Mountbatten, 1st Earl of Burma (Wikipedia)",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lord_Mountbatten",
+      "usedFor": "Suez advice, Spain and Greece monarchies, NATO role, date of transfer"
+    },
+    {
+      "id": "s4",
+      "kind": "reference",
+      "title": "Instrument of Accession (Jammu and Kashmir), including Mountbatten's reply of 27 October 1947",
+      "author": "Wikipedia (quoting Mountbatten)",
+      "url": "https://en.wikipedia.org/wiki/Instrument_of_Accession_(Jammu_and_Kashmir)",
+      "usedFor": "reference to the people on Kashmir accession"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Political integration of India (Wikipedia)",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Political_integration_of_India",
+      "usedFor": "his accession policy for princely states"
+    },
+    {
+      "id": "s6",
+      "kind": "scholarly",
+      "title": "Mountbatten, Cold War and Empire, 1945-79 (author blog post, University of Southampton)",
+      "author": "University of Southampton",
+      "url": "https://blog.soton.ac.uk/tdby/?p=200",
+      "usedFor": "Polaris, deterrent, NATO, European integration, decolonisation"
+    },
+    {
+      "id": "b1",
       "kind": "primary",
       "title": "Speech at Strasbourg on the presentation of the Louis Weiss Foundation Peace Prize to SIPRI",
       "author": "Louis Mountbatten",
@@ -17,7 +68,7 @@
       "usedFor": "nuclear arms race, reduction of nuclear armaments, no use for nuclear weapons, mutual restraint"
     },
     {
-      "id": "s2",
+      "id": "b2",
       "kind": "primary",
       "title": "Broadcast by the Viceroy on the transfer of power, 3 June 1947 (text as reprinted)",
       "author": "Louis Mountbatten",
@@ -25,20 +76,12 @@
       "usedFor": "coercion of majority areas, partition as alternative, consent, unified India"
     },
     {
-      "id": "s3",
+      "id": "b3",
       "kind": "reference",
       "title": "Lord Mountbatten",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Lord_Mountbatten",
       "usedFor": "1956 Suez advice, 1969-70 Spanish and Greek succession efforts, Viceroy record"
-    },
-    {
-      "id": "s4",
-      "kind": "reference",
-      "title": "Kashmir accession and UN referral (chapter 8)",
-      "author": "Unattributed (ikashmir.net)",
-      "url": "https://ikashmir.net/storm/chapter8.html",
-      "usedFor": "Kashmir plebiscite offer at Lahore, UN referral pressed on Nehru; partisan source"
     }
   ],
   "answers": {
@@ -217,12 +260,10 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "A secondary account says that in late 1947 he pressed Nehru to refer the Kashmir dispute to the UN, and that he backed such a referral, which India made on 1 January 1948. Partisan source, so medium confidence.",
-      "sources": [
-        "s4"
-      ]
+      "rationale": "No recorded position found.",
+      "sources": []
     },
     "free-trade": {
       "value": null,
@@ -359,9 +400,14 @@
     "monarchy-legitimate": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Wikipedia reports that in 1969 he tried to persuade the Spanish pretender Infante Juan to abdicate in favour of Juan Carlos, and that he lobbied Nixon in 1970 on behalf of Juan Carlos and Constantine II of Greece. This is action on behalf of monarchies, not a stated view.",
+      "rationale": "Wikipedia reports that in 1969 he tried to persuade the Spanish pretender Infante Juan to abdicate to ease Juan Carlos's accession, and discussed with Nixon the position of Juan Carlos and Constantine II of Greece. This is action for monarchies, not a stated view.",
       "sources": [
-        "s3"
+        "s3",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "democracy-best": {
@@ -384,10 +430,16 @@
     },
     "right-to-secede": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "In his 3 June 1947 broadcast he accepted partition as the alternative to coercing majority areas to remain under a government they did not want. The statement is broader than the case he addressed, so confidence is medium.",
+      "confidence": "medium",
+      "rationale": "He drove the 3 June 1947 plan under which areas with a majority of one community could separate, on the stated ground that they should not be coerced. He also told the princely states they could not remain independent, so the principle was applied only to the provinces.",
       "sources": [
-        "s2"
+        "s2",
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "natural-rulers": {
@@ -401,8 +453,9 @@
       "confidence": "low",
       "rationale": "Inferred: from his 1947 statement that the country could not afford any toleration of violence, said in the context of communal violence at partition. The principle is broader than the context he addressed.",
       "sources": [
-        "s2"
-      ]
+        "b2"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "war-builds-character": {
       "value": null,
@@ -430,10 +483,15 @@
     },
     "military-superiority": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: from his 1979 call for a military balance based on mutual restraint and for security at a lower level of armament, rather than for a race to stay ahead.",
+      "confidence": "medium",
+      "rationale": "In 1979 he said peace was best preserved by a military balance of strength between East and West, to be based on mutual restraint rather than ever-increasing armaments, not by superiority.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "ethnic-nation": {
@@ -755,20 +813,32 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "In his 3 June 1947 broadcast he rejected coercing communities against their will, and he drove the transfer of power to Indian hands and the creation of India and Pakistan as separate states.",
+      "rationale": "He advanced the date of the transfer of power and handed sovereignty to India and Pakistan, and in the 1947 broadcast rejected coercing communities against their will. He did not extend this to princely states seeking independence.",
       "sources": [
         "s2",
-        "s3"
+        "s3",
+        "s5",
+        "b2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "force-without-un": {
-      "value": -2,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "Wikipedia reports that in 1956 he strongly advised Anthony Eden against seizing the Suez Canal, arguing that it would undermine the UN and divide the Commonwealth. Advice reported secondhand, so medium confidence.",
+      "rationale": "Wikipedia reports he strongly advised Eden in 1956 against seizing the Suez Canal, arguing it would undermine the UN and divide the Commonwealth. Reported secondhand.",
       "sources": [
-        "s3"
+        "s3",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "reason-over-faith": {
@@ -952,11 +1022,17 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": 2,
-      "confidence": "low",
-      "rationale": "In his 3 June 1947 broadcast he rejected coercing communities to live under a government they did not want and said the only alternative was partition. Stated in the context of India, not as a general theory.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 1947 he argued communities should not be made to live under a government they did not accept; in his 27 October 1947 letter on Kashmir's accession he said the question should be settled by a reference to the people.",
       "sources": [
-        "s2"
+        "s2",
+        "s4",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "trade-surplus": {
@@ -1086,10 +1162,13 @@
       "sources": []
     },
     "pool-sovereignty": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "A historian's post on Mountbatten reports that he favoured closer European integration for Britain. Secondhand.",
+      "sources": [
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "head-commands-forces": {
       "value": null,
@@ -1134,10 +1213,14 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from his work in NATO and his Atlanticist outlook as described by a historian; he never proposed ending alliances.",
+      "sources": [
+        "s3",
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1254,11 +1337,16 @@
       "sources": []
     },
     "independent-nuclear-deterrent": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "In 1979 he said he could see no use for any nuclear weapons that would not end in escalation, and that the arms race only adds to peril. He argued for mutual reduction rather than for more national nuclear arms.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mixed record: he drove Polaris, but a historian's post reports he shared the view that an independent deterrent was a comfort blanket disguising geopolitical reality. Secondhand and not a direct statement.",
       "sources": [
-        "s1"
+        "s6",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "direct-election-head-of-state": {
@@ -1298,10 +1386,14 @@
       "sources": []
     },
     "collective-defense": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from his service as chairman of the NATO Military Committee and a historian's account that he supported an Atlanticist policy.",
+      "sources": [
+        "s3",
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1324,16 +1416,24 @@
     "force-to-prevent-secession": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "In his 3 June 1947 broadcast he said there could be no question of coercing large areas with a majority of one community to live against their will under a government dominated by another, and that the only alternative to coercion was partition.",
+      "rationale": "In his 3 June 1947 broadcast he said there could be no question of coercing large areas where one community has a majority to live against their will under a government dominated by another community, and the only alternative to coercion was partition. Said of India, not as a general rule.",
       "sources": [
-        "s2"
+        "s2",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "region-keeps-system": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Wikipedia reports that, urging princes to accede on defence, external affairs and communications, he stressed the instruments left them all the practical independence they needed.",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sacred-ruler": {
       "value": null,
@@ -1510,10 +1610,14 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from his driving the end of British rule in India and his support for decolonisation in south-east Asia; a historian describes him as not an imperial nostalgist.",
+      "sources": [
+        "s3",
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "patriotic-education": {
       "value": null,
@@ -1578,9 +1682,14 @@
     "elective-rulers": {
       "value": -1,
       "confidence": "low",
-      "rationale": "Inferred: from his 1969 and 1970 efforts to secure a hereditary succession to the Spanish throne and the Greek monarchy, as reported by Wikipedia.",
+      "rationale": "Inferred: from his 1969 and 1970 efforts to secure hereditary succession in Spain and to support the Greek monarchy, as reported by Wikipedia.",
       "sources": [
-        "s3"
+        "s3",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "minority-veto": {
@@ -2118,17 +2227,26 @@
       "sources": []
     },
     "stay-neutral-between-blocs": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: from his chairmanship of the NATO Military Committee and a historian's account of him as an Atlanticist.",
+      "sources": [
+        "s3",
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "dynastic-succession": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Inferred: from his 1969 effort to have Infante Juan abdicate in favour of his son Juan Carlos, as reported by Wikipedia.",
+      "rationale": "Inferred: from his 1969 effort to have Infante Juan step aside so that his son Juan Carlos could succeed to the Spanish throne, as reported by Wikipedia.",
       "sources": [
-        "s3"
+        "s3",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "interest-free-mutual-credit": {
@@ -2240,10 +2358,13 @@
       "sources": []
     },
     "power-sharing-divided-societies": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: in the 1947 broadcast he said he first urged leaders to accept the 1946 Cabinet Mission plan, which he called the best arrangement for the interests of all communities and which preserved a united India under shared arrangements.",
+      "sources": [
+        "s2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "charity-over-state-aid": {
       "value": null,
@@ -2508,9 +2629,10 @@
       "confidence": "low",
       "rationale": "Inferred: from his opposition to the 1956 Suez operation, as reported by Wikipedia, and his statement that in a nuclear war there would be no winners. Not a general statement of his view on defensive war.",
       "sources": [
-        "s3",
-        "s1"
-      ]
+        "b3",
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "language-defines-nation": {
       "value": null,
@@ -2557,9 +2679,14 @@
     "arms-reduction": {
       "value": 2,
       "confidence": "high",
-      "rationale": "In his Strasbourg speech of 11 May 1979 he said that by reducing nuclear armaments it should be possible to achieve greater security at a lower level of military confrontation.",
+      "rationale": "In his Strasbourg speech of 11 May 1979 he said that by reduction of nuclear armaments it should be possible to achieve greater security at a lower level of military confrontation, and called the nuclear arms race purposeless.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "open-diplomacy": {
@@ -2671,10 +2798,14 @@
       "sources": []
     },
     "keep-nuclear-weapons": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed record: he was described as the driving force behind Britain's Polaris submarine deterrent, yet in 1979 he said he could see no use for nuclear weapons that would not end in escalation and urged mutual restraint and reduction. He did not address unilateral disarmament.",
+      "sources": [
+        "s1",
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "workers-own-party": {
       "value": null,
@@ -2839,11 +2970,15 @@
       "sources": []
     },
     "disputed-territory-plebiscite": {
-      "value": 2,
-      "confidence": "low",
-      "rationale": "A secondary account of the Lahore talks (November 1947) says he formally offered Jinnah a plebiscite in Kashmir, and suggested it be held under UN auspices. The account is partisan, so medium confidence.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In his letter of 27 October 1947 accepting Kashmir's accession he wrote that it was the government's wish that, once order was restored and the invader cleared, the question of accession should be settled by a reference to the people.",
       "sources": [
         "s4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "keep-colonial-borders": {
@@ -3015,5 +3150,5 @@
       "sources": []
     }
   },
-  "notes": "Only the 1979 Strasbourg speech and the 1947 broadcast are his own words in the sources opened. Suez, the Spanish and Greek succession efforts and the Kashmir plebiscite and UN referral come from secondary accounts, rated medium at most. Wikipedia and Wikiquote were checked, but neither gives his stance on Rhodesia, Kenya, Cyprus, Northern Ireland, the welfare state or the economy, so those stay null. The Wikipedia article says the Viceroy's 1947 date was brought forward to 15 August; this measure is not recorded as an answer to any statement. Sources on Kashmir are partisan and are not used for salience. The 'brink of the final abyss' line is taken from the speech text itself."
+  "notes": "Most statements are null because his recorded words concern the transfer of power, princely states and nuclear arms. His Polaris advocacy as First Sea Lord and his later opposition to nuclear use in 1979 point different ways, so the nuclear-weapons answers are 0 at low confidence. The Kashmir plebiscite letter was written as Governor-General on his government's behalf.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the 1979 Strasbourg speech and the 1947 broadcast are his own words in the sources opened. Suez, the Spanish and Greek succession efforts and the Kashmir plebiscite and UN referral come from secondary accounts, rated medium at most. Wikipedia and Wikiquote were checked, but neither gives his stance on Rhodesia, Kenya, Cyprus, Northern Ireland, the welfare state or the economy, so those stay null. The Wikipedia article says the Viceroy's 1947 date was brought forward to 15 August; this measure is not recorded as an answer to any statement. Sources on Kashmir are partisan and are not used for salience. The 'brink of the final abyss' line is taken from the speech text itself."
 }
