@@ -40,8 +40,13 @@ function validate(id) {
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
-  for (const f of PEOPLE ? ["name", "auditedAt", "auditor", "summary", "role"] : ["name", "auditedAt", "auditor", "summary", "scope"]) {
+  for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : ["name", "auditedAt", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
+  }
+  // A merged audit (two models researched independently) lists every model id.
+  const isId = (s) => typeof s === "string" && !!s.trim();
+  if (!(isId(a.auditor) || (Array.isArray(a.auditor) && a.auditor.length && a.auditor.every(isId)))) {
+    errors.push('"auditor" must be a model id or a non-empty list of model ids');
   }
 
   if (a.wikipedia !== null && !/^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/.test(a.wikipedia || "")) {
