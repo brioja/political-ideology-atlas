@@ -2,7 +2,10 @@
  "id": "john-f-kennedy",
  "name": "John F. Kennedy",
  "auditedAt": "2026-10-22",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "claude-haiku-5-5"
+ ],
  "living": false,
  "role": "U.S. senator from Massachusetts (1953-1960) and 35th U.S. president (1961-1963)",
  "summary": "Kennedy was a Cold War liberal Democrat who combined an expansionist, growth-oriented economic programme (tax cuts, aid to education, health insurance for the aged) with firm anti-communism, a large military and alliance system, and support for arms control. He defended absolute separation of church and state, proposed ending the national-origins immigration quotas, and by 1963 championed federal civil rights legislation as a moral issue.",
@@ -119,6 +122,94 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/John_F._Kennedy",
    "usedFor": "Voting record and presidential record: Taft-Hartley, minimum wage, EO 10925, Equal Pay Act, Trade Expansion Act, Bay of Pigs, steel prices"
+  },
+  {
+   "id": "b1",
+   "kind": "primary",
+   "title": "Commencement Address at American University in Washington (\"A Strategy of Peace\")",
+   "author": "John F. Kennedy",
+   "url": "https://www.presidency.ucsb.edu/documents/commencement-address-american-university-washington",
+   "usedFor": "Full text, June 10, 1963: peace, arms control, alliances, UN, self-determination, civil rights at home"
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Inaugural Address (text as reproduced by the National Archives milestone document page)",
+   "author": "John F. Kennedy",
+   "url": "https://www.archives.gov/milestone-documents/president-john-f-kennedys-inaugural-address",
+   "usedFor": "Inaugural address, January 20, 1961: aid to poor nations, pledges to allies"
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "Transcript: JFK's Speech on His Religion (Greater Houston Ministerial Association)",
+   "author": "John F. Kennedy; transcript by NPR",
+   "url": "https://www.npr.org/2007/12/05/16920600/transcript-jfks-speech-on-his-religion",
+   "usedFor": "Full text, September 12, 1960: church and state, religious tests, public policy and religious bodies"
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "Commencement Address at Yale University (\"Myth and Reality in Our National Economy\")",
+   "author": "John F. Kennedy",
+   "url": "https://www.presidency.ucsb.edu/documents/commencement-address-yale-university",
+   "usedFor": "Full text, June 11, 1962: government size, fiscal policy, deficits, technical rather than ideological answers"
+  },
+  {
+   "id": "b5",
+   "kind": "primary",
+   "title": "Radio and Television Report to the American People on Civil Rights",
+   "author": "John F. Kennedy",
+   "url": "https://teachingamericanhistory.org/library/document/radio-and-television-report-to-the-american-people-on-civil-rights/",
+   "usedFor": "Full text, June 11, 1963: segregation, public accommodations, voting, equal rights, courts vs streets"
+  },
+  {
+   "id": "b6",
+   "kind": "primary",
+   "title": "Annual Message to the Congress on the State of the Union (January 14, 1963)",
+   "author": "John F. Kennedy",
+   "url": "https://www.presidency.ucsb.edu/documents/annual-message-the-congress-the-state-the-union-3",
+   "usedFor": "Full text: growth, tax reduction, deficits, poverty, defense, arms control, alliance, Peace Corps"
+  },
+  {
+   "id": "b7",
+   "kind": "primary",
+   "title": "Special Message to the Congress on Tax Reduction and Reform (January 24, 1963)",
+   "author": "John F. Kennedy",
+   "url": "https://www.presidency.ucsb.edu/documents/special-message-the-congress-tax-reduction-and-reform",
+   "usedFor": "Full text: individual rate reduction (range 14-65 percent), temporary deficit, corporate taxes"
+  },
+  {
+   "id": "b8",
+   "kind": "primary",
+   "title": "Special Message to the Congress on National Health Needs (February 27, 1962)",
+   "author": "John F. Kennedy",
+   "url": "https://www.presidency.ucsb.edu/node/236888",
+   "usedFor": "Full text: health insurance for the aged through Social Security, role of private insurance and government"
+  },
+  {
+   "id": "b9",
+   "kind": "primary",
+   "title": "Letter to the President of the Senate and to the Speaker of the House on Revision of the Immigration Laws (July 23, 1963)",
+   "author": "John F. Kennedy",
+   "url": "https://presidency.ucsb.edu/node/237245",
+   "usedFor": "Full text: national origins quotas, reform of the quota system, effect on numbers admitted"
+  },
+  {
+   "id": "b10",
+   "kind": "primary",
+   "title": "Address at Rice University on the Nation's Space Effort (\"We choose to go to the moon\")",
+   "author": "John F. Kennedy; transcript hosted by the Miller Center",
+   "url": "https://millercenter.org/node/1588",
+   "usedFor": "Full text, September 12, 1962: space effort as a national goal"
+  },
+  {
+   "id": "b11",
+   "kind": "reference",
+   "title": "Radio and Television Report to the American People on Civil Rights (introduction and background)",
+   "author": "Teaching American History",
+   "url": "https://teachingamericanhistory.org/library/document/radio-and-television-report-to-the-american-people-on-civil-rights/",
+   "usedFor": "Background on the 1963 civil rights address and the legislation it proposed"
   }
  ],
  "answers": {
@@ -128,7 +219,12 @@
    "rationale": "Proposed health insurance for the aged under Social Security and expanded hospital and research funding, but did not propose coverage for everyone.",
    "sources": [
     "s8",
-    "s10"
+    "s10",
+    "b8"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "raise-minimum-wage": {
@@ -138,13 +234,18 @@
    "sources": [
     "s10",
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "markets-allocate-better": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Called for a free economy that delivers adequate profits and wages (Yale, 1962) and said private consumers, employers and investors should first be given full opportunity before a large federal spending increase (1963 State of the Union); he did not compare the two systems in general.",
+   "sources": [
+    "b4",
+    "b6"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "public-ownership": {
    "value": null,
@@ -157,7 +258,13 @@
    "confidence": "high",
    "rationale": "His 1963 tax program cut top individual rates from 91 to 65 percent, offset partly by closing preferences, so it did not raise taxes on the wealthy.",
    "sources": [
-    "s5"
+    "s5",
+    "b6",
+    "b7"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "unions-good": {
@@ -166,7 +273,8 @@
    "rationale": "Voted against the Taft-Hartley Act and backed labor-friendly measures, while also backing the Landrum-Griffin union-reform effort against abuses.",
    "sources": [
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "property-fundamental": {
    "value": null,
@@ -181,7 +289,8 @@
    "sources": [
     "s14",
     "s5"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "cut-welfare": {
    "value": null,
@@ -220,10 +329,13 @@
    "sources": []
   },
   "state-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Rejected the idea that government is big and bad, calling the federal role in research and other sectors a source of national strength (Yale, 1962).",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "limit-guns": {
    "value": null,
@@ -237,7 +349,8 @@
    "rationale": "Called his defense build-up the most far-reaching in peacetime history and raised military spending.",
    "sources": [
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -251,7 +364,8 @@
    "rationale": "Inferred: argued that no state or city could ignore segregation and that federal legislation and suits were needed, favouring national action over local discretion on civil rights.",
    "sources": [
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "rehabilitation": {
    "value": null,
@@ -282,7 +396,12 @@
    "confidence": "medium",
    "rationale": "Insisted the presidency and public acts be free of religious pressure and that religion be a private matter.",
    "sources": [
-    "s2"
+    "s2",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "correct-racial-injustice": {
@@ -292,7 +411,13 @@
    "sources": [
     "s3",
     "s4",
-    "s14"
+    "s14",
+    "b5",
+    "b11"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "gender-social-construct": {
@@ -308,17 +433,25 @@
    "sources": []
   },
   "gradual-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Rejected counsels of patience and delay on civil rights and said the time had come to act (civil rights address, 1963).",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "reduce-immigration": {
    "value": -1,
    "confidence": "medium",
    "rationale": "Proposed replacing the national-origins quota system within a system of limited immigration, not cutting overall numbers.",
    "sources": [
-    "s6"
+    "s6",
+    "b9"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "empower-international-orgs": {
@@ -327,7 +460,12 @@
    "rationale": "Pledged support for the UN, wanted to develop it into a genuine world security system and called for a world of law.",
    "sources": [
     "s1",
-    "s9"
+    "s9",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "free-trade": {
@@ -337,7 +475,12 @@
    "sources": [
     "s10",
     "s14",
-    "s9"
+    "s9",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "nation-first": {
@@ -347,7 +490,8 @@
    "sources": [
     "s1",
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "humanitarian-intervention": {
    "value": null,
@@ -361,13 +505,17 @@
    "rationale": "Inferred: his immigration reform assumed a system of limited immigration with ceilings and priority categories.",
    "sources": [
     "s6"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "limit-growth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Argued that the economy must move to a higher rate of growth and full employment, calling for tens of billions more in production each year (1963 State of the Union).",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "drastic-climate-action": {
    "value": null,
@@ -380,7 +528,12 @@
    "confidence": "low",
    "rationale": "Inferred: spoke of science and technology as instruments to abolish poverty and disease, while warning of their destructive power.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "expand-nuclear": {
@@ -396,10 +549,13 @@
    "sources": []
   },
   "experts-over-public": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Said problems of fiscal and monetary policy require technical answers, not political answers (Yale, 1962), while leaving room for public debate.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "central-planning": {
    "value": null,
@@ -437,7 +593,12 @@
    "rationale": "Pledged not to fall back on restrictive trade policies and signed the Trade Expansion Act authorising reciprocal tariff cuts of up to 50 percent.",
    "sources": [
     "s10",
-    "s14"
+    "s14",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "state-directs-investment": {
@@ -471,10 +632,13 @@
    "sources": []
   },
   "one-party-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Called communism profoundly repugnant as a negation of personal freedom and dignity (American University, 1963).",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "monarchy-legitimate": {
    "value": null,
@@ -529,7 +693,12 @@
    "confidence": "high",
    "rationale": "\"I believe in an America where the separation of church and state is absolute.\"",
    "sources": [
-    "s2"
+    "s2",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "laws-from-scripture": {
@@ -538,7 +707,8 @@
    "rationale": "Said he would decide issues such as birth control, divorce and censorship by conscience and the national interest, with no religious body imposing its will on public acts.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "private-courts-defense": {
    "value": null,
@@ -552,14 +722,22 @@
    "rationale": "Said arms must be sufficient beyond doubt and boasted of military superiority of freedom and record defense improvements.",
    "sources": [
     "s1",
-    "s9"
+    "s9",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "ethnic-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Described the nation as founded by men of many nations and backgrounds, and said the rights of every man are diminished when the rights of one are threatened (civil rights address, 1963).",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "class-struggle-history": {
    "value": null,
@@ -568,10 +746,13 @@
    "sources": []
   },
   "equal-outcomes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Said children do not have equal talent but should have an equal right to develop their talents, rather than equal results (civil rights address, 1963).",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "indigenous-land-authority": {
    "value": null,
@@ -603,7 +784,8 @@
    "rationale": "Inferred: his inaugural urged citizens to ask what they can do for their country, which stresses duty but does not rank duties above rights.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "nature-intrinsic-value": {
    "value": null,
@@ -654,16 +836,22 @@
    "sources": []
   },
   "results-over-ideology": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Said governments should face technical problems without ideological preconceptions and judge answers on their merits (Yale, 1962).",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "direct-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Said civil rights disputes should be settled in the courts rather than in the streets, and asked Congress to act (civil rights address, 1963).",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "means-match-ends": {
    "value": null,
@@ -797,7 +985,8 @@
    "rationale": "Rejected a Pax Americana enforced by American weapons.",
    "sources": [
     "s11"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "personal-loyalty-rule": {
    "value": null,
@@ -860,14 +1049,21 @@
    "sources": [
     "s2",
     "s7"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "avoid-deficit-stimulus": {
    "value": -1,
    "confidence": "medium",
    "rationale": "Urged a tax cut that he said would temporarily increase the deficit but ultimately end it, while holding other spending flat; accepted deficits to stimulate growth.",
    "sources": [
-    "s5"
+    "s5",
+    "b6",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "economic-freedom": {
@@ -888,7 +1084,12 @@
    "rationale": "Pledged to those emerging from colonial control and urged that each nation choose its own future.",
    "sources": [
     "s1",
-    "s11"
+    "s11",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "force-without-un": {
@@ -898,7 +1099,8 @@
    "sources": [
     "s12",
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "reason-over-faith": {
    "value": null,
@@ -960,7 +1162,12 @@
    "rationale": "Asked Congress for a ban on segregation in public accommodations and federal help in school desegregation suits.",
    "sources": [
     "s3",
-    "s4"
+    "s4",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "state-class-instrument": {
@@ -994,10 +1201,13 @@
    "sources": []
   },
   "national-mission": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Said the United States is unwilling to impose its system on any unwilling people and would rely on peaceful competition (American University, 1963).",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "patriarchy-structural": {
    "value": null,
@@ -1024,10 +1234,15 @@
    "sources": []
   },
   "night-watchman-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Rejected the claim that government is big and bad, and called for federal programs in health, education and poverty (Yale, 1962; 1962-63 messages).",
+   "sources": [
+    "b4",
+    "b6",
+    "b8"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1040,7 +1255,12 @@
    "confidence": "high",
    "rationale": "Said every American should be treated as he would wish his own children to be, and that rights of all are diminished when one man's are threatened.",
    "sources": [
-    "s3"
+    "s3",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "socialism-one-country": {
@@ -1086,10 +1306,13 @@
    "sources": []
   },
   "consent-of-governed": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: from his statement that each nation should choose its own future without interference (American University, 1963); he did not address consent of the governed directly.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "trade-surplus": {
    "value": null,
@@ -1133,7 +1356,8 @@
    "rationale": "Invoked the system of checks and balances as a safeguard in the Houston speech.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "vanguard-party": {
    "value": null,
@@ -1142,10 +1366,13 @@
    "sources": []
   },
   "priority-to-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Said tax reduction alone was not enough to improve the lives of 32 million Americans living on the outskirts of poverty (1963 State of the Union).",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "right-to-buy-council-homes": {
    "value": null,
@@ -1166,10 +1393,13 @@
    "sources": []
   },
   "diversity-weakens-cohesion": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: from his description of the nation as built by men of many nations and his call for equal rights regardless of background (civil rights address, 1963); he did not discuss social cohesion directly.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "offices-by-lottery": {
    "value": null,
@@ -1225,7 +1455,8 @@
    "rationale": "Welcomed European unity and an Atlantic partnership of interdependent nations.",
    "sources": [
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "head-commands-forces": {
    "value": null,
@@ -1240,10 +1471,13 @@
    "sources": []
   },
   "clerical-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Said no public official should take instructions on public policy from the Pope or any other ecclesiastical source (Houston, 1960).",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "defeat-own-government-war": {
    "value": null,
@@ -1275,7 +1509,13 @@
    "rationale": "Strengthened NATO and other alliances and kept troops abroad.",
    "sources": [
     "s9",
-    "s13"
+    "s13",
+    "b1",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "abolish-rental-housing": {
@@ -1302,7 +1542,8 @@
    "rationale": "In Berlin he said Germans had earned the right to unite their families and their nation in peace.",
    "sources": [
     "s13"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "educated-out-of-touch": {
    "value": null,
@@ -1394,10 +1635,19 @@
    "rationale": "Pledged help to the world's poor \"because it is right\", and created the Peace Corps and the Alliance for Progress.",
    "sources": [
     "s1",
-    "s9"
+    "s9",
+    "b2",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
-  "independent-nuclear-deterrent": {"value": null, "rationale": "The US having a nuclear arsenal isn't a view of his; no statement of his on this was found."},
+  "independent-nuclear-deterrent": {
+   "value": null,
+   "rationale": "The US having a nuclear arsenal isn't a view of his; no statement of his on this was found."
+  },
   "direct-election-head-of-state": {
    "value": null,
    "confidence": "low",
@@ -1441,7 +1691,12 @@
    "sources": [
     "s9",
     "s1",
-    "s13"
+    "s13",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "annexed-territory-occupation": {
@@ -1485,7 +1740,12 @@
    "confidence": "high",
    "rationale": "Proposed a graduated income tax schedule of 14 to 65 percent.",
    "sources": [
-    "s5"
+    "s5",
+    "b7"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "character-from-environment": {
@@ -1506,7 +1766,12 @@
    "rationale": "Doubled the space effort to be first in space and continued Apollo toward a lunar landing, though also proposing cooperation with the USSR.",
    "sources": [
     "s9",
-    "s14"
+    "s14",
+    "b10"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "mixed-constitution": {
@@ -1552,10 +1817,13 @@
    "sources": []
   },
   "apostasy-punishable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Said every man should have the same right to attend or not attend the church of his choice, and opposed any state use of religion to compel or persecute (Houston, 1960).",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "women-must-cover": {
    "value": null,
@@ -1660,7 +1928,8 @@
    "sources": [
     "s1",
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "patriotic-education": {
    "value": null,
@@ -1709,7 +1978,12 @@
    "confidence": "high",
    "rationale": "Asked Congress to require equal service in hotels, restaurants, theatres and shops open to the public, rejecting private refusal of service.",
    "sources": [
-    "s3"
+    "s3",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "entrenched-bill-of-rights": {
@@ -1766,7 +2040,8 @@
    "rationale": "Inferred: said a free society that cannot help the many who are poor cannot save the few who are rich.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "withdraw-from-politics": {
    "value": null,
@@ -1809,7 +2084,13 @@
    "confidence": "medium",
    "rationale": "Called government aid a supplement to private investment, trade and internal self-improvement, but strongly backed foreign aid and begrudged no spending on it.",
    "sources": [
-    "s9"
+    "s9",
+    "b2",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "return-lost-territory": {
@@ -1956,7 +2237,8 @@
    "rationale": "Authorised the Bay of Pigs invasion and Operation Mongoose to overthrow Castro.",
    "sources": [
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "intervene-in-bloc": {
    "value": null,
@@ -2013,7 +2295,12 @@
    "sources": [
     "s1",
     "s12",
-    "s14"
+    "s14",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "industrial-unions": {
@@ -2064,7 +2351,8 @@
    "rationale": "Rejected defining the nation or office by religion and any religious test for office.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "deference-to-leading-power": {
    "value": null,
@@ -2092,7 +2380,8 @@
     "s1",
     "s11",
     "s13"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "mixed-public-service-providers": {
    "value": null,
@@ -2184,7 +2473,8 @@
    "rationale": "Said he was wholly opposed to the state being used by any religious group to compel, prohibit or persecute the free exercise of another religion.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "colonies-serve-metropole": {
    "value": -2,
@@ -2193,7 +2483,8 @@
    "sources": [
     "s1",
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "defensive-jihad-duty": {
    "value": null,
@@ -2232,10 +2523,13 @@
    "sources": []
   },
   "left-right-obsolete": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: from his call to face technical problems without ideological preconceptions (Yale, 1962); he did not discuss left and right as labels.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "alienated-labor": {
    "value": null,
@@ -2255,7 +2549,8 @@
    "rationale": "Inferred: his inaugural said human rights come \"from the hand of God\" rather than the state's generosity, which concerns rights and not political authority as such.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "religious-dress-in-state": {
    "value": null,
@@ -2281,7 +2576,8 @@
    "rationale": "Said \"we dare not tempt them with weakness\" and expanded US forces.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "rich-first": {
    "value": null,
@@ -2295,7 +2591,13 @@
    "rationale": "Led the Western bloc and pledged to oppose any foe in defense of liberty.",
    "sources": [
     "s1",
-    "s9"
+    "s9",
+    "b6",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "dynastic-succession": {
@@ -2352,7 +2654,12 @@
    "rationale": "Called for every citizen of any colour to be able to register and vote and proposed voting-rights legislation.",
    "sources": [
     "s3",
-    "s4"
+    "s4",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "online-participation": {
@@ -2427,7 +2734,8 @@
    "rationale": "Argued workers should not have to beg public charity when old and ill and should instead contribute to a Social Security health programme.",
    "sources": [
     "s9"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "term-limits": {
    "value": null,
@@ -2447,7 +2755,12 @@
    "rationale": "Treated avoiding nuclear self-destruction as the central issue of the age, calling world peace the most important topic on earth.",
    "sources": [
     "s1",
-    "s11"
+    "s11",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "women-in-religious-leadership": {
@@ -2685,10 +2998,13 @@
    "sources": []
   },
   "defensive-wars-only": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Contested: said the United States will never start a war (American University, 1963), yet backed the 1961 Bay of Pigs invasion of Cuba, which went beyond defending the country.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "language-defines-nation": {
    "value": null,
@@ -2714,7 +3030,8 @@
    "rationale": "His education programme expanded loans, loan insurance, work-study and construction loans rather than tuition-free public college.",
    "sources": [
     "s7"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "pollution-taxes": {
    "value": null,
@@ -2740,7 +3057,13 @@
    "rationale": "Called for inspection and control of arms, general disarmament by stages and signed the Partial Test Ban Treaty.",
    "sources": [
     "s1",
-    "s11"
+    "s11",
+    "b6",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "open-diplomacy": {
@@ -2755,7 +3078,8 @@
    "rationale": "Said in 1961 that the administration would not impose exchange controls.",
    "sources": [
     "s10"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "state-arms-monopoly": {
    "value": null,
@@ -2860,7 +3184,8 @@
    "sources": [
     "s1",
     "s11"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "workers-own-party": {
    "value": null,
@@ -2916,7 +3241,8 @@
    "rationale": "Inferred: blamed the Taft-Hartley right-to-work provision for giving the South an unfair advantage, implying opposition to bans on union-security agreements.",
    "sources": [
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "voter-id": {
    "value": null,
@@ -2930,7 +3256,8 @@
    "rationale": "Held that all churches be treated equally and that religious liberty is indivisible.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "democracy-is-procedure": {
    "value": null,
@@ -2980,7 +3307,8 @@
    "rationale": "Created the Presidential Commission on the Status of Women (1961) and signed the Equal Pay Act of 1963.",
    "sources": [
     "s14"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "homestead-ownership": {
    "value": null,
@@ -3023,7 +3351,12 @@
    "confidence": "high",
    "rationale": "Wanted an America \"officially neither Catholic, Protestant nor Jewish\" where no church gets public funds or political preference.",
    "sources": [
-    "s2"
+    "s2",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
    ]
   },
   "minority-territorial-autonomy": {
@@ -3123,10 +3456,13 @@
    "sources": []
   },
   "no-denominational-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Said there should be no Catholic vote, no anti-Catholic vote and no bloc voting of any kind (Houston, 1960).",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "tech-with-ancestral-values": {
    "value": null,
@@ -3159,10 +3495,13 @@
    "sources": []
   },
   "racism-not-main-obstacle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Described unequal schooling, employment and public life for Black Americans as a moral issue requiring federal action (civil rights address, 1963).",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "unjust-law-not-binding": {
    "value": null,
@@ -3207,5 +3546,5 @@
    "sources": []
   }
  },
- "notes": "Positions come from his own presidential messages and speeches plus his Senate and presidential record. His stance on civil rights moved from a cautious Senate record (including the 1957 jury-trial amendment vote) to the strong 1963 call for legislation; the 1963 statements are used. Many theme topics (ecology, much of means and liberty) have no counterpart in the texts read and are left null."
+ "notes": "Positions come from his own presidential messages and speeches plus his Senate and presidential record. His stance on civil rights moved from a cautious Senate record (including the 1957 jury-trial amendment vote) to the strong 1963 call for legislation; the 1963 statements are used. Many theme topics (ecology, much of means and liberty) have no counterpart in the texts read and are left null.\n\nMerged with an independent claude-haiku-5-5 audit: 21 answers taken from it, 27 agreed, 1 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Known answers are drawn from full texts of his speeches and messages (Houston 1960, Yale 1962, Rice 1962, inaugural 1961, 1963 State of the Union, 1963 tax and civil rights messages, 1962 health message, 1963 immigration letter, American University 1963). Most statements on which the texts are silent are null. Answers are limited to the texts reviewed; speeches on Berlin, the 1957 Algeria speech and the 1963 education message were not used because full texts could not be retrieved in this session."
 }
