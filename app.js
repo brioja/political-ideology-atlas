@@ -1093,7 +1093,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const diamondMark = (x, yy, r) => {
     // Kept in the background: a faint outline, so you and your ideology stay the strongest marks.
     const d = new Path2D(shapePath("diamond", x, yy, r));
-    ctx.globalAlpha = 0.55; ctx.fillStyle = CARD.surface; ctx.fill(d);
+    ctx.globalAlpha = 0.2; ctx.fillStyle = CARD.surface; ctx.fill(d);
+    ctx.globalAlpha = 0.55;
     ctx.strokeStyle = CARD.muted; ctx.lineWidth = 2.5; ctx.stroke(d); ctx.globalAlpha = 1;
   };
   {
@@ -1133,7 +1134,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     }
     ctx.fillStyle = CARD.ink; ctx.textAlign = align; ctx.fillText(text, x, ty + 10); ctx.textAlign = "left";
   };
-  const END_W = 262;
+  const END_W = 290;
   for (let i = 0; i < lines; i++) {
     const ty = y + 68 + i * lh;
     const x0 = PAD + END_W + 24, x1 = W - PAD - END_W - 24;
@@ -1551,7 +1552,7 @@ function ideologyRow(r) { return `<li><a class="row-link" href="${ideologyHref(r
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)}">
   <span class="match-name">${avatar(p)}${esc(p.name)}</span>
-  ${p.similarity != null ? `<span class="mono small">${pct(p.similarity)}</span>` : `<span class="muted small">${esc(p.region)}</span>`}
+  ${p.similarity != null ? `<span class="mono small">${pct(p.similarity)}</span>` : `<span class="muted small row-region">${esc(p.region)}</span>`}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 
 // An ideology's key figures (from its audit). Someone with a page here links to it; anyone else

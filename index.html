@@ -223,11 +223,11 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
 .brand:focus-visible, .site-nav a:focus-visible, .footer-links a:focus-visible, a.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 .site-nav { margin-right: auto; }
 .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.25rem; }
-.site-nav a { display: block; padding: 0.5rem 0.75rem; border-radius: 6px; color: var(--muted); text-decoration: none; font: 500 0.95rem/1 var(--display); }
+.site-nav a { display: block; padding: 0.5rem 0.75rem; border-radius: 6px; color: var(--muted); text-decoration: none; font: 500 0.95rem/1 var(--display); white-space: nowrap; }
 .site-nav a:hover { color: var(--ink); background: var(--surface); }
 .site-nav a[aria-current="page"] { color: var(--ink); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
 .menu-btn { display: none; }
-@media (max-width: 760px) {
+@media (max-width: 880px) {
   .header-inner { gap: 0.75rem; }
   .brand span { font-size: 0.95rem; }
   .site-nav { position: static; margin-left: auto; margin-right: 0; }
@@ -243,7 +243,7 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
 }
 @media (max-width: 430px) { .brand span { display: none; } }
 /* While taking the test on a phone, drop the menu so the name and the results button fit. */
-@media (max-width: 760px) { body.in-test .site-nav { display: none; } body.in-test .header-start { margin-left: auto; } }
+@media (max-width: 880px) { body.in-test .site-nav { display: none; } body.in-test .header-start { margin-left: auto; } }
 
 a.btn, .btn {
   display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;
@@ -311,6 +311,8 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .ideo-figure figcaption { margin-top: 0.35rem; line-height: 1.35; overflow-wrap: anywhere; }
 .credit a { color: inherit; }
 #people-list summary { grid-template-columns: minmax(0, 1fr) auto; }
+/* On a phone the region would crowd the name; the region chips above the list already show it */
+@media (max-width: 520px) { .row-region { display: none; } }
 
 /* Detail pages and list rows */
 .row-link {
