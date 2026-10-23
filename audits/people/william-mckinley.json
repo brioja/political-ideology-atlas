@@ -2,14 +2,81 @@
   "id": "william-mckinley",
   "name": "William McKinley",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
   "living": false,
-  "role": "25th president of the United States (1897-1901)",
-  "summary": "A Republican who as president favoured protective tariffs with reciprocal trade treaties, the gold standard, and federal action against trusts. He asked Congress for war with Spain over Cuba in 1898, annexed Hawaii, and governed the Philippines with a stated aim of eventual self-government, while supporting international arbitration.",
+  "role": "US president (1897-1901), congressman and governor of Ohio",
+  "summary": "A Republican protectionist who wrote the 1890 McKinley Tariff, defended the gold standard and signed the Dingley Tariff. As president he led the war with Spain and annexed Hawaii and the Philippines, while calling for action against trusts and supporting labor arbitration and the voting rights of Black Southerners.",
   "wikipedia": "https://en.wikipedia.org/wiki/William_McKinley",
   "sources": [
     {
       "id": "s1",
+      "kind": "primary",
+      "title": "Speeches and Addresses of William McKinley, from his election to Congress to the present time (House tariff, eight-hour, arbitration, Equal Suffrage, Federal Election Bill and Hawaiian treaty speeches, 1878-1893)",
+      "author": "William McKinley",
+      "url": "https://archive.org/details/speechesaddresse01mcki",
+      "usedFor": "Congressional tariff speeches, labor arbitration, equal suffrage, eight-hour law, trusts and tariff"
+    },
+    {
+      "id": "s2",
+      "kind": "primary",
+      "title": "Speeches and Addresses of William McKinley, from March 1, 1897 to May 30, 1900 (first inaugural address and presidential speeches)",
+      "author": "William McKinley",
+      "url": "https://archive.org/details/speechesaddresse00mcki",
+      "usedFor": "Inaugural address, 1898-1899 tour speeches on Hawaii, the war and the new possessions"
+    },
+    {
+      "id": "s3",
+      "kind": "primary",
+      "title": "State of the Union Addresses of William McKinley (four annual messages, 1897-1900), Project Gutenberg",
+      "author": "William McKinley",
+      "url": "https://www.gutenberg.org/ebooks/5031",
+      "usedFor": "Annual messages: gold standard, trusts, army, Hawaii, Cuba, Philippines, arbitration, Indian Territory, alien contract law"
+    },
+    {
+      "id": "s4",
+      "kind": "primary",
+      "title": "First Inaugural Address, March 4, 1897",
+      "author": "William McKinley",
+      "url": "https://millercenter.org/the-presidency/presidential-speeches/march-4-1897-first-inaugural-address",
+      "usedFor": "Revenue, tariff, trusts, civil service, immigration, lynching"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "title": "Message to Congress Requesting a Declaration of War with Spain, April 11, 1898",
+      "author": "William McKinley",
+      "url": "https://teachingamericanhistory.org/document/message-to-congress-requesting-a-declaration-of-war-with-spain/",
+      "usedFor": "Intervention in Cuba on grounds of humanity"
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "title": "Executive Order of December 21, 1898 (benevolent assimilation proclamation for the Philippines)",
+      "author": "William McKinley",
+      "url": "https://www.presidency.ucsb.edu/documents/executive-order-132",
+      "usedFor": "Philippine occupation and aim of benevolent assimilation"
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Speech in Buffalo, New York, September 5, 1901",
+      "author": "William McKinley",
+      "url": "https://millercenter.org/the-presidency/presidential-speeches/september-5-1901-speech-buffalo-new-york",
+      "usedFor": "Reciprocity, competition, arbitration, end of isolation"
+    },
+    {
+      "id": "s8",
+      "kind": "reference",
+      "title": "William McKinley",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/William_McKinley",
+      "usedFor": "Record of the Dingley Tariff, Gold Standard Act, annexations, Open Door policy"
+    },
+    {
+      "id": "b1",
       "kind": "primary",
       "title": "Second Inaugural Address (March 4, 1901)",
       "author": "William McKinley",
@@ -17,7 +84,7 @@
       "usedFor": "peace and arbitration, Cuban convention framing a constitution, Philippine sovereignty"
     },
     {
-      "id": "s2",
+      "id": "b2",
       "kind": "primary",
       "title": "Message to Congress Requesting a Declaration of War with Spain (April 11, 1898)",
       "author": "William McKinley",
@@ -25,7 +92,7 @@
       "usedFor": "humanitarian grounds for intervention in Cuba, war against Spain, Cuban independence"
     },
     {
-      "id": "s3",
+      "id": "b3",
       "kind": "primary",
       "title": "Address at the Pan-American Exposition, Buffalo (September 5, 1901)",
       "author": "William McKinley",
@@ -33,7 +100,7 @@
       "usedFor": "reciprocity, protective tariffs and export outlets, arbitration, peace over war"
     },
     {
-      "id": "s4",
+      "id": "b4",
       "kind": "primary",
       "title": "State of the Union Addresses of William McKinley (annual messages 1897-1900)",
       "author": "William McKinley",
@@ -41,7 +108,7 @@
       "usedFor": "civil service reform, Five Civilized Tribes, Cuba and Hawaii (1898), gold standard and trusts (1899), Hague disarmament (1899)"
     },
     {
-      "id": "s5",
+      "id": "b5",
       "kind": "primary",
       "title": "Benevolent Assimilation proclamation (letter to the Secretary of War, December 21, 1898)",
       "author": "William McKinley",
@@ -49,7 +116,7 @@
       "usedFor": "stated mission in the Philippines"
     },
     {
-      "id": "s6",
+      "id": "b6",
       "kind": "primary",
       "title": "Fourth Annual Message (December 3, 1900)",
       "author": "William McKinley",
@@ -57,28 +124,12 @@
       "usedFor": "Philippine civil government, wards and guardianship, army size, due process rules, civil service board"
     },
     {
-      "id": "s7",
+      "id": "b7",
       "kind": "primary",
       "title": "Second Annual Message (December 5, 1898)",
       "author": "William McKinley",
       "url": "https://www.presidency.ucsb.edu/documents/second-annual-message-15",
       "usedFor": "Cuba, Hawaii annexation, navy expansion"
-    },
-    {
-      "id": "s8",
-      "kind": "reference",
-      "title": "Historical Thinking Matters: Spanish-American War, sources",
-      "author": "Roy Rosenzweig Center for History and New Media",
-      "url": "https://historicalthinkingmatters.org/spanishamericanwar/1/sources/1/fulltext",
-      "usedFor": "context for the 1898 war message (background only, no answer rests on it)"
-    },
-    {
-      "id": "s9",
-      "kind": "reference",
-      "title": "President McKinley's Sept. 5, 1901 Buffalo Speech",
-      "author": "McKinley Presidential Library & Museum",
-      "url": "https://mckinleymuseum.org/wp-content/uploads/2023/02/President-McKinleys-Sept.-5-1901-Buffalo-Speech.pdf",
-      "usedFor": "cross-check of the Buffalo speech wording"
     }
   ],
   "answers": {
@@ -123,15 +174,22 @@
       "confidence": "low",
       "rationale": "The December 1900 message set Philippine rules that no person be deprived of property without due process and that private property not be taken without just compensation.",
       "sources": [
-        "s6"
-      ]
+        "b6"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "regulate-corporations": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "The 1899 message said combinations that control a market are obnoxious to the public welfare and asked Congress to extend federal law against trusts without delay.",
+      "rationale": "Called trusts and combinations that stifle competition and set prices obnoxious to the public welfare and urged Congress to check them under existing law. His 1897 inaugural endorsed the party stand against combinations of capital in trusts.",
       "sources": [
-        "s4"
+        "s3",
+        "s4",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "cut-welfare": {
@@ -185,9 +243,14 @@
     "empower-police-military": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "The December 1900 message asked that the President be authorised to raise the army to 100,000 and to raise native troops in the Philippines, citing the conflicts in Cuba and the Philippines.",
+      "rationale": "Raised the regular army to its authorized maximum in 1898 and in his annual messages said the Secretary of War's recommendation for a permanent increase of the army had his unqualified approval.",
       "sources": [
-        "s6"
+        "s3",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "legalize-sex-work": {
@@ -257,26 +320,44 @@
       "sources": []
     },
     "reduce-immigration": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "In the 1880s he praised Republican platforms against indiscriminate immigration, his inaugural urged further improving immigration and naturalization laws and his messages asked for amendment of the alien contract law, while his speeches also welcomed those fleeing despotism. Mixed evidence.",
+      "sources": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "empower-international-orgs": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Supported international arbitration and the Permanent Court of Arbitration (December 1900 message and Buffalo speech); this covers international bodies for arbitration rather than the UN.",
+      "rationale": "Inferred: from his repeated support for international arbitration as the true way of settling differences and his sending delegates to the 1899 peace conference; arbitration there was voluntary.",
       "sources": [
-        "s4",
-        "s3"
+        "s3",
+        "s7",
+        "b4",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "free-trade": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: from his advocacy of protective tariffs with reciprocal trade treaties in the Buffalo speech, not from any statement about free trade itself.",
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Opposed free trade and revenue tariffs throughout his career, citing the 1846 revenue tariff as the cause of the 1857 collapse and endorsing the claim that free trade lowers wages. His later reciprocity policy was limited to exchanges that would not harm domestic industry.",
       "sources": [
-        "s3"
+        "s1",
+        "s7",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "nation-first": {
@@ -288,9 +369,14 @@
     "humanitarian-intervention": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The 1898 war message justified forcible intervention in Cuba 'in the cause of humanity' to end the barbarities and starvation there.",
+      "rationale": "His April 1898 war message justified forcible intervention in Cuba first in the cause of humanity, to end barbarities, bloodshed and starvation, and rejected the argument that it was none of the US's business.",
       "sources": [
-        "s2"
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "open-borders": {
@@ -367,10 +453,17 @@
     },
     "tariffs-protect-industry": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "In the Buffalo speech he called the domestic policy of protective tariffs 'firmly established' and said trade arrangements should not interrupt home production; tariffs were to encourage and protect industries at home.",
+      "confidence": "high",
+      "rationale": "Authored the 1890 McKinley Tariff and signed the Dingley Tariff of 1897. In House speeches he argued that protection secures American industry and wages and that free trade ignores the welfare of workingmen.",
       "sources": [
-        "s3"
+        "s1",
+        "s4",
+        "s8",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "state-directs-investment": {
@@ -456,9 +549,10 @@
       "confidence": "low",
       "rationale": "Buffalo speech: 'our real eminence rests in the victories of peace, not those of war'; the second inaugural hoped the nation might be spared the horrors of war.",
       "sources": [
-        "s3",
-        "s1"
-      ]
+        "b3",
+        "b1"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "separate-church-state": {
       "value": null,
@@ -504,10 +598,15 @@
     },
     "indigenous-land-authority": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "The 1897 message said the Five Civilized Tribes' system of self-government, which excluded white persons, had become practically impossible to continue, and favoured citizenship for members.",
+      "confidence": "medium",
+      "rationale": "In his 1897 annual message he said the treaty system under which the Five Civilized Tribes governed the Indian Territory had become impossible to continue and endorsed ending their trust and tribal government by Congress.",
       "sources": [
-        "s4"
+        "s3",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "colonial-reparations": {
@@ -721,11 +820,18 @@
       "sources": []
     },
     "territorial-expansion": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He annexed Hawaii and held the Philippines and Puerto Rico after the war, and spoke of the 'prospective expansion of our influence and commerce in the Pacific'.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Annexed Hawaii by joint resolution, took the Philippines, Puerto Rico and Guam in the peace treaty with Spain, and defended expansion as duty and opportunity in his 1898-1899 speeches.",
       "sources": [
-        "s4"
+        "s2",
+        "s3",
+        "s8",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "personal-loyalty-rule": {
@@ -793,8 +899,9 @@
       "confidence": "low",
       "rationale": "The 1897 and 1899 messages stressed that revenues should equal expenditures and that bond issues to cover deficits should be avoided.",
       "sources": [
-        "s4"
-      ]
+        "b4"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "economic-freedom": {
       "value": null,
@@ -811,10 +918,16 @@
     "national-self-determination": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Said the Cuban people 'are, and of right ought to be, free and independent' and that Cuba's government should be left to its people, while the Philippines were kept under US sovereignty; mixed.",
+      "rationale": "Pointed both ways: he said Cuba's government should be left to its people and Hawaii asked to be annexed, but the Philippines were placed under US sovereignty.",
       "sources": [
         "s2",
-        "s4"
+        "s3",
+        "b2",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "force-without-un": {
@@ -842,10 +955,13 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In a House speech supporting labor arbitration he called it the true way of settling differences between labor and capital, bringing them to better understanding and uniting them closer in interest.",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sacrifice-heritage": {
       "value": null,
@@ -916,10 +1032,15 @@
     "national-mission": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "The December 1898 proclamation called the American mission in the Philippines one of 'benevolent assimilation', and the 1900 message described US government there as a trust to fulfil.",
+      "rationale": "Said the liberators would not become oppressors and asked whether the country should sit in isolation and recognize no obligation to peoples whose conditions it had helped make. He spoke of spreading liberty rather than a mission to export its form of government as such.",
       "sources": [
-        "s5",
-        "s6"
+        "s2",
+        "b5",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "patriarchy-structural": {
@@ -959,10 +1080,14 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His inaugural said equality of rights must prevail and that lynchings must not be tolerated. His Equal Suffrage speech called the suppression of Black voters a new slavery. His policy toward Filipinos did not follow the same principle.",
+      "sources": [
+        "s1",
+        "s4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "socialism-one-country": {
       "value": null,
@@ -1017,8 +1142,9 @@
       "confidence": "low",
       "rationale": "Buffalo speech: wanted an outlet abroad for surplus production, but also said the country should take products from customers that it can use and should not sell everything while buying little; points both ways.",
       "sources": [
-        "s3"
-      ]
+        "b3"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "population-transfer": {
       "value": null,
@@ -1229,8 +1355,9 @@
       "confidence": "low",
       "rationale": "Described the peoples of different Philippine islands as having different degrees of civilization and spoke of the degree of culture and advancement within their reach, treating advancement as differing between peoples.",
       "sources": [
-        "s6"
-      ]
+        "b6"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "death-penalty": {
       "value": null,
@@ -1297,9 +1424,10 @@
       "confidence": "medium",
       "rationale": "The second inaugural welcomed the elected Cuban convention framing a constitution, and the 1898 message called for a government 'created by the people of Cuba'.",
       "sources": [
-        "s1",
-        "s7"
-      ]
+        "b1",
+        "b7"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -1507,10 +1635,15 @@
     },
     "ban-cartels": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "The 1899 message supported federal prosecution under the 1890 anti-trust act of combinations in restraint of trade, but did not propose breaking up firms.",
+      "confidence": "medium",
+      "rationale": "In his 1899 annual message he said combinations to stifle competition, limit production and fix prices needed a remedy and that existing law should be extended to check monopolies without delay. He did not propose breaking up large firms as such.",
       "sources": [
-        "s4"
+        "s3",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "no-bailouts": {
@@ -1532,10 +1665,13 @@
       "sources": []
     },
     "economic-self-sufficiency": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His protectionism aimed at a domestic market, but in 1901 he said the period of exclusiveness is past, that the country should buy abroad what it can use without harm to industry, and that commercial wars are unprofitable. He did not advocate a closed bloc.",
+      "sources": [
+        "s7"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "trade-labor-env-standards": {
       "value": null,
@@ -1568,11 +1704,17 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Called the Filipinos 'wards of the nation' and described the United States as their guardian, aiming at a self-administering community and describing them as a race 'quick to learn'.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1898 proclamation described US rule of the Philippines as benevolent assimilation, and he said the US had an obligation to give a struggling people a better government and could not shift the new care.",
       "sources": [
-        "s6"
+        "s2",
+        "s6",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "patriotic-education": {
@@ -1628,8 +1770,9 @@
       "confidence": "low",
       "rationale": "The December 1900 message set 'inviolable rules' for Philippine government, including due process and just compensation, which limit what government may do.",
       "sources": [
-        "s6"
-      ]
+        "b6"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "colonial-treaties-void": {
       "value": null,
@@ -1795,11 +1938,17 @@
     },
     "office-by-exam": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "The 1897 message defended the civil service reform system of appointment on merit and removal for cause, and the 1900 order set up a civil service board for the Philippines.",
+      "confidence": "low",
+      "rationale": "Said as president that civil service reforms must go on and that he had voted and spoken for the civil service law in Congress, which uses competitive examination. His record is mixed because he also loosened some rules; the statement also contrasts exams with election.",
       "sources": [
+        "s2",
         "s4",
-        "s6"
+        "b4",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "foreign-takeover-block": {
@@ -1919,9 +2068,14 @@
     "non-intervention": {
       "value": -2,
       "confidence": "high",
-      "rationale": "The 1898 war message asserted that intervention in Cuba was justified by the 'dictates of humanity' and by injury to American interests.",
+      "rationale": "Argued that the US had a duty to intervene in Cuba despite it being another nation's territory, and carried out the intervention.",
       "sources": [
-        "s2"
+        "s5",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "industrial-unions": {
@@ -2087,10 +2241,13 @@
       "sources": []
     },
     "colonies-serve-metropole": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His instructions on the Philippines said administration should be for the greatest good of the governed, while open to American trade; his critics said otherwise. Mixed evidence.",
+      "sources": [
+        "s6"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "defensive-jihad-duty": {
       "value": null,
@@ -2237,10 +2394,13 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Defended the right of Black citizens in the South to vote in his 1880s-1890 speeches, calling suppression of the ballot wicked, and supported the Federal Election Bill that provided federal supervision of elections.",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "online-participation": {
       "value": null,
@@ -2567,11 +2727,17 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "In 1898 he asked Congress to authorise war against Spain, which had not attacked the United States, and framed the war as intervention rather than defence.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Asked Congress for authority to intervene by force in Cuba on humanitarian and interest grounds, and fought the Philippine War. Spain declared war after the US blockade.",
       "sources": [
-        "s2"
+        "s5",
+        "s8",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5"
       ]
     },
     "language-defines-nation": {
@@ -2621,8 +2787,9 @@
       "confidence": "low",
       "rationale": "The 1899 message recorded that the United States had advocated disarmament at the Hague conference; he also sought a larger navy, so the answer is low.",
       "sources": [
-        "s4"
-      ]
+        "b4"
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "open-diplomacy": {
       "value": null,
@@ -3075,5 +3242,5 @@
       "sources": []
     }
   },
-  "notes": "Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing."
+  "notes": "Positions come from his House speeches (1878-1891), first inaugural, annual messages and 1898-1901 speeches. Many topics he never addressed are null. His second-term stance on tariffs softened toward reciprocity in the Buffalo speech.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing."
 }
