@@ -84,7 +84,10 @@ it applies where they were silent: what a ruler did with power themselves (inher
 office within a family, a cult of their own portraits, arming groups abroad, a security apparatus
 drawn from one sect) answers the matching statement from the record even if they never spoke to it.
 A repudiation made under pressure (in court, in exile) does not cancel a lifetime's record; weigh it
-as mixed at most.
+as mixed at most. The same goes for campaign promises: for someone who then governed, a pledge
+their time in office contradicted (balanced budgets with debt tripled, free trade with new
+tariffs, civil liberties with indefinite detention signed into law) is mixed at most, and a pledge
+alone is never `high`.
 
 A state's use of force (war, counter-insurgency, executions) is not "political violence":
 `political-violence-never` is about violence for political ends outside lawful authority (coups,
