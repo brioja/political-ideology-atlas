@@ -870,24 +870,53 @@ function setUpSharing(given, ranked, you, shared) {
   const fileName = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
   // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
   // The file is made ahead: Safari only opens the sheet straight from the tap.
-  if (navigator.canShare) drawn.then(() => canvas.toBlob((blob) => {
+  // Text fields saying where the image came from (the site, not the answers); most platforms strip them on upload.
+  const png = () => drawn.then(() => pngWithText(canvas, {
+    Title: `${ranked[0].name}: closest political ideology`,
+    Description: `Political Ideology Atlas result. Take the test at ${location.origin}`,
+    URL: location.origin,
+  }));
+  // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
+  // The file is made ahead: Safari only opens the sheet straight from the tap.
+  if (navigator.canShare) png().then((blob) => {
     const files = [new File([blob], fileName, { type: "image/png" })];
     if (!navigator.canShare({ files })) return;
     const btn = $("share-image");
     btn.hidden = false;
     const text = `${shared ? "" : "I got "}${ranked[0].name} on ${location.origin}`; // the scheme makes chat apps link it
     btn.addEventListener("click", () => navigator.share({ files, text }).catch(() => {}));
-  }, "image/png"));
-  $("save-image").addEventListener("click", () => {
-    canvas.toBlob((blob) => {
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = fileName;
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-      status.textContent = "Image saved.";
-    }, "image/png");
   });
+  $("save-image").addEventListener("click", async () => {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(await png());
+    a.download = fileName;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    status.textContent = "Image saved.";
+  });
+}
+
+// The canvas as a PNG with iTXt chunks (UTF-8 text: names like Marxism–Leninism) inserted after the IHDR chunk.
+async function pngWithText(canvas, fields) {
+  const png = new Uint8Array(await (await new Promise((done) => canvas.toBlob(done, "image/png"))).arrayBuffer());
+  const crcTable = Array.from({ length: 256 }, (_, n) => {
+    for (let k = 0; k < 8; k++) n = n & 1 ? 0xedb88320 ^ (n >>> 1) : n >>> 1;
+    return n >>> 0;
+  });
+  const chunks = Object.entries(fields).map(([key, value]) => {
+    const data = new TextEncoder().encode(`${key}\0\0\0\0\0${value}`); // uncompressed, no language or translated keyword
+    const chunk = new Uint8Array(12 + data.length);
+    const view = new DataView(chunk.buffer);
+    view.setUint32(0, data.length);
+    chunk.set([105, 84, 88, 116], 4); // "iTXt"
+    chunk.set(data, 8);
+    let crc = 0xffffffff;
+    for (const b of chunk.subarray(4, 8 + data.length)) crc = crcTable[(crc ^ b) & 0xff] ^ (crc >>> 8);
+    view.setUint32(8 + data.length, (crc ^ 0xffffffff) >>> 0);
+    return chunk;
+  });
+  const ihdrEnd = 8 + 25; // signature, then IHDR (4 length + 4 type + 13 data + 4 CRC)
+  return new Blob([png.subarray(0, ihdrEnd), ...chunks, png.subarray(ihdrEnd)], { type: "image/png" });
 }
 
 // The card uses a fixed light palette: it's an image that gets posted elsewhere, not page UI.
