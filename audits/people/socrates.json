@@ -1,0 +1,3100 @@
+{
+ "id": "socrates",
+ "name": "Socrates",
+ "auditedAt": "2026-10-23",
+ "auditor": "claude-sonnet-5-5",
+ "living": false,
+ "role": "Athenian philosopher (c. 470-399 BC)",
+ "summary": "Socrates wrote nothing, so all views come from Plato, Xenophon and others, and scholars dispute how far each portrays the real man. The reports show him obeying Athenian law even to his death while refusing unjust orders, doubting selection of officials by lot or ballot in favour of those who know, and preaching simple living and care of the soul. Where Plato may be speaking through him, as in the Republic, answers are low confidence.",
+ "wikipedia": "https://en.wikipedia.org/wiki/Socrates",
+ "sources": [
+  {
+   "id": "s1",
+   "kind": "primary",
+   "title": "Memorabilia (Recollections of Socrates), Dakyns translation",
+   "author": "Xenophon",
+   "url": "https://www.gutenberg.org/cache/epub/1177/pg1177.txt",
+   "usedFor": "Xenophon's reports of Socrates' sayings (I.2, I.6, II.2, III.9, IV.4, IV.6); secondhand"
+  },
+  {
+   "id": "s2",
+   "kind": "primary",
+   "title": "Crito (Jowett translation)",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1657/pg1657.txt",
+   "usedFor": "Socrates and the Laws on obedience, experts' opinion vs the many; secondhand, Plato's account"
+  },
+  {
+   "id": "s3",
+   "kind": "primary",
+   "title": "Apology (Jowett translation)",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1656/pg1656.txt",
+   "usedFor": "Socrates' defence speech as reported by Plato: care of the soul, wealth, the Leon episode; secondhand"
+  },
+  {
+   "id": "s4",
+   "kind": "primary",
+   "title": "Gorgias (Jowett translation)",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1672/pg1672.txt",
+   "usedFor": "Punishment as improving the soul, the true political art; Plato's later construction"
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "title": "The Republic (Jowett translation)",
+   "author": "Plato",
+   "url": "https://www.gutenberg.org/cache/epub/1497/pg1497.txt",
+   "usedFor": "Censorship of poetry, division of labour, guardians' natures, women guardians; Plato's construction as much as Socrates'"
+  },
+  {
+   "id": "s6",
+   "kind": "primary",
+   "title": "Apology of Xenophon (Dakyns translation)",
+   "author": "Xenophon",
+   "url": "https://www.gutenberg.org/cache/epub/1171/pg1171.txt",
+   "usedFor": "Xenophon's account of Socrates' trial and piety; secondhand"
+  },
+  {
+   "id": "s7",
+   "kind": "reference",
+   "title": "Socrates",
+   "author": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Socrates",
+   "usedFor": "Dates, sources problem, scholarly dispute on his politics"
+  },
+  {
+   "id": "s8",
+   "kind": "scholarly",
+   "title": "Socrates",
+   "author": "Stanford Encyclopedia of Philosophy",
+   "url": "https://plato.stanford.edu/entries/socrates/",
+   "usedFor": "Socratic problem; obedience to law, civil disobedience, democracy; Xenophon vs Plato"
+  }
+ ],
+ "answers": {
+  "offices-by-lottery": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Xenophon reports Socrates ridiculing the appointment of state officers by lot or bean, since no one would pick a pilot or flute-player that way though political mistakes are far costlier (Mem. I.2.9; III.9.10). Secondhand report.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "experts-over-public": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates says true rulers are those with the knowledge of how to rule, not those chosen by lot, force or the crowd (Mem. III.9.10-11, I.2.9). In Plato's Crito he says one should follow the opinion of the one who has knowledge, not the many (47a-d). Secondhand reports.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "sovereign-above-law": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates defines a kingship as rule over willing subjects in accordance with the civil law, and a tyranny as rule by the ruler's whims (Mem. IV.6.12); in Crito he stresses obedience to the laws. Secondhand.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "consent-of-governed": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates distinguishes kingship, rule over willing subjects, from tyranny, rule over unwilling ones (Mem. IV.6.12). In Plato's Crito the Laws argue he is bound by an implied agreement made by staying in Athens (51d-52a). Secondhand; the Crito argument is about his own obligation.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "promulgated-standing-laws": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Xenophon's Socrates contrasts rule according to law with rule by the ruler's whims and wishes (Mem. IV.6.12). Does not mention public announcement or known judges, so low. Secondhand.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "no-duty-to-obey": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "In Plato's Crito Socrates holds that he must obey the city's laws, including its unjust sentence, or persuade it, and must not do wrong in return for wrong (50a-54c). Xenophon's Socrates also equates the just with the lawful (Mem. IV.4, IV.6.6). Apology 29d shows he would disobey an order to give up philosophy, but he accepts the penalty. Secondhand.",
+   "sources": [
+    "s2",
+    "s1",
+    "s3"
+   ]
+  },
+  "unjust-law-not-binding": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mixed evidence. He refused the Thirty's illegal order to arrest Leon (Apology 32c-d) and would not stop philosophizing if ordered, yet in Crito he treats even the unjust verdict as binding and will not escape. Plato's account only.",
+   "sources": [
+    "s3",
+    "s2",
+    "s8"
+   ]
+  },
+  "filial-duty": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "In Xenophon Socrates lectures his son Lamprocles on gratitude owed to a mother (Mem. II.2) and counts honouring parents among universal unwritten laws (IV.4.19). In Crito the Laws say a man owes more than filial obedience to parents (50e-51c). Secondhand.",
+   "sources": [
+    "s1",
+    "s2"
+   ]
+  },
+  "simple-living": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates says to have no wants is divine and to have as few as possible comes closest to the divine, and defends his frugal life (Mem. I.6.10). In Plato's Apology he lives in poverty and urges care of the soul over wealth (29d-30b, 36d). Secondhand.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "consumerism-harmful": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In Plato's Apology he reproaches Athenians for caring for money and reputation more than the soul (29d-30b), and Xenophon's Socrates rejects Antiphon's idea that happiness lies in luxury (Mem. I.6). Statement's wording on social harm goes a little beyond what is reported.",
+   "sources": [
+    "s3",
+    "s1"
+   ]
+  },
+  "universal-morality": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Plato's early Socrates searches for single definitions of virtues that hold in every case (Euthyphro, Meno), and Xenophon's Socrates says honouring the gods and parents are unwritten laws everywhere (Mem. IV.4.19-20). He claims no knowledge of them himself, so +1. Secondhand.",
+   "sources": [
+    "s1",
+    "s3"
+   ]
+  },
+  "reason-over-faith": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Xenophon's Socrates advised learning by reason what the gods allow humans to learn and consulting divination on what is hidden, and he followed his daimonion (Mem. I.1.6-9). Plato's Apology has him obey the god and his inner sign (29d, 31d). His reliance on divination contradicts reason as the only guide, though he also prized rational examination.",
+   "sources": [
+    "s1",
+    "s3",
+    "s6"
+   ]
+  },
+  "spiritual-nature": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In Plato's Apology he says the care of the soul and its improvement matters above body and wealth, and that he tried to persuade citizens to care for virtue (29d-30b, 36b-c). Link to politics serving both natures is only partly stated.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "rehabilitation": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In Plato's Gorgias Socrates holds punishment benefits the wrongdoer by improving the soul, like a cure (476-480, 525b). Gorgias is a later Plato dialogue and it is about justice in general, not prisons, so low.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "democracy-best": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mixed. Xenophon's Socrates mocks choosing officers by lot or ballot (Mem. I.2.9) and Plato's Socrates criticises Athenian statesmen (Gorgias 515-519); yet he obeyed the democracy, stayed in Athens and refused the Thirty's order. Scholars dispute where he stood.",
+   "sources": [
+    "s1",
+    "s2",
+    "s7",
+    "s8"
+   ]
+  },
+  "withdraw-from-politics": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mixed. Plato's Socrates says a man fighting for justice must live privately, not in public life (Apology 31c-32a), but also that he practises the true political art (Gorgias 521d), and Xenophon's Socrates says he served politics by making others fit for it.",
+   "sources": [
+    "s3",
+    "s4",
+    "s1"
+   ]
+  },
+  "duties-before-rights": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In Plato's Crito the Laws say the country is more to be revered than parents and must be obeyed or persuaded (51a-c). The language of individual rights is anachronistic, so low.",
+   "sources": [
+    "s2"
+   ]
+  },
+  "character-from-environment": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mixed. Xenophon's Socrates held that natural aptitude differs but is strengthened by learning and practice (Mem. III.9.1-3, IV.1), and Plato's Meno leaves open whether virtue is taught or natural.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "religion-illusion": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "Inferred: from his stated belief in the gods, sacrifice and divination (Mem. I.1; Apology of Xenophon; Apology 35d), he did not regard religion as an illusion.",
+   "sources": [
+    "s1",
+    "s6",
+    "s3"
+   ]
+  },
+  "censor-art-for-virtue": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In Plato's Republic Socrates proposes censoring poets' tales that make the young less virtuous (377-398). This construction is Plato's as much as Socrates', so low.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "natural-rulers": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In Plato's Republic Socrates holds that those with certain natures, the guardians and philosopher-rulers, are fitted to rule (412-415, 473-474). This is Plato's construction as much as Socrates', so low.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "single-common-good": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "In Plato's Gorgias the true statesman aims at the good of citizens' souls (521d), and in the Republic the city is organised for the good of the whole (420b). Plato's construction, so low.",
+   "sources": [
+    "s4",
+    "s5"
+   ]
+  },
+  "abolish-division-of-labor": {
+   "value": -2,
+   "confidence": "low",
+   "rationale": "In Plato's Republic Socrates makes each person doing one task the basis of the city (369-370, 433a). Plato's construction as much as Socrates', so low.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "distinct-gender-roles": {
+   "value": -1,
+   "confidence": "low",
+   "rationale": "In Plato's Republic Socrates argues women guardians should share the men's education and tasks, with differences only of degree (451-456). Plato's construction as much as Socrates', so low.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "universal-healthcare": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "raise-minimum-wage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "markets-allocate-better": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-the-wealthy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unions-good": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-fundamental": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regulate-corporations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cut-welfare": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "worker-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "surveillance-ok": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legalize-drugs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-hate-speech": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "strong-leader": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-harmful": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-guns": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "empower-police-military": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "legalize-sex-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "decide-locally": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "traditional-family": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "same-sex-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abortion-legal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "more-religion-public": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "correct-racial-injustice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-social-construct": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "preserve-national-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gradual-change": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reduce-immigration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "empower-international-orgs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-trade": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nation-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "humanitarian-intervention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "open-borders": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-growth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "drastic-climate-action": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tech-solves-problems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "expand-nuclear": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revolution-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "central-planning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialized-markets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-value-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tax-inheritance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "basic-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tariffs-protect-industry": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-directs-investment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "widespread-small-property": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-money-wages": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-central-banks": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "corporatist-bargaining": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-party-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "monarchy-legitimate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "direct-votes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-councils": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "right-to-secede": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-violence-never": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "war-builds-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "separate-church-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "laws-from-scripture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "private-courts-defense": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-superiority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ethnic-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-struggle-history": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-outcomes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-land-authority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilizational-union": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-interest-moral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nature-intrinsic-value": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "limit-population": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "industrial-civilization-disaster": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "accelerate-technology": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "human-enhancement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "algorithmic-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unbreakable-encryption": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restore-past-order": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "results-over-ideology": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "direct-action": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "means-match-ends": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-to-foraging": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "distribute-by-need": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "production-for-use": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "profit-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dictatorship-of-proletariat": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-farming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capitalism-causes-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "taxation-theft": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "harm-principle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "individual-rights-only": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "conscription": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "exit-over-voice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-as-business": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "media-academia-power": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "hereditarian-race": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "organic-representation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "total-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-rebirth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "territorial-expansion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "personal-loyalty-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "bound-labor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "jewish-state-israel": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "diaspora-return-right": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "revive-national-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workplace-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "school-vouchers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "avoid-deficit-stimulus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economic-freedom": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rule-by-example": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-self-determination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "force-without-un": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "welfare-for-citizens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "work-for-welfare": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-collaboration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sacrifice-heritage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dominated-front": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "positive-liberty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-interest": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-segregation-law": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-class-instrument": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "expand-fossil-fuels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "assimilate-immigrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "elite-replacement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "proportional-representation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-mission": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "patriarchy-structural": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "political-elite-corrupt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "heritable-defect-limits": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "security-forces-accountable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "night-watchman-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "discourage-race-mixing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-moral-worth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-one-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "settler-state-colonial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "uniform-civil-code": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-conversion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-cattle-slaughter": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-religion-state-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-strengthens-encirclement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "trade-surplus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "population-transfer": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "initiating-force-wrong": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-neutral-knowledge": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "competition-drives-progress": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-extremist-parties": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-as-non-domination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "separated-powers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vanguard-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "priority-to-poor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "right-to-buy-council-homes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-strikes-picketing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "population-causes-poverty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "diversity-weakens-cohesion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "emergency-suspend-protections": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "price-controls-essentials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-controls-media": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-commands-army": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "long-naturalization-wait": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "representatives-worker-pay": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-discipline-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pool-sovereignty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "head-commands-forces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "church-by-bishops": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "clerical-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defeat-own-government-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unlimited-reelection": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recall-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "end-foreign-alliances": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-rental-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "people-in-arms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rural-life-healthier": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reunify-divided-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "educated-out-of-touch": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cultures-equal-different": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "death-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sex-ed-in-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "creationism-in-schools": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-pornography": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "citizenship-by-descent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-language-support": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-exemptions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "encourage-eccentricity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sovereign-debt-cancellation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "independence-needs-economic-change": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "constituent-assembly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-freedoms-for-growth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rich-countries-aid-poor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "independent-nuclear-deterrent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "direct-election-head-of-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "central-bank-independence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-land-for-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-serves-common-good": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "soviet-state-capitalist": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "precautionary-principle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-defense": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "annexed-territory-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "subordinate-church-to-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nonpartisan-head-of-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "force-to-prevent-secession": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "region-keeps-system": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sacred-ruler": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "flat-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "space-expansion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mixed-constitution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "leader-cult": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-parenting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "class-struggle-under-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-redistribution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refugee-return": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "co-ethnic-territorial-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "apostasy-punishable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-must-cover": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "common-currency": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "kin-peoples-union": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-cultural-autonomy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rights-where-you-live": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "material-conditions-drive-history": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-cartels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-bailouts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "courts-bound-by-majority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-parity-bodies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economic-self-sufficiency": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "trade-labor-env-standards": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "moral-incentives": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "armed-group-creates-revolution": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-hereditary-privilege": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "history-own-civilization": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "civilizing-tutelage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "patriotic-education": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "end-racial-preferences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-money-creation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capitalism-adapts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "former-empire-influence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "delink-world-market": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labor-aristocracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "freedom-to-discriminate": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "entrenched-bill-of-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonial-treaties-void": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "elective-rulers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-veto": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resist-lawless-ruler": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "parliament-supreme": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "animal-suffering-matters": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "animal-use-humane": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "noblesse-oblige": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mass-culture-pacifies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ruling-class-consent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "world-economy-extracts-surplus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "native-born-offices": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "party-own-road": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-reliance-over-aid": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "return-lost-territory": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indigenous-political-leadership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "antifascism-founding-value": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "totalitarianisms-equivalent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "slavery-not-civil-war-cause": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "preserve-contested-monuments": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "male-disadvantage-attention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "domestic-violence-symmetry": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "institutions-fit-civilization": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "military-guardian-role": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "paid-care-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "office-by-exam": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-takeover-block": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-fault-divorce": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recallable-delegates": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "individual-pension-accounts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "land-use-tenure": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "budget-needs-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "single-official-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-land-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "disparate-impact-discrimination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arm-foreign-insurgents": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "intervene-in-bloc": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "corporate-influence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-foreign-funding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pronatalist-incentives": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "residents-only-property": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "job-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democratic-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "non-intervention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "industrial-unions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-conspiracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-legal-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-access-to-information": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-production": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "informal-organisation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-law-over-international": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "deference-to-leading-power": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-revenue-retention": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "personal-possessions-private": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defeat-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mixed-public-service-providers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capitalism-progressive": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-equality-needs-economic-change": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialized-care": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "purge-loanwords": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "treaties-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cooperative-communities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "majority-settlement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "neither-capitalism-nor-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "historical-land-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "holocaust-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "criminalize-homosexuality": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "suppress-opposition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "punish-blasphemy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "colonies-serve-metropole": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defensive-jihad-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unreligious-rulers-fought": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "participatory-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "intersecting-oppressions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-identity-recognition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "assisted-dying": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "left-right-obsolete": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "alienated-labor": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "islam-incompatible": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "divine-source-of-authority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-dress-in-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-nda-harassment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "social-market-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-armed-forces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rich-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "stay-neutral-between-blocs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dynastic-succession": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "interest-free-mutual-credit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "refuse-lender-austerity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "property-franchise": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "domination-women-nature": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reification": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "press-owned-by-wealth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-franchise": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "online-participation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "open-government-data": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "interfaith-marriage-restriction": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "boycott-minority-shops": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "citizens-assembly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "reinterpret-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wealth-concentration-endangers-liberty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "open-lgbt-military-service": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-promotes-atheism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-police-prisons": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "power-sharing-divided-societies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "charity-over-state-aid": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "term-limits": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "vote-delegation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "existential-risk-priority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-in-religious-leadership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shared-marital-authority": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-residents-local-vote": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "rent-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "abolish-ip": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "uniformed-youth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-nuclear-weapons-on-territory": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-foreign-bases": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "recognise-genocide": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "income-for-work-not-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "never-kill-self-defence": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "unbroken-national-continuity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sex-socially-constructed": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-fixed-category-of-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "martyrs-honoured": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "politics-spiritual-struggle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homeland-cultural-centre": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "culture-before-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "god-not-male": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "scripture-judged-by-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "economy-in-majority-hands": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "single-unit-for-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "independent-unions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "socialism-needs-workers-power": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "local-essentials-public": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "second-chamber": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "municipal-property": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "confederal-coordination": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "family-wage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "faster-drug-approval": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ageing-research-funding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "anonymous-payments": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "online-anonymity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "person-over-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "regional-powers-revocable": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gm-crops": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "dense-cities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-group-interests": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racial-pride": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defensive-wars-only": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "language-defines-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "communal-electorates": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "foreign-partition-plot": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-public-college": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pollution-taxes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "future-generations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-distinct-values": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "arms-reduction": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "open-diplomacy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "capital-controls": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "state-arms-monopoly": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "soldiers-refuse-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "collective-bargaining": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "in-work-tax-credits": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "fiscal-rules-binding": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restructure-world-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "smash-state-machine": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "free-economic-experiment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "nature-as-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "sacred-nation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "student-debt-relief": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "internal-colonialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "shared-human-nature": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "public-service-media": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religions-one-truth": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "farm-price-support": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-nuclear-weapons": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "workers-own-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "ban-fgm": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-property-inheritance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "one-language-many-names": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "pollution-tort-liability": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "customary-chiefs-lawmaking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "environment-over-liberty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "mandatory-sentences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "immigrants-learn-language": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-compulsory-union": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "voter-id": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religious-equal-recognition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "democracy-is-procedure": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "premarital-sex": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "internet-shutdowns": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "negative-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "women-suffrage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "religion-oppresses-women": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "race-social-construct": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gender-equality-agencies": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homestead-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "international-criminal-courts": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "scripture-inerrant": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "gendered-self-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "defend-planned-state": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "indirect-election": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-church-status": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "minority-territorial-autonomy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "disputed-territory-plebiscite": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "keep-colonial-borders": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "restrict-indigenous-settlement": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "equal-conscription": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "homeland-spiritual-bond": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "extrajudicial-killing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "close-ties-china": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "protect-kin-minorities": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "resources-common-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "self-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "cut-consumption-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "targeted-social-spending": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "bypass-parties-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-business-privileges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "no-denominational-politics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "tech-with-ancestral-values": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "wife-divorce-without-consent": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "national-resource-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "distribution-by-process": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "financial-transactions-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "racism-not-main-obstacle": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "automate-paid-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "multipolar-world": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "labour-theory-of-value": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "patriotism-serves-workers": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "material-over-identity": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  },
+  "market-under-party-rule": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found.",
+   "sources": []
+  }
+ },
+ "notes": "Born 470/469 BC, died 399 BC. Every answer is secondhand (Plato, Xenophon). Answers drawn only from the Republic are Plato's construction as much as Socrates' and are low. The Socratic problem is unresolved; the reports contradict one another."
+}
