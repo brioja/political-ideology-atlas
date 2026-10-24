@@ -866,7 +866,8 @@ function setUpSharing(given, ranked, you, shared) {
   });
 
   const canvas = $("card");
-  const drawn = drawShareCard(canvas, { ranked, you, people: cardPeople(given), answered: given.filter((a) => a !== null).length });
+  const cardResult = { ranked, you, people: cardPeople(given), answered: given.filter((a) => a !== null).length };
+  const drawn = drawShareCard(canvas, cardResult);
   const fileName = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
   // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
   // The file is made ahead: Safari only opens the sheet straight from the tap.
@@ -875,7 +876,7 @@ function setUpSharing(given, ranked, you, shared) {
     Title: `${ranked[0].name}: closest political ideology`,
     Description: `Political Ideology Atlas result. Take the test at ${location.origin}`,
     URL: location.origin,
-  }));
+  }, shareCardAlt(cardResult)));
   // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
   // The file is made ahead: Safari only opens the sheet straight from the tap.
   if (navigator.canShare) png().then((blob) => {
@@ -897,7 +898,11 @@ function setUpSharing(given, ranked, you, shared) {
 }
 
 // The canvas as a PNG with iTXt chunks (UTF-8 text: names like Marxism–Leninism) inserted after the IHDR chunk.
-async function pngWithText(canvas, fields) {
+// Alt text goes in XMP's IPTC accessibility field, the one standard place an image file carries it.
+async function pngWithText(canvas, fields, alt) {
+  if (alt) fields = { ...fields, "XML:com.adobe.xmp": `<x:xmpmeta xmlns:x="adobe:ns:meta/"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">`
+    + `<rdf:Description rdf:about="" xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/"><Iptc4xmpCore:AltTextAccessibility>`
+    + `<rdf:Alt><rdf:li xml:lang="x-default">${esc(alt)}</rdf:li></rdf:Alt></Iptc4xmpCore:AltTextAccessibility></rdf:Description></rdf:RDF></x:xmpmeta>` };
   const png = new Uint8Array(await (await new Promise((done) => canvas.toBlob(done, "image/png"))).arrayBuffer());
   const crcTable = Array.from({ length: 256 }, (_, n) => {
     for (let k = 0; k < 8; k++) n = n & 1 ? 0xedb88320 ^ (n >>> 1) : n >>> 1;
@@ -1024,7 +1029,21 @@ function wrapLines(ctx, text, maxWidth, maxLines) {
 }
 
 // `result.subject` ({ name }) draws a person's card: the labels speak about them instead of "you".
+// What the share card shows, in words: the canvas's label for screen readers and the saved image's alt text.
+function shareCardAlt(result) {
+  const { ranked } = result, [top] = ranked, people = (result.people || []).slice(0, 4);
+  const parts = [`${result.example ? "Example result card" : "Political Ideology Atlas result card"}${result.subject ? ` for ${result.subject.name}` : ""}.`,
+    `Closest ideology: ${top.name}, ${pct(top.similarity)} match${result.answered != null ? `, based on ${result.answered} answers` : ""}.`];
+  if (people.length) parts.push(`Thinks most like ${people[0].name}, ${pct(people[0].similarity)} alike.`);
+  parts.push(`Also close: ${ranked.slice(1, 4).map((r) => `${r.name} ${pct(r.similarity)}`).join(", ")}.`);
+  if (people.length > 1) parts.push(`Other similar people: ${people.slice(1).map((p) => `${p.name} ${pct(p.similarity)}`).join(", ")}.`);
+  parts.push(`Below that, the dividing lines, marking where ${result.subject ? result.subject.name : "you"} and ${top.name} sit on each.`);
+  return parts.join(" ");
+}
+
 async function drawShareCard(canvas, result, site = `${location.host}${location.pathname.replace(/\/$/, "")}`) {
+  canvas.setAttribute("role", "img");
+  canvas.setAttribute("aria-label", shareCardAlt(result));
   try {
     await Promise.all([
       document.fonts.load(`700 72px ${CARD_FONTS.display}`),
