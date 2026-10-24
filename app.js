@@ -875,7 +875,7 @@ function setUpSharing(given, ranked, you, shared) {
     if (!navigator.canShare({ files })) return;
     const btn = $("share-image");
     btn.hidden = false;
-    const text = `${shared ? "" : "I got "}${ranked[0].name} on ${location.host}`;
+    const text = `${shared ? "" : "I got "}${ranked[0].name} on ${location.origin}`; // the scheme makes chat apps link it
     btn.addEventListener("click", () => navigator.share({ files, text }).catch(() => {}));
   }, "image/png"));
   $("save-image").addEventListener("click", () => {
