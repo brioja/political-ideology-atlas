@@ -18,13 +18,29 @@ let order = [];
 let answers = [];
 let position = 0;
 
+// Saved by statement id, so progress survives statements being added. Older saves (v: 2) are
+// indexed by statement as of v1.0, which are the first share slots.
 function save() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 2, order, answers, position })); } catch {}
+  const ids = QUESTIONS.map((q) => q.id);
+  const given = Object.fromEntries(answers.flatMap((a, j) => (a == null ? [] : [[ids[j], a]])));
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ v: 3, order: order.map((j) => ids[j]), answers: given, position })); } catch {}
 }
 function load() {
   try {
-    const s = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (s && s.v === 2 && s.answers.length === QUESTIONS.length) return s;
+    let s = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (s && s.v === 2 && s.answers.length === V2_SLOTS) {
+      const given = {};
+      s.answers.forEach((a, k) => { if (a != null) given[SHARE_SLOTS[k]] = a; });
+      s = { v: 3, order: s.order.map((k) => SHARE_SLOTS[k]), answers: given, position: s.position };
+    }
+    if (!s || s.v !== 3) return null;
+    const at = new Map(QUESTIONS.map((q, j) => [q.id, j]));
+    const kept = s.order.map((id) => at.get(id));
+    return {
+      order: kept.filter((j) => j != null),
+      answers: QUESTIONS.map((q) => s.answers[q.id] ?? null),
+      position: kept.slice(0, s.position).filter((j) => j != null).length,
+    };
   } catch {}
   return null;
 }
@@ -475,19 +491,10 @@ document.addEventListener("keydown", (e) => {
 // ---------- Results ----------
 
 // ---------- Share links ----------
-// A result link carries only the answers: "?r=2." + one character per statement in data order,
-// 0-4 for strongly disagree..strongly agree and "-" for skipped or not asked. The "2." is a
-// format version; bump it whenever the statement list changes so old links stop decoding.
+// A result link carries only the answers, by slot (see encodeShare in pca.js).
 
-const CODE = "01234";
-function encodeAnswers(given) {
-  return "2." + given.map((a) => (a == null ? "-" : CODE[a + 2])).join("");
-}
-function decodeAnswers(s) {
-  const m = /^2\.([0-4-]+)$/.exec(s || "");
-  if (!m || m[1].length !== QUESTIONS.length) return null;
-  return [...m[1]].map((c) => (c === "-" ? null : CODE.indexOf(c) - 2));
-}
+const encodeAnswers = (given) => encodeShare(given, QUESTIONS.map((q) => q.id), SHARE_SLOTS);
+const decodeAnswers = (s) => decodeShare(s, QUESTIONS.map((q) => q.id), SHARE_SLOTS);
 function shareUrl(given) {
   return `${location.origin}${location.pathname}?r=${encodeAnswers(given)}`;
 }

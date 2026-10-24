@@ -106,6 +106,29 @@ const { PEOPLE } = require("./people.js");
 for (const p of PEOPLE) assert.strictEqual(p.profile.length, QUESTIONS.length, `${p.name}: profile doesn't match the statements; rebuild people.js`);
 console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind === "model").length} AI models).`);
 
+// 6. Share links: every statement has a slot, and links decode after statements are added.
+{
+  const { encodeShare, decodeShare } = require("./pca.js");
+  const { SHARE_SLOTS } = require("./data.js");
+  const fileSlots = lib.readJson(require("path").join(__dirname, "audits", "share-slots.json")).slots;
+  assert.deepStrictEqual(SHARE_SLOTS, fileSlots, "data.js share slots differ from audits/share-slots.json; run a full build");
+  assert.strictEqual(new Set(fileSlots).size, fileSlots.length, "audits/share-slots.json has a duplicate");
+  const ids = QUESTIONS.map((q) => q.id);
+  const noSlot = ids.filter((id) => !fileSlots.includes(id));
+  assert(!noSlot.length, `statements without a share slot (run a full build): ${noSlot.join(", ")}`);
+  const given = ids.map((_, j) => (j % 7 === 3 ? null : (j % 5) - 2));
+  assert.deepStrictEqual(decodeShare(encodeShare(given, ids, fileSlots), ids, fileSlots), given, "share link round-trip");
+  // A link made before the newest statement was added still decodes, with that one unanswered.
+  const newest = ids.indexOf(fileSlots[fileSlots.length - 1]);
+  const before = ids.filter((_, j) => j !== newest);
+  const old = encodeShare(given.filter((_, j) => j !== newest), before, fileSlots.slice(0, -1));
+  assert.deepStrictEqual(decodeShare(old, ids, fileSlots), given.map((a, j) => (j === newest ? null : a)), "older share link");
+  // "2." links from before v1.0: one character per v1.0 statement.
+  const v2 = "2." + fileSlots.slice(0, 490).map((_, k) => (k === 0 ? "4" : "-")).join("");
+  assert.strictEqual(decodeShare(v2, ids, fileSlots)[ids.indexOf(fileSlots[0])], 2, "v2 share link");
+  assert.strictEqual(decodeShare("2.4", ids, fileSlots), null, "a short v2 link is rejected");
+}
+
 // Report what the data found.
 let cum = 0;
 console.log(`${model.components.length} axes carry variance; ${MEANINGFUL_LINES ?? meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);

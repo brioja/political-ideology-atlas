@@ -622,6 +622,32 @@ function describeAxis(model, index, questions, count = 3) {
   };
 }
 
+// Share links carry only the answers: "3." + one character per slot in SHARE_SLOTS
+// (audits/share-slots.json, append-only), 0-4 for strongly disagree..strongly agree and "-" for
+// skipped, not asked or no longer asked. Trailing "-" are dropped, and a shorter string reads its
+// missing slots as not asked, so links keep working as statements are added. "2." links (before
+// v1.0) hold exactly one character per statement as of v1.0, which are the first V2_SLOTS slots.
+const SHARE_CODE = "01234";
+const V2_SLOTS = 490;
+function encodeShare(given, ids, slots) {
+  const at = new Map(ids.map((id, j) => [id, j]));
+  const chars = slots.map((id) => {
+    const a = at.has(id) ? given[at.get(id)] : null;
+    return a == null ? "-" : SHARE_CODE[a + 2];
+  });
+  return "3." + chars.join("").replace(/-+$/, "");
+}
+// Answers indexed like `ids`, or null if the string isn't a share link.
+function decodeShare(s, ids, slots) {
+  const m = /^([23])\.([0-4-]*)$/.exec(s || "");
+  if (!m || m[2].length > slots.length || (m[1] === "2" && m[2].length !== V2_SLOTS)) return null;
+  const at = new Map(slots.map((id, k) => [id, k]));
+  return ids.map((id) => {
+    const c = m[2][at.get(id)];
+    return c == null || c === "-" ? null : SHARE_CODE.indexOf(c) - 2;
+  });
+}
+
 if (typeof module !== "undefined") {
-  module.exports = { symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
 }
