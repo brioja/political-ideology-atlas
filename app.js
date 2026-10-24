@@ -688,11 +688,11 @@ function showResults(shared = null) {
     ${typeof PEOPLE !== "undefined" && PEOPLE.length ? `
     <section>
       <h2>People who think like ${shared ? "them" : "you"}</h2>
-      <p class="muted small">Matched on the statements where both ${shared ? "this person and each figure" : "you and they"} have a known position.</p>
+      <p class="muted small">The figures who fall closest to ${shared ? "this person" : "you"} on the dividing lines below, not a count of shared answers.</p>
       <ul class="matches">${matchPeople(model, given, PEOPLE).slice(0, 5).map((p) => `
         <li><details>
           <summary><span class="match-name">${avatar(p)}${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>
-          <div class="match-body">${personBody(p)}<p class="muted small">Based on ${p.overlap} statements you both have a position on.</p>
+          <div class="match-body">${personBody(p)}<p class="muted small">${sharedAnswersLine(given, p.profile, you_)}</p>
             <p><a class="more-link" href="${personHref(p.id)}">Full page for ${esc(p.name)} →</a></p></div>
         </details></li>`).join("")}
       </ul>
@@ -1457,6 +1457,20 @@ const imageCredit = (p) => p.image
 const auditFolder = (p) => (p.kind === "model" ? "models" : "people");
 const auditLabel = (p) => (p.kind === "model" ? "Its answers" : null);
 const lifeLine = (p) => (p.kind === "model" ? `took the quiz ${p.takenAt}` : p.living ? `born ${p.born}` : `born ${p.born}, historical`);
+
+// People are matched by where both sides fall on the dividing lines, so a match can rest on few
+// shared answers; this says how many there were and how often they took the same side.
+function sharedAnswersLine(given, profile, you_) {
+  let both = 0, same = 0;
+  given.forEach((g, j) => {
+    const v = profile[j];
+    if (g == null || v == null) return;
+    both++;
+    if (Math.sign(g) === Math.sign(v)) same++;
+  });
+  if (!both) return `${you_ === "you" ? "You haven't" : "They haven't"} answered any of the same statements; the match comes only from where ${you_ === "you" ? "you" : "they"} both fall on the dividing lines.`;
+  return `${you_ === "you" ? "You" : "They"} both answered ${both} of the same statement${both === 1 ? "" : "s"} and took the same side on ${same}.`;
+}
 
 function personBody(p) {
   const links = [p.wikipedia && `<a href="${esc(p.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`,
