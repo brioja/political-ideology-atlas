@@ -636,7 +636,7 @@ function showResults(shared = null) {
   }).join("");
 
   R.innerHTML = `
-    ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button>${canResume ? `<button id="continue-shared">Continue from these answers</button>` : ""}</div>` : ""}
+    ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
@@ -738,7 +738,7 @@ function showResults(shared = null) {
 
     <p class="muted small">Curious how the matching and the dividing lines work? <a href="#/about">Read about the method and sources</a>.</p>
 
-    <div class="row">${canContinue ? `<a class="btn primary" href="#/test">Answer more questions</a>` : ""}<button class="${shared || canContinue ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button></div>
+    <div class="row">${canContinue ? `<a class="btn primary" href="#/test">Answer more questions</a>` : ""}<button class="${shared || canContinue ? "" : "primary"}" id="retake">${shared ? "Take the test yourself" : "Take it again"}</button>${canResume ? `<button id="continue-shared">Continue from these answers</button>` : ""}</div>
   `;
 
   const axesBox = $("axes");
