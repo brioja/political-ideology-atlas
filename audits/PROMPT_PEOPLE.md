@@ -64,16 +64,32 @@ strength of inferences.
 A general principle they voiced ("freedom of religion", "equal rights for all") does not answer a
 specific statement it never addressed (apostasy laws, covering laws, blasphemy): those stay null
 unless they spoke to them. Absence of evidence is null, never a negative answer ("no
-rehabilitative aim recorded" is not a position on prisons).
+rehabilitative aim recorded" is not a position on prisons). A position on a narrower case does not
+answer a broader statement either: cannabis is not all drugs (`legalize-drugs`), unauthorized
+migration is not immigration levels (`reduce-immigration`), refugee relief is not development aid.
+Opponents' characterizations and interest-group ratings (a lobby's scorecard grade) are not
+evidence of a position.
 
 A monarch's or head of state's formal assent is not their position. Laws, constitutions and
-policies they only signed or proclaimed on ministers' or parliament's advice don't count; use only
-views they expressed themselves and measures they personally drove.
+policies they only signed or proclaimed on ministers' or parliament's advice don't count, nor does a
+speech from the throne setting out the government's programme; use only views they expressed
+themselves and measures they personally drove. Likewise, what a government did under someone
+(executions, a state policy) is their position only where they drove it or spoke to it.
 
 When the person's own record directly contradicts their words on a statement (elections they
 rigged or cancelled, term limits they wrote themselves out of, a single party they kept in power
 while praising pluralism), the record wins. If the evidence is genuinely mixed, answer 0 at `low`.
-Rhetoric alone is never `high`.
+Rhetoric alone is never `high`. This applies at every confidence level, including `low` answers, and
+it applies where they were silent: what a ruler did with power themselves (inheriting and keeping
+office within a family, a cult of their own portraits, arming groups abroad, a security apparatus
+drawn from one sect) answers the matching statement from the record even if they never spoke to it.
+A repudiation made under pressure (in court, in exile) does not cancel a lifetime's record; weigh it
+as mixed at most.
+
+A state's use of force (war, counter-insurgency, executions) is not "political violence":
+`political-violence-never` is about violence for political ends outside lawful authority (coups,
+insurrections, assassinations, terrorism). Leading or ordering state force answers it only where
+they said something about political violence as such.
 
 Words someone delivered as their own count as theirs, whoever drafted them (a speechwriter, a
 ghostwritten book). Later reports of what they said or did (a biographer, an ancient historian,
@@ -91,7 +107,8 @@ the statement texts for its keywords (`grep -i <word> statements.json`). For a l
 "suggests" or "seems to" is not evidence: answer only from what they said or did.
 
 Confidence:
-- `high`: stated directly by the person or shown by their record. Cosponsoring or voting for a bill
+- `high`: stated directly by the person on that specific statement, or shown by their record. A
+  close inference from a stated view is `medium` at most. Cosponsoring or voting for a bill
   alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 - `medium`: clearly implied by things they said or did.
 - `low`: inferred, ambiguous or contested.
