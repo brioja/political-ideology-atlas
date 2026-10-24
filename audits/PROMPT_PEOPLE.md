@@ -125,5 +125,9 @@ evidence must be `low`, lower the confidence; never rephrase a rationale to slip
 A merged audit (two models researched independently, combined by the integrator) lists both
 model ids in `auditor`, e.g. `["claude-sonnet-5-5", "claude-haiku-5-5"]`, and tags each answer
 with the `auditor` that found it. A single-model audit uses one id and no per-answer tag.
+A merged audit also lists every independent pass in `passes`, e.g.
+`[{ "auditor": "claude-sonnet-5-5", "auditedAt": "2026-10-23" }, { "auditor": "claude-haiku-5-5", "auditedAt": "2026-10-24" }]`;
+the same model appears twice if it audited the person twice. Before re-auditing someone, check
+`passes` (or `auditor`) and use a model that hasn't audited them yet.
 
 Write the summary and rationales neutrally and in your own words.

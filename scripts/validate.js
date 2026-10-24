@@ -48,6 +48,16 @@ function validate(id) {
   if (!(isId(a.auditor) || (Array.isArray(a.auditor) && a.auditor.length && a.auditor.every(isId)))) {
     errors.push('"auditor" must be a model id or a non-empty list of model ids');
   }
+  // A merged audit also lists each independent pass, so a model that already audited someone isn't
+  // sent to audit them again (one model can appear twice, e.g. a redo of a search-starved pass).
+  if (Array.isArray(a.auditor) || a.passes !== undefined) {
+    const passes = Array.isArray(a.passes) ? a.passes : [];
+    if (!passes.length || passes.some((p) => !isId(p.auditor) || !/^\d{4}-\d{2}-\d{2}$/.test(p.auditedAt || ""))) {
+      errors.push('"passes" must list every audit pass as { "auditor": model id, "auditedAt": "YYYY-MM-DD" }');
+    } else {
+      for (const m of [].concat(a.auditor)) if (!passes.some((p) => p.auditor === m)) errors.push(`"passes" has no pass by ${m}`);
+    }
+  }
 
   if (a.wikipedia !== null && !/^https:\/\/en\.wikipedia\.org\/wiki\/\S+$/.test(a.wikipedia || "")) {
     errors.push('"wikipedia" must be an en.wikipedia.org article URL or null');
