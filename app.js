@@ -610,6 +610,9 @@ function showResults(shared = null) {
   const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0).sort((x, y) => Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
   const disagree = diffs.filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 4);
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
+  // Below this the top match is only the least bad fit (someone who answers like an ideology, even
+  // with stronger answers, typically lands at 70% or more), so the page says so in words.
+  const looseFit = top.similarity < 0.55;
   const topPeople = typeof PEOPLE !== "undefined" && PEOPLE.length
     ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
 
@@ -634,6 +637,7 @@ function showResults(shared = null) {
     <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
+      ${looseFit ? `<p>No ideology fits ${shared ? "them" : "you"} closely; this is the nearest.</p>` : ""}
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
@@ -986,6 +990,13 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   drawGlobe(ctx, PAD, 60, 44);
   ctx.fillStyle = CARD.muted; ctx.font = `500 28px ${CARD_FONTS.mono}`;
   ctx.fillText(SITE_NAME.toUpperCase(), PAD + 62, 92);
+  // The home page's sample card is marked, so a screenshot of it isn't taken for someone's result.
+  if (result.example) {
+    ctx.font = `600 28px ${CARD_FONTS.mono}`;
+    const label = "EXAMPLE", w = ctx.measureText(label).width + 40;
+    ctx.fillStyle = CARD.accent2; ctx.beginPath(); ctx.roundRect(W - PAD - w, 56, w, 50, 25); ctx.fill();
+    ctx.fillStyle = CARD.surface; ctx.fillText(label, W - PAD - w + 20, 92);
+  }
   ctx.fillStyle = CARD.ink;
   fitText(ctx, top.name, W - PAD * 2, 92, 700, CARD_FONTS.display);
   ctx.fillText(top.name, PAD, 200);
@@ -1392,7 +1403,7 @@ drawScree($("scree"));
     return x;
   });
   const { you, ranked } = match(model, sample);
-  drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample), answered: sample.filter((a) => a !== null).length });
+  drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample), answered: sample.filter((a) => a !== null).length, example: true });
 })();
 
 // ---------- Explore ----------
