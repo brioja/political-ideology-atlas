@@ -598,6 +598,9 @@ function showResults(shared = null) {
   // "Answer more questions" goes back to the next one, and the result sharpens as you answer.
   const progress = order.length ? { order, position } : load();
   const canContinue = !shared && !!progress && progress.position < progress.order.length;
+  // A shared link holds every answer, so its owner (on another device, or after clearing the browser)
+  // can pick the test up from it.
+  const canResume = !!shared && !!nextQuestion(model, shared, new Set(shared.flatMap((a, j) => (a === null ? [] : [j]))));
   const R = $("results");
   const You = shared ? "They" : "You";
   const you_ = shared ? "they" : "you";
@@ -633,7 +636,7 @@ function showResults(shared = null) {
   }).join("");
 
   R.innerHTML = `
-    ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
+    ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button>${canResume ? `<button id="continue-shared">Continue from these answers</button>` : ""}</div>` : ""}
     <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
@@ -787,6 +790,17 @@ function showResults(shared = null) {
   };
   $("retake").addEventListener("click", fresh);
   if (shared) $("own-test").addEventListener("click", fresh);
+  if (canResume) $("continue-shared").addEventListener("click", () => {
+    if (load() && !confirm("This replaces the answers saved in this browser. Continue?")) return;
+    answers = shared.slice();
+    order = answers.flatMap((a, j) => (a === null ? [] : [j]));
+    position = order.length;
+    order.push(nextQuestion(model, answers, new Set(order)).q);
+    save();
+    lastAnswers = null;
+    history.replaceState(null, "", `${location.pathname}#/test`);
+    route();
+  });
   setUpSharing(given, ranked, you, shared);
   setHeaderAction(shared ? "take" : canContinue ? "more" : "none");
 }
