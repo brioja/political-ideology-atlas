@@ -203,28 +203,30 @@ function modelFromParts(ideologies, parts) {
 }
 
 // Places a set of answers on the axes. Skipped or unasked statements are null.
-// With every statement answered this is the exact projection. With only some, it is the
-// least-squares fit on the first `dims` axes using just the answered statements, so
-// unanswered statements don't drag the result toward the center.
-function project(model, answers, dims = Math.min(model.components.length, 8)) {
+// With every statement answered this is the exact projection. With only some, the unanswered
+// statements are filled in from a least-squares fit of the answered ones on every axis, then
+// projected the same way, so they don't drag the result toward the center. (The fit's coefficients
+// aren't scores themselves: the rotated axes aren't orthogonal, and ideologies are placed by projection.)
+function project(model, answers) {
   const rows = [];
   answers.forEach((x, j) => { if (x != null) rows.push(j); });
-  const y = rows.map((j) => answers[j] - model.mean[j]);
   if (rows.length === answers.length) {
+    const y = answers.map((x, j) => x - model.mean[j]);
     return model.components.map((c) => dot(y, c.vector));
   }
-  const scores = new Array(model.components.length).fill(0);
-  if (rows.length === 0) return scores;
+  if (rows.length === 0) return new Array(model.components.length).fill(0);
 
-  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the first `dims` eigenvectors.
-  const d = Math.min(dims, rows.length);
+  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors.
+  const y = rows.map((j) => answers[j] - model.mean[j]);
+  const d = Math.min(model.components.length, rows.length);
   const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
   const M = Array.from({ length: d }, (_, a) =>
     Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
   const rhs = Array.from({ length: d }, (_, a) => A.reduce((s, r, i) => s + r[a] * y[i], 0));
   const sol = solve(M, rhs);
-  sol.forEach((v, i) => { scores[i] = v; });
-  return scores;
+  const full = answers.map((x, j) => (x != null ? x - model.mean[j]
+    : sol.reduce((s, v, i) => s + v * model.components[i].vector[j], 0)));
+  return model.components.map((c) => dot(full, c.vector));
 }
 
 // Gaussian elimination with partial pivoting for a small dense system.
@@ -370,10 +372,10 @@ function lineSpan(model, dims) {
 }
 function matchPeople(model, answers, people, { dims = Math.min(model.components.length, 8), tie = 0.03 } = {}) {
   if (!answers.some((x) => x != null)) return [];
-  const you = project(model, answers, dims).slice(0, dims);
+  const you = project(model, answers).slice(0, dims);
   const span = lineSpan(model, dims);
   const ranked = people.map((p) => {
-    const at = project(model, p.profile, dims).slice(0, dims);
+    const at = project(model, p.profile).slice(0, dims);
     const d = Math.sqrt(at.reduce((t, x, k) => t + (x - you[k]) ** 2, 0));
     return { ...p, distance: d, similarity: span ? Math.max(0, 1 - d / span) : 0 };
   }).sort((a, b) => b.similarity - a.similarity);
