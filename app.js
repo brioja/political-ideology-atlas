@@ -710,12 +710,11 @@ function showResults(shared = null) {
       <div class="pick" id="result-pick" hidden></div>
     </section>
 
-    ${shared ? "" : `
     <section id="share">
-      <h2>Share your result</h2>
-      <p>The link opens this results page for anyone. It contains your answers to each statement and nothing else, so anyone with it can see how you answered.</p>
+      <h2>${shared ? "Share this result" : "Share your result"}</h2>
+      <p>The link opens this results page for anyone. It contains ${your} answers to each statement and nothing else, so anyone with it can see how ${you_} answered.</p>
       <div class="share-link">
-        <input id="share-url" readonly aria-label="Link to your result">
+        <input id="share-url" readonly aria-label="Link to ${your} result">
         <button class="primary" id="copy-link">Copy link</button>
         <button id="native-share" hidden>Share…</button>
       </div>
@@ -724,11 +723,11 @@ function showResults(shared = null) {
         <span class="muted" id="share-status" role="status"></span>
       </div>
       <figure>
-        <canvas id="card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of your result"></canvas>
-        <figcaption>Save the image to post alongside your link.</figcaption>
+        <canvas id="card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${your} result"></canvas>
+        <figcaption>Save the image to post alongside ${shared ? "the" : "your"} link.</figcaption>
       </figure>
       <p class="support-line">Enjoyed it? The test is free, ad-free and doesn't track you. <a href="https://ko-fi.com/sibshops" target="_blank" rel="noopener">Support it on Ko-fi ♥</a></p>
-    </section>`}
+    </section>
 
     <p class="muted small">Curious how the matching and the dividing lines work? <a href="#/about">Read about the method and sources</a>.</p>
 
@@ -784,7 +783,7 @@ function showResults(shared = null) {
   };
   $("retake").addEventListener("click", fresh);
   if (shared) $("own-test").addEventListener("click", fresh);
-  else setUpSharing(given, ranked, you);
+  setUpSharing(given, ranked, you, shared);
   setHeaderAction(shared ? "take" : canContinue ? "more" : "none");
 }
 
@@ -809,12 +808,13 @@ function drawScree(svg) {
 
 // ---------- Sharing ----------
 
-function setUpSharing(given, ranked, you) {
+// Shared results get it too, so a link from before a scoring change can be turned into a fresh image.
+function setUpSharing(given, ranked, you, shared) {
   const url = shareUrl(given);
   const status = $("share-status");
   $("share-url").value = url;
   // The button under the verdict jumps to the Share section (the hash is the router's, so scroll instead).
-  $("to-share").addEventListener("click", (e) => {
+  if (!shared) $("to-share").addEventListener("click", (e) => {
     e.preventDefault();
     $("share").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
@@ -822,7 +822,7 @@ function setUpSharing(given, ranked, you) {
   if (navigator.share) {
     const btn = $("native-share");
     btn.hidden = false;
-    btn.addEventListener("click", () => navigator.share({ title: `My closest political ideology: ${ranked[0].name}`, url }).catch(() => {}));
+    btn.addEventListener("click", () => navigator.share({ title: `${shared ? "Closest" : "My closest"} political ideology: ${ranked[0].name}`, url }).catch(() => {}));
   }
 
   $("copy-link").addEventListener("click", async () => {
