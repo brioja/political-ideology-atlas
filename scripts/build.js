@@ -118,7 +118,7 @@ function writePeople(model) {
   let models = 0, excludedModels = 0;
   for (const m of readJson(path.join(ROOT, "audits", "models-catalog.json")).models) {
     const p = path.join(ROOT, "audits", "models", `${m.id}.json`);
-    if (m.hidden || !fs.existsSync(p)) continue; // hidden: one model per provider is shown
+    if (m.hidden || !fs.existsSync(p)) continue; // hidden: kept on file, off the site
 
     const a = readJson(p);
     if (!personSalience(a.answers).salient) { excludedModels++; continue; }
