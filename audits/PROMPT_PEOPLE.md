@@ -32,6 +32,15 @@ objectionable; attribute them to sources instead.
   thin ones ("<name> on <topic>", their votes, platform sections, interviews). A prominent politician
   usually needs 8-12 sources; someone with a thin public record needs fewer, and many nulls are then
   the honest result.
+- Spread matters as much as count. Each theme feeds different dividing lines, and a person is placed
+  only as precisely as their thinnest themes allow: forty answers bunched in economy and society
+  with one in government leave several lines guessed, and then they get matched with test-takers
+  they share almost nothing with. Before finishing, every theme should have answers wherever the
+  person has said or done anything relevant. Government (elections, courts, executive power,
+  federalism) and world (wars, alliances, aid, the UN) are the themes most often left thin.
+- For people whose output is mostly video (streamers, podcasters, commentators), search their own
+  channels and clips by theme ("<name> on NATO", "<name> Supreme Court", "<name> elections") and
+  read the captions with yt-dlp. Their reactions to news segments state positions too.
 - When the person's own writing is available as full text (a book, manifesto, platform or speech
   collection), download it into your scratch folder and search it for each theme's topics rather than
   reading summaries: it covers far more statements, in their own words.
