@@ -28,7 +28,9 @@ many will have a thin political record; the early-exit rule makes those quick.
    finishing. Prefer full texts of their own words (books, speeches, transcripts, laws they
    signed), downloaded and searched, over summaries.
 3. **Confidence:** `high` only when the person states the position directly; `medium` when it is
-   clearly implied by what they said or did; `low` when ambiguous or contested.
+   clearly implied by what they said or did; `low` when ambiguous or contested. When their record
+   directly contradicts their words (rigged elections, term limits they exempted themselves from),
+   the record wins; genuinely mixed evidence is 0 at `low`. Rhetoric alone is never `high`.
 4. **Inference:** living people, none at all; no evidence means null. Historical figures, only when
    it follows directly from views they stated, `low`, rationale starting "Inferred:". Never infer
    from party, label or theme. The most recent clear position wins. Answers must match each

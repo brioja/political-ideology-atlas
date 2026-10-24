@@ -70,6 +70,11 @@ A monarch's or head of state's formal assent is not their position. Laws, consti
 policies they only signed or proclaimed on ministers' or parliament's advice don't count; use only
 views they expressed themselves and measures they personally drove.
 
+When the person's own record directly contradicts their words on a statement (elections they
+rigged or cancelled, term limits they wrote themselves out of, a single party they kept in power
+while praising pluralism), the record wins. If the evidence is genuinely mixed, answer 0 at `low`.
+Rhetoric alone is never `high`.
+
 Words someone delivered as their own count as theirs, whoever drafted them (a speechwriter, a
 ghostwritten book). Later reports of what they said or did (a biographer, an ancient historian,
 collected sayings) are secondhand: `medium` at most, `low` where the report is late or disputed.
