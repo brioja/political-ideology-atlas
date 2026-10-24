@@ -94,6 +94,16 @@ if (included.length >= 3) {
 
 if (included.length >= 3) useSalienceModel(included, statements, meaningful);
 
+// What the page needs to say how precisely a taker is placed (placementFromParts in pca.js): the
+// unrotated leading components and the noise level, which the rotated lines in MODEL don't carry.
+const placementCtx = included.length >= 3 ? salienceContext(buildModel(included), included, { lines: meaningful }) : null;
+const shippedPlacement = placementCtx && {
+  k: placementCtx.k,
+  noise: Math.round(placementCtx.noise * 1e6) / 1e6,
+  bar: Math.round(placementCtx.bar * 1e6) / 1e6,
+  components: placementCtx.model.components.slice(0, placementCtx.k).map((c) => ({ eigenvalue: Math.round(c.eigenvalue * 1e6) / 1e6, vector: c.vector.map((x) => Math.round(x * 1e4) / 1e4) })),
+};
+
 // People: included when salient (see pca.js), judged against the ideologies shown. A statement added
 // after their audit counts as "no known position" until it is backfilled.
 // `model`: the shipped dividing lines (modelFromParts), so people are ranked the way the page ranks them.
@@ -237,7 +247,10 @@ const IDEOLOGIES = ${JSON.stringify(included)};
 // The dividing lines, computed here so the page doesn't have to (see modelFromParts in pca.js).
 const MODEL = ${JSON.stringify(shippedModel)};
 
-if (typeof module !== "undefined") module.exports = { QUESTIONS, SHARE_SLOTS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION, MODEL };
+// How precisely a set of answers places someone (see placementFromParts in pca.js).
+const PLACEMENT = ${JSON.stringify(shippedPlacement)};
+
+if (typeof module !== "undefined") module.exports = { QUESTIONS, SHARE_SLOTS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION, MODEL, PLACEMENT };
 `;
 fs.writeFileSync(path.join(ROOT, "data.js"), out);
 // Record each new statement's text, so a later rewording is caught (see lib.js).

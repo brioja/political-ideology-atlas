@@ -1,5 +1,11 @@
 // UI: intro map, one-statement-at-a-time quiz, results.
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL) : buildModel(IDEOLOGIES);
+// Once the answers place you to within half the gap between neighbouring ideologies (precision 2, see
+// placementPrecision in pca.js; about 200 answers today), more barely change anything, so the quiz
+// says you're done, settled or not: someone between two ideologies may never settle and would
+// otherwise answer every statement. Measured, not counted, so it holds as statements are added.
+const PLACEMENT_CTX = typeof PLACEMENT !== "undefined" ? placementFromParts(PLACEMENT) : null;
+const DONE_PRECISION = 2;
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },
@@ -349,16 +355,17 @@ function renderQuestion() {
   // The figure is calibrated on simulated takers who are noisy copies of one ideology, so it overstates
   // how likely a real (mixed) taker's top match is to hold: it's shown as progress, not a probability.
   const status = $("certainty");
-  status.classList.toggle("ready", settled);
-  if (settled) {
-    status.innerHTML = `✓ Narrowed down · <a href="#/results" id="ready-link">See your result →</a>`;
+  const done = placementPrecision(PLACEMENT_CTX, answers) >= DONE_PRECISION;
+  status.classList.toggle("ready", settled || done);
+  if (settled || done) {
+    status.innerHTML = `✓ ${done ? "Done, your result is as sharp as it gets" : "Narrowed down"} · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else status.textContent = answered < Math.max(1, REAL_LINES) ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
     : `Narrowing it down · ${pct(hold)}`;
   $("statement").textContent = QUESTIONS[q].text;
   $("back").disabled = position === 0;
-  setHeaderAction(settled ? "results" : early ? "early" : "none");
+  setHeaderAction(settled || done ? "results" : early ? "early" : "none");
   // "No opinion" shows as chosen when this statement was already shown and skipped.
   const buttons = [...SHOWN_CHOICES.map((c, i) => [$(`choice-${i}`), answers[q] === c.value]),
     [$("choice-none"), answers[q] === null && position < order.length - 1]];
@@ -595,9 +602,13 @@ function showResults(shared = null) {
   const top = ranked[0];
   const answered = given.filter((a) => a !== null).length;
   // More questions are left when the quiz stopped early (it settled, or you chose to see results):
-  // "Answer more questions" goes back to the next one, and the result sharpens as you answer.
+  // "Answer more questions" goes back to the next one, and the result sharpens as you answer. Once the
+  // quiz has said you're done the page stops inviting it (more answers barely change anything), though
+  // the header's "Answer more" stays for anyone who wants to.
   const progress = order.length ? { order, position } : load();
-  const canContinue = !shared && !!progress && progress.position < progress.order.length;
+  const done = placementPrecision(PLACEMENT_CTX, given) >= DONE_PRECISION;
+  const moreLeft = !shared && !!progress && progress.position < progress.order.length;
+  const canContinue = moreLeft && !done;
   // A shared link holds every answer, so its owner (on another device, or after clearing the browser)
   // can pick the test up from it.
   const canResume = !!shared && !!nextQuestion(model, shared, new Set(shared.flatMap((a, j) => (a === null ? [] : [j]))));
@@ -802,7 +813,7 @@ function showResults(shared = null) {
     route();
   });
   setUpSharing(given, ranked, you, shared);
-  setHeaderAction(shared ? "take" : canContinue ? "more" : "none");
+  setHeaderAction(shared ? "take" : moreLeft ? "more" : "none");
 }
 
 function drawScree(svg) {

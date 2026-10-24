@@ -598,6 +598,20 @@ function placementUncertainty(ctx, knownIdx) {
   return Math.sqrt(trace);
 }
 
+// The placement context salience() needs, rebuilt from what the build ships (PLACEMENT in data.js):
+// the page's MODEL carries only the rotated lines, not the unrotated components or the noise level.
+function placementFromParts(parts) {
+  return parts && { model: { components: parts.components }, k: parts.k, noise: parts.noise, bar: parts.bar };
+}
+
+// How precisely a set of answers places someone, in units of the typical gap between neighbouring
+// ideologies: 1 means the uncertainty is about one such gap. It depends only on which statements
+// were answered, so unlike the top match's lead it keeps rising for a taker between two ideologies.
+function placementPrecision(ctx, answers) {
+  if (!ctx || !answers.some((x) => x != null)) return 0;
+  return ctx.bar / placementUncertainty(ctx, answeredIndexes(answers));
+}
+
 function salience(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
   const uncertainty = placementUncertainty(ctx, known);
@@ -651,5 +665,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, describeAxis, SETTLE };
+  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }
