@@ -738,6 +738,7 @@ function showResults(shared = null) {
       </div>
       <div class="row">
         <button id="save-image">Save image</button>
+        <button id="share-image" hidden>Share image…</button>
         <span class="muted" id="share-status" role="status"></span>
       </div>
       <figure>
@@ -865,12 +866,23 @@ function setUpSharing(given, ranked, you, shared) {
   });
 
   const canvas = $("card");
-  drawShareCard(canvas, { ranked, you, people: cardPeople(given), answered: given.filter((a) => a !== null).length });
+  const drawn = drawShareCard(canvas, { ranked, you, people: cardPeople(given), answered: given.filter((a) => a !== null).length });
+  const fileName = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
+  // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
+  // The file is made ahead: Safari only opens the sheet straight from the tap.
+  if (navigator.canShare) drawn.then(() => canvas.toBlob((blob) => {
+    const files = [new File([blob], fileName, { type: "image/png" })];
+    if (!navigator.canShare({ files })) return;
+    const btn = $("share-image");
+    btn.hidden = false;
+    const text = `${shared ? "" : "I got "}${ranked[0].name} on ${location.host}`;
+    btn.addEventListener("click", () => navigator.share({ files, text }).catch(() => {}));
+  }, "image/png"));
   $("save-image").addEventListener("click", () => {
     canvas.toBlob((blob) => {
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
+      a.download = fileName;
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
       status.textContent = "Image saved.";
