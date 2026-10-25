@@ -273,6 +273,46 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Frederick_Douglass",
    "usedFor": "Career overview, reform causes, Santo Domingo and Haiti"
+  },
+  {
+   "id": "c1",
+   "kind": "primary",
+   "title": "Frederick Douglass: Selections from His Writings",
+   "author": "Philip S. Foner (ed.), International Publishers, 1945",
+   "url": "https://archive.org/details/DouglassSelectionsWritings",
+   "usedFor": "Douglass's own speeches and editorials in the selections (Slavery, Civil War, Reconstruction, Democratic Spirit chapters); OCR is partly garbled and only clearly readable passages by Douglass were used, not Foner's introduction."
+  },
+  {
+   "id": "c2",
+   "kind": "primary",
+   "title": "Lecture on Haiti (World's Columbian Exposition, 1893)",
+   "author": "Frederick Douglass",
+   "url": "https://archive.org/details/Lecture-Haiti-Frederick-Douglass-1893",
+   "usedFor": "Haiti, independence, the Mole St Nicolas request, the Haitian revolution."
+  },
+  {
+   "id": "c3",
+   "kind": "primary",
+   "title": "Life and Times of Frederick Douglass",
+   "author": "Frederick Douglass",
+   "url": "https://www.gutenberg.org/cache/epub/71893/pg71893.txt",
+   "usedFor": "Santo Domingo annexation (ch. XV), Freedmen's Bank, John Brown, Reconstruction passages."
+  },
+  {
+   "id": "c4",
+   "kind": "primary",
+   "title": "New National Era, April 13, 1871 (Letter on Santo Domingo No. 3)",
+   "author": "Frederick Douglass",
+   "url": "http://www.loc.gov/resource/sn84026753/1871-04-13/ed-1/?sp=2",
+   "usedFor": "His signed Santo Domingo letters."
+  },
+  {
+   "id": "c5",
+   "kind": "primary",
+   "title": "New National Era, May 18, 1871",
+   "author": "New National Era (edited by Frederick Douglass)",
+   "url": "http://www.loc.gov/resource/sn84026753/1871-05-18/ed-1/?sp=2",
+   "usedFor": "Protection and Santo Domingo editorials."
   }
  ],
  "answers": {
@@ -374,9 +414,13 @@
    "confidence": "medium",
    "rationale": "Listed it among the grievances of Black southerners that they are denied the power to keep and bear arms.",
    "sources": [
-    "b16"
+    "b16",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "empower-police-military": {
    "value": null,
@@ -397,9 +441,13 @@
    "sources": [
     "b7",
     "b5",
-    "b6"
+    "b6",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "rehabilitation": {
    "value": null,
@@ -441,7 +489,8 @@
     "s6",
     "b14",
     "b5",
-    "b7"
+    "b7",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -461,10 +510,13 @@
    "sources": []
   },
   "gradual-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Foner, Suffrage for the Negro (1865) rejects waiting for suffrage to follow emancipation 'in the natural course' and demands immediate, unconditional enfranchisement; Progress Without Struggle (1857) says there is no progress without struggle and mocks those who favor freedom but deprecate agitation.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "reduce-immigration": {
    "value": -2,
@@ -474,10 +526,7 @@
     "s3",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "empower-international-orgs": {
    "value": null,
@@ -486,10 +535,13 @@
    "sources": []
   },
   "free-trade": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Unsigned May 18, 1871 New National Era editorial in the paper he edited and published defends protective duties against 'free traders'; authorship not certain, so low.",
+   "sources": [
+    "c5"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "nation-first": {
    "value": null,
@@ -511,10 +563,7 @@
     "s3",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "limit-growth": {
    "value": null,
@@ -547,7 +596,9 @@
    "sources": [
     "s2",
     "b3",
-    "b12"
+    "b12",
+    "c2",
+    "c3"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -591,10 +642,13 @@
    "sources": []
   },
   "tariffs-protect-industry": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Unsigned May 18, 1871 New National Era editorial in the paper he edited and published defends protective duties against 'free traders'; authorship not certain, so low.",
+   "sources": [
+    "c5"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "state-directs-investment": {
    "value": null,
@@ -603,10 +657,13 @@
    "sources": []
   },
   "widespread-small-property": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: Foner, Reconstruction chapter (1880-81): he contrasts freedmen turned out landless with Russian serfs given three acres and regrets that they were left dependent on the old master class; this implies support for broad small ownership but he does not state the principle.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "abolish-money-wages": {
    "value": null,
@@ -664,7 +721,8 @@
     "s9",
     "s1",
     "b11",
-    "b7"
+    "b7",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -687,7 +745,9 @@
     "b12",
     "b3",
     "b15",
-    "b5"
+    "b5",
+    "c3",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -708,10 +768,7 @@
     "s3",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "laws-from-scripture": {
    "value": null,
@@ -739,10 +796,7 @@
     "s3",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "class-struggle-history": {
    "value": null,
@@ -945,10 +999,13 @@
    "sources": []
   },
   "positive-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Foner, Reconstruction chapter (Life and Times, 1881): freedmen were given 'the machinery of liberty' but not 'the steam to put it in motion'; the power to say 'serve me or starve' is the power of slavery.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "media-academia-power": {
    "value": null,
@@ -963,7 +1020,9 @@
    "sources": [
     "s3",
     "s14",
-    "b17"
+    "b17",
+    "c1",
+    "c2"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -994,9 +1053,14 @@
    "rationale": "Supported annexing Santo Domingo in 1871 as a safe alliance with a weak people, but resigned as Haiti minister in 1891 when the US sought a naval base against Haiti's wishes; mixed.",
    "sources": [
     "b2",
-    "b18"
+    "b18",
+    "c3",
+    "c4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "personal-loyalty-rule": {
    "value": null,
@@ -1014,10 +1078,7 @@
     "b1",
     "b2"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "no-neutral-knowledge": {
    "value": null,
@@ -1033,10 +1094,7 @@
     "s3",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "single-common-good": {
    "value": null,
@@ -1093,10 +1151,14 @@
    "sources": []
   },
   "national-self-determination": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "1893 Haiti lecture: he praises Haiti for staying free and independent and refusing any foreign protector, and says Haiti had the right to refuse the Mole St Nicolas naval station request he had pressed as minister. His Santo Domingo support rested on that nation's own request for union.",
+   "sources": [
+    "c2",
+    "c3"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "force-without-un": {
    "value": null,
@@ -1154,10 +1216,7 @@
     "s4",
     "b9"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "ban-interest": {
    "value": null,
@@ -1173,7 +1232,9 @@
     "s5",
     "s14",
     "b1",
-    "b5"
+    "b5",
+    "c1",
+    "c2"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1224,10 +1285,7 @@
     "s4",
     "b9"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "political-elite-corrupt": {
    "value": null,
@@ -1266,7 +1324,8 @@
    "sources": [
     "s3",
     "b4",
-    "b17"
+    "b17",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1321,7 +1380,10 @@
    "rationale": "Described the ideal government as resting on 'nature, reason and the regularly ascertained will of the people'.",
    "sources": [
     "s3",
-    "b4"
+    "b4",
+    "c3",
+    "c4",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1363,9 +1425,13 @@
    "confidence": "medium",
    "rationale": "In My Bondage (ch. XI) he writes that good clothing and his mistress's smiles could not atone for taking his liberty, treating mastery as unfreedom even when kindly exercised.",
    "sources": [
-    "b1"
+    "b1",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "separated-powers": {
    "value": null,
@@ -1412,10 +1478,7 @@
     "s16",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "offices-by-lottery": {
    "value": null,
@@ -1710,7 +1773,8 @@
     "s9",
     "s1",
     "b11",
-    "b2"
+    "b2",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1781,10 +1845,13 @@
    "sources": []
   },
   "land-redistribution": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Foner, Reconstruction chapter (Life and Times 1881, 'Why Reconstruction failed'; West India Emancipation address 1880): he laments that freedmen were sent away without land while Russian serfs got three acres, and says Stevens and Sumner's counsel would have kept freedmen on their native soil in independence had it prevailed.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "refugee-return": {
    "value": null,
@@ -1837,7 +1904,8 @@
     "s10",
     "b10",
     "b15",
-    "b1"
+    "b1",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1918,10 +1986,15 @@
    "sources": []
   },
   "civilizing-tutelage": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Life and Times ch. XV and his April 1871 Santo Domingo letters argue annexation would give a weak, strife-torn people peace and civilization, but as an equal state with its own consent; his 1893 Haiti lecture rejects claims that Black people left alone lapse into barbarism and says a protectorate would be resisted. Mixed.",
+   "sources": [
+    "c3",
+    "c4",
+    "c2"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "patriotic-education": {
    "value": null,
@@ -1973,10 +2046,7 @@
     "s5",
     "b5"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "entrenched-bill-of-rights": {
    "value": 1,
@@ -2109,7 +2179,8 @@
    "sources": [
     "s1",
     "s6",
-    "b2"
+    "b2",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -2363,10 +2434,13 @@
    "sources": []
   },
   "religion-illusion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Foner, Slavery chapter (1846 speeches, Do the Abolitionists Undermine Religion): he says he loves the religion of the Savior and rejects only slaveholding religion.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "capitalism-progressive": {
    "value": null,
@@ -2574,9 +2648,13 @@
    "confidence": "high",
    "rationale": "Wrote that every argument against a property qualification for the vote applied equally against a color qualification, and said the vote ought to be enjoyed by all citizens.",
    "sources": [
-    "b2"
+    "b2",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "domination-women-nature": {
    "value": null,
@@ -2610,7 +2688,8 @@
     "s7",
     "s6",
     "b7",
-    "b14"
+    "b14",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -2768,10 +2847,13 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Life and Times (1859): it is right to protect oneself against thieves and assassins and to slay a beast devouring human prey, and equally right for the slaves to strike down their traffickers.",
+   "sources": [
+    "c3"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3088,10 +3170,7 @@
     "b17",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "public-service-media": {
    "value": null,
@@ -3214,7 +3293,8 @@
    "sources": [
     "s4",
     "b9",
-    "b18"
+    "b18",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -3359,10 +3439,7 @@
     "s2",
     "b1"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "cut-consumption-tax": {
    "value": null,
@@ -3434,10 +3511,7 @@
     "b16",
     "b6"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "unjust-law-not-binding": {
    "value": null,
@@ -3482,11 +3556,15 @@
    "sources": []
   }
  },
- "notes": "Full texts read: the three autobiographies, the Fourth of July speech, Composite Nation, Self-Made Men, the Constitution speech, Men of Color To Arms, Lessons of the Hour, the 1888 suffrage speech, the Nation's Problem, the Exodus paper and others. Economic and many institutional statements are null because his speeches rarely address them. Early Garrisonian disunionism and later Constitutional antislavery views differ; the mature view is used.\n\nMerged with an independent claude-sonnet-5-5 audit: 15 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Book-pass: My Bondage and My Freedom (1855) read theme by theme, then Life and Times (1881/1892) and speeches from 1852 to 1894 checked for later positions. Early Garrisonian disunionism and non-political action gave way to constitutional antislavery politics by 1851-52; the later view is used. Economic, technology, ecology and most institutional statements are null because his record does not address them.",
+ "notes": "Full texts read: the three autobiographies, the Fourth of July speech, Composite Nation, Self-Made Men, the Constitution speech, Men of Color To Arms, Lessons of the Hour, the 1888 suffrage speech, the Nation's Problem, the Exodus paper and others. Economic and many institutional statements are null because his speeches rarely address them. Early Garrisonian disunionism and later Constitutional antislavery views differ; the mature view is used.\n\nMerged with an independent claude-sonnet-5-5 audit: 15 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Book-pass: My Bondage and My Freedom (1855) read theme by theme, then Life and Times (1881/1892) and speeches from 1852 to 1894 checked for later positions. Early Garrisonian disunionism and non-political action gave way to constitutional antislavery politics by 1851-52; the later view is used. Economic, technology, ecology and most institutional statements are null because his record does not address them.\n\nMerged with an independent claude-sonnet-5-5 audit: 10 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Supplement pass on economy, world, culture and means. Foner's OCR is partly illegible; New National Era editorials are unsigned and in two cases written while he was abroad, so are held at low or medium. Answers in this pass rely on historical statements; none are inferred beyond one marked Inferred.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-25"
   },
   {
    "auditor": "claude-sonnet-5-5",
