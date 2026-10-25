@@ -2,7 +2,10 @@
   "id": "fyodor-dostoevsky",
   "name": "Fyodor Dostoevsky",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "Russian novelist and author of A Writer's Diary (1821–1881)",
   "summary": "Dostoevsky joined the Petrashevsky circle in the 1840s, was sentenced to death in 1849 and had the sentence commuted to exile. In his later journalism he defended Orthodox Christianity, Russian messianism, Slavic unity under Russia and the Tsarist monarchy, and opposed Western liberalism, bourgeois materialism, Catholicism and atheist socialism. His Diary also contains antisemitic passages on the 'Jewish question' that he said were not hatred of Jews as a people.",
@@ -47,6 +50,22 @@
       "author": "Joseph Frank",
       "url": "https://www.nybooks.com/articles/1980/12/04/his-jewish-problem/",
       "usedFor": "institutions-fit-civilization; minority-conspiracy; economy-in-majority-hands"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "The Diary of a Writer (translated by Boris Brasol; Scribner's, 1949)",
+      "author": "F. M. Dostoievsky",
+      "url": "https://archive.org/details/the-diary-of-a-writer",
+      "usedFor": "His own political journalism 1873-1881 (Eastern Question, war, Jews, Catholicism, socialism, courts, people and intelligentsia, Pushkin speech)"
+    },
+    {
+      "id": "b2",
+      "kind": "reference",
+      "title": "Fyodor Dostoevsky",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fyodor_Dostoevsky",
+      "usedFor": "Overview of political views"
     }
   ],
   "answers": {
@@ -134,7 +153,8 @@
       "rationale": "Inferred: he admires the Tsar's direct bond with the people and a unified national authority; he does not discuss legislative gridlock.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "state-harmful": {
       "value": -2,
@@ -142,7 +162,8 @@
       "rationale": "Inferred: he supports a strong Orthodox state and the Tsar's authority and never calls the state unnecessary.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "limit-guns": {
       "value": null,
@@ -169,11 +190,16 @@
       "sources": []
     },
     "rehabilitation": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "In a Diary essay on a young mother sentenced to hard labour he asks 'Whom and when did hard labor ever reform?' and argues for mercy over chastisement.",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Mixed: in the Kornilova case he argued that hard labour had never reformed anyone and urged mercy and correction, but in his 1876 pieces on the courts he insists the first task is to name evil as evil, with correction second.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "traditional-family": {
@@ -199,7 +225,12 @@
       "confidence": "medium",
       "rationale": "In the Diary and the Pushkin Speech he presents the Orthodox faith as the spiritual centre of Russian national life and wants it to guide public life.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "correct-racial-injustice": {
@@ -219,7 +250,12 @@
       "confidence": "medium",
       "rationale": "The Pushkin Speech and the Diary praise the Russian national spirit and its literature and call for Russians to develop their own culture rather than imitate Europe.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "gradual-change": {
@@ -252,14 +288,20 @@
       "rationale": "Inferred: he presents Russia's destiny as universal brotherhood rather than the pursuit of narrow national interest.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "humanitarian-intervention": {
       "value": 1,
       "confidence": "medium",
       "rationale": "In the Diary he supports Russia's intervention in 1877 to protect Balkan Christians from Ottoman atrocities.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "open-borders": {
@@ -297,7 +339,12 @@
       "confidence": "low",
       "rationale": "Inferred: he rejected revolutionary socialism as atheistic and condemned Nechaev's methods; he does not generalise to all revolutions.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "experts-over-public": {
@@ -383,7 +430,12 @@
       "confidence": "medium",
       "rationale": "In the Diary he presents the union of the Tsar with his people as the source of Russia's strength and defends the Russian monarchy as protector of Orthodoxy.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "democracy-best": {
@@ -391,7 +443,13 @@
       "confidence": "low",
       "rationale": "Inferred: in the Diary he criticises European parliamentary and liberal politics as hollow; he does not discuss democracy as such.",
       "sources": [
-        "s1"
+        "s1",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "direct-votes": {
@@ -429,7 +487,12 @@
       "confidence": "low",
       "rationale": "Inferred: in the Diary he praises the Russian soldier's self-sacrifice in the 1877 war; he does not generalise that war builds national character.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "separate-church-state": {
@@ -437,7 +500,12 @@
       "confidence": "low",
       "rationale": "Inferred: he wanted Orthodoxy to be the people's spiritual centre within the state; he does not write about formal separation.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "laws-from-scripture": {
@@ -471,7 +539,8 @@
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "equal-outcomes": {
       "value": null,
@@ -496,7 +565,12 @@
       "confidence": "low",
       "rationale": "Inferred: he wants Orthodox peoples united under Russia's spiritual leadership; he does not frame it as a political union of civilizations.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "self-interest-moral": {
@@ -505,7 +579,12 @@
       "rationale": "He condemned egoism and utilitarian self-interest as the spirit of Western bourgeois life and set against it the brotherhood of the Russian artel and the people.",
       "sources": [
         "s2",
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "duties-before-rights": {
@@ -628,7 +707,8 @@
       "rationale": "Inferred: he ties the European bourgeoisie and stock exchanges to the great-power rivalry that drives war; he does not state the general law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "taxation-theft": {
       "value": null,
@@ -649,7 +729,8 @@
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "conscription": {
       "value": null,
@@ -704,7 +785,12 @@
       "confidence": "medium",
       "rationale": "He writes of Europe's decay and of a spiritual renewal of Christianity for which Russia is to be the bearer.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "territorial-expansion": {
@@ -712,7 +798,12 @@
       "confidence": "low",
       "rationale": "Contested: he wants Constantinople to pass to Russia as protector of Orthodoxy but says it must not be taken by seizure.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "personal-loyalty-rule": {
@@ -726,7 +817,12 @@
       "confidence": "medium",
       "rationale": "In a letter to Maikov he calls the denial of the rights of man to peasants under serfdom unjust and egotistical.",
       "sources": [
-        "s3"
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "no-neutral-knowledge": {
@@ -741,7 +837,8 @@
       "rationale": "Inferred: he appealed to Christ's law as a binding standard for all people, which is a religious rather than a rational account of universal truth.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "single-common-good": {
       "value": null,
@@ -798,10 +895,13 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Supports freeing the Bulgarians and Serbs and keeping their independence (June 1876, March 1877) but within a union led by Russia; he is hostile to Polish aspirations (October 1877), so evidence is mixed.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "force-without-un": {
       "value": null,
@@ -814,7 +914,12 @@
       "confidence": "medium",
       "rationale": "In the Diary he calls European science atheism and argues that reason alone cannot found human brotherhood; faith in Christ is central to his view.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "welfare-for-citizens": {
@@ -835,7 +940,8 @@
       "rationale": "Inferred: he hopes a shared Russian spirit of brotherhood will overcome class division rather than class struggle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "sacrifice-heritage": {
       "value": null,
@@ -909,7 +1015,8 @@
       "rationale": "Inferred: he describes Russia's mission as universal brotherhood acquired 'not by the sword but by the force of brotherhood', not as spreading a form of government.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "patriarchy-structural": {
       "value": null,
@@ -952,7 +1059,12 @@
       "confidence": "high",
       "rationale": "In the 1877 Diary he says he favours 'full and complete equalization of rights' for Jews because it is Christ's law, while recording his objections to Jewish separateness.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "socialism-one-country": {
@@ -986,10 +1098,13 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "January 1876, 'A Boy with His Hand Stretched out for Alms' (colony visit): says religious instruction in schools should be given by priests, or at least Church history be told, and regrets that the colony has none.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1027,7 +1142,8 @@
       "rationale": "Inferred: in Winter Notes he calls a struggle of all against all the grim alternative to communal brotherhood and does not present it as progress.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "ban-extremist-parties": {
       "value": null,
@@ -1059,7 +1175,8 @@
       "rationale": "In the Diary he says he pities the toiling masses of the Russian people and that the Russian commoner bears heavy burdens.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1158,10 +1275,13 @@
       "sources": []
     },
     "defeat-own-government-war": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: attacks the intelligentsia that predicted Russian soldiers would throw down rifles, and treats the war as the nation's cause (April 1877).",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "censor-art-for-virtue": {
       "value": null,
@@ -1205,7 +1325,8 @@
       "rationale": "He idealises the Russian peasant's Christian soil and presents the city and Europe as morally corrupting in the Diary and the Pushkin Speech.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "reunify-divided-nation": {
       "value": 1,
@@ -1213,7 +1334,8 @@
       "rationale": "Inferred: he wants Slavs under Ottoman rule protected and united with Russia; he does not state a general principle of reunification.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "educated-out-of-touch": {
       "value": 2,
@@ -1221,7 +1343,12 @@
       "rationale": "In Winter Notes he blames the split between the educated classes and the peasantry for mutual incomprehension, and he criticises the educated for imitating Europe.",
       "sources": [
         "s2",
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "cultures-equal-different": {
@@ -1369,10 +1496,14 @@
       "sources": []
     },
     "nonpartisan-head-of-state": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: sees the Tsar as an all-unifying power of the whole people (reference article), and says parties lead to discord.",
+      "sources": [
+        "b1",
+        "b2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "force-to-prevent-secession": {
       "value": null,
@@ -1399,10 +1530,13 @@
       "sources": []
     },
     "character-from-environment": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "October 1876: says treating crime merely as sickness of society is right in some cases but, generalized, strips man of individuality.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sovereign-above-law": {
       "value": null,
@@ -1481,7 +1615,12 @@
       "confidence": "medium",
       "rationale": "He argues for unity among Slavs and Orthodox peoples under Russian spiritual leadership, though he questions whether Slavdom under Russia would be good.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "national-cultural-autonomy": {
@@ -1502,7 +1641,12 @@
       "rationale": "Inferred: he attacked materialism and held that moral and religious renewal comes before economic arrangements; he does not state the claim directly.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "ban-cartels": {
@@ -1637,7 +1781,8 @@
       "rationale": "Inferred: he defends an hereditary Russian monarchy and opposes Westernising parliamentary politics; he does not discuss elective rule directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "minority-veto": {
       "value": null,
@@ -1658,10 +1803,13 @@
       "sources": []
     },
     "animal-suffering-matters": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "January 1876 (Society for the Protection of Animals): welcomes the Society warmly, links cruelty to animals with cruelty to people, though he sees it as secondary to the people's needs.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "animal-use-humane": {
       "value": null,
@@ -1675,7 +1823,12 @@
       "rationale": "He writes that the educated classes owe a debt to the people and must serve it.",
       "sources": [
         "s2",
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "withdraw-from-politics": {
@@ -1774,7 +1927,12 @@
       "rationale": "Inferred: he argues Russia's path differs from a Western constitutional state; the point is also summarised in Frank's review.",
       "sources": [
         "s1",
-        "s5"
+        "s5",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "military-guardian-role": {
@@ -1860,7 +2018,12 @@
       "confidence": "medium",
       "rationale": "In Winter Notes he satirises the bourgeois pursuit of money and possessions as spiritually empty and harmful to human relations.",
       "sources": [
-        "s2"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "arm-foreign-insurgents": {
@@ -1935,7 +2098,12 @@
       "rationale": "Contested: he describes Jewry as a 'status in statu' and a triumphant mob controlling finance, while denying hatred of Jews as a people; he does not claim a secret conspiracy.",
       "sources": [
         "s1",
-        "s5"
+        "s5",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "abolish-legal-marriage": {
@@ -2010,7 +2178,12 @@
       "rationale": "He treated atheism as the root of European materialism and socialism and held that faith is needed for human brotherhood, so religion was not an illusion to be outgrown.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "capitalism-progressive": {
@@ -2019,7 +2192,8 @@
       "rationale": "Inferred: he presents the bourgeoisie and its money culture as spiritually corrupt, which is at odds with calling capitalism a progressive force.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "women-equality-needs-economic-change": {
       "value": null,
@@ -2051,7 +2225,8 @@
       "rationale": "Inferred: in the Diary he defends the Russian artel as an expression of living unity against utilitarian associations; he does not propose restructuring society.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "majority-settlement": {
       "value": null,
@@ -2060,10 +2235,13 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Rejects both the bourgeois 'every man for himself' order and Western socialism, and offers Orthodox brotherhood as Russia's own path (March 1877, January 1877, Aug 1880).",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "historical-land-claim": {
       "value": null,
@@ -2161,7 +2339,8 @@
       "rationale": "Inferred: the Orthodox monarchy he defends rests on Christian faith rather than on popular sovereignty; the Diary does not state the principle in these words.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2182,10 +2361,13 @@
       "sources": []
     },
     "abolish-armed-forces": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: sees war as salutary and arms as needed against Europe (April 1877; Oct 1877 military rule).",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "rich-first": {
       "value": null,
@@ -2296,7 +2478,8 @@
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "open-lgbt-military-service": {
       "value": null,
@@ -2310,7 +2493,12 @@
       "rationale": "Inferred: he saw atheism spreading among the educated as a sickness, and in a letter to Pobedonostsev objected to a ministry order to refute socialism in class.",
       "sources": [
         "s1",
-        "s3"
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "abolish-police-prisons": {
@@ -2438,7 +2626,12 @@
       "confidence": "medium",
       "rationale": "He calls death for the Slavic cause 'a glorious death' and honours Russian volunteers and soldiers who died for the people.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "politics-spiritual-struggle": {
@@ -2446,7 +2639,12 @@
       "confidence": "medium",
       "rationale": "He frames Russia's mission and its struggle with Europe in spiritual terms, not only political ones.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "homeland-cultural-centre": {
@@ -2461,7 +2659,8 @@
       "rationale": "Inferred: he faults Peter the Great's state-led Westernisation for cutting the educated off from the people's culture; he does not state the order of priority.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "god-not-male": {
       "value": null,
@@ -2482,7 +2681,8 @@
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "single-unit-for-people": {
       "value": null,
@@ -2561,7 +2761,12 @@
       "confidence": "medium",
       "rationale": "He wrote that the Russian people's thirst for universal brotherhood in Christ is a spiritual fact and that politics must serve it.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "regional-powers-revocable": {
@@ -2599,7 +2804,12 @@
       "confidence": "low",
       "rationale": "Contested: he supported the 1877 war against the Ottomans as a duty to Christian peoples, which is not a purely defensive framing.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "language-defines-nation": {
@@ -2619,7 +2829,12 @@
       "confidence": "medium",
       "rationale": "He argues that Europe, and England in particular, sought to weaken and divide Russia over Constantinople.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "free-public-college": {
@@ -2671,10 +2886,13 @@
       "sources": []
     },
     "soldiers-refuse-war": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: praises the Russian soldiers' eager popular war (April 1877).",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "collective-bargaining": {
       "value": null,
@@ -2724,7 +2942,8 @@
       "rationale": "Inferred: he describes the Russian people's faith and unity as a lasting spiritual community; he does not use the phrase 'sacred nation'.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "student-debt-relief": {
       "value": null,
@@ -2744,7 +2963,8 @@
       "rationale": "Inferred: the Pushkin Speech stresses a universal human brotherhood and a poet's power to enter into all nations, which presumes a common human nature.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "public-service-media": {
       "value": null,
@@ -2757,7 +2977,12 @@
       "confidence": "low",
       "rationale": "Inferred: he held that Orthodoxy keeps the true image of Christ against Catholicism; he does not say all religions express one truth.",
       "sources": [
-        "s2"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "farm-price-support": {
@@ -2868,7 +3093,8 @@
       "rationale": "In the Diary he calls for full equality of rights with men in education, professions and tenure of office; voting is not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "religion-oppresses-women": {
       "value": null,
@@ -2929,7 +3155,12 @@
       "confidence": "medium",
       "rationale": "He calls Russia the protectress of Orthodoxy and treats the Orthodox Church as the people's faith with a special place in the state.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "minority-territorial-autonomy": {
@@ -2974,7 +3205,8 @@
       "rationale": "Inferred: he ties the Russian people's identity to Orthodoxy and to the soil of the homeland; he does not state the bond in these words.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "extrajudicial-killing": {
       "value": null,
@@ -3019,10 +3251,14 @@
       "sources": []
     },
     "bypass-parties-groups": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: sees parties as breeding discord (reference article) and the Tsar-people union as the true political bond (April 1877).",
+      "sources": [
+        "b1",
+        "b2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-business-privileges": {
       "value": null,
@@ -3115,5 +3351,15 @@
       "sources": []
     }
   },
-  "notes": "Views changed over time. The early Petrashevsky-era socialism (1840s) is superseded by his mature conservatism in the Winter Notes (1863) and the Diary (1873-1881), which are used as the most recent clear positions. Answers are drawn only from his non-fiction and letters; no view of a novel's character is attributed to him. The Jewish question is answered as contested (low). The Diary's 1877 essay mixes antisemitic stereotypes with a stated favour for full equality of rights. Capital punishment: the only recorded material is his account of his own mock execution in 1849 and a letter written the day he was sentenced; no general position on the death penalty was found, so that statement is null. Sources: the Brasol translation of the Diary and the FitzLyon translation of Winter Notes are read in full text from Internet Archive scans; the letters are the 1923 English edition; Joseph Frank's 1980 review is cited for scholarly context and the Wikipedia article for dates."
+  "notes": "Views changed over time. The early Petrashevsky-era socialism (1840s) is superseded by his mature conservatism in the Winter Notes (1863) and the Diary (1873-1881), which are used as the most recent clear positions. Answers are drawn only from his non-fiction and letters; no view of a novel's character is attributed to him. The Jewish question is answered as contested (low). The Diary's 1877 essay mixes antisemitic stereotypes with a stated favour for full equality of rights. Capital punishment: the only recorded material is his account of his own mock execution in 1849 and a letter written the day he was sentenced; no general position on the death penalty was found, so that statement is null. Sources: the Brasol translation of the Diary and the FitzLyon translation of Winter Notes are read in full text from Internet Archive scans; the letters are the 1923 English edition; Joseph Frank's 1980 review is cited for scholarly context and the Wikipedia article for dates.\n\nMerged with an independent claude-sonnet-5-5 audit: 10 answers taken from it, 31 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Book pass: answers rest on the Brasol translation of the Diary (1873-1881), which covers his last years, so no later positions exist. Statement texts about positions voiced by characters in his novels were excluded.",
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-25"
+    }
+  ]
 }
