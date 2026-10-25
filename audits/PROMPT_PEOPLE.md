@@ -44,6 +44,13 @@ objectionable; attribute them to sources instead.
 - When the person's own writing is available as full text (a book, manifesto, platform or speech
   collection), download it into your scratch folder and search it for each theme's topics rather than
   reading summaries: it covers far more statements, in their own words.
+- The runner may hand you a text the maintainer supplied (a book or transcript you couldn't fetch
+  yourself). Treat it as a primary source and search it the same way. Cite it as the published
+  work, with the url of a publisher or library catalog page for it that you opened (e.g.
+  openlibrary.org/isbn/…), never a file path or download site. Name the chapter in each rationale
+  that rests on it, and paraphrase rather than quote more than a short phrase. A memoir's claims
+  about its own results are claims; answer from the positions and policies it states. Check later
+  positions on the web, since the text has a date.
 - Stop early for someone without a political record (an artist, athlete or entertainer known for
   other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
   "<name> views on …") turn up no stated political positions, record the few you found, answer the
