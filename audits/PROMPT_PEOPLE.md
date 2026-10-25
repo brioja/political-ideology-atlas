@@ -130,6 +130,11 @@ test's dividing lines precisely enough to tell neighbouring ideologies apart. It
 position, not on the answers. Someone with too thin a political record is left out. Do not pad
 answers to pass; an honest rejection is the correct outcome.
 
+A pass can still come with a "loosely placed" warning: the person is shown, but placed so roughly
+that they sit near the middle of the lines and show up in many takers' results. Treat it as a sign
+the research isn't finished: count known positions per theme and search the thinnest ones for
+stated positions. If the record really has nothing more, stop; the audit is accepted as it is.
+
 When the validator rejects an answer, fix the answer, not the wording: if it says contested
 evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.
 

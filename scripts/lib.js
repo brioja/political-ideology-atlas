@@ -56,12 +56,19 @@ function placed(answers, factor) {
 // record of roughly 20-25 positions passes, while the apolitical controls (0-5 positions) sit at 2.3x
 // or more and still fail.
 const PEOPLE_BAR = 1.5;
+// Passing the bar is enough to be shown, but a person placed near it lands close to the middle of the
+// lines and turns up in many takers' results. Below this share of the bar the placement is preferred;
+// above it the validator warns, and the audit is still accepted.
+const PEOPLE_PREFERRED = 0.75;
 // A historical figure's answers may be inferred from views they stated (audits/PROMPT_PEOPLE.md); those
 // begin "Inferred:" and, like an ideology's inferred answers, don't count toward salience. They still
 // count for matching, so nobody is shown on the strength of inferences.
 const statedOnlyPerson = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
-const personSalience = (answers) => placed(statedOnlyPerson(answers), PEOPLE_BAR);
+const personSalience = (answers) => {
+  const r = placed(statedOnlyPerson(answers), PEOPLE_BAR);
+  return { ...r, preferred: r.bar * PEOPLE_PREFERRED, loose: r.salient && r.uncertainty > r.bar * PEOPLE_PREFERRED };
+};
 
 // Ideologies must answer every statement, inferring where the ideology never took a position
 // (marked low confidence). For salience, only stated positions count: an inferred answer is the

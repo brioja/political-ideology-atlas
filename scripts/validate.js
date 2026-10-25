@@ -163,6 +163,8 @@ function validate(id) {
     const s = PEOPLE ? personSalience(answers) : ideologySalience(answers);
     if (!s.salient) {
       errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than the typical gap between neighbouring ideologies (${s.bar.toFixed(2)})`);
+    } else if (s.loose) {
+      warnings.push(`loosely placed: ${s.known} recorded positions give uncertainty ${s.uncertainty.toFixed(2)}, which passes the bar (${s.bar.toFixed(2)}) but not the preferred ${s.preferred.toFixed(2)}; look for stated positions in the thinnest themes`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;

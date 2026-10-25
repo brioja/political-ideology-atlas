@@ -40,9 +40,10 @@ many will have a thin political record; the early-exit rule makes those quick.
    folder and move it into `audits/people/` as the last step, so the main lane never picks up a
    half-written file. Run `node scripts/validate.js --people <id>` and fix every
    error except salience. Never add or strengthen an answer to clear the salience gate; failing
-   salience is an acceptable outcome.
+   salience is an acceptable outcome. A "loosely placed" warning means the audit passes but the
+   thinnest themes need more searching; do that, then accept what the record gives.
 7. Do not edit any other file. Do not build, test, commit or push: the main lane reviews each file,
    rebuilds and pushes.
 
 After each person, print one line: id, known answers out of 490, how many inferred, whether
-salience passed.
+salience passed, and whether it was loosely placed.
