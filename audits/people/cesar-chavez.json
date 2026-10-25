@@ -2,7 +2,10 @@
   "id": "cesar-chavez",
   "name": "Cesar Chavez",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "Labour leader and co-founder of the United Farm Workers (1927–1993)",
   "summary": "A farmworkers' union leader who co-founded the National Farm Workers Association and the United Farm Workers. He pursued change through nonviolent direct action such as boycotts, marches and fasts, grounded in Catholic social teaching and in Mexican-American and Chicano identity. He defended collective bargaining, attacked pesticide use and grower influence on politics, and changed his position on undocumented immigration over the 1970s.",
@@ -47,6 +50,70 @@
       "author": "Julio Ricardo Varela",
       "url": "https://www.latinorebels.com/?p=179564",
       "usedFor": "Quotes from Chavez's 1974 letter: against deportation of illegal aliens, support for amnesty and liberalised immigration law, opposition to growers' use of illegal aliens as strikebreakers"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "The Organizer’s Tale",
+      "author": "Cesar Chavez",
+      "url": "https://library.ucsd.edu/farmworkermovement/ufwarchives/DalzellArchive/RampartsMagazine/Cesar%20Chavez_001.pdf",
+      "usedFor": "Ramparts, July 1966 essay (UC San Diego Farmworker Movement archive copy): organizing method, membership democracy, first strikes"
+    },
+    {
+      "id": "b2",
+      "kind": "primary",
+      "title": "Commonwealth Club Address, 9 November 1984",
+      "author": "Cesar Chavez",
+      "url": "https://library.ucsd.edu/farmworkermovement/essays/essays/CESAR%20CHAVEZ%20COMMONWEALTH%20SPEECH.pdf",
+      "usedFor": "Race, unions, boycott, labor law, pesticides, grower subsidies, politicians"
+    },
+    {
+      "id": "b3",
+      "kind": "primary",
+      "title": "Address at Pacific Lutheran University, March 1989 (pesticides)",
+      "author": "Cesar Chavez",
+      "url": "https://ufw.org/?p=1011",
+      "usedFor": "Pesticide regulation, precaution, agribusiness lobbying, race and class, nonviolent noncooperation"
+    },
+    {
+      "id": "b4",
+      "kind": "primary",
+      "title": "Statement before the Senate Subcommittee on Labor, 16 April 1969 (S.8)",
+      "author": "Cesar E. Chavez",
+      "url": "https://libraries.ucsd.edu/farmworkermovement/essays/essays/MillerArchive/031%20Statement%20Of%20Cesar%20E.%20Chavez.pdf",
+      "usedFor": "Labor law, Taft-Hartley, right-to-work, small farms, land concentration, pesticide disclosure, New Deal"
+    },
+    {
+      "id": "b5",
+      "kind": "primary",
+      "title": "Statements by Cesar Chavez on his fasts (1968, 1972, 1988)",
+      "author": "Cesar Chavez",
+      "url": "https://chavez.cde.ca.gov/modelcurriculum/Teachers/Lessons/Resources/Documents/EXR1_Cesar_E_Chavez_Statements_on_Fasts.pdf",
+      "usedFor": "Nonviolence, sacrifice, faith, environment for future generations"
+    },
+    {
+      "id": "b6",
+      "kind": "primary",
+      "title": "The Mexican-American and the Church (1968)",
+      "author": "Cesar E. Chavez",
+      "url": "https://chavez.cde.ca.gov/modelcurriculum/Teachers/Lessons/Resources/Documents/8-13_Speeches_Statements_1968-71_f.pdf",
+      "usedFor": "Religion, the Church and the poor, spiritual needs of strikers"
+    },
+    {
+      "id": "b7",
+      "kind": "program",
+      "title": "The Plan of Delano (1966)",
+      "author": "National Farm Workers Association (read at the Delano-Sacramento pilgrimage)",
+      "url": "https://chavez.cde.ca.gov/ModelCurriculum/Teachers/Lessons/Resources/documents/plan_of_delano.pdf",
+      "usedFor": "Nonviolence, unity across races, social revolution; authorship is shared, so used only for corroboration"
+    },
+    {
+      "id": "b8",
+      "kind": "primary",
+      "title": "Letter to farm workers and supporters, 15 May 1972 (Arizona farm labor law)",
+      "author": "Cesar E. Chavez",
+      "url": "https://libraries.ucsd.edu/farmworkermovement/essays/essays/MillerArchive/044A%20Letter%20from%20Cesar%20Chavez.pdf",
+      "usedFor": "Boycott and nonviolence, labor law that hobbles unions, race"
     }
   ],
   "answers": {
@@ -55,7 +122,14 @@
       "confidence": "high",
       "rationale": "Calls the UFW 'first and foremost a union, a union like any other' and says it survives only by delivering bread-and-butter gains for members.",
       "sources": [
-        "s1"
+        "s1",
+        "b1",
+        "b2",
+        "b4"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "collective-bargaining": {
@@ -63,7 +137,13 @@
       "confidence": "high",
       "rationale": "Says farm workers should be able to 'sit down and negotiate with your employer as equals across the bargaining table', and faults growers for refusing to bargain in good faith.",
       "sources": [
-        "s1"
+        "s1",
+        "b3",
+        "b4"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "democracy-best": {
@@ -72,7 +152,8 @@
       "rationale": "Describes the society he works within as 'a democratic society, where majority rules', and invokes the Bill of Rights in defending the union against charges of danger.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "participatory-democracy": {
       "value": 2,
@@ -80,7 +161,12 @@
       "rationale": "Stresses farm workers 'seizing control over their own lives' through votes, union elections and voter registration drives.",
       "sources": [
         "s1",
-        "s4"
+        "s4",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "workplace-democracy": {
@@ -89,7 +175,8 @@
       "rationale": "Pressed for free, secret-ballot union elections among workers, but the record does not show a position on how companies themselves are run.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "worker-ownership": {
       "value": 1,
@@ -97,7 +184,8 @@
       "rationale": "Reported by Wikipedia from biographers and his son: he saw workers' cooperatives as a middle path. Secondhand, so low.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "neither-capitalism-nor-communism": {
       "value": 2,
@@ -105,7 +193,8 @@
       "rationale": "Reported view, via Wikipedia's account of biographers, that cooperatives lay between a failed capitalism and state socialism.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "dictatorship-of-proletariat": {
       "value": -2,
@@ -113,7 +202,8 @@
       "rationale": "Inferred: he rejected Marxist-Leninist state socialism as a model in favour of cooperatives and nonviolence, per the Wikipedia account.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "cooperative-communities": {
       "value": 1,
@@ -121,14 +211,20 @@
       "rationale": "Promoted the La Paz commune, which held property in common, as a model others should follow. Reported by Wikipedia; does not extend to all of society.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "correct-racial-injustice": {
       "value": 2,
       "confidence": "high",
       "rationale": "Describes his union as attacking the 'historical source of shame and infamy' imposed on Mexican-Americans and speaks of racism and discrimination as wrongs to be overcome.",
       "sources": [
-        "s1"
+        "s1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "racism-not-main-obstacle": {
@@ -137,14 +233,20 @@
       "rationale": "Inferred: his 1984 speech still describes ongoing discrimination in employment and in the fields, which points against saying racism has ceased to be the main obstacle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "racial-pride": {
       "value": 2,
       "confidence": "medium",
       "rationale": "Speaks of 'confidence and pride and hope' among Hispanics raised by the union, and of fighting for the dignity of his people.",
       "sources": [
-        "s1"
+        "s1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "racial-group-interests": {
@@ -153,7 +255,13 @@
       "rationale": "Organised Mexican-American voters and workers as a community with shared interests, and Wikipedia reports he focused the movement on their ethnic identity.",
       "sources": [
         "s1",
-        "s4"
+        "s4",
+        "b2",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "individual-rights-only": {
@@ -162,14 +270,20 @@
       "rationale": "Inferred: he organised as a community of farm workers and Mexican-Americans, which sits uneasily with holding that rights belong only to individuals.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "intersecting-oppressions": {
       "value": 1,
       "confidence": "low",
       "rationale": "Inferred: he links racial exclusion, class exploitation of farm labour and the sexual harassment of women workers within one struggle.",
       "sources": [
-        "s1"
+        "s1",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "racial-segregation-law": {
@@ -177,7 +291,12 @@
       "confidence": "low",
       "rationale": "Inferred: he describes being refused service in California because of his colour as an injustice, which implies opposition to laws separating races.",
       "sources": [
-        "s1"
+        "s1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "racial-franchise": {
@@ -186,7 +305,8 @@
       "rationale": "Inferred: his voter-registration work for Mexican-Americans was a fight against exclusion from the franchise on racial grounds.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "property-franchise": {
       "value": -2,
@@ -194,14 +314,21 @@
       "rationale": "Inferred: his registration drives targeted poor and working people who did not own property, which implies opposition to a property test for voting.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "equal-moral-worth": {
       "value": 2,
       "confidence": "medium",
       "rationale": "Says farm workers 'are not agricultural implements' and insists his people be treated 'as human beings and not as chattel'.",
       "sources": [
-        "s1"
+        "s1",
+        "b2",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "political-violence-never": {
@@ -209,16 +336,28 @@
       "confidence": "medium",
       "rationale": "His 1968 and 1972 fast statements call for nonviolence as the movement's only acceptable weapon, but he does not state an absolute rule for every case.",
       "sources": [
-        "s3"
+        "s3",
+        "b5",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "revolution-justified": {
-      "value": -1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Inferred: he rejected violence and pursued change through boycotts, fasts and elections rather than armed or revolutionary struggle.",
+      "rationale": "Mixed: called for a social revolution (Plan of Delano, 1969 statements) but meant a nonviolent one won through boycotts, fasts and elections, and rejected violent change.",
       "sources": [
         "s3",
-        "s4"
+        "s4",
+        "b4",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "direct-action": {
@@ -227,7 +366,13 @@
       "rationale": "Wikipedia reports he judged boycotts and marches better than electoral politics, but after 1975 he redirected effort to elections under the state labour law.",
       "sources": [
         "s4",
-        "s1"
+        "s1",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "means-match-ends": {
@@ -235,7 +380,13 @@
       "confidence": "low",
       "rationale": "Inferred: his fasts and nonviolence were tied to the kind of society he wanted, a just and non-violent one.",
       "sources": [
-        "s3"
+        "s3",
+        "b5",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "war-builds-character": {
@@ -244,7 +395,8 @@
       "rationale": "Inferred: Wikipedia reports he publicly opposed US involvement in the Vietnam War, but he makes no direct statement about war and character.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "religion-illusion": {
       "value": -2,
@@ -252,7 +404,13 @@
       "rationale": "Frames his movement as a Christian one and speaks of God as the giver of life, so he does not regard religion as mere consolation.",
       "sources": [
         "s3",
-        "s4"
+        "s4",
+        "b5",
+        "b6"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "spiritual-nature": {
@@ -260,7 +418,14 @@
       "confidence": "medium",
       "rationale": "Fast statements speak of 'spirits', God and a spiritual commitment to justice alongside the material struggle over wages and conditions.",
       "sources": [
-        "s3"
+        "s3",
+        "b1",
+        "b3",
+        "b6"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "universal-morality": {
@@ -269,7 +434,8 @@
       "rationale": "Inferred: his cause rests on Catholic social teaching, which holds moral principles to be universal, as Wikipedia describes.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "reason-over-faith": {
       "value": -1,
@@ -277,7 +443,13 @@
       "rationale": "Inferred: his movement drew its energy from faith and spiritual sacrifice as well as from organising reason.",
       "sources": [
         "s3",
-        "s4"
+        "s4",
+        "b3",
+        "b5"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "more-religion-public": {
@@ -285,7 +457,13 @@
       "confidence": "low",
       "rationale": "Inferred: he used Masses, processions and fasts in public campaigns and described the movement as a Christian radical philosophy.",
       "sources": [
-        "s4"
+        "s4",
+        "b6",
+        "b7"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "self-interest-moral": {
@@ -293,7 +471,12 @@
       "confidence": "high",
       "rationale": "Calls 'the greatest tragedy' a life without 'the satisfaction of giving life for others' and urges giving oneself totally to nonviolent struggle.",
       "sources": [
-        "s3"
+        "s3",
+        "b5"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "withdraw-from-politics": {
@@ -303,7 +486,8 @@
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "animal-suffering-matters": {
       "value": 1,
@@ -311,7 +495,8 @@
       "rationale": "Wikipedia reports he became a vegetarian in 1970 and said cows and dogs are 'about the same', a secondhand quote.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "animal-use-humane": {
       "value": -2,
@@ -319,14 +504,20 @@
       "rationale": "Inferred: he became a vegetarian in 1970 and rejected meat-eating, which points against using animals for food even humanely.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "precautionary-principle": {
       "value": 1,
       "confidence": "medium",
       "rationale": "In the 1986 Wrath of Grapes speech he says no one can define safe exposure to residual poison, so consumers must be warned and act now.",
       "sources": [
-        "s2"
+        "s2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "gm-crops": {
@@ -335,14 +526,21 @@
       "rationale": "Criticises produce that results from 'plant mutations or chemicals' and says food should be free of toxics; a judgement on engineered crops is not stated.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "nature-intrinsic-value": {
       "value": 1,
       "confidence": "low",
       "rationale": "Describes damage to the land as a 'wanton abuse of nature', which treats nature as worth protecting for its own sake, though he does not state this directly.",
       "sources": [
-        "s1"
+        "s1",
+        "b2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "future-generations": {
@@ -350,7 +548,13 @@
       "confidence": "low",
       "rationale": "Pleads for protection from poisons for 'our children and for their children', a concern for future generations that is not framed as stewardship of the Earth.",
       "sources": [
-        "s2"
+        "s2",
+        "b3",
+        "b5"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "patriotism-serves-workers": {
@@ -359,14 +563,21 @@
       "rationale": "Calls the boycott 'a fight for the future of America' and speaks of 'one family', linking national interest with the welfare of workers.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "material-over-identity": {
       "value": -1,
       "confidence": "low",
       "rationale": "Inferred: the movement built its identity around Mexican-American and Chicano ethnicity as well as material demands, per Wikipedia.",
       "sources": [
-        "s4"
+        "s4",
+        "b2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "profit-exploitation": {
@@ -375,7 +586,8 @@
       "rationale": "Accuses growers of abusing and exploiting the workers who produce their wealth; he does not state a general theory of profit.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "regulate-corporations": {
       "value": 1,
@@ -383,7 +595,12 @@
       "rationale": "Calls for enforcing the law against growers who break it and for protecting consumers from pesticide residues; a broader position on corporate regulation is not stated.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
       ]
     },
     "reduce-immigration": {
@@ -393,7 +610,8 @@
       "sources": [
         "s5",
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "suppress-opposition": {
       "value": null,
@@ -642,10 +860,14 @@
       "sources": []
     },
     "widespread-small-property": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Asked Congress to study ways to reverse the concentration of farmland in fewer hands and to help farm workers become family-sized farm owners, said his natural sympathy lay with small growers, and in 1989 named mammoth agribusiness and huge farms as the problem.",
+      "sources": [
+        "b3",
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-money-wages": {
       "value": null,
@@ -1014,10 +1236,15 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Mixed: he said the union does not seek to destroy growers and would cooperate with employers who sign fair contracts, yet he treated strikes, boycotts and economic power as necessary against growers.",
+      "sources": [
+        "b1",
+        "b4",
+        "b8"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sacrifice-heritage": {
       "value": null,
@@ -1092,10 +1319,14 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Accused California’s governor of paying back donor growers at workers’ expense and called regulators captives of agribusiness; the criticism targeted politicians allied with growers, not all elites.",
+      "sources": [
+        "b2",
+        "b3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "heritable-defect-limits": {
       "value": null,
@@ -1182,10 +1413,14 @@
       "sources": []
     },
     "initiating-force-wrong": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: his insistence that the struggle be totally nonviolent implies he rejected starting force against others, though he never stated the principle in these terms and spoke of tough tactics such as boycotts and leaflet attacks.",
+      "sources": [
+        "b1",
+        "b5"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "competition-drives-progress": {
       "value": null,
@@ -1230,10 +1465,14 @@
       "sources": []
     },
     "restrict-strikes-picketing": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Told the Senate that repressive legislation is not the answer to harvest strikes and boycotts, and asked for exemption from the Taft-Hartley and Landrum-Griffin bans on recognition picketing and secondary boycotts; in 1972 he condemned Arizona’s law barring farm boycotts.",
+      "sources": [
+        "b4",
+        "b8"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "population-causes-poverty": {
       "value": null,
@@ -1362,10 +1601,13 @@
       "sources": []
     },
     "rural-life-healthier": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Lamented millions who left farms to rot and decay in city ghettos and hoped the rural poor could be brought back to work uncultivated land, which hints at a preference for rural life but is not a stated moral claim.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "reunify-divided-nation": {
       "value": null,
@@ -1374,10 +1616,13 @@
       "sources": []
     },
     "educated-out-of-touch": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Recalled that the doctors, lawyers and professionals who joined CSO lacked the urgency of farm workers and liked to talk about playing politics; he was speaking of professionals in that organization, not university graduates generally.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "cultures-equal-different": {
       "value": null,
@@ -1590,10 +1835,13 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Proposed that Congress study a national policy to enable farm workers to become family-sized farm owners and to reverse land concentration; he did not call for taking estates from their owners.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "refugee-return": {
       "value": null,
@@ -1692,10 +1940,14 @@
       "sources": []
     },
     "armed-group-creates-revolution": {
-      "value": null,
+      "value": -2,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: since he demanded a nonviolent movement and an unarmed revolution, he would have rejected a small armed group trying to spark one; he never addressed the idea directly.",
+      "sources": [
+        "b5",
+        "b7"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-hereditary-privilege": {
       "value": null,
@@ -1734,10 +1986,13 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Said the New Deal measures modified the capitalist system somewhat and saved the nation for free enterprise, a historical remark that suggests reform can preserve capitalism but is not a general theory.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "former-empire-influence": {
       "value": null,
@@ -1758,10 +2013,14 @@
       "sources": []
     },
     "freedom-to-discriminate": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Counted overcoming discrimination in employment among the gains of union contracts and described discrimination as one of the evils the union exists to fight, which is the opposite of a right to refuse to hire on those grounds.",
+      "sources": [
+        "b2",
+        "b3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "entrenched-bill-of-rights": {
       "value": null,
@@ -1992,10 +2251,14 @@
       "sources": []
     },
     "corporate-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Said agribusiness lobbying beats even the NRA, that lobbying kept farm workers out of federal safety laws, and that corporate growers gave Governor Deukmejian a million dollars and were repaid with a farm labor board that no longer enforced the law.",
+      "sources": [
+        "b2",
+        "b3"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -2058,10 +2321,14 @@
       "sources": []
     },
     "public-access-to-information": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Objected to county agricultural commissioners refusing to disclose pesticide-application records and to court injunctions against disclosure, and in 1989 complained that farm workers are not told when pesticides are used; a narrow case of a general right.",
+      "sources": [
+        "b3",
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "local-production": {
       "value": null,
@@ -2244,10 +2511,13 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Praised the New Deal (Social Security, unemployment insurance, Fair Labor Standards Act) as reforms within free enterprise and asked that farm workers get minimum wage and social insurance coverage.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2568,10 +2838,14 @@
       "sources": []
     },
     "family-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Said in the 1969 Senate statement that what he would like to see is a family living wage for every farm worker, and the 1984 address frames wages and conditions around supporting farm families.",
+      "sources": [
+        "b2",
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "ageing-research-funding": {
       "value": null,
@@ -2754,10 +3028,14 @@
       "sources": []
     },
     "farm-price-support": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Asked Congress to consider the proposed National Agricultural Bargaining Act so producers could obtain fair prices in commodity markets and family farms a living income, though he criticized subsidies that mainly benefited large growers.",
+      "sources": [
+        "b2",
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "keep-nuclear-weapons": {
       "value": null,
@@ -2814,10 +3092,13 @@
       "sources": []
     },
     "no-compulsory-union": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Urged Congress to exempt farm workers from section 14(b) so state right-to-work laws could not apply, and called union security most essential in seasonal agriculture, so he opposed letting workers opt out of union membership or dues.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "voter-id": {
       "value": null,
@@ -3012,10 +3293,13 @@
       "sources": []
     },
     "no-business-privileges": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Listed water subsidies, farm subsidies and similar handouts to corporate growers as special privileges from an era of rural-dominated legislatures and said they could soon be in jeopardy, treating them as an unfair benefit to the well-connected.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-denominational-politics": {
       "value": null,
@@ -3084,5 +3368,15 @@
       "sources": []
     }
   },
-  "notes": "Positions were checked against his own words where available: the 1984 Commonwealth Club address (full transcript), the 1986 Wrath of Grapes excerpt, and his 1968 and 1972 fast statements. The Wrath of Grapes text is a seven-minute excerpt, not the full speech. The Foundation's archive and the 1968 nonviolence and 1975 farm labor law texts were unreachable, so the 1975 act is only covered through his 1984 speech. His immigration stance is the most contested part of the record. The 1974 letter (quoted via s5) is the most recent clear statement found on immigration, and the Illegals Campaign and wet line (both 1973–1974, reported in s4) point the other way, so the answer is 0 at low confidence. His Vietnam opposition and vegetarianism come from Wikipedia and are secondhand. No position was found on the great majority of statements, so most are null."
+  "notes": "Positions were checked against his own words where available: the 1984 Commonwealth Club address (full transcript), the 1986 Wrath of Grapes excerpt, and his 1968 and 1972 fast statements. The Wrath of Grapes text is a seven-minute excerpt, not the full speech. The Foundation's archive and the 1968 nonviolence and 1975 farm labor law texts were unreachable, so the 1975 act is only covered through his 1984 speech. His immigration stance is the most contested part of the record. The 1974 letter (quoted via s5) is the most recent clear statement found on immigration, and the Illegals Campaign and wet line (both 1973–1974, reported in s4) point the other way, so the answer is 0 at low confidence. His Vietnam opposition and vegetarianism come from Wikipedia and are secondhand. No position was found on the great majority of statements, so most are null.\n\nMerged with an independent claude-sonnet-5-5 audit: 18 answers taken from it, 22 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Historical figure; only positions he stated or acted on are recorded, and the two inferred answers are marked low. The 1966 essay (s1) covers only his organizing method. Immigration is left null: his 1969 Senate statement and 1974 Examiner letter oppose using undocumented workers as strikebreakers and favor legal residency (s4, s9), but a private 1974 letter and the 1974 Illegals Campaign (s11) show a harder line, and neither answers a statement about immigration levels. He supported the Vietnam Moratorium in 1969 but no statement matches. The 2026 allegations against him are not political positions and are not used.",
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-25"
+    }
+  ]
 }
