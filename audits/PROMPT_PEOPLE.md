@@ -41,6 +41,10 @@ objectionable; attribute them to sources instead.
 - For people whose output is mostly video (streamers, podcasters, commentators), search their own
   channels and clips by theme ("<name> on NATO", "<name> Supreme Court", "<name> elections") and
   read the captions with yt-dlp. Their reactions to news segments state positions too.
+- If a page comes back as an empty JavaScript shell (common on transcript databases), render it with
+  headless Chrome: `google-chrome --headless=new --disable-gpu --virtual-time-budget=15000
+  --dump-dom <url>`, then strip the tags. Transcripts and captions rarely label speakers: use a
+  passage only when context makes clear the person themselves is speaking, not a guest or a bit.
 - When the person's own writing is available as full text (a book, manifesto, platform or speech
   collection), download it into your scratch folder and search it for each theme's topics rather than
   reading summaries: it covers far more statements, in their own words.
