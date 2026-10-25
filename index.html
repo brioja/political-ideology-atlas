@@ -201,6 +201,11 @@ a.button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; 
   display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; align-items: center; justify-content: space-between;
   background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 0.9rem 1.1rem;
 }
+.keep-result {
+  background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 10px; padding: 0.9rem 1.1rem;
+}
+.keep-result p { margin: 0 0 0.6rem; }
+.keep-result .row { align-items: center; }
 .share-link { display: flex; gap: 0.5rem; }
 .share-link input {
   flex: 1; min-width: 0; font: 400 0.85rem var(--mono); padding: 0.7rem; border-radius: 6px;
@@ -523,6 +528,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
         <div class="row">
           <a class="btn primary big" href="#/test">Start the test <span aria-hidden="true">→</span></a>
           <a class="btn big" href="#/ideologies">Explore ideologies</a>
+          <a class="btn big" href="#/results" id="last-result" hidden>See your last result <span aria-hidden="true">→</span></a>
         </div>
         <button class="link" id="resume" hidden>Resume where you left off</button>
         <p class="facts">Takes about 5–10 minutes. Free, no sign-up. No ads or tracking.</p>

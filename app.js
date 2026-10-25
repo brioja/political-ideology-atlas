@@ -53,6 +53,11 @@ function load() {
 function clearSaved() {
   try { localStorage.removeItem(STORAGE_KEY); } catch {}
 }
+// The answers saved in this browser, once there are enough for a result (as for "Results so far").
+function savedResult() {
+  const s = load();
+  return s && s.answers.filter((a) => a !== null).length >= Math.max(1, REAL_LINES) ? s.answers : null;
+}
 
 // How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
 // at least 2 and at most 8. build.js precomputes the count; otherwise it's computed here.
@@ -672,7 +677,10 @@ function showResults(shared = null) {
           : `, so it's worth reading both.`}`
         : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
-    ${shared ? "" : `<div class="row"><a class="btn" href="#share" id="to-share">Share your result <span aria-hidden="true">↓</span></a></div>`}
+    ${shared ? "" : `<div class="keep-result">
+      <p><strong>Keep your result.</strong> It's saved in this browser only. Copy your link to come back to it from anywhere.</p>
+      <div class="row"><button class="primary" id="copy-link-top">Copy your link</button><a class="btn" href="#share" id="to-share">Share your result <span aria-hidden="true">↓</span></a><span class="muted" id="keep-status" role="status"></span></div>
+    </div>`}
 
     <section>
       <h2>What ${top.name} stands for</h2>
@@ -855,6 +863,16 @@ function setUpSharing(given, ranked, you, shared) {
     btn.addEventListener("click", () => navigator.share({ title: `${shared ? "Closest" : "My closest"} political ideology: ${ranked[0].name}`, url }).catch(() => {}));
   }
 
+  if (!shared) $("copy-link-top").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      $("keep-status").textContent = "Link copied. Bookmark it or save it somewhere.";
+    } catch {
+      location.hash = "#share";
+      $("share-url").select();
+      status.textContent = "Press Ctrl+C (or ⌘C) to copy the selected link.";
+    }
+  });
   $("copy-link").addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(url);
@@ -1967,6 +1985,7 @@ function route() {
   const [page = "", arg, arg2] = location.hash.replace(/^#\/?/, "").split("/");
   const shared = decodeAnswers(new URLSearchParams(location.search).get("r"));
   $("resume").hidden = !load();
+  $("last-result").hidden = !savedResult();
 
   if (page === "test") {
     if (arg) {
@@ -1979,6 +1998,7 @@ function route() {
     if (shared && page !== "results" && !lastAnswers) { show("results"); showResults(shared); }
     else if (lastAnswers) { show("results"); showResults(); }
     else if (shared) { show("results"); showResults(shared); }
+    else if ((lastAnswers = savedResult())) { show("results"); showResults(); }
     else go("#/");
   } else if (page === "ideologies" && arg) {
     const name = renderIdeologyPage(decodeURIComponent(arg));
