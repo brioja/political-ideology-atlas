@@ -4,7 +4,8 @@
   "auditedAt": "2026-10-23",
   "auditor": [
     "claude-sonnet-5-5",
-    "claude-haiku-5-5"
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
   ],
   "passes": [
     {
@@ -14,6 +15,10 @@
     {
       "auditor": "claude-haiku-5-5",
       "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
     }
   ],
   "living": false,
@@ -140,6 +145,54 @@
       "author": "William McKinley",
       "url": "https://www.presidency.ucsb.edu/documents/second-annual-message-15",
       "usedFor": "Cuba, Hawaii annexation, navy expansion"
+    },
+    {
+      "id": "c1",
+      "kind": "primary",
+      "title": "Speeches and Addresses of William McKinley (1893 collection, edited by Joseph P. Smith)",
+      "author": "William McKinley",
+      "url": "https://archive.org/download/speechesaddresse01mcki/speechesaddresse01mcki_djvu.txt",
+      "usedFor": "Full OCR early.txt. Page references are printed pages; includes congressional speeches and religious/civic addresses. Collection says McKinley reviewed it."
+    },
+    {
+      "id": "c2",
+      "kind": "primary",
+      "title": "Speeches and Addresses, March 1, 1897–May 30, 1900",
+      "author": "William McKinley",
+      "url": "https://archive.org/details/speechesaddresse00mcki",
+      "usedFor": "Full OCR president.txt, downloaded through archive metadata; printed page references."
+    },
+    {
+      "id": "c3",
+      "kind": "primary",
+      "title": "State of the Union Addresses, 1897–1900",
+      "author": "William McKinley",
+      "url": "https://gutenberg.org/files/5031/5031-h/5031-h.htm",
+      "usedFor": "Full messages.txt and original HTML. His own instructions to Philippine Commission are quoted in Fourth Annual Message."
+    },
+    {
+      "id": "c4",
+      "kind": "primary",
+      "title": "First Inaugural Address, March 4, 1897",
+      "author": "William McKinley",
+      "url": "https://millercenter.org/the-presidency/presidential-speeches/march-4-1897-first-inaugural-address",
+      "usedFor": "Full inaugural.txt; executive authority and rights, checked against presidential collection."
+    },
+    {
+      "id": "c5",
+      "kind": "primary",
+      "title": "Buffalo speech, September 5, 1901",
+      "author": "William McKinley",
+      "url": "https://millercenter.org/the-presidency/presidential-speeches/september-5-1901-speech-buffalo-new-york",
+      "usedFor": "Full buffalo.txt; latest reciprocity and arbitration position."
+    },
+    {
+      "id": "c6",
+      "kind": "reference",
+      "title": "William McKinley",
+      "author": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/wiki/William_McKinley",
+      "usedFor": "Chronology, Dingley Tariff and Philippine-war record cross-check; reference-browser.json."
     }
   ],
   "answers": {
@@ -184,9 +237,13 @@
       "confidence": "low",
       "rationale": "The December 1900 message set Philippine rules that no person be deprived of property without due process and that private property not be taken without just compensation.",
       "sources": [
-        "b6"
+        "b6",
+        "c3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "regulate-corporations": {
       "value": 1,
@@ -195,11 +252,12 @@
       "sources": [
         "s3",
         "s4",
-        "b4"
+        "b4",
+        "c3"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "cut-welfare": {
@@ -258,10 +316,7 @@
         "s3",
         "b6"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "legalize-sex-work": {
       "value": null,
@@ -300,10 +355,13 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "An Auxiliary to Religion, 1892, pp. 606–608, praises expanding Christian associations as strengthening citizenship and free institutions.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "correct-racial-injustice": {
       "value": null,
@@ -339,7 +397,7 @@
         "s3",
         "s4"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "empower-international-orgs": {
       "value": 1,
@@ -351,10 +409,7 @@
         "b4",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "free-trade": {
       "value": -2,
@@ -363,11 +418,12 @@
       "sources": [
         "s1",
         "s7",
-        "b3"
+        "b3",
+        "c5"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "nation-first": {
@@ -382,18 +438,23 @@
       "rationale": "His April 1898 war message justified forcible intervention in Cuba first in the cause of humanity, to end barbarities, bloodshed and starvation, and rejected the argument that it was none of the US's business.",
       "sources": [
         "s5",
-        "b2"
+        "b2",
+        "c3",
+        "c6"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "open-borders": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The first inaugural advocates closing entry to those he describes as hostile to American institutions and adding immigration safeguards.",
+      "sources": [
+        "c4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "limit-growth": {
       "value": null,
@@ -420,10 +481,13 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "July Fourth at Lakeside, pp. 583–584, celebrates the American Revolution as a justified struggle against oppression for self-government.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "experts-over-public": {
       "value": null,
@@ -469,11 +533,13 @@
         "s1",
         "s4",
         "s8",
-        "b3"
+        "b3",
+        "c6",
+        "c5"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "state-directs-investment": {
@@ -507,10 +573,13 @@
       "sources": []
     },
     "one-party-rule": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Issues Make Parties, 1892, pp. 574–575, says competing political parties are necessary and enduring agents of popular government.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "monarchy-legitimate": {
       "value": null,
@@ -562,13 +631,17 @@
         "b3",
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "July Fourth at Lakeside, p. 584, endorses absolute separation; his 1900 Philippine instructions personally require complete church–state separation.",
+      "sources": [
+        "c1",
+        "c3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "laws-from-scripture": {
       "value": null,
@@ -612,11 +685,12 @@
       "rationale": "In his 1897 annual message he said the treaty system under which the Five Civilized Tribes governed the Indian Territory had become impossible to continue and endorsed ending their trust and tribal government by Congress.",
       "sources": [
         "s3",
-        "b4"
+        "b4",
+        "c3"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "colonial-reparations": {
@@ -837,11 +911,13 @@
         "s2",
         "s3",
         "s8",
-        "b4"
+        "b4",
+        "c2",
+        "c6"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "personal-loyalty-rule": {
@@ -851,10 +927,13 @@
       "sources": []
     },
     "bound-labor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The American Workingman, 1891, p. 558, celebrates abolition of slave labor and workers’ freedom to enter voluntary employment.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "no-neutral-knowledge": {
       "value": null,
@@ -911,7 +990,7 @@
       "sources": [
         "b4"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "economic-freedom": {
       "value": null,
@@ -935,10 +1014,7 @@
         "b2",
         "b4"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "force-without-un": {
       "value": null,
@@ -947,10 +1023,13 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "An Auxiliary to Religion, p. 607, says religion is indispensable to human flourishing and has no substitute.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "welfare-for-citizens": {
       "value": null,
@@ -969,9 +1048,13 @@
       "confidence": "medium",
       "rationale": "In a House speech supporting labor arbitration he called it the true way of settling differences between labor and capital, bringing them to better understanding and uniting them closer in interest.",
       "sources": [
-        "s1"
+        "s1",
+        "c2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "sacrifice-heritage": {
       "value": null,
@@ -1046,11 +1129,12 @@
       "sources": [
         "s2",
         "b5",
-        "b6"
+        "b6",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "patriarchy-structural": {
@@ -1097,7 +1181,7 @@
         "s1",
         "s4"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "socialism-one-country": {
       "value": null,
@@ -1154,7 +1238,7 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "population-transfer": {
       "value": null,
@@ -1169,10 +1253,13 @@
       "sources": []
     },
     "competition-drives-progress": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Buffalo speech describes commercial competition as indispensable to advances in agriculture, industry and business.",
+      "sources": [
+        "c5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "ban-extremist-parties": {
       "value": null,
@@ -1187,10 +1274,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The first inaugural recognizes Congress’s exclusive revenue power and the executive’s obligation to convene it to address fiscal needs.",
+      "sources": [
+        "c4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "vanguard-party": {
       "value": null,
@@ -1247,10 +1337,13 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The first inaugural, collection p. 9, expressly commits to preserving and strengthening a free press.",
+      "sources": [
+        "c2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "party-commands-army": {
       "value": null,
@@ -1367,7 +1460,7 @@
       "sources": [
         "b6"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "death-penalty": {
       "value": null,
@@ -1437,7 +1530,7 @@
         "b1",
         "b7"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -1649,11 +1742,12 @@
       "rationale": "In his 1899 annual message he said combinations to stifle competition, limit production and fix prices needed a remedy and that existing law should be extended to check monopolies without delay. He did not propose breaking up large firms as such.",
       "sources": [
         "s3",
-        "b4"
+        "b4",
+        "c3"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "no-bailouts": {
@@ -1681,7 +1775,7 @@
       "sources": [
         "s7"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "trade-labor-env-standards": {
       "value": null,
@@ -1722,16 +1816,16 @@
         "s6",
         "b6"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "patriotic-education": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Children’s exercises and school speeches in the presidential collection praise teaching love of country, its flag and national hymns.",
+      "sources": [
+        "c2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "end-racial-preferences": {
       "value": null,
@@ -1782,7 +1876,7 @@
       "sources": [
         "b6"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "colonial-treaties-void": {
       "value": null,
@@ -1791,10 +1885,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "July Fourth at Lakeside, pp. 583–584, celebrates replacing inherited sovereignty with self-government by the people.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "minority-veto": {
       "value": null,
@@ -1956,10 +2053,7 @@
         "b4",
         "b6"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "foreign-takeover-block": {
       "value": null,
@@ -1992,10 +2086,13 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The first inaugural expressly says Congress alone can provide government revenue.",
+      "sources": [
+        "c4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "single-official-language": {
       "value": null,
@@ -2070,10 +2167,13 @@
       "sources": []
     },
     "no-duty-to-obey": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The first inaugural, presidential collection p. 9, treats respect for and obedience to law as a civic obligation.",
+      "sources": [
+        "c2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "non-intervention": {
       "value": -2,
@@ -2081,11 +2181,14 @@
       "rationale": "Argued that the US had a duty to intervene in Cuba despite it being another nation's territory, and carried out the intervention.",
       "sources": [
         "s5",
-        "b2"
+        "b2",
+        "c3",
+        "c2",
+        "c6"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "industrial-unions": {
@@ -2131,10 +2234,13 @@
       "sources": []
     },
     "religious-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Catholic Summer School address, August 1899, pp. 209–210, expressly defines national unity across different religious beliefs.",
+      "sources": [
+        "c2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "deference-to-leading-power": {
       "value": null,
@@ -2257,7 +2363,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "defensive-jihad-duty": {
       "value": null,
@@ -2314,10 +2420,13 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: his first inaugural derives presidential authority from the people’s will and constitutional oath, while invoking God’s guidance.",
+      "sources": [
+        "c4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2374,10 +2483,13 @@
       "sources": []
     },
     "property-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Equal Suffrage, pp. 165–180, defends equal voting rights for poor and rich citizens rather than a property qualification.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "domination-women-nature": {
       "value": null,
@@ -2408,9 +2520,13 @@
       "confidence": "high",
       "rationale": "Defended the right of Black citizens in the South to vote in his 1880s-1890 speeches, calling suppression of the ballot wicked, and supported the Federal Election Bill that provided federal supervision of elections.",
       "sources": [
-        "s1"
+        "s1",
+        "c1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "online-participation": {
       "value": null,
@@ -2701,10 +2817,13 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: the 1892 YMCA address, pp. 606–607, connects physical, moral and religious development with sound citizenship and free institutions.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "regional-powers-revocable": {
       "value": null,
@@ -2743,11 +2862,14 @@
       "sources": [
         "s5",
         "s8",
-        "b2"
+        "b2",
+        "c3",
+        "c2",
+        "c6"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "language-defines-nation": {
@@ -2799,7 +2921,7 @@
       "sources": [
         "b4"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "open-diplomacy": {
       "value": null,
@@ -2826,10 +2948,13 @@
       "sources": []
     },
     "collective-bargaining": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Labor Arbitration, pp. 196–199, supports organized workers and employers jointly settling wages and disputes through voluntary arbitration.",
+      "sources": [
+        "c1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "in-work-tax-credits": {
       "value": null,
@@ -3252,5 +3377,5 @@
       "sources": []
     }
   },
-  "notes": "Positions come from his House speeches (1878-1891), first inaugural, annual messages and 1898-1901 speeches. Many topics he never addressed are null. His second-term stance on tariffs softened toward reciprocity in the Buffalo speech.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing."
+  "notes": "Positions come from his House speeches (1878-1891), first inaugural, annual messages and 1898-1901 speeches. Many topics he never addressed are null. His second-term stance on tariffs softened toward reciprocity in the Buffalo speech.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 13 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third audit, no prior answers copied. Full texts of both speech collections and all four annual messages downloaded; searched each thin theme and reviewed all 490 statement texts. Religion table: the Lakeside address supplies an explicit church–state separation position; YMCA address supports a public religious role; Catholic Summer School speech supplies a civic definition of national belonging. Divine-source-of-authority and spiritual-nature are explicitly limited historical inferences, not direct theological claims. No evidence for scriptural civil law, blasphemy penalties, premarital-sex doctrine, party command of the army or revolutionary vanguard politics. Public-school neutrality and general church–state separation do not, by themselves, settle all religious instruction in state schools: no-religion-state-schools remains null. His commission’s later education regulations are not automatically attributed to him. No secondhand Rusling Philippines-prayer account is used. Equal Suffrage is about Black male voting rights, not evidence for women’s suffrage. Religious addresses include quotations from Washington and Lincoln; separate speakers’ words are not treated as new McKinley testimony except where he expressly endorses their principles. 1897 non-aggression pledges are superseded by his personally driven expansion and wars. Reciprocity at Buffalo softened exclusiveness but did not renounce protective tariffs. His civil-service promises were checked against later exemptions, so no unqualified meritocracy answer is assigned. Forest-reserve administration was examined but does not establish intrinsic value of nature, degrowth or other unrelated ecological doctrines. Eight-hour federal-employment advocacy is not generalized into a policy on all private employment. War authorization is not treated as extralegal political violence."
 }

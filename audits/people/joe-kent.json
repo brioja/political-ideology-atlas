@@ -4,7 +4,8 @@
   "auditedAt": "2026-10-23",
   "auditor": [
     "claude-sonnet-5-5",
-    "claude-haiku-5-5"
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
   ],
   "passes": [
     {
@@ -14,6 +15,10 @@
     {
       "auditor": "claude-haiku-5-5",
       "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
     }
   ],
   "living": true,
@@ -196,22 +201,73 @@
       "author": "The Media Line",
       "url": "https://themedialine.org/?p=176105",
       "usedFor": "Excerpts of Kent's March 2026 resignation letter, including his claims on Iran and Israel."
+    },
+    {
+      "id": "c2",
+      "kind": "primary",
+      "title": "Questions for candidates: Joe Kent, October 24, 2022",
+      "author": "Joe Kent / OPB",
+      "url": "https://www.opb.org/article/2022/10/24/opb-questions-joe-kent-southwest-washington-us-house-3rd-district-election/",
+      "usedFor": "Written responses; saved as opb.txt."
+    },
+    {
+      "id": "c3",
+      "kind": "primary",
+      "title": "WA-3 debate, October 27, 2022; OPB transcript",
+      "author": "Joe Kent / OPB",
+      "url": "https://www.opb.org/article/2022/10/28/washingtons-3rd-congressional-district-debate-republican-joe-kent-and-democrat-marie-gluesenkamp-perez/",
+      "usedFor": "Only turns labelled Kent; saved as debate.txt."
+    },
+    {
+      "id": "c4",
+      "kind": "primary",
+      "title": "Senate Intelligence nomination hearing, April 9, 2025, CHRG-119shrg60886",
+      "author": "Joe Kent",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-119shrg60886/pdf/CHRG-119shrg60886.pdf",
+      "usedFor": "Kent’s answers, especially printed pp. 33–35; hearing.pdf and hearing-clean.txt. Other nominees’ answers are excluded."
+    },
+    {
+      "id": "c5",
+      "kind": "primary",
+      "title": "House Homeland Security hearing, December 11, 2025; Rev transcript",
+      "author": "Joe Kent",
+      "url": "https://webflow.rev.com/transcripts/homeland-security-hearing-12-11-25",
+      "usedFor": "Kent’s speaker-labelled answers at 2:15–2:17; december.txt."
+    },
+    {
+      "id": "c6",
+      "kind": "primary",
+      "title": "Joe Kent: why I resigned over Iran, March 21, 2026",
+      "author": "Joe Kent",
+      "url": "https://unherd.com/2026/03/joe-kent-why-i-resigned-over-iran/",
+      "usedFor": "Interview labelled JK; unherd.txt."
+    },
+    {
+      "id": "c7",
+      "kind": "primary",
+      "title": "The Culture War #17, June 20, 2023, speaker-labelled transcript",
+      "author": "Joe Kent",
+      "url": "https://fight.fudgie.org/search/show/cw/episode/20230620_Tue",
+      "usedFor": "Kent’s own remarks on school-board participation; pool.txt."
+    },
+    {
+      "id": "c8",
+      "kind": "primary",
+      "title": "TYT Exclusive: Joe Kent on his Iran resignation, March 2026",
+      "author": "Joe Kent",
+      "url": "https://tytnetwork.substack.com/p/tyt-exclusive-joe-kent-breaks-down",
+      "usedFor": "Turns labelled Joe; tyt.txt."
     }
   ],
   "answers": {
     "universal-healthcare": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Asked in the 2022 debate whether he supports a government health plan, he said 'Not from the federal government. No', wants federal deregulation and market competition, and his platform says government involvement drove costs up. He favours a safety net but not state-provided universal care.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "In the debate he rejects a federal public option but welcomes state provision and publicly funded access through competing providers.",
       "sources": [
-        "s5",
-        "s1",
-        "b3"
+        "c3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "gpt-6.1-sol"
     },
     "raise-minimum-wage": {
       "value": null,
@@ -227,7 +283,7 @@
         "s5",
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "public-ownership": {
       "value": null,
@@ -244,10 +300,7 @@
         "s2",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "unions-good": {
       "value": -2,
@@ -256,7 +309,7 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "property-fundamental": {
       "value": null,
@@ -273,16 +326,16 @@
         "s5",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He explicitly supports a social fallback system and continued Medicare, Medicaid and veterans’ benefits.",
+      "sources": [
+        "c3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "worker-ownership": {
       "value": null,
@@ -303,13 +356,16 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "restrict-hate-speech": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In December 2025 he contrasts American freedom to criticize religion with Sharia restrictions and praises the former.",
+      "sources": [
+        "c5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "strong-leader": {
       "value": null,
@@ -331,11 +387,12 @@
         "s4",
         "s1",
         "b2",
-        "b3"
+        "b3",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "empower-police-military": {
@@ -345,11 +402,12 @@
       "sources": [
         "s1",
         "s5",
-        "b3"
+        "b3",
+        "c3"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "legalize-sex-work": {
@@ -366,11 +424,12 @@
         "s4",
         "s5",
         "s1",
-        "b3"
+        "b3",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "rehabilitation": {
@@ -386,7 +445,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "same-sex-marriage": {
       "value": 1,
@@ -395,7 +454,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "abortion-legal": {
       "value": -2,
@@ -406,11 +465,12 @@
         "s4",
         "s3",
         "b2",
-        "b3"
+        "b3",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "more-religion-public": {
@@ -432,7 +492,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "preserve-national-culture": {
       "value": null,
@@ -456,10 +516,7 @@
         "s6",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "empower-international-orgs": {
       "value": null,
@@ -477,10 +534,7 @@
         "b2",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "nation-first": {
       "value": 2,
@@ -488,15 +542,22 @@
       "rationale": "Platform: 'Putting this nation first will always be my guiding principle when dealing with issues abroad'; survey names America First as the key principle. He still favours alliances and coalitions.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "c6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "humanitarian-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He argues that attempts to topple foreign regimes have repeatedly produced compounding disasters rather than successful improvements.",
+      "sources": [
+        "c6"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "open-borders": {
       "value": -2,
@@ -506,11 +567,12 @@
         "s1",
         "s5",
         "s6",
-        "b6"
+        "b6",
+        "c4"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "limit-growth": {
@@ -527,10 +589,7 @@
         "s5",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "tech-solves-problems": {
       "value": null,
@@ -545,11 +604,12 @@
       "sources": [
         "s1",
         "s5",
-        "b2"
+        "b2",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "revolution-justified": {
@@ -603,10 +663,7 @@
         "s1",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "state-directs-investment": {
       "value": null,
@@ -681,10 +738,13 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Asked about January 6, he condemns anyone using violence against police or anyone else and supports prosecution.",
+      "sources": [
+        "c4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "war-builds-character": {
       "value": null,
@@ -717,7 +777,7 @@
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "ethnic-nation": {
       "value": null,
@@ -1020,7 +1080,7 @@
       "sources": [
         "s12"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "avoid-deficit-stimulus": {
       "value": 2,
@@ -1030,11 +1090,13 @@
         "s5",
         "s1",
         "b2",
-        "b3"
+        "b3",
+        "c2",
+        "c3"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "economic-freedom": {
@@ -1134,11 +1196,12 @@
       "sources": [
         "s5",
         "s1",
-        "b2"
+        "b2",
+        "c2"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "assimilate-immigrants": {
@@ -1154,7 +1217,7 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "proportional-representation": {
       "value": null,
@@ -1170,7 +1233,7 @@
         "s6",
         "s7"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "patriarchy-structural": {
       "value": null,
@@ -1187,11 +1250,12 @@
         "s6",
         "s10",
         "b3",
-        "b6"
+        "b6",
+        "c8"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "heritable-defect-limits": {
@@ -1273,7 +1337,7 @@
       "sources": [
         "s7"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "trade-surplus": {
       "value": null,
@@ -1445,7 +1509,7 @@
         "s1",
         "s2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "recall-officials": {
       "value": null,
@@ -1461,7 +1525,7 @@
         "s1",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1530,7 +1594,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "minority-language-support": {
       "value": null,
@@ -1581,7 +1645,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -1608,7 +1672,7 @@
       "sources": [
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "property-serves-common-good": {
       "value": null,
@@ -1786,7 +1850,7 @@
         "s1",
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "no-bailouts": {
       "value": null,
@@ -2095,7 +2159,7 @@
       "sources": [
         "b4"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "land-use-tenure": {
       "value": null,
@@ -2104,10 +2168,13 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He advocates Congress withholding the federal budget to compel changes in executive energy policy.",
+      "sources": [
+        "c3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "single-official-language": {
       "value": null,
@@ -2154,7 +2221,7 @@
         "s10",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -2163,10 +2230,13 @@
       "sources": []
     },
     "pronatalist-incentives": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He proposes expanding the child tax credit so families can support children.",
+      "sources": [
+        "c2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "residents-only-property": {
       "value": null,
@@ -2198,9 +2268,13 @@
       "rationale": "Says he is 'not a peacenik' who would never go to war for any reason and praised the Soleimani strike and defeating ISIS, while opposing wars of choice; he does not hold that intervention is never allowed.",
       "sources": [
         "s6",
-        "s9"
+        "s9",
+        "c6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "industrial-unions": {
       "value": null,
@@ -2263,7 +2337,7 @@
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "personal-possessions-private": {
       "value": null,
@@ -2278,10 +2352,13 @@
       "sources": []
     },
     "mixed-public-service-providers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He favors public funding that patients use among competing healthcare providers, including more veterans’ choice.",
+      "sources": [
+        "c3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religion-illusion": {
       "value": null,
@@ -2362,10 +2439,13 @@
       "sources": []
     },
     "punish-blasphemy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Asked specifically about speech criticizing religion, he favors constitutional free speech over religious restrictions.",
+      "sources": [
+        "c5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "colonies-serve-metropole": {
       "value": null,
@@ -2386,10 +2466,13 @@
       "sources": []
     },
     "participatory-democracy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "At 14:24–14:55 with Tim Pool he urges parents to attend school boards and hold institutions accountable even after homeschooling.",
+      "sources": [
+        "c7"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "intersecting-oppressions": {
       "value": null,
@@ -2404,7 +2487,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "assisted-dying": {
       "value": null,
@@ -2461,7 +2544,7 @@
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "rich-first": {
       "value": null,
@@ -2591,7 +2674,7 @@
         "s1",
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "power-sharing-divided-societies": {
       "value": null,
@@ -2613,7 +2696,7 @@
         "s2",
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "vote-delegation": {
       "value": null,
@@ -2706,7 +2789,7 @@
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "no-fixed-category-of-women": {
       "value": null,
@@ -2874,11 +2957,12 @@
         "s10",
         "b5",
         "b6",
-        "b7"
+        "b7",
+        "c6"
       ],
       "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "language-defines-nation": {
@@ -2947,9 +3031,13 @@
       "rationale": "Opposes further firearm restrictions and said 'the American people should have the exact same weapons that our military has'. This reads against disarming citizens.",
       "sources": [
         "b2",
-        "b3"
+        "b3",
+        "c2"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "soldiers-refuse-war": {
       "value": null,
@@ -3012,7 +3100,7 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "internal-colonialism": {
       "value": null,
@@ -3091,9 +3179,13 @@
       "confidence": "medium",
       "rationale": "In the 2022 debate he attacked the repeal of the 'three strikes and you're out' law, which fixes sentences for repeat offenders, and asked his opponent to commit to keeping criminals in prison.",
       "sources": [
-        "s5"
+        "s5",
+        "c3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": [
+        "claude-sonnet-5-5+claude-haiku-5-5",
+        "gpt-6.1-sol"
+      ]
     },
     "immigrants-learn-language": {
       "value": null,
@@ -3108,7 +3200,7 @@
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "voter-id": {
       "value": 2,
@@ -3119,10 +3211,7 @@
         "b2",
         "b3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "religious-equal-recognition": {
       "value": null,
@@ -3279,10 +3368,7 @@
         "b3",
         "b6"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
-      ]
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "protect-kin-minorities": {
       "value": null,
@@ -3411,5 +3497,5 @@
       "sources": []
     }
   },
-  "notes": "Living: true per Wikipedia (no death recorded; still giving interviews in 2026). Positions are mainly from his 2022 platform, 2022 OPB answers and debate, a 2024 long-form interview, and 2026 statements. Joekentforcongress.com was read through the Internet Archive; joekent.com is a different person. Abortion: he once backed a federal ban (per Wikipedia) but his most recent position is states decide and no new federal law, while remaining pro-life; answered -2 on legality. Not answered because no clear position of his was found: minimum wage, unions, welfare, drugs, sex work, death penalty, surveillance, Israel statehood or aid, Ukraine borders, civil-liberties statements (his general free speech principle does not answer hate speech or media control), COVID and Fauci items (no matching statement). The Daily Chronicle reported he appeared to agree with a 'demographic replacement' question at a 2022 town hall, which his attorney disputed; the article was paywalled, so elite-replacement and ethnic-nation statements stay null. Reports of 2022 interviews with American Virtue and of a 2022 immigration moratorium were not read in primary form and are not used. Many 2026 interviews (Tucker Carlson, Shawn Ryan, Megyn Kelly, Breaking Points) focus on Iran and Israel and mostly do not match any statement. The hearing transcript was auto-captioned and mostly concerns the Signal chat, January 6 and the border.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Known answers are limited to sourced statements. Most campaign quotations come from an undated third-party compilation (guides.vote) and are marked low or medium where undated. The joekent.com and joekentforcongress.com campaign sites and the Washington State Standard and KGW debate coverage could not be opened (not found or HTTP 403). The Senate hearing transcript and the full resignation letter were not reachable. Kent's 2026 Shawn Ryan transcript is an unofficial repost; the full text was not read past the first 100,000 characters. Contested points: his claims about Israel, the Jan. 6 'political prisoners' framing, and the 2024 abortion position."
+  "notes": "Living: true per Wikipedia (no death recorded; still giving interviews in 2026). Positions are mainly from his 2022 platform, 2022 OPB answers and debate, a 2024 long-form interview, and 2026 statements. Joekentforcongress.com was read through the Internet Archive; joekent.com is a different person. Abortion: he once backed a federal ban (per Wikipedia) but his most recent position is states decide and no new federal law, while remaining pro-life; answered -2 on legality. Not answered because no clear position of his was found: minimum wage, unions, welfare, drugs, sex work, death penalty, surveillance, Israel statehood or aid, Ukraine borders, civil-liberties statements (his general free speech principle does not answer hate speech or media control), COVID and Fauci items (no matching statement). The Daily Chronicle reported he appeared to agree with a 'demographic replacement' question at a 2022 town hall, which his attorney disputed; the article was paywalled, so elite-replacement and ethnic-nation statements stay null. Reports of 2022 interviews with American Virtue and of a 2022 immigration moratorium were not read in primary form and are not used. Many 2026 interviews (Tucker Carlson, Shawn Ryan, Megyn Kelly, Breaking Points) focus on Iran and Israel and mostly do not match any statement. The hearing transcript was auto-captioned and mostly concerns the Signal chat, January 6 and the border.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Known answers are limited to sourced statements. Most campaign quotations come from an undated third-party compilation (guides.vote) and are marked low or medium where undated. The joekent.com and joekentforcongress.com campaign sites and the Washington State Standard and KGW debate coverage could not be opened (not found or HTTP 403). The Senate hearing transcript and the full resignation letter were not reachable. Kent's 2026 Shawn Ryan transcript is an unofficial repost; the full text was not read past the first 100,000 characters. Contested points: his claims about Israel, the Jan. 6 'political prisoners' framing, and the 2024 abortion position.\n\nMerged with an independent gpt-6.1-sol audit: 10 answers taken from it, 14 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass; existing answers were not copied. All 490 statements and the existing blank list were checked against saved sources. Main effort covered the table and thin culture/means/globalism themes. No evidence established the listed Marxist doctrines, communal land tenure, atheistic schooling or a third economic system; opposition to Democrats is not evidence on one-party ideological rule. Political revolution in the May 2026 Curley program description could mean electoral reform; the page supplied no usable full transcript, so revolution-justified stays null. Cross-party cooperation against one war does not establish that all left/right distinctions are obsolete. The culture-war interview supports school-board participation, not armed revolution or rejecting elections. His memorial advocacy honors sacrifice but does not call the dead saints or assert that war improves national character. December 2025 comments address civic allegiance and speech restrictions, not the incompatibility of every Muslim or a general ethnic-state doctrine. The post-hearing PDF was accessible through web extraction but blocked on direct download; it was not used for answers. Confirmation evidence is restricted to Mr. Kent, excluding Messrs. Lukas and Eisenberg. Campaign-era healthcare and policing evidence is qualified; generic anti-government language is not converted into anarchism or class-instrument doctrine. Living person: zero inferred answers. Every non-null answer cites source text saved in this folder."
 }

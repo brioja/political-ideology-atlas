@@ -3,7 +3,8 @@
  "name": "Andrew Cuomo",
  "auditedAt": "2026-10-23",
  "auditor": [
-  "claude-sonnet-5-5"
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
  ],
  "passes": [
   {
@@ -13,6 +14,10 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-26"
   }
  ],
  "living": true,
@@ -379,6 +384,86 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/New_York_SAFE_Act",
    "usedFor": "Provisions of the 2013 gun law Cuomo signed"
+  },
+  {
+   "id": "c1",
+   "kind": "reference",
+   "title": "Andrew Cuomo",
+   "author": "Wikipedia contributors",
+   "url": "https://en.wikipedia.org/wiki/Andrew_Cuomo",
+   "usedFor": "Career and enacted-law cross-checks; browser-sources.json."
+  },
+  {
+   "id": "c2",
+   "kind": "primary",
+   "title": "National League of Cities address, March 2000",
+   "author": "Andrew Cuomo",
+   "url": "https://archives.hud.gov/remarks/cuomo/speeches/league.cfm",
+   "usedFor": "Ethnicity and cities; hud.txt."
+  },
+  {
+   "id": "c3",
+   "kind": "primary",
+   "title": "2018 State of the State policy book",
+   "author": "Andrew Cuomo",
+   "url": "https://www.governor.ny.gov/sites/default/files/atoms/files/2018-stateofthestatebook.pdf",
+   "usedFor": "Proposals and speech; 2018.pdf and 2018.txt, especially pp. 40–44, 141–143, 334–340."
+  },
+  {
+   "id": "c4",
+   "kind": "primary",
+   "title": "2021 State of the State policy book",
+   "author": "Andrew Cuomo",
+   "url": "https://www.governor.ny.gov/sites/default/files/atoms/files/SOTS2021Book_Final.pdf",
+   "usedFor": "Climate, labor, equality and privacy; 2021.pdf and 2021.txt."
+  },
+  {
+   "id": "c5",
+   "kind": "primary",
+   "title": "They Are Not Democrats, They Are Socialists, September 7, 2025",
+   "author": "Andrew Cuomo",
+   "url": "https://www.andrewcuomo.com/press/icymi-andrew-cuomo-new-york-daily-news-they-are-not-democrats-they-are-socialists",
+   "usedFor": "Full op-ed saved in campaign-text-web.json; direct fetch returned 404 after website migration."
+  },
+  {
+   "id": "c6",
+   "kind": "primary",
+   "title": "Address on Fighting Antisemitism, April 1, 2025",
+   "author": "Andrew Cuomo",
+   "url": "https://www.andrewcuomo.com/press/governor-cuomo-delivers-address-fighting-antisemitism-new-york-city",
+   "usedFor": "Prepared speech saved in campaign-text-web.json."
+  },
+  {
+   "id": "c7",
+   "kind": "primary",
+   "title": "Five-point gun-violence plan speech, September 2, 2025",
+   "author": "Andrew Cuomo",
+   "url": "https://www.andrewcuomo.com/press/transcript-heels-last-nights-shootings-bronx-and-brooklyn-andrew-cuomo-announces-5-point-plan",
+   "usedFor": "Speech and plan saved in campaign-text-web.json."
+  },
+  {
+   "id": "c9",
+   "kind": "reference",
+   "title": "New York bans Confederate flag sales/display on state property, December 16, 2020",
+   "author": "News reporting",
+   "url": "https://abcnews.com/US/york-bans-sale-display-confederate-flag-hate-symbols/story?id=74765110",
+   "usedFor": "Law’s scope and historical exceptions; flags.txt."
+  },
+  {
+   "id": "c10",
+   "kind": "reference",
+   "title": "Cuomo defends Columbus statue, June 2020",
+   "author": "News reporting",
+   "url": "https://talkingpointsmemo.com/news/cuomo-defends-columbus-statue-italian-american-legacy/page/2",
+   "usedFor": "His own attributed defense of the statue; columbus.txt."
+  },
+  {
+   "id": "c11",
+   "kind": "primary",
+   "title": "Democrats must resist shifting far left, August 13, 2026",
+   "author": "Andrew Cuomo",
+   "url": "https://andrewcuomo.com/news/2026/democrats-must-resist-shifting-far-left",
+   "usedFor": "Latest position on taxation, borders and checks on presidential power; 2026.txt."
   }
  ],
  "answers": {
@@ -392,10 +477,7 @@
     "s5",
     "b1"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "raise-minimum-wage": {
    "value": 2,
@@ -406,11 +488,13 @@
     "s19",
     "s5",
     "b1",
-    "b4"
+    "b4",
+    "c4",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "markets-allocate-better": {
@@ -425,9 +509,13 @@
    "rationale": "Rejects the socialist platform (free buses, rent freeze) as failing when tried; favors 'private enterprise with guardrails'.",
    "sources": [
     "b3",
-    "b5"
+    "b5",
+    "c5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "tax-the-wealthy": {
    "value": 0,
@@ -438,11 +526,12 @@
     "s13",
     "s9",
     "b5",
-    "b12"
+    "b12",
+    "c11"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "unions-good": {
@@ -451,9 +540,13 @@
    "rationale": "Wrote that labor unions protect fairness at the bargaining table and signed a 2018 law protecting public-sector union membership after Janus, which he called devastating to unions.",
    "sources": [
     "s19",
-    "s3"
+    "s3",
+    "c3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "property-fundamental": {
    "value": null,
@@ -476,10 +569,7 @@
     "s2",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "worker-ownership": {
    "value": null,
@@ -494,10 +584,13 @@
    "sources": []
   },
   "legalize-drugs": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "Cannabis legalization and specific drug scheduling are nearby; no stated position on legalizing recreational drugs generally.",
-   "sources": []
+   "rationale": "Mixed record: he signed recreational cannabis legalization for adults in 2021, but his September 2025 speech opposes legalizing the drug trade more broadly. His September 2025 speech opposes legalizing the drug trade; this is broader than his enacted cannabis exception.",
+   "sources": [
+    "c7"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "restrict-hate-speech": {
    "value": null,
@@ -519,10 +612,7 @@
     "s20",
     "b4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "limit-guns": {
    "value": 2,
@@ -533,11 +623,13 @@
     "s3",
     "b1",
     "b4",
-    "b15"
+    "b15",
+    "c7",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "empower-police-military": {
@@ -548,11 +640,12 @@
     "s6",
     "s14",
     "b7",
-    "b3"
+    "b3",
+    "c7"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "legalize-sex-work": {
@@ -561,11 +654,12 @@
    "rationale": "In a 2025 debate he attacked an opponent's stance on prostitution as making it legal for prostitutes.",
    "sources": [
     "s7",
-    "b9"
+    "b9",
+    "c7"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "decide-locally": {
@@ -584,10 +678,7 @@
     "b12",
     "b5"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "traditional-family": {
    "value": null,
@@ -603,11 +694,13 @@
     "s12",
     "s18",
     "b14",
-    "b1"
+    "b1",
+    "c4",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "abortion-legal": {
@@ -618,11 +711,13 @@
     "s15",
     "s5",
     "b1",
-    "b4"
+    "b4",
+    "c3",
+    "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "more-religion-public": {
@@ -699,9 +794,13 @@
    "rationale": "Criticized opening the borders with no plan, while also supporting lawful immigration and the state DREAM Act.",
    "sources": [
     "s24",
-    "s1"
+    "s1",
+    "c11"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "limit-growth": {
    "value": null,
@@ -715,9 +814,13 @@
    "rationale": "Launched a Green New Deal, set a goal of 100 percent clean power by 2040 and signed the 2019 climate law.",
    "sources": [
     "s3",
-    "s21"
+    "s21",
+    "c4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "tech-solves-problems": {
    "value": null,
@@ -734,10 +837,7 @@
     "s1",
     "b12"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "revolution-justified": {
    "value": null,
@@ -869,10 +969,13 @@
    "sources": []
   },
   "political-violence-never": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His April speech defends demonstration but rejects destruction, harassment and violence in pursuit of political causes.",
+   "sources": [
+    "c6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "war-builds-character": {
    "value": null,
@@ -905,10 +1008,13 @@
    "sources": []
   },
   "ethnic-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "His HUD speech says America was founded on nationhood without common ancestry or color, welcoming people of every race.",
+   "sources": [
+    "c2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "class-struggle-history": {
    "value": null,
@@ -1007,11 +1113,12 @@
    "sources": [
     "s23",
     "b2",
-    "b4"
+    "b4",
+    "c7"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "direct-action": {
@@ -1188,9 +1295,13 @@
    "rationale": "In 2024 and 2025 said true friends fight for the state of Israel and rejected 'occupation' language as meaning Israel has no right to exist as a Jewish state.",
    "sources": [
     "s10",
-    "s7"
+    "s7",
+    "c6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "diaspora-return-right": {
    "value": null,
@@ -1325,10 +1436,7 @@
     "s21",
     "b12"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-sonnet-5-5"
   },
   "assimilate-immigrants": {
    "value": null,
@@ -1400,9 +1508,13 @@
    "rationale": "Said Marriage Equality's passage affirmed that all New Yorkers are equal under the law and pushed antidiscrimination laws.",
    "sources": [
     "s12",
-    "s18"
+    "s18",
+    "c6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "socialism-one-country": {
    "value": null,
@@ -1489,10 +1601,13 @@
    "sources": []
   },
   "separated-powers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In August 2026 he welcomes congressional opposition as a check on an overly dominant president.",
+   "sources": [
+    "c11"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "vanguard-party": {
    "value": null,
@@ -2197,10 +2312,14 @@
    "sources": []
   },
   "preserve-contested-monuments": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "He defended the Columbus statue as Italian-American heritage while signing restrictions on Confederate symbols in state settings.",
+   "sources": [
+    "c10",
+    "c9"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "male-disadvantage-attention": {
    "value": null,
@@ -2322,15 +2441,22 @@
    "rationale": "Described Citizens United as unleashing a torrent of dark money that drowns out ordinary voices and pushed to close the LLC loophole in campaign finance.",
    "sources": [
     "s2",
-    "s3"
+    "s3",
+    "c3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "restrict-foreign-funding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His April 2025 speech urges stopping foreign funding that dictates biased university curricula.",
+   "sources": [
+    "c6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "pronatalist-incentives": {
    "value": null,
@@ -2391,9 +2517,14 @@
    "confidence": "medium",
    "rationale": "Proposed comprehensive reform of the Freedom of Information Law to improve transparency, including extending it to the Legislature.",
    "sources": [
-    "s1"
+    "s1",
+    "c3",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "local-production": {
    "value": null,
@@ -2414,10 +2545,13 @@
    "sources": []
   },
   "religious-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "In the same speech he says shared religion is unnecessary for belonging to the American nation.",
+   "sources": [
+    "c2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "deference-to-leading-power": {
    "value": null,
@@ -2498,10 +2632,13 @@
    "sources": []
   },
   "neither-capitalism-nor-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His September 2025 op-ed endorses responsible capitalism, with safeguards, rather than abandoning private enterprise for socialism.",
+   "sources": [
+    "c5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "historical-land-claim": {
    "value": null,
@@ -2568,9 +2705,13 @@
    "confidence": "high",
    "rationale": "Proposed passing the Gender Identity and Expression Non-Discrimination Act, regulations protecting transgender people and easier ID changes, and support for transgender troops.",
    "sources": [
-    "s3"
+    "s3",
+    "c4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "assisted-dying": {
    "value": null,
@@ -2613,15 +2754,22 @@
    "confidence": "high",
    "rationale": "Signed 2018 law limiting nondisclosure agreements and mandatory arbitration in sexual harassment cases, then proposed extending those protections.",
    "sources": [
-    "s3"
+    "s3",
+    "c3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "social-market-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He advocates private enterprise with labor and consumer protections and social safety nets.",
+   "sources": [
+    "c5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "abolish-armed-forces": {
    "value": null,
@@ -2760,11 +2908,12 @@
     "s14",
     "s6",
     "b3",
-    "b5"
+    "b5",
+    "c5"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "power-sharing-divided-societies": {
@@ -2780,13 +2929,14 @@
    "sources": []
   },
   "term-limits": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Proposed a constitutional amendment imposing eight-year term limits on legislators and limits for statewide officials.",
+   "value": 0,
+   "confidence": "low",
+   "rationale": "His 2018 book proposes eight-year legislative limits and statewide limits; he subsequently sought further gubernatorial terms himself.",
    "sources": [
-    "s2"
+    "c3",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "gpt-6.1-sol"
   },
   "vote-delegation": {
    "value": null,
@@ -3022,10 +3172,13 @@
    "sources": []
   },
   "dense-cities": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His HUD address favors redeveloping cities and older suburbs over consuming more green space through outward expansion.",
+   "sources": [
+    "c2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "racial-group-interests": {
    "value": null,
@@ -3072,11 +3225,12 @@
     "s22",
     "s5",
     "b11",
-    "b4"
+    "b4",
+    "c3"
    ],
    "auditor": [
     "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+    "gpt-6.1-sol"
    ]
   },
   "pollution-taxes": {
@@ -3090,9 +3244,13 @@
    "confidence": "medium",
    "rationale": "Said it is vital to commit to a greener future to preserve natural beauty for children and grandchildren.",
    "sources": [
-    "s25"
+    "s25",
+    "c4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+   ]
   },
   "women-distinct-values": {
    "value": null,
@@ -3183,10 +3341,13 @@
    "sources": []
   },
   "student-debt-relief": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 2018 book defends state payment of eligible graduates’ first two years of student-loan bills.",
+   "sources": [
+    "c3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "internal-colonialism": {
    "value": null,
@@ -3568,5 +3729,5 @@
    "sources": []
   }
  },
- "notes": "Positions rest mainly on his State of the State books (2016, 2017, 2019, 2020), compiled quotes from his books and speeches, and 2025 campaign coverage. Earlier State of the State addresses (2011-2015, 2018, 2021) and his books were not available as full text. Positions on taxes on the wealthy and on cannabis changed or were mixed over time.\n\nMerged with an independent claude-sonnet-5-5 audit: 2 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: His father Mario Cuomo's positions are not used. Most recent position wins on taxes (he signed higher rates on top earners in 2011 and 2021 but opposes 'tax the rich' in 2026). The campaign-site op-ed text was read through a summarizing fetch tool. NYT and governor.ny.gov pages were not reachable, so governor-era laws rest on his own record page, the state program page and Wikipedia."
+ "notes": "Positions rest mainly on his State of the State books (2016, 2017, 2019, 2020), compiled quotes from his books and speeches, and 2025 campaign coverage. Earlier State of the State addresses (2011-2015, 2018, 2021) and his books were not available as full text. Positions on taxes on the wealthy and on cannabis changed or were mixed over time.\n\nMerged with an independent claude-sonnet-5-5 audit: 2 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: His father Mario Cuomo's positions are not used. Most recent position wins on taxes (he signed higher rates on top earners in 2011 and 2021 but opposes 'tax the rich' in 2026). The campaign-site op-ed text was read through a summarizing fetch tool. NYT and governor.ny.gov pages were not reachable, so governor-era laws rest on his own record page, the state program page and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass, no existing answers copied. Reviewed all 490 statements and the ranked table. Core new sources are HUD’s full address, the 2018 and 2021 policy books, and speaker-labelled 2025 debate material. Ethnic-nation is answered from an explicit statement that common ancestry and color are unnecessary for nationhood. The 2025 responsible-capitalism op-ed answers neither-capitalism-nor-communism negatively; centrist opposition to extremists alone does not establish left-right-obsolete. His appeal to Jewish voters to mobilize against antisemitism is not generalized into a doctrine that all racial groups should organize separate political interests. No evidence established ancestry-based transnational union, a linguistic definition of nationhood, kin-territorial claims, revolutionary strategy, class determinism or ethnic economic ownership. Progressive rebirth rhetoric concerns political reform, not radical national regeneration from decadence. The 2018 term-limit proposal is weighed against later reelection bids. Nursing-home-data concealment is weighed against transparency pledges. Tax policy changed: the August 2026 explicit opposition is the most recent position, superseding his governor-era tax increases. Cannabis legalization is not a position on every recreational drug: the broader drug answer uses the explicit 2025 opposition to legalizing the drug trade. Boycott evidence concerns Israel specifically; no opinion on excluding every religious minority is assumed. His sexual-harassment findings and resignation were reviewed as well as his legal reforms; no unrelated position was inferred from misconduct. Speech claims about legislation were cross-checked with the governing record; primary rhetorical positions are medium, enacted signature measures high. Failed direct campaign downloads are retained, and the usable browser-extracted text is saved separately. No living-person inferred answers."
 }
