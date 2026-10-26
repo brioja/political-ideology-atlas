@@ -1,5 +1,5 @@
 {
- "_comment": "People shown under the old 1.5x people bar (before 2026-10-26) who do not yet meet the 1.125x bar. They keep the old bar until a deeper audit meets the new one; then the id is removed (test.js fails while a listed person already meets it). Nobody is added.",
+ "_comment": "People shown under the old 1.5x people bar (before 2026-10-26) who do not yet meet the 1.125x bar. They keep the old bar for one more audit pass: the id is removed once the audit meets the new bar, or once it has two passes (`passes` in the audit) and still does not, and the person then leaves the site. test.js enforces both. Nobody is added.",
  "ids": [
   "abigail-spanberger",
   "ahmed-al-sharaa",
@@ -9,7 +9,6 @@
   "amarinder-singh",
   "analilia-mejia",
   "anbumani-ramadoss",
-  "andrew-cuomo",
   "andrew-johnson",
   "angela-davis",
   "anna-paulina-luna",
@@ -45,7 +44,6 @@
   "francis-rooney",
   "fred-hampton",
   "frederick-william-i-of-prussia",
-  "fyodor-dostoevsky",
   "gaurav-gogoi",
   "georges-bataille",
   "gianni-agnelli",
@@ -70,9 +68,7 @@
   "jb-pritzker",
   "jean-jacques-dessalines",
   "jesse-jackson",
-  "joe-kent",
   "joe-lombardo",
-  "joe-rogan",
   "john-brown-abolitionist",
   "john-c-fremont",
   "john-fetterman",
@@ -96,7 +92,6 @@
   "mamata-banerjee",
   "mario-draghi",
   "marjorie-taylor-greene",
-  "mark-kelly",
   "mark-teixeira",
   "markwayne-mullin",
   "martin-mcguinness",
@@ -160,7 +155,6 @@
   "wang-jingwei",
   "wilhelm-frick",
   "william-lyon-mackenzie-king",
-  "william-mckinley",
   "woodrow-wilson",
   "xiomara-castro"
  ]

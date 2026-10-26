@@ -58,7 +58,8 @@ function placed(answers, factor) {
 const PEOPLE_BAR = 1.125;
 // The bar was 1.5x until 2026-10-26. People shown under it who don't yet meet the new bar are listed in
 // audits/people-legacy-bar.json and keep the old bar, so they stay on the site while their audits are
-// deepened. An id leaves the list once its audit meets the new bar (test.js checks); none are added.
+// deepened. An id leaves the list once its audit meets the new bar, or once a second pass still
+// doesn't and the person leaves the site (test.js checks both); none are added.
 const LEGACY_PEOPLE_BAR = 1.5;
 const LEGACY_PATH = path.join(ROOT, "audits", "people-legacy-bar.json");
 let legacyIds = null;

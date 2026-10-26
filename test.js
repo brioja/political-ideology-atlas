@@ -93,6 +93,9 @@ for (const id of legacy) {
   const x = people.find((y) => y.p.id === id);
   assert(x, `${id} is in audits/people-legacy-bar.json but has no audit; remove it`);
   assert(x.r.legacy, `${id} now meets the current people bar (or fails the old one); remove it from audits/people-legacy-bar.json`);
+  // One more pass to reach the new bar: a second pass that still falls short ends the exception.
+  const passes = (lib.readJson(lib.personPath(id)).passes || []).length;
+  assert(passes < 2, `${id} has ${passes} audit passes and still misses the current people bar; remove it from audits/people-legacy-bar.json`);
 }
 console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass ` +
   `(${people.filter((x) => x.r.legacy).length} on the legacy bar); ` +

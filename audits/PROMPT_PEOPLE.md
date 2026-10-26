@@ -146,7 +146,8 @@ passed an older, looser bar and are still held to it. They are shown, but placed
 they sit near the middle of the lines and show up in many takers' results. When deepening one,
 count known positions per theme and search the thinnest ones for stated positions. If the audit
 then meets the current bar (no warning), remove the id from that list. If the record really has
-nothing more, stop; the audit is accepted as it is.
+nothing more, stop: the person has had their extra pass, so remove the id anyway and they leave the
+site (`node test.js` fails until you do).
 
 When the validator rejects an answer, fix the answer, not the wording: if it says contested
 evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.

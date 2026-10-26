@@ -85,7 +85,8 @@ person's own words and record, and a statement with no reliable evidence is `nul
   themes. It was 1.5 times until 2026-10-26, which let in people with 20-25 positions; placed that
   roughly, they sat near the middle of the lines and turned up in many takers' results. People
   shown under the old bar who don't meet the new one are listed in `audits/people-legacy-bar.json`
-  and keep the old bar until their audits are deepened; the list only shrinks.
+  and keep the old bar for one more audit pass: a person whose second pass still misses the new
+  bar leaves the list and the site. The list only shrinks.
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
