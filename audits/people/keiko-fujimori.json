@@ -2,7 +2,10 @@
  "id": "keiko-fujimori",
  "name": "Keiko Fujimori",
  "auditedAt": "2026-10-24",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": true,
  "role": "President of Peru (since 28 July 2026); leader of Fuerza Popular; congresswoman 2006-2011",
  "summary": "Peruvian conservative politician and leader of Fujimorismo who campaigned in four presidential runoffs, winning in 2026. Her platforms combine a hardline security and order agenda, a market-based economy under the 1993 constitution with expanded social transfers, and socially conservative positions on family, abortion and marriage. She has distanced herself from some of her father's record at times (2016) while defending the fight against terrorism.",
@@ -135,6 +138,86 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Keiko_Fujimori",
    "usedFor": "Biography, offices, 2026 election result, political position"
+  },
+  {
+   "id": "b1",
+   "kind": "primary",
+   "title": "Inaugural address to Congress, July 28, 2026",
+   "author": "Keiko Fujimori",
+   "url": "https://www3.congreso.gob.pe/Docs/participacion/museo/congreso/files/mensaje-nacion-28-julio-2026.pdf",
+   "usedFor": "Full 14-page Spanish inaugural.pdf and inaugural-full.txt; proposals distinguished from implementation."
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Full RPP presidential interview, September 11, 2026",
+   "author": "Keiko Fujimori",
+   "url": "https://www.youtube.com/watch?v=ZBYM9X2zm2U",
+   "usedFor": "Full Spanish rpp-sept.es-orig.vtt and rpp-caption.txt; interview after news intro, excluding advertisements and host claims. Checked against labelled rpp26.txt article."
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "UN General Assembly address, September 22, 2026",
+   "author": "Keiko Fujimori",
+   "url": "https://www.youtube.com/watch?v=9o4HsRfVgro",
+   "usedFor": "Full native Spanish captions un-video.es-orig.vtt and un-caption.txt; introductory highlights followed by complete address. English mirrors checked but not relied on for translation."
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "El Comercio interview, March 20, 2021",
+   "author": "Keiko Fujimori",
+   "url": "https://elcomercio.pe/elecciones-2021/keiko-fujimori-es-verdad-que-la-actitud-de-fuerza-popular-ha-sido-confrontacional-alberto-fujimori-elecciones-2021-entrevista-noticia/",
+   "usedFor": "Full commerce21.txt; own replies on political constraints, health, gender equality and assisted dying."
+  },
+  {
+   "id": "b5",
+   "kind": "primary",
+   "title": "Trome interview with Óscar Torres, March 2021",
+   "author": "Keiko Fujimori",
+   "url": "https://trome.com/actualidad/politica/keiko-fujimori-caperucita-a-veronika-mendoza-guzman-es-rapido-y-furioso-y-tilda-de-traidor-a-vizcarra-entrevista-noticia/",
+   "usedFor": "Full trome21.txt; her own answers distinguished from questions."
+  },
+  {
+   "id": "b6",
+   "kind": "program",
+   "title": "Perú con Orden: 2026–2031 government programme",
+   "author": "Keiko Fujimori / Fuerza Popular",
+   "url": "https://mpesije.jne.gob.pe/docs/da4b943d-4344-4743-9362-a11ccf3054cb.pdf",
+   "usedFor": "Full 138-page program.pdf and program.txt; signed personal introduction, adopted platform, specific sections cited below. Campaign commitments, medium only."
+  },
+  {
+   "id": "b7",
+   "kind": "reference",
+   "title": "Keiko Fujimori Higuchi: political biography",
+   "author": "Roberto Ortiz de Zárate Arce, CIDOB",
+   "url": "https://www.cidob.org/lider-politico/keiko-fujimori-higuchi",
+   "usedFor": "Full cidob.txt; career, 2021 electoral challenge and formal acceptance, earlier market programme and democratic record."
+  },
+  {
+   "id": "b8",
+   "kind": "primary",
+   "title": "Enfrentados and TV Perú abortion answers, February 2026",
+   "author": "Keiko Fujimori",
+   "url": "https://larepublica.pe/amp/politica/2026/02/16/keiko-fujimori-en-contra-de-aborto-por-violacion-lo-he-conversado-con-mis-hijas-les-diria-que-tengan-al-bebe-hnews-1381200",
+   "usedFor": "Full reported answers in social-petro-full.json; other politicians’ comments excluded."
+  },
+  {
+   "id": "b9",
+   "kind": "primary",
+   "title": "Petroperú Lot 192 decree, October 17, 2026",
+   "author": "Keiko Fujimori",
+   "url": "https://elperuano.pe/noticia/307032-petroperu-tendra-el-100-de-participacion-en-el-lote-192-tras-modificarse-el-contrato",
+   "usedFor": "Full official report social-petro-full.json; contract transfer signed by her, not an involuntary confiscation."
+  },
+  {
+   "id": "b12",
+   "kind": "reference",
+   "title": "Marx en la segunda vuelta electoral, April 30, 2021",
+   "author": "Fernando Vivas",
+   "url": "https://elcomercio.pe/politica/marx-en-la-segunda-vuelta-electoral-una-cronica-de-fernando-vivas-que-dicen-los-academicos-pedro-castillo-keiko-fujimori-elecciones-2021-fuerza-popular-peru-libre-noticia/",
+   "usedFor": "Full marx.txt; her rejection of promoting class conflict. Marx’s words and academics’ views are not hers."
   }
  ],
  "answers": {
@@ -144,7 +227,12 @@
    "rationale": "Plan proposes a single affiliation system widening public insurance (SIS) coverage, free care for cancer, universal telemedicine and access to services for all, alongside private providers.",
    "sources": [
     "s1",
-    "s5"
+    "s5",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "raise-minimum-wage": {
@@ -152,7 +240,12 @@
    "confidence": "low",
    "rationale": "In the 2021 runoff debate she said her government would raise the minimum wage, without giving a size.",
    "sources": [
-    "s8"
+    "s8",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "markets-allocate-better": {
@@ -163,7 +256,8 @@
     "s1",
     "s6",
     "s5"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "public-ownership": {
    "value": -1,
@@ -171,7 +265,13 @@
    "rationale": "Plan limits state oil company Petroperu to refining and distribution, sells non-strategic assets, and brings PPPs into regional electricity distribution; she attacks Petroperu waste in the 2026 debate.",
    "sources": [
     "s1",
-    "s2"
+    "s2",
+    "b6",
+    "b9"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "tax-the-wealthy": {
@@ -194,14 +294,20 @@
     "s1",
     "s2",
     "s5"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "regulate-corporations": {
    "value": -1,
    "confidence": "low",
    "rationale": "Plan proposes a 'deregulatory shock', removal of 500+ procedures and positive administrative silence; this is aimed at bureaucracy and business regulation generally.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "cut-welfare": {
@@ -211,7 +317,12 @@
    "sources": [
     "s1",
     "s4",
-    "s5"
+    "s5",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "worker-ownership": {
@@ -221,10 +332,13 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She seeks geolocation and intelligence powers against gangs she would designate terrorist.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "legalize-drugs": {
    "value": null,
@@ -243,7 +357,13 @@
    "confidence": "medium",
    "rationale": "Rejected closing Congress ('not an option in any way') and says politicians must dialogue and build consensus, while wanting a government with strong leadership.",
    "sources": [
-    "s5"
+    "s5",
+    "b2",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "state-harmful": {
@@ -265,7 +385,12 @@
    "sources": [
     "s1",
     "s2",
-    "s5"
+    "s5",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "legalize-sex-work": {
@@ -288,7 +413,8 @@
     "s1",
     "s5",
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "traditional-family": {
    "value": 2,
@@ -296,7 +422,12 @@
    "rationale": "UN speech: believes in the family as an irreplaceable pillar of society and says imposed agendas weakened it; plan decalogue calls the family the fundamental cell of society.",
    "sources": [
     "s3",
-    "s1"
+    "s1",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "same-sex-marriage": {
@@ -306,7 +437,12 @@
    "sources": [
     "s10",
     "s11",
-    "s1"
+    "s1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abortion-legal": {
@@ -316,7 +452,12 @@
    "sources": [
     "s1",
     "s10",
-    "s11"
+    "s11",
+    "b8"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "more-religion-public": {
@@ -338,14 +479,20 @@
    "sources": [
     "s9",
     "s8"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "preserve-national-culture": {
    "value": 1,
    "confidence": "medium",
    "rationale": "UN speech: 'we believe in respect for our traditions' and each people's right to its own history and culture.",
    "sources": [
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "gradual-change": {
@@ -361,7 +508,12 @@
    "sources": [
     "s2",
     "s15",
-    "s5"
+    "s5",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "empower-international-orgs": {
@@ -369,7 +521,12 @@
    "confidence": "low",
    "rationale": "UN speech asks the organisation to respect the limits of a community of sovereign nations and not substitute national institutions.",
    "sources": [
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "free-trade": {
@@ -378,7 +535,12 @@
    "rationale": "Defended Peru's free trade treaties in the 2011 debate (asked why Humala wanted to revise them); plan builds on the existing 22 treaties and export promotion.",
    "sources": [
     "s6",
-    "s1"
+    "s1",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "nation-first": {
@@ -408,7 +570,7 @@
   "drastic-climate-action": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "tech-solves-problems": {
@@ -468,13 +630,13 @@
   "tariffs-protect-industry": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "state-directs-investment": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "widespread-small-property": {
@@ -676,10 +838,13 @@
    "sources": []
   },
   "results-over-ideology": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "She judges appointees by competence despite prior opposition affiliations.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "direct-action": {
    "value": null,
@@ -778,10 +943,13 @@
    "sources": []
   },
   "positive-liberty": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "She says government must supply basic conditions for personal advancement.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "media-academia-power": {
    "value": null,
@@ -886,7 +1054,8 @@
    "sources": [
     "s1",
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "economic-freedom": {
    "value": null,
@@ -931,16 +1100,23 @@
    "sources": []
   },
   "class-collaboration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She combines better wages with sustainable firms and employer cooperation.",
+   "sources": [
+    "b1",
+    "b12"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "sacrifice-heritage": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Section 3.2 promotes cultural industries together with heritage protection.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "dominated-front": {
    "value": null,
@@ -961,10 +1137,13 @@
    "sources": []
   },
   "ban-interest": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "She defends removing lending-rate caps rather than prohibiting interest.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "racial-segregation-law": {
    "value": null,
@@ -983,7 +1162,12 @@
    "confidence": "high",
    "rationale": "Plan promotes exploration and exploitation of hydrocarbons with new lots in the jungle and northern coast, a northern energy pole and the southern gas pipeline.",
    "sources": [
-    "s1"
+    "s1",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "assimilate-immigrants": {
@@ -1017,10 +1201,13 @@
    "sources": []
   },
   "political-elite-corrupt": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She describes institutions captured for corrupt private advantage.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "heritable-defect-limits": {
    "value": -2,
@@ -1028,14 +1215,20 @@
    "rationale": "In the 2021 debate she said she rejects any possibility of forced sterilization.",
    "sources": [
     "s8"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "security-forces-accountable": {
    "value": -2,
    "confidence": "medium",
    "rationale": "In her UN speech she said those who fought terrorism are still being judged despite due process violations and that human rights defence must not turn victims into defendants and perpetrators into protected persons.",
    "sources": [
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "night-watchman-state": {
@@ -1045,7 +1238,12 @@
    "sources": [
     "s3",
     "s1",
-    "s4"
+    "s4",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "discourage-race-mixing": {
@@ -1060,7 +1258,12 @@
    "rationale": "Plan decalogue and UN speech affirm equality before the law, human dignity and rejection of all discrimination, including by origin, religion and sexual orientation.",
    "sources": [
     "s1",
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "socialism-one-country": {
@@ -1154,7 +1357,12 @@
    "sources": [
     "s3",
     "s6",
-    "s1"
+    "s1",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "vanguard-party": {
@@ -1164,10 +1372,13 @@
    "sources": []
   },
   "priority-to-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She prioritizes people excluded from economic progress.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "right-to-buy-council-homes": {
    "value": null,
@@ -1188,10 +1399,13 @@
    "sources": []
   },
   "diversity-weakens-cohesion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "She describes multicultural Peru as one strong national community.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "offices-by-lottery": {
    "value": null,
@@ -1200,10 +1414,13 @@
    "sources": []
   },
   "emergency-suspend-protections": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She uses emergency regimes for military prison security and wider internal-control operations.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "price-controls-essentials": {
    "value": null,
@@ -1212,10 +1429,13 @@
    "sources": []
   },
   "party-controls-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "She explicitly defends press and expression freedoms.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "party-commands-army": {
    "value": null,
@@ -1242,10 +1462,13 @@
    "sources": []
   },
   "pool-sovereignty": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "She advocates deeper integration through the Andean Community.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "head-commands-forces": {
    "value": null,
@@ -1290,10 +1513,13 @@
    "sources": []
   },
   "end-foreign-alliances": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "She expands US military and intelligence partnerships against organized crime.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "abolish-rental-housing": {
    "value": null,
@@ -1338,7 +1564,8 @@
    "sources": [
     "s14",
     "s13"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "sex-ed-in-schools": {
    "value": 0,
@@ -1346,7 +1573,12 @@
    "rationale": "Supports teaching gender equality and equal rights, but wants education content on gender reviewed by parents and eliminates 'gender ideology'; mixed.",
    "sources": [
     "s8",
-    "s9"
+    "s9",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "creationism-in-schools": {
@@ -1368,10 +1600,13 @@
    "sources": []
   },
   "minority-language-support": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Section 3.3 requires healthcare guidance adapted to local languages.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "religious-exemptions": {
    "value": null,
@@ -1405,7 +1640,8 @@
     "s6",
     "s4",
     "s5"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "restrict-freedoms-for-growth": {
    "value": null,
@@ -1440,7 +1676,8 @@
     "s2",
     "s4",
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "no-land-for-peace": {
    "value": null,
@@ -1521,10 +1758,13 @@
    "sources": []
   },
   "sovereign-above-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "She says she would defend herself through judicial proceedings even as president.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "space-expansion": {
    "value": null,
@@ -1688,7 +1928,12 @@
    "rationale": "Plan strengthens civic curriculum with respect for family, national identity and civic-patriotic values; UN speech wants children proud of their country.",
    "sources": [
     "s1",
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "end-racial-preferences": {
@@ -1938,10 +2183,13 @@
    "sources": []
   },
   "budget-needs-parliament": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "She submits the budget and supplementary spending for congressional authorization.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "single-official-language": {
    "value": null,
@@ -2051,7 +2299,8 @@
    "rationale": "Plan strengthens the national transparency and access to information authority and promises full public transparency of procurement.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "local-production": {
    "value": null,
@@ -2072,7 +2321,8 @@
    "sources": [
     "s13",
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "religious-nation": {
    "value": null,
@@ -2110,7 +2360,12 @@
    "rationale": "Health plan promotes tariff agreements between public and private institutions so users can choose where to be treated, alongside public insurance; PPPs in infrastructure.",
    "sources": [
     "s1",
-    "s5"
+    "s5",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "religion-illusion": {
@@ -2120,10 +2375,14 @@
    "sources": []
   },
   "capitalism-progressive": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Her market platform credits the 1990s investment model with economic recovery and prosperity.",
+   "sources": [
+    "b6",
+    "b7"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "women-equality-needs-economic-change": {
    "value": null,
@@ -2162,10 +2421,13 @@
    "sources": []
   },
   "neither-capitalism-nor-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The adopted Decalogue explicitly endorses popular capitalism.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "historical-land-claim": {
    "value": null,
@@ -2238,7 +2500,12 @@
    "confidence": "medium",
    "rationale": "On the Ana Estrada euthanasia case she said life is defended from conception to natural death and that she does not share the decision but respects it, worried it could be generalised.",
    "sources": [
-    "s10"
+    "s10",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "left-right-obsolete": {
@@ -2283,7 +2550,12 @@
    "rationale": "Her party's program and her 2011 debate position both name the social market economy as the model, with rules for competition and protection for workers, small firms and consumers.",
    "sources": [
     "s1",
-    "s6"
+    "s6",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abolish-armed-forces": {
@@ -2515,10 +2787,13 @@
    "sources": []
   },
   "unbroken-national-continuity": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "She connects present Peru’s identity to ancient civilizations and Inca integration.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "sex-socially-constructed": {
    "value": null,
@@ -2604,7 +2879,8 @@
    "rationale": "Says Fuerza Popular made a historic change in moving from a single chamber to bicameralism, to give political stability.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "municipal-property": {
    "value": null,
@@ -2848,7 +3124,8 @@
     "s4",
     "s2",
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "keep-nuclear-weapons": {
    "value": null,
@@ -2923,10 +3200,13 @@
    "sources": []
   },
   "democracy-is-procedure": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Decalogue 6 requires democracy to deliver substantive public services.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "premarital-sex": {
    "value": null,
@@ -3091,22 +3371,31 @@
    "sources": []
   },
   "targeted-social-spending": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She emphasizes identifying poor households for timely assistance.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "bypass-parties-groups": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Decalogue 5 makes political parties foundational to democracy.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "no-business-privileges": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She condemns privileged procurement that undermines competition.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "no-denominational-politics": {
    "value": null,
@@ -3193,5 +3482,15 @@
    "sources": []
   }
  },
- "notes": "Positions are those of Keiko Fujimori herself; her father's record is not attributed to her. Same-sex union and abortion positions shifted between 2011 (patrimonial union) and 2016 (rejected civil union); the most recent clear statements are used. Debate captions have no speaker labels; only passages clearly hers were used. Reference sources on marriage, abortion, euthanasia and the death penalty are press reports of her statements."
+ "notes": "Positions are those of Keiko Fujimori herself; her father's record is not attributed to her. Same-sex union and abortion positions shifted between 2011 (patrimonial union) and 2016 (rejected civil union); the most recent clear statements are used. Debate captions have no speaker labels; only passages clearly hers were used. Reference sources on marriage, abortion, euthanasia and the death penalty are press reports of her statements.\n\nMerged with an independent gpt-6.1-sol audit: 26 answers taken from it, 24 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; no previous answers consulted and no living-person inference. Three of ten priorities answered: capitalist endorsement, historical market development, and legal interest. Full active list and nulls reviewed. Revolution, small armed-group theory, proletarian dictatorship, globally reorganized cooperative communities, and kin-peoples political union remain undocumented. Her condemnation of promoting class confrontation is not a historical-materialist theory; Marx’s quoted letter is not her view. Protecting life, private religious devotion and invoking God do not establish divine political authority. The inaugural address is a plan, not proof of achieved wages or pensions. The signed Lot 192 transfer is consensual contracting, not proof of overriding property rights; ownership remains mixed. Environmental monitoring and climate adaptation coexist with expanded extraction, so no nuclear, intrinsic-nature-rights or undamaged-Earth conclusion is inferred. Water restoration is not natural-capital valuation. The environmental delegation report was read, but committee opinions are not her words. AI flags procurement anomalies for human officials; that does not establish algorithmic government or extinction priority. US security cooperation does not settle permanent foreign bases or collective defense against every armed attack, and maintaining Chinese trade is not choosing China over the US. Regional integration does not establish ethnic or linguistic political unification. Military emergency functions are her own policy; her father’s coups and killings are not automatically attributed. Her antiterrorism prosecution objection is distinguished from automatic immunity for every police crime. The earlier El Comercio interview was read in full; its acknowledgement of autocracy and defenses of her father’s convictions are recorded context, not independent proof of his innocence. CIDOB records her 2021 annulment campaign and eventual recognition; no unconditional democracy-best answer inferred. Caption speaker context was checked against native-language reporting. No quiz-site positions used.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-26"
+  }
+ ]
 }
