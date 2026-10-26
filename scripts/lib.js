@@ -52,22 +52,28 @@ function placed(answers, factor) {
 }
 // People are held to a looser bar than ideologies. An ideology must be told apart from its nearest
 // neighbour; a person only has to be placed well enough to be compared at all, and the build's
-// "uniquely reachable" check already keeps two people from being indistinguishable. At 1.5x a solid
-// record of roughly 20-25 positions passes, while the apolitical controls (0-5 positions) sit at 2.3x
-// or more and still fail.
-const PEOPLE_BAR = 1.5;
-// Passing the bar is enough to be shown, but a person placed near it lands close to the middle of the
-// lines and turns up in many takers' results. Below this share of the bar the placement is preferred;
-// above it the validator warns, and the audit is still accepted.
-const PEOPLE_PREFERRED = 0.75;
+// "uniquely reachable" check already keeps two people from being indistinguishable. A person placed
+// near a looser bar lands close to the middle of the lines and turns up in many takers' results, so at
+// 1.125x a record needs roughly 40-60 positions, depending on how they spread over the themes.
+const PEOPLE_BAR = 1.125;
+// The bar was 1.5x until 2026-10-26. People shown under it who don't yet meet the new bar are listed in
+// audits/people-legacy-bar.json and keep the old bar, so they stay on the site while their audits are
+// deepened. An id leaves the list once its audit meets the new bar (test.js checks); none are added.
+const LEGACY_PEOPLE_BAR = 1.5;
+const LEGACY_PATH = path.join(ROOT, "audits", "people-legacy-bar.json");
+let legacyIds = null;
+const onLegacyBar = (id) => (legacyIds ||= new Set(fs.existsSync(LEGACY_PATH) ? readJson(LEGACY_PATH).ids : [])).has(id);
 // A historical figure's answers may be inferred from views they stated (audits/PROMPT_PEOPLE.md); those
 // begin "Inferred:" and, like an ideology's inferred answers, don't count toward salience. They still
 // count for matching, so nobody is shown on the strength of inferences.
 const statedOnlyPerson = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
-const personSalience = (answers) => {
+// `id` is needed only for people who may be on the legacy bar; `legacy` says whether that bar applied.
+const personSalience = (answers, id = null) => {
   const r = placed(statedOnlyPerson(answers), PEOPLE_BAR);
-  return { ...r, preferred: r.bar * PEOPLE_PREFERRED, loose: r.salient && r.uncertainty > r.bar * PEOPLE_PREFERRED };
+  if (r.salient || !id || !onLegacyBar(id)) return { ...r, legacy: false };
+  const old = placed(statedOnlyPerson(answers), LEGACY_PEOPLE_BAR);
+  return { ...old, legacy: old.salient, strictBar: r.bar };
 };
 
 // Ideologies must answer every statement, inferring where the ideology never took a position
@@ -81,4 +87,4 @@ const salienceBar = () => (placed({}, 1), salienceCache.ctx.bar);
 
 module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  salienceBar, useSalienceModel };
+  salienceBar, useSalienceModel, LEGACY_PATH, onLegacyBar };

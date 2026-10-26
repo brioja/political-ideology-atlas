@@ -160,11 +160,11 @@ function validate(id) {
   if (errors.length === 0 && SALIENCE) {
     // Salience: can their record place them precisely enough to match? (see pca.js)
     // For ideologies only stated positions count; inferred (low-confidence) answers don't.
-    const s = PEOPLE ? personSalience(answers) : ideologySalience(answers);
+    const s = PEOPLE ? personSalience(answers, CONTROLS ? null : id) : ideologySalience(answers);
     if (!s.salient) {
       errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than the typical gap between neighbouring ideologies (${s.bar.toFixed(2)})`);
-    } else if (s.loose) {
-      warnings.push(`loosely placed: ${s.known} recorded positions give uncertainty ${s.uncertainty.toFixed(2)}, which passes the bar (${s.bar.toFixed(2)}) but not the preferred ${s.preferred.toFixed(2)}; look for stated positions in the thinnest themes`);
+    } else if (s.legacy) {
+      warnings.push(`loosely placed: ${s.known} recorded positions give uncertainty ${s.uncertainty.toFixed(2)}, which passes the old bar (${s.bar.toFixed(2)}) this person is still held to but not the current one (${s.strictBar.toFixed(2)}); look for stated positions in the thinnest themes`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;

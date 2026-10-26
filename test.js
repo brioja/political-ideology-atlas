@@ -79,7 +79,7 @@ if (!PEOPLE_ONLY && hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 
 const fs = require("fs");
 const lib = require("./scripts/lib.js");
 const sal = (dir, list) => list.filter((p) => fs.existsSync(require("path").join(dir, `${p.id}.json`)))
-  .map((p) => ({ p, r: lib.personSalience(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers) }));
+  .map((p) => ({ p, r: lib.personSalience(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers, dir === lib.PEOPLE_DIR ? p.id : null) }));
 const controls = sal(lib.CONTROLS_DIR, lib.controlsCatalog());
 for (const { p, r } of controls) {
   const line = `${p.name}: ${r.known} positions, uncertainty ${r.uncertainty.toFixed(2)} vs bar ${r.bar.toFixed(2)}`;
@@ -87,7 +87,15 @@ for (const { p, r } of controls) {
   else assert(!r.salient, `control passed salience: ${line}`);
 }
 const people = sal(lib.PEOPLE_DIR, lib.peopleCatalog());
-console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass; ` +
+// The legacy-bar list only shrinks: a listed person who meets the current bar, or has no audit, comes off it.
+const legacy = lib.readJson(lib.LEGACY_PATH).ids;
+for (const id of legacy) {
+  const x = people.find((y) => y.p.id === id);
+  assert(x, `${id} is in audits/people-legacy-bar.json but has no audit; remove it`);
+  assert(x.r.legacy, `${id} now meets the current people bar (or fails the old one); remove it from audits/people-legacy-bar.json`);
+}
+console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass ` +
+  `(${people.filter((x) => x.r.legacy).length} on the legacy bar); ` +
   `${controls.filter((x) => !x.p.borderline && !x.r.salient).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
 
 // 4b. Ideology colors: never only neutral shades (grey, black, white); a neutral is fine next to a

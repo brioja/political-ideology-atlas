@@ -115,7 +115,7 @@ function writePeople(model) {
     if (!fs.existsSync(p)) continue;
     const a = readJson(p);
     const answers = statements.map((s) => a.answers[s.id] || { value: null });
-    if (!personSalience(a.answers).salient) { excludedPeople++; continue; }
+    if (!personSalience(a.answers, entry.id).salient) { excludedPeople++; continue; }
     people.push({
       id: entry.id, name: entry.name, role: a.role, summary: a.summary, region: entry.region, born: entry.born,
       living: a.living ?? entry.living, wikipedia: a.wikipedia || entry.wikipedia, views12m: entry.views12m || 0,
