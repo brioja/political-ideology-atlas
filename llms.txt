@@ -1,0 +1,28 @@
+# Political Ideology Atlas
+
+> A free political ideology test at https://ideologyatlas.fyi/. It finds the dividing lines between
+> ideologies from sourced audits of how each ideology answers a few hundred statements, then matches
+> the user's answers against them. Source code, data and audits: https://github.com/brioja/political-ideology-atlas
+
+The site is a single page whose results are worked out by its script in the browser. Fetching a page
+or a result link without running the script shows only the empty shell, not the result.
+
+## Result links
+
+A result link looks like `https://ideologyatlas.fyi/?r=3.<answers>`. It carries the person's answers
+and nothing else. After `3.`, each character is one statement, in the order listed in
+https://raw.githubusercontent.com/brioja/political-ideology-atlas/main/audits/share-slots.json
+(the `slots` array of statement ids): `-` = not answered, `0` = strongly disagree, `1` = disagree,
+`2` = neither, `3` = agree, `4` = strongly agree. Trailing unanswered statements are dropped.
+Statement texts are in https://raw.githubusercontent.com/brioja/political-ideology-atlas/main/statements.json
+(match by `id`).
+
+The ideology match itself depends on the model built from every audit, so it can't be read off the
+link alone. If someone shares only a link, decode their answers as above, and ask them to open the
+link in a browser and paste what the results page shows (closest ideologies, people and dividing lines).
+
+## More
+
+- [README: how it works](https://github.com/brioja/political-ideology-atlas/blob/main/README.md)
+- [Ideology audits](https://github.com/brioja/political-ideology-atlas/tree/main/audits/profiles): each ideology's sourced answer to every statement
+- [People audits](https://github.com/brioja/political-ideology-atlas/tree/main/audits/people)
