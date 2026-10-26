@@ -2,7 +2,10 @@
   "id": "richard-nixon",
   "name": "Richard Nixon",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-sonnet-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+  ],
   "living": false,
   "role": "37th President of the United States (1969-1974)",
   "summary": "A Republican president who combined a hard line on crime, drugs and pornography with pragmatic and sometimes interventionist domestic policy, including the EPA, wage-price controls, a federal welfare floor with work requirements and an employer-based health plan. In foreign policy he pursued Vietnamization, the Nixon Doctrine, détente with the USSR and the opening to China while keeping alliances and a strong nuclear deterrent. He resigned over Watergate and defended broad executive power in national-security matters.",
@@ -223,6 +226,102 @@
       "author": "Richard Nixon",
       "url": "https://www.presidency.ucsb.edu/documents/special-message-the-congress-draft-reform",
       "usedFor": "ending the draft, Gates Commission, standby draft"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "Beyond Peace (1994), substantial page-numbered excerpts",
+      "author": "Richard Nixon",
+      "url": "https://www.nixonfoundation.org/2022/02/richard-nixon-russia/",
+      "usedFor": "Full russia.txt; Nixon’s quoted passages separated from the Foundation’s 2022 editorial introduction."
+    },
+    {
+      "id": "b2",
+      "kind": "primary",
+      "title": "Beyond Peace and In the Arena: education and race excerpts",
+      "author": "Richard Nixon",
+      "url": "https://www.nixonfoundation.org/2013/08/president-nixons-approach-to-education-and-race/",
+      "usedFor": "Full education.txt; only the quoted book passages establish personal positions."
+    },
+    {
+      "id": "b3",
+      "kind": "primary",
+      "title": "Presidential Prayer Breakfast, February 5, 1970",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/remarks-the-presidential-prayer-breakfast",
+      "usedFor": "Full prayer.txt; public faith and national spiritual purpose."
+    },
+    {
+      "id": "b4",
+      "kind": "primary",
+      "title": "National Prayer Breakfast, January 31, 1974",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/remarks-the-national-prayer-breakfast-4",
+      "usedFor": "Full prayer74.txt; distinguishes his own beliefs from Lincoln’s and relatives’ views."
+    },
+    {
+      "id": "b5",
+      "kind": "primary",
+      "title": "Opening the American Revolution Bicentennial Era, July 3, 1971",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/remarks-the-president-chief-justice-warren-e-burger-and-speaker-the-house-carl-albert",
+      "usedFor": "Full bicentennial.txt; Nixon’s labelled turns only, excluding Burger’s and Albert’s speeches."
+    },
+    {
+      "id": "b6",
+      "kind": "primary",
+      "title": "Letter to President Thieu on Land to the Tiller, March 24, released April 2, 1973",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/letter-president-thieu-about-the-land-the-tiller-program-the-republic-vietnam",
+      "usedFor": "Full land.txt; Nixon’s letter distinguished from the appended Thieu letter."
+    },
+    {
+      "id": "b7",
+      "kind": "reference",
+      "title": "Richard Nixon: Domestic Affairs",
+      "author": "Ken Hughes, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/nixon/domestic-affairs",
+      "usedFor": "Full domestic.txt; welfare, economic regulation and personally directed Watergate conduct."
+    },
+    {
+      "id": "b8",
+      "kind": "reference",
+      "title": "Richard Nixon: Foreign Affairs",
+      "author": "Ken Hughes, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/nixon/foreign-affairs",
+      "usedFor": "Full foreign.txt; China, nuclear agreements, Cambodia and Chile; actions by Kissinger distinguished from Nixon’s own."
+    },
+    {
+      "id": "b9",
+      "kind": "primary",
+      "title": "Interview with David Frost, 1977, edited transcript",
+      "author": "Richard Nixon",
+      "url": "https://teachingamericanhistory.org/library/document/transcript-of-david-frosts-interview-with-richard-nixon/",
+      "usedFor": "Full frost.txt; actual interview rather than film dialogue; includes his qualification denying general above-law authority."
+    },
+    {
+      "id": "b10",
+      "kind": "primary",
+      "title": "Veto of Economic Opportunity Amendments, December 9, 1971",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/veto-the-economic-opportunity-amendments-1971",
+      "usedFor": "Full childcare.txt; actual veto and own explanations, including continued support for targeted childcare."
+    },
+    {
+      "id": "b11",
+      "kind": "primary",
+      "title": "Special Message to Congress on Science and Technology, March 16, 1972",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/documents/special-message-the-congress-science-and-technology",
+      "usedFor": "Full science.txt; innovation, its limits, patents, public investment and international cooperation."
+    },
+    {
+      "id": "b12",
+      "kind": "primary",
+      "title": "State of the Union message on law enforcement and drug abuse, March 14, 1973",
+      "author": "Richard Nixon",
+      "url": "https://www.presidency.ucsb.edu/node/256237",
+      "usedFor": "Full crime.txt; proposed criminal code, mandatory penalties, treatment and federalism."
     }
   ],
   "answers": {
@@ -233,7 +332,8 @@
       "sources": [
         "s8",
         "s11"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "markets-allocate-better": {
       "value": 0,
@@ -241,7 +341,8 @@
       "rationale": "Called the 1971 wage-price freeze temporary so as not to stifle free enterprise, yet imposed it and closed the gold window; evidence points both ways.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "regulate-corporations": {
       "value": 1,
@@ -249,7 +350,12 @@
       "rationale": "Record: created the EPA and OSHA, proposed tougher pollution standards and emission charges on industry, and imposed wage-price controls.",
       "sources": [
         "s6",
-        "s21"
+        "s21",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "cut-welfare": {
@@ -258,7 +364,12 @@
       "rationale": "Said the welfare system perpetuates dependency and called it a colossal failure, but proposed replacing it with a broader federal benefit (including the working poor) rather than cutting it.",
       "sources": [
         "s4",
-        "s11"
+        "s11",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "basic-income": {
@@ -267,14 +378,20 @@
       "rationale": "Said the Family Assistance floor is not a guaranteed income and that he opposed an income assured regardless of ability or willingness to work.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "negative-income-tax": {
       "value": 1,
       "confidence": "medium",
       "rationale": "Proposed replacing AFDC with a federal cash floor whose benefit falls by 50 cents per dollar earned above a small disregard, with work requirement.",
       "sources": [
-        "s4"
+        "s4",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "work-for-welfare": {
@@ -283,7 +400,8 @@
       "rationale": "Under his plan everyone who accepts benefits must accept work or training if suitable jobs are available (exceptions: those unable to work, mothers of preschool children).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "in-work-tax-credits": {
       "value": 1,
@@ -291,7 +409,8 @@
       "rationale": "His plan topped up the income of low-wage working families through family assistance supplements (a cash supplement, not a tax credit).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "free-trade": {
       "value": 1,
@@ -300,7 +419,12 @@
       "sources": [
         "s11",
         "s12",
-        "s3"
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "expand-fossil-fuels": {
@@ -310,14 +434,20 @@
       "sources": [
         "s13",
         "s11"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "expand-nuclear": {
       "value": 2,
       "confidence": "high",
       "rationale": "Proposed accelerating the licensing and construction of nuclear facilities.",
       "sources": [
-        "s13"
+        "s13",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "pollution-taxes": {
@@ -326,7 +456,8 @@
       "rationale": "Proposed a charge on sulphur emissions, stating the principle that the costs of pollution should be included in the price of the product, combined with existing regulation.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "farm-price-support": {
       "value": -1,
@@ -334,7 +465,8 @@
       "rationale": "Counted among his achievements that taxpayer farm subsidies had been cut to nearly zero as farm income rose through market-oriented policy.",
       "sources": [
         "s11"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "avoid-deficit-stimulus": {
       "value": 0,
@@ -342,7 +474,8 @@
       "rationale": "1972 budget was described as expansionary and job-producing, while 1973 messages stressed holding the line on spending; mixed record.",
       "sources": [
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "decide-locally": {
       "value": 2,
@@ -350,7 +483,12 @@
       "rationale": "Made the New Federalism and revenue sharing a core theme, saying power should flow back from Washington to states, localities and the people, and that the decision should be theirs.",
       "sources": [
         "s12",
-        "s11"
+        "s11",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "surveillance-ok": {
@@ -358,7 +496,12 @@
       "confidence": "medium",
       "rationale": "Defended approving the Huston Plan, including surveillance of domestic groups using violence, on national-security grounds.",
       "sources": [
-        "s20"
+        "s20",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "legalize-drugs": {
@@ -369,7 +512,12 @@
         "s5",
         "s14",
         "s22",
-        "s23"
+        "s23",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "empower-police-military": {
@@ -378,7 +526,13 @@
       "rationale": "Declared a war on crime, doubled federal funding for local law enforcement, and said increased defence expenditure would be needed in 1974.",
       "sources": [
         "s12",
-        "s11"
+        "s11",
+        "b12",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "death-penalty": {
@@ -386,7 +540,12 @@
       "confidence": "high",
       "rationale": "Proposed restoring the death penalty for certain federal crimes, saying he was convinced it can be an effective deterrent.",
       "sources": [
-        "s14"
+        "s14",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "mandatory-sentences": {
@@ -394,7 +553,12 @@
       "confidence": "high",
       "rationale": "His proposed federal criminal code provided mandatory minimum terms for hard-narcotics trafficking, use of dangerous weapons in crime, and organised-crime leaders.",
       "sources": [
-        "s14"
+        "s14",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "restrict-pornography": {
@@ -402,7 +566,12 @@
       "confidence": "high",
       "rationale": "Categorically rejected the Commission on Obscenity and Pornography's conclusions and said there would be no relaxation of the effort to control and eliminate smut.",
       "sources": [
-        "s16"
+        "s16",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "emergency-suspend-protections": {
@@ -410,7 +579,12 @@
       "confidence": "high",
       "rationale": "Told Frost that in wartime abroad and near-revolution at home a president has extraordinary powers, and that an otherwise illegal burglary approved for national security against groups like the Weathermen would not expose participants to prosecution; he called the use limited.",
       "sources": [
-        "s20"
+        "s20",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "sovereign-above-law": {
@@ -419,7 +593,13 @@
       "rationale": "Said 'when the president does it... that means that it is not illegal' in national-security cases, yet in the same interview said he did not mean the president is above the law; he later complied with the Supreme Court tapes order and resigned.",
       "sources": [
         "s20",
-        "s21"
+        "s21",
+        "b9",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "public-access-to-information": {
@@ -428,15 +608,22 @@
       "rationale": "Withheld White House tapes citing executive privilege, releasing transcripts instead, during Watergate; contested.",
       "sources": [
         "s21"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "separated-powers": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Invoked preserving the constitutional separation of powers between Congress and the presidency in setting terms for staff testimony, while also asserting broad executive prerogative.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Record over rhetoric: he praised the constitutional separation of powers, but set up an unauthorised investigative unit in the White House (the Plumbers) and obstructed the Watergate investigation.",
       "sources": [
         "s19",
-        "s20"
+        "s20",
+        "b7",
+        "b5"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "treaties-binding": {
@@ -445,7 +632,8 @@
       "rationale": "Said the US would continue to carry out its treaty and trusteeship obligations to Indian tribes as long as the groups themselves wish, and called unilateral termination wrong.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "indigenous-land-authority": {
       "value": 1,
@@ -453,7 +641,8 @@
       "rationale": "Called for Indian self-determination without termination, greater tribal control of federal programmes, and restoring the sacred lands near Blue Lake to the Taos Pueblo.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "correct-racial-injustice": {
       "value": 1,
@@ -463,7 +652,8 @@
         "s7",
         "s21",
         "s24"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "end-racial-preferences": {
       "value": -1,
@@ -472,7 +662,8 @@
       "sources": [
         "s24",
         "s21"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abortion-legal": {
       "value": -1,
@@ -480,7 +671,8 @@
       "rationale": "Stated he could not square unrestricted abortion policy (abortion on demand) with the sanctity of human life, called abortion an unacceptable form of population control, and held that the unborn have rights; ordered military hospitals to follow state law.",
       "sources": [
         "s15"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "racial-segregation-law": {
       "value": -2,
@@ -489,7 +681,8 @@
       "sources": [
         "s9",
         "s10"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "national-self-determination": {
       "value": 1,
@@ -497,7 +690,8 @@
       "rationale": "Said everything was negotiable except the right of the South Vietnamese people to determine their own future.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "non-intervention": {
       "value": -1,
@@ -506,7 +700,12 @@
       "sources": [
         "s1",
         "s17",
-        "s21"
+        "s21",
+        "b8"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "defeat-communism": {
@@ -517,7 +716,8 @@
         "s1",
         "s11",
         "s18"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "military-superiority": {
       "value": 0,
@@ -527,7 +727,8 @@
         "s11",
         "s12",
         "s25"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "arms-reduction": {
       "value": 1,
@@ -535,7 +736,12 @@
       "rationale": "Negotiated SALT I and the ABM Treaty and hoped for mutual reduction of arms, while insisting on maintaining strength until mutual agreement.",
       "sources": [
         "s12",
-        "s25"
+        "s25",
+        "b8"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "keep-nuclear-weapons": {
@@ -544,7 +750,8 @@
       "rationale": "Said until there is mutual arms agreement the US would maintain a nuclear deterrent adequate to any threat to the US or its allies.",
       "sources": [
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "independent-nuclear-deterrent": {
       "value": 1,
@@ -552,7 +759,8 @@
       "rationale": "Policy was that the US maintain its own nuclear deterrent adequate to meet any threat to itself and its allies.",
       "sources": [
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "collective-defense": {
       "value": 1,
@@ -561,7 +769,8 @@
       "sources": [
         "s2",
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "end-foreign-alliances": {
       "value": -1,
@@ -570,7 +779,8 @@
       "sources": [
         "s2",
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "stay-neutral-between-blocs": {
       "value": -2,
@@ -579,7 +789,8 @@
       "sources": [
         "s2",
         "s12"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "defensive-wars-only": {
       "value": -1,
@@ -587,7 +798,12 @@
       "rationale": "Ordered operations in Cambodia and bombing and mining of North Vietnam beyond defence of US territory, which he justified as protecting US troops and allies; contested.",
       "sources": [
         "s17",
-        "s21"
+        "s21",
+        "b8"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "force-without-un": {
@@ -597,7 +813,8 @@
       "sources": [
         "s17",
         "s21"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "raise-minimum-wage": {
       "value": null,
@@ -672,10 +889,13 @@
       "sources": []
     },
     "traditional-family": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He vetoed the childcare legislation while declaring the family the keystone of civilization.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "same-sex-marriage": {
       "value": null,
@@ -684,10 +904,13 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1970 breakfast address celebrates White House worship and religious guidance for public leadership.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "gender-social-construct": {
       "value": null,
@@ -696,10 +919,13 @@
       "sources": []
     },
     "preserve-national-culture": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In the Arena’s education passage defends studying national heritage alongside other cultures and minority contributions.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "gradual-change": {
       "value": null,
@@ -756,10 +982,13 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His bicentennial remarks celebrate the American Revolution and urge renewed commitment to its founding principles.",
+      "sources": [
+        "b5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "experts-over-public": {
       "value": null,
@@ -798,16 +1027,22 @@
       "sources": []
     },
     "state-directs-investment": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His science message directs public resources into energy, transportation, biomedical research and industrial innovation.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "widespread-small-property": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His Land to the Tiller letter welcomes eliminating tenancy by giving farming families ownership.",
+      "sources": [
+        "b6"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "abolish-money-wages": {
       "value": null,
@@ -840,10 +1075,14 @@
       "sources": []
     },
     "democracy-best": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His anti-Allende operations sought to prevent a democratically elected government taking office despite his later democratic rhetoric.",
+      "sources": [
+        "b8",
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "direct-votes": {
       "value": null,
@@ -870,10 +1109,13 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His authorization of CIA efforts to block Allende by any means supported a coup project outside Chile’s constitutional authority.",
+      "sources": [
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "war-builds-character": {
       "value": null,
@@ -900,10 +1142,13 @@
       "sources": []
     },
     "ethnic-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Beyond Peace’s education passage defines American belonging through civic opportunity rather than race or ancestry.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "class-struggle-history": {
       "value": null,
@@ -960,10 +1205,13 @@
       "sources": []
     },
     "accelerate-technology": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "That message explicitly rejects immediate deployment where costs, side effects or human living patterns counsel delay.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "human-enhancement": {
       "value": null,
@@ -1079,7 +1327,8 @@
       "rationale": "Backed the Gates Commission's all-volunteer force and set the goal of reducing draft calls to zero, but said draft authority must be extended for now and a standby draft system kept for emergencies; the draft ended in 1973. Points both ways.",
       "sources": [
         "s27"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "exit-over-voice": {
       "value": null,
@@ -1208,10 +1457,13 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His 1974 address urges leaders to seek God’s guidance, making faith a guide to public action.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "welfare-for-citizens": {
       "value": null,
@@ -1228,7 +1480,7 @@
     "sacrifice-heritage": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "dominated-front": {
@@ -1304,10 +1556,13 @@
       "sources": []
     },
     "security-forces-accountable": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He obstructed investigation to conceal unlawful activities of his own clandestine operatives.",
+      "sources": [
+        "b7"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "night-watchman-state": {
       "value": null,
@@ -1370,10 +1625,14 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He explicitly endorses popular consent in 1971 but worked to prevent Chile’s elected Allende assuming office.",
+      "sources": [
+        "b5",
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "trade-surplus": {
       "value": null,
@@ -1459,7 +1718,8 @@
       "rationale": "In March 1973 he ordered the Cost of Living Council to impose a ceiling on beef, pork and lamb prices to stop the rise at once while supply was increased, calling it temporary rather than a permanent solution. He framed it as an anti-inflation measure rather than as scarcity relief.",
       "sources": [
         "s26"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "party-controls-media": {
       "value": null,
@@ -1756,10 +2016,13 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1973 letter enthusiastically supports transferring land titles to South Vietnamese tenant farmers and praises US assistance.",
+      "sources": [
+        "b6"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "refugee-return": {
       "value": null,
@@ -2014,10 +2277,13 @@
       "sources": []
     },
     "self-reliance-over-aid": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Beyond Peace, pp. 71–80, urges effective Western financial assistance for post-Soviet economic recovery.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "return-lost-territory": {
       "value": null,
@@ -2200,10 +2466,13 @@
       "sources": []
     },
     "democratic-peace": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Beyond Peace, p. 42, explicitly argues an authoritarian Russia would be more aggressive than a democratic one.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "no-duty-to-obey": {
       "value": null,
@@ -2248,10 +2517,13 @@
       "sources": []
     },
     "religious-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Beyond Peace explicitly says being American is not defined by being Christian, Muslim or Buddhist.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "deference-to-leading-power": {
       "value": null,
@@ -2272,16 +2544,22 @@
       "sources": []
     },
     "mixed-public-service-providers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He supports federal childcare assistance purchased from private providers while retaining Head Start and other public programs.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religion-illusion": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: his 1970 address says affluent, powerful America still needs divine guidance, contradicting religion fading with material prosperity.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "capitalism-progressive": {
       "value": null,
@@ -2296,10 +2574,13 @@
       "sources": []
     },
     "socialized-care": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His veto rejected communal childrearing and minimized direct federal childcare provision while supporting parents purchasing services.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "purge-loanwords": {
       "value": null,
@@ -2320,10 +2601,13 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Beyond Peace, pp. 74 and 81, champions private enterprise and democratic capitalism after communism.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "historical-land-claim": {
       "value": null,
@@ -2344,10 +2628,13 @@
       "sources": []
     },
     "suppress-opposition": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He created the Plumbers to investigate and discredit perceived political enemies outside lawful investigative channels.",
+      "sources": [
+        "b7"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "punish-blasphemy": {
       "value": null,
@@ -2416,10 +2703,13 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His own bicentennial opening explicitly endorses government deriving its powers from the governed’s consent.",
+      "sources": [
+        "b5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2434,10 +2724,14 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His record combines private markets with social insurance and extensive environmental and workplace regulation.",
+      "sources": [
+        "b7",
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2620,10 +2914,13 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He defends strong patents and directs expanded exclusive licensing and patent protection to stimulate investment.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "uniformed-youth": {
       "value": null,
@@ -2794,10 +3091,13 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "That address insists national spiritual strength matters beyond material prosperity and military power.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "regional-powers-revocable": {
       "value": null,
@@ -2866,10 +3166,13 @@
       "sources": []
     },
     "open-diplomacy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He relied on secret negotiations and concealed military action in Cambodia.",
+      "sources": [
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "capital-controls": {
       "value": null,
@@ -3088,10 +3391,13 @@
       "sources": []
     },
     "defend-planned-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Beyond Peace, pp. 32–42, opposes restoration of command economics and dictatorship in Russia.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "indirect-election": {
       "value": null,
@@ -3184,10 +3490,13 @@
       "sources": []
     },
     "targeted-social-spending": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "The veto favors concentrating assistance on poor children over the proposed broadly available development program.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "bypass-parties-groups": {
       "value": null,
@@ -3286,5 +3595,15 @@
       "sources": []
     }
   },
-  "notes": "Views are taken from his presidential statements (1969-1974) and the Frost interviews (1977). Post-presidency books ('The Real War', '1999: Victory Without War', 'Seize the Moment') could not be reached as full texts, so his later foreign-policy views are not used. Contested: whether his 1971 controls and surcharge reflect a pro- or anti-market view; whether 'when the president does it' states a general doctrine (in the same interview he denied the president is above the law)."
+  "notes": "Views are taken from his presidential statements (1969-1974) and the Frost interviews (1977). Post-presidency books ('The Real War', '1999: Victory Without War', 'Seize the Moment') could not be reached as full texts, so his later foreign-policy views are not used. Contested: whether his 1971 controls and surcharge reflect a pro- or anti-market view; whether 'when the president does it' states a general doctrine (in the same interview he denied the president is above the law).\n\nMerged with an independent gpt-6.1-sol audit: 30 answers taken from it, 17 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third-model audit. All 490 statements and the full blank list reviewed. Sources from earlier passes were read only as bibliography and notes, never answers. Substantial excerpts of Beyond Peace and In the Arena supply later positions missing from the earlier pass; chapter/page references are provided where available. They are excerpts rather than complete books. Their pro-democracy rhetoric does not erase Chile or Watergate. Actual conduct controls the democracy and separation-of-powers answers; popular-consent evidence is mixed. The Frost interview contains both the presidential-authorization doctrine and a disclaimer that the president is not generally above law: the answer records a security exception, not unlimited divine sovereignty. Religious guidance is distinguished from authority conferred by God: his explicit popular-consent formula supplies the negative divine-authority answer. Exactly one historical inference, religion-illusion, is flagged low. No position on monarchy, hereditary abolition or dynastic succession is invented from his elective office. Land redistribution is supported by Nixon’s own letter, not just Thieu’s appended claims. Burger’s Bill of Rights passages and Albert’s constitutional speech are not attributed to Nixon. The 2022 China panel was checked but contains other speakers, not a new Nixon interview. The science message acknowledges technology’s limits; it does not establish that technology solves most problems, AI government, enhancement, anti-ageing or indefinite space expansion. Vetoing national communal childcare coexists with targeted daycare aid, so it does not mean opposition to all childcare assistance. His private wish for the welfare bill to fail makes negative-income-tax mixed rather than unqualified support. Racial and religious pluralism in the late books does not establish detailed anti-discrimination doctrines. The Middle East airlift and threats described as Kissinger’s decisions are not automatically Nixon’s personal actions. Historic land claims, global economic restructuring and national majority settlement remain null. Government abuse is not a position favoring racial segregation or genetic racial hierarchy. Nulls are not ideological denials.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
+    }
+  ]
 }
