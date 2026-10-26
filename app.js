@@ -974,10 +974,13 @@ function drawGlobe(ctx, x, y, size) {
   const line = (d, color, width, alpha = 1) => {
     ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = width; ctx.stroke(new Path2D(d)); ctx.globalAlpha = 1;
   };
+  ctx.save();
+  ctx.clip(new Path2D("M25.5 14A11.5 11.5 0 1 1 2.5 14A11.5 11.5 0 1 1 25.5 14")); // keep the meridians' ends inside the outline
   line("M2.5 14H25.5", CARD.muted, 1.2, 0.6);
   line("M14 2.5A6.5 11.5 0 0 0 14 25.5", LOGO.left, 2.2);
   line("M14 2.5V25.5", LOGO.center, 2.2);
   line("M14 2.5A6.5 11.5 0 0 1 14 25.5", LOGO.right, 2.2);
+  ctx.restore();
   line("M25.5 14A11.5 11.5 0 1 1 2.5 14A11.5 11.5 0 1 1 25.5 14", CARD.ink, 2); // outline last
   ctx.restore();
 }
@@ -1411,7 +1414,8 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
   ctx.font = `500 15px ${CARD_FONTS.mono}`;
   ctx.fillText(result ? "WHERE YOU STAND" : "THE DIVIDING LINES", mx + 28, my + 40);
 
-  const lines = SHOWN_LINES;
+  // The generic preview shows only the strongest lines: hundreds of ideologies need room to read as dots.
+  const lines = result ? SHOWN_LINES : Math.min(4, SHOWN_LINES);
   const top = result ? result.ranked[0] : null;
   const rowH = (ms - 80) / lines;
   for (let i = 0; i < lines; i++) {
@@ -1423,8 +1427,10 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const px = (v) => x0 + scale(v) * (x1 - x0);
     const ty = y0 + rowH * 0.55;
 
-    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x0, y0 + 4, 140, 8);
-    ctx.fillStyle = CARD.muted; ctx.fillRect(x0, y0 + 4, 140 * lineWeight(i), 8);
+    if (result) {
+      ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x0, y0 + 4, 140, 8);
+      ctx.fillStyle = CARD.muted; ctx.fillRect(x0, y0 + 4, 140 * lineWeight(i), 8);
+    }
     ctx.fillStyle = CARD.muted;
     ctx.font = `400 15px ${CARD_FONTS.body}`;
     ctx.fillText(L.low, x0, ty + 26);
@@ -1438,11 +1444,11 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke();
 
     if (!result) {
-      // Generic preview: every ideology as a faint marker.
-      for (const d of model.ideologies) {
-        ctx.globalAlpha = 0.55;
+      // Generic preview: every ideology as a faint dot, spread a little vertically so clusters show.
+      for (const [k, d] of model.ideologies.entries()) {
+        ctx.globalAlpha = 0.18;
         ctx.fillStyle = CARD.point;
-        ctx.fill(new Path2D(shapePath(styleOf(d).shape, px(d.scores[i]), ty, 6)));
+        ctx.fill(new Path2D(shapePath(styleOf(d).shape, px(d.scores[i]), ty + ((k % 5) - 2) * 4, 4)));
       }
       ctx.globalAlpha = 1;
       continue;
