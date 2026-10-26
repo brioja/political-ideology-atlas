@@ -2427,9 +2427,9 @@ const QUESTIONS = [
   "id": "totalitarianisms-equivalent",
   "theme": "government",
   "text": "Fascism and communism should be condemned together as equivalent forms of totalitarianism.",
-  "agree": "Both are the same kind of evil and deserve the same condemnation.",
+  "agree": "Fascist regimes and the communist states of the 20th century are the same kind of evil and deserve the same condemnation.",
   "disagree": "The two differ in aims and record and should not be put on one level.",
-  "note": "About comparing fascism and communism.",
+  "note": "Communism here means the communist parties and one-party states of the 20th century, such as the USSR and Mao's China, not the stateless society Marx described.",
   "icon": "⚖️"
  },
  {
@@ -2796,9 +2796,9 @@ const QUESTIONS = [
   "id": "defeat-communism",
   "theme": "world",
   "text": "Communism should be defeated rather than coexisted with.",
-  "agree": "Communism is a threat to be defeated, not a rival system to live alongside.",
+  "agree": "Communist parties and states are a threat to be defeated, not rival systems to live alongside.",
   "disagree": "Communist states can be coexisted with and should not be targeted for defeat.",
-  "note": "About whether to coexist with or defeat communism.",
+  "note": "Communism here means the communist parties and one-party states of the 20th century, such as the USSR and Mao's China, not the stateless society Marx described.",
   "icon": "🛑"
  },
  {
@@ -2886,9 +2886,9 @@ const QUESTIONS = [
   "id": "neither-capitalism-nor-communism",
   "theme": "economy",
   "text": "Neither capitalism nor communism offers a sound basis for society; a third course is needed.",
-  "agree": "Both capitalism and communism fail, and society should follow a different, third way.",
+  "agree": "Capitalism fails, and so does communism's collective ownership of the economy; society should follow a different, third way.",
   "disagree": "One of the two, capitalism or communism, is the sound basis, or other options are not needed.",
-  "note": "About whether a third way exists between capitalism and communism.",
+  "note": "Communism here means collective ownership of the economy as communist states practiced it.",
   "icon": "⚖️"
  },
  {
