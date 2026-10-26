@@ -2,7 +2,10 @@
   "id": "ilhan-omar",
   "name": "Ilhan Omar",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-sonnet-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+  ],
   "living": true,
   "role": "U.S. Representative for Minnesota's 5th district (2019–present); Deputy Chair of the Congressional Progressive Caucus",
   "summary": "Progressive Democrat who campaigns for Medicare for All, a higher minimum wage, tuition-free college and student debt cancellation, large public housing investment, and taxes on billionaires. She favors abolishing ICE, cutting defense spending, ending sanctions, and strongly criticizes Israel's conduct in Gaza and US military aid to it, while having stated support for a two-state solution in 2019.",
@@ -263,6 +266,94 @@
       "author": "JTA",
       "url": "https://www.jta.org/2019/03/20/ny/split-screen-reaction-over-omars-op-ed",
       "usedFor": "op-ed quotes: historical homeland, two states"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "Interview on war and foreign policy, May 28, 2020",
+      "author": "Ilhan Omar",
+      "url": "https://www.currentaffairs.org/news/2020/05/ilhan-omar-on-war-arms-sales-to-israel-margaret-thatcher-and-prince",
+      "usedFor": "Full current.txt; speaker-labelled Omar answers separated from interviewer assertions."
+    },
+    {
+      "id": "b2",
+      "kind": "primary",
+      "title": "Interview with David Marchese, September 2020",
+      "author": "Ilhan Omar",
+      "url": "https://portside.org/2020-09-24/ilhan-omar-not-here-put-you-ease",
+      "usedFor": "Full nyt-interview.txt; New York Times interview reprinted by Portside, including democracy and policing."
+    },
+    {
+      "id": "b3",
+      "kind": "primary",
+      "title": "Memoir interview with Lulu Garcia-Navarro, May 24, 2020",
+      "author": "Ilhan Omar",
+      "url": "https://www.vpm.org/npr-news/2020-05-24/ilhan-omar-on-her-memoir-and-moving-the-needle-toward-progressive-policies/",
+      "usedFor": "Full npr.txt; own pandemic relief and economic-policy answers."
+    },
+    {
+      "id": "b4",
+      "kind": "primary",
+      "title": "Interview with Ryan D’Agostino, February 2020",
+      "author": "Ilhan Omar",
+      "url": "https://www.esquire.com/news-politics/a30854217/ilhan-omar-squad-fame-in-politics-interview-2020/",
+      "usedFor": "Full esquire.txt; personal identity, human equality and feminism; no inference from faith."
+    },
+    {
+      "id": "b5",
+      "kind": "primary",
+      "title": "Pathway to PEACE legislative package, February 12, 2020",
+      "author": "Ilhan Omar",
+      "url": "https://omar.house.gov/media/press-releases/rep-omar-introduces-pathway-peace-bold-foreign-policy-vision-united-states",
+      "usedFor": "Full peace.txt direct retrieval succeeded despite browser 403; seven proposals and own statement."
+    },
+    {
+      "id": "b8",
+      "kind": "primary",
+      "title": "SUPPORT Act and Genuine Progress Indicator Act, July 30, 2021",
+      "author": "Ilhan Omar",
+      "url": "https://omar.house.gov/media/press-releases/rep-omar-introduces-guaranteed-income-bill-and-gdp-alternative-legislation",
+      "usedFor": "Full income.txt; own quote distinguished from other representatives and outside advocates."
+    },
+    {
+      "id": "b9",
+      "kind": "primary",
+      "title": "350 Action candidate questionnaire, December 6, 2019",
+      "author": "Ilhan Omar",
+      "url": "https://350action.org/wp-content/uploads/2019/12/350-Action-2019-Ilhan-Omar-12_6_19.pdf",
+      "usedFor": "Full 350.pdf and 350.txt; named candidate’s answers, not a third-party scorecard."
+    },
+    {
+      "id": "b10",
+      "kind": "primary",
+      "title": "Fight for Environmental Justice and Climate Action",
+      "author": "Ilhan Omar",
+      "url": "https://ilhanomar.com/issue/environment/",
+      "usedFor": "Full climate.txt; current campaign environmental program."
+    },
+    {
+      "id": "b11",
+      "kind": "primary",
+      "title": "International debt-cancellation letter, May 13, 2020",
+      "author": "Ilhan Omar",
+      "url": "https://omar.house.gov/media/press-releases/omar-sanders-lead-300-global-lawmakers-call-protect-developing-countries",
+      "usedFor": "Full debt.txt includes the signed letter and Omar’s own statement, separated from Sanders."
+    },
+    {
+      "id": "b12",
+      "kind": "primary",
+      "title": "I Hope President Biden Seizes This Opportunity, November 2020",
+      "author": "Ilhan Omar",
+      "url": "https://ilhanomar.com/news/rep-omar-in-the-nation-i-hope-president-biden-seizes-this-opportunity/",
+      "usedFor": "Full nation.txt; her Nation op-ed on Middle East policy. Page metadata date conflicts with text; post-election context identifies late 2020."
+    },
+    {
+      "id": "b13",
+      "kind": "reference",
+      "title": "Ilhan Omar: biography and 2026 Candidate Connection questionnaire",
+      "author": "Ballotpedia; candidate responses by Ilhan Omar",
+      "url": "https://ballotpedia.org/Ilhan_Omar",
+      "usedFor": "Reference-browser.json contains own 2026 answers and source context; browser biography reviewed. Direct request denied."
     }
   ],
   "answers": {
@@ -272,7 +363,13 @@
       "rationale": "States that healthcare is a human right and supports Medicare for All, a single-payer system guaranteeing coverage for every American.",
       "sources": [
         "s1",
-        "s28"
+        "s28",
+        "b9",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "raise-minimum-wage": {
@@ -281,7 +378,12 @@
       "rationale": "Calls herself a staunch supporter of raising the minimum wage; backed $15 in 2017 and introduced a 2023 bill for $17 by 2028.",
       "sources": [
         "s2",
-        "s28"
+        "s28",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "markets-allocate-better": {
@@ -303,7 +405,13 @@
       "sources": [
         "s18",
         "s17",
-        "s21"
+        "s21",
+        "b3",
+        "b13"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "unions-good": {
@@ -311,7 +419,12 @@
       "confidence": "high",
       "rationale": "Says labor unions have long been a force of good for working families and that she fights to protect and expand the right to unionize.",
       "sources": [
-        "s2"
+        "s2",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "property-fundamental": {
@@ -326,7 +439,13 @@
       "rationale": "Pushes to hold drug companies accountable for price gouging and monopolistic practices and introduced bills on shrinkflation and prescription drug ads; criticises a deregulatory agenda at the Labor Department.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b13",
+        "b10"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "cut-welfare": {
@@ -335,7 +454,12 @@
       "rationale": "Voted no on the 2025 budget law cutting Medicaid and nutrition aid and filed farm bill amendments against the SNAP cut; supports expanding, not cutting, safety-net programs. Her statements do not address the dependency claim itself.",
       "sources": [
         "s21",
-        "s4"
+        "s4",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "worker-ownership": {
@@ -344,7 +468,8 @@
       "rationale": "Says she is working to advance worker-owned cooperatives so workers have a voice in decisions affecting them.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "surveillance-ok": {
       "value": null,
@@ -377,10 +502,13 @@
       "sources": []
     },
     "limit-guns": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She supports universal background checks, an assault-weapons sales ban and restrictions on domestic abusers.",
+      "sources": [
+        "b9"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "empower-police-military": {
       "value": -2,
@@ -391,7 +519,13 @@
         "s8",
         "s20",
         "s11",
-        "s28"
+        "s28",
+        "b1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "legalize-sex-work": {
@@ -411,7 +545,12 @@
       "confidence": "high",
       "rationale": "Says the justice system should focus on rehabilitation, not retribution.",
       "sources": [
-        "s14"
+        "s14",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "traditional-family": {
@@ -426,7 +565,12 @@
       "rationale": "HRC describes her as a strong supporter of marriage equality and the Equality Act; she pledged to fight for LGBTQIA+ rights and for full equality.",
       "sources": [
         "s30",
-        "s19"
+        "s19",
+        "b13"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "abortion-legal": {
@@ -435,7 +579,12 @@
       "rationale": "Says every woman is entitled to abortion services and reproductive care; after Dobbs she was arrested in a protest at the Supreme Court.",
       "sources": [
         "s1",
-        "s28"
+        "s28",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "more-religion-public": {
@@ -452,7 +601,12 @@
         "s3",
         "s4",
         "s11",
-        "s17"
+        "s17",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "gender-social-construct": {
@@ -479,7 +633,12 @@
       "rationale": "Calls for a pathway to citizenship for undocumented immigrants and DACA/TPS holders, a return to leadership in refugee resettlement, and condemned the suspension of refugee admissions.",
       "sources": [
         "s6",
-        "s22"
+        "s22",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "empower-international-orgs": {
@@ -497,7 +656,7 @@
     "nation-first": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "humanitarian-intervention": {
@@ -508,7 +667,8 @@
         "s5",
         "s16",
         "s28"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "open-borders": {
       "value": null,
@@ -527,7 +687,12 @@
       "confidence": "high",
       "rationale": "Calls climate change a crisis requiring large-scale action and a transition to a 100% clean energy economy.",
       "sources": [
-        "s4"
+        "s4",
+        "b10"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "tech-solves-problems": {
@@ -578,7 +743,8 @@
       "rationale": "Was an original cosponsor of the For the 99.8% Act, which would strengthen the estate tax on the wealthiest estates.",
       "sources": [
         "s31"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "basic-income": {
       "value": null,
@@ -593,10 +759,13 @@
       "sources": []
     },
     "state-directs-investment": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her climate program directs public investment into clean energy, efficiency and a just industrial transition.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "widespread-small-property": {
       "value": null,
@@ -635,10 +804,13 @@
       "sources": []
     },
     "democracy-best": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She praises constitutional representative democracy as potentially the greatest form and rejects executive contempt for it.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "direct-votes": {
       "value": null,
@@ -673,7 +845,7 @@
     "war-builds-character": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "separate-church-state": {
@@ -723,7 +895,12 @@
       "confidence": "medium",
       "rationale": "Says the US must respect tribal sovereignty and stop fossil fuel infrastructure on tribal land and treaty territory.",
       "sources": [
-        "s4"
+        "s4",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "colonial-reparations": {
@@ -978,7 +1155,12 @@
       "rationale": "In her 2019 Washington Post op-ed she said Israel's founding rested on the Jewish people's connection to their historical homeland and she supports two states giving Israelis and Palestinians sanctuary and self-determination.",
       "sources": [
         "s27",
-        "s32"
+        "s32",
+        "b12"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "diaspora-return-right": {
@@ -999,7 +1181,8 @@
       "rationale": "Supports worker-owned cooperatives and workers having a seat at the table in decisions, but has not spoken to votes in how large companies are run.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "school-vouchers": {
       "value": null,
@@ -1032,7 +1215,8 @@
       "sources": [
         "s27",
         "s29"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "force-without-un": {
       "value": null,
@@ -1111,7 +1295,12 @@
       "confidence": "high",
       "rationale": "Wants to transition away from fossil fuels, end subsidies and tax breaks for the industry (End Polluter Welfare Act) and opposes new fossil fuel infrastructure.",
       "sources": [
-        "s4"
+        "s4",
+        "b10"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "assimilate-immigrants": {
@@ -1163,7 +1352,12 @@
       "sources": [
         "s11",
         "s13",
-        "s23"
+        "s23",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "night-watchman-state": {
@@ -1183,7 +1377,12 @@
       "confidence": "medium",
       "rationale": "Says her aim is a system that welcomes and protects all human beings, never treating anyone as a presumed criminal whatever their ethnicity or religion.",
       "sources": [
-        "s6"
+        "s6",
+        "b4"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "socialism-one-country": {
@@ -1277,7 +1476,12 @@
       "sources": [
         "s5",
         "s7",
-        "s16"
+        "s16",
+        "b5"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "vanguard-party": {
@@ -1287,10 +1491,13 @@
       "sources": []
     },
     "priority-to-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her guaranteed-income proposal centers meeting food, housing and healthcare needs and ending poverty.",
+      "sources": [
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1419,7 +1626,8 @@
       "sources": [
         "s5",
         "s28"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1463,7 +1671,8 @@
       "rationale": "Welcomed Biden's mass commutation of federal death sentences and said the work is not finished until the death penalty is ended federally and in the states.",
       "sources": [
         "s14"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -1508,10 +1717,13 @@
       "sources": []
     },
     "sovereign-debt-cancellation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "She leads a call to cancel low-income countries’ debts rather than merely suspend repayment during the pandemic.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "independence-needs-economic-change": {
       "value": null,
@@ -1532,10 +1744,13 @@
       "sources": []
     },
     "rich-countries-aid-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her signed international letter calls assistance to impoverished nations a humanitarian duty and requests major financial support.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -1586,10 +1801,13 @@
       "sources": []
     },
     "annexed-territory-occupation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her op-ed rejects treating annexed West Bank land as legitimately Israeli and describes continuing military occupation.",
+      "sources": [
+        "b12"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "subordinate-church-to-state": {
       "value": null,
@@ -1634,10 +1852,13 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Her ICC proposal explicitly rests on the principle that no one is above the law.",
+      "sources": [
+        "b5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "space-expansion": {
       "value": null,
@@ -1682,7 +1903,8 @@
       "sources": [
         "s26",
         "s27"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "co-ethnic-territorial-claim": {
       "value": null,
@@ -1768,7 +1990,8 @@
       "rationale": "Says trade agreements must not undermine labor and environmental standards at home or abroad.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "moral-incentives": {
       "value": null,
@@ -2053,10 +2276,13 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her 2026 questionnaire rejects executive dismantling of congressionally approved foreign aid.",
+      "sources": [
+        "b13"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "single-official-language": {
       "value": null,
@@ -2102,7 +2328,8 @@
         "s28",
         "s21",
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -2128,7 +2355,8 @@
       "rationale": "Says she is working to advance a federal jobs guarantee.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "democratic-peace": {
       "value": null,
@@ -2192,7 +2420,8 @@
         "s5",
         "s9",
         "s23"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religious-nation": {
       "value": null,
@@ -2224,7 +2453,8 @@
       "rationale": "Welcomed removing Cuba from the terrorism list as a step toward normalising relations, calling earlier policy a failure.",
       "sources": [
         "s25"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "mixed-public-service-providers": {
       "value": null,
@@ -2268,7 +2498,8 @@
       "rationale": "Ties respect for tribal sovereignty to treaty territory and opposes pipelines through treaty land.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "cooperative-communities": {
       "value": null,
@@ -2300,7 +2531,8 @@
       "rationale": "Her op-ed refers to the horror of the Holocaust as part of the context for Israel's founding.",
       "sources": [
         "s27"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "criminalize-homosexuality": {
       "value": -2,
@@ -2309,7 +2541,8 @@
       "sources": [
         "s28",
         "s19"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "suppress-opposition": {
       "value": null,
@@ -2348,10 +2581,13 @@
       "sources": []
     },
     "intersecting-oppressions": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "She describes anti-Muslim, anti-immigrant, anti-Black and sexist hostility operating together against her.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "gender-identity-recognition": {
       "value": 1,
@@ -2359,7 +2595,8 @@
       "rationale": "Called for ending violence against the trans community and outlawing conversion therapy.",
       "sources": [
         "s19"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "assisted-dying": {
       "value": null,
@@ -2385,7 +2622,8 @@
       "rationale": "Rejects anti-Muslim rhetoric as bigotry, welcomed the repeal of travel bans on Muslim-majority countries and called Boebert's remarks anti-Muslim bigotry.",
       "sources": [
         "s28"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "divine-source-of-authority": {
       "value": null,
@@ -2399,7 +2637,8 @@
       "rationale": "After her election the House rule banning head coverings was changed, and she became the first member to wear a hijab on the floor.",
       "sources": [
         "s28"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "ban-nda-harassment": {
       "value": null,
@@ -2546,7 +2785,8 @@
       "sources": [
         "s28",
         "s13"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "power-sharing-divided-societies": {
       "value": null,
@@ -2633,7 +2873,8 @@
       "sources": [
         "s28",
         "s9"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "income-for-work-not-ownership": {
       "value": null,
@@ -2822,7 +3063,8 @@
       "sources": [
         "s5",
         "s16"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "language-defines-nation": {
       "value": null,
@@ -2847,7 +3089,12 @@
       "confidence": "high",
       "rationale": "Supports establishing tuition-free college.",
       "sources": [
-        "s3"
+        "s3",
+        "b13"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "pollution-taxes": {
@@ -2875,7 +3122,12 @@
       "sources": [
         "s5",
         "s20",
-        "s7"
+        "s7",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "open-diplomacy": {
@@ -2908,7 +3160,8 @@
       "rationale": "Fights to protect and expand the right to unionize and collectively bargain for better wages and conditions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "in-work-tax-credits": {
       "value": null,
@@ -2923,10 +3176,13 @@
       "sources": []
     },
     "restructure-world-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her international initiative seeks debt cancellation and trillions in IMF liquidity directed toward developing countries.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "smash-state-machine": {
       "value": null,
@@ -2958,7 +3214,13 @@
       "rationale": "Supports eliminating existing student loan debt and introduced the House companion to Sanders's cancellation bill.",
       "sources": [
         "s3",
-        "s28"
+        "s28",
+        "b3",
+        "b13"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "internal-colonialism": {
@@ -2979,7 +3241,8 @@
       "rationale": "Voted no on the 2025 rescissions package, which cut funding for public broadcasting, calling public media vital for local news and emergency alerts.",
       "sources": [
         "s24"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religions-one-truth": {
       "value": null,
@@ -3126,7 +3389,13 @@
       "sources": [
         "s23",
         "s5",
-        "s9"
+        "s9",
+        "b1",
+        "b5"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "scripture-inerrant": {
@@ -3244,7 +3513,8 @@
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "bypass-parties-groups": {
       "value": null,
@@ -3295,10 +3565,13 @@
       "sources": []
     },
     "racism-not-main-obstacle": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "She describes persistent structural racial exclusion and calls for investments and police reform to confront it.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "unjust-law-not-binding": {
       "value": null,
@@ -3343,5 +3616,15 @@
       "sources": []
     }
   },
-  "notes": "Her stance on BDS changed from opposing it in her 2018 campaign to supporting it afterward, with reservations. Her Israel statements have drawn accusations of antisemitic tropes (2019 tweets about money and AIPAC, dual loyalty); she apologized for some and the House passed a general resolution against bigotry in March 2019. Not answered for lack of her own recorded statements: the memoir, floor speeches and the BDS resolution text were not retrieved, and congress.gov, GovTrack and the Washington Post were unreachable."
+  "notes": "Her stance on BDS changed from opposing it in her 2018 campaign to supporting it afterward, with reservations. Her Israel statements have drawn accusations of antisemitic tropes (2019 tweets about money and AIPAC, dual loyalty); she apologized for some and the House passed a general resolution against bigotry in March 2019. Not answered for lack of her own recorded statements: the memoir, floor speeches and the BDS resolution text were not retrieved, and congress.gov, GovTrack and the Washington Post were unreachable.\n\nMerged with an independent gpt-6.1-sol audit: 14 answers taken from it, 23 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third-model pass; all 490 exact statements reviewed. None of the ten prioritized doctrinal statements has adequate evidence. Economic inequality criticism does not establish Marxist history, dictatorship, a third economic system, or national class organization. New sources include long interviews, the complete named 350 questionnaire, current campaign pages, 2026 Candidate Connection responses, judicial-ethics legislation, AI safeguards, and an international debt-relief letter. The earlier sources were consulted only as notes and bibliography, never answers. SUPPORT is a guaranteed-income proposal, not evidence of an unconditional payment to every adult; basic-income remains null. GPI environmental accounting is not necessarily a cap on growth or nature-as-capital. Medical or workplace AI safeguards do not determine her position on algorithmic government, accelerated technology, general work automation or extinction priority. Court ethics and expansion do not establish parliamentary supremacy or unrestricted majority power; courts-bound-by-majority remains null. The nuclear-ban pledge calls for worldwide elimination, not explicitly unilateral disarmament while rival states retain weapons. Disbanding one police department is not abolition of all police and prisons. Restorative justice supplies the narrower rehabilitation answer. Her metaphor of burning systems is not advocacy of violent revolution or smashing the entire state. Opposition to particular wars does not establish absolute pacifism, abolition of armed forces, or ending every alliance. BDS is not a religious boycott of Jewish-owned shops; neither that statement nor a minority-conspiracy doctrine is assigned from disputed tropes or opponents’ accusations. The Nation op-ed independently documents two states; Current Affairs supplies general opposition to arms sales and criticism of Saudi and Israeli abuses without relying on the interviewer’s assertions. Religious identity and hijab use do not establish theology, compulsory dress or religious law. A church-state resolution found during research does not name Omar as cosponsor and is not attributed to her. No inferred answers; rhetoric and bill support remain medium.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
+    }
+  ]
 }
