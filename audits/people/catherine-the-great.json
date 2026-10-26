@@ -2,7 +2,10 @@
   "id": "catherine-the-great",
   "name": "Catherine the Great",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-sonnet-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
+  ],
   "living": false,
   "role": "Empress of Russia (1762-1796)",
   "summary": "Catherine II was an enlightened absolutist who defended autocracy as suited to Russia's size while drawing on Montesquieu and Beccaria for limits on torture, a preference for toleration and equality under law. In practice she entrenched noble privilege and serfdom, subordinated the Church to the state, crushed the Pugachev rising and expanded the empire through Crimea and the Polish partitions. After 1789 she turned against revolutionary ideas and tightened censorship.",
@@ -71,6 +74,102 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Partitions_of_Poland",
       "usedFor": "Her role in the partitions and the 1792 intervention"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "Grand Instructions, 1768 English translation",
+      "author": "Catherine II",
+      "url": "https://archive.org/download/bim_eighteenth-century_the-grand-instructions-t_russia-sovereign-1762-_1768/bim_eighteenth-century_the-grand-instructions-t_russia-sovereign-1762-_1768_djvu.txt",
+      "usedFor": "Full nakaz.txt, Catherine’s numbered articles 1–526; translator’s prefatory comments and later committees’ papers excluded."
+    },
+    {
+      "id": "b2",
+      "kind": "primary",
+      "title": "Nakaz supplementary chapters XXI–XXII, 1768",
+      "author": "Catherine II",
+      "url": "https://fershal.narod.ru/Memories/Texts/Ekaterina/Ek_Nakaz_XXI_XXII.htm",
+      "usedFor": "Full Russian appendix.txt, articles 527–655, checked against the English translation."
+    },
+    {
+      "id": "b3",
+      "kind": "primary",
+      "title": "Settlement manifesto, July 22, 1763",
+      "author": "Catherine II",
+      "url": "https://germanhistory-intersections.org/en/migration/ghis:document-59",
+      "usedFor": "Full manifesto.txt; colonization, industrial finance and unequal toleration. The earlier 1762 Jewish exclusion is not silently attributed to this translation."
+    },
+    {
+      "id": "b4",
+      "kind": "reference",
+      "title": "Noble and urban charters, April 21/May 2, 1785",
+      "author": "Boris Yeltsin Presidential Library",
+      "url": "https://www.prlib.ru/history/619213",
+      "usedFor": "Full charters.txt in Russian; contents and institutional effects, contextualized by Dixon’s account of her personal initiative."
+    },
+    {
+      "id": "b5",
+      "kind": "scholarly",
+      "title": "Catherine the Great, chapter 11: Zenith 1785–1790",
+      "author": "Simon Dixon",
+      "url": "https://erenow.org/biographies/catherine-the-great/12.php",
+      "usedFor": "Full zenith.txt; personal authorship of estate policy rather than formal assent alone."
+    },
+    {
+      "id": "b6",
+      "kind": "scholarly",
+      "title": "Catherine the Great, chapter 12: End of an Era 1790–1796",
+      "author": "Simon Dixon",
+      "url": "https://erenow.org/biographies/catherine-the-great/13.php",
+      "usedFor": "Full end.txt; late publishing restrictions, Poland and estate grants."
+    },
+    {
+      "id": "b7",
+      "kind": "scholarly",
+      "title": "Catherine the Great, chapter 7: Philosopher on the Throne",
+      "author": "Simon Dixon",
+      "url": "https://erenow.org/biographies/catherine-the-great/8.php",
+      "usedFor": "Full philosopher.txt; her direct restriction of serf petitions and enforcement, not merely government-wide attribution."
+    },
+    {
+      "id": "b8",
+      "kind": "primary",
+      "title": "Letter to Grimm, May 7, 1779, CatCor 03561",
+      "author": "Catherine II",
+      "url": "https://catcor.seh.ox.ac.uk/texts/letters/letter-03561.shtml",
+      "usedFor": "Full French letter and scholarly apparatus saved locally; her principle against hindering commerce."
+    },
+    {
+      "id": "b9",
+      "kind": "primary",
+      "title": "Letter to Stackelberg, November 4, 1782, CatCor 02956",
+      "author": "Catherine II",
+      "url": "https://catcor.seh.ox.ac.uk/texts/letters/letter-02956.shtml",
+      "usedFor": "Full French original; church appointments and threats to papal influence."
+    },
+    {
+      "id": "b10",
+      "kind": "primary",
+      "title": "Instruction to Aleksei Orlov, January 29, 1769, CatCor 02853",
+      "author": "Catherine II",
+      "url": "https://catcor.seh.ox.ac.uk/texts/letters/letter-02853.shtml",
+      "usedFor": "Full Russian original; operational funding, weapons, synchronized uprisings and secrecy."
+    },
+    {
+      "id": "b11",
+      "kind": "primary",
+      "title": "Letter to Joseph II, September 10, 1782, CatCor 01040",
+      "author": "Catherine II",
+      "url": "https://catcor.seh.ox.ac.uk/texts/letters/letter-01040.shtml",
+      "usedFor": "Full French original; confidential alliance, acquisitions and dynastic Greek project."
+    },
+    {
+      "id": "b12",
+      "kind": "primary",
+      "title": "Letter to Grimm, August 27–September 3, 1794, CatCor 03695",
+      "author": "Catherine II",
+      "url": "https://catcor.seh.ox.ac.uk/texts/letters/letter-03695.shtml",
+      "usedFor": "Full French original and dated sections; restoration of French religion and monarchy."
     }
   ],
   "answers": {
@@ -87,10 +186,14 @@
       "sources": []
     },
     "markets-allocate-better": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: private cultivation incentives and her anti-interference trade principle favor decentralized economic decisions.",
+      "sources": [
+        "b1",
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "public-ownership": {
       "value": null,
@@ -117,7 +220,13 @@
       "sources": [
         "s1",
         "s4",
-        "s2"
+        "s2",
+        "b4",
+        "b5"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "regulate-corporations": {
@@ -127,10 +236,13 @@
       "sources": []
     },
     "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Articles 345–346 require state provision for basic needs.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "worker-ownership": {
       "value": null,
@@ -161,7 +273,12 @@
       "confidence": "medium",
       "rationale": "Nakaz art. 10 argues that Russia's size requires absolute power so that quick dispatch of affairs makes up for distance; every other form would have ruined it.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "state-harmful": {
@@ -219,10 +336,13 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her restoration letter calls for re-establishing religion alongside legitimate kingship.",
+      "sources": [
+        "b12"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "correct-racial-injustice": {
       "value": null,
@@ -248,7 +368,12 @@
       "rationale": "She told Voltaire in 1777 that she was making legal innovations 'little by little', and Nakaz art. 426 says established rules should not be laid aside without due consideration.",
       "sources": [
         "s2",
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "reduce-immigration": {
@@ -256,7 +381,12 @@
       "confidence": "high",
       "rationale": "Her 1763 manifesto invited foreigners to settle in Russia, offering free travel, tax exemptions, free religion and exemption from conscription.",
       "sources": [
-        "s5"
+        "s5",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "empower-international-orgs": {
@@ -266,10 +396,14 @@
       "sources": []
     },
     "free-trade": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Inferred: article 328’s presumption against excluding trading nations, reinforced by her later opposition to impeding commerce.",
+      "sources": [
+        "b1",
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "nation-first": {
       "value": null,
@@ -283,7 +417,8 @@
       "rationale": "Contested: she presented her anti-Ottoman policy as protecting Christians under Turkish rule, and intervened in Poland over dissidents' rights; motives were also strategic.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "open-borders": {
       "value": null,
@@ -316,13 +451,18 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "She crushed the Pugachev rebellion, executed its leader, and after 1789 treated revolutionary ideas as dangerous (Radishchev) and backed intervention in Poland against 'Jacobinism'.",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Mixed, leaning against: she crushed the Pugachev rebellion, executed its leader and condemned the French Revolution, but funded and armed Greek and Slavic uprisings against the Ottomans as part of her own war aims.",
       "sources": [
         "s2",
         "s6",
-        "s8"
+        "s8",
+        "b10"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "experts-over-public": {
@@ -368,17 +508,26 @@
       "sources": []
     },
     "state-directs-investment": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She offers treasury loans and incentives for new manufacturing branches.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "widespread-small-property": {
       "value": 1,
       "confidence": "medium",
       "rationale": "Nakaz art. 425 favours dividing inheritances: the state gains more from thousands of subjects with a moderate competency than from a few hundred immensely rich.",
       "sources": [
-        "s1"
+        "s1",
+        "b1",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "abolish-money-wages": {
@@ -411,16 +560,22 @@
       "rationale": "Nakaz arts. 9-16 defend absolute monarchy as the right form for Russia's extent and say its aim is the glory of citizens, state and sovereign; she ruled as hereditary-style autocrat for 34 years.",
       "sources": [
         "s1",
-        "s2"
+        "s2",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "democracy-best": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: Nakaz art. 10 says every form of government other than absolute monarchy would have harmed Russia; she did not discuss democracy itself.",
+      "confidence": "medium",
+      "rationale": "Articles 9–11 reject alternative government for Russia.",
       "sources": [
-        "s1"
-      ]
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "direct-votes": {
       "value": null,
@@ -446,7 +601,8 @@
       "rationale": "Inferred: Nakaz arts. 360-365 say nobility arose by recognising the more virtuous and deserving, and that its first duty is service and defence of the country.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "political-violence-never": {
       "value": -1,
@@ -455,7 +611,8 @@
       "sources": [
         "s2",
         "s6"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "war-builds-character": {
       "value": null,
@@ -464,10 +621,13 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "She demands decisive state control over church appointments and papal influence.",
+      "sources": [
+        "b9"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "laws-from-scripture": {
       "value": null,
@@ -546,7 +706,12 @@
       "confidence": "medium",
       "rationale": "Nakaz art. 265: for a thinly populated country, population growth should be encouraged as much as possible.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "industrial-civilization-disaster": {
@@ -580,10 +745,13 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "In 1794 she urges restoring French monarchy and religion against revolutionary government.",
+      "sources": [
+        "b12"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "results-over-ideology": {
       "value": null,
@@ -652,10 +820,13 @@
       "sources": []
     },
     "taxation-theft": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Article 581 justifies taxation as preserving citizens’ welfare and security.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "harm-principle": {
       "value": null,
@@ -675,7 +846,8 @@
       "rationale": "Military conscription (the recruit levy on serfs and others) was maintained throughout her reign and she relied on it for her wars.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "exit-over-voice": {
       "value": null,
@@ -708,10 +880,14 @@
       "sources": []
     },
     "organic-representation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her charters organize representation through noble and occupational estate corporations.",
+      "sources": [
+        "b4",
+        "b5"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "total-state": {
       "value": null,
@@ -732,7 +908,12 @@
       "sources": [
         "s2",
         "s7",
-        "s8"
+        "s8",
+        "b11"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "personal-loyalty-rule": {
@@ -748,7 +929,13 @@
       "sources": [
         "s1",
         "s2",
-        "s3"
+        "s3",
+        "b5",
+        "b6"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "no-neutral-knowledge": {
@@ -768,7 +955,12 @@
       "confidence": "low",
       "rationale": "Nakaz art. 13 says the end of monarchy is to correct actions so as to attain the supreme good; she did not discuss balancing interests.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "jewish-state-israel": {
@@ -827,7 +1019,8 @@
         "s2",
         "s7",
         "s8"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "force-without-un": {
       "value": null,
@@ -852,7 +1045,12 @@
       "confidence": "medium",
       "rationale": "Nakaz art. 560: beggars able to work are to be set to work, while the sick and impotent are maintained and cured.",
       "sources": [
-        "s1"
+        "s1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "class-collaboration": {
@@ -915,7 +1113,8 @@
       "rationale": "Inferred: the 1763 manifesto grants settlers free practice of their religion with their own churches and priests, and exemption from forced service, without requiring them to give up their culture.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "elite-replacement": {
       "value": null,
@@ -960,10 +1159,13 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Article 578 assigns government schools, hospitals and infrastructure.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "discourage-race-mixing": {
       "value": null,
@@ -977,7 +1179,13 @@
       "rationale": "Mixed: Nakaz art. 34 says equality means subjection to the same laws and art. 35 asks that the rich not oppress the poor, but she upheld serfdom and estate privilege.",
       "sources": [
         "s1",
-        "s4"
+        "s4",
+        "b4",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "socialism-one-country": {
@@ -1003,7 +1211,12 @@
       "confidence": "medium",
       "rationale": "The 1763 manifesto bars anyone from persuading Christians in Russia to change faith on pain of severe punishment, while allowing Muslim peoples on the borders to be brought to Christianity.",
       "sources": [
-        "s5"
+        "s5",
+        "b3"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "ban-cattle-slaughter": {
@@ -1018,7 +1231,8 @@
       "rationale": "By 1786 she excluded religion and clerical studies from lay education (Statute of National Education).",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1032,13 +1246,17 @@
       "rationale": "Mixed: Nakaz art. 210 speaks of a government 'established with the united wishes of a whole people' and art. 520 says the sovereign exists for the people, but authority is said to come from the sovereign alone.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "trade-surplus": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Article 613 praises foreign trade with a favorable balance.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "population-transfer": {
       "value": null,
@@ -1076,7 +1294,12 @@
       "rationale": "Mixed: the Nakaz sets up intermediate bodies (courts, the Senate) that guard the laws and may remonstrate, but states that all power flows from the sovereign.",
       "sources": [
         "s1",
-        "s3"
+        "s3",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "vanguard-party": {
@@ -1108,7 +1331,12 @@
       "confidence": "medium",
       "rationale": "Nakaz arts. 265-269 treat Russia as underpopulated and blame lords' new impositions on peasants for depopulation and hardship, not population growth.",
       "sources": [
-        "s1"
+        "s1",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "diversity-weakens-cohesion": {
@@ -1136,10 +1364,13 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her 1796 edict closes private presses after earlier publishing liberalization.",
+      "sources": [
+        "b6"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "party-commands-army": {
       "value": null,
@@ -1177,7 +1408,8 @@
       "rationale": "As autocrat she directed the Russo-Turkish and Swedish wars and appointed her ministers and commanders such as Potemkin.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "church-by-bishops": {
       "value": null,
@@ -1191,7 +1423,8 @@
       "rationale": "Her record placed the clergy under the state and excluded Orthodox clergy from seats in the Legislative Commission.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "defeat-own-government-war": {
       "value": null,
@@ -1200,10 +1433,13 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Article 553 regulates public spectacles to protect morals.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "unlimited-reelection": {
       "value": null,
@@ -1218,10 +1454,13 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "She commits Russian forces to a durable defensive and offensive partnership with Austria.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1265,7 +1504,12 @@
       "rationale": "Mixed: Nakaz arts. 210-212 argue capital punishment is unnecessary in peacetime, except for dangerous disturbers of public peace or in anarchy; Pugachev was executed in 1775 and capital punishment remained for grave crimes.",
       "sources": [
         "s1",
-        "s6"
+        "s6",
+        "b1"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "sex-ed-in-schools": {
@@ -1293,10 +1537,13 @@
       "sources": []
     },
     "minority-language-support": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Her colonial settlement policy permits immigrant language use and separate schools.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religious-exemptions": {
       "value": null,
@@ -1383,10 +1630,13 @@
       "sources": []
     },
     "collective-defense": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She promises combined forces if Prussia attacks Austria, despite other military commitments.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "annexed-territory-occupation": {
       "value": -2,
@@ -1395,14 +1645,20 @@
       "sources": [
         "s7",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "subordinate-church-to-state": {
       "value": 2,
       "confidence": "high",
       "rationale": "1764 secularisation of church lands: church estates were expropriated, 569 of 954 monasteries closed, clergy put on state salaries; clergy received no seat in the Legislative Commission.",
       "sources": [
-        "s2"
+        "s2",
+        "b9"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "nonpartisan-head-of-state": {
@@ -1448,7 +1704,8 @@
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "space-expansion": {
       "value": null,
@@ -1481,13 +1738,14 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: she confirmed gentry ownership of estates (1785) and put down the Pugachev revolt, whose supporters were serfs seeking relief from landlords.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "She secures landed noble ownership and distributes estates with serfs to courtiers.",
       "sources": [
-        "s4",
-        "s2"
-      ]
+        "b4",
+        "b6"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "refugee-return": {
       "value": null,
@@ -1597,7 +1855,13 @@
       "rationale": "She issued the 1785 Charter to the Nobility confirming the gentry's hereditary privileges (tax exemption, exemption from corporal punishment, own courts and corporations).",
       "sources": [
         "s4",
-        "s2"
+        "s2",
+        "b4",
+        "b5"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "history-own-civilization": {
@@ -1859,10 +2123,13 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The charter entrenches permanent private noble estates, including subsurface resources.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "budget-needs-parliament": {
       "value": null,
@@ -1882,7 +2149,8 @@
       "rationale": "Inferred: the 1763 manifesto assigns free land to foreign settlers in colonies, so she did not bar foreigners from holding land.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "disparate-impact-discrimination": {
       "value": null,
@@ -1897,10 +2165,13 @@
       "sources": []
     },
     "arm-foreign-insurgents": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Her operational instruction allocates funds, cannon and firearms to coordinated Balkan uprisings.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "intervene-in-bloc": {
       "value": null,
@@ -1926,7 +2197,8 @@
       "rationale": "Nakaz art. 265 says Russia can never give too much encouragement to the propagation of the human species, and arts. 266-268 call for better care of health.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "residents-only-property": {
       "value": null,
@@ -1953,10 +2225,13 @@
       "sources": []
     },
     "non-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "She directs external support for uprisings against Ottoman authority.",
+      "sources": [
+        "b10"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "industrial-unions": {
       "value": null,
@@ -2084,7 +2359,8 @@
       "rationale": "Contested: after the 1783 annexation Russians were encouraged to settle in Crimea; the policy was run through her government, but I did not find her personal statements.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "neither-capitalism-nor-communism": {
       "value": null,
@@ -2115,7 +2391,12 @@
       "confidence": "medium",
       "rationale": "After 1789 she had Radishchev's book burned and exiled him to Siberia as spreading 'the poison of the French Revolution', and suppressed religious dissent.",
       "sources": [
-        "s2"
+        "s2",
+        "b7"
+      ],
+      "auditor": [
+        "claude-sonnet-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "punish-blasphemy": {
@@ -2125,7 +2406,8 @@
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "colonies-serve-metropole": {
       "value": null,
@@ -2188,10 +2470,13 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Article 625 explicitly derives sovereign authority immediately from God.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2218,7 +2503,8 @@
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "rich-first": {
       "value": null,
@@ -2233,10 +2519,13 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Her Greek project reserves dynastic crowns for descendants and acknowledges her son’s succession line.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -2251,10 +2540,13 @@
       "sources": []
     },
     "property-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Her urban charter restricts electoral participation to prosperous townspeople.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "domination-women-nature": {
       "value": null,
@@ -2280,7 +2572,8 @@
       "rationale": "Nakaz arts. 21-25 have courts publish and register the laws, and the Nakaz asks that sentences be made public; practice under her was often arbitrary, so confidence is low.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "racial-franchise": {
       "value": null,
@@ -2355,10 +2648,13 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Article 346 says private alms cannot discharge state obligations.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "term-limits": {
       "value": null,
@@ -2620,7 +2916,8 @@
         "s2",
         "s7",
         "s8"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "language-defines-nation": {
       "value": null,
@@ -2671,16 +2968,23 @@
       "sources": []
     },
     "open-diplomacy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Her Joseph II letter explicitly negotiates secret military and territorial agreements.",
+      "sources": [
+        "b11"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "capital-controls": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Article 343 opposes blocking transferable wealth; the settlement manifesto imposes an exit levy.",
+      "sources": [
+        "b1",
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "state-arms-monopoly": {
       "value": null,
@@ -2733,7 +3037,7 @@
     "nature-as-capital": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "sacred-nation": {
@@ -2847,7 +3151,7 @@
     "religious-equal-recognition": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "democracy-is-procedure": {
@@ -2941,7 +3245,8 @@
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -3039,7 +3344,8 @@
       "rationale": "Nakaz art. 590 says a monopoly should never be allowed on any pretext, and no exclusive right to a trade granted to one person.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-denominational-politics": {
       "value": null,
@@ -3090,10 +3396,13 @@
       "sources": []
     },
     "automate-paid-work": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Articles 314–316 oppose maximizing labor-saving machines domestically, while favoring export mechanization.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "multipolar-world": {
       "value": null,
@@ -3126,5 +3435,15 @@
       "sources": []
     }
   },
-  "notes": "Positions follow the Nakaz (1767) and her record; where the Nakaz and her record diverge (serfdom, equality before law, torture and capital punishment, toleration) the answer is mixed. After the Pugachev revolt (1773-75) and the French Revolution she hardened: Radishchev was exiled in 1790 and religious dissent suppressed. Her letters to Voltaire and Diderot, the 1785 Charter to the Towns and the memoirs were not available as full text; the memoirs (Gutenberg 46407) were opened but contain no relevant political positions beyond her reading of Montesquieu. The Nakaz's sections on Russia's size, torture and capital punishment were read in the 1768 English translation."
+  "notes": "Positions follow the Nakaz (1767) and her record; where the Nakaz and her record diverge (serfdom, equality before law, torture and capital punishment, toleration) the answer is mixed. After the Pugachev revolt (1773-75) and the French Revolution she hardened: Radishchev was exiled in 1790 and religious dissent suppressed. Her letters to Voltaire and Diderot, the 1785 Charter to the Towns and the memoirs were not available as full text; the memoirs (Gutenberg 46407) were opened but contain no relevant political positions beyond her reading of Montesquieu. The Nakaz's sections on Russia's size, torture and capital punishment were read in the 1768 English translation.\n\nMerged with an independent gpt-6.1-sol audit: 30 answers taken from it, 19 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third-model audit; all active statements and blanks reviewed. Existing answers were not read. Oxford CatCor originals and metadata are saved locally; original-language texts were read, with the English Nakaz used as a cross-check. Prefatory commentary and later committee drafts are excluded. Rhetoric remains medium; the operative insurgent-supply instruction alone is high. Two historical inferences are labelled low. Among ten priorities, only strategic investment is stated and market allocation inferred. Other priority items remain null. Charters are attributed through Dixon’s account of Catherine’s personal initiative, not formal assent alone. Her enacted class privileges control the legal-equality answer. Small-property and capital-control evidence is qualified and mixed. Relief employment, hospitals and rural dues do not establish a universal job guarantee, universal healthcare or urban rent controls. No substantial minimum-wage increase, broad public-industrial ownership, wealthy-rate increase or sex quota was found. Toleration is distinguished from equal confessional status and from particular apostasy, blasphemy or curriculum policies. The 1763 English manifesto is not claimed to contain the earlier 1762 Jewish exclusion. Settlement incentives are not a blanket position on all foreign land ownership. The Balkan uprising instruction does not endorse a small revolutionary vanguard. No position on modern AI, enhancement or sex equality is inferred from her patronage, royal status or sex. The thin themes remain thin.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
+    }
+  ]
 }
