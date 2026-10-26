@@ -2,7 +2,10 @@
   "id": "ted-kennedy",
   "name": "Ted Kennedy",
   "auditedAt": "2026-10-23",
-  "auditor": "claude-haiku-5-5",
+  "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
+  ],
   "living": false,
   "role": "U.S. senator from Massachusetts (1962–2009)",
   "summary": "Edward M. Kennedy was a Democratic senator for 47 years who sponsored major health, civil rights, disability and immigration laws and pressed for universal health coverage and a higher minimum wage. He voted against the 2002 Iraq war authorisation, called for a moratorium on executions, and supported labour unions and abortion rights. He opposed school vouchers and Social Security privatisation.",
@@ -71,6 +74,78 @@
       "author": "Voteview (Senate roll call record)",
       "url": "https://voteview.com/rollcall/RS1070617",
       "usedFor": "Tally 77-23 on the Iraq authorisation; individual vote for Kennedy from OnTheIssues"
+    },
+    {
+      "id": "b1",
+      "kind": "primary",
+      "title": "Edward M. Kennedy oral history, June 3–4, 2005",
+      "author": "Edward M. Kennedy",
+      "url": "https://millercenter.org/the-presidency/presidential-oral-histories/edward-m-kennedy-oral-history-06032005",
+      "usedFor": "Full oral.txt; Kennedy’s turns only, including institutional discussion and retrospective policy record."
+    },
+    {
+      "id": "b2",
+      "kind": "primary",
+      "title": "Truth and Tolerance in America, October 3, 1983",
+      "author": "Edward M. Kennedy",
+      "url": "https://www.speeches-usa.com/Transcripts/ted_kennedy-truth.html",
+      "usedFor": "Full usable speech text saved across fourth-browser.json and truth-complete-browser.json; direct downloads blocked."
+    },
+    {
+      "id": "b3",
+      "kind": "primary",
+      "title": "Address to the Democratic National Convention, August 12, 1980",
+      "author": "Edward M. Kennedy",
+      "url": "https://www.emersonkent.com/speeches/address_to_the_dnc.htm",
+      "usedFor": "Full dnc.txt; economic program, rights and environmental inheritance."
+    },
+    {
+      "id": "b4",
+      "kind": "primary",
+      "title": "Larry King Live interview, April 20, 2006",
+      "author": "Edward M. Kennedy",
+      "url": "https://transcripts.cnn.com/show/lkl/date/2006-04-20/segment/01",
+      "usedFor": "Full cnn.txt; Kennedy’s labelled answers only."
+    },
+    {
+      "id": "b8",
+      "kind": "primary",
+      "title": "National Press Club remarks opposing Iraq escalation, January 9, 2007",
+      "author": "Edward M. Kennedy",
+      "url": "https://talkingpointsmemo.com/muckraker/img-src-images-kennedyted-jpg-hspace-5-vspace-5-align-left-kennedy-no-iraq-surge-without-hill-s-ok",
+      "usedFor": "Own prepared remarks and proposed bill, reproduced by Paul Kiel; surge.txt."
+    },
+    {
+      "id": "b9",
+      "kind": "primary",
+      "title": "Senate roll call 42, Fair Minimum Wage Act, February 1, 2007",
+      "author": "US Senate",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1101/vote_110_1_00042.htm",
+      "usedFor": "Kennedy Yea; saved fourth-browser.json."
+    },
+    {
+      "id": "b10",
+      "kind": "primary",
+      "title": "Senate roll call 280, Defense of Marriage Act, September 10, 1996",
+      "author": "US Senate",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1042/vote_104_2_00280.htm",
+      "usedFor": "Kennedy Nay; saved policy-browser.json."
+    },
+    {
+      "id": "b12",
+      "kind": "primary",
+      "title": "Senate roll call 395, NAFTA implementation, November 20, 1993",
+      "author": "US Senate",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1031/vote_103_1_00395.htm",
+      "usedFor": "Kennedy Yea; records-browser.json."
+    },
+    {
+      "id": "b13",
+      "kind": "reference",
+      "title": "Ted Kennedy",
+      "author": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/wiki/Ted_Kennedy",
+      "usedFor": "Career and personally driven legislation cross-check; first-browser.json and vote-search.json."
     }
   ],
   "answers": {
@@ -81,7 +156,12 @@
       "sources": [
         "s4",
         "s1",
-        "s6"
+        "s6",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "raise-minimum-wage": {
@@ -90,7 +170,13 @@
       "rationale": "Voted in 2007 to raise the federal minimum wage to $7.25 and made minimum wage speeches in the Senate that year.",
       "sources": [
         "s1",
-        "s6"
+        "s6",
+        "b9",
+        "b1"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "markets-allocate-better": {
@@ -100,7 +186,8 @@
       "sources": [
         "s6",
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "public-ownership": {
       "value": null,
@@ -114,7 +201,12 @@
       "rationale": "Voted in 2008 to raise the tax rate on income over $1 million and said he would close tax loopholes in 1980.",
       "sources": [
         "s1",
-        "s6"
+        "s6",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "unions-good": {
@@ -122,7 +214,13 @@
       "confidence": "high",
       "rationale": "Sponsored a card-check bill in 2009, voted to restrict employer interference in union organising in 2007, and was rated 100% by the AFL-CIO.",
       "sources": [
-        "s1"
+        "s1",
+        "b1",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "property-fundamental": {
@@ -137,7 +235,13 @@
       "rationale": "Said in 1980 he would tame monopoly, and voted in 2001 and 2002 for bans on corporate and union donations to campaigns.",
       "sources": [
         "s6",
-        "s1"
+        "s1",
+        "b3",
+        "b4"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "cut-welfare": {
@@ -145,7 +249,12 @@
       "confidence": "high",
       "rationale": "Opposed the 1995 welfare overhaul and the 1996 block grants, and called the 2006 welfare reform bill legislative child abuse.",
       "sources": [
-        "s1"
+        "s1",
+        "b3"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "worker-ownership": {
@@ -173,10 +282,13 @@
       "sources": []
     },
     "strong-leader": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He condemns executive attempts to override Senate procedures and bypass its independent constitutional role.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "state-harmful": {
       "value": -2,
@@ -184,7 +296,8 @@
       "rationale": "Consistently argued for government programmes such as national health insurance and public employment, which rejects the view that the state is harmful.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "limit-guns": {
       "value": 1,
@@ -193,7 +306,8 @@
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "empower-police-military": {
       "value": null,
@@ -231,7 +345,12 @@
       "rationale": "Voted against the 1996 federal marriage definition and the 2006 constitutional ban on same-sex marriage, saying the ban would make gays and lesbians permanent second-class citizens.",
       "sources": [
         "s2",
-        "s6"
+        "s6",
+        "b10"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "abortion-legal": {
@@ -240,21 +359,34 @@
       "rationale": "Opposed banning partial-birth abortion except to save the mother's life, and warned in 1987 that women would be forced into back-alley abortions.",
       "sources": [
         "s1",
-        "s6"
+        "s6",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "more-religion-public": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He explicitly welcomes religious contributions to public conscience on genuinely collective moral questions.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "correct-racial-injustice": {
       "value": 2,
       "confidence": "high",
       "rationale": "Sponsored the Civil Rights Act of 2008, backed minority business set-asides in 1998, and signed the NAACP centennial resolution.",
       "sources": [
-        "s2"
+        "s2",
+        "b13"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "gender-social-construct": {
@@ -282,7 +414,8 @@
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "empower-international-orgs": {
       "value": null,
@@ -295,7 +428,13 @@
       "confidence": "low",
       "rationale": "Mixed: voted for permanent normal trade relations with China and a Peru agreement, but against CAFTA, fast-track authority and several trade pacts.",
       "sources": [
-        "s1"
+        "s1",
+        "b12",
+        "b13"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "nation-first": {
@@ -328,7 +467,8 @@
       "rationale": "Voted to cut oil use 40% by 2025 and to factor global warming into federal planning.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "tech-solves-problems": {
       "value": null,
@@ -379,7 +519,8 @@
       "sources": [
         "s1",
         "s7"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "basic-income": {
       "value": null,
@@ -394,10 +535,13 @@
       "sources": []
     },
     "state-directs-investment": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The DNC address urges national action to reindustrialize America and revive its inner cities.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "widespread-small-property": {
       "value": null,
@@ -477,19 +621,26 @@
       "rationale": "Said in 1969 that American boys were too valuable to be sacrificed for a false sense of military pride.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Truth and Tolerance defends institutional separation while allowing religious voices in democratic debate.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "laws-from-scripture": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He rejects using civil coercion to impose disputed religious judgments on private conduct.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "private-courts-defense": {
       "value": null,
@@ -498,10 +649,13 @@
       "sources": []
     },
     "military-superiority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 2006 he explicitly favors retaining America’s leading economic and military position against rising rivals.",
+      "sources": [
+        "b4"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "ethnic-nation": {
       "value": null,
@@ -683,7 +837,8 @@
       "rationale": "Voted for a 10% set-aside for minority- and women-owned businesses and sponsored a disparate-impact bill, which assign rights by group.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "conscription": {
       "value": null,
@@ -709,7 +864,8 @@
       "rationale": "Argued that equal pay and opportunity, health care and welfare give people real means to use their freedom.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "media-academia-power": {
       "value": null,
@@ -807,7 +963,8 @@
       "rationale": "Described as a steadfast opponent of school vouchers, opposed D.C. vouchers in 1997 and education savings accounts in 1998.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "avoid-deficit-stimulus": {
       "value": -2,
@@ -815,7 +972,8 @@
       "rationale": "Voted for the 2009 $825 billion economic recovery package and opposed a balanced-budget constitutional amendment in 1997.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "economic-freedom": {
       "value": 0,
@@ -823,7 +981,8 @@
       "rationale": "Mixed: he spoke of the free enterprise system being free in fact, and also of economic protections for workers.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "rule-by-example": {
       "value": null,
@@ -891,7 +1050,8 @@
       "rationale": "Reintroduced the Equal Rights Amendment in 2007 and backed equal pay, citing women's wages at 77 cents on the dollar.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "ban-interest": {
       "value": null,
@@ -906,7 +1066,8 @@
       "sources": [
         "s2",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "state-class-instrument": {
       "value": null,
@@ -950,7 +1111,8 @@
       "rationale": "Cited women earning about 77 cents per dollar of men's earnings in 2007 and sponsored the Equal Rights Amendment.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "political-elite-corrupt": {
       "value": null,
@@ -976,7 +1138,8 @@
       "rationale": "Consistently backed federal programmes such as health insurance, education and public employment, rejecting a minimal state.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "discourage-race-mixing": {
       "value": null,
@@ -991,7 +1154,8 @@
       "sources": [
         "s2",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "socialism-one-country": {
       "value": null,
@@ -1041,7 +1205,8 @@
       "rationale": "Said in 1980 that the demands of the people were for better government, and that the President serves at the pleasure of the people.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "trade-surplus": {
       "value": null,
@@ -1080,10 +1245,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His 2005 oral history defends Senate independence and the constitutional balance against executive encroachment.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "vanguard-party": {
       "value": null,
@@ -1098,7 +1266,8 @@
       "sources": [
         "s5",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1143,10 +1312,13 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The speech defends expression and access to ideas against censorship and book burning.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "party-commands-army": {
       "value": null,
@@ -1226,7 +1398,8 @@
       "rationale": "Voted in 2002 to enlarge NATO, the opposite of ending permanent alliances.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1270,7 +1443,8 @@
       "rationale": "Called for a moratorium on executions in 2001 and opposed limiting death penalty appeals in 1996.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -1350,7 +1524,8 @@
       "rationale": "Said in 1983 that the best defence against nuclear war is arms control and then disarmament.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "direct-election-head-of-state": {
       "value": null,
@@ -1394,7 +1569,8 @@
       "rationale": "Voted in 2002 to enlarge NATO to include Eastern European countries.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1439,7 +1615,8 @@
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "character-from-environment": {
       "value": null,
@@ -1448,10 +1625,13 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His oral history rejects executive circumvention of institutional rules and stresses the rule of law.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "space-expansion": {
       "value": null,
@@ -1549,7 +1729,8 @@
       "rationale": "Said in 1980 he would tame monopoly and close tax loopholes.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "no-bailouts": {
       "value": null,
@@ -1558,10 +1739,13 @@
       "sources": []
     },
     "courts-bound-by-majority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The oral history defends judges interpreting the law against intimidation and politically motivated removal threats.",
+      "sources": [
+        "b1"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "gender-parity-bodies": {
       "value": null,
@@ -1624,7 +1808,8 @@
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "public-money-creation": {
       "value": null,
@@ -1662,7 +1847,8 @@
       "rationale": "Sponsored the Employment Non-Discrimination Act, which bars employment discrimination on sexual orientation and gender identity.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "entrenched-bill-of-rights": {
       "value": null,
@@ -1724,7 +1910,8 @@
       "rationale": "Spent 47 years in the Senate and campaigned on public programmes; his record is the opposite of withdrawal.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "mass-culture-pacifies": {
       "value": null,
@@ -1864,7 +2051,8 @@
       "rationale": "Voted against Social Security reserve and lockbox proposals and against a 1998 amendment for personal retirement accounts, and criticised Bush's privatisation push.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "land-use-tenure": {
       "value": null,
@@ -1873,10 +2061,13 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His 2007 proposal prohibits funding an Iraq escalation without fresh congressional authorization.",
+      "sources": [
+        "b8"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "single-official-language": {
       "value": -2,
@@ -1884,7 +2075,8 @@
       "rationale": "Voted against declaring English the official language of the United States in 2007.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "foreign-land-ownership": {
       "value": null,
@@ -1898,7 +2090,8 @@
       "rationale": "Sponsored the Civil Rights Act of 2008, which establishes discrimination based on disparate impact.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "consumerism-harmful": {
       "value": null,
@@ -1912,7 +2105,8 @@
       "rationale": "Voted against military aid to the Contra insurgents in the mid-1980s, including a 1984 Nicaragua amendment.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "intervene-in-bloc": {
       "value": null,
@@ -1926,7 +2120,8 @@
       "rationale": "Voted for banning soft money and corporate and union donations to campaigns in 2001 and 2002.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -1952,7 +2147,8 @@
       "rationale": "Spoke in 1980 of increasing the government's commitment to full employment with public employment programmes when necessary.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "democratic-peace": {
       "value": null,
@@ -2015,10 +2211,13 @@
       "sources": []
     },
     "religious-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "That speech defines Americans’ common membership through freedom and mutual respect across faiths and nonbelief.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "deference-to-leading-power": {
       "value": null,
@@ -2099,10 +2298,13 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The DNC speech defends free enterprise and competition through deregulation rather than discarding market capitalism.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "historical-land-claim": {
       "value": null,
@@ -2170,7 +2372,8 @@
       "rationale": "Signed the 2009 Employment Non-Discrimination Act, which covers gender identity, and backed the 2007 version.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "assisted-dying": {
       "value": null,
@@ -2215,10 +2418,13 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The DNC speech combines competitive private enterprise with social insurance, worker protections and progressive taxes.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2257,10 +2463,13 @@
       "sources": []
     },
     "property-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He fought to remove poll taxes that conditioned voting on payment.",
+      "sources": [
+        "b13"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "domination-women-nature": {
       "value": null,
@@ -2377,10 +2586,13 @@
       "sources": []
     },
     "existential-risk-priority": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "That speech makes preventing nuclear destruction of the planet an urgent public responsibility.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "women-in-religious-leadership": {
       "value": null,
@@ -2436,7 +2648,8 @@
       "rationale": "Supported formal recognition of the Armenian Genocide in 2007.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "income-for-work-not-ownership": {
       "value": null,
@@ -2559,7 +2772,8 @@
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "ageing-research-funding": {
       "value": null,
@@ -2622,12 +2836,17 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Voted against the 2002 Iraq war authorisation, saying war should be a last resort after reasonable alternatives are exhausted.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mixed: he voted against the 2002 Iraq war authorisation, calling war a last resort, but in 2006 kept military action against Iran nuclear progress as an option.",
       "sources": [
         "s1",
-        "s6"
+        "s6",
+        "b4"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "language-defines-nation": {
@@ -2661,10 +2880,13 @@
       "sources": []
     },
     "future-generations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The DNC address insists children and grandchildren inherit an unpolluted, beautiful country.",
+      "sources": [
+        "b3"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "women-distinct-values": {
       "value": null,
@@ -2678,7 +2900,12 @@
       "rationale": "Called in 1983 for an immediate, mutual and verifiable nuclear freeze, and voted for the Comprehensive Nuclear Test Ban Treaty in 1999.",
       "sources": [
         "s6",
-        "s1"
+        "s1",
+        "b2"
+      ],
+      "auditor": [
+        "claude-haiku-5-5",
+        "gpt-6.1-sol"
       ]
     },
     "open-diplomacy": {
@@ -2711,7 +2938,8 @@
       "rationale": "Sponsored a card-check bill and voted to protect union organising, supporting wages set through collective bargaining.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "in-work-tax-credits": {
       "value": null,
@@ -2725,7 +2953,8 @@
       "rationale": "Opposed a balanced-budget constitutional amendment in 1997, the kind of binding borrowing limit this statement describes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "restructure-world-economy": {
       "value": null,
@@ -2800,7 +3029,8 @@
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "workers-own-party": {
       "value": null,
@@ -2865,7 +3095,7 @@
     "religious-equal-recognition": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
+      "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
       "sources": []
     },
     "democracy-is-procedure": {
@@ -2898,7 +3128,8 @@
       "rationale": "Reintroduced the Equal Rights Amendment in 2007 and said the 1980 party should back ratification, noting the nation had founding mothers as well as founding fathers.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3014,7 +3245,8 @@
       "rationale": "Voted for permanent normal trade relations with China in 2000 and called Nixon's China opening a magnificent gesture.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "protect-kin-minorities": {
       "value": null,
@@ -3059,10 +3291,13 @@
       "sources": []
     },
     "no-denominational-politics": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He rejects treating religious affiliation or nonbelief as qualifications for public office.",
+      "sources": [
+        "b2"
+      ],
+      "auditor": "gpt-6.1-sol"
     },
     "tech-with-ancestral-values": {
       "value": null,
@@ -3101,7 +3336,8 @@
       "sources": [
         "s6",
         "s2"
-      ]
+      ],
+      "auditor": "claude-haiku-5-5"
     },
     "unjust-law-not-binding": {
       "value": null,
@@ -3146,5 +3382,15 @@
       "sources": []
     }
   },
-  "notes": "Research was limited: the 1980 DNC speech full text, True Compass, the Congressional Record and congress.gov were not reachable through fetch, so most answers rest on OnTheIssues vote summaries (medium), Wikiquote quotations of his speeches and Wikipedia. S6 is a Wikiquote compilation of his own words, not the full speech texts. Nothing from the 1990 Immigration Act, NCLB, CHIP, the 1996 minimum wage, Kosovo or the FISA immunity vote was verified from a page opened in this session, so those statements are null. Individual Senate votes are taken from OnTheIssues and not checked against roll calls. No inferred answers were used."
+  "notes": "Research was limited: the 1980 DNC speech full text, True Compass, the Congressional Record and congress.gov were not reachable through fetch, so most answers rest on OnTheIssues vote summaries (medium), Wikiquote quotations of his speeches and Wikipedia. S6 is a Wikiquote compilation of his own words, not the full speech texts. Nothing from the 1990 Immigration Act, NCLB, CHIP, the 1996 minimum wage, Kosovo or the FISA immunity vote was verified from a page opened in this session, so those statements are null. Individual Senate votes are taken from OnTheIssues and not checked against roll calls. No inferred answers were used.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 11 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third-model audit. All 490 statements and the full blank list reviewed. Most ranked ideological-doctrine statements remain null; market support supplies only the negative third-course answer. Democratic renewal rhetoric does not establish radical national rebirth, and Kennedy family prominence is not a state leader cult. The primary record here is substantially broader than the earlier pass: full 2005 oral history, religion speech, DNC address, 2006 CNN interview, official minimum-wage/DOMA/NAFTA/Iraq votes, 2007 war-funding proposal and scientific hearings. Opposing the Iraq invasion does not establish opposition to every foreign intervention: his Afghanistan commitment and Iran military option prevent that extrapolation. Admiration for Karzai does not establish the humanitarian-intervention proposition, which remains null. In the energy debate other speakers’ global-warming statements were carefully separated from his; energy-kennedy-only.txt contains his actual turns. He supported expanding LNG and renewable power together, so neither blanket fossil-fuel opposition nor intrinsic ecological value is inferred. The 2008 climate opening establishes concern and public-health preparation, not by itself the exact drastic-action proposition. Medical stem-cell treatment does not answer human enhancement, anti-ageing or generic technological acceleration. Public-school prayer is discussed as a legitimate disagreement, not automatically a statement about all religious instruction. Faith is no substitute for facts in public debate, but this is not reason as the only guide to all knowledge. A single law or bill vote is medium confidence; the civil-rights record remains medium pending stronger primary documentation. He was absent on the July 2008 FISA final vote, so no vote position is invented. Private conduct, Chappaquiddick and the family succession controversies were checked for relevance without creating unrelated policy views. No inferred answers.",
+  "passes": [
+    {
+      "auditor": "claude-haiku-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-26"
+    }
+  ]
 }
