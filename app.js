@@ -1499,7 +1499,11 @@ mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25
   onPick: (ideo) => pickCard($("ideo-pick"), ideo, { onClose: () => $("ideo-map").unpick() }),
   onUnpick: () => { $("ideo-pick").hidden = true; } },
   { extraNote: "Close dots answer alike." });
-for (const el of document.querySelectorAll(".ideology-count")) el.textContent = `${model.ideologies.length}`;
+// The deploy writes the count in already (scripts/pages.js --stamp); rewriting the same text would
+// repaint the hero paragraph, which browsers then report as the page's main paint.
+for (const el of document.querySelectorAll(".ideology-count")) {
+  if (el.textContent !== `${model.ideologies.length}`) el.textContent = `${model.ideologies.length}`;
+}
 
 // Be upfront while the site still runs on hand-written profiles instead of researched audits.
 const auditedCount = model.ideologies.filter((i) => i.audited).length;
