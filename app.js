@@ -1,4 +1,10 @@
 // UI: intro map, one-statement-at-a-time quiz, results.
+// Search engines land on static pages at /ideologies/<id>/ and /people/<id>/ (scripts/pages.js).
+// The app runs on "#/" routes from the site root, so it moves the address there before anything reads it.
+{
+  const at = /^\/(ideologies|people)\/([^/]+)\/?$/.exec(location.pathname);
+  if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
+}
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL) : buildModel(IDEOLOGIES);
 // Once the answers place you to within half the gap between neighbouring ideologies (precision 2, see
 // placementPrecision in pca.js; about 200 answers today), more barely change anything, so the quiz

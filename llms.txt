@@ -4,8 +4,12 @@
 > ideologies from sourced audits of how each ideology answers a few hundred statements, then matches
 > the user's answers against them. Source code, data and audits: https://github.com/brioja/political-ideology-atlas
 
-The site is a single page whose results are worked out by its script in the browser. Fetching a page
-or a result link without running the script shows only the empty shell, not the result.
+The site is a single page whose results are worked out by its script in the browser. Fetching a
+result link without running the script shows only the empty shell, not the result.
+
+Every ideology and person also has a plain page that reads fine without the script:
+`https://ideologyatlas.fyi/ideologies/<id>/` and `https://ideologyatlas.fyi/people/<id>/` (summary,
+key positions, closest ideologies and people). All of them are listed in https://ideologyatlas.fyi/sitemap.xml.
 
 ## Result links
 
