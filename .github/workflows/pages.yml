@@ -30,7 +30,7 @@ jobs:
         run: sed -i "s/?v=dev/?v=${GITHUB_SHA::7}/g" index.html
       # Static ideology and people pages plus sitemap.xml for search engines, from the stamped index.html.
       - name: Write static pages
-        run: node scripts/pages.js
+        run: node scripts/pages.js --stamp
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

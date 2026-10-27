@@ -6,6 +6,9 @@
 // scripts. Browsers hide that HTML and the app takes over (app.js moves the address to its "#/" route).
 //
 //   node scripts/pages.js            write the pages and sitemap.xml
+//   node scripts/pages.js --stamp    also write the ideology count into index.html (deploy only; the
+//                                    app fills it in anyway, but text it changes after load is when
+//                                    Lighthouse says the page finished painting)
 //   node scripts/pages.js --clean    remove them again (handy after a local preview)
 const fs = require("fs");
 const path = require("path");
@@ -117,7 +120,13 @@ function personBody(p) {
 }
 
 // index.html with this page's head and content. Fails loudly if the template changes shape.
-const template = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+let template = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+if (process.argv.includes("--stamp")) {
+  const count = /<span class="ideology-count">[^<]*<\/span>/g;
+  if (!count.test(template)) throw new Error("index.html no longer has an ideology-count span");
+  template = template.replace(count, `<span class="ideology-count">${model.ideologies.length}</span>`);
+  fs.writeFileSync(path.join(ROOT, "index.html"), template);
+}
 function swap(html, pattern, replacement) {
   if (!pattern.test(html)) throw new Error(`index.html no longer matches ${pattern}`);
   return html.replace(pattern, replacement);
