@@ -605,12 +605,16 @@ function showResults(shared = null) {
   const given = shared || lastAnswers;
   const { you, ranked } = match(model, given);
   const top = ranked[0];
-  const answered = given.filter((a) => a !== null).length;
   // More questions are left when the quiz stopped early (it settled, or you chose to see results):
   // "Answer more questions" goes back to the next one, and the result sharpens as you answer. Once the
   // quiz has said you're done the page stops inviting it (more answers barely change anything), though
   // the header's "Answer more" stays for anyone who wants to.
   const progress = order.length ? { order, position } : load();
+  // "No opinion" counts as an answer: every statement shown except the last one, if it's still
+  // waiting. Share links can't tell a skip from a statement never asked, so shared results count only
+  // the answers with a side.
+  const pending = progress && progress.position < progress.order.length && given[progress.order.at(-1)] === null;
+  const answered = !shared && progress ? progress.order.length - (pending ? 1 : 0) : given.filter((a) => a !== null).length;
   const done = placementPrecision(PLACEMENT_CTX, given) >= DONE_PRECISION;
   const moreLeft = !shared && !!progress && progress.position < progress.order.length;
   const canContinue = moreLeft && !done;
@@ -821,7 +825,7 @@ function showResults(shared = null) {
     history.replaceState(null, "", `${location.pathname}#/test`);
     route();
   });
-  setUpSharing(given, ranked, you, shared);
+  setUpSharing(given, ranked, you, shared, answered);
   setHeaderAction(shared ? "take" : moreLeft ? "more" : "none");
 }
 
@@ -847,7 +851,7 @@ function drawScree(svg) {
 // ---------- Sharing ----------
 
 // Shared results get it too, so a link from before a scoring change can be turned into a fresh image.
-function setUpSharing(given, ranked, you, shared) {
+function setUpSharing(given, ranked, you, shared, answered) {
   const url = shareUrl(given);
   const status = $("share-status");
   $("share-url").value = url;
@@ -884,7 +888,7 @@ function setUpSharing(given, ranked, you, shared) {
   });
 
   const canvas = $("card");
-  const cardResult = { ranked, you, people: cardPeople(given), answered: given.filter((a) => a !== null).length };
+  const cardResult = { ranked, you, people: cardPeople(given), answered };
   const drawn = drawShareCard(canvas, cardResult);
   const fileName = `political-ideology-${ranked[0].name.toLowerCase().replace(/[^a-z]+/g, "-")}.png`;
   // The phone's share sheet with the image and a line of text the app pre-fills (the site, not the answers).
@@ -1502,17 +1506,20 @@ if (auditedCount < model.ideologies.length) {
 drawScree($("scree"));
 
 // The home page shows an example result drawn by the same code as the share image: a simulated
-// test-taker who leans toward a randomly chosen ideology (some statements skipped, some answers
-// nudged by a point), matched with the live model, so it changes per visit and tracks the data.
+// test-taker who leans toward a randomly chosen ideology (stops after 100 statements or more, says
+// "No opinion" to some, nudges some answers by a point), matched with the live model, so it changes
+// per visit and tracks the data. Like a real result, "No opinion" counts as an answer.
 (() => {
   const ideo = model.ideologies[Math.floor(Math.random() * model.ideologies.length)];
-  const sample = ideo.profile.map((x) => {
-    if (Math.random() < 0.35) return null;
+  const asked = Math.min(QUESTIONS.length, 100 + Math.floor(Math.random() * (QUESTIONS.length - 99)));
+  const shown = new Set([...QUESTIONS.keys()].sort(() => Math.random() - 0.5).slice(0, asked));
+  const sample = ideo.profile.map((x, j) => {
+    if (!shown.has(j) || Math.random() < 0.1) return null;
     if (Math.random() < 0.25) return Math.max(-2, Math.min(2, x + (Math.random() < 0.5 ? -1 : 1)));
     return x;
   });
   const { you, ranked } = match(model, sample);
-  drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample), answered: sample.filter((a) => a !== null).length, example: true });
+  drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample), answered: asked, example: true });
 })();
 
 // ---------- Explore ----------
