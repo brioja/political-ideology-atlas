@@ -1664,35 +1664,40 @@ function lineStrips(scores, { selfId = null, other = null } = {}) {
 // Topic emoji for a statement; decorative (the sentence carries the meaning), so hidden from screen readers.
 const topicIcon = (q) => `<span class="topic" aria-hidden="true">${q.icon || "•"}</span>`;
 
-// Key positions only: the strongly held ones (or the leanings, if there are none), best-sourced
-// first, each with its topic emoji; reasoning and sources are added once the audit loads. The rest
-// are summarized in one line that points to the full audit.
+// Key positions: the strongly held ones (or the leanings, if there are none), best-sourced first,
+// each with its topic emoji; reasoning and sources are added once the audit loads. The milder ones
+// sit in a collapsed list below, and unknown statements are counted with a link to the full audit.
 const CONF_RANK = { high: 0, medium: 1, low: 2 };
 function positionsList(profile, audit, auditUrl = null) {
   const answerOf = (j) => audit && audit.answers && audit.answers[QUESTIONS[j].id];
   const all = QUESTIONS.map((_, j) => j);
   const unknown = all.filter((j) => profile[j] == null);
   const strongest = Math.max(...all.map((j) => Math.abs(profile[j] ?? 0)));
-  const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest)
-    .sort((x, y) => (CONF_RANK[answerOf(x)?.confidence] ?? 1) - (CONF_RANK[answerOf(y)?.confidence] ?? 1) || x - y);
-  const others = all.length - known.length - unknown.length;
+  const byConfidence = (x, y) => (CONF_RANK[answerOf(x)?.confidence] ?? 1) - (CONF_RANK[answerOf(y)?.confidence] ?? 1) || x - y;
+  const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest).sort(byConfidence);
+  const milder = all.filter((j) => profile[j] != null && !known.includes(j))
+    .sort((x, y) => Math.abs(profile[y]) - Math.abs(profile[x]) || byConfidence(x, y));
   const sourceLink = (sid) => {
     const s = audit && (audit.sources || []).find((x) => x.id === sid);
     return s ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.title)}">${esc(sid)}</a>` : esc(sid);
   };
-  const items = known.map((j) => {
+  const item = (j) => {
     const v = profile[j];
     const a = answerOf(j);
     return `<li>${topicIcon(QUESTIONS[j])}
       <div class="stack-tight">
         <p class="stance">${esc(v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text)}</p>
+        ${v === 0 && strongest > 0 ? `<p class="muted small">Neither agrees nor disagrees.</p>` : ""}
         ${a && (a.rationale || a.reason) ? `<p class="muted small">${esc(a.rationale || a.reason)}
           ${a.confidence ? `<span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` · sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span>` : ""}</p>` : ""}
       </div></li>`;
-  }).join("");
-  const rest = [others && `${others} milder position${others === 1 ? "" : "s"}`, unknown.length && `no known position on ${unknown.length}`].filter(Boolean).join(", and ");
-  const more = rest ? `<p class="muted small">${rest[0].toUpperCase() + rest.slice(1)}${auditUrl ? `: <a href="${esc(auditUrl)}" target="_blank" rel="noopener">see the full audit</a>` : ""}.</p>` : "";
-  return `<ul class="positions">${items}</ul>${more}`;
+  };
+  const mild = milder.length ? `<details class="milder"><summary>${milder.length} milder position${milder.length === 1 ? "" : "s"}</summary>
+    <ul class="positions">${milder.map(item).join("")}</ul></details>` : "";
+  const link = auditUrl ? `<a href="${esc(auditUrl)}" target="_blank" rel="noopener">see the full audit</a>` : "";
+  const more = unknown.length ? `<p class="muted small">No known position on ${unknown.length}${link ? `: ${link}` : ""}.</p>`
+    : link ? `<p class="muted small">${link[0]}${link.slice(1).replace(">see", ">See")}.</p>` : "";
+  return `<ul class="positions">${known.map(item).join("")}</ul>${mild}${more}`;
 }
 
 function sourcesList(audit) {
