@@ -336,6 +336,7 @@ const NAV_FOR = { ideology: "ideologies", person: "people" };
 
 function show(page, { scroll = true, title = null } = {}) {
   for (const p of PAGES) $(`page-${p}`).hidden = p !== page;
+  if (page === "home") drawExample();
   for (const a of document.querySelectorAll(".site-nav a")) {
     if (a.dataset.page === (NAV_FOR[page] || page)) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -1518,8 +1519,12 @@ drawScree($("scree"));
 // The home page shows an example result drawn by the same code as the share image: a simulated
 // test-taker who leans toward a randomly chosen ideology (stops after 100 statements or more, says
 // "No opinion" to some, nudges some answers by a point), matched with the live model, so it changes
-// per visit and tracks the data. Like a real result, "No opinion" counts as an answer.
-(() => {
+// per visit and tracks the data. Like a real result, "No opinion" counts as an answer. Drawn the first
+// time the home page shows, so a visit that starts on another page doesn't pay for it.
+let exampleDrawn = false;
+function drawExample() {
+  if (exampleDrawn) return;
+  exampleDrawn = true;
   const ideo = model.ideologies[Math.floor(Math.random() * model.ideologies.length)];
   const asked = Math.min(QUESTIONS.length, 100 + Math.floor(Math.random() * (QUESTIONS.length - 99)));
   const shown = new Set([...QUESTIONS.keys()].sort(() => Math.random() - 0.5).slice(0, asked));
@@ -1530,7 +1535,7 @@ drawScree($("scree"));
   });
   const { you, ranked } = match(model, sample);
   drawShareCard($("example-card"), { you, ranked, people: cardPeople(sample), answered: asked, example: true });
-})();
+}
 
 // ---------- Explore ----------
 

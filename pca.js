@@ -196,7 +196,7 @@ function varimax(model, k, { iters = 100 } = {}) {
 // The same model from parts build.js computed ahead of time (mean and the leading components), so
 // the page skips the eigen-decomposition, which grows with the cube of the statement count.
 function modelFromParts(ideologies, parts) {
-  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], ideologies: [] };
+  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], fullSpread: parts.fullSpread, ideologies: [] };
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
@@ -272,6 +272,8 @@ function gap(answers, profile, idx) {
 const spreadCache = new WeakMap();
 function spreadOn(model, idx) {
   const ideos = model.ideologies;
+  // With every statement answered (an ideology's own page) the build has worked it out already.
+  if (model.fullSpread != null && ideos.length && idx.length === ideos[0].profile.length) return model.fullSpread;
   let cache = spreadCache.get(ideos);
   if (!cache) {
     const n = ideos.length ? ideos[0].profile.length : 0;
@@ -665,5 +667,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

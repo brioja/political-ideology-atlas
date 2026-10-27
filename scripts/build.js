@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personSalience, ideologySalience, useSalienceModel } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, salienceContext, salience, varimax, matchPeople } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, salienceContext, salience, varimax, matchPeople, spreadOn } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -222,6 +222,9 @@ const shippedModel = {
   components: lines.map((c) => ({ eigenvalue: r6(c.eigenvalue), share: r6(c.share), vector: c.vector.map(r6) })),
   labels,
 };
+// match()'s scale with every statement answered: every pair of ideologies compared on all of them,
+// ~150 ms in a browser, the same on every visit.
+shippedModel.fullSpread = spreadOn(modelFromParts(included, shippedModel), statements.map((_, j) => j));
 
 writePeople(modelFromParts(included, shippedModel));
 
