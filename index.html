@@ -18,7 +18,15 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="Notes for AI assistants">
+<link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
+<!-- The scripts are deferred so the home page paints while the data downloads. Any other address
+     waits for the app to decide what to show, so the home page doesn't flash first. -->
+<script>
+if (!/^(#\/?)?$/.test(location.hash) || /[?&]r=/.test(location.search) || /^\/(ideologies|people)\//.test(location.pathname)) document.documentElement.classList.add("routing");
+</script>
 <style>
 /* Layout: one centered reading column; the quiz is a single card, results are stacked figures. */
 :root {
@@ -52,6 +60,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+.routing #page-home { display: none; }
 html { padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px); }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
@@ -306,7 +315,7 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 
 /* People photos */
 .avatar { flex: none; width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center 20%; margin-right: 0.65rem; background: var(--line); }
-.avatar.initials { display: inline-grid; place-items: center; font: 600 0.8rem var(--display); color: var(--muted); }
+.avatar.initials { display: inline-grid; place-items: center; font: 600 0.8rem var(--display); color: color-mix(in srgb, var(--muted) 70%, var(--ink)); }
 .person-head { display: flex; gap: 0.25rem; align-items: center; }
 .person-head .avatar { width: 72px; height: 72px; }
 .person-head .stack { gap: 0.25rem; }
@@ -722,9 +731,9 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
     </ul>
   </div>
 </footer>
-<script src="data.js?v=dev"></script>
-<script src="people.js?v=dev"></script>
-<script src="pca.js?v=dev"></script>
-<script src="app.js?v=dev"></script>
+<script defer src="data.js?v=dev"></script>
+<script defer src="people.js?v=dev"></script>
+<script defer src="pca.js?v=dev"></script>
+<script defer src="app.js?v=dev"></script>
 </body>
 </html>

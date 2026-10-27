@@ -2044,3 +2044,4 @@ function route() {
 }
 window.addEventListener("hashchange", route);
 route();
+document.documentElement.classList.remove("routing");
