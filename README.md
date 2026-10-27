@@ -127,11 +127,15 @@ prints the axes it found.
 
 ## Deploying
 
-It is a static site with no build step and no server, so any static host works:
+It is a static site with no server, so any static host works. The site runs as is; one optional
+step, `node scripts/pages.js`, writes a plain page for every ideology and person
+(`/ideologies/<id>/`, `/people/<id>/`, each with its own canonical URL) and a `sitemap.xml` listing
+them, so search engines can find them. Those files are written at deploy and never committed.
 
-- **GitHub Pages:** push this folder to a repo, then turn on Settings → Pages → deploy from branch.
-- **Netlify / Cloudflare Pages:** drag the folder in, or connect the repo. There is no build
-  command and the publish directory is `/`.
+- **GitHub Pages:** `.github/workflows/pages.yml` deploys on every push to `main`, running
+  `scripts/pages.js` first (Settings → Pages → source: GitHub Actions).
+- **Netlify / Cloudflare Pages:** connect the repo with build command `node scripts/pages.js` and
+  publish directory `/`.
 
 ## Data flows one way: ideologies → people
 
