@@ -2,7 +2,10 @@
  "id": "fred-hampton",
  "name": "Fred Hampton",
  "auditedAt": "2026-10-24",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": false,
  "role": "Deputy chairman of the Black Panther Party and chairman of its Illinois chapter (1968-1969)",
  "summary": "Hampton was a Marxist-Leninist revolutionary who argued that the Black struggle is a class struggle, that racism is a by-product of capitalism, and that a vanguard party must educate and arm the people. He built a multiracial Rainbow Coalition and free community programs while advocating armed self-defence against the police and rejecting cultural nationalism and black capitalism.",
@@ -71,6 +74,54 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Fred_Hampton",
    "usedFor": "Biography, dates, Rainbow Coalition, community police supervision, sexism condemned."
+  },
+  {
+   "id": "b1",
+   "kind": "primary",
+   "title": "Fred Hampton: Black Panthers in Chicago (1969), full interview transcript",
+   "author": "Fred Hampton; Videofreex; Museum of Contemporary Art Chicago",
+   "url": "https://mcachicago.org/whats-on/exhibitions/the-commons-artist-project-public-fiction/",
+   "usedFor": "Speaker-labelled interview: community programmes, self-defence, police decentralisation, vanguard and Weathermen criticism."
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Power Anywhere Where There’s People!",
+   "author": "Fred Hampton",
+   "url": "https://www.marxists.org/archive/hampton/1969/misc/power-anywhere-where-theres-people.htm",
+   "usedFor": "Community needs, exploitation, revolution, internationalism, police accountability and People’s Party."
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "You Can Murder a Liberator, but You Can’t Murder Liberation (27 April 1969)",
+   "author": "Fred Hampton",
+   "url": "https://www.marxists.org/archive/hampton/1969/04/27.htm",
+   "usedFor": "Vanguard education, socialism in practice and dictatorship of the people rather than the Panthers."
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "It’s a Class Struggle, Godamnit! (November 1969)",
+   "author": "Fred Hampton",
+   "url": "https://www.marxists.org/archive/hampton/1969/11/class-struggle-godamnit.htm",
+   "usedFor": "Class analysis, cultural nationalism, press, Vietnam and armed communities."
+  },
+  {
+   "id": "b5",
+   "kind": "reference",
+   "title": "Fred Hampton",
+   "author": "Wikipedia contributors",
+   "url": "https://en.wikipedia.org/wiki/Fred_Hampton",
+   "usedFor": "Biography, early desegregation organising and Rainbow Coalition."
+  },
+  {
+   "id": "b6",
+   "kind": "reference",
+   "title": "Fred Hampton",
+   "author": "John Simkin, Spartacus Educational",
+   "url": "https://www.spartacus-educational.com/USAhamptonF.htm",
+   "usedFor": "Career, community programmes and corroborating speech extracts."
   }
  ],
  "answers": {
@@ -169,7 +220,13 @@
    "confidence": "high",
    "rationale": "Said there was nothing wrong with guns in the community, only a misdistribution because the police hold them all, and that Black people needed to arm themselves.",
    "sources": [
-    "s4"
+    "s4",
+    "b1",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "empower-police-military": {
@@ -178,7 +235,12 @@
    "rationale": "Denounced the police as fascist 'pigs' who occupy communities like a foreign territory and campaigned to decentralise them.",
    "sources": [
     "s6",
-    "s4"
+    "s4",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "legalize-sex-work": {
@@ -224,10 +286,13 @@
    "sources": []
   },
   "correct-racial-injustice": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: he framed Black Americans' oppression as a continuation of slavery ('we're slaves', Dred Scott) and fought segregated facilities and placed Panther programmes where 'black people are most oppressed'.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "gender-social-construct": {
    "value": null,
@@ -236,10 +301,13 @@
    "sources": []
   },
   "preserve-national-culture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "He rejected preserving inherited African cultural forms as a political goal, favouring revolutionary culture that secured liberation.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "gradual-change": {
    "value": -2,
@@ -247,7 +315,12 @@
    "rationale": "Said the party stood for 'the complete revolution' and would not 'half do a thing'; rejected petitioning authorities as a cycle of futility.",
    "sources": [
     "s1",
-    "s3"
+    "s3",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "reduce-immigration": {
@@ -316,7 +389,13 @@
    "rationale": "Called for 'international proletarian revolution' and said he hoped to die as a revolutionary; described revolution as the cure for a 'sick society'.",
    "sources": [
     "s3",
-    "s5"
+    "s5",
+    "b2",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "experts-over-public": {
@@ -398,7 +477,8 @@
    "sources": [
     "s1",
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "monarchy-legitimate": {
    "value": null,
@@ -441,7 +521,12 @@
    "confidence": "high",
    "rationale": "Said it was no longer a question of violence or nonviolence but of resistance to fascism, and that war is abolished only through war.",
    "sources": [
-    "s4"
+    "s4",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "war-builds-character": {
@@ -486,7 +571,12 @@
    "rationale": "Said revolution is always a class struggle (citing Marx, Lenin, Mao, Che) and that the priority of the struggle is class, with racism a by-product of capitalism.",
    "sources": [
     "s4",
-    "s2"
+    "s2",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "equal-outcomes": {
@@ -568,10 +658,13 @@
    "sources": []
   },
   "restore-past-order": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He rejected returning to ancient African culture as a route to liberation and prioritised revolutionary change.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "results-over-ideology": {
    "value": null,
@@ -581,18 +674,21 @@
   },
   "direct-action": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred: stressed learning through 'observation and participation' and acting over writing, while also backing a People's Party ticket, so evidence on elections versus direct action is mixed.",
+   "confidence": "medium",
+   "rationale": "Said 'political power flows from the barrel of a gun' and that Democrats and Republicans sell out, yet urged people to run on a People's Party ticket.",
    "sources": [
-    "s3",
-    "s1"
-   ]
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "means-match-ends": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His free breakfast programme practised the socialism it was meant to teach.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "return-to-foraging": {
    "value": null,
@@ -612,7 +708,12 @@
    "rationale": "Described the free breakfast and free clinic as open to anyone whose only qualification is being hungry or sick.",
    "sources": [
     "s6",
-    "s4"
+    "s4",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "production-for-use": {
@@ -621,7 +722,12 @@
    "rationale": "Judged programs by whether they meet the needs of the masses, described the Breakfast for Children program as running 'in a socialistic manner', and attacked businesses that profit from the community.",
    "sources": [
     "s3",
-    "s1"
+    "s1",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "profit-exploitation": {
@@ -629,7 +735,12 @@
    "confidence": "medium",
    "rationale": "Said anyone who comes into the community to make profit off the people by exploiting them is a capitalist and must be driven out.",
    "sources": [
-    "s3"
+    "s3",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "dictatorship-of-proletariat": {
@@ -637,7 +748,12 @@
    "confidence": "medium",
    "rationale": "Rejected 'the dictatorship of the Panthers' or of Black people but said 'We are for the dictatorship of the people', with the vanguard educating the people after the revolution until they run things themselves.",
    "sources": [
-    "s1"
+    "s1",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "collective-farming": {
@@ -814,7 +930,8 @@
    "rationale": "Backed the Vietnamese people's right to self-determination and called for victory for Vietnam against US forces.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "force-without-un": {
    "value": null,
@@ -846,7 +963,13 @@
    "rationale": "Held that employers (capitalists, 'avaricious greedy businessmen') and the oppressed are opposed classes; argued capitalists, black or white, must be driven out of the community.",
    "sources": [
     "s3",
-    "s4"
+    "s4",
+    "b2",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "sacrifice-heritage": {
@@ -867,7 +990,12 @@
    "rationale": "Said the way to fight reactionaries is 'international proletarian revolution' and described a coalition of black, white, brown and yellow masses.",
    "sources": [
     "s3",
-    "s7"
+    "s7",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "distinct-gender-roles": {
@@ -888,7 +1016,12 @@
    "rationale": "Said the party was not a racist organisation, would fight racism with solidarity, and denounced Judge Taney's ruling that Black people have no rights.",
    "sources": [
     "s2",
-    "s7"
+    "s7",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "state-class-instrument": {
@@ -896,7 +1029,12 @@
    "confidence": "medium",
    "rationale": "Described the oppressor as a 'three-in-one' of greedy businessmen, lying politicians and fascist police, and said the legal system was set up to keep the money-makers' arrangements going.",
    "sources": [
-    "s4"
+    "s4",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "expand-fossil-fuels": {
@@ -941,7 +1079,12 @@
    "rationale": "Called politicians 'demagogic, lyin'' and said Democrats and Republicans sell out their voters and independents sell to the highest bidder.",
    "sources": [
     "s3",
-    "s6"
+    "s6",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "heritable-defect-limits": {
@@ -956,7 +1099,12 @@
    "rationale": "Said police who step outside legality should be arrested (a 'citizens' arrest' demonstration) and denounced police killings of young Black residents as murder.",
    "sources": [
     "s3",
-    "s4"
+    "s4",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "night-watchman-state": {
@@ -1073,7 +1221,13 @@
    "rationale": "Repeatedly asserted that the Black Panther Party is the vanguard party and that the people follow and are educated by the vanguard.",
    "sources": [
     "s1",
-    "s6"
+    "s6",
+    "b1",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "priority-to-poor": {
@@ -1083,7 +1237,8 @@
    "sources": [
     "s3",
     "s6"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "right-to-buy-council-homes": {
    "value": null,
@@ -1241,7 +1396,12 @@
    "rationale": "Mocked people with 'more degrees than a thermometer' who lack practice and students who think they serve the struggle by talking.",
    "sources": [
     "s3",
-    "s4"
+    "s4",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "cultures-equal-different": {
@@ -1305,10 +1465,13 @@
    "sources": []
   },
   "independence-needs-economic-change": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He used Duvalier’s Haiti to show that Black leadership could preserve oppression without ending exploitative rule.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "constituent-assembly": {
    "value": null,
@@ -1520,7 +1683,8 @@
    "rationale": "Described himself as a dialectical materialist and argued that the economic motive of capitalism came first and racism followed from it as a by-product.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "ban-cartels": {
    "value": null,
@@ -1570,7 +1734,12 @@
    "rationale": "Contested: held up Newton and the vanguard setting an armed example, yet called the Weathermen's confrontations premature, adventurist and on the brink of anarchism because the people were not ready.",
    "sources": [
     "s6",
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abolish-hereditary-privilege": {
@@ -1701,11 +1870,12 @@
   },
   "mass-culture-pacifies": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred: said the established press and ruling interests 'talked us into believing' we were nobody and called papers 'ideological servants' of fascism.",
+   "confidence": "medium",
+   "rationale": "He described the established press as serving fascism and teaching people to accept misleading accounts of their situation.",
    "sources": [
-    "s4"
-   ]
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "ruling-class-consent": {
    "value": null,
@@ -1970,7 +2140,12 @@
    "confidence": "medium",
    "rationale": "Insisted on a disciplined vanguard party with six weeks of political education for members and attacked spontaneous, anarchistic groups as leading people to massacre.",
    "sources": [
-    "s6"
+    "s6",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "national-law-over-international": {
@@ -2010,7 +2185,8 @@
    "sources": [
     "s3",
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "mixed-public-service-providers": {
    "value": null,
@@ -2073,7 +2249,13 @@
    "sources": [
     "s2",
     "s3",
-    "s4"
+    "s4",
+    "b2",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "historical-land-claim": {
@@ -2130,7 +2312,12 @@
    "rationale": "Said people should take over control of their communities, that programs should be analysed by the people they serve, and that the community would run the breakfast and health programs.",
    "sources": [
     "s3",
-    "s6"
+    "s6",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "intersecting-oppressions": {
@@ -2421,7 +2608,12 @@
    "rationale": "Insisted on armed self-defence and retaliation, saying the party would 'blow their brains out' if police attacked, and that attacks must be met reciprocally.",
    "sources": [
     "s6",
-    "s2"
+    "s2",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "unbroken-national-continuity": {
@@ -2461,10 +2653,13 @@
    "sources": []
   },
   "culture-before-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He rejected cultural renewal as liberation’s prerequisite, insisting instead on revolutionary political power.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "god-not-male": {
    "value": null,
@@ -2588,7 +2783,8 @@
     "s2",
     "s1",
     "s7"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "racial-pride": {
    "value": null,
@@ -2668,7 +2864,12 @@
    "rationale": "Called for arming the people and for equal distribution of guns, rejecting police monopoly on arms.",
    "sources": [
     "s4",
-    "s1"
+    "s1",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "soldiers-refuse-war": {
@@ -2772,7 +2973,12 @@
    "confidence": "medium",
    "rationale": "Said Democrat, Republican and Independent labels all mean selling out and that he wanted candidates running on a 'People's Party'.",
    "sources": [
-    "s3"
+    "s3",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "women-property-inheritance": {
@@ -3094,10 +3300,13 @@
    "sources": []
   },
   "material-over-identity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He prioritised class liberation over cultural nationalism, dress and changes of name.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "market-under-party-rule": {
    "value": null,
@@ -3106,5 +3315,15 @@
    "sources": []
   }
  },
- "notes": "Died in 1969 aged 21, so the record is a single year of speeches. The Black Panther Party's Ten-Point Program was not used unless he championed a point in his own words. The Weathermen criticism and the call to decentralise the police come from recorded interviews."
+ "notes": "Died in 1969 aged 21, so the record is a single year of speeches. The Black Panther Party's Ten-Point Program was not used unless he championed a point in his own words. The Weathermen criticism and the call to decentralise the police come from recorded interviews.\n\nMerged with an independent gpt-6.1-sol audit: 9 answers taken from it, 25 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third-model pass; earlier audit consulted only for notes and source list. All 490 active statements reviewed. Priority religion, family and church-status questions were searched; no specific positions found except a stated rejection of cultural restoration. Church venues and religious allies do not establish church-state doctrine. The MCA full interview transcript was an additional primary text. The downloaded Fred Hampton Speaks collection was OCRed and checked; its principal speeches overlap those cited above. FBI surveillance reports were also downloaded and OCRed, but uncorroborated hostile characterisations were not used as positions. No position inferred from party membership alone. Community medical provision does not by itself establish government-provided universal healthcare. Criticism of male chauvinism does not establish a position on sex-specific law, so distinct-gender-roles remains null.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-27"
+  }
+ ]
 }

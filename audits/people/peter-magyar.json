@@ -2,7 +2,10 @@
  "id": "peter-magyar",
  "name": "Péter Magyar",
  "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": true,
  "role": "Hungarian prime minister since May 2026; Tisza party leader since 2024; MEP 2024-2026",
  "summary": "Magyar leads the Tisza party, which won a two-thirds majority in the April 2026 election. He campaigned on ending corruption, recovering frozen EU funds, restoring checks and balances and public services, while keeping Orbán-era border fence and a strict line on illegal migration. He calls himself a critical pro-European, backs NATO and eventual euro adoption, and avoided culture-war issues, though his government later moved to ease some LGBT restrictions.",
@@ -119,6 +122,46 @@
    "author": "XpatLoop",
    "url": "https://xpatloop.com/channels/2026/02/wealth-tax-and-euro-adoption-in-hungary-now-officially-promised-by-tisza-party.html",
    "usedFor": "Wealth tax, euro target date, Russian energy end by 2035, support for nuclear with Paks 2 review"
+  },
+  {
+   "id": "b1",
+   "kind": "program",
+   "title": "A működő és emberséges Magyarország alapjai (2026 programme; full 243-page document)",
+   "author": "TISZA Party, presented and led by Péter Magyar",
+   "url": "https://cdn.tisza.work/A%20m%C5%B1k%C3%B6d%C5%91%20%C3%A9s%20embers%C3%A9ges%20Magyarorsz%C3%A1g%20alapjai.pdf",
+   "usedFor": "Page-cited policy pledges, checked against later statements where available."
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Péter Magyar: an interview (10 January 2026; published 1 February)",
+   "author": "Péter Magyar interviewed by Nick Thorpe and Artemis",
+   "url": "https://nickthorpe.substack.com/p/peter-magyar",
+   "usedFor": "Full speaker-labelled interview on democracy, participation and peaceful electoral change."
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "Magyar Péter parliamentary speech, 7 September 2026",
+   "author": "Péter Magyar; parliamentary transcript reproduced by K-Monitor Parlamonitor",
+   "url": "https://parlamonitor.k-monitor.hu/proceedings/43026-4",
+   "usedFor": "Stated government priorities and claimed implementation, treated as his claims rather than independently verified outcomes."
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "AP Exclusive: Hungary’s Magyar vows accountability for Orbán era while holding firm on migration (21 October 2026)",
+   "author": "Péter Magyar interviewed by Justin Spike, Associated Press",
+   "url": "https://infonews.ca/news/7959400/ap-exclusive-hungarys-magyar-vows-accountability-for-orbn-era-while-holding-firm-on-migration/",
+   "usedFor": "Latest interview on taxation, social benefits, migration and minority-language education."
+  },
+  {
+   "id": "b5",
+   "kind": "primary",
+   "title": "Magyar Péter: Ötvenhat hősei a szabad Magyarországért adták életüket (23 October 2026)",
+   "author": "Péter Magyar; Government of Hungary",
+   "url": "https://kormany.hu/hirek/magyar-peter-otvenhat-hosei-a-szabad-magyarorszagert-adtak-eletuket",
+   "usedFor": "His statements praising the 1956 revolution, commemorating martyrs and rejecting repression."
   }
  ],
  "answers": {
@@ -128,7 +171,12 @@
    "rationale": "Programme raises public health spending to 7% of GDP, adds at least HUF 500bn a year, keeps all rural hospitals and cuts waiting times; this strengthens the state-funded system.",
    "sources": [
     "s2",
-    "s3"
+    "s3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "tax-the-wealthy": {
@@ -138,7 +186,12 @@
    "sources": [
     "s2",
     "s13",
-    "s14"
+    "s14",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "flat-income-tax": {
@@ -147,7 +200,12 @@
    "rationale": "Programme cuts income tax on minimum-wage earners to 9% and lowers it below the median wage while keeping 15% above; it describes a more progressive tax system.",
    "sources": [
     "s2",
-    "s13"
+    "s13",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "cut-consumption-tax": {
@@ -156,7 +214,12 @@
    "rationale": "Programme sets VAT at 0% on prescription medicines and 5% on healthy food and firewood.",
    "sources": [
     "s2",
-    "s3"
+    "s3",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "cut-welfare": {
@@ -165,7 +228,12 @@
    "rationale": "Programme expands welfare: doubles family allowance and childcare benefits, keeps 13th/14th month pensions, sets a HUF 120,000 minimum pension.",
    "sources": [
     "s2",
-    "s3"
+    "s3",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "no-business-privileges": {
@@ -174,7 +242,12 @@
    "rationale": "Programme pledges to end politically motivated subsidies and cut distortive subsidies to large multinationals; he attacks oligarchs' privileges in the EP.",
    "sources": [
     "s5",
-    "s13"
+    "s13",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "political-elite-corrupt": {
@@ -184,7 +257,12 @@
    "sources": [
     "s5",
     "s6",
-    "s2"
+    "s2",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "pronatalist-incentives": {
@@ -194,7 +272,8 @@
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "public-service-media": {
    "value": 2,
@@ -202,7 +281,12 @@
    "rationale": "Programme pledges to restore the independence of public media; he says every Hungarian deserves a public service media that broadcasts the truth, and proposed an independent oversight body.",
    "sources": [
     "s2",
-    "s10"
+    "s10",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "party-controls-media": {
@@ -211,7 +295,12 @@
    "rationale": "Contested: he states the aim as independent public media, but as prime minister he suspended the state news service.",
    "sources": [
     "s2",
-    "s10"
+    "s10",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "common-currency": {
@@ -221,7 +310,12 @@
    "sources": [
     "s2",
     "s14",
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "pool-sovereignty": {
@@ -231,14 +325,20 @@
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "international-criminal-courts": {
    "value": 1,
    "confidence": "high",
    "rationale": "Kept Hungary in the ICC and said a person wanted by the court entering Hungary must be detained, naming Netanyahu's case.",
    "sources": [
-    "s11"
+    "s11",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "reduce-immigration": {
@@ -249,7 +349,8 @@
     "s2",
     "s3",
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "open-borders": {
    "value": -2,
@@ -257,7 +358,12 @@
    "rationale": "Keeps the southern border fence and says Hungary will protect the EU external border and act firmly against illegal migration.",
    "sources": [
     "s2",
-    "s5"
+    "s5",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "term-limits": {
@@ -266,7 +372,12 @@
    "rationale": "Programme limits the prime minister to two terms; a constitutional amendment to that effect passed in June 2026.",
    "sources": [
     "s2",
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "unlimited-reelection": {
@@ -281,7 +392,12 @@
    "rationale": "Programme 'Bibó István' pledges to restore checks and balances and judicial independence and to end government by decree.",
    "sources": [
     "s2",
-    "s3"
+    "s3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "courts-bound-by-majority": {
@@ -290,7 +406,12 @@
    "rationale": "Programme restores judicial independence and checks on power; his later changes to the Constitutional Court are criticised by rights groups.",
    "sources": [
     "s2",
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "direct-votes": {
@@ -299,7 +420,8 @@
    "rationale": "Promised a binding referendum on Ukraine's EU membership, though not on laws generally.",
    "sources": [
     "s8"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "public-access-to-information": {
    "value": 1,
@@ -308,7 +430,8 @@
    "sources": [
     "s13",
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "open-government-data": {
    "value": 1,
@@ -316,7 +439,12 @@
    "rationale": "Programme pledges to increase transparency of state-held data and publish beneficial owners of private equity funds.",
    "sources": [
     "s13",
-    "s3"
+    "s3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "decide-locally": {
@@ -325,7 +453,12 @@
    "rationale": "Programme strengthens municipalities, returns powers taken from local government and decentralises decision-making.",
    "sources": [
     "s2",
-    "s13"
+    "s13",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "legalize-drugs": {
@@ -333,7 +466,12 @@
    "confidence": "medium",
    "rationale": "Programme promises a working, strict, human-centred drug policy.",
    "sources": [
-    "s3"
+    "s3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "empower-police-military": {
@@ -343,14 +481,20 @@
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "conscription": {
    "value": -1,
    "confidence": "medium",
    "rationale": "Programme says conscription will not be reinstated; he did not address the state's power to conscript in general.",
    "sources": [
-    "s2"
+    "s2",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "collective-defense": {
@@ -361,7 +505,8 @@
     "s2",
     "s7",
     "s8"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "stay-neutral-between-blocs": {
    "value": -2,
@@ -369,7 +514,12 @@
    "rationale": "Programme sets a Western orientation and strengthens NATO and EU ties; he promises Hungary a trustworthy NATO ally and full EU member.",
    "sources": [
     "s2",
-    "s8"
+    "s8",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "end-foreign-alliances": {
@@ -378,16 +528,26 @@
    "rationale": "Programme reinforces NATO and EU commitments; says Hungary will again be a reliable NATO partner.",
    "sources": [
     "s2",
-    "s7"
+    "s7",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "expand-nuclear": {
-   "value": 0,
-   "confidence": "low",
-   "rationale": "Programme supports nuclear energy but calls for a comprehensive review of the Paks 2 expansion.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Programme commits to meeting rising electricity demand by building a safe nuclear plant and studying small modular reactors, while ordering a full review of the Paks II project.",
    "sources": [
     "s14",
-    "s13"
+    "s13",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "animal-suffering-matters": {
@@ -396,7 +556,12 @@
    "rationale": "Programme creates a national animal-welfare authority, shelters and a ministry covering animal welfare.",
    "sources": [
     "s3",
-    "s13"
+    "s13",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abortion-legal": {
@@ -405,7 +570,8 @@
    "rationale": "Said current abortion rules are adequate and no one he knows wants to change them, while saying society should debate it and he will not decide.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "gender-parity-bodies": {
    "value": -1,
@@ -413,14 +579,20 @@
    "rationale": "Said he personally does not believe in gender quotas, while adding it is not for him to decide.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "minority-language-support": {
    "value": 1,
    "confidence": "medium",
    "rationale": "Demands guarantees for ethnic Hungarians' language, education and culture rights in Ukraine as a condition of EU talks.",
    "sources": [
-    "s7"
+    "s7",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "protect-kin-minorities": {
@@ -428,7 +600,12 @@
    "confidence": "high",
    "rationale": "Made Ukraine's EU path conditional on rights for ethnic Hungarians in Transcarpathia.",
    "sources": [
-    "s7"
+    "s7",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "diaspora-return-right": {
@@ -437,7 +614,8 @@
    "rationale": "Programme 'Vár a hazád' aims to bring 200,000 Hungarians abroad home within eight years.",
    "sources": [
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "nonpartisan-head-of-state": {
    "value": 1,
@@ -445,7 +623,8 @@
    "rationale": "Called President Sulyok unworthy to embody the unity of the nation and pressed him to resign.",
    "sources": [
     "s10"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "algorithmic-government": {
    "value": 1,
@@ -454,7 +633,8 @@
    "sources": [
     "s13",
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "raise-minimum-wage": {
    "value": null,
@@ -475,10 +655,13 @@
    "sources": []
   },
   "unions-good": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.52: Strengthen union rights.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "property-fundamental": {
    "value": null,
@@ -559,10 +742,13 @@
    "sources": []
   },
   "correct-racial-injustice": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Programme commits to a Roma equal-opportunity plan and to ending segregated schooling, but frames it as present-day uplift rather than redress for historical injustice.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "gender-social-construct": {
    "value": null,
@@ -571,10 +757,13 @@
    "sources": []
   },
   "preserve-national-culture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.203: Preserve inherited heritage.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "gradual-change": {
    "value": null,
@@ -613,10 +802,13 @@
    "sources": []
   },
   "drastic-climate-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Programme commits to cutting fossil-fuel use and CO2 emissions, doubling renewables by 2040 and subsidising low-emission technology, without calling for drastic measures.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "tech-solves-problems": {
    "value": null,
@@ -627,7 +819,7 @@
   "revolution-justified": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "experts-over-public": {
@@ -715,10 +907,13 @@
    "sources": []
   },
   "democracy-best": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He defended debate, compromise and criticism even when the public opposes his party.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "workers-councils": {
    "value": null,
@@ -741,7 +936,7 @@
   "political-violence-never": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "war-builds-character": {
@@ -751,10 +946,13 @@
    "sources": []
   },
   "separate-church-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Programme names church–state separation as the basis of its religious policy but pairs it with partnership, honouring the Vatican treaty and keeping established-church status.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "laws-from-scripture": {
    "value": null,
@@ -871,10 +1069,13 @@
    "sources": []
   },
   "direct-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "He pursued electoral system change and rejected calls for revolution in contemporary Hungary.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "means-match-ends": {
    "value": null,
@@ -993,7 +1194,7 @@
   "national-rebirth": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "territorial-expansion": {
@@ -1141,10 +1342,13 @@
    "sources": []
   },
   "racial-segregation-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "p.192: End segregated schooling.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "state-class-instrument": {
    "value": null,
@@ -1171,10 +1375,13 @@
    "sources": []
   },
   "proportional-representation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "p.120: More proportional elections.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "national-mission": {
    "value": null,
@@ -1261,10 +1468,13 @@
    "sources": []
   },
   "consent-of-governed": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He told parliament that power belongs to the people and said politicians represent and serve the people, a leaning toward popular sovereignty.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "trade-surplus": {
    "value": null,
@@ -1563,7 +1773,7 @@
   "precautionary-principle": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "annexed-territory-occupation": {
@@ -1573,10 +1783,13 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "p.133: Protect religious self-government.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "force-to-prevent-secession": {
    "value": null,
@@ -1603,10 +1816,13 @@
    "sources": []
   },
   "sovereign-above-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He committed to constitutional, parliamentary government and accountability for those wielding public power.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "space-expansion": {
    "value": null,
@@ -1693,10 +1909,13 @@
    "sources": []
   },
   "ban-cartels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "p.237: Break restrictive monopolies.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "no-bailouts": {
    "value": null,
@@ -1831,10 +2050,13 @@
    "sources": []
   },
   "animal-use-humane": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "pp.225–227: Regulated humane husbandry.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "noblesse-oblige": {
    "value": null,
@@ -1993,10 +2215,13 @@
    "sources": []
   },
   "budget-needs-parliament": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.65: Parliamentary budget amendments.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "single-official-language": {
    "value": null,
@@ -2029,15 +2254,18 @@
    "sources": []
   },
   "intervene-in-bloc": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He condemned Soviet military suppression of Hungary’s 1956 bid for freedom.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "corporate-influence": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "restrict-foreign-funding": {
@@ -2107,10 +2335,13 @@
    "sources": []
   },
   "national-law-over-international": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "p.122: Recognise EU-law primacy.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "religious-nation": {
    "value": null,
@@ -2139,7 +2370,7 @@
   "defeat-communism": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "mixed-public-service-providers": {
@@ -2221,10 +2452,13 @@
    "sources": []
   },
   "suppress-opposition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He said criticism and opposition to his own government would be healthy signs of democracy.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "punish-blasphemy": {
    "value": null,
@@ -2251,10 +2485,13 @@
    "sources": []
   },
   "participatory-democracy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He says he wants to involve people in decisions at local, national and European level, and his programme promises real public participation in lawmaking.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "intersecting-oppressions": {
    "value": null,
@@ -2371,10 +2608,13 @@
    "sources": []
   },
   "promulgated-standing-laws": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.120: Predictable, published lawmaking.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "racial-franchise": {
    "value": null,
@@ -2545,10 +2785,13 @@
    "sources": []
   },
   "martyrs-honoured": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He honoured the executed 1956 leaders as martyrs whose names are taught to children, without the sacral cult the statement describes.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "politics-spiritual-struggle": {
    "value": null,
@@ -2655,7 +2898,7 @@
   "person-over-state": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "spiritual-nature": {
@@ -2731,10 +2974,13 @@
    "sources": []
   },
   "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.206: Conserve for descendants.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "women-distinct-values": {
    "value": null,
@@ -2773,22 +3019,31 @@
    "sources": []
   },
   "collective-bargaining": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.52: Expand collective agreements.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "in-work-tax-credits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "p.56: Low-earner tax credits.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "fiscal-rules-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "p.65: Binding EU debt-rules.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "restructure-world-economy": {
    "value": null,
@@ -3151,10 +3406,13 @@
    "sources": []
   },
   "patriotism-serves-workers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He explicitly linked loving the nation with protecting hospitals, public workers and ordinary people’s livelihoods.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "material-over-identity": {
    "value": null,
@@ -3169,5 +3427,15 @@
    "sources": []
   }
  },
- "notes": "Press reports of the Tisza programme (s2, s3, s13, s14) were used because the 240-page document itself could not be downloaded; they are classed as program sources. Several outlets (Telex, Intellinews, Politico) returned 403 or were not opened. He avoided questions on same-sex marriage, the death penalty and Pride policy; those stay null. Most recent positions (2026) are used where earlier ones differ, e.g. on Ukraine."
+ "notes": "Press reports of the Tisza programme (s2, s3, s13, s14) were used because the 240-page document itself could not be downloaded; they are classed as program sources. Several outlets (Telex, Intellinews, Politico) returned 403 or were not opened. He avoided questions on same-sex marriage, the death penalty and Pride policy; those stay null. Most recent positions (2026) are used where earlier ones differ, e.g. on Ukraine.\n\nMerged with an independent gpt-6.1-sol audit: 33 answers taken from it, 24 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; earlier audit consulted only for notes and bibliography. The complete Hungarian-language 243-page TISZA programme was downloaded and searched, including all themes and the full blank list. Concise page locators refer to the printed page numbers, which match PDF page indices. Programme pledges are medium confidence, not proven outcomes. September parliamentary implementation claims are likewise medium unless independently established; the October AP interview and October 23 speech update earlier positions. The call for peaceful electoral change now does not negate his explicit approval of the 1956 uprising. Of the ten priority questions, revolution-justified has direct evidence; the remaining nine stay null. Anti-corruption rhetoric does not establish a Marxist theory of class history or exploitation. AI assistants supporting officials do not imply algorithms should take over government decision-making. General religious freedom does not answer the source of political authority. No inference from his former party or ideological labels.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-27"
+  }
+ ]
 }

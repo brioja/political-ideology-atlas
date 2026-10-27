@@ -2,7 +2,10 @@
  "id": "grover-cleveland",
  "name": "Grover Cleveland",
  "auditedAt": "2026-10-23",
- "auditor": "claude-haiku-5-5",
+ "auditor": [
+  "claude-haiku-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": false,
  "role": "US president (1885–1889, 1893–1897)",
  "summary": "A Democrat who favoured tariff reduction, sound money with a gold standard, civil service merit appointments and a limited federal government, and who opposed federal aid to individuals and the annexation of Hawaii. He also ordered federal troops into the 1894 railroad strike and pushed the Venezuela boundary dispute under the Monroe Doctrine.",
@@ -199,6 +202,110 @@
    "author": "Miller Center, University of Virginia",
    "url": "https://millercenter.org/the-presidency/presidential-speeches?field_president_target_id%5B22%5D=22",
    "usedFor": "Index of the speeches and messages used as primary sources"
+  },
+  {
+   "id": "b1",
+   "kind": "primary",
+   "title": "Presidential Problems (1904), complete text",
+   "author": "Grover Cleveland",
+   "url": "https://www.gutenberg.org/cache/epub/56060/pg56060.txt",
+   "usedFor": "Mature account of executive independence, Pullman intervention, finance and Venezuela; own text distinguished from quoted correspondence."
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Good Citizenship (1908), complete text: addresses of 1903 and 1907",
+   "author": "Grover Cleveland",
+   "url": "https://www.gutenberg.org/cache/epub/68159/pg68159.txt",
+   "usedFor": "Civic engagement, political corruption and patriotic commemorations; excludes publishers’ introduction."
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "State of the Union addresses, 1885–1896 (complete collection)",
+   "author": "Grover Cleveland",
+   "url": "https://www.gutenberg.org/cache/epub/5029/pg5029.txt",
+   "usedFor": "Trade, land, forestry, currency and Indigenous policies; years identified."
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "Second Inaugural Address, 4 March 1893",
+   "author": "Grover Cleveland",
+   "url": "https://millercenter.org/the-presidency/presidential-speeches/march-4-1893-second-inaugural-address",
+   "usedFor": "Limited government, competition, constitutional restraints and race."
+  },
+  {
+   "id": "b5",
+   "kind": "primary",
+   "title": "First Inaugural Address, 4 March 1885",
+   "author": "Grover Cleveland",
+   "url": "https://www.presidency.ucsb.edu/documents/inaugural-address-40",
+   "usedFor": "Consent, civil service and rights of Black citizens."
+  },
+  {
+   "id": "b6",
+   "kind": "primary",
+   "title": "Texas seed-relief veto, 16 February 1887",
+   "author": "Grover Cleveland",
+   "url": "https://www.presidency.ucsb.edu/documents/veto-message-237",
+   "usedFor": "Own veto and general anti-paternalism argument favouring voluntary charity."
+  },
+  {
+   "id": "b7",
+   "kind": "primary",
+   "title": "Immigration literacy-test veto, 2 March 1897",
+   "author": "Grover Cleveland",
+   "url": "https://www.presidency.ucsb.edu/documents/veto-message-31",
+   "usedFor": "Own defence of broad immigration against literacy restriction, qualified by earlier Chinese exclusion."
+  },
+  {
+   "id": "b8",
+   "kind": "primary",
+   "title": "Chinese exclusion message, 1 October 1888",
+   "author": "Grover Cleveland",
+   "url": "https://millercenter.org/the-presidency/presidential-speeches/october-1-1888-message-regarding-chinese-exclusion-act",
+   "usedFor": "Personally negotiated exclusion and racial incompatibility justification, not mere formal assent."
+  },
+  {
+   "id": "b9",
+   "kind": "primary",
+   "title": "Hawaiian annexation message, 18 December 1893",
+   "author": "Grover Cleveland",
+   "url": "https://www.presidency.ucsb.edu/documents/special-message-770",
+   "usedFor": "His personal withdrawal of annexation treaty and proposed restoration of Queen subject to amnesty."
+  },
+  {
+   "id": "b10",
+   "kind": "primary",
+   "title": "Message regarding the labour force, 22 April 1886",
+   "author": "Grover Cleveland",
+   "url": "https://millercenter.org/the-presidency/presidential-speeches/april-22-1886-message-regarding-us-labor-force",
+   "usedFor": "Voluntary federal arbitration, fair recognition of labour and rejection of coercion."
+  },
+  {
+   "id": "b13",
+   "kind": "scholarly",
+   "title": "Grover Cleveland: Domestic Affairs",
+   "author": "Henry F. Graff, Miller Center",
+   "url": "https://millercenter.org/president/cleveland/domestic-affairs",
+   "usedFor": "Personal record on civil service, labour, relief, patronage and financial policy."
+  },
+  {
+   "id": "b14",
+   "kind": "scholarly",
+   "title": "Grover Cleveland: Foreign Affairs",
+   "author": "Henry F. Graff, Miller Center",
+   "url": "https://millercenter.org/president/cleveland/foreign-affairs",
+   "usedFor": "Checks neutrality rhetoric against his own force deployments and territorial decisions."
+  },
+  {
+   "id": "b15",
+   "kind": "reference",
+   "title": "Autograph draft: Woman’s Mission and Woman’s Clubs (published May 1905)",
+   "author": "Christie’s, Forbes Collection of American Historical Documents",
+   "url": "https://www.christies.com/en/lot/lot-3886853",
+   "usedFor": "Catalog reproduces substantial passages from personally corrected manuscript; medium as transmitted text."
   }
  ],
  "answers": {
@@ -216,11 +323,12 @@
   },
   "markets-allocate-better": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred: his 1887 message praises healthy, free competition that lowers prices and condemns combinations that fix them, which suggests support for market competition over administered prices, though he never compared markets with government planning.",
+   "confidence": "medium",
+   "rationale": "His second inaugural defended fair competition for improving prices and independent enterprise.",
    "sources": [
-    "s5"
-   ]
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "public-ownership": {
    "value": null,
@@ -252,7 +360,12 @@
    "rationale": "His 1888 address calls for federal power to restrain combinations and trusts and to relieve citizens of their exactions, which is clearly implied support for tighter regulation of large corporations.",
    "sources": [
     "s2",
-    "s6"
+    "s6",
+    "b4"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "cut-welfare": {
@@ -262,7 +375,12 @@
    "sources": [
     "s11",
     "s12",
-    "s1"
+    "s1",
+    "b6"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "worker-ownership": {
@@ -324,7 +442,12 @@
    "confidence": "medium",
    "rationale": "His 1893 inaugural calls for careful observance of the distinction between federal powers and those reserved to the states or the people, which supports decisions being made at the lowest level.",
    "sources": [
-    "s2"
+    "s2",
+    "b4"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "rehabilitation": {
@@ -339,7 +462,12 @@
    "rationale": "He called polygamy in the territories destructive of the family relation and offensive to the moral sense, and sought to repress it, which implies that family structure matters to social health.",
    "sources": [
     "s6",
-    "s1"
+    "s1",
+    "b15"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "same-sex-marriage": {
@@ -373,10 +501,13 @@
    "sources": []
   },
   "preserve-national-culture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Holiday Observance, 1907 address: demanded active remembrance of national achievements and founders.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "gradual-change": {
    "value": null,
@@ -390,7 +521,13 @@
    "rationale": "He approved Chinese exclusion and anti-contract-labour laws but vetoed a literacy test and said there was no case for further restriction on grounds of overcrowding, so his record points both ways.",
    "sources": [
     "s19",
-    "s20"
+    "s20",
+    "b7",
+    "b8"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "empower-international-orgs": {
@@ -405,7 +542,12 @@
    "rationale": "He urged lower tariffs, free raw materials and reciprocity treaties, and described freer exchange of commodities as widening markets for American products, though he did not call free trade universally beneficial.",
    "sources": [
     "s6",
-    "s7"
+    "s7",
+    "b3"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "nation-first": {
@@ -415,7 +557,8 @@
    "sources": [
     "s21",
     "s9"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "humanitarian-intervention": {
    "value": null,
@@ -456,7 +599,7 @@
   "revolution-justified": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "experts-over-public": {
@@ -501,7 +644,12 @@
    "rationale": "His 1887 and 1893 messages call protective tariffs unjust and call for reduced duties on necessaries and raw materials, while also asking that manufacturers not be imperiled by sudden change, so the position is a cut in protection rather than its abolition.",
    "sources": [
     "s5",
-    "s7"
+    "s7",
+    "b3"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "state-directs-investment": {
@@ -516,7 +664,12 @@
    "rationale": "He objected to land accumulation and to monopolies of public land by corporations and speculators, and favoured distributing land to settlers.",
    "sources": [
     "s4",
-    "s6"
+    "s6",
+    "b3"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abolish-money-wages": {
@@ -546,7 +699,7 @@
   "monarchy-legitimate": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "democracy-best": {
@@ -554,7 +707,12 @@
    "confidence": "medium",
    "rationale": "His 1885 inaugural says the democratic principle needs no apology and that the surest guaranty of good government is its fearless and faithful application, though he did not address voters choosing badly.",
    "sources": [
-    "s1"
+    "s1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "direct-votes": {
@@ -588,7 +746,8 @@
    "sources": [
     "s16",
     "s17"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "war-builds-character": {
    "value": null,
@@ -639,10 +798,13 @@
    "sources": []
   },
   "indigenous-land-authority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "1896 message sought replacing tribal courts and common lands, preferably through negotiated consent.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "colonial-reparations": {
    "value": null,
@@ -729,7 +891,8 @@
    "sources": [
     "s1",
     "s17"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "means-match-ends": {
    "value": null,
@@ -821,7 +984,8 @@
    "rationale": "His 1893 inaugural calls for the application of business principles to public affairs, but he did not describe citizens as customers who can leave.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "positive-liberty": {
    "value": null,
@@ -854,7 +1018,8 @@
    "sources": [
     "s11",
     "s1"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "national-rebirth": {
    "value": null,
@@ -868,7 +1033,12 @@
    "rationale": "He withdrew the 1893 Hawaiian annexation treaty and called annexation without consent a wrong, though he also asserted the Monroe Doctrine against European expansion in the Americas.",
    "sources": [
     "s15",
-    "s21"
+    "s21",
+    "b9"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "personal-loyalty-rule": {
@@ -954,7 +1124,12 @@
    "confidence": "medium",
    "rationale": "His 1893 Hawaii message treats the Hawaiian government as the lawful government and recommends restoring the Queen, rather than allowing a foreign-backed provisional government to decide the country's fate.",
    "sources": [
-    "s15"
+    "s15",
+    "b9"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "force-without-un": {
@@ -982,10 +1157,13 @@
    "sources": []
   },
   "class-collaboration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "His labour message proposed voluntary arbitration reconciling employers and workers as national partners.",
+   "sources": [
+    "b10"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "sacrifice-heritage": {
    "value": null,
@@ -1006,10 +1184,13 @@
    "sources": []
   },
   "distinct-gender-roles": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "His 1905 manuscript assigned women a divinely ordained domestic mission rather than political participation.",
+   "sources": [
+    "b15"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "ban-interest": {
    "value": null,
@@ -1041,7 +1222,8 @@
    "rationale": "His 1886 message says the purpose of opening the country to alien elements was to invite assimilation, which supports expecting immigrants to join the national culture, though he did not require them to give up their original culture.",
    "sources": [
     "s4"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "elite-replacement": {
    "value": null,
@@ -1069,12 +1251,12 @@
   },
   "political-elite-corrupt": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "Inferred: his 1885 annual message says office promises debauch the suffrage and his inaugural condemns the corrupting influence of partisan rewards, which suggests distrust of political elites, though he did not call them out of touch.",
+   "confidence": "medium",
+   "rationale": "Good Citizenship, 1903 address: denounced widespread trading of public duties for gain.",
    "sources": [
-    "s3",
-    "s1"
-   ]
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "heritable-defect-limits": {
    "value": null,
@@ -1095,7 +1277,8 @@
    "sources": [
     "s2",
     "s11"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1104,12 +1287,19 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "His 1885 inaugural calls for equal and exact justice to all men, and his 1893 inaugural says equality before the law should be conceded in all parts of the land regardless of race or colour; he did not address moral worth itself.",
+   "value": 1,
+   "confidence": "low",
+   "rationale": "He called for 'equal and exact justice to all men' and equality before the law regardless of race or colour, but backed Chinese exclusion and opposed equal political rights for women.",
    "sources": [
     "s1",
-    "s2"
+    "s2",
+    "b4",
+    "b8",
+    "b15"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "socialism-one-country": {
@@ -1160,7 +1350,12 @@
    "rationale": "His 1885 inaugural says the Government is the people's government and that power is exercised by the people's choice; his 1893 Hawaii message says the provisional government never existed with the consent of the people.",
    "sources": [
     "s1",
-    "s15"
+    "s15",
+    "b5"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "trade-surplus": {
@@ -1188,7 +1383,8 @@
    "sources": [
     "s2",
     "s5"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "ban-extremist-parties": {
    "value": null,
@@ -1203,10 +1399,13 @@
    "sources": []
   },
   "separated-powers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Presidential Problems, Executive Independence: defended distinct, mutually independent constitutional branches.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "vanguard-party": {
    "value": null,
@@ -1227,10 +1426,13 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In the 1894 Pullman strike he had his Attorney-General seek sweeping injunctions against the strike leaders and sent troops, justified as protecting the mails and interstate commerce, though he never argued for restricting strikes in general.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "population-causes-poverty": {
    "value": null,
@@ -1239,10 +1441,13 @@
    "sources": []
   },
   "diversity-weakens-cohesion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His exclusion message claimed mixing Chinese and American racial-social habits injured both nations.",
+   "sources": [
+    "b8"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "offices-by-lottery": {
    "value": null,
@@ -1346,7 +1551,8 @@
    "rationale": "His 1885 inaugural endorses a policy of neutrality and entangling alliance with none, as set out by Washington and Jefferson, which implies keeping out of permanent alliances.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "abolish-rental-housing": {
    "value": null,
@@ -1516,7 +1722,8 @@
    "rationale": "His 1893 Hawaii message says the annexation of Hawaii without the consent of its government or people would be wrongful and that a substantial wrong must be repaired.",
    "sources": [
     "s15"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "subordinate-church-to-state": {
    "value": null,
@@ -1561,10 +1768,13 @@
    "sources": []
   },
   "sovereign-above-law": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "His second inaugural pledged obedience to constitutional commands and their restraints on office.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "space-expansion": {
    "value": null,
@@ -1662,14 +1872,22 @@
    "rationale": "His 1888 message calls trusts, combinations and monopolies a danger to citizens and says they should be sternly regulated and restrained; his 1887 message calls trusts that regulate supply and price an improper restraint on competition.",
    "sources": [
     "s5",
-    "s6"
+    "s6",
+    "b4"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "no-bailouts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "His second inaugural rejected public subsidies rescuing ill-advised or languishing businesses.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "courts-bound-by-majority": {
    "value": null,
@@ -1720,16 +1938,22 @@
    "sources": []
   },
   "civilizing-tutelage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He treated Native Americans as 'the nation's wards' to be led 'through the paths of civilization and education' to citizenship, but he opposed annexing Hawaii.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "patriotic-education": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Inferred: he praised commemorations that 'teach children' the value of American institutions and 'the nobility of patriotic citizenship', but did not speak about schools.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "end-racial-preferences": {
    "value": null,
@@ -1738,13 +1962,13 @@
    "sources": []
   },
   "public-money-creation": {
-   "value": -1,
-   "confidence": "low",
-   "rationale": "Inferred: he vetoed silver coinage and the issue of Treasury notes and defended a gold reserve and sound currency, which suggests opposition to new money created by public authority, though he did not address private bank lending.",
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He repeatedly urged retiring the government's greenbacks and Treasury notes, letting national banks issue currency, and said sound finance requires that 'our Government abandons the banking business'.",
    "sources": [
-    "s13",
-    "s14"
-   ]
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "capitalism-adapts": {
    "value": null,
@@ -1789,10 +2013,13 @@
    "sources": []
   },
   "elective-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Presidential Problems, Executive Independence: demanded presidents reflect the nation’s popular choice.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "minority-veto": {
    "value": null,
@@ -1809,7 +2036,7 @@
   "parliament-supreme": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "animal-suffering-matters": {
@@ -1831,10 +2058,13 @@
    "sources": []
   },
   "withdraw-from-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Good Citizenship, 1903 address: demanded sustained political involvement from every citizen.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "mass-culture-pacifies": {
    "value": null,
@@ -1950,7 +2180,12 @@
    "rationale": "His 1885 inaugural calls for merit and competency over party service, and his 1888 civil service message proposes compulsory competitive examinations and certification for public posts.",
    "sources": [
     "s1",
-    "s18"
+    "s18",
+    "b3"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "foreign-takeover-block": {
@@ -2008,10 +2243,13 @@
    "sources": []
   },
   "consumerism-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Good Citizenship, 1903 address: condemned material ostentation eclipsing citizenship.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "arm-foreign-insurgents": {
    "value": -2,
@@ -2020,7 +2258,8 @@
    "sources": [
     "s22",
     "s6"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "intervene-in-bloc": {
    "value": null,
@@ -2029,10 +2268,13 @@
    "sources": []
   },
   "corporate-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His 1888 message said manufacturers' fortunes came from 'the discriminating favor of the Government' and that corporations 'are fast becoming the people's masters', though he did not address lobbying or campaign money.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "restrict-foreign-funding": {
    "value": null,
@@ -2053,10 +2295,13 @@
    "sources": []
   },
   "job-guarantee": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He opposed federal public-work employment relief during the depression despite Coxey’s appeal.",
+   "sources": [
+    "b13"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "democratic-peace": {
    "value": null,
@@ -2076,7 +2321,13 @@
    "rationale": "His 1893 Hawaii message condemns the landing of United States forces and the recognition of a provisional government as an improper intervention in the internal affairs of another state, though his Venezuela position asserted a broader right.",
    "sources": [
     "s15",
-    "s21"
+    "s21",
+    "b9",
+    "b14"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "industrial-unions": {
@@ -2343,7 +2594,12 @@
    "rationale": "His 1885 inaugural calls for neutrality, rejecting share in foreign broils, and his 1895 neutrality proclamation kept the United States out of the Cuban conflict.",
    "sources": [
     "s1",
-    "s22"
+    "s22",
+    "b5"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "dynastic-succession": {
@@ -2395,10 +2651,13 @@
    "sources": []
   },
   "racial-franchise": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His first inaugural explicitly affirmed freed Black citizens’ constitutional rights and privileges.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "online-participation": {
    "value": null,
@@ -2437,10 +2696,13 @@
    "sources": []
   },
   "wealth-concentration-endangers-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "1888 message described monopoly capital as threatening free institutions and mastering citizens.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "open-lgbt-military-service": {
    "value": null,
@@ -2467,10 +2729,13 @@
    "sources": []
   },
   "charity-over-state-aid": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "His seed veto explicitly preferred private charity and warned federal aid displaced it.",
+   "sources": [
+    "b6"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "term-limits": {
    "value": null,
@@ -2725,10 +2990,13 @@
    "sources": []
   },
   "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His personal force deployments in Panama and Brazil extended beyond repelling attack on America.",
+   "sources": [
+    "b14"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "language-defines-nation": {
    "value": null,
@@ -2761,10 +3029,13 @@
    "sources": []
   },
   "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "1894 message demanded permanent forest reserves maintaining long-term timber supplies.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "women-distinct-values": {
    "value": null,
@@ -2886,7 +3157,8 @@
    "rationale": "Inferred: he refused federal seed relief to farmers and wanted government kept from supporting the people, which suggests opposition to state-guaranteed farm prices, though no price-support measure is discussed.",
    "sources": [
     "s11"
-   ]
+   ],
+   "auditor": "claude-haiku-5-5"
   },
   "keep-nuclear-weapons": {
    "value": null,
@@ -2985,10 +3257,13 @@
    "sources": []
   },
   "women-suffrage": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "His 1905 manuscript opposed suffrage as undermining wives’ and mothers’ character.",
+   "sources": [
+    "b15"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "religion-oppresses-women": {
    "value": null,
@@ -3039,10 +3314,13 @@
    "sources": []
   },
   "indirect-election": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "In Presidential Problems he wrote that the President's selection 'should rest upon the direct and independent expression of the people's choice', faulted the electoral system for letting a popular minority win, and welcomed the rejection of choice by Congress.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "national-church-status": {
    "value": null,
@@ -3128,7 +3406,12 @@
    "rationale": "He argued that tariff duties on necessaries of life raise prices for workers and farmers and urged reducing them, which is close to, though not the same as, cutting taxes on everyday goods.",
    "sources": [
     "s5",
-    "s7"
+    "s7",
+    "b3"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "targeted-social-spending": {
@@ -3149,7 +3432,12 @@
    "rationale": "His 1893 inaugural rejects bounties and subsidies that burden labour to aid enterprises in which citizens have no concern, and he calls governmental favouritism a corrupting dependence.",
    "sources": [
     "s2",
-    "s6"
+    "s6",
+    "b4"
+   ],
+   "auditor": [
+    "claude-haiku-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "no-denominational-politics": {
@@ -3237,5 +3525,15 @@
    "sources": []
   }
  },
- "notes": "Texts are the National Archives transcripts as published by the Miller Center. The presidency.ucsb.edu copies were not downloaded. Many statements have no recorded position in his messages. Answers are for his presidential-era positions, mostly from his own official messages and vetoes. Inferences are marked low."
+ "notes": "Texts are the National Archives transcripts as published by the Miller Center. The presidency.ucsb.edu copies were not downloaded. Many statements have no recorded position in his messages. Answers are for his presidential-era positions, mostly from his own official messages and vetoes. Inferences are marked low.\n\nMerged with an independent gpt-6.1-sol audit: 30 answers taken from it, 18 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass using two complete later works as well as the complete annual messages. Post-presidential suffrage opposition is explicit. Indigenous allotment enthusiasm is qualified by his later reservations about premature allotment and sales, while his 1896 proposal still sought ending tribal courts and common ownership. Public homestead distribution does not establish redistributing private estates or community land tenure; priority items remain null. Religious analogies and invocations do not establish the requested theology of political power. No historical inference used.",
+ "passes": [
+  {
+   "auditor": "claude-haiku-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-27"
+  }
+ ]
 }
