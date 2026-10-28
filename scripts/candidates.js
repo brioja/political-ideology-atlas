@@ -7,6 +7,7 @@
 // in at least MIN_LINKS Wikipedia languages. To show that floor doesn't drop anyone who belongs, a
 // sample of people just below it is fetched too, and the catalog keeps only people with more views
 // than anyone in that sample: below that level the list could be incomplete, above it it isn't.
+// The floor is waived for anyone in English Wikipedia's monthly top-1,000 articles.
 // People who already have an audit stay in the catalog regardless.
 //   node scripts/candidates.js
 const fs = require("fs");
@@ -30,22 +31,33 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/
 // reformer, suffragist, feminist, anarchist. Philosophers and economists bring in thinkers such as
 // Adam Smith, Engels, Friedman and Rand, whom Wikidata never calls political. Plain "activist" and
 // "philanthropist" are left out because Wikidata gives them to celebrities, and "writer" is too broad.
+// Also pundit (Wikidata often tags commentators plain "pundit", not "political pundit": Tucker Carlson),
+// monarch as an occupation (rulers with no office record: Genghis Khan), jihadist, terrorist and
+// military leader (Osama bin Laden). "Podcaster", "journalist" and plain "activist" stay out: they
+// bring in entertainers and reporters wholesale.
 const OCCUPATIONS = ["Q82955", "Q11499147", "Q11499163", "Q1238570", "Q15994177", "Q18930007", "Q4964182", "Q188094",
   "Q28692502", "Q1021386", "Q1476215", "Q8359428", "Q16323111", "Q3578589", "Q15627169", "Q3242115", "Q16611574",
   "Q27532437", "Q34074720", "Q12359071"].map((q) => `wd:${q}`).join(" ");
+const OCCUPATIONS_2 = ["Q116", "Q21512362", "Q12414919", "Q1402561"].map((q) => `wd:${q}`).join(" ");
+// Plain "pundit" also tags football and TV pundits (Ian Wright, Sanjay Gupta), so it counts only for
+// people with no sports, coaching, wrestling or medical occupation.
+const NOT_PUNDITS = ["Q2066131", "Q2986228", "Q628099", "Q13474373", "Q39631"].map((q) => `wd:${q}`).join(" ");
 // "Position held" counts only for political offices: public office, head of state or government,
 // monarch, legislator. Any position let in goodwill ambassadors, CEOs and trustees (Messi, Bezos).
 const OFFICES = ["Q294414", "Q48352", "Q2285706", "Q116", "Q4175034"].map((q) => `wd:${q}`).join(" ");
 // Each way in is its own query, merged here: as one UNION the query timed out on QLever.
 const BRANCHES = [
   `VALUES ?o { ${OCCUPATIONS} } ?item wdt:P106 ?o .`,
+  `VALUES ?o { ${OCCUPATIONS_2} } ?item wdt:P106 ?o .`,
+  `?item wdt:P106 wd:Q1642960 . FILTER NOT EXISTS { VALUES ?x { ${NOT_PUNDITS} } ?item wdt:P106/wdt:P279* ?x }`,
   `VALUES ?office { ${OFFICES} } ?item wdt:P39 ?pos . ?pos wdt:P31*/wdt:P279* ?office .`,
 ];
-const query = (branch, linkFilter) => `${PREFIX}
+const query = (branch, linkFilter, extra = "") => `${PREFIX}
 SELECT ?item (SAMPLE(?article) AS ?wiki) (SAMPLE(?name) AS ?label) (SAMPLE(?g) AS ?gender)
   (SAMPLE(?birth) AS ?born) (SAMPLE(?death) AS ?died) (SAMPLE(?contName) AS ?continent) (SAMPLE(?iso) AS ?countryCode) (SAMPLE(?birthIso) AS ?birthCode)
   (SAMPLE(?l) AS ?links) WHERE {
   ${branch}
+  ${extra}
   ?item wdt:P31 wd:Q5 ; wikibase:sitelinks ?l .
   FILTER(${linkFilter})
   ?article schema:about ?item . FILTER(STRSTARTS(STR(?article), "https://en.wikipedia.org/wiki/"))
@@ -109,6 +121,19 @@ const cache = new Map(fs.existsSync(CACHE) ? fs.readFileSync(CACHE, "utf8").spli
   .map((l) => JSON.parse(l)).map((e) => [e.key, e.views]) : []);
 const remember = (key, n) => (fs.appendFileSync(CACHE, JSON.stringify({ key, views: n }) + "\n"), cache.set(key, n), n);
 
+// QLever and Wikidata's own endpoint often time out or run out of memory partway through the run,
+// so each SPARQL result is kept for the month (the views period changes monthly too): a rerun
+// repeats only the queries that hadn't come back.
+const QUERY_CACHE = path.join(path.dirname(CACHE), `sparql-${new Date().toISOString().slice(0, 7)}`);
+fs.mkdirSync(QUERY_CACHE, { recursive: true });
+async function cachedSparql(q) {
+  const file = path.join(QUERY_CACHE, require("crypto").createHash("sha1").update(q).digest("hex") + ".json");
+  if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, "utf8"));
+  const rows = await sparql(q);
+  fs.writeFileSync(file, JSON.stringify(rows));
+  return rows;
+}
+
 async function views(p) {
   const t = encodeURIComponent(titleOf(p.wikipedia).replace(/ /g, "_"));
   const key = `${t}|${ymd(start)}-${ymd(end)}`;
@@ -124,6 +149,23 @@ async function views(p) {
     await sleep(retryAfter || Math.min(3000 * 2 ** attempt, 120000));
   }
 }
+// English Wikipedia's monthly top-1,000 articles over the same 12 months. Someone who qualifies and
+// shows up there is in the catalog however few languages their article has (new politicians with a
+// burst of attention, e.g. Francesca Hong, are in under 10 languages and so never reach the sample).
+async function topTitles() {
+  const file = path.join(QUERY_CACHE, `top-${ymd(start)}-${ymd(end)}.json`);
+  if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, "utf8"));
+  const names = new Set();
+  for (let d = new Date(start); d <= end; d.setUTCMonth(d.getUTCMonth() + 1)) {
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const res = await fetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${d.getUTCFullYear()}/${m}/all-days`, { headers: HEADERS });
+    if (!res.ok) throw new Error(`${res.status} for top articles ${d.getUTCFullYear()}-${m}`);
+    for (const a of (await res.json()).items[0].articles) if (!a.article.includes(":")) names.add(a.article.replace(/_/g, " "));
+  }
+  fs.writeFileSync(file, JSON.stringify([...names]));
+  return [...names];
+}
+
 async function fetchViews(list, label) {
   let next = 0, done = 0;
   await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
@@ -142,7 +184,7 @@ async function nationalityFromDescription(people) {
   const ids = people.filter((p) => p.wikidata).map((p) => p.wikidata);
   const byId = new Map(people.map((p) => [p.wikidata, p]));
   for (let i = 0; i < ids.length; i += 300) {
-    const rows = await sparql(`${PREFIX}
+    const rows = await cachedSparql(`${PREFIX}
 SELECT ?item (SAMPLE(?d) AS ?desc) (GROUP_CONCAT(DISTINCT CONCAT(?iso, "=", ?dem); separator="|") AS ?nations) WHERE {
   VALUES ?item { ${ids.slice(i, i + 300).map((q) => `wd:${q}`).join(" ")} }
   ?item wdt:P27 ?c . ?c wdt:P297 ?iso . ?c wdt:P1549 ?dem . FILTER(LANG(?dem) = "en")
@@ -160,13 +202,20 @@ SELECT ?item (SAMPLE(?d) AS ?desc) (GROUP_CONCAT(DISTINCT CONCAT(?iso, "=", ?dem
 }
 
 async function main() {
-  const candidates = async (linkFilter) => {
+  const candidates = async (linkFilter, extra) => {
     const byId = new Map();
-    for (const branch of BRANCHES) for (const b of await sparql(query(branch, linkFilter))) byId.set(b.item.value, b);
+    for (const branch of BRANCHES) for (const b of await cachedSparql(query(branch, linkFilter, extra))) byId.set(b.item.value, b);
     return [...byId.values()].sort((a, b) => a.item.value.localeCompare(b.item.value)).map(toPerson);
   };
   const above = await candidates(`xsd:integer(?l) >= ${MIN_LINKS}`);
   console.log(`${above.length} candidates in at least ${MIN_LINKS} languages`);
+  const names = await topTitles();
+  const lit = (t) => JSON.stringify(t) + "@en";
+  for (let i = 0; i < names.length; i += 500) {
+    const extra = `VALUES ?name { ${names.slice(i, i + 500).map(lit).join(" ")} } ?article schema:name ?name .`;
+    above.push(...await candidates(`xsd:integer(?l) < ${MIN_LINKS}`, extra));
+  }
+  console.log(`${above.length} with those in the monthly top-1,000 lists below the language floor`);
   // A deterministic ~1% sample of those below the floor: Wikidata ids ending in "37".
   const sample = (await candidates(`xsd:integer(?l) < ${MIN_LINKS} && STRENDS(STR(?item), "37")`)).slice(0, SAMPLE_BELOW);
   console.log(`Sampled ${sample.length} people below the floor`);
@@ -179,10 +228,18 @@ async function main() {
   const old = readJson(CATALOG);
   const audited = new Set(fs.readdirSync(PEOPLE_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)));
   const oldByTitle = new Map(old.people.map((p) => [titleOf(p.wikipedia), p]));
+  // Match by Wikidata id first: a renamed article ("Joseph II, Holy Roman Emperor" -> "Joseph II")
+  // must keep its id, or its audit is orphaned. Views count only under the current title, so a
+  // recent rename also adds the old title's views.
+  const oldByQid = new Map(old.people.filter((p) => p.wikidata).map((p) => [p.wikidata, p]));
+  const renamed = above.filter((p) => oldByQid.has(p.wikidata) && titleOf(oldByQid.get(p.wikidata).wikipedia) !== titleOf(p.wikipedia));
+  const oldTitles = renamed.map((p) => ({ wikipedia: oldByQid.get(p.wikidata).wikipedia, p }));
+  await fetchViews(oldTitles, "renamed");
+  for (const o of oldTitles) o.p.views12m += o.views12m;
   const people = [];
   const seen = new Set();
   for (const p of above.filter((p) => p.views12m > cutoff).sort((a, b) => b.views12m - a.views12m)) {
-    const prev = oldByTitle.get(titleOf(p.wikipedia));
+    const prev = oldByQid.get(p.wikidata) || oldByTitle.get(titleOf(p.wikipedia));
     const id = prev ? prev.id : slug(titleOf(p.wikipedia));
     if (seen.has(id)) continue;
     seen.add(id);
@@ -197,8 +254,8 @@ async function main() {
   fs.writeFileSync(CATALOG, JSON.stringify({
     _comment: "People to audit, generated by scripts/candidates.js from Wikidata (political occupation, cause activist, philosopher or economist, or a political office held) and ranked by English Wikipedia views. `living` is a hint for auditors to verify.",
     criteria: { occupations: ["politician", "political activist", "political pundit", "political scientist", "political theorist",
-      "political philosopher", "philosopher", "economist", "cause activists (women's rights, civil rights, human rights, social, peace, environment), trade unionist, revolutionary, social reformer, suffragist, feminist, anarchist"], orPoliticalOfficeHeld: ["public office", "head of state",
-      "head of government", "monarch", "legislator"], minLanguages: MIN_LINKS, minViews12m: cutoff },
+      "political philosopher", "philosopher", "economist", "pundit", "monarch", "jihadist", "terrorist", "military leader", "cause activists (women's rights, civil rights, human rights, social, peace, environment), trade unionist, revolutionary, social reformer, suffragist, feminist, anarchist"], orPoliticalOfficeHeld: ["public office", "head of state",
+      "head of government", "monarch", "legislator"], minLanguages: MIN_LINKS, minLanguagesWaivedFor: "articles in English Wikipedia's monthly top 1,000", minViews12m: cutoff },
     viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
     people,
   }, null, 1) + "\n");
