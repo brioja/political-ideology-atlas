@@ -145,8 +145,10 @@ disagree, the higher tier wins.
 5. **Secondhand account of views, and all tertiary sources:** a reporter's paraphrase of what
    someone thinks; and Wikipedia, other encyclopedias, OnTheIssues and similar compilations, for
    views and record alike. Never evidence on its own: use it only to find tiers 1-4 (follow its
-   citations to the report or document and cite that). If nothing better turns up, the answer is
-   null.
+   citations to the report or document and cite that). Check the original yourself: a quotation on
+   Wikiquote or in an article can be cut, misattributed or out of context. If the cited original
+   is blocked or offline, look for it elsewhere (an archive.org copy, another site hosting the same
+   text, the official record) before giving up. If nothing better turns up, the answer is null.
 Inference stays as above: never for living people, `low` with "Inferred:" for historical figures.
 
 Confidence:
