@@ -2,7 +2,10 @@
  "id": "c-joseph-vijay",
  "name": "C. Joseph Vijay",
  "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": true,
  "role": "Chief Minister of Tamil Nadu (since 10 May 2026); president of Tamilaga Vettri Kazhagam (TVK); former film actor",
  "summary": "Former Tamil film actor who founded TVK in 2024 and led it to 108 seats in the 2026 Tamil Nadu election. The party calls itself secular and egalitarian, follows Periyar, Kamaraj and Ambedkar, rejects atheism, backs state autonomy and the Tamil-English two-language policy, and opposes NEET. Its manifesto centres on cash transfers, health cover, farm prices and women's safety.",
@@ -87,6 +90,46 @@
    "author": "The South First",
    "url": "https://thesouthfirst.com/tamilnadu/tvks-resolutions-ahead-of-2026-elections-recipe-for-change-or-just-political-pomp/",
    "usedFor": "November 2024 resolutions: federalism, NEET, liquor, Tamil culture."
+  },
+  {
+   "id": "b1",
+   "kind": "program",
+   "title": "People’s Election Manifesto 2026, Tamil original",
+   "author": "Tamilaga Vettri Kazhagam, led and released by C. Joseph Vijay",
+   "url": "https://voterlist.co.in/wp-content/uploads/2026/04/TVK_MANIFESTO_2026_-1.pdf",
+   "usedFor": "Original document; PDF page numbers used in rationales"
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "Second anniversary speech, February 26, 2025, Tamil text",
+   "author": "C. Joseph Vijay, reproduced by Hindu Tamil Thisai",
+   "url": "https://www.hindutamil.in/news/tamilnadu/1352349-vijay-full-speech-in-tvk-2nd-anniversary.html",
+   "usedFor": "His own quoted speech; other speakers excluded"
+  },
+  {
+   "id": "b4",
+   "kind": "reference",
+   "title": "Maiden public speech at Vikravandi, October 27, 2024",
+   "author": "Press Trust of India, via ThePrint",
+   "url": "https://theprint.in/india/in-maiden-public-speech-tvk-leader-vijay-targets-dmk-speaks-out-against-neet/2331111/",
+   "usedFor": "His quoted commitments on equality, secularism, belief and political methods"
+  },
+  {
+   "id": "b5",
+   "kind": "reference",
+   "title": "2026 TN election: Rs 2,500/month for women, MSP for fish in TVK manifesto, April 16, 2026",
+   "author": "DT Next Bureau",
+   "url": "https://www.dtnext.in/amp/story/news/politics/2026-tn-election-rs-2500month-for-women-msp-for-fish-in-tvk-manifesto",
+   "usedFor": "His personal launch and economic, healthcare and farm commitments"
+  },
+  {
+   "id": "b6",
+   "kind": "reference",
+   "title": "Vijay’s foreign policy challenge: Sri Lanka, May 12, 2026",
+   "author": "N. Manoharan and Saanvi Banyana, Indian Express",
+   "url": "https://indianexpress.com/article/opinion/columns/vijay-foreign-policy-challenge-sri-lanka-tvk-tamils-fishermen-10685398/",
+   "usedFor": "Documented Sri Lankan Tamil policy; authors’ predictions excluded"
   }
  ],
  "answers": {
@@ -95,7 +138,12 @@
    "confidence": "high",
    "rationale": "The manifesto promises every family a Rs 25 lakh state health-insurance card covering major treatments, plus a free annual full-body check-up for every resident of Tamil Nadu.",
    "sources": [
-    "s1"
+    "s1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "raise-minimum-wage": {
@@ -137,7 +185,7 @@
   "regulate-corporations": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "cut-welfare": {
@@ -145,7 +193,12 @@
    "confidence": "medium",
    "rationale": "The manifesto he leads builds on extensive welfare: monthly cash for women heads of household, ration and pension schemes, and allowances for many worker groups. It proposes expansion, not cuts.",
    "sources": [
-    "s1"
+    "s1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "worker-ownership": {
@@ -165,7 +218,12 @@
    "confidence": "high",
    "rationale": "The manifesto promises a drug-free Tamil Nadu: a chief minister-supervised anti-drug force, detention of sellers under the Goondas Act, and anti-drug forums in every school.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "restrict-hate-speech": {
@@ -198,7 +256,8 @@
    "rationale": "The manifesto raises police pay, risk allowances and welfare funding, but also demands apolitical police administration. Authority is not addressed.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -213,7 +272,12 @@
    "sources": [
     "s1",
     "s3",
-    "s10"
+    "s10",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "rehabilitation": {
@@ -243,7 +307,7 @@
   "more-religion-public": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "correct-racial-injustice": {
@@ -264,7 +328,12 @@
    "rationale": "The manifesto commits large funds to Tamil heritage sites, folk arts and Tirukkural; his party condemned Union interference in Tamil culture. The culture is Tamil rather than national in the Indian sense.",
    "sources": [
     "s1",
-    "s10"
+    "s10",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "gradual-change": {
@@ -315,14 +384,20 @@
    "rationale": "The manifesto sets a goal of a 1.5 trillion dollar state economy by 2036 and promises to grow the economy, alongside a Rs 3,000 crore climate budget. Growth is pursued, not limited.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "drastic-climate-action": {
    "value": 1,
    "confidence": "medium",
    "rationale": "The manifesto sets aside a Rs 3,000 crore climate budget, a sustainable-energy economy unit under the CM's office, 33 percent forest cover by 2031 and 500 crore a year for air pollution.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "tech-solves-problems": {
@@ -390,7 +465,12 @@
    "confidence": "high",
    "rationale": "The manifesto sets up a Rs 50,000 crore strategic investment body in which the state co-invests directly in semiconductors, electric vehicles, aerospace, AI and advanced manufacturing.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "widespread-small-property": {
@@ -477,7 +557,12 @@
    "rationale": "TVK describes itself as secular, but the manifesto has the state fund spiritual tourism circuits for several faiths and pilgrimage grants (Haj, Jerusalem), which is not strict separation. The party's secularism is the equal-treatment kind.",
    "sources": [
     "s1",
-    "s3"
+    "s3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "laws-from-scripture": {
@@ -579,7 +664,7 @@
   "algorithmic-government": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "unbreakable-encryption": {
@@ -858,7 +943,8 @@
    "rationale": "The manifesto funds restoration of heritage sites, a Tamil civilisation museum in Madurai and archaeological digs, treating inherited cultural institutions as assets.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "dominated-front": {
    "value": null,
@@ -938,7 +1024,12 @@
    "rationale": "He accused the DMK and other rivals of corruption, said they hide behind masks of ideology and loot the state as a family. This is aimed at his opponents rather than all politicians.",
    "sources": [
     "s4",
-    "s8"
+    "s8",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "heritable-defect-limits": {
@@ -952,7 +1043,12 @@
    "confidence": "medium",
    "rationale": "The manifesto promises to investigate custodial deaths under the previous government, secure justice for families and take strict action against those responsible.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "night-watchman-state": {
@@ -973,7 +1069,12 @@
    "rationale": "Equality is a declared principle of his party; at the 2024 conference TVK adopted a Tirukkural line on equality of all as its guiding principle and his slogan was everything for everyone.",
    "sources": [
     "s4",
-    "s3"
+    "s3",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "socialism-one-country": {
@@ -1534,7 +1635,8 @@
    "rationale": "At the 2024 conference TVK's spokesperson said one-third of Assembly seats would be reserved for women, rising gradually to 50 percent. This is a party spokesperson's account and covers legislative seats only.",
    "sources": [
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "economic-self-sufficiency": {
    "value": null,
@@ -1843,7 +1945,13 @@
    "sources": [
     "s5",
     "s3",
-    "s1"
+    "s1",
+    "b3",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "foreign-land-ownership": {
@@ -1948,7 +2056,8 @@
    "rationale": "The manifesto's public monitoring platform would publish accounts, spending and replies to citizens. It does not mention a legal right of access.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "local-production": {
    "value": null,
@@ -1969,10 +2078,13 @@
    "sources": []
   },
   "religious-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He rejects religious division and identifies his political movement with secular social justice.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "deference-to-leading-power": {
    "value": null,
@@ -1981,10 +2093,13 @@
    "sources": []
   },
   "regional-revenue-retention": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position. His demand for a fair share of central tax revenue is a related issue; he did not say revenue should mostly stay in the region where it is raised.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Page 9 demands 70% GST for states.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "personal-possessions-private": {
    "value": null,
@@ -2107,10 +2222,13 @@
    "sources": []
   },
   "participatory-democracy": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Page 88 gives residents budget-allocation powers.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "intersecting-oppressions": {
    "value": null,
@@ -2119,10 +2237,13 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Page 24 proposes transgender dignity legislation.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "assisted-dying": {
    "value": null,
@@ -2197,7 +2318,8 @@
    "sources": [
     "s5",
     "s4"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -2252,7 +2374,12 @@
    "confidence": "medium",
    "rationale": "The manifesto creates a digital 'Makkal Arangam' where citizens file complaints and petitions, with petitions of 5 lakh signatures debated for a full day in the Assembly.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "open-government-data": {
@@ -2260,7 +2387,12 @@
    "confidence": "high",
    "rationale": "The manifesto promises an official online monitoring platform publishing the state's accounts, constituency and district project spending, and public complaints with the government's replies.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "interfaith-marriage-restriction": {
@@ -2304,7 +2436,12 @@
    "confidence": "medium",
    "rationale": "At the 2024 conference he said TVK would adopt Periyar's social justice and rationalism but not his atheism and is not against anyone's belief.",
    "sources": [
-    "s4"
+    "s4",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "abolish-police-prisons": {
@@ -2738,7 +2875,12 @@
    "confidence": "high",
    "rationale": "The manifesto promises a Rs 3,000 per quintal paddy support price and minimum prices for other crops (also fish), crop-loan waivers for small farmers and state procurement.",
    "sources": [
-    "s1"
+    "s1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "keep-nuclear-weapons": {
@@ -2860,7 +3002,12 @@
    "confidence": "medium",
    "rationale": "The manifesto sets up a separate department for women, children and senior citizens under the Chief Minister's direct control, focused on women's safety and welfare.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "homestead-ownership": {
@@ -2964,7 +3111,12 @@
    "confidence": "low",
    "rationale": "The manifesto pledges pressure on the Union government to protect the rights, culture and property of Tamils in Sri Lanka and to press for citizenship for Sri Lankan Tamils in Tamil Nadu.",
    "sources": [
-    "s1"
+    "s1",
+    "b6"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "resources-common-ownership": {
@@ -3004,10 +3156,13 @@
    "sources": []
   },
   "no-denominational-politics": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He identifies forces dividing the country by religion as his ideological opponents.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "tech-with-ancestral-values": {
    "value": null,
@@ -3088,5 +3243,15 @@
    "sources": []
   }
  },
- "notes": "Most positions come from the 2026 manifesto and party declarations, which are collective party documents. NEET, delimitation, caste census, Governor and liquor policy have no statement in the list that matches them closely, so they are left null. 'Proportional representation' in his speeches means caste-proportional representation, not electoral PR. He deferred the party's stance on reservation. Wikipedia lists him alive (born 22 June 1974)."
+ "notes": "Most positions come from the 2026 manifesto and party declarations, which are collective party documents. NEET, delimitation, caste census, Governor and liquor policy have no statement in the list that matches them closely, so they are left null. 'Proportional representation' in his speeches means caste-proportional representation, not electoral PR. He deferred the party's stance on reservation. Wikipedia lists him alive (born 22 June 1974).\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing audit answers not read. Full Tamil manifesto downloaded this session, repaired as a PDF and searched through raw OCR; source hash and OCR provenance saved separately. Original page 86 visually checked. Raw source OCR reused from a byte-identical previously downloaded source, not from prior analysis or audit answers. Official party image edition cross-checked. Unverified third-party HTML translations and fan-site summaries are discovery only and are not cited evidence: some claims differ from the original. Every statement, all existing blanks and the ten priorities reviewed. None of the ten revolutionary or property-system propositions has direct evidence. Public-land titles and farm-loan relief are not redistribution of large private estates; targeted women’s cash assistance is not a universal basic income. Caste-proportional representation is not electoral proportional representation, and caste remedies are not automatically positions about racial categories. Protection for Tamil refugees does not settle general immigration levels or territorial expansion. Public religious subsidies coexist with his secular political identity; no inference from personal faith or film roles. Manifesto commitments remain medium rather than high confidence, and unsigned departmental measures are not treated as his record. Searches for land reform, socialist economic theory, union politics, political violence, press freedom, religion, international institutions and military policy found no further precise statements. The investment authority explicitly takes government equity positions in semiconductors, EVs, aerospace and AI. The Parandur cancellation protects particular farms while retaining airport expansion elsewhere, so it is not treated as opposition to economic growth or as a general theory of property.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-28"
+  }
+ ]
 }
