@@ -255,34 +255,11 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 
 // The average gap between two sets of answers, in notches on the answer scale. An average rather
 // than a root mean square, so a few one-notch differences don't weigh like real disagreement.
-// With `weight`, a weighted average: an ideology's defining statements count for more (see coreWeights).
-function gap(answers, profile, idx, weight = null) {
+function gap(answers, profile, idx) {
   if (idx.length === 0) return 0;
-  let s = 0, n = 0;
-  for (const j of idx) {
-    const w = weight ? weight[j] : 1;
-    s += w * Math.abs(answers[j] - profile[j]);
-    n += w;
-  }
-  return s / n;
-}
-
-// How much each statement counts when comparing someone with an ideology: how firmly its audit found
-// the position held. A sourced, firmly held position counts most; "no doctrine on this" (most low
-// answers are 0 with that rationale) barely counts, so it is neither agreement nor a two-notch miss
-// for someone with a strong view on it. Without audit confidences (a model built from bare profiles)
-// every statement counts the same. Cached per model.
-const CONFIDENCE_WEIGHT = { h: 4, m: 2, l: 0.5 };
-const coreWeightCache = new WeakMap();
-function coreWeights(model) {
-  let w = coreWeightCache.get(model.ideologies);
-  if (!w) {
-    w = new Map(model.ideologies.map((i) => [i.id, i.confidence
-      ? Float64Array.from(i.confidence, (c) => CONFIDENCE_WEIGHT[c] ?? 1)
-      : new Float64Array(i.profile.length).fill(1)]));
-    coreWeightCache.set(model.ideologies, w);
-  }
-  return w;
+  let s = 0;
+  for (const j of idx) s += Math.abs(answers[j] - profile[j]);
+  return s / idx.length;
 }
 
 // Ranks ideologies by how far their answers are from yours on the statements you answered.
@@ -329,10 +306,9 @@ function match(model, answers) {
   const idx = answeredIndexes(answers);
   const ideos = model.ideologies;
   const spread = spreadOn(model, idx);
-  const cw = coreWeights(model);
   const ranked = ideos
     .map((i) => {
-      const d = gap(answers, i.profile, idx, cw.get(i.id));
+      const d = gap(answers, i.profile, idx);
       return { ...i, distance: d, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .sort((x, y) => x.distance - y.distance);
@@ -344,9 +320,8 @@ function match(model, answers) {
 function topMatch(model, answers) {
   const idx = answeredIndexes(answers);
   let best = null, bestD = Infinity;
-  const cw = coreWeights(model);
   for (const i of model.ideologies) {
-    const d = gap(answers, i.profile, idx, cw.get(i.id));
+    const d = gap(answers, i.profile, idx);
     if (d < bestD) { bestD = d; best = i.id; }
   }
   return best;
@@ -362,8 +337,7 @@ function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 
     .map((p) => {
       const both = idx.filter((j) => p.profile[j] != null);
       if (both.length < minOverlap) return null;
-      // An ideology is compared on its own weights, as in match(); a person on plain ones.
-      const d = gap(answers, p.profile, both, coreWeights(model).get(p.id) || null);
+      const d = gap(answers, p.profile, both);
       return { ...p, distance: d, overlap: both.length, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .filter(Boolean)
@@ -416,35 +390,28 @@ function matchPeople(model, answers, people, { dims = Math.min(model.components.
 }
 
 // How plausible each ideology is given the answers so far: each answer multiplies an
-// ideology's weight by exp(-c·(difference)² / 2), so a 2-point miss costs far more than a 1-point one,
-// and a miss on a position the ideology firmly holds (c, its audit confidence; see coreWeights) costs
-// more than one on a statement it has no doctrine on.
+// ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
 function weights(model, answers) {
   const idx = answeredIndexes(answers);
-  const cw = coreWeights(model);
-  const logs = model.ideologies.map((i) => { const c = cw.get(i.id); return -idx.reduce((s, j) => s + c[j] * (answers[j] - i.profile[j]) ** 2, 0) / 2; });
+  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - i.profile[j]) ** 2, 0) / 2);
   const top = Math.max(...logs);
   const w = logs.map((l) => Math.exp(l - top));
   const total = w.reduce((s, x) => s + x, 0);
   return w.map((x) => x / total);
 }
 
-// Picks the unasked statement on which the currently plausible ideologies disagree most firmly.
+// Picks the unasked statement on which the currently plausible ideologies disagree most.
 // With no answers that is simply the most divisive statement overall; later it is the one
-// that best separates your remaining candidates. Each candidate's position counts by its audit
-// confidence too, so a close race is settled on what the candidates actually hold, not on
-// statements they have no doctrine on. `gain` is that weighted disagreement.
+// that best separates your remaining candidates. `gain` is that weighted disagreement.
 function nextQuestion(model, answers, asked) {
   const w = weights(model, answers);
-  const cw = model.ideologies.map((i) => coreWeights(model).get(i.id));
   let best = null;
   for (let q = 0; q < answers.length; q++) {
     if (asked.has(q)) continue;
-    let mean = 0, total = 0;
-    model.ideologies.forEach((i, k) => { const v = w[k] * cw[k][q]; mean += v * i.profile[q]; total += v; });
-    mean /= total || 1;
+    let mean = 0;
+    model.ideologies.forEach((i, k) => { mean += w[k] * i.profile[q]; });
     let gain = 0;
-    model.ideologies.forEach((i, k) => { gain += w[k] * cw[k][q] * (i.profile[q] - mean) ** 2; });
+    model.ideologies.forEach((i, k) => { gain += w[k] * (i.profile[q] - mean) ** 2; });
     if (!best || gain > best.gain) best = { q, gain };
   }
   return best;
@@ -509,8 +476,6 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const m = ideos.length, n = ideos[0].profile.length;
   const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
   ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x; colMajor[q * m + k] = x; }));
-  const cw = coreWeights(model), weightRow = new Float64Array(m * n), weightCol = new Float64Array(n * m);
-  ideos.forEach((i, k) => { const c = cw.get(i.id); weightRow.set(c, k * n); c.forEach((x, q) => { weightCol[q * m + k] = x; }); });
   const w = new Float64Array(m), logs = new Float64Array(m);
   const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
   let count = 0;
@@ -521,7 +486,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let k = 0; k < m; k++) {
       const base = k * n;
       let s = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t]; s += weightRow[base + j] * (answers[j] - rowMajor[base + j]) ** 2; }
+      for (let t = 0; t < count; t++) { const j = idx[t]; s += (answers[j] - rowMajor[base + j]) ** 2; }
       logs[k] = -s / 2;
       if (logs[k] > top) top = logs[k];
     }
@@ -535,23 +500,22 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let q = 0; q < n; q++) {
       if (asked[q]) continue;
       const base = q * m;
-      let mean = 0, total = 0;
-      for (let k = 0; k < m; k++) { const v = w[k] * weightCol[base + k]; mean += v * colMajor[base + k]; total += v; }
-      mean /= total || 1;
+      let mean = 0;
+      for (let k = 0; k < m; k++) mean += w[k] * colMajor[base + k];
       let gain = 0;
-      for (let k = 0; k < m; k++) gain += w[k] * weightCol[base + k] * (colMajor[base + k] - mean) ** 2;
+      for (let k = 0; k < m; k++) gain += w[k] * (colMajor[base + k] - mean) ** 2;
       if (bestQ < 0 || gain > bestGain) { bestQ = q; bestGain = gain; }
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
   };
-  // topMatch(): the ideology with the smallest weighted average gap; ties go to the earlier one.
+  // topMatch(): the ideology with the smallest average gap; ties go to the earlier one.
   const top = () => {
     let best = -1, bestD = Infinity;
     for (let k = 0; k < m; k++) {
       const base = k * n;
-      let s = 0, sw = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], wj = weightRow[base + j]; s += wj * Math.abs(answers[j] - rowMajor[base + j]); sw += wj; }
-      const d = count ? s / sw : 0;
+      let s = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t]; s += Math.abs(answers[j] - rowMajor[base + j]); }
+      const d = count ? s / count : 0;
       if (d < bestD) { bestD = d; best = k; }
     }
     return best;
