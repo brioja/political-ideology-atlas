@@ -86,6 +86,14 @@ const ideologySalience = (answers) => placed(statedOnly(answers), 1);
 // The bar itself: the median distance between an ideology and its nearest neighbour (see pca.js).
 const salienceBar = () => (placed({}, 1), salienceCache.ctx.bar);
 
-module.exports = { ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, each
+// ideology's answers, and the model calibrated on.
+const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1")
+  .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
+  .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
+  .update(JSON.stringify([model.mean, model.components.map((c) => c.vector)]))
+  .digest("hex");
+
+module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
   salienceBar, useSalienceModel, LEGACY_PATH, onLegacyBar };

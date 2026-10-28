@@ -36,6 +36,12 @@ assert(!behind.length, `${behind.length} audits miss active statements (backfill
 
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
 const model = buildModel(IDEOLOGIES);
+// The shipped calibration must come from these ideologies and this pca.js (see build.js).
+if (!PEOPLE_ONLY) {
+  const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
+  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, model), "audits/calibration.json is stale: run a full build");
+  assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
+}
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
 assert(Math.abs(shareSum - 1) < 1e-9, "variance shares do not sum to 1");
 // (Ties are fine: two variants can legitimately share every answer.)
