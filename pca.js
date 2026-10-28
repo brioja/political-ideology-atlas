@@ -416,28 +416,35 @@ function matchPeople(model, answers, people, { dims = Math.min(model.components.
 }
 
 // How plausible each ideology is given the answers so far: each answer multiplies an
-// ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
+// ideology's weight by exp(-c·(difference)² / 2), so a 2-point miss costs far more than a 1-point one,
+// and a miss on a position the ideology firmly holds (c, its audit confidence; see coreWeights) costs
+// more than one on a statement it has no doctrine on.
 function weights(model, answers) {
   const idx = answeredIndexes(answers);
-  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - i.profile[j]) ** 2, 0) / 2);
+  const cw = coreWeights(model);
+  const logs = model.ideologies.map((i) => { const c = cw.get(i.id); return -idx.reduce((s, j) => s + c[j] * (answers[j] - i.profile[j]) ** 2, 0) / 2; });
   const top = Math.max(...logs);
   const w = logs.map((l) => Math.exp(l - top));
   const total = w.reduce((s, x) => s + x, 0);
   return w.map((x) => x / total);
 }
 
-// Picks the unasked statement on which the currently plausible ideologies disagree most.
+// Picks the unasked statement on which the currently plausible ideologies disagree most firmly.
 // With no answers that is simply the most divisive statement overall; later it is the one
-// that best separates your remaining candidates. `gain` is that weighted disagreement.
+// that best separates your remaining candidates. Each candidate's position counts by its audit
+// confidence too, so a close race is settled on what the candidates actually hold, not on
+// statements they have no doctrine on. `gain` is that weighted disagreement.
 function nextQuestion(model, answers, asked) {
   const w = weights(model, answers);
+  const cw = model.ideologies.map((i) => coreWeights(model).get(i.id));
   let best = null;
   for (let q = 0; q < answers.length; q++) {
     if (asked.has(q)) continue;
-    let mean = 0;
-    model.ideologies.forEach((i, k) => { mean += w[k] * i.profile[q]; });
+    let mean = 0, total = 0;
+    model.ideologies.forEach((i, k) => { const v = w[k] * cw[k][q]; mean += v * i.profile[q]; total += v; });
+    mean /= total || 1;
     let gain = 0;
-    model.ideologies.forEach((i, k) => { gain += w[k] * (i.profile[q] - mean) ** 2; });
+    model.ideologies.forEach((i, k) => { gain += w[k] * cw[k][q] * (i.profile[q] - mean) ** 2; });
     if (!best || gain > best.gain) best = { q, gain };
   }
   return best;
@@ -502,8 +509,8 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const m = ideos.length, n = ideos[0].profile.length;
   const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
   ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x; colMajor[q * m + k] = x; }));
-  const cw = coreWeights(model), weightRow = new Float64Array(m * n);
-  ideos.forEach((i, k) => weightRow.set(cw.get(i.id), k * n));
+  const cw = coreWeights(model), weightRow = new Float64Array(m * n), weightCol = new Float64Array(n * m);
+  ideos.forEach((i, k) => { const c = cw.get(i.id); weightRow.set(c, k * n); c.forEach((x, q) => { weightCol[q * m + k] = x; }); });
   const w = new Float64Array(m), logs = new Float64Array(m);
   const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
   let count = 0;
@@ -514,7 +521,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let k = 0; k < m; k++) {
       const base = k * n;
       let s = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t]; s += (answers[j] - rowMajor[base + j]) ** 2; }
+      for (let t = 0; t < count; t++) { const j = idx[t]; s += weightRow[base + j] * (answers[j] - rowMajor[base + j]) ** 2; }
       logs[k] = -s / 2;
       if (logs[k] > top) top = logs[k];
     }
@@ -528,10 +535,11 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let q = 0; q < n; q++) {
       if (asked[q]) continue;
       const base = q * m;
-      let mean = 0;
-      for (let k = 0; k < m; k++) mean += w[k] * colMajor[base + k];
+      let mean = 0, total = 0;
+      for (let k = 0; k < m; k++) { const v = w[k] * weightCol[base + k]; mean += v * colMajor[base + k]; total += v; }
+      mean /= total || 1;
       let gain = 0;
-      for (let k = 0; k < m; k++) gain += w[k] * (colMajor[base + k] - mean) ** 2;
+      for (let k = 0; k < m; k++) gain += w[k] * weightCol[base + k] * (colMajor[base + k] - mean) ** 2;
       if (bestQ < 0 || gain > bestGain) { bestQ = q; bestGain = gain; }
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
