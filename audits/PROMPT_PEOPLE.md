@@ -115,9 +115,7 @@ insurrections, assassinations, terrorism). Leading or ordering state force answe
 they said something about political violence as such.
 
 Words someone delivered as their own count as theirs, whoever drafted them (a speechwriter, a
-ghostwritten book). Later reports of what they said or did (a biographer, an ancient historian,
-collected sayings) are secondhand: `medium` at most, `low` where the report is late or disputed.
-Endorsing a candidate, attending a march or hosting an event is not a position on any statement.
+ghostwritten book). Endorsing a candidate, attending a march or hosting an event is not a position on any statement.
 A relative's or employer's positions are never theirs.
 
 Contested or mixed evidence is still evidence: answer it at `low` confidence (or 0 if it points
@@ -129,15 +127,32 @@ check it against the evidence you gathered. Before deciding a topic "matches no 
 the statement texts for its keywords (`grep -i <word> statements.json`). For a living person,
 "suggests" or "seems to" is not evidence: answer only from what they said or did.
 
+**Source priority.** Every answer must be traceable: a reader can open the cited source and see the
+position there. Judging whether a secondhand outlet is reliable or biased is not something to rely
+on, so evidence is ranked by kind. Answer from the highest tier that has evidence; where tiers
+disagree, the higher tier wins.
+1. **Primary record:** laws signed, votes, orders, official acts, court records, cited from the
+   document itself. Can be `high`.
+2. **Own words:** speeches, interview transcripts, books, letters, op-eds, posts, party programmes
+   they led, cited from the original. Can be `high`, unless tier 1 or tier 3 contradicts them (the record wins, above).
+3. **Secondhand report of the record:** press, NGO or reference sources stating that a vote, law,
+   arrest, election result or other act happened. `medium` at most, but it still overrides tier 2:
+   a ruler's pro-democracy speeches don't outweigh reported arrests of opponents.
+4. **Ancient or attributed accounts:** for figures whose own words and records don't survive, the
+   oldest surviving source reporting what they said or did (Plato, Suetonius, the sutras,
+   collected sayings, a contemporary biographer), cited as that source, not a modern summary.
+   `medium` at most, `low` where the account is late or disputed.
+5. **Secondhand account of views:** a reporter's paraphrase, a Wikipedia summary, an OnTheIssues
+   quote or any other compilation of what someone thinks. Never evidence on its own: use it only to
+   find tiers 1-4. If nothing better turns up, the answer is null.
+Inference stays as above: never for living people, `low` with "Inferred:" for historical figures.
+
 Confidence:
-- `high`: stated directly by the person on that specific statement, or shown by their record, in a
-  cited source where a reader can see it: their own words (speech, interview transcript, book,
-  op-ed, post) or the record itself (law signed, vote, order, official act). A secondhand account
-  (a reporter's paraphrase, Wikipedia, OnTheIssues or another compilation) is `medium` at most,
-  however likely it is to be right. A close inference from a stated view is `medium` at most.
-  Cosponsoring or voting for a bill alone is `medium`: it shows support for the bill, not for every
-  way a statement could be read.
-- `medium`: clearly implied by things they said or did.
+- `high`: stated directly by the person on that specific statement (tier 2) or shown by their record
+  (tier 1), cited from the primary source. A close inference from a stated view is `medium` at
+  most. Cosponsoring or voting for a bill alone is `medium`: it shows support for the bill, not for
+  every way a statement could be read.
+- `medium`: clearly implied by things they said or did, or from tier 3 or 4.
 - `low`: inferred, ambiguous or contested.
 
 **Salience:** the validator checks whether the person's recorded positions place them on the
