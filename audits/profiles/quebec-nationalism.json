@@ -90,6 +90,46 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Parti_Qu%C3%A9b%C3%A9cois",
       "usedFor": "Party platform on economy, labour, immigration, secularism, Indigenous peoples."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Bill 99 (2000, chapter 46): An Act respecting the exercise of the fundamental rights and prerogatives of the Québec people and the Québec State",
+      "author": "Québec Official Publisher (Gazette officielle du Québec, 17 January 2001)",
+      "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2001A/4018.pdf",
+      "usedFor": "Self-determination, no other parliament reducing the National Assembly's powers, treaty consent, territorial integrity, French as official language, Aboriginal nations"
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "title": "Bill 21 (2019, chapter 12): An Act respecting the laicity of the State",
+      "author": "Québec Official Publisher (Gazette officielle du Québec, 10 July 2019)",
+      "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/gazette/pdf_encrypte/lois_reglements/2019A/104004.pdf",
+      "usedFor": "Who is barred from wearing religious symbols (officials, teachers; not pupils), parliamentary sovereignty and override of the Charters"
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "title": "Bill 84 (2025, chapter 13): An Act respecting integration into the Québec nation",
+      "author": "Québec Official Publisher",
+      "url": "https://d12oqns8b3bfa8.cloudfront.net/bmqc/Education-Integration-Francais-Maitrise-du-francais-Anglophones-Immigrants-Nation-An-Act-respecting-integration-into-the-Quebec-nation-2025-SQ-chp.-13-2025-ANQ.PDF",
+      "usedFor": "Interculturalism (\"national integration\", distinct from multiculturalism), common culture, French as common language, integration without denying the culture of origin"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "title": "La planification de l'immigration au Québec pour la période 2026-2029: orientations pluriannuelles",
+      "author": "Ministère de l'Immigration, de la Francisation et de l'Intégration (Gouvernement du Québec)",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/immigration/publications-adm/planif-pluriannuelle/Orientations_planification_pluriannuelle_immigration_2026-2029.pdf",
+      "usedFor": "Cut in permanent admissions to about 45,000 a year and in temporary residents, with a French-knowledge target"
+    },
+    {
+      "id": "s11",
+      "kind": "scholarly",
+      "title": "Fiscal Imbalance in Canada Twenty Years after the Séguin Commission (IRPP Insight No. 60)",
+      "author": "Marcelin Joanis, Institute for Research on Public Policy",
+      "url": "https://centre.irpp.org/wp-content/uploads/sites/3/2025/01/Fiscal-Imbalance-in-Canada-Twenty-Years-after-the-Seguin-Commission.pdf",
+      "usedFor": "Quebec's fiscal-imbalance argument: the Séguin report, non-recognition of the federal spending power, and its call to reform equalization rather than end it"
     }
   ],
   "answers": {
@@ -231,10 +271,11 @@
     },
     "decide-locally": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Autonomists and sovereigntists want powers moved from Ottawa to Quebec, but this is about the province, not local communities as such.",
+      "confidence": "medium",
+      "rationale": "Quebec nationalists want decisions in Quebec's jurisdictions taken by Quebec and not by Ottawa; Bill 99 s13 and the Séguin report's rejection of the federal spending power say so (s7, s11). The principle applies to the province, and the Act also has the Québec State encouraging local and regional communities to take responsibility for their development (s.10).",
       "sources": [
-        "s1"
+        "s7",
+        "s11"
       ]
     },
     "rehabilitation": {
@@ -312,8 +353,9 @@
     "reduce-immigration": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "The PQ under St-Pierre Plamondon and the CAQ have called for lower immigration, citing French-language integration capacity.",
+      "rationale": "The Québec government's 2026-2029 plan lowers permanent admissions to about 45,000 a year and cuts temporary residents by 13 percent against 2024, linking this to the share of French-speaking newcomers (s10); the PQ goes further, and the movement mainly backs lower levels.",
       "sources": [
+        "s10",
         "s6"
       ]
     },
@@ -535,9 +577,10 @@
     },
     "right-to-secede": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Quebec's right to choose independence by referendum is the movement's central claim, and sovereigntists reject the Clarity Act's limits on it (s4). The claim is made for Quebec as a nation, and sovereigntists reject partition of Quebec by its own regions.",
+      "confidence": "high",
+      "rationale": "Bill 99 states that the Québec people has an inalienable right to freely decide its political regime and legal status, decides alone how it is exercised, and that a referendum is won with fifty percent plus one (ss.1-4); it was adopted against the federal Clarity Act (s7). The claim is made for Quebec as a nation, and the same Act bars changing Quebec's borders without the National Assembly (s.9).",
       "sources": [
+        "s7",
         "s4"
       ]
     },
@@ -975,10 +1018,11 @@
     },
     "revive-national-language": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "French is not fallen out of use, but nationalism strongly backs French as the state language, so the principle fits.",
+      "confidence": "medium",
+      "rationale": "French has not fallen out of use, so the statement fits only in principle; Bill 99 s8 and Bill 84 make French the only official and common language of the state and commit the State to promote its quality and influence (s7, s9).",
       "sources": [
-        "s3"
+        "s7",
+        "s9"
       ]
     },
     "workplace-democracy": {
@@ -1135,10 +1179,10 @@
     },
     "assimilate-immigrants": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "The model asks newcomers to integrate through French as the common public language, not to abandon their culture; interculturalism rejects full assimilation.",
+      "confidence": "high",
+      "rationale": "Bill 84 sets out \"national integration\" as distinct from Canadian multiculturalism but says newcomers are to enrich Québec culture \"without denying their culture of origin\", asking for adherence to a French-language common culture rather than assimilation (s9).",
       "sources": [
-        "s1"
+        "s9"
       ]
     },
     "elite-replacement": {
@@ -1336,9 +1380,10 @@
     "separated-powers": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Parliamentary constitutional democracy; not specifically addressed.",
+      "rationale": "Bill 99 describes the Québec State as having a government, a National Assembly and impartial, independent courts, so adherents accept divided powers (s7); Bill 21 preamble and override clause (s8) show the movement also favours parliamentary sovereignty over court review, so the check is only weakly held.",
       "sources": [
-        "s1"
+        "s7",
+        "s8"
       ]
     },
     "vanguard-party": {
@@ -1614,10 +1659,12 @@
       ]
     },
     "minority-language-support": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Quebec supports Indigenous languages in schools but restricts English; adherents are split by which minority.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Québec law recognizes the right of First Nations and Inuit to preserve and develop their languages and respects the English-speaking community's long-established institutions (s7, s9), and the movement defends French as a minority language in North America. The Charter of the French Language restricts English in public life, so adherents are mixed on English.",
       "sources": [
+        "s7",
+        "s9",
         "s3"
       ]
     },
@@ -1910,11 +1957,12 @@
       ]
     },
     "national-cultural-autonomy": {
-      "value": 1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Quebec nationalism seeks cultural self-government for Quebec within Canada; the statement concerns a minority in a state, which the nation in Quebec is within Canada.",
+      "rationale": "The movement is split on the \"rather than a state of its own\" clause: the PQ and Bloc seek a Quebec state, the CAQ seeks greater autonomy within Canada (s1, s4). Quebecers also form the majority in Quebec, not a minority within it.",
       "sources": [
-        "s1"
+        "s1",
+        "s4"
       ]
     },
     "rights-where-you-live": {
@@ -2536,8 +2584,9 @@
     "national-law-over-international": {
       "value": 0,
       "confidence": "low",
-      "rationale": "The cited sources do not address international law. Sovereigntists invoke the international right of self-determination against Canada's courts, while Quebec governments have shielded the laicity law from rights review; the two pull in opposite directions, so 0 at low confidence.",
+      "rationale": "Bill 99 s7 makes the Québec State bound by a treaty only with the National Assembly's or Government's formal consent, which leans toward national precedence, but s1 grounds secession in the international principle of equal rights and self-determination of peoples, so adherents pull both ways.",
       "sources": [
+        "s7",
         "s4"
       ]
     },
@@ -2558,10 +2607,11 @@
       ]
     },
     "regional-revenue-retention": {
-      "value": 1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Sovereigntists argue Quebec's taxes should be spent by Quebec rather than in Ottawa-run transfers; inferred from the case for a sovereign Quebec.",
+      "rationale": "The Séguin report argued Quebec lacks fiscal resources to match its jurisdictions and rejected the federal spending power (s11), but it asked to reform equalization, not end it, and Quebec is a recipient; sovereigntists want Quebec taxes spent by Quebec while the movement does not reject sharing between provinces.",
       "sources": [
+        "s11",
         "s4"
       ]
     },
@@ -2631,9 +2681,10 @@
     },
     "treaties-binding": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Nationalist parties recognise Indigenous nations and agreements such as the James Bay treaty; inferred from the PQ platform.",
+      "confidence": "medium",
+      "rationale": "Bill 99 s11 has the Québec State recognize the existing aboriginal and treaty rights of the Aboriginal nations of Québec, and s12 commits it to harmonious relations with them; the statement's \"until both parties agree\" wording is not tested in the sources.",
       "sources": [
+        "s7",
         "s6"
       ]
     },
@@ -2792,8 +2843,9 @@
     "religious-dress-in-state": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "The laicity law (s5) bars public officials in positions of authority, and teachers, from wearing religious symbols at work, and the nationalist mainstream backs it. It does not cover students, so the statement is only partly matched.",
+      "rationale": "Bill 21 bars officials in authority positions and public-school teachers and principals from wearing religious symbols at work, and the nationalist mainstream backs it (s8). The Act does not cover pupils, and some nationalists oppose it, so the statement is only partly matched.",
       "sources": [
+        "s8",
         "s5"
       ]
     },
@@ -3176,10 +3228,11 @@
     "culture-before-state": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Sovereigntists treat the state as the main instrument for protecting language and culture, as with the Charter of the French Language, rather than waiting for cultural renewal first.",
+      "rationale": "Post-Quiet Revolution nationalism treats the state as the instrument of cultural protection: Bill 84 says the Québec State must continue building the constitutional foundations on which the nation stands, and Bill 99 asserts state powers to defend the nation (s9, s7), not waiting on cultural renewal first.",
       "sources": [
-        "s1",
-        "s3"
+        "s7",
+        "s9",
+        "s1"
       ]
     },
     "god-not-male": {
@@ -3207,10 +3260,11 @@
       ]
     },
     "single-unit-for-people": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Quebec nationalists are mainly concerned with the Quebec territory as a whole; the sources do not address merging regions, so adherents have no clear position.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Bill 99 s9 says Quebec's territory and boundaries cannot be altered without the National Assembly's consent and that territorial integrity must be maintained (s7); Quebec nationalism since the 1960s defines the people by territory and has not sought to merge francophone regions of other provinces into Quebec.",
       "sources": [
+        "s7",
         "s4"
       ]
     },
@@ -3319,11 +3373,11 @@
       ]
     },
     "regional-powers-revocable": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Quebec nationalists seek autonomy or sovereignty entrenched against Ottawa, so revocable powers would defeat their aim.",
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Bill 99 s13 states that no other parliament or government may reduce the powers, authority, sovereignty or legitimacy of the National Assembly, and the Assembly never adhered to the 1982 Constitution; sovereigntists and autonomists alike reject powers that Ottawa could withdraw (s7).",
       "sources": [
-        "s4"
+        "s7"
       ]
     },
     "gm-crops": {
@@ -3367,12 +3421,13 @@
       ]
     },
     "language-defines-nation": {
-      "value": 1,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "Quebec nationalism makes French the core of Quebec identity, but since the Quiet Revolution it is a territorial and civic nationalism that does not link Quebec to francophones elsewhere across borders.",
+      "rationale": "The Québec people is defined as the majority French-speaking people of a territory, and the State draws its legitimacy from \"the people inhabiting its territory\" (Bill 99 preamble and s.5; Bill 84), so Quebec nationalism since the Quiet Revolution does not take language and history to form one nation across provincial borders, and it includes non-francophone Quebecers.",
       "sources": [
-        "s1",
-        "s3"
+        "s7",
+        "s9",
+        "s1"
       ]
     },
     "communal-electorates": {
@@ -3540,11 +3595,13 @@
       ]
     },
     "internal-colonialism": {
-      "value": 1,
+      "value": 0,
       "confidence": "low",
-      "rationale": "Inferred: nationalist writers have compared French Canadians to a colonised people (as in Pierre Vallières), but mainstream parties rarely use it.",
+      "rationale": "A decolonial strand (Vallières, the FLQ, Parti pris) compared French Canadians to a colonised people, but the mainstream post-1960 parties argue from self-determination and fiscal imbalance (s4, s11) rather than exploitation by a wealthy centre, and Quebec is not a poor periphery in their account.",
       "sources": [
-        "s1"
+        "s1",
+        "s4",
+        "s11"
       ]
     },
     "shared-human-nature": {
@@ -3806,8 +3863,9 @@
     "minority-territorial-autonomy": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Quebec nationalism itself claims territorial autonomy for the French-speaking majority region within Canada, so adherents agree with the principle.",
+      "rationale": "The movement claims territorial autonomy or sovereignty for French-speaking Quebec, and Bill 99 recognizes the Aboriginal nations' right to autonomy within Québec (preamble); sovereigntists would go beyond autonomy, and Quebec nationalism describes the nation as civic, not ethnic.",
       "sources": [
+        "s7",
         "s1"
       ]
     },
