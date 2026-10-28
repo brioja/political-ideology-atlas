@@ -2,7 +2,10 @@
  "id": "ulysses-s-grant",
  "name": "Ulysses S. Grant",
  "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "gpt-6.1-sol"
+ ],
  "living": false,
  "role": "General of the Union Army and 18th US president (1869–1877)",
  "summary": "Grant led Union forces to victory and as president backed Reconstruction, the Fifteenth Amendment and federal prosecution of the Ku Klux Klan. He favored a return to gold-backed money, vetoed the 1874 inflation bill, urged civil service reform and nonsectarian public schools with strict church-state separation, and pursued a missionary-run Peace Policy toward Native Americans. His record also includes the failed Santo Domingo annexation and the 1862 order expelling Jews from his military district, which he later regretted.",
@@ -111,6 +114,94 @@
    "author": "Wikipedia contributors",
    "url": "https://en.wikipedia.org/wiki/Ulysses_S._Grant",
    "usedFor": "Enforcement Acts and habeas corpus suspension, Comstock Act prosecutions, Indian policy, General Order No. 11 and regret, civil rights record, Mexican War view"
+  },
+  {
+   "id": "b1",
+   "kind": "primary",
+   "title": "Messages and Papers of the Presidents, Volume VII, Part 1: Ulysses S. Grant",
+   "author": "Ulysses S. Grant; compiled by James D. Richardson",
+   "url": "https://www.gutenberg.org/cache/epub/13012/pg13012.txt",
+   "usedFor": "Full texts, including civil-service rules, proclamations and August 1876 constitutional messages"
+  },
+  {
+   "id": "b2",
+   "kind": "primary",
+   "title": "Personal Memoirs of U.S. Grant, Chapter XVI",
+   "author": "Ulysses S. Grant",
+   "url": "https://en.wikisource.org/wiki/Personal_Memoirs_of_U._S._Grant/Chapter_XVI",
+   "usedFor": "Revolution, secession, slavery and Know-Nothingism"
+  },
+  {
+   "id": "b3",
+   "kind": "primary",
+   "title": "Second Inaugural Address, March 4, 1873",
+   "author": "Ulysses S. Grant; Miller Center transcript",
+   "url": "https://millercenter.org/the-presidency/presidential-speeches/march-4-1873-second-inaugural-address",
+   "usedFor": "Republican government, civil rights, annexation, industry and international peace"
+  },
+  {
+   "id": "b4",
+   "kind": "primary",
+   "title": "Second Annual Message, December 5, 1870",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/second-annual-message-11",
+   "usedFor": "Homesteads, tariffs, tax policy and defense"
+  },
+  {
+   "id": "b5",
+   "kind": "primary",
+   "title": "Third Annual Message, December 4, 1871",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/third-annual-message-11",
+   "usedFor": "Klan enforcement, public telegraphs, religious practices and arbitration"
+  },
+  {
+   "id": "b7",
+   "kind": "primary",
+   "title": "Fifth Annual Message, December 1, 1873",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/fifth-annual-message-3",
+   "usedFor": "Reservation concentration, foreign patent protection and immigration"
+  },
+  {
+   "id": "b8",
+   "kind": "primary",
+   "title": "Sixth Annual Message, December 7, 1874",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/sixth-annual-message-3",
+   "usedFor": "Fiscal obligations, tariffs, labor and capital, territorial proposals"
+  },
+  {
+   "id": "b9",
+   "kind": "primary",
+   "title": "Seventh Annual Message, December 7, 1875",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/seventh-annual-message-3",
+   "usedFor": "Public education, secular state, cable monopolies and industrial progress"
+  },
+  {
+   "id": "b10",
+   "kind": "primary",
+   "title": "Eighth Annual Message, December 5, 1876",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/eighth-annual-message-3",
+   "usedFor": "English for prospective voters, Black Hills settlement and appropriations"
+  },
+  {
+   "id": "b11",
+   "kind": "primary",
+   "title": "Remarks at the Army of the Tennessee reunion, September 29, 1875",
+   "author": "Ulysses S. Grant",
+   "url": "https://www.presidency.ucsb.edu/documents/remarks-the-ninth-annual-meeting-the-army-the-tennessee-des-moines-iowa",
+   "usedFor": "Civil liberties, popular sovereignty and secular education"
+  },
+  {
+   "id": "b12",
+   "kind": "reference",
+   "title": "President Ulysses S. Grant and Federal Indian Policy",
+   "author": "U.S. National Park Service",
+   "url": "https://www.nps.gov/articles/000/president-ulysses-s-grant-and-federal-indian-policy.htm",
+   "usedFor": "Grant’s personal role in Christian assimilation and the decision to take the Black Hills"
   }
  ],
  "answers": {
@@ -159,7 +250,7 @@
   "regulate-corporations": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "cut-welfare": {
@@ -216,7 +307,8 @@
    "rationale": "The Memoirs urge a good navy and well-kept sea-coast defences, saying the money is little compared with the security gained.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "legalize-sex-work": {
    "value": null,
@@ -231,7 +323,8 @@
    "sources": [
     "s7",
     "s13"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "rehabilitation": {
    "value": null,
@@ -258,12 +351,14 @@
    "sources": []
   },
   "more-religion-public": {
-   "value": -1,
+   "value": 0,
    "confidence": "low",
-   "rationale": "Inferred: his call to leave the matter of religion to the family circle, the church and the private school implies he did not want a larger public role for religion.",
+   "rationale": "He promotes Christian-directed Indigenous assimilation while demanding separation of church and state and secular common schools; the record is mixed.",
    "sources": [
-    "s10"
-   ]
+    "b12",
+    "b9"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "correct-racial-injustice": {
    "value": 1,
@@ -272,7 +367,13 @@
    "sources": [
     "s12",
     "s7",
-    "s13"
+    "s13",
+    "b5",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "gender-social-construct": {
@@ -294,10 +395,13 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His 1873 message welcomes immigration of industrious settlers and advocates protection for newcomers against exploitation.",
+   "sources": [
+    "b7"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "empower-international-orgs": {
    "value": null,
@@ -306,10 +410,14 @@
    "sources": []
   },
   "free-trade": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "He supports freer entry of unavailable industrial inputs in 1874 while retaining tariffs to support domestic production and revenue; the position is mixed.",
+   "sources": [
+    "b4",
+    "b8"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "nation-first": {
    "value": null,
@@ -354,10 +462,13 @@
    "sources": []
   },
   "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In Memoirs chapter XVI he explicitly recognises a natural right to overthrow or leave an oppressive government, while denying the justification of the Confederate cause.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "experts-over-public": {
    "value": null,
@@ -401,7 +512,12 @@
    "rationale": "In 1870 he said a tariff for revenue is necessary and that its encouragement of home production affords labor living wages against 'pauper labor of the Old World'; he also asked for lower duties on many goods.",
    "sources": [
     "s3",
-    "s13"
+    "s13",
+    "b4"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "state-directs-investment": {
@@ -410,13 +526,17 @@
    "rationale": "In 1870 he said the nation should not loan credit or grant lands to state or corporate enterprises unless of acknowledged national importance, and thought subsidies inexpedient.",
    "sources": [
     "s3"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "widespread-small-property": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 1870 message praises permanent homesteads within ordinary settlers’ reach and proposes disposing of remaining public land through homestead and preemption laws.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "abolish-money-wages": {
    "value": null,
@@ -449,10 +569,13 @@
    "sources": []
   },
   "democracy-best": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His 1875 message calls republican institutions the best form yet devised because they benefit the largest share of the people; he did not address voters choosing badly.",
+   "sources": [
+    "b9"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "direct-votes": {
    "value": null,
@@ -471,7 +594,12 @@
    "confidence": "high",
    "rationale": "He called secession 'illogical as well as impracticable' and led the Union armies against it.",
    "sources": [
-    "s1"
+    "s1",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "natural-rulers": {
@@ -481,10 +609,13 @@
    "sources": []
   },
   "political-violence-never": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Memoirs chapter XVI accepts revolution against oppression despite the risks to the participants’ lives and property; this concerns rebellion, not merely state warfare.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "war-builds-character": {
    "value": 1,
@@ -492,15 +623,22 @@
    "rationale": "The Memoirs say wars 'are not always evils unmixed with some good' and that the Civil War made the nation one of great power and intelligence, while also calling it a fearful lesson in avoiding wars.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "separate-church-state": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "In Des Moines (1875) he told veterans to keep church and state forever separate, leaving religion to the family, church and private school; his 1875 annual message repeated the call.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At Des Moines (1875) and in his 1875 message he called for church and state to be forever separate, with religion-free public schools; his Peace Policy gave Christian denominations administrative roles on Indigenous reservations, which cuts against strict separation.",
    "sources": [
     "s10",
-    "s8"
+    "s8",
+    "b9",
+    "b12"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "laws-from-scripture": {
@@ -521,7 +659,8 @@
    "rationale": "He argued that to maintain peace it is necessary to be prepared for war, and that the US should be able to resist even fourth-rate European fleets; this is preparedness more than superiority over rivals.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "ethnic-nation": {
    "value": null,
@@ -536,10 +675,13 @@
    "sources": []
   },
   "equal-outcomes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His second inaugural opposes legislating social equality while supporting equal civil rights and a fair chance for freedpeople to develop their abilities.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "indigenous-land-authority": {
    "value": -1,
@@ -548,7 +690,12 @@
    "sources": [
     "s2",
     "s3",
-    "s13"
+    "s13",
+    "b12"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "colonial-reparations": {
@@ -588,10 +735,13 @@
    "sources": []
   },
   "industrial-civilization-disaster": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "His 1875 message celebrates mechanised industry, transport, commerce and scientific invention as improvements in national prosperity and happiness.",
+   "sources": [
+    "b9"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "accelerate-technology": {
    "value": null,
@@ -713,7 +863,8 @@
    "rationale": "The Memoirs treat the Union draft as necessary to fill the ranks and worried that retreat would lead to resistance to it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "exit-over-voice": {
    "value": null,
@@ -769,7 +920,12 @@
    "rationale": "He urged annexing Santo Domingo as national protection and growth, yet called the Mexican War one of the most unjust ever waged by a stronger nation on a weaker one; evidence points both ways.",
    "sources": [
     "s3",
-    "s1"
+    "s1",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "personal-loyalty-rule": {
@@ -832,7 +988,12 @@
    "rationale": "Resolved that not one dollar of school money, however raised, go to any sectarian school; he proposed an amendment barring school funds for any religious sect, which excludes vouchers to religious schools.",
    "sources": [
     "s10",
-    "s8"
+    "s8",
+    "b11"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "avoid-deficit-stimulus": {
@@ -859,7 +1020,8 @@
    "rationale": "He sent forces to the Rio Grande to help Juárez expel the French and criticized the imposition of Maximilian's monarchy against the Mexican people's wishes.",
    "sources": [
     "s1"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "force-without-un": {
    "value": null,
@@ -886,10 +1048,13 @@
    "sources": []
   },
   "class-collaboration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His 1874 message calls for bringing labor and capital into harmony and for policies that profit both.",
+   "sources": [
+    "b8"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "sacrifice-heritage": {
    "value": null,
@@ -928,7 +1093,8 @@
    "sources": [
     "s7",
     "s13"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "state-class-instrument": {
    "value": null,
@@ -961,10 +1127,13 @@
    "sources": []
   },
   "national-mission": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His second inaugural describes the American republic as a guiding star for government by chosen representatives elsewhere.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "patriarchy-structural": {
    "value": null,
@@ -1003,12 +1172,18 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Called for equal rights and privileges to all men irrespective of nationality, color or religion, and hailed the Fifteenth Amendment enfranchising 4,000,000 people previously denied citizenship.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He called for equal rights irrespective of nationality, color or religion, backed the Fifteenth Amendment and the Enforcement Acts against the Klan, but his policy toward Indigenous peoples was coercive and unequal.",
    "sources": [
     "s10",
-    "s12"
+    "s12",
+    "b11",
+    "b12"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "socialism-one-country": {
@@ -1047,7 +1222,12 @@
    "rationale": "He urged schools free of sectarian, pagan or atheistic tenets, and in 1875 proposed a constitutional amendment barring the teaching of religious tenets in public schools.",
    "sources": [
     "s10",
-    "s8"
+    "s8",
+    "b9"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "state-strengthens-encirclement": {
@@ -1061,7 +1241,12 @@
    "confidence": "medium",
    "rationale": "He described the US as a republic where no power is exercised except by the will of the people and the official is the servant.",
    "sources": [
-    "s10"
+    "s10",
+    "b11"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "trade-surplus": {
@@ -1069,15 +1254,25 @@
    "confidence": "low",
    "rationale": "He said a specie basis could not be reached until exports (excluding gold) pay for imports and foreign obligations.",
    "sources": [
-    "s6"
+    "s6",
+    "b3"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "population-transfer": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He ordered Jews expelled from his military district in 1862 (General Order No. 11); Lincoln rescinded it and he later called it one of his biggest regrets.",
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Mixed: General Order No. 11 (1862) expelled Jews from his military district, which Lincoln rescinded and he later regretted; his reservation policy concentrated Indigenous peoples within the country. Neither episode is removal from the country as a whole.",
    "sources": [
-    "s13"
+    "s13",
+    "b7"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "initiating-force-wrong": {
@@ -1105,10 +1300,14 @@
    "sources": []
   },
   "separated-powers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He accepted the Senate's rejection of Santo Domingo annexation and in August 1876 defended distinct congressional funding and presidential appointment powers; no general statement of checks and balances.",
+   "sources": [
+    "b3",
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "vanguard-party": {
    "value": null,
@@ -1157,7 +1356,13 @@
    "confidence": "medium",
    "rationale": "In October 1871 he suspended habeas corpus in parts of South Carolina to suppress the Klan, per the Wikipedia account.",
    "sources": [
-    "s13"
+    "s13",
+    "b5",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "price-controls-essentials": {
@@ -1167,10 +1372,13 @@
    "sources": []
   },
   "party-controls-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "At Des Moines he calls for stronger guarantees of a free press rather than its political control.",
+   "sources": [
+    "b11"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "party-commands-army": {
    "value": null,
@@ -1250,7 +1458,8 @@
    "rationale": "In his first message he praised the nation as being without entangling alliances abroad; he did not address withdrawing troops.",
    "sources": [
     "s2"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "abolish-rental-housing": {
    "value": null,
@@ -1261,7 +1470,7 @@
   "people-in-arms": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "rural-life-healthier": {
@@ -1330,7 +1539,12 @@
    "rationale": "As president he held that Mormons would be protected in worship but would not be permitted to violate the laws against polygamy under cover of religion, and his administration prosecuted polygamists.",
    "sources": [
     "s4",
-    "s13"
+    "s13",
+    "b5"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "encourage-eccentricity": {
@@ -1429,7 +1643,8 @@
    "rationale": "He recommended that church property bear its share of taxation (exempting perhaps church buildings) as a check on accumulating untaxed church wealth; he said nothing of placing clergy under state oversight.",
    "sources": [
     "s8"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "nonpartisan-head-of-state": {
    "value": null,
@@ -1442,7 +1657,12 @@
    "confidence": "high",
    "rationale": "As commanding general of Union forces he fought to put down the Southern secession, and defended the war's necessity in the Memoirs.",
    "sources": [
-    "s1"
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "region-keeps-system": {
@@ -1568,7 +1788,7 @@
   "ban-cartels": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "no-bailouts": {
@@ -1631,7 +1851,12 @@
    "rationale": "His Indian policy aimed to Christianize and civilize the Indians under federal tutelage, and he argued Santo Domingo's people could not maintain themselves without outside support.",
    "sources": [
     "s3",
-    "s13"
+    "s13",
+    "b12"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "patriotic-education": {
@@ -1683,7 +1908,8 @@
    "sources": [
     "s13",
     "s10"
-   ]
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "entrenched-bill-of-rights": {
    "value": null,
@@ -1698,10 +1924,13 @@
    "sources": []
   },
   "elective-rulers": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "His second inaugural endorses government by the people through chosen representatives as the direction of political progress.",
+   "sources": [
+    "b3"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "minority-veto": {
    "value": null,
@@ -1810,7 +2039,12 @@
    "confidence": "high",
    "rationale": "In the Memoirs' conclusion he wrote that the cause of the war 'will have to be attributed to slavery'.",
    "sources": [
-    "s1"
+    "s1",
+    "b2"
+   ],
+   "auditor": [
+    "claude-sonnet-5-5",
+    "gpt-6.1-sol"
    ]
   },
   "preserve-contested-monuments": {
@@ -1856,10 +2090,13 @@
    "sources": []
   },
   "office-by-exam": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His December 1871 civil-service rules required publicly announced competitive examinations for appointment and promotion, but the scheme lapsed in 1875 after Congress withheld funds and he did not enforce it fully; record is positive but partial.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "foreign-takeover-block": {
    "value": null,
@@ -1886,16 +2123,23 @@
    "sources": []
   },
   "land-use-tenure": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Inferred: his 1870 message favours settlers acquiring permanent private homes under homestead law, which points against use-based communal tenure; he did not address the statement.",
+   "sources": [
+    "b4"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "budget-needs-parliament": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "In 1876 he closed diplomatic posts after Congress withheld appropriations, recognising Congress’s authority to grant or withhold their funding.",
+   "sources": [
+    "b10",
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "single-official-language": {
    "value": null,
@@ -2090,10 +2334,14 @@
    "sources": []
   },
   "treaties-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His personal Black Hills decision opened treaty-protected land after the tribes declined sale, overriding the earlier guarantee.",
+   "sources": [
+    "b12",
+    "b10"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "cooperative-communities": {
    "value": null,
@@ -2228,10 +2476,14 @@
    "sources": []
   },
   "abolish-armed-forces": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "His second inaugural anticipates a future without armies but maintains a present national force, and he later requests more regular cavalry.",
+   "sources": [
+    "b3",
+    "b1"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "rich-first": {
    "value": null,
@@ -2290,14 +2542,18 @@
   "promulgated-standing-laws": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "racial-franchise": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "He urged ratification and enforcement of the Fifteenth Amendment, opposing race-based denial of voting rights.",
+   "sources": [
+    "b10",
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "online-participation": {
    "value": null,
@@ -2348,10 +2604,14 @@
    "sources": []
   },
   "state-promotes-atheism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He expressly excludes atheistic instruction alongside sectarian teaching from the common-school education he proposes.",
+   "sources": [
+    "b11",
+    "b9"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "abolish-police-prisons": {
    "value": null,
@@ -2414,10 +2674,13 @@
    "sources": []
   },
   "abolish-ip": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In 1873 he sent a Patent Office representative to seek stronger European protection for American inventors.",
+   "sources": [
+    "b7"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "uniformed-youth": {
    "value": null,
@@ -2672,10 +2935,13 @@
    "sources": []
   },
   "arms-reduction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His 1871 message welcomes arbitration as a way to return soldiers from standing armies to productive civilian industry.",
+   "sources": [
+    "b5"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "open-diplomacy": {
    "value": null,
@@ -2716,7 +2982,7 @@
   "fiscal-rules-binding": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
+   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
    "sources": []
   },
   "restructure-world-economy": {
@@ -2834,10 +3100,13 @@
    "sources": []
   },
   "immigrants-learn-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In 1876 he argues that naturalizing immigrants should acquire English during their residence and would deny prospective voters the franchise without it.",
+   "sources": [
+    "b10"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "no-compulsory-union": {
    "value": null,
@@ -2972,10 +3241,14 @@
    "sources": []
   },
   "restrict-indigenous-settlement": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His later Black Hills policy abandoned efforts to remove incoming miners and opened the area to settler occupation.",
+   "sources": [
+    "b10",
+    "b12"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "equal-conscription": {
    "value": null,
@@ -3020,10 +3293,14 @@
    "sources": []
   },
   "cut-consumption-tax": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "He favours removing tea and coffee duties in 1870, but in 1874 endorses criticism of their repeal as lost revenue without consumer benefit.",
+   "sources": [
+    "b4",
+    "b8"
+   ],
+   "auditor": "gpt-6.1-sol"
   },
   "targeted-social-spending": {
    "value": null,
@@ -3128,5 +3405,15 @@
    "sources": []
   }
  },
- "notes": "Order No. 11 (1862) was followed by later regret; the most recent position is used. Only part of the ideology statement set matches his recorded views (mostly religion, Reconstruction, war and currency); the 1871 Klan message and 1873 second inaugural were not opened and are not cited. Currency and civil service views were recorded but match no statement."
+ "notes": "Order No. 11 (1862) was followed by later regret; the most recent position is used. Only part of the ideology statement set matches his recorded views (mostly religion, Reconstruction, war and currency); the 1871 Klan message and 1873 second inaugural were not opened and are not cited. Currency and civil service views were recorded but match no statement.\n\nMerged with an independent gpt-6.1-sol audit: 31 answers taken from it, 14 agreed, 3 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass using his full collected presidential messages and a memoir chapter, without reading the previous audit’s answers. The collection was searched across labor, property, fiscal policy, executive power, Reconstruction, religion, immigration, technology and natural resources. Recommendations by department heads were used only when Grant expressly adopted them. No view inferred from his Republican affiliation. Modern technology and environmental propositions remain null where his praise of invention or forestry measures does not answer the actual wording. Final null review covered all 490 texts and all ten priority statements. Three priority statements are answered: revolution-justified, class-collaboration, people-in-arms. References to freed labor were read in their slavery context and were not turned into views on worker ownership, profit exploitation or Marxist class history. Eight-hour federal employment rules do not answer the minimum-wage statement. Telegraph acquisition does not establish a general demand to nationalise major industries. No salience-driven additions were made; legacy-list decisions are left to the integrating lane.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "gpt-6.1-sol",
+   "auditedAt": "2026-10-28"
+  }
+ ]
 }
