@@ -653,11 +653,19 @@ function showResults(shared = null) {
   const diffs = answeredDiffs(top);
   // Shared positions most ideologies also hold (state healthcare, secular government) say little about
   // why this one matched, so the ones fewest ideologies share come first; strength breaks ties.
-  const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0)
-    .sort((x, y) => sideShare(x.q, x.a) - sideShare(y.q, y.a) || Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
+  // Twice as many agreements as disagreements are listed: each disagreement takes two lines (yours and
+  // theirs), so equal counts made the disagreements look twice as many. The headings give the totals.
+  // Agreeing means taking the same side (agree or disagree, at any strength) and parting ways the
+  // opposite side; "mixed" on either side is neither. Requiring the exact strength to agree, while any
+  // two-notch gap counted as parting ways, made agreements look rarer than they are.
+  const agreeAll = diffs.filter((d) => d.a !== 0 && Math.sign(d.a) === Math.sign(d.t));
+  const agree = agreeAll.slice()
+    .sort((x, y) => sideShare(x.q, x.a) - sideShare(y.q, y.a) || x.gap - y.gap || Math.abs(y.a) - Math.abs(x.a)).slice(0, 8);
   // Biggest gaps first; among equal gaps, the ideology's more distinctive positions.
   const apartOrder = (x, y) => y.gap - x.gap || sideShare(x.q, x.t) - sideShare(y.q, y.t);
-  const disagree = diffs.filter((d) => d.gap >= 2).sort(apartOrder).slice(0, 4);
+  const disagreeAll = diffs.filter((d) => d.a * d.t < 0);
+  const disagree = disagreeAll.slice().sort(apartOrder).slice(0, 4);
+  const statements = (n) => `${n} statement${n === 1 ? "" : "s"}`;
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
   // Below this the top match is only the least bad fit, so the page says so in words. In simulations
   // after 150 answers, random answers land at 47-56%, takers mixing two ideologies at 61-75% and
@@ -726,8 +734,8 @@ function showResults(shared = null) {
     <section>
       <h2>Why ${you_} matched</h2>
       <div class="diffs">
-        <div class="stack"><h3>${You} agree on</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
-        <div class="stack"><h3>${You} part ways on</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name)).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
+        <div class="stack"><h3>${You} agree on ${statements(agreeAll.length)}</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
+        <div class="stack"><h3>${You} part ways on ${statements(disagreeAll.length)}</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name)).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
       </div>
       ${shared ? "" : `<div class="row"><a class="btn" href="${compareHref("me", `i:${top.id}`)}">Full comparison with ${esc(top.name)}</a><a class="btn" href="#/compare">Compare with anyone</a></div>`}
     </section>
