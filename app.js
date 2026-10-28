@@ -608,6 +608,14 @@ function aboutWithImage(ideo) {
 }
 
 // Pass `shared` (decoded answers) to show someone else's result from a link.
+// The share of ideologies on the same side of a statement as an answer (agree or disagree).
+const sideShares = new Map();
+function sideShare(q, a) {
+  const key = `${q}:${Math.sign(a)}`;
+  if (!sideShares.has(key)) sideShares.set(key, model.ideologies.filter((i) => Math.sign(i.profile[q]) === Math.sign(a)).length / model.ideologies.length);
+  return sideShares.get(key);
+}
+
 function showResults(shared = null) {
   const given = shared || lastAnswers;
   const { you, ranked } = match(model, given);
@@ -637,17 +645,25 @@ function showResults(shared = null) {
     .map((a, q) => (a === null ? null : { q, a, t: ideo.profile[q], gap: Math.abs(a - ideo.profile[q]) }))
     .filter(Boolean);
   const diffs = answeredDiffs(top);
-  const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0).sort((x, y) => Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
-  const disagree = diffs.filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 4);
+  // Shared positions most ideologies also hold (state healthcare, secular government) say little about
+  // why this one matched, so the ones fewest ideologies share come first; strength breaks ties.
+  const agree = diffs.filter((d) => d.gap === 0 && d.a !== 0)
+    .sort((x, y) => sideShare(x.q, x.a) - sideShare(y.q, y.a) || Math.abs(y.a) - Math.abs(x.a)).slice(0, 4);
+  // Biggest gaps first; among equal gaps, the ideology's more distinctive positions.
+  const apartOrder = (x, y) => y.gap - x.gap || sideShare(x.q, x.t) - sideShare(y.q, y.t);
+  const disagree = diffs.filter((d) => d.gap >= 2).sort(apartOrder).slice(0, 4);
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
-  // Below this the top match is only the least bad fit (someone who answers like an ideology, even
-  // with stronger answers, typically lands at 70% or more), so the page says so in words.
+  // Below this the top match is only the least bad fit, so the page says so in words. In simulations
+  // after 150 answers, random answers land at 47-56%, takers mixing two ideologies at 61-75% and
+  // takers answering like one ideology at 82-88%; real takers mostly land between 50% and 75%.
   const looseFit = top.similarity < 0.55;
+  // Below this (most real takers) answers mix several ideologies rather than following one.
+  const mixedFit = !looseFit && top.similarity < 0.75;
   const topPeople = typeof PEOPLE !== "undefined" && PEOPLE.length
     ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
 
   const others = ranked.slice(1, 7).map((r) => {
-    const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort((x, y) => y.gap - x.gap).slice(0, 2);
+    const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort(apartOrder).slice(0, 2);
     return `
       <li><details>
         <summary><span class="match-name">${posGlyph(r)}${esc(r.name)}</span><span class="bar"><span style="width:${pct(r.similarity)}"></span></span><span class="mono">${pct(r.similarity)}</span></summary>
@@ -667,7 +683,8 @@ function showResults(shared = null) {
     <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
-      ${looseFit ? `<p>No ideology fits ${shared ? "them" : "you"} closely; this is the nearest.</p>` : ""}
+      ${looseFit ? `<p>No ideology fits ${shared ? "them" : "you"} closely; this is the nearest.</p>`
+        : mixedFit ? `<p>${shared ? "Their" : "Your"} views mix several ideologies; this is the nearest.</p>` : ""}
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
