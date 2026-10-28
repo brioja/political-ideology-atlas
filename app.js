@@ -555,9 +555,15 @@ function beliefList(ideo, n = 4) {
 
 // "You: … / Feudalism: …" for a statement where two answers differ. Each side is its own positive
 // statement; the name reads like a speaker's, so a long one wraps with the text.
+// The strength ("strongly", "leans") follows the name, since the plain text reads the same either way.
 function versus(q, mine, theirs, me, them) {
-  return `<li class="versus">${topicIcon(q)}<div class="stack-tight"><span><span class="who">${esc(me)}:</span> ${esc(stance(q, mine).text)}</span>
-    <span><span class="who">${esc(them)}:</span> ${esc(stance(q, theirs).text)}</span></div></li>`;
+  const side = (who, v) => {
+    const s = stance(q, v);
+    const how = s.cls === "strong" || s.cls === "lean" ? `, ${s.tag.toLowerCase()}` : "";
+    return `<span><span class="who">${esc(who)}${how}:</span> ${esc(s.text)}</span>`;
+  };
+  return `<li class="versus">${topicIcon(q)}<div class="stack-tight">${side(me, mine)}
+    ${side(them, theirs)}</div></li>`;
 }
 
 // The card shown under a map when a dot is picked.
