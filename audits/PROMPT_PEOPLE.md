@@ -99,7 +99,7 @@ themselves and measures they personally drove. Likewise, what a government did u
 When the person's own record directly contradicts their words on a statement (elections they
 rigged or cancelled, term limits they wrote themselves out of, a single party they kept in power
 while praising pluralism), the record wins. If the evidence is genuinely mixed, answer 0 at `low`.
-Rhetoric alone is never `high`. This applies at every confidence level, including `low` answers, and
+Where words and record pull apart, rhetoric alone is never `high`. This applies at every confidence level, including `low` answers, and
 it applies where they were silent: what a ruler did with power themselves (inheriting and keeping
 office within a family, a cult of their own portraits, arming groups abroad, a security apparatus
 drawn from one sect) answers the matching statement from the record even if they never spoke to it.
@@ -130,9 +130,13 @@ the statement texts for its keywords (`grep -i <word> statements.json`). For a l
 "suggests" or "seems to" is not evidence: answer only from what they said or did.
 
 Confidence:
-- `high`: stated directly by the person on that specific statement, or shown by their record. A
-  close inference from a stated view is `medium` at most. Cosponsoring or voting for a bill
-  alone is `medium`: it shows support for the bill, not for every way a statement could be read.
+- `high`: stated directly by the person on that specific statement, or shown by their record, in a
+  cited source where a reader can see it: their own words (speech, interview transcript, book,
+  op-ed, post) or the record itself (law signed, vote, order, official act). A secondhand account
+  (a reporter's paraphrase, Wikipedia, OnTheIssues or another compilation) is `medium` at most,
+  however likely it is to be right. A close inference from a stated view is `medium` at most.
+  Cosponsoring or voting for a bill alone is `medium`: it shows support for the bill, not for every
+  way a statement could be read.
 - `medium`: clearly implied by things they said or did.
 - `low`: inferred, ambiguous or contested.
 
