@@ -255,11 +255,32 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 
 // The average gap between two sets of answers, in notches on the answer scale. An average rather
 // than a root mean square, so a few one-notch differences don't weigh like real disagreement.
-function gap(answers, profile, idx) {
+// With `weight`, a weighted average: an ideology's defining statements count for more (see coreWeights).
+function gap(answers, profile, idx, weight = null) {
   if (idx.length === 0) return 0;
-  let s = 0;
-  for (const j of idx) s += Math.abs(answers[j] - profile[j]);
-  return s / idx.length;
+  let s = 0, n = 0;
+  for (const j of idx) {
+    const w = weight ? weight[j] : 1;
+    s += w * Math.abs(answers[j] - profile[j]);
+    n += w;
+  }
+  return s / n;
+}
+
+// How much each statement counts when comparing someone with an ideology: the further the ideology
+// sits from the average ideology on a statement, the more that statement defines it, so the more it
+// counts (1 where it is average, up to 9 at the far end). Rejecting what defines an ideology then
+// costs more than differing on what most ideologies share: someone who rejects nationalism shouldn't
+// match a nationalism on their other answers. Cached per model.
+const CORE_WEIGHT = 2;
+const coreWeightCache = new WeakMap();
+function coreWeights(model) {
+  let w = coreWeightCache.get(model.ideologies);
+  if (!w) {
+    w = new Map(model.ideologies.map((i) => [i.id, Float64Array.from(i.profile, (t, j) => 1 + CORE_WEIGHT * Math.abs(t - model.mean[j]))]));
+    coreWeightCache.set(model.ideologies, w);
+  }
+  return w;
 }
 
 // Ranks ideologies by how far their answers are from yours on the statements you answered.
@@ -306,9 +327,10 @@ function match(model, answers) {
   const idx = answeredIndexes(answers);
   const ideos = model.ideologies;
   const spread = spreadOn(model, idx);
+  const cw = coreWeights(model);
   const ranked = ideos
     .map((i) => {
-      const d = gap(answers, i.profile, idx);
+      const d = gap(answers, i.profile, idx, cw.get(i.id));
       return { ...i, distance: d, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .sort((x, y) => x.distance - y.distance);
@@ -320,8 +342,9 @@ function match(model, answers) {
 function topMatch(model, answers) {
   const idx = answeredIndexes(answers);
   let best = null, bestD = Infinity;
+  const cw = coreWeights(model);
   for (const i of model.ideologies) {
-    const d = gap(answers, i.profile, idx);
+    const d = gap(answers, i.profile, idx, cw.get(i.id));
     if (d < bestD) { bestD = d; best = i.id; }
   }
   return best;
@@ -337,7 +360,8 @@ function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 
     .map((p) => {
       const both = idx.filter((j) => p.profile[j] != null);
       if (both.length < minOverlap) return null;
-      const d = gap(answers, p.profile, both);
+      // An ideology is compared on its own weights, as in match(); a person on plain ones.
+      const d = gap(answers, p.profile, both, coreWeights(model).get(p.id) || null);
       return { ...p, distance: d, overlap: both.length, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
     })
     .filter(Boolean)
@@ -476,6 +500,8 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const m = ideos.length, n = ideos[0].profile.length;
   const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
   ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x; colMajor[q * m + k] = x; }));
+  const cw = coreWeights(model), weightRow = new Float64Array(m * n);
+  ideos.forEach((i, k) => weightRow.set(cw.get(i.id), k * n));
   const w = new Float64Array(m), logs = new Float64Array(m);
   const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
   let count = 0;
@@ -508,14 +534,14 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
   };
-  // topMatch(): the ideology with the smallest average gap; ties go to the earlier one.
+  // topMatch(): the ideology with the smallest weighted average gap; ties go to the earlier one.
   const top = () => {
     let best = -1, bestD = Infinity;
     for (let k = 0; k < m; k++) {
       const base = k * n;
-      let s = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t]; s += Math.abs(answers[j] - rowMajor[base + j]); }
-      const d = count ? s / count : 0;
+      let s = 0, sw = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t], wj = weightRow[base + j]; s += wj * Math.abs(answers[j] - rowMajor[base + j]); sw += wj; }
+      const d = count ? s / sw : 0;
       if (d < bestD) { bestD = d; best = k; }
     }
     return best;
