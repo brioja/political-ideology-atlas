@@ -267,17 +267,19 @@ function gap(answers, profile, idx, weight = null) {
   return s / n;
 }
 
-// How much each statement counts when comparing someone with an ideology: the further the ideology
-// sits from the average ideology on a statement, the more that statement defines it, so the more it
-// counts (1 where it is average, up to 9 at the far end). Rejecting what defines an ideology then
-// costs more than differing on what most ideologies share: someone who rejects nationalism shouldn't
-// match a nationalism on their other answers. Cached per model.
-const CORE_WEIGHT = 2;
+// How much each statement counts when comparing someone with an ideology: how firmly its audit found
+// the position held. A sourced, firmly held position counts most; "no doctrine on this" (most low
+// answers are 0 with that rationale) barely counts, so it is neither agreement nor a two-notch miss
+// for someone with a strong view on it. Without audit confidences (a model built from bare profiles)
+// every statement counts the same. Cached per model.
+const CONFIDENCE_WEIGHT = { h: 4, m: 2, l: 0.5 };
 const coreWeightCache = new WeakMap();
 function coreWeights(model) {
   let w = coreWeightCache.get(model.ideologies);
   if (!w) {
-    w = new Map(model.ideologies.map((i) => [i.id, Float64Array.from(i.profile, (t, j) => 1 + CORE_WEIGHT * Math.abs(t - model.mean[j]))]));
+    w = new Map(model.ideologies.map((i) => [i.id, i.confidence
+      ? Float64Array.from(i.confidence, (c) => CONFIDENCE_WEIGHT[c] ?? 1)
+      : new Float64Array(i.profile.length).fill(1)]));
     coreWeightCache.set(model.ideologies, w);
   }
   return w;

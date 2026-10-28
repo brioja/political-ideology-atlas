@@ -58,6 +58,9 @@ function classify(useSalience = true) {
       furtherReading: a.furtherReading || [],
       keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
       profile: statements.map((s) => a.answers[s.id].value),
+      // How firmly the audit found each position held (h/m/l, one letter per statement): matching
+      // weighs a sourced, firmly held position more than "no doctrine on this".
+      confidence: statements.map((s) => a.answers[s.id].confidence[0]).join(""),
     });
   }
 }
