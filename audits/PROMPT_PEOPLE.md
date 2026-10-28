@@ -135,16 +135,18 @@ disagree, the higher tier wins.
    document itself. Can be `high`.
 2. **Own words:** speeches, interview transcripts, books, letters, op-eds, posts, party programmes
    they led, cited from the original. Can be `high`, unless tier 1 or tier 3 contradicts them (the record wins, above).
-3. **Secondhand report of the record:** press, NGO or reference sources stating that a vote, law,
-   arrest, election result or other act happened. `medium` at most, but it still overrides tier 2:
+3. **Secondhand report of the record:** a press, NGO or scholarly report (a secondary source) stating
+   that a vote, law, arrest, election result or other act happened. `medium` at most, but it still overrides tier 2:
    a ruler's pro-democracy speeches don't outweigh reported arrests of opponents.
 4. **Ancient or attributed accounts:** for figures whose own words and records don't survive, the
    oldest surviving source reporting what they said or did (Plato, Suetonius, the sutras,
    collected sayings, a contemporary biographer), cited as that source, not a modern summary.
    `medium` at most, `low` where the account is late or disputed.
-5. **Secondhand account of views:** a reporter's paraphrase, a Wikipedia summary, an OnTheIssues
-   quote or any other compilation of what someone thinks. Never evidence on its own: use it only to
-   find tiers 1-4. If nothing better turns up, the answer is null.
+5. **Secondhand account of views, and all tertiary sources:** a reporter's paraphrase of what
+   someone thinks; and Wikipedia, other encyclopedias, OnTheIssues and similar compilations, for
+   views and record alike. Never evidence on its own: use it only to find tiers 1-4 (follow its
+   citations to the report or document and cite that). If nothing better turns up, the answer is
+   null.
 Inference stays as above: never for living people, `low` with "Inferred:" for historical figures.
 
 Confidence:
