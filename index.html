@@ -124,6 +124,13 @@ button:disabled { opacity: 0.4; cursor: default; }
 .likert button .key { font: 400 0.75rem/1 var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0.2rem 0.4rem; }
 .likert button.chosen { background: var(--accent-soft); border-color: var(--accent); }
 .likert button.chosen .dot { background: var(--accent); border-color: var(--accent); }
+/* The other side's answer, when the statement was opened from a comparison. */
+.likert button.theirs { grid-template-columns: 1.6rem minmax(0, 1fr) auto auto; }
+.likert .their-tag:empty { display: none; }
+.likert button.theirs { outline: 2px dashed var(--accent-2); outline-offset: 2px; animation: theirs-blink 0.6s ease-in-out 3; }
+.likert .their-tag { font: 500 0.75rem/1.2 var(--mono); color: var(--accent-2); text-align: right; max-width: 12rem; }
+@keyframes theirs-blink { 50% { outline-color: transparent; } }
+@media (prefers-reduced-motion: reduce) { .likert button.theirs { animation: none; } }
 /* "No opinion" has the same weight as the scale; a small gap and its dashed dot mark it as off the scale. */
 .likert button.no-opinion { margin-top: 0.35rem; }
 .likert button.no-opinion .dot { border-style: dashed; width: 0.9rem; height: 0.9rem; }
@@ -371,6 +378,8 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .topic { font-size: 1.15rem; line-height: 1.4; text-align: center; }
 .iconed { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.6rem; font-size: 0.95rem; }
 .iconed li, .versus { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.5rem; align-items: start; }
+/* An empty list's note has no icon, so it takes the whole row instead of the icon column. */
+.iconed li.muted { grid-template-columns: minmax(0, 1fr); }
 .unknowns { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
 .unknowns summary { cursor: pointer; }
 .milder { margin-top: 1rem; }

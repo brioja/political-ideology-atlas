@@ -376,6 +376,15 @@ function renderQuestion() {
     : hold == null ? "Narrowing it down…"
     : `Narrowing it down · ${pct(hold)}`;
   $("statement").textContent = QUESTIONS[q].text;
+  // Opened from a comparison: the other side's answer is marked beside yours.
+  if (comparing && comparing.q !== q) comparing = null;
+  const side = comparing && compareSide(comparing.key);
+  const theirs = side ? side.profile[q] : null;
+  for (const b of $("likert").querySelectorAll("button")) {
+    const marked = theirs != null && b.dataset.value === String(theirs);
+    b.classList.toggle("theirs", marked);
+    b.querySelector(".their-tag").textContent = marked ? side.name : "";
+  }
   $("back").disabled = position === 0;
   setHeaderAction(settled || done ? "results" : early ? "early" : "none");
   // "No opinion" shows as chosen when this statement was already shown and skipped.
@@ -439,6 +448,9 @@ function askStatement(id) {
   save();
 }
 
+// A statement opened from a comparison (#/test/<statement id>/<compare key>): { q, key }.
+let comparing = null;
+
 // Results are a page of their own: finishing stores the answers and navigates there.
 let lastAnswers = null;
 function finishQuiz() {
@@ -452,7 +464,7 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
   b.id = `choice-${i}`;
   b.dataset.value = c.value;
-  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${c.label}</span><span class="key" aria-hidden="true">${i + 1}</span>`;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>${c.label}</span><span class="their-tag"></span><span class="key" aria-hidden="true">${i + 1}</span>`;
   b.addEventListener("click", () => answer(c.value));
   $("likert").append(b);
 }
@@ -462,7 +474,7 @@ for (const [i, c] of SHOWN_CHOICES.entries()) {
   const b = document.createElement("button");
   b.id = "choice-none";
   b.className = "no-opinion";
-  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>No opinion</span><span class="key" aria-hidden="true">6</span>`;
+  b.innerHTML = `<span class="dot" aria-hidden="true"></span><span>No opinion</span><span class="their-tag"></span><span class="key" aria-hidden="true">6</span>`;
   b.addEventListener("click", () => answer(null));
   $("likert").append(b);
 }
@@ -553,14 +565,21 @@ function beliefList(ideo, n = 4) {
   }).join("")}</ul>`;
 }
 
+// A position's text, linked to its statement in the test when `key` names the side compared with you.
+const statementLink = (q, text, key) => key
+  ? `<a class="belief-link" href="#/test/${encodeURIComponent(q.id)}/${encodeURIComponent(key)}" title="See both answers on this statement">${esc(text)}</a>`
+  : esc(text);
+
 // "You: … / Feudalism: …" for a statement where two answers differ. Each side is its own positive
 // statement; the name reads like a speaker's, so a long one wraps with the text.
 // The strength ("strongly", "leans") follows the name, since the plain text reads the same either way.
-function versus(q, mine, theirs, me, them) {
+// With `key` (the other side's compare key), each position links to the statement in the test, where
+// the other side's answer is marked beside yours.
+function versus(q, mine, theirs, me, them, key = null) {
   const side = (who, v) => {
     const s = stance(q, v);
     const how = s.cls === "strong" || s.cls === "lean" ? `, ${s.tag.toLowerCase()}` : "";
-    return `<span><span class="who">${esc(who)}${how}:</span> ${esc(s.text)}</span>`;
+    return `<span><span class="who">${esc(who)}${how}:</span> ${statementLink(q, s.text, key)}</span>`;
   };
   return `<li class="versus">${topicIcon(q)}<div class="stack-tight">${side(me, mine)}
     ${side(them, theirs)}</div></li>`;
@@ -676,6 +695,8 @@ function showResults(shared = null) {
   const topPeople = typeof PEOPLE !== "undefined" && PEOPLE.length
     ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
 
+  // Your own results link each position to the test; someone else's shared result doesn't.
+  const linkKey = (ideo) => (shared ? null : `i:${ideo.id}`);
   const others = ranked.slice(1, 7).map((r) => {
     const apart = answeredDiffs(r).filter((d) => d.gap >= 2).sort(apartOrder).slice(0, 2);
     return `
@@ -687,7 +708,7 @@ function showResults(shared = null) {
           ${beliefList(r)}
           <p><a class="more-link" href="${ideologyHref(r.id)}">Full page for ${esc(r.name)} →</a></p>
           ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="iconed">${apart.map((d) =>
-            versus(QUESTIONS[d.q], d.a, d.t, You, r.name)).join("")}</ul>` : ""}
+            versus(QUESTIONS[d.q], d.a, d.t, You, r.name, linkKey(r))).join("")}</ul>` : ""}
         </div>
       </details></li>`;
   }).join("");
@@ -734,8 +755,8 @@ function showResults(shared = null) {
     <section>
       <h2>Why ${you_} matched</h2>
       <div class="diffs">
-        <div class="stack"><h3>${You} agree on ${statements(agreeAll.length)}</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${esc(stance(QUESTIONS[d.q], d.a).text)}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
-        <div class="stack"><h3>${You} part ways on ${statements(disagreeAll.length)}</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name)).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
+        <div class="stack"><h3>${You} agree on ${statements(agreeAll.length)}</h3><ul class="iconed">${agree.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span>${statementLink(QUESTIONS[d.q], stance(QUESTIONS[d.q], d.a).text, linkKey(top))}</span></li>`).join("") || "<li class='muted'>No exact matches on strong views.</li>"}</ul></div>
+        <div class="stack"><h3>${You} part ways on ${statements(disagreeAll.length)}</h3><ul class="iconed">${disagree.map((d) => versus(QUESTIONS[d.q], d.a, d.t, You, top.name, linkKey(top))).join("") || "<li class='muted'>No major disagreements.</li>"}</ul></div>
       </div>
       ${shared ? "" : `<div class="row"><a class="btn" href="${compareHref("me", `i:${top.id}`)}">Full comparison with ${esc(top.name)}</a><a class="btn" href="#/compare">Compare with anyone</a></div>`}
     </section>
@@ -2013,6 +2034,7 @@ function renderComparePage(aKey, bKey) {
   const mine = a.key === "me" || b.key === "me";
   const other = a.key === "me" ? b : a;
   const they = mine ? "you" : "they";
+  const otherKey = mine ? other.key : null;
   root.innerHTML = `
     ${comparePickers(aKey, bKey)}
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>
@@ -2021,9 +2043,9 @@ function renderComparePage(aKey, bKey) {
       <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
       ${lineStrips(project(model, a.profile), { other: project(model, b.profile) })}</section>
     <section class="stack"><h2>Where ${they} differ most</h2>
-      <ul class="iconed">${differ.map((j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name)).join("") || `<li class='muted'>No statement where ${they}'re more than a step apart.</li>`}</ul></section>
+      <ul class="iconed">${differ.map((j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name, otherKey)).join("") || `<li class='muted'>No statement where ${they}'re more than a step apart.</li>`}</ul></section>
     <section class="stack"><h2>What ${they} share</h2>
-      <ul class="iconed">${shared.map((j) => `<li>${topicIcon(QUESTIONS[j])}<span>${esc(stance(QUESTIONS[j], a.profile[j]).text)}</span></li>`).join("") || `<li class='muted'>No position ${they} hold the same way.</li>`}</ul></section>
+      <ul class="iconed">${shared.map((j) => `<li>${topicIcon(QUESTIONS[j])}<span>${statementLink(QUESTIONS[j], stance(QUESTIONS[j], a.profile[j]).text, otherKey)}</span></li>`).join("") || `<li class='muted'>No position ${they} hold the same way.</li>`}</ul></section>
     <p class="muted small"><a href="${compareHref(b.key, a.key)}">Swap sides</a></p>`;
   return `${a.name} and ${b.name}`;
 }
@@ -2054,6 +2076,8 @@ function route() {
   if (page === "test") {
     if (arg) {
       askStatement(decodeURIComponent(arg));
+      const q = QUESTIONS.findIndex((s) => s.id === decodeURIComponent(arg));
+      comparing = arg2 && q >= 0 ? { q, key: decodeURIComponent(arg2) } : null;
       history.replaceState(null, "", `${location.pathname}#/test`); // so a reload doesn't ask it again
     }
     if (order.length === 0) startQuiz(load());
