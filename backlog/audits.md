@@ -32,4 +32,20 @@ Audit work discussed but not started.
     Lebensraum (2: an "overseas territories" answer stretched from eastward settlement) and
     Technocracy (2: sex education deduced from "deference to experts"). These five are the re-audit
     candidates, as Jewish secularism was.
+  - **Whole-catalog check** (2026-10-29, one Sonnet reader over all 628 lists, serially, after the
+    wording fixes; full output in `scratchpad/beliefs-check-all/`, ranked in `summary.json`): 120
+    ideologies have at least one flagged position on their current list (79 one, 32 two). Re-audit
+    candidates, most flagged first:
+    - **Borrowed scope or deductions across the list:** Soviet anti-Zionism (6 of 6: general Soviet
+      state features), Budapest School (6 of 6: rejections deduced from anti-nationalism), Valencian
+      nationalism (4: the Compromís coalition's wider politics), Right-wing antiglobalism (3: the
+      wider right), Alter-globalization (3), Technolibertarianism (3), Indigenismo (3), Blaverism (3),
+      Slovenian nationalism (3).
+    - **Firm from the earlier runs** (flagged on wording since reworded, but the problem is in the
+      audit): Stoicism, Egalitarianism, Georgism, Lebensraum, Technocracy.
+    - **A possible wrong answer, not just a stretch:** Producerism lists foreign land ownership as
+      allowed; the Populists opposed alien land ownership.
+    Not checked by a second reader yet (`~/work/codex-beliefs-check.md` is ready for Codex); a single
+    reader repeats only about half its flags, so confirm before re-auditing the one- and two-flag
+    cases.
 
