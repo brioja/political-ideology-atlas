@@ -26,4 +26,10 @@ Audit work discussed but not started.
     these; it does affect what takers see after all.
   - **False alarms seen:** Lebensraum's racial segregation (sourced to Nazi occupation law) and
     other single minor flags. Run the full 628 (about 700k tokens) only with this in mind.
+  - **Re-check, same 50 with the fixed wording:** a single run of the reader is noisy (54 of its
+    first 112 flags weren't repeated). Flagged both times, so the firmest leads: Stoicism (5),
+    Egalitarianism (3), Georgism (3: free-trade positions and an unrelated land-claims answer),
+    Lebensraum (2: an "overseas territories" answer stretched from eastward settlement) and
+    Technocracy (2: sex education deduced from "deference to experts"). These five are the re-audit
+    candidates, as Jewish secularism was.
 

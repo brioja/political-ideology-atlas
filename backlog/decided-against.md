@@ -19,4 +19,8 @@ explicit decision from the maintainer.
   `economic-self-sufficiency`, `labor-aristocracy`, `democratic-peace`, `religion-illusion`,
   `left-right-obsolete`). Rewording a text means a new statement and a backfill of every audit; not
   worth it for these.
+- **Ordering "What it stands for" by how *defining* a position is** (2026-10-29). It stays ordered by
+  how unusual each strongly held stated position is among all ideologies: that can be checked against
+  the data, while "defining" is interpretive. So a broad label like Liberalism or Trumpism may lead
+  with positions that set its camp apart rather than its best-known slogans; that is expected.
 
