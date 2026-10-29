@@ -4309,7 +4309,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Women should be able to initiate divorce without their husband's consent.",
   "agree": "A wife can end the marriage even when her husband refuses.",
-  "disagree": "Religious or customary law may require the husband's consent to divorce.",
+  "disagree": "Women should not be able to initiate divorce without their husband's consent.",
   "note": "About whether a wife can divorce against her husband's will.",
   "icon": "💔"
  },
