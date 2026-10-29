@@ -29,6 +29,9 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
      allow." Contested in Israel, Lebanon, India's personal-law debate and much of the Muslim world.
   4. Weaker: "Religious students should serve in the military or national service on the same terms
      as everyone else." (Public transport on the Sabbath is too local to pass.)
+- **Wording feedback from a tester** (Discord, 2026-10-29): `democracy-best` ("Democracy is best even
+  when voters make poor choices") depends on context, e.g. whether the public is manipulated by
+  unchecked propaganda. Same kind as below.
 - **Wording feedback from a tester** (Discord, 2026-10-28): `monarchy-legitimate` "can" should be
   "may" (any ruler can be good); `preserve-national-culture` and `profit-exploitation` are too
   context-dependent to answer flatly. Rewording changes a statement's id (audits/statements/texts.json).
