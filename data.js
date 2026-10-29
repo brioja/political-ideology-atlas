@@ -942,7 +942,7 @@ const QUESTIONS = [
   "id": "personal-loyalty-rule",
   "theme": "government",
   "text": "Political authority should rest on personal oaths of loyalty between lords and their followers.",
-  "agree": "Authority should be personal bonds of loyalty and service, such as land granted for military service.",
+  "agree": "Authority should rest on personal oaths of loyalty between lords and their followers.",
   "disagree": "Political authority should not rest on personal oaths of loyalty between lords and their followers.",
   "note": "Identifies feudalism.",
   "icon": "🤝"
@@ -1374,7 +1374,7 @@ const QUESTIONS = [
   "id": "initiating-force-wrong",
   "theme": "liberty",
   "text": "It is always wrong to initiate force against another person or their property, whatever the goal.",
-  "agree": "Force is justified only in defense or in answer to aggression, however good the aim.",
+  "agree": "Starting force against another person or their property is always wrong, whatever the goal.",
   "disagree": "It is not always wrong to initiate force against another person or their property, whatever the goal.",
   "note": "About whether good ends can justify starting force.",
   "icon": "🛑"
