@@ -74,10 +74,13 @@ free trade, not about markets in general.
 - **A narrower or nearby case doesn't answer a broader or different statement:** cannabis is not all
   drugs, unauthorized migration is not immigration levels, refugee relief is not development aid,
   and a state's right of defence is not a person's right to kill in self-defence.
-- **A related subject's sources aren't the subject's.** Sources about a broader or related subject
-  (secularism's for Jewish secularism, a party's for one of its members, a movement's for one
-  current in it) don't answer for the subject. That is borrowing, neither evidence nor inference:
-  without the subject's own sources the answer is `null`.
+- **A related subject's sources aren't the subject's.** Sources about a broader, narrower or related
+  subject don't answer for the subject, in either direction: secularism's not for Jewish
+  secularism, nor American Jewish secularism's for Jewish secularism as a whole; a party's not for
+  one of its members. That is borrowing, neither evidence nor inference: without the subject's own
+  sources the answer is `null`. One branch's position (one country, strand or organisation) is the
+  whole subject's only where sources show the other branches share it; where they differ, it is a
+  split (0, `low`).
 - **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
   lobby's scorecard grade), are not evidence of a position.
 - **Record over words.** Where the subject's own record directly contradicts their words (elections
