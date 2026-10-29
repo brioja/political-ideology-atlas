@@ -52,7 +52,9 @@ function rank(ideos, answers) {
   }).filter(Boolean).sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
 }
 
+// Each step draws from its own seed, so reusing the saved sample doesn't shift the later draws.
 let seed = 20261029;
+const reseed = (k) => { seed = 20261029 + k; };
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 const pick = (arr, k) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a.slice(0, k); };
 const clamp = (v) => Math.max(-2, Math.min(2, v));
@@ -65,7 +67,9 @@ const firm = (id) => { const a = readJson(profilePath(id)).answers; return QUEST
 const shownIds = new Set(IDEOLOGIES.map((i) => i.id));
 function cases(drawn) {
   const out = [];
+  reseed(1);
   const sample = drawn ? drawn.sample.filter((id) => shownIds.has(id)) : pick(IDEOLOGIES.map((i) => i.id).sort(), 40);
+  reseed(2);
   const pairs = drawn ? drawn.pairs.filter((p) => p.every((id) => shownIds.has(id))) : null;
   for (const id of sample) {
     const f = firm(id);
@@ -79,22 +83,24 @@ function cases(drawn) {
     out.push({ suite: "adherent", label: `adherent of ${id}`, expect: [id], answers: adherent });
     out.push({ suite: "mild", label: `mild adherent of ${id}`, expect: [id], answers: mild });
   }
-  const usedPairs = [];
-  for (let k = 0; k < (pairs ? pairs.length : 20); k++) {
-    const [a, b] = pairs ? pairs[k] : pick(IDEOLOGIES.map((i) => i.id).sort(), 2);
-    usedPairs.push([a, b]);
+  reseed(3);
+  const usedPairs = pairs || Array.from({ length: 20 }, () => pick(IDEOLOGIES.map((i) => i.id).sort(), 2));
+  reseed(6);
+  for (const [a, b] of usedPairs) {
     const fa = firm(a), fb = firm(b);
     const answers = Array(n).fill(null);
     for (const j of pick(fa.flatMap((v, j) => (v == null ? [] : [j])), 30)) answers[j] = fa[j];
     for (const j of pick(fb.flatMap((v, j) => (v == null ? [] : [j])), 30)) if (answers[j] == null) answers[j] = fb[j];
     out.push({ suite: "mixed", label: `mixed ${a} + ${b}`, expect: [a, b], answers });
   }
+  reseed(4);
   for (let k = 0; k < 20; k++) {
     const answers = Array(n).fill(null);
     for (const j of pick([...Array(n).keys()], 60)) { const r = rand(); answers[j] = r < 0.5 ? 0 : r < 0.75 ? -1 : r < 0.95 ? 1 : (rand() < 0.5 ? -2 : 2); }
     out.push({ suite: "neutral", label: `mostly-neutral taker ${k + 1}`, expect: null, answers });
   }
   // A secular-only taker: Secularism's firm positions (it isn't shown) and 25 "Neither" answers.
+  reseed(5);
   const sec = firm("secularism");
   for (let k = 0; k < 5; k++) {
     const answers = sec.slice();
