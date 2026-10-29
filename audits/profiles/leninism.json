@@ -1773,12 +1773,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Lenin's era predates environmental regulation, and his texts say nothing on acting before scientific certainty.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": -1,
@@ -1868,12 +1869,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Lenin's writings predate space flight, and nothing in them makes it a goal of civilization.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -2,
@@ -2196,20 +2198,22 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "animal-use-humane": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "noblesse-oblige": {
       "value": -1,
@@ -2292,12 +2296,13 @@
       ]
     },
     "antifascism-founding-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic: Lenin died in 1924 before fascism took power.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "totalitarianisms-equivalent": {
       "value": -2,
@@ -2324,20 +2329,22 @@
       ]
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Lenin focused on class.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Lenin focused on class.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "institutions-fit-civilization": {
       "value": -1,
@@ -3144,12 +3151,13 @@
       ]
     },
     "no-nuclear-weapons-on-territory": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic: Lenin's era predates nuclear weapons, and anti-imperialism gives no clear rule on basing.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-foreign-bases": {
       "value": 1,
@@ -3192,12 +3200,13 @@
       ]
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic: the question is outside Lenin's texts, and Marxist materialism gives no clear answer.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fixed-category-of-women": {
       "value": -1,
@@ -3320,20 +3329,22 @@
       ]
     },
     "family-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Lenin aimed to abolish wage labour and so did not take up the family wage.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by Lenin; no position can be inferred.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 1,
@@ -3584,12 +3595,13 @@
       ]
     },
     "student-debt-relief": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; student loans did not exist, and Lenin's own view of free public education is the only guide.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "internal-colonialism": {
       "value": 1,
@@ -3921,12 +3933,13 @@
       ]
     },
     "close-ties-china": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic: China as an economic partner was not an issue for Lenin, so there is no basis to infer a side.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "protect-kin-minorities": {
       "value": -1,
@@ -4028,12 +4041,13 @@
       ]
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Lenin never addressed such a tax and would likely treat reforms of finance as secondary to abolishing capitalism.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": -1,
@@ -4111,5 +4125,13 @@
       "addedAs": "vanguard-party"
     }
   ],
-  "notes": "Adherents differ on whether one-party rule and the ban on factions were wartime necessities or part of the doctrine; this profile follows Lenin's own statements and the 1921 practice. Answers on social issues Lenin did not address are low confidence."
+  "notes": "Adherents differ on whether one-party rule and the ban on factions were wartime necessities or part of the doctrine; this profile follows Lenin's own statements and the 1921 practice. Answers on social issues Lenin did not address are low confidence.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

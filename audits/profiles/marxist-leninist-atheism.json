@@ -709,12 +709,13 @@
       ]
     },
     "algorithmic-government": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in any source; adherents have no settled view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unbreakable-encryption": {
       "value": -1,
@@ -1839,12 +1840,13 @@
       ]
     },
     "leader-cult": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; cults of leaders appeared in Soviet states.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "equal-parenting": {
       "value": -1,
@@ -2913,12 +2915,13 @@
       ]
     },
     "online-participation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No settled doctrine and not covered, so neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-government-data": {
       "value": -1,
@@ -3034,12 +3037,13 @@
       ]
     },
     "women-in-religious-leadership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Lenin treated religion as the church's private affair under the state, so internal church offices were of no concern to the state.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-marital-authority": {
       "value": 1,
@@ -3098,12 +3102,13 @@
       ]
     },
     "recognise-genocide": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources about atheism; inferred from the parent doctrine.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "income-for-work-not-ownership": {
       "value": 2,
@@ -3266,20 +3271,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; no clear position follows.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; no clear position follows.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -2,
@@ -3330,12 +3337,13 @@
       ]
     },
     "dense-cities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no clear position follows.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-group-interests": {
       "value": -2,
@@ -3608,12 +3616,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A linguistic classification question the doctrine never addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -2,
@@ -3867,12 +3876,13 @@
       ]
     },
     "close-ties-china": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; foreign alignment depends on the state and period, not on the doctrine of religion.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "protect-kin-minorities": {
       "value": -1,
@@ -3899,12 +3909,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the doctrine's sources deal with religion, not taxation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -3971,12 +3982,13 @@
       ]
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the doctrine's sources deal with religion, not finance.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": -1,
@@ -4064,5 +4076,13 @@
       "addedAs": "separate-church-state"
     }
   ],
-  "notes": "Most answers outside religion are inferred from the parent Marxism–Leninism and are low confidence, so the profile has few stated positions. Practice also differed from Lenin's formula that religion is private: Soviet and Albanian policy went to closure and persecution."
+  "notes": "Most answers outside religion are inferred from the parent Marxism–Leninism and are low confidence, so the profile has few stated positions. Practice also differed from Lenin's formula that religion is private: Soviet and Albanian policy went to closure and persecution.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

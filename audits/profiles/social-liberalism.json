@@ -965,12 +965,13 @@
       ]
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The core texts do not address this, and adherents have no common position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": 1,
@@ -1502,12 +1503,13 @@
       ]
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberalism separates church and state and leaves church governance to believers; inferred, so no clear stance.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "clerical-rule": {
       "value": -2,
@@ -1729,12 +1731,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social liberals accept both parliamentary and presidential models and the core texts are silent; inferred.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": 0,
@@ -3287,12 +3290,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; social liberalism is indifferent on this question of diaspora and homeland.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3360,12 +3364,13 @@
       ]
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social liberals do not take a common stance on legislative design; inferred.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": -1,
@@ -3392,12 +3397,13 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social liberals value both access to treatments and public safety regulation; the issue is not addressed. Inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 1,
@@ -3440,12 +3446,13 @@
       ]
     },
     "regional-powers-revocable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social liberals support both devolution and national standards, and do not take a common stance on revocability; inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gm-crops": {
       "value": 1,
@@ -3669,13 +3676,14 @@
       ]
     },
     "internal-colonialism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the core texts never address regional exploitation, though social liberals support regional redistribution within welfare states.",
       "sources": [
         "s3",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-human-nature": {
       "value": 1,
@@ -3696,12 +3704,13 @@
       ]
     },
     "religions-one-truth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition's neutrality among beliefs, including Rawls's overlapping consensus, takes no side on whether religions share one truth; inferred.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "farm-price-support": {
       "value": 1,
@@ -3961,12 +3970,13 @@
       ]
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: nothing in the sources addresses this and liberals divide between stability and self-determination.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": -1,
@@ -4206,5 +4216,13 @@
       "addedAs": "positive-liberty"
     }
   ],
-  "notes": "American usage of liberal often means progressive on social issues, and strands differ: Rawlsians lean to property-owning democracy, others to a Keynesian welfare state."
+  "notes": "American usage of liberal often means progressive on social issues, and strands differ: Rawlsians lean to property-owning democracy, others to a Keynesian welfare state.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 10
+    }
+  ]
 }

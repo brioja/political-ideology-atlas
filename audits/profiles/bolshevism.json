@@ -716,12 +716,13 @@
       ]
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed and the ideology is indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": -1,
@@ -1026,12 +1027,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed and adherents have no common view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": -2,
@@ -1864,12 +1866,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the period (inferred).",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -2,
@@ -1888,12 +1891,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the period (inferred).",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 1,
@@ -2338,12 +2342,13 @@
       ]
     },
     "domestic-violence-symmetry": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in Lenin's writings; no basis for a clear answer.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "institutions-fit-civilization": {
       "value": -1,
@@ -2508,12 +2513,13 @@
       ]
     },
     "residents-only-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the party abolished private land ownership outright, so residency-based purchase limits are beside the point.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "job-guarantee": {
       "value": 1,
@@ -2810,20 +2816,22 @@
       ]
     },
     "intersecting-oppressions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Lenin saw class as primary, and subordinated other oppressions to it; the modern intersectional claim is anachronistic.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gender-identity-recognition": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; Lenin did not address gender identity and the answer is inferred as unclear.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assisted-dying": {
       "value": 0,
@@ -2876,12 +2884,13 @@
       ]
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; Lenin did not address these legal tools.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "social-market-economy": {
       "value": -2,
@@ -2994,12 +3003,13 @@
       ]
     },
     "online-participation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; inferred from nothing stated in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-government-data": {
       "value": 0,
@@ -3112,12 +3122,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Never addressed in Lenin's time and nothing in the doctrine points either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 0,
@@ -3275,12 +3286,13 @@
       ]
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Lenin said religion is private for the state and the party fights it by propaganda; no stance on feminist reading of texts.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -3350,20 +3362,22 @@
       ]
     },
     "family-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address the family wage; socialist pay was meant to follow labour.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address drug approval.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 1,
@@ -4157,5 +4171,13 @@
       "addedAs": "defeat-own-government-war"
     }
   ],
-  "notes": "Lenin-era doctrine and Bolshevik practice diverged, especially on soviet democracy, workers' control and markets (War Communism versus the NEP). Answers follow stated doctrine where it exists, and practice where doctrine is silent."
+  "notes": "Lenin-era doctrine and Bolshevik practice diverged, especially on soviet democracy, workers' control and markets (War Communism versus the NEP). Answers follow stated doctrine where it exists, and practice where doctrine is silent.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

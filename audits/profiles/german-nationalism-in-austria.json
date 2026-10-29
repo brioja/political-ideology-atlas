@@ -756,12 +756,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in any source; adherents are indifferent.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -1144,12 +1145,13 @@
       ]
     },
     "expand-fossil-fuels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Energy supply is not addressed beyond rejecting nuclear power.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assimilate-immigrants": {
       "value": 1,
@@ -1233,12 +1235,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist strategy is not addressed; adherents are indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": -1,
@@ -1281,12 +1284,13 @@
       ]
     },
     "state-strengthens-encirclement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist state theory is outside the ideology; adherents are indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "consent-of-governed": {
       "value": 1,
@@ -1338,12 +1342,13 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not discussed in sources; adherents are indifferent to the republican theory.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": 1,
@@ -2267,12 +2272,13 @@
       ]
     },
     "slavery-not-civil-war-cause": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "An American historiographic dispute never addressed by the movement.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-contested-monuments": {
       "value": 1,
@@ -2476,12 +2482,13 @@
       ]
     },
     "democratic-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources show no view on this thesis, and a nationalist outlook neither embraces nor denies it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-duty-to-obey": {
       "value": -2,
@@ -2500,12 +2507,13 @@
       ]
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Union structure is not discussed anywhere in the sources.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-conspiracy": {
       "value": 1,
@@ -2949,12 +2957,13 @@
       ]
     },
     "citizens-assembly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sortition is not discussed, and direct-democracy sympathy is offset by the programme's preference for elections.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reinterpret-religion": {
       "value": 0,
@@ -3047,12 +3056,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the movement's concerns are national identity, borders and sovereignty, and it never addressed extinction risks either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 0,
@@ -3608,12 +3618,13 @@
       ]
     },
     "keep-nuclear-weapons": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Austria is neutral and non-nuclear and the movement never took a position on nuclear arms, so this is left neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-own-party": {
       "value": -1,
@@ -3941,12 +3952,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are not documented as taking a position on consumption taxes; the sources are silent, so this is left neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4113,5 +4125,13 @@
       "addedAs": "separate-church-state"
     }
   ],
-  "notes": "The strands differ: Schönerer's racial antisemitism and anti-Habsburg radicalism, interwar pan-Germans absorbed into the NSDAP, and the post-1945 FPÖ that combines German cultural identity with Austrian patriotism and formal democracy. Answers lean on the 2011 FPÖ programme for modern policy positions, so many economic and social answers rest on inference from a party that is only partly this ideology."
+  "notes": "The strands differ: Schönerer's racial antisemitism and anti-Habsburg radicalism, interwar pan-Germans absorbed into the NSDAP, and the post-1945 FPÖ that combines German cultural identity with Austrian patriotism and formal democracy. Answers lean on the 2011 FPÖ programme for modern policy positions, so many economic and social answers rest on inference from a party that is only partly this ideology.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

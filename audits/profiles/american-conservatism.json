@@ -1076,13 +1076,14 @@
       ]
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in sources; the conservative immigration stance disfavours open citizenship claims, though Israel's law of return is supported by many.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": 0,
@@ -1480,13 +1481,14 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A republican theory not discussed; Goldwater's negative liberty only partly overlaps with it.",
       "sources": [
         "s3",
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": 2,
@@ -2018,13 +2020,14 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources and adherents are indifferent.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": 1,
@@ -2288,13 +2291,14 @@
       ]
     },
     "former-empire-influence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed and adherents are indifferent.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "delink-world-market": {
       "value": -2,
@@ -3242,13 +3246,14 @@
       ]
     },
     "online-participation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents are indifferent.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-government-data": {
       "value": 0,
@@ -3512,13 +3517,14 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents are indifferent.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": 0,
@@ -4007,12 +4013,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents are indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": 1,
@@ -4521,5 +4528,13 @@
       "addedAs": "voter-id"
     }
   ],
-  "notes": "Strands differ: libertarian-leaning conservatives dissent on drugs, surveillance and immigration; national conservatives on trade and entitlements; neoconservatives on intervention; paleoconservatives on foreign policy. The profile follows the mainstream Republican-aligned centre as of 2024."
+  "notes": "Strands differ: libertarian-leaning conservatives dissent on drugs, surveillance and immigration; national conservatives on trade and entitlements; neoconservatives on intervention; paleoconservatives on foreign policy. The profile follows the mainstream Republican-aligned centre as of 2024.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 7
+    }
+  ]
 }

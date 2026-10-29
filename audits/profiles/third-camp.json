@@ -388,12 +388,13 @@
       ]
     },
     "expand-nuclear": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents have no settled view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revolution-justified": {
       "value": 2,
@@ -1836,12 +1837,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the tradition and adherents have no settled view on custody presumptions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 0,
@@ -2124,12 +2126,13 @@
       ]
     },
     "animal-use-humane": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address animal use, and adherents divide between welfare reform and abolition.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "noblesse-oblige": {
       "value": -2,
@@ -2244,12 +2247,13 @@
       ]
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the tradition; adherents have no settled view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": -1,
@@ -2284,12 +2288,13 @@
       ]
     },
     "filial-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition does not address family obligations, and adherents have no settled view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "office-by-exam": {
       "value": -1,
@@ -2436,12 +2441,13 @@
       ]
     },
     "abolish-legal-marriage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the tradition; adherents have no settled view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "public-access-to-information": {
       "value": 1,
@@ -2868,12 +2874,13 @@
       ]
     },
     "reinterpret-religion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; secular adherents are indifferent to internal religious reinterpretation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "wealth-concentration-endangers-liberty": {
       "value": 2,
@@ -2932,20 +2939,22 @@
       ]
     },
     "vote-delegation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents have no settled view on liquid democracy.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the tradition; adherents have no settled view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3181,12 +3190,13 @@
       ]
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; a secular tradition with no stated line on testing religious texts.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -3607,12 +3617,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition has no position on how regional language varieties are named.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -4085,5 +4096,13 @@
       "addedAs": "stay-neutral-between-blocs"
     }
   ],
-  "notes": "Contested: the USSR is bureaucratic collectivist for Shachtman but state capitalist for Cliff's followers. Shachtman himself later drifted toward backing the West, so some self-described adherents would answer Cold War questions differently."
+  "notes": "Contested: the USSR is bureaucratic collectivist for Shachtman but state capitalist for Cliff's followers. Shachtman himself later drifted toward backing the West, so some self-described adherents would answer Cold War questions differently.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 11
+    }
+  ]
 }

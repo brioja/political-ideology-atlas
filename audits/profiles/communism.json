@@ -2408,12 +2408,13 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxism-Leninism has no doctrine on animals; the question is not addressed.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "animal-use-humane": {
       "value": 1,
@@ -3359,12 +3360,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; communists focused on class struggle and the present material order, and no strand treats extinction risk as a topic.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3620,12 +3622,13 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Drug regulation is not discussed in the classic texts and adherents have no settled position.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 1,
@@ -4469,5 +4472,13 @@
       "addedAs": "dictatorship-of-proletariat"
     }
   ],
-  "notes": "Anarcho-communists and council communists would reject one-party rule, central planning by the state and the transitional state, and score the state-related statements quite differently. Present-day communist parties diverge on social questions such as same-sex marriage. Several answers rest on the practice of 20th-century communist states and are marked low."
+  "notes": "Anarcho-communists and council communists would reject one-party rule, central planning by the state and the transitional state, and score the state-related statements quite differently. Present-day communist parties diverge on social questions such as same-sex marriage. Several answers rest on the practice of 20th-century communist states and are marked low.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 3
+    }
+  ]
 }

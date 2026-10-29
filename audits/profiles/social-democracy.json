@@ -773,12 +773,13 @@
       ]
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; social democrats combine personal freedom with insistence on social control of technology and equal access, so they have no settled view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": -1,
@@ -1854,12 +1855,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: social democratic parties hold both parliamentary and presidential systems and no common line exists.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": 0,
@@ -3405,20 +3407,22 @@
       ]
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; this is a contested academic debate on which the movement takes no position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fixed-category-of-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the movement supports gender equality without taking a side in this theoretical debate.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "martyrs-honoured": {
       "value": -1,
@@ -3437,12 +3441,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no position is documented.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3453,20 +3458,22 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the movement is secular and leaves religious language to believers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the movement is secular and takes no position on judging religious texts.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -4141,14 +4148,15 @@
       ]
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents have no common view.",
       "sources": [
         "s1",
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": 0,
@@ -4396,5 +4404,13 @@
       "s5 is a blog review of Berman, not the book; acceptable but thin"
     ],
     "note": "Answers reviewed and accepted unchanged. Added wikipedia and furtherReading (from already-cited sources) after those fields were introduced."
-  }
+  },
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 8
+    }
+  ]
 }

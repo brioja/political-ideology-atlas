@@ -713,12 +713,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the program values land and forests as national resources, and nothing points either way on intrinsic value.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": -2,
@@ -925,13 +926,14 @@
       ]
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the program or the modern party; no position can be inferred either way.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -1,
@@ -1456,13 +1458,14 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the program or the current party; no position can be inferred.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": 2,
@@ -1845,12 +1848,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; no position follows from the program.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": -1,
@@ -1917,12 +1921,13 @@
       ]
     },
     "character-from-environment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents combine a Catholic view of man with a call to shape citizens through the state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-above-law": {
       "value": 1,
@@ -1933,12 +1938,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -1,
@@ -2159,12 +2165,13 @@
       ]
     },
     "end-racial-preferences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Falange never addressed racial preferences, and its Catholic, hispanist outlook points no clear way.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "public-money-creation": {
       "value": 1,
@@ -2390,12 +2397,13 @@
       ]
     },
     "slavery-not-civil-war-cause": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The issue is outside Falangist concerns and adherents have no documented line, so no stance is inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-contested-monuments": {
       "value": 1,
@@ -3454,20 +3462,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -2,
@@ -3515,12 +3525,13 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; inferred only from its agrarian reform, which gives no direction on biotechnology.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
       "value": -1,
@@ -4135,12 +4146,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses consumption taxes; adherents have no distinct view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4305,5 +4317,13 @@
       "addedAs": "organic-representation"
     }
   ],
-  "notes": "The original 1934 text is cited from a wiki reproduction (Hispanopedia) because no official edition could be opened; its wording matches the summaries in Payne and Wikipedia. Under Franco the Falange was merged into a broader regime party and its economic radicalism was largely shelved; \"authentic\" Falangist splinters after 1975 stress the anti-capitalist side and are hostile to the monarchy. Positions on immigration, the EU, abortion and similar modern issues come from today's FE de las JONS."
+  "notes": "The original 1934 text is cited from a wiki reproduction (Hispanopedia) because no official edition could be opened; its wording matches the summaries in Payne and Wikipedia. Under Franco the Falange was merged into a broader regime party and its economic radicalism was largely shelved; \"authentic\" Falangist splinters after 1975 stress the anti-capitalist side and are hostile to the monarchy. Positions on immigration, the EU, abortion and similar modern issues come from today's FE de las JONS.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

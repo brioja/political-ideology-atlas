@@ -1327,12 +1327,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarians do not address it; they reject socialism altogether, so the question of its survival has no clear answer from principle.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": 0,
@@ -1680,12 +1681,13 @@
       ]
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarianism takes no position on where people should live and treats such lifestyle claims as individual choice; inferred from its neutrality on ways of life.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": 0,
@@ -1910,12 +1912,13 @@
       ]
     },
     "nonpartisan-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: libertarianism does not address the office, and its concern is limiting the powers of any head of state.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "force-to-prevent-secession": {
       "value": -2,
@@ -1953,12 +1956,13 @@
       ]
     },
     "character-from-environment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: libertarianism stresses individual responsibility and does not take a settled view on nature versus nurture.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-above-law": {
       "value": -2,
@@ -2360,12 +2364,13 @@
       ]
     },
     "ruling-class-consent": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A hegemony account of class power is not part of the ideology; inferred from libertarian commitments to individual liberty, property rights, voluntary association and minimal government.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "world-economy-extracts-surplus": {
       "value": -2,
@@ -3262,12 +3267,13 @@
       ]
     },
     "vote-delegation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; libertarians are sceptical of democratic decision-making generally, so delegable voting is neither endorsed nor opposed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "existential-risk-priority": {
       "value": -1,
@@ -3279,13 +3285,14 @@
       ]
     },
     "women-in-religious-leadership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarians defend churches' freedom to set their own rules, so they take no position on eligibility.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-marital-authority": {
       "value": 1,
@@ -3416,36 +3423,40 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; libertarianism is indifferent to where a people lives, as people may move and settle freely.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; libertarians do not hold national projects of either kind, and leave culture to voluntary society.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religious language is a private matter on which libertarianism takes no position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarians hold that religious authority is a private affair of believers, and take no position on how traditions should be judged.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -4378,5 +4389,13 @@
       "addedAs": "taxation-theft"
     }
   ],
-  "notes": "The family is split between minarchists and anarcho-capitalists (separate catalog entries), and on abortion and, since the 2022 rise of the Mises Caucus, on immigration. Left-libertarians would answer differently on land-value tax, basic income and class. The answers follow mainstream US right-libertarianism."
+  "notes": "The family is split between minarchists and anarcho-capitalists (separate catalog entries), and on abortion and, since the 2022 rise of the Mises Caucus, on immigration. Left-libertarians would answer differently on land-value tax, basic income and class. The answers follow mainstream US right-libertarianism.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 11
+    }
+  ]
 }

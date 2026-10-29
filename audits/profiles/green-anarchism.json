@@ -260,12 +260,13 @@
       ]
     },
     "same-sex-marriage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Many anarchists reject state marriage altogether, so they would not demand its extension; the issue is not addressed by the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abortion-legal": {
       "value": 1,
@@ -659,12 +660,13 @@
       ]
     },
     "duties-before-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anarchists stress mutual obligation and also individual freedom; not addressed in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nature-intrinsic-value": {
       "value": 2,
@@ -1023,12 +1025,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fiscal policy is a state matter that anarchists do not address; no stated position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": 0,
@@ -1240,12 +1243,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist-Leninist debate outside the anarchist frame; no stated view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": 1,
@@ -2088,12 +2092,13 @@
       ]
     },
     "labor-aristocracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist debate not addressed in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-to-discriminate": {
       "value": -2,
@@ -2892,22 +2897,24 @@
       ]
     },
     "religious-dress-in-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: anarchists oppose religion and state coercion alike, so there is no common view.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: anarchists distrust both employers and the courts and the state, so there is no clear stance.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "social-market-economy": {
       "value": -2,
@@ -3139,13 +3146,14 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; primitivists and social ecologists disagree on technology, and the focus is on ecological and social crisis.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3247,12 +3255,13 @@
       ]
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; green anarchists have no shared position on this feminist-theory question.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fixed-category-of-women": {
       "value": 1,
@@ -3279,12 +3288,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; the tradition rejects national homelands more than it designs them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3619,12 +3629,13 @@
       ]
     },
     "restructure-world-economy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "They want to abolish states and capitalism rather than reform global rules, though they sympathise with poorer countries; not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "smash-state-machine": {
       "value": 2,
@@ -4043,12 +4054,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed, since the strand rejects the state and its taxation altogether.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4219,5 +4231,13 @@
       "addedAs": "nature-intrinsic-value"
     }
   ],
-  "notes": "The largest internal splits are primitivism versus Bookchin's social ecology (foraging, technology, consensus, population control). Several 0 answers record that split or the movement's silence on a state-policy question."
+  "notes": "The largest internal splits are primitivism versus Bookchin's social ecology (foraging, technology, consensus, population control). Several 0 answers record that split or the movement's silence on a state-policy question.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

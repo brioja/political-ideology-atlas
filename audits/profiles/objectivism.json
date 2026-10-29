@@ -1818,12 +1818,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand did not address how the head of state should be chosen; adherents care about limits on power more than the method.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": -1,
@@ -1898,12 +1899,13 @@
       ]
     },
     "nonpartisan-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Rand's concern is limited government under objective law, not the form of the head of state.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "force-to-prevent-secession": {
       "value": 0,
@@ -1914,12 +1916,13 @@
       ]
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Objectivists favor one objective legal system protecting rights everywhere, though freer regions are welcomed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": -2,
@@ -2009,12 +2012,13 @@
       ]
     },
     "refugee-return": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed directly; Objectivists would judge by property rights and individual claims rather than descent, so this is genuinely open.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "co-ethnic-territorial-claim": {
       "value": -2,
@@ -2359,12 +2363,13 @@
       ]
     },
     "party-own-road": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Objectivism opposes socialism whichever party leads it and has no position on the party's independence.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "self-reliance-over-aid": {
       "value": 0,
@@ -2415,12 +2420,13 @@
       ]
     },
     "preserve-contested-monuments": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Objectivism has no position, and Rand would judge each case by the figure's moral worth.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "male-disadvantage-attention": {
       "value": 0,
@@ -2726,12 +2732,13 @@
       ]
     },
     "regional-revenue-retention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand did not address how regions should spend revenue, and her view of government funding by voluntary means leaves the question unclear.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "personal-possessions-private": {
       "value": -2,
@@ -3191,20 +3198,22 @@
       ]
     },
     "term-limits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by Rand; adherents have no settled position.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "vote-delegation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by Rand, who also distrusted unlimited democratic majorities; inferred as neutral.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "existential-risk-priority": {
       "value": -1,
@@ -3362,20 +3371,22 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand was an atheist, so the statement is outside the philosophy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand rejected religion as a source of authority, so the statement is outside the philosophy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -3498,12 +3509,13 @@
       ]
     },
     "regional-powers-revocable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand's concern is that government protects individual rights at every level; the sources do not discuss regional devolution.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gm-crops": {
       "value": 1,
@@ -3608,20 +3620,22 @@
       ]
     },
     "arms-reduction": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rand held government should maintain an army for defense; no position on arms levels is documented.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-diplomacy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; Objectivists would not clearly favor or oppose secret agreements.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capital-controls": {
       "value": -2,
@@ -4265,5 +4279,13 @@
       "addedAs": "reason-over-faith"
     }
   ],
-  "notes": "Rand rejected libertarianism; the ARI and Atlas Society differ on some points such as open immigration and foreign policy."
+  "notes": "Rand rejected libertarianism; the ARI and Atlas Society differ on some points such as open immigration and foreign policy.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

@@ -1013,12 +1013,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "State fiscal policy is not a concern of a stateless ideology and adherents have no common view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": 1,
@@ -1829,12 +1830,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not an anarchist concern and adherents have no common view.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -2,
@@ -1853,12 +1855,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses family courts; adherents have no common view.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 1,
@@ -3166,12 +3169,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anarchists reject nation-states and have no stated view on a diaspora homeland.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": 0,
@@ -3182,12 +3186,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition is anti-clerical and has no stated view on how God is described, so it is inferred as indifferent.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": 0,
@@ -3270,20 +3275,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Drug approval speed is not addressed by the sources and adherents have no common view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-ageing research is not addressed by the sources and adherents have no common view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": 1,
@@ -4060,5 +4067,13 @@
       "addedAs": "minority-veto"
     }
   ],
-  "notes": "Bookchin's municipalism favours majority-vote assemblies, while Kropotkin, Malatesta and consensus advocates distrust majorities; mutualists and collectivists keep exchange and compensation that communists reject. Several answers on state-run measures are inferred from anti-statism."
+  "notes": "Bookchin's municipalism favours majority-vote assemblies, while Kropotkin, Malatesta and consensus advocates distrust majorities; mutualists and collectivists keep exchange and compensation that communists reject. Several answers on state-run measures are inferred from anti-statism.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 7
+    }
+  ]
 }

@@ -1117,12 +1117,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the source; inferred that anarchists reject the state's management of the economy, so neither deficit stimulus nor fiscal discipline is an anarchist position.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": -1,
@@ -2059,12 +2060,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anarchists have no common doctrine on custody law, which they would leave to voluntary arrangements; inferred.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 1,
@@ -3335,13 +3337,14 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; anarchists share no stated position on this issue.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3500,12 +3503,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anarchism is generally secular and has no position on religious language, though religious anarchists are a separate strand.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": 0,
@@ -3607,12 +3611,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the tradition, and adherents hold no common view.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": 1,
@@ -4443,5 +4448,13 @@
       "addedAs": "means-match-ends"
     }
   ],
-  "notes": "Individualist and mutualist anarchists would answer more favourably on markets, small property and self-interest; anarcho-pacifists and Christian anarchists would reject revolutionary violence; primitivists would agree that industrial civilization has been a disaster. Many policy statements presuppose state action that anarchists reject in principle, so those answers reflect the direction anarchists favour, not support for the state carrying it out."
+  "notes": "Individualist and mutualist anarchists would answer more favourably on markets, small property and self-interest; anarcho-pacifists and Christian anarchists would reject revolutionary violence; primitivists would agree that industrial civilization has been a disaster. Many policy statements presuppose state action that anarchists reject in principle, so those answers reflect the direction anarchists favour, not support for the state carrying it out.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 5
+    }
+  ]
 }

@@ -942,12 +942,13 @@
       ]
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fascism placed press and universities under state control and no source addresses where power lies in a liberal order; no position can be inferred either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": 1,
@@ -1472,12 +1473,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed as a doctrine; the regime kept private property and state housing programs alike, and no stated position can be sourced.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": 2,
@@ -2173,12 +2175,13 @@
       ]
     },
     "end-racial-preferences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: fascism did not address race-conscious admissions, and its hierarchical views make the answer unclear.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "public-money-creation": {
       "value": 0,
@@ -2280,12 +2283,13 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the doctrine; no stance documented.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "animal-use-humane": {
       "value": 1,
@@ -2394,12 +2398,13 @@
       ]
     },
     "slavery-not-civil-war-cause": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No documented stance; Italian fascism had no stake in the question.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-contested-monuments": {
       "value": 1,
@@ -3452,12 +3457,13 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 0,
@@ -4120,12 +4126,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fascist doctrine never addressed consumption taxes; the regime taxed to fund state projects and adherents have no distinct view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4305,5 +4312,13 @@
       "addedAs": "territorial-expansion"
     }
   ],
-  "notes": "Fascism's programs shifted sharply: the 1919 Fasci program was left-leaning (minimum wage, capital levy, women's suffrage), but the movement dropped most of it on the way to power, and scholars such as Paxton warn that fascist texts are poor guides to fascist practice. Economic answers follow the regime's practice and the 1932 Doctrine. Race is the main point where strands diverge: Italian doctrine defined the nation as a historical people rather than a race until the 1938 racial laws, while Nazism made biological race central. Modern answers (climate, nuclear power, encryption, AI) are inferences and marked low or medium accordingly. Thirteen newer statements were answered in a later pass (2026-10-17) from the Doctrine, Wikipedia's Fascism, Economics of fascism and Italian Fascism articles; most are inferences."
+  "notes": "Fascism's programs shifted sharply: the 1919 Fasci program was left-leaning (minimum wage, capital levy, women's suffrage), but the movement dropped most of it on the way to power, and scholars such as Paxton warn that fascist texts are poor guides to fascist practice. Economic answers follow the regime's practice and the 1932 Doctrine. Race is the main point where strands diverge: Italian doctrine defined the nation as a historical people rather than a race until the 1938 racial laws, while Nazism made biological race central. Modern answers (climate, nuclear power, encryption, AI) are inferences and marked low or medium accordingly. Thirteen newer statements were answered in a later pass (2026-10-17) from the Doctrine, Wikipedia's Fascism, Economics of fascism and Italian Fascism articles; most are inferences.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 7
+    }
+  ]
 }

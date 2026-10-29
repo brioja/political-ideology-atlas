@@ -56,6 +56,21 @@ const ideologyJudgeKey = (ideologies, statements) => require("crypto").createHas
   .update(JSON.stringify(statements.map((s) => s.id)))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
+// Silence in ideology audits written before "no known position" existed for them, when it was recorded
+// as 0 (audits/AUDIT_RULES.md: silence is null): a low zero whose rationale the audit repeats 3+ times
+// (a stock "no doctrine" line), or that says in words there is no position and mentions no split,
+// difference or balance. Checked by hand on samples: about 95% of what it finds is silence; about a
+// third of what it leaves (silence with a "but" clause) is too, for re-audits to pick up.
+const SILENT = /\b(no (position|stance|view|doctrine|line|record|programme|program|documented|stated|known|clear|specific|explicit|common|shared|source (takes|decides|addresses|records|documents|covers|states|says))|not (address|discuss|mention|take|cover|state|applicable|part of|relevant|an? (issue|question|theme|concern|topic|matter|feature))\w*|(does|do|did)n.t (address|discuss|take|mention)|never (address|discuss|took|take)\w*|silent|nothing in|outside (its|the)|takes no|left neutral|offers? no|anachronis\w*|post-?dates?|pre-?dates?|irrelevant|beside the point|n\/a|undocumented|no counterpart|no \w+ (stance|position|view) (is )?(stated|recorded|documented)|not in (its|the) (documented )?(program|programme|platform|sources))\b/i;
+const SPLIT = /\b(split|divided|mixed|balanc\w*|varie[ds]|vary|differ\w*|both (sides|ways)|compromise|tension|while|but\b|yet\b)\b/i;
+function silentZeros(audit) {
+  const uses = new Map();
+  for (const a of Object.values(audit.answers || {})) uses.set(a.rationale, (uses.get(a.rationale) || 0) + 1);
+  return new Set(Object.entries(audit.answers || {})
+    .filter(([, a]) => a.value === 0 && a.confidence === "low"
+      && (uses.get(a.rationale) >= 3 || (SILENT.test(a.rationale || "") && !SPLIT.test(a.rationale || ""))))
+    .map(([id]) => id));
+}
 // An ideology audit's answers as the model takes them. "No known position" (null) counts as 0 for
 // now, as it did when the audits recorded silence as 0: matching changes only once a regression set
 // shows what treating it as unanswered does (it would then be left out, like a person's).
@@ -131,4 +146,4 @@ const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1
 
 module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  RULES, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  RULES, silentZeros, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };

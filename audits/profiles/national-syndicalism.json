@@ -1439,12 +1439,13 @@
       ]
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents have no clear position on representatives' pay.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-discipline-binding": {
       "value": 2,
@@ -1471,12 +1472,13 @@
       ]
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; church governance is outside the program, which only coordinates Church and state (point 25).",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "clerical-rule": {
       "value": -2,
@@ -1727,12 +1729,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmental risk was not a concern of 1930s Spanish national syndicalism and nothing in its program points either way; adherents' state direction of the economy is the only weak hint.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": -1,
@@ -1815,12 +1818,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic for 1930s Spain; its imperial expansionism was terrestrial and nothing suggests a view on space.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -1,
@@ -1864,12 +1868,13 @@
       ]
     },
     "refugee-return": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; nothing in the program or sources bears on a general right of return.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "co-ethnic-territorial-claim": {
       "value": 1,
@@ -1923,12 +1928,13 @@
       ]
     },
     "rights-where-you-live": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the movement; no basis to infer a common line.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "material-conditions-drive-history": {
       "value": -2,
@@ -2272,12 +2278,13 @@
       ]
     },
     "slavery-not-civil-war-cause": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The issue lies outside national syndicalist concerns and no line is documented.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-contested-monuments": {
       "value": 1,
@@ -3331,20 +3338,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -2,
@@ -3391,12 +3400,13 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; nothing in the sources bears on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
       "value": -1,
@@ -4003,12 +4013,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses consumption taxes.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4187,5 +4198,13 @@
       "addedAs": "widespread-small-property"
     }
   ],
-  "notes": "The Spanish strand is the basis; the Italian strand (Corradini, Rossoni) was more imperialist and openly pro-class-struggle and would answer some items differently. Sources on religion and race are thin, so those answers are low confidence. Ledesma (atheist, pro-union) and José Antonio (Catholic, elitist) differed on religion and labor."
+  "notes": "The Spanish strand is the basis; the Italian strand (Corradini, Rossoni) was more imperialist and openly pro-class-struggle and would answer some items differently. Sources on religion and race are thin, so those answers are low confidence. Ledesma (atheist, pro-union) and José Antonio (Catholic, elitist) differed on religion and labor.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 11
+    }
+  ]
 }

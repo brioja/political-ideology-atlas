@@ -345,13 +345,14 @@
       ]
     },
     "free-trade": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The neoliberal right backs free trade, whereas the current US platform and national conservatives favour tariffs. The cited sources do not address this directly, so the answer is inferred.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nation-first": {
       "value": 1,
@@ -705,12 +706,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by right-wing thought as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": -1,
@@ -1069,12 +1071,13 @@
       ]
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not an issue the right addresses.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-self-determination": {
       "value": 1,
@@ -1328,12 +1331,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A regional issue on which the right has no shared position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-religion-state-schools": {
       "value": -1,
@@ -1345,12 +1349,13 @@
       ]
     },
     "state-strengthens-encirclement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A Marxist-Leninist doctrine that the right does not address.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "consent-of-governed": {
       "value": 0,
@@ -2870,12 +2875,13 @@
       ]
     },
     "defensive-jihad-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The mainstream Western right has no settled view on this Islamic doctrine; it falls outside the scope.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unreligious-rulers-fought": {
       "value": -1,
@@ -3347,12 +3353,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The label does not address diaspora and homeland roles; the question belongs to specific nationalisms and adherents have no common view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": 0,
@@ -4044,12 +4051,13 @@
       ]
     },
     "disputed-territory-plebiscite": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Right-wing adherents divide between self-determination by vote and defence of existing borders, so this is left neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "keep-colonial-borders": {
       "value": 1,
@@ -4300,5 +4308,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "The strands diverge on trade, welfare, intervention, religion in public life and the role of the state: neoliberal, traditionalist and national-conservative answers differ, so those are 0 or low confidence. The US platform source reflects one national party and was used only for stated planks."
+  "notes": "The strands diverge on trade, welfare, intervention, religion in public life and the role of the state: neoliberal, traditionalist and national-conservative answers differ, so those are 0 or low confidence. The US platform source reflects one national party and was used only for stated planks.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 8
+    }
+  ]
 }

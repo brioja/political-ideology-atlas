@@ -331,12 +331,13 @@
       ]
     },
     "gender-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal feminism concentrates on legal and political equality for women and takes no settled position on the origins of gender.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-national-culture": {
       "value": -1,
@@ -735,12 +736,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal theory is centred on persons and takes no settled view on nature's intrinsic value, though liberals back environmental protection.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": -1,
@@ -2010,12 +2012,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; liberals divide between a shared-parenting presumption and case-by-case welfare tests.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -2493,12 +2496,13 @@
       ]
     },
     "paid-care-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed directly; inferred from liberal commitments to individual rights, consent, equality before the law and constitutional government applied to recognising and paying domestic labour.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "filial-duty": {
       "value": -1,
@@ -3438,13 +3442,14 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; neutral.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3612,12 +3617,13 @@
       ]
     },
     "dense-cities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed as an ideological question; liberals favour planning and markets in various forms.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-group-interests": {
       "value": -2,
@@ -3901,12 +3907,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; liberalism is neutral on how languages are classified and named.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": 0,
@@ -4388,5 +4395,13 @@
       "addedAs": "individual-rights-only"
     }
   ],
-  "notes": "The category hint 'Right' fits European usage, where liberal parties sit in the centre or centre-right; in North America 'liberal' means social liberalism and would answer the economic statements further left (minimum wage, regulation, taxes on the wealthy). Classical liberals would answer the welfare and healthcare statements negatively. Answers where these strands diverge are marked low confidence."
+  "notes": "The category hint 'Right' fits European usage, where liberal parties sit in the centre or centre-right; in North America 'liberal' means social liberalism and would answer the economic statements further left (minimum wage, regulation, taxes on the wealthy). Classical liberals would answer the welfare and healthcare statements negatively. Answers where these strands diverge are marked low confidence.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 7
+    }
+  ]
 }

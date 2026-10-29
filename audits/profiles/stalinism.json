@@ -1502,12 +1502,13 @@
       ]
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The regime persecuted the church, then in 1943 restored the bishop-led Moscow Patriarchate under state control; adherents had no view on church governance as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "clerical-rule": {
       "value": -2,
@@ -1736,12 +1737,13 @@
       ]
     },
     "no-land-for-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Stalinism's sources do not address trading territory for peace and its record mixes annexation with diplomacy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-serves-common-good": {
       "value": 1,
@@ -2133,12 +2135,13 @@
       ]
     },
     "colonial-treaties-void": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Soviet policy treated border questions by its own interests (1939 pact, post-war frontiers); no clear stated principle, inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "elective-rulers": {
       "value": -1,
@@ -2829,12 +2832,13 @@
       ]
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Stalinism had no position on nondisclosure agreements; the state owned the economy and the issue did not arise.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "social-market-economy": {
       "value": -2,
@@ -3215,12 +3219,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The atheist ideology had no stance on how God is described, which it treated as irrelevant.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": 0,
@@ -3311,12 +3316,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: no source states a view on ageing research.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -2,
@@ -3902,12 +3908,13 @@
       ]
     },
     "close-ties-china": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Soviet Union under Stalin had no relations with China as a partner on that footing; inferred as outside the period, and the question is anachronistic.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "protect-kin-minorities": {
       "value": -1,
@@ -4089,5 +4096,13 @@
       "addedAs": "state-strengthens-encirclement"
     }
   ],
-  "notes": "Stalinism is contested as a category: its adherents regard it as simply Marxism-Leninism, and historians disagree over its continuity with Lenin. Practice (terror, deportations) often diverged from the formal doctrine, so answers on equality and self-determination are low confidence."
+  "notes": "Stalinism is contested as a category: its adherents regard it as simply Marxism-Leninism, and historians disagree over its continuity with Lenin. Practice (terror, deportations) often diverged from the formal doctrine, so answers on equality and self-determination are low confidence.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 7
+    }
+  ]
 }

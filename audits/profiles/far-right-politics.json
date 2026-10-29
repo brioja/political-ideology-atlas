@@ -1253,12 +1253,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A Marxist doctrinal debate that the far right does not address.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": -2,
@@ -1302,12 +1303,13 @@
       ]
     },
     "state-strengthens-encirclement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A Marxist-Leninist question not addressed by the far right.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "consent-of-governed": {
       "value": 1,
@@ -1439,12 +1441,13 @@
       ]
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Economic positions range from free-market to state-interventionist across the far right, so there is no shared view on emergency price caps.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-controls-media": {
       "value": -1,
@@ -1752,12 +1755,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A dispute among socialists; the far right treats the USSR simply as a communist enemy and does not take a side on its classification.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": -2,
@@ -1848,12 +1852,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties far-right politics to a space programme; the question is outside its documented concerns.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": 0,
@@ -1872,12 +1877,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "AfD traditional family focus not addressed to custody.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 0,
@@ -2136,12 +2142,13 @@
       ]
     },
     "elective-rulers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Monarchist and republican strands both exist among the far right, and the sources give no common answer.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-veto": {
       "value": -1,
@@ -2232,12 +2239,13 @@
       ]
     },
     "party-own-road": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A dispute inside the communist movement that the far right does not take part in.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "self-reliance-over-aid": {
       "value": 1,
@@ -2649,12 +2657,13 @@
       ]
     },
     "treaties-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Indigenous-treaty issue not addressed in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cooperative-communities": {
       "value": -1,
@@ -2856,12 +2865,13 @@
       ]
     },
     "rich-first": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Strands diverge on economics, and the position is not part of the core nationalist programme.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "stay-neutral-between-blocs": {
       "value": 0,
@@ -3209,12 +3219,13 @@
       ]
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the far right wants both cultural defence and a strong state, so inferred neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
       "value": -2,
@@ -3895,12 +3906,13 @@
       ]
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The question is outside the Western far right's agenda and irredentist strands would redraw borders.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": 0,
@@ -4154,5 +4166,13 @@
       "declined": "Overlaps drastic-climate-action, which already answers -2 for the far right with the same AfD evidence; a separate factual cause statement adds little."
     }
   ],
-  "notes": "Strands diverge sharply: the extreme right (neo-fascist, neo-Nazi, white-nationalist) would answer revolution, violence, racial hierarchy, segregation and antisemitic conspiracy items more strongly, while parliamentary radical right parties accept elections and disavow denial. Economic answers are low confidence because parties range from free-market to welfare-chauvinist. AfD text is a stand-in for the European populist mainstream, not for every national party."
+  "notes": "Strands diverge sharply: the extreme right (neo-fascist, neo-Nazi, white-nationalist) would answer revolution, violence, racial hierarchy, segregation and antisemitic conspiracy items more strongly, while parliamentary radical right parties accept elections and disavow denial. Economic answers are low confidence because parties range from free-market to welfare-chauvinist. AfD text is a stand-in for the European populist mainstream, not for every national party.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

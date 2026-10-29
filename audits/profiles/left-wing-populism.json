@@ -416,12 +416,13 @@
       ]
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by left populist sources; no characteristic view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": -1,
@@ -762,12 +763,13 @@
       ]
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in left populist sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": -1,
@@ -812,12 +814,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No documented position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -1046,12 +1049,13 @@
       ]
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No documented position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": 0,
@@ -1335,12 +1339,13 @@
       ]
     },
     "uniform-civil-code": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by left populist sources; no characteristic position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-conversion": {
       "value": -1,
@@ -1561,12 +1566,13 @@
       ]
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Church governance is outside left populism's concerns, so no position is documented.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "clerical-rule": {
       "value": -2,
@@ -1644,12 +1650,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by left populist sources; no shared position exists.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": 0,
@@ -1722,20 +1729,22 @@
       ]
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in sources; inclusive stance on minorities pulls one way and secularism the other.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "encourage-eccentricity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in left populist sources; no characteristic position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-strengthens-encirclement": {
       "value": -1,
@@ -3166,12 +3175,13 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the populist focus on one people against elites gives no clear answer.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "charity-over-state-aid": {
       "value": -2,
@@ -3198,12 +3208,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no position in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3343,20 +3354,22 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not an issue for the strand; adherents have no common position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not an issue for the strand; adherents have no common position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
       "value": 1,
@@ -4278,5 +4291,13 @@
       "addedAs": "constituent-assembly"
     }
   ],
-  "notes": "Strands differ: Latin American and African nationalist-left variants (Chavismo, EFF, MK) are more nationalist and in places socially conservative, and M5S takes restrictive immigration positions. Many answers are low confidence because populism is a style more than a full program."
+  "notes": "Strands differ: Latin American and African nationalist-left variants (Chavismo, EFF, MK) are more nationalist and in places socially conservative, and M5S takes restrictive immigration positions. Many answers are low confidence because populism is a style more than a full program.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 13
+    }
+  ]
 }

@@ -758,12 +758,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; progressives are split on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -971,20 +972,22 @@
       ]
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; progressives are split on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; progressives are split on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": 1,
@@ -1255,12 +1258,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The mainstream tradition is reformist, not revolutionary, so it has no position on this Marxist dispute; inferred from the scope.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": 0,
@@ -1502,12 +1506,13 @@
       ]
     },
     "party-discipline-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The progressive tradition has no stated view on binding party discipline, and the caucus acts as a coalition; inferred.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pool-sovereignty": {
       "value": 1,
@@ -2416,12 +2421,13 @@
       ]
     },
     "filial-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressivism has no doctrine on filial duties; they are left to personal choice and social-insurance policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "office-by-exam": {
       "value": 1,
@@ -2827,12 +2833,13 @@
       ]
     },
     "defensive-jihad-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A religious-law question the tradition never addressed and has no stake in.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unreligious-rulers-fought": {
       "value": -1,
@@ -3123,13 +3130,14 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressivism has no stated position on consociational power sharing; this is inferred as neutral from its focus on majoritarian direct democracy and reform.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "charity-over-state-aid": {
       "value": -2,
@@ -3312,13 +3320,14 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressivism has no diaspora doctrine; the statement lies outside its scope.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3374,12 +3383,13 @@
       ]
     },
     "socialism-needs-workers-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The scope excludes revolutionary socialism, and progressives have no stated test for what counts as socialist.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "local-essentials-public": {
       "value": 1,
@@ -3390,12 +3400,13 @@
       ]
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressives have no stated position on bicameralism; they favoured direct democracy.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": -1,
@@ -3763,12 +3774,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressivism takes no position on language classification; inferred as indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -4228,5 +4240,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "The Progressive Era strand mixed reform with prohibition, eugenics and racial exclusion, and the 1912 platform had no civil-rights plank; modern progressives reject these. Many modern-era answers rest on the caucus rather than on a canonical text, so several are low confidence."
+  "notes": "The Progressive Era strand mixed reform with prohibition, eugenics and racial exclusion, and the 1912 platform had no civil-rights plank; modern progressives reject these. Many modern-era answers rest on the caucus rather than on a canonical text, so several are low confidence.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

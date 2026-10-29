@@ -1837,12 +1837,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; no stated position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -1861,12 +1862,13 @@
       ]
     },
     "refugee-return": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the report or Document 9; inferred as indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "co-ethnic-territorial-claim": {
       "value": -1,
@@ -2196,12 +2198,13 @@
       ]
     },
     "native-born-offices": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the thought.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-own-road": {
       "value": 2,
@@ -2261,20 +2264,22 @@
       ]
     },
     "preserve-contested-monuments": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No position documented.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The thought does not address it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": -1,
@@ -2743,12 +2748,13 @@
       ]
     },
     "intersecting-oppressions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The thought stresses class and national unity, rejects Western 'universal values' discourse; not addressed directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gender-identity-recognition": {
       "value": -1,
@@ -3033,20 +3039,22 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; inferred neutral, as adherents stress development and security more than extinction risk.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religious bodies are subject to Party control and the sources do not address female clergy; no stance can be inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-marital-authority": {
       "value": 1,
@@ -3169,12 +3177,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The report speaks of unity of Chinese at home and abroad without a stated role for the homeland; the question is not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3185,12 +3194,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Official atheism makes the question one the thought does not address.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": -1,
@@ -3543,12 +3553,13 @@
       ]
     },
     "student-debt-relief": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Student debt relief is not addressed; common prosperity points one way and fiscal caution the other.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "internal-colonialism": {
       "value": -2,
@@ -3672,12 +3683,13 @@
       ]
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The thought never addresses union membership terms; China's unions are Party-led under the All-China Federation of Trade Unions, and the issue is not framed this way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": -1,
@@ -3747,12 +3759,13 @@
       ]
     },
     "race-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Official doctrine treats race through ethnic unity of the Chinese nation; the thought does not address the scientific status of race, so neutral and inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gender-equality-agencies": {
       "value": 1,
@@ -3997,12 +4010,13 @@
       ]
     },
     "racism-not-main-obstacle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The thought does not address racism as a domestic category; adherents frame ethnic policy as unity and common prosperity, so an answer is inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unjust-law-not-binding": {
       "value": -2,
@@ -4086,5 +4100,13 @@
       "addedAs": "party-commands-army"
     }
   ],
-  "notes": "Official line only. Many answers on social and rights issues are inferred and low confidence. Sources s1 and s2 were read via translated copies; s4 is a lecture abstract."
+  "notes": "Official line only. Many answers on social and rights issues are inferred and low confidence. Sources s1 and s2 were read via translated copies; s4 is a lecture abstract.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

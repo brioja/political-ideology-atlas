@@ -446,12 +446,13 @@
       ]
     },
     "land-value-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A tax-policy idea unconnected to the system; adherents have no position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-inheritance": {
       "value": 0,
@@ -1015,12 +1016,13 @@
       ]
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A national-cultural question outside the system.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": -1,
@@ -1268,12 +1270,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A Marxist-Leninist debate; adherents have no position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": 0,
@@ -1785,12 +1788,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The system takes no position on the USSR's economic character; it only holds that it was not a liberal democracy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": 1,
@@ -3227,20 +3231,22 @@
       ]
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the system takes no position on sex and gender theory.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fixed-category-of-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the system takes no position on feminist theory.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "martyrs-honoured": {
       "value": -1,
@@ -3260,28 +3266,31 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the system is silent on diaspora relations.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the system is silent on the ordering of cultural and state building.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religious language is left to private conscience and the system takes no position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": 0,
@@ -3435,12 +3444,13 @@
       ]
     },
     "dense-cities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "An environmental and planning question the system does not address.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-group-interests": {
       "value": -1,
@@ -3671,12 +3681,13 @@
       ]
     },
     "religions-one-truth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal democracy guarantees freedom of belief (UDHR Art. 18) and takes no position on whether religions share one truth; inferred from its religious neutrality.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "farm-price-support": {
       "value": 0,
@@ -3687,12 +3698,13 @@
       ]
     },
     "keep-nuclear-weapons": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nothing in the model of liberal democracy settles nuclear policy; democracies hold both nuclear and disarmament positions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-own-party": {
       "value": 0,
@@ -3722,12 +3734,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Language naming is a cultural and scholarly question the system does not address; inferred as neutral from its pluralism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -3974,12 +3987,13 @@
       ]
     },
     "homeland-spiritual-bond": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal democracy leaves cultural attachment to land to citizens and parties; the system itself takes no view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "extrajudicial-killing": {
       "value": -2,
@@ -4067,12 +4081,13 @@
       ]
     },
     "tech-with-ancestral-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The system is neutral on cultural traditions, and the sources do not address it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "wife-divorce-without-consent": {
       "value": 2,
@@ -4177,5 +4192,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Many answers are neutral or low confidence because liberal democracy specifies a form of government, not a program on economic or social policy; most such questions split adherents along party lines."
+  "notes": "Many answers are neutral or low confidence because liberal democracy specifies a form of government, not a program on economic or social policy; most such questions split adherents along party lines.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 15
+    }
+  ]
 }

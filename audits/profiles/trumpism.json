@@ -87,12 +87,13 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Wages are not addressed in the platform, and working-class appeals coexist with business-friendly conservatism. Inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": 0,
@@ -375,12 +376,13 @@
       ]
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No stated doctrine on technology; inferred as neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": 1,
@@ -679,12 +681,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Support for crypto and defence tech sits beside no stated enthusiasm for disruption of institutions. Inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": 0,
@@ -735,12 +738,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No stated position in the sources; adherents are pragmatic about means, so neutral is inferred.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -815,12 +819,13 @@
       ]
     },
     "harm-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No stated position; free speech and religious liberty planks coexist with moral regulation of drugs and gender.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "individual-rights-only": {
       "value": 0,
@@ -959,12 +964,13 @@
       ]
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources opened, and no clear adherent position; inferred neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": -2,
@@ -1713,12 +1719,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Trump has criticised the Electoral College at times and defended it at others, and the platform is silent on abolishing it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": -1,
@@ -1746,12 +1753,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement has no position on this scholarly debate about the Soviet Union.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": -1,
@@ -1866,12 +1874,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: not addressed in the platform or addresses.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -3246,13 +3255,14 @@
       ]
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the movement stresses both cultural renewal and strong state action, so adherents do not rank one first.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
       "value": -2,
@@ -3304,12 +3314,13 @@
       ]
     },
     "local-essentials-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The platform does not address local utility ownership.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "second-chamber": {
       "value": 1,
@@ -3368,20 +3379,22 @@
       ]
     },
     "online-anonymity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; free-speech concerns pull one way and crime concerns the other.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "person-over-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed as a principle; the movement stresses both individual liberty and national interest.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "spiritual-nature": {
       "value": 1,
@@ -3911,12 +3924,13 @@
       ]
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement has no stated position on post-colonial borders; the question is anachronistic for its agenda.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": -1,
@@ -4180,5 +4194,13 @@
       ]
     }
   ],
-  "notes": "Scholars disagree whether Trumpism is a coherent ideology; former adviser John Bolton says it lacks a philosophical core. Evangelical and Christian-nationalist strands, libertarian-leaning economic conservatives and nationalist-populist strands differ on abortion, welfare, same-sex marriage and the role of the state."
+  "notes": "Scholars disagree whether Trumpism is a coherent ideology; former adviser John Bolton says it lacks a philosophical core. Evangelical and Christian-nationalist strands, libertarian-leaning economic conservatives and nationalist-populist strands differ on abortion, welfare, same-sex marriage and the role of the state.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

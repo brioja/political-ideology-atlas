@@ -3218,12 +3218,13 @@
       ]
     },
     "vote-delegation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Delegable voting is a new proposal on which the left has no common position; inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "existential-risk-priority": {
       "value": 0,
@@ -3375,20 +3376,22 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the left as a whole; inferred neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the left has strands favouring either state action or cultural change.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
       "value": 1,
@@ -4130,12 +4133,13 @@
       ]
     },
     "close-ties-china": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic and strand-dependent; the left has no common view on China or the United States.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "protect-kin-minorities": {
       "value": -1,
@@ -4324,5 +4328,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Positions on which the centre-left and the far left diverge (revolution, worker ownership, class struggle, profit as exploitation, the state as class instrument) are scored 0. Immigration, Israel and guns are not addressed in the sources, so those answers are inferred."
+  "notes": "Positions on which the centre-left and the far left diverge (revolution, worker ownership, class struggle, profit as exploitation, the state as class instrument) are scored 0. Immigration, Israel and guns are not addressed in the sources, so those answers are inferred.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 4
+    }
+  ]
 }

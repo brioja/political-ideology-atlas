@@ -1781,12 +1781,13 @@
       ]
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No doctrine; arises from Chinese socialism specifically.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": -2,
@@ -2309,12 +2310,13 @@
       ]
     },
     "filial-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist doctrine offers no rule on filial duty, and welfare-state socialists favour public care over family obligation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "office-by-exam": {
       "value": 0,
@@ -2749,12 +2751,13 @@
       ]
     },
     "assisted-dying": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist doctrine does not address assisted dying, and socialists divide between autonomy and concerns for vulnerable people.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "left-right-obsolete": {
       "value": -2,
@@ -3178,12 +3181,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no position is documented.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3194,20 +3198,22 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the family is mostly secular and takes no position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the family is mostly secular and takes no position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -3297,12 +3303,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not discussed; adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -1,
@@ -3314,12 +3321,13 @@
       ]
     },
     "online-anonymity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not discussed; adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "person-over-state": {
       "value": 1,
@@ -3347,12 +3355,13 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not discussed; adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
       "value": 1,
@@ -4123,5 +4132,13 @@
       "addedAs": "alienated-labor"
     }
   ],
-  "notes": "Socialism is a broad family; the profile follows the documented majority and scores 0 where democratic, libertarian, Leninist and social-democratic strands genuinely split."
+  "notes": "Socialism is a broad family; the profile follows the documented majority and scores 0 where democratic, libertarian, Leninist and social-democratic strands genuinely split.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 9
+    }
+  ]
 }

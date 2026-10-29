@@ -1015,12 +1015,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the source; inferred that libertarian socialists reject the state's management of the economy, so neither deficit stimulus nor fiscal discipline is an anarchist position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": -1,
@@ -3041,12 +3042,13 @@
       ]
     },
     "reinterpret-religion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Chomsky-style libertarian socialism is secular and takes no stance on religious reform, so adherents are indifferent; inferred from the lack of any stated position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "wealth-concentration-endangers-liberty": {
       "value": 2,
@@ -3355,20 +3357,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition does not address drug regulation; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition does not address ageing research; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": 1,
@@ -3694,12 +3698,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The family has no stated view on linguistic classification; neutral inference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -3982,12 +3987,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not discussed; it is mainly concerned with abolishing wage labour and the state rather than the structure of consumption taxes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4131,5 +4137,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "The family is broad: individualist and market-socialist strands accept markets, democratic-socialist strands accept the state, and pacifist strands reject violence. Answers not stated in the four sources were carried over from the anarchist profile and are marked low; another audit is not a source."
+  "notes": "The family is broad: individualist and market-socialist strands accept markets, democratic-socialist strands accept the state, and pacifist strands reject violence. Answers not stated in the four sources were carried over from the anarchist profile and are marked low; another audit is not a source.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 6
+    }
+  ]
 }

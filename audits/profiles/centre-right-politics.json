@@ -794,13 +794,14 @@
       ]
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Security priorities and civil-liberty commitments pull in opposite directions; the sources do not address it.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -1,
@@ -830,12 +831,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not take a stand on prefigurative means; conservatives stress effects over symmetry.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -973,12 +975,13 @@
       ]
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anglosphere right-wing strands make this claim more than continental ones; the centre-right as a family has no stated position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -1362,12 +1365,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "This is an internal Marxist debate on which the centre-right has no position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": -1,
@@ -1478,12 +1482,13 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not mention the republican concept of freedom; the EPP couples freedom with responsibility.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": 2,
@@ -1637,13 +1642,14 @@
       ]
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Church governance is outside the secular program of the centre-right; no position.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "clerical-rule": {
       "value": -2,
@@ -2527,13 +2533,14 @@
       ]
     },
     "domestic-violence-symmetry": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address it and the EPP is committed to equal rights.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "institutions-fit-civilization": {
       "value": -1,
@@ -2761,12 +2768,13 @@
       ]
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Christian democratic unions existed in several forms; no doctrine on union structure.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-conspiracy": {
       "value": -2,
@@ -3492,12 +3500,13 @@
       ]
     },
     "culture-before-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no stated position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "god-not-male": {
       "value": -1,
@@ -3759,12 +3768,13 @@
       ]
     },
     "open-diplomacy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address it; it values both transparency and the confidentiality of statecraft.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capital-controls": {
       "value": -2,
@@ -3947,12 +3957,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by centre-right sources; positions depend on national context.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -4421,5 +4432,13 @@
       "addedAs": "decide-locally"
     }
   ],
-  "notes": "Strands diverge: Christian democrats accept more intervention and are more pro-EU, Anglosphere conservatives and liberal conservatives favour lower taxes and less integration, and eastern parties are more nationalist. Many answers rest on inference from a broad family, hence the large share of low-confidence and neutral answers."
+  "notes": "Strands diverge: Christian democrats accept more intervention and are more pro-EU, Anglosphere conservatives and liberal conservatives favour lower taxes and less integration, and eastern parties are more nationalist. Many answers rest on inference from a broad family, hence the large share of low-confidence and neutral answers.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 11
+    }
+  ]
 }

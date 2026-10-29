@@ -651,12 +651,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nazism treated Bolshevism as a Jewish invention, not as state capitalism; the statement was not addressed from that angle.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": 0,
@@ -739,12 +740,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic and not a Nazi focus; territorial expansion was earthbound Lebensraum.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -2,
@@ -763,12 +765,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nazi family policy centred on mothers and race; this modern issue was not addressed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -2,
@@ -1179,28 +1182,31 @@
       ]
     },
     "preserve-contested-monuments": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the regime built its own monuments and destroyed those of enemies.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the regime prized men as soldiers and women as mothers.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by Nazism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "institutions-fit-civilization": {
       "value": 1,
@@ -1635,12 +1641,13 @@
       ]
     },
     "drastic-climate-action": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic; Nazism never addressed climate change.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "duties-before-rights": {
       "value": 2,
@@ -1715,12 +1722,13 @@
       ]
     },
     "expand-nuclear": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anachronistic for this ideology; not addressed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "experts-over-public": {
       "value": 0,
@@ -2267,12 +2275,13 @@
       ]
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; Nazism was itself a settler-colonial project in the East.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "single-common-good": {
       "value": 1,
@@ -2727,12 +2736,13 @@
       ]
     },
     "defensive-jihad-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The question was not one the movement addressed; inferred indifference, as it treated Muslim religious duty as outside its concerns.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unreligious-rulers-fought": {
       "value": -1,
@@ -3306,20 +3316,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle in the sources points either way.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; racial health policy concerned the Volk's hereditary stock, not extending individual lives.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -2,
@@ -4147,5 +4159,13 @@
       "addedAs": "ban-interest"
     }
   ],
-  "notes": "The program's anti-capitalist points (13, 14, 17) were radical early demands; Hitler limited them in 1928 and the regime privatised assets and cooperated with business, so economic answers are mixed or low confidence. Several answers on modern issues (nuclear, climate, encryption, algorithms) are inferred. Rationales marked inferred rest on regime practice described in s2 rather than a stated doctrine."
+  "notes": "The program's anti-capitalist points (13, 14, 17) were radical early demands; Hitler limited them in 1928 and the regime privatised assets and cooperated with business, so economic answers are mixed or low confidence. Several answers on modern issues (nuclear, climate, encryption, algorithms) are inferred. Rationales marked inferred rest on regime practice described in s2 rather than a stated doctrine.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

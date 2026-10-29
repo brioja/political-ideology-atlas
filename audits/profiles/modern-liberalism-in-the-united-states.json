@@ -1642,12 +1642,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by liberalism as a program; adherents have no common position on border-drawn reunification.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": -1,
@@ -2326,12 +2327,13 @@
       ]
     },
     "party-own-road": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The ideology is indifferent to communist party strategy; no position is stated.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "self-reliance-over-aid": {
       "value": -1,
@@ -3164,12 +3166,13 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The program does not address consociational power-sharing; inferred as neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "charity-over-state-aid": {
       "value": -1,
@@ -3346,12 +3349,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal views on diaspora and homeland ties are not addressed in the sources and are not an ideological question.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3765,13 +3769,14 @@
       ]
     },
     "religions-one-truth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "American liberalism is pluralist and secular and takes no position on whether religions share one truth; inferred.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "farm-price-support": {
       "value": 1,
@@ -4043,12 +4048,13 @@
       ]
     },
     "simple-living": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberalism is pluralist about ways of living and takes no stand on simple living.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-indigenous-settlement": {
       "value": 0,
@@ -4274,5 +4280,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Many answers on foreign policy, drugs, policing and trade reflect a coalition with internal splits; where sources are silent, answers are low-confidence inferences."
+  "notes": "Many answers on foreign policy, drugs, policing and trade reflect a coalition with internal splits; where sources are silent, answers are low-confidence inferences.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 6
+    }
+  ]
 }

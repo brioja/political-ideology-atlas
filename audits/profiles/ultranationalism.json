@@ -111,12 +111,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No documented stance; adherents focus on national unity of classes rather than redistribution.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": -1,
@@ -1393,12 +1394,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources and adherents have no shared position on housing tenure.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": 1,
@@ -1697,12 +1699,13 @@
       ]
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address foreign debt; hostility to foreign creditors and state primacy pull against any one answer.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independence-needs-economic-change": {
       "value": -1,
@@ -1792,12 +1795,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmental risk is outside the ideology's concerns, so adherents are indifferent; inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": -1,
@@ -1910,12 +1914,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ultranationalism does not address custody law; adherents have no settled position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -2927,12 +2932,13 @@
       ]
     },
     "rich-first": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not stated; the nation is treated as an organic whole, which leaves regional inequality unaddressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "stay-neutral-between-blocs": {
       "value": -2,
@@ -2992,12 +2998,13 @@
       ]
     },
     "press-owned-by-wealth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it; strands used state control of the press rather than a critique of wealth.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "promulgated-standing-laws": {
       "value": -1,
@@ -3130,12 +3137,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no stance can be inferred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": -1,
@@ -3282,12 +3290,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The question is not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": -1,
@@ -3373,20 +3382,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ultranationalism has no position on drug approval; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ultranationalism has no position on ageing research; anachronistic, inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -1,
@@ -3433,20 +3444,22 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ultranationalism has no position on GM crops; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ultranationalism has no position on urban form; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-group-interests": {
       "value": 1,
@@ -4051,12 +4064,13 @@
       ]
     },
     "no-business-privileges": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; strands range from corporatist partnership with business to hostility to finance.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-denominational-politics": {
       "value": 0,
@@ -4180,5 +4194,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "The strands differ: Mussolini rejects race as the basis of the nation while Nazi and Ustase strands rest on it; Maurras is monarchist while fascists were not. Answers favour the shared core."
+  "notes": "The strands differ: Mussolini rejects race as the basis of the nation while Nazi and Ustase strands rest on it; Maurras is monarchist while fascists were not. Answers favour the shared core.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 14
+    }
+  ]
 }

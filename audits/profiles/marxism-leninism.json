@@ -3299,12 +3299,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: not addressed; the doctrine prioritises class revolution and planned development, and the ideology predates the concept.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3544,12 +3545,13 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; inferred from a state-run health system with centralised regulation, with nothing in the sources pushing for or against faster approval.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 1,
@@ -4212,12 +4214,13 @@
       ]
     },
     "no-business-privileges": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "All major enterprises are state-owned so there are no private firms to favour; the doctrine does not address cronyism, so this is inferred as neutral.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-denominational-politics": {
       "value": 1,
@@ -4361,5 +4364,13 @@
       "addedAs": "capitalism-causes-war"
     }
   ],
-  "notes": "Practice in Marxist-Leninist states often diverged from constitutional texts (secession, freedom of conscience, soviet power). Chinese and Vietnamese Marxism-Leninism today accepts markets and would answer the market and growth questions differently. Social questions such as abortion and homosexuality varied over time."
+  "notes": "Practice in Marxist-Leninist states often diverged from constitutional texts (secession, freedom of conscience, soviet power). Chinese and Vietnamese Marxism-Leninism today accepts markets and would answer the market and growth questions differently. Social questions such as abortion and homosexuality varied over time.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 3
+    }
+  ]
 }

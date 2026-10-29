@@ -4030,12 +4030,13 @@
       ]
     },
     "multipolar-world": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources and not a defining issue for the movement.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "labour-theory-of-value": {
       "value": -2,
@@ -4056,12 +4057,13 @@
       ]
     },
     "material-over-identity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "An intra-left debate; the sources show no position, and the movement stresses both economic and civil-liberty concerns.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "market-under-party-rule": {
       "value": -2,
@@ -4094,5 +4096,13 @@
       "addedAs": "no-business-privileges"
     }
   ],
-  "notes": "Contributors disagree on a basic income, open borders details, humanitarian intervention and private provision of defense. Many answers on non-economic topics are inferred from the movement's civil-liberties and pro-market commitments."
+  "notes": "Contributors disagree on a basic income, open borders details, humanitarian intervention and private provision of defense. Many answers on non-economic topics are inferred from the movement's civil-liberties and pro-market commitments.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 2
+    }
+  ]
 }

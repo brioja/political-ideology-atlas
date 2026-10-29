@@ -1012,20 +1012,22 @@
       ]
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Diaspora return rights are not addressed in the sources; no left consensus.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The NFP backs regional language teaching overseas; reviving a lapsed state language is not discussed.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": 2,
@@ -1611,12 +1613,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed in the sources; the left backs self-determination case by case, so no firm position is inferred.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": -2,
@@ -1661,12 +1664,13 @@
       ]
     },
     "restrict-pornography": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no consensus.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "citizenship-by-descent": {
       "value": -2,
@@ -2340,12 +2344,13 @@
       ]
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The NFP centres women's rights and does not address men's disadvantage.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": -1,
@@ -2380,12 +2385,13 @@
       ]
     },
     "filial-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The NFP plans a Grand Age plan and public care for the elderly, shifting support to public services; filial duty itself is not discussed.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "office-by-exam": {
       "value": 1,
@@ -2560,12 +2566,13 @@
       ]
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Union structure is not addressed beyond the CGT's history.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-conspiracy": {
       "value": -2,
@@ -2956,12 +2963,13 @@
       ]
     },
     "reification": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A Marxist concept not addressed in the sources.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "press-owned-by-wealth": {
       "value": 1,
@@ -3070,12 +3078,13 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed beyond the Nouméa accord.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "charity-over-state-aid": {
       "value": -2,
@@ -3269,12 +3278,13 @@
       ]
     },
     "scripture-judged-by-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; laicite sets religious texts outside political judgement.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economy-in-majority-hands": {
       "value": -2,
@@ -3361,12 +3371,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; no principle of the tradition points either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -1,
@@ -3377,12 +3388,13 @@
       ]
     },
     "online-anonymity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the tradition's privacy defence and its stress on tackling online hate point in opposite directions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "person-over-state": {
       "value": 1,
@@ -4202,5 +4214,13 @@
       "addedAs": "rent-control"
     }
   ],
-  "notes": "The PS wing accepts a regulated market economy, the EU and a reformist method, while LFI and parts of the NFP favour rupture, price controls and more radical Europe policy; answers follow the PS-to-NFP centre of gravity. Laïcité (religious dress) and drugs divide the left. Many answers on non-French issues are low-confidence inferences."
+  "notes": "The PS wing accepts a regulated market economy, the EU and a reformist method, while LFI and parts of the NFP favour rupture, price controls and more radical Europe policy; answers follow the PS-to-NFP centre of gravity. Laïcité (religious dress) and drugs divide the left. Many answers on non-French issues are low-confidence inferences.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

@@ -1899,12 +1899,13 @@
       ]
     },
     "common-currency": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The bloc used a transferable rouble for trade; adherents had no view on a single currency.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "kin-peoples-union": {
       "value": -1,
@@ -1979,12 +1980,13 @@
       ]
     },
     "trade-labor-env-standards": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; foreign trade was state-controlled and conducted in planned agreements.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "moral-incentives": {
       "value": -1,
@@ -2627,12 +2629,13 @@
       ]
     },
     "treaties-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the Soviet state treated treaties with national groups inside it as superseded by the constitution.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cooperative-communities": {
       "value": -2,
@@ -2867,12 +2870,13 @@
       ]
     },
     "domination-women-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The ecofeminist thesis was not part of the doctrine.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reification": {
       "value": 0,
@@ -2947,12 +2951,13 @@
       ]
     },
     "reinterpret-religion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The state's atheist doctrine takes no part in religious reform, and the sources do not discuss it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "wealth-concentration-endangers-liberty": {
       "value": 1,
@@ -3028,12 +3033,13 @@
       ]
     },
     "women-in-religious-leadership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: churches are separated from the state and religion is regarded as a private matter, so the ruling parties had no position on internal church offices.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-marital-authority": {
       "value": 2,
@@ -3252,20 +3258,22 @@
       ]
     },
     "family-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pay was set by the state, with equal pay for equal work; the family wage is not stated.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by the sources; a centrally planned health system had its own approval bodies.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
       "value": 0,
@@ -3865,13 +3873,14 @@
       ]
     },
     "protect-kin-minorities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The doctrine stressed bloc solidarity and internationalism over ethnic kin protection, and Soviet borders and minorities were officially settled, so no clear lean.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "resources-common-ownership": {
       "value": 1,
@@ -4057,5 +4066,13 @@
       "addedAs": "intervene-in-bloc"
     }
   ],
-  "notes": "The label was sincere in official use and sarcastic in much dissident use. Many answers on cultural and criminal-law questions rest on documented bloc practice or inference and are marked low. Later-era strands such as Gorbachev's reforms would answer differently on markets and party monopoly."
+  "notes": "The label was sincere in official use and sarcastic in much dissident use. Many answers on cultural and criminal-law questions rest on documented bloc practice or inference and are marked low. Later-era strands such as Gorbachev's reforms would answer differently on markets and party monopoly.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 9
+    }
+  ]
 }

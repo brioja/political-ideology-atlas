@@ -12,7 +12,7 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-const { ROOT, readJson, profilePath, activeStatements } = require("./lib");
+const { ROOT, readJson, profilePath, activeStatements, silentZeros } = require("./lib");
 const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
 const { decodeShare } = require(path.join(ROOT, "pca.js"));
 
@@ -28,23 +28,14 @@ if (activeStatements().map((s) => s.id).join() !== QUESTIONS.map((q) => q.id).jo
   process.exit(1);
 }
 
-// Silence (audits/AUDIT_RULES.md: it is null) in audits written before that rule: a low zero whose
-// rationale the audit repeats 3+ times (a stock "no doctrine" line), or that says in words that there
-// is no position and mentions no split or balance. A rough stand-in for re-auditing; the "nulls"
-// variant leaves these out of matching.
-const SILENT = /\b(no (position|stance|view|doctrine|line|record|programme|program|documented|stated|known|clear|specific|explicit)|not (address|discuss|mention|take|cover|state)\w*|(does|do|did)n.t (address|discuss|take|mention)|never (address|discuss|took|take)\w*|silent|nothing in|outside (its|the) scope|takes no|left neutral|offers? no)\b/i;
-const SPLIT = /\b(split|divided|mixed|balanc\w*|both (sides|ways)|compromise|tension|while|but\b|yet\b)\b/i;
-const saysSilent = (r) => SILENT.test(r || "") && !SPLIT.test(r || "");
+// The "nulls" variant leaves silence out of matching: answers already null, and the low zeros
+// scripts/lib.js silentZeros() reads as silence in audits written before null existed.
 function profiles() {
   return IDEOLOGIES.map((ideo) => {
     if (variant !== "nulls" || (onlyIds && !onlyIds.has(ideo.id))) return ideo;
-    const answers = readJson(profilePath(ideo.id)).answers;
-    const uses = new Map();
-    for (const q of QUESTIONS) { const r = answers[q.id].rationale; uses.set(r, (uses.get(r) || 0) + 1); }
-    const profile = QUESTIONS.map((q, j) => {
-      const a = answers[q.id];
-      return a.value === null || (a.value === 0 && a.confidence === "low" && (uses.get(a.rationale) >= 3 || saysSilent(a.rationale))) ? null : ideo.profile[j];
-    });
+    const audit = readJson(profilePath(ideo.id));
+    const silent = silentZeros(audit);
+    const profile = QUESTIONS.map((q, j) => (audit.answers[q.id].value === null || silent.has(q.id) ? null : ideo.profile[j]));
     return { ...ideo, profile };
   });
 }

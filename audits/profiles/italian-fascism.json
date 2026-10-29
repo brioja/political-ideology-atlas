@@ -2285,12 +2285,13 @@
    ]
   },
   "slavery-not-civil-war-cause": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The ideology has no position on this American historical question, so the answer is neutral.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "preserve-contested-monuments": {
    "value": 1,
@@ -3350,12 +3351,13 @@
    ]
   },
   "gm-crops": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The ideology has no position on this issue; it is anachronistic.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "dense-cities": {
    "value": -1,
@@ -3631,12 +3633,13 @@
    ]
   },
   "one-language-many-names": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The ideology has no position on this question of naming regional languages.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "pollution-tort-liability": {
    "value": -1,
@@ -3999,12 +4002,13 @@
    ]
   },
   "racism-not-main-obstacle": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The regime did not address the question in this form and its 1938 racial laws cut against any simple reading.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "unjust-law-not-binding": {
    "value": -2,
@@ -4064,5 +4068,13 @@
   }
  },
  "missingStatements": [],
- "notes": "The regime changed course over time: liberal economics in 1922-25, corporatism and state ownership after 1929, autarky from 1934, and official antisemitism from 1938. The Doctrine excerpt does not cover the family, corporations or race, so those answers rest on reference sources. Several modern questions are answered by inference and marked low."
+ "notes": "The regime changed course over time: liberal economics in 1922-25, corporatism and state ownership after 1929, autarky from 1934, and official antisemitism from 1938. The Doctrine excerpt does not cover the family, corporations or race, so those answers rest on reference sources. Several modern questions are answered by inference and marked low.",
+ "reviews": [
+  {
+   "kind": "silence",
+   "reviewer": "scripts/silence-to-null.js",
+   "reviewedAt": "2026-10-29",
+   "nulled": 4
+  }
+ ]
 }

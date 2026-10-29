@@ -661,12 +661,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Supports industry under workers' control, with no stated view on speeding up disruption.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": 0,
@@ -797,12 +798,13 @@
       ]
     },
     "harm-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed as such; the state is rejected, so the principle is not a test for restricting adults.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "individual-rights-only": {
       "value": -1,
@@ -1357,12 +1359,13 @@
       ]
     },
     "offices-by-lottery": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Delegates are elected for single terms and paid like workers; lottery is not mentioned.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "emergency-suspend-protections": {
       "value": -2,
@@ -1525,12 +1528,13 @@
       ]
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; the program federates communes of towns and villages without favoring either.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": -1,
@@ -1712,12 +1716,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources are silent on environmental precaution; no position follows from the programme.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": -2,
@@ -1800,12 +1805,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address space policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -2,
@@ -3010,12 +3016,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The classical movement predates the issue and no stated position makes it a top priority; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3251,20 +3258,22 @@
       ]
     },
     "faster-drug-approval": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement never addressed drug regulation and its principles give no clear lean either way; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement never addressed life-extension research; its support for socialised health care gives no clear lean on this specific priority.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": 1,
@@ -3309,12 +3318,13 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The classical movement never addressed genetic engineering and its principles give no clear lean; inferred indifference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
       "value": -1,
@@ -3600,12 +3610,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address language naming, and the ideology is indifferent to it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -4073,5 +4084,13 @@
       "addedAs": "representatives-worker-pay"
     }
   ],
-  "notes": "The CNT joined the Republican government in 1936, which was controversial within the anarcho-syndicalist international. Distribution is disputed: some supporters keep contribution-based pay in a transition, others stress need. Ecology, religion and money are thinly covered by the sources read."
+  "notes": "The CNT joined the Republican government in 1936, which was controversial within the anarcho-syndicalist international. Distribution is disputed: some supporters keep contribution-based pay in a transition, others stress need. Ecology, religion and money are thinly covered by the sources read.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 11
+    }
+  ]
 }

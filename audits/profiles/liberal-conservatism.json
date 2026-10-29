@@ -722,12 +722,13 @@
       ]
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not documented; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": -1,
@@ -772,12 +773,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not documented; not directly documented, so inferred from its general principles.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -901,12 +903,13 @@
       ]
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not documented; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -999,12 +1002,13 @@
       ]
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not documented; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": -1,
@@ -1258,12 +1262,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not applicable; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": -1,
@@ -1298,12 +1303,13 @@
       ]
     },
     "no-religion-state-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Split; not directly documented, so inferred from its general principles.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "consent-of-governed": {
       "value": 1,
@@ -1362,12 +1368,13 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not documented; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": 2,
@@ -1403,12 +1410,13 @@
       ]
     },
     "restrict-strikes-picketing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Split; not directly documented, so inferred from its general principles.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-causes-poverty": {
       "value": -1,
@@ -1467,12 +1475,13 @@
       ]
     },
     "long-naturalization-wait": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Split; not directly documented, so inferred from its general principles.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "representatives-worker-pay": {
       "value": -1,
@@ -3079,12 +3088,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed by liberal conservatism; adherents are indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 0,
@@ -3329,12 +3339,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address ageing research and adherents are not united on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -1,
@@ -3387,12 +3398,13 @@
       ]
     },
     "dense-cities": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not address urban form, and adherents divide between urban centre-right and rural conservative bases.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-group-interests": {
       "value": -2,
@@ -4110,5 +4122,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Strands differ on abortion, same-sex marriage, drugs, immigration and energy; these are scored 0 or low confidence. Only the overview page of the CDU programme and parts of Burke were read."
+  "notes": "Strands differ on abortion, same-sex marriage, drugs, immigration and energy; these are scored 0 or low confidence. Only the overview page of the CDU programme and parts of Burke were read.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 12
+    }
+  ]
 }

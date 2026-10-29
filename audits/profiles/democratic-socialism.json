@@ -1026,12 +1026,13 @@
       ]
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The current takes no position on language revival; it is indifferent apart from protecting minorities.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": 2,
@@ -3198,12 +3199,13 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; inferred only from the commitment to democracy, with no clear stance on consociational arrangements.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "charity-over-state-aid": {
       "value": -2,
@@ -3231,12 +3233,13 @@
       ]
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; inferred that existential risk is not a distinguishing priority, with climate action favoured instead.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": 1,
@@ -3369,12 +3372,13 @@
       ]
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents are not agreed on diaspora policy.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": -1,
@@ -3486,12 +3490,13 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; adherents have no settled position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
       "value": -1,
@@ -3778,12 +3783,13 @@
       ]
     },
     "religions-one-truth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Democratic socialists treat religion as a private matter and the current includes both secular and religious socialists, so it holds no view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "farm-price-support": {
       "value": 1,
@@ -3828,12 +3834,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not addressed; a linguistic classification question with no bearing on the current.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -4047,12 +4054,13 @@
       ]
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss post-colonial borders, and an anti-imperialist current could support either keeping borders for stability or redrawing them for self-determination.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": 0,
@@ -4300,5 +4308,13 @@
       "addedAs": "workplace-democracy"
     }
   ],
-  "notes": "Positions differ between the European party current (Die Linke: strongly pacifist, anti-nuclear, open borders) and US democratic socialists (DSA: police and prison abolitionist, anti-Zionist in recent years); answers take the overlap and mark divergences with lower values or confidence. DSA's national site blocked automated access, so a chapter platform (Twin Cities DSA) stands in for US positions. Labels have shifted: figures like Sanders and Corbyn use 'democratic socialist' for what scholars often class as social democracy; this profile follows the post-capitalist meaning."
+  "notes": "Positions differ between the European party current (Die Linke: strongly pacifist, anti-nuclear, open borders) and US democratic socialists (DSA: police and prison abolitionist, anti-Zionist in recent years); answers take the overlap and mark divergences with lower values or confidence. DSA's national site blocked automated access, so a chapter platform (Twin Cities DSA) stands in for US positions. Labels have shifted: figures like Sanders and Corbyn use 'democratic socialist' for what scholars often class as social democracy; this profile follows the post-capitalist meaning.",
+  "reviews": [
+    {
+      "kind": "silence",
+      "reviewer": "scripts/silence-to-null.js",
+      "reviewedAt": "2026-10-29",
+      "nulled": 8
+    }
+  ]
 }
