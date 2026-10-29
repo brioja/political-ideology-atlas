@@ -215,3 +215,21 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 
 Write the summary, scope and rationales in your own words. Do not paste long passages from
 sources.
+
+## 7. Deepening an existing audit
+
+The runner may ask for a deepen pass on an audit that fails the salience check or sits close to
+it. Build on the existing audit rather than starting over:
+- Read its scope, sources and answers. Count the stated (`medium` and `high`) positions per theme
+  and research the thinnest themes for what the ideology itself states: its programmes, defining
+  thinkers, organisations and the scholarship on them.
+- Keep the scope. Don't widen it to borrow a related movement's positions (secular humanism's for
+  secularism, a party's whole platform for one of its causes): those belong to that movement.
+- Change an answer or raise its confidence only on evidence you found and cite; never raise an
+  inference. Check every answer you touch against the rules in section 3, and lower any you find
+  deduced from a general value.
+- Add your model id to `auditor` (a list, the original auditor first) and list both passes in
+  `passes`, e.g. `[{ "auditor": "<first>", "auditedAt": "<its date>" }, { "auditor": "<you>",
+  "auditedAt": "YYYY-MM-DD" }]`. Keep `auditedAt` as the date of your pass.
+- If the record really has nothing more, failing salience is the correct outcome. Say in `notes`
+  which themes you searched.

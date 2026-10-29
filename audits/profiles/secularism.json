@@ -1,8 +1,21 @@
 {
   "id": "secularism",
   "name": "Secularism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-10-29",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+  ],
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-10-29"
+    }
+  ],
   "summary": "Political secularism holds that religion and government should be kept separate: the state recognises and funds no religion, enforces no religious law, protects freedom of conscience and treats believers and non-believers equally. Its strands range from the separationist US model and the strict French laïcité to accommodationist models in which the state supports religion impartially.",
   "scope": "Mainstream political secularism as a church-state doctrine, drawing on George Holyoake's English Secularism (1896), the 1905 French separation law and the liberal-democratic literature. It excludes state atheism, which Wikipedia notes may not count as secularism. Most answers outside religion and state are low-confidence inferences.",
   "wikipedia": "https://en.wikipedia.org/wiki/Secularism",
@@ -21,6 +34,11 @@
       "title": "1905 French law on the Separation of the Churches and the State (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/1905_French_law_on_the_Separation_of_the_Churches_and_the_State",
       "note": "The best-known legal enactment of strict secularism."
+    },
+    {
+      "title": "National Secular Society (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/National_Secular_Society",
+      "note": "What the oldest secularist campaigning group, founded by Bradlaugh, works for today."
     }
   ],
   "keyFigures": [
@@ -31,6 +49,14 @@
       "sources": [
         "s1",
         "s2"
+      ]
+    },
+    {
+      "name": "Charles Bradlaugh",
+      "role": "Founder and first president of the National Secular Society (1866).",
+      "wikipedia": "https://en.wikipedia.org/wiki/Charles_Bradlaugh",
+      "sources": [
+        "s6"
       ]
     }
   ],
@@ -66,6 +92,46 @@
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/religion-politics/",
       "usedFor": "Neutrality, public reason and religious exemptions in liberal democracy."
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "title": "Laïcité",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Laïcité",
+      "usedFor": "French laïcité: the state refrains from positions on religious doctrine and from involvement in religious affairs; the 2004 school symbols ban and the US contrast"
+    },
+    {
+      "id": "s6",
+      "kind": "reference",
+      "title": "National Secular Society",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/National_Secular_Society",
+      "usedFor": "Campaigns of the main British secularist organisation: faith schools, creationism, blasphemy law, religious exemptions, state neutrality on doctrine"
+    },
+    {
+      "id": "s7",
+      "kind": "program",
+      "title": "About Americans United",
+      "author": "Americans United for Separation of Church and State (archived 2024)",
+      "url": "https://web.archive.org/web/20240303214827/https://www.au.org/about-au/",
+      "usedFor": "Mission and issue areas of the main US church-state separation organisation"
+    },
+    {
+      "id": "s8",
+      "kind": "program",
+      "title": "New Americans United Video, Website Highlight Why You Should Support Public Schools By Opposing Private School Vouchers",
+      "author": "Americans United for Separation of Church and State (archived 2024)",
+      "url": "https://web.archive.org/web/20240522012336/https://www.au.org/the-latest/articles/stop-vouchers-au/",
+      "usedFor": "Opposition to private school vouchers as taxpayer funding of religious education"
+    },
+    {
+      "id": "s9",
+      "kind": "program",
+      "title": "Reform assisted dying laws",
+      "author": "National Secular Society (archived 2025)",
+      "url": "https://web.archive.org/web/20250110222024/https://www.secularism.org.uk/assisted-dying/",
+      "usedFor": "NSS position on assisted dying and the range of views among its members"
     }
   ],
   "answers": {
@@ -249,8 +315,9 @@
     "abortion-legal": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Secularist groups focus on keeping religious doctrine out of abortion law, which usually leads them to favour legality; inferred, not a creed.",
+      "rationale": "Americans United counts abortion access among the issues that depend on church-state separation, but secularism as such asks only that religious doctrine not decide the question, so the answer is inferred.",
       "sources": [
+        "s7",
         "s1"
       ]
     },
@@ -976,9 +1043,11 @@
     },
     "school-vouchers": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Separationist secularists object to public money flowing to religious schools; the 1905 law ended public funding of worship.",
+      "confidence": "medium",
+      "rationale": "Americans United calls public funding of religious schooling through vouchers a modern church tax and says only public schools deserve public support, and the NSS campaigns against public funding of faith schools.",
       "sources": [
+        "s8",
+        "s6",
         "s3"
       ]
     },
@@ -1200,8 +1269,8 @@
     },
     "equal-moral-worth": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Legal equality between people of different religions and between believers and non-believers is a core principle.",
+      "confidence": "low",
+      "rationale": "Secularism states legal equality regardless of religion or belief; equal rights for all people in general is inferred from that narrower principle.",
       "sources": [
         "s1"
       ]
@@ -1266,8 +1335,8 @@
     },
     "consent-of-governed": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Liberal-democratic secularism holds that legitimate authority rests on citizens rather than on religious sanction; the SEP discussion of public reason supports this.",
+      "confidence": "low",
+      "rationale": "Secularism denies that authority rests on religious sanction, but the stronger claim that consent is the only source of legitimacy is liberal-democratic theory, inferred rather than stated by secularism.",
       "sources": [
         "s4",
         "s1"
@@ -1467,11 +1536,11 @@
     },
     "church-by-bishops": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "Secularism holds that a church's internal governance is not the state's business, so it takes no side.",
+      "confidence": "medium",
+      "rationale": "Laïcité forbids government involvement in religious affairs and the 1905 law left churches to organise their own associations, so how a church is governed is not a secularist question.",
       "sources": [
-        "s3",
-        "s4"
+        "s5",
+        "s3"
       ]
     },
     "clerical-rule": {
@@ -1493,11 +1562,11 @@
     },
     "censor-art-for-virtue": {
       "value": -2,
-      "confidence": "low",
-      "rationale": "Inferred from Holyoake's free thought and the freedom of conscience in secular law.",
+      "confidence": "medium",
+      "rationale": "Holyoake makes free inquiry, free publicity and free discussion of ideas conditions of secularism and condemns the coercion of ideas; the NSS holds that religion must not restrict freedom of expression.",
       "sources": [
         "s2",
-        "s3"
+        "s6"
       ]
     },
     "unlimited-reelection": {
@@ -1590,10 +1659,11 @@
     },
     "creationism-in-schools": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism keeps religious instruction out of state schools, so teaching creationism as science alongside evolution is excluded.",
+      "confidence": "high",
+      "rationale": "The NSS opposes teaching creationism or intelligent design as an alternative to mainstream science, in line with secularism's exclusion of religious instruction from state schools.",
       "sources": [
-        "s3"
+        "s6",
+        "s2"
       ]
     },
     "restrict-pornography": {
@@ -1621,11 +1691,13 @@
       ]
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": -1,
       "confidence": "low",
-      "rationale": "Adherents are genuinely split: accommodationist models allow exemptions while strict laicite as in the 1905 law favours one law for all.",
+      "rationale": "The NSS campaigns against religious exemptions from equality and animal-welfare law and AU against exemptions that harm others, but the US free-exercise tradition and accommodationist models accept many exemptions, so strands differ.",
       "sources": [
-        "s1"
+        "s6",
+        "s7",
+        "s5"
       ]
     },
     "encourage-eccentricity": {
@@ -2328,8 +2400,8 @@
     },
     "no-fault-divorce": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Secularist reform, such as the French 1792 law and Holyoake's circle, backed civil marriage and divorce free of church doctrine.",
+      "confidence": "low",
+      "rationale": "Inferred from secularist support for civil rather than church law on marriage; the sources say nothing on fault-based versus no-fault divorce.",
       "sources": [
         "s2"
       ]
@@ -2488,8 +2560,8 @@
     },
     "minority-conspiracy": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Equal treatment of believers and non-believers and of every religion is core to secularism, which rejects treating a religious minority as a collective enemy of the nation.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's equal treatment of every religion; a conspiracy belief is a factual claim the doctrine does not address.",
       "sources": [
         "s1"
       ]
@@ -2584,8 +2656,8 @@
     },
     "religion-illusion": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "Holyoake's secularism is explicitly not atheism and makes no claim about religion's decline, so adherents are neutral; inferred.",
+      "confidence": "medium",
+      "rationale": "Holyoake states that secularism exacts no denial of deity and that atheism may be a personal tenet but never a secularist one, so the doctrine takes no view on whether religion is an illusion.",
       "sources": [
         "s2"
       ]
@@ -2672,25 +2744,26 @@
     },
     "criminalize-homosexuality": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism holds that the state enforces no religious law, and criminalising same-sex relations rests mostly on religious morality; liberal-democratic secularists treat conscience and private life as protected.",
+      "confidence": "low",
+      "rationale": "Inferred: such laws usually rest on religious morality, which secularism keeps out of law, and AU counts LGBTQ equality among its issues, but secularism as such states no position on it.",
       "sources": [
         "s4"
       ]
     },
     "suppress-opposition": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism protects freedom of conscience and equal treatment of all citizens, and in the liberal-democratic literature it goes with pluralism and open political competition.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's protection of conscience and free discussion; it has no doctrine on suppressing political opposition generally.",
       "sources": [
         "s4"
       ]
     },
     "punish-blasphemy": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism holds that the state enforces no religion and protects freedom of conscience; the 1905 French law ended the offence of blasphemy against a state church and the doctrine rejects penalties for false religion.",
+      "confidence": "high",
+      "rationale": "The NSS campaigned for and won the abolition of the UK blasphemy law, and the 1905 French law makes the state recognise no religion, leaving no 'false religion' for it to punish.",
       "sources": [
+        "s6",
         "s3"
       ]
     },
@@ -2745,9 +2818,9 @@
     "assisted-dying": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Secularists have often backed assisted dying as a freedom of conscience once religious law is not binding on the state, but the doctrine does not require it; inferred.",
+      "rationale": "The NSS campaigns for decisions on assisted dying to rest on autonomy rather than religious doctrine, but says its own members hold a range of views on assisted dying itself.",
       "sources": [
-        "s1"
+        "s9"
       ]
     },
     "left-right-obsolete": {
@@ -2889,8 +2962,8 @@
     },
     "promulgated-standing-laws": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Secularism as a liberal-democratic doctrine favours equal treatment under general public law, not discretionary rule, as in the 1905 French law.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's preference for one civil law applied equally; secularist sources say nothing about decrees versus standing laws.",
       "sources": [
         "s1",
         "s3"
@@ -2898,8 +2971,8 @@
     },
     "racial-franchise": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism holds that the state treats all citizens equally regardless of belief, and the same equality principle excludes racial restriction of political rights.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's equal citizenship regardless of belief; its sources address religion, not race.",
       "sources": [
         "s1",
         "s4"
@@ -2932,8 +3005,8 @@
     },
     "boycott-minority-shops": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "Secularism treats believers and non-believers equally and opposes religious discrimination, though private boycotts are not state action.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's opposition to religious discrimination, which concerns the state; a private boycott is outside its stated scope.",
       "sources": [
         "s1",
         "s2"
@@ -2973,9 +3046,10 @@
     },
     "state-promotes-atheism": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism as defined here keeps the state neutral between religion and non-belief, so it excludes state promotion of atheism.",
+      "confidence": "high",
+      "rationale": "Holyoake writes that secular education is not atheistic and that atheism cannot be a secularist tenet, and Wikipedia sets state atheism apart from secularism because it denies freedom of belief.",
       "sources": [
+        "s2",
         "s1"
       ]
     },
@@ -3029,10 +3103,11 @@
     },
     "women-in-religious-leadership": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "Secularism leaves religious institutions' internal rules to them, so it takes no side; adherents are split.",
+      "confidence": "medium",
+      "rationale": "Who may lead a religious body is internal religious affairs, in which secularism, as laïcité and the NSS state it, has the state take no part.",
       "sources": [
-        "s1"
+        "s5",
+        "s6"
       ]
     },
     "shared-marital-authority": {
@@ -3173,18 +3248,20 @@
     },
     "god-not-male": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "The state takes no position on how God is described; secularism leaves theology to religious communities.",
+      "confidence": "medium",
+      "rationale": "How God is described is a doctrinal question, and secularism holds that the state takes no position on doctrine and does not intervene in it.",
       "sources": [
-        "s1"
+        "s5",
+        "s6"
       ]
     },
     "scripture-judged-by-women": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "The state takes no position on judging scripture; secularism leaves religious interpretation to believers.",
+      "confidence": "medium",
+      "rationale": "Judging scripture is religious interpretation, which laïcité and the NSS leave to believers: the state does not intervene in matters of doctrine.",
       "sources": [
-        "s1"
+        "s5",
+        "s6"
       ]
     },
     "economy-in-majority-hands": {
@@ -3509,8 +3586,8 @@
     },
     "sacred-nation": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "Secularism keeps the state neutral on sacred claims and treats citizens as equal individuals, so a sacralised nation clashes with it.",
+      "confidence": "low",
+      "rationale": "Inferred from the state's neutrality on sacred claims; secularist sources say nothing about the nation as a sacred community.",
       "sources": [
         "s4"
       ]
@@ -3549,11 +3626,11 @@
     },
     "religions-one-truth": {
       "value": 0,
-      "confidence": "low",
-      "rationale": "Secularism is neutral on religious truth and holds that the state should not rule on it; adherents include both believers and non-believers.",
+      "confidence": "medium",
+      "rationale": "Holyoake confines secularism to questions testable in this life and excludes questions of deity, and laïcité bars the state from positions on doctrine, so the unity of religions is outside the doctrine.",
       "sources": [
         "s2",
-        "s4"
+        "s5"
       ]
     },
     "farm-price-support": {
@@ -3616,8 +3693,8 @@
     },
     "customary-chiefs-lawmaking": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "Secularism opposes giving religious bodies official roles in making law; the 1905 French law ended state recognition of religion, though customary chiefs are not named.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's refusal of official lawmaking roles to religious bodies; customary chiefs are not religious authorities and are not addressed.",
       "sources": [
         "s1",
         "s3"
@@ -3705,8 +3782,8 @@
     },
     "women-suffrage": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Equal treatment of all citizens regardless of belief extends to equal political rights for women.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's equal treatment of citizens; the sources state equality regardless of belief, not of sex.",
       "sources": [
         "s1"
       ]
@@ -3753,11 +3830,11 @@
       ]
     },
     "scripture-inerrant": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Secularism keeps government neutral on religious truth and Holyoake stressed it is not atheism, so it takes no stand on scripture; the answer is inferred from its insistence that public decisions not rest on scriptural authority.",
+      "value": 0,
+      "confidence": "medium",
+      "rationale": "Under laïcité the government refrains from taking positions on religious doctrine, and Holyoake excludes theological questions from secularism, so how scripture is read is left to believers.",
       "sources": [
-        "s1",
+        "s5",
         "s2"
       ]
     },
@@ -3856,8 +3933,8 @@
     },
     "extrajudicial-killing": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Secularism rests on equal treatment under law and freedom of conscience, which excludes executing people without trial.",
+      "confidence": "low",
+      "rationale": "Inferred from the rule of civil law that secularism presupposes; secularist sources say nothing on killing without trial.",
       "sources": [
         "s4"
       ]
@@ -3944,8 +4021,8 @@
     },
     "wife-divorce-without-consent": {
       "value": 1,
-      "confidence": "medium",
-      "rationale": "Secularism holds that the state enforces no religious law and treats believers and non-believers equally, so a religious rule requiring a husband's consent has no standing.",
+      "confidence": "low",
+      "rationale": "Inferred from secularism's rejection of religious personal law; the statement could also be met or denied by a secular law, which the doctrine does not address.",
       "sources": [
         "s1"
       ]
@@ -4051,5 +4128,5 @@
       "addedAs": "no-religion-state-schools"
     }
   ],
-  "notes": "Accommodationist secularists (India, pillarized states) would answer school-voucher, religious-symbol and personal-law questions differently from strict laïcité."
+  "notes": "Accommodationist secularists (India, pillarized states) would answer school-voucher, religious-symbol and personal-law questions differently from strict laïcité. Deepen pass (2026-10-29): searched Holyoake's English Secularism (full text), the 1905 law, laïcité, and the programmes of the NSS and Americans United for the economy, world, ecology, technology, means and globalism themes. Beyond church-state questions they state only opposition to public money for religious schools (vouchers) and the state's neutrality on doctrine; on assisted dying, abortion and same-sex marriage they ask only that religious doctrine not decide, and the NSS says its members differ. Several earlier medium answers deduced from general equality were lowered."
 }
