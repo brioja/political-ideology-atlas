@@ -43,7 +43,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Taxes on the wealthy should be significantly higher.",
   "agree": "High earners and the very rich pay a noticeably larger share in tax.",
-  "disagree": "Taxes on the wealthy stay as they are or go down.",
+  "disagree": "Taxes on the wealthy should not be significantly higher.",
   "note": "About redistribution through taxes.",
   "icon": "💰"
  },
@@ -151,7 +151,7 @@ const QUESTIONS = [
   "theme": "liberty",
   "text": "The police and military need more funding and authority.",
   "agree": "Police and armed forces get bigger budgets and more powers.",
-  "disagree": "Police and military budgets and powers stay the same or shrink.",
+  "disagree": "The police and military do not need more funding and authority.",
   "note": "About security institutions.",
   "icon": "🚓"
  },
@@ -259,7 +259,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "Immigration levels should be reduced.",
   "agree": "Fewer people should be allowed to move into the country.",
-  "disagree": "Immigration should stay at current levels or increase.",
+  "disagree": "Immigration levels should not be reduced.",
   "note": "About immigration.",
   "icon": "🛂"
  },
@@ -340,7 +340,7 @@ const QUESTIONS = [
   "theme": "technology",
   "text": "Nuclear power should be expanded.",
   "agree": "Build more nuclear power plants.",
-  "disagree": "Phase out or avoid nuclear power.",
+  "disagree": "Nuclear power should not be expanded.",
   "note": "About energy policy; splits even environmentalists.",
   "icon": "⚛️"
  },
@@ -574,7 +574,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "My country should maintain military superiority over its rivals.",
   "agree": "Your country should be militarily stronger than its rivals.",
-  "disagree": "Military balance or cooperation matters more than superiority.",
+  "disagree": "My country does not need military superiority over its rivals.",
   "note": "About hawkish foreign policy.",
   "icon": "🛩️"
  },
@@ -1645,7 +1645,7 @@ const QUESTIONS = [
   "theme": "culture",
   "text": "Rural life is morally healthier than life in cities.",
   "agree": "Living close to the land builds character and community that city life tends to wear down.",
-  "disagree": "Cities are as good or better for character, culture and community as the countryside.",
+  "disagree": "Rural life is not morally healthier than life in cities.",
   "note": "About whether where people live shapes their virtue.",
   "icon": "🌾"
  },
@@ -1753,7 +1753,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "The foreign debts of poor countries should be cancelled rather than repaid.",
   "agree": "Debts owed by poor countries to rich states and lenders are written off.",
-  "disagree": "Debts are legitimate obligations and should be repaid or renegotiated.",
+  "disagree": "The foreign debts of poor countries should not be cancelled.",
   "note": "About whether poor countries' external debt should be forgiven.",
   "icon": "🧾"
  },
@@ -1798,7 +1798,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "My country should maintain its own independent nuclear weapons rather than rely on an ally's protection.",
   "agree": "Our country keeps its own nuclear deterrent so its defence does not depend on another state.",
-  "disagree": "Our country should rely on allies or give up nuclear weapons.",
+  "disagree": "My country should not keep its own nuclear weapons instead of relying on an ally's protection.",
   "note": "About national nuclear independence.",
   "icon": "☢️"
  },
@@ -2644,7 +2644,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "The state should give families financial incentives to have more children, rather than rely on immigration to offset population decline.",
   "agree": "Tax breaks and payments for parents are the right answer to a falling birth rate.",
-  "disagree": "Birth rates are a private matter, and immigration or other measures can handle population decline.",
+  "disagree": "The state should not give families incentives to have more children instead of relying on immigration.",
   "note": "About how the state should respond to falling birth rates.",
   "icon": "👶"
  },
@@ -4372,7 +4372,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "The world should be organised around several independent centres of power rather than under one dominant power.",
   "agree": "A balance among several large powers or civilizations protects each one's way of life.",
-  "disagree": "A single leading power or strong global institutions give a more stable world.",
+  "disagree": "The world should not be organised around several independent centres of power.",
   "note": "About one dominant power versus many.",
   "icon": "🌐"
  },
