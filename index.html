@@ -374,8 +374,9 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
 .positions .stance { font-weight: 600; }
 .belief-link { color: inherit; text-decoration: underline dotted var(--muted); text-underline-offset: 0.2em; }
 .belief-link:hover { color: var(--accent); text-decoration-color: currentColor; }
-/* Topic emoji beside each position */
-.topic { font-size: 1.15rem; line-height: 1.4; text-align: center; }
+/* Topic emoji beside each position: decoration, left out of a selection so a copied list pastes one
+   statement per line. */
+.topic { font-size: 1.15rem; line-height: 1.4; text-align: center; user-select: none; -webkit-user-select: none; }
 .iconed { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.6rem; font-size: 0.95rem; }
 .iconed li, .versus { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr); gap: 0.5rem; align-items: start; }
 /* An empty list's note has no icon, so it takes the whole row instead of the icon column. */
