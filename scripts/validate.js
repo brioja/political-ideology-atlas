@@ -95,9 +95,14 @@ function validate(id) {
     // A new (candidate) statement only needs answering; the rest of the audit stays valid.
     if (!ans && isCandidate(st)) { backfill.push(st.id); continue; }
     if (!ans) { errors.push(`no answer for '${st.id}'`); continue; }
-    // People may have "no known position" (null); ideologies must take a position on everything.
-    if (ans.value === null && PEOPLE) { if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`); continue; }
-    if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2${PEOPLE ? " or null" : ""}`);
+    // "No known position" (null) needs a reason; for an ideology, that its sources record none
+    // (audits/PROMPT.md), at low confidence.
+    if (ans.value === null) {
+      if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`);
+      if (!PEOPLE && ans.confidence !== "low") errors.push(`${st.id}: a "no known position" answer is low confidence`);
+      continue;
+    }
+    if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2 or null`);
     if (!CONFIDENCE.includes(ans.confidence)) errors.push(`${st.id}: confidence must be high, medium or low`);
     if (!ans.rationale || ans.rationale.trim().length < 20) errors.push(`${st.id}: rationale missing or too short`);
     if (!Array.isArray(ans.sources) || ans.sources.length === 0) errors.push(`${st.id}: cite at least one source`);

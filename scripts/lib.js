@@ -56,12 +56,16 @@ const ideologyJudgeKey = (ideologies, statements) => require("crypto").createHas
   .update(JSON.stringify(statements.map((s) => s.id)))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
+// An ideology audit's answers as the model takes them. "No known position" (null) counts as 0 for
+// now, as it did when the audits recorded silence as 0: matching changes only once a regression set
+// shows what treating it as unanswered does (it would then be left out, like a person's).
+const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => audit.answers[s.id].value ?? 0);
 // Every ideology audit that answers all active statements, which is what the ideology judge is built from.
 const completeIdeologies = (statements = activeStatements()) => catalog()
   .filter((e) => fs.existsSync(profilePath(e.id)))
   .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
   .filter(({ audit }) => !audit.notAnIdeology && !unanswered(audit.answers, statements).length)
-  .map(({ id, audit }) => ({ id, name: audit.name, profile: statements.map((s) => audit.answers[s.id].value) }));
+  .map(({ id, audit }) => ({ id, name: audit.name, profile: ideologyProfile(audit, statements) }));
 let lastIdeologyJudge = null, lastPeopleJudge = null;
 const ideologyJudge = () => {
   if (!lastIdeologyJudge) {
@@ -109,9 +113,9 @@ const personSalience = (answers, id = null, judge = peopleJudge()) => {
   return { ...old, legacy: old.salient, strictBar: r.bar };
 };
 
-// Ideologies must answer every statement, inferring where the ideology never took a position
-// (marked low confidence). For salience, only stated positions count: an inferred answer is the
-// ideology equivalent of a person's "no known position".
+// Ideologies answer every statement: a position, an inference from a stated principle (marked low
+// confidence), or "no known position" (null) where the sources record none. For salience, only
+// stated positions count: an inferred answer counts no more than a "no known position".
 const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
 const ideologySalience = (answers, judge = ideologyJudge()) => placed(statedOnly(answers), 1, judge);
@@ -126,4 +130,4 @@ const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1
 
 module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };

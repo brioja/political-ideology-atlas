@@ -7,7 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
-  peopleCatalog, personPath, personSalience, ideologySalience, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey } = require("./lib");
+  peopleCatalog, personPath, personSalience, ideologySalience, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey } = require("./lib");
 const { buildModel, modelFromParts, meaningfulAxes, salienceContext, salience, varimax, matchPeople, spreadOn, MAX_SHOWN_LINES } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
@@ -58,7 +58,7 @@ function classify(judge = null) {
       wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
       keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
-      profile: statements.map((s) => a.answers[s.id].value),
+      profile: ideologyProfile(a, statements),
     });
   }
 }

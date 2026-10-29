@@ -85,15 +85,20 @@ record it in `scope`:
 ## 3. Answer every statement
 
 Use the scale -2 (strongly disagree), -1 (disagree), 0 (neutral or genuinely split),
-+1 (agree), +2 (strongly agree).
++1 (agree), +2 (strongly agree), or `null` (no known position).
 
 - Answer as a typical committed adherent would, not a fringe member or a critic.
 - Use ±2 only when the position is central to the ideology or stated explicitly and forcefully.
-- Use 0 only when adherents are genuinely split or the ideology is truly indifferent. Do not use
+- Use 0 only for a documented middle: adherents or strands are genuinely split on it, or the
+  ideology deliberately takes no side (laïcité refuses to rule on religious doctrine). Do not use
   it to avoid a hard call.
-- If the ideology never addressed the issue (for example nuclear power for a 19th-century
-  ideology), infer the answer from its stated principles, mark it `low` confidence, and say in the
-  rationale what you inferred it from.
+- If there is no data, don't assume the ideology takes a position: answer `null`, at `low`
+  confidence, with a rationale saying the sources record no position (and citing the sources you
+  checked). Silence is not neutrality, so never record it as 0.
+- If the ideology never addressed the issue but a principle it states bears on it directly (for
+  example nuclear power for a 19th-century ideology with a stated view on industry), infer the
+  answer from that principle, mark it `low` confidence, and say in the rationale what you inferred
+  it from. If no stated principle bears on it, the answer is `null`.
 - Read each statement literally. "Free trade benefits everyone in the long run" is about free
   trade, not about markets in general.
 - A general value (humanism, liberty, equality, democracy, dignity) doesn't answer a specific
@@ -104,8 +109,8 @@ Use the scale -2 (strongly disagree), -1 (disagree), 0 (neutral or genuinely spl
 - A position on a narrower or nearby case doesn't answer a broader or different statement:
   cannabis is not all drugs, and a state's right of defence is not a person's right to kill in
   self-defence. Such an answer is `low`.
-- Absence of evidence is not a position. If the sources record nothing on a topic, answer 0 at
-  `low` and say the ideology has no doctrine on it, never a firm answer.
+- Absence of evidence is not a position. If the sources record nothing on a topic, answer `null`
+  and say the ideology has no doctrine on it, never 0 or a firm answer.
 - What critics or opponents say about an ideology is not evidence of its position.
 - Record over words, for ideologies that were the official doctrine of a state or ruling party
   (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): its regimes' sustained, documented
@@ -198,6 +203,12 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "value": 2,
       "confidence": "high | medium | low",
       "rationale": "Why an adherent answers this way.",
+      "sources": ["s1"]
+    },
+    "<statement id>": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this, and no stated principle bears on it.",
       "sources": ["s1"]
     }
   },
