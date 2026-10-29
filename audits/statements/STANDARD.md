@@ -49,7 +49,9 @@ voluntary"); otherwise the plain negation in the statement's own words ("Corpora
 more tightly regulated"). Never an either/or listing the ways to disagree ("Companies face fewer
 rules, or the current amount is enough"): an either/or is not a position. For "A rather than B" keep
 both sides ("Prisons should not put rehabilitation ahead of punishment"); for a statement that
-bundles two claims, "It is not true that ...". Explanations are display text: fixing one doesn't change what was answered, so the id
+bundles two claims, "It is not true that ...". An `agree` sentence means exactly the statement, in other words that help a reader
+see the position; repeating the statement is the fallback when no faithful rewording exists.
+Explanations are display text: fixing one doesn't change what was answered, so the id
 stays.
 
 ## Reference
