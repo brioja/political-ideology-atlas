@@ -162,6 +162,9 @@ function buildModel(ideologies, opts = {}) {
 
   const model = { mean, components, kept, ideologies: [] };
   if (opts.skipExtras) return model;
+  // The real lines are counted on this bare model (parallel analysis) before anything is placed on
+  // them; the build counts them once and passes `realLines` in.
+  model.realLines = opts.realLines ?? meaningfulAxes(model, ideologies);
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
@@ -202,14 +205,11 @@ function varimax(model, k, { iters = 100 } = {}) {
 // The same model from parts build.js computed ahead of time (mean and the leading components), so
 // the page skips the eigen-decomposition, which grows with the cube of the statement count.
 function modelFromParts(ideologies, parts) {
-  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], fullSpread: parts.fullSpread, ideologies: [] };
+  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], fullSpread: parts.fullSpread, realLines: parts.realLines, ideologies: [] };
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
 }
-
-// How many leading components a partial set of answers is fitted on (and build.js ships).
-const FIT_COMPONENTS = 12;
 
 // Places a set of answers on the axes. Skipped or unasked statements are null, and so are
 // statements an ideology has no known position on, so ideologies are placed the same way.
@@ -226,10 +226,10 @@ function project(model, answers) {
   }
   if (rows.length === 0) return new Array(model.components.length).fill(0);
 
-  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors, on the leading
-  // FIT_COMPONENTS (the ones the site ships), so the build, the tests and the page place alike.
+  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors, on the real lines
+  // (matchLines), so the build, the tests and the page place alike.
   const y = rows.map((j) => answers[j] - model.mean[j]);
-  const d = Math.min(FIT_COMPONENTS, model.components.length, rows.length);
+  const d = Math.min(matchLines(model), rows.length);
   const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
   const M = Array.from({ length: d }, (_, a) =>
     Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
@@ -376,8 +376,16 @@ function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 
   return ranked;
 }
 
-// Ranks people by where they sit on the dividing lines: each side is placed on the leading `dims`
-// lines from whatever it answered (see project), and the nearest person wins. Comparing statement by
+// The dividing lines that are real (they beat shuffled noise, see meaningfulAxes): matching people,
+// placing answers and the quiz's progress all use these, whatever the page has room to show
+// (MAX_SHOWN_LINES). Counted once per model (buildModel) and shipped with it (build.js).
+function matchLines(model) {
+  if (model.realLines == null) throw new Error("This model has no count of real lines (realLines): build it with buildModel or ship it from build.js.");
+  return Math.min(model.components.length, model.realLines);
+}
+
+// Ranks people by where they sit on the dividing lines: each side is placed on the real lines
+// (matchLines) from whatever it answered (see project), and the nearest person wins. Comparing statement by
 // statement favoured whoever had answered the most (AI models answer everything, most people a few
 // dozen) and whoever held the mildest views. Similarity is 1 minus the distance over the widest gap
 // between two ideologies there. Near-ties (within `tie`) go to the more widely read person.
@@ -398,7 +406,7 @@ function lineSpan(model, dims) {
   }
   return cache.get(dims);
 }
-function matchPeople(model, answers, people, { dims = Math.min(model.components.length, 8), tie = 0.03 } = {}) {
+function matchPeople(model, answers, people, { dims = matchLines(model), tie = 0.03 } = {}) {
   if (!answers.some((x) => x != null)) return [];
   const you = project(model, answers).slice(0, dims);
   const span = lineSpan(model, dims);
@@ -621,7 +629,7 @@ const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10)
 // between an ideology and its nearest neighbour. A record less precise than that can't say which
 // of two neighbouring ideologies it is closer to, so it isn't matched against.
 function salienceContext(model, ideologies, { lines } = {}) {
-  const k = Math.max(2, Math.min(lines ?? meaningfulAxes(model, ideologies), model.components.length));
+  const k = Math.max(2, Math.min(lines ?? matchLines(model), model.components.length));
   const n = model.mean.length;
   const noise = model.components.slice(k).reduce((s, c) => s + c.eigenvalue, 0) / n || 1e-6;
   const dist = (a, b) => Math.sqrt(a.slice(0, k).reduce((s, x, i) => s + (x - b[i]) ** 2, 0));
@@ -711,5 +719,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, FIT_COMPONENTS, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

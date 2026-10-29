@@ -130,7 +130,15 @@ if (variant === "nulls") {
 }
 const name = Object.fromEntries(IDEOLOGIES.map((i) => [i.id, i.name]));
 const drawnCases = cases(process.argv.includes("--save") ? null : savedBase && savedBase.drawn);
-const results = drawnCases.map((c) => ({ ...c, top: rank(ideos, c.answers).slice(0, 5).map((r) => r.id) }));
+// People: each taker's closest people, as the results page ranks them (matchPeople on the shipped lines).
+const { MODEL } = require(path.join(ROOT, "data.js"));
+const { PEOPLE } = require(path.join(ROOT, "people.js"));
+const { modelFromParts, matchPeople } = require(path.join(ROOT, "pca.js"));
+const shipped = modelFromParts(IDEOLOGIES, MODEL);
+const people = PEOPLE.map((x) => ({ ...x, profile: x.profile.slice(0, n) }));
+const personName = Object.fromEntries(PEOPLE.map((x) => [x.id, x.name]));
+const results = drawnCases.map((c) => ({ ...c, top: rank(ideos, c.answers).slice(0, 5).map((r) => r.id),
+  people: matchPeople(shipped, c.answers, people).slice(0, 5).map((x) => x.id) }));
 
 // --rank <id>: where that ideology ranks for each suite's takers (median), to see a change below the top.
 if (arg("--rank")) {
@@ -171,8 +179,10 @@ for (const s of suites) {
 }
 
 // --out <file>: write each taker's top 5 for the saved takers, to compare two versions taker by taker.
-if (arg("--out")) fs.writeFileSync(arg("--out"), JSON.stringify(Object.fromEntries(results.map((r) => [r.label, { top: r.top, expect: r.expect || null }]))));
-const save = (file, rs, drawn) => fs.writeFileSync(file, JSON.stringify({ ...(drawn ? { drawn } : {}), tops: Object.fromEntries(rs.map((r) => [r.label, r.top])) }, null, 1) + "\n");
+if (arg("--out")) fs.writeFileSync(arg("--out"), JSON.stringify(Object.fromEntries(results.map((r) => [r.label, { top: r.top, people: r.people, expect: r.expect || null }]))));
+if (arg("--answers")) fs.writeFileSync(arg("--answers"), JSON.stringify(Object.fromEntries(results.map((r) => [r.label, r.answers]))));
+const save = (file, rs, drawn) => fs.writeFileSync(file, JSON.stringify({ ...(drawn ? { drawn } : {}),
+  tops: Object.fromEntries(rs.map((r) => [r.label, r.top])), people: Object.fromEntries(rs.map((r) => [r.label, r.people])) }, null, 1) + "\n");
 if (process.argv.includes("--save")) {
   if (variant !== "current") { console.error("Save the baseline from today's matching only."); process.exit(1); }
   save(BASELINE, results.filter((r) => r.suite !== "real"), drawnCases.drawn);
@@ -189,4 +199,12 @@ for (const r of moved) {
   const was = base[r.label][0], now = r.top[0];
   const verdict = r.expect ? (r.expect.includes(now) ? "better" : r.expect.includes(was) ? "WORSE" : "other") : "";
   console.log(`  ${r.label}: ${name[was] || was} -> ${name[now] || now}${verdict ? ` (${verdict})` : ""}`);
+}
+// The closest person, shown first on the results page.
+const realBase = fs.existsSync(REAL_BASELINE) ? readJson(REAL_BASELINE) : {};
+const basePeople = { ...(savedBase && savedBase.people) || {}, ...realBase.people || {} };
+const movedPeople = results.filter((r) => basePeople[r.label] && basePeople[r.label][0] !== r.people[0]);
+console.log(`\nClosest person changed for ${movedPeople.length} of ${results.filter((r) => basePeople[r.label]).length} takers${movedPeople.length > 12 ? " (real takers, then 12 others)" : ""}:`);
+for (const r of [...movedPeople.filter((x) => x.suite === "real"), ...movedPeople.filter((x) => x.suite !== "real").slice(0, 12)]) {
+  console.log(`  ${r.label}: ${personName[basePeople[r.label][0]] || basePeople[r.label][0]} -> ${personName[r.people[0]]}${r.suite === "real" ? `  [top 5 now: ${r.people.map((id) => personName[id]).join(", ")}]` : ""}`);
 }

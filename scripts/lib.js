@@ -135,6 +135,12 @@ const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
 const ideologySalience = (audit, judge = ideologyJudge()) =>
   placed((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), 1, judge);
 
+// The inputs of the real-line count (build.js, audits/lines.json): pca.js and the answers of the
+// ideologies it is counted on (`id` and `profile`, in catalog order).
+const linesKey = (ideologies) => require("crypto").createHash("sha1")
+  .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
+  .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
+  .digest("hex");
 // The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, each
 // ideology's answers, and the model calibrated on.
 const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1")
@@ -143,6 +149,6 @@ const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1
   .update(JSON.stringify([model.mean, model.components.map((c) => c.vector)]))
   .digest("hex");
 
-module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
   RULES, silentZeros, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };

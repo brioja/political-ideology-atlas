@@ -69,10 +69,9 @@ function savedResult() {
   return s && s.answers.filter((a) => a !== null).length >= Math.max(1, REAL_LINES) ? s.answers : null;
 }
 
-// How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
-// at least 2 and at most MAX_SHOWN_LINES (pca.js). build.js precomputes the count; otherwise it's
-// computed here.
-const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
+// How many dividing lines to show: the real ones (matchLines in pca.js, counted by the build and
+// shipped with the model), at least 2 and at most MAX_SHOWN_LINES (pca.js).
+const REAL_LINES = matchLines(model);
 const SHOWN_LINES = Math.min(MAX_SHOWN_LINES, model.components.length, Math.max(2, REAL_LINES));
 
 // Where a score falls along a drawn line, 0-1: scaled to the line's own extremes (plus a small
@@ -779,7 +778,7 @@ function showResults(shared = null) {
     ${typeof PEOPLE !== "undefined" && PEOPLE.length ? `
     <section>
       <h2>People who think like ${shared ? "them" : "you"}</h2>
-      <p class="muted small">The figures who fall closest to ${shared ? "this person" : "you"} on the dividing lines below, not a count of shared answers.</p>
+      <p class="muted small">The figures who fall closest to ${shared ? "this person" : "you"} on the dividing lines, not a count of shared answers.</p>
       <ul class="matches">${matchPeople(model, given, PEOPLE).slice(0, 5).map((p) => `
         <li><details>
           <summary><span class="match-name">${avatar(p)}${esc(p.name)}</span><span class="bar"><span style="width:${pct(p.similarity)}"></span></span><span class="mono">${pct(p.similarity)}</span></summary>

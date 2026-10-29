@@ -35,7 +35,7 @@ const behind = catalog().filter((e) => require("fs").existsSync(profilePath(e.id
 assert(!behind.length, `${behind.length} audits miss active statements (backfill before promoting): ${behind.slice(0, 5).map((b) => b.id).join(", ")}`);
 
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
-const model = buildModel(IDEOLOGIES);
+const model = buildModel(IDEOLOGIES, { realLines: MEANINGFUL_LINES });
 // The shipped calibration must come from these ideologies and this pca.js (see build.js).
 if (!PEOPLE_ONLY) {
   const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
@@ -53,6 +53,12 @@ if (!PEOPLE_ONLY) {
   const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
+  // The real-line count is counted on the salient ideologies (before indistinguishable ones are set
+  // aside) and committed in audits/lines.json; it must be current and be the one data.js ships.
+  const salient = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient);
+  const lines = readJson(require("path").join(__dirname, "audits", "lines.json"));
+  assert.strictEqual(lines.key, lib.linesKey(salient), "audits/lines.json is stale: run a full build");
+  assert.strictEqual(lines.realLines, MEANINGFUL_LINES, "data.js's MEANINGFUL_LINES differs from audits/lines.json: run a full build");
 }
 // Silence is never scored: a statement where one side has no known position (null) counts neither as
 // "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see
