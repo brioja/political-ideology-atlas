@@ -43,8 +43,11 @@ everyone who answers that way, whatever their reason: not the opposite extreme, 
 second policy. Disagreeing that "the rules of the international economy should be restructured in
 favour of developing countries" is not "the rules are broadly fair" (an economic nationalist wants
 them restructured for their own country); it is "international economic rules should not be
-reshaped to favour developing countries". Explanations are display text: fixing one doesn't change
-what was answered, so the id stays.
+reshaped to favour developing countries". A `disagree` sentence is the plain negation of
+the statement ("Corporations should not be more tightly regulated"), never an either/or listing the
+ways to disagree ("Companies face fewer rules, or the current amount is enough"): an either/or is not
+a position. Explanations are display text: fixing one doesn't change what was answered, so the id
+stays.
 
 ## Reference
 

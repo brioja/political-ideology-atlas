@@ -16,7 +16,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "The minimum wage should be raised substantially.",
   "agree": "The legal lowest wage goes up a lot, even if some employers have to pay more.",
-  "disagree": "Wages are left mostly to employers, workers and unions, or raised only slowly.",
+  "disagree": "The minimum wage should not be raised substantially.",
   "note": "About how much the state should set pay.",
   "icon": "💵"
  },
@@ -70,7 +70,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Corporations should be more tightly regulated.",
   "agree": "Companies face more rules on things like pollution, prices, labor and competition.",
-  "disagree": "Companies face fewer rules, or the current amount is enough.",
+  "disagree": "Corporations should not be more tightly regulated.",
   "note": "About the state's oversight of business.",
   "icon": "🏢"
  },
@@ -141,7 +141,7 @@ const QUESTIONS = [
   "id": "limit-guns",
   "theme": "liberty",
   "text": "Gun ownership should be strictly limited.",
-  "agree": "Owning guns requires strict licensing, or most private gun ownership is banned.",
+  "agree": "Gun ownership should be strictly limited by law.",
   "disagree": "Gun ownership should not be strictly limited.",
   "note": "About gun rights versus gun control.",
   "icon": "🔫"
@@ -322,7 +322,7 @@ const QUESTIONS = [
   "theme": "ecology",
   "text": "Climate change requires drastic government action.",
   "agree": "Governments should act fast and hard on emissions, even at real cost.",
-  "disagree": "Climate policy should be modest, market-led, or not a priority.",
+  "disagree": "Climate change does not require drastic government action.",
   "note": "About climate change.",
   "icon": "🌡️"
  },
@@ -376,7 +376,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Markets are acceptable as long as businesses are owned by their workers or the public.",
   "agree": "Firms can compete in markets as long as workers or the public own them.",
-  "disagree": "Markets are fine with private owners, or markets themselves are the problem.",
+  "disagree": "Markets are not made acceptable just by worker or public ownership of businesses.",
   "note": "Identifies market socialism.",
   "icon": "🏪"
  },
@@ -628,7 +628,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "Nations that share a religion or civilization should unite politically.",
   "agree": "Countries with a shared religion or civilization should join politically.",
-  "disagree": "Countries should stay separate, or unite on other grounds.",
+  "disagree": "Nations should not unite politically because they share a religion or civilization.",
   "note": "Identifies pan-Islamism, Eurasianism and similar movements.",
   "icon": "🌍"
  },
@@ -925,7 +925,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "The nation needs a radical rebirth to overcome a period of decadence.",
   "agree": "The nation has decayed and must be reborn.",
-  "disagree": "The nation is not in decay, or doesn't need a radical rebirth.",
+  "disagree": "The nation does not need a radical rebirth to overcome decadence.",
   "note": "About national decline and renewal.",
   "icon": "🔥"
  },
@@ -1123,7 +1123,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "Countries that see themselves as dominated by the leading Western powers should form a common front against them.",
   "agree": "Countries that feel dominated by Western powers should band together to resist them.",
-  "disagree": "Countries should deal with the Western powers one by one, or cooperate with them.",
+  "disagree": "Countries should not form a common front against the leading Western powers.",
   "note": "About whether non-Western or resisting countries should act as a bloc.",
   "icon": "🤝"
  },
@@ -1249,7 +1249,7 @@ const QUESTIONS = [
   "theme": "liberty",
   "text": "Governments should be held legally accountable for past killings and abuses committed by their security forces.",
   "agree": "Officials and officers responsible for past abuses should face courts, including international ones, however long ago.",
-  "disagree": "Old abuses are best left behind, or are matters for the state itself to judge.",
+  "disagree": "Governments should not be held legally accountable for past abuses by their security forces.",
   "note": "About whether states answer for past violence.",
   "icon": "⚖️"
  },
@@ -2059,7 +2059,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "A national minority should have its own self-governing cultural institutions and schools within the state, rather than a state of its own.",
   "agree": "Minorities run their own cultural life and schools inside the country, without needing their own state.",
-  "disagree": "Minorities should be integrated into common institutions, or be given a state of their own.",
+  "disagree": "A national minority should not have self-governing cultural institutions within the state instead of a state of its own.",
   "note": "About autonomy for minorities within a state.",
   "icon": "🏫"
  },
@@ -2302,7 +2302,7 @@ const QUESTIONS = [
   "theme": "government",
   "text": "Parliament, not the monarch, should be the supreme lawmaking authority.",
   "agree": "The elected assembly has the last word on law, above the crown or executive.",
-  "disagree": "The monarch or executive holds the final say, or courts can overrule parliament.",
+  "disagree": "Parliament should not be the supreme lawmaking authority.",
   "note": "About where final lawmaking power lies.",
   "icon": "🏛️"
  },
@@ -2311,7 +2311,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Animals are sentient beings whose suffering matters morally.",
   "agree": "Animals can suffer, and that suffering counts in how we treat them.",
-  "disagree": "Animals have no moral standing, or only what humans give them.",
+  "disagree": "Animals' suffering does not matter morally in its own right.",
   "note": "About the moral weight of animal suffering.",
   "icon": "🐾"
  },
@@ -2320,7 +2320,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Animals may be kept and used for food or research, provided their suffering is kept to a minimum.",
   "agree": "Using animals is acceptable if they are treated humanely.",
-  "disagree": "Using animals is wrong however well they are treated, or needs no limits.",
+  "disagree": "Using animals for food or research is not acceptable just because their suffering is kept low.",
   "note": "About human use of animals.",
   "icon": "🐄"
  },
@@ -2527,7 +2527,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Adults should be free to end a marriage without having to prove fault.",
   "agree": "Either spouse can leave a marriage without showing wrongdoing by the other.",
-  "disagree": "Ending a marriage should require grounds such as fault, or be made hard by law.",
+  "disagree": "Ending a marriage should not be possible without proving fault.",
   "note": "About how easily marriages can be dissolved.",
   "icon": "💔"
  },
@@ -2698,7 +2698,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Workers should be organized in unions by industry rather than by craft.",
   "agree": "All workers in an industry belong in one union, whatever their trade.",
-  "disagree": "Workers are better organized by craft or trade, or in unions of their own choosing.",
+  "disagree": "Workers should not be organized in unions by industry rather than by craft.",
   "note": "About how workers should organize into unions.",
   "icon": "🏭"
  },
@@ -2788,7 +2788,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Personal belongings should remain private while the means of production are held in common.",
   "agree": "Ordinary personal possessions stay private, but factories, land and tools belong to everyone.",
-  "disagree": "Either all property should be private, or common ownership should extend to personal belongings too.",
+  "disagree": "Personal belongings should not stay private while the means of production are held in common.",
   "note": "About the line between personal possessions and productive property.",
   "icon": "⌚"
  },
@@ -2887,7 +2887,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Neither capitalism nor communism offers a sound basis for society; a third course is needed.",
   "agree": "Capitalism fails, and so does communism's collective ownership of the economy; society should follow a different, third way.",
-  "disagree": "One of the two, capitalism or communism, is the sound basis, or other options are not needed.",
+  "disagree": "A third course between capitalism and communism is not needed.",
   "note": "Communism here means collective ownership of the economy as communist states practiced it.",
   "icon": "⚖️"
  },
@@ -3058,7 +3058,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "A market economy should be combined with social protection and fair competition rules, rather than left to laissez-faire or run by the state.",
   "agree": "Markets work best inside rules that protect competition and guarantee social security.",
-  "disagree": "Markets are best left free of such rules, or the state should run the economy.",
+  "disagree": "A market economy should not be combined with social protection and fair-competition rules as the model.",
   "note": "About the middle course between free markets and state control.",
   "icon": "⚖️"
  },
@@ -3103,7 +3103,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Credit should be issued at cost by banks owned by their users rather than by profit-making banks.",
   "agree": "Loans come from user-owned mutual banks that charge only what running them costs.",
-  "disagree": "Banks may lend for profit and charge interest, or the state should run credit.",
+  "disagree": "Credit should not be issued at cost by user-owned banks instead of profit-making banks.",
   "note": "About who should supply credit and at what price.",
   "icon": "🏦"
  },
@@ -3238,7 +3238,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Gay and lesbian people should be allowed to serve openly in the armed forces.",
   "agree": "Sexual orientation should not bar anyone from military service or force them to hide it.",
-  "disagree": "Open service by gay and lesbian people harms military order, or the ban or concealment should stay.",
+  "disagree": "Gay and lesbian people should not serve openly in the armed forces.",
   "note": "About open LGB service in the military.",
   "icon": "🎖️"
  },
@@ -3292,7 +3292,7 @@ const QUESTIONS = [
   "theme": "government",
   "text": "Citizens should be able to delegate their vote on each policy area to someone they trust and withdraw that delegation at any time.",
   "agree": "People can hand their vote on a topic to a trusted person and take it back whenever they like.",
-  "disagree": "Each citizen should vote for themselves, or leave decisions to elected representatives.",
+  "disagree": "Citizens should not be able to delegate their vote on each policy area to someone they trust.",
   "note": "About delegable, revocable voting as a form of democracy.",
   "icon": "🔀"
  },
@@ -3715,7 +3715,7 @@ const QUESTIONS = [
   "theme": "ecology",
   "text": "Present generations owe it to future generations to hand on the Earth undamaged.",
   "agree": "We have a duty to leave the planet in good condition for those who come after us.",
-  "disagree": "We owe little to people not yet born, or may use resources as we judge best.",
+  "disagree": "Present generations do not owe it to future ones to hand on the Earth undamaged.",
   "note": "About duties to future generations.",
   "icon": "🌍"
  },
@@ -3724,7 +3724,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Women tend to bring distinct values, such as care, cooperation and nonviolence, to public life, and these should be given more weight.",
   "agree": "Women's typical outlook adds something different to politics that deserves more weight.",
-  "disagree": "Women and men bring the same range of values, or gender should not shape how views are weighed.",
+  "disagree": "Women's values in public life should not be given more weight as distinct from men's.",
   "note": "About whether women bring distinct values to public life.",
   "icon": "🤝"
  },
@@ -3787,7 +3787,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Governments should top up the incomes of low-paid working families through tax credits.",
   "agree": "The state adds to the pay of low-income working households through the tax system.",
-  "disagree": "Pay should be left to employers and the market, or low incomes helped by other means.",
+  "disagree": "Governments should not top up the incomes of low-paid working families through tax credits.",
   "note": "About supplementing low wages with public money.",
   "icon": "💷"
  },
@@ -4084,7 +4084,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "The first person to claim and work unowned land or resources thereby becomes their rightful owner.",
   "agree": "Whoever first claims and works unowned resources owns them.",
-  "disagree": "Unowned resources belong to the community, or ownership needs wider consent.",
+  "disagree": "Claiming and working unowned land or resources does not by itself make someone their rightful owner.",
   "note": "About how property first comes to be owned.",
   "icon": "🌾"
  },
@@ -4102,7 +4102,7 @@ const QUESTIONS = [
   "theme": "culture",
   "text": "Scripture is the inerrant word of God and is to be read literally.",
   "agree": "Scripture is without error and means what it plainly says.",
-  "disagree": "Scripture is a human record, or is to be read in other ways.",
+  "disagree": "Scripture is not the inerrant word of God to be read literally.",
   "note": "About how to read religious scripture.",
   "icon": "📖"
  },
@@ -4300,7 +4300,7 @@ const QUESTIONS = [
   "theme": "technology",
   "text": "Modern technological civilization should be combined with a return to ancestral values rather than choosing one over the other.",
   "agree": "Use advanced technology while reviving the archaic values of one's people.",
-  "disagree": "Modernity and ancestral values pull apart; one must give way, or modern values should lead.",
+  "disagree": "Modern technological civilization should not be combined with a return to ancestral values.",
   "note": "About combining new technology with old values.",
   "icon": "⚙️"
  },
@@ -4408,7 +4408,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "A market economy can be built within a socialist system under the leadership of a communist party.",
   "agree": "A communist party can direct a market economy toward socialist goals.",
-  "disagree": "Markets and one-party socialism contradict each other, or markets need democratic or free-market politics.",
+  "disagree": "A market economy cannot be built within a socialist system under a communist party's leadership.",
   "note": "About combining markets with party-led socialism.",
   "icon": "🏭"
  }
