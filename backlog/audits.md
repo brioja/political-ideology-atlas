@@ -48,4 +48,9 @@ Audit work discussed but not started.
     Not checked by a second reader yet (`~/work/codex-beliefs-check.md` is ready for Codex); a single
     reader repeats only about half its flags, so confirm before re-auditing the one- and two-flag
     cases.
+  - **Jewish secularism re-audit (8fe2108) borrows downward:** about a dozen of its answers rest on
+    the American Society for Humanistic Judaism and JFASD alone (same-sex marriage, abortion,
+    assisted dying, vouchers), which AUDIT_RULES.md now calls borrowing unless other branches,
+    Israeli secularists above all, are shown to share the position. It is off the site already, so
+    this matters only if it is deepened again.
 
