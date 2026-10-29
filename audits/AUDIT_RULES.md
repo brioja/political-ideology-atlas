@@ -36,8 +36,10 @@ words; don't paste long passages.
   the thin ones. Government (elections, courts, executive power, federalism) and world (wars,
   alliances, aid, the UN) are the themes most often left thin.
 - When the subject's own texts are available as full text (a book, manifesto, programme or speech
-  collection), download them into your scratch folder and search them for each theme's topics
-  rather than reading summaries.
+  collection), download them and search them for each theme's topics rather than reading
+  summaries. Keep downloads in the local source library, `scratchpad/sources/<id>/` (never
+  committed), so later passes reuse them: check its `index.json` first, and list each file you add
+  there with its title, url and download date.
 - The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself).
   Treat it as a primary source and search it the same way. Cite it as the published work, with the
   url of a publisher or library catalog page for it that you opened (e.g. openlibrary.org/isbn/…),
