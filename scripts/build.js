@@ -266,6 +266,17 @@ if (!spreads) {
 }
 for (const i of included) if (spreads[i.id] != null) i.spread = spreads[i.id];
 
+// "What it stands for": an ideology's strongly held stated positions (never an inference, a silence
+// or a leaning), the ones furthest from the average ideology's answer first; fewer if it has fewer.
+// Shipped as statement indexes so the page and the static pages show the same list.
+const BELIEFS = 6;
+for (const i of included) {
+  const stated = require("./lib").statedPositions(readJson(profilePath(i.id)));
+  i.beliefs = statements.map((s, j) => j).filter((j) => stated.has(statements[j].id) && Math.abs(i.profile[j]) === 2)
+    .sort((x, y) => Math.abs(i.profile[y] - landscape.mean[y]) - Math.abs(i.profile[x] - landscape.mean[x]) || x - y)
+    .slice(0, BELIEFS);
+}
+
 writePeople(modelFromParts(included, shippedModel), judge);
 
 // Share links index answers by audits/share-slots.json, which only ever grows (see encodeShare in pca.js).

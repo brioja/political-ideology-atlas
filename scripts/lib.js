@@ -114,6 +114,10 @@ const personSalience = (answers, id = null, judge = shippedJudge()) => {
 // unmarked, so only their medium and high answers count until they are re-audited.
 const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
+// The statements an ideology audit has a stated position on, as its salience counts them: evidence,
+// not "Inferred:" (or, in audits from before the shared rules, medium or high only); never null.
+const statedPositions = (audit) => new Set(Object.entries((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers))
+  .filter(([, a]) => a.value != null).map(([id]) => id));
 const ideologySalience = (audit, judge = shippedJudge()) =>
   placed((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), 1, judge);
 
@@ -132,4 +136,4 @@ const calibrationKey = (ideologies) => require("crypto").createHash("sha1")
 
 module.exports = { linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  RULES, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies, LEGACY_PATH, onLegacyBar };

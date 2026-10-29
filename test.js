@@ -66,6 +66,16 @@ if (!PEOPLE_ONLY) {
   const unnamed = Array.from({ length: drawn }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
   assert(!unnamed.length, `drawn dividing line${unnamed.length > 1 ? "s" : ""} ${unnamed.join(", ")} ha${unnamed.length > 1 ? "ve" : "s"} no name: add or update its anchors in audits/line-labels.json`);
 }
+// "What it stands for" comes from strongly held stated positions only: no inference, silence or leaning.
+{
+  const lib = require("./scripts/lib");
+  const bad = [];
+  for (const i of IDEOLOGIES) {
+    const stated = lib.statedPositions(lib.readJson(lib.profilePath(i.id)));
+    if (!i.beliefs || !i.beliefs.length || i.beliefs.some((q) => !stated.has(QUESTIONS[q].id) || Math.abs(i.profile[q]) !== 2)) bad.push(i.id);
+  }
+  assert(!bad.length, `"What it stands for" is missing or not from stated positions (run a full build): ${bad.slice(0, 5).join(", ")}`);
+}
 // Silence is never scored: a statement where one side has no known position (null) counts neither as
 // "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see
 // audits/AUDIT_RULES.md). And the model reads an ideology's null as null.

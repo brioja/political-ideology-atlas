@@ -62,14 +62,8 @@ function stance(q, v) {
   if (v === 0) return `Mixed on: ${q.text}`;
   return (v > 0 ? q.agree : q.disagree) || `${v > 0 ? "Agrees" : "Disagrees"}: ${q.text}`;
 }
-function keyBeliefs(profile, n) {
-  return profile
-    .map((p, q) => ({ q, p, d: Math.abs(p - model.mean[q]) }))
-    .filter((x) => x.p != null && x.p !== 0)
-    .sort((a, b) => b.d - a.d || Math.abs(b.p) - Math.abs(a.p))
-    .slice(0, n);
-}
-const beliefs = (profile, n) => `<ul>${keyBeliefs(profile, n).map((b) => `<li>${esc(stance(QUESTIONS[b.q], b.p))}</li>`).join("")}</ul>`;
+// "What it stands for", as the build picked it (scripts/build.js).
+const beliefs = (ideo, n) => `<ul>${(ideo.beliefs || []).slice(0, n).map((q) => `<li>${esc(stance(QUESTIONS[q], ideo.profile[q]))}</li>`).join("")}</ul>`;
 // Every known position, strongest first.
 function positions(profile) {
   const known = profile.map((v, q) => ({ v, q })).filter((x) => x.v != null && x.v !== 0)
@@ -95,7 +89,7 @@ function ideologyBody(ideo) {
     <h1>${esc(ideo.name)}</h1>
     ${ideo.summary ? `<p>${esc(ideo.summary)}</p>` : ""}
     ${ideo.wikipedia ? `<p class="small"><a href="${esc(ideo.wikipedia)}">Wikipedia</a></p>` : ""}
-    <h2>What it stands for</h2>${beliefs(ideo.profile, 6)}
+    <h2>What it stands for</h2>${beliefs(ideo, 6)}
     ${figures.length ? `<h2>Key figures</h2><ul>${figures.map((f) => `<li>${esc(f.name)}${f.role ? `: ${esc(f.role)}` : ""}</li>`).join("")}</ul>` : ""}
     <h2>Closest ideologies</h2>${ideologyLinks(neighbors)}
     ${closest.length ? `<h2>People closest to it</h2>${personLinks(closest)}` : ""}

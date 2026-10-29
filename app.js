@@ -541,14 +541,9 @@ const REPO = "https://github.com/brioja/political-ideology-atlas";
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const word = (v) => CHOICES.find((c) => c.value === v).label;
 
-// The positions that set an ideology apart: strong answers far from the average ideology's.
-function keyBeliefs(ideo, n = 4) {
-  return ideo.profile
-    .map((p, q) => ({ q, p, d: Math.abs(p - model.mean[q]) }))
-    .filter((x) => x.p != null && x.p !== 0)
-    .sort((a, b) => b.d - a.d || Math.abs(b.p) - Math.abs(a.p))
-    .slice(0, n);
-}
+// "What it stands for": the build picks it (scripts/build.js): strongly held stated positions only,
+// the ones furthest from the average ideology's answer first.
+const keyBeliefs = (ideo, n = 4) => (ideo.beliefs || []).slice(0, n).map((q) => ({ q, p: ideo.profile[q] }));
 
 // A position in plain words: the stance itself (from the statement's agree/disagree explanation)
 // rather than "disagree" with a negatively worded statement. The tag carries only the strength.
