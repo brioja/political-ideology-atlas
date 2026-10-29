@@ -35,6 +35,17 @@ Anarcho-primitivism is a live match, and it doesn't make the test longer for any
 
 Rewording a statement changes what was answered, so a reworded statement gets a new id.
 
+## Explanations
+
+Each statement's `agree` and `disagree` sentences are shown as "If you agree / If you disagree" and
+describe the position of any ideology or person who answers that way. So each must be true of
+everyone who answers that way, whatever their reason: not the opposite extreme, no added reason or
+second policy. Disagreeing that "the rules of the international economy should be restructured in
+favour of developing countries" is not "the rules are broadly fair" (an economic nationalist wants
+them restructured for their own country); it is "international economic rules should not be
+reshaped to favour developing countries". Explanations are display text: fixing one doesn't change
+what was answered, so the id stays.
+
 ## Reference
 
 `coverage.json` maps the statements onto the Manifesto Project's issue categories
