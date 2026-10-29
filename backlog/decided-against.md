@@ -23,4 +23,8 @@ explicit decision from the maintainer.
   how unusual each strongly held stated position is among all ideologies: that can be checked against
   the data, while "defining" is interpretive. So a broad label like Liberalism or Trumpism may lead
   with positions that set its camp apart rather than its best-known slogans; that is expected.
+- **Ranking people by how certain their placement is** (2026-10-29). Proposed after a thin record
+  (Jared Kushner, 49 positions) was a taker's top match while sharing no views with them. Matching
+  people on all real dividing lines instead of the 8 drawn ones moved him from #1 to #4 on that link;
+  a thin record lower in the top five isn't a problem, and more people in the catalog push it down.
 
