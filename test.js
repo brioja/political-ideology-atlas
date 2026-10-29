@@ -39,26 +39,22 @@ const model = buildModel(IDEOLOGIES, { realLines: MEANINGFUL_LINES });
 // The shipped calibration must come from these ideologies and this pca.js (see build.js).
 if (!PEOPLE_ONLY) {
   const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
-  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, model), "audits/calibration.json is stale: run a full build");
+  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES), "audits/calibration.json is stale: run a full build");
   assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
-  // Salience is judged one way everywhere (scripts/lib.js): the ideology judge is current, and the
-  // shown set is exactly the audits that pass it as validate.js judges them, less indistinguishable
-  // ones (listed as related on the one kept).
+  // One landscape (build.js): the real-line count is counted on every complete audit and committed in
+  // audits/lines.json, current and the one data.js ships; and salience is judged one way everywhere
+  // (scripts/lib.js), so the shown set is exactly the audits the shipped judge passes, less
+  // indistinguishable ones (listed as related on the one kept).
   const lib = require("./scripts/lib");
   const complete = lib.completeIdeologies(active);
-  const judge = readJson(lib.IDEOLOGY_JUDGE_PATH);
-  assert.strictEqual(judge.key, lib.ideologyJudgeKey(complete, active), "audits/salience-ideologies.json is stale: run a full build");
+  const lines = readJson(require("path").join(__dirname, "audits", "lines.json"));
+  assert.strictEqual(lines.key, lib.linesKey(complete), "audits/lines.json is stale: run a full build");
+  assert.strictEqual(lines.realLines, MEANINGFUL_LINES, "data.js's MEANINGFUL_LINES differs from audits/lines.json: run a full build");
   const shown = new Set(IDEOLOGIES.map((i) => i.id));
   const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
   const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
-  // The real-line count is counted on the salient ideologies (before indistinguishable ones are set
-  // aside) and committed in audits/lines.json; it must be current and be the one data.js ships.
-  const salient = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient);
-  const lines = readJson(require("path").join(__dirname, "audits", "lines.json"));
-  assert.strictEqual(lines.key, lib.linesKey(salient), "audits/lines.json is stale: run a full build");
-  assert.strictEqual(lines.realLines, MEANINGFUL_LINES, "data.js's MEANINGFUL_LINES differs from audits/lines.json: run a full build");
 }
 // Silence is never scored: a statement where one side has no known position (null) counts neither as
 // "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see

@@ -31,15 +31,11 @@ const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
 const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
 const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
 
-// Salience (see pca.js) is judged against one of two contexts, each defined here once:
-// - ideologies: the dividing lines of every complete ideology audit, not just the ones shown, so the
-//   shown set doesn't depend on itself. build.js writes it to audits/salience-ideologies.json under a
-//   hash of its inputs; test.js fails when it is stale.
-// - people: the lines of the ideologies shown, as data.js ships them (PLACEMENT).
-// Both are judged from the rounded parts that are written out, so build.js, validate.js and test.js
-// get the same verdicts. build.js passes the judges it has just made; everyone else gets the last
-// build's.
-const IDEOLOGY_JUDGE_PATH = path.join(ROOT, "audits", "salience-ideologies.json");
+// Salience (see pca.js) is judged against one context for ideologies and people alike: the lines of
+// the landscape (every complete ideology audit, build.js), their noise and their bar, as data.js
+// ships them (PLACEMENT). It is judged from the rounded parts that are written out, so build.js,
+// validate.js and test.js get the same verdicts. build.js passes the judge it has just made;
+// everyone else gets the last build's.
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
 const judgeParts = (ctx) => ({
   k: ctx.k,
@@ -49,13 +45,6 @@ const judgeParts = (ctx) => ({
 });
 // `ids`: the statement ids, in the order of the parts' vectors.
 const judgeFrom = (parts, ids) => ({ ctx: require(path.join(ROOT, "pca.js")).placementFromParts(parts), ids });
-// The ideology judge's inputs: pca.js, the statements and every complete audit's answers (as `id` and
-// `profile`, in catalog order).
-const ideologyJudgeKey = (ideologies, statements) => require("crypto").createHash("sha1")
-  .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
-  .update(JSON.stringify(statements.map((s) => s.id)))
-  .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
-  .digest("hex");
 // Silence in ideology audits written before "no known position" existed for them, when it was recorded
 // as 0 (audits/AUDIT_RULES.md: silence is null): a low zero whose rationale the audit repeats 3+ times
 // (a stock "no doctrine" line), or that says in words there is no position and mentions no split,
@@ -74,26 +63,19 @@ function silentZeros(audit) {
 // An ideology audit's answers as the model takes them. "No known position" stays null: matching leaves
 // it out, like a person's or a taker's (pca.js).
 const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => audit.answers[s.id].value);
-// Every ideology audit that answers all active statements, which is what the ideology judge is built from.
+// Every ideology audit that answers all active statements: the landscape the lines come from.
 const completeIdeologies = (statements = activeStatements()) => catalog()
   .filter((e) => fs.existsSync(profilePath(e.id)))
   .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
   .filter(({ audit }) => !audit.notAnIdeology && !unanswered(audit.answers, statements).length)
   .map(({ id, audit }) => ({ id, name: audit.name, profile: ideologyProfile(audit, statements) }));
-let lastIdeologyJudge = null, lastPeopleJudge = null;
-const ideologyJudge = () => {
-  if (!lastIdeologyJudge) {
-    const file = readJson(IDEOLOGY_JUDGE_PATH);
-    lastIdeologyJudge = judgeFrom(file.parts, file.ids);
-  }
-  return lastIdeologyJudge;
-};
-const peopleJudge = () => {
-  if (!lastPeopleJudge) {
+let lastJudge = null;
+const shippedJudge = () => {
+  if (!lastJudge) {
     const { QUESTIONS, PLACEMENT } = require(path.join(ROOT, "data.js"));
-    lastPeopleJudge = judgeFrom(PLACEMENT, QUESTIONS.map((q) => q.id));
+    lastJudge = judgeFrom(PLACEMENT, QUESTIONS.map((q) => q.id));
   }
-  return lastPeopleJudge;
+  return lastJudge;
 };
 // Placement precision against the judge's bar, scaled by `factor`.
 function placed(answers, factor, judge) {
@@ -121,7 +103,7 @@ const RULES = 2;
 const evidenceOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
 // `id` is needed only for people who may be on the legacy bar; `legacy` says whether that bar applied.
-const personSalience = (answers, id = null, judge = peopleJudge()) => {
+const personSalience = (answers, id = null, judge = shippedJudge()) => {
   const r = placed(evidenceOnly(answers), PEOPLE_BAR, judge);
   if (r.salient || !id || !onLegacyBar(id)) return { ...r, legacy: false };
   const old = placed(evidenceOnly(answers), LEGACY_PEOPLE_BAR, judge);
@@ -132,7 +114,7 @@ const personSalience = (answers, id = null, judge = peopleJudge()) => {
 // unmarked, so only their medium and high answers count until they are re-audited.
 const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-const ideologySalience = (audit, judge = ideologyJudge()) =>
+const ideologySalience = (audit, judge = shippedJudge()) =>
   placed((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), 1, judge);
 
 // The inputs of the real-line count (build.js, audits/lines.json): pca.js and the answers of the
@@ -141,14 +123,13 @@ const linesKey = (ideologies) => require("crypto").createHash("sha1")
   .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
-// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, each
-// ideology's answers, and the model calibrated on.
-const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1")
+// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js and the
+// shown ideologies' answers. The calibration never reads the lines (calibrateCertainty in pca.js).
+const calibrationKey = (ideologies) => require("crypto").createHash("sha1")
   .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
-  .update(JSON.stringify([model.mean, model.components.map((c) => c.vector)]))
   .digest("hex");
 
 module.exports = { linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  RULES, silentZeros, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  RULES, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies, LEGACY_PATH, onLegacyBar };
