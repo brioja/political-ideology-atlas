@@ -56,6 +56,16 @@ if (!PEOPLE_ONLY) {
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
 }
+// Every dividing line the page draws has a name from audits/line-labels.json. A line whose anchor
+// statements are no longer among its strongest loses its name (build.js warns); that must be renamed
+// deliberately, not shipped with its ends named by ideologies.
+{
+  const { MODEL } = require("./data.js");
+  const { MAX_SHOWN_LINES, matchLines, modelFromParts } = require("./pca.js");
+  const drawn = Math.min(MAX_SHOWN_LINES, MODEL.components.length, Math.max(2, matchLines(modelFromParts([], MODEL))));
+  const unnamed = Array.from({ length: drawn }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
+  assert(!unnamed.length, `drawn dividing line${unnamed.length > 1 ? "s" : ""} ${unnamed.join(", ")} ha${unnamed.length > 1 ? "ve" : "s"} no name: add or update its anchors in audits/line-labels.json`);
+}
 // Silence is never scored: a statement where one side has no known position (null) counts neither as
 // "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see
 // audits/AUDIT_RULES.md). And the model reads an ideology's null as null.
