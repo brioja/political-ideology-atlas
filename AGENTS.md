@@ -27,8 +27,8 @@ agents too. This file adds what matters when running the audit workflows in
 
 ## Backlog
 
-- Discussed-but-not-started ideology work, and ideas ruled out, live in `audits/BACKLOG.md`. Add new
-  ideas there, and check "Decided against" before proposing something.
+- Discussed-but-not-started ideology work, and ideas ruled out, live in `backlog/`, one file per
+  topic. Add new ideas there, and check `backlog/decided-against.md` before proposing something.
 
 ## People and AI models
 
