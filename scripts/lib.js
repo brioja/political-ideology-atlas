@@ -100,25 +100,26 @@ const LEGACY_PEOPLE_BAR = 1.5;
 const LEGACY_PATH = path.join(ROOT, "audits", "people-legacy-bar.json");
 let legacyIds = null;
 const onLegacyBar = (id) => (legacyIds ||= new Set(fs.existsSync(LEGACY_PATH) ? readJson(LEGACY_PATH).ids : [])).has(id);
-// A historical figure's answers may be inferred from views they stated (audits/PROMPT_PEOPLE.md); those
-// begin "Inferred:" and, like an ideology's inferred answers, don't count toward salience. They still
-// count for matching, so nobody is shown on the strength of inferences.
-const statedOnlyPerson = (answers) => Object.fromEntries(Object.entries(answers)
+// Salience counts every answer resting on evidence, whatever its confidence (audits/AUDIT_RULES.md,
+// section 5): inferences, which begin "Inferred:", and "no known position" (null) don't count. They
+// still count for matching, so nobody is shown on the strength of inferences.
+const RULES = 2;
+const evidenceOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
 // `id` is needed only for people who may be on the legacy bar; `legacy` says whether that bar applied.
 const personSalience = (answers, id = null, judge = peopleJudge()) => {
-  const r = placed(statedOnlyPerson(answers), PEOPLE_BAR, judge);
+  const r = placed(evidenceOnly(answers), PEOPLE_BAR, judge);
   if (r.salient || !id || !onLegacyBar(id)) return { ...r, legacy: false };
-  const old = placed(statedOnlyPerson(answers), LEGACY_PEOPLE_BAR, judge);
+  const old = placed(evidenceOnly(answers), LEGACY_PEOPLE_BAR, judge);
   return { ...old, legacy: old.salient, strictBar: r.bar };
 };
 
-// Ideologies answer every statement: a position, an inference from a stated principle (marked low
-// confidence), or "no known position" (null) where the sources record none. For salience, only
-// stated positions count: an inferred answer counts no more than a "no known position".
-const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
+// Ideology audits written before the shared rules (no "rules": 2) recorded silence as 0 and inferences
+// unmarked, so only their medium and high answers count until they are re-audited.
+const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-const ideologySalience = (answers, judge = ideologyJudge()) => placed(statedOnly(answers), 1, judge);
+const ideologySalience = (audit, judge = ideologyJudge()) =>
+  placed((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), 1, judge);
 
 // The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, each
 // ideology's answers, and the model calibrated on.
@@ -130,4 +131,4 @@ const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1
 
 module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  RULES, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };

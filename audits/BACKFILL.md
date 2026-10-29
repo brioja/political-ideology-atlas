@@ -7,13 +7,16 @@ For each audit you are given (`audits/profiles/<id>.json`) and its list of state
 
 1. Read the audit's `summary`, `scope` and `sources` first. Answer for the same strand and period the
    scope describes; don't reinterpret the ideology.
-2. Answer each listed statement exactly as `audits/PROMPT.md` section 3 says: the same -2..+2 scale,
-   the same confidence levels, a rationale that explains the answer, and at least one source id.
+2. Answer each listed statement exactly as `audits/AUDIT_RULES.md` (sections 3 and 4) and
+   `audits/PROMPT.md` section 3 say: the same -2..+2 scale or `null` where the sources record no
+   position, the same confidence levels, a rationale that explains the answer, and at least one
+   source id.
    - Reuse the audit's existing sources when they support the answer.
    - When they don't, research it: open a real page with WebSearch/WebFetch and add it to
      `sources` with the next free id (`s7`, `s8`, ...). Cite only pages you opened in this session.
-   - An inference from the ideology's principles is fine at `low` confidence; say what you
-     inferred it from. Never raise a confidence you can't source.
+   - An inference from a principle the ideology states is fine at `low` confidence, with a rationale
+     beginning "Inferred:" that says what you inferred it from. Never raise a confidence you can't
+     source. Leave the audit's `rules` field as it is: it describes the whole audit.
    - If the statement came from this ideology's own `missingStatements`, your answer should agree
      with the value recorded there.
 3. Add the answers to `answers`. Do not change any other answer, field or source.

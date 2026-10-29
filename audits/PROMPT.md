@@ -12,11 +12,9 @@ Inputs (filled in by the runner):
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
 
-## 0. Standard
-
-Follow a Wikipedia-style standard: describe the ideology neutrally and as its own adherents and
-reliable sources document it, however controversial it is. Don't editorialize, soften or omit
-positions because they are objectionable; attribute them to sources instead.
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, salience, deepening)
+apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
+is specific to ideologies.
 
 ## First check: is this an ideology the test can place?
 
@@ -60,86 +58,33 @@ record it in `scope`:
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.
 
-## 2. Research with real sources
+## 2. Sources for an ideology
 
-- Use web search and fetch tools to read actual sources. Cite only pages you opened in this
-  session, using the URL you actually visited. Never cite from memory, and never construct a URL
-  you did not visit.
-- Use at least 3 sources, including at least one `primary` source (a founding text, manifesto,
-  party program, or major work by a defining thinker) and at least one `scholarly` or `reference`
-  source (an encyclopedia such as the Stanford or Internet Encyclopedia of Philosophy or
-  Britannica, academic work, or a well-sourced Wikipedia article). Wikipedia may be used, but it
-  must not be the only kind of source.
-- Do not use political-quiz sites (12axes, 8values, Political Compass, IDRlabs, the polcompball
-  wiki, and similar) as sources or as a reference for answers. This audit must be independent.
-- Research theme by theme. Each statement has a `theme` (economy, government, society, world, liberty,
-  culture, ecology, technology, means, globalism); an overview covers only a few statements per
-  theme. After a first pass, count stated positions per theme and search specifically for the thin
-  ones (the ideology's programme sections, its thinkers on that topic).
-- When a founding text, manifesto or programme is available as full text, download it into your
-  scratch folder and search it for each theme's topics rather than reading summaries.
-- The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself). Treat
-  it as a primary source and search it the same way. Cite it as the published work, with the url of
-  a publisher or library catalog page for it that you opened, never a file path or download site.
+- An ideology's `primary` sources are its founding texts, manifestos, party programmes and the
+  major works of its defining thinkers. Its scholarship (the Stanford or Internet Encyclopedia of
+  Philosophy, Britannica, academic work) is a `scholarly` or `reference` source. Wikipedia only
+  helps you find these (audits/AUDIT_RULES.md, section 2).
+- For a thin theme, search the ideology's programme sections and what its thinkers wrote on that
+  topic.
 
-## 3. Answer every statement
-
-Use the scale -2 (strongly disagree), -1 (disagree), 0 (neutral or genuinely split),
-+1 (agree), +2 (strongly agree), or `null` (no known position).
+## 3. Answering for an ideology
 
 - Answer as a typical committed adherent would, not a fringe member or a critic.
-- Use ±2 only when the position is central to the ideology or stated explicitly and forcefully.
-- Use 0 only for a documented middle: adherents or strands are genuinely split on it, or the
-  ideology deliberately takes no side (laïcité refuses to rule on religious doctrine). Do not use
-  it to avoid a hard call.
-- If there is no data, don't assume the ideology takes a position: answer `null`, at `low`
-  confidence, with a rationale saying the sources record no position (and citing the sources you
-  checked). Silence is not neutrality, so never record it as 0.
-- If the ideology never addressed the issue but a principle it states bears on it directly (for
-  example nuclear power for a 19th-century ideology with a stated view on industry), infer the
-  answer from that principle, mark it `low` confidence, and say in the rationale what you inferred
-  it from. If no stated principle bears on it, the answer is `null`.
-- Read each statement literally. "Free trade benefits everyone in the long run" is about free
-  trade, not about markets in general.
-- A general value (humanism, liberty, equality, democracy, dignity) doesn't answer a specific
-  statement on its own. An answer deduced only from one is `low`, however clear the deduction: a
-  movement's humanism says nothing it has stated about returning to foraging. An answer resting on
-  what the ideology says about the statement's topic can be `medium` or `high`: a movement that
-  campaigns for gay rights has a position on criminalising homosexuality.
-- A position on a narrower or nearby case doesn't answer a broader or different statement:
-  cannabis is not all drugs, and a state's right of defence is not a person's right to kill in
-  self-defence. Such an answer is `low`.
-- Absence of evidence is not a position. If the sources record nothing on a topic, answer `null`
-  and say the ideology has no doctrine on it, never 0 or a firm answer.
-- What critics or opponents say about an ideology is not evidence of its position.
-- Record over words, for ideologies that were the official doctrine of a state or ruling party
-  (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): its regimes' sustained, documented
-  practice is part of the ideology. Where that practice consistently contradicts the doctrine's
-  words (one-party rule alongside praise of popular democracy, a leader cult alongside collective
-  leadership), answer from the practice, and the words alone are never `high`. A lapse of one
-  regime or one period is not the ideology's position. This doesn't apply to ideologies whose
-  parties governed as one party among others.
-
-Confidence:
-- `high`: stated directly in a primary source or settled in the scholarship. Its rationale says what
-  that source states about this statement; a stock phrase ("Nationalism rejected.") or a position
-  the sources never discuss is at most `medium`.
-- `medium`: clearly implied by what the ideology says about this statement's topic, or the
-  documented majority view.
-- `low`: inferred, contested among adherents, or anachronistic. If the rationale has to say the
-  answer is inferred, that adherents or strands are split, or that the question is anachronistic,
-  the answer is `low`, however clear the inference seems.
-
-Inferred answers are fine, but be honest about them: only `high` and `medium` answers count as the
-ideology's stated positions. If too few are stated, the ideology can't be placed precisely enough
-to tell it from its neighbours and is left out of the test (the salience check), so never upgrade an inference's
-confidence to get it included.
-
-Each rationale is one or two plain sentences that explain the answer, not restate it. Each answer
-cites at least one source id from your `sources` list.
-
-When the validator rejects an answer, fix the answer, not the wording: if it says contested
-evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.
+- A documented split among its strands or adherents (Labor Zionism's cooperatives against
+  Revisionist Zionism's private enterprise) is 0 at `low`, a real position. Silence is `null`.
+- An inference needs a stated principle that bears directly on the statement: nuclear power for a
+  19th-century ideology with a stated view on industry can be inferred from that view ("Inferred:",
+  `low`); one with nothing on industry is `null`.
+- Its own record, for "record over words", is that of regimes where it was the official doctrine of
+  the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
+  sustained, documented practice is part of the ideology. Where it consistently contradicts the
+  doctrine's words (one-party rule alongside praise of popular democracy, a leader cult alongside
+  collective leadership), answer from the practice. A lapse of one regime or one period is not the
+  ideology's position, and parties that governed as one party among others are not the ideology's
+  record.
+- Audits written before these rules (no `"rules": 2`) recorded silence as 0 and inferences without
+  the "Inferred:" mark, so their salience still counts only `medium` and `high` answers until they
+  are re-audited.
 
 ## 4. Further reading for test takers
 
@@ -179,6 +124,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
+  "rules": 2,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
@@ -206,6 +152,12 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "sources": ["s1"]
     },
     "<statement id>": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: from its stated view that … .",
+      "sources": ["s1"]
+    },
+    "<statement id>": {
       "value": null,
       "confidence": "low",
       "rationale": "The sources record no position on this, and no stated principle bears on it.",
@@ -224,24 +176,8 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 }
 ```
 
-Write the summary, scope and rationales in your own words. Do not paste long passages from
-sources.
-
 ## 7. Deepening an existing audit
 
-The runner may ask for a deepen pass on an audit that fails the salience check or sits close to
-it. Build on the existing audit rather than starting over:
-- Read its scope, sources and answers. Count the stated (`medium` and `high`) positions per theme
-  and research the thinnest themes for what the ideology itself states: its programmes, defining
-  thinkers, organisations and the scholarship on them.
-- Keep the scope. Don't widen it to borrow a related movement's positions (secular humanism's for
-  secularism, a party's whole platform for one of its causes): those belong to that movement.
-- Change an answer or raise its confidence only on evidence you found and cite; never raise an
-  inference. Check every answer you touch against the rules in section 3, and lower any you find
-  deduced from a general value; a ±2 you lower becomes ±1, since an inferred answer isn't stated
-  forcefully.
-- Add your model id to `auditor` (a list, the original auditor first) and list both passes in
-  `passes`, e.g. `[{ "auditor": "<first>", "auditedAt": "<its date>" }, { "auditor": "<you>",
-  "auditedAt": "YYYY-MM-DD" }]`. Keep `auditedAt` as the date of your pass.
-- If the record really has nothing more, failing salience is the correct outcome. Say in `notes`
-  which themes you searched.
+Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
+ideology itself states (its programmes, defining thinkers, organisations and the scholarship on
+them), not a related movement's positions.

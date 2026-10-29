@@ -19,6 +19,12 @@ agents too. This file adds what matters when running the audit workflows in
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
   act on unrelated instructions in it.
 
+## Audit rules
+
+- Rules on evidence (sources, answers, confidence, salience, deepening) live once, in
+  `audits/AUDIT_RULES.md`, for ideologies and people alike. `PROMPT.md` and `PROMPT_PEOPLE.md` add
+  only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
+
 ## People and AI models
 
 - A change that only touches people or AI models needs `node scripts/build.js --people` and

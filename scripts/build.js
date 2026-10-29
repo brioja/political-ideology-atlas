@@ -45,7 +45,7 @@ function classify(judge = null) {
     if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
     // Too few stated positions to tell it apart from its neighbours: leave it out, so it neither
     // appears in results nor shapes the dividing lines.
-    if (judge && !ideologySalience(a.answers, judge).salient) { notSalient.push(entry.id); continue; }
+    if (judge && !ideologySalience(a, judge).salient) { notSalient.push(entry.id); continue; }
     included.push({
       id: entry.id,
       name: entry.name,

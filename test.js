@@ -50,7 +50,7 @@ if (!PEOPLE_ONLY) {
   assert.strictEqual(judge.key, lib.ideologyJudgeKey(complete, active), "audits/salience-ideologies.json is stale: run a full build");
   const shown = new Set(IDEOLOGIES.map((i) => i.id));
   const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
-  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id)).answers).salient
+  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
 }

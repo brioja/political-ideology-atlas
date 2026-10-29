@@ -11,27 +11,18 @@ Inputs (filled in by the runner):
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error except salience.
 
-## 0. Standard
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, salience, deepening)
+apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
+is specific to people.
 
-Follow a Wikipedia-style standard: describe the person's documented positions neutrally, however
-controversial they are. Don't editorialize, soften or omit positions because they are
-objectionable; attribute them to sources instead.
+## 1. Research
 
-## 1. Research with real sources
-
-- Use web search and fetch tools and cite only pages you opened in this session, by the URL you
-  visited. Never cite from memory or construct a URL.
-- Use at least 3 sources, including at least one `primary` source: the person's own words (books,
-  speeches, interviews, party programs they led, official statements) or their record (votes,
-  laws signed, policies enacted). Add at least one `reference` or `scholarly` source.
-- Prefer what the person said or did over what others say about them. Opponents' characterizations
-  are not evidence of a position.
-- Research theme by theme. Each statement has a `theme` (economy, government, society, world, liberty,
-  culture, ecology, technology, means, globalism); a broad overview covers only a few statements per
-  theme. After a first pass, count your known positions per theme and search specifically for the
-  thin ones ("<name> on <topic>", their votes, platform sections, interviews). A prominent politician
-  usually needs 8-12 sources; someone with a thin public record needs fewer, and many nulls are then
-  the honest result.
+- A person's `primary` sources are their own words (books, speeches, interviews, party programs they
+  led, official statements) and their record (votes, laws signed, policies enacted). Prefer what the
+  person said or did over what others say about them.
+- For a thin theme, search "<name> on <topic>", their votes, platform sections and interviews. A
+  prominent politician usually needs 8-12 sources; someone with a thin public record needs fewer,
+  and many nulls are then the honest result.
 - Spread matters as much as count. Each theme feeds different dividing lines, and a person is placed
   only as precisely as their thinnest themes allow: forty answers bunched in economy and society
   with one in government leave several lines guessed, and then they get matched with test-takers
@@ -45,22 +36,14 @@ objectionable; attribute them to sources instead.
   headless Chrome: `google-chrome --headless=new --disable-gpu --virtual-time-budget=15000
   --dump-dom <url>`, then strip the tags. Transcripts and captions rarely label speakers: use a
   passage only when context makes clear the person themselves is speaking, not a guest or a bit.
-- When the person's own writing is available as full text (a book, manifesto, platform or speech
-  collection), download it into your scratch folder and search it for each theme's topics rather than
-  reading summaries: it covers far more statements, in their own words.
-- The runner may hand you a text the maintainer supplied (a book or transcript you couldn't fetch
-  yourself). Treat it as a primary source and search it the same way. Cite it as the published
-  work, with the url of a publisher or library catalog page for it that you opened (e.g.
-  openlibrary.org/isbn/…), never a file path or download site. Name the chapter in each rationale
-  that rests on it, and paraphrase rather than quote more than a short phrase. A memoir's claims
-  about its own results are claims; answer from the positions and policies it states. Check later
-  positions on the web, since the text has a date.
+- A maintainer-supplied text (AUDIT_RULES.md, section 2) has a date: check later positions on the
+  web.
 - Stop early for someone without a political record (an artist, athlete or entertainer known for
   other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
   "<name> views on …") turn up no stated political positions, record the few you found, answer the
   rest null, and finish. Failing salience is then the correct outcome, and a long search is wasted.
-- Do not use political-quiz sites as sources: a site's guess at where someone stands isn't evidence.
-- The exception is the person taking a quiz themselves, answers read aloud, as some streamers and
+- Political-quiz sites are not sources (AUDIT_RULES.md). The exception is the person taking a quiz
+  themselves, answers read aloud, as some streamers and
   pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
   own answer is direct evidence, so it can be `high` confidence, but only where the quiz item says
   the same thing as our statement; otherwise use it as context. Get the words from the video's
@@ -74,21 +57,12 @@ holds. If their views changed, use their mature or most recent public position a
 sources from different times disagree (two runs of the same quiz, an old interview and a new one),
 the more recent clear statement wins; leave it null only if the recent position itself is unclear.
 
-If there is no reliable evidence of their position, answer `null` ("no known position"). Do not
-infer a living person's view from their party or ideology alone. For historical figures, a
-position may be inferred only when it follows directly from views they stated, and it must then
-be `low` confidence with a rationale that begins "Inferred:" and says what it is inferred from.
-Inferred answers count toward matching but not toward salience, so nobody is included on the
-strength of inferences.
-
-A general principle they voiced ("freedom of religion", "equal rights for all") does not answer a
-specific statement it never addressed (apostasy laws, covering laws, blasphemy): those stay null
-unless they spoke to them. Absence of evidence is null, never a negative answer ("no
-rehabilitative aim recorded" is not a position on prisons). A position on a narrower case does not
-answer a broader statement either: cannabis is not all drugs (`legalize-drugs`), unauthorized
-migration is not immigration levels (`reduce-immigration`), refugee relief is not development aid.
-Opponents' characterizations and interest-group ratings (a lobby's scorecard grade) are not
-evidence of a position.
+If there is no reliable evidence of their position, answer `null` ("no known position"). Never
+infer a living person's view, not even from their party or ideology. For historical figures, a
+position may be inferred as AUDIT_RULES.md, section 3 describes ("Inferred:", `low`). A general
+principle they voiced ("freedom of religion", "equal rights for all") doesn't answer a specific
+statement it never addressed (apostasy laws, covering laws, blasphemy): for a person those stay
+null unless they spoke to them.
 
 A monarch's or head of state's formal assent is not their position. Laws, constitutions and
 policies they only signed or proclaimed on ministers' or parliament's advice don't count, nor does a
@@ -137,43 +111,31 @@ disagree, the higher tier wins.
    they led, cited from the original. Can be `high`, unless tier 1 or tier 3 contradicts them (the record wins, above).
 3. **Secondhand report of the record:** a press, NGO or scholarly report (a secondary source) stating
    that a vote, law, arrest, election result or other act happened. `medium` at most, but it still overrides tier 2:
-   a ruler's pro-democracy speeches don't outweigh reported arrests of opponents.
+   a ruler's pro-democracy speeches don't outweigh reported arrests of opponents. A scholarly
+   reference work or biography stating their views (AUDIT_RULES.md, section 2) is tier 3 too.
 4. **Ancient or attributed accounts:** for figures whose own words and records don't survive, the
    oldest surviving source reporting what they said or did (Plato, Suetonius, the sutras,
    collected sayings, a contemporary biographer), cited as that source, not a modern summary.
    `medium` at most, `low` where the account is late or disputed.
-5. **Secondhand account of views, and all tertiary sources:** a reporter's paraphrase of what
-   someone thinks; and Wikipedia, other encyclopedias, OnTheIssues and similar compilations, for
-   views and record alike. Never evidence on its own: use it only to find tiers 1-4 (follow its
-   citations to the report or document and cite that). Check the original yourself: a quotation on
-   Wikiquote or in an article can be cut, misattributed or out of context. If the cited original
-   is blocked or offline, look for it elsewhere (an archive.org copy, another site hosting the same
-   text, the official record) before giving up. If nothing better turns up, the answer is null.
+5. **Secondhand account of views, and tertiary compilations:** a reporter's paraphrase of what
+   someone thinks; and Wikipedia, OnTheIssues and similar compilations, for views and record alike.
+   Never evidence on its own: use it only to find tiers 1-4 (follow its citations to the report or
+   document and cite that, checking the original as AUDIT_RULES.md, section 2 says). If nothing
+   better turns up, the answer is null.
 Inference stays as above: never for living people, `low` with "Inferred:" for historical figures.
 
-Confidence:
-- `high`: stated directly by the person on that specific statement (tier 2) or shown by their record
-  (tier 1), cited from the primary source. A close inference from a stated view is `medium` at
-  most. Cosponsoring or voting for a bill alone is `medium`: it shows support for the bill, not for
-  every way a statement could be read.
-- `medium`: clearly implied by things they said or did, or from tier 3 or 4.
-- `low`: inferred, ambiguous or contested.
+Confidence follows AUDIT_RULES.md, section 4: `high` is tier 1 or 2 on that specific statement,
+cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring or voting for a bill
+alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 
-**Salience:** the validator checks whether the person's recorded positions place them on the
-test's dividing lines precisely enough to tell neighbouring ideologies apart. It depends only on which statements have a recorded
-position, not on the answers. Someone with too thin a political record is left out. Do not pad
-answers to pass; an honest rejection is the correct outcome.
-
-A "loosely placed" warning appears only for people listed in `audits/people-legacy-bar.json`, who
+**Salience** (AUDIT_RULES.md, section 5) counts every recorded position except inferences. A
+"loosely placed" warning appears only for people listed in `audits/people-legacy-bar.json`, who
 passed an older, looser bar and are still held to it. They are shown, but placed so roughly that
 they sit near the middle of the lines and show up in many takers' results. When deepening one,
 count known positions per theme and search the thinnest ones for stated positions. If the audit
 then meets the current bar (no warning), remove the id from that list. If the record really has
 nothing more, stop: the person has had their extra pass, so remove the id anyway and they leave the
 site (`node test.js` fails until you do).
-
-When the validator rejects an answer, fix the answer, not the wording: if it says contested
-evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.
 
 ## 3. Output format
 
@@ -183,6 +145,7 @@ evidence must be `low`, lower the confidence; never rephrase a rationale to slip
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
+  "rules": 2,
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",
@@ -206,4 +169,3 @@ A merged audit also lists every independent pass in `passes`, e.g.
 the same model appears twice if it audited the person twice. Before re-auditing someone, check
 `passes` (or `auditor`) and use a model that hasn't audited them yet.
 
-Write the summary and rationales neutrally and in your own words.

@@ -29,7 +29,8 @@ If you think an ideology or person is placed wrong on a statement:
 3. Run `node scripts/validate.js <id>` (add `--people` for a person) and fix any errors.
 4. Open a pull request saying what you changed and why.
 
-Please keep to the audit rules in `audits/PROMPT.md` (ideologies) and `audits/PROMPT_PEOPLE.md`
+Please keep to the audit rules in `audits/AUDIT_RULES.md`, which apply to every audit, and the
+subject-specific instructions in `audits/PROMPT.md` (ideologies) and `audits/PROMPT_PEOPLE.md`
 (people). In particular, never infer a living person's view from their party or ideology. Leave it
 `null` instead.
 

@@ -140,6 +140,19 @@ function validate(id) {
     if (guessed.length) errors.push(`${guessed.join(", ")}: the rationale says there's no evidence of this living person's view, so answer null (no known position)`);
   }
   if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
+  // Audits under the shared rules (audits/AUDIT_RULES.md, "rules": 2): an inference is marked, so
+  // salience can leave it out, and Wikipedia alone is no evidence.
+  if (a.rules >= lib.RULES) {
+    const INFERRED = /\b(inferred|by inference|an inference)\b/i;
+    const unmarked = statements.filter((st) => answers[st.id] && answers[st.id].value !== null
+      && INFERRED.test(answers[st.id].rationale || "") && !NOT_LOW.test(answers[st.id].rationale)
+      && !/^Inferred:/.test(answers[st.id].rationale)).map((st) => st.id);
+    if (unmarked.length) errors.push(`${unmarked.join(", ")}: an inferred answer's rationale begins "Inferred:"`);
+    const wiki = new Set(sources.filter((s) => /wikipedia\.org/i.test(s.url || "")).map((s) => s.id));
+    const wikiOnly = statements.filter((st) => answers[st.id] && answers[st.id].value !== null && !/^Inferred:/.test(answers[st.id].rationale || "")
+      && (answers[st.id].sources || []).length && answers[st.id].sources.every((sid) => wiki.has(sid))).map((st) => st.id);
+    if (wikiOnly.length) errors.push(`${wikiOnly.join(", ")}: Wikipedia is only a way to find evidence; cite the source it cites`);
+  }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');
@@ -165,7 +178,7 @@ function validate(id) {
   if (errors.length === 0 && SALIENCE) {
     // Salience: can their record place them precisely enough to match? (see pca.js)
     // For ideologies only stated positions count; inferred (low-confidence) answers don't.
-    const s = PEOPLE ? personSalience(answers, CONTROLS ? null : id) : ideologySalience(answers);
+    const s = PEOPLE ? personSalience(answers, CONTROLS ? null : id) : ideologySalience(a);
     if (!s.salient) {
       errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than the typical gap between neighbouring ideologies (${s.bar.toFixed(2)})`);
     } else if (s.legacy) {
