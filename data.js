@@ -123,7 +123,7 @@ const QUESTIONS = [
   "id": "strong-leader",
   "theme": "liberty",
   "text": "A strong leader who can bypass political gridlock would benefit the country.",
-  "agree": "A decisive leader who can act without parliament or courts slowing things down would help.",
+  "agree": "A decisive leader who can get past political deadlock would help.",
   "disagree": "Checks and balances matter even when they slow decisions down.",
   "note": "About concentrated versus limited power.",
   "icon": "⚖️"
@@ -186,7 +186,7 @@ const QUESTIONS = [
   "id": "traditional-family",
   "theme": "society",
   "text": "Traditional family structures are the foundation of a healthy society.",
-  "agree": "A married mother and father raising children is the model society should support.",
+  "agree": "Traditional family structures are what a healthy society rests on.",
   "disagree": "A healthy society does not rest on traditional family structures.",
   "note": "About social traditionalism.",
   "icon": "👪"
@@ -348,7 +348,7 @@ const QUESTIONS = [
   "id": "revolution-justified",
   "theme": "means",
   "text": "Revolution is sometimes justified to achieve political change.",
-  "agree": "Overthrowing a government by force can sometimes be right.",
+  "agree": "Revolution can sometimes be justified to achieve political change.",
   "disagree": "Change should only come through legal, peaceful means.",
   "note": "About revolution versus reform.",
   "icon": "🔄"
@@ -393,7 +393,7 @@ const QUESTIONS = [
   "id": "tax-inheritance",
   "theme": "economy",
   "text": "Large inheritances should be heavily taxed.",
-  "agree": "Big inheritances should be taxed heavily so wealth isn't simply passed down.",
+  "agree": "Large inheritances should be taxed heavily.",
   "disagree": "People should be able to leave what they own to their family without heavy tax.",
   "note": "About inherited wealth.",
   "icon": "📜"
@@ -474,7 +474,7 @@ const QUESTIONS = [
   "id": "monarchy-legitimate",
   "theme": "government",
   "text": "A hereditary monarch can be a legitimate and good head of state.",
-  "agree": "A king or queen who inherits the throne can be good for a country, whether as a ceremonial figure (as in the UK) or as its actual ruler.",
+  "agree": "A hereditary monarch, whether a ceremonial figure or the actual ruler, can be a good head of state.",
   "disagree": "A country's top position should go to someone chosen, such as by election, never to someone born into it.",
   "note": "About monarchy.",
   "icon": "👑"
@@ -510,7 +510,7 @@ const QUESTIONS = [
   "id": "right-to-secede",
   "theme": "government",
   "text": "Regions should have the right to secede from the country.",
-  "agree": "Regions should be able to vote to leave the country.",
+  "agree": "Regions should be able to leave the country.",
   "disagree": "The country should stay whole; regions can't simply leave.",
   "note": "About self-determination.",
   "icon": "✂️"
@@ -870,7 +870,7 @@ const QUESTIONS = [
   "id": "state-as-business",
   "theme": "government",
   "text": "Governments should be run like businesses, with citizens treated as customers who can leave.",
-  "agree": "A state should be run efficiently by an owner-manager, like a company.",
+  "agree": "The state should be run like a company, with citizens as customers who can leave.",
   "disagree": "Government is not a business and citizens are not customers.",
   "note": "Identifies neocameralism.",
   "icon": "🏢"
@@ -1032,7 +1032,7 @@ const QUESTIONS = [
   "id": "avoid-deficit-stimulus",
   "theme": "economy",
   "text": "Governments should avoid running large budget deficits to stimulate the economy.",
-  "agree": "Spending should stay close to revenue, even in a downturn.",
+  "agree": "Governments should not run large budget deficits to stimulate the economy.",
   "disagree": "Borrowing to boost demand in a slump is a legitimate and useful tool.",
   "note": "About fiscal stimulus and public debt.",
   "icon": "📉"
@@ -1086,7 +1086,7 @@ const QUESTIONS = [
   "id": "welfare-for-citizens",
   "theme": "economy",
   "text": "Welfare benefits should be reserved for citizens rather than extended to immigrants.",
-  "agree": "Public benefits go to citizens first, and newcomers have to earn access to them.",
+  "agree": "Welfare benefits should go to citizens, not to immigrants.",
   "disagree": "Welfare benefits should not be reserved for citizens.",
   "note": "About who the welfare state is for.",
   "icon": "🪪"
@@ -1140,7 +1140,7 @@ const QUESTIONS = [
   "id": "distinct-gender-roles",
   "theme": "society",
   "text": "Law should reflect distinct roles for men and women in public life.",
-  "agree": "Laws and customs treat men and women differently in public roles, based on tradition or religion.",
+  "agree": "Laws and customs treat men and women differently in public roles.",
   "disagree": "Laws treat men and women the same, and public roles are open to everyone.",
   "note": "About whether the law should assign different public roles by sex.",
   "icon": "⚖️"
@@ -1149,7 +1149,7 @@ const QUESTIONS = [
   "id": "ban-interest",
   "theme": "economy",
   "text": "Lending money at interest should be prohibited by law.",
-  "agree": "Charging interest on loans is banned, and finance runs on profit-sharing instead.",
+  "agree": "Charging interest on loans is banned by law.",
   "disagree": "Lenders may charge interest, with the law at most capping or regulating it.",
   "note": "About whether lending at interest should be allowed.",
   "icon": "🏦"
@@ -1176,7 +1176,7 @@ const QUESTIONS = [
   "id": "expand-fossil-fuels",
   "theme": "ecology",
   "text": "Domestic oil, gas and coal production should be expanded.",
-  "agree": "Drill and mine more at home to lower energy costs and secure supply.",
+  "agree": "Drill and mine more oil, gas and coal at home.",
   "disagree": "Domestic oil, gas and coal production should not be expanded.",
   "note": "About energy supply versus climate.",
   "icon": "🛢️"
@@ -1383,7 +1383,7 @@ const QUESTIONS = [
   "id": "competition-drives-progress",
   "theme": "society",
   "text": "Competition and struggle, between individuals and between peoples, are the main engine of human progress.",
-  "agree": "Societies improve mainly because rivals compete and the less capable fall behind.",
+  "agree": "Competition and struggle, between individuals and between peoples, drive human progress more than anything else.",
   "disagree": "Competition and struggle are not the main engine of human progress.",
   "note": "About whether competition or cooperation drives progress.",
   "icon": "🏁"
@@ -1464,7 +1464,7 @@ const QUESTIONS = [
   "id": "diversity-weakens-cohesion",
   "theme": "society",
   "text": "Ethnic and racial diversity makes a society less cohesive and more prone to conflict.",
-  "agree": "Societies hold together better when their people share ancestry, culture and language.",
+  "agree": "Societies with more ethnic and racial diversity hold together less well and have more conflict.",
   "disagree": "Ethnic and racial diversity does not make a society less cohesive or more prone to conflict.",
   "note": "About whether diversity helps or harms social cohesion.",
   "icon": "🧩"
@@ -1473,7 +1473,7 @@ const QUESTIONS = [
   "id": "offices-by-lottery",
   "theme": "government",
   "text": "Public offices should be filled by lottery among citizens rather than by election.",
-  "agree": "Chance selection gives every citizen an equal shot at office and keeps campaigning money out of it.",
+  "agree": "Public offices should be filled by lottery among citizens.",
   "disagree": "Officials should be chosen by voters or appointed for their ability.",
   "note": "About how rulers should be chosen.",
   "icon": "🎲"
@@ -1500,7 +1500,7 @@ const QUESTIONS = [
   "id": "party-controls-media",
   "theme": "liberty",
   "text": "News media and online information should be controlled by the government or ruling party.",
-  "agree": "Authorities decide what the press and the internet may publish, to guide opinion and protect order.",
+  "agree": "Authorities decide what the press and the internet may publish.",
   "disagree": "Press and online speech should be independent of the government.",
   "note": "About state control of information.",
   "icon": "📺"
@@ -1518,7 +1518,7 @@ const QUESTIONS = [
   "id": "long-naturalization-wait",
   "theme": "world",
   "text": "Immigrants should have to live in a country for many years before they can become citizens.",
-  "agree": "Citizenship comes only after a long residence, to show commitment and integration.",
+  "agree": "Immigrants should have to live in a country for many years before becoming citizens.",
   "disagree": "Citizenship should come after a short residence once basic requirements are met.",
   "note": "About how long newcomers wait for full membership.",
   "icon": "⏳"
@@ -1527,7 +1527,7 @@ const QUESTIONS = [
   "id": "representatives-worker-pay",
   "theme": "government",
   "text": "Elected representatives should be paid no more than an average worker.",
-  "agree": "Those who hold public office earn an ordinary wage, so office is service, not a way to get rich.",
+  "agree": "Those who hold public office are paid no more than an average worker.",
   "disagree": "Elected representatives should not be limited to the pay of an average worker.",
   "note": "About how much pay public office should carry.",
   "icon": "💼"
@@ -1914,7 +1914,7 @@ const QUESTIONS = [
   "id": "sacred-ruler",
   "theme": "government",
   "text": "The head of state should be regarded as sacred and of divine descent.",
-  "agree": "The ruler is holy, with a divine origin that gives the throne its authority.",
+  "agree": "The ruler is holy, of divine origin, and that is where their authority comes from.",
   "disagree": "The head of state is an ordinary person holding a secular office.",
   "note": "About divine status for rulers.",
   "icon": "👑"
@@ -1923,7 +1923,7 @@ const QUESTIONS = [
   "id": "flat-income-tax",
   "theme": "economy",
   "text": "Income tax rates should be flat, charging everyone the same percentage rather than rising with income.",
-  "agree": "Everyone pays the same share of income, with few deductions.",
+  "agree": "Everyone pays the same percentage of their income in tax.",
   "disagree": "Income tax should not charge everyone the same percentage regardless of income.",
   "note": "About flat versus progressive income taxes.",
   "icon": "📏"
@@ -1950,7 +1950,7 @@ const QUESTIONS = [
   "id": "space-expansion",
   "theme": "technology",
   "text": "Expanding humanity into space should be a central goal of civilization.",
-  "agree": "Civilization should aim to spread beyond Earth and harness ever more energy.",
+  "agree": "Civilization should aim to spread into space.",
   "disagree": "Expanding humanity into space should not be a central goal of civilization.",
   "note": "About space expansion as a civilizational goal.",
   "icon": "🚀"
@@ -2031,7 +2031,7 @@ const QUESTIONS = [
   "id": "women-must-cover",
   "theme": "liberty",
   "text": "The law should require women to cover themselves fully in public.",
-  "agree": "Public dress for women should be set by law according to religious modesty.",
+  "agree": "The law requires women to cover themselves fully in public.",
   "disagree": "Dress is a personal choice and the law should not require women to cover.",
   "note": "About compulsory covering of women.",
   "icon": "🧕"
@@ -2211,7 +2211,7 @@ const QUESTIONS = [
   "id": "capitalism-adapts",
   "theme": "economy",
   "text": "Capitalism can adapt to its crises and avoid a general collapse.",
-  "agree": "Credit, regulation and growth let capitalism survive its downturns without a general collapse.",
+  "agree": "Capitalism can adapt to its crises and avoid a general collapse.",
   "disagree": "Capitalism cannot permanently adapt to its crises.",
   "note": "About whether capitalism is bound to collapse.",
   "icon": "🔄"
@@ -2391,7 +2391,7 @@ const QUESTIONS = [
   "id": "self-reliance-over-aid",
   "theme": "economy",
   "text": "A poor country should rely on its own resources for development rather than on foreign aid, loans or investment.",
-  "agree": "Development should be paid for at home, even if it is slower, to stay independent.",
+  "agree": "A poor country should develop with its own resources rather than foreign aid, loans or investment.",
   "disagree": "Foreign aid, loans and investment are a sound way to speed up development.",
   "note": "About independence versus outside help in development.",
   "icon": "🌱"
@@ -2436,7 +2436,7 @@ const QUESTIONS = [
   "id": "slavery-not-civil-war-cause",
   "theme": "culture",
   "text": "Slavery was not the main cause of the American Civil War.",
-  "agree": "States' rights, tariffs and other disputes drove the war more than slavery did.",
+  "agree": "Something other than slavery, such as states' rights or tariffs, was the main cause of the war.",
   "disagree": "Slavery was the main cause of the war and of secession.",
   "note": "About the causes of the American Civil War.",
   "icon": "📜"
@@ -2877,7 +2877,7 @@ const QUESTIONS = [
   "id": "majority-settlement",
   "theme": "globalism",
   "text": "The majority ethnic group should be encouraged to settle in regions where minorities are the majority.",
-  "agree": "The state should promote settlement of the majority group in minority regions to bind them to the nation.",
+  "agree": "The state should encourage the majority group to settle in regions where minorities are the majority.",
   "disagree": "The state should not steer majority settlement into regions where minorities are the majority.",
   "note": "About state-promoted settlement in minority regions.",
   "icon": "🚆"
@@ -3228,7 +3228,7 @@ const QUESTIONS = [
   "id": "wealth-concentration-endangers-liberty",
   "theme": "economy",
   "text": "Great concentrations of wealth endanger a free society.",
-  "agree": "Very rich citizens can dominate politics and bend the law, so liberty needs a rough equality of means.",
+  "agree": "Very large concentrations of wealth threaten a free society.",
   "disagree": "Large fortunes are compatible with a free society and need not be curbed to protect liberty.",
   "note": "About whether wealth inequality threatens political freedom.",
   "icon": "🏛️"
@@ -3282,7 +3282,7 @@ const QUESTIONS = [
   "id": "term-limits",
   "theme": "government",
   "text": "Elected politicians should be limited to a small number of terms in any office.",
-  "agree": "Term limits keep politics from becoming a career and bring in fresh people.",
+  "agree": "Elected politicians should serve only a small number of terms.",
   "disagree": "Voters should be free to re-elect anyone, and experience in office is valuable.",
   "note": "About limiting how long one person can hold elected office.",
   "icon": "⏳"
@@ -3372,7 +3372,7 @@ const QUESTIONS = [
   "id": "no-foreign-bases",
   "theme": "world",
   "text": "A country should not host foreign military bases on its territory.",
-  "agree": "Foreign armies should leave; hosting them compromises sovereignty.",
+  "agree": "Foreign armies should not be based on the country's territory.",
   "disagree": "Hosting allied bases can be a fair price for security and investment.",
   "note": "About foreign troops on national soil.",
   "icon": "🏴"
@@ -3624,7 +3624,7 @@ const QUESTIONS = [
   "id": "gm-crops",
   "theme": "ecology",
   "text": "Genetically engineered crops should be embraced as a tool for sustainable agriculture.",
-  "agree": "Gene-edited crops can feed people with less land and chemicals.",
+  "agree": "Genetically engineered crops are a good tool for sustainable agriculture.",
   "disagree": "Genetically engineered crops should be avoided or strictly limited.",
   "note": "About genetically engineered crops.",
   "icon": "🌽"
@@ -3948,7 +3948,7 @@ const QUESTIONS = [
   "id": "customary-chiefs-lawmaking",
   "theme": "government",
   "text": "Customary chiefs should have an official advisory role in making national law.",
-  "agree": "Traditional leaders sit in a recognised body that is consulted on laws touching custom.",
+  "agree": "Customary chiefs should have an official advisory role in making national law.",
   "disagree": "Lawmaking belongs to elected representatives alone, with no formal place for traditional leaders.",
   "note": "About a formal role for traditional chiefs in lawmaking.",
   "icon": "🪶"
@@ -4335,7 +4335,7 @@ const QUESTIONS = [
   "id": "financial-transactions-tax",
   "theme": "economy",
   "text": "A small tax should be charged on international financial transactions such as currency trades.",
-  "agree": "A small levy on currency and other cross-border financial trades curbs speculation and raises money.",
+  "agree": "A small tax should be charged on international financial transactions such as currency trades.",
   "disagree": "Such a tax harms markets or is better replaced by other measures.",
   "note": "About taxing speculative finance.",
   "icon": "💱"
@@ -4389,7 +4389,7 @@ const QUESTIONS = [
   "id": "patriotism-serves-workers",
   "theme": "culture",
   "text": "Love of one's own country and a politics that serves ordinary working people belong together.",
-  "agree": "Patriotism and solidarity with working people, at home and abroad, support one another.",
+  "agree": "Love of one's own country and a politics that serves ordinary working people support one another.",
   "disagree": "Love of one's own country and a politics that serves ordinary working people do not necessarily belong together.",
   "note": "About whether patriotism fits with left-wing or worker-focused politics.",
   "icon": "🚩"
