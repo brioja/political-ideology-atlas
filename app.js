@@ -2046,6 +2046,10 @@ function renderComparePage(aKey, bKey) {
   const agree = both.filter((j) => a.profile[j] !== 0 && Math.sign(a.profile[j]) === Math.sign(b.profile[j]))
     .sort((x, y) => sideShare(x, a.profile[x]) - sideShare(y, a.profile[y]) || gap(x) - gap(y)
       || Math.abs(a.profile[y]) - Math.abs(a.profile[x]) || x - y);
+  // The rest of the statements both have a position on: one (or both) takes neither side. Listed too,
+  // so every statement the headline counts appears somewhere; the firmest side taken first.
+  const neither = both.filter((j) => a.profile[j] === 0 || b.profile[j] === 0)
+    .sort((x, y) => gap(y) - gap(x) || x - y);
   const statements = (n) => `${n} statement${n === 1 ? "" : "s"}`;
   // The first few show; the rest, in the same order, sit in a collapsed list below them.
   const list = (items, shown, item, none) => {
@@ -2061,10 +2065,19 @@ function renderComparePage(aKey, bKey) {
   const they = mine ? "you" : "they";
   const They = mine ? "You" : "They";
   const otherKey = mine ? other.key : [a.key, b.key];
+  // With a person on either side, the headline is the number the results and person pages show for
+  // people: how alike the two are placed on the dividing lines (matchPeople), with how many statements
+  // they actually share, since a thin record can be placed close on few of them.
+  const withPerson = a.key.startsWith("p:") || b.key.startsWith("p:");
+  const alike = withPerson ? (matchPeople(model, a.profile, [{ ...b, views12m: 0 }])[0] || {}).similarity : null;
+  const shared = `${both.length} of the same statement${both.length === 1 ? "" : "s"}`;
+  const lede = withPerson && alike != null
+    ? `<p class="lede">${mine ? `You and ${esc(other.name)} are` : "They are"} placed <strong>${pct(alike)}</strong> alike on the dividing lines. ${mine ? "You both answered" : "Both have a position on"} ${shared}.</p>`
+    : similarity != null ? `<p class="lede">${mine ? `You and ${esc(other.name)} match` : "They match"} <strong>${pct(similarity)}</strong>, on the ${both.length} statements where ${mine ? "you both" : "both"} have a position.</p>` : "";
   root.innerHTML = `
     ${comparePickers(aKey, bKey)}
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>
-    ${similarity != null ? `<p class="lede">${mine ? `You and ${esc(other.name)} match` : "They match"} <strong>${pct(similarity)}</strong>, on the ${both.length} statements where ${mine ? "you both" : "both"} have a position.</p>` : ""}
+    ${lede}
     <section class="stack"><h2>Where ${they} sit</h2>
       <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
       ${lineStrips(project(model, a.profile), { other: project(model, b.profile) })}</section>
@@ -2072,6 +2085,12 @@ function renderComparePage(aKey, bKey) {
       ${list(agree, 8, (j) => `<li>${topicIcon(QUESTIONS[j])}<span>${statementLink(QUESTIONS[j], stance(QUESTIONS[j], a.profile[j]).text, otherKey)}</span></li>`, `No position ${they} hold on the same side.`)}</section>
     <section class="stack"><h2>${They} part ways on ${statements(apart.length)}</h2>
       ${list(apart, 4, (j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name, otherKey), `No statement where ${they} take opposite sides.`)}</section>
+    ${neither.length ? `<section class="stack"><h2>${mine ? "One of you takes" : "One of them takes"} neither side on ${statements(neither.length)}</h2>
+      ${[[2, mine ? "One of you feels strongly, the other takes neither side" : "One feels strongly, the other takes neither side"],
+        [1, mine ? "One of you leans, the other takes neither side" : "One leans, the other takes neither side"],
+        [0, mine ? "Neither of you takes a side" : "Neither takes a side"]]
+        .map(([g, heading]) => [heading, neither.filter((j) => gap(j) === g)]).filter(([, js]) => js.length)
+        .map(([heading, js]) => `<h3>${heading} (${js.length})</h3>${list(js, 4, (j) => versus(QUESTIONS[j], a.profile[j], b.profile[j], a.name, b.name, otherKey), "")}`).join("")}</section>` : ""}
     <p class="muted small"><a href="${compareHref(b.key, a.key)}">Swap sides</a></p>`;
   return `${a.name} and ${b.name}`;
 }
