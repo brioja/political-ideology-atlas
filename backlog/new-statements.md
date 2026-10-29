@@ -31,3 +31,12 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
 - **Near-duplicates:** "Religion and government should have nothing to do with each other" and
   "Religion should stay a private matter, out of government" both lead Quebec nationalism's list;
   review whether both are needed.
+- **"The means of production should be owned in common rather than privately."** (2026-10-29) The bank
+  has no plain statement of common ownership, only niche variants, so the mainstream rejection of
+  socialism is carried by `personal-possessions-private` ("Personal belongings should remain private
+  while the means of production are held in common"), a bad statement: a communist distinction
+  that Centrism, US modern liberalism, Capitalism and others reject only for its second half, yet
+  their "What it stands for" shows the whole of it negated (13 lists). The plain statement would
+  carry this position cleanly for dozens of ideologies on both sides; worth a backfill. Once it is
+  active, consider retiring `personal-possessions-private`.
+
