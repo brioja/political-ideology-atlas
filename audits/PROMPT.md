@@ -227,7 +227,8 @@ it. Build on the existing audit rather than starting over:
   secularism, a party's whole platform for one of its causes): those belong to that movement.
 - Change an answer or raise its confidence only on evidence you found and cite; never raise an
   inference. Check every answer you touch against the rules in section 3, and lower any you find
-  deduced from a general value.
+  deduced from a general value; a ±2 you lower becomes ±1, since an inferred answer isn't stated
+  forcefully.
 - Add your model id to `auditor` (a list, the original auditor first) and list both passes in
   `passes`, e.g. `[{ "auditor": "<first>", "auditedAt": "<its date>" }, { "auditor": "<you>",
   "auditedAt": "YYYY-MM-DD" }]`. Keep `auditedAt` as the date of your pass.
