@@ -65,6 +65,12 @@ free trade, not about markets in general.
   apostasy laws or blasphemy. An answer deduced only from a value is an inference (below). An
   answer resting on what the subject says about the statement's topic is evidence: a movement that
   campaigns for gay rights has a position on criminalising homosexuality.
+- **A statement the doctrine settles is stated, not inferred.** Where the statement says the same
+  as the subject's stated position on the same question, or contradicts it, the answer is a stated
+  position, as strong as the subject holds it: a doctrine that authority belongs to experts by
+  competence rejects rule by inheritance, by clergy or by a sacred ruler, and one that the nation is
+  defined by language has a position on defining it by descent. A statement on a different question
+  that the position only bears on is still an inference (below).
 - **A narrower or nearby case doesn't answer a broader or different statement:** cannabis is not all
   drugs, unauthorized migration is not immigration levels, refugee relief is not development aid,
   and a state's right of defence is not a person's right to kill in self-defence.
@@ -74,8 +80,8 @@ free trade, not about markets in general.
   rigged or cancelled, a single party kept in power while praising pluralism), the record wins; if
   the evidence is genuinely mixed, answer 0 at `low`. Words alone are never `high` where the record
   pulls the other way. Each prompt says what counts as the subject's own record.
-- **Inference, only from a stated principle.** Where the subject never addressed a statement but a
-  principle they state bears on it directly, you may infer the answer (where the subject's prompt
+- **Inference, only from a stated principle.** Where the subject never addressed a statement and
+  no stated position settles it, but a principle they state bears on it directly, you may infer the answer (where the subject's prompt
   allows it). An inferred answer is `low`, and its rationale begins "Inferred:" and says what it is
   inferred from. If no stated principle bears on it, the answer is `null`.
 - **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
