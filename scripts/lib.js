@@ -31,23 +31,55 @@ const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
 const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
 const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
 
-// Salience (see pca.js): computed against the ideology model currently in data.js, unless
-// useSalienceModel has set another (build.js does, to judge against the set it is building).
-let salienceCache = null;
-function useSalienceModel(ideologies, statements, lines) {
-  const pca = require(path.join(ROOT, "pca.js"));
-  salienceCache = { pca, ids: statements.map((s) => s.id), ctx: pca.salienceContext(pca.buildModel(ideologies), ideologies, { lines }) };
-}
-// Placement precision against the bar (see pca.js), scaled by `factor`.
-function placed(answers, factor) {
-  if (!salienceCache) {
-    // data.js records how many lines beat noise, so the slow parallel analysis isn't rerun here.
-    const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES } = require(path.join(ROOT, "data.js"));
-    const pca = require(path.join(ROOT, "pca.js"));
-    salienceCache = { pca, ids: QUESTIONS.map((q) => q.id), ctx: pca.salienceContext(pca.buildModel(IDEOLOGIES), IDEOLOGIES, { lines: MEANINGFUL_LINES }) };
+// Salience (see pca.js) is judged against one of two contexts, each defined here once:
+// - ideologies: the dividing lines of every complete ideology audit, not just the ones shown, so the
+//   shown set doesn't depend on itself. build.js writes it to audits/salience-ideologies.json under a
+//   hash of its inputs; test.js fails when it is stale.
+// - people: the lines of the ideologies shown, as data.js ships them (PLACEMENT).
+// Both are judged from the rounded parts that are written out, so build.js, validate.js and test.js
+// get the same verdicts. build.js passes the judges it has just made; everyone else gets the last
+// build's.
+const IDEOLOGY_JUDGE_PATH = path.join(ROOT, "audits", "salience-ideologies.json");
+const r6 = (x) => Math.round(x * 1e6) / 1e6;
+const judgeParts = (ctx) => ({
+  k: ctx.k,
+  noise: r6(ctx.noise),
+  bar: r6(ctx.bar),
+  components: ctx.model.components.slice(0, ctx.k).map((c) => ({ eigenvalue: r6(c.eigenvalue), vector: c.vector.map((x) => Math.round(x * 1e4) / 1e4) })),
+});
+// `ids`: the statement ids, in the order of the parts' vectors.
+const judgeFrom = (parts, ids) => ({ ctx: require(path.join(ROOT, "pca.js")).placementFromParts(parts), ids });
+// The ideology judge's inputs: pca.js, the statements and every complete audit's answers (as `id` and
+// `profile`, in catalog order).
+const ideologyJudgeKey = (ideologies, statements) => require("crypto").createHash("sha1")
+  .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
+  .update(JSON.stringify(statements.map((s) => s.id)))
+  .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
+  .digest("hex");
+// Every ideology audit that answers all active statements, which is what the ideology judge is built from.
+const completeIdeologies = (statements = activeStatements()) => catalog()
+  .filter((e) => fs.existsSync(profilePath(e.id)))
+  .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
+  .filter(({ audit }) => !audit.notAnIdeology && !unanswered(audit.answers, statements).length)
+  .map(({ id, audit }) => ({ id, name: audit.name, profile: statements.map((s) => audit.answers[s.id].value) }));
+let lastIdeologyJudge = null, lastPeopleJudge = null;
+const ideologyJudge = () => {
+  if (!lastIdeologyJudge) {
+    const file = readJson(IDEOLOGY_JUDGE_PATH);
+    lastIdeologyJudge = judgeFrom(file.parts, file.ids);
   }
-  const { pca, ids, ctx } = salienceCache;
-  const r = pca.salience(ctx, ids.map((id) => (answers[id] ? answers[id].value : null)));
+  return lastIdeologyJudge;
+};
+const peopleJudge = () => {
+  if (!lastPeopleJudge) {
+    const { QUESTIONS, PLACEMENT } = require(path.join(ROOT, "data.js"));
+    lastPeopleJudge = judgeFrom(PLACEMENT, QUESTIONS.map((q) => q.id));
+  }
+  return lastPeopleJudge;
+};
+// Placement precision against the judge's bar, scaled by `factor`.
+function placed(answers, factor, judge) {
+  const r = require(path.join(ROOT, "pca.js")).salience(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
   return { ...r, bar: r.bar * factor, salient: r.uncertainty <= r.bar * factor };
 }
 // People are held to a looser bar than ideologies. An ideology must be told apart from its nearest
@@ -70,10 +102,10 @@ const onLegacyBar = (id) => (legacyIds ||= new Set(fs.existsSync(LEGACY_PATH) ? 
 const statedOnlyPerson = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
 // `id` is needed only for people who may be on the legacy bar; `legacy` says whether that bar applied.
-const personSalience = (answers, id = null) => {
-  const r = placed(statedOnlyPerson(answers), PEOPLE_BAR);
+const personSalience = (answers, id = null, judge = peopleJudge()) => {
+  const r = placed(statedOnlyPerson(answers), PEOPLE_BAR, judge);
   if (r.salient || !id || !onLegacyBar(id)) return { ...r, legacy: false };
-  const old = placed(statedOnlyPerson(answers), LEGACY_PEOPLE_BAR);
+  const old = placed(statedOnlyPerson(answers), LEGACY_PEOPLE_BAR, judge);
   return { ...old, legacy: old.salient, strictBar: r.bar };
 };
 
@@ -82,9 +114,7 @@ const personSalience = (answers, id = null) => {
 // ideology equivalent of a person's "no known position".
 const statedOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-const ideologySalience = (answers) => placed(statedOnly(answers), 1);
-// The bar itself: the median distance between an ideology and its nearest neighbour (see pca.js).
-const salienceBar = () => (placed({}, 1), salienceCache.ctx.bar);
+const ideologySalience = (answers, judge = ideologyJudge()) => placed(statedOnly(answers), 1, judge);
 
 // The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, each
 // ideology's answers, and the model calibrated on.
@@ -96,4 +126,4 @@ const calibrationKey = (ideologies, model) => require("crypto").createHash("sha1
 
 module.exports = { calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  salienceBar, useSalienceModel, LEGACY_PATH, onLegacyBar };
+  IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey, completeIdeologies, LEGACY_PATH, onLegacyBar };

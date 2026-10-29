@@ -41,6 +41,18 @@ if (!PEOPLE_ONLY) {
   const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
   assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, model), "audits/calibration.json is stale: run a full build");
   assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
+  // Salience is judged one way everywhere (scripts/lib.js): the ideology judge is current, and the
+  // shown set is exactly the audits that pass it as validate.js judges them, less indistinguishable
+  // ones (listed as related on the one kept).
+  const lib = require("./scripts/lib");
+  const complete = lib.completeIdeologies(active);
+  const judge = readJson(lib.IDEOLOGY_JUDGE_PATH);
+  assert.strictEqual(judge.key, lib.ideologyJudgeKey(complete, active), "audits/salience-ideologies.json is stale: run a full build");
+  const shown = new Set(IDEOLOGIES.map((i) => i.id));
+  const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
+  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id)).answers).salient
+    ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
+  assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
 }
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
 assert(Math.abs(shareSum - 1) < 1e-9, "variance shares do not sum to 1");
@@ -93,6 +105,13 @@ for (const { p, r } of controls) {
   else assert(!r.salient, `control passed salience: ${line}`);
 }
 const people = sal(lib.PEOPLE_DIR, lib.peopleCatalog());
+// people.js holds exactly the salient people, less those listed on a closer match's page.
+{
+  const { PEOPLE } = require("./people.js");
+  const listed = new Set(PEOPLE.flatMap((p) => [p.id, ...(p.related || []).map((r) => r.id)]));
+  const misjudged = people.filter(({ p, r }) => r.salient !== listed.has(p.id)).map(({ p }) => p.id);
+  assert(!misjudged.length, `people.js doesn't match the people salience judge (run node scripts/build.js --people): ${misjudged.join(", ")}`);
+}
 // The legacy-bar list only shrinks: a listed person who meets the current bar, or has no audit, comes off it.
 const legacy = lib.readJson(lib.LEGACY_PATH).ids;
 for (const id of legacy) {

@@ -426,6 +426,9 @@ function certainty(model, answers, asked) {
   return Math.min(1, Math.max(lead, resolved));
 }
 
+// The most dividing lines the site shows (and build.js names and rotates for), however many beat noise.
+const MAX_SHOWN_LINES = 8;
+
 // Parallel analysis: how many axes reflect real structure rather than noise. Each run shuffles
 // every statement's answers independently across ideologies (keeping each statement's spread
 // but destroying any pattern between statements) and recomputes the eigenvalues. An axis
@@ -667,5 +670,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

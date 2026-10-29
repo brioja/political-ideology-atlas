@@ -70,10 +70,10 @@ function savedResult() {
 }
 
 // How many dividing lines to show: those that beat shuffled-noise data (parallel analysis),
-// at least 2 and at most 8. build.js precomputes the count; otherwise it's computed here.
-const MAX_LINES = 8;
+// at least 2 and at most MAX_SHOWN_LINES (pca.js). build.js precomputes the count; otherwise it's
+// computed here.
 const REAL_LINES = typeof MEANINGFUL_LINES !== "undefined" ? MEANINGFUL_LINES : meaningfulAxes(model, IDEOLOGIES);
-const SHOWN_LINES = Math.min(MAX_LINES, model.components.length, Math.max(2, REAL_LINES));
+const SHOWN_LINES = Math.min(MAX_SHOWN_LINES, model.components.length, Math.max(2, REAL_LINES));
 
 // Where a score falls along a drawn line, 0-1: scaled to the line's own extremes (plus a small
 // margin) rather than centred on zero, so a lopsided line doesn't leave one end empty.
