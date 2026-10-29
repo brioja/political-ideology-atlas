@@ -43,10 +43,13 @@ everyone who answers that way, whatever their reason: not the opposite extreme, 
 second policy. Disagreeing that "the rules of the international economy should be restructured in
 favour of developing countries" is not "the rules are broadly fair" (an economic nationalist wants
 them restructured for their own country); it is "international economic rules should not be
-reshaped to favour developing countries". A `disagree` sentence is the plain negation of
-the statement ("Corporations should not be more tightly regulated"), never an either/or listing the
-ways to disagree ("Companies face fewer rules, or the current amount is enough"): an either/or is not
-a position. Explanations are display text: fixing one doesn't change what was answered, so the id
+reshaped to favour developing countries". A `disagree` sentence is a clean positive opposite
+where one exists and means exactly "not the statement" ("Military service should always be
+voluntary"); otherwise the plain negation in the statement's own words ("Corporations should not be
+more tightly regulated"). Never an either/or listing the ways to disagree ("Companies face fewer
+rules, or the current amount is enough"): an either/or is not a position. For "A rather than B" keep
+both sides ("Prisons should not put rehabilitation ahead of punishment"); for a statement that
+bundles two claims, "It is not true that ...". Explanations are display text: fixing one doesn't change what was answered, so the id
 stays.
 
 ## Reference
