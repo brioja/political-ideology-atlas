@@ -1,8 +1,11 @@
 {
   "id": "atheist-feminism",
   "name": "Atheist feminism",
-  "auditedAt": "2026-10-21",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-10-29",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+  ],
   "summary": "Atheist feminism combines feminism with atheism, holding that religion is a major source of women's oppression and that most religions are sexist. It traces to nineteenth-century freethinkers such as Ernestine Rose, Elizabeth Cady Stanton and Matilda Joslyn Gage, and today also challenges sexism inside secular and atheist movements. Its core commitments are women's legal equality, reproductive rights, and strict separation of church and state.",
   "scope": "The mainstream atheist and secular feminist tradition from Stanton's Woman's Bible (1895) and Gage's Woman, Church and State (1893) to the Freedom From Religion Foundation (Anne Nicol Gaylor, Annie Laurie Gaylor) and modern figures such as Taslima Nasrin and Sikivu Hutchinson. It excludes religious and 'spiritual' feminisms. The sources are about religion, sex and law, so most economic, defence and technology answers are low-confidence inferences from the movement's progressive, rights-based outlook.",
   "wikipedia": "https://en.wikipedia.org/wiki/Atheist_feminism",
@@ -104,6 +107,46 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Matilda_Joslyn_Gage",
       "usedFor": "Gage's views on church and state, suffrage, marriage, Native rights and abolition."
+    },
+    {
+      "id": "s7",
+      "kind": "primary",
+      "title": "Same Sex Marriage, Religiosity and Black Civil Rights Orthodoxies",
+      "author": "Sikivu Hutchinson (Black Agenda Report, 2009)",
+      "url": "https://blackagendareport.com/content/same-sex-marriage-religiosity-and-black-civil-rights-orthodoxies",
+      "usedFor": "Hutchinson on same-sex marriage and gay rights as civil rights against conservative church orthodoxy, and on intersecting oppressions."
+    },
+    {
+      "id": "s8",
+      "kind": "primary",
+      "title": "Taslima Nasrin: \"They Wanted to Kill Me\"",
+      "author": "Middle East Quarterly interview with Taslima Nasrin (2000)",
+      "url": "https://www.meforum.org/middle-east-quarterly/taslima-nasrin-they-wanted-to-kill-me",
+      "usedFor": "Nasrin on abolishing rather than modifying sharia, a uniform civil code not based on religion, universal human rights across cultures, and no compromise with religion."
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "title": "'If religious laws exist, women would not get equal rights': Taslima Nasreen backs UCC",
+      "author": "The Tribune (India), report of Nasreen's remarks",
+      "url": "https://www.tribuneindia.com/news/world/if-religious-laws-exist-women-would-not-get-equal-rights-taslima-nasreen-backs-ucc-urges-unban-of-awami-league/",
+      "usedFor": "Nasreen's call for a uniform civil code based on equal rights and her view that religion-based politics is always misogynistic."
+    },
+    {
+      "id": "s10",
+      "kind": "reference",
+      "title": "Sikivu Hutchinson",
+      "author": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sikivu_Hutchinson",
+      "usedFor": "Hutchinson's challenge to secular movements over institutional racism and her rejection of colorblindness."
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "title": "Women's Leadership Project: gender justice and humanist education",
+      "author": "Sikivu Hutchinson (Foundation Beyond Belief, 2015)",
+      "url": "https://foundationbeyondbelief.org/news/womens-leadership-project-gender-justice-humanist-education.html",
+      "usedFor": "Hutchinson's secular feminist programme in South Los Angeles high schools: peer education on sexual assault, HIV/AIDS, reproductive justice and LGBTQ equality, and racially disproportionate school discipline."
     }
   ],
   "answers": {
@@ -278,10 +321,10 @@
     },
     "same-sex-marriage": {
       "value": 2,
-      "confidence": "low",
-      "rationale": "Modern secular feminists oppose religious restrictions on sexuality and back marriage equality, though the sources do not state it directly. None of the cited sources takes up this statement, so this is a low-confidence reading of the general outlook.",
+      "confidence": "medium",
+      "rationale": "Hutchinson argues gay rights are civil rights and attacks conservative church leaders who condemn same-sex marriage and deny gay couples marital benefits; Gupta names religious opposition to gay marriage as an attack on equality.",
       "sources": [
-        "s3",
+        "s7",
         "s5"
       ]
     },
@@ -305,10 +348,11 @@
     },
     "correct-racial-injustice": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Gage was an abolitionist and defender of Native treaty rights, so adherents lean to remedying racial injustice; modern view inferred.",
+      "confidence": "medium",
+      "rationale": "Modern atheist feminism, as in Hutchinson's work, challenges secular movements to confront institutional racism, rejects colorblindness and campaigns against racially disproportionate school discipline.",
       "sources": [
-        "s6"
+        "s10",
+        "s11"
       ]
     },
     "gender-social-construct": {
@@ -570,9 +614,9 @@
       ]
     },
     "natural-rulers": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Stanton rejected the doctrine that woman was made for man as an inferior subject to him; that is a rejection of sex hierarchy rather than of natural rulers in general.",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: Stanton and Gage rejected the doctrine that women are created inferior to men, a narrower claim than the statement about natural rulers in general.",
       "sources": [
         "s1"
       ]
@@ -684,9 +728,9 @@
       ]
     },
     "duties-before-rights": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Stanton's demand for women's rights against church and community authority runs against subordinating individual rights to duty.",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Stanton's and Gage's assertion of women's individual rights against church and community authority; they did not address duties versus rights in general.",
       "sources": [
         "s1"
       ]
@@ -973,11 +1017,11 @@
       ]
     },
     "universal-morality": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Not addressed; adherents split between humanist universalism and relativism.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Nasrin holds that universal human rights apply to every culture and rejects an Islamic declaration of human rights and cultural defences of practices harmful to women; adherents ground this in reason rather than revelation.",
       "sources": [
-        "s3"
+        "s8"
       ]
     },
     "single-common-good": {
@@ -1276,17 +1320,17 @@
     },
     "uniform-civil-code": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Secular feminists oppose religious personal-status law that treats women unequally and want one civil law for all.",
+      "confidence": "high",
+      "rationale": "Nasrin wants sharia abolished, not modified, in favour of a uniform civil code not based on religious dogma, and says that where religious laws exist women cannot get equal rights.",
       "sources": [
-        "s3",
-        "s5"
+        "s8",
+        "s9"
       ]
     },
     "restrict-conversion": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Freethought principles protect leaving and changing religion.",
+      "confidence": "low",
+      "rationale": "Inferred from the defence of the right to leave religion, as in Nasrin's case; laws restricting conversion between religions are not addressed.",
       "sources": [
         "s3"
       ]
@@ -1318,10 +1362,11 @@
     },
     "consent-of-governed": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "Gage argued that women had a natural right to the vote, which rests on government by consent of all the governed.",
+      "confidence": "high",
+      "rationale": "The Woman's Bible quotes 'No just government can be formed without the consent of the governed' and asks why women should obey laws they never consented to; Gage likewise calls consent the question in which woman is most deeply concerned.",
       "sources": [
-        "s6"
+        "s1",
+        "s2"
       ]
     },
     "trade-surplus": {
@@ -1607,10 +1652,10 @@
     "cultures-equal-different": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Gupta and Nasrin judge religions and customs by how they treat women, so adherents reject treating all cultures as merely different.",
+      "rationale": "Gupta says all religions do not have the same respect for human rights and Nasrin rejects cultural defences of practices harmful to women, so adherents judge customs by how they treat women.",
       "sources": [
-        "s3",
-        "s5"
+        "s5",
+        "s8"
       ]
     },
     "death-penalty": {
@@ -1624,10 +1669,10 @@
     "sex-ed-in-schools": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Gaylor's birth-control referral work and the movement's critique of religious control of sexuality imply support for secular sex education.",
+      "rationale": "Hutchinson's Women's Leadership Project brings a feminist secular curriculum into high schools, training students in sexual-assault prevention, HIV/AIDS education, reproductive justice and gender equality.",
       "sources": [
-        "s4",
-        "s3"
+        "s11",
+        "s4"
       ]
     },
     "creationism-in-schools": {
@@ -1828,9 +1873,10 @@
     "sacred-ruler": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Gage opposed claims of divine sanction for rulers as part of Church-State domination.",
+      "rationale": "Gage condemns rulers, ecclesiastical and temporal, who claim authority by 'divine right', and a Woman's Bible contributor ties the Bible doctrine of the divine right of kings to men's servility.",
       "sources": [
-        "s2"
+        "s2",
+        "s1"
       ]
     },
     "flat-income-tax": {
@@ -1851,8 +1897,8 @@
     },
     "sovereign-above-law": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Gage's natural-rights argument for women opposes unbound rulers.",
+      "confidence": "low",
+      "rationale": "Inferred from Gage's natural-rights case for women; the sources do not discuss whether rulers are bound by law.",
       "sources": [
         "s2"
       ]
@@ -2044,9 +2090,9 @@
       ]
     },
     "abolish-hereditary-privilege": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Stanton and Gage attacked inherited, ordained status including male headship; hereditary titles are an extension.",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the attack on inherited, ordained male headship; the sources do not address hereditary titles.",
       "sources": [
         "s1",
         "s6"
@@ -2325,9 +2371,9 @@
       ]
     },
     "institutions-fit-civilization": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Universal women's rights is central, rejecting cultural exceptions.",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred from Nasrin's insistence that universal human rights bind every culture; the sources speak of rights, not of forms of government.",
       "sources": [
         "s3",
         "s5"
@@ -2480,8 +2526,8 @@
     },
     "pronatalist-incentives": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "Gage condemned enforced motherhood, so adherents resist pressure to bear children.",
+      "confidence": "low",
+      "rationale": "Inferred from Gage's condemnation of enforced motherhood; financial incentives to have children are not addressed.",
       "sources": [
         "s6"
       ]
@@ -2723,9 +2769,9 @@
     "criminalize-homosexuality": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Modern atheist feminism opposes religion-based sexual morality laws.",
+      "rationale": "Hutchinson treats gay rights as civil rights against religious condemnation of homosexuality, and Gupta counts religious campaigns against gay people's rights as attacks on equality.",
       "sources": [
-        "s3",
+        "s7",
         "s5"
       ]
     },
@@ -2781,9 +2827,9 @@
     "intersecting-oppressions": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Gage linked abolition, Native rights and women's rights, and Hutchinson works on race and gender in secularism.",
+      "rationale": "Hutchinson writes that oppression and privilege intersect across identities and calls for a civil rights movement based on intersectionality; Gage linked abolition, Native rights and women's rights.",
       "sources": [
-        "s3",
+        "s7",
         "s6"
       ]
     },
@@ -2846,9 +2892,9 @@
       ]
     },
     "ban-nda-harassment": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Movement opposes sexism and harassment within atheism, as in the Watson case.",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Inferred from the movement's campaign against sexual harassment at atheist events, as in the Watson case; nothing found on nondisclosure agreements or arbitration.",
       "sources": [
         "s3"
       ]
@@ -2912,8 +2958,9 @@
     "property-franchise": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Gage insisted on vote as natural right regardless of status.",
+      "rationale": "Gage treats the recognition of property rather than person in government as a relic of feudal times and claims the vote as a natural right of persons.",
       "sources": [
+        "s2",
         "s6"
       ]
     },
@@ -2951,8 +2998,8 @@
     },
     "racial-franchise": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Gage's natural-rights stance and abolitionism oppose racial limits on the vote.",
+      "confidence": "low",
+      "rationale": "Inferred from the natural-rights case for suffrage and Gage's abolitionism; the sources here do not address racial limits on the vote.",
       "sources": [
         "s6"
       ]
@@ -3023,9 +3070,9 @@
       ]
     },
     "state-promotes-atheism": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents want state neutrality and freedom from religion, not state-imposed belief.",
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Inferred: adherents campaign for keeping religion out of the state, and no source found argues either for or against the state promoting atheism.",
       "sources": [
         "s2",
         "s5"
@@ -3420,8 +3467,9 @@
     "communal-electorates": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Religious-community electorates entrench religion in the state, which Gage opposed.",
+      "rationale": "Nasreen says politics based on religion is always misogynistic, and Gage opposed any union of church and state; separate religious electorates build religion into politics.",
       "sources": [
+        "s9",
         "s2"
       ]
     },
@@ -3938,9 +3986,9 @@
       ]
     },
     "self-ownership": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Bodily autonomy and reproductive rights are core to the movement, and Gaylor's work rests on a woman's right to control her own body.",
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Bodily autonomy and reproductive rights are core, as in Gaylor's work, but the statement's claim to full rights over one's labour is not addressed, so this is inferred.",
       "sources": [
         "s4"
       ]
@@ -4124,5 +4172,15 @@
       "addedAs": "separate-church-state"
     }
   ],
-  "notes": "Strands differ on sex work, pornography, trans inclusion and how far to criticise religious minorities, and there is internal conflict over sexism in the atheist movement. Stanton blamed the church more than Christianity itself, following Lucretia Mott."
+  "notes": "Strands differ on sex work, pornography, trans inclusion and how far to criticise religious minorities, and there is internal conflict over sexism in the atheist movement. Stanton blamed the church more than Christianity itself, following Lucretia Mott. Deepen pass 2026-10-29 (claude-opus-5-5): searched the full texts of The Woman's Bible and Woman, Church and State for consent, franchise, divine right, wages, prostitution regulation, treaties and schools; read Nasrin, Hutchinson and Gupta on law, sexuality, race and culture. The record says almost nothing on economics, foreign policy, ecology or technology, so those stay low. Gage opposed abortion on principle and state licensing of prostitution, so 19th-century and modern strands differ there. Several earlier medium answers deduced from general values were lowered.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-21"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-10-29"
+    }
+  ]
 }
