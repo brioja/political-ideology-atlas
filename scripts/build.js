@@ -220,7 +220,37 @@ const r6 = (x) => Math.round(x * 1e6) / 1e6;
 // A name holds only while its anchor statements are still among that end's strongest; otherwise the
 // build warns and the page names that line's ends by ideologies, as before.
 const SHOWN = Math.min(MAX_SHOWN_LINES, Math.max(2, meaningful));
-const lines = varimax(landscape, Math.max(SHOWN, meaningful)).slice(0, SHIPPED_COMPONENTS);
+const ROTATED = Math.max(SHOWN, meaningful);
+const lines = keepLineOrder(varimax(landscape, ROTATED), ROTATED).slice(0, SHIPPED_COMPONENTS);
+// The rotation sorts lines by variance, and mid-sized lines are close: one re-audit can swap their
+// order, or move a line out of the shown ones, while the space they span stays the same. So each line
+// keeps the slot of the previous build's line it matches best (the data.js being replaced); lines
+// with no counterpart take the slots left, biggest first. A line that matches only loosely is reported.
+function keepLineOrder(rotated, k) {
+  const file = path.join(ROOT, "data.js");
+  if (!fs.existsSync(file)) return rotated;
+  const prev = require(file);
+  if (!prev.MODEL || !prev.QUESTIONS) return rotated;
+  const at = Object.fromEntries(prev.QUESTIONS.map((q, j) => [q.id, j]));
+  const old = prev.MODEL.components.slice(0, Math.min(k, prev.MODEL.realLines || k))
+    .map((c) => statements.map((s) => (at[s.id] === undefined ? 0 : c.vector[at[s.id]])));
+  const cos = (a, b) => a.reduce((s, x, j) => s + x * b[j], 0) / Math.sqrt(a.reduce((s, x) => s + x * x, 0) * b.reduce((s, x) => s + x * x, 0));
+  const pairs = [];
+  rotated.slice(0, k).forEach((c, i) => old.forEach((o, slot) => pairs.push({ i, slot, c: cos(c.vector, o) })));
+  pairs.sort((x, y) => Math.abs(y.c) - Math.abs(x.c));
+  const bySlot = new Map(), taken = new Set();
+  for (const p of pairs) if (!bySlot.has(p.slot) && !taken.has(p.i)) { bySlot.set(p.slot, p); taken.add(p.i); }
+  const free = rotated.slice(0, k).map((_, i) => i).filter((i) => !taken.has(i));
+  const order = [];
+  for (let slot = 0; slot < k; slot++) {
+    const p = bySlot.get(slot);
+    if (p) {
+      if (Math.abs(p.c) < 0.95) console.log(`Line ${slot + 1} changed since the last build (similarity ${Math.abs(p.c).toFixed(2)}); check its name.`);
+      order.push(p.c < 0 ? { ...rotated[p.i], vector: rotated[p.i].vector.map((x) => -x) } : rotated[p.i]);
+    } else order.push(rotated[free.shift()]);
+  }
+  return [...order, ...rotated.slice(k)];
+}
 const labelSets = readJson(path.join(ROOT, "audits", "line-labels.json")).lines;
 const qIndex = Object.fromEntries(statements.map((s, j) => [s.id, j]));
 const used = new Set();
