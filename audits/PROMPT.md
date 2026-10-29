@@ -72,6 +72,15 @@ record it in `scope`:
   must not be the only kind of source.
 - Do not use political-quiz sites (12axes, 8values, Political Compass, IDRlabs, the polcompball
   wiki, and similar) as sources or as a reference for answers. This audit must be independent.
+- Research theme by theme. Each statement has a `theme` (economy, government, society, world, liberty,
+  culture, ecology, technology, means, globalism); an overview covers only a few statements per
+  theme. After a first pass, count stated positions per theme and search specifically for the thin
+  ones (the ideology's programme sections, its thinkers on that topic).
+- When a founding text, manifesto or programme is available as full text, download it into your
+  scratch folder and search it for each theme's topics rather than reading summaries.
+- The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself). Treat
+  it as a primary source and search it the same way. Cite it as the published work, with the url of
+  a publisher or library catalog page for it that you opened, never a file path or download site.
 
 ## 3. Answer every statement
 
@@ -87,12 +96,31 @@ Use the scale -2 (strongly disagree), -1 (disagree), 0 (neutral or genuinely spl
   rationale what you inferred it from.
 - Read each statement literally. "Free trade benefits everyone in the long run" is about free
   trade, not about markets in general.
+- A general value (humanism, liberty, equality, democracy, dignity) doesn't answer a specific
+  statement on its own. An answer deduced only from one is `low`, however clear the deduction: a
+  movement's humanism says nothing it has stated about returning to foraging. An answer resting on
+  what the ideology says about the statement's topic can be `medium` or `high`: a movement that
+  campaigns for gay rights has a position on criminalising homosexuality.
+- A position on a narrower or nearby case doesn't answer a broader or different statement:
+  cannabis is not all drugs, and a state's right of defence is not a person's right to kill in
+  self-defence. Such an answer is `low`.
+- Absence of evidence is not a position. If the sources record nothing on a topic, answer 0 at
+  `low` and say the ideology has no doctrine on it, never a firm answer.
+- What critics or opponents say about an ideology is not evidence of its position.
+- Record over words, for ideologies that were the official doctrine of a state or ruling party
+  (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): its regimes' sustained, documented
+  practice is part of the ideology. Where that practice consistently contradicts the doctrine's
+  words (one-party rule alongside praise of popular democracy, a leader cult alongside collective
+  leadership), answer from the practice, and the words alone are never `high`. A lapse of one
+  regime or one period is not the ideology's position. This doesn't apply to ideologies whose
+  parties governed as one party among others.
 
 Confidence:
 - `high`: stated directly in a primary source or settled in the scholarship. Its rationale says what
   that source states about this statement; a stock phrase ("Nationalism rejected.") or a position
   the sources never discuss is at most `medium`.
-- `medium`: clearly implied by core principles, or the documented majority view.
+- `medium`: clearly implied by what the ideology says about this statement's topic, or the
+  documented majority view.
 - `low`: inferred, contested among adherents, or anachronistic. If the rationale has to say the
   answer is inferred, that adherents or strands are split, or that the question is anachronistic,
   the answer is `low`, however clear the inference seems.
@@ -104,6 +132,9 @@ confidence to get it included.
 
 Each rationale is one or two plain sentences that explain the answer, not restate it. Each answer
 cites at least one source id from your `sources` list.
+
+When the validator rejects an answer, fix the answer, not the wording: if it says contested
+evidence must be `low`, lower the confidence; never rephrase a rationale to slip past a check.
 
 ## 4. Further reading for test takers
 
