@@ -31,9 +31,9 @@ many will have a thin political record; the early-exit rule makes those quick.
    clearly implied by what they said or did; `low` when ambiguous or contested. When their record
    directly contradicts their words (rigged elections, term limits they exempted themselves from),
    the record wins; genuinely mixed evidence is 0 at `low`. Rhetoric alone is never `high`.
-4. **Inference:** living people, none at all; no evidence means null. Historical figures, only when
-   it follows directly from views they stated, `low`, rationale starting "Inferred:". Never infer
-   from party, label or theme. The most recent clear position wins. Answers must match each
+4. **No inference** (AUDIT_RULES.md, section 3): no evidence means null, for living and historical
+   people. Answer only where their own stated position settles the statement, never from party,
+   label or theme. The most recent clear position wins. Answers must match each
    statement's actual wording; if the evidence is about something nearby, answer null.
 5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).
 6. Write only `audits/people/<id>.json`, and only once it is finished: build it in your scratch
@@ -47,5 +47,5 @@ many will have a thin political record; the early-exit rule makes those quick.
 7. Do not edit any other file. Do not build, test, commit or push: the main lane reviews each file,
    rebuilds and pushes.
 
-After each person, print one line: id, known answers out of 490, how many inferred, whether
+After each person, print one line: id, known answers out of 490, whether
 salience passed, and whether it was loosely placed.

@@ -44,12 +44,12 @@ When in doubt, the entry is audited, and gate 3 decides on the evidence.
 ## 3. Comparable: shown in the test
 
 An audited ideology is shown in the results, and helps define the axes, only if it **takes stated
-positions on the questions the other ideologies answer**. That means enough high- or
-medium-confidence answers (not inferences) across the statements to place it on the test's
+positions on the questions the other ideologies answer**. That means enough stated answers (not `null`, and not
+the marked inferences older audits hold) across the statements to place it on the test's
 dividing lines more precisely than the typical distance between neighbouring ideologies. This is
 the same salience check people get (`salienceContext` in `pca.js`; see the README).
 
-An ideology that only speaks to one issue, or whose answers are mostly inferred, stays in the
+An ideology that only speaks to one issue, or whose sources are silent on most statements, stays in the
 audits but is left out of the test. Its distinctive positions can still enter the statement bank
 through `missingStatements` (see `audits/statements/STANDARD.md`). Once statements that cover it
 exist, it may pass.

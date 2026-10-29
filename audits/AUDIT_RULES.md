@@ -4,8 +4,8 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 2` in the audit
-file, to record that it follows these rules.
+"The subject" below is the ideology or the person being audited. Write `"rules": 3` in the audit
+file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none.)
 
 ## 1. Standard
 
@@ -62,37 +62,37 @@ free trade, not about markets in general.
   adherents split), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
 - **±2** only when the position is central or stated explicitly and forcefully.
+- **Every answer is stated or null; there are no inferences.** An answer is stated when the
+  subject's own stated position settles the statement: the statement says the same on the same
+  question, says the opposite, or could not be true without contradicting that position. Then the
+  answer is as strong as the subject holds the position: a doctrine that authority belongs to
+  experts by competence rejects rule by inheritance, by clergy or by a sacred ruler, and a movement
+  that campaigns for gay rights has a position on criminalising homosexuality. If the statement
+  could be true without contradicting anything the subject states, the answer is `null`, however
+  likely an answer seems.
 - **A general value doesn't answer a specific statement.** Humanism, liberty, equality, democracy,
-  "freedom of religion" or "equal rights for all" say nothing stated about returning to foraging,
-  apostasy laws or blasphemy. An answer deduced only from a value is an inference (below). An
-  answer resting on what the subject says about the statement's topic is evidence: a movement that
-  campaigns for gay rights has a position on criminalising homosexuality.
-- **A statement the doctrine settles is stated, not inferred.** Where the statement says the same
-  as the subject's stated position on the same question, or contradicts it, the answer is a stated
-  position, as strong as the subject holds it: a doctrine that authority belongs to experts by
-  competence rejects rule by inheritance, by clergy or by a sacred ruler, and one that the nation is
-  defined by language has a position on defining it by descent. A statement on a different question
-  that the position only bears on is still an inference (below).
+  "freedom of religion" or "equal rights for all" say nothing about returning to foraging, apostasy
+  laws or blasphemy: `null`.
+- **No guessed outcomes.** An answer that needs a guess about what the subject's method would
+  produce (what experts would conclude, what a planner would choose), a contemporary consensus, or
+  what adherents would probably think is `null`: a technocracy whose experts decided against sex
+  education would still be a technocracy.
 - **A narrower or nearby case doesn't answer a broader or different statement:** cannabis is not all
   drugs, unauthorized migration is not immigration levels, refugee relief is not development aid,
   and a state's right of defence is not a person's right to kill in self-defence.
 - **A related subject's sources aren't the subject's.** Sources about a broader, narrower or related
   subject don't answer for the subject, in either direction: secularism's not for Jewish
   secularism, nor American Jewish secularism's for Jewish secularism as a whole; a party's not for
-  one of its members. That is borrowing, neither evidence nor inference: without the subject's own
+  one of its members. That is borrowing, not evidence: without the subject's own
   sources the answer is `null`. One branch's position (one country, strand or organisation) is the
-  whole subject's only where sources show the other branches share it; where they differ, it is a
-  split (0, `low`).
+  whole subject's only where sources show the other branches share it; where they take opposite
+  positions on the same question, it is a split (0, `low`), never one side and never `null`.
 - **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
   lobby's scorecard grade), are not evidence of a position.
 - **Record over words.** Where the subject's own record directly contradicts their words (elections
   rigged or cancelled, a single party kept in power while praising pluralism), the record wins; if
   the evidence is genuinely mixed, answer 0 at `low`. Words alone are never `high` where the record
   pulls the other way. Each prompt says what counts as the subject's own record.
-- **Inference, only from a stated principle.** Where the subject never addressed a statement and
-  no stated position settles it, but a principle they state bears on it directly, you may infer the answer (where the subject's prompt
-  allows it). An inferred answer is `low`, and its rationale begins "Inferred:" and says what it is
-  inferred from. If no stated principle bears on it, the answer is `null`.
 - **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
   says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
   past a check.
@@ -108,17 +108,16 @@ least one source id from your `sources` list.
   never discuss is at most `medium`.
 - `medium`: clearly implied by what the subject said or did on this statement's topic; reported by a
   secondary or scholarly source; or (for an ideology) the documented majority view of adherents.
-- `low`: inferred, mixed, contested or anachronistic. If the rationale has to say the answer is
-  inferred, that the evidence or adherents are split, or that the question is anachronistic, the
-  answer is `low`, however clear the inference seems.
+- `low`: mixed, contested or anachronistic. If the rationale has to say that the evidence or
+  adherents are split, or that the question is anachronistic, the answer is `low`.
 
 ## 5. Salience
 
 The validator checks whether the subject's known positions place them on the test's dividing lines
 precisely enough to tell neighbouring ideologies apart. Every answer resting on evidence counts,
-whatever its confidence; inferences ("Inferred:") and `null` don't. A subject with too thin a record
-is left out of the test. Don't pad answers or upgrade an inference to pass: an honest rejection is
-the correct outcome.
+whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits
+under rules 2 still hold. A subject with too thin a record is left out of the test. Don't pad
+answers to pass: an honest rejection is the correct outcome.
 
 ## 6. Deepening an existing audit
 
@@ -128,11 +127,12 @@ Build on the existing audit rather than starting over:
 - Keep the subject. Don't borrow a related subject's positions (secular humanism's for secularism,
   a party's for one of its members, a relative's or employer's for a person).
 - Change an answer or raise its confidence only on evidence you found and cite. Check every answer
-  you touch against these rules: one deduced from a general value becomes an inference (`low`,
-  "Inferred:"), and a ±2 you lower that way becomes ±1, since an inference isn't stated forcefully.
+  you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
+  stated (cite the source of the position that settles it) or `null`. One deduced from a general
+  value is `null`.
 - Use a model that hasn't audited the subject yet. Add your model id to `auditor` (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 2`.
+  the date of your pass. Set `"rules": 3`, which requires no "Inferred:" answer left.
 - If the record really has nothing more, failing salience is the correct outcome. Say in `notes`
   which themes you searched.

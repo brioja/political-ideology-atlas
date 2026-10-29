@@ -14,9 +14,8 @@ For each audit you are given (`audits/profiles/<id>.json`) and its list of state
    - Reuse the audit's existing sources when they support the answer.
    - When they don't, research it: open a real page with WebSearch/WebFetch and add it to
      `sources` with the next free id (`s7`, `s8`, ...). Cite only pages you opened in this session.
-   - An inference from a principle the ideology states is fine at `low` confidence, with a rationale
-     beginning "Inferred:" that says what you inferred it from. Never raise a confidence you can't
-     source. Leave the audit's `rules` field as it is: it describes the whole audit.
+   - No inferences: answer only where the ideology's own stated position settles the statement
+     (AUDIT_RULES.md, section 3); otherwise `null`. Never raise a confidence you can't source. Leave the audit's `rules` field as it is: it describes the whole audit.
    - If the statement came from this ideology's own `missingStatements`, your answer should agree
      with the value recorded there.
 3. Add the answers to `answers`. Do not change any other answer, field or source.

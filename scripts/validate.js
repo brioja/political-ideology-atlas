@@ -153,6 +153,11 @@ function validate(id) {
       && (answers[st.id].sources || []).length && answers[st.id].sources.every((sid) => wiki.has(sid))).map((st) => st.id);
     if (wikiOnly.length) errors.push(`${wikiOnly.join(", ")}: Wikipedia is only a way to find evidence; cite the source it cites`);
   }
+  // Rules 3 has no inferences: every answer is stated or null (audits/AUDIT_RULES.md, section 3).
+  if (a.rules >= 3) {
+    const inferred = statements.filter((st) => answers[st.id] && /^Inferred:/.test(answers[st.id].rationale || "")).map((st) => st.id);
+    if (inferred.length) errors.push(`${inferred.join(", ")}: rules 3 has no inferences; answer from a stated position that settles the statement, or null`);
+  }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');

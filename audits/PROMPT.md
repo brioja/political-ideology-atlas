@@ -72,9 +72,9 @@ record it in `scope`:
 - Answer as a typical committed adherent would, not a fringe member or a critic.
 - A documented split among its strands or adherents (Labor Zionism's cooperatives against
   Revisionist Zionism's private enterprise) is 0 at `low`, a real position. Silence is `null`.
-- An inference needs a stated principle that bears directly on the statement: nuclear power for a
-  19th-century ideology with a stated view on industry can be inferred from that view ("Inferred:",
-  `low`); one with nothing on industry is `null`.
+- The ideology's stated position settles a statement only where the statement couldn't be true
+  without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
+  power (`null`), but a doctrine of rule by competence settles hereditary office.
 - Its own record, for "record over words", is that of regimes where it was the official doctrine of
   the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
   sustained, documented practice is part of the ideology. Where it consistently contradicts the
@@ -82,9 +82,10 @@ record it in `scope`:
   collective leadership), answer from the practice. A lapse of one regime or one period is not the
   ideology's position, and parties that governed as one party among others are not the ideology's
   record.
-- Audits written before these rules (no `"rules": 2`) recorded silence as 0 and inferences without
+- Audits written before the shared rules (no `"rules"`) recorded silence as 0 and inferences without
   the "Inferred:" mark, so their salience still counts only `medium` and `high` answers until they
-  are re-audited.
+  are re-audited. Audits under rules 2 may hold marked inferences ("Inferred:"); salience leaves
+  them out, and the next pass makes each stated or `null`.
 
 ## 4. Further reading for test takers
 
@@ -124,7 +125,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
-  "rules": 2,
+  "rules": 3,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
@@ -149,12 +150,6 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "value": 2,
       "confidence": "high | medium | low",
       "rationale": "Why an adherent answers this way.",
-      "sources": ["s1"]
-    },
-    "<statement id>": {
-      "value": -1,
-      "confidence": "low",
-      "rationale": "Inferred: from its stated view that … .",
       "sources": ["s1"]
     },
     "<statement id>": {

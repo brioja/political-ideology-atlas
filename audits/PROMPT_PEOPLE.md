@@ -57,10 +57,10 @@ holds. If their views changed, use their mature or most recent public position a
 sources from different times disagree (two runs of the same quiz, an old interview and a new one),
 the more recent clear statement wins; leave it null only if the recent position itself is unclear.
 
-If there is no reliable evidence of their position, answer `null` ("no known position"). Never
-infer a living person's view, not even from their party or ideology. For historical figures, a
-position may be inferred as AUDIT_RULES.md, section 3 describes ("Inferred:", `low`). A general
-principle they voiced ("freedom of religion", "equal rights for all") doesn't answer a specific
+If there is no reliable evidence of their position, answer `null` ("no known position"). There
+are no inferences, for living or historical people (AUDIT_RULES.md, section 3): a statement is
+answered only where their own stated position settles it, never from their party or ideology. A
+general principle they voiced ("freedom of religion", "equal rights for all") doesn't answer a specific
 statement it never addressed (apostasy laws, covering laws, blasphemy): for a person those stay
 null unless they spoke to them.
 
@@ -122,13 +122,12 @@ disagree, the higher tier wins.
    Never evidence on its own: use it only to find tiers 1-4 (follow its citations to the report or
    document and cite that, checking the original as AUDIT_RULES.md, section 2 says). If nothing
    better turns up, the answer is null.
-Inference stays as above: never for living people, `low` with "Inferred:" for historical figures.
 
 Confidence follows AUDIT_RULES.md, section 4: `high` is tier 1 or 2 on that specific statement,
 cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring or voting for a bill
 alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 
-**Salience** (AUDIT_RULES.md, section 5) counts every recorded position except inferences. A
+**Salience** (AUDIT_RULES.md, section 5) counts every recorded position (not `null`). A
 "loosely placed" warning appears only for people listed in `audits/people-legacy-bar.json`, who
 passed an older, looser bar and are still held to it. They are shown, but placed so roughly that
 they sit near the middle of the lines and show up in many takers' results. When deepening one,
@@ -145,7 +144,7 @@ site (`node test.js` fails until you do).
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
-  "rules": 2,
+  "rules": 3,
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",
