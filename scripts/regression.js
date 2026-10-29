@@ -170,6 +170,8 @@ for (const s of suites) {
   console.log(`  ${s.padEnd(9)} ${rs.length} takers${scored.length ? `: expected match first ${top1}/${scored.length}, in top 3 ${top3}/${scored.length}` : ""}`);
 }
 
+// --out <file>: write each taker's top 5 for the saved takers, to compare two versions taker by taker.
+if (arg("--out")) fs.writeFileSync(arg("--out"), JSON.stringify(Object.fromEntries(results.map((r) => [r.label, { top: r.top, expect: r.expect || null }]))));
 const save = (file, rs, drawn) => fs.writeFileSync(file, JSON.stringify({ ...(drawn ? { drawn } : {}), tops: Object.fromEntries(rs.map((r) => [r.label, r.top])) }, null, 1) + "\n");
 if (process.argv.includes("--save")) {
   if (variant !== "current") { console.error("Save the baseline from today's matching only."); process.exit(1); }

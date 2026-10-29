@@ -54,7 +54,8 @@ free trade, not about markets in general.
 - **No data, no position.** If the sources record nothing on a statement, answer `null`, at `low`
   confidence, with a rationale saying so. Silence is not neutrality, so never record it as 0, and
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
-  on prisons).
+  on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
+  disagreement.
 - **0 is a documented middle:** the evidence genuinely points both ways (a mixed record, strands or
   adherents split), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.

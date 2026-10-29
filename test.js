@@ -3,7 +3,7 @@
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION } = require("./data.js");
 const PEOPLE_ONLY = process.argv.includes("--people");
-const { symmetricEigen, buildModel, match, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
+const { symmetricEigen, buildModel, match, gap, answeredIndexes, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -54,12 +54,38 @@ if (!PEOPLE_ONLY) {
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
 }
+// Silence is never scored: a statement where one side has no known position (null) counts neither as
+// "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see
+// audits/AUDIT_RULES.md). And the model reads an ideology's null as null.
+{
+  const lib = require("./scripts/lib");
+  assert.strictEqual(gap([2, -2, 1], [2, null, 0], [0, 1, 2]), gap([2, -2, 1], [2, null, 0], [0, 2]), "gap() scores a statement one side has no position on");
+  assert.strictEqual(gap([2, 0], [null, 0], [0, 1]), 0, "gap() scores silence");
+  const silent = IDEOLOGIES.find((i) => i.profile.includes(null));
+  assert(silent, "no ideology in data.js has a 'no known position' answer: is null being turned into a value?");
+  const audit = lib.readJson(lib.profilePath(silent.id));
+  assert(lib.activeStatements().every((s, j) => (audit.answers[s.id].value === null) === (silent.profile[j] === null)), `${silent.id}: data.js doesn't keep its 'no known position' answers as null`);
+}
+// Each ideology's match scale ships with it (build.js), so its page doesn't compare every pair of
+// ideologies in the browser; every ideology with a silence needs one, and it must be current.
+if (!PEOPLE_ONLY) {
+  const { MODEL } = require("./data.js");
+  const { modelFromParts, spreadOn } = require("./pca.js");
+  const missing = IDEOLOGIES.filter((i) => i.profile.includes(null) && i.spread == null).map((i) => i.id);
+  assert(!missing.length, `ideologies without a shipped match scale (run a full build): ${missing.slice(0, 5).join(", ")}`);
+  const plain = modelFromParts(IDEOLOGIES.map(({ spread, ...i }) => i), MODEL);
+  for (const i of IDEOLOGIES.filter((x) => x.spread != null).slice(0, 3)) {
+    assert(Math.abs(spreadOn(plain, answeredIndexes(i.profile)) - i.spread) < 1e-5, `${i.id}: its shipped match scale is stale (run a full build)`);
+  }
+}
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
 assert(Math.abs(shareSum - 1) < 1e-9, "variance shares do not sum to 1");
 // (Ties are fine: two variants can legitimately share every answer.)
 const twins = [];
+// Distances only (match()'s similarity scale would be recomputed for each ideology's own statements).
 for (const ideo of IDEOLOGIES) {
-  const { ranked } = match(model, ideo.profile);
+  const idx = answeredIndexes(ideo.profile);
+  const ranked = model.ideologies.map((i) => ({ name: i.name, distance: gap(ideo.profile, i.profile, idx) })).sort((x, y) => x.distance - y.distance);
   assert.strictEqual(ranked[0].distance, 0, `${ideo.name} matched ${ranked[0].name} instead of itself`);
   const tied = ranked.filter((r) => r.distance === 0 && r.name !== ideo.name).map((r) => r.name);
   if (tied.length) twins.push(`${ideo.name} = ${tied.join(", ")}`);

@@ -265,9 +265,10 @@ function solve(M, b) {
 const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
 
 // The average gap between two sets of answers, in notches on the answer scale, on the statements in
-// `idx` that both have a position on. An average rather than a root mean square, so a few one-notch
-// differences don't weigh like real disagreement. With nothing in common it is Infinity (no basis
-// for a match), except that no statements at all is 0.
+// `idx` that both have a position on. Silence (null) is never scored, as "Neither" or as
+// disagreement: a decision, not a default (test.js checks it). An average rather than a root mean
+// square, so a few one-notch differences don't weigh like real disagreement. With nothing in common
+// it is Infinity (no basis for a match), except that no statements at all is 0.
 function gap(answers, profile, idx) {
   if (idx.length === 0) return 0;
   let s = 0, c = 0;
@@ -282,21 +283,30 @@ function gap(answers, profile, idx) {
 // Every pair on every statement is slow with hundreds of ideologies, so the profiles are packed into
 // one typed array per model and each result is cached by its statement set (a page asks for the same
 // set several times). As in gap(), a pair is compared only where both have a position (NaN marks none).
+// The build works out each ideology's own scale (on the statements it has a position on) and ships it
+// as `spread`, so an ideology's page and the Compare page don't compute it in the browser.
 const spreadCache = new WeakMap();
-function spreadOn(model, idx) {
-  const ideos = model.ideologies;
-  // With every statement answered (an ideology's own page) the build has worked it out already.
-  if (model.fullSpread != null && ideos.length && idx.length === ideos[0].profile.length) return model.fullSpread;
+function spreadCacheFor(ideos) {
   let cache = spreadCache.get(ideos);
   if (!cache) {
     const n = ideos.length ? ideos[0].profile.length : 0;
-    const packed = new Float64Array(ideos.length * n);
-    ideos.forEach((i, a) => packed.set(i.profile.map((x) => (x == null ? NaN : x)), a * n));
-    cache = { n, packed, results: new Map() };
+    cache = { n, packed: null, results: new Map() };
+    for (const i of ideos) if (i.spread != null) cache.results.set(answeredIndexes(i.profile).join(","), i.spread);
     spreadCache.set(ideos, cache);
   }
+  return cache;
+}
+function spreadOn(model, idx) {
+  const ideos = model.ideologies;
+  // With every statement answered the build has worked it out already.
+  if (model.fullSpread != null && ideos.length && idx.length === ideos[0].profile.length) return model.fullSpread;
+  const cache = spreadCacheFor(ideos);
   const key = idx.join(",");
   if (cache.results.has(key)) return cache.results.get(key);
+  if (!cache.packed) {
+    cache.packed = new Float64Array(ideos.length * cache.n);
+    ideos.forEach((i, a) => cache.packed.set(i.profile.map((x) => (x == null ? NaN : x)), a * cache.n));
+  }
   let spread = 0;
   if (idx.length) {
     const { n, packed } = cache;
@@ -407,13 +417,19 @@ function matchPeople(model, answers, people, { dims = Math.min(model.components.
 
 // How plausible each ideology is given the answers so far: each answer multiplies an
 // ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
-// Where the ideology has no known position, the difference is from the statement's mean, as in the
-// lines (buildModel): every answer has to weigh on every ideology's plausibility.
+// Only the statements the ideology has a position on are scored (silence is never scored); their mean
+// squared miss stands for every answer given, so an ideology neither gains nor loses by its silences.
+// One with no position on any answered statement has no evidence yet, and no weight until it does.
+const plausibility = (s, c, count) => (count === 0 ? 0 : c === 0 ? -Infinity : -(s / c) * count / 2);
 function weights(model, answers) {
   const idx = answeredIndexes(answers);
-  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - (i.profile[j] ?? model.mean[j])) ** 2, 0) / 2);
+  const logs = model.ideologies.map((i) => {
+    let s = 0, c = 0;
+    for (const j of idx) if (i.profile[j] != null) { s += (answers[j] - i.profile[j]) ** 2; c++; }
+    return plausibility(s, c, idx.length);
+  });
   const top = Math.max(...logs);
-  const w = logs.map((l) => Math.exp(l - top));
+  const w = logs.map((l) => (top === -Infinity ? 1 : Math.exp(l - top)));
   const total = w.reduce((s, x) => s + x, 0);
   return w.map((x) => x / total);
 }
@@ -497,12 +513,9 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
   const m = ideos.length, n = ideos[0].profile.length;
-  // rowMajor holds the answers with no known position filled from the statement's mean (weights());
-  // raw and colMajor hold NaN there (topMatch() and nextQuestion() leave them out).
-  const rowMajor = new Float64Array(m * n), raw = new Float64Array(m * n), colMajor = new Float64Array(n * m);
-  ideos.forEach((i, k) => i.profile.forEach((x, q) => {
-    rowMajor[k * n + q] = x ?? model.mean[q]; raw[k * n + q] = x ?? NaN; colMajor[q * m + k] = x ?? NaN;
-  }));
+  // NaN marks no known position, which weights(), nextQuestion() and topMatch() leave out.
+  const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
+  ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x ?? NaN; colMajor[q * m + k] = x ?? NaN; }));
   const w = new Float64Array(m), logs = new Float64Array(m);
   const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
   let count = 0;
@@ -512,13 +525,13 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     let top = -Infinity;
     for (let k = 0; k < m; k++) {
       const base = k * n;
-      let s = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t]; s += (answers[j] - rowMajor[base + j]) ** 2; }
-      logs[k] = -s / 2;
+      let s = 0, c = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += (answers[j] - x) ** 2; c++; } }
+      logs[k] = plausibility(s, c, count);
       if (logs[k] > top) top = logs[k];
     }
     let total = 0;
-    for (let k = 0; k < m; k++) { w[k] = Math.exp(logs[k] - top); total += w[k]; }
+    for (let k = 0; k < m; k++) { w[k] = top === -Infinity ? 1 : Math.exp(logs[k] - top); total += w[k]; }
     for (let k = 0; k < m; k++) w[k] /= total;
   };
   // nextQuestion(): the unasked statement with the largest weighted disagreement.
@@ -542,7 +555,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let k = 0; k < m; k++) {
       const base = k * n;
       let s = 0, c = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], x = raw[base + j]; if (x === x) { s += Math.abs(answers[j] - x); c++; } }
+      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += Math.abs(answers[j] - x); c++; } }
       const d = count === 0 ? 0 : c ? s / c : Infinity;
       if (d < bestD) { bestD = d; best = k; }
     }
