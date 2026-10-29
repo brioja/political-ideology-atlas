@@ -7,8 +7,9 @@
 //                                                   "no doctrine" zeros left out of matching (all if no ids)
 // Real links: one "label<TAB>link" per line in ~/work/regression-links.txt (not in the repo, since they
 // hold people's answers); their baseline is kept next to that file.
-// Simulated takers are drawn from a fixed seed over the ideologies shown, so the cases only change
-// when the shown set or the statements do (then re-save the baseline).
+// Simulated takers are drawn once, from a fixed seed over the ideologies shown, and the ideologies
+// drawn are saved with the baseline, so a change that alters the shown set is still compared on the
+// same takers (an ideology no longer shown drops its takers).
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
@@ -61,9 +62,11 @@ const firm = (id) => { const a = readJson(profilePath(id)).answers; return QUEST
 // adherent answers the same, but strong answers soften and a third become "Neither"; a mixed taker
 // answers 30 firm positions of each of two ideologies; a mostly-neutral taker answers 60 random
 // statements, mostly 0 and ±1.
-function cases() {
+const shownIds = new Set(IDEOLOGIES.map((i) => i.id));
+function cases(drawn) {
   const out = [];
-  const sample = pick(IDEOLOGIES.map((i) => i.id).sort(), 40);
+  const sample = drawn ? drawn.sample.filter((id) => shownIds.has(id)) : pick(IDEOLOGIES.map((i) => i.id).sort(), 40);
+  const pairs = drawn ? drawn.pairs.filter((p) => p.every((id) => shownIds.has(id))) : null;
   for (const id of sample) {
     const f = firm(id);
     const known = f.flatMap((v, j) => (v == null ? [] : [j]));
@@ -76,8 +79,10 @@ function cases() {
     out.push({ suite: "adherent", label: `adherent of ${id}`, expect: [id], answers: adherent });
     out.push({ suite: "mild", label: `mild adherent of ${id}`, expect: [id], answers: mild });
   }
-  for (let k = 0; k < 20; k++) {
-    const [a, b] = pick(IDEOLOGIES.map((i) => i.id).sort(), 2);
+  const usedPairs = [];
+  for (let k = 0; k < (pairs ? pairs.length : 20); k++) {
+    const [a, b] = pairs ? pairs[k] : pick(IDEOLOGIES.map((i) => i.id).sort(), 2);
+    usedPairs.push([a, b]);
     const fa = firm(a), fb = firm(b);
     const answers = Array(n).fill(null);
     for (const j of pick(fa.flatMap((v, j) => (v == null ? [] : [j])), 30)) answers[j] = fa[j];
@@ -106,17 +111,20 @@ function cases() {
       else console.warn(`Couldn't read the link for ${label}`);
     }
   }
+  out.drawn = { sample, pairs: usedPairs };
   return out;
 }
 
 const ideos = profiles();
+const savedBase = fs.existsSync(BASELINE) ? readJson(BASELINE) : null;
 if (variant === "nulls") {
   const left = ideos.reduce((t, i) => t + i.profile.filter((v) => v == null).length, 0);
   const zeros = IDEOLOGIES.reduce((t, i) => t + i.profile.filter((v) => v === 0).length, 0);
   console.log(`Silence left out: ${left} of ${zeros} zeros${onlyIds ? " in all ideologies" : ""}.`);
 }
 const name = Object.fromEntries(IDEOLOGIES.map((i) => [i.id, i.name]));
-const results = cases().map((c) => ({ ...c, top: rank(ideos, c.answers).slice(0, 5).map((r) => r.id) }));
+const drawnCases = cases(process.argv.includes("--save") ? null : savedBase && savedBase.drawn);
+const results = drawnCases.map((c) => ({ ...c, top: rank(ideos, c.answers).slice(0, 5).map((r) => r.id) }));
 
 // --rank <id>: where that ideology ranks for each suite's takers (median), to see a change below the top.
 if (arg("--rank")) {
@@ -139,15 +147,15 @@ for (const s of suites) {
   console.log(`  ${s.padEnd(9)} ${rs.length} takers${scored.length ? `: expected match first ${top1}/${scored.length}, in top 3 ${top3}/${scored.length}` : ""}`);
 }
 
-const save = (file, rs) => fs.writeFileSync(file, JSON.stringify(Object.fromEntries(rs.map((r) => [r.label, r.top])), null, 1) + "\n");
+const save = (file, rs, drawn) => fs.writeFileSync(file, JSON.stringify({ ...(drawn ? { drawn } : {}), tops: Object.fromEntries(rs.map((r) => [r.label, r.top])) }, null, 1) + "\n");
 if (process.argv.includes("--save")) {
   if (variant !== "current") { console.error("Save the baseline from today's matching only."); process.exit(1); }
-  save(BASELINE, results.filter((r) => r.suite !== "real"));
+  save(BASELINE, results.filter((r) => r.suite !== "real"), drawnCases.drawn);
   if (results.some((r) => r.suite === "real")) save(REAL_BASELINE, results.filter((r) => r.suite === "real"));
   console.log(`Baseline saved (${results.length} takers).`);
   process.exit(0);
 }
-const base = { ...(fs.existsSync(BASELINE) ? readJson(BASELINE) : {}), ...(fs.existsSync(REAL_BASELINE) ? readJson(REAL_BASELINE) : {}) };
+const base = { ...(savedBase ? savedBase.tops : {}), ...(fs.existsSync(REAL_BASELINE) ? readJson(REAL_BASELINE).tops : {}) };
 const moved = results.filter((r) => base[r.label] && base[r.label][0] !== r.top[0]);
 const missing = results.filter((r) => !base[r.label]).length;
 if (missing) console.log(`${missing} takers have no baseline (run with --save).`);

@@ -126,8 +126,14 @@ function buildModel(ideologies, opts = {}) {
   const rows = ideologies.map((i) => i.profile);
   const m = rows.length;
   const n = rows[0].length;
-  const mean = Array.from({ length: n }, (_, j) => rows.reduce((s, r) => s + r[j], 0) / m);
-  const centered = rows.map((r) => r.map((x, j) => x - mean[j]));
+  // An ideology with no known position on a statement (null) is filled with that statement's mean
+  // over the ideologies that have one, so after centring it adds nothing to the lines.
+  const mean = Array.from({ length: n }, (_, j) => {
+    let s = 0, c = 0;
+    for (const r of rows) if (r[j] != null) { s += r[j]; c++; }
+    return c ? s / c : 0;
+  });
+  const centered = rows.map((r) => r.map((x, j) => (x == null ? 0 : x - mean[j])));
 
   const cov = Array.from({ length: n }, () => new Array(n));
   for (let i = 0; i < n; i++) {
@@ -202,7 +208,11 @@ function modelFromParts(ideologies, parts) {
   return model;
 }
 
-// Places a set of answers on the axes. Skipped or unasked statements are null.
+// How many leading components a partial set of answers is fitted on (and build.js ships).
+const FIT_COMPONENTS = 12;
+
+// Places a set of answers on the axes. Skipped or unasked statements are null, and so are
+// statements an ideology has no known position on, so ideologies are placed the same way.
 // With every statement answered this is the exact projection. With only some, the unanswered
 // statements are filled in from a least-squares fit of the answered ones on every axis, then
 // projected the same way, so they don't drag the result toward the center. (The fit's coefficients
@@ -216,9 +226,10 @@ function project(model, answers) {
   }
   if (rows.length === 0) return new Array(model.components.length).fill(0);
 
-  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors.
+  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors, on the leading
+  // FIT_COMPONENTS (the ones the site ships), so the build, the tests and the page place alike.
   const y = rows.map((j) => answers[j] - model.mean[j]);
-  const d = Math.min(model.components.length, rows.length);
+  const d = Math.min(FIT_COMPONENTS, model.components.length, rows.length);
   const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
   const M = Array.from({ length: d }, (_, a) =>
     Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
@@ -253,13 +264,15 @@ function solve(M, b) {
 
 const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
 
-// The average gap between two sets of answers, in notches on the answer scale. An average rather
-// than a root mean square, so a few one-notch differences don't weigh like real disagreement.
+// The average gap between two sets of answers, in notches on the answer scale, on the statements in
+// `idx` that both have a position on. An average rather than a root mean square, so a few one-notch
+// differences don't weigh like real disagreement. With nothing in common it is Infinity (no basis
+// for a match), except that no statements at all is 0.
 function gap(answers, profile, idx) {
   if (idx.length === 0) return 0;
-  let s = 0;
-  for (const j of idx) s += Math.abs(answers[j] - profile[j]);
-  return s / idx.length;
+  let s = 0, c = 0;
+  for (const j of idx) if (profile[j] != null && answers[j] != null) { s += Math.abs(answers[j] - profile[j]); c++; }
+  return c ? s / c : Infinity;
 }
 
 // Ranks ideologies by how far their answers are from yours on the statements you answered.
@@ -268,7 +281,7 @@ function gap(answers, profile, idx) {
 // The largest distance between any two ideologies on these statements: the "0%" end of the scale.
 // Every pair on every statement is slow with hundreds of ideologies, so the profiles are packed into
 // one typed array per model and each result is cached by its statement set (a page asks for the same
-// set several times). A null answer counts as 0 here, as it does in gap().
+// set several times). As in gap(), a pair is compared only where both have a position (NaN marks none).
 const spreadCache = new WeakMap();
 function spreadOn(model, idx) {
   const ideos = model.ideologies;
@@ -278,7 +291,7 @@ function spreadOn(model, idx) {
   if (!cache) {
     const n = ideos.length ? ideos[0].profile.length : 0;
     const packed = new Float64Array(ideos.length * n);
-    ideos.forEach((i, a) => packed.set(i.profile, a * n));
+    ideos.forEach((i, a) => packed.set(i.profile.map((x) => (x == null ? NaN : x)), a * n));
     cache = { n, packed, results: new Map() };
     spreadCache.set(ideos, cache);
   }
@@ -292,9 +305,12 @@ function spreadOn(model, idx) {
       const pa = a * n;
       for (let b = a + 1; b < ideos.length; b++) {
         const pb = b * n;
-        let s = 0;
-        for (let k = 0; k < cols.length; k++) s += Math.abs(packed[pa + cols[k]] - packed[pb + cols[k]]);
-        if (s / cols.length > spread) spread = s / cols.length;
+        let s = 0, c = 0;
+        for (let k = 0; k < cols.length; k++) {
+          const x = packed[pa + cols[k]], y = packed[pb + cols[k]];
+          if (x === x && y === y) { s += Math.abs(x - y); c++; }
+        }
+        if (c && s / c > spread) spread = s / c;
       }
     }
   }
@@ -391,9 +407,11 @@ function matchPeople(model, answers, people, { dims = Math.min(model.components.
 
 // How plausible each ideology is given the answers so far: each answer multiplies an
 // ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
+// Where the ideology has no known position, the difference is from the statement's mean, as in the
+// lines (buildModel): every answer has to weigh on every ideology's plausibility.
 function weights(model, answers) {
   const idx = answeredIndexes(answers);
-  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - i.profile[j]) ** 2, 0) / 2);
+  const logs = model.ideologies.map((i) => -idx.reduce((s, j) => s + (answers[j] - (i.profile[j] ?? model.mean[j])) ** 2, 0) / 2);
   const top = Math.max(...logs);
   const w = logs.map((l) => Math.exp(l - top));
   const total = w.reduce((s, x) => s + x, 0);
@@ -408,10 +426,12 @@ function nextQuestion(model, answers, asked) {
   let best = null;
   for (let q = 0; q < answers.length; q++) {
     if (asked.has(q)) continue;
-    let mean = 0;
-    model.ideologies.forEach((i, k) => { mean += w[k] * i.profile[q]; });
+    // Only ideologies with a position on it can be told apart by it.
+    let mean = 0, known = 0;
+    model.ideologies.forEach((i, k) => { if (i.profile[q] != null) { mean += w[k] * i.profile[q]; known += w[k]; } });
+    if (known) mean /= known;
     let gain = 0;
-    model.ideologies.forEach((i, k) => { gain += w[k] * (i.profile[q] - mean) ** 2; });
+    model.ideologies.forEach((i, k) => { if (i.profile[q] != null) gain += w[k] * (i.profile[q] - mean) ** 2; });
     if (!best || gain > best.gain) best = { q, gain };
   }
   return best;
@@ -477,8 +497,12 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
   const m = ideos.length, n = ideos[0].profile.length;
-  const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
-  ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x; colMajor[q * m + k] = x; }));
+  // rowMajor holds the answers with no known position filled from the statement's mean (weights());
+  // raw and colMajor hold NaN there (topMatch() and nextQuestion() leave them out).
+  const rowMajor = new Float64Array(m * n), raw = new Float64Array(m * n), colMajor = new Float64Array(n * m);
+  ideos.forEach((i, k) => i.profile.forEach((x, q) => {
+    rowMajor[k * n + q] = x ?? model.mean[q]; raw[k * n + q] = x ?? NaN; colMajor[q * m + k] = x ?? NaN;
+  }));
   const w = new Float64Array(m), logs = new Float64Array(m);
   const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
   let count = 0;
@@ -503,10 +527,11 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let q = 0; q < n; q++) {
       if (asked[q]) continue;
       const base = q * m;
-      let mean = 0;
-      for (let k = 0; k < m; k++) mean += w[k] * colMajor[base + k];
+      let mean = 0, known = 0;
+      for (let k = 0; k < m; k++) { const x = colMajor[base + k]; if (x === x) { mean += w[k] * x; known += w[k]; } }
+      if (known) mean /= known;
       let gain = 0;
-      for (let k = 0; k < m; k++) gain += w[k] * (colMajor[base + k] - mean) ** 2;
+      for (let k = 0; k < m; k++) { const x = colMajor[base + k]; if (x === x) gain += w[k] * (x - mean) ** 2; }
       if (bestQ < 0 || gain > bestGain) { bestQ = q; bestGain = gain; }
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
@@ -516,9 +541,9 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     let best = -1, bestD = Infinity;
     for (let k = 0; k < m; k++) {
       const base = k * n;
-      let s = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t]; s += Math.abs(answers[j] - rowMajor[base + j]); }
-      const d = count ? s / count : 0;
+      let s = 0, c = 0;
+      for (let t = 0; t < count; t++) { const j = idx[t], x = raw[base + j]; if (x === x) { s += Math.abs(answers[j] - x); c++; } }
+      const d = count === 0 ? 0 : c ? s / c : Infinity;
       if (d < bestD) { bestD = d; best = k; }
     }
     return best;
@@ -528,7 +553,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const held = Array.from({ length: 10 }, () => [0, 0]);
   for (let rep = 0; rep < reps; rep++) {
     for (const ideo of ideos) {
-      const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
+      const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
       asked.fill(0);
       count = 0;
       setWeights();
@@ -536,11 +561,14 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
       let ask = next();
       while (ask) {
         asked[ask.q] = 1;
-        answers[ask.q] = truth[ask.q];
-        // Keep the answered indexes ascending, the order weights() and gap() sum them in.
-        let t = count++;
-        while (t > 0 && idx[t - 1] > ask.q) { idx[t] = idx[t - 1]; t--; }
-        idx[t] = ask.q;
+        // A statement its ideology has no position on, the simulated taker skips ("No opinion").
+        if (truth[ask.q] != null) {
+          answers[ask.q] = truth[ask.q];
+          // Keep the answered indexes ascending, the order weights() and gap() sum them in.
+          let t = count++;
+          while (t > 0 && idx[t - 1] > ask.q) { idx[t] = idx[t - 1]; t--; }
+          idx[t] = ask.q;
+        }
         setWeights();
         ask = next(); // certainty() reads the same next question the loop asks after this one
         let lead = -Infinity;
@@ -670,5 +698,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, FIT_COMPONENTS, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

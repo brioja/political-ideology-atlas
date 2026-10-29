@@ -71,10 +71,9 @@ function silentZeros(audit) {
       && (uses.get(a.rationale) >= 3 || (SILENT.test(a.rationale || "") && !SPLIT.test(a.rationale || ""))))
     .map(([id]) => id));
 }
-// An ideology audit's answers as the model takes them. "No known position" (null) counts as 0 for
-// now, as it did when the audits recorded silence as 0: matching changes only once a regression set
-// shows what treating it as unanswered does (it would then be left out, like a person's).
-const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => audit.answers[s.id].value ?? 0);
+// An ideology audit's answers as the model takes them. "No known position" stays null: matching leaves
+// it out, like a person's or a taker's (pca.js).
+const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => audit.answers[s.id].value);
 // Every ideology audit that answers all active statements, which is what the ideology judge is built from.
 const completeIdeologies = (statements = activeStatements()) => catalog()
   .filter((e) => fs.existsSync(profilePath(e.id)))

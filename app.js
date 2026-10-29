@@ -546,7 +546,7 @@ const word = (v) => CHOICES.find((c) => c.value === v).label;
 function keyBeliefs(ideo, n = 4) {
   return ideo.profile
     .map((p, q) => ({ q, p, d: Math.abs(p - model.mean[q]) }))
-    .filter((x) => x.p !== 0)
+    .filter((x) => x.p != null && x.p !== 0)
     .sort((a, b) => b.d - a.d || Math.abs(b.p) - Math.abs(a.p))
     .slice(0, n);
 }
@@ -676,7 +676,7 @@ function showResults(shared = null) {
   const your = shared ? "their" : "your";
 
   const answeredDiffs = (ideo) => given
-    .map((a, q) => (a === null ? null : { q, a, t: ideo.profile[q], gap: Math.abs(a - ideo.profile[q]) }))
+    .map((a, q) => (a === null || ideo.profile[q] == null ? null : { q, a, t: ideo.profile[q], gap: Math.abs(a - ideo.profile[q]) }))
     .filter(Boolean);
   const diffs = answeredDiffs(top);
   // Shared positions most ideologies also hold (state healthcare, secular government) say little about
@@ -1591,7 +1591,7 @@ function drawExample() {
   const asked = Math.min(QUESTIONS.length, 100 + Math.floor(Math.random() * (QUESTIONS.length - 99)));
   const shown = new Set([...QUESTIONS.keys()].sort(() => Math.random() - 0.5).slice(0, asked));
   const sample = ideo.profile.map((x, j) => {
-    if (!shown.has(j) || Math.random() < 0.1) return null;
+    if (x == null || !shown.has(j) || Math.random() < 0.1) return null;
     if (Math.random() < 0.25) return Math.max(-2, Math.min(2, x + (Math.random() < 0.5 ? -1 : 1)));
     return x;
   });

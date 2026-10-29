@@ -1,31 +1,28 @@
 // Lists ideologies the test can barely tell apart from their nearest neighbours, as candidates for
-// new statements. A statement separates two ideologies when their answers are 2+ notches apart and
-// at least one of them holds its position firmly (medium or high audit confidence), which is when it
-// moves the confidence-weighted match. Pairs with fewer than --min separating statements are listed,
-// those with none first. Reads the shipped data.js, so run a build first.
+// new statements. Neighbours are nearest as matching sees it (the average gap on the statements both
+// have a position on, pca.js). A statement separates two ideologies when both have a position on it,
+// 2+ notches apart, and at least one holds it firmly (medium or high confidence in its audit).
+// Pairs with fewer than --min separating statements are listed, those with none first. Reads the
+// shipped data.js, so run a build first.
 //   node scripts/separation.js [--min N] [--neighbours K] [--json]
 //   --min N         flag pairs with fewer than N separating statements (default 3)
 //   --neighbours K  check each ideology against its K nearest (default 3)
 const path = require("path");
-const { ROOT } = require("./lib");
+const { ROOT, readJson, profilePath } = require("./lib");
 const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
+const { gap } = require(path.join(ROOT, "pca.js"));
+const firm = Object.fromEntries(IDEOLOGIES.map((i) => {
+  const answers = readJson(profilePath(i.id)).answers;
+  return [i.id, QUESTIONS.map((q) => answers[q.id].confidence !== "low")];
+}));
+const all = QUESTIONS.map((_, q) => q);
 
 const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > -1 ? Number(process.argv[i + 1]) : dflt; };
 const MIN = arg("--min", 3), K = arg("--neighbours", 3);
-const WEIGHT = { h: 4, m: 2, l: 0.5 };
-
-// Nearness as matching sees it: the average gap, each statement weighted by the less firm side.
-function distance(a, b) {
-  let s = 0, n = 0;
-  for (let q = 0; q < QUESTIONS.length; q++) {
-    const w = Math.min(WEIGHT[a.confidence[q]], WEIGHT[b.confidence[q]]);
-    s += w * Math.abs(a.profile[q] - b.profile[q]);
-    n += w;
-  }
-  return s / n;
-}
+const distance = (a, b) => gap(a.profile, b.profile, all);
 const separating = (a, b) => QUESTIONS.flatMap((s, q) =>
-  Math.abs(a.profile[q] - b.profile[q]) >= 2 && (a.confidence[q] !== "l" || b.confidence[q] !== "l") ? [s.id] : []);
+  a.profile[q] != null && b.profile[q] != null && Math.abs(a.profile[q] - b.profile[q]) >= 2
+  && (firm[a.id][q] || firm[b.id][q]) ? [s.id] : []);
 
 const seen = new Set(), pairs = [];
 for (const a of IDEOLOGIES) {

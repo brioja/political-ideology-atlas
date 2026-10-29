@@ -74,7 +74,7 @@ let hits = 0, totalAsked = 0;
 // The build ships the calibration; recompute it only for an older data.js without one.
 const calibration = PEOPLE_ONLY ? null : CALIBRATION || calibrateCertainty(model);
 for (const ideo of PEOPLE_ONLY ? [] : IDEOLOGIES) {
-  const truth = ideo.profile.map((x) => (rand() < 0.2 ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
+  const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
   const answers = Array(QUESTIONS.length).fill(null);
   const asked = new Set();
   for (;;) {

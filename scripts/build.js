@@ -8,7 +8,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personSalience, ideologySalience, ideologyProfile, IDEOLOGY_JUDGE_PATH, judgeParts, judgeFrom, ideologyJudgeKey } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, salienceContext, salience, varimax, matchPeople, spreadOn, MAX_SHOWN_LINES } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, salienceContext, salience, varimax, matchPeople, spreadOn, MAX_SHOWN_LINES, FIT_COMPONENTS } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -212,7 +212,7 @@ else {
 }
 // The page needs only the leading components: the rotated lines (shown or not) and the 8 used to
 // place a partial set of answers. SHIPPED_COMPONENTS keeps a margin over both.
-const SHIPPED_COMPONENTS = 12;
+const SHIPPED_COMPONENTS = FIT_COMPONENTS;
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
 // Every line that beats noise is rotated so each is one cluster of statements (rotating only the
 // shown ones blends the clusters left out into them); the shown lines (as app.js counts them) are
