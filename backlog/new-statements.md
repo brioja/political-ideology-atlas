@@ -31,8 +31,3 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
 - **Near-duplicates:** "Religion and government should have nothing to do with each other" and
   "Religion should stay a private matter, out of government" both lead Quebec nationalism's list;
   review whether both are needed.
-- **False choices in a statement's own text** (people have complained about false choices). The
-  2026-10-29 wording check sorts these out from false choices in the agree/disagree explanations,
-  which are display-only and fixed directly; one in the text itself needs a new statement (a new id
-  and a backfill), so it is collected here.
-

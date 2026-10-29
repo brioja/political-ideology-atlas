@@ -12,3 +12,11 @@ explicit decision from the maintainer.
 - **Fixing mild takers.** A taker who answers mildly lands on a softer ideology on the same sides
   (`scripts/regression.js --sides`); correcting it would override their answers.
 - **Naming dividing lines the page doesn't draw.**
+- **Rewording the 17 statements whose text bundles two claims** (found 2026-10-29: `unions-good`,
+  `cut-welfare`, `abolish-money-wages`, `democracy-best`, `political-elite-corrupt`,
+  `equal-moral-worth`, `head-commands-forces`, `end-foreign-alliances`, `abolish-rental-housing`,
+  `sex-ed-in-schools`, `encourage-eccentricity`, `central-bank-independence`,
+  `economic-self-sufficiency`, `labor-aristocracy`, `democratic-peace`, `religion-illusion`,
+  `left-right-obsolete`). Rewording a text means a new statement and a backfill of every audit; not
+  worth it for these.
+
