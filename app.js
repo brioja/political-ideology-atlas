@@ -567,7 +567,7 @@ function stance(q, v) {
 function beliefList(ideo, n = 4) {
   return `<ul class="beliefs">${keyBeliefs(ideo, n).map((b) => {
     const s = stance(QUESTIONS[b.q], b.p);
-    return `<li>${topicIcon(QUESTIONS[b.q])}<a class="belief-link" href="#/test/${encodeURIComponent(QUESTIONS[b.q].id)}" title="Where do you stand on this?">${esc(s.text)}</a></li>`;
+    return `<li>${topicIcon(QUESTIONS[b.q])}<a class="belief-link" href="#/test/${encodeURIComponent(QUESTIONS[b.q].id)}/${encodeURIComponent(`i:${ideo.id}`)}" title="Where do you stand on this?">${esc(s.text)}</a></li>`;
   }).join("")}</ul>`;
 }
 
@@ -1730,7 +1730,9 @@ const topicIcon = (q) => `<span class="topic" aria-hidden="true">${q.icon || "â€
 // each with its topic emoji; reasoning and sources are added once the audit loads. The milder ones
 // sit in a collapsed list below, and unknown statements are counted with a link to the full audit.
 const CONF_RANK = { high: 0, medium: 1, low: 2 };
-function positionsList(profile, audit, auditUrl = null) {
+// `key` (the compare key of whoever holds these positions) links each statement to the test, with
+// their answer marked.
+function positionsList(profile, audit, auditUrl = null, key = null) {
   const answerOf = (j) => audit && audit.answers && audit.answers[QUESTIONS[j].id];
   const all = QUESTIONS.map((_, j) => j);
   const unknown = all.filter((j) => profile[j] == null);
@@ -1748,7 +1750,7 @@ function positionsList(profile, audit, auditUrl = null) {
     const a = answerOf(j);
     return `<li>${topicIcon(QUESTIONS[j])}
       <div class="stack-tight">
-        <p class="stance">${esc(v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text)}</p>
+        <p class="stance">${statementLink(QUESTIONS[j], v === 0 ? QUESTIONS[j].text : stance(QUESTIONS[j], v).text, key)}</p>
         ${v === 0 && strongest > 0 ? `<p class="muted small">Neither agrees nor disagrees.</p>` : ""}
         ${a && (a.rationale || a.reason) ? `<p class="muted small">${esc(a.rationale || a.reason)}
           ${a.confidence ? `<span class="conf">${esc(a.confidence)} confidence${a.sources && a.sources.length ? ` Â· sources ${a.sources.map(sourceLink).join(", ")}` : ""}</span>` : ""}</p>` : ""}
@@ -1831,7 +1833,7 @@ function renderIdeologyPage(id) {
       ${comparePicker(`i:${ideo.id}`)}
       <section class="stack"><h2>Key positions</h2>
         ${ideo.audited ? "" : `<p class="muted small">This is a preliminary profile, so reasoning and sources aren't available yet.</p>`}
-        ${positionsList(ideo.profile, audit, ideo.audited ? `${REPO}/blob/main/audits/profiles/${ideo.id}.json` : null)}</section>
+        ${positionsList(ideo.profile, audit, ideo.audited ? `${REPO}/blob/main/audits/profiles/${ideo.id}.json` : null, `i:${ideo.id}`)}</section>
       ${sourcesList(audit)}`;
   };
   draw(null);
@@ -1872,7 +1874,7 @@ function renderPersonPage(id) {
       <section class="stack"><h2>Share card</h2>
         <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas></section>
       ${comparePicker(`p:${p.id}`)}
-      <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`)}</section>
+      <section class="stack"><h2>Key positions</h2>${positionsList(profile, audit, `${REPO}/blob/main/audits/${auditFolder(p)}/${p.id}.json`, `p:${p.id}`)}</section>
       ${sourcesList(audit)}`;
     // The same card a visitor gets, with this person in the "you" spot.
     const ranked = match(model, profile).ranked;
