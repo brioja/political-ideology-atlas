@@ -25,6 +25,11 @@ agents too. This file adds what matters when running the audit workflows in
   `audits/AUDIT_RULES.md`, for ideologies and people alike. `PROMPT.md` and `PROMPT_PEOPLE.md` add
   only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
 
+## Backlog
+
+- Discussed-but-not-started ideology work, and ideas ruled out, live in `audits/BACKLOG.md`. Add new
+  ideas there, and check "Decided against" before proposing something.
+
 ## People and AI models
 
 - A change that only touches people or AI models needs `node scripts/build.js --people` and
