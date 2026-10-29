@@ -1,5 +1,9 @@
 # New statements
 
+**Low priority** (2026-10-29): every new statement has to be backfilled across every ideology and
+every person audit, for little improvement on the site. Collect candidates here, but don't start a
+batch unless that trade-off changes.
+
 Candidate statements and the plan for choosing them. Statements are the only way to tell apart
 ideologies the test can barely separate, and each one costs a backfill across every audit, so they
 are chosen together in one batch and held to the bar in `audits/statements/STANDARD.md`.
