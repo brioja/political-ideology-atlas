@@ -67,3 +67,8 @@ when that gap plausibly cost answers (not for a reference page that had other co
   removed"; Ratzel's Der Lebensraum (1901) has no full text found; Generalplan Ost reached only through
   scholarship. The Nuremberg trial volumes on archive.org (Nazi Conspiracy and Aggression) hold the PS
   documents.
+- **Ecoauthoritarianism** (re-audit 2026-10-30, 16 stated, off the site): William Ophuls's Ecology and the
+  Politics of Scarcity (1977, Revisited 1992) and Plato's Revenge, Heilbroner's An Inquiry into the Human
+  Prospect, Hardin's Living Within Limits, Shearman and Smith, and Lovelock's The Revenge of Gaia are all
+  lending-only on archive.org. Ophuls is the doctrine's central thinker; a maintainer-supplied copy would
+  answer the government and constitutional statements.
