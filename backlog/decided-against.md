@@ -28,3 +28,15 @@ explicit decision from the maintainer.
   people on all real dividing lines instead of the 8 drawn ones moved him from #1 to #4 on that link;
   a thin record lower in the top five isn't a problem, and more people in the catalog push it down.
 
+- **Matching changes against sparse-overlap wins** (2026-10-30, measured with scripts/regression.js on the
+  simulated suites and real links). Since null-left-out matching (60a48c3), an honestly re-audited, sparse
+  ideology can top a light taker on a tiny overlap (Georgism 81% on 8 of 21 answers; Stoicism 100% on 2).
+  Rejected: (1) ranking ideologies by distance on the real lines, as people are: pulls mild and light
+  takers to the most central ideologies (Pan-nationalism, Procedural democracy), adherents first 38/39 ->
+  19/39, two-ideology takers 0/18 with either in the top 5. (2) mean gap plus its standard error: two
+  exactly agreeing statements have zero spread, so Stoicism still wins. (3) a minimum overlap (8, or the
+  number of real lines): best on simulated suites, but a light taker then almost never reaches an honest
+  (rules-3) ideology (0 of 9 for a 14-answer taker), so it penalises honest audits more the more of them
+  there are. Brandon: "test takers who are told to see the results would never get many ideologies".
+  Open idea instead (backlog/audits.md): have the question picker prefer statements the leading ideologies
+  hold a position on, so a contender is tested on more of them before it can win.
