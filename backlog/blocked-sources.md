@@ -34,10 +34,7 @@ when that gap plausibly cost answers (not for a reference page that had other co
   2019-22 votes (assisted dying, unions, EU, welfare, tax, policing, drugs) and his own death-penalty words.
 - **Rand Paul** (second pass 2026-10-30, shown): paul.senate.gov and congress.gov returned 403; no press
   releases or Congressional Record.
-- **Alex Jones** (second pass 2026-10-30, 33 known, off the site): The Alex Jones Show transcripts
-  (podscripts.co, 502) were unreachable and Joe Rogan Experience captions couldn't separate him from
-  Rogan, so his economy views (taxes, welfare, healthcare, wages) have no source. A diarised transcript
-  or show archive would answer them.
+
 - **Reza Shah** (second pass 2026-10-30, shown): Encyclopaedia Iranica entries (court, Anglo-Iranian
   relations, conscription, education; 403/Cloudflare), Brew on the D'Arcy cancellation (paywall),
   Chehabi on the dress laws (paywall); no speech collection found online.
