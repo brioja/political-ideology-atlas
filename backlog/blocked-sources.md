@@ -38,6 +38,9 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Reza Shah** (second pass 2026-10-30, shown): Encyclopaedia Iranica entries (court, Anglo-Iranian
   relations, conscription, education; 403/Cloudflare), Brew on the D'Arcy cancellation (paywall),
   Chehabi on the dress laws (paywall); no speech collection found online.
+- **Balen Shah** (second pass 2026-10-30, 25 known, off the site): his first parliamentary appearance
+  (redvoicenepal.com, 404), his Facebook/X posts and Nepali speech transcripts weren't reached; his own
+  words in Nepali would be the source.
 
 ## Ideologies
 
