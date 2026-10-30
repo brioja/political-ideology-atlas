@@ -403,19 +403,12 @@ function matchLines(model) {
 }
 
 // Ranks people (or any profiles: the Compare page ranks one ideology against another this way) by fit,
-// on the same scale as ideologies. Near-ties (within `tie`) go to the more widely read person, by
-// Wikipedia page views. Nothing answered: an empty list.
-function matchPeople(model, answers, people, { tie = 0.03 } = {}) {
+// on the same scale as ideologies, closest first. Nothing answered: an empty list.
+function matchPeople(model, answers, people) {
   const d = fitTo(model, answers, people.map((p) => place(model, p.profile)));
   if (!d) return [];
-  const ranked = people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
-    .sort((a, b) => b.similarity - a.similarity);
-  for (let i = 1; i < ranked.length; i++) {
-    for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
-      [ranked[j - 1], ranked[j]] = [ranked[j], ranked[j - 1]];
-    }
-  }
-  return ranked;
+  return people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
+    .sort((a, b) => a.distance - b.distance);
 }
 
 // How plausible each ideology is given the answers so far (see plausibility).

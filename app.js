@@ -687,7 +687,6 @@ function showResults(shared = null) {
   const disagreeAll = diffs.filter((d) => d.a * d.t < 0);
   const disagree = disagreeAll.slice().sort(apartOrder).slice(0, 4);
   const statements = (n) => `${n} statement${n === 1 ? "" : "s"}`;
-  const closeCall = ranked[1].similarity > top.similarity - 0.05;
   // Ideologies showing the same percentage as the top one: to the reader they are a tie, so the page
   // says the result sits between them rather than implying one clear winner.
   const tied = ranked.filter((r) => pct(r.similarity) === pct(top.similarity));
@@ -734,10 +733,6 @@ function showResults(shared = null) {
       </div>
       ${aboutWithImage(top)}
       <p class="muted">${tied.length > 1 ? (canContinue ? `<a href="#/test">Answer more questions</a> to tell them apart.` : `It's worth reading each of them.`)
-        : closeCall
-        ? `It's close: ${you_} are almost as near to <strong>${ranked[1].name}</strong>${canContinue
-          ? `. <a href="#/test">Answer a few more questions</a> to tell them apart.`
-          : `, so it's worth reading both.`}`
         : `${shared ? "Their" : "Your"} next closest match is <strong>${ranked[1].name}</strong>.`}</p>
     </div>
     ${shared ? "" : `<div class="keep-result">
