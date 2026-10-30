@@ -40,6 +40,14 @@ words; don't paste long passages.
   summaries. Keep downloads in the local source library, `scratchpad/sources/<id>/` (never
   committed), so later passes reuse them: check its `index.json` first, and list each file you add
   there with its title, url and download date.
+- Bulk public records are kept locally in `~/.cache/political-ideology-atlas/corpora/` (never
+  committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789,
+  European Parliament roll calls since 2019, interview and show transcripts. Check them before
+  searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
+  source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
+  dataset by its publisher's page and version, a transcript by its original broadcast or page, and a
+  mirror as a mirror of the original. Machine transcripts without speaker labels count only where
+  the speaker is unambiguous, at medium confidence at most.
 - The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself).
   Treat it as a primary source and search it the same way. Cite it as the published work, with the
   url of a publisher or library catalog page for it that you opened (e.g. openlibrary.org/isbn/…),
