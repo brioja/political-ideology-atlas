@@ -42,6 +42,12 @@ when that gap plausibly cost answers (not for a reference page that had other co
   (redvoicenepal.com, 404), his Facebook/X posts and Nepali speech transcripts weren't reached; his own
   words in Nepali would be the source.
 
+- **Amarinder Singh** (second pass 2026-10-30, 23 known, off the site): Punjab Vidhan Sabha verbatim debates,
+  his Lok Sabha 2014-16 speeches and his books (A Ridge Too Far, Lest We Forget, Honour and Fidelity) weren't
+  found online; Hindi and Punjabi interviews weren't searched.
+- **Christina, Queen of Sweden** (second pass 2026-10-30, 32 known, off the site): Drottning Kristina,
+  Brev och skrifter (2006; her Swedish letters and speeches on government, the Diet and peace), archive.org
+  text 404.
 ## Ideologies
 
 - **Soviet anti-Zionism** (re-audit 2026-10-30, 23 stated, off the site): the Great Soviet Encyclopedia
