@@ -53,3 +53,8 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Valencian nationalism** (re-audit 2026-10-30, 21 stated, off the site): the Bloc Nacionalista
   Valencià's congress papers (ponències) and programmes weren't found as text; its positions come from
   interviews and press reports.
+- **Lebensraum** (re-audit 2026-10-30, 47 stated, off the site): Avalon Project documents 2718-PS (Hunger
+  Plan), 1014-PS (Hitler's 22 August 1939 speech) and 1919-PS (Himmler's Posen speech) returned "resource
+  removed"; Ratzel's Der Lebensraum (1901) has no full text found; Generalplan Ost reached only through
+  scholarship. The Nuremberg trial volumes on archive.org (Nazi Conspiracy and Aggression) hold the PS
+  documents.
