@@ -6,6 +6,7 @@ not only in conversation, and move an item to `decided-against.md` when it is ru
 
 - [new-statements.md](new-statements.md): candidate statements and how they are chosen (low priority)
 - [catalog.md](catalog.md): which ideologies the catalog includes
+- [ideology-candidates.md](ideology-candidates.md): ideologies not yet in the catalog that a source turned up
 - [audits.md](audits.md): audit passes and reviews not yet run
 - [blocked-sources.md](blocked-sources.md): audits held back by sources we couldn't reach, for a retry
 - [decided-against.md](decided-against.md): ideas ruled out, so they aren't proposed again
