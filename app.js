@@ -692,12 +692,6 @@ function showResults(shared = null) {
   // says the result sits between them rather than implying one clear winner.
   const tied = ranked.filter((r) => pct(r.similarity) === pct(top.similarity));
   const listNames = (rs) => rs.map((r) => `<strong>${esc(r.name)}</strong>`).join(", ").replace(/, ([^,]*)$/, " and $1");
-  // Below this the top match is only the least bad fit, so the page says so in words. In simulations
-  // after 150 answers, random answers land at 47-56%, takers mixing two ideologies at 61-75% and
-  // takers answering like one ideology at 82-88%; real takers mostly land between 50% and 75%.
-  const looseFit = top.similarity < 0.55;
-  // Below this (most real takers) answers mix several ideologies rather than following one.
-  const mixedFit = !looseFit && top.similarity < 0.75;
   const topPeople = typeof PEOPLE !== "undefined" && PEOPLE.length
     ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).slice(0, 3) : [];
 
@@ -725,8 +719,6 @@ function showResults(shared = null) {
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
       ${tied.length > 1 ? `<p>${shared ? "They are" : "You're"} equally close to ${tied.length} ideologies: ${listNames(tied.slice(0, 5))}${tied.length > 5 ? ` and ${tied.length - 5} more` : ""}. ${shared ? "Their" : "Your"} views sit between them; ${esc(top.name)} is listed first only by a hair.</p>` : ""}
-      ${looseFit ? `<p>No ideology fits ${shared ? "them" : "you"} closely; this is the nearest.</p>`
-        : mixedFit && tied.length < 2 ? `<p>${shared ? "Their" : "Your"} views mix several ideologies; this is the nearest.</p>` : ""}
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
