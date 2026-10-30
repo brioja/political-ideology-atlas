@@ -78,3 +78,6 @@ when that gap plausibly cost answers (not for a reference page that had other co
   congress reports and the 1976 Pansa interview (Berlinguer foundation links disabled), and the lending-only
   scholarship (Kriegel, Godson and Haseler, Sassoon). Carrillo's book alone would answer the state, army,
   property, church, NATO and nationalisation statements.
+- **Clintonism** (re-audit 2026-10-30, 43 stated, 1.01x the bar, off the site): Putting People First (1992,
+  archive.org lending-only) and the full DLC New Orleans Declaration (1990) and New American Choice (1991)
+  weren't reached; Clinton's own books were not tried. Any of them could carry it over the bar.
