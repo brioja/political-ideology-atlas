@@ -154,14 +154,41 @@
    "author": "NBC News (Megyn Kelly)",
    "url": "https://www.youtube.com/watch?v=-HzOqZeX3Yk",
    "usedFor": "Jones's recorded remarks on open borders, reported with the broadcast footage"
+  },
+  {
+   "id": "c1",
+   "kind": "primary",
+   "title": "The Alex Jones Show 1997-2026, WhisperX machine transcripts (episode files cited by date and timestamp)",
+   "author": "Alex Jones",
+   "url": "https://github.com/Fudge/infowars",
+   "usedFor": "Own-voice host monologue passages on economy, world, ecology, technology (mirror of the InfoWars RSS archive; machine transcripts, no speaker labels, so only clear monologue used)"
+  },
+  {
+   "id": "c2",
+   "kind": "primary",
+   "title": "CNN Early Start, 8 January 2013: Alex Jones after the Piers Morgan interview",
+   "author": "CNN",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/1301/08/es.01.html",
+   "usedFor": "Gun control"
+  },
+  {
+   "id": "c3",
+   "kind": "primary",
+   "title": "CNN transcript, 8 January 2013: Alex Jones on guns and crime",
+   "author": "CNN",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/1301/08/cnr.13.html",
+   "usedFor": "Gun control"
   }
  ],
  "answers": {
   "universal-healthcare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Says in his own voice he is against government health care, citing its history under Nazi Germany and the Soviet Union and the control it brings (20090416_Thu 00:26:08; again 20130624_Mon 02:10:13), and in an opening monologue says socializing health care makes the state 'God' over your health (20260403_Fri 00:02:07).",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "raise-minimum-wage": {
    "value": null,
@@ -170,10 +197,13 @@
    "sources": []
   },
   "markets-allocate-better": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Calls the free market 'God, nature, meritocracy' and defends Friedman's pencil essay against state production (20260430_Thu 01:49:58); says he is for free market and no income tax in a new order (20260308_Sun 00:38:44) and describes laissez-faire capitalism as what Trump's plan restores (20260327_Fri 00:06:25).",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "public-ownership": {
    "value": null,
@@ -194,10 +224,13 @@
    "sources": []
   },
   "property-fundamental": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Lists private property among the rights he wants protected alongside the First and Second Amendments (20260228_Sat 01:44:50) and condemns seizure of private property as the communist model (20260107_Wed 00:22:01).",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "regulate-corporations": {
    "value": null,
@@ -230,7 +263,7 @@
    "sources": [
     "s7"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "restrict-hate-speech": {
    "value": -2,
@@ -239,7 +272,7 @@
    "sources": [
     "s6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "strong-leader": {
    "value": null,
@@ -258,9 +291,14 @@
    "confidence": "high",
    "rationale": "He explicitly defends civilian firearms ownership against confiscation and presents armed self-defense as essential.",
    "sources": [
-    "s2"
+    "s2",
+    "c2",
+    "c3"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": [
+    "gpt-6.1-sol+claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "empower-police-military": {
    "value": null,
@@ -300,7 +338,7 @@
     "s10",
     "s12"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "abortion-legal": {
    "value": null,
@@ -352,10 +390,11 @@
     "s1",
     "b2",
     "b4",
-    "b1"
+    "b1",
+    "c1"
    ],
    "auditor": [
-    "gpt-6.1-sol",
+    "gpt-6.1-sol+claude-sonnet-5-5",
     "claude-sonnet-5-5"
    ]
   },
@@ -372,7 +411,7 @@
    "sources": [
     "s5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "humanitarian-intervention": {
    "value": null,
@@ -386,9 +425,13 @@
    "rationale": "Jones complains that governments are dissolving national borders and inviting people in for free benefits, and attacks those promoting open borders.",
    "sources": [
     "b3",
-    "b5"
+    "b5",
+    "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "gpt-6.1-sol+claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "limit-growth": {
    "value": -2,
@@ -397,7 +440,7 @@
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "drastic-climate-action": {
    "value": -2,
@@ -405,9 +448,13 @@
    "rationale": "He opposes carbon-tax policies and welcomes withdrawal from them in February 2026; earlier statements reject the premise of human-driven climate warming.",
    "sources": [
     "s5",
-    "s12"
+    "s12",
+    "c1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": [
+    "gpt-6.1-sol+claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "tech-solves-problems": {
    "value": null,
@@ -428,7 +475,7 @@
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "experts-over-public": {
    "value": null,
@@ -461,10 +508,13 @@
    "sources": []
   },
   "basic-income": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Presents universal basic income as part of the globalist control package with social credit and a digital currency (20260326_Thu 00:38:08; 20260322_Sun 00:03:14) and opposes it.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "tariffs-protect-industry": {
    "value": null,
@@ -491,10 +541,13 @@
    "sources": []
   },
   "abolish-central-banks": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Says 'we need to abolish the Federal Reserve' (20250322_Sat 00:37:38) and wants Congress to pull its charter, though he also floats Trump nationalizing it (20250418_Fri 00:32:25), so 'left to the market' is not settled.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "corporatist-bargaining": {
    "value": null,
@@ -552,10 +605,7 @@
     "s2",
     "b1"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "war-builds-character": {
    "value": null,
@@ -647,10 +697,11 @@
    "rationale": "He denounces elite-directed depopulation as an assault on humanity.",
    "sources": [
     "s1",
-    "b2"
+    "b2",
+    "c1"
    ],
    "auditor": [
-    "gpt-6.1-sol",
+    "gpt-6.1-sol+claude-sonnet-5-5",
     "claude-sonnet-5-5"
    ]
   },
@@ -661,7 +712,7 @@
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "accelerate-technology": {
    "value": null,
@@ -682,7 +733,7 @@
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "unbreakable-encryption": {
    "value": null,
@@ -710,7 +761,7 @@
     "s3",
     "s4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "means-match-ends": {
    "value": null,
@@ -833,7 +884,7 @@
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "national-rebirth": {
    "value": null,
@@ -1022,7 +1073,7 @@
    "sources": [
     "s13"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "proportional-representation": {
    "value": null,
@@ -1051,10 +1102,7 @@
     "b2",
     "b3"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "heritable-defect-limits": {
    "value": -2,
@@ -1063,7 +1111,7 @@
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "security-forces-accountable": {
    "value": null,
@@ -1180,7 +1228,7 @@
    "sources": [
     "s4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "vanguard-party": {
    "value": null,
@@ -1231,7 +1279,7 @@
    "sources": [
     "s4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "price-controls-essentials": {
    "value": null,
@@ -1246,7 +1294,7 @@
    "sources": [
     "s6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "party-commands-army": {
    "value": null,
@@ -1369,7 +1417,7 @@
    "sources": [
     "s3"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1462,7 +1510,7 @@
    "sources": [
     "s8"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "no-land-for-peace": {
    "value": null,
@@ -1549,13 +1597,16 @@
    "sources": [
     "s4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "space-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "States 'I want to go to the stars' as part of the future he wants (20260402_Thu 00:16:44); not stated as the central goal of civilization.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "mixed-constitution": {
    "value": null,
@@ -1786,7 +1837,7 @@
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "parliament-supreme": {
    "value": null,
@@ -2066,7 +2117,7 @@
     "s6",
     "s11"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "abolish-legal-marriage": {
    "value": null,
@@ -2279,7 +2330,7 @@
    "sources": [
     "s9"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "divine-source-of-authority": {
    "value": null,
@@ -2450,10 +2501,13 @@
    "sources": []
   },
   "term-limits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Argues that wherever there are no term limits corruption emerges because power becomes centralized, saying so of Israel 'and every other nation' (20260408_Wed 01:31:18).",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "vote-delegation": {
    "value": null,
@@ -2565,10 +2619,7 @@
     "s1",
     "b1"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "homeland-cultural-centre": {
    "value": null,
@@ -2689,9 +2740,13 @@
    "confidence": "high",
    "rationale": "He presents genetically modified food as part of a harmful program of biological control.",
    "sources": [
-    "s1"
+    "s1",
+    "c1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": [
+    "gpt-6.1-sol+claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "dense-cities": {
    "value": null,
@@ -2712,10 +2767,13 @@
    "sources": []
   },
   "defensive-wars-only": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Welcomes a new order with 'not launching offensive wars' and 'strength through peace' (20260308_Sun 00:38:44) and opposes the 2026 Iran war.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "language-defines-nation": {
    "value": null,
@@ -2747,9 +2805,13 @@
    "rationale": "He specifically rejects carbon taxes as a mechanism of global control; this establishes opposition to that major form of environmental taxation.",
    "sources": [
     "s5",
-    "s12"
+    "s12",
+    "c1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": [
+    "gpt-6.1-sol+claude-sonnet-5-5",
+    "claude-sonnet-5-5"
+   ]
   },
   "future-generations": {
    "value": null,
@@ -2788,7 +2850,7 @@
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3139,7 +3201,7 @@
    "sources": [
     "s10"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "no-denominational-politics": {
    "value": null,
@@ -3196,10 +3258,13 @@
    "sources": []
   },
   "multipolar-world": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Says he is 'all for' a new political order based on freedom and a multipolar world without total US dominance (20260308_Sun 00:38:44).",
+   "sources": [
+    "c1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "labour-theory-of-value": {
    "value": null,
@@ -3226,11 +3291,15 @@
    "sources": []
   }
  },
- "notes": "No inferred answers. Complete accessible broadcast transcripts were downloaded and searched across themes; the full 23-page Mercola interview was read through the PDF tool. A freely accessible complete copy of his Great Reset book was not located, so summaries were not substituted for its text. Allegations are recorded as his claims, not verified facts. His 2022 demand for executions supersedes his 2013 abolition argument; July 2026 impeachment demands qualify earlier support of Trump. August 11, 2024 was guest-hosted by Chase Geiser; October 1, 2026 was mainly hosted by Rex Jones. Their comments, Crowder’s pre-interview monologue, callers, guests and clips were not treated as Jones’s positions. Moral condemnation of abortion does not alone establish his exact legal policy. Opposition to coercive transhumanism does not establish a ban on voluntary enhancement. All 490 statements, including remaining unknowns, were checked against the evidence; criticism of one war does not establish opposition to every possible intervention.\n\nMerged with an independent claude-sonnet-5-5 audit: 1 answers taken from it, 5 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second independent pass. The transcript site podscripts.co returned HTTP 502, so sources are YouTube auto-captions of Jones's own appearances; speakers are unlabeled, so only passages clearly spoken by Jones were used. Joe Rogan Experience episodes #911, #1255 and #1555 were downloaded and searched for economy, immigration, abortion, drugs, trans, Israel and Fed topics, but speaker attribution between Jones and Rogan was unreliable, so nothing was taken from them. Themes searched: economy (tax, welfare, minimum wage, healthcare), society, government, world (Ukraine, NATO, Israel, Iran), technology. Economy has no stated position found. Statements about illegal immigration, voter fraud claims and criticism of single wars were not treated as answers to broader statements.",
+ "notes": "No inferred answers. Complete accessible broadcast transcripts were downloaded and searched across themes; the full 23-page Mercola interview was read through the PDF tool. A freely accessible complete copy of his Great Reset book was not located, so summaries were not substituted for its text. Allegations are recorded as his claims, not verified facts. His 2022 demand for executions supersedes his 2013 abolition argument; July 2026 impeachment demands qualify earlier support of Trump. August 11, 2024 was guest-hosted by Chase Geiser; October 1, 2026 was mainly hosted by Rex Jones. Their comments, Crowder’s pre-interview monologue, callers, guests and clips were not treated as Jones’s positions. Moral condemnation of abortion does not alone establish his exact legal policy. Opposition to coercive transhumanism does not establish a ban on voluntary enhancement. All 490 statements, including remaining unknowns, were checked against the evidence; criticism of one war does not establish opposition to every possible intervention.\n\nMerged with an independent claude-sonnet-5-5 audit: 1 answers taken from it, 5 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second independent pass. The transcript site podscripts.co returned HTTP 502, so sources are YouTube auto-captions of Jones's own appearances; speakers are unlabeled, so only passages clearly spoken by Jones were used. Joe Rogan Experience episodes #911, #1255 and #1555 were downloaded and searched for economy, immigration, abortion, drugs, trans, Israel and Fed topics, but speaker attribution between Jones and Rogan was unreliable, so nothing was taken from them. Themes searched: economy (tax, welfare, minimum wage, healthcare), society, government, world (Ukraine, NATO, Israel, Iran), technology. Economy has no stated position found. Statements about illegal immigration, voter fraud claims and criticism of single wars were not treated as answers to broader statements.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 7 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Third pass, from the Alex Jones Show transcript mirror (2015-2026 searched theme by theme: tax, welfare, health care, minimum wage, unions, trade, tariffs, Fed, gold, property, abortion, same-sex marriage, trans, drugs, guns, death penalty, surveillance, crypto, climate, nuclear, GMO, population, immigration, UN, voter ID, term limits, secession, Israel, schooling, speech) and MediaSum CNN transcripts. Machine transcripts carry no speaker labels and recent shows are heavily co-hosted, so only first-person host monologue was used; guest, caller and ad passages (e.g. a Newsom clip on universal health care, a guest's 'taxation is theft') were rejected. Several themes (welfare, unions, tariffs, free trade, abortion law, drugs, minimum wage) returned only ambiguous or rhetorical passages and stay null. A 2013 MediaSum search turned up CNN turns only for guns.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-30"
   },
   {
    "auditor": "claude-sonnet-5-5",
