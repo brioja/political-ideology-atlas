@@ -14,8 +14,10 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const { ROOT, readJson, profilePath, activeStatements, silentZeros } = require("./lib");
-const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
-const { decodeShare, gap } = require(path.join(ROOT, "pca.js"));
+const { QUESTIONS, IDEOLOGIES, MODEL } = require(path.join(ROOT, "data.js"));
+const { decodeShare, modelFromParts, place, fitTo, matchPeople } = require(path.join(ROOT, "pca.js"));
+// The shipped lines, as the page places everyone on them.
+const shipped = modelFromParts(IDEOLOGIES, MODEL);
 
 const arg = (name) => { const i = process.argv.indexOf(name); return i < 0 ? null : process.argv[i + 1]; };
 const variant = arg("--variant") || "current";
@@ -41,15 +43,13 @@ function profiles() {
   });
 }
 
-// Ranks by gap() (pca.js's fit measure, as match() does) on the statements both the taker and the
-// ideology answered; one sharing fewer than 8 is left out.
+// Ranks by fit (pca.js's fit measure, as match() does): distance on the real lines, each ideology
+// placed from its (variant's) profile. Positions are worked out once per set of profiles.
+const positions = new WeakMap();
 function rank(ideos, answers) {
-  const idx = answers.flatMap((a, j) => (a == null ? [] : [j]));
-  return ideos.map((i) => {
-    const both = idx.filter((j) => i.profile[j] != null);
-    if (both.length < 8) return null;
-    return { id: i.id, d: gap(answers, i.profile, both) };
-  }).filter(Boolean).sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
+  if (!positions.has(ideos)) positions.set(ideos, ideos.map((i) => place(shipped, i.profile)));
+  const d = fitTo(shipped, answers, positions.get(ideos)) || ideos.map(() => 0);
+  return ideos.map((i, k) => ({ id: i.id, d: d[k] })).sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
 }
 
 // Each step draws from its own seed, so reusing the saved sample doesn't shift the later draws.
@@ -131,10 +131,7 @@ if (variant === "nulls") {
 const name = Object.fromEntries(IDEOLOGIES.map((i) => [i.id, i.name]));
 const drawnCases = cases(process.argv.includes("--save") ? null : savedBase && savedBase.drawn);
 // People: each taker's closest people, as the results page ranks them (matchPeople on the shipped lines).
-const { MODEL } = require(path.join(ROOT, "data.js"));
 const { PEOPLE } = require(path.join(ROOT, "people.js"));
-const { modelFromParts, matchPeople } = require(path.join(ROOT, "pca.js"));
-const shipped = modelFromParts(IDEOLOGIES, MODEL);
 const people = PEOPLE.map((x) => ({ ...x, profile: x.profile.slice(0, n) }));
 const personName = Object.fromEntries(PEOPLE.map((x) => [x.id, x.name]));
 const results = drawnCases.map((c) => ({ ...c, top: rank(ideos, c.answers).slice(0, 5).map((r) => r.id),

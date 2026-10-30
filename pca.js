@@ -165,7 +165,7 @@ function buildModel(ideologies, opts = {}) {
   // The real lines are counted on this bare model (parallel analysis) before anything is placed on
   // them; the build counts them once and passes `realLines` in.
   model.realLines = opts.realLines ?? meaningfulAxes(model, ideologies);
-  model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
+  model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile), at: place(model, i.profile) }));
   model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
 }
@@ -204,9 +204,17 @@ function varimax(model, k, { iters = 100 } = {}) {
 
 // The same model from parts build.js computed ahead of time (mean and the leading components), so
 // the page skips the eigen-decomposition, which grows with the cube of the statement count.
-function modelFromParts(ideologies, parts) {
-  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], fullSpread: parts.fullSpread, realLines: parts.realLines, ideologies: [] };
-  model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile) }));
+// `placement`: the shipped placement context (PLACEMENT in data.js), which the quiz's next-question
+// selector needs (plausibility); the shipped parts hold too few components to work it out.
+function modelFromParts(ideologies, parts, placement = null) {
+  const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], span: parts.span, realLines: parts.realLines,
+    placement: placementFromParts(placement), ideologies: [] };
+  // When every shipped line is a real one (the usual case), an ideology's scores are its place, so
+  // each is projected once.
+  model.ideologies = ideologies.map((i) => {
+    const at = place(model, i.profile);
+    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), at };
+  });
   model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
 }
@@ -217,27 +225,35 @@ function modelFromParts(ideologies, parts) {
 // statements are filled in from a least-squares fit of the answered ones on every axis, then
 // projected the same way, so they don't drag the result toward the center. (The fit's coefficients
 // aren't scores themselves: the rotated axes aren't orthogonal, and ideologies are placed by projection.)
-function project(model, answers) {
+// Only the first `dims` scores are returned (all by default).
+function project(model, answers, dims = model.components.length) {
+  const out = model.components.slice(0, dims);
   const rows = [];
   answers.forEach((x, j) => { if (x != null) rows.push(j); });
   if (rows.length === answers.length) {
     const y = answers.map((x, j) => x - model.mean[j]);
-    return model.components.map((c) => dot(y, c.vector));
+    return out.map((c) => dot(y, c.vector));
   }
-  if (rows.length === 0) return new Array(model.components.length).fill(0);
+  if (rows.length === 0) return new Array(out.length).fill(0);
+  const { sol } = lineFit(model, answers);
+  const full = answers.map((x, j) => (x != null ? x - model.mean[j]
+    : sol.reduce((s, v, i) => s + v * model.components[i].vector[j], 0)));
+  return out.map((c) => dot(full, c.vector));
+}
 
-  // Solve (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the eigenvectors, on the real lines
-  // (matchLines), so the build, the tests and the page place alike.
+// The least-squares fit of the answered statements on the real lines (matchLines), so the build, the
+// tests and the page place alike: solves (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the
+// line vectors. `sol` are coefficients on the line vectors, not scores (the rotated lines aren't
+// orthogonal), so the fitted answer to statement j is mean[j] + Σ sol[i] · vector[i][j].
+function lineFit(model, answers) {
+  const rows = answeredIndexes(answers);
   const y = rows.map((j) => answers[j] - model.mean[j]);
   const d = Math.min(matchLines(model), rows.length);
   const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
   const M = Array.from({ length: d }, (_, a) =>
     Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
   const rhs = Array.from({ length: d }, (_, a) => A.reduce((s, r, i) => s + r[a] * y[i], 0));
-  const sol = solve(M, rhs);
-  const full = answers.map((x, j) => (x != null ? x - model.mean[j]
-    : sol.reduce((s, v, i) => s + v * model.components[i].vector[j], 0)));
-  return model.components.map((c) => dot(full, c.vector));
+  return { rows, y, A, sol: solve(M, rhs) };
 }
 
 // Gaussian elimination with partial pivoting for a small dense system.
@@ -264,121 +280,152 @@ function solve(M, b) {
 
 const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
 
-// The fit measure: how far a set of answers is from a profile. The results ranking (match(), gap()),
-// the quiz's next-question selector and its progress (weights()) and the calibration all score fit
-// through fit(), so they rank ideologies the same way and cannot drift apart. A miss is scored by its
-// size (a Laplace error model: a 2-point miss costs two 1-point ones), matching the results page's mean
-// gap. Silence (null) is never scored, as "Neither" or as disagreement: a decision, not a default
-// (test.js checks it). Only the statements in `idx` that both sides have a position on count.
-// The cost of one miss: its size. Every fit computation (fit(), spreadOn(), the calibration's inner loops)
-// uses this, so changing the error model is a one-line change.
-const miss = (d) => Math.abs(d);
-function fit(answers, profile, idx) {
-  let s = 0, c = 0;
-  for (const j of idx) if (profile[j] != null && answers[j] != null) { s += miss(answers[j] - profile[j]); c++; }
-  return { s, c };
+// ---- The fit measure ------------------------------------------------------------------------------
+// Everything that says how close a set of answers is to a profile is here, implemented once:
+// placement (answers -> a position), the distance between two positions, the similarity scale
+// (0-100%), how precisely the answers place you (s, which also tells the quiz you're done) and the
+// plausibility the quiz's next-question selector weights ideologies by. Every
+// ranking (match(), topMatch(), matchPeople(), the Compare page), the selector and its progress
+// (weights()) and the calibration go through these functions only, so changing the measure here
+// changes them all together and they cannot drift apart.
+//
+// Fit is distance on the real dividing lines (matchLines). Comparing statement by statement favoured
+// whoever had answered the most and whoever held the mildest views, and two sparse records often
+// share few statements. Silence (null) is never scored, as "Neither" or as disagreement: a decision,
+// not a default (test.js checks it). Placement solves the real lines from the answered statements
+// only (see project), and with nothing answered there is no position at all.
+
+// Where a set of answers sits on the real lines, or null with nothing answered.
+function place(model, answers) {
+  if (!answers.some((x) => x != null)) return null;
+  return project(model, answers, matchLines(model));
 }
 
-// The gap between two sets of answers, in notches on the answer scale: the mean miss on the statements in `idx` that both
-// have a position on. With nothing in common it is Infinity (no basis for a match), except that no
-// statements at all is 0.
-function gap(answers, profile, idx) {
-  if (idx.length === 0) return 0;
-  const { s, c } = fit(answers, profile, idx);
-  return c ? s / c : Infinity;
+// The distance between two positions (Euclidean, on the real lines). No position is no basis for a match.
+function distance(a, b) {
+  if (!a || !b) return Infinity;
+  let s = 0;
+  for (let k = 0; k < a.length; k++) s += (a[k] - b[k]) ** 2;
+  return Math.sqrt(s);
 }
 
-// Ranks ideologies by how far their answers are from yours on the statements you answered.
-// Similarity rescales that distance so 0% is as far apart as the two most distant ideologies
-// are on those same statements.
-// The largest distance between any two ideologies on these statements: the "0%" end of the scale.
-// Every pair on every statement is slow with hundreds of ideologies, so the profiles are packed into
-// one typed array per model and each result is cached by its statement set (a page asks for the same
-// set several times). As in gap(), a pair is compared only where both have a position (NaN marks none).
-// The build works out each ideology's own scale (on the statements it has a position on) and ships it
-// as `spread`, so an ideology's page and the Compare page don't compute it in the browser.
-const spreadCache = new WeakMap();
-function spreadCacheFor(ideos) {
-  let cache = spreadCache.get(ideos);
-  if (!cache) {
-    const n = ideos.length ? ideos[0].profile.length : 0;
-    cache = { n, packed: null, results: new Map() };
-    for (const i of ideos) if (i.spread != null) cache.results.set(answeredIndexes(i.profile).join(","), i.spread);
-    spreadCache.set(ideos, cache);
-  }
-  return cache;
-}
-function spreadOn(model, idx) {
-  const ideos = model.ideologies;
-  // With every statement answered the build has worked it out already.
-  if (model.fullSpread != null && ideos.length && idx.length === ideos[0].profile.length) return model.fullSpread;
-  const cache = spreadCacheFor(ideos);
-  const key = idx.join(",");
-  if (cache.results.has(key)) return cache.results.get(key);
-  if (!cache.packed) {
-    cache.packed = new Float64Array(ideos.length * cache.n);
-    ideos.forEach((i, a) => cache.packed.set(i.profile.map((x) => (x == null ? NaN : x)), a * cache.n));
-  }
-  let spread = 0;
-  if (idx.length) {
-    const { n, packed } = cache;
-    const cols = Int32Array.from(idx);
-    for (let a = 0; a < ideos.length; a++) {
-      const pa = a * n;
-      for (let b = a + 1; b < ideos.length; b++) {
-        const pb = b * n;
-        let s = 0, c = 0;
-        for (let k = 0; k < cols.length; k++) {
-          const x = packed[pa + cols[k]], y = packed[pb + cols[k]];
-          if (x === x && y === y) { s += miss(x - y); c++; }
-        }
-        if (c && s / c > spread) spread = s / c;
-      }
-    }
-  }
-  cache.results.set(key, spread);
-  return spread;
+// The distances from a set of answers to each of `positions` (from place()), or null with nothing
+// answered: no basis to rank anyone, rather than everyone measured from the centre.
+function fitTo(model, answers, positions) {
+  const you = place(model, answers);
+  return you && positions.map((at) => distance(you, at));
 }
 
+// The similarity scale's 0% end: the largest distance between two shown ideologies. Fixed for a model,
+// whatever was answered; the build ships it (MODEL.span), so the page doesn't compare every pair.
+function fitScale(model) {
+  if (model.span == null) {
+    const at = model.ideologies.map((i) => i.at);
+    let span = 0;
+    for (let a = 0; a < at.length; a++) for (let b = a + 1; b < at.length; b++) span = Math.max(span, distance(at[a], at[b]));
+    model.span = span;
+  }
+  return model.span;
+}
+
+// A distance as a similarity: 100% at the same position, 0% as far apart as the two most distant ideologies.
+const similarity = (model, d) => {
+  const span = fitScale(model);
+  return span && d != null ? Math.max(0, 1 - d / span) : 0;
+};
+
+// How noisy the answers are around their own place: each answered statement's answer minus what the
+// place predicts for it (the line fit's value, see lineFit), as a variance with the usual degrees of
+// freedom, RSS / (n - k), for n answers on k lines. A consistent taker is quiet, a mixed or
+// contradictory one noisy. Only answered statements count (silence is not scored or imputed). With
+// n <= k answers there are no degrees of freedom left, so (and for an exact fit, whose noise would be
+// 0) it is the landscape's: the variance ideology profiles leave off the real lines.
+function takerNoise(model, answers) {
+  const ctx = placementOf(model);
+  const k = matchLines(model);
+  const { rows, y, A, sol } = lineFit(model, answers);
+  if (rows.length <= k) return ctx.noise;
+  let rss = 0;
+  A.forEach((r, t) => { rss += (y[t] - r.reduce((s, v, i) => s + v * sol[i], 0)) ** 2; });
+  return rss > 0 ? rss / (rows.length - k) : ctx.noise;
+}
+
+// s: how precisely the answers place you on the real lines (the expected distance from your true
+// place; placementUncertainty), with your own answers' noise (takerNoise), so it can rise during the
+// test when answers stop fitting together. Always positive and finite: it starts from the ideologies'
+// own spread on each line.
+function placementSpread(model, answers) {
+  return placementUncertainty(placementOf(model), answeredIndexes(answers), takerNoise(model, answers));
+}
+
+// How precisely a set of answers places someone, in units of the typical gap between neighbouring
+// ideologies (the placement context's bar): 1 means s is about one such gap. The quiz says you're done
+// at a fixed precision (app.js), so a taker between two ideologies isn't asked every statement, and a
+// noisy one is asked more than a consistent one.
+function placementPrecision(model, answers) {
+  if (!answers.some((x) => x != null)) return 0;
+  return placementOf(model).bar / placementSpread(model, answers);
+}
+
+// How plausible each ideology is given the answers so far (weights summing to 1), from its distance
+// `d` (fitTo): a Gaussian, exp(-d² / 2s²), whose width s is how precisely the answers place you
+// (placementSpread, the same s that tells the quiz you're done), so there is no tuning constant. Few
+// or noisy answers place you loosely and every nearby ideology stays in play; many consistent ones
+// narrow it down. Before any answer (d null) all weigh the same.
+function plausibility(model, answers, d) {
+  const m = model.ideologies.length;
+  if (!d) return new Array(m).fill(1 / m);
+  const s = placementSpread(model, answers);
+  const logs = d.map((x) => -(x * x) / (2 * s * s));
+  const top = Math.max(...logs);
+  const w = logs.map((l) => Math.exp(l - top));
+  const total = w.reduce((t, x) => t + x, 0);
+  return w.map((x) => x / total);
+}
+
+// The placement context plausibility() measures with: shipped (modelFromParts), or worked out from a
+// model built here (buildModel), which has every component.
+function placementOf(model) {
+  if (model.placement === undefined) model.placement = salienceContext(model);
+  if (!model.placement) throw new Error("This model has no placement context: pass PLACEMENT to modelFromParts.");
+  return model.placement;
+}
+// ---- End of the fit measure -----------------------------------------------------------------------
+
+// Ranks ideologies by fit, nearest first, with each one's similarity. With nothing answered there is
+// no basis to rank: every ideology is at distance 0 and 0% similarity, in catalog order.
 function match(model, answers) {
-  const idx = answeredIndexes(answers);
-  const ideos = model.ideologies;
-  const spread = spreadOn(model, idx);
-  const ranked = ideos
-    .map((i) => {
-      const d = gap(answers, i.profile, idx);
-      return { ...i, distance: d, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
-    })
+  const d = fitTo(model, answers, model.ideologies.map((i) => i.at));
+  const ranked = model.ideologies
+    .map((i, k) => ({ ...i, distance: d ? d[k] : 0, similarity: d ? similarity(model, d[k]) : 0 }))
     .sort((x, y) => x.distance - y.distance);
   return { you: project(model, answers), ranked };
 }
 
-// The id match() would rank first, without its similarity scale (spreadOn compares every pair of
-// ideologies, which dominates calibration's cost). Ties go to the earlier ideology, as in match().
-function topMatch(model, answers) {
-  const idx = answeredIndexes(answers);
-  let best = null, bestD = Infinity;
-  for (const i of model.ideologies) {
-    const d = gap(answers, i.profile, idx);
-    if (d < bestD) { bestD = d; best = i.id; }
-  }
+// The index of the smallest distance; ties (and no basis at all) go to the earlier one, as in match().
+function nearest(d) {
+  let best = 0;
+  if (d) for (let k = 1; k < d.length; k++) if (d[k] < d[best]) best = k;
   return best;
 }
+// The id match() would rank first, without sorting or similarities.
+const topMatch = (model, answers) => model.ideologies[nearest(fitTo(model, answers, model.ideologies.map((i) => i.at)))].id;
 
-// Ranks people on the statements both you and they have a position on, using the same 0–100%
-// scale as ideologies (the Compare page, where the exact statements matter). People sharing fewer than `minOverlap` statements with you are left out.
-// Near-ties (within `tie`) go to the more widely read person, by Wikipedia page views.
-function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 } = {}) {
-  const idx = answeredIndexes(answers);
-  const spread = spreadOn(model, idx);
-  const ranked = people
-    .map((p) => {
-      const both = idx.filter((j) => p.profile[j] != null);
-      if (both.length < minOverlap) return null;
-      const d = gap(answers, p.profile, both);
-      return { ...p, distance: d, overlap: both.length, similarity: spread ? Math.max(0, 1 - d / spread) : 0 };
-    })
-    .filter(Boolean)
+// The dividing lines that are real (they beat shuffled noise, see meaningfulAxes): matching, placing
+// answers and the quiz's progress all use these, whatever the page has room to show
+// (MAX_SHOWN_LINES). Counted once per model (buildModel) and shipped with it (build.js).
+function matchLines(model) {
+  if (model.realLines == null) throw new Error("This model has no count of real lines (realLines): build it with buildModel or ship it from build.js.");
+  return Math.min(model.components.length, model.realLines);
+}
+
+// Ranks people (or any profiles: the Compare page ranks one ideology against another this way) by fit,
+// on the same scale as ideologies. Near-ties (within `tie`) go to the more widely read person, by
+// Wikipedia page views. Nothing answered: an empty list.
+function matchPeople(model, answers, people, { tie = 0.03 } = {}) {
+  const d = fitTo(model, answers, people.map((p) => place(model, p.profile)));
+  if (!d) return [];
+  const ranked = people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
     .sort((a, b) => b.similarity - a.similarity);
   for (let i = 1; i < ranked.length; i++) {
     for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
@@ -388,70 +435,8 @@ function matchOnStatements(model, answers, people, { minOverlap = 8, tie = 0.03 
   return ranked;
 }
 
-// The dividing lines that are real (they beat shuffled noise, see meaningfulAxes): matching people,
-// placing answers and the quiz's progress all use these, whatever the page has room to show
-// (MAX_SHOWN_LINES). Counted once per model (buildModel) and shipped with it (build.js).
-function matchLines(model) {
-  if (model.realLines == null) throw new Error("This model has no count of real lines (realLines): build it with buildModel or ship it from build.js.");
-  return Math.min(model.components.length, model.realLines);
-}
-
-// Ranks people by where they sit on the dividing lines: each side is placed on the real lines
-// (matchLines) from whatever it answered (see project), and the nearest person wins. Comparing statement by
-// statement favoured whoever had answered the most (AI models answer everything, most people a few
-// dozen) and whoever held the mildest views. Similarity is 1 minus the distance over the widest gap
-// between two ideologies there. Near-ties (within `tie`) go to the more widely read person.
-const lineSpanCache = new WeakMap();
-function lineSpan(model, dims) {
-  const key = model.ideologies;
-  if (!lineSpanCache.has(key)) lineSpanCache.set(key, new Map());
-  const cache = lineSpanCache.get(key);
-  if (!cache.has(dims)) {
-    const pos = model.ideologies.map((i) => i.scores.slice(0, dims));
-    let span = 0;
-    for (let a = 0; a < pos.length; a++) for (let b = a + 1; b < pos.length; b++) {
-      let d = 0;
-      for (let k = 0; k < dims; k++) d += (pos[a][k] - pos[b][k]) ** 2;
-      if (d > span) span = d;
-    }
-    cache.set(dims, Math.sqrt(span));
-  }
-  return cache.get(dims);
-}
-function matchPeople(model, answers, people, { dims = matchLines(model), tie = 0.03 } = {}) {
-  if (!answers.some((x) => x != null)) return [];
-  const you = project(model, answers).slice(0, dims);
-  const span = lineSpan(model, dims);
-  const ranked = people.map((p) => {
-    const at = project(model, p.profile).slice(0, dims);
-    const d = Math.sqrt(at.reduce((t, x, k) => t + (x - you[k]) ** 2, 0));
-    return { ...p, distance: d, similarity: span ? Math.max(0, 1 - d / span) : 0 };
-  }).sort((a, b) => b.similarity - a.similarity);
-  for (let i = 1; i < ranked.length; i++) {
-    for (let j = i; j > 0 && ranked[j - 1].similarity - ranked[j].similarity < tie && ranked[j].views12m > ranked[j - 1].views12m; j--) {
-      [ranked[j - 1], ranked[j]] = [ranked[j], ranked[j - 1]];
-    }
-  }
-  return ranked;
-}
-
-// How plausible each ideology is given the answers so far, under fit()'s error model: each answer
-// multiplies an ideology's weight by exp(-miss) (Laplace, unit scale). Only the statements the ideology has a
-// position on are scored (silence is never scored); their mean miss stands for every answer given, so
-// an ideology neither gains nor loses by its silences. One with no position on any answered statement
-// has no evidence yet, and no weight until it does.
-const plausibility = (s, c, count) => (count === 0 ? 0 : c === 0 ? -Infinity : -(s / c) * count);
-function weights(model, answers) {
-  const idx = answeredIndexes(answers);
-  const logs = model.ideologies.map((i) => {
-    const { s, c } = fit(answers, i.profile, idx);
-    return plausibility(s, c, idx.length);
-  });
-  const top = Math.max(...logs);
-  const w = logs.map((l) => (top === -Infinity ? 1 : Math.exp(l - top)));
-  const total = w.reduce((s, x) => s + x, 0);
-  return w.map((x) => x / total);
-}
+// How plausible each ideology is given the answers so far (see plausibility).
+const weights = (model, answers) => plausibility(model, answers, fitTo(model, answers, model.ideologies.map((i) => i.at)));
 
 // Picks the unasked statement on which the currently plausible ideologies disagree most.
 // With no answers that is simply the most divisive statement overall; later it is the one
@@ -525,34 +510,23 @@ function isSettled(model, calibration, answers, asked) {
 // (each ideology's answers, ~20% nudged by one point) answer every statement in the adaptive order;
 // at each step we record the reading and whether their top match then is their final top match.
 // The result is, per tenth of the reading, the share whose top match held (made non-decreasing).
-// It is the slowest part of the build, so it inlines weights(), nextQuestion(), certainty() and
-// topMatch() over packed typed arrays, computing each once per step in the same arithmetic order.
+// It is the slowest part of the build, so each step measures fit once (fitTo, as weights() and
+// topMatch() do) and inlines nextQuestion() and certainty() over a packed typed array, in the same
+// arithmetic order.
 function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   let state = seed;
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
   const m = ideos.length, n = ideos[0].profile.length;
-  // NaN marks no known position, which weights(), nextQuestion() and topMatch() leave out.
-  const rowMajor = new Float64Array(m * n), colMajor = new Float64Array(n * m);
-  ideos.forEach((i, k) => i.profile.forEach((x, q) => { rowMajor[k * n + q] = x ?? NaN; colMajor[q * m + k] = x ?? NaN; }));
-  const w = new Float64Array(m), logs = new Float64Array(m);
-  const answers = new Float64Array(n), asked = new Uint8Array(n), idx = new Int32Array(n);
-  let count = 0;
+  const positions = ideos.map((i) => i.at);
+  // NaN marks no known position, which nextQuestion() leaves out.
+  const colMajor = new Float64Array(n * m);
+  ideos.forEach((i, k) => i.profile.forEach((x, q) => { colMajor[q * m + k] = x ?? NaN; }));
+  const answers = new Array(n), asked = new Uint8Array(n);
+  let w, d;
 
-  // weights(): each ideology's likelihood from the answers so far, normalised.
-  const setWeights = () => {
-    let top = -Infinity;
-    for (let k = 0; k < m; k++) {
-      const base = k * n;
-      let s = 0, c = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += miss(answers[j] - x); c++; } }
-      logs[k] = plausibility(s, c, count);
-      if (logs[k] > top) top = logs[k];
-    }
-    let total = 0;
-    for (let k = 0; k < m; k++) { w[k] = top === -Infinity ? 1 : Math.exp(logs[k] - top); total += w[k]; }
-    for (let k = 0; k < m; k++) w[k] /= total;
-  };
+  // weights() and topMatch(), from one fit measurement.
+  const measure = () => { d = fitTo(model, answers, positions); w = plausibility(model, answers, d); };
   // nextQuestion(): the unasked statement with the largest weighted disagreement.
   const next = () => {
     let bestQ = -1, bestGain = 0;
@@ -568,18 +542,6 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
   };
-  // topMatch(): the ideology with the smallest gap(); ties go to the earlier one.
-  const top = () => {
-    let best = -1, bestD = Infinity;
-    for (let k = 0; k < m; k++) {
-      const base = k * n;
-      let s = 0, c = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += miss(answers[j] - x); c++; } }
-      const d = count === 0 ? 0 : c ? s / c : Infinity;
-      if (d < bestD) { bestD = d; best = k; }
-    }
-    return best;
-  };
 
   const reps = Math.max(1, Math.ceil(takers / m));
   const held = Array.from({ length: 10 }, () => [0, 0]);
@@ -587,28 +549,22 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (const ideo of ideos) {
       const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
       asked.fill(0);
-      count = 0;
-      setWeights();
+      answers.fill(null);
+      measure();
       const steps = [];
       let ask = next();
       while (ask) {
         asked[ask.q] = 1;
         // A statement its ideology has no position on, the simulated taker skips ("No opinion").
-        if (truth[ask.q] != null) {
-          answers[ask.q] = truth[ask.q];
-          // Keep the answered indexes ascending, the order weights() and gap() sum them in.
-          let t = count++;
-          while (t > 0 && idx[t - 1] > ask.q) { idx[t] = idx[t - 1]; t--; }
-          idx[t] = ask.q;
-        }
-        setWeights();
+        if (truth[ask.q] != null) answers[ask.q] = truth[ask.q];
+        measure();
         ask = next(); // certainty() reads the same next question the loop asks after this one
         let lead = -Infinity;
         for (let k = 0; k < m; k++) if (w[k] > lead) lead = w[k];
         const resolved = ask ? 1 - ask.gain / model.initialGain : 1;
-        steps.push({ c: Math.min(1, Math.max(lead, resolved)), top: top() });
+        steps.push({ c: Math.min(1, Math.max(lead, resolved)), top: nearest(d) });
       }
-      const final = top();
+      const final = nearest(d);
       for (const st of steps) {
         const bin = held[Math.min(9, Math.floor(st.c * 10))];
         bin[1]++;
@@ -626,7 +582,6 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   }
   return out;
 }
-
 
 // The calibrated chance that the current top match will hold, for a "how settled" reading.
 const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
@@ -652,8 +607,10 @@ function salienceContext(model, ideologies, { lines } = {}) {
   return ctx;
 }
 
-function placementUncertainty(ctx, knownIdx) {
-  const { model, k, noise } = ctx;
+// `noise`: the variance per statement off the real lines; by default the landscape's (salience judges
+// records by it), while a taker's s uses their own (placementSpread).
+function placementUncertainty(ctx, knownIdx, noise = ctx.noise) {
+  const { model, k } = ctx;
   const comps = model.components.slice(0, k);
   const M = comps.map((ca, a) => comps.map((cb, b) =>
     (a === b ? 1 / ca.eigenvalue : 0) + knownIdx.reduce((s, j) => s + ca.vector[j] * cb.vector[j], 0) / noise));
@@ -667,14 +624,6 @@ function placementUncertainty(ctx, knownIdx) {
 // the page's MODEL carries only the rotated lines, not the unrotated components or the noise level.
 function placementFromParts(parts) {
   return parts && { model: { components: parts.components }, k: parts.k, noise: parts.noise, bar: parts.bar };
-}
-
-// How precisely a set of answers places someone, in units of the typical gap between neighbouring
-// ideologies: 1 means the uncertainty is about one such gap. It depends only on which statements
-// were answered, so unlike the top match's lead it keeps rising for a taker between two ideologies.
-function placementPrecision(ctx, answers) {
-  if (!ctx || !answers.some((x) => x != null)) return 0;
-  return ctx.bar / placementUncertainty(ctx, answeredIndexes(answers));
 }
 
 // How precisely a record places someone on every real line, not only overall: each line gets an equal
@@ -745,5 +694,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, fit, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, distance, fitTo, fitScale, similarity, plausibility, placementSpread, takerNoise, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

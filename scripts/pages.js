@@ -33,14 +33,14 @@ for (const f of ["data.js", "pca.js", "people.js"]) {
 }
 const { QUESTIONS, IDEOLOGIES, MODEL, PEOPLE = [] } = ctx;
 const model = ctx.modelFromParts(IDEOLOGIES, MODEL);
-// Every page matches against every person, so remember each profile's projection onto the lines
-// (pca.js looks `project` up on the global object at each call).
-const projected = new WeakMap();
-const project = ctx.project;
-ctx.project = (m, answers) => {
-  if (m !== model) return project(m, answers);
-  if (!projected.has(answers)) projected.set(answers, project(m, answers));
-  return projected.get(answers);
+// Every page matches against every person, so remember each profile's place on the lines
+// (pca.js looks `place` up on the global object at each call).
+const placed = new WeakMap();
+const place = ctx.place;
+ctx.place = (m, answers) => {
+  if (m !== model) return place(m, answers);
+  if (!placed.has(answers)) placed.set(answers, place(m, answers));
+  return placed.get(answers);
 };
 const onModel = (profile) => profile.slice(0, QUESTIONS.length);
 const people = PEOPLE.map((p) => ({ ...p, profile: onModel(p.profile) }));
@@ -71,13 +71,6 @@ function positions(profile) {
   return `<ul>${known.map((x) => `<li><strong>${Math.abs(x.v) === 2 ? "Strongly" : "Leans"}:</strong> ${esc(stance(QUESTIONS[x.q], x.v))}</li>`).join("")}</ul>`;
 }
 const ideologyLinks = (ranked) => `<ul>${ranked.map((r) => `<li><a href="${ideologyUrl(r.id)}">${esc(r.name)}</a>${r.similarity != null ? ` (${pct(r.similarity)} match)` : ""}</li>`).join("")}</ul>`;
-// match()'s order without its percentages: the scale behind them compares every pair of ideologies
-// on the statements answered, which takes a second or two for each person's own set.
-function nearestIdeologies(profile, n) {
-  const idx = ctx.answeredIndexes(profile);
-  return model.ideologies.map((i) => ({ id: i.id, name: i.name, d: ctx.gap(profile, i.profile, idx) }))
-    .sort((a, b) => a.d - b.d).slice(0, n);
-}
 const personLinks = (list) => `<ul>${list.map((p) => `<li><a href="${personUrl(p.id)}">${esc(p.name)}</a> (${pct(p.similarity)} alike)</li>`).join("")}</ul>`;
 const nav = (section, label) => `<p class="small"><a href="/">${SITE_NAME}</a> · <a href="/#/${section}">${label}</a> · <a href="/#/test">Take the test</a></p>`;
 
@@ -97,7 +90,7 @@ function ideologyBody(ideo) {
 }
 
 function personBody(p) {
-  const closest = nearestIdeologies(p.profile, 5);
+  const closest = ctx.match(model, p.profile).ranked.slice(0, 5);
   const similar = ctx.matchPeople(model, p.profile, people.filter((x) => x.id !== p.id)).slice(0, 5);
   const life = p.living ? `born ${p.born}` : `born ${p.born}, historical`;
   return `${nav("people", "All people")}

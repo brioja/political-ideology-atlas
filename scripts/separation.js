@@ -1,6 +1,6 @@
 // Lists ideologies the test can barely tell apart from their nearest neighbours, as candidates for
-// new statements. Neighbours are nearest as matching sees it (the average gap on the statements both
-// have a position on, pca.js). A statement separates two ideologies when both have a position on it,
+// new statements. Neighbours are nearest as matching sees it (distance on the real lines, pca.js's fit
+// measure). A statement separates two ideologies when both have a position on it,
 // 2+ notches apart, and at least one holds it firmly (medium or high confidence in its audit).
 // Pairs with fewer than --min separating statements are listed, those with none first. Reads the
 // shipped data.js, so run a build first.
@@ -9,17 +9,17 @@
 //   --neighbours K  check each ideology against its K nearest (default 3)
 const path = require("path");
 const { ROOT, readJson, profilePath } = require("./lib");
-const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
-const { gap } = require(path.join(ROOT, "pca.js"));
+const { QUESTIONS, IDEOLOGIES, MODEL } = require(path.join(ROOT, "data.js"));
+const { modelFromParts, distance: apart } = require(path.join(ROOT, "pca.js"));
+const at = Object.fromEntries(modelFromParts(IDEOLOGIES, MODEL).ideologies.map((i) => [i.id, i.at]));
 const firm = Object.fromEntries(IDEOLOGIES.map((i) => {
   const answers = readJson(profilePath(i.id)).answers;
   return [i.id, QUESTIONS.map((q) => answers[q.id].confidence !== "low")];
 }));
-const all = QUESTIONS.map((_, q) => q);
 
 const arg = (name, dflt) => { const i = process.argv.indexOf(name); return i > -1 ? Number(process.argv[i + 1]) : dflt; };
 const MIN = arg("--min", 3), K = arg("--neighbours", 3);
-const distance = (a, b) => gap(a.profile, b.profile, all);
+const distance = (a, b) => apart(at[a.id], at[b.id]);
 const separating = (a, b) => QUESTIONS.flatMap((s, q) =>
   a.profile[q] != null && b.profile[q] != null && Math.abs(a.profile[q] - b.profile[q]) >= 2
   && (firm[a.id][q] || firm[b.id][q]) ? [s.id] : []);

@@ -1,9 +1,9 @@
 // Sanity checks: node test.js
 //   node test.js --people   skips the ideology simulation, for builds that only changed people.js
 const assert = require("assert");
-const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION } = require("./data.js");
+const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION, MODEL, PLACEMENT } = require("./data.js");
 const PEOPLE_ONLY = process.argv.includes("--people");
-const { symmetricEigen, buildModel, match, gap, answeredIndexes, nextQuestion, certainty, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
+const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, weights, place, fitTo, fitScale, placementSpread, nextQuestion, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -36,10 +36,12 @@ assert(!behind.length, `${behind.length} audits miss active statements (backfill
 
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
 const model = buildModel(IDEOLOGIES, { realLines: MEANINGFUL_LINES });
+// The model the page matches with: the shipped lines and placement context (app.js).
+const shipped = modelFromParts(IDEOLOGIES, MODEL, PLACEMENT);
 // The shipped calibration must come from these ideologies and this pca.js (see build.js).
 if (!PEOPLE_ONLY) {
   const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
-  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES), "audits/calibration.json is stale: run a full build");
+  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, PLACEMENT), "audits/calibration.json is stale: run a full build");
   assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
   // One landscape (build.js): the real-line count is counted on every complete audit and committed in
   // audits/lines.json, current and the one data.js ships; and salience is judged one way everywhere
@@ -77,43 +79,58 @@ if (!PEOPLE_ONLY) {
   }
   assert(!bad.length, `"What it stands for" is missing or not from stated positions (run a full build): ${bad.slice(0, 5).join(", ")}`);
 }
-// Silence is never scored: a statement where one side has no known position (null) counts neither as
-// "Neither" nor as disagreement, so the gap is the same as without that statement (a decision; see
-// audits/AUDIT_RULES.md). And the model reads an ideology's null as null.
+// Silence is never scored: fit is distance on the real lines, placed from the answered statements only
+// (project in pca.js), so a statement with no known position (null) is neither "Neither" nor
+// disagreement (a decision; see audits/AUDIT_RULES.md). With nothing answered there is no basis: no
+// position, no ranking, every ideology equally plausible. And the model reads an ideology's null as null.
 {
   const lib = require("./scripts/lib");
-  assert.strictEqual(gap([2, -2, 1], [2, null, 0], [0, 1, 2]), gap([2, -2, 1], [2, null, 0], [0, 2]), "gap() scores a statement one side has no position on");
-  assert.strictEqual(gap([2, 0], [null, 0], [0, 1]), 0, "gap() scores silence");
+  const none = Array(QUESTIONS.length).fill(null);
+  assert.strictEqual(place(shipped, none), null, "place() gives a position to no answers");
+  assert.strictEqual(fitTo(shipped, none, shipped.ideologies.map((i) => i.at)), null, "fitTo() measures no answers");
+  assert(match(shipped, none).ranked.every((r) => r.distance === 0 && r.similarity === 0), "match() ranks no answers");
+  assert.strictEqual(matchPeople(shipped, none, [{ id: "x", profile: IDEOLOGIES[0].profile }]).length, 0, "matchPeople() ranks no answers");
+  assert(weights(shipped, none).every((w) => w === 1 / IDEOLOGIES.length), "ideologies don't weigh the same before any answer");
   const silent = IDEOLOGIES.find((i) => i.profile.includes(null));
   assert(silent, "no ideology in data.js has a 'no known position' answer: is null being turned into a value?");
+  const asNeither = place(shipped, silent.profile.map((x) => x ?? 0));
+  assert(place(shipped, silent.profile).some((x, k) => Math.abs(x - asNeither[k]) > 1e-9), `${silent.id}: its silences are placed as "Neither"`);
   const audit = lib.readJson(lib.profilePath(silent.id));
   assert(lib.activeStatements().every((s, j) => (audit.answers[s.id].value === null) === (silent.profile[j] === null)), `${silent.id}: data.js doesn't keep its 'no known position' answers as null`);
 }
-// Each ideology's match scale ships with it (build.js), so its page doesn't compare every pair of
-// ideologies in the browser; every ideology with a silence needs one, and it must be current.
+// The similarity scale (fitScale, the widest distance between two shown ideologies) ships with the
+// model (build.js), so the page doesn't compare every pair; it must be current.
 if (!PEOPLE_ONLY) {
-  const { MODEL } = require("./data.js");
-  const { modelFromParts, spreadOn } = require("./pca.js");
-  const missing = IDEOLOGIES.filter((i) => i.profile.includes(null) && i.spread == null).map((i) => i.id);
-  assert(!missing.length, `ideologies without a shipped match scale (run a full build): ${missing.slice(0, 5).join(", ")}`);
-  const plain = modelFromParts(IDEOLOGIES.map(({ spread, ...i }) => i), MODEL);
-  for (const i of IDEOLOGIES.filter((x) => x.spread != null).slice(0, 3)) {
-    assert(Math.abs(spreadOn(plain, answeredIndexes(i.profile)) - i.spread) < 1e-5, `${i.id}: its shipped match scale is stale (run a full build)`);
-  }
+  const fresh = modelFromParts(IDEOLOGIES, { ...MODEL, span: undefined });
+  assert(Math.abs(fitScale(fresh) - MODEL.span) < 1e-5, "data.js's similarity scale (MODEL.span) is stale: run a full build");
 }
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
 assert(Math.abs(shareSum - 1) < 1e-9, "variance shares do not sum to 1");
 // (Ties are fine: two variants can legitimately share every answer.)
 const twins = [];
-// Distances only (match()'s similarity scale would be recomputed for each ideology's own statements).
+// Each ideology's full profile ranks itself first (distance 0, 100%), and is its most plausible.
 for (const ideo of IDEOLOGIES) {
-  const idx = answeredIndexes(ideo.profile);
-  const ranked = model.ideologies.map((i) => ({ name: i.name, distance: gap(ideo.profile, i.profile, idx) })).sort((x, y) => x.distance - y.distance);
-  assert.strictEqual(ranked[0].distance, 0, `${ideo.name} matched ${ranked[0].name} instead of itself`);
-  const tied = ranked.filter((r) => r.distance === 0 && r.name !== ideo.name).map((r) => r.name);
+  const { ranked } = match(shipped, ideo.profile);
+  const self = ranked.find((r) => r.id === ideo.id);
+  assert(ranked[0].distance < 1e-9 && self.distance < 1e-9, `${ideo.name} matched ${ranked[0].name} instead of itself`);
+  assert(Math.abs(self.similarity - 1) < 1e-9, `${ideo.name} isn't a 100% match for itself`);
+  const tied = ranked.filter((r) => r.distance < 1e-9 && r.id !== ideo.id).map((r) => r.name);
   if (tied.length) twins.push(`${ideo.name} = ${tied.join(", ")}`);
+  else assert.strictEqual(topMatch(shipped, ideo.profile), ideo.id, `topMatch() disagrees with match() for ${ideo.name}`);
 }
-if (twins.length) console.log(`Identical profiles (need distinguishing statements):\n  ${[...new Set(twins)].join("\n  ")}`);
+// s (placementSpread) comes from the taker's own noise: the same statements answered inconsistently
+// (every other answer flipped) place them less precisely than answered as the ideology does.
+{
+  const own = IDEOLOGIES[0].profile;
+  let k = 0;
+  const flipped = own.map((x) => (x == null ? null : k++ % 2 ? -x : x));
+  assert(placementSpread(shipped, flipped) > placementSpread(shipped, own), "contradictory answers don't widen s");
+}
+{
+  const w = weights(shipped, IDEOLOGIES[0].profile);
+  assert.strictEqual(w.indexOf(Math.max(...w)), shipped.ideologies.findIndex((i) => i.id === topMatch(shipped, IDEOLOGIES[0].profile)), "the most plausible ideology isn't the top match");
+}
+if (twins.length) console.log(`Same place on the dividing lines (need distinguishing statements):\n  ${[...new Set(twins)].join("\n  ")}`);
 
 // 3. Adaptive run: simulated takers (an ideology's answers, with ~20% of them nudged by one
 // point) answer until the result settles. Most should land on their source ideology.
@@ -121,20 +138,20 @@ let seed = 7;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 let hits = 0, totalAsked = 0;
 // The build ships the calibration; recompute it only for an older data.js without one.
-const calibration = PEOPLE_ONLY ? null : CALIBRATION || calibrateCertainty(model);
+const calibration = PEOPLE_ONLY ? null : CALIBRATION || calibrateCertainty(shipped);
 for (const ideo of PEOPLE_ONLY ? [] : IDEOLOGIES) {
   const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
   const answers = Array(QUESTIONS.length).fill(null);
   const asked = new Set();
   for (;;) {
-    const next = nextQuestion(model, answers, asked);
+    const next = nextQuestion(shipped, answers, asked);
     if (!next) break;
     asked.add(next.q);
     answers[next.q] = truth[next.q];
-    if (isSettled(model, calibration, answers, asked)) break;
+    if (isSettled(shipped, calibration, answers, asked)) break;
   }
   totalAsked += asked.size;
-  const { ranked } = match(model, answers);
+  const { ranked } = match(shipped, answers);
   if (ranked.find((r) => r.name === ideo.name).distance === ranked[0].distance) hits++;
 }
 if (!PEOPLE_ONLY) console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their source, ` +

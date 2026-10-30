@@ -5,12 +5,12 @@
   const at = /^\/(ideologies|people)\/([^/]+)\/?$/.exec(location.pathname);
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
-const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL) : buildModel(IDEOLOGIES);
+const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
 // Once the answers place you to within half the gap between neighbouring ideologies (precision 2, see
-// placementPrecision in pca.js; about 200 answers today), more barely change anything, so the quiz
-// says you're done, settled or not: someone between two ideologies may never settle and would
-// otherwise answer every statement. Measured, not counted, so it holds as statements are added.
-const PLACEMENT_CTX = typeof PLACEMENT !== "undefined" ? placementFromParts(PLACEMENT) : null;
+// placementPrecision in pca.js), more barely change anything, so the quiz says you're done, settled
+// or not: someone between two ideologies may never settle and would otherwise answer every statement.
+// Measured from your own answers' noise, not counted, so a consistent taker is done sooner than a
+// mixed one, and it holds as statements are added.
 const DONE_PRECISION = 2;
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
@@ -370,7 +370,7 @@ function renderQuestion() {
   // The figure is calibrated on simulated takers who are noisy copies of one ideology, so it overstates
   // how likely a real (mixed) taker's top match is to hold: it's shown as progress, not a probability.
   const status = $("certainty");
-  const done = placementPrecision(PLACEMENT_CTX, answers) >= DONE_PRECISION;
+  const done = placementPrecision(model, answers) >= DONE_PRECISION;
   status.classList.toggle("ready", settled || done);
   if (settled || done) {
     status.innerHTML = `✓ ${done ? "Done, your result is as sharp as it gets" : "Your top match has settled"} · <a href="#/results" id="ready-link">See your result →</a>`;
@@ -658,7 +658,7 @@ function showResults(shared = null) {
   const answered = !shared && progress
     ? progress.order.filter((j, k) => !progress.opened.has(j) && !(pending && k === progress.order.length - 1)).length
     : given.filter((a) => a !== null).length;
-  const done = placementPrecision(PLACEMENT_CTX, given) >= DONE_PRECISION;
+  const done = placementPrecision(model, given) >= DONE_PRECISION;
   const moreLeft = !shared && !!progress && progress.position < progress.order.length;
   const canContinue = moreLeft && !done;
   // A shared link holds every answer, so its owner (on another device, or after clearing the browser)
@@ -2036,7 +2036,6 @@ function renderComparePage(aKey, bKey) {
     return "Compare";
   }
   const both = QUESTIONS.map((_, j) => j).filter((j) => a.profile[j] != null && b.profile[j] != null);
-  const similarity = (matchOnStatements(model, a.profile, [{ ...b, views12m: 0 }], { minOverlap: 1 })[0] || {}).similarity;
   // Counted and ordered as on the results page: agreeing is taking the same side at any strength,
   // parting ways the opposite side. Positions few ideologies share come first among agreements; the
   // biggest gaps first among disagreements, then the second side's more distinctive positions.
@@ -2065,15 +2064,13 @@ function renderComparePage(aKey, bKey) {
   const they = mine ? "you" : "they";
   const They = mine ? "You" : "They";
   const otherKey = mine ? other.key : [a.key, b.key];
-  // With a person on either side, the headline is the number the results and person pages show for
-  // people: how alike the two are placed on the dividing lines (matchPeople), with how many statements
-  // they actually share, since a thin record can be placed close on few of them.
-  const withPerson = a.key.startsWith("p:") || b.key.startsWith("p:");
-  const alike = withPerson ? (matchPeople(model, a.profile, [{ ...b, views12m: 0 }])[0] || {}).similarity : null;
+  // The headline is the number the results, ideology and person pages show: how alike the two are
+  // placed on the dividing lines (matchPeople ranks any two profiles), with how many statements they
+  // actually share, since a thin record can be placed close on few of them.
+  const alike = (matchPeople(model, a.profile, [{ ...b, views12m: 0 }])[0] || {}).similarity;
   const shared = `${both.length} of the same statement${both.length === 1 ? "" : "s"}`;
-  const lede = withPerson && alike != null
-    ? `<p class="lede">${mine ? `You and ${esc(other.name)} are` : "They are"} placed <strong>${pct(alike)}</strong> alike on the dividing lines. ${mine ? "You both answered" : "Both have a position on"} ${shared}.</p>`
-    : similarity != null ? `<p class="lede">${mine ? `You and ${esc(other.name)} match` : "They match"} <strong>${pct(similarity)}</strong>, on the ${both.length} statements where ${mine ? "you both" : "both"} have a position.</p>` : "";
+  const lede = alike != null
+    ? `<p class="lede">${mine ? `You and ${esc(other.name)} are` : "They are"} placed <strong>${pct(alike)}</strong> alike on the dividing lines. ${mine ? "You both answered" : "Both have a position on"} ${shared}.</p>` : "";
   root.innerHTML = `
     ${comparePickers(aKey, bKey)}
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>

@@ -127,11 +127,12 @@ const linesKey = (ideologies) => require("crypto").createHash("sha1")
   .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
-// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js and the
-// shown ideologies' answers. The calibration never reads the lines (calibrateCertainty in pca.js).
-const calibrationKey = (ideologies) => require("crypto").createHash("sha1")
+// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, the
+// shown ideologies' answers and the placement context it measures fit with (PLACEMENT, as shipped).
+const calibrationKey = (ideologies, placement) => require("crypto").createHash("sha1")
   .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
+  .update(JSON.stringify(placement))
   .digest("hex");
 
 // Ideologies held off the site until re-audited (audits/awaiting-reaudit.json). Their old audits still

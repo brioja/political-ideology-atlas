@@ -16,7 +16,8 @@ A political ideology test where the axes come from the data. You don't choose th
    `audits/line-labels.json`. A name holds only
    while its anchor statements stay among that end's strongest; otherwise the build warns and the
    page names the ends by ideologies until the labels file is updated.
-4. Ideologies are ranked by the average gap between your answers and theirs. The results show the
+4. Ideologies (and people) are ranked by distance on the real dividing lines, where your answers
+   place you (the fit measure in `pca.js`). The results show the
    top matches, flag close calls, and list the statements where you agree and disagree with your
    top match.
 
