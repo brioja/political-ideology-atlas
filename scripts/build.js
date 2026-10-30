@@ -17,7 +17,8 @@ const flagFor = (id) => {
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
 const statements = activeStatements();
-let included, stale, missing, notSalient, notIdeology;
+let included, stale, missing, notSalient, notIdeology, awaiting;
+const awaitingReaudit = require("./lib").awaitingReaudit();
 
 if (process.argv.includes("--people")) {
   const { QUESTIONS } = require(path.join(ROOT, "data.js"));
@@ -37,6 +38,7 @@ function classify(judge = null) {
   missing = [];
   notSalient = [];
   notIdeology = [];
+  awaiting = [];
   for (const entry of catalog()) {
     const p = profilePath(entry.id);
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
@@ -46,6 +48,7 @@ function classify(judge = null) {
     // Too few stated positions to tell it apart from its neighbours: leave it out, so it neither
     // appears in results nor shapes the dividing lines.
     if (judge && !ideologySalience(a, judge).salient) { notSalient.push(entry.id); continue; }
+    if (judge && awaitingReaudit.has(entry.id)) { awaiting.push(entry.id); continue; }
     included.push({
       id: entry.id,
       name: entry.name,
@@ -188,6 +191,7 @@ console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.l
 if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
 if (notSalient.length) console.log(`Excluded as not salient (too few stated positions): ${notSalient.join(", ")}`);
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
+if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);
 if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {

@@ -134,6 +134,13 @@ const calibrationKey = (ideologies) => require("crypto").createHash("sha1")
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
 
-module.exports = { linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+// Ideologies held off the site until re-audited (audits/awaiting-reaudit.json). Their old audits still
+// shape the dividing lines, like audits that fail salience.
+const awaitingReaudit = () => {
+  const f = path.join(ROOT, "audits", "awaiting-reaudit.json");
+  return new Set(fs.existsSync(f) ? readJson(f).ids : []);
+};
+
+module.exports = { awaitingReaudit, linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies, LEGACY_PATH, onLegacyBar };

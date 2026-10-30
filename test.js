@@ -52,7 +52,8 @@ if (!PEOPLE_ONLY) {
   assert.strictEqual(lines.realLines, MEANINGFUL_LINES, "data.js's MEANINGFUL_LINES differs from audits/lines.json: run a full build");
   const shown = new Set(IDEOLOGIES.map((i) => i.id));
   const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
-  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient
+  const awaiting = lib.awaitingReaudit();
+  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient && !awaiting.has(id)
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
 }
