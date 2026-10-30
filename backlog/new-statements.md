@@ -59,3 +59,18 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
   natural law (Catholic traditions agree) and as anti-redesign (transhumanists and "new man" movements
   disagree). Two statements would carry each cleanly: rights rest on a shared human nature; human nature
   should not be altered by technology.
+
+## Proposed by the 2026-10-30 honest re-audits (rules 3)
+
+Each re-audit lists defining positions no statement captures (`missingStatements` in its audit file).
+Several ideologies that left the site fell just short of the bar for want of these (Stoicism 1.02x,
+Egalitarianism 1.12x, Right-wing antiglobalism 1.31x). Not added: each would need a backfill across
+every ideology and person. Candidates worth weighing first, because more than one ideology would answer
+them: citizens' political influence independent of money (egalitarianism; likely many), tax havens
+dismantled (alter-globalization), migration governed by national law only and no international court
+jurisdiction over citizens (right-wing antiglobalism, national conservatives), encryption back doors
+(technolibertarianism, civil libertarians), weight as a protected ground (fat feminism), one community of
+reason (Stoicism, cosmopolitans), the difference principle (egalitarianism, Rawlsian liberals).
+Full lists: soviet-anti-zionism, budapest-school, valencian-nationalism, fat-feminism,
+right-wing-antiglobalism, alter-globalization, technolibertarianism, indigenismo, blaverism,
+slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.json).
