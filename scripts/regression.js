@@ -15,7 +15,7 @@ const path = require("path");
 const os = require("os");
 const { ROOT, readJson, profilePath, activeStatements, silentZeros } = require("./lib");
 const { QUESTIONS, IDEOLOGIES } = require(path.join(ROOT, "data.js"));
-const { decodeShare } = require(path.join(ROOT, "pca.js"));
+const { decodeShare, gap } = require(path.join(ROOT, "pca.js"));
 
 const arg = (name) => { const i = process.argv.indexOf(name); return i < 0 ? null : process.argv[i + 1]; };
 const variant = arg("--variant") || "current";
@@ -41,14 +41,14 @@ function profiles() {
   });
 }
 
-// Ranks by mean gap on the statements both the taker and the ideology answered (with every ideology
-// answering everything, this is match() in pca.js); one sharing fewer than 8 is left out.
+// Ranks by gap() (pca.js's fit measure, as match() does) on the statements both the taker and the
+// ideology answered; one sharing fewer than 8 is left out.
 function rank(ideos, answers) {
   const idx = answers.flatMap((a, j) => (a == null ? [] : [j]));
   return ideos.map((i) => {
     const both = idx.filter((j) => i.profile[j] != null);
     if (both.length < 8) return null;
-    return { id: i.id, d: both.reduce((s, j) => s + Math.abs(answers[j] - i.profile[j]), 0) / both.length };
+    return { id: i.id, d: gap(answers, i.profile, both) };
   }).filter(Boolean).sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
 }
 

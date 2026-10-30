@@ -264,15 +264,27 @@ function solve(M, b) {
 
 const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] : [j]));
 
-// The average gap between two sets of answers, in notches on the answer scale, on the statements in
-// `idx` that both have a position on. Silence (null) is never scored, as "Neither" or as
-// disagreement: a decision, not a default (test.js checks it). An average rather than a root mean
-// square, so a few one-notch differences don't weigh like real disagreement. With nothing in common
-// it is Infinity (no basis for a match), except that no statements at all is 0.
+// The fit measure: how far a set of answers is from a profile. The results ranking (match(), gap()),
+// the quiz's next-question selector and its progress (weights()) and the calibration all score fit
+// through fit(), so they rank ideologies the same way and cannot drift apart. A miss is scored by its
+// size (a Laplace error model: a 2-point miss costs two 1-point ones), matching the results page's mean
+// gap. Silence (null) is never scored, as "Neither" or as disagreement: a decision, not a default
+// (test.js checks it). Only the statements in `idx` that both sides have a position on count.
+// The cost of one miss: its size. Every fit computation (fit(), spreadOn(), the calibration's inner loops)
+// uses this, so changing the error model is a one-line change.
+const miss = (d) => Math.abs(d);
+function fit(answers, profile, idx) {
+  let s = 0, c = 0;
+  for (const j of idx) if (profile[j] != null && answers[j] != null) { s += miss(answers[j] - profile[j]); c++; }
+  return { s, c };
+}
+
+// The gap between two sets of answers, in notches on the answer scale: the mean miss on the statements in `idx` that both
+// have a position on. With nothing in common it is Infinity (no basis for a match), except that no
+// statements at all is 0.
 function gap(answers, profile, idx) {
   if (idx.length === 0) return 0;
-  let s = 0, c = 0;
-  for (const j of idx) if (profile[j] != null && answers[j] != null) { s += Math.abs(answers[j] - profile[j]); c++; }
+  const { s, c } = fit(answers, profile, idx);
   return c ? s / c : Infinity;
 }
 
@@ -318,7 +330,7 @@ function spreadOn(model, idx) {
         let s = 0, c = 0;
         for (let k = 0; k < cols.length; k++) {
           const x = packed[pa + cols[k]], y = packed[pb + cols[k]];
-          if (x === x && y === y) { s += Math.abs(x - y); c++; }
+          if (x === x && y === y) { s += miss(x - y); c++; }
         }
         if (c && s / c > spread) spread = s / c;
       }
@@ -423,17 +435,16 @@ function matchPeople(model, answers, people, { dims = matchLines(model), tie = 0
   return ranked;
 }
 
-// How plausible each ideology is given the answers so far: each answer multiplies an
-// ideology's weight by exp(-(difference)² / 2), so a 2-point miss costs far more than a 1-point one.
-// Only the statements the ideology has a position on are scored (silence is never scored); their mean
-// squared miss stands for every answer given, so an ideology neither gains nor loses by its silences.
-// One with no position on any answered statement has no evidence yet, and no weight until it does.
-const plausibility = (s, c, count) => (count === 0 ? 0 : c === 0 ? -Infinity : -(s / c) * count / 2);
+// How plausible each ideology is given the answers so far, under fit()'s error model: each answer
+// multiplies an ideology's weight by exp(-miss) (Laplace, unit scale). Only the statements the ideology has a
+// position on are scored (silence is never scored); their mean miss stands for every answer given, so
+// an ideology neither gains nor loses by its silences. One with no position on any answered statement
+// has no evidence yet, and no weight until it does.
+const plausibility = (s, c, count) => (count === 0 ? 0 : c === 0 ? -Infinity : -(s / c) * count);
 function weights(model, answers) {
   const idx = answeredIndexes(answers);
   const logs = model.ideologies.map((i) => {
-    let s = 0, c = 0;
-    for (const j of idx) if (i.profile[j] != null) { s += (answers[j] - i.profile[j]) ** 2; c++; }
+    const { s, c } = fit(answers, i.profile, idx);
     return plausibility(s, c, idx.length);
   });
   const top = Math.max(...logs);
@@ -534,7 +545,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     for (let k = 0; k < m; k++) {
       const base = k * n;
       let s = 0, c = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += (answers[j] - x) ** 2; c++; } }
+      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += miss(answers[j] - x); c++; } }
       logs[k] = plausibility(s, c, count);
       if (logs[k] > top) top = logs[k];
     }
@@ -557,13 +568,13 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
     }
     return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
   };
-  // topMatch(): the ideology with the smallest average gap; ties go to the earlier one.
+  // topMatch(): the ideology with the smallest gap(); ties go to the earlier one.
   const top = () => {
     let best = -1, bestD = Infinity;
     for (let k = 0; k < m; k++) {
       const base = k * n;
       let s = 0, c = 0;
-      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += Math.abs(answers[j] - x); c++; } }
+      for (let t = 0; t < count; t++) { const j = idx[t], x = rowMajor[base + j]; if (x === x) { s += miss(answers[j] - x); c++; } }
       const d = count === 0 ? 0 : c ? s / c : Infinity;
       if (d < bestD) { bestD = d; best = k; }
     }
@@ -719,5 +730,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, fit, gap, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, spreadOn, match, matchPeople, matchOnStatements, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }
