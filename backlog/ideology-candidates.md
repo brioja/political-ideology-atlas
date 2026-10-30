@@ -25,6 +25,19 @@ Carnism, Violent extremism, Anti-White racism.
 
 Reproduce: `scratchpad/ideology2/backlinks.js` and `classify.js` (local, not committed).
 
+## From Wikipedia backlinks to "Politics" (2026-10-30)
+
+5,316 articles link to "Politics"; 18 more pass the filter beyond the list above.
+
+**Look like ideologies:** Ketuanan Melayu, Castilian nationalism, Aragonese nationalism, Orangism
+(Luxembourg), Diaspora nationalism, Reactionary feminism, World government (check against the
+catalog's world federalism / cosmopolitanism entries), Atatürk's Main Principles (check against
+Kemalism).
+
+**Probably not:** Party discipline, Ethical consumerism, Anti-Catholicism, Opposition to pornography,
+Political repression, Political violence, Military democracy, Anti-independence, Old Liberals (a
+party), Filipinization (a policy).
+
 ## From audits
 
 Ideologies an audit's sources treat as separate from the one audited. Add them here as they come up.
