@@ -373,7 +373,7 @@ function renderQuestion() {
   const done = placementPrecision(PLACEMENT_CTX, answers) >= DONE_PRECISION;
   status.classList.toggle("ready", settled || done);
   if (settled || done) {
-    status.innerHTML = `✓ ${done ? "Done, your result is as sharp as it gets" : "Narrowed down"} · <a href="#/results" id="ready-link">See your result →</a>`;
+    status.innerHTML = `✓ ${done ? "Done, your result is as sharp as it gets" : "Your top match has settled"} · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
   } else status.textContent = answered < Math.max(1, REAL_LINES) ? "Most telling statements first"
     : hold == null ? "Narrowing it down…"
@@ -689,6 +689,10 @@ function showResults(shared = null) {
   const disagree = disagreeAll.slice().sort(apartOrder).slice(0, 4);
   const statements = (n) => `${n} statement${n === 1 ? "" : "s"}`;
   const closeCall = ranked[1].similarity > top.similarity - 0.05;
+  // Ideologies showing the same percentage as the top one: to the reader they are a tie, so the page
+  // says the result sits between them rather than implying one clear winner.
+  const tied = ranked.filter((r) => pct(r.similarity) === pct(top.similarity));
+  const listNames = (rs) => rs.map((r) => `<strong>${esc(r.name)}</strong>`).join(", ").replace(/, ([^,]*)$/, " and $1");
   // Below this the top match is only the least bad fit, so the page says so in words. In simulations
   // after 150 answers, random answers land at 47-56%, takers mixing two ideologies at 61-75% and
   // takers answering like one ideology at 82-88%; real takers mostly land between 50% and 75%.
@@ -721,8 +725,9 @@ function showResults(shared = null) {
     <div class="verdict tinted" style="${flagTint(top)}">
       <span class="eyebrow">${pct(top.similarity)} match · based on ${answered} answers</span>
       <h1 class="name">${esc(top.name)}</h1>
+      ${tied.length > 1 ? `<p>${shared ? "They are" : "You're"} equally close to ${tied.length} ideologies: ${listNames(tied.slice(0, 5))}${tied.length > 5 ? ` and ${tied.length - 5} more` : ""}. ${shared ? "Their" : "Your"} views sit between them; ${esc(top.name)} is listed first only by a hair.</p>` : ""}
       ${looseFit ? `<p>No ideology fits ${shared ? "them" : "you"} closely; this is the nearest.</p>`
-        : mixedFit ? `<p>${shared ? "Their" : "Your"} views mix several ideologies; this is the nearest.</p>` : ""}
+        : mixedFit && tied.length < 2 ? `<p>${shared ? "Their" : "Your"} views mix several ideologies; this is the nearest.</p>` : ""}
       ${topPeople.length ? `<a class="hero-person" href="${personHref(topPeople[0].id)}">
           ${avatar(topPeople[0], 88)}
           <span class="stack-tight">
@@ -737,7 +742,8 @@ function showResults(shared = null) {
         <a class="more-link" href="${ideologyHref(top.id)}">Explore ${esc(top.name)} in detail →</a>
       </div>
       ${aboutWithImage(top)}
-      <p class="muted">${closeCall
+      <p class="muted">${tied.length > 1 ? (canContinue ? `<a href="#/test">Answer more questions</a> to tell them apart.` : `It's worth reading each of them.`)
+        : closeCall
         ? `It's close: ${you_} are almost as near to <strong>${ranked[1].name}</strong>${canContinue
           ? `. <a href="#/test">Answer a few more questions</a> to tell them apart.`
           : `, so it's worth reading both.`}`
