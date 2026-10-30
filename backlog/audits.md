@@ -53,8 +53,3 @@ Audit work discussed but not started.
     assisted dying, vouchers), which AUDIT_RULES.md now calls borrowing unless other branches,
     Israeli secularists above all, are shown to share the position. It is off the site already, so
     this matters only if it is deepened again.
-- **Question picker: test contenders on statements they answer** (2026-10-30). Sparse honest audits can top a
-  light taker on a tiny overlap (see decided-against.md, matching changes). Rather than change matching,
-  the picker could prefer the next statement that the leading ideologies hold a known position on, so the
-  overlap with each contender grows before it can win. Measure with scripts/regression.js (real links in
-  ~/work/regression-links.txt) and simulated light takers; no tuned constants.
