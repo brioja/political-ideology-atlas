@@ -334,34 +334,17 @@ const similarity = (model, d) => {
   return span && d != null ? Math.max(0, 1 - d / span) : 0;
 };
 
-// How noisy the answers are around their own place: each answered statement's answer minus what the
-// place predicts for it (the line fit's value, see lineFit), as a variance with the usual degrees of
-// freedom, RSS / (n - k), for n answers on k lines. A consistent taker is quiet, a mixed or
-// contradictory one noisy. Only answered statements count (silence is not scored or imputed). With
-// n <= k answers there are no degrees of freedom left, so (and for an exact fit, whose noise would be
-// 0) it is the landscape's: the variance ideology profiles leave off the real lines.
-function takerNoise(model, answers) {
-  const ctx = placementOf(model);
-  const k = matchLines(model);
-  const { rows, y, A, sol } = lineFit(model, answers);
-  if (rows.length <= k) return ctx.noise;
-  let rss = 0;
-  A.forEach((r, t) => { rss += (y[t] - r.reduce((s, v, i) => s + v * sol[i], 0)) ** 2; });
-  return rss > 0 ? rss / (rows.length - k) : ctx.noise;
-}
-
 // s: how precisely the answers place you on the real lines (the expected distance from your true
-// place; placementUncertainty), with your own answers' noise (takerNoise), so it can rise during the
-// test when answers stop fitting together. Always positive and finite: it starts from the ideologies'
-// own spread on each line.
+// place; placementUncertainty), with the landscape's noise per statement (the variance ideology
+// profiles leave off the real lines, as salience uses), so it only shrinks as you answer. Always
+// positive and finite: it starts from the ideologies' own spread on each line.
 function placementSpread(model, answers) {
-  return placementUncertainty(placementOf(model), answeredIndexes(answers), takerNoise(model, answers));
+  return placementUncertainty(placementOf(model), answeredIndexes(answers));
 }
 
 // How precisely a set of answers places someone, in units of the typical gap between neighbouring
 // ideologies (the placement context's bar): 1 means s is about one such gap. The quiz says you're done
-// at a fixed precision (app.js), so a taker between two ideologies isn't asked every statement, and a
-// noisy one is asked more than a consistent one.
+// at a fixed precision (app.js), so a taker between two ideologies isn't asked every statement.
 function placementPrecision(model, answers) {
   if (!answers.some((x) => x != null)) return 0;
   return placementOf(model).bar / placementSpread(model, answers);
@@ -370,8 +353,8 @@ function placementPrecision(model, answers) {
 // How plausible each ideology is given the answers so far (weights summing to 1), from its distance
 // `d` (fitTo): a Gaussian, exp(-d² / 2s²), whose width s is how precisely the answers place you
 // (placementSpread, the same s that tells the quiz you're done), so there is no tuning constant. Few
-// or noisy answers place you loosely and every nearby ideology stays in play; many consistent ones
-// narrow it down. Before any answer (d null) all weigh the same.
+// answers place you loosely and every nearby ideology stays in play; more answers narrow
+// it down. Before any answer (d null) all weigh the same.
 function plausibility(model, answers, d) {
   const m = model.ideologies.length;
   if (!d) return new Array(m).fill(1 / m);
@@ -607,8 +590,7 @@ function salienceContext(model, ideologies, { lines } = {}) {
   return ctx;
 }
 
-// `noise`: the variance per statement off the real lines; by default the landscape's (salience judges
-// records by it), while a taker's s uses their own (placementSpread).
+// `noise`: the variance per statement off the real lines (the landscape's; salience and a taker's s).
 function placementUncertainty(ctx, knownIdx, noise = ctx.noise) {
   const { model, k } = ctx;
   const comps = model.components.slice(0, k);
@@ -694,5 +676,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, distance, fitTo, fitScale, similarity, plausibility, placementSpread, takerNoise, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, distance, fitTo, fitScale, similarity, plausibility, placementSpread, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
 }

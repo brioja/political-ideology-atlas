@@ -118,13 +118,11 @@ for (const ideo of IDEOLOGIES) {
   if (tied.length) twins.push(`${ideo.name} = ${tied.join(", ")}`);
   else assert.strictEqual(topMatch(shipped, ideo.profile), ideo.id, `topMatch() disagrees with match() for ${ideo.name}`);
 }
-// s (placementSpread) comes from the taker's own noise: the same statements answered inconsistently
-// (every other answer flipped) place them less precisely than answered as the ideology does.
+// s (placementSpread) only shrinks as answers come in: one more answered statement never widens it.
 {
   const own = IDEOLOGIES[0].profile;
-  let k = 0;
-  const flipped = own.map((x) => (x == null ? null : k++ % 2 ? -x : x));
-  assert(placementSpread(shipped, flipped) > placementSpread(shipped, own), "contradictory answers don't widen s");
+  const half = own.map((x, j) => (j % 2 ? null : x));
+  assert(placementSpread(shipped, own) < placementSpread(shipped, half), "more answers don't narrow s");
 }
 {
   const w = weights(shipped, IDEOLOGIES[0].profile);

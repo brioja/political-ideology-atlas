@@ -9,8 +9,7 @@ const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, t
 // Once the answers place you to within the typical gap between neighbouring ideologies (precision 1, see
 // placementPrecision in pca.js), more barely change anything, so the quiz says you're done, settled
 // or not: someone between two ideologies may never settle and would otherwise answer every statement.
-// Measured from your own answers' noise, not counted, so a consistent taker is done sooner than a
-// mixed one, and it holds as statements are added.
+// Measured from which statements you answered, not counted, so it holds as statements are added.
 const DONE_PRECISION = 1;
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
