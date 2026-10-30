@@ -59,3 +59,8 @@ Audit work discussed but not started.
   gap over shared statements. They disagree on the leader, so questions narrow a ranking the taker isn't
   shown and the shown top match wanders for mixed takers (an environmentalist-libertarian mix got African
   feminism at q40). Direction: one measure of fit for both, no special rules; measure with regression.js.
+- **Nationalisms not yet re-audited may carry their main party's programme** (2026-10-30). Under rules 3 a
+  nationalism's doctrine is its position on the nation; a carrying party's or government's wider programme
+  is borrowing (Valencian nationalism's old answers came from Compromís, Ethiopian nationalism's from Abiy's
+  record). Honest re-audits leave most nationalisms short of the bar, so until all are redone, treatment
+  differs by whether one has been re-audited. Re-audit them in turn, or decide another scope with Brandon.
