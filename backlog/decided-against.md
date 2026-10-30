@@ -42,3 +42,11 @@ explicit decision from the maintainer.
   sparse ideology and steers questions toward its positions (Brandon: "sounds like a hack": it hand-selects
   which ideology gets tested). The selector itself is not off limits. (5) counting an ideology's blanks as distance (silence is
   never scored; the old 'Neither' bias). Matching stays as is; the bias shrinks as more audits become honest.
+
+## Statement counts or "% likely your closest" as the match number (2026-10-30)
+
+- Same-side counts on shared statements ("41 of 52"): statements are sparse for ideologies, people and
+  takers alike, which is why matching moved to the lines.
+- The chance each ideology is the closest (plausibility weights): that is uncertainty, not likeness;
+  uncertainty, if shown, is a range around the % match (see results.md).
+- Uncertainty from simulated answers to unasked statements: scores silence.
