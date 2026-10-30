@@ -47,3 +47,15 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
   carry this position cleanly for dozens of ideologies on both sides; worth a backfill. Once it is
   active, consider retiring `personal-possessions-private`.
 
+
+- **Split `state-arms-monopoly`** (tester feedback, 2026-10-30 plain-language pass). "Only the state's army
+  and police should be allowed to bear arms; all other armed groups should be disarmed" is read two ways:
+  a state monopoly of organised force (no militias or private armies: laissez-faire, economic liberalism,
+  Benazir Bhutto agree) or no private gun ownership ("bear arms": American conservatism and Black
+  conservatism disagree as gun-rights defenders). A clean replacement is a statement on militias and
+  private armies only; `limit-guns` already covers private guns.
+- **Split `shared-human-nature`** (tester couldn't follow it, 2026-10-30). It bundles three claims (a shared
+  human nature exists; it grounds dignity and rights; it should not be redesigned). Audits read it as
+  natural law (Catholic traditions agree) and as anti-redesign (transhumanists and "new man" movements
+  disagree). Two statements would carry each cleanly: rights rest on a shared human nature; human nature
+  should not be altered by technology.
