@@ -73,3 +73,8 @@ when that gap plausibly cost answers (not for a reference page that had other co
   lending-only on archive.org. Ophuls is the doctrine's central thinker, but even his texts would add mainly government and
   constitutional answers; the doctrine is silent on most dividing lines (foreign policy, military
   intervention, culture), so it is unlikely to clear the bar. Low priority (Brandon, 2026-10-30).
+- **Eurocommunism** (re-audit 2026-10-30, 27 stated, off the site): Carrillo's Eurocomunismo y Estado (1977;
+  archive.org 403 / lending-only), the 1975 Livorno and Paris and 1977 Madrid declaration texts, Berlinguer's
+  congress reports and the 1976 Pansa interview (Berlinguer foundation links disabled), and the lending-only
+  scholarship (Kriegel, Godson and Haseler, Sassoon). Carrillo's book alone would answer the state, army,
+  property, church, NATO and nationalisation statements.
