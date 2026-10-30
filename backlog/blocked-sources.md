@@ -28,6 +28,12 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Christopher Guest** (2026-10-23, 2 known): the 2004 Guardian interview (Richard Grant) wouldn't open.
 - **Vlad the Impaler** (8 known): his own letters weren't available in full; the rest is hostile or late
   secondhand accounts.
+- **Lee Anderson** (2026-10-30, 24 known, not shown): his TheyWorkForYou votes page (no Wayback snapshot;
+  Commons Votes API gaps for most of 2019 to early 2022), the Chad NHS/ECHR column (403), GB News
+  deportations piece (paywall redirect) and the original Feb 2023 Spectator interview. Would cover his
+  2019-22 votes (assisted dying, unions, EU, welfare, tax, policing, drugs) and his own death-penalty words.
+- **Rand Paul** (second pass 2026-10-30, shown): paul.senate.gov and congress.gov returned 403; no press
+  releases or Congressional Record.
 
 ## Ideologies
 
