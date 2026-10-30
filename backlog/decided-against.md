@@ -38,6 +38,7 @@ explicit decision from the maintainer.
   number of real lines): best on simulated suites, but a light taker then almost never reaches an honest
   (rules-3) ideology (0 of 9 for a 14-answer taker), so it penalises honest audits more the more of them
   there are. Brandon: "test takers who are told to see the results would never get many ideologies".
-  Also rejected: (4) steering the question picker toward statements the leading (sparse) ideology holds a
-  position on (Brandon: "sounds like a hack"). (5) counting an ideology's blanks as distance (silence is
+  Also rejected: (4) a special rule in the next-question selector (pca.js nextQuestion) that singles out the leading
+  sparse ideology and steers questions toward its positions (Brandon: "sounds like a hack": it hand-selects
+  which ideology gets tested). The selector itself is not off limits. (5) counting an ideology's blanks as distance (silence is
   never scored; the old 'Neither' bias). Matching stays as is; the bias shrinks as more audits become honest.

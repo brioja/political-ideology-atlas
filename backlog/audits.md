@@ -53,3 +53,9 @@ Audit work discussed but not started.
     assisted dying, vouchers), which AUDIT_RULES.md now calls borrowing unless other branches,
     Israeli secularists above all, are shown to share the position. It is off the site already, so
     this matters only if it is deepened again.
+- **Next-question selector and results ranking use different measures of fit** (found 2026-10-30, simulated
+  takers through the real selector). nextQuestion weights ideologies by squared misses extrapolated to all
+  answers (very sharp: half the weight on one ideology by ~q20), while the results page ranks by mean absolute
+  gap over shared statements. They disagree on the leader, so questions narrow a ranking the taker isn't
+  shown and the shown top match wanders for mixed takers (an environmentalist-libertarian mix got African
+  feminism at q40). Direction: one measure of fit for both, no special rules; measure with regression.js.
