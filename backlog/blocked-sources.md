@@ -48,6 +48,9 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Christina, Queen of Sweden** (second pass 2026-10-30, 32 known, off the site): Drottning Kristina,
   Brev och skrifter (2006; her Swedish letters and speeches on government, the Diet and peace), archive.org
   text 404.
+- **Frances Perkins** (second pass 2026-10-30, 32 known, off the site): ssa.gov/history (her 1935 radio
+  addresses, the 1962 Roots of Social Security lecture, FLSA and immigration speeches) returned 403. The
+  Wayback Machine has perkinsradio.html (2023 capture); perkins.html and fp1962.html weren't captured.
 ## Ideologies
 
 - **Soviet anti-Zionism** (re-audit 2026-10-30, 23 stated, off the site): the Great Soviet Encyclopedia
