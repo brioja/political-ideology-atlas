@@ -1878,9 +1878,9 @@ const QUESTIONS = [
   "id": "subordinate-church-to-state",
   "theme": "society",
   "text": "The state should curb the power and property of religious institutions and place the clergy under civil authority.",
-  "agree": "Religious bodies answer to the civil state, which may limit their wealth and independence.",
-  "disagree": "The state should not curb the power and property of religious institutions or place the clergy under civil authority.",
-  "note": "About how far the state may control churches.",
+  "agree": "The state should have authority over religious bodies themselves: their property, their leadership and their clergy.",
+  "disagree": "It is not true that the state should curb the power and property of religious institutions and place the clergy under civil authority.",
+  "note": "About state control of churches themselves, beyond the ordinary laws and taxes everyone pays.",
   "icon": "⛪"
  },
  {
@@ -3867,9 +3867,9 @@ const QUESTIONS = [
   "id": "shared-human-nature",
   "theme": "society",
   "text": "There is a shared human nature that grounds human dignity and rights and should not be redesigned.",
-  "agree": "A common human nature underlies dignity and rights, and tampering with it is wrong.",
-  "disagree": "There is not a shared human nature that grounds human dignity and rights and should not be redesigned.",
-  "note": "About whether human nature is a fixed basis for dignity.",
+  "agree": "All people share one human nature. It is the source of their dignity and rights, and it should not be remade, by technology or by politics.",
+  "disagree": "It is not true that there is a shared human nature that grounds human dignity and rights and should not be redesigned.",
+  "note": "About whether human nature is fixed and the source of our rights, and whether it may be remade, for example by genetic engineering or by political campaigns to create a \"new man\".",
   "icon": "🧬"
  },
  {
@@ -3957,9 +3957,9 @@ const QUESTIONS = [
   "id": "environment-over-liberty",
   "theme": "ecology",
   "text": "Protecting the environment should take priority over individual liberty when the two conflict.",
-  "agree": "Where freedoms damage the environment, they should give way.",
-  "disagree": "Protecting the environment should not take priority over individual liberty when the two conflict.",
-  "note": "About trading freedom against environmental protection.",
+  "agree": "When people's freedom to do something harms the environment, the law should limit that freedom.",
+  "disagree": "When people's freedom to do something harms the environment, protecting the environment should not take priority over that freedom.",
+  "note": "About everyday freedoms, such as how people use their land, run their businesses, travel and what they buy, when these harm the environment.",
   "icon": "🌿"
  },
  {
