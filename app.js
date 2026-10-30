@@ -6,12 +6,12 @@
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
-// Once the answers place you to within half the gap between neighbouring ideologies (precision 2, see
+// Once the answers place you to within the typical gap between neighbouring ideologies (precision 1, see
 // placementPrecision in pca.js), more barely change anything, so the quiz says you're done, settled
 // or not: someone between two ideologies may never settle and would otherwise answer every statement.
 // Measured from your own answers' noise, not counted, so a consistent taker is done sooner than a
 // mixed one, and it holds as statements are added.
-const DONE_PRECISION = 2;
+const DONE_PRECISION = 1;
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },
