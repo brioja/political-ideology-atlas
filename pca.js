@@ -251,14 +251,14 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // changes them all together and they cannot drift apart.
 //
 // Fit is distance on the real dividing lines (matchLines). Comparing statement by statement favoured
-// whoever had answered the most and whoever held the mildest views, and two sparse records often
+// whoever had answered the most and whoever held the mildest views, and two sparse lists of answers often
 // share few statements. Silence (null) is never scored, as "Neither" or as disagreement: a decision,
 // not a default (test.js checks it). Placement reads the real lines from the answered statements
 // only (see posterior), and with nothing answered there is no position at all.
 //
-// Each line counts as far as both records are placed on it (lineStats, the same per-line precision
-// that decides who is placed well enough to be shown and tells the quiz you're done). A line a record says nothing about would
-// otherwise sit at its middle by default and count in full, as if the record were a moderate there:
+// Each line counts as far as both lists of answers are placed on it (lineStats, the same per-line
+// precision that decides who is shown and tells the quiz you're done). A line a list says nothing
+// about would otherwise sit at its middle by default and count in full, as if it were moderate there:
 // someone placed only on economics would match whoever sits mid-way on religion. Weighted by
 // precision, it counts for nothing until it is answered, so ideologies that differ only there stay
 // tied, and the next-question selector asks about it because they disagree there.
@@ -269,12 +269,12 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 function locate(model, answers) {
   const known = answeredIndexes(answers);
   if (!known.length) return null;
-  const p = posterior(placementOf(model), known, answers.map((x, j) => (x == null ? 0 : x - model.mean[j])));
+  const p = posterior(placementOf(model), known, answers.map((x, j) => (x == null ? null : x - model.mean[j]))); // only `known` is read
   return { at: p.at, reliability: p.lines.map((l) => l.reliability) };
 }
 // Where a list of answers sits on the real lines, or null with nothing answered.
 const place = (model, answers) => { const l = locate(model, answers); return l && l.at; };
-// A record as shipped by the build (ideologies in IDEOLOGIES, people in PEOPLE carry `at` and
+// A list of answers as shipped by the build (ideologies in IDEOLOGIES, people in PEOPLE carry `at` and
 // `reliability`, so the page doesn't work them out for each; test.js checks they are current), or
 // located here.
 const located = (model, r) => (r.at && r.reliability ? { at: r.at, reliability: r.reliability } : locate(model, r.profile));
@@ -288,7 +288,7 @@ function positions(model, answers, at = place(model, answers)) {
   return out;
 }
 
-// The distance between two located records (locate): Euclidean on the real lines, each line weighted
+// The distance between two located lists of answers (locate): Euclidean on the real lines, each line weighted
 // by how reliably both are placed on it. No position is no basis for a match.
 function distance(a, b) {
   if (!a || !b) return Infinity;
@@ -297,7 +297,7 @@ function distance(a, b) {
   return Math.sqrt(s);
 }
 
-// The distances from a set of answers to each of `places` (located records, such as a model's
+// The distances from a set of answers to each of `places` (located lists of answers, such as a model's
 // ideologies), or null with nothing answered: no basis to rank anyone, rather than everyone measured
 // from the centre.
 function fitTo(model, answers, places) {
@@ -455,7 +455,7 @@ function meaningfulAxes(model, ideologies, { runs = 60, quantile = 0.95, seed = 
   return count;
 }
 
-// The placement context: how precisely a record is placed on each real line. Depends only on WHICH
+// The placement context: how precisely a list of answers is placed on each real line. Depends only on WHICH
 // statements have a recorded position, never on the answers, so unusual views are not penalized.
 // Bayesian: before any evidence, a position is as spread out as the ideologies are on each dividing
 // line (the eigenvalues); each recorded statement narrows that along the lines it measures, weighted
@@ -527,9 +527,9 @@ function posterior(ctx, knownIdx, centred = null) {
   return out;
 }
 
-// A political ideology or figure takes positions across every dividing line; a record that speaks to
-// only some of them holds opinions, not a full politics, and isn't shown (Brandon, 2026-10-31).
-// Uncertainty: on a record's worst line, the share of that line's spread its answers leave unknown
+// A political ideology or figure takes positions across every dividing line; a list of answers that speaks
+// to only some of them holds opinions, not a full politics, and isn't shown (Brandon, 2026-10-31).
+// Uncertainty: on a list of answers' worst line, the share of that line's spread its answers leave unknown
 // (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY: every
 // line more known than unknown. The same rule for ideologies, people and AI models; the quiz's "Done"
 // uses the same measure with its own target (DONE_UNCERTAINTY).
@@ -545,7 +545,7 @@ function uncertainty(ctx, profile) {
   return { known: known.length, uncertainty: worst, lines, max: MAX_UNCERTAINTY, placed: worst <= MAX_UNCERTAINTY };
 }
 
-// How far off a distance may be from placement error alone, for a record with positions on `knownIdx`:
+// How far off a distance may be from placement error alone, for a list of answers with positions on `knownIdx`:
 // on each line its variance, weighted the way distance weighs that line (s² = Σ reliability ·
 // variance). The selector's plausibility width, and, for every statement answered, the closest two
 // ideologies can be and still be told apart.
