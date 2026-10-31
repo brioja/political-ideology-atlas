@@ -5,7 +5,8 @@
  "auditor": [
   "claude-sonnet-5-5",
   "claude-opus-5-5",
-  "claude-haiku-5-5"
+  "claude-haiku-5-5",
+  "gpt-6"
  ],
  "living": true,
  "role": "Mayor of New York City (2026–); member of the New York State Assembly (2021–2025)",
@@ -347,6 +348,22 @@
    "author": "QNS (October 27, 2021)",
    "url": "https://qns.com/2021/10/queens-lawmaker-joins-hunger-to-get-mayor-to-allocate-more-relief-for-taxi-cab-drivers",
    "usedFor": "2021 taxi-driver hunger strike"
+  },
+  {
+   "id": "c1",
+   "kind": "primary",
+   "title": "Candidate Answers to JOLDC: Zohran Mamdani for NY Assembly District 36 (2022)",
+   "author": "Zohran Mamdani; published by Jim Owles Liberal Democratic Club",
+   "url": "https://jimowles.squarespace.com/news/candidate-answers-to-joldc-zohran-mamdani-for-ny-assembly-district-36-2022",
+   "usedFor": "Question 42: explicitly supports a statewide rent supplement for households facing eviction or homelessness; evidence against prohibiting all rental housing."
+  },
+  {
+   "id": "c2",
+   "kind": "primary",
+   "title": "Mayor Mamdani Releases Block by Block: The Housing Plan for A New Era",
+   "author": "New York City Housing Development Corporation; includes Mamdani's own statement",
+   "url": "https://www.nychdc.com/newsroom/mayor-mamdani-releases-block-block-housing-plan-new-era",
+   "usedFor": "May 26, 2026 housing plan and Mamdani's express commitment to housing for present and future tenants, alongside homeownership."
   }
  ],
  "answers": {
@@ -1625,10 +1642,14 @@
    "sources": []
   },
   "abolish-rental-housing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "He explicitly supported a statewide rent supplement for households facing eviction or homelessness (2022 questionnaire, question 42). His 2026 housing plan preserves and expands housing for tenants alongside homeownership, and he expressly defends provision for future tenants; these positions support continued renting rather than requiring every family to own its home.",
+   "sources": [
+    "c1",
+    "c2"
+   ],
+   "auditor": "gpt-6"
   },
   "people-in-arms": {
    "value": null,
@@ -3634,7 +3655,7 @@
    "sources": []
   }
  },
- "notes": "Born October 18, 1991; living. Positions have shifted in office: he reversed his opposition to mayoral control of schools, retreated from 'defund the police' rhetoric, and later dropped some earlier stances (SHSAT). Most evidence on specific issues comes from secondary reports; positions not directly documented are left null.\n\nMerged with an independent claude-sonnet-5-5 audit: 23 answers taken from it, 28 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Shifts: in 2020 he voiced support for defunding the NYPD and called it racist; as a candidate and mayor he said he would work with police, apologized for the earlier remark, kept Commissioner Tisch and still pursues disbanding the Strategic Response Group and a Department of Community Safety. He campaigned to end mayoral control of schools but lobbied for a two-year extension as mayor. City grocery stores were first proposed as city-run and then to be run by a private operator. On Israel he has said it has a right to exist but will not endorse it as a Jewish state, and he supports a permanent ceasefire, an end to occupation and equal rights for all. DSA platform planks (for example leaving NATO) were not counted because he said his positions are the ones he states himself. Government (elections, courts, executive power) and several world topics (Ukraine, NATO, trade, aid) remain thin because he has not spoken to them in sources found.\n\nclaude-opus-5-5 deepening pass (2026-10-31), aimed at line 13 (nationalism, irredentism, supranational union). Searched his interviews (NYT The Interview, Jon Stewart, Odd Lots, Hasan Piker, ABC This Week June 2026, CBS 100-day interview, 9/11 interview), the three mayoral debates and the victory speech (captions downloaded and searched), plus the web, for: pan-national or civilizational unity (pan-African, Muslim world), the EU or pooled sovereignty, territorial claims and reunification (Kashmir, Ukraine and Crimea, Greenland), territorial expansion, an anti-Western front or the Global South, land redistribution, national rebirth, a third way between capitalism and communism, settler colonialism, the Palestinian right of return, colonial reparations (only a remark about the Kohinoor diamond, which is not reparations), immigration levels and open borders. None of these has a stated position: line 13 statements stay null. Added: ICC trials (+2), national church status (-1) and a religiously defined nation (-1). Reviewed the world answers: annexed-territory-occupation set to null (occupation and the Ukraine invasion are not annexation), national-law-over-international lowered to 0 (he backs the ICC warrant but says he will act only within New York law), force-without-un re-sourced from Wikipedia to City & State and his interview. Nine answers that rested only on Wikipedia were re-sourced to the reports or documents behind them (regulate-corporations, worker-ownership, one-party-rule (lowered to -1), suppress-opposition, direct-action, night-watchman-state, flat-income-tax, holocaust-denial); religious-exemptions became null for lack of a verifiable source. claude-haiku-5-5 cheap pass (2026-10-31), line 13: searched noncitizen voting in local elections (no statement; the city law was struck down), a city-owned bank (co-sponsored A3352 and pledged a city bank in the victory speech, but a public bank is not a bank owned by its users at cost), city-run grocery stores (a narrow case, not the general statement on public ownership of means of production or on markets), AI and technological progress (no claim that progress will solve problems), and guaranteed income (nothing found). None gives a stated position on the line 13 statements, so they stay null.",
+ "notes": "Born October 18, 1991; living. Positions have shifted in office: he reversed his opposition to mayoral control of schools, retreated from 'defund the police' rhetoric, and later dropped some earlier stances (SHSAT). Most evidence on specific issues comes from secondary reports; positions not directly documented are left null.\n\nMerged with an independent claude-sonnet-5-5 audit: 23 answers taken from it, 28 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Shifts: in 2020 he voiced support for defunding the NYPD and called it racist; as a candidate and mayor he said he would work with police, apologized for the earlier remark, kept Commissioner Tisch and still pursues disbanding the Strategic Response Group and a Department of Community Safety. He campaigned to end mayoral control of schools but lobbied for a two-year extension as mayor. City grocery stores were first proposed as city-run and then to be run by a private operator. On Israel he has said it has a right to exist but will not endorse it as a Jewish state, and he supports a permanent ceasefire, an end to occupation and equal rights for all. DSA platform planks (for example leaving NATO) were not counted because he said his positions are the ones he states himself. Government (elections, courts, executive power) and several world topics (Ukraine, NATO, trade, aid) remain thin because he has not spoken to them in sources found.\n\nclaude-opus-5-5 deepening pass (2026-10-31), aimed at line 13 (nationalism, irredentism, supranational union). Searched his interviews (NYT The Interview, Jon Stewart, Odd Lots, Hasan Piker, ABC This Week June 2026, CBS 100-day interview, 9/11 interview), the three mayoral debates and the victory speech (captions downloaded and searched), plus the web, for: pan-national or civilizational unity (pan-African, Muslim world), the EU or pooled sovereignty, territorial claims and reunification (Kashmir, Ukraine and Crimea, Greenland), territorial expansion, an anti-Western front or the Global South, land redistribution, national rebirth, a third way between capitalism and communism, settler colonialism, the Palestinian right of return, colonial reparations (only a remark about the Kohinoor diamond, which is not reparations), immigration levels and open borders. None of these has a stated position: line 13 statements stay null. Added: ICC trials (+2), national church status (-1) and a religiously defined nation (-1). Reviewed the world answers: annexed-territory-occupation set to null (occupation and the Ukraine invasion are not annexation), national-law-over-international lowered to 0 (he backs the ICC warrant but says he will act only within New York law), force-without-un re-sourced from Wikipedia to City & State and his interview. Nine answers that rested only on Wikipedia were re-sourced to the reports or documents behind them (regulate-corporations, worker-ownership, one-party-rule (lowered to -1), suppress-opposition, direct-action, night-watchman-state, flat-income-tax, holocaust-denial); religious-exemptions became null for lack of a verifiable source. claude-haiku-5-5 cheap pass (2026-10-31), line 13: searched noncitizen voting in local elections (no statement; the city law was struck down), a city-owned bank (co-sponsored A3352 and pledged a city bank in the victory speech, but a public bank is not a bank owned by its users at cost), city-run grocery stores (a narrow case, not the general statement on public ownership of means of production or on markets), AI and technological progress (no claim that progress will solve problems), and guaranteed income (nothing found). None gives a stated position on the line 13 statements, so they stay null. gpt-6 pass (2026-10-31, Codex; exact runtime version not exposed), line 13 only: Read all 52 supplied statements, the existing audit and earlier-pass notes, the local source-library index and relevant passages in its interviews and debates; checked the local corpus inventory. Targeted web searches covered Palestinian refugee return, noncitizen local voting, religious exemptions including vaccination, pooled sovereignty and the EU, common currency and pan-African unity or reunification, intellectual property, land redistribution, guaranteed income, markets and cooperative ownership, central planning, the UN and term limits. No further statement was settled by his own words or record: the Nakba-video article inferred support for return from commemoration and a guest's account, not his stated position on return including descendants; statewide term limits do not settle presidential reelection; public banks, groceries and cooperative advocacy do not settle the broader ownership claims. A full housing-plan PDF was blocked; a GitHub mirror search found only a link, so the housing answer uses the opened official release and his questionnaire. Remaining statements had no matching evidence.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3650,6 +3671,10 @@
   },
   {
    "auditor": "claude-haiku-5-5",
+   "auditedAt": "2026-10-31"
+  },
+  {
+   "auditor": "gpt-6",
    "auditedAt": "2026-10-31"
   }
  ],
