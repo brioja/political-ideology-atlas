@@ -858,7 +858,7 @@
    "sources": []
   },
   "tariffs-protect-industry": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Has criticized the Trump administration's broad tariffs as raising costs for consumers, farmers and small businesses; he has not stated a general view on protecting domestic industry.",
    "sources": [
@@ -871,7 +871,8 @@
    "auditor": [
     "claude-sonnet-5-5+gpt-6.1-sol",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "state-directs-investment": {
    "value": 1,
@@ -928,7 +929,7 @@
    "sources": []
   },
   "democracy-best": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Said 'our democracy is not a given' and that Pennsylvanians cherish it; defended free and fair elections. Has not addressed the 'even when voters choose badly' clause.",
    "sources": [
@@ -936,7 +937,8 @@
     "b1",
     "b7"
    ],
-   "auditor": "claude-sonnet-5-5+gpt-6.1-sol"
+   "auditor": "claude-sonnet-5-5+gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "direct-votes": {
    "value": null,
@@ -1923,13 +1925,14 @@
    "sources": []
   },
   "no-land-for-peace": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Backs a two-state solution, which implies territorial compromise, while calling Netanyahu's course dangerous; he has not discussed historic-homeland claims directly.",
    "sources": [
     "s8"
    ],
-   "auditor": "claude-sonnet-5-5+gpt-6.1-sol"
+   "auditor": "claude-sonnet-5-5+gpt-6.1-sol",
+   "nulledFrom": -1
   },
   "property-serves-common-good": {
    "value": null,
@@ -2722,7 +2725,7 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Pledged nondiscrimination protections for LGBTQ people, filed an attorney general brief supporting a transgender student's bathroom access, and opposed banning transgender girls from girls' teams. Has not addressed legal gender recognition itself.",
    "sources": [
@@ -2734,7 +2737,8 @@
    "auditor": [
     "claude-sonnet-5-5+gpt-6.1-sol",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "assisted-dying": {
    "value": null,
@@ -3271,14 +3275,15 @@
    "sources": []
   },
   "collective-bargaining": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Backed workers' right to bargain collectively and opposed right-to-work, which implies collectively negotiated terms; he has not addressed the individual-contract alternative directly.",
    "sources": [
     "s3",
     "b12"
    ],
-   "auditor": "claude-sonnet-5-5+gpt-6.1-sol"
+   "auditor": "claude-sonnet-5-5+gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "in-work-tax-credits": {
    "value": 2,
@@ -3738,6 +3743,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 5
   }
  ]
 }

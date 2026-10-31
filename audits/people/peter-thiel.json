@@ -1180,13 +1180,14 @@
       "sources": []
     },
     "party-controls-media": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Fought campus speech codes as a student and argues that being unable to say something suggests it is true.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "party-commands-army": {
       "value": null,
@@ -2925,12 +2926,13 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "Wrote that he does not think any class of people should be disenfranchised and called it absurd to suggest taking away women's votes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3176,5 +3178,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed over time: a libertarian (Ron Paul donor, Cato 2009) who by 2016-2019 backed Trump and national conservatism; in 2023-2025 he stepped back from donations and was critical of Trump's distractions. Recent positions are used where they differ. His own full texts for Straussian Moment, Zero to One and the 2019 NYT op-ed could not be fetched, so economics, healthcare, guns, abortion and similar issues are left null. The Reason account of the 2019 NatCon speech is a critical secondary source used only for reported content, and the Le Grand Continent text is a French translation of his 2026 handout."
+  "notes": "Views changed over time: a libertarian (Ron Paul donor, Cato 2009) who by 2016-2019 backed Trump and national conservatism; in 2023-2025 he stepped back from donations and was critical of Trump's distractions. Recent positions are used where they differ. His own full texts for Straussian Moment, Zero to One and the 2019 NYT op-ed could not be fetched, so economics, healthcare, guns, abortion and similar issues are left null. The Reason account of the 2019 NatCon speech is a critical secondary source used only for reported content, and the Le Grand Continent text is a French translation of his 2026 handout.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

@@ -1297,14 +1297,15 @@
       "sources": []
     },
     "central-bank-independence": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "Called central bank independence \"precious\" and the \"cornerstone of institutional credibility\" in monetary policy, while saying it is independence within government and does not extend to regulatory work; as chair nominee in 2026 called it essential and pledged to be strictly independent. In 2025 said the Fed had strayed from its price-stability remit.",
       "sources": [
         "s1",
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "no-land-for-peace": {
       "value": null,
@@ -3042,5 +3043,13 @@
       "sources": []
     }
   },
-  "notes": "Fiscal, trade and regulation answers rest mainly on 2010 Fed speeches and a 2025 interview; no clear later statement was found on tariffs. The Wall Street Journal op-eds, the Senate transcript and the Mercatus brief could not be read (blocked or not retrievable), so 2026 hearing remarks come from news reporting. Trump's positions were not attributed to him."
+  "notes": "Fiscal, trade and regulation answers rest mainly on 2010 Fed speeches and a 2025 interview; no clear later statement was found on tariffs. The Wall Street Journal op-eds, the Senate transcript and the Mercatus brief could not be read (blocked or not retrievable), so 2026 hearing remarks come from news reporting. Trump's positions were not attributed to him.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

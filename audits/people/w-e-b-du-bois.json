@@ -280,12 +280,13 @@
    ]
   },
   "state-harmful": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted the public to own all capital and run transport and communications, which assumes a necessary state.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "limit-guns": {
    "value": null,
@@ -464,13 +465,14 @@
    ]
   },
   "central-planning": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted public ownership of all capital and praised the Soviet path as 'real socialism'.",
    "sources": [
     "s1",
     "s14"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "socialized-markets": {
    "value": null,
@@ -507,12 +509,13 @@
    "sources": []
   },
   "state-directs-investment": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his 1961 platform of public ownership of all capital and 'discipline for growth' places investment under public direction.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "widespread-small-property": {
    "value": 0,
@@ -742,13 +745,14 @@
    "sources": []
   },
   "restore-past-order": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his program looked to a future communism and Darkwater to future industrial democracy.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "results-over-ideology": {
    "value": 1,
@@ -1654,21 +1658,23 @@
    "sources": []
   },
   "sacred-ruler": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Darkwater dismisses the 'king by the grace of God' and rule by birth in favor of election.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "flat-income-tax": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted taxation to limit inheritance and personal income, which assumes progressive rather than flat rates.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "character-from-environment": {
    "value": null,
@@ -2652,12 +2658,13 @@
    "sources": []
   },
   "charity-over-state-aid": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his 1961 platform rests on state provision of medicine, education and jobs.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "term-limits": {
    "value": null,
@@ -3243,13 +3250,14 @@
    "sources": []
   },
   "scripture-inerrant": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he refused to sign any church creed and wrote 'No dogmatic religion' in 1961.",
    "sources": [
     "s16",
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "gendered-self-government": {
    "value": null,
@@ -3361,12 +3369,13 @@
    "sources": []
   },
   "targeted-social-spending": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his platform proposes social medicine and free education for all rather than means-tested programs.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "bypass-parties-groups": {
    "value": null,
@@ -3473,5 +3482,13 @@
    "sources": []
   }
  },
- "notes": "Views changed over a long life: reformist Talented Tenth elitism (1903), Socialist Party membership (1911-12), support of WWI (1918), voluntary segregation as pragmatism (1934), Marxist analysis (1930s), peace activism and the 1951 Peace Information Center trial, and Communist Party membership (1961). Where earlier and later positions conflict, the later (1950s-1961) position is used. Statements about the Communist Party's own program (vanguard, one-party rule, dictatorship of the proletariat) are null because his application does not state them. Quoted Autobiography passages are cited via Wikipedia."
+ "notes": "Views changed over a long life: reformist Talented Tenth elitism (1903), Socialist Party membership (1911-12), support of WWI (1918), voluntary segregation as pragmatism (1934), Marxist analysis (1930s), peace activism and the 1951 Peace Information Center trial, and Communist Party membership (1961). Where earlier and later positions conflict, the later (1950s-1961) position is used. Statements about the Communist Party's own program (vanguard, one-party rule, dictatorship of the proletariat) are null because his application does not state them. Quoted Autobiography passages are cited via Wikipedia.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 9
+  }
+ ]
 }

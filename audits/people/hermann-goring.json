@@ -330,12 +330,13 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held that how a sovereign state treats its people is its own business, and rejected humanitarian principle as a constraint on greatness.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "open-borders": {
       "value": -2,
@@ -452,12 +453,13 @@
       "sources": []
     },
     "corporatist-bargaining": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "He replaced unions with the German Labor Front and removed strikes and lockouts, which suggests state-organized bodies for labour and employers, but he described no wage-and-price bargaining.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "one-party-rule": {
       "value": 2,
@@ -709,12 +711,13 @@
       "sources": []
     },
     "profit-exploitation": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he condemned Marxist doctrine as pernicious and rejected the proletarian reading of society, though he never addressed this claim about profit.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dictatorship-of-proletariat": {
       "value": -2,
@@ -1343,12 +1346,13 @@
       "sources": []
     },
     "recall-officials": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his leadership principle, where authority runs from the top down and the people only acknowledge the Leader, not remove officials.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "end-foreign-alliances": {
       "value": null,
@@ -3351,5 +3355,13 @@
       "sources": []
     }
   },
-  "notes": "Answers rest on Göring's 1934 book, his Nuremberg testimony and cross-examination (some self-serving, given in defence), the 1938 meeting minutes and the record of his offices. At Nuremberg he denied planning aggressive war and knowledge of the extermination, and minimized his anti-Jewish role; those claims are contested by the documents, and where record and testimony differ the record is used. Holocaust denial is left null because he denied knowledge and called atrocity films fakes without a clear statement that it did not happen. Three answers are marked Inferred and kept low. He claimed to be less anti-Jewish than Goebbels or Himmler but led economic persecution and signed the July 1941 order to Heydrich; that order is not used as an answer to any statement here."
+  "notes": "Answers rest on Göring's 1934 book, his Nuremberg testimony and cross-examination (some self-serving, given in defence), the 1938 meeting minutes and the record of his offices. At Nuremberg he denied planning aggressive war and knowledge of the extermination, and minimized his anti-Jewish role; those claims are contested by the documents, and where record and testimony differ the record is used. Holocaust denial is left null because he denied knowledge and called atrocity films fakes without a clear statement that it did not happen. Three answers are marked Inferred and kept low. He claimed to be less anti-Jewish than Goebbels or Himmler but led economic persecution and signed the July 1941 order to Heydrich; that order is not used as an answer to any statement here.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

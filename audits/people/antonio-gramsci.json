@@ -545,13 +545,14 @@
    "sources": []
   },
   "central-planning": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted competition and private property suppressed and production coordinated by councils for the community, which implies non-market coordination, but he never set out a planning scheme in these texts.",
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "socialized-markets": {
    "value": null,
@@ -3443,5 +3444,13 @@
    "sources": []
   }
  },
- "notes": "Pre-prison (1916-1926) texts and the Lyons Theses are the strongest evidence; the Prison Notebooks are used only where translations were reachable (Modern Prince, parts of State and Civil Society, The Intellectuals, On Education). His views shifted from council-centred writing in 1919-20 to party-led Leninism in 1924-26 and hegemony theory in prison; the later view is used where clear. Texts on Americanism and Fordism, language and religion in the notebooks could not be opened, so those stay null."
+ "notes": "Pre-prison (1916-1926) texts and the Lyons Theses are the strongest evidence; the Prison Notebooks are used only where translations were reachable (Modern Prince, parts of State and Civil Society, The Intellectuals, On Education). His views shifted from council-centred writing in 1919-20 to party-led Leninism in 1924-26 and hegemony theory in prison; the later view is used where clear. Texts on Americanism and Fordism, language and religion in the notebooks could not be opened, so those stay null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

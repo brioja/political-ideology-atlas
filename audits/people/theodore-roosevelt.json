@@ -99,13 +99,14 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Platform pledged minimum wage standards for working women to provide a living wage; said no one is a good citizen on less than a wage above bare cost of living. Not stated as a general or large increase.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "markets-allocate-better": {
       "value": -1,
@@ -466,12 +467,13 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his stated republican principles (government by the people through elected representatives) do not accommodate hereditary rule.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "democracy-best": {
       "value": 1,
@@ -1800,12 +1802,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his platform calls for government of the people through elected representatives and direct primaries; he did not address inheritance of rule.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "minority-veto": {
       "value": null,
@@ -3232,5 +3235,13 @@
       "sources": []
     }
   },
-  "notes": "Positions are drawn from his presidency, the 1912 campaign and his autobiography; the 1912 platform is a party text he led. Secondary sources (Wikipedia, citing Dyer and Dalton) are used for Brownsville, Americanization quotes, the 1914 sterilization statement and the view that his racial views shifted by 1917-18; the Osawatomie speech was read as an excerpt only. Race views are marked contested (low) because they changed over time. Dyer and Dalton were not opened directly."
+  "notes": "Positions are drawn from his presidency, the 1912 campaign and his autobiography; the 1912 platform is a party text he led. Secondary sources (Wikipedia, citing Dyer and Dalton) are used for Brownsville, Americanization quotes, the 1914 sterilization statement and the view that his racial views shifted by 1917-18; the Osawatomie speech was read as an excerpt only. Race views are marked contested (low) because they changed over time. Dyer and Dalton were not opened directly.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

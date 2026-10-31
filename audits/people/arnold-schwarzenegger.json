@@ -338,13 +338,14 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In 2004 said America 'fights not for imperialism but for human rights and democracy' and backed the Iraq war; later (2006) urged a deadline for withdrawal. Position on intervention for human rights is implied rather than stated in general terms.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "open-borders": {
       "value": null,
@@ -3165,5 +3166,13 @@
       "sources": []
     }
   },
-  "notes": "Views shifted over time: same-sex marriage (vetoed legalization 2005 and 2007; by 2008 opposed the Proposition 8 ban and in 2010 did not appeal its overturning), climate (from AB 32 to 'new environmentalism' stressing fast permitting), and party stance (RNC speaker for Bush in 2004; criticized Trump and endorsed Harris in 2024). Many statements are null because no direct position was found; the 2004 speech and 2003 call-in are older than the recent record. The 2005 minimum-wage veto and his 2005-2010 tax and union positions are mixed, so left null. A later explicit statement on same-sex marriage or guns was searched for but not found."
+  "notes": "Views shifted over time: same-sex marriage (vetoed legalization 2005 and 2007; by 2008 opposed the Proposition 8 ban and in 2010 did not appeal its overturning), climate (from AB 32 to 'new environmentalism' stressing fast permitting), and party stance (RNC speaker for Bush in 2004; criticized Trump and endorsed Harris in 2024). Many statements are null because no direct position was found; the 2004 speech and 2003 call-in are older than the recent record. The 2005 minimum-wage veto and his 2005-2010 tax and union positions are mixed, so left null. A later explicit statement on same-sex marriage or guns was searched for but not found.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

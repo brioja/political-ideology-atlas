@@ -271,13 +271,14 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she described the French Revolution as destructive to all governments and sought its reversal; she did not speak to revolution as a general principle.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "experts-over-public": {
       "value": null,
@@ -2996,5 +2997,13 @@
       "sources": []
     }
   },
-  "notes": "Unreachable: Morgan Library page (403); Gallica/Internet Archive editions not opened. The 'let them eat cake' remark was not used. Wikipedia text was read only in part by the fetch tool."
+  "notes": "Unreachable: Morgan Library page (403); Gallica/Internet Archive editions not opened. The 'let them eat cake' remark was not used. Wikipedia text was read only in part by the fetch tool.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

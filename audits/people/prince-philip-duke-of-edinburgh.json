@@ -27,8 +27,8 @@
   {
    "id": "s3",
    "kind": "reference",
-   "title": "Prince Philip interview, 1990-02-05 (Ng\u0101 Taonga catalogue description)",
-   "author": "Ng\u0101 Taonga Sound & Vision",
+   "title": "Prince Philip interview, 1990-02-05 (Ngā Taonga catalogue description)",
+   "author": "Ngā Taonga Sound & Vision",
    "url": "https://www.ngataonga.org.nz/search-use-collection/search/5876",
    "usedFor": "Context: WWF aims and his interest in population and wildlife in 1990; catalogue summary only, no specific positions"
   }
@@ -477,12 +477,13 @@
    "sources": []
   },
   "limit-population": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "As WWF president he called human population growth probably the single most serious long-term threat to survival and the main cause of environmental degradation (1981, 1987); he did not set out specific limiting measures in the sources opened.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "industrial-civilization-disaster": {
    "value": null,
@@ -2981,5 +2982,13 @@
    "sources": []
   }
  },
- "notes": "Original speech texts, books (Down to Earth, Wildlife Crisis) and the 1988 DPA interview could not be opened; Snopes could not trace the DPA 'deadly virus' quote. Many reported off-the-cuff remarks were deliberately not used. Sources reached: Wikipedia, Wikiquote, Ng\u0101 Taonga catalogue. Unreachable: Snopes (402), Scotsman (403), Royal Collection Trust (403)."
+ "notes": "Original speech texts, books (Down to Earth, Wildlife Crisis) and the 1988 DPA interview could not be opened; Snopes could not trace the DPA 'deadly virus' quote. Many reported off-the-cuff remarks were deliberately not used. Sources reached: Wikipedia, Wikiquote, Ngā Taonga catalogue. Unreachable: Snopes (402), Scotsman (403), Royal Collection Trust (403).",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

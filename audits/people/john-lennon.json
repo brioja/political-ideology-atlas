@@ -511,14 +511,15 @@
    ]
   },
   "war-builds-character": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his statements that the Vietnam War was a waste and should end, and his 'Give Peace a Chance' campaigns.",
    "sources": [
     "s1",
     "s4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "separate-church-state": {
    "value": null,
@@ -653,7 +654,7 @@
    "sources": []
   },
   "means-match-ends": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Peace-themed protest (bed-ins, 'Give Peace a Chance') and the 1980 line that he would stand on the barricades only 'with flowers' suggest methods matching aims, but he did not state the principle.",
    "sources": [
@@ -665,7 +666,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "return-to-foraging": {
    "value": null,
@@ -3203,6 +3205,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

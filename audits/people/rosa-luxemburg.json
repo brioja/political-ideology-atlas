@@ -224,12 +224,13 @@
    "sources": []
   },
   "cut-welfare": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: her program calls for radical social legislation and a transformed health, housing and education system, so a call to cut welfare as harmful would run against it.",
    "sources": [
     "s6"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "worker-ownership": {
    "value": 2,
@@ -493,12 +494,13 @@
    ]
   },
   "abolish-money-wages": {
-   "value": 2,
+   "value": null,
    "confidence": "medium",
    "rationale": "'Down with the wage system' is the slogan of the hour in her program, and commerce is also to be abolished; money itself is not discussed separately.",
    "sources": [
     "s6"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "abolish-central-banks": {
    "value": null,
@@ -3346,5 +3348,13 @@
    "sources": []
   }
  },
- "notes": "Positions come mainly from her own writings (1893-1919). On the Russian Revolution she praised the Bolsheviks' seizure of power while criticising their dissolution of the Constituent Assembly, press restrictions, land distribution and slogan of national self-determination. On means she accepted revolutionary violence and class dictatorship but rejected terror and one-party rule. Her 1918 Spartacus program is her latest statement of aims. Her 1899 argument for a militia and her 1905 speech on churches are read as her mature views."
+ "notes": "Positions come mainly from her own writings (1893-1919). On the Russian Revolution she praised the Bolsheviks' seizure of power while criticising their dissolution of the Constituent Assembly, press restrictions, land distribution and slogan of national self-determination. On means she accepted revolutionary violence and class dictatorship but rejected terror and one-party rule. Her 1918 Spartacus program is her latest statement of aims. Her 1899 argument for a militia and her 1905 speech on churches are read as her mature views.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

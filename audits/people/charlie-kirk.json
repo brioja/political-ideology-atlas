@@ -2163,13 +2163,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "restrict-pornography": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Asked whether he would support a ban on porn, answered absolutely, calling it a digital opioid and noting he did not think a ban is legal at present; praised state efforts to restrict access.",
    "sources": [
     "b61"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 2
   },
   "citizenship-by-descent": {
    "value": 1,
@@ -3060,13 +3061,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he repeatedly compared abortion to the Holocaust, treating it as a real atrocity; no statement on denial itself was found.",
    "sources": [
     "s7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "criminalize-homosexuality": {
    "value": -1,
@@ -3912,14 +3914,15 @@
    "sources": []
   },
   "scripture-inerrant": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Said his morals come from the Bible and cited Leviticus; literal-inerrancy not stated explicitly.",
    "sources": [
     "s2",
     "s9"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "gendered-self-government": {
    "value": null,
@@ -4152,6 +4155,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
   }
  ]
 }

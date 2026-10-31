@@ -1161,13 +1161,14 @@
       "sources": []
     },
     "expand-fossil-fuels": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "The programme rules out the lignite phase-out and plans new coal capacity, and she calls for re-entry into coal power and gas; domestic oil and gas extraction was not addressed.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "assimilate-immigrants": {
       "value": null,
@@ -1483,12 +1484,13 @@
       "sources": []
     },
     "unlimited-reelection": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "The programme wants chancellor terms limited; unlimited re-election of presidents was not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "recall-officials": {
       "value": null,
@@ -1577,12 +1579,13 @@
       ]
     },
     "minority-language-support": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The programme keeps recognised minority languages equal in status; support in schools and elections was not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religious-exemptions": {
       "value": null,
@@ -3498,5 +3501,13 @@
       "sources": []
     }
   },
-  "notes": "Her evidence is dominated by Bundestag speeches from May 2025 to October 2026 and the 2025 programme she led. Programme-only answers are medium or lower because a party programme is not her own record. Positions on the euro, same-sex marriage and the minimum wage rest on mixed or older reports and are low confidence. Weidel's January 2025 X conversation with Elon Musk was only available through press reports, so it is used for a few items only. Positions that changed: on the euro she moved from calling for exit (2015, programme 2025) to calling it a myth in 2026 that the AfD wants out."
+  "notes": "Her evidence is dominated by Bundestag speeches from May 2025 to October 2026 and the 2025 programme she led. Programme-only answers are medium or lower because a party programme is not her own record. Positions on the euro, same-sex marriage and the minimum wage rest on mixed or older reports and are low confidence. Weidel's January 2025 X conversation with Elon Musk was only available through press reports, so it is used for a few items only. Positions that changed: on the euro she moved from calling for exit (2015, programme 2025) to calling it a myth in 2026 that the AfD wants out.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

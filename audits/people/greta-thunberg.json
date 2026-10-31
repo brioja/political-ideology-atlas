@@ -263,13 +263,14 @@
       "sources": []
     },
     "limit-growth": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In her September 2019 UN Climate Action Summit speech she told leaders they talk about 'money and fairy tales of eternal economic growth' and about 'business as usual' while the climate crisis is unaddressed. She criticises endless growth as a framing but does not state a specific cap on growth.",
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "drastic-climate-action": {
       "value": 2,
@@ -470,14 +471,15 @@
       "sources": []
     },
     "indigenous-land-authority": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "She said the Swedish government 'needs to stop the colonization of Sapmi' in early 2022 over iron mining on Sámi land (per Wikipedia), and in 2023 she said renewable energy 'that violates human rights' is unacceptable while joining Sámi protests against the Fosen wind farms (per Euronews, citing NTB). Reuters reported her saying the owners 'should have seen it coming for violating human rights.' She did not use the words 'authority' or 'veto', so this is implied.",
       "sources": [
         "s6",
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "colonial-reparations": {
       "value": null,
@@ -3017,5 +3019,13 @@
       "sources": []
     }
   },
-  "notes": "Research was limited: the NPR transcript timed out and the Guardian was blocked, so the 2023 Gaza op-ed and her 2022 London and BBC remarks on 'system-wide transformation' could not be checked against the original text and are not used. Her Gaza and Israel statements were reported only secondhand through Wikipedia and were not answered as positions. Her 'uproot the system' and capitalism-related remarks (per Wikipedia, undated) do not map to a statement in statements.json and are not answered. Her nuclear view in 2022 was conditional (keeping running plants is preferable to closing them for coal); no earlier view was verified from an opened source. Known answers: 6 of 490."
+  "notes": "Research was limited: the NPR transcript timed out and the Guardian was blocked, so the 2023 Gaza op-ed and her 2022 London and BBC remarks on 'system-wide transformation' could not be checked against the original text and are not used. Her Gaza and Israel statements were reported only secondhand through Wikipedia and were not answered as positions. Her 'uproot the system' and capitalism-related remarks (per Wikipedia, undated) do not map to a statement in statements.json and are not answered. Her nuclear view in 2022 was conditional (keeping running plants is preferable to closing them for coal); no earlier view was verified from an opened source. Known answers: 6 of 490.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

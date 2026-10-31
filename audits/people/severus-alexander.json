@@ -450,12 +450,13 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the biography’s reported religious appointments and official priestly role combine civic and religious authority (43, 49).",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "laws-from-scripture": {
       "value": null,
@@ -944,13 +945,14 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the late biography attributes rank-dependent punishments and separate slave status to his personally ordered arrangements (23, 51).",
       "sources": [
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialism-one-country": {
       "value": null,
@@ -1844,12 +1846,13 @@
       "sources": []
     },
     "consumerism-harmful": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his reported condemnation of jewels and extravagant court display supports opposition to status consumption (41).",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "arm-foreign-insurgents": {
       "value": null,
@@ -3070,5 +3073,13 @@
       "sources": []
     }
   },
-  "notes": "All three parts of the Historia Augusta life downloaded and searched by theme. Its numerous anecdotes and speeches are late, frequently fictitious and idealizing; matching reports are low confidence, never high. Herodian’s personal reports are medium at most. Administrative acts attributed to Mamaea, Maesa or their council are not automatically Alexander’s positions. Three directly stated-view deductions are marked Inferred and remain low. No democratic, modern ecological, technological or socioeconomic position inferred from his imperial label. Conflicting capital-punishment and sex-work evidence retained as low-confidence 0 rather than null. All remaining statements checked against collected evidence; no salience padding."
+  "notes": "All three parts of the Historia Augusta life downloaded and searched by theme. Its numerous anecdotes and speeches are late, frequently fictitious and idealizing; matching reports are low confidence, never high. Herodian’s personal reports are medium at most. Administrative acts attributed to Mamaea, Maesa or their council are not automatically Alexander’s positions. Three directly stated-view deductions are marked Inferred and remain low. No democratic, modern ecological, technological or socioeconomic position inferred from his imperial label. Conflicting capital-punishment and sex-work evidence retained as low-confidence 0 rather than null. All remaining statements checked against collected evidence; no salience padding.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

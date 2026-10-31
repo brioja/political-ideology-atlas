@@ -1924,13 +1924,14 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Championed the federal budget system and called Congress jealous of its prerogative; approval of budget by Congress is implied.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "single-official-language": {
       "value": null,
@@ -3187,5 +3188,13 @@
       "sources": []
     }
   },
-  "notes": "As governor he backed hours and wage laws for women and opposed child labor; as president he held that such matters were for the states, and favored a child-labor amendment only in 1923. Many economic and social topics are unanswered because he left them unaddressed."
+  "notes": "As governor he backed hours and wage laws for women and opposed child labor; as president he held that such matters were for the states, and favored a child-labor amendment only in 1923. Many economic and social topics are unanswered because he left them unaddressed.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

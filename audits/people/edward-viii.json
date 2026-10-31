@@ -405,12 +405,13 @@
       "sources": []
     },
     "war-builds-character": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in the 1939 Verdun broadcast he called war 'cruel and destructive madness' that must never again overtake mankind; he did not address war's effect on national character.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "separate-church-state": {
       "value": null,
@@ -2764,12 +2765,13 @@
       "sources": []
     },
     "race-social-construct": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he described races as ranked, inherent human grades ('lowest known form of human beings'), which does not fit treating racial categories as constructs.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "gender-equality-agencies": {
       "value": null,
@@ -3000,5 +3002,13 @@
       "sources": []
     }
   },
-  "notes": "Full text of the memoir A King's Story could not be obtained (Internet Archive downloads returned 401/403), and Ziegler, Lownie and the Kenneth Harris interview were not read. Reported pro-Nazi remarks (Oursler 1941 interview, Kinross, Giles, Marburg Files) are secondhand, disputed or denied by him, so no answer was drawn from them."
+  "notes": "Full text of the memoir A King's Story could not be obtained (Internet Archive downloads returned 401/403), and Ziegler, Lownie and the Kenneth Harris interview were not read. Reported pro-Nazi remarks (Oursler 1941 interview, Kinross, Giles, Marburg Files) are secondhand, disputed or denied by him, so no answer was drawn from them.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

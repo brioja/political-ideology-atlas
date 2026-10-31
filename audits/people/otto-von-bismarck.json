@@ -738,12 +738,13 @@
       "sources": []
     },
     "profit-exploitation": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: said in 1882 he was not antagonistic to the rightful claims of capital and that a landowner has a right to rent and a capitalist to profit.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dictatorship-of-proletariat": {
       "value": null,
@@ -1801,12 +1802,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated need for the monarchical institution and royalist traditions; he spoke of kings inheriting.",
       "sources": [
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "minority-veto": {
       "value": null,
@@ -2381,12 +2383,13 @@
       ]
     },
     "dynastic-succession": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his support for hereditary monarchy and its royalist traditions, which include succession within the dynasty.",
       "sources": [
         "s8"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -2490,12 +2493,13 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held the state should stand on a religious foundation and spoke of practical Christianity, which excludes an atheist state.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -2851,13 +2855,14 @@
       "sources": []
     },
     "soldiers-refuse-war": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his insistence on army obedience in the 1862-67 conflict and military strength.",
       "sources": [
         "s6",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "collective-bargaining": {
       "value": null,
@@ -3286,5 +3291,13 @@
       "sources": []
     }
   },
-  "notes": "Several positions changed over time: free trader until 1876 then protectionist from 1878-79; ally of the National Liberals and Kulturkampf until 1878-79, then allied with the Centre and conservatives; opposed colonies until 1884. Answers on social insurance rely on his 1884 speech and Dawson's quotations of 1881-85 speeches. Memoir passages are his dictated words. Jewish emancipation (1869), the 1881 Imperial Message and railway nationalisation were not read in full text and are left null."
+  "notes": "Several positions changed over time: free trader until 1876 then protectionist from 1878-79; ally of the National Liberals and Kulturkampf until 1878-79, then allied with the Centre and conservatives; opposed colonies until 1884. Answers on social insurance rely on his 1884 speech and Dawson's quotations of 1881-85 speeches. Memoir passages are his dictated words. Jewish emancipation (1869), the 1881 Imperial Message and railway nationalisation were not read in full text and are left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

@@ -210,13 +210,14 @@
       ]
     },
     "political-violence-never": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "In 1966-68 wrote that non-violent methods are now anachronistic and that armed struggle is the highest form of political action in the neo-colonial situation.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "separate-church-state": {
       "value": 2,
@@ -3249,5 +3250,13 @@
       "sources": []
     }
   },
-  "notes": "Positions shifted from non-violent Positive Action (1949-57) to endorsing armed struggle after 1966; the later view is used. Class Struggle in Africa and Africa Must Unite were read only through extracts in Revolutionary Path. Evidence on women, family, ecology and many liberty items was not found in the texts read, so those answers are null."
+  "notes": "Positions shifted from non-violent Positive Action (1949-57) to endorsing armed struggle after 1966; the later view is used. Class Struggle in Africa and Africa Must Unite were read only through extracts in Revolutionary Path. Evidence on women, family, ecology and many liberty items was not found in the texts read, so those answers are null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-31",
+      "nulled": 1
+    }
+  ]
 }

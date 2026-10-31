@@ -228,13 +228,14 @@
    "auditor": "claude-haiku-5-5"
   },
   "historical-land-claim": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his 1976 claim that parts of Kenya and Sudan were historically Ugandan. He did not state the general principle that a historical tie outweighs other peoples' present claims.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": 1
   },
   "nation-first": {
    "value": 2,
@@ -551,23 +552,25 @@
    ]
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his reported approval of the Holocaust and his 1972 telegram to Kurt Waldheim praising Hitler's treatment of Jews (as reported by Wikipedia), which treats it as having happened. He made no recorded statement on whether it happened as historians describe.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "antifascism-founding-value": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Quoted (via Wolcott 2004, on Wikiquote) as saying that Hitler, though some thought him bad, was a great man. Constitutional antifascism is not addressed directly.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -1
   },
   "political-elite-corrupt": {
    "value": 2,
@@ -2427,13 +2430,14 @@
    "sources": []
   },
   "neither-capitalism-nor-communism": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his Kabale rejection of pure socialist or capitalist templates favors a selective mixed course.",
    "sources": [
     "b5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "criminalize-homosexuality": {
    "value": null,
@@ -3427,6 +3431,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

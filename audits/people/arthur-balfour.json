@@ -2263,13 +2263,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "religion-illusion": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his defense of theism as necessary to coherent reason contradicts treating religion as merely compensatory illusion.",
    "sources": [
     "s10"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": -2
   },
   "capitalism-progressive": {
    "value": null,
@@ -3376,5 +3377,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

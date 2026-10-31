@@ -296,7 +296,7 @@
       ]
     },
     "empower-police-military": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said police in New York City need funding ('funding for the police in New York City, for the NYPD, which affects my district') and campaigned that law enforcement should be defended and funded. Cosponsored H.R. 354 to give active and retired law enforcement officers wider concealed-carry authority. The military is not addressed.",
       "sources": [
@@ -308,7 +308,8 @@
       "auditor": [
         "claude-haiku-5-5",
         "claude-haiku-5-5"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "legalize-sex-work": {
       "value": null,
@@ -2242,13 +2243,14 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Cosponsored a bill to bar individuals born male from women's and girls' school sports (NY1). This covers only sports, and the broader legal recognition question is not addressed.",
       "sources": [
         "b4"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": -1
     },
     "assisted-dying": {
       "value": null,
@@ -3216,5 +3218,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: answers are only from his own statements, his bills and votes as reported by news and bill-tracking sources. congress.gov, GovTrack and the Wayback Machine could not be fetched (403 or refused), so no roll-call votes are cited and the 2020 and 2022 campaign websites were not read directly; campaign positions come from a secondhand BallotReady profile and news reports. A reported quote that he called police brutality a 'made-up concept' could not be verified in any opened source and is not used. Wikipedia says he called abortion 'barbaric' in a 2022 speech; the original speech was not opened. His 2023 votes beyond the Fiscal Responsibility Act (on which only news reports were read) are not used. He was expelled from the House in December 2023, pleaded guilty to wire fraud in 2024 and had his sentence commuted in October 2025.\n\nMerged with an independent claude-haiku-5-5 audit: 9 answers taken from it, 6 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Research was limited: WebSearch made 7 calls; the 6th and 7th returned the message: this session's web search budget is used up (a session-wide limit of 200 shared by every agent), and no searching was routed around it. Pages were read only where a search or Wikipedia link returned them. Not found: his House votes on Ukraine or Israel aid, his stated position on Social Security and Medicare, and the text of his 2022 abortion speech; those statements stay null. Wikipedia reports he voted against final passage of the Fiscal Responsibility Act of 2023 (one of 71 Republicans) and voted for the bills backed by House Republican leadership; the statement list has no matching position, so no answer was taken from these votes. The 2022 campaign platform items on energy independence and a flat tax appeared only in search snippets and were not opened, so they are not cited. Ideology is not inferred for this living person."
+  "notes": "Living person: answers are only from his own statements, his bills and votes as reported by news and bill-tracking sources. congress.gov, GovTrack and the Wayback Machine could not be fetched (403 or refused), so no roll-call votes are cited and the 2020 and 2022 campaign websites were not read directly; campaign positions come from a secondhand BallotReady profile and news reports. A reported quote that he called police brutality a 'made-up concept' could not be verified in any opened source and is not used. Wikipedia says he called abortion 'barbaric' in a 2022 speech; the original speech was not opened. His 2023 votes beyond the Fiscal Responsibility Act (on which only news reports were read) are not used. He was expelled from the House in December 2023, pleaded guilty to wire fraud in 2024 and had his sentence commuted in October 2025.\n\nMerged with an independent claude-haiku-5-5 audit: 9 answers taken from it, 6 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Research was limited: WebSearch made 7 calls; the 6th and 7th returned the message: this session's web search budget is used up (a session-wide limit of 200 shared by every agent), and no searching was routed around it. Pages were read only where a search or Wikipedia link returned them. Not found: his House votes on Ukraine or Israel aid, his stated position on Social Security and Medicare, and the text of his 2022 abortion speech; those statements stay null. Wikipedia reports he voted against final passage of the Fiscal Responsibility Act of 2023 (one of 71 Republicans) and voted for the bills backed by House Republican leadership; the statement list has no matching position, so no answer was taken from these votes. The 2022 campaign platform items on energy independence and a flat tax appeared only in search snippets and were not opened, so they are not cited. Ideology is not inferred for this living person.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

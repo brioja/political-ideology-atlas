@@ -1360,14 +1360,15 @@
    "sources": []
   },
   "head-commands-forces": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "His personal project, a presidential system replacing the prime minister with an executive president, puts government formation with the head of state; the sources do not discuss command of the forces.",
    "sources": [
     "b4",
     "b3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "church-by-bishops": {
    "value": null,
@@ -3351,5 +3352,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

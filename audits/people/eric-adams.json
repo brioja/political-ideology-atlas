@@ -2423,7 +2423,7 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Signed Executive Order 32 protecting access to gender-affirming care and stating that all people deserve protection 'for being who they are'; that covers protection, while legal recognition of gender identity was not addressed.",
    "sources": [
@@ -2433,7 +2433,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "assisted-dying": {
    "value": null,
@@ -2855,14 +2856,15 @@
    "sources": []
   },
   "spiritual-nature": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "He said we should embrace the spiritual part of ourselves, but as a personal view; its link to what politics should serve is not stated, so low.",
    "sources": [
     "b5",
     "b6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "regional-powers-revocable": {
    "value": null,
@@ -3423,6 +3425,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

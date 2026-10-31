@@ -2123,13 +2123,14 @@
    "sources": []
   },
   "land-use-tenure": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his 1870 message favours settlers acquiring permanent private homes under homestead law, which points against use-based communal tenure; he did not address the statement.",
    "sources": [
     "b4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": -1
   },
   "budget-needs-parliament": {
    "value": 2,
@@ -3414,6 +3415,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

@@ -227,7 +227,7 @@
       "auditor": "claude-sonnet-5-5"
     },
     "avoid-deficit-stimulus": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Pledged strict economy, paid off the national debt, said a long-lasting debt was incompatible with independence and that profuse spending breeds profligacy. Stimulus itself was not discussed.",
       "sources": [
@@ -239,7 +239,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "no-business-privileges": {
       "value": 2,
@@ -553,14 +554,15 @@
       "auditor": "claude-sonnet-5-5"
     },
     "entrenched-bill-of-rights": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: urged strict adherence to a written constitution of limited powers that secures liberty of conscience, the press and property.",
       "sources": [
         "s1",
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "head-commands-forces": {
       "value": 2,
@@ -688,13 +690,14 @@
       "auditor": "claude-sonnet-5-5"
     },
     "dynastic-succession": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: favoured election of the head of state by the people.",
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "military-guardian-role": {
       "value": -2,
@@ -911,13 +914,14 @@
       "auditor": "claude-sonnet-5-5"
     },
     "indigenous-political-leadership": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: refused any independent tribal government inside Georgia and Alabama and required tribes to submit to state laws.",
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "restrict-indigenous-settlement": {
       "value": -2,
@@ -1242,13 +1246,14 @@
       "sources": []
     },
     "military-superiority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he urged expanding the navy and forts and said the militia would render the country invincible, but he opposed a large standing army.",
       "sources": [
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "ethnic-nation": {
       "value": null,
@@ -2133,13 +2138,14 @@
       "sources": []
     },
     "courts-bound-by-majority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the bank veto argues that a Supreme Court decision does not bind Congress and the president on the question of necessity, which limits judicial control of the elected branches. He did not speak of a majority as such.",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "gender-parity-bodies": {
       "value": null,
@@ -3510,5 +3516,13 @@
       "sources": []
     }
   },
-  "notes": "Position changes: none material. Jackson favoured a bank 'wholly national' in early messages but vetoed the 1832 recharter. His 1829 recommendation of a single presidential term was not followed by his own conduct. Slavery, removal and the abolitionist mail question are scored from his messages and from record (reference source), with contested answers kept low.\n\nMerged with an independent claude-haiku-5-5 audit: 6 answers taken from it, 33 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Positions are taken from his inaugurals, annual messages and vetoes, the 1832 Proclamation and the 1837 Farewell Address. The 1836 Specie Circular is known only from secondary summaries and maps to no statement. Several answers are inferred from his record on slavery and Indian removal and are marked low. Compilation page numbers were not recorded; the Richardson compilation PDF was searched by text."
+  "notes": "Position changes: none material. Jackson favoured a bank 'wholly national' in early messages but vetoed the 1832 recharter. His 1829 recommendation of a single presidential term was not followed by his own conduct. Slavery, removal and the abolitionist mail question are scored from his messages and from record (reference source), with contested answers kept low.\n\nMerged with an independent claude-haiku-5-5 audit: 6 answers taken from it, 33 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Positions are taken from his inaugurals, annual messages and vetoes, the 1832 Proclamation and the 1837 Farewell Address. The 1836 Specie Circular is known only from secondary summaries and maps to no statement. Several answers are inferred from his record on slavery and Indian removal and are marked low. Compilation page numbers were not recorded; the Richardson compilation PDF was searched by text.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

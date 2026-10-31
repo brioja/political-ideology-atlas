@@ -1161,12 +1161,13 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Federalist 70 says energy in the executive is essential to protection against foreign attacks, which implies the executive rather than the legislature directing defense; ministers are not addressed in the passages read.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "church-by-bishops": {
       "value": null,
@@ -3119,5 +3120,13 @@
       "sources": []
     }
   },
-  "notes": "Born 1755 or 1757. Founders Online, The Farmer Refuted, A Full Vindication, the 1779 letter to John Jay and the reports on public credit, the bank and the mint could not be read in full, so the 1779 letter is cited via Wikipedia and debt policy is left unanswered. His 1787 hostility to state sovereignty softened in the Federalist."
+  "notes": "Born 1755 or 1757. Founders Online, The Farmer Refuted, A Full Vindication, the 1779 letter to John Jay and the reports on public credit, the bank and the mint could not be read in full, so the 1779 letter is cited via Wikipedia and debt policy is left unanswered. His 1787 hostility to state sovereignty softened in the Federalist.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

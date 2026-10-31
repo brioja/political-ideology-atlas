@@ -267,12 +267,13 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his Discourse blames the 'disobedient and contentious talking and doing' of the common people and lists seditious bills among sores to be remedied, and his Journal calls the 1549 risers 'rebels'. He did not discuss revolution in general.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "experts-over-public": {
       "value": null,
@@ -355,12 +356,13 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his Discourse says a well-ordered commonwealth has every part obey one head, one governor and one law, and his Devise provides for hereditary heirs to the crown. He did not discuss monarchy as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "democracy-best": {
       "value": null,
@@ -952,10 +954,10 @@
       "sources": []
     },
     "trade-surplus": {
-     "value": null,
-     "confidence": "low",
-     "rationale": "No recorded position found. (Reviewer: favouring bullion-bringing trade at a mart is nearby evidence, not a stated aim of exporting more than importing.)",
-     "sources": []
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found. (Reviewer: favouring bullion-bringing trade at a mart is nearby evidence, not a stated aim of exporting more than importing.)",
+      "sources": []
     },
     "population-transfer": {
       "value": null,
@@ -1587,12 +1589,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his Devise settles the crown on named hereditary heirs (heirs male of his cousins) and nowhere contemplates election of rulers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "minority-veto": {
       "value": null,
@@ -2139,12 +2142,13 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his Devise begins 'for lack of issue of my body', treating issue of his body as the first in line, and then names heirs in turn; there is no statement on the principle itself.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3039,5 +3043,13 @@
       "sources": []
     }
   },
-  "notes": "Minority rule: acts of Parliament, the Prayer Books, proclamations and council measures in his name were not counted. School orations are exercises on set themes (some argue both sides), so they are used only as low-confidence support. His Journal is mostly a terse record of events, so entries are used only where it records his own stance (Mary's mass, Somerset's execution, the council's price rebuke). Left null: price controls (the Journal only records council proclamations), the Devise's legality and Parliament's role (known mainly from Chief Justice Montagu's later account), and the 1549 Somerset-era enclosure policy (his own sympathies are inferred only by a footnote)."
+  "notes": "Minority rule: acts of Parliament, the Prayer Books, proclamations and council measures in his name were not counted. School orations are exercises on set themes (some argue both sides), so they are used only as low-confidence support. His Journal is mostly a terse record of events, so entries are used only where it records his own stance (Mary's mass, Somerset's execution, the council's price rebuke). Left null: price controls (the Journal only records council proclamations), the Devise's legality and Parliament's role (known mainly from Chief Justice Montagu's later account), and the 1549 Somerset-era enclosure policy (his own sympathies are inferred only by a footnote).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

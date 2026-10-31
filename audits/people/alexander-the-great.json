@@ -760,13 +760,14 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he conquered Persians, Egyptians, Phoenicians, Indians and others and ruled them as king, and razed Thebes after its revolt, though he let some cities (Sardis, Ionia) use their own laws.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "force-without-un": {
       "value": null,
@@ -829,13 +830,14 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his policy was to integrate Persians into the court, army units and the ruling circle, the opposite of legal separation.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": null,
@@ -2128,12 +2130,13 @@
       "sources": []
     },
     "abolish-armed-forces": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his whole career, including the creation of mixed Persian-Macedonian units at Opis, rested on maintaining and enlarging armed forces.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "rich-first": {
       "value": null,
@@ -2579,13 +2582,14 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he raised ever larger armies, enrolled 30,000 trained Persian youths and planned a large new fleet, and recorded no wish to reduce arms.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "open-diplomacy": {
       "value": null,
@@ -3040,5 +3044,13 @@
       "sources": []
     }
   },
-  "notes": "No writings of his own survive. Arrian, Plutarch and Diodorus wrote centuries later from lost earlier accounts, so reported speeches (Hyphasis, Opis) carry the historians' wording and are used only at medium or low confidence. Quintus Curtius Rufus and Plutarch's 'On the Fortune or Virtue of Alexander' could not be fetched in this session. Persian dress, proskynesis and claims of divinity are reported with doubt in the sources; Arrian himself disapproves of several of these acts."
+  "notes": "No writings of his own survive. Arrian, Plutarch and Diodorus wrote centuries later from lost earlier accounts, so reported speeches (Hyphasis, Opis) carry the historians' wording and are used only at medium or low confidence. Quintus Curtius Rufus and Plutarch's 'On the Fortune or Virtue of Alexander' could not be fetched in this session. Persian dress, proskynesis and claims of divinity are reported with doubt in the sources; Arrian himself disapproves of several of these acts.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

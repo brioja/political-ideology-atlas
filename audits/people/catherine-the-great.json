@@ -186,14 +186,15 @@
       "sources": []
     },
     "markets-allocate-better": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: private cultivation incentives and her anti-interference trade principle favor decentralized economic decisions.",
       "sources": [
         "b1",
         "b8"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": 1
     },
     "public-ownership": {
       "value": null,
@@ -396,14 +397,15 @@
       "sources": []
     },
     "free-trade": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: article 328’s presumption against excluding trading nations, reinforced by her later opposition to impeding commerce.",
       "sources": [
         "b1",
         "b8"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": 1
     },
     "nation-first": {
       "value": null,
@@ -596,13 +598,14 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Nakaz arts. 360-365 say nobility arose by recognising the more virtuous and deserving, and that its first duty is service and defence of the country.",
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "political-violence-never": {
       "value": -1,
@@ -1108,13 +1111,14 @@
       "sources": []
     },
     "assimilate-immigrants": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1763 manifesto grants settlers free practice of their religion with their own churches and priests, and exemption from forced service, without requiring them to give up their culture.",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "elite-replacement": {
       "value": null,
@@ -2144,13 +2148,14 @@
       "sources": []
     },
     "foreign-land-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1763 manifesto assigns free land to foreign settlers in colonies, so she did not bar foreigners from holding land.",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "disparate-impact-discrimination": {
       "value": null,
@@ -3444,6 +3449,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
     }
   ]
 }

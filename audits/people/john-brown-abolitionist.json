@@ -262,13 +262,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "women-suffrage": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Article I covers all persons of mature age in the oppressed races together with the enslaved, Article III has all mature citizens of the organization elect the Congress, and Article XLIII refers to 'male or female' members. Eligibility for office is not stated.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "premarital-sex": {
    "value": -2,
@@ -286,13 +287,14 @@
    "sources": []
   },
   "abolish-legal-marriage": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Article XLII requires that 'the marriage relation shall be at all times respected' and families kept together, which points against abolishing legal marriage. He did not address its legal benefits.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "racial-franchise": {
    "value": -2,
@@ -309,7 +311,7 @@
    ]
   },
   "racial-segregation-law": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he held all people equal before God and the Declaration, and his organization and its Constitution were open to Black and white members alike.",
    "sources": [
@@ -317,7 +319,8 @@
     "s2",
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "correct-racial-injustice": {
    "value": null,
@@ -326,13 +329,14 @@
    "sources": []
   },
   "slavery-not-civil-war-cause": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he died before the war, but his last note said the 'crimes of this guilty land' would be purged only with blood, tying coming bloodshed to slavery.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "property-fundamental": {
    "value": -1,
@@ -449,24 +453,26 @@
    "auditor": "claude-sonnet-5-5"
   },
   "self-ownership": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his opposition to slavery as a 'barbarous' war on the enslaved, and his aim of freeing them, follow from a claim that people own themselves. He did not state it in those terms.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "bound-labor": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he devoted his life to ending compulsory bondage of labor, and the Constitution protects families and requires voluntary service only for the common good. He did not discuss serfdom.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "universal-healthcare": {
    "value": null,
@@ -3240,6 +3246,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 6
   }
  ]
 }

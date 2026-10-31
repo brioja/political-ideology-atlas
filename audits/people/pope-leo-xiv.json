@@ -284,13 +284,14 @@
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Says governments should invest in the family founded on the union between a man and a woman; has not addressed same-sex marriage law by name in the texts reviewed.",
       "sources": [
         "s7",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abortion-legal": {
       "value": -2,
@@ -637,12 +638,13 @@
       "sources": []
     },
     "nature-intrinsic-value": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Describes each creature as a reflection of God's love, which suggests value beyond usefulness; not stated in those terms.",
       "sources": [
         "s9"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "limit-population": {
       "value": -1,
@@ -3355,5 +3357,13 @@
       "sources": []
     }
   },
-  "notes": "Only his own words as pope (from May 2025) were used; no statement of Catholic doctrine in general was treated as his position unless he repeated or endorsed it in his own texts. Many passages in Magnifica Humanitas and Dilexi te recall predecessors; they count only where he presents them as his own teaching. His pre-papal positions as Robert Prevost (US immigration reposts, Peruvian politics) were not used as answers because the reposts are not his own statements. Several answers (same-sex marriage, reduce-immigration, open-borders) rest on statements about adjacent matters rather than a direct statement on the exact point, and are marked medium or low."
+  "notes": "Only his own words as pope (from May 2025) were used; no statement of Catholic doctrine in general was treated as his position unless he repeated or endorsed it in his own texts. Many passages in Magnifica Humanitas and Dilexi te recall predecessors; they count only where he presents them as his own teaching. His pre-papal positions as Robert Prevost (US immigration reposts, Peruvian politics) were not used as answers because the reposts are not his own statements. Several answers (same-sex marriage, reduce-immigration, open-borders) rest on statements about adjacent matters rather than a direct statement on the exact point, and are marked medium or low.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

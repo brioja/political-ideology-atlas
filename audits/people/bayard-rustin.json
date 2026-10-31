@@ -1602,12 +1602,13 @@
       "sources": []
     },
     "end-racial-preferences": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "His later opposition targeted racial hiring and admissions quotas; this does not imply opposition to every affirmative-action measure.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "public-money-creation": {
       "value": null,
@@ -3110,5 +3111,13 @@
       "sources": []
     }
   },
-  "notes": "Full 1965 essay and long documentary interview downloaded and searched; 1970 women’s-equality column checked against its scanned pages. Later electoral strategy supersedes protest as his primary mechanism of change without repudiating every demonstration. Later military positions qualify early absolute pacifism. Quota opposition is distinguished from opposition to all remedial racial policies. Refugee admission does not establish open borders, and gay antidiscrimination advocacy does not by itself establish a position on same-sex marriage. Childcare advocacy does not establish payment for domestic work. The Freedom Budget’s conditional income guarantee is not an unconditional adult income. No historical inferences used."
+  "notes": "Full 1965 essay and long documentary interview downloaded and searched; 1970 women’s-equality column checked against its scanned pages. Later electoral strategy supersedes protest as his primary mechanism of change without repudiating every demonstration. Later military positions qualify early absolute pacifism. Quota opposition is distinguished from opposition to all remedial racial policies. Refugee admission does not establish open borders, and gay antidiscrimination advocacy does not by itself establish a position on same-sex marriage. Childcare advocacy does not establish payment for domestic work. The Freedom Budget’s conditional income guarantee is not an unconditional adult income. No historical inferences used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

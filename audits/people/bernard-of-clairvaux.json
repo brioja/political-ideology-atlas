@@ -357,14 +357,15 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Calls for the crusade to protect eastern Christians and the holy places; the statement's 'human rights' framing is anachronistic.",
    "sources": [
     "b2",
     "b7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "open-borders": {
    "value": null,
@@ -3319,5 +3320,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-31",
+   "nulled": 1
+  }
+ ]
 }

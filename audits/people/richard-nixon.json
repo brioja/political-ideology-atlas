@@ -2553,13 +2553,14 @@
       "auditor": "gpt-6.1-sol"
     },
     "religion-illusion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his 1970 address says affluent, powerful America still needs divine guidance, contradicting religion fading with material prosperity.",
       "sources": [
         "b3"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": -1
     },
     "capitalism-progressive": {
       "value": null,
@@ -3604,6 +3605,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
     }
   ]
 }

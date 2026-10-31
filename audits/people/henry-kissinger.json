@@ -802,13 +802,14 @@
       "sources": []
     },
     "universal-morality": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he defined legitimacy in order as acceptance by the major powers and not as justice, and set public opinion and morality aside; he stressed that civilisations hold different concepts of order.",
       "sources": [
         "b6"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": -1
     },
     "single-common-good": {
       "value": null,
@@ -3213,5 +3214,13 @@
       "sources": []
     }
   },
-  "notes": "Domestic, economic and social statements are null: his books and the sources opened are almost wholly about foreign policy and strategy. Several of his later books and op-eds (Diplomacy, On China, Years of Upheaval, the 2014 Washington Post Ukraine piece, the 2020 WSJ piece, the 2023 Economist interview) were not available in full text or could not be fetched, so Ukraine/NATO relies on secondary reports; the most recent view (2023) favoured Ukraine in NATO, reversing his 2014 position. Views of the 1957 book (strategy and limited war) were set against his later practice where they differ.\n\nMerged with an independent claude-haiku-5-5 audit: 5 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Changes of view: on Ukraine he said in 2014 that Ukraine should not join NATO and should be a bridge between East and West (s1); in December 2016 he advised accepting Crimea as Russian; in May 2022 he urged a return to the pre-invasion lines (s2); in January 2023 he called NATO membership for Ukraine an appropriate outcome (s7). The most recent clear position (2023) is used for NATO and Ukraine statements, and the 2022 territorial advice is recorded as low-confidence because a July 2022 interview points the other way (reported in Wikipedia). Contested: Chile 1970-73, Cambodia, Argentina 1976, Angola 1975. Not read in full: Diplomacy (1994), World Order (2014), On China (2011), White House Years, Years of Upheaval, and NSSM 200 (1974, population): archive.org full texts returned 401/404 to the downloader, and their positions were not answered except where cited above. Null answers on population, Holocaust, Israel-Palestinian and US domestic economics reflect the sources reachable in this session, not a verdict."
+  "notes": "Domestic, economic and social statements are null: his books and the sources opened are almost wholly about foreign policy and strategy. Several of his later books and op-eds (Diplomacy, On China, Years of Upheaval, the 2014 Washington Post Ukraine piece, the 2020 WSJ piece, the 2023 Economist interview) were not available in full text or could not be fetched, so Ukraine/NATO relies on secondary reports; the most recent view (2023) favoured Ukraine in NATO, reversing his 2014 position. Views of the 1957 book (strategy and limited war) were set against his later practice where they differ.\n\nMerged with an independent claude-haiku-5-5 audit: 5 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Changes of view: on Ukraine he said in 2014 that Ukraine should not join NATO and should be a bridge between East and West (s1); in December 2016 he advised accepting Crimea as Russian; in May 2022 he urged a return to the pre-invasion lines (s2); in January 2023 he called NATO membership for Ukraine an appropriate outcome (s7). The most recent clear position (2023) is used for NATO and Ukraine statements, and the 2022 territorial advice is recorded as low-confidence because a July 2022 interview points the other way (reported in Wikipedia). Contested: Chile 1970-73, Cambodia, Argentina 1976, Angola 1975. Not read in full: Diplomacy (1994), World Order (2014), On China (2011), White House Years, Years of Upheaval, and NSSM 200 (1974, population): archive.org full texts returned 401/404 to the downloader, and their positions were not answered except where cited above. Null answers on population, Holocaust, Israel-Palestinian and US domestic economics reflect the sources reachable in this session, not a verdict.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

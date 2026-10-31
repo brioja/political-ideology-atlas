@@ -290,12 +290,13 @@
       "sources": []
     },
     "legalize-drugs": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Presenting the party board's report in 1978 he said the fight against narcotics must aim to eliminate abuse, not only reduce it, and backed treatment plus action against organised crime, which implies no support for legal recreational drug use.",
       "sources": [
         "s16"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "restrict-hate-speech": {
       "value": null,
@@ -349,12 +350,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "The 1978 party board report he presented called for correctional care that puts adaptation (return to society) first and for resources for treating offenders, in line with his view that no person is a lost cause.",
       "sources": [
         "s16"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "traditional-family": {
       "value": null,
@@ -492,12 +494,13 @@
       ]
     },
     "revolution-justified": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In 1969 he said revolutions in some poor countries were likely and described them as 'the last desperate resort' against foreign usurpers and native oppressors when suppression is unbearable, while he rejected revolution in Sweden.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "experts-over-public": {
       "value": -2,
@@ -680,12 +683,13 @@
       ]
     },
     "ethnic-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he said immigration gave new cultural impulses to Swedish society and that internationalism begins at home, which is at odds with an ethnically uniform nation, though he did not address the idea directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "class-struggle-history": {
       "value": null,
@@ -1159,13 +1163,14 @@
       ]
     },
     "assimilate-immigrants": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his 1975 government said immigrants should have rights to work, housing, social security and community, and he valued new cultural impulses from immigration, which suggests he did not demand giving up original culture.",
       "sources": [
         "s10",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "elite-replacement": {
       "value": null,
@@ -3555,5 +3560,13 @@
       "sources": []
     }
   },
-  "notes": "Palme died in 1986; all positions come from his own speeches (mostly archive translations) and the record of his governments. On nuclear power he moved from caution in 1975 to backing the completion of 12 reactors with a phase-out by 2010 in the 1980 referendum. He denounced the Hanoi bombing of Christmas 1972 in terms that led the US to recall its ambassador, and criticised both superpowers while stressing neutrality. Statements on abortion, same-sex marriage, drugs for adults beyond the 1978 narcotics aim, and many theoretical items are left null for lack of his own recorded position."
+  "notes": "Palme died in 1986; all positions come from his own speeches (mostly archive translations) and the record of his governments. On nuclear power he moved from caution in 1975 to backing the completion of 12 reactors with a phase-out by 2010 in the 1980 referendum. He denounced the Hanoi bombing of Christmas 1972 in terms that led the US to recall its ambassador, and criticised both superpowers while stressing neutrality. Statements on abortion, same-sex marriage, drugs for adults beyond the 1978 narcotics aim, and many theoretical items are left null for lack of his own recorded position.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

@@ -1694,12 +1694,13 @@
    "sources": []
   },
   "slavery-not-civil-war-cause": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: reported as saying God would not let the Union beat the South until it freed the enslaved, which treats slavery as what the war turned on; she gave no explicit statement on its causes.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "preserve-contested-monuments": {
    "value": null,
@@ -2980,13 +2981,14 @@
    "sources": []
   },
   "unjust-law-not-binding": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: said that after the Fugitive Slave Law she would not trust \"Uncle Sam\" with her people and took them to Canada, and she took part in rescuing a man from officers; she did not state a view on the force of unjust law.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "automate-paid-work": {
    "value": null,
@@ -3025,5 +3027,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia gives her birth as c. March 1822 (the task listed 1820). Her words are reported by Bradford and others and cannot be checked against her own writing. Her political record is thin on the test's statements, so many answers are null."
+ "notes": "Wikipedia gives her birth as c. March 1822 (the task listed 1820). Her words are reported by Bradford and others and cannot be checked against her own writing. Her political record is thin on the test's statements, so many answers are null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

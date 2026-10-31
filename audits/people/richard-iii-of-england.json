@@ -1511,13 +1511,14 @@
       "sources": []
     },
     "abolish-hereditary-privilege": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his whole claim rested on hereditary right and legitimate descent, and he founded the College of Arms (1484) to regulate heraldic honours.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "history-own-civilization": {
       "value": null,
@@ -3022,5 +3023,13 @@
       "sources": []
     }
   },
-  "notes": "The 1484 statutes (benevolences ban, bail, jury qualifications, printing exemption, commercial acts) are left unanswered: they passed with royal assent and scholars dispute how far he personally drove them. Chroniclers and Shakespeare were not used."
+  "notes": "The 1484 statutes (benevolences ban, bail, jury qualifications, printing exemption, commercial acts) are left unanswered: they passed with royal assent and scholars dispute how far he personally drove them. Chroniclers and Shakespeare were not used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

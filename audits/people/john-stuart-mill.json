@@ -265,12 +265,13 @@
       ]
     },
     "strong-leader": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: In Considerations ch. III he called the view that a good despot would be best a radical and pernicious misconception for civilised peoples; this addresses despotism, not bypassing gridlock.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-harmful": {
       "value": -2,
@@ -452,13 +453,14 @@
       ]
     },
     "socialized-markets": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Looked to co-operative associations of workers in a competitive economy as the likely future form of industry, and wrote that private and socialist forms should each get a fair trial.",
       "sources": [
         "s9",
         "s13"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "land-value-tax": {
       "value": 1,
@@ -525,13 +527,14 @@
       "sources": []
     },
     "one-party-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Considerations argues that no class or combination should hold preponderant power, that minorities need representation, and that free discussion is vital.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "monarchy-legitimate": {
       "value": 0,
@@ -1350,12 +1353,13 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: On Liberty argues for the fullest liberty of professing and discussing any doctrine however immoral it may be considered, and that law should not restrain even vituperative expression.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unlimited-reelection": {
       "value": null,
@@ -1445,12 +1449,13 @@
       "sources": []
     },
     "minority-language-support": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: In Considerations ch. XVI he judged it beneficial for a Breton or Basque to be absorbed into a larger civilised nationality rather than keep to a separate culture.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "religious-exemptions": {
       "value": null,
@@ -1860,12 +1865,13 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Defined utilitarian morality as aiming to secure happiness to all mankind and, so far as possible, the whole sentient creation, and noted human sympathy extends to all sentient beings.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "animal-use-humane": {
       "value": null,
@@ -2453,12 +2459,13 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: In Considerations he calls it a personal injustice to withhold from anyone the ordinary privilege of having a voice in affairs in which they share the interest, and treats sex as irrelevant to political rights.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "online-participation": {
       "value": null,
@@ -2579,12 +2586,13 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said a time-limited monopoly concession is justified on the principle that justifies patents for invention, treating patents as legitimate; copyright was not addressed in the passages found.",
       "sources": [
         "s12"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "uniformed-youth": {
       "value": null,
@@ -3322,5 +3330,13 @@
       "sources": []
     }
   },
-  "notes": "His views shifted toward socialism after 1848: later editions of the Principles and the posthumous Socialism chapters treat worker co-operatives and socialist experiments sympathetically, and these later positions are used where they differ from the first edition. Principles Book II-V text was read from econlib (full text), since the Gutenberg edition (#30107) is an abridgement that omits Book V ch. VII-XI. Positions marked 'Inferred' rest on his stated principles rather than direct statements."
+  "notes": "His views shifted toward socialism after 1848: later editions of the Principles and the posthumous Socialism chapters treat worker co-operatives and socialist experiments sympathetically, and these later positions are used where they differ from the first edition. Principles Book II-V text was read from econlib (full text), since the Gutenberg edition (#30107) is an abridgement that omits Book V ch. VII-XI. Positions marked 'Inferred' rest on his stated principles rather than direct statements.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 8
+    }
+  ]
 }

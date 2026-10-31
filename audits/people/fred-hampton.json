@@ -286,13 +286,14 @@
    "sources": []
   },
   "correct-racial-injustice": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he framed Black Americans' oppression as a continuation of slavery ('we're slaves', Dred Scott) and fought segregated facilities and placed Panther programmes where 'black people are most oppressed'.",
    "sources": [
     "b5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "gender-social-construct": {
    "value": null,
@@ -3324,6 +3325,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

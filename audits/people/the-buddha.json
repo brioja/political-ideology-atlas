@@ -782,13 +782,14 @@
    "sources": []
   },
   "means-match-ends": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: 'Hatred is never laid to rest by hate, it is laid to rest by love' ties the method of resolving conflict to the peace sought.",
    "sources": [
     "s10"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "return-to-foraging": {
    "value": null,
@@ -2701,7 +2702,7 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: the Dhammapada and the first precept forbid killing without recording any exception for self-defence, though no sutta addresses self-defence directly.",
    "sources": [
@@ -2712,7 +2713,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3266,14 +3268,15 @@
    "sources": []
   },
   "extrajudicial-killing": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from the unqualified Dhammapada instruction not to kill or incite killing and the first precept, killing anyone without trial is not allowed.",
    "sources": [
     "s11",
     "s5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "close-ties-china": {
    "value": null,
@@ -3417,6 +3420,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
   }
  ]
 }

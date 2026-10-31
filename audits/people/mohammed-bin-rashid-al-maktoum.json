@@ -274,13 +274,14 @@
    "sources": []
   },
   "free-trade": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Presented the 'Economic Principles of the UAE' (2023), whose first principle is a globally open free-market economy, and urged the GCC to ease restrictions on cross-border trade. The long-run benefit to everyone is not stated in those terms.",
    "sources": [
     "s9",
     "s10"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "nation-first": {
    "value": null,
@@ -945,12 +946,13 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "In a statement on the UAE's majlis and tolerance he said all people are equal as they were born and that the country is home to people of every background, free of fanaticism, hate and racial discrimination. Equal rights before the law are not addressed explicitly.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "socialism-one-country": {
    "value": null,
@@ -1399,13 +1401,14 @@
    "sources": []
   },
   "space-expansion": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Founded the Mohammed bin Rashid Space Centre (2015) and named the Hope Mars probe, saying people should set no limits to their ambitions; the Mars 2117 settlement plan is not attributed to him personally. Whether space is a central goal of civilization is not stated.",
    "sources": [
     "s1",
     "s6"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "mixed-constitution": {
    "value": null,
@@ -3051,5 +3054,13 @@
    "sources": []
   }
  },
- "notes": "Thin, mostly official-media record: the full text of his books (My Vision, Flashes of Thought) could not be obtained, and sheikhmohammed.ae was unreachable. Federal measures only signed or approved in cabinet (e.g. the 2020 Israel agreement, taken at presidential level) were not counted. Court findings about Princess Haya and Pegasus were not treated as his positions."
+ "notes": "Thin, mostly official-media record: the full text of his books (My Vision, Flashes of Thought) could not be obtained, and sheikhmohammed.ae was unreachable. Federal measures only signed or approved in cabinet (e.g. the 2020 Israel agreement, taken at presidential level) were not counted. Court findings about Princess Haya and Pegasus were not treated as his positions.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

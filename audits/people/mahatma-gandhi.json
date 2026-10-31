@@ -222,14 +222,15 @@
       "auditor": "claude-sonnet-5-5"
     },
     "markets-allocate-better": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: called an economics that lets the strong amass wealth at the expense of the weak a false science (Harijan 9 October 1937) and criticised the mill-owners' reliance on supply and demand in the Autobiography (An Instructive Dialogue).",
       "sources": [
         "b3",
         "b1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "public-ownership": {
       "value": 1,
@@ -325,13 +326,14 @@
       "sources": []
     },
     "strong-leader": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: described a leader as only first among equals who must follow the people's ethics (Young India 8 December 1921) and feared concentrated state power (Modern Review 1935, India of My Dreams ch. 20).",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "state-harmful": {
       "value": 1,
@@ -559,14 +561,15 @@
       "sources": []
     },
     "central-planning": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: opposed concentrating economic control at the centre and said true democracy cannot be run by twenty men at the centre (Harijan 18 January 1948), while accepting nationalisation of heavy industry.",
       "sources": [
         "b3",
         "b4"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "socialized-markets": {
       "value": null,
@@ -1002,13 +1005,14 @@
       "auditor": "claude-sonnet-5-5"
     },
     "capitalism-causes-war": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: described Western industrial civilization as having insatiable material ambition at one end and war at the other, and said mass production ties nations to exploiting weaker races (Harijan 2 November 1934, India of My Dreams ch. 7); he did not call it inevitable.",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "taxation-theft": {
       "value": -2,
@@ -1035,13 +1039,14 @@
       "sources": []
     },
     "conscription": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said he would oppose compulsory military training in every case, even under a national government (Young India 24 September 1925, My Non-violence).",
       "sources": [
         "b5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "exit-over-voice": {
       "value": null,
@@ -3807,13 +3812,14 @@
       "sources": []
     },
     "resources-common-ownership": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: said the means of producing the necessaries of life should be freely available to all like God's air and that monopolizing them is unjust (Young India 15 November 1928, India of My Dreams ch. 17); he did not speak of compensation.",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "self-ownership": {
       "value": null,
@@ -3859,14 +3865,15 @@
       "auditor": "claude-sonnet-5-5"
     },
     "tech-with-ancestral-values": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wanted village tools and simple machines that serve people but rejected modern technological civilization itself (Hind Swaraj, ch. XIX; Young India 5 November 1925).",
       "sources": [
         "b2",
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "wife-divorce-without-consent": {
       "value": null,
@@ -3931,13 +3938,14 @@
       "sources": []
     },
     "labour-theory-of-value": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he called the toiler the true owner of what he produces (Harijan 5 December 1936) and treated labour as worth more than money (Harijan 19 October 1935), without stating a theory of value.",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "patriotism-serves-workers": {
       "value": 2,
@@ -3970,6 +3978,14 @@
     {
       "auditor": "claude-sonnet-5-5",
       "auditedAt": "2026-10-25"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 8
     }
   ]
 }

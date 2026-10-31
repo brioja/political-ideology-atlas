@@ -426,12 +426,13 @@
    ]
   },
   "courts-bound-by-majority": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he urged obedience to the 1954 Supreme Court decision and disobedience to majority-enacted segregation ordinances, which treats courts as a legitimate check on majorities.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "universal-healthcare": {
    "value": null,
@@ -3128,5 +3129,13 @@
    "sources": []
   }
  },
- "notes": "Stride Toward Freedom, Why We Can't Wait, The Trumpet of Conscience and the book Where Do We Go from Here could not be downloaded (archive.org full text blocked, other hosts missing), so the 1967 SCLC address stands in for the book. King's economic radicalism grew after 1965; the later statements are used. Wikipedia reports he privately spoke of democratic socialism; this is not used for answers."
+ "notes": "Stride Toward Freedom, Why We Can't Wait, The Trumpet of Conscience and the book Where Do We Go from Here could not be downloaded (archive.org full text blocked, other hosts missing), so the 1967 SCLC address stands in for the book. King's economic radicalism grew after 1965; the later statements are used. Wikipedia reports he privately spoke of democratic socialism; this is not used for answers.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

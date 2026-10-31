@@ -436,12 +436,13 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his stated identity as Amun’s ruling son and temple patron unites royal and religious authority.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "laws-from-scripture": {
       "value": null,
@@ -928,12 +929,13 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his proud description of captive foreign princes’ children serving as temple slaves denies equal standing.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "socialism-one-country": {
       "value": null,
@@ -990,12 +992,13 @@
       "sources": []
     },
     "population-transfer": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his inscription celebrates resettling captured foreign princes’ children in temple settlements after conquest.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "initiating-force-wrong": {
       "value": null,
@@ -3042,5 +3045,13 @@
       "sources": []
     }
   },
-  "notes": "Evidence spans early commemorative scarabs, diplomatic correspondence and later temple building. Downloaded and searched the complete Six Temples at Thebes transcript, reading the whole building stela and carefully excluding Merenptah’s subsequent inscription. Breasted PDF retrieval failed; not cited. Browser provided full EA1 text after direct download returned a block response. Commissioned first-person royal propaganda counts as the ruler’s expressed ideology, without treating its military boasts as independently verified events. Divine titles and ritual assertions support positions about political theology, not literal factual divinity. Three historical deductions are explicitly marked Inferred and low confidence. No views inferred merely from pharaonic office; modern economic, social and environmental statements remain null. All themes and remaining statement texts checked against collected evidence."
+  "notes": "Evidence spans early commemorative scarabs, diplomatic correspondence and later temple building. Downloaded and searched the complete Six Temples at Thebes transcript, reading the whole building stela and carefully excluding Merenptah’s subsequent inscription. Breasted PDF retrieval failed; not cited. Browser provided full EA1 text after direct download returned a block response. Commissioned first-person royal propaganda counts as the ruler’s expressed ideology, without treating its military boasts as independently verified events. Divine titles and ritual assertions support positions about political theology, not literal factual divinity. Three historical deductions are explicitly marked Inferred and low confidence. No views inferred merely from pharaonic office; modern economic, social and environmental statements remain null. All themes and remaining statement texts checked against collected evidence.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

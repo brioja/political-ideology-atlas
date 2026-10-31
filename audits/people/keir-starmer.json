@@ -2871,12 +2871,13 @@
       "sources": []
     },
     "fiscal-rules-binding": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Manifesto: fiscal rules are 'non-negotiable'; strengthened OBR scrutiny. Whether legally binding is not stated.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restructure-world-economy": {
       "value": null,
@@ -3296,5 +3297,13 @@
       "sources": []
     }
   },
-  "notes": "His positions moved considerably after winning the 2020 leadership on a left-leaning ten-pledge platform (higher income tax on the top 5%, abolishing tuition fees, freedom of movement); the most recent government record is used throughout. Answers are limited to his speeches, manifesto, votes and government record; where evidence was mixed or absent they are 0 or null. The gov.uk transcripts carry some 'political content redacted' markers."
+  "notes": "His positions moved considerably after winning the 2020 leadership on a left-leaning ten-pledge platform (higher income tax on the top 5%, abolishing tuition fees, freedom of movement); the most recent government record is used throughout. Answers are limited to his speeches, manifesto, votes and government record; where evidence was mixed or absent they are 0 or null. The gov.uk transcripts carry some 'political content redacted' markers.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -473,13 +473,14 @@
    ]
   },
   "war-builds-character": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: urged cultivating 'all warlike virtues' (Queen Louise speech) and called the army a school of manliness.",
    "sources": [
     "s2",
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "separate-church-state": {
    "value": -2,
@@ -2943,12 +2944,13 @@
    "sources": []
   },
   "women-suffrage": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: dismissed women's pursuit of 'imaginary rights' to do as men do and political meetings.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "religion-oppresses-women": {
    "value": null,
@@ -3199,5 +3201,13 @@
    "sources": []
   }
  },
- "notes": "Dead since 1941, so answers rest on his own speeches, letters, interviews and memoirs only; formal assent to Reichstag legislation is not counted. The antisemitic remarks date from exile (1919-1941) and are cited from Wikiquote's citations of Rohl; the 1922 Chicago Tribune and Bigelow 'gas' remarks were not used. Views on parliament and Social Democracy mix rhetoric of repression with policies of compromise (1890 refusal of Bismarck's plan; social legislation), so suppression answers are low. The Easter Message of 1917 was drafted with Bethmann Hollweg and is used only for the franchise and House of Lords."
+ "notes": "Dead since 1941, so answers rest on his own speeches, letters, interviews and memoirs only; formal assent to Reichstag legislation is not counted. The antisemitic remarks date from exile (1919-1941) and are cited from Wikiquote's citations of Rohl; the 1922 Chicago Tribune and Bigelow 'gas' remarks were not used. Views on parliament and Social Democracy mix rhetoric of repression with policies of compromise (1890 refusal of Bismarck's plan; social legislation), so suppression answers are low. The Easter Message of 1917 was drafted with Bethmann Hollweg and is used only for the franchise and House of Lords.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

@@ -1080,12 +1080,13 @@
    "sources": []
   },
   "diversity-weakens-cohesion": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: remembered Highlander, where Black and white people lived and worked as equals, as the first time she could envision a unified society.",
    "sources": [
     "s7"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "offices-by-lottery": {
    "value": null,
@@ -3029,13 +3030,14 @@
    ]
   },
   "unjust-law-not-binding": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: deliberately refused to obey the segregation ordinance, saying giving in did not help her rights as a human being; she did not state a legal theory of unjust law.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "automate-paid-work": {
    "value": null,
@@ -3074,5 +3076,13 @@
    "sources": []
   }
  },
- "notes": "Her Vietnam and apartheid opposition and her 1967 and 1970s Detroit activism are documented mainly through biographer summaries (Theoharis), so they were not used for specific statements. Her autobiography text and the Rosa Parks Papers items themselves could not be downloaded; only excerpts quoted in secondary pieces were seen."
+ "notes": "Her Vietnam and apartheid opposition and her 1967 and 1970s Detroit activism are documented mainly through biographer summaries (Theoharis), so they were not used for specific statements. Her autobiography text and the Rosa Parks Papers items themselves could not be downloaded; only excerpts quoted in secondary pieces were seen.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

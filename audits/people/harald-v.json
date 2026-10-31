@@ -605,7 +605,7 @@
    "sources": []
   },
   "limit-growth": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "In 2011 he said growth lifts millions out of poverty but that more and more suggests the Earth cannot bear further development like the one that created our prosperity; mixed with no call for limits as such.",
    "sources": [
@@ -615,10 +615,11 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "drastic-climate-action": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "In 2023 he said he shares young people's worry and impatience that adults are not taking strong enough measures, quickly enough, and hoped world leaders' targets would be followed by action; in 2022 he called climate the most serious issue and hoped for action in line with the seriousness.",
    "sources": [
@@ -629,7 +630,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "tech-solves-problems": {
    "value": null,
@@ -2517,14 +2519,15 @@
    "auditor": "claude-sonnet-5-5"
   },
   "criminalize-homosexuality": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his 2016 statement that Norwegians include girls who love girls and boys who love boys, within a Norway that is 'us', and from his statement that all people are of equal worth.",
    "sources": [
     "s2",
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "suppress-opposition": {
    "value": -2,
@@ -3582,6 +3585,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
   }
  ]
 }

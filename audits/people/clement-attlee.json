@@ -749,12 +749,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "Argued violent revolution implies the totalitarian state and that democratic ends need democratic methods.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "return-to-foraging": {
       "value": null,
@@ -1354,12 +1355,13 @@
       ]
     },
     "head-commands-forces": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his writing puts defence under civilian Ministers responsible to Parliament, not a head of state choosing ministers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "church-by-bishops": {
       "value": null,
@@ -1642,13 +1644,14 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his insistence on democracy and rule of law implies no ruler is above the law.",
       "sources": [
         "s1",
         "s9"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "space-expansion": {
       "value": null,
@@ -1874,12 +1877,13 @@
       "sources": []
     },
     "entrenched-bill-of-rights": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his view that the elected Commons' will must prevail over Lords implies no entrenched limits on it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "colonial-treaties-void": {
       "value": null,
@@ -2445,13 +2449,14 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: grounded democratic authority in popular consent and was agnostic.",
       "sources": [
         "s1",
         "s16"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "religious-dress-in-state": {
       "value": null,
@@ -3436,5 +3441,13 @@
       "sources": []
     }
   },
-  "notes": "Positions on India, empire, nuclear weapons and European integration changed over time: in 1937 he called for trusteeship and League supervision of colonies, in 1947 he ended British rule in India; he built the British bomb in 1947 but doubted Polaris in 1963; he urged collective security in the 1930s and promoted NATO after 1949. Immigration, capital punishment and abortion are left null because no personal statement was found. The 1945 manifesto was used only where he personally championed a policy."
+  "notes": "Positions on India, empire, nuclear weapons and European integration changed over time: in 1937 he called for trusteeship and League supervision of colonies, in 1947 he ended British rule in India; he built the British bomb in 1947 but doubted Polaris in 1963; he urged collective security in the 1930s and promoted NATO after 1949. Immigration, capital punishment and abortion are left null because no personal statement was found. The 1945 manifesto was used only where he personally championed a policy.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

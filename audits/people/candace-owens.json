@@ -724,12 +724,13 @@
    "sources": []
   },
   "jewish-state-israel": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Is quoted (via Dennis Prager's letter, unverified) saying 'I can't support the state of Israel' and 'We are an occupied nation'; she has also said she rejects Zionism. She has not addressed a Jewish right to a state in those words, so low.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "diaspora-return-right": {
    "value": null,
@@ -3023,5 +3024,13 @@
    "sources": []
   }
  },
- "notes": "Primary full texts (Blackout, testimony PDF, podcast transcripts, C-SPAN) were unreachable; evidence is quotes in news, a Prager letter, and Wikipedia. Mediaite and BizPac Review returned 403. Her COVID vaccine refusal (BlackAmericaWeb: 'I am not getting this vaccine, ever'), Ukraine and feminism remarks match no statement wording, so those stay null. Views changed: broke with Trump in 2025-26."
+ "notes": "Primary full texts (Blackout, testimony PDF, podcast transcripts, C-SPAN) were unreachable; evidence is quotes in news, a Prager letter, and Wikipedia. Mediaite and BizPac Review returned 403. Her COVID vaccine refusal (BlackAmericaWeb: 'I am not getting this vaccine, ever'), Ukraine and feminism remarks match no statement wording, so those stay null. Views changed: broke with Trump in 2025-26.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

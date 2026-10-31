@@ -380,7 +380,7 @@
    "auditor": "claude-sonnet-5-5"
   },
   "empower-police-military": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Consistently urged sustained defense investment and rebuilding the defense industrial base; the statement's police component is not documented.",
    "sources": [
@@ -392,7 +392,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "free-trade": {
    "value": 1,
@@ -3414,6 +3415,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

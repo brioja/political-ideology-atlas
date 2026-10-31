@@ -189,21 +189,23 @@
       ]
     },
     "property-fundamental": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she called wider ownership of homes and shares one of her proudest achievements; she did not describe property as very hard to override.",
       "sources": [
         "s8"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regulate-corporations": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she promised to reduce government intervention and over-government in industry, though she said privatised monopolies must not exploit consumers.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "cut-welfare": {
       "value": 1,
@@ -1286,12 +1288,13 @@
       ]
     },
     "party-controls-media": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she championed free institutions and faulted Soviet-style controls on liberty.",
       "sources": [
         "s9"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "party-commands-army": {
       "value": null,
@@ -1737,12 +1740,13 @@
       "sources": []
     },
     "trade-labor-env-standards": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she opposed new European regulations that raise employment costs.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "moral-incentives": {
       "value": -2,
@@ -2109,13 +2113,14 @@
       "sources": []
     },
     "job-guarantee": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she held that lasting jobs come from private-sector growth rather than government preserving or creating employment.",
       "sources": [
         "s3",
         "s16"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "democratic-peace": {
       "value": null,
@@ -3338,5 +3343,13 @@
       "sources": []
     }
   },
-  "notes": "Changes of view: she backed an active climate response in 1988-89 and later revised her view (Statecraft, 2002; not read directly, so the answer is 0 at low confidence). Her 1988 Bruges speech hardened her stance on Europe. She opposed sanctions on South Africa (Vancouver press conference), but no statement asks about sanctions. The Margaret Thatcher Foundation site was unreachable directly (Cloudflare 403), so Wayback Machine copies were read. Her Downing Street Years, Path to Power and Statecraft texts were not available."
+  "notes": "Changes of view: she backed an active climate response in 1988-89 and later revised her view (Statecraft, 2002; not read directly, so the answer is 0 at low confidence). Her 1988 Bruges speech hardened her stance on Europe. She opposed sanctions on South Africa (Vancouver press conference), but no statement asks about sanctions. The Margaret Thatcher Foundation site was unreachable directly (Cloudflare 403), so Wayback Machine copies were read. Her Downing Street Years, Path to Power and Statecraft texts were not available.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

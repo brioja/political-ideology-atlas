@@ -244,12 +244,13 @@
       "sources": []
     },
     "limit-growth": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said anyone who thinks infinite growth is possible in a finite environment is 'either a madman or an economist'; this implies limits on growth but he is not recorded as proposing a policy of limiting it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "drastic-climate-action": {
       "value": 2,
@@ -2998,5 +2999,13 @@
       "sources": []
     }
   },
-  "notes": "Full parliamentary transcripts (2019 BEIS committee), the Davos 2019 conversation and Guardian pieces could not be fetched (blocked), and no stated position on nuclear power, GM crops, hunting or whaling was found in opened sources, so those are null. Population remarks (2013 'plague' interview) are known only through Wikipedia's summary."
+  "notes": "Full parliamentary transcripts (2019 BEIS committee), the Davos 2019 conversation and Guardian pieces could not be fetched (blocked), and no stated position on nuclear power, GM crops, hunting or whaling was found in opened sources, so those are null. Population remarks (2013 'plague' interview) are known only through Wikipedia's summary.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

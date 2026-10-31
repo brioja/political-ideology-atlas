@@ -928,12 +928,13 @@
    ]
   },
   "leader-cult": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "In December 2016 he announced legislation so that Fidel's name and image would not name institutions, streets or monuments, in line with Fidel's wish.",
    "sources": [
     "s13"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "rule-by-example": {
    "value": 0,
@@ -3391,5 +3392,13 @@
    "sources": []
   }
  },
- "notes": "Evidence is mainly his own speeches and party programmes plus the 2019 constitution, whose drafting commission he chaired; constitution-based answers are medium because they are a collective text. Secondhand reports (HRW, IPS, press) are used only for the treatment of dissidents, the 2008 death-sentence commutations and the 2013 migration reform, and are medium at most. Judgment calls: the 2011 term-limit proposal and his 2018 departure make term-limits high; repression answers rest on HRW and so stay medium; dynastic-succession, death-penalty, same-sex marriage and abortion were left null because his own position was not found (he succeeded his brother, not a child; the death penalty remains in the penal code but he commuted nearly all sentences in 2008). The 2013 migration reform and the 2008 commutations (reported by El Dínamo and IPS) were checked but matched no statement exactly.."
+ "notes": "Evidence is mainly his own speeches and party programmes plus the 2019 constitution, whose drafting commission he chaired; constitution-based answers are medium because they are a collective text. Secondhand reports (HRW, IPS, press) are used only for the treatment of dissidents, the 2008 death-sentence commutations and the 2013 migration reform, and are medium at most. Judgment calls: the 2011 term-limit proposal and his 2018 departure make term-limits high; repression answers rest on HRW and so stay medium; dynastic-succession, death-penalty, same-sex marriage and abortion were left null because his own position was not found (he succeeded his brother, not a child; the death penalty remains in the penal code but he commuted nearly all sentences in 2008). The 2013 migration reform and the 2008 commutations (reported by El Dínamo and IPS) were checked but matched no statement exactly..",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

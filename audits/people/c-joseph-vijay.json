@@ -251,13 +251,14 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The manifesto raises police pay, risk allowances and welfare funding, but also demands apolitical police administration. Authority is not addressed.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "legalize-sex-work": {
    "value": null,
@@ -3252,6 +3253,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

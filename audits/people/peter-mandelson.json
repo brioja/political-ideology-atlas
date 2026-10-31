@@ -2566,12 +2566,13 @@
       "sources": []
     },
     "second-chamber": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Book (per reviewer) kept a second chamber, suggesting it might become more representative.",
       "sources": [
         "s19"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "municipal-property": {
       "value": null,
@@ -3158,5 +3159,13 @@
       "sources": []
     }
   },
-  "notes": "Appointed ambassador Dec 2024, took up post Feb 2025, dismissed by Starmer 11 Sep 2025 over Epstein links; arrested Feb 2026 on suspicion of misconduct in public office. None of this is used as evidence of ideology. Full texts of The Blair Revolution and The Third Man were not available online; book positions come from reviews and are capped at medium. Hansard and europa.eu speech archives were not reachable via search; several pages (taxresearch Guardian letter, gov.uk, BusinessGreen, Computing, committees.parliament.uk, RSA, Express and Star, Cato) returned 403/429."
+  "notes": "Appointed ambassador Dec 2024, took up post Feb 2025, dismissed by Starmer 11 Sep 2025 over Epstein links; arrested Feb 2026 on suspicion of misconduct in public office. None of this is used as evidence of ideology. Full texts of The Blair Revolution and The Third Man were not available online; book positions come from reviews and are capped at medium. Hansard and europa.eu speech archives were not reachable via search; several pages (taxresearch Guardian letter, gov.uk, BusinessGreen, Computing, committees.parliament.uk, RSA, Express and Star, Cato) returned 403/429.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

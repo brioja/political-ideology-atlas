@@ -513,7 +513,7 @@
    ]
   },
   "humanitarian-intervention": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Opposes US foreign wars generally ('get us out of this'), and voted for Syria troop withdrawal; she has not addressed human-rights interventions specifically.",
    "sources": [
@@ -524,7 +524,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "open-borders": {
    "value": -2,
@@ -3429,6 +3430,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

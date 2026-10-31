@@ -2546,13 +2546,14 @@
    "sources": []
   },
   "racial-franchise": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his explicit rejection of racial definitions of American membership implies opposition to racially restricted citizenship’s political rights.",
    "sources": [
     "b2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": -1
   },
   "online-participation": {
    "value": null,
@@ -2975,14 +2976,15 @@
    "sources": []
   },
   "soldiers-refuse-war": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Military hawk and veteran who backed many foreign wars; nothing suggests support for refusing orders.",
    "sources": [
     "s1",
     "s4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "collective-bargaining": {
    "value": null,
@@ -3433,6 +3435,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

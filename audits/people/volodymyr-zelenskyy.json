@@ -452,7 +452,7 @@
       ]
     },
     "no-business-privileges": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Inaugural address: a country 'where everybody is equal before the law and where the rules of the game are honest and transparent, the same for everyone'; he later drove the anti-oligarch law (barring oligarchs from privatisations). Implied rather than stated about legal privileges for connected firms.",
       "sources": [
@@ -463,7 +463,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "self-reliance-over-aid": {
       "value": -1,
@@ -516,17 +517,18 @@
       ]
     },
     "criminalize-homosexuality": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Told a heckler in Oct 2019 he would say nothing negative about the LGBT community because Ukraine is an open society ('leave those finally at peace'); in 2022 asked the government to examine civil partnerships; in 2024 said he would sign a civil-partnership law; June 2026: same rights for all. Implies opposition to criminalisation; he did not address criminal law directly.",
       "sources": [
         "s4",
         "s17"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "open-lgbt-military-service": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "June 2026, answering the head of an LGBT veterans' group: 'we are defending the state, we are the same and we have absolutely the same rights, regardless of any prejudices'. Clearly implies LGBT soldiers are equal; he did not name open service.",
       "sources": [
@@ -536,7 +538,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "equal-conscription": {
       "value": -2,
@@ -926,14 +929,15 @@
       "auditor": "claude-sonnet-5-5"
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "UNGA 2023: 'Deported people must come back home' and Russia must return the Ukrainian children it deported; the Peace Formula includes release and return of deportees. Applied to Ukrainians; descendants not addressed.",
       "sources": [
         "s2",
         "s29"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "expand-nuclear": {
       "value": 2,
@@ -3763,6 +3767,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
     }
   ]
 }

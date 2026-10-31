@@ -330,12 +330,13 @@
       "sources": []
     },
     "open-borders": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Record shows tighter visas, border integrity and screening measures; he has not addressed open borders as an aim.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "limit-growth": {
       "value": -2,
@@ -3205,5 +3206,13 @@
       "sources": []
     }
   },
-  "notes": "Views shifted on carbon pricing: he backed the consumer carbon tax in 2019 and said in 2024 it had 'served a purpose up until now'; as PM he cancelled it (March 2025) while keeping industrial pricing. Most recent position used. Several answers rest on the Liberal platform he led. Books (Value(s)) and Reith lectures were not accessible as full text."
+  "notes": "Views shifted on carbon pricing: he backed the consumer carbon tax in 2019 and said in 2024 it had 'served a purpose up until now'; as PM he cancelled it (March 2025) while keeping industrial pricing. Most recent position used. Several answers rest on the Liberal platform he led. Books (Value(s)) and Reith lectures were not accessible as full text.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

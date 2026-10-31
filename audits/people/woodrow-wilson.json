@@ -315,22 +315,24 @@
    "sources": []
   },
   "strong-leader": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from Congressional Government's argument that leadership should be concentrated in the executive rather than in committees.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": 1
   },
   "state-harmful": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his argument in The State that government may legitimately promote the general welfare by regulating labour, factories and trade. The statement is his view on government, not a quoted rejection.",
    "sources": [
     "s9"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "limit-guns": {
    "value": null,
@@ -420,13 +422,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "reduce-immigration": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Vetoed two congressional bills restricting immigration (the later veto overridden), though his views on the level of immigration are not stated.",
    "sources": [
     "s9"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -1
   },
   "empower-international-orgs": {
    "value": 2,
@@ -1418,14 +1421,15 @@
    "sources": []
   },
   "pool-sovereignty": {
-   "value": 2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Supported the League Covenant, which bound members to collective guarantees of political independence and territorial integrity. The European Union itself is not discussed.",
    "sources": [
     "s1",
     "s9"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": 2
   },
   "head-commands-forces": {
    "value": null,
@@ -1955,13 +1959,14 @@
    "sources": []
   },
   "parliament-supreme": {
-   "value": 2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from Congressional Government, which presents parliamentary government with a legislature virtually supreme as the better model.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": 2
   },
   "animal-suffering-matters": {
    "value": null,
@@ -2096,13 +2101,14 @@
    "sources": []
   },
   "office-by-exam": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from Congressional Government's call for a better civil service to attract talent. It does not state the exam principle.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": 1
   },
   "foreign-takeover-block": {
    "value": null,
@@ -2973,7 +2979,7 @@
    "sources": []
   },
   "arms-reduction": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Fourteen Points, point IV: national armaments to be reduced to the lowest point consistent with domestic safety.",
    "sources": [
@@ -2983,7 +2989,8 @@
    "auditor": [
     "claude-haiku-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "open-diplomacy": {
    "value": 1,
@@ -3474,6 +3481,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 7
   }
  ]
 }

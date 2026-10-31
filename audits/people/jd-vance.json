@@ -418,7 +418,7 @@
    "auditor": "claude-sonnet-5-5"
   },
   "restrict-hate-speech": {
-   "value": -2,
+   "value": null,
    "confidence": "high",
    "rationale": "Told Rogan that 'hate speech' is fundamentally subjective and criticized Tim Walz for suggesting it is outside the First Amendment; at Munich he called 'misinformation' and 'disinformation' censorship tools.",
    "sources": [
@@ -429,7 +429,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "limit-guns": {
    "value": -2,
@@ -3599,6 +3600,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

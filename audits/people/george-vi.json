@@ -181,14 +181,15 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his broadcasts repeatedly commit the national cause to God and the 1939 Christmas message said \"the cause of Christian civilisation\" was the basis on which a true civilisation can be built; he did not address the size of religion's public role directly.",
       "sources": [
         "s1",
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "correct-racial-injustice": {
       "value": null,
@@ -233,12 +234,13 @@
       "sources": []
     },
     "nation-first": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in the VE Day broadcast he said that in defending Britain \"we were defending the liberties of the whole world\" and that the cause was not of this nation only, and he committed the country to helping restore peace to a shattered world; he did not discuss global cooperation versus national interest as such.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "humanitarian-intervention": {
       "value": null,
@@ -823,12 +825,13 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: on the 1947 South Africa tour he was appalled when told to shake hands only with white people and called his South African bodyguards \"the Gestapo\"; this shows objection to the discriminatory instruction, not a statement on segregation law.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-class-instrument": {
       "value": null,
@@ -2999,5 +3002,13 @@
       "sources": []
     }
   },
-  "notes": "Not reached: Wheeler-Bennett official biography, full texts of the other Christmas broadcasts, the royal.uk 1939 page (404), Historic UK (blocked). The 1939 text was read via Speakola (the speakola.com/political/tag/KING+GEORGE+VI page). Government policy read in his name (India independence, Munich) was not scored as his own view."
+  "notes": "Not reached: Wheeler-Bennett official biography, full texts of the other Christmas broadcasts, the royal.uk 1939 page (404), Historic UK (blocked). The 1939 text was read via Speakola (the speakola.com/political/tag/KING+GEORGE+VI page). Government policy read in his name (India independence, Munich) was not scored as his own view.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

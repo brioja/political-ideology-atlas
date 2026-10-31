@@ -1605,13 +1605,14 @@
    "sources": []
   },
   "flat-income-tax": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Called for a tax increase on the wealthiest and a fairer tax system, which implies rising rates rather than a flat tax.",
    "sources": [
     "s6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "character-from-environment": {
    "value": null,
@@ -3328,6 +3329,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

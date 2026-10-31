@@ -711,13 +711,14 @@
    "sources": []
   },
   "strong-leader": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Anti-Tech Revolution ch. 1 (part V) considers a single philosopher-king or dictator and argues he could not steer society rationally nor stay consistent with the population's values; he does not welcome one.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "state-harmful": {
    "value": null,
@@ -790,14 +791,15 @@
    "sources": []
   },
   "nation-first": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: manifesto para. 195 calls nationalism a great promoter of technology and says revolution must be global, and the 2020 essay says restraint of technology must be worldwide; he does not discuss any country's interests directly.",
    "sources": [
     "b2",
     "b3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "humanitarian-intervention": {
    "value": null,
@@ -1254,13 +1256,14 @@
    "sources": []
   },
   "distinct-gender-roles": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: in 'The Truth About Primitive Life' he says he personally supports equal status for women, which cuts against law prescribing separate roles; he does not discuss such laws.",
    "sources": [
     "b6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "ban-interest": {
    "value": null,
@@ -1396,13 +1399,14 @@
    "sources": []
   },
   "consent-of-governed": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Anti-Tech Revolution ch. 4 (section 5) says a movement to collapse the system should proceed even if ninety percent of people would vote against, because numbers do not decide social struggles; he does not discuss legitimacy.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "trade-surplus": {
    "value": null,
@@ -1765,13 +1769,14 @@
    "sources": []
   },
   "space-expansion": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: ch. 2 (part V) describes Kurzweil's and Kelly's visions of humanity filling the universe as science-fiction fantasy of a technological utopia he opposes.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "mixed-constitution": {
    "value": null,
@@ -2230,13 +2235,14 @@
    "sources": []
   },
   "no-duty-to-obey": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: 'Morality and Revolution' argues that respect for property, docility and rule-following are made into moral values because the industrial system needs them; he does not address a duty to obey law directly.",
    "sources": [
     "b4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "non-intervention": {
    "value": null,
@@ -2818,13 +2824,14 @@
    "sources": []
   },
   "ageing-research-funding": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Anti-Tech Revolution ch. 2 (part V) calls the techies' immortality hopes self-deception and says the system would not deliver them; he does not discuss public research funding.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "anonymous-payments": {
    "value": null,
@@ -2877,13 +2884,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "racial-pride": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he calls rejecting racism and ethnocentrism a cardinal point of strategy (2020 ecofascism essay); he does not discuss pride in ancestry as such.",
    "sources": [
     "b3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "defensive-wars-only": {
    "value": null,
@@ -3373,6 +3381,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 8
   }
  ]
 }

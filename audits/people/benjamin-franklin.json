@@ -94,13 +94,14 @@
       "sources": []
     },
     "tax-the-wealthy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his view that superfluous property is the public's to dispose of by law, and from his long fight to have the Penn family's estates taxed like others in the Assembly; no stated call for higher rates on the wealthy.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "unions-good": {
       "value": null,
@@ -150,21 +151,23 @@
       "sources": []
     },
     "restrict-hate-speech": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: argued that freedom of speech is a pillar of free government and that no magistrate can be trusted with power to punish words, though he held abuse of it should be repressed; hate speech was not addressed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "strong-leader": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: feared that the new government could end in monarchy, advised moderate executive salaries and opposed an absolute presidential veto in 1787.",
       "sources": [
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-harmful": {
       "value": -2,
@@ -363,12 +366,13 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that the public has the right of regulating descents and conveyances of property and limiting the quantity and uses of it; he named no inheritance tax.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "basic-income": {
       "value": null,
@@ -856,12 +860,13 @@
       "sources": []
     },
     "work-for-welfare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his view that public provision for the poor removes the inducement to work and that the poor should be 'led or driven out' of poverty; he proposed no explicit work requirement.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "class-collaboration": {
       "value": null,
@@ -1171,13 +1176,14 @@
       ]
     },
     "representatives-worker-pay": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his approval of the Pennsylvania rule that no office should be so profitable as to be desirable and his preference for moderate executive salaries.",
       "sources": [
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "party-discipline-binding": {
       "value": null,
@@ -2352,14 +2358,15 @@
       "sources": []
     },
     "wealth-concentration-endangers-liberty": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: argued that slavery let a few families acquire vast estates while the poor lost employment, that laws made by the rich to protect their property began a tyranny, and warned the 1787 Convention against partiality to the rich.",
       "sources": [
         "s2",
         "s4",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "open-lgbt-military-service": {
       "value": null,
@@ -3171,5 +3178,13 @@
       "sources": []
     }
   },
-  "notes": "Slavery: Franklin owned slaves and printed advertisements for their sale; by the late 1750s he argued against slavery and in 1787-1790 was president of the Pennsylvania Abolition Society. His 1790 'Sidi Mehemet Ibrahim' piece is a parody that voices the pro-slavery argument in order to refute it; it is read as supporting abolition. The 1751 Increase of Mankind essay contains remarks on German immigrants and 'purely white' people that later printings dropped; immigration answers use the mature position or are left low. Answers marked Inferred rely on stated views only."
+  "notes": "Slavery: Franklin owned slaves and printed advertisements for their sale; by the late 1750s he argued against slavery and in 1787-1790 was president of the Pennsylvania Abolition Society. His 1790 'Sidi Mehemet Ibrahim' piece is a parody that voices the pro-slavery argument in order to refute it; it is read as supporting abolition. The 1751 Increase of Mankind essay contains remarks on German immigrants and 'purely white' people that later printings dropped; immigration answers use the mature position or are left low. Answers marked Inferred rely on stated views only.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

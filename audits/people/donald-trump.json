@@ -230,12 +230,13 @@
       "sources": []
     },
     "property-fundamental": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Called eminent domain 'wonderful' in 2015 and repeatedly asked government to use it for his projects, which suggests he does not see property as very hard to override; ambiguous.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "regulate-corporations": {
       "value": -2,
@@ -3318,5 +3319,13 @@
       "sources": []
     }
   },
-  "notes": "Positions are taken from his mature, recent record (2024-2026) where views changed: he said in 1999 he was 'very pro-choice' and believed in universal health care and in 2004 identified more as a Democrat. Most economic-philosophy, constitutional-design, religious and radical-ideology statements have no recorded position and are null. Minimum wage and estate-tax positions were reported only through search snippets that were not opened, so they are left null. Several 2026 events come from Wikipedia and a PBS report and should be rechecked."
+  "notes": "Positions are taken from his mature, recent record (2024-2026) where views changed: he said in 1999 he was 'very pro-choice' and believed in universal health care and in 2004 identified more as a Democrat. Most economic-philosophy, constitutional-design, religious and radical-ideology statements have no recorded position and are null. Minimum wage and estate-tax positions were reported only through search snippets that were not opened, so they are left null. Several 2026 events come from Wikipedia and a PBS report and should be rechecked.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -678,12 +678,13 @@
       "sources": []
     },
     "results-over-ideology": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Historian Berstein calls Gaullism neither doctrine nor ideology but a pragmatic exercise of power; not stated by him in so many words.",
       "sources": [
         "s8"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "direct-action": {
       "value": null,
@@ -722,12 +723,13 @@
       "sources": []
     },
     "profit-exploitation": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his participation scheme says capital and labour both contribute to an enterprise and both should share its profit.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dictatorship-of-proletariat": {
       "value": -2,
@@ -1004,13 +1006,14 @@
       ]
     },
     "state-class-instrument": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he presented the state as embodying the nation above parties and classes, not as a tool of one class.",
       "sources": [
         "s1",
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "expand-fossil-fuels": {
       "value": null,
@@ -1186,13 +1189,14 @@
       ]
     },
     "vanguard-party": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he accused the Communists of seeking to hijack the Resistance for their own dictatorship and kept them from key ministries.",
       "sources": [
         "s5",
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "priority-to-poor": {
       "value": null,
@@ -2266,13 +2270,14 @@
       "sources": []
     },
     "suppress-opposition": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: denounced dictatorship and the longing for liberty it provokes, and kept free elections and press.",
       "sources": [
         "s1",
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "punish-blasphemy": {
       "value": null,
@@ -3316,5 +3321,13 @@
       "sources": []
     }
   },
-  "notes": "Changed views: Algeria (integration rhetoric in 1958, self-determination from September 1959). Mixed evidence on constitutional assemblies (1946 vs 1958). Some answers rely on Wikipedia summaries."
+  "notes": "Changed views: Algeria (integration rhetoric in 1958, self-determination from September 1959). Mixed evidence on constitutional assemblies (1946 vs 1958). Some answers rely on Wikipedia summaries.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

@@ -889,13 +889,14 @@
    "sources": []
   },
   "political-elite-corrupt": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Made fighting corruption his top priority, alleged in 2021 corruption across every branch of government, and said God put him in office to clean the country of politicians' corrupt practices. 'Out of touch' part is not addressed.",
    "sources": [
     "s3",
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "heritable-defect-limits": {
    "value": null,
@@ -3039,5 +3040,13 @@
    "sources": []
   }
  },
- "notes": "Death penalty: strongly in favour 2016-2018, then in November 2021 held his bill pending judicial reform. Drug war: supported as senator, in 2022 said extrajudicial killings may have occurred. Many topics (abortion, age of criminal responsibility, anti-terror vote, wage platform) were found only in pages that could not be opened, so left null."
+ "notes": "Death penalty: strongly in favour 2016-2018, then in November 2021 held his bill pending judicial reform. Drug war: supported as senator, in 2022 said extrajudicial killings may have occurred. Many topics (abortion, age of criminal responsibility, anti-terror vote, wage platform) were found only in pages that could not be opened, so left null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

@@ -1307,13 +1307,14 @@
    "sources": []
   },
   "constituent-assembly": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "She presided over the 2017 Constituent Assembly and defended it as having power to act; opponents boycotted its election and disputed its legitimacy, so whether it fits 'democratically elected' is contested.",
    "sources": [
     "s1",
     "s11"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "restrict-freedoms-for-growth": {
    "value": null,
@@ -3083,5 +3084,13 @@
    "sources": []
   }
  },
- "notes": "Positions changed sharply after January 2026: she now cooperates with the US, thanks Trump, and promotes private and foreign oil investment, while still calling Maduro the legitimate president (NBC interview). Dollarization: rejected in 2021 and again in October 2026. Gaza: in 2023 she called Israel's offensive genocide, but no statement matches a current statement in the test. Essequibo: she asserts Venezuelan rights under the 1966 Geneva Agreement and asks Guyana to drop the ICJ case; no test statement fits cleanly, so it is left null. Her 2024 claim that opposition tally sheets were forged is a government position on a specific dispute and is not used for any statement. Unreachable: NPR amnesty article (timeout), El Colombiano (redirect loop), a mirror of a Sputnik piece on ties with China/Russia (connection refused), the later half of Wikipedia (no body text)."
+ "notes": "Positions changed sharply after January 2026: she now cooperates with the US, thanks Trump, and promotes private and foreign oil investment, while still calling Maduro the legitimate president (NBC interview). Dollarization: rejected in 2021 and again in October 2026. Gaza: in 2023 she called Israel's offensive genocide, but no statement matches a current statement in the test. Essequibo: she asserts Venezuelan rights under the 1966 Geneva Agreement and asks Guyana to drop the ICJ case; no test statement fits cleanly, so it is left null. Her 2024 claim that opposition tally sheets were forged is a government position on a specific dispute and is not used for any statement. Unreachable: NPR amnesty article (timeout), El Colombiano (redirect loop), a mirror of a Sputnik piece on ties with China/Russia (connection refused), the later half of Wikipedia (no body text).",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

@@ -2000,13 +2000,14 @@
       "sources": []
     },
     "material-conditions-drive-history": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his stated view that individuals make history rejects primarily impersonal material causation.",
       "sources": [
         "b12"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": -1
     },
     "ban-cartels": {
       "value": 1,
@@ -3703,6 +3704,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
     }
   ]
 }

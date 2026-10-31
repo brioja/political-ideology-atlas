@@ -1562,12 +1562,13 @@
       ]
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Promises that the displaced Venezuelans can return home; descendants are not addressed.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "co-ethnic-territorial-claim": {
       "value": null,
@@ -3247,5 +3248,13 @@
       "sources": []
     }
   },
-  "notes": "Most recent positions used (2023-2026). On same-sex marriage, outlets differ between civil unions and marriage, and I could not open her original 2023 interview. Several sites (The Hill, Times of Israel, Reuters, Sky News, Expreso) blocked access, so Israel and strike positions rest partly on Wikipedia. No full text of the Vente programme or Freedom Manifesto was reachable; the manifesto and programme are cited through news reports quoting them."
+  "notes": "Most recent positions used (2023-2026). On same-sex marriage, outlets differ between civil unions and marriage, and I could not open her original 2023 interview. Several sites (The Hill, Times of Israel, Reuters, Sky News, Expreso) blocked access, so Israel and strike positions rest partly on Wikipedia. No full text of the Vente programme or Freedom Manifesto was reachable; the manifesto and programme are cited through news reports quoting them.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

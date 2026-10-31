@@ -478,7 +478,7 @@
  ],
  "answers": {
   "universal-healthcare": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Said in March 2025 that health care 'should be 100 percent socially funded', told Sanders in June 2025 that a community should protect its most vulnerable and most people would accept a national health care system, and repeated it in 2026.",
    "sources": [
@@ -492,7 +492,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "raise-minimum-wage": {
    "value": 2,
@@ -588,7 +589,7 @@
    "sources": []
   },
   "legalize-drugs": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Said in March 2026 that marijuana 'should be legal', that it is a personal freedom issue and 'leave people alone'; also says psychedelics like MDMA and ibogaine should be accessible. Separates these from heroin and opiates, so full legalization of all drugs is not stated.",
    "sources": [
@@ -597,7 +598,8 @@
     "s12",
     "b11"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "restrict-hate-speech": {
    "value": -2,
@@ -825,7 +827,7 @@
    "sources": []
   },
   "expand-nuclear": {
-   "value": 1,
+   "value": null,
    "confidence": "high",
    "rationale": "Told Trump (Oct 2024) that nuclear is probably the cleanest, safest electricity and that fears rest on a few old disasters; also called coal-powered electric cars ridiculous.",
    "sources": [
@@ -836,7 +838,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "revolution-justified": {
    "value": null,
@@ -2877,14 +2880,15 @@
    "sources": []
   },
   "abolish-police-prisons": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Called defunding police 'stupid' and said police are necessary (2024, 2026). Prisons not addressed, so medium.",
    "sources": [
     "s22",
     "s20"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "power-sharing-divided-societies": {
    "value": null,
@@ -3712,6 +3716,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

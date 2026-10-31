@@ -546,12 +546,13 @@
    ]
   },
   "private-courts-defense": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he treated courts, defence and policing as state functions and wanted a strong army, navy and air force.",
    "sources": [
     "s11"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "military-superiority": {
    "value": null,
@@ -742,12 +743,13 @@
    "sources": []
   },
   "taxation-theft": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he built a progressive-tax, planned welfare state and called for taxation measures to cut inequality.",
    "sources": [
     "s8"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "harm-principle": {
    "value": null,
@@ -1082,12 +1084,13 @@
    "sources": []
   },
   "uniform-civil-code": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Wikipedia reports he likely favoured a uniform code but accepted that personal laws were tied to religious identity, so he codified Hindu law first.",
    "sources": [
     "s12"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "restrict-conversion": {
    "value": null,
@@ -2729,12 +2732,13 @@
    "sources": []
   },
   "communal-electorates": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he said India would tolerate no communalism and was building a secular State with equal citizenship, which excludes separate religious electorates.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "foreign-partition-plot": {
    "value": null,
@@ -3234,5 +3238,13 @@
    "sources": []
   }
  },
- "notes": "Nehru's attitude to planning and nationalisation is the mature mixed-economy position of the 1950s. On Kashmir he pledged a plebiscite in 1947-48 but declined one from 1953; the latter is treated as his mature position. His autobiography on the death penalty is ambivalent."
+ "notes": "Nehru's attitude to planning and nationalisation is the mature mixed-economy position of the 1950s. On Kashmir he pledged a plebiscite in 1947-48 but declined one from 1953; the latter is treated as his mature position. His autobiography on the death penalty is ambivalent.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
+  }
+ ]
 }

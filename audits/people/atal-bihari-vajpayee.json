@@ -748,13 +748,14 @@
       "sources": []
     },
     "direct-action": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he chose elections, coalition-building and parliamentary debate and stated in 1998 that democracy needs vigilant voters.",
       "sources": [
         "s5",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "means-match-ends": {
       "value": null,
@@ -989,12 +990,13 @@
       ]
     },
     "force-without-un": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in July 2003 his government declined a US request to send troops to Iraq without an explicit UN mandate; he fought no war abroad.",
       "sources": [
         "s20"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "reason-over-faith": {
       "value": null,
@@ -1202,12 +1204,13 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in 1977 he called the post-Emergency election a 'magnificent assertion of the human spirit' and spoke of democracy and basic rights being restored.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "trade-surplus": {
       "value": null,
@@ -1393,12 +1396,13 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he described non-alignment in 1977 as a projection of sovereignty, 'freedom' rather than neutrality, and India joined no military alliance under him.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "abolish-rental-housing": {
       "value": null,
@@ -3294,5 +3298,13 @@
       "sources": []
     }
   },
-  "notes": "Attributed primary texts could not be downloaded in full: the Parliament digital library (eparlib) and PIB archives refused connections, so confidence-vote speeches and his collected speeches were not searched; the 1998 manifesto is a party document he fronted, and where it conflicts with his government's record (UCC, Article 370, cow slaughter, tariffs) the answer is mixed. His 1977 UN speech says India would not build nuclear weapons, but his later 1998 position (tests and a weaponised deterrent) governs. Raj dharma remark of April 2002 and a Goa speech passage on Muslims remain contested."
+  "notes": "Attributed primary texts could not be downloaded in full: the Parliament digital library (eparlib) and PIB archives refused connections, so confidence-vote speeches and his collected speeches were not searched; the 1998 manifesto is a party document he fronted, and where it conflicts with his government's record (UCC, Article 370, cow slaughter, tariffs) the answer is mixed. His 1977 UN speech says India would not build nuclear weapons, but his later 1998 position (tests and a weaponised deterrent) governs. Raj dharma remark of April 2002 and a Goa speech passage on Muslims remain contested.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

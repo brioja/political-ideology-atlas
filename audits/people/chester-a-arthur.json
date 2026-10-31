@@ -849,13 +849,14 @@
    "sources": []
   },
   "racial-segregation-law": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his 1883 statement that he would approve legislation securing equal enjoyment by all citizens of every right and privilege of citizenship, and his backing of the Civil Rights Cases dissent; he did not address segregation law directly.",
    "sources": [
     "s3",
     "s7"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "state-class-instrument": {
    "value": null,
@@ -3039,5 +3040,13 @@
    "sources": []
   }
  },
- "notes": "Thin on many statement topics because his stated record is narrow. His 1881 message was cautious about competitive examinations but later he fully backed the system. Chinese exclusion and his stated support for equal civil rights point in different directions, so the equal-rights answer is low confidence. The Rivers and Harbors veto (local appropriations beyond constitutional powers) and Mongrel Tariff of 1883 matched no statement closely and were left unanswered."
+ "notes": "Thin on many statement topics because his stated record is narrow. His 1881 message was cautious about competitive examinations but later he fully backed the system. Chinese exclusion and his stated support for equal civil rights point in different directions, so the equal-rights answer is low confidence. The Rivers and Harbors veto (local appropriations beyond constitutional powers) and Mongrel Tariff of 1883 matched no statement closely and were left unanswered.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

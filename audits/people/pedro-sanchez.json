@@ -208,7 +208,7 @@
    "sources": []
   },
   "regulate-corporations": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Calls for strict legal regulation, scrutiny and accountability of tech platforms and proposes a 15% minimum effective corporate tax; tight regulation of other sectors is not stated.",
    "sources": [
@@ -216,7 +216,8 @@
     "s5",
     "s10",
     "s11"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "cut-welfare": {
    "value": -2,
@@ -355,14 +356,15 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Rejects treating migrants as enemies, backs integration and ordered an extraordinary regularisation of about 500,000 undocumented migrants; levels as such not addressed.",
    "sources": [
     "s4",
     "s5",
     "s17"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "empower-international-orgs": {
    "value": 1,
@@ -3252,5 +3254,13 @@
    "sources": []
   }
  },
- "notes": "Sources are mainly his own speeches on lamoncloa.gob.es. Spain recognised Palestine in 2024 and imposed an arms embargo on Israel in 2025. The Almaraz nuclear extension in 2026 makes his nuclear position mixed. The amnesty, Western Sahara shift, trans law and Mercosur support were found in news only, so are not answered or are low."
+ "notes": "Sources are mainly his own speeches on lamoncloa.gob.es. Spain recognised Palestine in 2024 and imposed an arms embargo on Israel in 2025. The Almaraz nuclear extension in 2026 makes his nuclear position mixed. The amnesty, Western Sahara shift, trans law and Mercosur support were found in news only, so are not answered or are low.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

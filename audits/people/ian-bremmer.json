@@ -1135,13 +1135,14 @@
    "sources": []
   },
   "expand-fossil-fuels": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Endorses boosting US oil and gas as a bridge fuel while investing in clean energy; says nothing on coal, so the answer is partial.",
    "sources": [
     "b13"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "assimilate-immigrants": {
    "value": null,
@@ -3409,5 +3410,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

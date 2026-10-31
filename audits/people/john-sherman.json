@@ -991,12 +991,13 @@
       "sources": []
     },
     "population-transfer": {
-      "value": 1,
+      "value": null,
       "confidence": "high",
       "rationale": "He favored ending Chinese laborers’ residence when consistent with treaty obligations.",
       "sources": [
         "memoir"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "initiating-force-wrong": {
       "value": null,
@@ -3035,5 +3036,13 @@
       "sources": []
     }
   },
-  "notes": "Full autobiography downloaded and searched by theme. Immigration answers distinguish exclusion from his opposition to discriminatory residence certificates. Income-tax views changed: he opposed the 1894 proposal while his 1895 memoir retained conditional support for moderate taxation. His official participation in the Hawaii annexation treaty differs from his later opposition to overseas acquisition; the later explicit position governs. Modern ecology and technology positions remain unknown. No inference used."
+  "notes": "Full autobiography downloaded and searched by theme. Immigration answers distinguish exclusion from his opposition to discriminatory residence certificates. Income-tax views changed: he opposed the 1894 proposal while his 1895 memoir retained conditional support for moderate taxation. His official participation in the Hawaii annexation treaty differs from his later opposition to overseas acquisition; the later explicit position governs. Modern ecology and technology positions remain unknown. No inference used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

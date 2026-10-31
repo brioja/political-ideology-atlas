@@ -269,7 +269,7 @@
       "auditor": "claude-sonnet-5-5"
     },
     "public-ownership": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Took state control of gold mines via the state miner SOPAMIB and says he will continue; energy, rail and utilities not addressed.",
       "sources": [
@@ -281,7 +281,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "tax-the-wealthy": {
       "value": null,
@@ -341,7 +342,7 @@
       "sources": []
     },
     "strong-leader": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Rejects pluralist democracy in favour of revolutionary order and discipline under his leadership; has not stated this in terms of gridlock.",
       "sources": [
@@ -353,7 +354,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "state-harmful": {
       "value": -2,
@@ -1885,14 +1887,15 @@
       "sources": []
     },
     "armed-group-creates-revolution": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "A small military group (Sept 2022 coup) took power and he then proclaimed a revolution; he has not stated it as a general principle.",
       "sources": [
         "s1",
         "s10"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "abolish-hereditary-privilege": {
       "value": null,
@@ -2283,13 +2286,14 @@
       "sources": []
     },
     "non-intervention": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Called for \"a free world without interference in our internal affairs\" and condemned Western interference; has not discussed intervention \"for any reason\".",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 2
     },
     "industrial-unions": {
       "value": null,
@@ -3519,6 +3523,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
     }
   ]
 }

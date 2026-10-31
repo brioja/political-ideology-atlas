@@ -1761,13 +1761,14 @@
       "sources": []
     },
     "emergency-suspend-protections": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she held that rights are not subject to override and the government's only role is protecting them; she did not address emergency powers directly.",
       "sources": [
         "s49",
         "s12"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "price-controls-essentials": {
       "value": -2,
@@ -2606,13 +2607,14 @@
       "sources": []
     },
     "individual-pension-accounts": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she opposed government-run social programs and favoured voluntary arrangements, though in 1976 she reportedly took Social Security benefits; she did not discuss pension design.",
       "sources": [
         "s1",
         "s54"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "land-use-tenure": {
       "value": -2,
@@ -3297,12 +3299,13 @@
       ]
     },
     "never-kill-self-defence": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Said the right to life implies the right to self-defense, and force is morally imperative in retaliation.",
       "sources": [
         "s50"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unbroken-national-continuity": {
       "value": null,
@@ -4102,5 +4105,13 @@
       ]
     }
   },
-  "notes": "Positions are taken from her own nonfiction, mainly as collected in the Ayn Rand Lexicon, plus the 1964 Playboy interview (quoted there) and 1970s Q&A appearances. Contested points: she personally said she would not work for a woman president but supported women in other offices and equal rights; she called Israel's Arab opponents 'savages', which her audiences contested; in 1976 she reportedly claimed Social Security despite opposing it. Fictional speeches (Galt) were used only where the Lexicon quotes them as her own formulations of positions held in nonfiction."
+  "notes": "Positions are taken from her own nonfiction, mainly as collected in the Ayn Rand Lexicon, plus the 1964 Playboy interview (quoted there) and 1970s Q&A appearances. Contested points: she personally said she would not work for a woman president but supported women in other offices and equal rights; she called Israel's Arab opponents 'savages', which her audiences contested; in 1976 she reportedly claimed Social Security despite opposing it. Fictional speeches (Galt) were used only where the Lexicon quotes them as her own formulations of positions held in nonfiction.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

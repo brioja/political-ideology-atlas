@@ -497,7 +497,10 @@
    "rationale": "No recorded position found.",
    "sources": []
   },
-  "class-struggle-history": {"value": null, "rationale": "Calls himself a Marxist, but no statement of his on whether class conflict drives history was found; a label isn't evidence."},
+  "class-struggle-history": {
+   "value": null,
+   "rationale": "Calls himself a Marxist, but no statement of his on whether class conflict drives history was found; a label isn't evidence."
+  },
   "equal-outcomes": {
    "value": null,
    "confidence": "low",
@@ -634,7 +637,15 @@
     "s1"
    ]
   },
-  "profit-exploitation": {"value": 2, "confidence": "low", "rationale": "Described to the New York Times as Marxist/anti-capitalist; speaks of bosses and landlords extracting from workers; no single explicit sentence on profit as exploitation found.", "sources": ["s2", "s6"]},
+  "profit-exploitation": {
+   "value": 2,
+   "confidence": "low",
+   "rationale": "Described to the New York Times as Marxist/anti-capitalist; speaks of bosses and landlords extracting from workers; no single explicit sentence on profit as exploitation found.",
+   "sources": [
+    "s2",
+    "s6"
+   ]
+  },
   "dictatorship-of-proletariat": {
    "value": 1,
    "confidence": "low",
@@ -2160,12 +2171,13 @@
    "sources": []
   },
   "alienated-labor": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Describes young workers in jobs they despise with \"no control\"; implied critique of work under capitalism.",
    "sources": [
     "s6"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "islam-incompatible": {
    "value": null,
@@ -3108,5 +3120,13 @@
    "sources": []
   }
  },
- "notes": "Quiz answers come from a 60-question quiz on stream (s1); he misread or joked on several items and those were excluded. Interview material (s3, s5, s6) is partly secondhand write-ups, so many positions stay null. Statements about Hamas, Oct 7 and China are contested and are not mapped to statements here without a direct match."
+ "notes": "Quiz answers come from a 60-question quiz on stream (s1); he misread or joked on several items and those were excluded. Interview material (s3, s5, s6) is partly secondhand write-ups, so many positions stay null. Statements about Hamas, Oct 7 and China are contested and are not mapped to statements here without a direct match.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

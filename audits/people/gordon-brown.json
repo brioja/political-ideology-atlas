@@ -571,21 +571,23 @@
       ]
     },
     "keep-nuclear-weapons": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "As PM kept Trident and tied any cut to multilateral progress, saying warheads could go lower only consistent with deterrence and multilateral talks.",
       "sources": [
         "s15",
         "s5"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "arms-reduction": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "In 2009 he urged drastic US-Russian cuts and said Britain would cut warheads or Trident tubes (12 not 16) consistent with national deterrence.",
       "sources": [
         "s15"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "international-criminal-courts": {
       "value": 2,
@@ -724,12 +726,13 @@
       ]
     },
     "power-sharing-divided-societies": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Commission backs restoring and strengthening devolution in Northern Ireland consistent with consent and the Good Friday Agreement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regional-powers-revocable": {
       "value": -2,
@@ -3320,5 +3323,13 @@
       "sources": []
     }
   },
-  "notes": "Living (born 20 February 1951). Changes of view: same-sex marriage (opposed in 2010, supported in 2013; later used). Answers rest on the 2022 Commission report he chaired, his own speeches and statements, and his government's and Commons record; news pages are cited for statements they report. Seven Ways to Change the World, My Scotland, Our Britain and Beyond the Crash were not available as full text, and Hansard budget and PMQs texts other than the 2003 euro statement could not be fetched. Many statements, notably on religion, family, culture and revolutionary ideology, are null for lack of a stated position."
+  "notes": "Living (born 20 February 1951). Changes of view: same-sex marriage (opposed in 2010, supported in 2013; later used). Answers rest on the 2022 Commission report he chaired, his own speeches and statements, and his government's and Commons record; news pages are cited for statements they report. Seven Ways to Change the World, My Scotland, Our Britain and Beyond the Crash were not available as full text, and Hansard budget and PMQs texts other than the 2003 euro statement could not be fetched. Many statements, notably on religion, family, culture and revolutionary ideology, are null for lack of a stated position.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

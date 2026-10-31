@@ -1945,12 +1945,13 @@
       ]
     },
     "preserve-contested-monuments": {
-      "value": -1,
+      "value": null,
       "confidence": "high",
       "rationale": "Wants Confederate military names replaced by commemorations consistent with national ideals.",
       "sources": [
         "s18"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "male-disadvantage-attention": {
       "value": null,
@@ -3294,5 +3295,13 @@
       "sources": []
     }
   },
-  "notes": "Whole-career review uses recent explicit positions where available. Personal explanations and personally led legislation are distinguished from cosponsorship alone. The 2024 abortion answer allows specified exceptions; support for religious exemptions coexists with civil same-sex marriage. Medicaid evidence is qualified by his stated preference for different provisions. The iVoterGuide questionnaire was unanswered and supplies no positions. All remaining null statements reviewed; no living-person inferences."
+  "notes": "Whole-career review uses recent explicit positions where available. Personal explanations and personally led legislation are distinguished from cosponsorship alone. The 2024 abortion answer allows specified exceptions; support for religious exemptions coexists with civil same-sex marriage. Medicaid evidence is qualified by his stated preference for different provisions. The iVoterGuide questionnaire was unanswered and supplies no positions. All remaining null statements reviewed; no living-person inferences.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

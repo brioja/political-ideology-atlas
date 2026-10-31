@@ -376,12 +376,13 @@
       "sources": []
     },
     "land-value-tax": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he supported taxing unearned increases in land value, but did not thereby commit to replacing most other taxes.",
       "sources": [
         "liberal"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "tax-inheritance": {
       "value": null,
@@ -600,12 +601,13 @@
       "sources": []
     },
     "human-enhancement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his warning about designing specialised human beings expresses concern about engineered humanity, without specifying a legal ban.",
       "sources": [
         "science"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "algorithmic-government": {
       "value": null,
@@ -3138,5 +3140,13 @@
       "sources": []
     }
   },
-  "notes": "Postwar Conservative positions take precedence over early Liberal economic speeches where the views changed. European unity is not treated as a commitment to every later EU institution. Racial hierarchy is recorded without treating it as proof of a specific genetic theory. Predictions about climate control or synthetic food do not establish modern environmental or biotechnology policies."
+  "notes": "Postwar Conservative positions take precedence over early Liberal economic speeches where the views changed. European unity is not treated as a commitment to every later EU institution. Racial hierarchy is recorded without treating it as proof of a specific genetic theory. Predictions about climate control or synthetic food do not establish modern environmental or biotechnology policies.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

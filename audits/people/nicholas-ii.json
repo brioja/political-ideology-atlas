@@ -1671,13 +1671,14 @@
    "sources": []
   },
   "abolish-hereditary-privilege": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he defended hereditary autocracy and dynastic succession.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "history-own-civilization": {
    "value": null,
@@ -1771,13 +1772,14 @@
    "sources": []
   },
   "resist-lawless-ruler": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he opposed revolutionary resistance to the monarchy and kept his authority over the Duma.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "parliament-supreme": {
    "value": -2,
@@ -3250,6 +3252,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

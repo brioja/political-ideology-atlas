@@ -275,20 +275,22 @@
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1973-74 Islamic measures under his rule introduced flogging for homosexual acts, which leaves no room for recognised same-sex marriage.",
       "sources": [
         "s9"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abortion-legal": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Green Book calls deliberate interventions against conception 'tantamount to murder' and extols natural maternity; abortion itself is not named.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "more-religion-public": {
       "value": 2,
@@ -301,13 +303,14 @@
       ]
     },
     "correct-racial-injustice": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Green Book speaks of Black people's wish for vindication after slavery and at the UN he demanded reparations for Africa.",
       "sources": [
         "s3",
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "gender-social-construct": {
       "value": -2,
@@ -1569,13 +1572,14 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Declaration has the General People's Congress choose its chairman and the Green Book says elections falsify democracy.",
       "sources": [
         "s5",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "central-bank-independence": {
       "value": null,
@@ -2106,12 +2110,13 @@
       "sources": []
     },
     "foreign-takeover-block": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: nationalised foreign oil operations in 1973.",
       "sources": [
         "s9"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "no-fault-divorce": {
       "value": -1,
@@ -2756,12 +2761,13 @@
       "sources": []
     },
     "no-nuclear-weapons-on-territory": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: renounced WMD in 2003 and called nuclear weapons a security liability for states.",
       "sources": [
         "s12"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "no-foreign-bases": {
       "value": 2,
@@ -3513,12 +3519,13 @@
       "sources": []
     },
     "multipolar-world": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Third Universal Theory rejected both superpowers as imperialist.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "labour-theory-of-value": {
       "value": -1,
@@ -3547,5 +3554,13 @@
       "sources": []
     }
   },
-  "notes": "Stated theory and practice often diverge: the Green Book condemns rule by individuals, parties and violence while his regime banned parties, executed dissenters and kept him as leader; such items are answered low or 0. Where positions shifted, the later one is used (pan-Arabism to pan-Africanism; WMD renounced 2003; one-state Israel-Palestine proposal 2009). Charter and Declaration texts were adopted by the General People's Congress under his leadership, so answers resting on them are medium. Not reachable: UN speech full text (404), NYT op-ed (blocked, WFU reproduction used), Britannica (403), the February 2011 speech transcript (only a link to a Google document found)."
+  "notes": "Stated theory and practice often diverge: the Green Book condemns rule by individuals, parties and violence while his regime banned parties, executed dissenters and kept him as leader; such items are answered low or 0. Where positions shifted, the later one is used (pan-Arabism to pan-Africanism; WMD renounced 2003; one-state Israel-Palestine proposal 2009). Charter and Declaration texts were adopted by the General People's Congress under his leadership, so answers resting on them are medium. Not reachable: UN speech full text (404), NYT op-ed (blocked, WFU reproduction used), Britannica (403), the February 2011 speech transcript (only a link to a Google document found).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

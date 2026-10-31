@@ -610,14 +610,15 @@
    ]
   },
   "avoid-deficit-stimulus": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Backed deficit-financed COVID relief and $1,200 checks and said $600 was a joke; criticized tax cuts paid for by borrowing, but he has not stated a general view on deficits.",
    "sources": [
     "s28",
     "s10"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "political-elite-corrupt": {
    "value": 1,
@@ -3618,6 +3619,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

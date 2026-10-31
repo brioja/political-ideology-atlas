@@ -213,14 +213,15 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Repeatedly asks for a solid welfare state and protection of vulnerable groups; has not addressed the dependency argument directly.",
       "sources": [
         "s8",
         "s7",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "social-market-economy": {
       "value": 1,
@@ -3263,5 +3264,13 @@
       "sources": []
     }
   },
-  "notes": "As a constitutional monarch his formal assent to laws (e.g. on abortion, same-sex marriage, the 2024 amnesty law) is not his position and is not used. Speeches abroad and on state occasions are delivered with ministers' endorsement, so statements on foreign policy are rated medium at most. Personal measures counted only as record on succession and household transparency (renouncing any inheritance from his father in 2020 and publishing his assets in 2022, per Wikipedia)."
+  "notes": "As a constitutional monarch his formal assent to laws (e.g. on abortion, same-sex marriage, the 2024 amnesty law) is not his position and is not used. Speeches abroad and on state occasions are delivered with ministers' endorsement, so statements on foreign policy are rated medium at most. Personal measures counted only as record on succession and household transparency (renouncing any inheritance from his father in 2020 and publishing his assets in 2022, per Wikipedia).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

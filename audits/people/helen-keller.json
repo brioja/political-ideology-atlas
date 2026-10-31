@@ -1889,12 +1889,13 @@
       "sources": []
     },
     "slavery-not-civil-war-cause": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she said the Civil War decided whether Southern slaveholders or Northern capitalists would exploit the West, which downplays slavery as its cause; she did not address the question directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "preserve-contested-monuments": {
       "value": null,
@@ -3282,5 +3283,13 @@
       "sources": []
     }
   },
-  "notes": "Views shifted from Socialist Party membership (1909) to the IWW (about 1912-16, when she said nothing can be gained by political action), yet in 1917 she endorsed voting for the Socialist Hillquit; direction-of-change answers are marked low. Her 1915 Bollinger baby article defended Dr. Haiselden's refusal to operate and endorsed birth control with eugenic reasoning; it is recorded under heritable-defect-limits and equal-moral-worth at low confidence because she also doubted anyone's fitness to judge, and no statement covers infant euthanasia exactly. No evidence found on the death penalty, abortion, or sex education. Not read: Foner, Helen Keller: Her Socialist Years (lending-only on archive.org); disabilitymuseum.org was unreachable (HTTP 406)."
+  "notes": "Views shifted from Socialist Party membership (1909) to the IWW (about 1912-16, when she said nothing can be gained by political action), yet in 1917 she endorsed voting for the Socialist Hillquit; direction-of-change answers are marked low. Her 1915 Bollinger baby article defended Dr. Haiselden's refusal to operate and endorsed birth control with eugenic reasoning; it is recorded under heritable-defect-limits and equal-moral-worth at low confidence because she also doubted anyone's fitness to judge, and no statement covers infant euthanasia exactly. No evidence found on the death penalty, abortion, or sex education. Not read: Foner, Helen Keller: Her Socialist Years (lending-only on archive.org); disabilitymuseum.org was unreachable (HTTP 406).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -2078,13 +2078,14 @@
    "sources": []
   },
   "democratic-peace": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Said free nations are less likely to threaten and fight each other and that free societies make America safer.",
    "sources": [
     "s15",
     "s5"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "no-duty-to-obey": {
    "value": null,
@@ -3273,5 +3274,13 @@
    "sources": []
   }
  },
- "notes": "Only positions in his own speeches or his documented record are scored; unmentioned topics are null. His 2002 steel tariffs contradict his stated opposition to protectionism, and the 2006-07 immigration push was not enacted. Where speeches and record diverge, the stated recent position is used and the rationale notes the exception."
+ "notes": "Only positions in his own speeches or his documented record are scored; unmentioned topics are null. His 2002 steel tariffs contradict his stated opposition to protectionism, and the 2006-07 immigration push was not enacted. Where speeches and record diverge, the stated recent position is used and the rationale notes the exception.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

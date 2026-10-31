@@ -94,13 +94,14 @@
       ]
     },
     "criminalize-homosexuality": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she anticipated legally binding marriages for gay and lesbian couples (1970) and said sexuality limited to reproduction harms gay men and lesbians (2004), which is incompatible with criminalising same-sex relations.",
       "sources": [
         "s8",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "legalize-sex-work": {
       "value": -2,
@@ -3070,5 +3071,13 @@
       "sources": []
     }
   },
-  "notes": "Wikipedia gives her death as 2 September 2026 in Manhattan at age 92, so living is false (catalog said false). Her 1977 remarks on transgender surgery were retracted in 2013; the 2013 position is used. Not found in sources opened: her own words on economic policy, a national homemaker's salary, Israel/Palestine (she criticised Netanyahu in 2019 and condemned the 1975 UN Zionism resolution per secondary reports, not opened), Native American matriarchal societies, or the pay gap beyond her 1970 testimony. Books were not available as full text (archive.org lending locked), so many topics stay null. Pornography: she opposed it as domination but no source opened shows she backed legal restriction, so restrict-pornography is null."
+  "notes": "Wikipedia gives her death as 2 September 2026 in Manhattan at age 92, so living is false (catalog said false). Her 1977 remarks on transgender surgery were retracted in 2013; the 2013 position is used. Not found in sources opened: her own words on economic policy, a national homemaker's salary, Israel/Palestine (she criticised Netanyahu in 2019 and condemned the 1975 UN Zionism resolution per secondary reports, not opened), Native American matriarchal societies, or the pay gap beyond her 1970 testimony. Books were not available as full text (archive.org lending locked), so many topics stay null. Pornography: she opposed it as domination but no source opened shows she backed legal restriction, so restrict-pornography is null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

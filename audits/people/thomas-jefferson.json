@@ -773,21 +773,23 @@
       "sources": []
     },
     "taxation-theft": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Declaration complains of taxes imposed without consent, which implies taxes imposed with consent are legitimate; second inaugural describes taxes funding government and paying the debt.",
       "sources": [
         "s1",
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Notes on Virginia: the legitimate powers of government extend to such acts only as are injurious to others, with the example of a neighbour's belief that there are twenty gods or none; stated for religion, and the same revised code he helped prepare made sodomy a punishable crime.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "individual-rights-only": {
       "value": null,
@@ -1030,12 +1032,13 @@
       "sources": []
     },
     "assimilate-immigrants": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Notes on Virginia fears that immigrants from absolute monarchies will bring and pass on foreign principles and language that make government heterogeneous, so he wants the country harmonious in what it must do together.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "elite-replacement": {
       "value": null,
@@ -2501,12 +2504,13 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated view that government has no authority over opinion, and that coercing opinion only makes hypocrites, he would oppose the state promoting any belief, atheism included.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -3309,5 +3313,13 @@
       "sources": []
     }
   },
-  "notes": "His words and acts conflict on slavery and equality, so those answers are mixed. On race, the Notes state a suspicion of Black inferiority, hedged as a suspicion only; no later retraction was found in the sources read. On free trade the sources point both ways (1774 free-trade claim, Notes against home manufactures, 1807 Embargo). The Kentucky text used is the 1799 resolution; Jefferson drafted the 1798 original. Founders Online was unreachable, so the 1787 Smith letter is read through a quoting article. The Virginia Statute text is read through Wikipedia. Not reached: letters to Peter Carr, Kercheval, McPherson, Austin and Burwell, and his Annual Messages."
+  "notes": "His words and acts conflict on slavery and equality, so those answers are mixed. On race, the Notes state a suspicion of Black inferiority, hedged as a suspicion only; no later retraction was found in the sources read. On free trade the sources point both ways (1774 free-trade claim, Notes against home manufactures, 1807 Embargo). The Kentucky text used is the 1799 resolution; Jefferson drafted the 1798 original. Founders Online was unreachable, so the 1787 Smith letter is read through a quoting article. The Virginia Statute text is read through Wikipedia. Not reached: letters to Peter Carr, Kercheval, McPherson, Austin and Burwell, and his Annual Messages.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

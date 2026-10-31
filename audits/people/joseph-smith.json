@@ -319,12 +319,13 @@
    "sources": []
   },
   "free-trade": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "His platform backs a protective tariff for domestic industry and says nothing in favour of free trade, so he leaned against it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "nation-first": {
    "value": null,
@@ -568,12 +569,13 @@
    "sources": []
   },
   "indigenous-land-authority": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Said the Union should extend to Oregon only when the red man's consent is obtained.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "colonial-reparations": {
    "value": null,
@@ -3251,5 +3253,13 @@
    "sources": []
   }
  },
- "notes": "Records only what he said in the 1844 platform, his letters and sermons as compiled in the Teachings, and revelations he dictated, taken as his words. Statements on Black people and the Nauvoo Expositor rely partly on later or secondary accounts and are low confidence. His views on slavery moved from defending slaveholders' rights in the 1830s to urging compensated abolition in 1844; the latter is used."
+ "notes": "Records only what he said in the 1844 platform, his letters and sermons as compiled in the Teachings, and revelations he dictated, taken as his words. Statements on Black people and the Nauvoo Expositor rely partly on later or secondary accounts and are low confidence. His views on slavery moved from defending slaveholders' rights in the 1830s to urging compensated abolition in 1844; the latter is used.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

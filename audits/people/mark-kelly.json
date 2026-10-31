@@ -586,7 +586,7 @@
    "sources": []
   },
   "tax-the-wealthy": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "His campaign page backs ending the tax breaks for the super wealthy and big corporations, and in 2025 he criticised 'huge tax breaks to rich people'. He has not stated a specific rate increase.",
    "sources": [
@@ -594,7 +594,8 @@
     "s15",
     "b3"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+   "nulledFrom": 1
   },
   "unions-good": {
    "value": 2,
@@ -1371,7 +1372,7 @@
    "auditor": "gpt-6.1-sol"
   },
   "avoid-deficit-stimulus": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Voted for the $900 billion COVID relief law and the $1.9 trillion American Rescue Plan and backed federal aid to states; he also criticised tax breaks that explode the national debt, so evidence leans against avoiding deficit stimulus but is not a stated view on the principle.",
    "sources": [
@@ -1379,7 +1380,8 @@
     "s22",
     "b3"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+   "nulledFrom": -1
   },
   "economic-freedom": {
    "value": null,
@@ -3736,5 +3738,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia and Senate pages show he is alive and the sitting senator (term to 2029). Positions come mainly from his 2020 campaign pages, Senate press releases and floor remarks, so some older campaign positions may have shifted: he declined in 2020 to take a position on the filibuster but in 2022 said he would back a majority-vote change for voting-rights bills (no statement in the test covers this). Many answers are null because no statement of his speaks to them; his wife Gabby Giffords' positions were not used. His 2026 break with Israel arms transfers is noted under jewish-state-israel, which concerns Israel's right to exist, not arms policy.\n\nMerged with an independent claude-haiku-5-5 audit: 7 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Evidence is thin on labor, Ukraine (2022 statements could not be opened), China, technology and marijuana: kelly.senate.gov, markkelly.com, congress.gov, Vote Smart and the 2020/2022 debate transcripts returned 403 or no transcript, so those themes rely on news reports and dated quotes from compilations. Many answers are null because no opened source addressed the statement. Kelly's 2026 AI proposal (Make AI Work for Americans Act) was not mapped to any statement. His 2020 Vote Smart questionnaire answers could not be read.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass. All 490 statements reviewed against saved sources; no prior answers copied. The ranked Marxist, historical-materialist and religious-doctrine statements remain null: science advocacy does not establish reason as the only guide, and school-voucher opposition does not establish opposition to religious instruction in state schools. The voucher release quotes outside religious-liberty organizations; those words are not Kelly’s. Military duty to refuse unlawful orders is not refusal of interstate war generally, and a constitutional oath does not itself answer party-commands-army. No inference from party, his wife’s positions or his occupation. The 2025 AI roadmap was examined for worker, investment, technology and ecological positions; qualified support for safe AI is not acceleration regardless of disruption or full automation of paid work. Nuclear modernisation and cleanup support are not inferred opposition to environmental review. Iran-war opposition alone does not establish non-intervention in all cases. All scored positions use medium confidence; votes, bill sponsorship and rhetoric alone are not high. Recent defense of due process must be read alongside his Laken Riley Act vote; no sweeping answer asserting universal procedural protection was assigned. Direct source fetches blocked by access controls are retained, with the usable browser text saved separately."
+ "notes": "Wikipedia and Senate pages show he is alive and the sitting senator (term to 2029). Positions come mainly from his 2020 campaign pages, Senate press releases and floor remarks, so some older campaign positions may have shifted: he declined in 2020 to take a position on the filibuster but in 2022 said he would back a majority-vote change for voting-rights bills (no statement in the test covers this). Many answers are null because no statement of his speaks to them; his wife Gabby Giffords' positions were not used. His 2026 break with Israel arms transfers is noted under jewish-state-israel, which concerns Israel's right to exist, not arms policy.\n\nMerged with an independent claude-haiku-5-5 audit: 7 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Evidence is thin on labor, Ukraine (2022 statements could not be opened), China, technology and marijuana: kelly.senate.gov, markkelly.com, congress.gov, Vote Smart and the 2020/2022 debate transcripts returned 403 or no transcript, so those themes rely on news reports and dated quotes from compilations. Many answers are null because no opened source addressed the statement. Kelly's 2026 AI proposal (Make AI Work for Americans Act) was not mapped to any statement. His 2020 Vote Smart questionnaire answers could not be read.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass. All 490 statements reviewed against saved sources; no prior answers copied. The ranked Marxist, historical-materialist and religious-doctrine statements remain null: science advocacy does not establish reason as the only guide, and school-voucher opposition does not establish opposition to religious instruction in state schools. The voucher release quotes outside religious-liberty organizations; those words are not Kelly’s. Military duty to refuse unlawful orders is not refusal of interstate war generally, and a constitutional oath does not itself answer party-commands-army. No inference from party, his wife’s positions or his occupation. The 2025 AI roadmap was examined for worker, investment, technology and ecological positions; qualified support for safe AI is not acceleration regardless of disruption or full automation of paid work. Nuclear modernisation and cleanup support are not inferred opposition to environmental review. Iran-war opposition alone does not establish non-intervention in all cases. All scored positions use medium confidence; votes, bill sponsorship and rhetoric alone are not high. Recent defense of due process must be read alongside his Laken Riley Act vote; no sweeping answer asserting universal procedural protection was assigned. Direct source fetches blocked by access controls are retained, with the usable browser text saved separately.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

@@ -297,13 +297,14 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Celebrated immigrant absorption and urged further Jewish immigration; other immigration categories unaddressed.",
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": -1
   },
   "empower-international-orgs": {
    "value": null,
@@ -3207,5 +3208,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

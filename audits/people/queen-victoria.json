@@ -815,13 +815,14 @@
       "sources": []
     },
     "distinct-gender-roles": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her opposition to women's suffrage and 'Women's Rights' she apparently held that public life was for men; she did not state a view on legal roles as such.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "ban-interest": {
       "value": null,
@@ -1466,12 +1467,13 @@
       "sources": []
     },
     "gender-parity-bodies": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her opposition to women's rights and suffrage.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "economic-self-sufficiency": {
       "value": null,
@@ -1576,12 +1578,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her own hereditary reign and succession views; no recorded statement on elective rulers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "minority-veto": {
       "value": null,
@@ -3017,5 +3020,13 @@
       "sources": []
     }
   },
-  "notes": "Most statements are anachronistic or undocumented for her and are left null. Quotations are as reproduced on secondary pages, with some variation in wording. A Rothschild-peerage remark attributed to her was not used because its only source is unreliable. She disliked Gladstone and was privately partisan, so 'nonpartisan-head-of-state' was left null."
+  "notes": "Most statements are anachronistic or undocumented for her and are left null. Quotations are as reproduced on secondary pages, with some variation in wording. A Rothschild-peerage remark attributed to her was not used because its only source is unreliable. She disliked Gladstone and was privately partisan, so 'nonpartisan-head-of-state' was left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

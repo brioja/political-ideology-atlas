@@ -323,12 +323,13 @@
       ]
     },
     "more-religion-public": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said a constitutional amendment allowing voluntary prayer in public schools had merit and that he would favor it.",
       "sources": [
         "s13"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "correct-racial-injustice": {
       "value": 1,
@@ -2250,12 +2251,13 @@
       "sources": []
     },
     "criminalize-homosexuality": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in 2001 said gay and lesbian couples should be treated equally and wanted a federal ban on anti-gay job discrimination, which is incompatible with criminalization.",
       "sources": [
         "s15"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "suppress-opposition": {
       "value": -2,
@@ -3288,5 +3290,13 @@
       "sources": []
     }
   },
-  "notes": "Pardon of Nixon (1974), clemency program (1974) and Mayaguez rescue (1975) are recorded but map to few statements. His 1974 tax-surcharge proposal was dropped in favor of tax cuts; he reversed on NYC aid within weeks. Betty Ford's views were not used. Helsinki Final Act speech text and the NYC speech text could not be opened; only arrival remarks and a reference page were used."
+  "notes": "Pardon of Nixon (1974), clemency program (1974) and Mayaguez rescue (1975) are recorded but map to few statements. His 1974 tax-surcharge proposal was dropped in favor of tax cuts; he reversed on NYC aid within weeks. Betty Ford's views were not used. Helsinki Final Act speech text and the NYC speech text could not be opened; only arrival remarks and a reference page were used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

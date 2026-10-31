@@ -214,12 +214,13 @@
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Quran 7:80-81 condemns men approaching men instead of women, and marriage in 30:21 is between mates from different sexes. He did not address same-sex marriage as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abortion-legal": {
       "value": null,
@@ -904,12 +905,13 @@
       ]
     },
     "racial-segregation-law": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Quran 49:13 makes peoples and tribes distinct only so they may know one another, with nobility by righteousness; no racial legal separation is recorded.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": null,
@@ -2074,12 +2076,13 @@
       "sources": []
     },
     "religion-illusion": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he presented religion as true divine revelation (Quran 18:110), not as an illusion that fades with material improvement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "capitalism-progressive": {
       "value": null,
@@ -2384,12 +2387,13 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he proclaimed belief in one God as true and condemned disbelief (Quran 18:110, 2:256 on faith by choice), so state promotion of atheism follows as opposed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -3198,5 +3202,13 @@
       "sources": []
     }
   },
-  "notes": "Quran treated as his proclaimed words; hadith (Bukhari, Muslim) are later reports and capped at medium or low. sunnah.com was unreachable (Cloudflare challenge), so hadith text came from a GitHub-hosted mirror. Several verses and reports point in different directions on apostasy, blasphemy and war; those are answered 0 or low. Later jurists' rulings are not used."
+  "notes": "Quran treated as his proclaimed words; hadith (Bukhari, Muslim) are later reports and capped at medium or low. sunnah.com was unreachable (Cloudflare challenge), so hadith text came from a GitHub-hosted mirror. Several verses and reports point in different directions on apostasy, blasphemy and war; those are answered 0 or low. Later jurists' rulings are not used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

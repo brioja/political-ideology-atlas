@@ -93,12 +93,13 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his stated plan to divide his dominions among his successors and his appointing his sons as rulers, which presupposes that hereditary rulers can be legitimate. He also served the Abbasid caliph as overlord. He did not discuss monarchy as a principle.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "abolish-hereditary-privilege": {
    "value": null,
@@ -3032,5 +3033,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia gives his birth as c. 1137 (the catalogue says 1138); he died 4 March 1193. Almost every answer rests on Baha ad-Din's near-contemporary account, so confidence is medium at most; no WebSearch used. Executions at Hattin and of Suhrawardi are recorded but the motives are partly political."
+ "notes": "Wikipedia gives his birth as c. 1137 (the catalogue says 1138); he died 4 March 1193. Almost every answer rests on Baha ad-Din's near-contemporary account, so confidence is medium at most; no WebSearch used. Executions at Hattin and of Suhrawardi are recorded but the motives are partly political.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

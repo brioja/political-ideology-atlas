@@ -1117,12 +1117,13 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his satirical criticism of government supervision of writing opposes state-imposed literary standards, which would include moral censorship.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "unlimited-reelection": {
       "value": null,
@@ -3010,5 +3011,13 @@
       "sources": []
     }
   },
-  "notes": "All 490 statements were reviewed, including every remaining null. The sparse political record supports an early exit despite his nominated parliamentary service. His schoolbag speech was read in full: its objections to excessive homework, unsuitable uniforms and forcing children to greet dignitaries do not directly answer the more specific quiz statements on national-service youth movements or patriotic curricula. Essays and secondary scholarship were checked across economy, government, society, world affairs, liberty, culture, ecology, technology and methods. No economic platform is inferred from tax jokes; no social policy is inferred from fictional characters, caste background, religion or the values of relatives. The government-literary-censorship answer is explicitly a low-confidence historical inference, not a direct statement about every moral-censorship proposal. Harveen Mann’s interpretation of fictional patriarchy is not converted into Narayan’s own legal platform; only his quoted account of cultural tradition is used. Jayaprakash Narayan and K. R. Narayanan are different people. An attempted download of the UFRGS thesis failed and is not cited. Sources about personal simplicity or political detachment do not establish a general duty to withdraw from politics or a simple-living program."
+  "notes": "All 490 statements were reviewed, including every remaining null. The sparse political record supports an early exit despite his nominated parliamentary service. His schoolbag speech was read in full: its objections to excessive homework, unsuitable uniforms and forcing children to greet dignitaries do not directly answer the more specific quiz statements on national-service youth movements or patriotic curricula. Essays and secondary scholarship were checked across economy, government, society, world affairs, liberty, culture, ecology, technology and methods. No economic platform is inferred from tax jokes; no social policy is inferred from fictional characters, caste background, religion or the values of relatives. The government-literary-censorship answer is explicitly a low-confidence historical inference, not a direct statement about every moral-censorship proposal. Harveen Mann’s interpretation of fictional patriarchy is not converted into Narayan’s own legal platform; only his quoted account of cultural tradition is used. Jayaprakash Narayan and K. R. Narayanan are different people. An attempted download of the UFRGS thesis failed and is not cited. Sources about personal simplicity or political detachment do not establish a general duty to withdraw from politics or a simple-living program.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

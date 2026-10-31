@@ -718,13 +718,14 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Her 2008 camp said she backs a two-state solution provided Israel's security is assured and said Jerusalem should be Israel's undivided capital; implies support for an Israeli state, no direct statement on the statement's wording.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "diaspora-return-right": {
       "value": null,
@@ -3013,5 +3014,13 @@
       "sources": []
     }
   },
-  "notes": "Most 2008 positions were given via spokespeople or campaign statements, not full-text speeches. Vaccine remarks (2025) do not match any statement wording, so were not used. Full speeches and books were not downloaded; the record found is thin."
+  "notes": "Most 2008 positions were given via spokespeople or campaign statements, not full-text speeches. Vaccine remarks (2025) do not match any statement wording, so were not used. Full speeches and books were not downloaded; the record found is thin.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

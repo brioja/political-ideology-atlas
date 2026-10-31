@@ -613,12 +613,13 @@
       ]
     },
     "war-builds-character": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his 1795 'Political Observations' called war the most dreaded enemy of public liberty because it breeds armies, debts, taxes and executive power.",
       "sources": [
         "s19"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "territorial-expansion": {
       "value": 1,
@@ -3258,5 +3259,13 @@
       "sources": []
     }
   },
-  "notes": "Views shifted: he favored a strong national government and a negative on state laws in 1787, defended state interposition in 1798-1800, opposed a national bank in 1791 but signed the second bank in 1816, and favored protective duties by 1815. Rationales marked Inferred rest on stated views of his own. He owned slaves throughout his life while condemning the slave trade and proposing gradual emancipation with deportation (1833)."
+  "notes": "Views shifted: he favored a strong national government and a negative on state laws in 1787, defended state interposition in 1798-1800, opposed a national bank in 1791 but signed the second bank in 1816, and favored protective duties by 1815. Rationales marked Inferred rest on stated views of his own. He owned slaves throughout his life while condemning the slave trade and proposing gradual emancipation with deportation (1833).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

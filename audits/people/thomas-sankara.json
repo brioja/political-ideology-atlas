@@ -162,13 +162,14 @@
       ]
     },
     "public-ownership": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Programme called for progressively establishing popular control over production and distribution in the modern sector, and the state ran the rail-building and state supermarket projects; energy and utilities were not discussed by name.",
       "sources": [
         "s1",
         "s15"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "tax-the-wealthy": {
       "value": 1,
@@ -536,12 +537,13 @@
       "sources": []
     },
     "workers-councils": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he made the CDRs, organized in workplaces, villages and neighbourhoods, the organs of popular power replacing the old state machine; they were not workers' councils proper.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "right-to-secede": {
       "value": -2,
@@ -1143,13 +1145,14 @@
       "sources": []
     },
     "settler-state-colonial": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said the Palestinians were replaced by another people and endorsed describing Israel and South Africa as examples of anachronistic colonialism.",
       "sources": [
         "s2",
         "s13"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "uniform-civil-code": {
       "value": null,
@@ -1390,12 +1393,13 @@
       "sources": []
     },
     "recall-officials": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: told L'Humanité that CDRs deposed old authorities on proof of abuses and re-elected delegates.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "end-foreign-alliances": {
       "value": null,
@@ -2100,13 +2104,14 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his programme said the elective principle applies at every level of CDRs, and delegates were re-elected when discredited.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "individual-pension-accounts": {
       "value": null,
@@ -3280,12 +3285,13 @@
       "sources": []
     },
     "indirect-election": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his CDR structure had each level subordinate to the next up under democratic centralism with elected delegates.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-church-status": {
       "value": null,
@@ -3485,5 +3491,13 @@
       "sources": []
     }
   },
-  "notes": "Historical figure: only positions he stated or enacted are answered; items marked 'Inferred:' follow directly from stated views. Speech translations on thomassankara.net are partly machine-translated. Views on party organization and democracy shifted across 1983-1987 (the 1985 doubts about a party versus the 1986 call for revolutionary organization); the later statement is used where clear. The record of repression (tribunals, executions, teacher dismissals, union arrests) rests on the Wikipedia article summarising secondary scholarship."
+  "notes": "Historical figure: only positions he stated or enacted are answered; items marked 'Inferred:' follow directly from stated views. Speech translations on thomassankara.net are partly machine-translated. Views on party organization and democracy shifted across 1983-1987 (the 1985 doubts about a party versus the 1986 call for revolutionary organization); the later statement is used where clear. The record of repression (tribunals, executions, teacher dismissals, union arrests) rests on the Wikipedia article summarising secondary scholarship.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-31",
+      "nulled": 6
+    }
+  ]
 }

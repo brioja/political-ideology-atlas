@@ -152,12 +152,13 @@
    ]
   },
   "state-harmful": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his insistence that the state apparatus, bureaucracy and SS-police must be strong and lead the ideological struggle, he regarded the state as necessary.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "limit-guns": {
    "value": null,
@@ -956,13 +957,14 @@
    ]
   },
   "night-watchman-state": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his demand that police, SS and state direct national life ideologically, not limited to defence and justice.",
    "sources": [
     "s2",
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "discourage-race-mixing": {
    "value": 2,
@@ -2229,13 +2231,14 @@
    "sources": []
   },
   "abolish-armed-forces": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his statement that SS men should provide the best recruits to the armed forces and from his war aims.",
    "sources": [
     "s2",
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "rich-first": {
    "value": null,
@@ -3166,5 +3169,13 @@
    "sources": []
   }
  },
- "notes": "Only positions stated in his own words or shown by his own record are answered. The Wannsee minutes were written by Eichmann, so they are a record of the conference Heydrich chaired, not his own text. Statements on topics he never addressed are null. His Protectorate welfare measures (food rations, pensions, unemployment insurance) were tactical wartime moves, so no welfare statements are answered."
+ "notes": "Only positions stated in his own words or shown by his own record are answered. The Wannsee minutes were written by Eichmann, so they are a record of the conference Heydrich chaired, not his own text. Statements on topics he never addressed are null. His Protectorate welfare measures (food rations, pensions, unemployment insurance) were tactical wartime moves, so no welfare statements are answered.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

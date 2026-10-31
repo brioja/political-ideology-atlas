@@ -1281,13 +1281,14 @@
       "sources": []
     },
     "property-serves-common-good": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his will makes the retention of specified estates conditional on continuing almsgiving, subordinating those property grants to an obligation benefiting the needy.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "soviet-state-capitalist": {
       "value": null,
@@ -3011,5 +3012,13 @@
       "sources": []
     }
   },
-  "notes": "Reviewed all 490 statements against the military chronicle, surviving will and historical overview, with targeted research on landholding, law, church and relief. No modern economic, ecological or technological policy is inferred from his period or royal title. No law code is securely known to survive. Bequests to his mother do not establish equal inheritance rights for all women; religious patronage does not establish a position on civil blasphemy, conversion or marriage laws. The relief provisions are testamentary directions, not evidence that the whole scheme was implemented; scholarly commentary notes that the will may have been set aside after his death. Punitive warfare and the Thetford killings are retained as documented actions."
+  "notes": "Reviewed all 490 statements against the military chronicle, surviving will and historical overview, with targeted research on landholding, law, church and relief. No modern economic, ecological or technological policy is inferred from his period or royal title. No law code is securely known to survive. Bequests to his mother do not establish equal inheritance rights for all women; religious patronage does not establish a position on civil blasphemy, conversion or marriage laws. The relief provisions are testamentary directions, not evidence that the whole scheme was implemented; scholarly commentary notes that the will may have been set aside after his death. Punitive warfare and the Thetford killings are retained as documented actions.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

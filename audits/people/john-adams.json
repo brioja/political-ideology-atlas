@@ -99,12 +99,13 @@
       "sources": []
     },
     "tax-the-wealthy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he listed taxes laid heavy on the rich, and not on others, among the abuses a propertyless majority would vote itself; he gave no view on a particular tax rate.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "unions-good": {
       "value": null,
@@ -2356,13 +2357,14 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held religion and virtue to be the only foundations of republican government and wanted public worship supported, which excludes state promotion of atheism.",
       "sources": [
         "s3",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -3158,5 +3160,13 @@
       "sources": []
     }
   },
-  "notes": "Historical figure: answers come from his own writings and drafts, not inference, except where a rationale begins \"Inferred:\". Wikipedia says he signed the Alien and Sedition Acts at the urging of his wife and cabinet without having promoted them; he later wrote that he believed the alien and sedition laws constitutional and salutary. His views on monarchy and hereditary institutions are described as shifting. His draft of the Massachusetts constitution was altered by the convention on points such as the religion article."
+  "notes": "Historical figure: answers come from his own writings and drafts, not inference, except where a rationale begins \"Inferred:\". Wikipedia says he signed the Alien and Sedition Acts at the urging of his wife and cabinet without having promoted them; he later wrote that he believed the alien and sedition laws constitutional and salutary. His views on monarchy and hereditary institutions are described as shifting. His draft of the Massachusetts constitution was altered by the convention on points such as the religion article.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

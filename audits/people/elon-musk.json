@@ -542,7 +542,7 @@
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Opposes race-conscious DEI programs as discrimination, which implies opposition to active racial correction.",
       "sources": [
@@ -552,7 +552,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-sonnet-5-5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "gender-social-construct": {
       "value": null,
@@ -1619,7 +1620,7 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Endorsed US exit from NATO and said it does not make sense to pay for Europe's defense; wider alliances not addressed.",
       "sources": [
@@ -1628,7 +1629,8 @@
         "b12",
         "b2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1739,7 +1741,7 @@
       "sources": []
     },
     "rich-countries-aid-poor": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "As DOGE head in 2025 he drove the dismantling of USAID, which drew public backlash; he has not stated a view on aid duties as such.",
       "sources": [
@@ -1749,7 +1751,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-sonnet-5-5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -3175,14 +3178,15 @@
       "sources": []
     },
     "collective-bargaining": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Opposition to unions as such implies he does not favor wages set by union bargaining over individual contracts.",
       "sources": [
         "s1",
         "b2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "in-work-tax-credits": {
       "value": null,
@@ -3642,6 +3646,14 @@
     {
       "auditor": "claude-sonnet-5-5",
       "auditedAt": "2026-10-25"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
     }
   ]
 }

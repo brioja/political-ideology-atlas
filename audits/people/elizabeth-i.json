@@ -621,13 +621,14 @@
    "sources": []
   },
   "more-religion-public": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "1585 speech closing Parliament (as quoted in Robertson, History of America): religion is the ground on which all other matters take root; says nothing of a larger public role, and she enforced uniformity.",
    "sources": [
     "b4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "correct-racial-injustice": {
    "value": null,
@@ -3324,6 +3325,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

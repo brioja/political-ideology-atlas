@@ -2508,13 +2508,14 @@
       "sources": []
     },
     "religious-dress-in-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Called for banning the burqa nationally on security grounds in 2016 and wore one in the Senate; a narrower rule on dress in state bodies was not addressed directly.",
       "sources": [
         "s2",
         "s28"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "ban-nda-harassment": {
       "value": null,
@@ -3458,5 +3459,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: no inference; evidence about a nearby question is left null. Several positions shifted: in 1996 she called for national service and a halt to Asian immigration, by 2016 the target was Muslim immigration, and in 2026 she framed it as radical Islam and 'monocultural' Australia; abortion shifted from pro-choice (1996) to a pro-life platform (2022); on foreign aid she moved from ceasing it (1996) to 'if spent well' (2026). The recent position is used. Party policy pages are treated as programs she leads and are medium unless she personally stated the position. theyvoteforyou.org.au sits behind a bot check, so her division record could not be read directly; vote-based answers rest on news reports and Hansard debate text."
+  "notes": "Living person: no inference; evidence about a nearby question is left null. Several positions shifted: in 1996 she called for national service and a halt to Asian immigration, by 2016 the target was Muslim immigration, and in 2026 she framed it as radical Islam and 'monocultural' Australia; abortion shifted from pro-choice (1996) to a pro-life platform (2022); on foreign aid she moved from ceasing it (1996) to 'if spent well' (2026). The recent position is used. Party policy pages are treated as programs she leads and are medium unless she personally stated the position. theyvoteforyou.org.au sits behind a bot check, so her division record could not be read directly; vote-based answers rest on news reports and Hansard debate text.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

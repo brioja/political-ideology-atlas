@@ -1085,13 +1085,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "elite-replacement": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Alleged Biden sought to 'increase the foreign-born population as speedily as possible'; leaked 2015-16 emails (via SPLC, contested) used demographic-replacement language about DACA. He has not stated the replacement claim in these terms.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "proportional-representation": {
    "value": null,
@@ -1461,14 +1462,15 @@
    "sources": []
   },
   "citizenship-by-descent": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Says the nation must end birthright citizenship, by Supreme Court ruling or otherwise; has not stated descent as the replacement rule.",
    "sources": [
     "s2",
     "s10"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "minority-language-support": {
    "value": null,
@@ -3338,6 +3340,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

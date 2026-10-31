@@ -141,12 +141,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1920s argument that taxes should follow ability to pay and be progressive rather than proportionate; no statement on rates.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "unions-good": {
       "value": 1,
@@ -248,12 +249,13 @@
       "sources": []
     },
     "traditional-family": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his support for monogamy by law and for women's rights to divorce and property, which reform the traditional Hindu family.",
       "sources": [
         "s9"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "same-sex-marriage": {
       "value": null,
@@ -726,13 +728,14 @@
       "sources": []
     },
     "taxation-theft": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his support for taxes based on ability to pay and his defence of estate duty; he did not address whether taxation is theft.",
       "sources": [
         "s4",
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": null,
@@ -1019,12 +1022,13 @@
       "sources": []
     },
     "heritable-defect-limits": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from the 1938 resolution he drafted, which said preventing the births of children of persons handicapped physically or mentally would reduce suffering; it does not address heritable defects or compulsion.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "security-forces-accountable": {
       "value": null,
@@ -1263,13 +1267,14 @@
       "sources": []
     },
     "clerical-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from Annihilation of Caste's attack on the priestly basis of caste and from the Buddha essay's treatment of priestly powers and ritualism as obstacles to moral life; no statement addresses political authority for religious scholars directly.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-own-government-war": {
       "value": null,
@@ -1503,12 +1508,13 @@
       "sources": []
     },
     "flat-income-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from the same argument that tax should follow ability to pay and be progressive; the source criticises a proportionate land revenue rather than income tax.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "character-from-environment": {
       "value": null,
@@ -1662,12 +1668,13 @@
       "sources": []
     },
     "armed-group-creates-revolution": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1949 call to abandon the bloody methods of revolution in favour of constitutional methods; he did not address armed groups specifically.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-hereditary-privilege": {
       "value": null,
@@ -3178,5 +3185,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed over time. The 1947 States and Minorities proposal (state socialism written into the Constitution) is superseded by the 1952 SCF manifesto and later speeches, which drop a fixed economic pattern (Omvedt); the later position is used where they differ. The 1949 Constituent Assembly speech and the 1956 'Buddha or Karl Marx' essay are used for means and class conflict. Many statements (religion, gender, economy, foreign policy) have no direct statement by him on their exact wording and are null. Seven answers are inferences from nearby views and are low and prefixed 'Inferred:'. Several are judgment calls: material-conditions-drive-history, political-violence-never, leader-cult, and the economic answers that rely on the 1947 proposal where the later manifesto is less clear."
+  "notes": "Views changed over time. The 1947 States and Minorities proposal (state socialism written into the Constitution) is superseded by the 1952 SCF manifesto and later speeches, which drop a fixed economic pattern (Omvedt); the later position is used where they differ. The 1949 Constituent Assembly speech and the 1956 'Buddha or Karl Marx' essay are used for means and class conflict. Many statements (religion, gender, economy, foreign policy) have no direct statement by him on their exact wording and are null. Seven answers are inferences from nearby views and are low and prefixed 'Inferred:'. Several are judgment calls: material-conditions-drive-history, political-violence-never, leader-cult, and the economic answers that rely on the 1947 proposal where the later manifesto is less clear.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

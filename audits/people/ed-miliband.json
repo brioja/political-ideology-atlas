@@ -1535,13 +1535,14 @@
    "sources": []
   },
   "no-land-for-peace": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Supports a two-state solution in which Israel lives alongside a Palestinian state, which implies territorial compromise, but he has not discussed land swaps directly in the statement's terms.",
    "sources": [
     "s2",
     "s12"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "property-serves-common-good": {
    "value": null,
@@ -1607,13 +1608,14 @@
    "sources": []
   },
   "flat-income-tax": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "His record is for a progressive structure: the 2015 manifesto he led restored a 50p rate on incomes over £150,000, and he voted generally for higher income tax on high earners. He has not discussed a flat tax directly.",
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "character-from-environment": {
    "value": null,
@@ -3349,5 +3351,13 @@
    "sources": []
   }
  },
- "notes": "Views shift over time: as Labour leader he said Labour would scrap ID cards (earlier he voted for them as an MP); he opposed an EU referendum then campaigned to Remain; as a Cabinet minister since 2024 he has voted for government measures such as the winter fuel means test and welfare changes that he opposed in opposition. Answers on cabinet-era votes reflect collective government decisions as well as his own statements. The TheyWorkForYou summary aggregates votes since 2005 and is used as a record, not as his own words."
+ "notes": "Views shift over time: as Labour leader he said Labour would scrap ID cards (earlier he voted for them as an MP); he opposed an EU referendum then campaigned to Remain; as a Cabinet minister since 2024 he has voted for government measures such as the winter fuel means test and welfare changes that he opposed in opposition. Answers on cabinet-era votes reflect collective government decisions as well as his own statements. The TheyWorkForYou summary aggregates votes since 2005 and is used as a record, not as his own words.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

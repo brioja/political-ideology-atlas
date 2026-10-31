@@ -508,12 +508,13 @@
       ]
     },
     "ethnic-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his stated aim, as reported by Suetonius, was to keep the Roman people unmixed with foreign or servile blood by restricting citizenship grants and manumission, which does not amount to an ethnic definition of the nation.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "class-struggle-history": {
       "value": null,
@@ -751,13 +752,14 @@
       "sources": []
     },
     "national-rebirth": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he presented his regime as restoring ancestral customs falling into disuse and held the Secular Games, a ceremony marking a new age, but he described a restoration, not a radical rebirth.",
       "sources": [
         "s2",
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "territorial-expansion": {
       "value": 1,
@@ -1057,14 +1059,15 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Res Gestae grounds his authority in the Senate's and people's unanimous consent and in oaths taken by all Italy and the provinces, suggesting he regarded consent as a source of legitimacy.",
       "sources": [
         "s1",
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "trade-surplus": {
       "value": null,
@@ -1322,12 +1325,13 @@
       "sources": []
     },
     "citizenship-by-descent": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Suetonius says he granted citizenship sparingly to keep the people free of foreign or servile blood, which favours descent-based membership, though Roman citizenship by descent was already normal.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "minority-language-support": {
       "value": null,
@@ -1442,13 +1446,14 @@
       ]
     },
     "nonpartisan-head-of-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he says he freed the republic from the tyranny of a faction and accepted the title Father of the Country by acclamation of Senate, knights and people, presenting himself as head of the whole community.",
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "force-to-prevent-secession": {
       "value": null,
@@ -3197,5 +3202,13 @@
       "sources": []
     }
   },
-  "notes": "His own Res Gestae presents his rule as a restored republic; the Suetonius and Tacitus reports are secondhand. The Tacitus report of his advice to keep the empire within its frontiers is the only evidence against expansion and Tacitus himself hedges on its motive."
+  "notes": "His own Res Gestae presents his rule as a restored republic; the Suetonius and Tacitus reports are secondhand. The Tacitus report of his advice to keep the empire within its frontiers is the only evidence against expansion and Tacitus himself hedges on its motive.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

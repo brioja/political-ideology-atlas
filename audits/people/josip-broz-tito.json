@@ -436,13 +436,14 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "Led the 1941 uprising and the social revolution that followed and defended the revolutionary destruction of the old state machine as consistent with Marxism.",
       "sources": [
         "s1",
         "s11"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "experts-over-public": {
       "value": -1,
@@ -609,13 +610,14 @@
       "sources": []
     },
     "laws-from-scripture": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his regime and programme were secular and Marxist, with law from the socialist state.",
       "sources": [
         "s8",
         "s12"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "private-courts-defense": {
       "value": null,
@@ -1389,12 +1391,13 @@
       "sources": []
     },
     "clerical-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: an atheist Marxist who curbed church influence and ran a secular party state.",
       "sources": [
         "s12"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-own-government-war": {
       "value": null,
@@ -1643,12 +1646,13 @@
       "sources": []
     },
     "sacred-ruler": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: an atheist who denounced the monarchy; the cult of personality he tolerated was secular.",
       "sources": [
         "s12"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "flat-income-tax": {
       "value": null,
@@ -2500,13 +2504,14 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: an atheist whose authority claimed to derive from the people and working class.",
       "sources": [
         "s12",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "religious-dress-in-state": {
       "value": null,
@@ -3281,13 +3286,14 @@
       "sources": []
     },
     "scripture-inerrant": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: an atheist Marxist, so unlikely to hold scripture inerrant.",
       "sources": [
         "s12",
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "gendered-self-government": {
       "value": null,
@@ -3517,5 +3523,13 @@
       ]
     }
   },
-  "notes": "Early postwar policy (1945-1952) was orthodox Leninist and repressive, including the Goli Otok camp and an early cooperative drive; after 1950 he promoted self-management, decentralisation, relaxed church policy and non-alignment. Answers use his mature positions where they differ, and the 1958 party programme is cited as a document he led, corroborated by his own speeches where possible. His 1961 Belgrade Non-Aligned speech and the 1948 CPY report text could not be fetched in full; the 1948 report is used from translated extracts."
+  "notes": "Early postwar policy (1945-1952) was orthodox Leninist and repressive, including the Goli Otok camp and an early cooperative drive; after 1950 he promoted self-management, decentralisation, relaxed church policy and non-alignment. Answers use his mature positions where they differ, and the 1958 party programme is cited as a document he led, corroborated by his own speeches where possible. His 1961 Belgrade Non-Aligned speech and the 1948 CPY report text could not be fetched in full; the 1948 report is used from translated extracts.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

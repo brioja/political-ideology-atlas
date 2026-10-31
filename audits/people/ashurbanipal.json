@@ -383,12 +383,13 @@
       ]
     },
     "democracy-best": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his claim that the gods established his royal rule conflicts with making popular choice the highest governing authority.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "direct-votes": {
       "value": null,
@@ -403,12 +404,13 @@
       "sources": []
     },
     "right-to-secede": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his enforcement of Assyrian overlordship against Babylon’s revolt denies its claimed freedom to depart.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "natural-rulers": {
       "value": null,
@@ -779,12 +781,13 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his demand that foreign rulers accept his imperial yoke conflicts with a universal right to independent national rule.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "force-without-un": {
       "value": null,
@@ -975,12 +978,13 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he grounds authority in divine appointment and imposed submission, rather than requiring the consent of subjects.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "trade-surplus": {
       "value": null,
@@ -3043,5 +3047,13 @@
       "sources": []
     }
   },
-  "notes": "The royal inscriptions are commissioned self-presentations and often contain propagandistic claims; high confidence identifies what he claimed or endorsed, rather than independently verifying every event. Later scholarly descriptions are medium at most. Four explicit historical deductions are low and do not count toward salience. Neither the apolitical early-exit rule nor assumptions about generic Assyrian society are used. All statements were reviewed; modern institutions and issue-specific positions without matching personal evidence remain null. Regnal chronology is disputed; the catalog birth date is approximate."
+  "notes": "The royal inscriptions are commissioned self-presentations and often contain propagandistic claims; high confidence identifies what he claimed or endorsed, rather than independently verifying every event. Later scholarly descriptions are medium at most. Four explicit historical deductions are low and do not count toward salience. Neither the apolitical early-exit rule nor assumptions about generic Assyrian society are used. All statements were reviewed; modern institutions and issue-specific positions without matching personal evidence remain null. Regnal chronology is disputed; the catalog birth date is approximate.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

@@ -1600,13 +1600,14 @@
    "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "space-expansion": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "States 'I want to go to the stars' as part of the future he wants (20260402_Thu 00:16:44); not stated as the central goal of civilization.",
    "sources": [
     "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "mixed-constitution": {
    "value": null,
@@ -3306,5 +3307,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

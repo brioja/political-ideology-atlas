@@ -367,12 +367,13 @@
       "sources": []
     },
     "expand-nuclear": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he urged development of atomic energy and atomic weapons; the speech does not separate civilian electricity generation from military applications.",
       "sources": [
         "relationships"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "revolution-justified": {
       "value": 2,
@@ -830,12 +831,13 @@
       ]
     },
     "no-neutral-knowledge": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his claim that all thinking in class society bears a class stamp extends to knowledge, although the statement is broader than his wording.",
       "sources": [
         "classes"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "universal-morality": {
       "value": null,
@@ -3218,5 +3220,13 @@
       ]
     }
   },
-  "notes": "The New Democracy programme describes a transitional stage; later collectivisation and the 1975 remarks govern mature economic answers. Cultural policy is assessed against the later record where it departed from the Hundred Flowers language. No modern digital or climate positions are assigned. The atomic-energy inference is distinguished from direct evidence for an independent bomb."
+  "notes": "The New Democracy programme describes a transitional stage; later collectivisation and the 1975 remarks govern mature economic answers. Cultural policy is assessed against the later record where it departed from the Hundred Flowers language. No modern digital or climate positions are assigned. The atomic-energy inference is distinguished from direct evidence for an independent bomb.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

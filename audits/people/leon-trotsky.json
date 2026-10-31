@@ -136,13 +136,14 @@
    ]
   },
   "property-fundamental": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he called for expropriating banks, monopolies and landed estates and for abolishing private ownership of the means of production, which rules out treating private property as a near-inviolable right.",
    "sources": [
     "s3",
     "s6"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "regulate-corporations": {
    "value": null,
@@ -719,12 +720,13 @@
    ]
   },
   "taxation-theft": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he advocated shifting the burden of taxation onto the rich and funding a planned economy by the state.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "harm-principle": {
    "value": null,
@@ -1039,13 +1041,14 @@
    "sources": []
   },
   "night-watchman-state": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he advocated a state-planned economy with nationalised industry and banking, incompatible with a state limited to defence and justice.",
    "sources": [
     "s1",
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "discourage-race-mixing": {
    "value": null,
@@ -3260,5 +3263,13 @@
    ]
   }
  },
- "notes": "Positions shifted from the civil war (banning rival parties, compulsory labour, terror) to a 1930s programme of soviet pluralism and press freedom; the latter is used where they conflict. Not covered by his available writings: LGBT issues, drugs, environment, healthcare provision and most modern policy questions, which stay null."
+ "notes": "Positions shifted from the civil war (banning rival parties, compulsory labour, terror) to a 1930s programme of soviet pluralism and press freedom; the latter is used where they conflict. Not covered by his available writings: LGBT issues, drugs, environment, healthcare provision and most modern policy questions, which stay null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

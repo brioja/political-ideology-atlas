@@ -254,7 +254,7 @@
  ],
  "answers": {
   "universal-healthcare": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Said in 1994 he supported the single-payer plan, backed Medicare for All through his House years and said in 2017 he would support Sanders' bill; in 2019 called himself a single-payer advocate all his life.",
    "sources": [
@@ -264,7 +264,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "raise-minimum-wage": {
    "value": 1,
@@ -3386,6 +3387,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

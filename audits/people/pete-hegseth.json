@@ -217,13 +217,14 @@
    "sources": []
   },
   "cut-welfare": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Supported cutting Medicare and Medicaid and reducing benefits for higher earners as part of entitlement reform; the dependency framing itself is not documented.",
    "sources": [
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "worker-ownership": {
    "value": null,
@@ -3482,6 +3483,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

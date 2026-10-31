@@ -195,12 +195,13 @@
       "sources": []
     },
     "abortion-legal": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "In a Vanity Fair profile (as summarised by Yahoo) she said abortion involves \"a human life, and it's worthy of protection\", which implies opposition to legal abortion in most cases. The source is a secondhand summary of the interview.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "more-religion-public": {
       "value": null,
@@ -3010,5 +3011,13 @@
       "sources": []
     }
   },
-  "notes": "Thin policy record: most of her public words concern faith, grief and her husband's legacy. Nothing was inferred from Charlie Kirk's views or Turning Point USA's positions. She declined to take a position on Israeli government actions (\"I don't sit around thinking about what Bibi Netanyahu is doing\"), so Israel statements are null. She called anti-ICE protests \"demonic\" in January 2026, but that does not map to a statement on immigration levels."
+  "notes": "Thin policy record: most of her public words concern faith, grief and her husband's legacy. Nothing was inferred from Charlie Kirk's views or Turning Point USA's positions. She declined to take a position on Israeli government actions (\"I don't sit around thinking about what Bibi Netanyahu is doing\"), so Israel statements are null. She called anti-ICE protests \"demonic\" in January 2026, but that does not map to a statement on immigration levels.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

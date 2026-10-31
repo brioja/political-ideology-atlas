@@ -519,13 +519,14 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he called Christianity a plague and wanted Germanic values as the base of law; his pamphlet treats the Bible as Jewish history.",
       "sources": [
         "s5",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "private-courts-defense": {
       "value": null,
@@ -1022,13 +1023,14 @@
       "sources": []
     },
     "heritable-defect-limits": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he spoke of selection and racial hygiene and of breeding the SS like a breeder purifying a strain, but I opened no statement of his on defective births.",
       "sources": [
         "s1",
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "security-forces-accountable": {
       "value": null,
@@ -1187,12 +1189,13 @@
       "sources": []
     },
     "diversity-weakens-cohesion": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held that race-mixing degrades peoples and wanted an ethnically pure nation, but no statement about diversity and cohesion was found.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "offices-by-lottery": {
       "value": null,
@@ -2002,13 +2005,14 @@
       "sources": []
     },
     "pronatalist-incentives": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "He founded Lebensborn welfare for mothers of 'racially valuable' children and pressed for large families; financial state incentives specifically are not documented in sources opened.",
       "sources": [
         "s9",
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "residents-only-property": {
       "value": null,
@@ -3246,5 +3250,13 @@
       "sources": []
     }
   },
-  "notes": "Answers rely mainly on the 1936/37 SS pamphlet, the Posen speech of 4 October 1943, the Bad Tölz speech of 1937, the 1942 speech on Christianity and the 1940 memorandum. The Posen speech of 6 October 1943, the full 1940 memo, the diaries and Longerich's biography were not read directly. His 1940 memo called physical destruction of a people 'un-Germanic' but later policy included the Holocaust. The Posen full 115-page text, the 1935 Lebensborn order and the SS marriage order text were not opened; those points rest on Wikipedia."
+  "notes": "Answers rely mainly on the 1936/37 SS pamphlet, the Posen speech of 4 October 1943, the Bad Tölz speech of 1937, the 1942 speech on Christianity and the 1940 memorandum. The Posen speech of 6 October 1943, the full 1940 memo, the diaries and Longerich's biography were not read directly. His 1940 memo called physical destruction of a people 'un-Germanic' but later policy included the Holocaust. The Posen full 115-page text, the 1935 Lebensborn order and the SS marriage order text were not opened; those points rest on Wikipedia.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

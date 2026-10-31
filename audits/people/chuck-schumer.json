@@ -550,13 +550,14 @@
       "sources": []
     },
     "free-trade": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Voted for China permanent trade relations and several free-trade agreements but against CAFTA, opposed NAFTA, and said globalization on balance probably raised wealth while costing tens of millions of jobs.",
       "sources": [
         "s34",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nation-first": {
       "value": null,
@@ -1568,12 +1569,13 @@
       ]
     },
     "sex-ed-in-schools": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Backed sex education covering abstinence and contraception and funding to reduce teen pregnancy through education; gender-equality curricula are not addressed.",
       "sources": [
         "s30"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "creationism-in-schools": {
       "value": null,
@@ -3470,5 +3472,13 @@
       "sources": []
     }
   },
-  "notes": "Many roll-call votes (Iraq 2002, Kosovo 1999, estate tax, ACA 2009, stimulus) are taken from OnTheIssues and Wikipedia rather than the Senate roll-call pages, which were blocked. Senate Democratic press pages were read from Wayback Machine copies. Mixed record: voted for the 1996 Defense of Marriage Act but backed same-sex marriage from 2009; voted for the 2002 Iraq war authorization, then criticized its conduct; broke with the Obama administration over the 2015 Iran deal; called in 2024 for new Israeli elections while continuing to back military aid. Financial deregulation record (2008 NYT review) conflicts with his current regulatory stance. Senate roll-call pages for 2024 FISA reauthorization and the 2008 bank bailout could not be retrieved, so those answers are null."
+  "notes": "Many roll-call votes (Iraq 2002, Kosovo 1999, estate tax, ACA 2009, stimulus) are taken from OnTheIssues and Wikipedia rather than the Senate roll-call pages, which were blocked. Senate Democratic press pages were read from Wayback Machine copies. Mixed record: voted for the 1996 Defense of Marriage Act but backed same-sex marriage from 2009; voted for the 2002 Iraq war authorization, then criticized its conduct; broke with the Obama administration over the 2015 Iran deal; called in 2024 for new Israeli elections while continuing to back military aid. Financial deregulation record (2008 NYT review) conflicts with his current regulatory stance. Senate roll-call pages for 2024 FISA reauthorization and the 2008 bank bailout could not be retrieved, so those answers are null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

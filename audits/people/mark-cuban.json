@@ -143,13 +143,14 @@
    "sources": []
   },
   "tax-the-wealthy": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Says it is patriotic to pay taxes and he would accept being the target of higher taxes on the rich, but criticised a 25% minimum tax on income over $100M including unrealized gains as an economy killer. Mixed.",
    "sources": [
     "s5",
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "unions-good": {
    "value": null,
@@ -3085,5 +3086,13 @@
    "sources": []
   }
  },
- "notes": "Mixed evidence on taxes (patriotic to pay taxes versus opposition to unrealized-gains and wealth taxes). No stated position found on most social issues, gun-control specifics beyond his 2019 proposal, or foreign policy."
+ "notes": "Mixed evidence on taxes (patriotic to pay taxes versus opposition to unrealized-gains and wealth taxes). No stated position found on most social issues, gun-control specifics beyond his 2019 proposal, or foreign policy.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

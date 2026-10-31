@@ -296,14 +296,15 @@
       "sources": []
     },
     "abortion-legal": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her statement that an unwanted life forced into poverty did not seem sacred to her, her demand for free motherhood and her attack on laws against contraception; she herself refused to perform abortions and called them a tragic result of social conditions.",
       "sources": [
         "s12",
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "more-religion-public": {
       "value": -2,
@@ -1193,13 +1194,14 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her stated principle that free thought and free expression need no legal chain and that heresy laws are the old inquisition.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -2628,13 +2630,14 @@
       "sources": []
     },
     "interfaith-marriage-restriction": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her view that marriage and love belong to the individuals concerned and that Church and State control of them is invasive, and her indignation that love between Jews and Gentiles was a 'crime'.",
       "sources": [
         "s1",
         "s13"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "boycott-minority-shops": {
       "value": null,
@@ -2974,12 +2977,13 @@
       ]
     },
     "defensive-wars-only": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Contested: called the foreign-invasion rationale for standing armies a myth and saw state wars as capitalist ventures, which implies opposing aggressive war, yet she wanted armed forces abolished altogether.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "language-defines-nation": {
       "value": null,
@@ -3551,5 +3555,13 @@
       ]
     }
   },
-  "notes": "Died 1940, so inference was limited to views she stated and marked 'Inferred:'. Her views on economics were stated as principles of anarchist communism rather than policy; topics of modern welfare policy (healthcare, wages, taxes) are left null. Her position on women's suffrage is contested: she saw no reason women should not vote but denounced the vote as a fetish. Her attitude to political violence is mixed: she explained and defended the motives of attentaters but said such acts do not bring about social reconstruction. Her view of Soviet Russia changed from early support for defending the Revolution (1919) to calling it state capitalism and despotism (1935)."
+  "notes": "Died 1940, so inference was limited to views she stated and marked 'Inferred:'. Her views on economics were stated as principles of anarchist communism rather than policy; topics of modern welfare policy (healthcare, wages, taxes) are left null. Her position on women's suffrage is contested: she saw no reason women should not vote but denounced the vote as a fetish. Her attitude to political violence is mixed: she explained and defended the motives of attentaters but said such acts do not bring about social reconstruction. Her view of Soviet Russia changed from early support for defending the Revolution (1919) to calling it state capitalism and despotism (1935).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

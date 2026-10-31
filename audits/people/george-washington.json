@@ -149,12 +149,13 @@
       "sources": []
     },
     "public-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he stated that, as a general rule, manufactures on public account are inexpedient, with an exception for military supplies.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-the-wealthy": {
       "value": null,
@@ -394,12 +395,13 @@
       "sources": []
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he stated that, as a general rule, manufactures on public account are inexpedient.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -479,13 +481,14 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he described the republican form of government as the object of his service and the American experiment, and spoke of monarchical governments as a different sort from popular ones.",
       "sources": [
         "s1",
         "s7"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "democracy-best": {
       "value": null,
@@ -799,14 +802,15 @@
       "sources": []
     },
     "total-state": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Presented liberty as the basis of the government and called for a government of vigor consistent with security of liberty; proposed public encouragement of science and agriculture, not direction of all life.",
       "sources": [
         "s1",
         "s12",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "national-rebirth": {
       "value": null,
@@ -1078,12 +1082,13 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wrote that all citizens possess alike liberty of conscience and government assists no persecution.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1242,12 +1247,13 @@
       "sources": []
     },
     "pool-sovereignty": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he warned that a nation that accepts favors from others pays with a portion of its independence, and he sought to keep the nation free of foreign political ties.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "head-commands-forces": {
       "value": null,
@@ -1504,13 +1510,14 @@
       "sources": []
     },
     "sacred-ruler": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held that authority rests on the voluntary consent of the people and took the title Mr. President, not a sacred title.",
       "sources": [
         "s1",
         "s13"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "flat-income-tax": {
       "value": null,
@@ -1582,12 +1589,13 @@
       "sources": []
     },
     "apostasy-punishable": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wrote that all citizens have liberty of conscience and that government gives no assistance to persecution.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "women-must-cover": {
       "value": null,
@@ -2433,13 +2441,14 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Called religion and morality indispensable supports of the nation, so would reject state promotion of atheism.",
       "sources": [
         "s1",
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -2502,12 +2511,13 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he asked Congress to give effectual encouragement to useful inventions and to the exertions of skill and genius.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "uniformed-youth": {
       "value": null,
@@ -3038,13 +3048,14 @@
       "sources": []
     },
     "national-church-status": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wrote that all possess alike liberty of conscience and immunities of citizenship, and called on all religious denominations to give thanks.",
       "sources": [
         "s11",
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -3231,5 +3242,13 @@
       "sources": []
     }
   },
-  "notes": "On slavery, he was a lifelong slaveholder who wrote in 1786 that he wished to see gradual abolition by legislative authority and would not buy more slaves, and in 1799 freed those he held in his own right (not the dower slaves) at his wife's death. Slavery-specific record, such as the Fugitive Slave Act of 1793 and the Naturalization Act of 1790 limited to free white persons, was left null where no statement matches. Several answers rest on one or two passages in Farewell Address and annual messages; the Newburgh Address, Founders Online papers and Jay Treaty text itself were not available to the auditor."
+  "notes": "On slavery, he was a lifelong slaveholder who wrote in 1786 that he wished to see gradual abolition by legislative authority and would not buy more slaves, and in 1799 freed those he held in his own right (not the dower slaves) at his wife's death. Slavery-specific record, such as the Fugitive Slave Act of 1793 and the Naturalization Act of 1790 limited to free white persons, was left null where no statement matches. Several answers rest on one or two passages in Farewell Address and annual messages; the Newburgh Address, Founders Online papers and Jay Treaty text itself were not available to the auditor.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 11
+    }
+  ]
 }

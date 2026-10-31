@@ -364,13 +364,14 @@
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held a racial hierarchy and legislated discrimination, so remedying historical racial injustices has no support in his stated views.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "gender-social-construct": {
       "value": null,
@@ -431,12 +432,13 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Mein Kampf derides 'so-called humanitarianism' and sets national interest above such motives.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "open-borders": {
       "value": -2,
@@ -550,12 +552,13 @@
       ]
     },
     "abolish-central-banks": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: rearmament was financed by state-controlled instruments such as Mefo bills rather than a market for money.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "corporatist-bargaining": {
       "value": 1,
@@ -847,12 +850,13 @@
       ]
     },
     "collective-farming": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Blood and Soil ideal of peasant farmers and anti-Marxism.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "capitalism-causes-war": {
       "value": -2,
@@ -993,12 +997,13 @@
       "sources": []
     },
     "universal-morality": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Mein Kampf rejects humanitarian ethics and bases morality on race and struggle.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "single-common-good": {
       "value": 1,
@@ -1030,13 +1035,14 @@
       "sources": []
     },
     "workplace-democracy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: leader principle and abolition of unions rule out worker voice in firms.",
       "sources": [
         "s2",
         "s13"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "school-vouchers": {
       "value": null,
@@ -1676,12 +1682,13 @@
       ]
     },
     "rich-countries-aid-poor": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: nation-first stance and derision of humanitarianism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -1696,12 +1703,13 @@
       "sources": []
     },
     "central-bank-independence": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: state financing of rearmament via Mefo bills.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-land-for-peace": {
       "value": null,
@@ -2294,12 +2302,13 @@
       "sources": []
     },
     "disparate-impact-discrimination": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: racial-hierarchy beliefs.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "consumerism-harmful": {
       "value": 1,
@@ -3667,5 +3676,13 @@
       "sources": []
     }
   },
-  "notes": "Answers draw on Mein Kampf, the 25-point programme and the regime's laws and acts. Where the programme and the record differ (point 13 nationalisation versus privatisation; Mein Kampf's praise of unions versus their abolition in 1933; point 17 land reform), the record in power is used, at lower confidence where the two conflict. Historical-figure inferences are marked 'Inferred:' and kept at low confidence. The 1941 decree on homosexuality and Hitler's role in the Holocaust are as described by USHMM and Wikipedia; Hitler did not leave a written order for the genocide."
+  "notes": "Answers draw on Mein Kampf, the 25-point programme and the regime's laws and acts. Where the programme and the record differ (point 13 nationalisation versus privatisation; Mein Kampf's praise of unions versus their abolition in 1933; point 17 land reform), the record in power is used, at lower confidence where the two conflict. Historical-figure inferences are marked 'Inferred:' and kept at low confidence. The 1941 decree on homosexuality and Hitler's role in the Holocaust are as described by USHMM and Wikipedia; Hitler did not leave a written order for the genocide.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 9
+    }
+  ]
 }

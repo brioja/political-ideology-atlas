@@ -400,7 +400,7 @@
       "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
     },
     "empower-international-orgs": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his repeated support for international arbitration as the true way of settling differences and his sending delegates to the 1899 peace conference; arbitration there was voluntary.",
       "sources": [
@@ -409,7 +409,8 @@
         "b4",
         "b3"
       ],
-      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "free-trade": {
       "value": -2,
@@ -2420,13 +2421,14 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his first inaugural derives presidential authority from the people’s will and constitutional oath, while invoking God’s guidance.",
       "sources": [
         "c4"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": -1
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2817,13 +2819,14 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1892 YMCA address, pp. 606–607, connects physical, moral and religious development with sound citizenship and free institutions.",
       "sources": [
         "c1"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": 1
     },
     "regional-powers-revocable": {
       "value": null,
@@ -3377,5 +3380,13 @@
       "sources": []
     }
   },
-  "notes": "Positions come from his House speeches (1878-1891), first inaugural, annual messages and 1898-1901 speeches. Many topics he never addressed are null. His second-term stance on tariffs softened toward reciprocity in the Buffalo speech.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 13 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third audit, no prior answers copied. Full texts of both speech collections and all four annual messages downloaded; searched each thin theme and reviewed all 490 statement texts. Religion table: the Lakeside address supplies an explicit church–state separation position; YMCA address supports a public religious role; Catholic Summer School speech supplies a civic definition of national belonging. Divine-source-of-authority and spiritual-nature are explicitly limited historical inferences, not direct theological claims. No evidence for scriptural civil law, blasphemy penalties, premarital-sex doctrine, party command of the army or revolutionary vanguard politics. Public-school neutrality and general church–state separation do not, by themselves, settle all religious instruction in state schools: no-religion-state-schools remains null. His commission’s later education regulations are not automatically attributed to him. No secondhand Rusling Philippines-prayer account is used. Equal Suffrage is about Black male voting rights, not evidence for women’s suffrage. Religious addresses include quotations from Washington and Lincoln; separate speakers’ words are not treated as new McKinley testimony except where he expressly endorses their principles. 1897 non-aggression pledges are superseded by his personally driven expansion and wars. Reciprocity at Buffalo softened exclusiveness but did not renounce protective tariffs. His civil-service promises were checked against later exemptions, so no unqualified meritocracy answer is assigned. Forest-reserve administration was examined but does not establish intrinsic value of nature, degrowth or other unrelated ecological doctrines. Eight-hour federal-employment advocacy is not generalized into a policy on all private employment. War authorization is not treated as extralegal political violence."
+  "notes": "Positions come from his House speeches (1878-1891), first inaugural, annual messages and 1898-1901 speeches. Many topics he never addressed are null. His second-term stance on tariffs softened toward reciprocity in the Buffalo speech.\n\nMerged with an independent claude-haiku-5-5 audit: 8 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the Second Inaugural (1901), the 1898 war message, the Buffalo speech (1901), the annual messages of 1897 to 1900 and the 1898 Philippine proclamation were read in full. Not retrieved: the first inaugural (1897), the McKinley Tariff (1890) and his tariff speeches, and any text on the Gold Standard Act of 1900 itself. The 1899 message urged keeping the gold standard, but no statement in the test covers gold or currency, so none is answered. The reported remarks to Methodist ministers (1899) could not be checked against a primary text and are not used. Most answers rest on his messages and the Buffalo speech, so statements about labour, immigration, race, religion and social issues are null because his opening speeches and messages did not address them. Public web search was exhausted during the audit, so tariff-speech and first-inaugural sources are missing.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 13 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third audit, no prior answers copied. Full texts of both speech collections and all four annual messages downloaded; searched each thin theme and reviewed all 490 statement texts. Religion table: the Lakeside address supplies an explicit church–state separation position; YMCA address supports a public religious role; Catholic Summer School speech supplies a civic definition of national belonging. Divine-source-of-authority and spiritual-nature are explicitly limited historical inferences, not direct theological claims. No evidence for scriptural civil law, blasphemy penalties, premarital-sex doctrine, party command of the army or revolutionary vanguard politics. Public-school neutrality and general church–state separation do not, by themselves, settle all religious instruction in state schools: no-religion-state-schools remains null. His commission’s later education regulations are not automatically attributed to him. No secondhand Rusling Philippines-prayer account is used. Equal Suffrage is about Black male voting rights, not evidence for women’s suffrage. Religious addresses include quotations from Washington and Lincoln; separate speakers’ words are not treated as new McKinley testimony except where he expressly endorses their principles. 1897 non-aggression pledges are superseded by his personally driven expansion and wars. Reciprocity at Buffalo softened exclusiveness but did not renounce protective tariffs. His civil-service promises were checked against later exemptions, so no unqualified meritocracy answer is assigned. Forest-reserve administration was examined but does not establish intrinsic value of nature, degrowth or other unrelated ecological doctrines. Eight-hour federal-employment advocacy is not generalized into a policy on all private employment. War authorization is not treated as extralegal political violence.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

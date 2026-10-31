@@ -1403,13 +1403,14 @@
    "sources": []
   },
   "end-foreign-alliances": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "His 9 December 2025 NATO Act press release: he sponsors withdrawal from NATO and says the Constitution did not authorize permanent foreign entanglements; troops abroad and other alliances are not addressed.",
    "sources": [
     "b16"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "abolish-rental-housing": {
    "value": null,
@@ -2417,13 +2418,14 @@
    "sources": []
   },
   "stay-neutral-between-blocs": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Same NATO release: sponsors leaving one alliance and rejects permanent entanglements; neutrality between rival blocs is not stated.",
    "sources": [
     "b16"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "dynastic-succession": {
    "value": null,
@@ -3347,6 +3349,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

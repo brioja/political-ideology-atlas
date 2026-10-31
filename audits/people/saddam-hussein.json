@@ -272,13 +272,14 @@
       ]
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his government rejected orthodox Marxist class conflict, built a National Front with other parties, and said workers in the private sector are not exploited when the state guarantees work.",
       "sources": [
         "s8",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "one-party-rule": {
       "value": 2,
@@ -430,12 +431,13 @@
       ]
     },
     "natural-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the FBI summary records that he considered himself an excellent debater and superior to those around him, and he ruled as the unrivalled leader; he did not state a doctrine of natural rulers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "right-to-secede": {
       "value": -2,
@@ -3334,5 +3336,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed: the 1970s-80s sources are secular Ba'athist; from 1991 and the 1993 Faith Campaign the regime promoted Islam, but in 2004 he told the FBI religion and government should not mix. Where acts contradict stated principles (equal citizenship, self-determination, democracy), answers are low or 0. Not reached: The Saddam Tapes (Woods, Palkki, Stout), Conflict Records Research Center files, and Social and Foreign Affairs in Iraq (restricted on the Internet Archive); the Al-Khuld Hall tape and Anfal are used only through Wikipedia."
+  "notes": "Views changed: the 1970s-80s sources are secular Ba'athist; from 1991 and the 1993 Faith Campaign the regime promoted Islam, but in 2004 he told the FBI religion and government should not mix. Where acts contradict stated principles (equal citizenship, self-determination, democracy), answers are low or 0. Not reached: The Saddam Tapes (Woods, Palkki, Stout), Conflict Records Research Center files, and Social and Foreign Affairs in Iraq (restricted on the Internet Archive); the Al-Khuld Hall tape and Anfal are used only through Wikipedia.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

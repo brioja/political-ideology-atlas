@@ -336,13 +336,14 @@
    ]
   },
   "restrict-hate-speech": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "In a 1975 interview she excludes racist advocacy denying others' right to exist from protected democratic speech; the view is old and not stated as a call for legal restriction.",
    "sources": [
     "b10"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "strong-leader": {
    "value": null,
@@ -2809,13 +2810,14 @@
    "sources": []
   },
   "local-essentials-public": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "She criticizes privatized healthcare and argues hospitals must serve the public good; water and transport are not addressed.",
    "sources": [
     "b2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "second-chamber": {
    "value": null,
@@ -3424,6 +3426,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
   }
  ]
 }

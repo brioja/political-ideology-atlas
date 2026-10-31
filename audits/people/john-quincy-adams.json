@@ -250,13 +250,14 @@
    "sources": []
   },
   "restrict-hate-speech": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he held that freedom of the press, speech and communication of thought is paramount over all legislative authority, with no exception stated for hateful speech.",
    "sources": [
     "s4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "strong-leader": {
    "value": null,
@@ -3310,6 +3311,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-24"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

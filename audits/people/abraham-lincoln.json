@@ -927,13 +927,14 @@
       ]
     },
     "natural-rulers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that no man is good enough to govern another without that other's consent.",
       "sources": [
         "s2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "political-violence-never": {
       "value": -1,
@@ -1173,13 +1174,14 @@
       "sources": []
     },
     "collective-farming": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he praised families working their own farms and taking the whole product to themselves, which points against collective farming; he never addressed collective farms.",
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "capitalism-causes-war": {
       "value": null,
@@ -1290,14 +1292,15 @@
       "sources": []
     },
     "bound-labor": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he opposed forcing people to labor without their consent, calling slavery wrong and saying a free man is not fixed for life in one condition of labor; he did not address land-bound labor owed to a lord as such.",
       "sources": [
         "s6",
         "s12"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "no-neutral-knowledge": {
       "value": null,
@@ -1409,7 +1412,7 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said there is and probably always will be a relation between labor and capital 'producing mutual benefits' and denied that hired laborers are fixed in a class for life, while ranking labor above capital.",
       "sources": [
@@ -1419,7 +1422,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "sacrifice-heritage": {
       "value": null,
@@ -3813,6 +3817,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
     }
   ]
 }

@@ -181,12 +181,13 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: her Christmas messages repeatedly spoke of drawing strength from the Christian gospel and of faith as a guide to service, but she did not argue for a policy on religion's public role.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "correct-racial-injustice": {
       "value": null,
@@ -816,13 +817,14 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she addressed the Commonwealth's peoples 'whatever race they come from' (1947) and said everyone is our neighbour 'no matter what race, creed or colour' (2004); she is not recorded endorsing racial segregation.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": null,
@@ -921,12 +923,13 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: her stated respect for all faiths and for people of no faith (2014 Christmas message) is incompatible with legal limits on conversion.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1397,12 +1400,13 @@
       "sources": []
     },
     "apostasy-punishable": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in 2014 she said Christ's example taught her to respect and value all people 'of whatever faith or none'.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "women-must-cover": {
       "value": null,
@@ -2005,12 +2009,13 @@
       "sources": []
     },
     "punish-blasphemy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she said she respects people 'of whatever faith or none' and, reportedly, that the Church's role is to protect the free practice of all faiths.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "colonies-serve-metropole": {
       "value": null,
@@ -2997,5 +3002,13 @@
       "sources": []
     }
   },
-  "notes": "Constitutional formalities on ministerial advice are not treated as her views. Her 2014 remark that Scots should 'think very carefully about the future' was informal and the Palace denied it was an intervention, so no position on secession is recorded. The Lambeth Palace 2012 remark on protecting all faiths was seen only secondhand and is not relied on beyond low-confidence inference."
+  "notes": "Constitutional formalities on ministerial advice are not treated as her views. Her 2014 remark that Scots should 'think very carefully about the future' was informal and the Palace denied it was an intervention, so no position on secession is recorded. The Lambeth Palace 2012 remark on protecting all faiths was seen only secondhand and is not relied on beyond low-confidence inference.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

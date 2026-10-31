@@ -230,13 +230,14 @@
       ]
     },
     "gradual-change": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he revived older religious worship and kept the Senate and magistracies in use (HA, Dio), which suggests respect for established institutions; he says nothing about the pace of change.",
       "sources": [
         "s5",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "reduce-immigration": {
       "value": 0,
@@ -394,13 +395,14 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he accepted the dynastic arrangement and passed power to his son, which implies that a hereditary line can rule, but he wrote nothing on monarchy as an institution.",
       "sources": [
         "s3",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "democracy-best": {
       "value": null,
@@ -518,12 +520,13 @@
       ]
     },
     "duties-before-rights": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his ethic is built on duties to the common good (Meditations II and VI), and he never speaks of rights, so the priority claim is only indirectly supported.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "nature-intrinsic-value": {
       "value": 1,
@@ -842,12 +845,13 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Meditations I (section XV) holds that people are born to cooperate rather than oppose one another, but it speaks of humanity in general, not of employers and workers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "sacrifice-heritage": {
       "value": null,
@@ -1036,12 +1040,13 @@
       ]
     },
     "competition-drives-progress": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Meditations I (section XV) says opposition between people is against nature and that people are born to cooperate; progress is not discussed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-extremist-parties": {
       "value": null,
@@ -1803,12 +1808,13 @@
       "sources": []
     },
     "filial-duty": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Meditations I opens with thanks to his grandfather and mother, and Book VI speaks of honouring one's own mother; the duty of care is not stated outright.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "office-by-exam": {
       "value": null,
@@ -2145,12 +2151,13 @@
       "sources": []
     },
     "assisted-dying": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Meditations X (section VIII) endorses leaving life by a plain voluntary act when one cannot act well, but it does not address medical help.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "left-right-obsolete": {
       "value": null,
@@ -2566,12 +2573,13 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Meditations I (section XV) describes each person as sharing a divine particle of reason, which he treats as a higher part of human nature; the political side is not discussed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regional-powers-revocable": {
       "value": null,
@@ -3119,5 +3127,13 @@
       "sources": []
     }
   },
-  "notes": "Known answers rest on the Meditations and on his letters and record as emperor, reported by Cassius Dio and the Historia Augusta. The Historia Augusta is unreliable and is low confidence where it is the only source. Reports conflict on whether he doubted Commodus (HA) and on his role in the persecution of Christians (disputed). The widow-related legal reform named in the research brief was not found in the sources opened here. Most modern-institution statements are null because the sources do not address their wording."
+  "notes": "Known answers rest on the Meditations and on his letters and record as emperor, reported by Cassius Dio and the Historia Augusta. The Historia Augusta is unreliable and is low confidence where it is the only source. Reports conflict on whether he doubted Commodus (HA) and on his role in the persecution of Christians (disputed). The widow-related legal reform named in the research brief was not found in the sources opened here. Most modern-institution statements are null because the sources do not address their wording.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 8
+    }
+  ]
 }

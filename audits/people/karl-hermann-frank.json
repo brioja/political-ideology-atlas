@@ -977,12 +977,13 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his compulsory assimilation and expulsions subordinate inhabitants to Germanization regardless of their wishes.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "trade-surplus": {
       "value": null,
@@ -1025,12 +1026,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his proposed single authority controls planning and execution, subordinate directly to Hitler.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "vanguard-party": {
       "value": null,
@@ -3053,5 +3055,13 @@
       "sources": []
     }
   },
-  "notes": "The 1940 memorandum and 1941 lecture establish his own policy, separately from Hans Frank and from Neurath. Historical deductions are marked Inferred. His tactical resistance to Hitler’s proposed killing of 10,000 Czechs does not cancel his own reprisals. No positions are assigned merely from Nazi membership, religious affiliation or attendance at meetings. Remaining statements were checked against the downloaded texts; specific economic systems, family and sexual laws, environmental policy and modern technologies lack individual evidence. Death-penalty doctrine and drug-specific extrajudicial killing remain null: collective civilian murder does not establish those particular formulations."
+  "notes": "The 1940 memorandum and 1941 lecture establish his own policy, separately from Hans Frank and from Neurath. Historical deductions are marked Inferred. His tactical resistance to Hitler’s proposed killing of 10,000 Czechs does not cancel his own reprisals. No positions are assigned merely from Nazi membership, religious affiliation or attendance at meetings. Remaining statements were checked against the downloaded texts; specific economic systems, family and sexual laws, environmental policy and modern technologies lack individual evidence. Death-penalty doctrine and drug-specific extrajudicial killing remain null: collective civilian murder does not establish those particular formulations.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

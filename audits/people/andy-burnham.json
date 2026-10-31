@@ -1130,14 +1130,15 @@
    "sources": []
   },
   "school-vouchers": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Opposed free schools as shadow education secretary and voted mostly against greater school autonomy and academies; vouchers themselves are not addressed.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "avoid-deficit-stimulus": {
    "value": 1,
@@ -1475,13 +1476,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "restrict-strikes-picketing": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Voted consistently against tighter regulation of trade unions; secret-ballot rules specifically not addressed.",
    "sources": [
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "population-causes-poverty": {
    "value": null,
@@ -2007,7 +2009,7 @@
    "sources": []
   },
   "abolish-hereditary-privilege": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Voted mostly for removing hereditary peers from the Lords and always for a wholly elected Lords; monarchy not addressed.",
    "sources": [
@@ -2017,7 +2019,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "history-own-civilization": {
    "value": null,
@@ -2570,7 +2573,7 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Earlier supported trans people using facilities matching their gender; in May 2026 backed single-sex facility rules following For Women Scotland and the EHRC guidance. Position on legal recognition itself is not stated.",
    "sources": [
@@ -2581,10 +2584,11 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "assisted-dying": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Abstained in 2015; said in 2024 he would back the principle; as PM in July 2026 declined to give a stance, saying palliative and social care funding must be fixed first.",
    "sources": [
@@ -2594,7 +2598,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "left-right-obsolete": {
    "value": null,
@@ -3385,13 +3390,14 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "On Gaza said evidence suggests war crimes may have been committed and accountability is a matter for the international courts.",
    "sources": [
     "b14"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "scripture-inerrant": {
    "value": null,
@@ -3624,6 +3630,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 6
   }
  ]
 }

@@ -425,20 +425,22 @@
    ]
   },
   "democracy-best": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he judged states governed by the suffrages of many to be less honourable and trustworthy than monarchies.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "direct-votes": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he held that republics and assemblies governed by many suffrages act on interest alone and that subjects should obey; no role for popular votes.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "workers-councils": {
    "value": null,
@@ -1277,14 +1279,15 @@
    "sources": []
   },
   "death-penalty": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Code Noir provisions he issued prescribe death for repeated escape and striking a master; the Grands Jours severely punished abusive nobles; the statement is about gravest crimes such as terrorism, which his record fits only loosely.",
    "sources": [
     "s3",
     "s7",
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1478,12 +1481,13 @@
    "sources": []
   },
   "mixed-constitution": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he preferred rule by one over aristocratic and republican states and praised the monarch's independence of both.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "leader-cult": {
    "value": 1,
@@ -2385,12 +2389,13 @@
    "sources": []
   },
   "state-promotes-atheism": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he attacked 'rois sans religion' and promoted Catholic uniformity in all schools and institutions, so would reject state promotion of atheism.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-police-prisons": {
    "value": null,
@@ -3184,5 +3189,13 @@
    "sources": []
   }
  },
- "notes": "Louis XIV's Mémoires were drafted with secretaries under his direction and count as his words. The deathbed advice to Louis XV is secondhand. The Code Noir was drafted by Colbert and Seignelay on his order and issued in his name; answers drawn from it rely on that record rather than on any personal statement. The remark 'L'État, c'est moi' is apocryphal and was not used. His views on war shifted late in life (advice of 1700 and 1715 urging peace)."
+ "notes": "Louis XIV's Mémoires were drafted with secretaries under his direction and count as his words. The deathbed advice to Louis XV is secondhand. The Code Noir was drafted by Colbert and Seignelay on his order and issued in his name; answers drawn from it rely on that record rather than on any personal statement. The remark 'L'État, c'est moi' is apocryphal and was not used. His views on war shifted late in life (advice of 1700 and 1715 urging peace).",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 5
+  }
+ ]
 }

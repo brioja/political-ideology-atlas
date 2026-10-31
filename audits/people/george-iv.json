@@ -430,13 +430,14 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his view that the Protestant faith and the established Church must be upheld by the state under his coronation oath, which implies he did not accept strict separation.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "laws-from-scripture": {
       "value": null,
@@ -2834,13 +2835,14 @@
       "sources": []
     },
     "national-church-status": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "He held that his coronation oath bound him to uphold the Protestant faith and opposed any measure that would weaken the established Church, which implies a privileged legal status for the national church.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -3023,5 +3025,13 @@
       "sources": []
     }
   },
-  "notes": "Most of the record is ministers' policy; answers are limited to positions he stated or acts he personally drove. Catholic emancipation: he privately canvassed against the 1813 bill and publicly declared in 1827 that his sentiments were those of George III (opposed), but a 1797 proposal for an Irish Catholic emancipation bill is attributed to him (Wikipedia), so the later and sustained opposition is taken as his mature position. The Aspinall edition of his correspondence (Prince of Wales, to 1812) was not reachable as full text (Internet Archive returned 401), so the Regency-era letters were checked only through the 1859 Buckingham memoirs. Wellington's and Gurwood's records of the 1829 debates and Fraser's The King and the Catholics were not opened."
+  "notes": "Most of the record is ministers' policy; answers are limited to positions he stated or acts he personally drove. Catholic emancipation: he privately canvassed against the 1813 bill and publicly declared in 1827 that his sentiments were those of George III (opposed), but a 1797 proposal for an Irish Catholic emancipation bill is attributed to him (Wikipedia), so the later and sustained opposition is taken as his mature position. The Aspinall edition of his correspondence (Prince of Wales, to 1812) was not reachable as full text (Internet Archive returned 401), so the Regency-era letters were checked only through the 1859 Buckingham memoirs. Wellington's and Gurwood's records of the 1829 debates and Fraser's The King and the Catholics were not opened.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

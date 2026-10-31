@@ -597,14 +597,15 @@
    "sources": []
   },
   "tariffs-protect-industry": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Argued that protectionism is fueled by closed trade and pushed to open markets; his trade agenda was tariff-reducing. Acts such as steel actions are not stated as his policy here.",
    "sources": [
     "s15",
     "s5",
     "s12"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "state-directs-investment": {
    "value": null,
@@ -3368,5 +3369,13 @@
    "sources": []
   }
  },
- "notes": "Recent positions govern where he changed: he signed DOMA (1996) but supported same-sex marriage by 2009 and urged DOMA's repeal in 2013; he said in 2015 that the 1994 crime bill's incarceration provisions had overshot. Many answers rest on his presidential speeches (1992-2000) and signed laws; positions he stated only as president may differ from his private views. Items without a quoted or recorded position (e.g. unions, encryption, surveillance, central bank independence, Glass-Steagall as a personal view) are left null. DADT, the 1999 Glass-Steagall repeal and the 1996 Telecommunications Act were signed or accepted under congressional pressure, so they are cited only where a statement matches."
+ "notes": "Recent positions govern where he changed: he signed DOMA (1996) but supported same-sex marriage by 2009 and urged DOMA's repeal in 2013; he said in 2015 that the 1994 crime bill's incarceration provisions had overshot. Many answers rest on his presidential speeches (1992-2000) and signed laws; positions he stated only as president may differ from his private views. Items without a quoted or recorded position (e.g. unions, encryption, surveillance, central bank independence, Glass-Steagall as a personal view) are left null. DADT, the 1999 Glass-Steagall repeal and the 1996 Telecommunications Act were signed or accepted under congressional pressure, so they are cited only where a statement matches.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

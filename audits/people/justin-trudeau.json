@@ -1594,12 +1594,13 @@
    "sources": []
   },
   "collective-defense": {
-   "value": 2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Calls NATO a cornerstone of transatlantic security and increased Canada's contribution; Article 5 not stated explicitly.",
    "sources": [
     "s12"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "annexed-territory-occupation": {
    "value": 2,
@@ -3351,5 +3352,13 @@
    "sources": []
   }
  },
- "notes": "Living person: answers rest only on his own statements and his government's record. Immigration moved from expansion to reduction in 2024 and the most recent position was used. Several topics could not be sourced from pages opened here (2015 and 2019 platforms, the full 2021 platform, Common Ground, Hansard, mandate letters beyond Finance and Health), so those statements are null."
+ "notes": "Living person: answers rest only on his own statements and his government's record. Immigration moved from expansion to reduction in 2024 and the most recent position was used. Several topics could not be sourced from pages opened here (2015 and 2019 platforms, the full 2021 platform, Common Ground, Hansard, mandate letters beyond Finance and Health), so those statements are null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

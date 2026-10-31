@@ -363,13 +363,14 @@
       ]
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he leaves industry to private chiefs under moral regulation and calls the Communist solution chimerical.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -1024,12 +1025,13 @@
       "sources": []
     },
     "patriarchy-structural": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "He says the natural arrangements of society are far less faulty than the claims of women's champions suggest, and treats women's position as a privilege.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "political-elite-corrupt": {
       "value": null,
@@ -2057,13 +2059,14 @@
       "sources": []
     },
     "no-duty-to-obey": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he says no society can last if inferiors do not respect superiors and treats subordination as the rule, with revolt only in exceptional cases.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "non-intervention": {
       "value": null,
@@ -2237,12 +2240,13 @@
       "sources": []
     },
     "punish-blasphemy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wants all penalties hampering discussion abolished and full freedom to criticise doctrines.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "colonies-serve-metropole": {
       "value": -2,
@@ -2485,13 +2489,14 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wants poverty addressed by moral agencies and the duty of patricians rather than by legislation.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "term-limits": {
       "value": null,
@@ -2824,12 +2829,13 @@
       "sources": []
     },
     "state-arms-monopoly": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he would leave only a state gendarmerie and constabulary and suppress the national guard.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "soldiers-refuse-war": {
       "value": null,
@@ -3002,12 +3008,13 @@
       "sources": []
     },
     "premarital-sex": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he requires exclusive, indissoluble monogamy and condemns 'levity and inconsistency in love'.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "internet-shutdowns": {
       "value": null,
@@ -3124,12 +3131,13 @@
       "sources": []
     },
     "equal-conscription": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he opposes conscription altogether, so the 'neither' option of the statement matches.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "homeland-spiritual-bond": {
       "value": null,
@@ -3279,5 +3287,13 @@
       "sources": []
     }
   },
-  "notes": "Quotes come from English translations (Bridges, Congreve, Martineau, Congreve's Polity). The 1848 General View favours a strong central power; later volumes (cited by the Stanford Encyclopedia) place temporal power in small local republics, so decide-locally is mixed. His most recent position (1850s) is used for the priesthood's state funding and for the abolition of parliament. Inheritance, women and race answers follow his own statements."
+  "notes": "Quotes come from English translations (Bridges, Congreve, Martineau, Congreve's Polity). The 1848 General View favours a strong central power; later volumes (cited by the Stanford Encyclopedia) place temporal power in small local republics, so decide-locally is mixed. His most recent position (1850s) is used for the priesthood's state funding and for the abolition of parliament. Inheritance, women and race answers follow his own statements.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 8
+    }
+  ]
 }

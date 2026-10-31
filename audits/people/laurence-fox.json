@@ -1332,13 +1332,14 @@
    "sources": []
   },
   "pool-sovereignty": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Says he was called racist simply for voting for Brexit, so he voted Leave; his reasons are not stated.",
    "sources": [
     "b6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "head-commands-forces": {
    "value": null,
@@ -3322,5 +3323,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

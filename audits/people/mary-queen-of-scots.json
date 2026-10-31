@@ -1089,12 +1089,13 @@
    ]
   },
   "church-by-bishops": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: she called the Roman church the true church; it is governed by bishops.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "clerical-rule": {
    "value": null,
@@ -1487,12 +1488,13 @@
    "sources": []
   },
   "abolish-hereditary-privilege": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: she held and asserted rank and a throne by birth.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "history-own-civilization": {
    "value": null,
@@ -1567,13 +1569,14 @@
    "sources": []
   },
   "elective-rulers": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: her whole claim to Scotland and England rested on hereditary right.",
    "sources": [
     "s1",
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "minority-veto": {
    "value": null,
@@ -2122,12 +2125,13 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: she claimed the English throne by descent and in 1584 proposed an association with her son James as co-ruler.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3010,5 +3014,13 @@
    "sources": []
   }
  },
- "notes": "Knox's account of the 1561 interviews is hostile and was published decades later, so answers from it are low confidence. Her original letters (Labanoff, Calendar of State Papers) were not opened; quotes from her letters come via Wikipedia. Her final letter to Henri III was seen only in paraphrase."
+ "notes": "Knox's account of the 1561 interviews is hostile and was published decades later, so answers from it are low confidence. Her original letters (Labanoff, Calendar of State Papers) were not opened; quotes from her letters come via Wikipedia. Her final letter to Henri III was seen only in paraphrase.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
+  }
+ ]
 }

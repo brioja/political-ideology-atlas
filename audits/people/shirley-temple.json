@@ -1911,14 +1911,15 @@
       "sources": []
     },
     "defeat-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "sources": [
         "s1",
         "s2",
         "s4"
       ],
-      "rationale": "Inferred: her 1967 call to cut Chinese and Soviet military supply lines fits an anti-communist military stance, but in December 1969, as a UN delegate, she asked why Communist China was kept out of the UN, which points toward engagement. The evidence points both ways, so the value is 0 (AFSA account of a 1969 staff briefing)."
+      "rationale": "Inferred: her 1967 call to cut Chinese and Soviet military supply lines fits an anti-communist military stance, but in December 1969, as a UN delegate, she asked why Communist China was kept out of the UN, which points toward engagement. The evidence points both ways, so the value is 0 (AFSA account of a 1969 staff briefing).",
+      "nulledFrom": 0
     },
     "mixed-public-service-providers": {
       "value": null,
@@ -2491,13 +2492,14 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "sources": [
         "s1",
         "s2"
       ],
-      "rationale": "In October 1967 she urged mining the approaches to Haiphong to cut off Chinese and Soviet supplies, and said the president should rely more on the Joint Chiefs than on Defense Secretary McNamara. Backing offensive escalation in Vietnam, rather than defence against attack, is clearly implied by these statements (AP excerpt, reprinted by Mother Jones)."
+      "rationale": "In October 1967 she urged mining the approaches to Haiphong to cut off Chinese and Soviet supplies, and said the president should rely more on the Joint Chiefs than on Defense Secretary McNamara. Backing offensive escalation in Vietnam, rather than defence against attack, is clearly implied by these statements (AP excerpt, reprinted by Mother Jones).",
+      "nulledFrom": -1
     },
     "language-defines-nation": {
       "value": null,
@@ -2998,5 +3000,13 @@
       "sources": []
     }
   },
-  "notes": "Her 1967 platform labels (anti-racism, anti-crime) are press characterizations, not her words, so they are not answered. Her 1969 and 1972 environmental and UN remarks were delivered as US delegate; the environmental answer is low for that reason. Her ambassadorial statements (Ghana, Czechoslovakia) were official work and are not counted. Sources for her 1988 memoir Child Star, the 1967 AP story and the 1969 speech text were not reached in full. The validator's salience check is expected to fail: the record is too thin, and no answers were added to pass it."
+  "notes": "Her 1967 platform labels (anti-racism, anti-crime) are press characterizations, not her words, so they are not answered. Her 1969 and 1972 environmental and UN remarks were delivered as US delegate; the environmental answer is low for that reason. Her ambassadorial statements (Ghana, Czechoslovakia) were official work and are not counted. Sources for her 1988 memoir Child Star, the 1967 AP story and the 1969 speech text were not reached in full. The validator's salience check is expected to fail: the record is too thin, and no answers were added to pass it.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

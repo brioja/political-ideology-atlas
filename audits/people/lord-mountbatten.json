@@ -459,13 +459,14 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1947 statement that the country could not afford any toleration of violence, said in the context of communal violence at partition. The principle is broader than the context he addressed.",
       "sources": [
         "b2"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "war-builds-character": {
       "value": null,
@@ -1223,14 +1224,15 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his work in NATO and his Atlanticist outlook as described by a historian; he never proposed ending alliances.",
       "sources": [
         "s3",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1396,14 +1398,15 @@
       "sources": []
     },
     "collective-defense": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his service as chairman of the NATO Military Committee and a historian's account that he supported an Atlanticist policy.",
       "sources": [
         "s3",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1620,14 +1623,15 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his driving the end of British rule in India and his support for decolonisation in south-east Asia; a historian describes him as not an imperial nostalgist.",
       "sources": [
         "s3",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "patriotic-education": {
       "value": null,
@@ -1690,7 +1694,7 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1969 and 1970 efforts to secure hereditary succession in Spain and to support the Greek monarchy, as reported by Wikipedia.",
       "sources": [
@@ -1700,7 +1704,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "minority-veto": {
       "value": null,
@@ -2237,17 +2242,18 @@
       "sources": []
     },
     "stay-neutral-between-blocs": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his chairmanship of the NATO Military Committee and a historian's account of him as an Atlanticist.",
       "sources": [
         "s3",
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "dynastic-succession": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1969 effort to have Infante Juan step aside so that his son Juan Carlos could succeed to the Spanish throne, as reported by Wikipedia.",
       "sources": [
@@ -2257,7 +2263,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -2368,13 +2375,14 @@
       "sources": []
     },
     "power-sharing-divided-societies": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in the 1947 broadcast he said he first urged leaders to accept the 1946 Cabinet Mission plan, which he called the best arrangement for the interests of all communities and which preserved a united India under shared arrangements.",
       "sources": [
         "s2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "charity-over-state-aid": {
       "value": null,
@@ -2635,14 +2643,15 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his opposition to the 1956 Suez operation, as reported by Wikipedia, and his statement that in a nuclear war there would be no winners. Not a general statement of his view on defensive war.",
       "sources": [
         "b3",
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "language-defines-nation": {
       "value": null,
@@ -3160,5 +3169,13 @@
       "sources": []
     }
   },
-  "notes": "Most statements are null because his recorded words concern the transfer of power, princely states and nuclear arms. His Polaris advocacy as First Sea Lord and his later opposition to nuclear use in 1979 point different ways, so the nuclear-weapons answers are 0 at low confidence. The Kashmir plebiscite letter was written as Governor-General on his government's behalf.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the 1979 Strasbourg speech and the 1947 broadcast are his own words in the sources opened. Suez, the Spanish and Greek succession efforts and the Kashmir plebiscite and UN referral come from secondary accounts, rated medium at most. Wikipedia and Wikiquote were checked, but neither gives his stance on Rhodesia, Kenya, Cyprus, Northern Ireland, the welfare state or the economy, so those stay null. The Wikipedia article says the Viceroy's 1947 date was brought forward to 15 August; this measure is not recorded as an answer to any statement. Sources on Kashmir are partisan and are not used for salience. The 'brink of the final abyss' line is taken from the speech text itself."
+  "notes": "Most statements are null because his recorded words concern the transfer of power, princely states and nuclear arms. His Polaris advocacy as First Sea Lord and his later opposition to nuclear use in 1979 point different ways, so the nuclear-weapons answers are 0 at low confidence. The Kashmir plebiscite letter was written as Governor-General on his government's behalf.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Only the 1979 Strasbourg speech and the 1947 broadcast are his own words in the sources opened. Suez, the Spanish and Greek succession efforts and the Kashmir plebiscite and UN referral come from secondary accounts, rated medium at most. Wikipedia and Wikiquote were checked, but neither gives his stance on Rhodesia, Kenya, Cyprus, Northern Ireland, the welfare state or the economy, so those stay null. The Wikipedia article says the Viceroy's 1947 date was brought forward to 15 August; this measure is not recorded as an answer to any statement. Sources on Kashmir are partisan and are not used for salience. The 'brink of the final abyss' line is taken from the speech text itself.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 9
+    }
+  ]
 }

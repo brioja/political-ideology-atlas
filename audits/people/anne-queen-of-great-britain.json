@@ -421,13 +421,14 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Her commitment to the Church of England 'as by Law established' as part of the Government 'in Church and State' implies she did not favour strict separation of religion and the state.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "laws-from-scripture": {
       "value": null,
@@ -3019,5 +3020,13 @@
       "sources": []
     }
   },
-  "notes": "Her own recorded words are few: the 1702 opening and closing speeches, the 1704 statement on first-fruits and tenths, and the 1706 speeches to the Union commissioners. Ministers' policies are not counted as hers. The 1708 Scottish Militia Bill veto is recorded in the sources as taken on ministers' advice, so it is not used as her position. Her backing of the 1702 Occasional Conformity bill is reported only secondhand (Wikipedia, citing her husband's vote at her request), and the statement list has no statement on dissenters holding office, so it is not answered. Her driving of the 1706-07 union negotiations and the Act of Union is not answered either, because no statement in the list covers Scotland or the union. Her stance on the Treaty of Utrecht is not recorded in her own words in the sources reached."
+  "notes": "Her own recorded words are few: the 1702 opening and closing speeches, the 1704 statement on first-fruits and tenths, and the 1706 speeches to the Union commissioners. Ministers' policies are not counted as hers. The 1708 Scottish Militia Bill veto is recorded in the sources as taken on ministers' advice, so it is not used as her position. Her backing of the 1702 Occasional Conformity bill is reported only secondhand (Wikipedia, citing her husband's vote at her request), and the statement list has no statement on dissenters holding office, so it is not answered. Her driving of the 1706-07 union negotiations and the Act of Union is not answered either, because no statement in the list covers Scotland or the union. Her stance on the Treaty of Utrecht is not recorded in her own words in the sources reached.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

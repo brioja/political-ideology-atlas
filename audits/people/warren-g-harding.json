@@ -935,12 +935,13 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said racial pride would bring natural segregation without narrowing any rights, which implies it need not be imposed by law; no call for segregation laws.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-class-instrument": {
       "value": -1,
@@ -2275,13 +2276,14 @@
       "sources": []
     },
     "abolish-armed-forces": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Sought less armament consistent with national necessities, not abolition, and wanted universal service in defense.",
       "sources": [
         "s5",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "rich-first": {
       "value": null,
@@ -3211,5 +3213,13 @@
       "sources": []
     }
   },
-  "notes": "Harding died in 1923, so answers rest on his own speeches and his record in office. His Birmingham speech mixed political and educational equality with endorsement of racial separation and race purity, so related answers are split. Tax rates and the tax bill's final form were set by Congress; he said he could not settle the tax debate for himself."
+  "notes": "Harding died in 1923, so answers rest on his own speeches and his record in office. His Birmingham speech mixed political and educational equality with endorsement of racial separation and race purity, so related answers are split. Tax rates and the tax bill's final form were set by Congress; he said he could not settle the tax debate for himself.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

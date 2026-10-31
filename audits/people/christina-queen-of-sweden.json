@@ -2963,7 +2963,7 @@
    "sources": []
   },
   "women-suffrage": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "She held women unfit to reign and would have barred daughters from the succession, but she held office herself and stood for election in Poland; voting is not addressed.",
    "sources": [
@@ -2971,7 +2971,8 @@
     "b1",
     "b5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 0
   },
   "religion-oppresses-women": {
    "value": null,
@@ -3225,5 +3226,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

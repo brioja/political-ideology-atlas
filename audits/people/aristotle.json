@@ -369,13 +369,14 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Politics III.14-17 sets out kinds of kingship and says it fits a people with a family of surpassing virtue; NE VIII.10 calls monarchy the best form; hereditary succession draws doubts (III.15).",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "democracy-best": {
    "value": -1,
@@ -1932,13 +1933,14 @@
    "sources": []
   },
   "no-duty-to-obey": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: NE V.2 says the laws aim at the common good and the lawful is just, and Politics III.15 says free people act only in conformity to the law, so he treats obeying law as a duty; he never states the question.",
    "sources": [
     "s2",
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "non-intervention": {
    "value": null,
@@ -2217,12 +2219,13 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Politics III.15 asks whether the king's family is to reign, noting the children may turn out poorly and that a king is unlikely to bar them, which 'requires greater virtue than is to be met with in human nature'.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3127,5 +3130,13 @@
    "sources": []
   }
  },
- "notes": "Chapter numbers follow the Ellis translation of the Politics (Gutenberg #6762, numbered as printed) and the Gutenberg Nicomachean Ethics. The Ellis text elides the sentence on abortion and exposure in Politics VII.16, so abortion and infant exposure are left null. Wikipedia gives birth as 384 BC; the catalog uses 384/383. The Politics text reached by the audit is a translation, not the Greek."
+ "notes": "Chapter numbers follow the Ellis translation of the Politics (Gutenberg #6762, numbered as printed) and the Gutenberg Nicomachean Ethics. The Ellis text elides the sentence on abortion and exposure in Politics VII.16, so abortion and infant exposure are left null. Wikipedia gives birth as 384 BC; the catalog uses 384/383. The Politics text reached by the audit is a translation, not the Greek.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

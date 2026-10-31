@@ -1817,12 +1817,13 @@
       "sources": []
     },
     "no-land-for-peace": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "He backs a two-state outcome, one Jewish and one Palestinian, achieved through direct negotiations, which implies territorial compromise.",
       "sources": [
         "u8"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "property-serves-common-good": {
       "value": null,
@@ -2645,12 +2646,13 @@
       "sources": []
     },
     "islam-incompatible": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Defending the mosque near Ground Zero he said Muslims 'are as much a part of our City and our country as the people of any faith' and rejected the idea that the 9/11 attacks were consistent with Islam.",
       "sources": [
         "n1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "divine-source-of-authority": {
       "value": null,
@@ -3618,5 +3620,13 @@
       "sources": []
     }
   },
-  "notes": "Evidence comes from his own words and record: the 2020 platform pages, debate and speeches, op-eds and columns (2015-2026), and mayoral texts and laws. Where his views changed, the recent position was used: after the February 2020 debate he reversed on non-disclosure agreements, and in 2019 he apologized for the stop-and-frisk policy he had defended as mayor in 2012-2013 (the 2013 words are kept for the specific statements they bear on, at lower confidence). 2020 campaign pledges are his stated programme, not governing record, since he never held national office; where the 2020 platform differs from his mayoral years, the 2020 position is used as the more recent one. Term limits are a mixed case: he supported limits but sought and signed an extension to three terms for himself in 2008. Evidence about nearby but different questions (decriminalizing marijuana versus legalizing all drugs, tariff or ownership stakes in AI versus public ownership of utilities, Israeli two-state policy versus national self-determination in general) was left null."
+  "notes": "Evidence comes from his own words and record: the 2020 platform pages, debate and speeches, op-eds and columns (2015-2026), and mayoral texts and laws. Where his views changed, the recent position was used: after the February 2020 debate he reversed on non-disclosure agreements, and in 2019 he apologized for the stop-and-frisk policy he had defended as mayor in 2012-2013 (the 2013 words are kept for the specific statements they bear on, at lower confidence). 2020 campaign pledges are his stated programme, not governing record, since he never held national office; where the 2020 platform differs from his mayoral years, the 2020 position is used as the more recent one. Term limits are a mixed case: he supported limits but sought and signed an extension to three terms for himself in 2008. Evidence about nearby but different questions (decriminalizing marijuana versus legalizing all drugs, tariff or ownership stakes in AI versus public ownership of utilities, Israeli two-state policy versus national self-determination in general) was left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

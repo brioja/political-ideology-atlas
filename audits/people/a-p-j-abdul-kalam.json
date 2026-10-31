@@ -2686,12 +2686,13 @@
    "sources": []
   },
   "keep-nuclear-weapons": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his leading role in making India a nuclear-weapons state and presenting the weapons as an assertion of its standing; he did not speak to unilateral disarmament.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "workers-own-party": {
    "value": null,
@@ -3030,5 +3031,13 @@
    "sources": []
   }
  },
- "notes": "Formal assent to government-advised acts is not counted. His 2006 return of the Office of Profit bill is his own act but matches no statement. Full texts of his books were not available, so most statements stay null."
+ "notes": "Formal assent to government-advised acts is not counted. His 2006 return of the Office of Profit bill is his own act but matches no statement. Full texts of his books were not available, so most statements stay null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

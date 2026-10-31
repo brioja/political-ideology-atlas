@@ -2183,13 +2183,14 @@
    "sources": []
   },
   "end-racial-preferences": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Interview comments treat the prospect of the Supreme Court ending affirmative action as a setback and \"ridiculous\"; has not addressed hiring specifically.",
    "sources": [
     "s41"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "public-money-creation": {
    "value": null,
@@ -3736,6 +3737,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

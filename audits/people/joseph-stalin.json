@@ -993,12 +993,13 @@
       "sources": []
     },
     "assimilate-immigrants": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he condemned forced assimilation of national communities as counter-revolutionary; applying that general principle to immigrants goes beyond his examples.",
       "sources": [
         "nation"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "elite-replacement": {
       "value": null,
@@ -3215,5 +3216,13 @@
       ]
     }
   },
-  "notes": "Constitutional secession and franchise answers report his explicit commitments, not a finding that Soviet practice honoured them. His record governs workplace control, family law and political repression. The 1952 economic text governs mature economic views and preserves distinctions between commodity exchange, capitalist markets and eventual communist distribution. Ecology and digital-policy statements lack sufficiently specific personal evidence."
+  "notes": "Constitutional secession and franchise answers report his explicit commitments, not a finding that Soviet practice honoured them. His record governs workplace control, family law and political repression. The 1952 economic text governs mature economic views and preserves distinctions between commodity exchange, capitalist markets and eventual communist distribution. Ecology and digital-policy statements lack sufficiently specific personal evidence.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -379,13 +379,14 @@
       "sources": []
     },
     "tax-the-wealthy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Criticises the permanent tax breaks for billionaire donors and presents the Inflation Reduction Act as paid for by taxes on the largest corporations and ultra-wealthy; has not stated a specific higher rate.",
       "sources": [
         "s17",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "unions-good": {
       "value": 2,
@@ -1923,13 +1924,14 @@
       "sources": []
     },
     "end-racial-preferences": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Supported affirmative action in 2008 and defends diversity, equity and inclusion programmes now; he has not addressed the 2023 admissions ruling in sources I opened.",
       "sources": [
         "s25",
         "s27"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "public-money-creation": {
       "value": null,
@@ -3021,12 +3023,13 @@
       "sources": []
     },
     "collective-bargaining": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Backs the PRO Act and objects to the executive order removing federal employees' collective bargaining rights; he has not addressed contract-versus-bargaining as such.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "in-work-tax-credits": {
       "value": 1,
@@ -3464,5 +3467,13 @@
       "sources": []
     }
   },
-  "notes": "Medicare for All: cosponsored 2013-2021, said in August 2026 he does not currently support it; the audit gives universal healthcare low confidence. Gender identity: 2016 remark against elevating it as a protected class is superseded by his 2019 Equality Act vote. Some older positions (2008-2015) come from the OnTheIssues index and may not reflect his current views."
+  "notes": "Medicare for All: cosponsored 2013-2021, said in August 2026 he does not currently support it; the audit gives universal healthcare low confidence. Gender identity: 2016 remark against elevating it as a protected class is superseded by his 2019 Equality Act vote. Some older positions (2008-2015) come from the OnTheIssues index and may not reflect his current views.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

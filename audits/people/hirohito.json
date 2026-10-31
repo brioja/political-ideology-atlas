@@ -1308,12 +1308,13 @@
       "sources": []
     },
     "nonpartisan-head-of-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he said in 1975 that a cabinet decision for war could not be reversed by him and spoke of adhering to constitutional politics, consistent with a ruler who stays out of party politics; the postwar constitution made him a symbol of the unity of the people, though that was imposed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "force-to-prevent-secession": {
       "value": null,
@@ -3001,5 +3002,13 @@
       "sources": []
     }
   },
-  "notes": "Rescripts, declarations and laws issued on government advice (including the 1941 declaration of war and the 1946 constitution) are not treated as personal positions. Aides' diaries and the 1946 Monologue are secondhand and were written partly in his defence; scholars dispute his wartime role (see s5), so those questions are left null."
+  "notes": "Rescripts, declarations and laws issued on government advice (including the 1941 declaration of war and the 1946 constitution) are not treated as personal positions. Aides' diaries and the 1946 Monologue are secondhand and were written partly in his defence; scholars dispute his wartime role (see s5), so those questions are left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

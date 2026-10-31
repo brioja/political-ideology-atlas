@@ -219,13 +219,14 @@
    ]
   },
   "collective-farming": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he condemned the Communists' land revolution and rural uprisings and favoured tenants becoming owners of land, which points against collectivised farming; he did not discuss collective farms directly.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "one-party-rule": {
    "value": 2,
@@ -327,13 +328,14 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he took part in the 1911 revolution against the Manchu dynasty and presented the overthrow of the Manchus as a correct step toward a people's state; he did not discuss monarchy as a general form.",
    "sources": [
     "s1",
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "conscription": {
    "value": 2,
@@ -3243,5 +3245,13 @@
    "sources": []
   }
  },
- "notes": "Born 31 October 1887, died 5 April 1975 (checked against Wikipedia). China's Destiny was ghostwritten in part but published under his name; the book's closing commentary in the 1947 edition is the editor's, not his. Statements on the 1938 Yellow River flood, the Shanghai purge and Taiwan's repression are answered through the matching statements. Contested: his democratic rhetoric versus the practice of martial law."
+ "notes": "Born 31 October 1887, died 5 April 1975 (checked against Wikipedia). China's Destiny was ghostwritten in part but published under his name; the book's closing commentary in the 1947 edition is the editor's, not his. Statements on the 1938 Yellow River flood, the Shanghai purge and Taiwan's repression are answered through the matching statements. Contested: his democratic rhetoric versus the practice of martial law.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

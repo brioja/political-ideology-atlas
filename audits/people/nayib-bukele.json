@@ -680,13 +680,14 @@
       "sources": []
     },
     "results-over-ideology": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Repeatedly frames his policy as common sense judged by tangible results, says there is no single recipe, and that his own method fits his own reality.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "direct-action": {
       "value": null,
@@ -3251,5 +3252,13 @@
       "sources": []
     }
   },
-  "notes": "As mayor he called himself part of the radical left; as president he disclaims any ideology. Positions on abortion and marriage hardened between 2014 (supportive of LGBT rights) and 2021. He told Time in 2024 he would not seek a third term, but the 2025 reform removed term limits and he registered for 2026. Several answers are low confidence because the record (foreign agents law, press pressure) conflicts with his stated positions."
+  "notes": "As mayor he called himself part of the radical left; as president he disclaims any ideology. Positions on abortion and marriage hardened between 2014 (supportive of LGBT rights) and 2021. He told Time in 2024 he would not seek a third term, but the 2025 reform removed term limits and he registered for 2026. Several answers are low confidence because the record (foreign agents law, press pressure) conflicts with his stated positions.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -2947,12 +2947,13 @@
       "sources": []
     },
     "fiscal-rules-binding": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "His programme of zero deficit and refusal to borrow is a fiscal rule, though a statutory limit on borrowing is not documented in the sources used.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restructure-world-economy": {
       "value": null,
@@ -3387,5 +3388,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: only stated positions and the record (decrees, Ley Bases, vetoes, speeches) were used; nothing was inferred from his party or label. He calls himself an anarcho-capitalist but governs as a minarchist, so the state and private-courts answers use his clearest recent statement (state limited to defending life, liberty and property). Full speech texts came from Le Grand Continent (Davos 2024 and 2025, with interleaved editorial commentary that was not used as evidence); UN and Davos 2026 passages are press quotations because official transcripts were not reachable. Several earlier-career statements (guns, drugs, sex work, organ sales, central bank, same-sex marriage) come via Wikipedia and press, not primary text, and are medium or low. No on-camera political quiz was found. His 2025 Davos speech is more culturally conservative than his earlier libertarian line (same-sex marriage, migration), where the most recent position was used."
+  "notes": "Living person: only stated positions and the record (decrees, Ley Bases, vetoes, speeches) were used; nothing was inferred from his party or label. He calls himself an anarcho-capitalist but governs as a minarchist, so the state and private-courts answers use his clearest recent statement (state limited to defending life, liberty and property). Full speech texts came from Le Grand Continent (Davos 2024 and 2025, with interleaved editorial commentary that was not used as evidence); UN and Davos 2026 passages are press quotations because official transcripts were not reachable. Several earlier-career statements (guns, drugs, sex work, organ sales, central bank, same-sex marriage) come via Wikipedia and press, not primary text, and are medium or low. No on-camera political quiz was found. His 2025 Davos speech is more culturally conservative than his earlier libertarian line (same-sex marriage, migration), where the most recent position was used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

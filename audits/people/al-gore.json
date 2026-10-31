@@ -2551,13 +2551,14 @@
       "sources": []
     },
     "abolish-ip": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "In 1999 he pressed South Africa to respect pharmaceutical patents on AIDS drugs, though he also supported cheaper generics consistent with trade agreements.",
       "sources": [
         "s9",
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "uniformed-youth": {
       "value": null,
@@ -3302,5 +3303,13 @@
       "sources": []
     }
   },
-  "notes": "His positions shifted over time: in the 1980s he opposed federal abortion funding and described homosexuality as wrong, and in 2000 he supported civil unions but not marriage; by 2008 he backed same-sex marriage. He opposed nuclear power in 2000 but spoke more favorably in 2025. His medical-marijuana statements in 2000 varied. Answers use his most recent clear statements."
+  "notes": "His positions shifted over time: in the 1980s he opposed federal abortion funding and described homosexuality as wrong, and in 2000 he supported civil unions but not marriage; by 2008 he backed same-sex marriage. He opposed nuclear power in 2000 but spoke more favorably in 2025. His medical-marijuana statements in 2000 varied. Answers use his most recent clear statements.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

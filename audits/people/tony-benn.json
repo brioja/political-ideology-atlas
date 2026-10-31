@@ -745,13 +745,14 @@
    ]
   },
   "laws-from-scripture": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted a secular state and a secular constitution, which is incompatible with basing law on scripture, though he was a practising Christian socialist.",
    "sources": [
     "s1",
     "s36"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "private-courts-defense": {
    "value": null,
@@ -1945,13 +1946,14 @@
    "sources": []
   },
   "elective-rulers": {
-   "value": 2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: as a republican seeking to end hereditary titles and the Crown's status, he preferred rulers who are chosen over those who inherit.",
    "sources": [
     "s9",
     "s1"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "minority-veto": {
    "value": null,
@@ -2520,13 +2522,14 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: as a republican opposed to hereditary privilege he would reject succession of a leader by a child.",
    "sources": [
     "s9",
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3427,5 +3430,13 @@
    "sources": []
   }
  },
- "notes": "Moved from technocratic modernism in the 1960s to workers' control and the Alternative Economic Strategy after 1970. Supported nuclear power as Energy Secretary (1975-79) and later opposed it. Evidence is drawn mostly from his Commons speeches; his books were not available as full text."
+ "notes": "Moved from technocratic modernism in the 1960s to workers' control and the Alternative Economic Strategy after 1970. Supported nuclear power as Energy Secretary (1975-79) and later opposed it. Evidence is drawn mostly from his Commons speeches; his books were not available as full text.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

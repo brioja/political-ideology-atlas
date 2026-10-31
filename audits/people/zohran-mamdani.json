@@ -314,7 +314,7 @@
    ]
   },
   "markets-allocate-better": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Proposes city-run grocery stores, a rent freeze and free buses, implying public provision beats markets in these areas; not stated as a general claim.",
    "sources": [
@@ -325,7 +325,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "public-ownership": {
    "value": 1,
@@ -2395,7 +2396,7 @@
    "sources": []
   },
   "socialized-care": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Proposes universal public child care; says nothing on housework being socialized.",
    "sources": [
@@ -2406,7 +2407,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "purge-loanwords": {
    "value": null,
@@ -2933,7 +2935,7 @@
    "sources": []
   },
   "local-essentials-public": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Backs fare-free public buses and public renewable power; water and hospitals not addressed.",
    "sources": [
@@ -2945,7 +2947,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "second-chamber": {
    "value": null,
@@ -3341,7 +3344,7 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Said he would seek to enforce ICC warrants against Netanyahu and Putin.",
    "sources": [
@@ -3353,7 +3356,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "scripture-inerrant": {
    "value": null,
@@ -3582,6 +3586,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

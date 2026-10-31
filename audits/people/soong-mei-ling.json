@@ -1981,13 +1981,14 @@
    "sources": []
   },
   "institutions-fit-civilization": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "She said each democracy should have an order that fits its own requirements and that Chinese democracy would not be a colourless imitation of American democracy, though adhering to the fundamental principle.",
    "sources": [
     "b2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "military-guardian-role": {
    "value": null,
@@ -3390,5 +3391,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

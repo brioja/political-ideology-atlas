@@ -1011,12 +1011,13 @@
       "sources": []
     },
     "territorial-expansion": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Calls colonial rule over occupied territory anachronistic and says Tibetans cannot claim territory that Tibetan rulers once conquered.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "personal-loyalty-rule": {
       "value": null,
@@ -1921,12 +1922,13 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Says colonial rule over other peoples is anachronistic and that unions must be voluntary.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "patriotic-education": {
       "value": null,
@@ -2480,13 +2482,14 @@
       "sources": []
     },
     "colonies-serve-metropole": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Calls colonial rule over occupied territories anachronistic and condemns the Chinese colonial administration of Tibet.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defensive-jihad-duty": {
       "value": null,
@@ -3544,5 +3547,13 @@
       "sources": []
     }
   },
-  "notes": "On Tibet's status his position shifted: until the 1970s he sought independence, and since Deng Xiaoping's 1979 offer he has pursued autonomy within the PRC; the most recent position (autonomy, not independence) is used where possible. He describes himself as a Marxist in economic theory (1993, 2015) but his 1992 guidelines reject both capitalism and socialism as extremes, so economic answers are cautious. Some answers rest on statements issued through spokespeople or reported by secondary outlets (death penalty, Europe remarks); the remarks on refugees are as reported from the 2018 Malmo talk and the June 2019 BBC interview."
+  "notes": "On Tibet's status his position shifted: until the 1970s he sought independence, and since Deng Xiaoping's 1979 offer he has pursued autonomy within the PRC; the most recent position (autonomy, not independence) is used where possible. He describes himself as a Marxist in economic theory (1993, 2015) but his 1992 guidelines reject both capitalism and socialism as extremes, so economic answers are cautious. Some answers rest on statements issued through spokespeople or reported by secondary outlets (death penalty, Europe remarks); the remarks on refugees are as reported from the 2018 Malmo talk and the June 2019 BBC interview.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-31",
+      "nulled": 3
+    }
+  ]
 }

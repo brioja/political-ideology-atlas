@@ -522,13 +522,14 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "1969: 'we are not the chosen; we are the elected', and no need for pompous dignity or aloof distance; consistent with democratic equality in 1987.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "political-violence-never": {
       "value": 0,
@@ -557,12 +558,13 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: 1969 asks that a society open to all worldviews and religions settle marriage-law reform despite worldview disagreements, implying law not derived from scripture.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "private-courts-defense": {
       "value": null,
@@ -581,13 +583,14 @@
       ]
     },
     "ethnic-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Nobel lecture says a good German cannot be a nationalist; 1987 insists on confronting xenophobia. Defined the nation by language and history across two states, not ethnic purity.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "class-struggle-history": {
       "value": null,
@@ -1357,13 +1360,14 @@
       "sources": []
     },
     "clerical-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: 1969 and 1987 treat churches as partners in society but place political authority in elected government.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-own-government-war": {
       "value": null,
@@ -1372,12 +1376,13 @@
       "sources": []
     },
     "censor-art-for-virtue": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: 1987 gives priority to freedom of conscience and opinion ('in case of doubt for freedom').",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unlimited-reelection": {
       "value": null,
@@ -1636,12 +1641,13 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his commitment to the Rechtsstaat and to equal legal protection for citizens (1969).",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "space-expansion": {
       "value": null,
@@ -2205,13 +2211,14 @@
       "sources": []
     },
     "minority-conspiracy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: 1961 speech argues against anti-Semitism and 1987 says xenophobia must never be left unchallenged.",
       "sources": [
         "s8",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": null,
@@ -3481,5 +3488,13 @@
       "sources": []
     }
   },
-  "notes": "Historical figure (died 1992): answers rest on his own speeches (1948-1989) and his record in office; low answers beginning \"Inferred:\" are drawn only from stated views. Changed positions: anti-communist hard line in 1948 gave way to coexistence and treaties with the East (1960s-70s); he backed the 1972 Radikalenerlass and later called it a painful mistake (1987). Full text of the 1980 Brandt Report introduction could not be retrieved, so Brandt Commission positions rest on his 1978 speech chairing it. His personal views on nuclear power, drugs, same-sex law and the death penalty were not found in the sources reviewed."
+  "notes": "Historical figure (died 1992): answers rest on his own speeches (1948-1989) and his record in office; low answers beginning \"Inferred:\" are drawn only from stated views. Changed positions: anti-communist hard line in 1948 gave way to coexistence and treaties with the East (1960s-70s); he backed the 1972 Radikalenerlass and later called it a painful mistake (1987). Full text of the 1980 Brandt Report introduction could not be retrieved, so Brandt Commission positions rest on his 1978 speech chairing it. His personal views on nuclear power, drugs, same-sex law and the death penalty were not found in the sources reviewed.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

@@ -714,12 +714,13 @@
       "sources": []
     },
     "return-to-foraging": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his insistence on progress through science to ever higher forms of life.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
       "value": -2,
@@ -781,13 +782,14 @@
       ]
     },
     "taxation-theft": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his programmes relied on budgetary expenditure and state loans, e.g. 1930 pension and public works schemes.",
       "sources": [
         "s5",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": 1,
@@ -1496,12 +1498,13 @@
       "sources": []
     },
     "citizenship-by-descent": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that Jews would be treated as foreigners and denied full citizenship, and that naturalised foreigners would be deported.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "minority-language-support": {
       "value": null,
@@ -1740,12 +1743,13 @@
       "sources": []
     },
     "common-currency": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his 1962 declaration put finance and economic policy under one European government.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "kin-peoples-union": {
       "value": 2,
@@ -2246,12 +2250,13 @@
       "sources": []
     },
     "industrial-unions": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his corporations were organised by industry rather than craft.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "minority-conspiracy": {
       "value": 1,
@@ -2359,12 +2364,13 @@
       "sources": []
     },
     "socialized-care": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his family policy kept mothers in the home with a family wage.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "purge-loanwords": {
       "value": null,
@@ -2788,12 +2794,13 @@
       ]
     },
     "never-kill-self-defence": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he accepted meeting force with force.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unbroken-national-continuity": {
       "value": 1,
@@ -2997,12 +3004,13 @@
       ]
     },
     "language-defines-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he wanted Europe as one nation across languages.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "communal-electorates": {
       "value": null,
@@ -3095,13 +3103,14 @@
       "sources": []
     },
     "fiscal-rules-binding": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: advocated credit expansion and loan-financed schemes.",
       "sources": [
         "s3",
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "restructure-world-economy": {
       "value": null,
@@ -3397,12 +3406,13 @@
       "sources": []
     },
     "extrajudicial-killing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his pledge against imprisonment without trial.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "close-ties-china": {
       "value": null,
@@ -3554,5 +3564,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed after 1945: pre-war he sought a one-nation corporate state under the British Union of Fascists, with party politics abolished and Jews to be deported or denied citizenship; from 1946-1948 he called for a union of Europe, and the 1962 Venice declaration provided for free elections open to all parties. Where the post-war texts (The Alternative, My Life) state a position they were used; where they are silent but he said his earlier economic and governmental proposals remained relevant (The Alternative, preface and chapter V), the 1936 programme is used, usually at medium or low confidence. His own words on the Holocaust (1968) accept mass killing as a crime but treat the scale as open; secondary reports (Wikipedia) describe further denialist claims, hence 0 at low confidence. Archive.org texts are OCR and were read through search and targeted reading, not every page."
+  "notes": "Views changed after 1945: pre-war he sought a one-nation corporate state under the British Union of Fascists, with party politics abolished and Jews to be deported or denied citizenship; from 1946-1948 he called for a union of Europe, and the 1962 Venice declaration provided for free elections open to all parties. Where the post-war texts (The Alternative, My Life) state a position they were used; where they are silent but he said his earlier economic and governmental proposals remained relevant (The Alternative, preface and chapter V), the 1936 programme is used, usually at medium or low confidence. His own words on the Holocaust (1968) accept mass killing as a crime but treat the scale as open; secondary reports (Wikipedia) describe further denialist claims, hence 0 at low confidence. Archive.org texts are OCR and were read through search and targeted reading, not every page.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 10
+    }
+  ]
 }

@@ -1250,13 +1250,14 @@
    "sources": []
   },
   "end-foreign-alliances": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "In 2013 he said he did not believe in continuing defence alliances; he has since said he would seek to restrict NATO's role rather than leave.",
    "sources": [
     "s1",
     "s7"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "abolish-rental-housing": {
    "value": null,
@@ -3220,5 +3221,13 @@
    "sources": []
   }
  },
- "notes": "Hansard covers 2001 onward and the votes API 2016 onward; earlier positions rest on Wikipedia. On NATO he argued in 2013 against defence alliances, then said as leader he would seek to restrict its role; the later position is used. On the EU he opposed membership historically but backed Remain in 2016 and a second referendum in 2019. Answers that rest only on a vote are medium. Manifesto positions were not used."
+ "notes": "Hansard covers 2001 onward and the votes API 2016 onward; earlier positions rest on Wikipedia. On NATO he argued in 2013 against defence alliances, then said as leader he would seek to restrict its role; the later position is used. On the EU he opposed membership historically but backed Remain in 2016 and a second referendum in 2019. Answers that rest only on a vote are medium. Manifesto positions were not used.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

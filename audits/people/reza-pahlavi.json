@@ -440,13 +440,14 @@
       "sources": []
     },
     "decide-locally": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "He co-signed a charter calling for decentralization of financial, bureaucratic and policy-making affairs to elected provincial, city and regional administrations; his later principles list only territorial integrity and say nothing on devolution.",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "rehabilitation": {
       "value": null,
@@ -3590,5 +3591,13 @@
       "sources": []
     }
   },
-  "notes": "Living person; no inference. Positions on the monarchy itself are deliberately null: he says the form of government is for voters and has not stated a personal preference in the sources reviewed. Positions on sanctions and military action changed: in 2010-2011 speeches he opposed military strikes, while in 2025-2026 he welcomed US and Israeli strikes on the regime and urged more; the latest position is used. Mahsa Charter (March 2023) is a co-signed alliance document whose alliance later fell apart; his later four principles omit its decentralization pledge, so decentralization is only medium. The IPP booklet is written by expert authors under his leadership and treated as his programme. Not reached: the text of his books 'Winds of Change' (2002) and 'Gozashteh va Ayandeh' (archive.org copy is lending-only), and several press pages (IranWire, Mezha) were blocked.\n\nMerged with an independent claude-haiku-5-5 audit: 2 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Most of the 490 statements have no recorded position from his own words. The statement list has no sanctions item, so his support for 'maximum pressure' (Hudson 2020) is not answered. Death penalty: his office's calls to stop executions of protesters are not in an opened source and are not a general position, so the item is null. The Israel right-to-a-state item and the monarchy item are contested. His own monarchy preference is disputed in reporting (a 2024 BBC remark that he prefers a republic is not opened). Several opened sources are reporter paraphrase; medium/high answers rest on his quoted words in s1, s3, s4, s5, s10 and s12. Federalism, the economy, hijab in his own words beyond the 2022 post, and nuclear enrichment were not found in opened primary text. Full text of his books (Winds of Change, Gozashteh va Ayandeh) was not downloaded, so coverage is thinner than for a full-text audit."
+  "notes": "Living person; no inference. Positions on the monarchy itself are deliberately null: he says the form of government is for voters and has not stated a personal preference in the sources reviewed. Positions on sanctions and military action changed: in 2010-2011 speeches he opposed military strikes, while in 2025-2026 he welcomed US and Israeli strikes on the regime and urged more; the latest position is used. Mahsa Charter (March 2023) is a co-signed alliance document whose alliance later fell apart; his later four principles omit its decentralization pledge, so decentralization is only medium. The IPP booklet is written by expert authors under his leadership and treated as his programme. Not reached: the text of his books 'Winds of Change' (2002) and 'Gozashteh va Ayandeh' (archive.org copy is lending-only), and several press pages (IranWire, Mezha) were blocked.\n\nMerged with an independent claude-haiku-5-5 audit: 2 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Most of the 490 statements have no recorded position from his own words. The statement list has no sanctions item, so his support for 'maximum pressure' (Hudson 2020) is not answered. Death penalty: his office's calls to stop executions of protesters are not in an opened source and are not a general position, so the item is null. The Israel right-to-a-state item and the monarchy item are contested. His own monarchy preference is disputed in reporting (a 2024 BBC remark that he prefers a republic is not opened). Several opened sources are reporter paraphrase; medium/high answers rest on his quoted words in s1, s3, s4, s5, s10 and s12. Federalism, the economy, hijab in his own words beyond the 2022 post, and nuclear enrichment were not found in opened primary text. Full text of his books (Winds of Change, Gozashteh va Ayandeh) was not downloaded, so coverage is thinner than for a full-text audit.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

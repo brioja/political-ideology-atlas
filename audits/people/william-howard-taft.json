@@ -218,12 +218,13 @@
       ]
     },
     "unions-good": {
-      "value": 1,
+      "value": null,
       "confidence": "high",
       "rationale": "As judge and president he said unions benefit workers and the public and said he would probably join one as a workman, while condemning boycotts and violence.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "property-fundamental": {
       "value": 2,
@@ -1568,12 +1569,13 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Insisted the President has no power beyond express or necessarily implied constitutional or statutory grant.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "space-expansion": {
       "value": null,
@@ -3015,13 +3017,14 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "In 1909 he said he would favor votes for women once they desired it, and in 1913 he put the case in terms of whether it improves government; his later position is not clear.",
       "sources": [
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3267,5 +3270,13 @@
       "sources": []
     }
   },
-  "notes": "Taft's positions on direct democracy and the courts were stated most fully in 1913 and 1922. On woman suffrage the record found is conditional (1909, 1913) and later views were not located. The Occasional Papers and Addresses volume found in search is by Henry W. Taft and was not used."
+  "notes": "Taft's positions on direct democracy and the courts were stated most fully in 1913 and 1922. On woman suffrage the record found is conditional (1909, 1913) and later views were not located. The Occasional Papers and Addresses volume found in search is by Henry W. Taft and was not used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

@@ -139,13 +139,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "public-ownership": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: described as a laissez-faire believer who wanted government kept to coinage, justice and modest aid.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "tax-the-wealthy": {
    "value": null,
@@ -394,13 +395,14 @@
    "sources": []
   },
   "central-planning": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: laissez-faire outlook and hard-money views; he spoke of no state direction of the economy.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "socialized-markets": {
    "value": null,
@@ -887,14 +889,15 @@
    "auditor": "claude-sonnet-5-5"
   },
   "avoid-deficit-stimulus": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his letter backs paying down the debt and the inaugural address demands rigid economy in government spending.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "economic-freedom": {
    "value": null,
@@ -1105,13 +1108,14 @@
    "sources": []
   },
   "no-religion-state-schools": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he opposed public funds for sectarian schools and wanted church and state separate in taxation.",
    "sources": [
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "state-strengthens-encirclement": {
    "value": null,
@@ -1359,13 +1363,14 @@
    "sources": []
   },
   "death-penalty": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: in 1864 he advocated executing or banishing the leaders of the rebellion; wartime treason is not terrorism or the gravest crimes generally.",
    "sources": [
     "b5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1777,13 +1782,14 @@
    "sources": []
   },
   "entrenched-bill-of-rights": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his view that press freedom lies beyond legislative interference (Press, vol. II); he did not address an entrenched bill of rights as such.",
    "sources": [
     "b2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "colonial-treaties-void": {
    "value": null,
@@ -3260,6 +3266,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 6
   }
  ]
 }

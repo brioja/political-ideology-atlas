@@ -206,12 +206,13 @@
       ]
     },
     "legalize-drugs": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "He defended capital punishment for illicit drug traffickers in Iran, which implies he supports their activity being illegal; he did not discuss legalising adult use.",
       "sources": [
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "restrict-hate-speech": {
       "value": -1,
@@ -3228,5 +3229,13 @@
       "sources": []
     }
   },
-  "notes": "Living: Wikipedia and 2026 press reports (conflicting reports of death in March 2026 were denied; he was reported seen in July 2026). Views on economics were mixed (privatisation to the poor via justice shares alongside price controls and subsidies), so economy answers are limited to clear measures. Interview and speech items are treated as his own words even when translated. Where he never addressed a topic (healthcare, abortion, taxes, climate policy) the answer is null."
+  "notes": "Living: Wikipedia and 2026 press reports (conflicting reports of death in March 2026 were denied; he was reported seen in July 2026). Views on economics were mixed (privatisation to the poor via justice shares alongside price controls and subsidies), so economy answers are limited to clear measures. Interview and speech items are treated as his own words even when translated. Where he never addressed a topic (healthcare, abortion, taxes, climate policy) the answer is null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

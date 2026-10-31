@@ -185,7 +185,7 @@
    "sources": []
   },
   "tax-the-wealthy": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Said wealth inequality hurts everyone and that \"people like me should pay for\" a new social contract; reported to have funded the 2020 California ballot measure to tax commercial property at market value. He has not stated a specific tax rate position.",
    "sources": [
@@ -196,7 +196,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "unions-good": {
    "value": null,
@@ -3271,6 +3272,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

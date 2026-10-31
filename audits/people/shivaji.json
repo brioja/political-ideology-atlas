@@ -94,12 +94,13 @@
    ]
   },
   "political-violence-never": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "His record includes killing Afzal Khan at their 1659 meeting, the night raid on Shaista Khan and sacks of towns; he treated armed force as a normal political instrument. Not stated as a principle.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "initiating-force-wrong": {
    "value": -2,
@@ -110,12 +111,13 @@
    ]
   },
   "laws-from-scripture": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "After 1667 he appointed a chief justice (Nyayadhish) to try suits according to Sanskrit law-books, per Sabhasad as summarized by Sarkar. Scope for non-Hindu subjects is not stated.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "punish-blasphemy": {
    "value": 0,
@@ -3009,5 +3011,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia gives birth c. 1630 (other traditions say 1627); he died in 1680. His own words survive mainly as letters, many disputed; the jizya letter (1679) is known through Sarkar's translation of a Persian text and its authenticity and addressee are debated, so it is low. The Ajnapatra is by Ramchandra Pant Amatya after his death and was not used; later hagiography and modern political claims were set aside. Sabhasad's chronicle (c. 1697) is secondhand. National self-determination, revolution, restrictions on conversion and cattle slaughter, and farm credit were checked against the evidence and left null because the evidence concerns nearby but different matters. No inferred answers."
+ "notes": "Wikipedia gives birth c. 1630 (other traditions say 1627); he died in 1680. His own words survive mainly as letters, many disputed; the jizya letter (1679) is known through Sarkar's translation of a Persian text and its authenticity and addressee are debated, so it is low. The Ajnapatra is by Ramchandra Pant Amatya after his death and was not used; later hagiography and modern political claims were set aside. Sabhasad's chronicle (c. 1697) is secondhand. National self-determination, revolution, restrictions on conversion and cattle slaughter, and farm credit were checked against the evidence and left null because the evidence concerns nearby but different matters. No inferred answers.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

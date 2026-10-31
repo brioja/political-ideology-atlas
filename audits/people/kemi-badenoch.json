@@ -340,13 +340,14 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Voted for the Investigatory Powers (Amendment) Bill and covert human intelligence sources bills; announced live facial recognition in crime hotspots in 2026. Terrorism-specific statement not addressed directly.",
    "sources": [
     "s18",
     "s11"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "legalize-drugs": {
    "value": -2,
@@ -408,12 +409,13 @@
    "sources": []
   },
   "rehabilitation": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Says she wants more criminals in prison, with 50,000 more places and punishment that fits the crime; frames prison around consequences, not rehabilitation.",
    "sources": [
     "s10"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "traditional-family": {
    "value": 1,
@@ -1356,13 +1358,14 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Voted for the Strikes (Minimum Service Levels) Bill and regulations for rail, ambulance, fire and border services; criticised Labour's cut in strike notice. Secret ballots and picketing not addressed directly.",
    "sources": [
     "s18",
     "s29"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "population-causes-poverty": {
    "value": null,
@@ -1964,13 +1967,14 @@
    "sources": []
   },
   "parliament-supreme": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Said law should be made by sovereign Parliament accountable to the British people. The monarch's role not addressed.",
    "sources": [
     "s9",
     "s7"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "animal-suffering-matters": {
    "value": null,
@@ -3154,13 +3158,14 @@
    "sources": []
   },
   "voter-id": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "As minister defended photographic voter ID in the Elections Bill (2022) and voted for it; proof of citizenship not addressed.",
    "sources": [
     "s31",
     "s18"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "religious-equal-recognition": {
    "value": null,
@@ -3452,5 +3457,13 @@
    "sources": []
   }
  },
- "notes": "Evidence is mainly her own Commons speeches, speeches and op-eds from 2017 to 2026, and her voting record. Ministerial answers (trade, equalities) are taken as hers when she gave them but are weighed below her later statements as leader. Net zero: in 2024 she defended the 2050 target as set by Parliament; since the 2022 leadership run and 2025-26 she has called for scrapping the legislation. Same-sex marriage and abortion rest on thinner evidence (a ministerial statement, a 2019 abstention, a 2025 post on being pro-choice) and are rated accordingly. Several 2026 conference clips contain other speakers; only her own words were used. Hansard URLs are the debate pages the quoted text was retrieved for through the Hansard search API."
+ "notes": "Evidence is mainly her own Commons speeches, speeches and op-eds from 2017 to 2026, and her voting record. Ministerial answers (trade, equalities) are taken as hers when she gave them but are weighed below her later statements as leader. Net zero: in 2024 she defended the 2050 target as set by Parliament; since the 2022 leadership run and 2025-26 she has called for scrapping the legislation. Same-sex marriage and abortion rest on thinner evidence (a ministerial statement, a 2019 abstention, a 2025 post on being pro-choice) and are rated accordingly. Several 2026 conference clips contain other speakers; only her own words were used. Hansard URLs are the debate pages the quoted text was retrieved for through the Hansard search API.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 5
+  }
+ ]
 }

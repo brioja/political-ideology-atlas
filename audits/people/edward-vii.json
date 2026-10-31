@@ -144,13 +144,14 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his objection to cuts in the naval building programme and his support for army and territorial reorganisation.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "legalize-sex-work": {
       "value": null,
@@ -213,12 +214,13 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his opposition to any drastic reconstruction of the political constitution on Ireland and his preference to keep rather than replace the Lords.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "reduce-immigration": {
       "value": null,
@@ -325,12 +327,13 @@
       "sources": []
     },
     "tariffs-protect-industry": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his personal sympathy with free traders against Chamberlain's tariff reform in 1903.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-directs-investment": {
       "value": null,
@@ -393,13 +396,14 @@
       "sources": []
     },
     "right-to-secede": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his conviction that Home Rule for Ireland was incompatible with the integrity of the Empire and that coercion was needed to protect the Union.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "natural-rulers": {
       "value": null,
@@ -1618,12 +1622,13 @@
       "sources": []
     },
     "noblesse-oblige": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated 'keenest and liveliest interest' in the dwellings of the poor, his urging of 'drastic and thorough' measures in the Lords in 1884, and his rebuilt Sandringham cottages.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "withdraw-from-politics": {
       "value": null,
@@ -3017,5 +3022,13 @@
       "sources": []
     }
   },
-  "notes": "Born 1841, king 1901-1910. Lee's biography is an official, sympathetic work; where it characterises his views rather than quoting them, answers are held at low or medium. Most of his reign's policy was ministers' decisions and is not counted as his. Not accessed: Magnus's biography (not freely available), Hansard text of the 1884 speech (not found online)."
+  "notes": "Born 1841, king 1901-1910. Lee's biography is an official, sympathetic work; where it characterises his views rather than quoting them, answers are held at low or medium. Most of his reign's policy was ministers' decisions and is not counted as his. Not accessed: Magnus's biography (not freely available), Hansard text of the 1884 speech (not found online).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

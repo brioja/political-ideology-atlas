@@ -2849,12 +2849,13 @@
       "sources": []
     },
     "future-generations": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "Said sustainable development cannot be spoken of apart from intergenerational solidarity and the common good extends to later generations.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "women-distinct-values": {
       "value": null,
@@ -3339,5 +3340,13 @@
       "sources": []
     }
   },
-  "notes": "Died 21 April 2025, so treated as a historical figure; no answer is inferred, all rest on his own writings, speeches and acts, or on documents he approved. Dignitas infinita and Fiducia supplicans were issued by the Dicastery for the Doctrine of the Faith with his approval and are used only at medium confidence or below. His tone on LGBT people softened (accompaniment, non-liturgical blessings, calling criminalization unjust) without changing the stated teaching on marriage."
+  "notes": "Died 21 April 2025, so treated as a historical figure; no answer is inferred, all rest on his own writings, speeches and acts, or on documents he approved. Dignitas infinita and Fiducia supplicans were issued by the Dicastery for the Doctrine of the Faith with his approval and are used only at medium confidence or below. His tone on LGBT people softened (accompaniment, non-liturgical blessings, calling criminalization unjust) without changing the stated teaching on marriage.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

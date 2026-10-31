@@ -779,13 +779,14 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Describes himself as 'certainly not a Zionist' and a Jewish non-Zionist; reported to call Zionism racist for displacing Palestinians. His position on the underlying right is not stated in those words.",
       "sources": [
         "s6",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "diaspora-return-right": {
       "value": null,
@@ -3102,5 +3103,13 @@
       "sources": []
     }
   },
-  "notes": "Several sources (BBC, Guardian, The National) could not be fetched. Green Party policy was counted only where he stated it himself. Several party-wide positions (nuclear power, Trident, migration policy details, Palestine Action) were seen only in search snippets and are left null. Did not record the NATO, Israel arms embargo or Palestine Action positions as answers because no statement matches directly."
+  "notes": "Several sources (BBC, Guardian, The National) could not be fetched. Green Party policy was counted only where he stated it himself. Several party-wide positions (nuclear power, Trident, migration policy details, Palestine Action) were seen only in search snippets and are left null. Did not record the NATO, Israel arms embargo or Palestine Action positions as answers because no statement matches directly.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

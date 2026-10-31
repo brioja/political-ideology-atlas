@@ -2147,12 +2147,13 @@
       "sources": []
     },
     "national-law-over-international": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: backed UN resolutions, international criminal courts and treaties as binding standards.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "religious-nation": {
       "value": null,
@@ -2262,13 +2263,14 @@
       "sources": []
     },
     "criminalize-homosexuality": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he opposed the Briggs initiative against gay teachers, was the first president to meet gay rights activists and later backed civil same-sex marriage.",
       "sources": [
         "s13",
         "s12"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "suppress-opposition": {
       "value": -2,
@@ -3317,5 +3319,13 @@
       "sources": []
     }
   },
-  "notes": "Died December 2024. Abortion evidence is mixed (accepted legal abortion after Roe, personal opposition, 2012 wish for narrower Democratic stance), recorded at 0. Same-sex marriage: supported in civil ceremonies, in 2014 said states should decide. His full texts of the 1977 inaugural address, Our Endangered Values, Palestine: Peace Not Apartheid and A Call to Action were not reachable; the books are known here only through his interviews. Several high-confidence answers rest on speeches from different years; the most recent clear position was used. His 2015 'oligarchy' remark was not opened; the Citizens United 'unlimited political bribery' quote was used instead."
+  "notes": "Died December 2024. Abortion evidence is mixed (accepted legal abortion after Roe, personal opposition, 2012 wish for narrower Democratic stance), recorded at 0. Same-sex marriage: supported in civil ceremonies, in 2014 said states should decide. His full texts of the 1977 inaugural address, Our Endangered Values, Palestine: Peace Not Apartheid and A Call to Action were not reachable; the books are known here only through his interviews. Several high-confidence answers rest on speeches from different years; the most recent clear position was used. His 2015 'oligarchy' remark was not opened; the Citizens United 'unlimited political bribery' quote was used instead.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

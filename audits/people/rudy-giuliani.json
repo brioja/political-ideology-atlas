@@ -305,12 +305,13 @@
       ]
     },
     "property-fundamental": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Listed 'protections for private property' with low taxes, sensible regulation and free trade as the model that brings national wealth; not stated as a near-absolute right.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regulate-corporations": {
       "value": -1,
@@ -345,12 +346,13 @@
       ]
     },
     "legalize-drugs": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Called the push for medical marijuana 'really a way to legalize it' and said 'there's no reason for it'; he said marijuana 'adds nothing' to the legal medications available. Opposition to legalizing other drugs is not documented, so this rests on marijuana.",
       "sources": [
         "s26"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "restrict-hate-speech": {
       "value": null,
@@ -3380,5 +3382,13 @@
       "sources": []
     }
   },
-  "notes": "Most answers rest on his 2007-2008 presidential campaign (debates, interviews, a Foreign Affairs essay) because that is when he stated positions across the widest range of issues; later statements override earlier ones where found. Views that changed: same-sex marriage (opposed in 2007 and 2011, supportive by June 2015); his abortion position (pro-choice, with the partial-birth ban, parental consent and the Hyde amendment) is the same in 2007 and 2015. No Giuliani statement on the Dobbs ruling, tariffs, NATO or Ukraine, voter ID, or later gun or immigration policy was found. His post-2020 election claims and Ukraine activities are not tied to any statement in the list. OnTheIssues pages are a dated compilation that quotes debate transcripts, interviews and his book Leadership; they were used as references and the debate transcripts (s2, s3) were checked directly."
+  "notes": "Most answers rest on his 2007-2008 presidential campaign (debates, interviews, a Foreign Affairs essay) because that is when he stated positions across the widest range of issues; later statements override earlier ones where found. Views that changed: same-sex marriage (opposed in 2007 and 2011, supportive by June 2015); his abortion position (pro-choice, with the partial-birth ban, parental consent and the Hyde amendment) is the same in 2007 and 2015. No Giuliani statement on the Dobbs ruling, tariffs, NATO or Ukraine, voter ID, or later gun or immigration policy was found. His post-2020 election claims and Ukraine activities are not tied to any statement in the list. OnTheIssues pages are a dated compilation that quotes debate transcripts, interviews and his book Leadership; they were used as references and the debate transcripts (s2, s3) were checked directly.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

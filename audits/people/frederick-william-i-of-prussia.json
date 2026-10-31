@@ -399,12 +399,13 @@
       ]
     },
     "democracy-best": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his defense of unlimited royal sovereignty as a divine duty conflicts with popular supremacy.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "direct-votes": {
       "value": null,
@@ -991,12 +992,13 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his account of sovereignty as divinely ordained royal duty does not make legitimacy conditional on subjects’ consent.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "trade-surplus": {
       "value": null,
@@ -1037,12 +1039,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: exclusive royal control of army and finances rules out independent checks.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "vanguard-party": {
       "value": null,
@@ -1629,12 +1632,13 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his son’s planned succession endorses inheritance over election.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "minority-veto": {
       "value": null,
@@ -1649,12 +1653,13 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his assertion of unlimited royal authority places the monarch above any parliamentary claim to supreme lawmaking.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "animal-suffering-matters": {
       "value": null,
@@ -1825,12 +1830,13 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: exclusive royal financial control precludes parliamentary budget approval.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "single-official-language": {
       "value": null,
@@ -3081,5 +3087,13 @@
       "sources": []
     }
   },
-  "notes": "The 1722 testament and administrative instructions are read alongside evidence from the remainder of his reign. His later recommendation of Wolff’s philosophy prevents treating the 1723 expulsion as his final position on philosophical study. Selective Protestant immigration does not establish support for open borders; limited Christian toleration does not establish universal religious equality. Modern issues without matching evidence remain null."
+  "notes": "The 1722 testament and administrative instructions are read alongside evidence from the remainder of his reign. His later recommendation of Wolff’s philosophy prevents treating the 1723 expulsion as his final position on philosophical study. Selective Protestant immigration does not establish support for open borders; limited Christian toleration does not establish universal religious equality. Modern issues without matching evidence remain null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

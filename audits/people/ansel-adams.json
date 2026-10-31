@@ -469,12 +469,13 @@
       "sources": []
     },
     "nature-intrinsic-value": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated belief 'in stones and water, air and soil' and decades of wilderness advocacy; he did not state the philosophical claim in these terms.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "limit-population": {
       "value": null,
@@ -947,12 +948,13 @@
       "sources": []
     },
     "population-transfer": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he described the forced removal of loyal Japanese Americans as 'a great injustice'; he did not comment on the general principle.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "initiating-force-wrong": {
       "value": null,
@@ -1027,12 +1029,13 @@
       "sources": []
     },
     "emergency-suspend-protections": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he called the wartime internment of Japanese Americans 'a great injustice' and photographed internees to stress their loyalty; he did not address emergency powers in general.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "price-controls-essentials": {
       "value": null,
@@ -2517,12 +2520,13 @@
       "sources": []
     },
     "future-generations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his autobiographical statement of belief in 'people and their future and their fate' and his preservation campaigns for parks and wilderness.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "women-distinct-values": {
       "value": null,
@@ -2987,5 +2991,13 @@
       "sources": []
     }
   },
-  "notes": "Died 1984, so every non-null answer rests on stated views; those beginning 'Inferred:' go beyond what he said. His political record is almost entirely environmental, so most statements are null. Sheff's piece was read via a fetch summary, not in full."
+  "notes": "Died 1984, so every non-null answer rests on stated views; those beginning 'Inferred:' go beyond what he said. His political record is almost entirely environmental, so most statements are null. Sheff's piece was read via a fetch summary, not in full.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

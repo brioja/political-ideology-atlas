@@ -871,12 +871,13 @@
       ]
     },
     "dictatorship-of-proletariat": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated rejection of Marxism-Leninism and abhorrence of dictatorship in all its forms.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "collective-farming": {
       "value": null,
@@ -1073,13 +1074,14 @@
       ]
     },
     "force-without-un": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Ordered the 1983 invasion of Grenada and justified aid to insurgents as consistent with the OAS and UN charters rather than needing Security Council approval.",
       "sources": [
         "s27",
         "s11"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "reason-over-faith": {
       "value": -2,
@@ -1334,12 +1336,13 @@
       "sources": []
     },
     "vanguard-party": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated rejection of Marxism-Leninism and one-party totalitarian rule.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "priority-to-poor": {
       "value": null,
@@ -2204,12 +2207,13 @@
       "sources": []
     },
     "job-guarantee": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his administration ended the CETA public-service jobs program and held that growth, not state employment, creates jobs.",
       "sources": [
         "s27"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "democratic-peace": {
       "value": null,
@@ -3436,5 +3440,13 @@
       "sources": []
     }
   },
-  "notes": "Born 1911, died 2004. He was a New Deal Democrat until the 1950s and switched to the Republican Party in 1962; answers use his positions as president and in the 1964 Goldwater speech. On abortion he signed California's 1967 Therapeutic Abortion Act as governor but from about 1980 on opposed abortion firmly, and the later position is used. His 1986 immigration law is read as a record of enforcement plus legalization. Where his rhetoric (low taxes, balanced budget) differed from his record (TEFRA and other tax rises, large deficits) the answer follows the stated position and says so. Few answers rely on inference; none was added to pass the salience check."
+  "notes": "Born 1911, died 2004. He was a New Deal Democrat until the 1950s and switched to the Republican Party in 1962; answers use his positions as president and in the 1964 Goldwater speech. On abortion he signed California's 1967 Therapeutic Abortion Act as governor but from about 1980 on opposed abortion firmly, and the later position is used. His 1986 immigration law is read as a record of enforcement plus legalization. Where his rhetoric (low taxes, balanced budget) differed from his record (TEFRA and other tax rises, large deficits) the answer follows the stated position and says so. Few answers rely on inference; none was added to pass the salience check.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

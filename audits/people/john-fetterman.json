@@ -1854,7 +1854,7 @@
    "sources": []
   },
   "death-penalty": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "As lieutenant governor he supported the moratorium on executions and called the death penalty inhumane, antiquated and flawed (per Wikipedia); terrorism cases not addressed specifically.",
    "sources": [
@@ -1864,7 +1864,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -3814,6 +3815,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

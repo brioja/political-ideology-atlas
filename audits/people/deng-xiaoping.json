@@ -838,14 +838,15 @@
    "sources": []
   },
   "right-to-secede": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: insisted on reunifying Taiwan and keeping minority regions such as Tibet within China under regional autonomy.",
    "sources": [
     "s6",
     "s36",
     "s28"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "natural-rulers": {
    "value": null,
@@ -1021,12 +1022,13 @@
    "sources": []
   },
   "return-to-foraging": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his programme was rapid industrial and scientific modernisation.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-division-of-labor": {
    "value": null,
@@ -1391,13 +1393,14 @@
    "sources": []
   },
   "night-watchman-state": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: built and defended a state-led socialist economy with predominant public ownership and Party leadership.",
    "sources": [
     "s14",
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1412,13 +1415,14 @@
    "sources": []
   },
   "socialism-one-country": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: argued that socialism could be built and consolidated in China on its own road over generations.",
    "sources": [
     "s3",
     "s45"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "settler-state-colonial": {
    "value": null,
@@ -3674,5 +3678,13 @@
    "sources": []
   }
  },
- "notes": "Answers rest on his own speeches in Selected Works (marxists.org). Views changed from Maoist-era campaigns (he played a leading role in the 1957 Anti-Rightist Campaign) to the post-1978 reform line; the most recent clear position was used. Party resolutions were not used."
+ "notes": "Answers rest on his own speeches in Selected Works (marxists.org). Views changed from Maoist-era campaigns (he played a leading role in the 1957 Anti-Rightist Campaign) to the post-1978 reform line; the most recent clear position was used. Party resolutions were not used.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
+  }
+ ]
 }

@@ -489,12 +489,13 @@
    ]
   },
   "patriarchy-structural": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Called women an oppressed group, said they are probably oppressed, and urged revolutionaries to support women's liberation.",
    "sources": [
     "s7"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "political-elite-corrupt": {
    "value": 2,
@@ -3344,5 +3345,13 @@
    "sources": []
   }
  },
- "notes": "Positions changed from separatist Black nationalism (1966) to internationalism and intercommunalism (1970-71). The 1971 Cleaver split led him to criticize revolutionary cultism and military adventurism. Statements on topics he never addressed (healthcare, abortion, drugs policy, death penalty, religion in public life) stay null."
+ "notes": "Positions changed from separatist Black nationalism (1966) to internationalism and intercommunalism (1970-71). The 1971 Cleaver split led him to criticize revolutionary cultism and military adventurism. Statements on topics he never addressed (healthcare, abortion, drugs policy, death penalty, religion in public life) stay null.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

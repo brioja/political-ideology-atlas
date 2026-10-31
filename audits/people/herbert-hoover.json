@@ -338,13 +338,14 @@
    "sources": []
   },
   "open-borders": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: favored restricting and selecting immigration and cut it in 1930.",
    "sources": [
     "s4",
     "s10"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "limit-growth": {
    "value": null,
@@ -448,12 +449,13 @@
    "sources": []
   },
   "abolish-money-wages": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: held that self-interest must remain a motive for production for generations and called socialism a failure.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-central-banks": {
    "value": -2,
@@ -566,12 +568,13 @@
    "sources": []
   },
   "class-struggle-history": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: rejected class frameworks and Marxist doctrine in favor of equality of opportunity.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "equal-outcomes": {
    "value": -2,
@@ -698,12 +701,13 @@
    "sources": []
   },
   "distribute-by-need": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: held that production depends on rewarding effort and ruled out an economy based on altruism alone.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "production-for-use": {
    "value": null,
@@ -712,12 +716,13 @@
    "sources": []
   },
   "profit-exploitation": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: treated the profit motive as the stimulus to production and held that production and its fair division go together.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "dictatorship-of-proletariat": {
    "value": -2,
@@ -1258,12 +1263,13 @@
    "sources": []
   },
   "pool-sovereignty": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: rejected political engagements like League membership that commit the US in advance.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "head-commands-forces": {
    "value": null,
@@ -1416,13 +1422,14 @@
    "sources": []
   },
   "restrict-freedoms-for-growth": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: held that political freedom cannot last without economic freedom and condemned Soviet tyranny as an economic failure.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "rich-countries-aid-poor": {
    "value": null,
@@ -2339,12 +2346,13 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: said the sons of the successful should not hold their fathers' places of power by right of birth.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3252,5 +3260,13 @@
    "sources": []
   }
  },
- "notes": "Born 10 August 1874 in West Branch, Iowa; died 20 October 1964 (checked against Wikipedia). The Challenge to Liberty (1934) and Freedom Betrayed could not be downloaded in full, so the New Deal views rest on a scholarly account of the former and on Wikipedia for his foreign policy after 1939. Mexican repatriation, the Bonus Army and civil-rights questions are left null: his personal direction of repatriation is disputed, and no answer to a specific statement rests on them. His views on Prohibition (enforcement, no repeal) are not covered by a statement."
+ "notes": "Born 10 August 1874 in West Branch, Iowa; died 20 October 1964 (checked against Wikipedia). The Challenge to Liberty (1934) and Freedom Betrayed could not be downloaded in full, so the New Deal views rest on a scholarly account of the former and on Wikipedia for his foreign policy after 1939. Mexican repatriation, the Bonus Army and civil-rights questions are left null: his personal direction of repatriation is disputed, and no answer to a specific statement rests on them. His views on Prohibition (enforcement, no repeal) are not covered by a statement.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 8
+  }
+ ]
 }

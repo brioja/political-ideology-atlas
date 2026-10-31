@@ -101,13 +101,14 @@
    ]
   },
   "consent-of-governed": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Xenophon's Socrates distinguishes kingship, rule over willing subjects, from tyranny, rule over unwilling ones (Mem. IV.6.12). In Plato's Crito the Laws argue he is bound by an implied agreement made by staying in Athens (51d-52a). Secondhand; the Crito argument is about his own obligation.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "promulgated-standing-laws": {
    "value": 1,
@@ -221,12 +222,13 @@
    ]
   },
   "duties-before-rights": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "In Plato's Crito the Laws say the country is more to be revered than parents and must be obeyed or persuaded (51a-c). The language of individual rights is anachronistic, so low.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "character-from-environment": {
    "value": 0,
@@ -237,14 +239,15 @@
    ]
   },
   "religion-illusion": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his stated belief in the gods, sacrifice and divination (Mem. I.1; Apology of Xenophon; Apology 35d), he did not regard religion as an illusion.",
    "sources": [
     "s1",
     "s6",
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "censor-art-for-virtue": {
    "value": 1,
@@ -3096,5 +3099,13 @@
    "sources": []
   }
  },
- "notes": "Born 470/469 BC, died 399 BC. Every answer is secondhand (Plato, Xenophon). Answers drawn only from the Republic are Plato's construction as much as Socrates' and are low. The Socratic problem is unresolved; the reports contradict one another."
+ "notes": "Born 470/469 BC, died 399 BC. Every answer is secondhand (Plato, Xenophon). Answers drawn only from the Republic are Plato's construction as much as Socrates' and are low. The Socratic problem is unresolved; the reports contradict one another.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-31",
+   "nulled": 3
+  }
+ ]
 }

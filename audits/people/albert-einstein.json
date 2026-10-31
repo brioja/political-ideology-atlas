@@ -119,12 +119,13 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated aim that a planned economy would guarantee a livelihood to every man, woman and child; he made no recorded comment on welfare and dependency.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "central-planning": {
       "value": 1,
@@ -258,12 +259,13 @@
       ]
     },
     "local-essentials-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated view that the means of production should be owned by society; he did not discuss water, hospitals or local transport.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "night-watchman-state": {
       "value": -2,
@@ -326,13 +328,14 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1953 statement that ethics is an exclusively human concern with no superhuman authority, and his 1954 description of the Bible as primitive legends.",
       "sources": [
         "s6",
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "military-superiority": {
       "value": -1,
@@ -343,12 +346,13 @@
       ]
     },
     "ethnic-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his remark that Switzerland, built from several nationalities, stands at a higher stage of political development than a single-nationality state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "class-struggle-history": {
       "value": -1,
@@ -555,12 +559,13 @@
       ]
     },
     "racial-franchise": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that equality and human dignity must not be confined to one racial group and his civil-rights activism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "correct-racial-injustice": {
       "value": 1,
@@ -887,13 +892,14 @@
       ]
     },
     "divine-source-of-authority": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that ethics is an exclusively human concern with no superhuman authority, and his support for elected representatives.",
       "sources": [
         "s6",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "mass-culture-pacifies": {
       "value": 1,
@@ -3254,5 +3260,13 @@
       "sources": []
     }
   },
-  "notes": "His views shifted on war: in the 1920s and early 1930s he backed refusal of military service and near-absolute pacifism; from 1933 he supported armed resistance to Nazi Germany and said he was a dedicated but not absolute pacifist, and the later position is used. On Zionism he opposed a Jewish state with borders and an army (1938, 1946) but supported Israel after 1948. His 1953 advice to refuse to testify before congressional committees is cited via Wikipedia because the primary text could not be opened."
+  "notes": "His views shifted on war: in the 1920s and early 1930s he backed refusal of military service and near-absolute pacifism; from 1933 he supported armed resistance to Nazi Germany and said he was a dedicated but not absolute pacifist, and the later position is used. On Zionism he opposed a Jewish state with borders and an army (1938, 1946) but supported Israel after 1948. His 1953 advice to refuse to testify before congressional committees is cited via Wikipedia because the primary text could not be opened.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

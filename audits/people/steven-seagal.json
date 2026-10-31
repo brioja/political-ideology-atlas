@@ -227,12 +227,13 @@
       "sources": []
     },
     "reduce-immigration": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In a January 2014 interview with ABC15 (reported by LAist) he said 'our biggest problem is open borders'. This clearly implies that immigration should be restricted, though it does not give a number. The report is from 2014, and no later statement on immigration levels was found. Sources: s4.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "empower-international-orgs": {
       "value": null,
@@ -3007,5 +3008,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: only his own words as reported by named outlets are used. Several Seagal remarks are reported only secondhand (2014 Rossiyskaya Gazeta via the Moscow Times). The 2014 claim that mass shootings were 'engineered' (reported by Mediaite) was not verified: the source returned HTTP 403 and it is not cited. His 2014 immigration remarks and 2014 Crimea remarks are the oldest answers; no later statement on those topics was found. His 2022 Ukraine remarks (Meduza, Fox News Digital) were reviewed and matched no statement. The ORSIS entry is a business and lobbying record, not a stated view on gun ownership."
+  "notes": "Living person: only his own words as reported by named outlets are used. Several Seagal remarks are reported only secondhand (2014 Rossiyskaya Gazeta via the Moscow Times). The 2014 claim that mass shootings were 'engineered' (reported by Mediaite) was not verified: the source returned HTTP 403 and it is not cited. His 2014 immigration remarks and 2014 Crimea remarks are the oldest answers; no later statement on those topics was found. His 2022 Ukraine remarks (Meduza, Fox News Digital) were reviewed and matched no statement. The ORSIS entry is a business and lobbying record, not a stated view on gun ownership.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

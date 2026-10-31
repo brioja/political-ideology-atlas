@@ -227,7 +227,7 @@
       ]
     },
     "emergency-suspend-protections": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "He calls the 1975 Emergency a sin of 'murdering the Constitution' in which the country became a prison, so he rejects suspending ordinary protections in that case; he has not addressed other emergencies.",
       "sources": [
@@ -238,7 +238,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "return-lost-territory": {
       "value": 1,
@@ -3308,6 +3309,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-22"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
     }
   ]
 }

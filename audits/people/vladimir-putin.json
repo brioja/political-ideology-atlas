@@ -501,13 +501,14 @@
       "sources": []
     },
     "central-planning": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Describes Russia as a market economy without Communist Party power and criticises the Soviet one-size-fits-all approach and deprivation of property.",
       "sources": [
         "s18",
         "s8"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "socialized-markets": {
       "value": null,
@@ -3379,5 +3380,13 @@
       "sources": []
     }
   },
-  "notes": "Stated views and practice conflict in places: he calls Russia a democracy and invokes self-determination, while the record shows suppression of opposition and denial of Ukraine's separateness. Where positions changed, the recent clear one is used (e.g. a flat 13 percent income tax early on, progressive scale since 2021; openness to the West in 2000s vs later hostility). The FT 2019 interview and Direct Line transcripts were not opened, so nothing is cited from them. Several other answers rely on his legislative record via Wikipedia."
+  "notes": "Stated views and practice conflict in places: he calls Russia a democracy and invokes self-determination, while the record shows suppression of opposition and denial of Ukraine's separateness. Where positions changed, the recent clear one is used (e.g. a flat 13 percent income tax early on, progressive scale since 2021; openness to the West in 2000s vs later hostility). The FT 2019 interview and Direct Line transcripts were not opened, so nothing is cited from them. Several other answers rely on his legislative record via Wikipedia.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

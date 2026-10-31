@@ -133,12 +133,13 @@
       "sources": []
     },
     "limit-guns": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Posted on Bluesky in 2025 that 'Rational gun laws [are] desperately needed' after a school shooting involving a 'high velocity gun'; earlier tweeted that gun control is 'no longer debatable' (a 'moral mandate'), the latter per The Blaze. Exact degree of restriction not stated.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "empower-police-military": {
       "value": null,
@@ -2990,5 +2991,13 @@
       "sources": []
     }
   },
-  "notes": "Thin political record outside Darfur advocacy; most statements are null. Campaigns and charity work are not treated as positions."
+  "notes": "Thin political record outside Darfur advocacy; most statements are null. Campaigns and charity work are not treated as positions.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

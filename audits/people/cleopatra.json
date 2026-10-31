@@ -388,13 +388,14 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she claimed rule for herself and her children by birth and divine status, which presupposes that some are fit to rule by descent.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "political-violence-never": {
       "value": -2,
@@ -815,13 +816,14 @@
       "sources": []
     },
     "distinct-gender-roles": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she held the highest public office herself, ruling alone after dropping her brother's name from documents; Dio's 'nature as a woman' comment is a hostile Roman view.",
       "sources": [
         "s4",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-interest": {
       "value": null,
@@ -998,12 +1000,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her personal rule; she is recorded making decisions without consulting her court, so no checks between separate bodies are recorded.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "vanguard-party": {
       "value": null,
@@ -1613,12 +1616,13 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she held sovereign authority as monarch and no legislature over her is recorded in these sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "animal-suffering-matters": {
       "value": null,
@@ -2108,13 +2112,14 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: her authority is presented through divine titles and descent from a dynasty of god-kings, not from the people.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religious-dress-in-state": {
       "value": null,
@@ -3041,5 +3046,13 @@
       "sources": []
     }
   },
-  "notes": "Ancient sources on her are largely Roman and hostile, so their characterisations are used only for recorded acts. Positions are drawn from what she did; the few marked 'Inferred:' are low-confidence inferences. Reference pages for economic policy (taxation, coinage, grain) were not found in the pages opened, so those statements are null."
+  "notes": "Ancient sources on her are largely Roman and hostile, so their characterisations are used only for recorded acts. Positions are drawn from what she did; the few marked 'Inferred:' are low-confidence inferences. Reference pages for economic policy (taxation, coinage, grain) were not found in the pages opened, so those statements are null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

@@ -625,12 +625,13 @@
       ]
     },
     "free-trade": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said earlier trade deals put American companies and workers behind other countries and backs the tariff reset; he has not addressed free trade's long-run benefits as such.",
       "sources": [
         "s40"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "nation-first": {
       "value": 1,
@@ -1192,14 +1193,15 @@
       "sources": []
     },
     "force-without-un": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said the president has constitutional authority to strike Iran and that the War Powers Act does not obstruct him; welcomed the 2026 capture of Maduro; voted No on repeated Iran, Venezuela and Lebanon war powers resolutions (2025-345, 2026-48, 2026-114, 2026-282). UN approval is not discussed.",
       "sources": [
         "s41",
         "s34",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "reason-over-faith": {
       "value": null,
@@ -3515,5 +3517,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: no inference was used. Answers rest on House roll-call votes, cosponsorships in the Congressional Record Index, and his own press releases, hearing transcripts, op-eds and campaign platform. Where cosponsorship or a vote is the only basis the answer is medium. Updates: his early Ukraine votes were mixed (Yes on the 2022 lend-lease bill), then he opposed Ukraine funding from 2023 on; Ukraine is not scored because no statement matches exactly. He voted to object to the 2020 electoral votes of Arizona and Pennsylvania (2021-10, 2021-11) and against the January 6 commission (2021-154), but no statement was answered from this. Ran for the governor nomination and won the August 2026 primary (per Wikipedia)."
+  "notes": "Living person: no inference was used. Answers rest on House roll-call votes, cosponsorships in the Congressional Record Index, and his own press releases, hearing transcripts, op-eds and campaign platform. Where cosponsorship or a vote is the only basis the answer is medium. Updates: his early Ukraine votes were mixed (Yes on the 2022 lend-lease bill), then he opposed Ukraine funding from 2023 on; Ukraine is not scored because no statement matches exactly. He voted to object to the 2020 electoral votes of Arizona and Pennsylvania (2021-10, 2021-11) and against the January 6 commission (2021-154), but no statement was answered from this. Ran for the governor nomination and won the August 2026 primary (per Wikipedia).",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

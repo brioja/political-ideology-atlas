@@ -387,14 +387,15 @@
    "auditor": "claude-sonnet-5-5"
   },
   "uniform-civil-code": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Opposes Sharia taking hold in Britain and urges US lawmakers to join an anti-Sharia caucus, which implies one civil law for all.",
    "sources": [
     "s2",
     "s5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "universal-healthcare": {
    "value": null,
@@ -3217,6 +3218,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

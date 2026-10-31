@@ -2413,14 +2413,15 @@
       "sources": []
     },
     "religion-illusion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his criticism of Marxism’s lack of faith and 2020 account of religion as liberation reject treating faith as merely illusory consolation.",
       "sources": [
         "b3",
         "b4"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": -1
     },
     "capitalism-progressive": {
       "value": null,
@@ -3449,6 +3450,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
     }
   ]
 }

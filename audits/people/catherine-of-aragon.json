@@ -173,12 +173,13 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she put the marriage question under the Church's law and the Pope's jurisdiction against the king's courts (Cavendish), which suggests she wanted religious authority to weigh more in public decisions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "correct-racial-injustice": {
       "value": null,
@@ -199,13 +200,14 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Her record: she refused the annulment and the break from Rome and appealed to the established Church and the Pope against the king's changes, which is clearly implied by what she did (Cavendish; Wikipedia).",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "reduce-immigration": {
       "value": null,
@@ -1576,12 +1578,13 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she refused to accept the 1533 annulment and the royal supremacy that Parliament enacted (Wikipedia), which suggests she did not accept Parliament as the final authority on Church and marriage matters.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "animal-suffering-matters": {
       "value": null,
@@ -1924,12 +1927,13 @@
       "sources": []
     },
     "religion-illusion": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Her record: she was a devout Catholic who prayed and gave her life to religious duty and called her soul the first concern (Wikipedia, citing the 1536 letter, whose authenticity is disputed). Her devotion implies she rejected the view that religion is an illusion.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "capitalism-progressive": {
       "value": null,
@@ -2114,12 +2118,13 @@
       ]
     },
     "dynastic-succession": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she pressed for the rights of her daughter Mary, the heir presumptive, and asked Charles V to protect her (Wikipedia), which suggests she accepted succession by a ruler's child.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -2956,13 +2961,14 @@
       "sources": []
     },
     "unjust-law-not-binding": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she refused to accept the annulment and the new court's authority in conscience, which suggests she did not treat a law she thought unjust as binding on her conscience (Cavendish; Wikipedia).",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "automate-paid-work": {
       "value": null,
@@ -3001,5 +3007,13 @@
       "sources": []
     }
   },
-  "notes": "Early-exit audit: her recorded political positions are few. Her own words survive mainly in letters about her marriage and her daughter, and in Cavendish's account of her 1529 speech, which is secondhand. Most statements are null. Her appeal to Rome and her refusal of the royal supremacy are the clearest public positions. Several answers are low-confidence inferences from those positions. Her 1536 letter to Henry is reported by later writers and its authenticity is disputed, so it is not used as an answer."
+  "notes": "Early-exit audit: her recorded political positions are few. Her own words survive mainly in letters about her marriage and her daughter, and in Cavendish's account of her 1529 speech, which is secondhand. Most statements are null. Her appeal to Rome and her refusal of the royal supremacy are the clearest public positions. Several answers are low-confidence inferences from those positions. Her 1536 letter to Henry is reported by later writers and its authenticity is disputed, so it is not used as an answer.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

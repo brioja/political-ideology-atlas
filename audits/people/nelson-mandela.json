@@ -295,13 +295,14 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Urged the UN to reform itself and act decisively on conflicts, and in 2003 said he would back any action the UN agreed on while accusing Bush and Blair of undermining it.",
       "sources": [
         "s6",
         "s9"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "free-trade": {
       "value": 1,
@@ -400,12 +401,13 @@
       "sources": []
     },
     "basic-income": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: said unemployment should be fought 'not by way of handouts but by the creation of work opportunities', which points away from an unconditional income for all.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tariffs-protect-industry": {
       "value": -1,
@@ -849,13 +851,14 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: called at the UN for respect for the independence and security of all States of the Middle East alongside Palestinian aspirations, which includes Israel as a state; he also criticised Israeli policy.",
       "sources": [
         "s6",
         "s10"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "diaspora-return-right": {
       "value": null,
@@ -912,13 +915,14 @@
       ]
     },
     "force-without-un": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "In 2003 said he would support any action agreed by the UN against Iraq but attacked the US and UK for undermining the UN; opposed NATO's 1999 Kosovo intervention.",
       "sources": [
         "s9",
         "s10"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "reason-over-faith": {
       "value": null,
@@ -1236,12 +1240,13 @@
       "sources": []
     },
     "emergency-suspend-protections": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: demanded in 1990 the immediate end of the State of Emergency as a precondition for negotiations, opposing emergency powers against opponents.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "price-controls-essentials": {
       "value": null,
@@ -2266,12 +2271,13 @@
       "sources": []
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: referred at the UN to the defeat of 'the Nazi and fascist crime against humanity', treating Nazi crimes as established fact.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": -2,
@@ -2428,13 +2434,14 @@
       "sources": []
     },
     "refuse-lender-austerity": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "His government adopted the market-oriented GEAR plan in line with World Bank and IMF thinking, while he urged reform of those institutions.",
       "sources": [
         "s6",
         "s10"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "property-franchise": {
       "value": -2,
@@ -3366,5 +3373,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed over time. In 1964 he defended nationalising mines, banks and monopoly industry within a private-enterprise economy and said he was attracted to a classless society; in office (1994-99) his government pursued the RDP and then the market-oriented GEAR, with privatisation and no nationalisation, so the later record is used. In 1961-90 he defended armed struggle as a last resort; from 1990 he pursued negotiation and reconciliation. Answers resting on the 1996 Constitution reflect a text drafted by the Constitutional Assembly and adopted under his presidency, so they are medium confidence unless he also said the same himself. Nothing was taken from his party or label alone; items marked 'Inferred:' follow from a specific statement."
+  "notes": "Views changed over time. In 1964 he defended nationalising mines, banks and monopoly industry within a private-enterprise economy and said he was attracted to a classless society; in office (1994-99) his government pursued the RDP and then the market-oriented GEAR, with privatisation and no nationalisation, so the later record is used. In 1961-90 he defended armed struggle as a last resort; from 1990 he pursued negotiation and reconciliation. Answers resting on the 1996 Constitution reflect a text drafted by the Constitutional Assembly and adopted under his presidency, so they are medium confidence unless he also said the same himself. Nothing was taken from his party or label alone; items marked 'Inferred:' follow from a specific statement.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

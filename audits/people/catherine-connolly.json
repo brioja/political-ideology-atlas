@@ -1652,13 +1652,14 @@
       "sources": []
     },
     "diversity-weakens-cohesion": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said the opposite in effect: she wants diversity cherished, said anti-migrant claims are absurd and stressed Ireland's dependence on migrant workers; she has not addressed social cohesion statistics directly.",
       "sources": [
         "s7",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "offices-by-lottery": {
       "value": null,
@@ -3247,13 +3248,14 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Opposes the militarisation of the EU and the \"military-industrial complex\" and said the arms industry seems to be determining policy; she has not stated a target for reducing armaments.",
       "sources": [
         "s57",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "open-diplomacy": {
       "value": 2,
@@ -3630,12 +3632,13 @@
       "sources": []
     },
     "no-business-privileges": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Criticised subsidies and tax breaks for landlords and the reliance on the private market for housing; she has not stated a general rule against special privileges for connected businesses.",
       "sources": [
         "s20"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "no-denominational-politics": {
       "value": null,
@@ -3725,5 +3728,13 @@
       "sources": []
     }
   },
-  "notes": "Name, birth year (born 5 November 1955, Galway) and living status match the Wikipedia article; she became President of Ireland on 11 November 2025. Because a head of state's formal acts on government advice are not her views, only her own statements as TD, candidate and in interviews are used; as President she has so far given only the inaugural speech. Her EU stance is nuanced: she opposed Nice and Lisbon and criticises EU militarisation and neoliberalism but says she is not anti-EU. On defence she says Ireland needs Defence Forces but not an army and opposes scrapping the triple lock. On drugs she backs decriminalisation of possession, not legal supply. Her 2018 Syria visit and her Hamas comments in Sept 2025 were controversial; she said she condemns Hamas' October 2023 attack and Israel's conduct as war crimes. Topics with no recorded statement of her own (wealth taxes, unions, nuclear power, immigration levels beyond the quoted remarks, most constitutional-design and ideological-theory items) are left null."
+  "notes": "Name, birth year (born 5 November 1955, Galway) and living status match the Wikipedia article; she became President of Ireland on 11 November 2025. Because a head of state's formal acts on government advice are not her views, only her own statements as TD, candidate and in interviews are used; as President she has so far given only the inaugural speech. Her EU stance is nuanced: she opposed Nice and Lisbon and criticises EU militarisation and neoliberalism but says she is not anti-EU. On defence she says Ireland needs Defence Forces but not an army and opposes scrapping the triple lock. On drugs she backs decriminalisation of possession, not legal supply. Her 2018 Syria visit and her Hamas comments in Sept 2025 were controversial; she said she condemns Hamas' October 2023 attack and Israel's conduct as war crimes. Topics with no recorded statement of her own (wealth taxes, unions, nuclear power, immigration levels beyond the quoted remarks, most constitutional-design and ideological-theory items) are left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

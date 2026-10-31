@@ -209,12 +209,13 @@
    "sources": []
   },
   "more-religion-public": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: the first law attributed to him declares that one God be revered and one faith in Christ kept inviolate throughout his realm; no wider view on public religion is recorded.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "correct-racial-injustice": {
    "value": null,
@@ -442,13 +443,14 @@
    "sources": []
   },
   "separate-church-state": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he named bishops, convened and shaped church councils with royal and papal legates and issued Law 1 on one faith, which runs against strict separation; he never stated a view on separation.",
    "sources": [
     "s1",
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "laws-from-scripture": {
    "value": null,
@@ -631,13 +633,14 @@
    "sources": []
   },
   "taxation-theft": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he treated taxation as a royal right, continuing the danegeld, imposing 72 pence a hide in 1083 and ordering the Domesday survey to record dues; he never discussed taxation as theft.",
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "harm-principle": {
    "value": null,
@@ -1537,13 +1540,14 @@
    "sources": []
   },
   "abolish-hereditary-privilege": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he removed the English aristocracy and installed a new landholding Norman nobility holding heritable fiefs from him; he never spoke to titles as such.",
    "sources": [
     "s3",
     "s6"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "history-own-civilization": {
    "value": null,
@@ -1618,12 +1622,13 @@
    "sources": []
   },
   "elective-rulers": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he fought the nomination of Edgar the Ætheling after Hastings and rested his own claim on designation and conquest, not election; he never addressed election as such.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "minority-veto": {
    "value": null,
@@ -1686,13 +1691,14 @@
    "sources": []
   },
   "native-born-offices": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he replaced the English holders of earldoms, bishoprics and abbacies with Normans and other continental clergy such as Lanfranc, rather than reserving posts for native English; this reflects his choice of loyal followers, not a stated principle.",
    "sources": [
     "s3",
     "s6"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "party-own-road": {
    "value": null,
@@ -2064,12 +2070,13 @@
    ]
   },
   "punish-blasphemy": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Law 1 attributed to him wishes one faith in Christ 'kept ever inviolate' throughout the realm, but it names no penalty for blasphemy or false worship.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "colonies-serve-metropole": {
    "value": null,
@@ -3065,5 +3072,13 @@
    "sources": []
   }
  },
- "notes": "Sources are chronicles written after or around events (medium at most); the 'Laws of William' text is a collection of articles whose attribution and date are debated. The Harrying of the North's scale is disputed among historians. Pages for the London charter and the Salisbury Oath on Wikipedia do not exist, and the Fordham pages for the Domesday text, the Anglo-Saxon Chronicle and Orderic's deathbed speech returned errors, so those were not used."
+ "notes": "Sources are chronicles written after or around events (medium at most); the 'Laws of William' text is a collection of articles whose attribution and date are debated. The Harrying of the North's scale is disputed among historians. Pages for the London charter and the Salisbury Oath on Wikipedia do not exist, and the Fordham pages for the Domesday text, the Anglo-Saxon Chronicle and Orderic's deathbed speech returned errors, so those were not used.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 7
+  }
+ ]
 }

@@ -162,13 +162,14 @@
       "sources": []
     },
     "state-harmful": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said the EPA 'are not the bad guys' though understaffed, and that a deregulated water system would leave 'no oversight'. Her public calls for government regulation imply rejection of the claim that the state is harmful, though she does not address the statement's wording directly.",
       "sources": [
         "s5",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-guns": {
       "value": null,
@@ -3030,5 +3031,13 @@
       "sources": []
     }
   },
-  "notes": "Recorded positions cover water and chemical pollution only. Her legal cases (Hinkley, Aliso Canyon, East Palestine, and others) are not counted as positions. Her 2026 AI data-center map and moratorium campaign has no statement matching these wordings. Most recent clear statements are from 2024 (s3); earlier 2001 and 2019 remarks are consistent with them. Some searches for a 2020 Guardian op-ed and a 2024 NYT essay returned only secondary reports, so no sources for those were cited."
+  "notes": "Recorded positions cover water and chemical pollution only. Her legal cases (Hinkley, Aliso Canyon, East Palestine, and others) are not counted as positions. Her 2026 AI data-center map and moratorium campaign has no statement matching these wordings. Most recent clear statements are from 2024 (s3); earlier 2001 and 2019 remarks are consistent with them. Some searches for a 2020 Guardian op-ed and a 2024 NYT essay returned only secondary reports, so no sources for those were cited.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

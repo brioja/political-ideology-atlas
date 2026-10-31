@@ -512,13 +512,14 @@
       ]
     },
     "gender-identity-recognition": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said in 2025 he would support the Equality Act and voted against 2021 Texas anti-trans bills, but in 2026 backed limits on trans athletes and a ban on surgery for minors; mixed record.",
       "sources": [
         "s2",
         "s15"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "freedom-to-discriminate": {
       "value": -2,
@@ -3263,5 +3264,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: nothing inferred from party or faith. Source gaps: the Rogan transcript has no speaker labels, so only passages clearly spoken by Talarico are used. No Texas House floor speeches or committee transcripts were retrieved, and campaign issue pages were read through a fetch summarizer, so wording is paraphrased and campaign claims about past legislation (e.g. minimum-wage or union laws) are not used. Positions on guns and trans issues changed or were clarified in 2026; the recent statements are used and mixed ones are low confidence. Death penalty, police funding and many structural questions were not found and are left null."
+  "notes": "Living person: nothing inferred from party or faith. Source gaps: the Rogan transcript has no speaker labels, so only passages clearly spoken by Talarico are used. No Texas House floor speeches or committee transcripts were retrieved, and campaign issue pages were read through a fetch summarizer, so wording is paraphrased and campaign claims about past legislation (e.g. minimum-wage or union laws) are not used. Positions on guns and trans issues changed or were clarified in 2026; the recent statements are used and mixed ones are low confidence. Death penalty, police funding and many structural questions were not found and are left null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

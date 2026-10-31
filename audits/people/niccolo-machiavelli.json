@@ -742,12 +742,13 @@
       ]
     },
     "bound-labor": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Discourses I.55 condemns lords with castles and retainers as enemies of free institutions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "no-neutral-knowledge": {
       "value": null,
@@ -955,12 +956,13 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: He assigns the state expansion, civic religion and the shaping of citizens' character (Discourses I.6, I.11-15), well beyond defence and justice.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "discourage-race-mixing": {
       "value": null,
@@ -1057,13 +1059,14 @@
       "sources": []
     },
     "freedom-as-non-domination": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Discourses I.5 says the people desire not to be dominated and prefer liberty, and scholars (SEP) link him to freedom as non-domination, but he does not define it.",
       "sources": [
         "s2",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "separated-powers": {
       "value": 1,
@@ -1142,12 +1145,13 @@
       "sources": []
     },
     "long-naturalization-wait": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Discourses I.6 praises Rome for admitting foreigners and increasing its citizens, preferring this to Sparta's exclusion.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "representatives-worker-pay": {
       "value": null,
@@ -2452,13 +2456,14 @@
       "sources": []
     },
     "never-kill-self-defence": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Discourses III.41 holds that the country must be defended by any means, and Art of War trains citizens to fight; he does not address individual self-defence.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unbroken-national-continuity": {
       "value": null,
@@ -2693,13 +2698,14 @@
       ]
     },
     "open-diplomacy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Prince ch. 18 advises breaking faith when interest requires and Discourses III.42 says promises made under compulsion need not be kept.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capital-controls": {
       "value": null,
@@ -2714,12 +2720,13 @@
       "sources": []
     },
     "soldiers-refuse-war": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Art of War demands strict discipline, with death for soldiers who break ranks in fear, so he would not allow refusal of orders.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "collective-bargaining": {
       "value": null,
@@ -3150,5 +3157,13 @@
       "sources": []
     }
   },
-  "notes": "The Prince (advice to a prince) and the Discourses (republicanism) differ on the people, law-bound rule and succession; scholarly consensus treats the Discourses as closer to his own preference, and contested items are low or 0. Inferred answers are marked in the rationale. His personal religious belief is disputed."
+  "notes": "The Prince (advice to a prince) and the Discourses (republicanism) differ on the people, law-bound rule and succession; scholarly consensus treats the Discourses as closer to his own preference, and contested items are low or 0. Inferred answers are marked in the rationale. His personal religious belief is disputed.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

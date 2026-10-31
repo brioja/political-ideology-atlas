@@ -182,13 +182,14 @@
       ]
     },
     "restrict-hate-speech": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Campaign page says freedom of speech must be protected and calls censorship an assault on rights; he has not discussed hate-speech laws specifically.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-harmful": {
       "value": -2,
@@ -3134,5 +3135,13 @@
       "sources": []
     }
   },
-  "notes": "Views moved from environmental Democrat to 2024 independent to Trump cabinet member. Where 2023-24 campaign statements conflict with his 2025-26 record (abortion, healthcare, China), the later position was used where clear. Many topics (taxes, welfare, courts, social issues) have no recorded position in the sources read and are left null. Abortion and Israel answers rest partly on secondhand reporting of his remarks."
+  "notes": "Views moved from environmental Democrat to 2024 independent to Trump cabinet member. Where 2023-24 campaign statements conflict with his 2025-26 record (abortion, healthcare, China), the later position was used where clear. Many topics (taxes, welfare, courts, social issues) have no recorded position in the sources read and are left null. Abortion and Israel answers rest partly on secondhand reporting of his remarks.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -763,12 +763,13 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he subjugated the peoples of Gaul and Britain and made them tributary to Rome rather than letting them govern themselves; he never addressed the principle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "force-without-un": {
       "value": null,
@@ -3031,5 +3032,13 @@
       "sources": []
     }
   },
-  "notes": "His clemency to defeated opponents (Corfinium, Pharsalus) is documented in his Commentaries and Suetonius but matched no statement closely. The Oppius and Balbus letter (Cicero, Ad Atticum 9.7C) could not be opened (Perseus and Wikisource pages not found) and is not cited. Speeches reported by Sallust are a historian's composition and held to low confidence. Debt relief, the Julian calendar, sumptuary laws and the reduced grain roll were considered but did not match a statement's wording."
+  "notes": "His clemency to defeated opponents (Corfinium, Pharsalus) is documented in his Commentaries and Suetonius but matched no statement closely. The Oppius and Balbus letter (Cicero, Ad Atticum 9.7C) could not be opened (Perseus and Wikisource pages not found) and is not cited. Speeches reported by Sallust are a historian's composition and held to low confidence. Debt relief, the Julian calendar, sumptuary laws and the reduced grain roll were considered but did not match a statement's wording.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -287,12 +287,13 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: treated the American rising as treason to be suppressed (Proclamation of 1775); he did not state a general rule on revolution.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "experts-over-public": {
       "value": null,
@@ -1368,12 +1369,13 @@
       "sources": []
     },
     "sovereign-above-law": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his 1801 letter treats the coronation oath as binding him to the fundamental maxims of the constitution, so he did not claim to be above it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "space-expansion": {
       "value": null,
@@ -2143,12 +2145,13 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: as a hereditary king he insisted on the Royal Marriages Act 1772 to control royal marriages and the line of succession.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3030,5 +3033,13 @@
       "sources": []
     }
   },
-  "notes": "Slave trade stance, constitutional essays, Fortescue's Correspondence and the 1775 speech from the throne were not read in full text (Fortescue and Georgian Papers pages not reached); many nulls reflect that and that ministers made most policy. He privately accepted American independence by 1783 and told John Adams in 1785 he would meet friendship with the United States."
+  "notes": "Slave trade stance, constitutional essays, Fortescue's Correspondence and the 1775 speech from the throne were not read in full text (Fortescue and Georgian Papers pages not reached); many nulls reflect that and that ministers made most policy. He privately accepted American independence by 1783 and told John Adams in 1785 he would meet friendship with the United States.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

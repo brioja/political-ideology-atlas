@@ -161,13 +161,14 @@
       "sources": []
     },
     "strong-leader": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his four dissolutions of Parliament in 1679 to 1681 and his rule without Parliament from 1681 to 1685. He stated no view on gridlock.",
       "sources": [
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "state-harmful": {
       "value": null,
@@ -432,12 +433,13 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Breda calls the crown a right that 'God and Nature hath made our due', which implies that rule by descent suits certain families by birth.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "political-violence-never": {
       "value": null,
@@ -1836,13 +1838,14 @@
       "sources": []
     },
     "budget-needs-parliament": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1670 Dover pension was meant to make him financially independent of Parliament, a motive historians debate. The treaty's aim is documented, but the wider view is not stated.",
       "sources": [
         "s6",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "single-official-language": {
       "value": null,
@@ -3088,5 +3091,13 @@
       "sources": []
     }
   },
-  "notes": "Assent to the Clarendon Code (Conventicle, Five Mile and Uniformity Acts), the Test Act and the 1662 Licensing Act is not counted, as these were Parliament's laws he assented to. The Navigation Acts are treated the same way, and only the 1660 act's effects are used. The Secret Treaty of Dover's Catholic conversion clause is documented only through secondary reporting, and the Dover pension is cited as a motive historians debate. Wikisource copies of the 1672 Declaration and the Dover treaty were not reachable; the 1672 text used is from constitution.org. The king's 1681 Oxford declaration was not found in full; its content is taken from Dryden's quotations in His Majesties Declaration Defended. The Royal Society charters (1662 and 1663) are noted as royal patronage but support no statement. His deathbed reception into the Catholic Church is noted in Wikipedia as uncertain in conscious commitment, so it is not used to answer any statement."
+  "notes": "Assent to the Clarendon Code (Conventicle, Five Mile and Uniformity Acts), the Test Act and the 1662 Licensing Act is not counted, as these were Parliament's laws he assented to. The Navigation Acts are treated the same way, and only the 1660 act's effects are used. The Secret Treaty of Dover's Catholic conversion clause is documented only through secondary reporting, and the Dover pension is cited as a motive historians debate. Wikisource copies of the 1672 Declaration and the Dover treaty were not reachable; the 1672 text used is from constitution.org. The king's 1681 Oxford declaration was not found in full; its content is taken from Dryden's quotations in His Majesties Declaration Defended. The Royal Society charters (1662 and 1663) are noted as royal patronage but support no statement. His deathbed reception into the Catholic Church is noted in Wikipedia as uncertain in conscious commitment, so it is not used to answer any statement.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 3
+    }
+  ]
 }

@@ -880,12 +880,13 @@
    "sources": []
   },
   "jewish-state-israel": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Refused to recognise Israel until Palestinians get their rights, in line with a two-state solution; no statement on a right to a state in itself.",
    "sources": [
     "s13"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "diaspora-return-right": {
    "value": null,
@@ -3252,5 +3253,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia reports he has been held in Adiala Jail since 2023 with 2025 sentences in the Al-Qadir Trust and Toshakhana-II cases; he says the cases are political. The original books, full UNGA 2019 text and official manifesto PDF could not be opened, so answers rest on news reports of his statements and a SlideShare copy of the manifesto. His relationship to the army changed: he extended Bajwa in 2019 but blamed the army for his removal. Pre-2022 and post-2022 views on the US (partner vs alleged conspirator) are not used for any answer."
+ "notes": "Wikipedia reports he has been held in Adiala Jail since 2023 with 2025 sentences in the Al-Qadir Trust and Toshakhana-II cases; he says the cases are political. The original books, full UNGA 2019 text and official manifesto PDF could not be opened, so answers rest on news reports of his statements and a SlideShare copy of the manifesto. His relationship to the army changed: he extended Bajwa in 2019 but blamed the army for his removal. Pre-2022 and post-2022 views on the US (partner vs alleged conspirator) are not used for any answer.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

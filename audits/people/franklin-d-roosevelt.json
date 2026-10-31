@@ -728,12 +728,13 @@
       ]
     },
     "ethnic-nation": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he said the Constitution let all manner of men of all races, colors and creeds build American democracy, which is at odds with a nation of mainly one ethnic group.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "class-struggle-history": {
       "value": null,
@@ -1242,14 +1243,15 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "He said security should extend to all 'regardless of station, race, or creed' and that men of all races, colors and creeds could build American democracy; his record also includes Executive Order 9066 and no push for federal anti-lynching law.",
       "sources": [
         "s7",
         "s5",
         "s17"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "socialism-one-country": {
       "value": null,
@@ -3460,5 +3462,13 @@
       "sources": []
     }
   },
-  "notes": "Answers rest on his own speeches and messages (1932-1945) and on the record of laws and orders he signed. Where views changed, the later position is used: his 1932 pledge to balance the budget gave way to deficit-financed relief; peacetime neutrality gave way to aid to the Allies and a call for a world organization. His 1937 letter held that collective bargaining cannot be transplanted into the public service and that strikes of federal employees are intolerable; his support for unions applies to private-sector workers. One answer is inferred (marked 'Inferred:') and is low confidence. No position was recorded for many cultural, religious and gender statements; none were guessed."
+  "notes": "Answers rest on his own speeches and messages (1932-1945) and on the record of laws and orders he signed. Where views changed, the later position is used: his 1932 pledge to balance the budget gave way to deficit-financed relief; peacetime neutrality gave way to aid to the Allies and a call for a world organization. His 1937 letter held that collective bargaining cannot be transplanted into the public service and that strikes of federal employees are intolerable; his support for unions applies to private-sector workers. One answer is inferred (marked 'Inferred:') and is low confidence. No position was recorded for many cultural, religious and gender statements; none were guessed.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

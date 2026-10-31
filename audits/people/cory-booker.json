@@ -1561,13 +1561,14 @@
       "sources": []
     },
     "no-land-for-peace": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Supports a two-state solution to the Israeli-Palestinian conflict even with settlements, which implies territorial compromise; no direct statement on ceding land.",
       "sources": [
         "s25",
         "s26"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "property-serves-common-good": {
       "value": null,
@@ -3346,5 +3347,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed: vouchers (supported for years, then in September 2019 said they hurt equity, though he backed D.C.'s program that year); Medicare for All (open to single-payer in 2017, then backed it, later described himself as a pragmatist); Israel arms sales (opposed blocking them in 2024-25, voted to block certain sales in April 2026 tied to the Iran war); filibuster (defended in 2019, called for reform from 2021). Many statements are null because he has not spoken to them; Marijuana Justice Act covers cannabis only, not all drugs. The 25-hour speech in the Congressional Record is mostly health care, Medicaid, tax cuts and institutions."
+  "notes": "Views changed: vouchers (supported for years, then in September 2019 said they hurt equity, though he backed D.C.'s program that year); Medicare for All (open to single-payer in 2017, then backed it, later described himself as a pragmatist); Israel arms sales (opposed blocking them in 2024-25, voted to block certain sales in April 2026 tied to the Iran war); filibuster (defended in 2019, called for reform from 2021). Many statements are null because he has not spoken to them; Marijuana Justice Act covers cannabis only, not all drugs. The 25-hour speech in the Congressional Record is mostly health care, Medicaid, tax cuts and institutions.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

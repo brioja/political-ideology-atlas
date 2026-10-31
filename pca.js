@@ -677,9 +677,24 @@ function placementPrecision(ctx, answers) {
   return ctx.bar / placementUncertainty(ctx, answeredIndexes(answers));
 }
 
+// How precisely a record places someone on every real line, not only overall: each line gets an equal
+// share of the bar, since an error of the same size moves a distance equally on any line. The worst
+// line counts, scaled back to the whole (sqrt(k) times its error) so it compares with the bar. A record
+// precise on a few lines and silent on the rest (a single-cause ideology) sits by default near the
+// middle of the lines it doesn't address, and would match takers there; it fails here. A narrow line,
+// which barely changes any distance, is uncertain by little even with no answers, so it rarely decides.
+function lineUncertainty(ctx, knownIdx) {
+  const { model, k, noise } = ctx;
+  const comps = model.components.slice(0, k);
+  const M = comps.map((ca, a) => comps.map((cb, b) =>
+    (a === b ? 1 / ca.eigenvalue : 0) + knownIdx.reduce((s, j) => s + ca.vector[j] * cb.vector[j], 0) / noise));
+  const worst = Math.max(...comps.map((_, i) => solve(M, comps.map((_, j) => (j === i ? 1 : 0)))[i]));
+  return Math.sqrt(k * worst);
+}
+
 function salience(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
-  const uncertainty = placementUncertainty(ctx, known);
+  const uncertainty = lineUncertainty(ctx, known);
   return { known: known.length, uncertainty, bar: ctx.bar, salient: uncertainty <= ctx.bar };
 }
 

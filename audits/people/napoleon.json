@@ -468,12 +468,13 @@
       "sources": []
     },
     "one-party-rule": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated aim to fuse and unite parties rather than rule through one; his regime had no governing party.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "monarchy-legitimate": {
       "value": 2,
@@ -514,13 +515,14 @@
       "sources": []
     },
     "natural-rulers": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statements that what the people say is scarcely ever what they want and that their wants are better read in the prince's heart, and that men are governed by fear and interest.",
       "sources": [
         "s2",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "political-violence-never": {
       "value": -2,
@@ -559,12 +561,13 @@
       ]
     },
     "private-courts-defense": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his construction of state courts, police and army as monopolies.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "military-superiority": {
       "value": 2,
@@ -588,13 +591,14 @@
       "sources": []
     },
     "equal-outcomes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his stated belief in equality of rights and careers open to talent, alongside hereditary titles and rank.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "indigenous-land-authority": {
       "value": null,
@@ -2777,13 +2781,14 @@
       "sources": []
     },
     "person-over-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from conscription, which he called a debt each person owes the country, and his statement that the state was himself.",
       "sources": [
         "s2",
         "s12"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "spiritual-nature": {
       "value": 1,
@@ -2794,12 +2799,13 @@
       ]
     },
     "regional-powers-revocable": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his reorganization of local government into centrally appointed prefects with no autonomy of their own.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "gm-crops": {
       "value": null,
@@ -3240,13 +3246,14 @@
       "sources": []
     },
     "self-ownership": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his 1802 reinstatement of slavery and conscription of every man.",
       "sources": [
         "s7",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "cut-consumption-tax": {
       "value": null,
@@ -3365,5 +3372,13 @@
       "sources": []
     }
   },
-  "notes": "Answers rest on his recorded St Helena conversations (mediated by Las Cases, written after defeat and shaped by self-justification), his letters, and the laws and decrees of his regime. Some of his statements conflict with his record (e.g. 'defensive wars only' and the European plan versus his conquests); these are answered 0 or low. Plebiscite results were inflated. Answers marked 'Inferred:' are low confidence and follow directly from stated views or enacted measures."
+  "notes": "Answers rest on his recorded St Helena conversations (mediated by Las Cases, written after defeat and shaped by self-justification), his letters, and the laws and decrees of his regime. Some of his statements conflict with his record (e.g. 'defensive wars only' and the European plan versus his conquests); these are answered 0 or low. Plebiscite results were inflated. Answers marked 'Inferred:' are low confidence and follow directly from stated views or enacted measures.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

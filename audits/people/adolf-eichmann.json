@@ -507,13 +507,14 @@
    "sources": []
   },
   "duties-before-rights": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he repeatedly justified his actions as fulfilment of duty under oath to the Reich, which indicates he put duty to the state ahead of individual rights.",
    "sources": [
     "s3",
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "nature-intrinsic-value": {
    "value": null,
@@ -3054,5 +3055,13 @@
    "sources": []
   }
  },
- "notes": "His accounts conflict: at the 1961 trial he said he had no hatred of Jews, never thought annihilation justified and acted on orders, while the 1957 Sassen material (secondhand, via the Jewish Virtual Library and Wikipedia) records him as unrepentant. The trial court found he believed in the Nazi cause. Answers weigh his record of measures he personally drove, and mark contested points low. Memoirs written in prison and the Avner Less interrogation volume were not obtained in full text; the interrogation was read into the trial record."
+ "notes": "His accounts conflict: at the 1961 trial he said he had no hatred of Jews, never thought annihilation justified and acted on orders, while the 1957 Sassen material (secondhand, via the Jewish Virtual Library and Wikipedia) records him as unrepentant. The trial court found he believed in the Nazi cause. Answers weigh his record of measures he personally drove, and mark contested points low. Memoirs written in prison and the Avner Less interrogation volume were not obtained in full text; the interrogation was read into the trial record.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

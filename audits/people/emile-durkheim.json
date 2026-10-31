@@ -354,12 +354,13 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his proposal to end most inheritance and strictly limit remaining bequests implies substantial support for taxing large inheritances.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "basic-income": {
       "value": null,
@@ -3117,5 +3118,13 @@
       "sources": []
     }
   },
-  "notes": "The 1915 pamphlet criticizes Treitschke: passages presenting Treitschke’s doctrines are not Durkheim’s endorsements. His support for sex education does not establish the combined curriculum statement’s gender-equality component. General egalitarianism does not establish specific suffrage or reproductive policies. The inheritance-tax answer is explicitly inferred; abolition and taxation are different instruments."
+  "notes": "The 1915 pamphlet criticizes Treitschke: passages presenting Treitschke’s doctrines are not Durkheim’s endorsements. His support for sex education does not establish the combined curriculum statement’s gender-equality component. General egalitarianism does not establish specific suffrage or reproductive policies. The inheritance-tax answer is explicitly inferred; abolition and taxation are different instruments.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

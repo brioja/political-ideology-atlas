@@ -423,22 +423,24 @@
    "sources": []
   },
   "separate-church-state": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he defended velayat-e faqih, which fuses religious and political authority; no direct statement on this item.",
    "sources": [
     "s4",
     "s5"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "laws-from-scripture": {
-   "value": 2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he defended velayat-e faqih and the Islamic Republic's system as legitimate, whose constitution bases law on Islamic jurisprudence; no direct statement on this item.",
    "sources": [
     "s4",
     "s5"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "private-courts-defense": {
    "value": null,
@@ -3012,5 +3014,13 @@
    "sources": []
   }
  },
- "notes": "Born 3 June 1958, died 17 March 2026 per Wikipedia. His brothers' statements (e.g. Mohammad-Javad Larijani's 2012 CNN interview) were excluded. Little on hijab, economy or social issues was found in sources opened."
+ "notes": "Born 3 June 1958, died 17 March 2026 per Wikipedia. His brothers' statements (e.g. Mohammad-Javad Larijani's 2012 CNN interview) were excluded. Little on hijab, economy or social issues was found in sources opened.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

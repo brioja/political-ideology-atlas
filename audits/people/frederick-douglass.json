@@ -389,13 +389,14 @@
    "sources": []
   },
   "restrict-hate-speech": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: in 1860 he insisted free speech must not be given up to mob pressure, even for unpopular speakers, and held it as the right tyrants dread most.",
    "sources": [
     "b13"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "strong-leader": {
    "value": null,
@@ -657,13 +658,14 @@
    "sources": []
   },
   "widespread-small-property": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Foner, Reconstruction chapter (1880-81): he contrasts freedmen turned out landless with Russian serfs given three acres and regrets that they were left dependent on the old master class; this implies support for broad small ownership but he does not state the principle.",
    "sources": [
     "c1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "abolish-money-wages": {
    "value": null,
@@ -1931,13 +1933,14 @@
    "sources": []
   },
   "courts-bound-by-majority": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his attacks on Dred Scott and the 1883 civil rights ruling demanded courts enforce equal rights, not defer to white majorities.",
    "sources": [
     "b5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "gender-parity-bodies": {
    "value": null,
@@ -3569,6 +3572,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
   }
  ]
 }

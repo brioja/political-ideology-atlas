@@ -598,13 +598,14 @@
    ]
   },
   "one-party-rule": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Called a single party unreal, formed a multiparty government, and said nobody, himself included, would accept one party's hegemony.",
    "sources": [
     "s9",
     "s6"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "monarchy-legitimate": {
    "value": null,
@@ -830,13 +831,14 @@
    ]
   },
   "return-to-foraging": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he wanted rapid industrial development, science and technology to end hunger and underdevelopment, which excludes a return to foraging.",
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-division-of-labor": {
    "value": null,
@@ -893,12 +895,13 @@
    ]
   },
   "taxation-theft": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his program relied on taxes, and he proposed taxing the highest incomes, so he cannot have regarded taxation as theft.",
    "sources": [
     "s12"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "harm-principle": {
    "value": null,
@@ -3612,5 +3615,13 @@
    "sources": []
   }
  },
- "notes": "Answers rest mainly on his own speeches and interviews (marxists.org archive) and the Unidad Popular program he championed. He said in 1972 that workers would administer, not own, nationalised firms. Evidence on the 1972-73 economic crisis and on tolerance of armed leftist groups is contested and mostly not recorded as answers. He took office after accepting the Statute of Constitutional Guarantees demanded by the Christian Democrats."
+ "notes": "Answers rest mainly on his own speeches and interviews (marxists.org archive) and the Unidad Popular program he championed. He said in 1972 that workers would administer, not own, nationalised firms. Evidence on the 1972-73 economic crisis and on tolerance of armed leftist groups is contested and mostly not recorded as answers. He took office after accepting the Statute of Constitutional Guarantees demanded by the Christian Democrats.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

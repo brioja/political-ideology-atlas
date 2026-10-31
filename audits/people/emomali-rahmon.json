@@ -2164,12 +2164,13 @@
       "sources": []
     },
     "religious-dress-in-state": {
-      "value": 2,
+      "value": null,
       "confidence": "high",
       "rationale": "He signed the 2024 prohibition of supposedly alien clothing, explicitly targeting hijab; restrictions extend to state institutions.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "ban-nda-harassment": {
       "value": null,
@@ -3106,5 +3107,13 @@
       "sources": []
     }
   },
-  "notes": "Record covers the civil-war settlement and its later dismantling, constitutional changes, religious legislation and recent development speeches. Institutional restrictions are attributed as governing policies, not assumed private beliefs. No inference from party membership. General job targets, cultural pride, cashless payments and scientific investment do not establish universal job guarantees, racial hierarchy, opposition to payment privacy or technological solutions to every human problem. Religious dress restrictions do not establish views on apostasy or blasphemy. Legal immunity is narrower than unlimited freedom from every law, hence medium confidence. No completed dynastic transition or statutory abolition of capital punishment is claimed."
+  "notes": "Record covers the civil-war settlement and its later dismantling, constitutional changes, religious legislation and recent development speeches. Institutional restrictions are attributed as governing policies, not assumed private beliefs. No inference from party membership. General job targets, cultural pride, cashless payments and scientific investment do not establish universal job guarantees, racial hierarchy, opposition to payment privacy or technological solutions to every human problem. Religious dress restrictions do not establish views on apostasy or blasphemy. Legal immunity is narrower than unlimited freedom from every law, hence medium confidence. No completed dynastic transition or statutory abolition of capital punishment is claimed.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

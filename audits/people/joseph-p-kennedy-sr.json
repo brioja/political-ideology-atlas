@@ -79,12 +79,13 @@
       "sources": []
     },
     "markets-allocate-better": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he called the complaint that there was 'too much Government in business' a baseless lament and described regulation as necessary to restrain 'the power of the strong over the weak', which points away from trusting free markets alone; he never addressed the comparison directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "public-ownership": {
       "value": null,
@@ -158,12 +159,13 @@
       ]
     },
     "state-harmful": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he defended an expanding role for government agencies and called it unmanly to blame government for business's own lack of courage, which is incompatible with the state being unnecessary and harmful.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-guns": {
       "value": null,
@@ -926,13 +928,14 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: as SEC and Maritime Commission chairman he administered market supervision, wage floors and subsidies, and defended such functions as legitimate, beyond defence, justice and property protection.",
       "sources": [
         "s3",
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "discourage-race-mixing": {
       "value": null,
@@ -1338,13 +1341,14 @@
       "sources": []
     },
     "collective-defense": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in 1950 he urged applying the withdrawal principle to Europe and rejected fighting Communism abroad; in 1941 he left hemisphere defence to other countries' self-interest.",
       "sources": [
         "s6",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1575,13 +1579,14 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he argued in 1934-35 that regulation would restore confidence and that business could recover under the new securities laws ('We cannot turn back'), implying capitalism could be reformed rather than collapse; no direct statement on collapse theory.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "former-empire-influence": {
       "value": null,
@@ -2144,13 +2149,14 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he was a strong supporter of the New Deal and defended regulation as protecting both investors and honest business, which fits a market economy with public protections; he did not frame it in these terms.",
       "sources": [
         "s7",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2603,12 +2609,13 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: in 1947 and 1950 he argued proposed Cold War military budgets would 'seriously affect the economic well-being of our country' and urged withdrawal from Korea and elsewhere in Asia, which points to lower armaments; he did not state a general level.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "open-diplomacy": {
       "value": null,
@@ -3061,5 +3068,13 @@
       "sources": []
     }
   },
-  "notes": "Full texts of the 1936 book I'm for Roosevelt, the December 1950 University of Virginia speech and the 1941 Lend-Lease testimony were not obtainable, so the 1950 positions rest on quotations reported by The Nation from Nasaw. Reported private remarks about Jews are secondhand and were left null. Support for Joseph McCarthy is a record of donations, not stated views on any statement."
+  "notes": "Full texts of the 1936 book I'm for Roosevelt, the December 1950 University of Virginia speech and the 1941 Lend-Lease testimony were not obtainable, so the 1950 positions rest on quotations reported by The Nation from Nasaw. Reported private remarks about Jews are secondhand and were left null. Support for Joseph McCarthy is a record of donations, not stated views on any statement.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 7
+    }
+  ]
 }

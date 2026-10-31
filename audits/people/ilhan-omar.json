@@ -660,7 +660,7 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Wants military action to be a last resort (implying not never), but her record is opposition to most US interventions (Iran, Venezuela, Ukraine aid vote). She has not stated a position on intervention to stop atrocities.",
       "sources": [
@@ -668,7 +668,8 @@
         "s16",
         "s28"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": null,
@@ -3057,14 +3058,15 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Wants military action to be a last resort and opposed the 2026 Iran war as unauthorised; has not stated a defence-only rule.",
       "sources": [
         "s5",
         "s16"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "language-defines-nation": {
       "value": null,
@@ -3625,6 +3627,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
     }
   ]
 }

@@ -968,13 +968,14 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Regards violent revolution as a last resort to be avoided where possible, which implies it can sometimes be justified.",
       "sources": [
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "nulledFrom": 1
     },
     "experts-over-public": {
       "value": -2,
@@ -1842,13 +1843,14 @@
       "auditor": "claude-sonnet-5-5"
     },
     "state-strengthens-encirclement": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Doubts that more dictatorial structures would have better defended the Spanish revolution and suggests a more consistent libertarian policy might have been the only possible defense.",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "consent-of-governed": {
       "value": null,
@@ -4157,5 +4159,13 @@
       "sources": []
     }
   },
-  "notes": "Based mostly on his own texts: full-text books (Manufacturing Consent, Profit Over People, How the World Works, Keeping the Rabble in Line, Class Warfare, Necessary Illusions, Fateful Triangle, Failed States, Rogue States, Chomsky on Anarchism) and chomsky.info articles and interviews. Understanding Power, Hegemony or Survival, Requiem for the American Dream and Who Rules the World? (English) could not be read in full text (Internet Archive lending copies or only a non-English edition), so nothing rests on them. Recent position wins where views changed: he calls a two-state settlement the best practical path but prefers binational or no-state arrangements, and he accepts strategic voting for Democrats in swing states since 2016. Wikipedia pages are used only as secondary pointers and for the Nuremberg remark and copyright quotation.\n\nMerged with an independent claude-haiku-5-5 audit: 9 answers taken from it, 43 agreed, 2 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Positions are drawn from his own articles and interviews on chomsky.info plus Wikipedia as a reference. Coverage is strongest on economy, government, world affairs and the media. Israel-Palestine: his stated preference shifted over decades (a binational or one-state option in the 1970s-2000s, a two-state international-consensus settlement by 2023), so the 2023 interview is taken as the most recent clear view. Faurisson: he defended the right of expression, and his 1980 essay does not endorse Faurisson's claims. Wikipedia reports a 2023 stroke with loss of ability to speak or walk, so no newer positions are recorded. Books (Understanding Power, Requiem for the American Dream, Who Rules the World?, Hegemony or Survival) were not downloaded separately; the chomsky.info texts used include the book-related talks and interviews. 'Government in the Future' (1970) was not found in the chomsky.info index. Most statements are null because the corpus does not address them."
+  "notes": "Based mostly on his own texts: full-text books (Manufacturing Consent, Profit Over People, How the World Works, Keeping the Rabble in Line, Class Warfare, Necessary Illusions, Fateful Triangle, Failed States, Rogue States, Chomsky on Anarchism) and chomsky.info articles and interviews. Understanding Power, Hegemony or Survival, Requiem for the American Dream and Who Rules the World? (English) could not be read in full text (Internet Archive lending copies or only a non-English edition), so nothing rests on them. Recent position wins where views changed: he calls a two-state settlement the best practical path but prefers binational or no-state arrangements, and he accepts strategic voting for Democrats in swing states since 2016. Wikipedia pages are used only as secondary pointers and for the Nuremberg remark and copyright quotation.\n\nMerged with an independent claude-haiku-5-5 audit: 9 answers taken from it, 43 agreed, 2 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Positions are drawn from his own articles and interviews on chomsky.info plus Wikipedia as a reference. Coverage is strongest on economy, government, world affairs and the media. Israel-Palestine: his stated preference shifted over decades (a binational or one-state option in the 1970s-2000s, a two-state international-consensus settlement by 2023), so the 2023 interview is taken as the most recent clear view. Faurisson: he defended the right of expression, and his 1980 essay does not endorse Faurisson's claims. Wikipedia reports a 2023 stroke with loss of ability to speak or walk, so no newer positions are recorded. Books (Understanding Power, Requiem for the American Dream, Who Rules the World?, Hegemony or Survival) were not downloaded separately; the chomsky.info texts used include the book-related talks and interviews. 'Government in the Future' (1970) was not found in the chomsky.info index. Most statements are null because the corpus does not address them.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

@@ -199,12 +199,13 @@
       ]
     },
     "one-party-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his statement that communism's lack of free speech, protest, religion and press is characteristic of a totalitarian regime.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-communism": {
       "value": 0,
@@ -389,13 +390,14 @@
       ]
     },
     "public-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his repeated plans to use private-sector incentives (tax credits, Bedford-Stuyvesant), and his saying community action and private enterprise should combine, rather than public ownership.",
       "sources": [
         "s6",
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "reason-over-faith": {
       "value": -1,
@@ -3106,5 +3108,13 @@
       "sources": []
     }
   },
-  "notes": "This is Senator Robert F. Kennedy (1925-1968), not his son. Views on Vietnam moved from support of his brother's policies to public opposition by 1966-68; the most recent position (negotiation, bombing halt, no immediate withdrawal) is used. Primary texts at the JFK Library were blocked (403) and the books were unavailable, so many topics remain null."
+  "notes": "This is Senator Robert F. Kennedy (1925-1968), not his son. Views on Vietnam moved from support of his brother's policies to public opposition by 1966-68; the most recent position (negotiation, bombing halt, no immediate withdrawal) is used. Primary texts at the JFK Library were blocked (403) and the books were unavailable, so many topics remain null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

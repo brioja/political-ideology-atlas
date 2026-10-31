@@ -253,12 +253,13 @@
       "sources": []
     },
     "drastic-climate-action": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In September 2019 at the Venice Film Festival he said of world leaders that 'they are ruining the world' on climate and urged that the leaders of Brazil, London and Washington be voted out of office for it. This implies that government action on climate must go much further; he did not spell out the policies he wanted.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "tech-solves-problems": {
       "value": null,
@@ -2985,5 +2986,13 @@
       "sources": []
     }
   },
-  "notes": "Known answers: 1 of 490. The record is thin. Most of his public activity is anti-Vietnam War and anti-Iraq-war activism, which is documented as activism rather than as stated positions, so it is not answered. Wikipedia says he opposed the 2003 US-led invasion of Iraq, but gives no quote; this was not used. An Iraq quote attributed to a 2005 BBC interview and a 2008 Huffington Post blog endorsing Obama could not be verified in any page opened, so neither was used. His 2015 Globe and Mail op-ed (\"I'm Canadian -- and I have a right to vote\") argued for expatriate voting; the page could not be opened (CBC and CP24 returned 403 and 404), so no answer is based on it, and no statement covers expatriate voting. Endorsements (Obama 2008, Mulcair 2015) are not positions. His Hunger Games comments urge participation and change in general terms and are not answers to any specific statement."
+  "notes": "Known answers: 1 of 490. The record is thin. Most of his public activity is anti-Vietnam War and anti-Iraq-war activism, which is documented as activism rather than as stated positions, so it is not answered. Wikipedia says he opposed the 2003 US-led invasion of Iraq, but gives no quote; this was not used. An Iraq quote attributed to a 2005 BBC interview and a 2008 Huffington Post blog endorsing Obama could not be verified in any page opened, so neither was used. His 2015 Globe and Mail op-ed (\"I'm Canadian -- and I have a right to vote\") argued for expatriate voting; the page could not be opened (CBC and CP24 returned 403 and 404), so no answer is based on it, and no statement covers expatriate voting. Endorsements (Obama 2008, Mulcair 2015) are not positions. His Hunger Games comments urge participation and change in general terms and are not answers to any specific statement.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

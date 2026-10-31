@@ -381,13 +381,14 @@
       ]
     },
     "democracy-best": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: His expressed programme legitimised rule by Han dynastic descent and restoration, rather than government chosen by voters.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "direct-votes": {
       "value": null,
@@ -3029,5 +3030,13 @@
       "sources": []
     }
   },
-  "notes": "The first memorial is used as his own surviving writing. Historical reports, even when quoting him, are medium confidence at most. The disputed second memorial and anecdotes challenged by Pei Songzhi are not used as firm evidence; later military treatises and Romance of the Three Kingdoms episodes are excluded. The northern campaigns concern dynastic recovery, not a modern nation divided by an outside border. Military agricultural colonies alone do not establish support for collective ownership of all farmland. Local chief rule did not amount to independence. Impartiality between officials does not establish universal equal moral worth or modern judicial checks on the emperor. All statements were reviewed, leaving unrecorded social, ecological and technological policies null."
+  "notes": "The first memorial is used as his own surviving writing. Historical reports, even when quoting him, are medium confidence at most. The disputed second memorial and anecdotes challenged by Pei Songzhi are not used as firm evidence; later military treatises and Romance of the Three Kingdoms episodes are excluded. The northern campaigns concern dynastic recovery, not a modern nation divided by an outside border. Military agricultural colonies alone do not establish support for collective ownership of all farmland. Local chief rule did not amount to independence. Impartiality between officials does not establish universal equal moral worth or modern judicial checks on the emperor. All statements were reviewed, leaving unrecorded social, ecological and technological policies null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

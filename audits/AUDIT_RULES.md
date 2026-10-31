@@ -116,8 +116,9 @@ least one source id from your `sources` list.
   never discuss is at most `medium`.
 - `medium`: clearly implied by what the subject said or did on this statement's topic; reported by a
   secondary or scholarly source; or (for an ideology) the documented majority view of adherents.
-- `low`: mixed, contested or anachronistic. If the rationale has to say that the evidence or
-  adherents are split, or that the question is anachronistic, the answer is `low`.
+- `low`: mixed or contested. If the rationale has to say that the evidence or adherents are split,
+  the answer is `low`. A question anachronistic for the subject (it couldn't have taken a side on it)
+  is `null`, unless the subject's own texts settle it anyway.
 
 ## 5. Salience
 

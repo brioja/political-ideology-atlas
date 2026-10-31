@@ -884,13 +884,14 @@
    ]
   },
   "results-over-ideology": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Insisted on keeping party policy uncompromisingly in line with principle rather than judging by votes gained.",
    "sources": [
     "s16",
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "direct-action": {
    "value": -1,
@@ -941,13 +942,14 @@
    ]
   },
   "dictatorship-of-proletariat": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: backed the Bolshevik regime and its working-class rule in 1919 and 1922 but never described a dictatorship of the proletariat in his own terms.",
    "sources": [
     "s12",
     "s22"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "collective-farming": {
    "value": null,
@@ -3465,12 +3467,13 @@
    "sources": []
   },
   "extrajudicial-killing": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he opposed capital punishment even after trial and condemned mob lynching as bloodlust.",
    "sources": [
     "s20"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "close-ties-china": {
    "value": null,
@@ -3623,5 +3626,13 @@
    ]
   }
  },
- "notes": "He moved from craft unionism (Brotherhood of Locomotive Firemen) to industrial unionism and socialism after the 1894 Pullman strike. His anti-immigration-restriction and race-equality stances are from 1903-1910. His praise for Bolshevism (1918-1919) was tempered in 1922 by insisting each country find its own road. Wording on direct action and violence is mixed: he backed political revolution and praised John Brown but rejected anarchist direct action. Inferred answers are marked low."
+ "notes": "He moved from craft unionism (Brotherhood of Locomotive Firemen) to industrial unionism and socialism after the 1894 Pullman strike. His anti-immigration-restriction and race-equality stances are from 1903-1910. His praise for Bolshevism (1918-1919) was tempered in 1922 by insisting each country find its own road. Wording on direct action and violence is mixed: he backed political revolution and praised John Brown but rejected anarchist direct action. Inferred answers are marked low.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 3
+  }
+ ]
 }

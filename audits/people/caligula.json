@@ -168,13 +168,14 @@
    "sources": []
   },
   "strong-leader": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his reported 'Let there be one Lord, one King' and his claimed right to do anything, he favoured a single unconstrained ruler; he never spoke of benefit to the country.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "state-harmful": {
    "value": null,
@@ -819,14 +820,15 @@
    "sources": []
   },
   "rule-by-example": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his stated motto 'Let them hate me, so they but fear me' and his senate speech advising fear and self-regard over affection show he relied on fear rather than example.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "national-self-determination": {
    "value": null,
@@ -1074,7 +1076,7 @@
    "sources": []
   },
   "separated-powers": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his claim of a right to do anything to anybody and his taking trials into his own hands (Suetonius, Dio), he did not accept power divided among bodies that check each other.",
    "sources": [
@@ -1085,7 +1087,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "vanguard-party": {
    "value": null,
@@ -1724,17 +1727,18 @@
    "sources": []
   },
   "resist-lawless-ruler": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his claimed right to do anything to anybody and his execution of those suspected of plotting, he denied subjects any right to resist or remove a ruler.",
    "sources": [
     "s1",
     "s2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "parliament-supreme": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his stated right to do anything to anybody and his saying he would never again be fellow-citizen or prince to the senate (Suetonius), he treated the senate as subordinate to himself.",
    "sources": [
@@ -1744,7 +1748,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "animal-suffering-matters": {
    "value": null,
@@ -2246,13 +2251,14 @@
    "sources": []
   },
   "divine-source-of-authority": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: Philo §§353–357 links his claim to divine status with demands for obedience and worship.",
    "sources": [
     "b1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 1
   },
   "religious-dress-in-state": {
    "value": null,
@@ -2631,13 +2637,14 @@
    "sources": []
   },
   "person-over-state": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: his asserted right to do anything to anyone subordinates personal inviolability to the ruler (Suetonius 29).",
    "sources": [
     "b3"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": -1
   },
   "spiritual-nature": {
    "value": null,
@@ -3197,6 +3204,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 7
   }
  ]
 }

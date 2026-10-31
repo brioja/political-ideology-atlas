@@ -1787,13 +1787,14 @@
       "sources": []
     },
     "ban-cartels": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: VIII condemns monopolization; V requires princely moral enforcement.",
       "sources": [
         "b4"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": 1
     },
     "no-bailouts": {
       "value": null,
@@ -3420,13 +3421,14 @@
       "sources": []
     },
     "distribution-by-process": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: VIII and X distinguish lawful wealth from fraudulent acquisition.",
       "sources": [
         "b4"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "nulledFrom": 1
     },
     "financial-transactions-tax": {
       "value": null,
@@ -3497,6 +3499,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
     }
   ]
 }

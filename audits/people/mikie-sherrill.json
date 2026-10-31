@@ -567,14 +567,15 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Condemned federal cuts to healthcare, housing, food aid and foster care, praised Social Security and Medicare, and funded school meals and housing aid; 'welfare' as such was not addressed.",
       "sources": [
         "s2",
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "worker-ownership": {
       "value": null,
@@ -1308,7 +1309,7 @@
       "sources": []
     },
     "school-vouchers": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Said she would reject the Trump administration's plan to expand vouchers through tax credits; supports public school choice and magnet schools.",
       "sources": [
@@ -1320,7 +1321,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "avoid-deficit-stimulus": {
       "value": -1,
@@ -1901,13 +1903,14 @@
       "sources": []
     },
     "no-land-for-peace": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Repeatedly called for a path to a two-state solution, which implies territorial compromise, but did not address land claims directly.",
       "sources": [
         "s10"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "property-serves-common-good": {
       "value": null,
@@ -3441,7 +3444,7 @@
       ]
     },
     "voter-id": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Said she would back a state voter ID law and has no problem with voter ID, but called the federal SAVE America Act (proof of citizenship) a tool of voter suppression.",
       "sources": [
@@ -3451,7 +3454,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religious-equal-recognition": {
       "value": null,
@@ -3755,6 +3759,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
     }
   ]
 }

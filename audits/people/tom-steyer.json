@@ -233,13 +233,14 @@
       "sources": []
     },
     "limit-guns": {
-      "value": 1,
+      "value": null,
       "confidence": "high",
       "rationale": "His October 2019 gun plan proposed a national license for all gun ownership, a national registry for existing assault weapons and a ban on new ones. It does not extend to all guns.",
       "sources": [
         "s4",
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "empower-police-military": {
       "value": null,
@@ -935,12 +936,13 @@
       "sources": []
     },
     "expand-fossil-fuels": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Campaign platform called to 'eliminate our dependence on fossil fuels', end American fossil fuel exports and prevent drilling in the Arctic. Expansion of domestic production is not addressed directly.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "assimilate-immigrants": {
       "value": null,
@@ -3112,5 +3114,13 @@
       "sources": []
     }
   },
-  "notes": "Health care changed over time: he opposed Medicare for All and backed a public option in 2019-2020, then in December 2025 said 'We need single-payer health care' and used the most recent statement. Most of the known answers come from his 2019-2020 campaign releases (American Presidency Project copies) and his 2026 issue page and reported remarks. Many statements are left null: the reviewed sources did not address them. Searches on unions, drug policy, Israel/Iran beyond the 2020 statement, and abortion beyond 2017 found too little usable text. Attempts to fetch the 2026 Substack ICE post and the Davis Vanguard interview failed (403) and the Bloomberg Law article was paywalled, so those are reported only through secondary coverage and Wikipedia. Two campaign-era items (the 2020 criminal justice plan and the 2019 marijuana interview) were found only in pages that could not be fetched, so they are not used."
+  "notes": "Health care changed over time: he opposed Medicare for All and backed a public option in 2019-2020, then in December 2025 said 'We need single-payer health care' and used the most recent statement. Most of the known answers come from his 2019-2020 campaign releases (American Presidency Project copies) and his 2026 issue page and reported remarks. Many statements are left null: the reviewed sources did not address them. Searches on unions, drug policy, Israel/Iran beyond the 2020 statement, and abortion beyond 2017 found too little usable text. Attempts to fetch the 2026 Substack ICE post and the Davis Vanguard interview failed (403) and the Bloomberg Law article was paywalled, so those are reported only through secondary coverage and Wikipedia. Two campaign-era items (the 2020 criminal justice plan and the 2019 marijuana interview) were found only in pages that could not be fetched, so they are not used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

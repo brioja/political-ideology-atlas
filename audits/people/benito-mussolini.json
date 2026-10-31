@@ -107,12 +107,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Charter of Labour (Art. 27) sets as an aim compulsory insurance against occupational disease and tuberculosis as a 'first step towards compulsory insurance against all disease', funded by employer and worker contributions rather than general taxation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "raise-minimum-wage": {
       "value": null,
@@ -336,13 +337,14 @@
       ]
     },
     "free-trade": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his government adopted protectionism (1925 grain) and state economic control, and the Doctrine rejects economic liberalism.",
       "sources": [
         "s12",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "nation-first": {
       "value": 2,
@@ -378,12 +380,13 @@
       "sources": []
     },
     "tech-solves-problems": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Doctrine rejects the 'myth of felicity and indefinite progress' and the equation of material well-being with happiness.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "expand-nuclear": {
       "value": null,
@@ -401,13 +404,14 @@
       ]
     },
     "experts-over-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Doctrine places the nation's will in 'the few, if not one'; his 1919 programme proposed national technical councils with legislative powers.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "central-planning": {
       "value": null,
@@ -518,13 +522,14 @@
       ]
     },
     "direct-votes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he rejected government by popular consultation, though his regime used plebiscites to approve a single list.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "workers-councils": {
       "value": -2,
@@ -1024,12 +1029,13 @@
       ]
     },
     "sacrifice-heritage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Doctrine places great value on culture, tradition and records.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dominated-front": {
       "value": null,
@@ -1773,12 +1779,13 @@
       "sources": []
     },
     "economic-self-sufficiency": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Fascist economic policy emphasised domestic production, protectionism and state economic control.",
       "sources": [
         "s12"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "trade-labor-env-standards": {
       "value": null,
@@ -2240,12 +2247,13 @@
       "sources": []
     },
     "national-law-over-international": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he used poison gas despite the Geneva Protocol and defied League sanctions.",
       "sources": [
         "s11"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religious-nation": {
       "value": null,
@@ -2445,12 +2453,13 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Doctrine places authority in the State rather than God or the people.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2541,13 +2550,14 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1938 laws removed Jews from public office and Verona declared them foreigners.",
       "sources": [
         "s7",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "online-participation": {
       "value": null,
@@ -3454,5 +3464,13 @@
       "sources": []
     }
   },
-  "notes": "Views changed over time: a socialist before 1914, he turned to revolutionary nationalism, and his 1919 programme (women's vote, proportional representation, abolition of the Senate, progressive capital levy, church property seizure) was largely dropped after 1922; the mature position (1925-1943) is used, with the 1943 Verona programme (republic, constituent assembly, socialisation) noted where it differs. The Doctrine of Fascism's first part is credited to Giovanni Gentile, but both parts were issued under his name. The 3 January 1925 speech, the Ascension Day speech, the 1935 and 1940 war declarations, the Manifesto of Verona text and the 1938 laws were not opened as primary texts; they are described through the cited reference pages only. Several 1938 racial measures were promulgated by the king on Mussolini's proposal; Wikipedia reports he later privately said the Manifesto of Race could have been avoided, and the record on his private antisemitism is contested."
+  "notes": "Views changed over time: a socialist before 1914, he turned to revolutionary nationalism, and his 1919 programme (women's vote, proportional representation, abolition of the Senate, progressive capital levy, church property seizure) was largely dropped after 1922; the mature position (1925-1943) is used, with the 1943 Verona programme (republic, constituent assembly, socialisation) noted where it differs. The Doctrine of Fascism's first part is credited to Giovanni Gentile, but both parts were issued under his name. The 3 January 1925 speech, the Ascension Day speech, the 1935 and 1940 war declarations, the Manifesto of Verona text and the 1938 laws were not opened as primary texts; they are described through the cited reference pages only. Several 1938 racial measures were promulgated by the king on Mussolini's proposal; Wikipedia reports he later privately said the Manifesto of Race could have been avoided, and the record on his private antisemitism is contested.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 10
+    }
+  ]
 }

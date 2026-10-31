@@ -532,14 +532,15 @@
       ]
     },
     "central-planning": {
-      "value": -2,
+      "value": null,
       "confidence": "high",
       "rationale": "Calls the British economy a 'corporatist command economy' akin to the USSR and says central planners always get it wrong.",
       "sources": [
         "s11",
         "s17",
         "s21"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "socialized-markets": {
       "value": null,
@@ -2924,12 +2925,13 @@
       "sources": []
     },
     "racial-pride": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Belonging paper says nothing is shameful in acknowledging English, Welsh, Scottish ethnic identities and concern for the White British population is not inherently racist.",
       "sources": [
         "s10"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "defensive-wars-only": {
       "value": null,
@@ -3466,5 +3468,13 @@
       "sources": []
     }
   },
-  "notes": "Left Reform UK in 2025 (whip suspended March 2025) and now leads Restore Britain, registered as a party in March 2026. Party documents are published under his leadership and often with his foreword, so they are treated as his positions. Answers use his most recent positions (2025-2026). Positions before 2024 (Referendum Party 1997, Brexit Party MEP 2019-20) were not separately documented from primary text and are not used. Foreign policy (Ukraine, Israel), abortion, same-sex marriage and drug policy were searched and left null for lack of his own statements."
+  "notes": "Left Reform UK in 2025 (whip suspended March 2025) and now leads Restore Britain, registered as a party in March 2026. Party documents are published under his leadership and often with his foreword, so they are treated as his positions. Answers use his most recent positions (2025-2026). Positions before 2024 (Referendum Party 1997, Brexit Party MEP 2019-20) were not separately documented from primary text and are not used. Foreign policy (Ukraine, Israel), abortion, same-sex marriage and drug policy were searched and left null for lack of his own statements.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
+    }
+  ]
 }

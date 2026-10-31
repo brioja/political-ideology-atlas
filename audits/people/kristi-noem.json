@@ -417,13 +417,14 @@
    "auditor": "claude-sonnet-5-5"
   },
   "no-religion-state-schools": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Backed a school-prayer bill, which suggests she does not favour excluding religion from state schools; instruction itself not addressed.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "school-vouchers": {
    "value": 2,
@@ -592,22 +593,24 @@
    "auditor": "claude-sonnet-5-5"
   },
   "freedom-to-discriminate": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Signed S.B. 124 (2021) letting businesses cite religious belief to refuse services; general statement not stated by her.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "gender-social-construct": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Her sex-based sports position implies she treats sex and gender as fixed; no direct statement found.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -1
   },
   "raise-minimum-wage": {
    "value": null,
@@ -2238,14 +2241,15 @@
    "sources": []
   },
   "budget-needs-parliament": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Acknowledged congressional funding limits; her personal facility-access memoranda used an appropriations workaround the court found likely unlawful.",
    "sources": [
     "b25",
     "b6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "nulledFrom": 0
   },
   "single-official-language": {
    "value": null,
@@ -3461,6 +3465,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

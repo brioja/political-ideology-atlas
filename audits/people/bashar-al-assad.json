@@ -332,13 +332,14 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Opposed Western military action over Syria, saying a strike would support Al-Qaeda groups and that foreign pretexts of freedom and democracy mask a plot.",
    "sources": [
     "s7",
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "open-borders": {
    "value": null,
@@ -3216,5 +3217,13 @@
    "sources": []
   }
  },
- "notes": "Living: Wikipedia records no death; he was overthrown on 8 December 2024 and lives in exile in Moscow. Answers rest on his speeches and interviews (2000-2023 reported speech) and on measures he personally drove (2012 constitution, wartime conduct). Contested points are low confidence. No answers are inferred from party, label or his father."
+ "notes": "Living: Wikipedia records no death; he was overthrown on 8 December 2024 and lives in exile in Moscow. Answers rest on his speeches and interviews (2000-2023 reported speech) and on measures he personally drove (2012 constitution, wartime conduct). Contested points are low confidence. No answers are inferred from party, label or his father.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

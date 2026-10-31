@@ -2221,12 +2221,13 @@
       "sources": []
     },
     "purge-loanwords": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: wrote that only a nation that keeps the purity of its own language can develop independently.",
       "sources": [
         "s20"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "treaties-binding": {
       "value": null,
@@ -3317,5 +3318,13 @@
       ]
     }
   },
-  "notes": "Works published under his name count as his words, whoever drafted them. Late works (2011 public health talk, ITAR-Tass interview) show a continued line on Songun, the nuclear deterrent and free medical care. The record includes political repression, a 1990s famine and unfree press, per the Wikipedia reference; none of that is in his own texts and is not used to answer statements without his stated position."
+  "notes": "Works published under his name count as his words, whoever drafted them. Late works (2011 public health talk, ITAR-Tass interview) show a continued line on Songun, the nuclear deterrent and free medical care. The record includes political repression, a 1990s famine and unfree press, per the Wikipedia reference; none of that is in his own texts and is not used to answer statements without his stated position.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

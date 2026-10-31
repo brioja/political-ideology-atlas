@@ -1016,13 +1016,14 @@
       "sources": []
     },
     "restrict-conversion": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from the heresy laws she revived, which penalised adopting Protestant belief; no law on conversion as such is recorded.",
       "sources": [
         "s6"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1181,7 +1182,7 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: she commanded the muster against Northumberland and Wyatt and appointed her own council, though she struggled to form an effective one.",
       "sources": [
@@ -1193,7 +1194,8 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "church-by-bishops": {
       "value": 2,
@@ -1636,14 +1638,15 @@
       "sources": []
     },
     "abolish-hereditary-privilege": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from her claim to the throne by hereditary right, which she defended against Jane Grey and Wyatt.",
       "sources": [
         "s1",
         "s2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -2
     },
     "history-own-civilization": {
       "value": null,
@@ -2250,14 +2253,15 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: her August 1553 proclamation, as reported by a biographer, says God had secured her crown, while her letters also rest her title on inheritance, Parliament's act and her father's will.",
       "sources": [
         "s3",
         "s2"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "religious-dress-in-state": {
       "value": null,
@@ -3202,5 +3206,13 @@
       "sources": []
     }
   },
-  "notes": "Mary's August 1553 proclamation said she would not compel subjects in religion until further order by common assent; within a year she had moved to full restoration. Statutes enacted in her name on Parliament's or ministers' advice were not counted unless she personally drove them. Foxe and chroniclers' versions of the Guildhall speech differ and are partly secondhand. Limits: the full texts of her 1554 instructions to bishops and of the proclamation were not found online in this session, so those rest on summaries.\n\nMerged with an independent claude-haiku-5-5 audit: 1 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Her record (restoration, heresy laws, Spanish marriage) is documented in secondary accounts; few of her own words survive, so most answers rest on what she drove. The 1553 proclamation promising not to force consciences is noted in the Wikipedia article but its wording was not retrieved, so it is not used. Chroniclers and Foxe were not opened. Counts and burnings are contested by Protestant writers; the answers follow the measures she personally drove."
+  "notes": "Mary's August 1553 proclamation said she would not compel subjects in religion until further order by common assent; within a year she had moved to full restoration. Statutes enacted in her name on Parliament's or ministers' advice were not counted unless she personally drove them. Foxe and chroniclers' versions of the Guildhall speech differ and are partly secondhand. Limits: the full texts of her 1554 instructions to bishops and of the proclamation were not found online in this session, so those rest on summaries.\n\nMerged with an independent claude-haiku-5-5 audit: 1 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Her record (restoration, heresy laws, Spanish marriage) is documented in secondary accounts; few of her own words survive, so most answers rest on what she drove. The 1553 proclamation promising not to force consciences is noted in the Wikipedia article but its wording was not retrieved, so it is not used. Chroniclers and Foxe were not opened. Counts and burnings are contested by Protestant writers; the answers follow the measures she personally drove.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

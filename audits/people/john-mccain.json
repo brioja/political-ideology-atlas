@@ -825,13 +825,14 @@
       "sources": []
     },
     "dictatorship-of-proletariat": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: a lifelong anti-communist who backed Reagan's hard line against the Soviet Union and defeating communism.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "collective-farming": {
       "value": null,
@@ -840,22 +841,24 @@
       "sources": []
     },
     "capitalism-causes-war": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he argued protectionism and closed markets contributed to world war and that open commerce and democracy build peace, rejecting the claim that capitalism leads to war.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "taxation-theft": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: proposed and backed numerous tax measures, including cigarette taxes in 1998, and sought low but not zero taxation.",
       "sources": [
         "s1",
         "s14"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": null,
@@ -1489,12 +1492,13 @@
       ]
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Said in 2005 that all points of view on origins could be presented, then in 2006 that intelligent design should probably not be taught as science.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": 1,
@@ -2704,13 +2708,14 @@
       "sources": []
     },
     "never-kill-self-defence": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: career naval officer and a defender of Second Amendment rights including personal protection.",
       "sources": [
         "s11",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "unbroken-national-continuity": {
       "value": null,
@@ -3419,5 +3424,13 @@
       "sources": []
     }
   },
-  "notes": "Some positions moved over time: opposed Bush tax cuts in 2001 and 2003 but backed making them permanent by 2008; earlier supported partly private Social Security accounts, later disavowed privatization; opposed the MLK holiday in 1983 and later reversed; moved from an opposed-then-favoured stance on a ban on affirmative action; softened on LGBT issues in later years while keeping his stated opposition to same-sex marriage. Most recent clear positions are used."
+  "notes": "Some positions moved over time: opposed Bush tax cuts in 2001 and 2003 but backed making them permanent by 2008; earlier supported partly private Social Security accounts, later disavowed privatization; opposed the MLK holiday in 1983 and later reversed; moved from an opposed-then-favoured stance on a ban on affirmative action; softened on LGBT issues in later years while keeping his stated opposition to same-sex marriage. Most recent clear positions are used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 5
+    }
+  ]
 }

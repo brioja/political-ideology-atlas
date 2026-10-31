@@ -1891,13 +1891,14 @@
    "auditor": "claude-opus-5-5"
   },
   "creationism-in-schools": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "Said he wants no religion in school at all, which implies opposition to teaching creationism; he was not asked about creationism.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "restrict-pornography": {
    "value": -1,
@@ -2725,13 +2726,14 @@
    "sources": []
   },
   "socialized-care": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Lists free childcare among welfare-state benefits he favours for citizens (Nov 2025); housework is not addressed.",
    "sources": [
     "s10"
    ],
-   "auditor": "claude-opus-5-5"
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 1
   },
   "purge-loanwords": {
    "value": null,
@@ -2791,7 +2793,7 @@
    ]
   },
   "suppress-opposition": {
-   "value": 2,
+   "value": null,
    "confidence": "high",
    "rationale": "Hopes the DOJ will 'make up whatever they possibly can' to jail Gavin Newsom (2026), wants opposing city leaders tried and jailed, and suggests denaturalising and deporting congresspeople (Sep 2026).",
    "sources": [
@@ -2799,7 +2801,8 @@
     "s35",
     "s15"
    ],
-   "auditor": "claude-opus-5-5"
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 2
   },
   "punish-blasphemy": {
    "value": -2,
@@ -3283,14 +3286,15 @@
    "sources": []
   },
   "online-anonymity": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Calls internet ID 'inevitably and unfortunately coming' and says he would resist it in some ways (2026), though in 2025 he accepted ID checks run through an encrypted government system.",
    "sources": [
     "s33",
     "s32"
    ],
-   "auditor": "claude-opus-5-5"
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 1
   },
   "person-over-state": {
    "value": null,
@@ -3902,6 +3906,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-22"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

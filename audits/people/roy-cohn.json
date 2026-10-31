@@ -85,12 +85,13 @@
       "sources": []
     },
     "regulate-corporations": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Wikipedia article reports that Cohn argued consumer agencies often serve the industries they regulate, citing the Civil Aeronautics Board. That suggests scepticism of tighter regulation, but he did not address corporate regulation as such.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "cut-welfare": {
       "value": 1,
@@ -107,12 +108,13 @@
       "sources": []
     },
     "surveillance-ok": {
-      "value": -1,
+      "value": null,
       "confidence": "medium",
       "rationale": "In his 1981 book, as reported in the Wikipedia article, Cohn wrote that he was deeply troubled by invasion of privacy through wiretapping, searches and mail interception, and that consent removes the problem. The terrorism qualifier is not addressed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "legalize-drugs": {
       "value": null,
@@ -707,12 +709,13 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "The Wikipedia article reports that Cohn's autobiography describes him as consistently pro-Israel, and that he said McCarthy was a friend of Israel. The sources do not address the Land of Israel claim itself.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "diaspora-return-right": {
       "value": null,
@@ -1455,12 +1458,13 @@
       "sources": []
     },
     "courts-bound-by-majority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Wikipedia article reports that Cohn opposed palimony rulings and said courts should defer to the people's representatives. This was said about one area, not about the general limits a majority may set.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "gender-parity-bodies": {
       "value": null,
@@ -1919,13 +1923,14 @@
       "sources": []
     },
     "defeat-communism": {
-      "value": 2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Cohn was chief counsel to McCarthy's anti-Communist investigations and is reported to have described himself as fighting Stalinist infiltration. The sources do not address coexistence with communism directly.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "mixed-public-service-providers": {
       "value": null,
@@ -2006,12 +2011,13 @@
       "sources": []
     },
     "suppress-opposition": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the Lavender Scare article reports that McCarthy and Cohn spread rumours about the sexuality of opponents to silence them. This is a record of conduct, not a stated view that political opposition should be suppressed.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "punish-blasphemy": {
       "value": null,
@@ -3004,5 +3010,13 @@
       "sources": []
     }
   },
-  "notes": "Sources were limited: the 1954 Army–McCarthy transcripts, the 1968 book McCarthy, and the 1981 book were not available in full text, so most positions are as reported in Wikipedia articles, which cite his autobiography (Sidney Zion, 1988). Many statements are null because nothing was found on them. Salience is expected to fail on the thin record."
+  "notes": "Sources were limited: the 1954 Army–McCarthy transcripts, the 1968 book McCarthy, and the 1981 book were not available in full text, so most positions are as reported in Wikipedia articles, which cite his autobiography (Sidney Zion, 1988). Many statements are null because nothing was found on them. Salience is expected to fail on the thin record.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 6
+    }
+  ]
 }

@@ -3187,13 +3187,14 @@
    "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
   },
   "criminalize-homosexuality": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his statement that same-sex marriage should have been legalized long ago and that he is socially left of the left.",
    "sources": [
     "s7"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "suppress-opposition": {
    "value": null,
@@ -3367,13 +3368,14 @@
    "sources": []
   },
   "racial-franchise": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: from his statement that the law should not discriminate by race, religion or ethnicity.",
    "sources": [
     "s10"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+   "nulledFrom": -2
   },
   "online-participation": {
    "value": null,
@@ -4226,5 +4228,13 @@
    "sources": []
   }
  },
- "notes": "He called his 'left of Bernie' and 'libertarian without the crazy parts' labels deliberately empty and said he neither voted nor joined a party, so no answer is inferred from them. Many of his statements were framed as persuasion analysis rather than his own policy view and were left null. His 2023 remarks about Black Americans were later described by him as hyperbole; the answers use what he said on policy.\n\nMerged with an independent claude-haiku-5-5 audit: 0 answers taken from it, 2 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Living status: the Wikipedia article gives a death date of January 13, 2026, so living is false; the no-inference rule was applied anyway. Two answers have a recorded position. Persuasion analysis of Trump in Win Bigly (2017) and the podcast is not treated as his position. The 2018 'left of Bernie' and 'progressive side' self-descriptions are not mapped to any statement, because no specific policy was stated. The 2019 border-wall proposal and the 2009 post on immigration as 'as inviting as possible' were not read in full, so immigration is null. blog.dilbert.com could not be reached (DNS error), so most of his blog was read only through Goodreads mirrors and secondary reports. The 2023 remarks about Black Americans were not checked against any statement and are not counted. Win Bigly full text and Real Coffee transcripts were not obtained.\n\nMerged with an independent claude-sonnet-5-5 audit: 28 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Wikipedia and his own livestream confirm he died on 13 January 2026, so he is treated as a historical figure with no inferences. Positions come from captions of 'Real Coffee with Scott Adams' (2019-2025). Where he voiced positions only as a persuasion exercise or explicitly declined to give an opinion (abortion before 2024, Israel, climate risk, UBI, tariffs in 2025), answers are low confidence or null; the most recent clear statement wins (e.g. on affirmative action and abortion). Win Bigly and Loserthink were not available as full text."
+ "notes": "He called his 'left of Bernie' and 'libertarian without the crazy parts' labels deliberately empty and said he neither voted nor joined a party, so no answer is inferred from them. Many of his statements were framed as persuasion analysis rather than his own policy view and were left null. His 2023 remarks about Black Americans were later described by him as hyperbole; the answers use what he said on policy.\n\nMerged with an independent claude-haiku-5-5 audit: 0 answers taken from it, 2 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Living status: the Wikipedia article gives a death date of January 13, 2026, so living is false; the no-inference rule was applied anyway. Two answers have a recorded position. Persuasion analysis of Trump in Win Bigly (2017) and the podcast is not treated as his position. The 2018 'left of Bernie' and 'progressive side' self-descriptions are not mapped to any statement, because no specific policy was stated. The 2019 border-wall proposal and the 2009 post on immigration as 'as inviting as possible' were not read in full, so immigration is null. blog.dilbert.com could not be reached (DNS error), so most of his blog was read only through Goodreads mirrors and secondary reports. The 2023 remarks about Black Americans were not checked against any statement and are not counted. Win Bigly full text and Real Coffee transcripts were not obtained.\n\nMerged with an independent claude-sonnet-5-5 audit: 28 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Wikipedia and his own livestream confirm he died on 13 January 2026, so he is treated as a historical figure with no inferences. Positions come from captions of 'Real Coffee with Scott Adams' (2019-2025). Where he voiced positions only as a persuasion exercise or explicitly declined to give an opinion (abortion before 2024, Israel, climate risk, UBI, tariffs in 2025), answers are low confidence or null; the most recent clear statement wins (e.g. on affirmative action and abortion). Win Bigly and Loserthink were not available as full text.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

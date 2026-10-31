@@ -503,13 +503,14 @@
       "sources": []
     },
     "open-borders": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his government's immigration controls and the 1966 manifesto's 'realistic controls' leave no room for open borders.",
       "sources": [
         "s2",
         "s26"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-growth": {
       "value": -2,
@@ -553,12 +554,13 @@
       "sources": []
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: the 1966 manifesto he led says Britain has a mixed economy in which both sectors play their part in the National Plan, which was indicative rather than a command economy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -664,13 +666,14 @@
       ]
     },
     "workers-councils": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he said Parliament's decisions are the right decisions in the constitution and wanted industrial democracy inside firms, not councils as the basis of political power.",
       "sources": [
         "s13",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "right-to-secede": {
       "value": -2,
@@ -717,13 +720,14 @@
       "sources": []
     },
     "military-superiority": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he cut defence spending, withdrew from east of Suez and said Britain could not afford to keep up with other nuclear powers.",
       "sources": [
         "s15",
         "s14"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ethnic-nation": {
       "value": null,
@@ -897,13 +901,14 @@
       "sources": []
     },
     "taxation-theft": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his manifestos treat tax as the way to pay for public services and redistribute income and wealth, and he pledged a wealth tax.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": null,
@@ -974,12 +979,13 @@
       "sources": []
     },
     "territorial-expansion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his government announced withdrawal from bases in Singapore and Malaysia and cut commitments east of Suez.",
       "sources": [
         "s15"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "personal-loyalty-rule": {
       "value": null,
@@ -1700,13 +1706,14 @@
       "sources": []
     },
     "flat-income-tax": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his governments introduced capital gains and wealth taxes to shift the burden to the better off, which is inconsistent with a flat income tax.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "character-from-environment": {
       "value": null,
@@ -1935,13 +1942,14 @@
       ]
     },
     "entrenched-bill-of-rights": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: he held that the Commons' decisions are the right ones and warned of parliamentary sovereignty being diminished, which cuts against entrenched limits.",
       "sources": [
         "s13",
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "colonial-treaties-void": {
       "value": null,
@@ -2652,13 +2660,14 @@
       ]
     },
     "charity-over-state-aid": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his manifestos rely on state pensions, the NHS and benefits to relieve poverty, not charities.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "term-limits": {
       "value": null,
@@ -3454,5 +3463,13 @@
       "sources": []
     }
   },
-  "notes": "Manifesto answers rest on programmes he led; where a position came only from a manifesto it is capped at medium. The 1964 and 1969 death-penalty votes were free votes. His own votes on the Abortion Act 1967 and Sexual Offences Act 1967 were not found in the divisions checked (the government gave parliamentary time to these private members' bills), so those statements are null; Wikipedia records that he personally showed no particular enthusiasm for the permissive-society agenda, which these free-vote reforms belonged to. His view on EEC membership shifted from application (1967) through an anti-terms stance in opposition (1971-72) to recommending a Yes vote in 1975; the later position is used."
+  "notes": "Manifesto answers rest on programmes he led; where a position came only from a manifesto it is capped at medium. The 1964 and 1969 death-penalty votes were free votes. His own votes on the Abortion Act 1967 and Sexual Offences Act 1967 were not found in the divisions checked (the government gave parliamentary time to these private members' bills), so those statements are null; Wikipedia records that he personally showed no particular enthusiasm for the permissive-society agenda, which these free-vote reforms belonged to. His view on EEC membership shifted from application (1967) through an anti-terms stance in opposition (1971-72) to recommending a Yes vote in 1975; the later position is used.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 9
+    }
+  ]
 }

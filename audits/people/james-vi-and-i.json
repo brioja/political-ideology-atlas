@@ -216,13 +216,14 @@
       "sources": []
     },
     "decide-locally": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: told his son to stop heritable sheriffdoms and regalities from staying in great men's hands and to move Scotland toward English practice; in 1607 asked for one law for the whole island ('vnus Rex, vnus Grex, vna Lex').",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "rehabilitation": {
       "value": null,
@@ -240,12 +241,13 @@
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: Basilikon Doron lists sodomy among the crimes a king must never pardon and defines marriage by procreation and a wife as helper; he never discussed same-sex marriage itself.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abortion-legal": {
       "value": null,
@@ -456,12 +458,13 @@
       ]
     },
     "direct-votes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: held that laws are made by the king and are only 'craved' by subjects in Parliament, so he gave no role to votes by citizens on laws.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "workers-councils": {
       "value": null,
@@ -470,12 +473,13 @@
       "sources": []
     },
     "right-to-secede": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: argued in 1603 that the union of England and Scotland was made by God ('what God hath conjoined let no man separate') and that nobody should 'cut asunder' the island; he did not discuss regional secession as such.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "natural-rulers": {
       "value": 2,
@@ -640,12 +644,13 @@
       "sources": []
     },
     "direct-action": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: held that subjects may answer even a wicked king only with 'sobbes and teares to God', never resistance; his own stated route to change was through king and Parliament.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "means-match-ends": {
       "value": null,
@@ -1069,12 +1074,13 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: told his son to keep the schools, 'the seminarie of the Church', maintained so that doctrine is preserved in purity.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1955,12 +1961,13 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: held that members of Parliament are 'sworne Councellours' of the king and that grievances are for the king, not for binding instructions from constituents.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "individual-pension-accounts": {
       "value": null,
@@ -2486,12 +2493,13 @@
       ]
     },
     "abolish-police-prisons": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: made strict execution of the laws the king's chief duty and told him to punish offenders severely before showing mercy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "power-sharing-divided-societies": {
       "value": null,
@@ -3312,5 +3320,13 @@
       "sources": []
     }
   },
-  "notes": "Changes of view: the Trew Law (1598) places the king above the law, bound only by good will; by 1609-10 he said a king in a settled kingdom is bound by its fundamental laws through his oath, while still accountable to God alone, and the later position is used. Witchcraft: Daemonologie (1597) demands death; later accounts of a more sceptical James are not used here. Basilikon Doron was written for his son and is advice, not law; statements drawn from it are marked accordingly. Opened but not usable for any statement: A Counterblaste to Tobacco beyond its opening pages (its tobacco-specific argument matches no statement except a low-confidence drug answer); the Wikipedia Treaty of London (1604) article (background only). The King James Bible and the later parts of the Oath of Allegiance apology and the Premonition were not read in full. The 'no bishop, no king' remark at Hampton Court is reported by Barlow, a secondhand source not opened here; the point is taken from Basilikon Doron instead."
+  "notes": "Changes of view: the Trew Law (1598) places the king above the law, bound only by good will; by 1609-10 he said a king in a settled kingdom is bound by its fundamental laws through his oath, while still accountable to God alone, and the later position is used. Witchcraft: Daemonologie (1597) demands death; later accounts of a more sceptical James are not used here. Basilikon Doron was written for his son and is advice, not law; statements drawn from it are marked accordingly. Opened but not usable for any statement: A Counterblaste to Tobacco beyond its opening pages (its tobacco-specific argument matches no statement except a low-confidence drug answer); the Wikipedia Treaty of London (1604) article (background only). The King James Bible and the later parts of the Oath of Allegiance apology and the Premonition were not read in full. The 'no bishop, no king' remark at Hampton Court is reported by Barlow, a secondhand source not opened here; the point is taken from Basilikon Doron instead.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 8
+    }
+  ]
 }

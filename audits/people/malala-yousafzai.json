@@ -2804,13 +2804,14 @@
    "sources": []
   },
   "women-suffrage": {
-   "value": 2,
+   "value": null,
    "confidence": "medium",
    "rationale": "She opposes the Taliban erasing women and girls from public life in Afghanistan and has demanded equal rights for women; she has not discussed voting or office-holding as such.",
    "sources": [
     "s4",
     "s10"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "religion-oppresses-women": {
    "value": -1,
@@ -2840,13 +2841,14 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "She urged governments to make gender apartheid a crime against humanity under international criminal law, which implies accountability, but she did not call for trials of particular leaders.",
    "sources": [
     "s4",
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "scripture-inerrant": {
    "value": null,
@@ -3059,5 +3061,13 @@
    "sources": []
   }
  },
- "notes": "Quotes on forgiveness, dress and religion came from the Wikipedia summary. Statements on drones (2013), Gaza (2023-2024) and the 2017 refugee order were read but match no statement, so they are not scored. Full text of Finding My Way and I Am Malala was not available."
+ "notes": "Quotes on forgiveness, dress and religion came from the Wikipedia summary. Statements on drones (2013), Gaza (2023-2024) and the 2017 refugee order were read but match no statement, so they are not scored. Full text of Finding My Way and I Am Malala was not available.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 2
+  }
+ ]
 }

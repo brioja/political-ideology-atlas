@@ -427,13 +427,14 @@
    "sources": []
   },
   "political-violence-never": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Past Reddit posts advocated political violence and armed resistance; he has since apologized, attributing them to PTSD and saying he no longer holds some views. Current position not stated in these terms.",
    "sources": [
     "s5",
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "war-builds-character": {
    "value": null,
@@ -3032,5 +3033,13 @@
    "sources": []
   }
  },
- "notes": "Most issue positions are from campaign platform pages and secondary summaries; many specific topics (Israel as a state, nuclear power, trade, culture-war statements) had no direct quote found and are null. Withdrew July 2026; platform positions are his last stated ones. Several primary pages (NewsCenter Maine, Lawyers Guns & Money, Sun Journal) returned 403 and were not used."
+ "notes": "Most issue positions are from campaign platform pages and secondary summaries; many specific topics (Israel as a state, nuclear power, trade, culture-war statements) had no direct quote found and are null. Withdrew July 2026; platform positions are his last stated ones. Several primary pages (NewsCenter Maine, Lawyers Guns & Money, Sun Journal) returned 403 and were not used.",
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
+  }
+ ]
 }

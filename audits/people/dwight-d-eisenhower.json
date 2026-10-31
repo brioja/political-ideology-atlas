@@ -752,14 +752,15 @@
    ]
   },
   "state-promotes-atheism": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he condemned a hostile ideology 'atheistic in character' and a rule that 'glorifies atheistic materialism', so he would not favor state promotion of atheism.",
    "sources": [
     "s1",
     "s13"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "public-ownership": {
    "value": null,
@@ -3590,6 +3591,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 1
   }
  ]
 }

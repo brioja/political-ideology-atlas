@@ -163,13 +163,14 @@
       "sources": []
     },
     "cut-welfare": {
-      "value": -2,
+      "value": null,
       "confidence": "medium",
       "rationale": "Expanded cash welfare as CM (women's Rs 1,000 stipend from 2023, pledged to rise to Rs 2,000 in the 2026 manifesto); implied opposition to the dependency argument from the record, not a stated view.",
       "sources": [
         "s1",
         "s13"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "worker-ownership": {
       "value": null,
@@ -3083,5 +3084,13 @@
       "sources": []
     }
   },
-  "notes": "Office: CM until 9 May 2026 (succeeded by C. Joseph Vijay); defeated in Kolathur in 2026. Many statements (economy, ideology, most social issues) have no recorded position. Sanatana remarks in 2023 were by his son Udhayanidhi and are not attributed to him. Caste reservation quotas and NEET stance are documented but no matching statement exists in the list, except as noted. Research limited to ~12 successful page fetches; 2021 and 2024 manifesto full texts were not retrieved."
+  "notes": "Office: CM until 9 May 2026 (succeeded by C. Joseph Vijay); defeated in Kolathur in 2026. Many statements (economy, ideology, most social issues) have no recorded position. Sanatana remarks in 2023 were by his son Udhayanidhi and are not attributed to him. Caste reservation quotas and NEET stance are documented but no matching statement exists in the list, except as noted. Research limited to ~12 successful page fetches; 2021 and 2024 manifesto full texts were not retrieved.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

@@ -226,14 +226,15 @@
       "sources": []
     },
     "tax-the-wealthy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Her Medicare for All plan was to be partly funded by taxing the wealthy and financial transactions (2017); a 2019 summary lists taxing the wealthiest 5%. These date from her Democratic years and her later view is not documented.",
       "sources": [
         "s3",
         "s9"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": 1
     },
     "unions-good": {
       "value": 1,
@@ -517,14 +518,15 @@
       "sources": []
     },
     "expand-nuclear": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "In Feb 2019 she said she did not support 'leaving the door open' to nuclear power until there is a permanent waste solution. Later view not documented.",
       "sources": [
         "s3",
         "s9"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "nulledFrom": -1
     },
     "revolution-justified": {
       "value": null,
@@ -3446,6 +3448,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 2
     }
   ]
 }

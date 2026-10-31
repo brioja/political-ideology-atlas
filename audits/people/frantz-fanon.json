@@ -213,12 +213,13 @@
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from demanding reparation and redistribution for colonial wrongs and the end of racial domination.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "gender-social-construct": {
       "value": null,
@@ -3093,5 +3094,13 @@
       "sources": []
     }
   },
-  "notes": "Historical figure (died 6 December 1961); only positions stated in his writings are recorded. Inferred answers are marked in their rationales. He explicitly said the capitalism-versus-socialism choice as defined elsewhere was not the basic issue, which leaves many economic-system statements null."
+  "notes": "Historical figure (died 6 December 1961); only positions stated in his writings are recorded. Inferred answers are marked in their rationales. He explicitly said the capitalism-versus-socialism choice as defined elsewhere was not the basic issue, which leaves many economic-system statements null.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

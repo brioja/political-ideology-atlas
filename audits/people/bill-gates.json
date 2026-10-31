@@ -735,7 +735,7 @@
    "sources": []
   },
   "tax-inheritance": {
-   "value": 1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Called for raising the estate tax in his 2020 blog post; the degree ('heavily') is not stated in the sources opened.",
    "sources": [
@@ -748,7 +748,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "basic-income": {
    "value": null,
@@ -1073,14 +1074,15 @@
    "sources": []
   },
   "taxation-theft": {
-   "value": -2,
+   "value": null,
    "confidence": "medium",
    "rationale": "In The Road Ahead (ch. 12) he described taxes as how high earners pay more for roads, schools, the army and other services and said he had no complaint about paying over $100 million; in 2019 he said he would accept paying far more.",
    "sources": [
     "c1",
     "c4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "harm-principle": {
    "value": null,
@@ -1314,7 +1316,7 @@
    "sources": []
   },
   "expand-fossil-fuels": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "Divested from fossil fuels (2019), backs net-zero emissions, a green premium of zero and a tax disadvantaging the dirty option; has not addressed expanding domestic production directly.",
    "sources": [
@@ -1327,7 +1329,8 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "assimilate-immigrants": {
    "value": null,
@@ -3140,13 +3143,14 @@
    "sources": []
   },
   "free-public-college": {
-   "value": -2,
+   "value": null,
    "confidence": "high",
    "rationale": "Asked 'Why should college be free?' and called it a regressive upper-class idea because middle-class taxpayers would fund students likely to earn a lot.",
    "sources": [
     "s5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": -2
   },
   "pollution-taxes": {
    "value": 1,
@@ -3648,6 +3652,14 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 4
   }
  ]
 }

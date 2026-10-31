@@ -621,22 +621,24 @@
       ]
     },
     "class-struggle-history": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his adoption of Marxism-Leninism as his doctrine and his call for class struggle.",
       "sources": [
         "s4",
         "s19"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "material-conditions-drive-history": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his declared adoption of Marxism-Leninism.",
       "sources": [
         "s4",
         "s10"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "class-collaboration": {
       "value": -1,
@@ -1010,13 +1012,14 @@
       ]
     },
     "restrict-strikes-picketing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: wrote sympathetically about strikes and criticised a government that refused to recognise a workers’ federation.",
       "sources": [
         "s20",
         "s19"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "flat-income-tax": {
       "value": -1,
@@ -1036,12 +1039,13 @@
       ]
     },
     "income-for-work-not-ownership": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: from his charge that owners exploit workers and his programme to take property for those who work it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "socialism-needs-workers-power": {
       "value": 1,
@@ -3424,5 +3428,13 @@
       "sources": []
     }
   },
-  "notes": "Most evidence comes from his own writings on the Marxists Internet Archive, which hold few statements on social, religious or technology topics. Some answers rest on later biographical reference material. The 1969 Testament was read in a Portuguese edition; wording was paraphrased. Land reform executions occurred under his government, which later apologised for errors in 1956; his own role in specifics is uncertain."
+  "notes": "Most evidence comes from his own writings on the Marxists Internet Archive, which hold few statements on social, religious or technology topics. Some answers rest on later biographical reference material. The 1969 Testament was read in a Portuguese edition; wording was paraphrased. Land reform executions occurred under his government, which later apologised for errors in 1956; his own role in specifics is uncertain.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 4
+    }
+  ]
 }

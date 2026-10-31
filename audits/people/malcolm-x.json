@@ -174,12 +174,13 @@
    "sources": []
   },
   "legalize-drugs": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: he called drug addiction and trafficking an evil to be eliminated from the community (OAAU, June 1964), while treating addicts as victims who need clinics; he did not discuss legalisation.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "restrict-hate-speech": {
    "value": null,
@@ -217,12 +218,13 @@
    ]
   },
   "legalize-sex-work": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: the OAAU speech (June 1964) listed organised prostitution among vices destroying the community's moral fiber that it had to eliminate; legal status of consensual sex work was not discussed.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "decide-locally": {
    "value": 1,
@@ -1004,13 +1006,14 @@
    "sources": []
   },
   "discourage-race-mixing": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: the OAAU program says that 'ethnic intermingling can be beneficial to all' when people have real equality and justice, and his Mecca letter shows regret for earlier views; he did not address marriage across racial lines directly after leaving the Nation of Islam in the sources used.",
    "sources": [
     "s4",
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "equal-moral-worth": {
    "value": 2,
@@ -1132,12 +1135,13 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": -1,
+   "value": null,
    "confidence": "medium",
    "rationale": "The OAAU speech backed city-wide rent strikes and demonstrations without seeking permission; the law on strikes was not discussed.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "population-causes-poverty": {
    "value": null,
@@ -2910,13 +2914,14 @@
    "sources": []
   },
   "premarital-sex": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Inferred: in 'The Black Revolution' (April 1964) he listed adultery leading to children born outside marriage among the social evils to be eliminated, while the OAAU speech called for help for unwed mothers; no direct statement on sex outside marriage for women.",
    "sources": [
     "s3",
     "s8"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "internet-shutdowns": {
    "value": null,
@@ -3188,5 +3193,13 @@
    "rationale": "No recorded position found.",
    "sources": []
   }
- }
+ },
+ "reviews": [
+  {
+   "kind": "inference",
+   "reviewer": "scripts/inference-to-null.js",
+   "reviewedAt": "2026-10-30",
+   "nulled": 5
+  }
+ ]
 }

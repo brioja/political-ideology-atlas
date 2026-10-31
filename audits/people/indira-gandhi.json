@@ -1541,12 +1541,13 @@
       ]
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "medium",
       "rationale": "Insisted that Bangladesh refugees on Indian soil should return once conditions were created; descendants were not addressed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "co-ethnic-territorial-claim": {
       "value": null,
@@ -3242,5 +3243,13 @@
       "rationale": "No recorded position found.",
       "sources": []
     }
-  }
+  },
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }

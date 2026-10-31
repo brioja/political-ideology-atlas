@@ -1283,13 +1283,14 @@
       "sources": []
     },
     "people-in-arms": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Inferred: his endorsement of abolishing the standing army for armed workers supplies this model, but his later government retained a regular Red Army.",
       "sources": [
         "state3",
         "reference"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "rural-life-healthier": {
       "value": null,
@@ -3195,5 +3196,13 @@
       ]
     }
   },
-  "notes": "Late NEP and cooperative texts qualify earlier economic prescriptions. The Commune-inspired armed-citizen ideal is marked as an inference because actual Soviet practice retained a regular army. Constitutional or emancipatory language is not treated as proof that Bolshevik government respected political liberties. No position is assigned on later digital or climate questions."
+  "notes": "Late NEP and cooperative texts qualify earlier economic prescriptions. The Commune-inspired armed-citizen ideal is marked as an inference because actual Soviet practice retained a regular army. Constitutional or emancipatory language is not treated as proof that Bolshevik government respected political liberties. No position is assigned on later digital or climate questions.",
+  "reviews": [
+    {
+      "kind": "inference",
+      "reviewer": "scripts/inference-to-null.js",
+      "reviewedAt": "2026-10-30",
+      "nulled": 1
+    }
+  ]
 }
