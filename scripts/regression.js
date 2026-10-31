@@ -148,23 +148,6 @@ if (arg("--rank")) {
   }
 }
 
-// --sides: how often each suite's top match takes the taker's side, on the statements where both
-// take one (a softer ideology on the same sides is a different thing from one on the other side).
-if (process.argv.includes("--sides")) {
-  const byId = Object.fromEntries(ideos.map((i) => [i.id, i]));
-  const sideRate = (answers, id) => {
-    const p = byId[id].profile;
-    const both = answers.flatMap((a, j) => (a && p[j] ? [j] : []));
-    return both.length ? both.filter((j) => Math.sign(answers[j]) === Math.sign(p[j])).length / both.length : null;
-  };
-  for (const s of [...new Set(results.map((r) => r.suite))]) {
-    const rs = results.filter((r) => r.suite === s);
-    const top = rs.map((r) => sideRate(r.answers, r.top[0])).filter((x) => x != null).sort((a, b) => a - b);
-    const own = rs.filter((r) => r.expect).map((r) => sideRate(r.answers, r.expect[0])).filter((x) => x != null).sort((a, b) => a - b);
-    console.log(`  ${s.padEnd(9)} top match shares the taker's side on ${Math.round(top[Math.floor(top.length / 2)] * 100)}% of statements (median)${own.length ? `; their own ideology ${Math.round(own[Math.floor(own.length / 2)] * 100)}%` : ""}`);
-  }
-}
-
 const suites = [...new Set(results.map((r) => r.suite))];
 console.log(`Matching: ${variant}${onlyIds ? ` (${[...onlyIds].join(", ")})` : ""}`);
 for (const s of suites) {

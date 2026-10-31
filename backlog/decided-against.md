@@ -9,8 +9,8 @@ explicit decision from the maintainer.
   **adjusting a bar to include or exclude one person or ideology.**
 - **Grouping place twins** (Quebec / Catalan nationalism) on the page, **ideology families**, and
   **breaking near-ties by Wikipedia views**.
-- **Fixing mild takers.** A taker who answers mildly lands on a softer ideology on the same sides
-  (`scripts/regression.js --sides`); correcting it would override their answers.
+- **Fixing mild takers.** A taker who answers mildly lands on a softer ideology on the same sides;
+  correcting it would override their answers.
 - **Naming dividing lines the page doesn't draw.**
 - **Rewording the 17 statements whose text bundles two claims** (found 2026-10-29: `unions-good`,
   `cut-welfare`, `abolish-money-wages`, `democracy-best`, `political-elite-corrupt`,

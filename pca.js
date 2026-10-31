@@ -250,9 +250,7 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // (weights()) go through these functions only, so changing the measure here
 // changes them all together and they cannot drift apart.
 //
-// Fit is distance on the real dividing lines (matchLines). Comparing statement by statement favoured
-// whoever had answered the most and whoever held the mildest views, and two sparse lists of answers often
-// share few statements. Silence (null) is never scored, as "Neither" or as disagreement: a decision,
+// Fit is distance on the real dividing lines (matchLines). Silence (null) is never scored, as "Neither" or as disagreement: a decision,
 // not a default (test.js checks it). Placement reads the real lines from the answered statements
 // only (see posterior), and with nothing answered there is no position at all.
 //
