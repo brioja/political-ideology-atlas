@@ -65,6 +65,18 @@ if (!PEOPLE_ONLY) {
   const unnamed = Array.from({ length: drawn }, (_, i) => i).filter((i) => !(MODEL.labels || [])[i]).map((i) => i + 1);
   assert(!unnamed.length, `drawn dividing line${unnamed.length > 1 ? "s" : ""} ${unnamed.join(", ")} ha${unnamed.length > 1 ? "ve" : "s"} no name: add or update its anchors in audits/line-labels.json`);
 }
+// An ideology's "no known position" (null) is low confidence (audits/PROMPT.md; validate.js checks one
+// audit, this checks them all), so a bulk edit that nulls answers can't leave their old confidence:
+// the 10-30 inference pass did, and 601 audits failed validation until 2026-10-31.
+{
+  const lib = require("./scripts/lib");
+  const fs = require("fs");
+  const bad = fs.readdirSync(lib.PROFILES_DIR).filter((f) => f.endsWith(".json")).flatMap((f) => {
+    const a = lib.readJson(require("path").join(lib.PROFILES_DIR, f));
+    return Object.entries(a.answers || {}).filter(([, x]) => x && x.value === null && x.confidence !== "low").map(([id]) => `${f.slice(0, -5)}/${id}`);
+  });
+  assert(!bad.length, `${bad.length} "no known position" answers aren't low confidence: ${bad.slice(0, 5).join(", ")}`);
+}
 // "What it stands for" comes from strongly held stated positions only: no inference, silence or leaning.
 {
   const lib = require("./scripts/lib");
