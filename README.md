@@ -24,7 +24,7 @@ A political ideology test where the axes come from the data. You don't choose th
 Adding a statement or an ideology means adding its audit data and rebuilding. The lines and how
 many are kept update on their own.
 
-Ideologies get the salience check (see below, with a stricter bar than people), counting only their **stated**
+Ideologies get the uncertainty rule (see below, the same one as people), counting only their **stated**
 positions (high or medium confidence). An ideology whose answers are mostly inferred is left out of
 both the results and the dividing lines.
 
@@ -49,7 +49,7 @@ be re-run.
 
 - `node scripts/pending.js` lists ideologies whose audit is missing or invalid (`--backfill`: audits
   that still need answers for new statements).
-- `node scripts/validate.js [id ...] [--links]` checks audits (add `--links` to test every URL, `--no-salience` to skip the slow salience check).
+- `node scripts/validate.js [id ...] [--links]` checks audits (add `--links` to test every URL, `--no-uncertainty` to skip the slow uncertainty rule).
 - `node scripts/build.js` compiles valid audits into `data.js` (`--status` just reports progress).
 - `node scripts/wikipedia.js` refreshes suggested Wikipedia links in the catalog.
 
@@ -77,17 +77,15 @@ era, and an imbalance is reported rather than corrected by hand. Each gets
 an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
 
-- **Salience:** an ideology is included only if its stated positions place it on the test's real
-  dividing lines more precisely than the typical (median) distance between an ideology and its
-  nearest neighbour there (Bayesian placement uncertainty, see `salienceContext` in `pca.js`); a
-  less precise record can't say which of two neighbouring ideologies it is closer to. People only
-  have to be placed well enough to compare, so their bar is 1.125 times that (`PEOPLE_BAR` in
-  `scripts/lib.js`): roughly 40-60 documented positions, depending on how they spread over the
-  themes. It was 1.5 times until 2026-10-26, which let in people with 20-25 positions; placed that
-  roughly, they sat near the middle of the lines and turned up in many takers' results. People
-  shown under the old bar who don't meet the new one are listed in `audits/people-legacy-bar.json`
-  and keep the old bar for one more audit pass: a person whose second pass still misses the new
-  bar leaves the list and the site. The list only shrinks.
+- **Uncertainty:** a political ideology or figure takes positions across every dividing line; one
+  that speaks to only some of them holds opinions, not a full politics. A record is included only
+  if, on each of the real dividing lines, its known positions leave at most half of the line's
+  spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). The rule is the
+  same for ideologies, people and AI models; the quiz says you're done by the same measure, at its own
+  target (35% unknown at most on every line, `DONE_UNCERTAINTY`). It
+  replaced salience (2026-10-31), which asked whether a record was placed within the typical gap
+  between neighbouring ideologies: it dropped full ideologies in crowded parts of the map, and
+  needed a separate, looser bar for people.
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
@@ -143,5 +141,5 @@ them, so search engines can find them. Those files are written at deploy and nev
 The person audits are AI-researched estimates of public figures' views, not their own answers, so
 they are not ground truth for anything else. Ideology data may shape how people are shown
 (placement, matches, comparisons), but nothing about the ideologies, statements, dividing lines,
-salience, labels, colors or quiz calibration is derived from people data. This keeps the
+uncertainty rule, labels, colors or quiz calibration is derived from people data. This keeps the
 subsystems loosely coupled: a change to the people catalog or a person audit never moves the test.

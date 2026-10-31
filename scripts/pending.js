@@ -26,7 +26,7 @@ if (process.argv.includes("--backfill")) {
   return;
 }
 
-// Validated in this process, not one validate.js run per audit: the salience context takes seconds
+// Validated in this process, not one validate.js run per audit: the uncertainty judge takes seconds
 // to compute and is cached per process. validate.js reads --people from this command line too.
 const { validate, excludedOnly } = require("./validate");
 const pending = catalog().filter((entry) => {

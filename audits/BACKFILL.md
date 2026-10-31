@@ -19,7 +19,7 @@ For each audit you are given (`audits/profiles/<id>.json`) and its list of state
    - If the statement came from this ideology's own `missingStatements`, your answer should agree
      with the value recorded there.
 3. Add the answers to `answers`. Do not change any other answer, field or source.
-4. Run `node scripts/validate.js --no-salience <id>`. It should report no "needs answers" warning for the
+4. Run `node scripts/validate.js --no-uncertainty <id>`. It should report no "needs answers" warning for the
    statements you were given.
 
 Be economical: most new statements are about one ideology's defining issue, and for the others the

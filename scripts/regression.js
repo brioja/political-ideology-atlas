@@ -14,10 +14,10 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 const { ROOT, readJson, profilePath, activeStatements, silentZeros } = require("./lib");
-const { QUESTIONS, IDEOLOGIES, MODEL } = require(path.join(ROOT, "data.js"));
-const { decodeShare, modelFromParts, place, fitTo, matchPeople } = require(path.join(ROOT, "pca.js"));
+const { QUESTIONS, IDEOLOGIES, MODEL, PLACEMENT } = require(path.join(ROOT, "data.js"));
+const { decodeShare, modelFromParts, locate, fitTo, matchPeople } = require(path.join(ROOT, "pca.js"));
 // The shipped lines, as the page places everyone on them.
-const shipped = modelFromParts(IDEOLOGIES, MODEL);
+const shipped = modelFromParts(IDEOLOGIES, MODEL, PLACEMENT);
 
 const arg = (name) => { const i = process.argv.indexOf(name); return i < 0 ? null : process.argv[i + 1]; };
 const variant = arg("--variant") || "current";
@@ -44,10 +44,10 @@ function profiles() {
 }
 
 // Ranks by fit (pca.js's fit measure, as match() does): distance on the real lines, each ideology
-// placed from its (variant's) profile. Positions are worked out once per set of profiles.
+// located from its (variant's) profile. Positions are worked out once per set of profiles.
 const positions = new WeakMap();
 function rank(ideos, answers) {
-  if (!positions.has(ideos)) positions.set(ideos, ideos.map((i) => place(shipped, i.profile)));
+  if (!positions.has(ideos)) positions.set(ideos, ideos.map((i) => locate(shipped, i.profile)));
   const d = fitTo(shipped, answers, positions.get(ideos)) || ideos.map(() => 0);
   return ideos.map((i, k) => ({ id: i.id, d: d[k] })).sort((a, b) => a.d - b.d || (a.id < b.id ? -1 : 1));
 }

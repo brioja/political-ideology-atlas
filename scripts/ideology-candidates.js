@@ -3,7 +3,7 @@
 // (see step 2; the list also links people, places and parties), with its English Wikipedia views over
 // the last 12 full months, which set the audit order. Wikipedia's list is a loose source, like the
 // older hand-made list the catalog started from, so it only proposes candidates: each audit's first
-// check and the salience rule decide what reaches the test.
+// check and the uncertainty rule decide what reaches the test.
 //
 // Entries without their own Wikipedia article are dropped.
 // Writes a report of the additions and drops and, with --write, applies them to the catalog.
@@ -102,7 +102,7 @@ async function main() {
   // Wikipedia article stays, and listed ideologies are added unless an entry already points at the
   // same article (whatever its name). An entry whose link is only a search hit (wikipedia.js) or
   // missing is dropped unless its audit confirmed an article: a quiz-taker matched to it would have
-  // nowhere to read more. The audit's first check and the salience rule decide what reaches the
+  // nowhere to read more. The audit's first check and the uncertainty rule decide what reaches the
   // test; views set the order.
   const data = readJson(CATALOG);
   const auditLink = (e) => {

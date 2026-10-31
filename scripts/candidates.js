@@ -1,7 +1,7 @@
 // Builds the people catalog from data instead of hand-picking: every human on Wikidata with a
 // political occupation (politician, political activist, political pundit, political scientist) or
 // a public office held, who has an English Wikipedia article, ranked by English Wikipedia views
-// over the last 12 full months. The salience check, not this list, decides who appears in the test.
+// over the last 12 full months. The uncertainty rule, not this list, decides who appears in the test.
 //
 // Fetching views for every such person is too slow, so the query keeps those whose article exists
 // in at least MIN_LINKS Wikipedia languages. To show that floor doesn't drop anyone who belongs, a
@@ -246,7 +246,7 @@ async function main() {
     people.push({ id, ...p, ...(prev && prev.image ? { image: prev.image } : {}) });
   }
   await nationalityFromDescription(people);
-  // Keep everyone already audited, even if they fall outside the criteria (e.g. the salience controls' kin).
+  // Keep everyone already audited, even if they fall outside the criteria (e.g. the uncertainty controls' kin).
   for (const p of old.people) if (audited.has(p.id) && !seen.has(p.id)) { people.push(p); seen.add(p.id); }
   people.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
 

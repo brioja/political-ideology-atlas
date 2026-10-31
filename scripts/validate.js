@@ -4,13 +4,14 @@
 //   add --links to also check that every source URL responds
 //   add --people to validate person audits (audits/people) instead of ideologies
 //   add --controls to validate the negative-control audits (audits/controls)
-//   add --no-salience to skip the salience check (it builds the whole PCA model: slow)
+//   add --no-uncertainty to skip the uncertainty rule (whether the record places them on every
+//   dividing line; it loads the whole model: slow). --no-salience, its old name, still works.
 const fs = require("fs");
 const lib = require("./lib");
-const { readJson, allStatements, isCandidate, personSalience, ideologySalience } = lib;
+const { readJson, allStatements, isCandidate, personUncertainty, ideologyUncertainty } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
-const SALIENCE = !process.argv.includes("--no-salience");
+const UNCERTAINTY = !process.argv.includes("--no-uncertainty") && !process.argv.includes("--no-salience");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
@@ -31,7 +32,7 @@ function validate(id) {
   if (!entry) errors.push(`id '${id}' is not in audits/catalog.json`);
 
   // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
-  // short record instead of an audit. It's finished, and excluded like a salience failure.
+  // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
   if (!PEOPLE && a.notAnIdeology !== undefined) {
     if (typeof a.notAnIdeology !== "string" || a.notAnIdeology.trim().length < 20) errors.push('"notAnIdeology" needs a reason of at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
@@ -141,7 +142,7 @@ function validate(id) {
   }
   if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
   // Audits under the shared rules (audits/AUDIT_RULES.md, "rules": 2): an inference is marked, so
-  // salience can leave it out, and Wikipedia alone is no evidence.
+  // the uncertainty rule can leave it out, and Wikipedia alone is no evidence.
   if (a.rules >= lib.RULES) {
     const INFERRED = /\b(inferred|by inference|an inference)\b/i;
     const unmarked = statements.filter((st) => answers[st.id] && answers[st.id].value !== null
@@ -180,14 +181,15 @@ function validate(id) {
 
   // Not errors, but signs of a lazy audit worth a look.
   const vals = active.map((s) => answers[s.id]).filter(Boolean);
-  if (errors.length === 0 && SALIENCE) {
-    // Salience: can their record place them precisely enough to match? (see pca.js)
-    // For ideologies only stated positions count; inferred (low-confidence) answers don't.
-    const s = PEOPLE ? personSalience(answers, CONTROLS ? null : id) : ideologySalience(a);
-    if (!s.salient) {
-      errors.push(`salience: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions place them with uncertainty ${s.uncertainty.toFixed(2)}, less precisely than the typical gap between neighbouring ideologies (${s.bar.toFixed(2)})`);
-    } else if (s.legacy) {
-      warnings.push(`loosely placed: ${s.known} recorded positions give uncertainty ${s.uncertainty.toFixed(2)}, which passes the old bar (${s.bar.toFixed(2)}) this person is still held to but not the current one (${s.strictBar.toFixed(2)}); look for stated positions in the thinnest themes`);
+  if (errors.length === 0 && UNCERTAINTY) {
+    // Uncertainty: does their record place them on every dividing line? (see pca.js)
+    // For ideologies only stated positions count; inferred answers don't.
+    const s = PEOPLE ? personUncertainty(answers) : ideologyUncertainty(a);
+    if (!s.placed) {
+      const pct = (x) => `${Math.round(x * 100)}%`;
+      const weak = s.lines.map((u, i) => [u, i]).filter(([u]) => u > s.max).sort((x, y) => y[0] - x[0])
+        .map(([u, i]) => `${lineName(i)} ${pct(u)}`);
+      errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} more unknown than known (over ${pct(s.max)}): ${weak.join(", ")}`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;
@@ -218,25 +220,33 @@ async function main() {
   let ids = args.filter((x) => !x.startsWith("--"));
   if (ids.length === 0) ids = fs.existsSync(PROFILES_DIR) ? fs.readdirSync(PROFILES_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 
-  let failed = 0, salienceOnly = 0;
+  let failed = 0, excluded = 0;
   for (const id of ids.sort()) {
     const { errors, warnings, sources = [] } = validate(id);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
-    if (excludedOnly(errors)) salienceOnly++;
+    if (excludedOnly(errors)) excluded++;
     const status = errors.length ? "FAIL" : warnings.length ? "WARN" : "ok";
     console.log(`${status.padEnd(4)} ${id}`);
     for (const e of errors) console.log(`     error: ${e}`);
     for (const w of warnings) console.log(`     warning: ${w}`);
   }
   console.log(`\n${ids.length - failed}/${ids.length} audits valid.`);
-  // Exit 2 when every failure is only the salience rule: a finished audit that is excluded, not
+  // Exit 2 when every failure is only the uncertainty rule: a finished audit that is excluded, not
   // one to redo. pending.js relies on this so excluded people aren't re-audited on every run.
-  process.exit(failed === 0 ? 0 : failed === salienceOnly ? 2 : 1);
+  process.exit(failed === 0 ? 0 : failed === excluded ? 2 : 1);
 }
 
-// Finished but excluded: by the salience rule, or as not an ideology (the first check).
-const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("salience:") || e.startsWith("not an ideology:"));
+// Finished but excluded: by the uncertainty rule, or as not an ideology (the first check).
+const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not an ideology:"));
+// A dividing line as the site names it (data.js), or past the drawn ones by its strongest statements.
+function lineName(i) {
+  const { MODEL, QUESTIONS } = require(require("path").join(lib.ROOT, "data.js"));
+  const label = (MODEL.labels || [])[i];
+  if (label) return `line ${i + 1} (${label.low} / ${label.high})`;
+  const top = MODEL.components[i].vector.map((w, j) => [Math.abs(w), j]).sort((x, y) => y[0] - x[0]).slice(0, 3);
+  return `line ${i + 1} (strongest: ${top.map(([, j]) => QUESTIONS[j].id).join(", ")})`;
+}
 
 if (require.main === module) main();
 module.exports = { validate, excludedOnly };

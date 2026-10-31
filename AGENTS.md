@@ -21,7 +21,7 @@ agents too. This file adds what matters when running the audit workflows in
 
 ## Audit rules
 
-- Rules on evidence (sources, answers, confidence, salience, deepening) live once, in
+- Rules on evidence (sources, answers, confidence, uncertainty, deepening) live once, in
   `audits/AUDIT_RULES.md`, for ideologies and people alike. `PROMPT.md` and `PROMPT_PEOPLE.md` add
   only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
 
@@ -41,7 +41,7 @@ agents too. This file adds what matters when running the audit workflows in
 - Check `git status`. Agents sometimes leave files uncommitted (often
   `audits/statements/texts.json`) or skip a rebuild because of someone else's uncommitted work.
 - Check the report for audits that weren't produced, failed tests, new `notAnIdeology` records and
-  new salience exclusions. Judgment calls (a duplicate, an exclusion that looks wrong) go to the
+  new uncertainty exclusions. Judgment calls (a duplicate, an exclusion that looks wrong) go to the
   maintainer rather than being fixed silently.
 - Don't pad rationales by script. `validate.js` rejects high-confidence answers that share a
   rationale; a stock phrase is at most medium confidence.

@@ -12,7 +12,7 @@ Inputs (filled in by the runner):
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, salience, deepening)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, deepening)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to ideologies.
 
@@ -45,7 +45,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
 }
 ```
 
-When in doubt, audit it: a thin ideology is excluded later by the salience check, on evidence.
+When in doubt, audit it: a thin ideology is excluded later by the uncertainty rule, on evidence.
 
 ## 1. Pin down what the ideology is
 
@@ -83,8 +83,8 @@ record it in `scope`:
   ideology's position, and parties that governed as one party among others are not the ideology's
   record.
 - Audits written before the shared rules (no `"rules"`) recorded silence as 0 and inferences without
-  the "Inferred:" mark, so their salience still counts only `medium` and `high` answers until they
-  are re-audited. Audits under rules 2 may hold marked inferences ("Inferred:"); salience leaves
+  the "Inferred:" mark, so their uncertainty still counts only `medium` and `high` answers until they
+  are re-audited. Audits under rules 2 may hold marked inferences ("Inferred:"); the rule leaves
   them out, and the next pass makes each stated or `null`.
 
 ## 4. Further reading for test takers

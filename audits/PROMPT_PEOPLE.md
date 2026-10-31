@@ -9,9 +9,9 @@ Inputs (filled in by the runner):
 - Statements: `statements.json` in the repo root. Answer every statement.
 
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
-run the validator command the runner gives and fix every error except salience.
+run the validator command the runner gives and fix every error except the uncertainty rule.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, salience, deepening)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, deepening)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to people.
 
@@ -41,7 +41,7 @@ is specific to people.
 - Stop early for someone without a political record (an artist, athlete or entertainer known for
   other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
   "<name> views on …") turn up no stated political positions, record the few you found, answer the
-  rest null, and finish. Failing salience is then the correct outcome, and a long search is wasted.
+  rest null, and finish. Failing the uncertainty rule is then the correct outcome, and a long search is wasted.
 - Political-quiz sites are not sources (AUDIT_RULES.md). The exception is the person taking a quiz
   themselves, answers read aloud, as some streamers and
   pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
@@ -127,14 +127,9 @@ Confidence follows AUDIT_RULES.md, section 4: `high` is tier 1 or 2 on that spec
 cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring or voting for a bill
 alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 
-**Salience** (AUDIT_RULES.md, section 5) counts every recorded position (not `null`). A
-"loosely placed" warning appears only for people listed in `audits/people-legacy-bar.json`, who
-passed an older, looser bar and are still held to it. They are shown, but placed so roughly that
-they sit near the middle of the lines and show up in many takers' results. When deepening one,
-count known positions per theme and search the thinnest ones for stated positions. If the audit
-then meets the current bar (no warning), remove the id from that list. If the record really has
-nothing more, stop: the person has had their extra pass, so remove the id anyway and they leave the
-site (`node test.js` fails until you do).
+**Uncertainty** (AUDIT_RULES.md, section 5) counts every recorded position (not `null`). When it
+fails, the validator names the dividing lines the record leaves mostly unknown; when deepening, search
+those first for stated positions. If the record really has nothing more, stop.
 
 ## 3. Output format
 

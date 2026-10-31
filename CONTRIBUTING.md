@@ -11,7 +11,7 @@ The test follows a Wikipedia-style standard: anything notable and documented in 
 included and described neutrally, however controversial. Nothing is left out because it is
 objectionable, and nothing is added on someone's say-so. The only reasons to leave something out are
 missing evidence (a statement with no known position, an ideology with no documented color
-tradition) or the published rules (such as the salience check), never a judgment about who or what
+tradition) or the published rules (such as the uncertainty rule), never a judgment about who or what
 deserves to appear.
 
 ## Challenge an answer
@@ -69,7 +69,7 @@ the old text. The `agree`, `disagree` and `note` explanations can be edited free
 node scripts/validate.js            # ideology audits
 node scripts/validate.js --people   # person audits
 node scripts/build.js               # rebuild data.js and people.js
-node test.js                        # math checks, plus the salience controls
+node test.js                        # math checks, plus the uncertainty controls
 ```
 
 `test.js` checks that apolitical celebrities (`audits/controls/`, audited with the same rules) are

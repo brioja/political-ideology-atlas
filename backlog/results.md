@@ -17,3 +17,23 @@ Other ways of computing it: d ± s on the lines (s = placement uncertainty), or 
 taker's answers. Display options: a range ("87% (78-96%)"), ±, a band on each bar, the ideologies
 within range named. What would decide it: a replay of real links (~/work/regression-links.txt)
 showing the ranges each option gives.
+
+## Error bars instead of a dot (idea, 2026-10-31)
+
+Show the taker's place on each dividing line as a range, not a point: `lineStats` in pca.js gives
+each line's variance, so ±1 SD is available already. A line with nothing answered shows as wide as
+the ideologies' whole spread there and narrows as statements on it are answered. First as a
+debugging view; whether takers see it is open.
+
+## Far-edge distance (parked 2026-10-31, Brandon wants to understand it better first)
+
+Measure each line between the furthest points of the two records' ranges (|Δ| + sd_a + sd_b) instead
+of between their centres, so a line a record leaves unknown counts against it without any inclusion
+rule. It doesn't score silence: null leaves the range wide, a middle answer narrows it. Measured at
+±1 SD on every complete audit with no rule (scratchpad tool far-edge.js): it barely separates thin
+records (mean distance to the others 33.6 for the thinnest vs 32.1 for well-placed ones), because the
+middle of a line plus one SD is about where a typical known ideology sits. A record failing the 50%
+rule was in the top 5 for 44 of 140 simulated adherents after 77 statements, and first for 45 of 114
+regression takers. A wider edge (2 SD, the line's ends) would separate them more, but how wide is a
+chosen number, the same choice as the 50% inclusion cut-off in another form.
+

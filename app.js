@@ -6,12 +6,11 @@
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
-// Once the answers place you to within the typical gap between neighbouring ideologies on every
-// dividing line (precision 1, see placementPrecision in pca.js), the quiz says you're done, whether or
-// not your top match has stopped moving: someone between two ideologies may never settle and would
-// otherwise answer every statement.
+// Once the answers place you on every dividing line (each more known than unknown: the rule that
+// decides which ideologies and people are shown; placementProgress in pca.js), the quiz says you're
+// done, whether or not your top match has stopped moving: someone between two ideologies may never
+// settle and would otherwise answer every statement.
 // Measured from which statements you answered, not counted, so it holds as statements are added.
-const DONE_PRECISION = 1;
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
   { label: "Disagree", value: -1 },
@@ -359,17 +358,17 @@ function renderQuestion() {
   const answered = answers.filter((a) => a !== null).length;
   $("counter").textContent = `Statement ${position + 1}`;
   // The bar and the text show one figure: how precisely the answers place you on every dividing line,
-  // as a share of the precision the quiz calls done (placementPrecision in pca.js).
-  const precision = placementPrecision(model, answers);
-  const done = precision >= DONE_PRECISION;
+  // (placementProgress in pca.js).
+  const progress = placementProgress(model, answers);
+  const done = progress >= 1;
   const early = answered >= Math.max(1, REAL_LINES);
-  $("bar").style.width = pct(Math.min(1, precision / DONE_PRECISION));
+  $("bar").style.width = pct(progress);
   const status = $("certainty");
   status.classList.toggle("ready", done);
   if (done) {
     status.innerHTML = `✓ Done, you're placed on every dividing line · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
-  } else status.textContent = early ? `Placing you on every dividing line · ${pct(Math.min(1, precision / DONE_PRECISION))}` : "Most telling statements first";
+  } else status.textContent = early ? `Placing you on every dividing line · ${pct(progress)}` : "Most telling statements first";
   $("statement").textContent = QUESTIONS[q].text;
   // Opened from a comparison: the compared sides' answers are marked beside yours.
   if (comparing && comparing.q !== q) comparing = null;
@@ -650,7 +649,7 @@ function showResults(shared = null) {
   const answered = !shared && progress
     ? progress.order.filter((j, k) => !progress.opened.has(j) && !(pending && k === progress.order.length - 1)).length
     : given.filter((a) => a !== null).length;
-  const done = placementPrecision(model, given) >= DONE_PRECISION;
+  const done = placementProgress(model, given) >= 1;
   const moreLeft = !shared && !!progress && progress.position < progress.order.length;
   const canContinue = moreLeft && !done;
   // A shared link holds every answer, so its owner (on another device, or after clearing the browser)

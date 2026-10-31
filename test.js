@@ -3,7 +3,7 @@
 const assert = require("assert");
 const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION, MODEL, PLACEMENT } = require("./data.js");
 const PEOPLE_ONLY = process.argv.includes("--people");
-const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, weights, place, fitTo, fitScale, placementSpread, nextQuestion, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
+const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, weights, place, locate, fitTo, fitScale, placementProgress, nextQuestion, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -44,7 +44,7 @@ if (!PEOPLE_ONLY) {
   assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, PLACEMENT), "audits/calibration.json is stale: run a full build");
   assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
   // One landscape (build.js): the real-line count is counted on every complete audit and committed in
-  // audits/lines.json, current and the one data.js ships; and salience is judged one way everywhere
+  // audits/lines.json, current and the one data.js ships; and uncertainty is judged one way everywhere
   // (scripts/lib.js), so the shown set is exactly the audits the shipped judge passes, less
   // indistinguishable ones (listed as related on the one kept).
   const lib = require("./scripts/lib");
@@ -55,9 +55,9 @@ if (!PEOPLE_ONLY) {
   const shown = new Set(IDEOLOGIES.map((i) => i.id));
   const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
   const awaiting = lib.awaitingReaudit();
-  const misjudged = complete.filter(({ id }) => lib.ideologySalience(readJson(profilePath(id))).salient && !awaiting.has(id)
+  const misjudged = complete.filter(({ id }) => lib.ideologyUncertainty(readJson(profilePath(id))).placed && !awaiting.has(id)
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
-  assert(!misjudged.length, `the shown ideologies don't match the salience judge (run a full build): ${misjudged.join(", ")}`);
+  assert(!misjudged.length, `the shown ideologies don't match the uncertainty judge (run a full build): ${misjudged.join(", ")}`);
 }
 // Every dividing line the page draws has a name from audits/line-labels.json. A line whose anchor
 // statements are no longer among its strongest loses its name (build.js warns); that must be renamed
@@ -87,7 +87,7 @@ if (!PEOPLE_ONLY) {
   const lib = require("./scripts/lib");
   const none = Array(QUESTIONS.length).fill(null);
   assert.strictEqual(place(shipped, none), null, "place() gives a position to no answers");
-  assert.strictEqual(fitTo(shipped, none, shipped.ideologies.map((i) => i.at)), null, "fitTo() measures no answers");
+  assert.strictEqual(fitTo(shipped, none, shipped.ideologies), null, "fitTo() measures no answers");
   assert(match(shipped, none).ranked.every((r) => r.distance === 0 && r.similarity === 0), "match() ranks no answers");
   assert.strictEqual(matchPeople(shipped, none, [{ id: "x", profile: IDEOLOGIES[0].profile }]).length, 0, "matchPeople() ranks no answers");
   assert(weights(shipped, none).every((w) => w === 1 / IDEOLOGIES.length), "ideologies don't weigh the same before any answer");
@@ -101,7 +101,7 @@ if (!PEOPLE_ONLY) {
 // The similarity scale (fitScale, the widest distance between two shown ideologies) ships with the
 // model (build.js), so the page doesn't compare every pair; it must be current.
 if (!PEOPLE_ONLY) {
-  const fresh = modelFromParts(IDEOLOGIES, { ...MODEL, span: undefined });
+  const fresh = modelFromParts(IDEOLOGIES, { ...MODEL, span: undefined }, PLACEMENT);
   assert(Math.abs(fitScale(fresh) - MODEL.span) < 1e-5, "data.js's similarity scale (MODEL.span) is stale: run a full build");
 }
 const shareSum = model.components.reduce((s, c) => s + c.share, 0);
@@ -132,13 +132,13 @@ for (const ideo of IDEOLOGIES) {
   // Two takers who share no statement still get a line distance (statement overlap plays no part).
   const n = QUESTIONS.length, a = Array(n).fill(null), b = Array(n).fill(null);
   a[0] = 2; b[1] = -2;
-  assert(fitTo(shipped, a, [place(shipped, b)]) != null, "match needs shared statements: statement-based matching is back");
+  assert(fitTo(shipped, a, [locate(shipped, b)]) != null, "match needs shared statements: statement-based matching is back");
 }
-// s (placementSpread) only shrinks as answers come in: one more answered statement never widens it.
+// The quiz's progress (placementProgress) only grows as answers come in.
 {
   const own = IDEOLOGIES[0].profile;
   const half = own.map((x, j) => (j % 2 ? null : x));
-  assert(placementSpread(shipped, own) < placementSpread(shipped, half), "more answers don't narrow s");
+  assert(placementProgress(shipped, own) >= placementProgress(shipped, half), "more answers lower the quiz's progress");
 }
 {
   const w = weights(shipped, IDEOLOGIES[0].profile);
@@ -172,39 +172,28 @@ if (!PEOPLE_ONLY) console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy take
   `averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
 if (!PEOPLE_ONLY && hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers matched their source.");
 
-// 4. Salience controls: apolitical celebrities, audited with the same instructions as everyone
+// 4. Uncertainty controls: apolitical celebrities, audited with the same instructions as everyone
 // else, must not pass; report how the audited people fare.
 const fs = require("fs");
 const lib = require("./scripts/lib.js");
-const sal = (dir, list) => list.filter((p) => fs.existsSync(require("path").join(dir, `${p.id}.json`)))
-  .map((p) => ({ p, r: lib.personSalience(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers, dir === lib.PEOPLE_DIR ? p.id : null) }));
-const controls = sal(lib.CONTROLS_DIR, lib.controlsCatalog());
+const judged = (dir, list) => list.filter((p) => fs.existsSync(require("path").join(dir, `${p.id}.json`)))
+  .map((p) => ({ p, r: lib.personUncertainty(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers) }));
+const controls = judged(lib.CONTROLS_DIR, lib.controlsCatalog());
 for (const { p, r } of controls) {
-  const line = `${p.name}: ${r.known} positions, uncertainty ${r.uncertainty.toFixed(2)} vs bar ${r.bar.toFixed(2)}`;
-  if (p.borderline) console.log(`Borderline control ${line} -> ${r.salient ? "included" : "excluded"}`);
-  else assert(!r.salient, `control passed salience: ${line}`);
+  const line = `${p.name}: ${r.known} positions, worst line ${Math.round(r.uncertainty * 100)}% unknown (at most ${Math.round(r.max * 100)}%)`;
+  if (p.borderline) console.log(`Borderline control ${line} -> ${r.placed ? "included" : "excluded"}`);
+  else assert(!r.placed, `control passed the uncertainty rule: ${line}`);
 }
-const people = sal(lib.PEOPLE_DIR, lib.peopleCatalog());
-// people.js holds exactly the salient people, less those listed on a closer match's page.
+const people = judged(lib.PEOPLE_DIR, lib.peopleCatalog());
+// people.js holds exactly the people placed on every line, less those listed on a closer match's page.
 {
   const { PEOPLE } = require("./people.js");
   const listed = new Set(PEOPLE.flatMap((p) => [p.id, ...(p.related || []).map((r) => r.id)]));
-  const misjudged = people.filter(({ p, r }) => r.salient !== listed.has(p.id)).map(({ p }) => p.id);
-  assert(!misjudged.length, `people.js doesn't match the people salience judge (run node scripts/build.js --people): ${misjudged.join(", ")}`);
+  const misjudged = people.filter(({ p, r }) => r.placed !== listed.has(p.id)).map(({ p }) => p.id);
+  assert(!misjudged.length, `people.js doesn't match the uncertainty judge (run node scripts/build.js --people): ${misjudged.join(", ")}`);
 }
-// The legacy-bar list only shrinks: a listed person who meets the current bar, or has no audit, comes off it.
-const legacy = lib.readJson(lib.LEGACY_PATH).ids;
-for (const id of legacy) {
-  const x = people.find((y) => y.p.id === id);
-  assert(x, `${id} is in audits/people-legacy-bar.json but has no audit; remove it`);
-  assert(x.r.legacy, `${id} now meets the current people bar (or fails the old one); remove it from audits/people-legacy-bar.json`);
-  // One more pass to reach the new bar: a second pass that still falls short ends the exception.
-  const passes = (lib.readJson(lib.personPath(id)).passes || []).length;
-  assert(passes < 2, `${id} has ${passes} audit passes and still misses the current people bar; remove it from audits/people-legacy-bar.json`);
-}
-console.log(`Salience: ${people.filter((x) => x.r.salient).length}/${people.length} audited people pass ` +
-  `(${people.filter((x) => x.r.legacy).length} on the legacy bar); ` +
-  `${controls.filter((x) => !x.p.borderline && !x.r.salient).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
+console.log(`Uncertainty: ${people.filter((x) => x.r.placed).length}/${people.length} audited people are placed on every line; ` +
+  `${controls.filter((x) => !x.p.borderline && !x.r.placed).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
 
 // 4b. Ideology colors: never only neutral shades (grey, black, white); a neutral is fine next to a
 // real color. Saturation is HSL saturation; below 0.15 reads as neutral.

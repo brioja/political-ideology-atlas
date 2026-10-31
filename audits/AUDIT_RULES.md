@@ -120,19 +120,22 @@ least one source id from your `sources` list.
   the answer is `low`. A question anachronistic for the subject (it couldn't have taken a side on it)
   is `null`, unless the subject's own texts settle it anyway.
 
-## 5. Salience
+## 5. Uncertainty: placed on every dividing line
 
-The validator checks whether the subject's known positions place them on the test's dividing lines
-precisely enough to tell neighbouring ideologies apart. Every answer resting on evidence counts,
-whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits
-under rules 2 still hold. A subject with too thin a record is left out of the test. Don't pad
-answers to pass: an honest rejection is the correct outcome.
+A political ideology or figure takes positions across all of the test's dividing lines; a record
+that speaks to only some of them holds opinions, not a full politics. The validator measures, on
+each line, how much of it the subject's known positions leave unknown, and the subject is shown only
+if every line is more known than unknown (at most 50% unknown, `MAX_UNCERTAINTY` in `pca.js`). The
+same rule applies to ideologies, people and AI models. Every answer resting on evidence counts,
+whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
+rules 2 still hold. A failure names the lines left unknown. Don't pad answers to pass: an honest
+rejection is the correct outcome.
 
 ## 6. Deepening an existing audit
 
-The runner may ask for another pass on an audit that fails the salience check or sits close to it.
+The runner may ask for another pass on an audit that fails the uncertainty rule or sits close to it.
 Build on the existing audit rather than starting over:
-- Read its sources and answers. Count known positions per theme and research the thinnest themes.
+- Read its sources and answers. Research the lines the validator names, then the thinnest themes.
 - Keep the subject. Don't borrow a related subject's positions (secular humanism's for secularism,
   a party's for one of its members, a relative's or employer's for a person).
 - Change an answer or raise its confidence only on evidence you found and cite. Check every answer
@@ -143,5 +146,5 @@ Build on the existing audit rather than starting over:
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
   the date of your pass. Set `"rules": 3`, which requires no "Inferred:" answer left.
-- If the record really has nothing more, failing salience is the correct outcome. Say in `notes`
+- If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.

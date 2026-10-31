@@ -31,16 +31,16 @@ vm.createContext(ctx);
 for (const f of ["data.js", "pca.js", "people.js"]) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, f), "utf8").replace(/^(const|let) /gm, "var "), ctx, { filename: f });
 }
-const { QUESTIONS, IDEOLOGIES, MODEL, PEOPLE = [] } = ctx;
-const model = ctx.modelFromParts(IDEOLOGIES, MODEL);
+const { QUESTIONS, IDEOLOGIES, MODEL, PLACEMENT, PEOPLE = [] } = ctx;
+const model = ctx.modelFromParts(IDEOLOGIES, MODEL, PLACEMENT);
 // Every page matches against every person, so remember each profile's place on the lines
-// (pca.js looks `place` up on the global object at each call).
-const placed = new WeakMap();
-const place = ctx.place;
-ctx.place = (m, answers) => {
-  if (m !== model) return place(m, answers);
-  if (!placed.has(answers)) placed.set(answers, place(m, answers));
-  return placed.get(answers);
+// (pca.js looks `locate` up on the global object at each call).
+const located = new WeakMap();
+const locate = ctx.locate;
+ctx.locate = (m, answers) => {
+  if (m !== model) return locate(m, answers);
+  if (!located.has(answers)) located.set(answers, locate(m, answers));
+  return located.get(answers);
 };
 const onModel = (profile) => profile.slice(0, QUESTIONS.length);
 const people = PEOPLE.map((p) => ({ ...p, profile: onModel(p.profile) }));

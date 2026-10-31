@@ -21,7 +21,7 @@ const PICK = {
 }
 const LANE = {
   type: 'object',
-  properties: { id: { type: 'string' }, ok: { type: 'boolean', description: 'audit file written and validator has no errors other than salience' }, report: { type: 'string' } },
+  properties: { id: { type: 'string' }, ok: { type: 'boolean', description: 'audit file written and validator has no errors other than the uncertainty rule' }, report: { type: 'string' } },
   required: ['id', 'ok', 'report'],
 }
 const INTEGRATE = {
@@ -44,8 +44,8 @@ Your ideology: ${it.name} (id: ${it.id}).
    opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard.
-2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-salience ${it.id}\` (the integrator checks
-   salience for the whole wave); fix every error it reports. Never raise a confidence to make an audit more salient. Write each rationale yourself, specific to its
+2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-uncertainty ${it.id}\` (the integrator checks
+   the uncertainty rule for the whole wave); fix every error it reports. Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
    statement; never pad or generate rationales by script to pass a length check.
 3. Leave missingStatements entries as proposals: do NOT set addedAs or declined, and do NOT edit statements.json.
    An integrator handles proposals from all lanes together.
@@ -64,8 +64,8 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    in every audit that proposed it; if a wave audit proposed it, that audit must also answer the new statement in its answers,
    following audits/PROMPT.md's answer format. Or set "declined" with a reason. Keep the bank lean: every statement added must be answered by every future audit.
    Keep each file's own JSON indentation.
-2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the salience model once);
-   fix every error except salience (never raise a confidence to pass it).
+2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the uncertainty judge once);
+   fix every error except the uncertainty rule (never raise a confidence to pass it).
 3. Commit each audit separately as "Audit <name>" (git add only that audit file; statements.json goes with the first commit).
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
 4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js and

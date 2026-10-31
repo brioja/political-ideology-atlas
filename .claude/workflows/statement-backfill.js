@@ -65,7 +65,7 @@ Only edit those audit files. Do not modify any other file in the repo.`,
 phase('Check')
 const check = await agent(
   `In ${ROOT}, run \`node scripts/validate.js\` and \`node scripts/statements-check.js\`. ` +
-  `Report the validator's summary line and any errors other than salience, and the "Candidates" section of the check, briefly. Do not edit any files.`,
+  `Report the validator's summary line and any errors other than the uncertainty rule, and the "Candidates" section of the check, briefly. Do not edit any files.`,
   { label: 'check', phase: 'Check', effort: 'low' },
 )
 

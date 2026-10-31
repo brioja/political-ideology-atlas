@@ -64,8 +64,8 @@ Read ${ROOT}/audits/PROMPT_PEOPLE.md first and follow it exactly. Fill its place
 The statements are in ${ROOT}/statements.json. Write your audit to ${ROOT}/audits/people/${i.id}.json.
 Use WebSearch and WebFetch (load them with ToolSearch if they are deferred) to read real sources, and cite only pages you opened.
 Research theme by theme as PROMPT_PEOPLE.md says, starting from the person's own words and record; a prominent politician usually needs 8-12 sources.
-Then run \`node ${ROOT}/scripts/validate.js --people ${i.id}\`. Fix every error except the salience rule; if only the
-salience rule fails, the person genuinely lacks enough known positions. Leave the honest answers in place and report it.
+Then run \`node ${ROOT}/scripts/validate.js --people ${i.id}\`. Fix every error except the uncertainty rule; if only the
+uncertainty rule fails, the person's record genuinely leaves a dividing line mostly unknown. Leave the honest answers in place and report it.
 Only write that one file. Do not modify any other file in the repo.`
 
 phase('Audit')

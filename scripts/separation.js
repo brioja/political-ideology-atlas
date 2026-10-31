@@ -9,9 +9,9 @@
 //   --neighbours K  check each ideology against its K nearest (default 3)
 const path = require("path");
 const { ROOT, readJson, profilePath } = require("./lib");
-const { QUESTIONS, IDEOLOGIES, MODEL } = require(path.join(ROOT, "data.js"));
+const { QUESTIONS, IDEOLOGIES, MODEL, PLACEMENT } = require(path.join(ROOT, "data.js"));
 const { modelFromParts, distance: apart } = require(path.join(ROOT, "pca.js"));
-const at = Object.fromEntries(modelFromParts(IDEOLOGIES, MODEL).ideologies.map((i) => [i.id, i.at]));
+const at = Object.fromEntries(modelFromParts(IDEOLOGIES, MODEL, PLACEMENT).ideologies.map((i) => [i.id, i]));
 const firm = Object.fromEntries(IDEOLOGIES.map((i) => {
   const answers = readJson(profilePath(i.id)).answers;
   return [i.id, QUESTIONS.map((q) => answers[q.id].confidence !== "low")];

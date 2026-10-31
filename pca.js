@@ -166,6 +166,7 @@ function buildModel(ideologies, opts = {}) {
   // them; the build counts them once and passes `realLines` in.
   model.realLines = opts.realLines ?? meaningfulAxes(model, ideologies);
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile), at: place(model, i.profile) }));
+  model.ideologies.forEach((i) => Object.assign(i, locatedAt(model, i.profile, i.at)));
   model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
 }
@@ -213,7 +214,7 @@ function modelFromParts(ideologies, parts, placement = null) {
   // each is projected once.
   model.ideologies = ideologies.map((i) => {
     const at = place(model, i.profile);
-    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), at };
+    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), ...locatedAt(model, i.profile, at) };
   });
   model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
@@ -294,6 +295,13 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // share few statements. Silence (null) is never scored, as "Neither" or as disagreement: a decision,
 // not a default (test.js checks it). Placement solves the real lines from the answered statements
 // only (see project), and with nothing answered there is no position at all.
+//
+// Each line counts as far as both records are placed on it (lineStats, the same per-line precision
+// that decides who is placed well enough to be shown and tells the quiz you're done). A line a record says nothing about would
+// otherwise sit at its middle by default and count in full, as if the record were a moderate there:
+// someone placed only on economics would match whoever sits mid-way on religion. Weighted by
+// precision, it counts for nothing until it is answered, so ideologies that differ only there stay
+// tied, and the next-question selector asks about it because they disagree there.
 
 // Where a set of answers sits on the real lines, or null with nothing answered.
 function place(model, answers) {
@@ -301,26 +309,37 @@ function place(model, answers) {
   return project(model, answers, matchLines(model));
 }
 
-// The distance between two positions (Euclidean, on the real lines). No position is no basis for a match.
+// Where a set of answers sits on the real lines (`at`, from place()) and how reliably on each
+// (`reliability`, 0 for a line it says nothing about to 1 for a line it pins down; see lineStats), or
+// null with nothing answered. Ideologies in a model carry both (modelFromParts, buildModel).
+function locate(model, answers) {
+  return locatedAt(model, answers, place(model, answers));
+}
+const locatedAt = (model, answers, at) =>
+  at && { at, reliability: lineStats(placementOf(model), answeredIndexes(answers)).map((l) => l.reliability) };
+
+// The distance between two located records (locate): Euclidean on the real lines, each line weighted
+// by how reliably both are placed on it. No position is no basis for a match.
 function distance(a, b) {
   if (!a || !b) return Infinity;
   let s = 0;
-  for (let k = 0; k < a.length; k++) s += (a[k] - b[k]) ** 2;
+  for (let k = 0; k < a.at.length; k++) s += a.reliability[k] * b.reliability[k] * (a.at[k] - b.at[k]) ** 2;
   return Math.sqrt(s);
 }
 
-// The distances from a set of answers to each of `positions` (from place()), or null with nothing
-// answered: no basis to rank anyone, rather than everyone measured from the centre.
-function fitTo(model, answers, positions) {
-  const you = place(model, answers);
-  return you && positions.map((at) => distance(you, at));
+// The distances from a set of answers to each of `places` (located records, such as a model's
+// ideologies), or null with nothing answered: no basis to rank anyone, rather than everyone measured
+// from the centre.
+function fitTo(model, answers, places) {
+  const you = locate(model, answers);
+  return you && places.map((p) => distance(you, p));
 }
 
 // The similarity scale's 0% end: the largest distance between two shown ideologies. Fixed for a model,
 // whatever was answered; the build ships it (MODEL.span), so the page doesn't compare every pair.
 function fitScale(model) {
   if (model.span == null) {
-    const at = model.ideologies.map((i) => i.at);
+    const at = model.ideologies;
     let span = 0;
     for (let a = 0; a < at.length; a++) for (let b = a + 1; b < at.length; b++) span = Math.max(span, distance(at[a], at[b]));
     model.span = span;
@@ -334,32 +353,32 @@ const similarity = (model, d) => {
   return span && d != null ? Math.max(0, 1 - d / span) : 0;
 };
 
-// s: how precisely the answers place you on every real line (lineUncertainty, the same measure
-// salience judges ideologies and people by), with the landscape's noise per statement, so it only
-// shrinks as you answer. Precise answers on a few lines don't make up for none on another. Always
-// positive and finite: it starts from the ideologies' own spread on each line.
-function placementSpread(model, answers) {
-  return lineUncertainty(placementOf(model), answeredIndexes(answers));
-}
-
-// How precisely a set of answers places someone, in units of the typical gap between neighbouring
-// ideologies (the placement context's bar): 1 means s is about one such gap on every line. The quiz
-// says you're done at a fixed precision (app.js), so a taker between two ideologies isn't asked every
-// statement, and one is never done while a line is still unknown.
-function placementPrecision(model, answers) {
+// How far the quiz has placed you, from 0 to 1: 1 once your uncertainty on every real line (the same
+// measure that decides who is shown; see uncertainty()) is at most DONE_UNCERTAINTY, and on the way
+// there, how much of its spread your worst line has resolved against that target. It only grows as you
+// answer. The quiz says you're done at 1, so a taker between two ideologies isn't asked every statement,
+// and one is never done while a line is still mostly unknown.
+// Being shown asks "is this a full politics?"; "Done" asks "is the result settled?", so it has its own
+// target. Measured on simulated adherents (Brandon picked ~60 questions, 2026-10-31): at 35% the median
+// taker is done after 64 statements with their own ideology first for 75% (top 3 for 86%); 50% took 35
+// statements at 46%, 25% took 105 at 91%.
+const DONE_UNCERTAINTY = 0.35;
+function placementProgress(model, answers) {
   if (!answers.some((x) => x != null)) return 0;
-  return placementOf(model).bar / placementSpread(model, answers);
+  return Math.min(1, (1 - worstUncertainty(placementOf(model), answeredIndexes(answers))) / (1 - DONE_UNCERTAINTY));
 }
 
 // How plausible each ideology is given the answers so far (weights summing to 1), from its distance
-// `d` (fitTo): a Gaussian, exp(-d² / 2s²), whose width s is how precisely the answers place you
-// (placementSpread, the same s that tells the quiz you're done), so there is no tuning constant. Few
-// answers place you loosely and every nearby ideology stays in play; more answers narrow
-// it down. Before any answer (d null) all weigh the same.
+// `d` (fitTo): a Gaussian, exp(-d² / 2s²), whose width s is how far off the distance itself may be
+// from your placement error: on each line, its variance weighted the way distance weighs that line
+// (distanceSpread), so there is no tuning constant. A line you haven't
+// answered adds neither distance nor width; a loosely placed one keeps every nearby ideology in play.
+// Before any answer (d null) all weigh the same.
 function plausibility(model, answers, d) {
   const m = model.ideologies.length;
   if (!d) return new Array(m).fill(1 / m);
-  const s = placementSpread(model, answers);
+  const s = distanceSpread(placementOf(model), answeredIndexes(answers));
+  if (!(s > 0)) return new Array(m).fill(1 / m);
   const logs = d.map((x) => -(x * x) / (2 * s * s));
   const top = Math.max(...logs);
   const w = logs.map((l) => Math.exp(l - top));
@@ -370,7 +389,7 @@ function plausibility(model, answers, d) {
 // The placement context plausibility() measures with: shipped (modelFromParts), or worked out from a
 // model built here (buildModel), which has every component.
 function placementOf(model) {
-  if (model.placement === undefined) model.placement = salienceContext(model);
+  if (model.placement === undefined) model.placement = placementContext(model);
   if (!model.placement) throw new Error("This model has no placement context: pass PLACEMENT to modelFromParts.");
   return model.placement;
 }
@@ -379,7 +398,7 @@ function placementOf(model) {
 // Ranks ideologies by fit, nearest first, with each one's similarity. With nothing answered there is
 // no basis to rank: every ideology is at distance 0 and 0% similarity, in catalog order.
 function match(model, answers) {
-  const d = fitTo(model, answers, model.ideologies.map((i) => i.at));
+  const d = fitTo(model, answers, model.ideologies);
   const ranked = model.ideologies
     .map((i, k) => ({ ...i, distance: d ? d[k] : 0, similarity: d ? similarity(model, d[k]) : 0 }))
     .sort((x, y) => x.distance - y.distance);
@@ -393,7 +412,7 @@ function nearest(d) {
   return best;
 }
 // The id match() would rank first, without sorting or similarities.
-const topMatch = (model, answers) => model.ideologies[nearest(fitTo(model, answers, model.ideologies.map((i) => i.at)))].id;
+const topMatch = (model, answers) => model.ideologies[nearest(fitTo(model, answers, model.ideologies))].id;
 
 // The dividing lines that are real (they beat shuffled noise, see meaningfulAxes): matching, placing
 // answers and the quiz's progress all use these, whatever the page has room to show
@@ -406,14 +425,14 @@ function matchLines(model) {
 // Ranks people (or any profiles: the Compare page ranks one ideology against another this way) by fit,
 // on the same scale as ideologies, closest first. Nothing answered: an empty list.
 function matchPeople(model, answers, people) {
-  const d = fitTo(model, answers, people.map((p) => place(model, p.profile)));
+  const d = fitTo(model, answers, people.map((p) => locate(model, p.profile)));
   if (!d) return [];
   return people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
     .sort((a, b) => a.distance - b.distance);
 }
 
 // How plausible each ideology is given the answers so far (see plausibility).
-const weights = (model, answers) => plausibility(model, answers, fitTo(model, answers, model.ideologies.map((i) => i.at)));
+const weights = (model, answers) => plausibility(model, answers, fitTo(model, answers, model.ideologies));
 
 // Picks the unasked statement on which the currently plausible ideologies disagree most.
 // With no answers that is simply the most divisive statement overall; later it is the one
@@ -495,7 +514,7 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
   const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
   const ideos = model.ideologies;
   const m = ideos.length, n = ideos[0].profile.length;
-  const positions = ideos.map((i) => i.at);
+  const positions = ideos;
   // NaN marks no known position, which nextQuestion() leaves out.
   const colMajor = new Float64Array(n * m);
   ideos.forEach((i, k) => i.profile.forEach((x, q) => { colMajor[q * m + k] = x ?? NaN; }));
@@ -563,53 +582,86 @@ function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
 // The calibrated chance that the current top match will hold, for a "how settled" reading.
 const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
 
-// Salience: can a record place someone precisely enough to tell them apart from their neighbours?
-// Depends only on WHICH statements have a recorded position, never on the answers, so unusual
-// views are not penalized. Bayesian: before any evidence, a position is as spread out as the
-// ideologies are on each dividing line (the eigenvalues); each recorded statement narrows that
-// along the lines it measures, weighted by the leftover noise per statement (the variance the
-// real lines don't explain). The bar is the resolution: the median distance, on the real lines,
-// between an ideology and its nearest neighbour. A record less precise than that can't say which
-// of two neighbouring ideologies it is closer to, so it isn't matched against.
-function salienceContext(model, ideologies, { lines } = {}) {
+// The placement context: how precisely a record is placed on each real line. Depends only on WHICH
+// statements have a recorded position, never on the answers, so unusual views are not penalized.
+// Bayesian: before any evidence, a position is as spread out as the ideologies are on each dividing
+// line (the eigenvalues); each recorded statement narrows that along the lines it measures, weighted
+// by the leftover noise per statement (the variance the real lines don't explain). Precision is
+// judged on the lines matching uses (`rotated`: the rotated real lines, which span the same space as
+// the first k components; the components themselves without).
+function placementContext(model, { lines, rotated } = {}) {
   const k = Math.max(2, Math.min(lines ?? matchLines(model), model.components.length));
   const n = model.mean.length;
   const noise = model.components.slice(k).reduce((s, c) => s + c.eigenvalue, 0) / n || 1e-6;
-  const dist = (a, b) => Math.sqrt(a.slice(0, k).reduce((s, x, i) => s + (x - b[i]) ** 2, 0));
-  const gaps = model.ideologies
-    .map((a) => Math.min(...model.ideologies.filter((b) => b !== a).map((b) => dist(a.scores, b.scores))))
-    .sort((x, y) => x - y);
-  const ctx = { model, k, noise, resolution: gaps[Math.floor(gaps.length / 2)] };
-  ctx.bar = ctx.resolution;
+  const comps = model.components.slice(0, k);
+  // lines[i][a]: line i's loading on component a, so a score on line i is Σ_a lines[i][a] · score on a.
+  const toLines = rotated ? rotated.slice(0, k).map((r) => comps.map((c) => dot(r.vector, c.vector)))
+    : comps.map((_, i) => comps.map((__, a) => (a === i ? 1 : 0)));
+  return withLines({ model, k, noise, lines: toLines });
+}
+
+// A placement context with each line's spread before any answer (`prior`: the ideologies' variance
+// along it).
+function withLines(ctx) {
+  const comps = ctx.model.components.slice(0, ctx.k);
+  ctx.prior = ctx.lines.map((row) => row.reduce((s, x, a) => s + x * x * comps[a].eigenvalue, 0));
   return ctx;
 }
 
-
-// The placement context salience() needs, rebuilt from what the build ships (PLACEMENT in data.js):
-// the page's MODEL carries only the rotated lines, not the unrotated components or the noise level.
+// The placement context, rebuilt from what the build ships (PLACEMENT in data.js): the page's MODEL
+// carries only the rotated lines, not the unrotated components or the noise level.
 function placementFromParts(parts) {
-  return parts && { model: { components: parts.components }, k: parts.k, noise: parts.noise, bar: parts.bar };
+  return parts && withLines({ model: { components: parts.components }, k: parts.k, noise: parts.noise,
+    lines: parts.lines || parts.components.map((_, i) => parts.components.map((__, a) => (a === i ? 1 : 0))) });
 }
 
-// How precisely a record places someone on every real line, not only overall: each line gets an equal
-// share of the bar, since an error of the same size moves a distance equally on any line. The worst
-// line counts, scaled back to the whole (sqrt(k) times its error) so it compares with the bar. A record
-// precise on a few lines and silent on the rest (a single-cause ideology) sits by default near the
-// middle of the lines it doesn't address, and would match takers there; it fails here. A narrow line,
-// which barely changes any distance, is uncertain by little even with no answers, so it rarely decides.
-function lineUncertainty(ctx, knownIdx) {
-  const { model, k, noise } = ctx;
+// How precisely a record with positions on `knownIdx` is placed on each real line, in the order
+// matching uses them: `variance`, its expected squared error there, and `reliability`, the share of
+// the line's spread its answers account for (1 - variance / prior: 0 with nothing on the line, near 1
+// once pinned down). One posterior for every use: distance weighs lines by reliability, the
+// selector's plausibility takes its width from it, and who is shown and "Done" from the worst line.
+function lineStats(ctx, knownIdx) {
+  const { model, k, noise, lines, prior } = ctx;
   const comps = model.components.slice(0, k);
-  const M = comps.map((ca, a) => comps.map((cb, b) =>
-    (a === b ? 1 / ca.eigenvalue : 0) + knownIdx.reduce((s, j) => s + ca.vector[j] * cb.vector[j], 0) / noise));
-  const worst = Math.max(...comps.map((_, i) => solve(M, comps.map((_, j) => (j === i ? 1 : 0)))[i]));
-  return Math.sqrt(k * worst);
+  const M = comps.map((ca, a) => comps.map(() => 0));
+  for (const j of knownIdx) {
+    for (let a = 0; a < k; a++) {
+      const x = comps[a].vector[j] / noise;
+      for (let b = a; b < k; b++) M[a][b] += x * comps[b].vector[j];
+    }
+  }
+  for (let a = 0; a < k; a++) { M[a][a] += 1 / comps[a].eigenvalue; for (let b = 0; b < a; b++) M[a][b] = M[b][a]; }
+  const C = comps.map((_, i) => solve(M, comps.map((__, j) => (j === i ? 1 : 0)))); // M⁻¹ (symmetric)
+  return lines.map((row, i) => {
+    const variance = row.reduce((s, x, a) => s + x * row.reduce((t, y, b) => t + C[a][b] * y, 0), 0);
+    return { variance, reliability: Math.max(0, 1 - variance / prior[i]) };
+  });
 }
 
-function salience(ctx, profile) {
+// A political ideology or figure takes positions across every dividing line; a record that speaks to
+// only some of them holds opinions, not a full politics, and isn't shown (Brandon, 2026-10-31).
+// Uncertainty: on a record's worst line, the share of that line's spread its answers leave unknown
+// (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY: every
+// line more known than unknown. The same rule for ideologies, people and AI models; the quiz's "Done"
+// uses the same measure with its own target (DONE_UNCERTAINTY).
+const MAX_UNCERTAINTY = 0.5;
+function worstUncertainty(ctx, knownIdx) {
+  return Math.max(...lineStats(ctx, knownIdx).map((l) => 1 - l.reliability));
+}
+
+function uncertainty(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
-  const uncertainty = lineUncertainty(ctx, known);
-  return { known: known.length, uncertainty, bar: ctx.bar, salient: uncertainty <= ctx.bar };
+  const lines = lineStats(ctx, known).map((l) => 1 - l.reliability);
+  const worst = Math.max(...lines);
+  return { known: known.length, uncertainty: worst, lines, max: MAX_UNCERTAINTY, placed: worst <= MAX_UNCERTAINTY };
+}
+
+// How far off a distance may be from placement error alone, for a record with positions on `knownIdx`:
+// on each line its variance, weighted the way distance weighs that line (s² = Σ reliability ·
+// variance). The selector's plausibility width, and, for every statement answered, the closest two
+// ideologies can be and still be told apart.
+function distanceSpread(ctx, knownIdx) {
+  return Math.sqrt(lineStats(ctx, knownIdx).reduce((t, l) => t + l.reliability * l.variance, 0));
 }
 
 // Describes an axis by the statements that load on it most and the ideologies at each end.
@@ -659,5 +711,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, distance, fitTo, fitScale, similarity, plausibility, placementSpread, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, salienceContext, salience, placementFromParts, placementPrecision, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis, SETTLE };
 }

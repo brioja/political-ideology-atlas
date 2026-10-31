@@ -33,7 +33,7 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
-   except salience (exit code 2 is an honest result: never raise a confidence to pass it).
+   except the uncertainty rule (exit code 2 is an honest result: never raise a confidence to pass it).
 3. Handle each missingStatements entry. Prefer merging: if an existing statement in statements.json already captures it,
    even loosely, set "addedAs" to that id (your answer to it must agree). Only if none does, append a new statement to
    statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,

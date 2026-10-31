@@ -26,22 +26,23 @@ const profilePath = (id) => path.join(PROFILES_DIR, `${id}.json`);
 const PEOPLE_DIR = path.join(ROOT, "audits", "people");
 const peopleCatalog = () => readJson(path.join(ROOT, "audits", "people-catalog.json")).people;
 const personPath = (id) => path.join(PEOPLE_DIR, `${id}.json`);
-// Negative controls: apolitical celebrities audited the same way, expected to fail salience.
+// Negative controls: apolitical celebrities audited the same way, expected to fail the uncertainty rule.
 const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
 const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
 const controlPath = (id) => path.join(CONTROLS_DIR, `${id}.json`);
 
-// Salience (see pca.js) is judged against one context for ideologies and people alike: the lines of
-// the landscape (every complete ideology audit, build.js), their noise and their bar, as data.js
-// ships them (PLACEMENT). It is judged from the rounded parts that are written out, so build.js,
+// Uncertainty (see pca.js) is judged against one context for ideologies and people alike: the lines of
+// the landscape (every complete ideology audit, build.js) and their noise, as data.js ships them
+// (PLACEMENT). It is judged from the rounded parts that are written out, so build.js,
 // validate.js and test.js get the same verdicts. build.js passes the judge it has just made;
 // everyone else gets the last build's.
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
 const judgeParts = (ctx) => ({
   k: ctx.k,
   noise: r6(ctx.noise),
-  bar: r6(ctx.bar),
   components: ctx.model.components.slice(0, ctx.k).map((c) => ({ eigenvalue: r6(c.eigenvalue), vector: c.vector.map((x) => Math.round(x * 1e4) / 1e4) })),
+  // Each matched line in terms of the components (placementContext in pca.js), in the shipped order.
+  lines: ctx.lines.map((row) => row.map(r6)),
 });
 // `ids`: the statement ids, in the order of the parts' vectors.
 const judgeFrom = (parts, ids) => ({ ctx: require(path.join(ROOT, "pca.js")).placementFromParts(parts), ids });
@@ -77,49 +78,27 @@ const shippedJudge = () => {
   }
   return lastJudge;
 };
-// Placement precision against the judge's bar, scaled by `factor`.
-function placed(answers, factor, judge) {
-  const r = require(path.join(ROOT, "pca.js")).salience(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
-  return { ...r, bar: r.bar * factor, salient: r.uncertainty <= r.bar * factor };
-}
-// People are held to a looser bar than ideologies. An ideology must be told apart from its nearest
-// neighbour; a person only has to be placed well enough to be compared at all, and the build's
-// "uniquely reachable" check already keeps two people from being indistinguishable. A person placed
-// near a looser bar lands close to the middle of the lines and turns up in many takers' results, so at
-// 1.125x a record needs roughly 40-60 positions, depending on how they spread over the themes.
-const PEOPLE_BAR = 1.125;
-// The bar was 1.5x until 2026-10-26. People shown under it who don't yet meet the new bar are listed in
-// audits/people-legacy-bar.json and keep the old bar, so they stay on the site while their audits are
-// deepened. An id leaves the list once its audit meets the new bar, or once a second pass still
-// doesn't and the person leaves the site (test.js checks both); none are added.
-const LEGACY_PEOPLE_BAR = 1.5;
-const LEGACY_PATH = path.join(ROOT, "audits", "people-legacy-bar.json");
-let legacyIds = null;
-const onLegacyBar = (id) => (legacyIds ||= new Set(fs.existsSync(LEGACY_PATH) ? readJson(LEGACY_PATH).ids : [])).has(id);
-// Salience counts every answer resting on evidence, whatever its confidence (audits/AUDIT_RULES.md,
+// The uncertainty rule (pca.js), from audit answers.
+const judged = (answers, judge) =>
+  require(path.join(ROOT, "pca.js")).uncertainty(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
+// Uncertainty counts every answer resting on evidence, whatever its confidence (audits/AUDIT_RULES.md,
 // section 5): inferences, which begin "Inferred:", and "no known position" (null) don't count. They
 // still count for matching, so nobody is shown on the strength of inferences.
 const RULES = 2;
 const evidenceOnly = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
-// `id` is needed only for people who may be on the legacy bar; `legacy` says whether that bar applied.
-const personSalience = (answers, id = null, judge = shippedJudge()) => {
-  const r = placed(evidenceOnly(answers), PEOPLE_BAR, judge);
-  if (r.salient || !id || !onLegacyBar(id)) return { ...r, legacy: false };
-  const old = placed(evidenceOnly(answers), LEGACY_PEOPLE_BAR, judge);
-  return { ...old, legacy: old.salient, strictBar: r.bar };
-};
+const personUncertainty = (answers, judge = shippedJudge()) => judged(evidenceOnly(answers), judge);
 
 // Ideology audits written before the shared rules (no "rules": 2) recorded silence as 0 and inferences
 // unmarked, so only their medium and high answers count until they are re-audited.
 const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-// The statements an ideology audit has a stated position on, as its salience counts them: evidence,
+// The statements an ideology audit has a stated position on, as its uncertainty counts them: evidence,
 // not "Inferred:" (or, in audits from before the shared rules, medium or high only); never null.
 const statedPositions = (audit) => new Set(Object.entries((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers))
   .filter(([, a]) => a.value != null).map(([id]) => id));
-const ideologySalience = (audit, judge = shippedJudge()) =>
-  placed((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), 1, judge);
+const ideologyUncertainty = (audit, judge = shippedJudge()) =>
+  judged((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), judge);
 
 // The inputs of the real-line count (build.js, audits/lines.json): pca.js and the answers of the
 // ideologies it is counted on (`id` and `profile`, in catalog order).
@@ -136,12 +115,12 @@ const calibrationKey = (ideologies, placement) => require("crypto").createHash("
   .digest("hex");
 
 // Ideologies held off the site until re-audited (audits/awaiting-reaudit.json). Their old audits still
-// shape the dividing lines, like audits that fail salience.
+// shape the dividing lines, like audits that fail the uncertainty rule.
 const awaitingReaudit = () => {
   const f = path.join(ROOT, "audits", "awaiting-reaudit.json");
   return new Set(fs.existsSync(f) ? readJson(f).ids : []);
 };
 
 module.exports = { awaitingReaudit, linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
-  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personSalience, ideologySalience,
-  RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies, LEGACY_PATH, onLegacyBar };
+  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
+  RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
