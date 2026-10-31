@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": false,
  "role": "English musician, Beatles co-founder and peace and left-wing activist (1940-1980)",
@@ -106,6 +107,22 @@
    "author": "The Beatles official archive",
    "url": "https://www.thebeatles.com/when-beatles-refused-play-segregated-audiences",
    "usedFor": "Corroboration of the band’s 1964 refusal"
+  },
+  {
+   "id": "b8",
+   "kind": "reference",
+   "title": "Sunday Bloody Sunday (Lennon-Ono, 1972): song history and lyrics",
+   "author": "Joe Goodden, The Beatles Bible",
+   "url": "https://www.beatlesbible.com/people/john-lennon/songs/sunday-bloody-sunday/",
+   "usedFor": "Lyric on the unionist 'majority' being a minority on the island; Lennon's September 1971 remarks on the IRA and non-violence"
+  },
+  {
+   "id": "b9",
+   "kind": "reference",
+   "title": "John Lennon and the Irish (Irish America)",
+   "author": "Brian Dooley",
+   "url": "https://www.irishamerica.com/?p=58001",
+   "usedFor": "August 1971 London march placard 'For the IRA Against British Imperialism'; February 1972 New York Bloody Sunday rally"
   }
  ],
  "answers": {
@@ -513,12 +530,9 @@
   "war-builds-character": {
    "value": null,
    "confidence": "low",
-   "rationale": "Inferred: from his statements that the Vietnam War was a waste and should end, and his 'Give Peace a Chance' campaigns.",
-   "sources": [
-    "s1",
-    "s4"
-   ],
-   "auditor": "claude-sonnet-5-5",
+   "rationale": "No recorded position on whether war strengthens a nation's character; his opposition to the Vietnam War does not address it.",
+   "sources": [],
+   "auditor": "claude-opus-5-5",
    "nulledFrom": -2
   },
   "separate-church-state": {
@@ -1310,10 +1324,14 @@
    "sources": []
   },
   "reunify-divided-nation": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "In 'Sunday Bloody Sunday' (1972) he told Northern Ireland's unionists their claim to be a majority was a lie because they are a minority 'on this sweet emerald isle', treating the whole island as the unit, and at an August 1971 London march he carried a placard 'For the IRA Against British Imperialism'. A song and a placard rather than a stated programme, and not revisited after 1972.",
+   "sources": [
+    "b8",
+    "b9"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "educated-out-of-touch": {
    "value": null,
@@ -3196,7 +3214,7 @@
    "sources": []
   }
  },
- "notes": "Most recent clear position wins: in 1980 he distanced himself from the 1971 revolutionary stance (he said the 'Power to the People' period came partly from guilt), keeping only 'count me out' for violence. Red Mole and Playboy full texts were read; Rolling Stone 1970 book scan searched. Many stated causes (Attica, Sinclair, Ireland) have no matching statement beyond those answered. The Counterpunch original was blocked; a TRANSCEND reprint was used.\n\nMerged with an independent gpt-6.1-sol audit: 9 answers taken from it, 8 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass, existing audit read only for notes and sources. Full September and December 1980 interviews downloaded and searched alongside the estate’s compilation of earlier interviews and letters. Speaker attribution is essential: Ono’s answers, Ali’s and Blackburn’s arguments, and posthumous comments are not Lennon’s. No song lyrics quoted or used alone as policy evidence. His 1980 reaffirmation of pacifism and criticism of political father figures take precedence over the less settled 1971 revolutionary discussion. Nutopia is explicitly conceptual performance art, so its institutional details are low confidence and not turned into detailed constitutional or economic policy. All 490 statement texts and remaining nulls reviewed. Targeted searches for electoral rules, national identity, ecology, technology and international economic institutions yielded little specific evidence; modern AI documentary makers’ views are not his. No inference from marriage, party labels, drug use or wealth alone. Of the ten priority statements only discourage-race-mixing is answered directly; broad equal-rights, racial-franchise and constitutional claims stay null. Final specificity review leaves state-harmful null: an imaginary country without ordinary laws is not a sufficient statement that actual states are unnecessary and harmful. No effort was made to clear inclusion by expanding generic peace or equality rhetoric into constitutional, weapons or environmental positions.",
+ "notes": "Most recent clear position wins: in 1980 he distanced himself from the 1971 revolutionary stance (he said the 'Power to the People' period came partly from guilt), keeping only 'count me out' for violence. Red Mole and Playboy full texts were read; Rolling Stone 1970 book scan searched. Many stated causes (Attica, Sinclair, Ireland) have no matching statement beyond those answered. The Counterpunch original was blocked; a TRANSCEND reprint was used.\n\nMerged with an independent gpt-6.1-sol audit: 9 answers taken from it, 8 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass, existing audit read only for notes and sources. Full September and December 1980 interviews downloaded and searched alongside the estate’s compilation of earlier interviews and letters. Speaker attribution is essential: Ono’s answers, Ali’s and Blackburn’s arguments, and posthumous comments are not Lennon’s. No song lyrics quoted or used alone as policy evidence. His 1980 reaffirmation of pacifism and criticism of political father figures take precedence over the less settled 1971 revolutionary discussion. Nutopia is explicitly conceptual performance art, so its institutional details are low confidence and not turned into detailed constitutional or economic policy. All 490 statement texts and remaining nulls reviewed. Targeted searches for electoral rules, national identity, ecology, technology and international economic institutions yielded little specific evidence; modern AI documentary makers’ views are not his. No inference from marriage, party labels, drug use or wealth alone. Of the ten priority statements only discourage-race-mixing is answered directly; broad equal-rights, racial-franchise and constitutional claims stay null. Final specificity review leaves state-harmful null: an imaginary country without ordinary laws is not a sufficient statement that actual states are unnecessary and harmful. No effort was made to clear inclusion by expanding generic peace or equality rhetoric into constitutional, weapons or environmental positions.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 13 (unity across borders): re-searched the full 1980 Playboy and Rolling Stone texts and the 1971 Red Mole interview for line-13 topics, and searched the web for his statements on Ireland, the UN and world government, prisons (Attica) and government. Only Irish reunification has evidence (low: song lyric and placard; no spoken call for a united Ireland was found). Attica, U Thant and the 1969 'the people are the government' remarks match no line-13 statement; his Yugoslavia remark (1971) was curiosity about workers' control, not a position on market socialism. The record says nothing more on this line, so failing the uncertainty rule is the expected outcome.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3205,6 +3223,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3214,5 +3236,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 2
   }
- ]
+ ],
+ "rules": 3
 }
