@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-22",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "American podcaster (The Joe Rogan Experience), comedian and UFC commentator",
@@ -474,6 +475,46 @@
    "author": "Joe Rogan and Shawn Ryan; The Singju Post",
    "url": "https://singjupost.com/joe-rogan-experience-2207-with-shawn-ryan-transcript/",
    "usedFor": "Rogan’s pro-choice self-description and argument concerning abortion."
+  },
+  {
+   "id": "d1",
+   "kind": "primary",
+   "title": "Joe Rogan: Fear, Love, Chaos, and the Joe Rogan Experience | Lex Fridman Podcast #127 (Sept 2020); Whisper transcript, no speaker labels",
+   "author": "Joe Rogan and Lex Fridman (local Lex Fridman Podcast transcript corpus)",
+   "url": "https://www.youtube.com/watch?v=FKCJWkPehdY",
+   "usedFor": "At 36:07-37:35 Rogan answers Fridman's question on whether people should carry guns: having a firearm to defend your family or your life, the Second Amendment. The next passage (37:40 on, 'I don't yet own a gun') is Fridman's and is not used."
+  },
+  {
+   "id": "d2",
+   "kind": "primary",
+   "title": "Joe Rogan Edward Snowden Podcast Interview Transcript (JRE #1368, 23 Oct 2019; speaker-labelled)",
+   "author": "Joe Rogan and Edward Snowden; transcript by Rev",
+   "url": "https://www.rev.com/transcripts/joe-rogan-edward-snowden-podcast-interview-transcript-rogan-spends-almost-3-hours-interviewing-snowden",
+   "usedFor": "Rogan at 01:36:52 on mass surveillance justified by terrorism; at 01:38:36-41 he agrees targeted spying on a terrorist's phone is fine."
+  },
+  {
+   "id": "d3",
+   "kind": "reference",
+   "title": "'Insanely F**ked Up': Joe Rogan's concerns addressed as Google comes clean on data privacy (Feb 2025)",
+   "author": "EssentiallySports",
+   "url": "https://www.essentiallysports.com/ufc-mma-news-insanely-fed-up-joe-rogan-elon-musks-concerns-addressed-as-google-comes-clean-on-data-privacy",
+   "usedFor": "Quotes Rogan's X post on Apple withdrawing iCloud end-to-end encryption in the UK under government pressure."
+  },
+  {
+   "id": "d4",
+   "kind": "primary",
+   "title": "Joe Rogan (@joerogan), post on X, 24 Feb 2025 (follow-up thanking Google for clarifying UK access to Android backups)",
+   "author": "Joe Rogan",
+   "url": "https://x.com/joerogan/status/1893846380201890056",
+   "usedFor": "His follow-up in the same thread, confirming the exchange about government access to encrypted backups."
+  },
+  {
+   "id": "d5",
+   "kind": "primary",
+   "title": "Eat What You Kill: Joe Rogan (interview and quoted posts, 10 Apr 2015)",
+   "author": "Ben O'Brien / Petersen's Hunting",
+   "url": "https://www.petersenshunting.com/editorial/eat-kill-joe-rogan/272599",
+   "usedFor": "Rogan's own words: hunting as 'the rejection of store-bought, factory-farmed crap'; his goal to 'personally, ethically harvest all the meat I eat'."
   }
  ],
  "answers": {
@@ -583,10 +624,15 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No clear stated position found.",
-   "sources": []
+   "rationale": "Told Snowden (2019) that tracking everyone's calls and movements 'under the guise of protecting us from terrorists' has no basis in the Constitution and violates the Fourth Amendment, yet agreed that targeted spying on a terrorist's phone is fine: against mass surveillance for counter-terrorism, not all of it.",
+   "sources": [
+    "d2"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "legalize-drugs": {
    "value": null,
@@ -1115,10 +1161,16 @@
    "auditor": "gpt-6.1-sol"
   },
   "unbreakable-encryption": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No clear stated position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Called Apple's withdrawal of iCloud end-to-end encryption in the UK, after the government demanded access, 'insanely f---ed up' (Feb 2025) and said that if Android backups were still out of the government's reach that was a reason to switch platforms.",
+   "sources": [
+    "d3",
+    "d4"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "restore-past-order": {
    "value": null,
@@ -2232,12 +2284,14 @@
   "animal-use-humane": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Hunter who promotes 'Eat What You Kill' as an alternative to factory farming and mistreatment of animals.",
+   "rationale": "A hunter who eats meat, he called hunting 'the rejection of store-bought, factory-farmed crap' and wrote that his goal is to 'ethically harvest' the meat he eats (2015): animals used for food, without factory-farm suffering.",
    "sources": [
-    "s1",
-    "b1"
+    "d5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "noblesse-oblige": {
    "value": null,
@@ -2687,13 +2741,14 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "In his 2024 Netflix special, as quoted by Wikipedia, Rogan said he believes in trans people and supports an adult's right to do whatever makes them happy, but that society needs standards and a trans woman should not simply use the women's room. He has also said trans women should not compete in women's sports. Mixed.",
-   "sources": [
-    "b1"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "The earlier 0 rested only on Wikipedia's quotation of his 2024 Netflix special; the original lines could not be checked, and reports of the special only paraphrase general support for trans people's happiness, not legal recognition. No stated position found.",
+   "sources": [],
+   "nulledFrom": 0,
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "assisted-dying": {
    "value": 2,
@@ -2989,10 +3044,15 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No clear stated position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Asked by Fridman in 2020 whether people should carry guns, Rogan said mass shootings do not take away from 'the fundamental efficacy of having a firearm and defending your family or defending your life', and cited people who protected loved ones or stopped shooters. Unlabelled transcript, but the answer to Fridman's question is his.",
+   "sources": [
+    "d1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3249,10 +3309,16 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No clear stated position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Said on #1824 (2022) that it is not wise 'to take all the guns away from people and give all the power to the government', since governments tend toward totalitarianism even with an armed populace; in 2020 defended citizens keeping firearms to defend themselves under the Second Amendment.",
+   "sources": [
+    "c15",
+    "d1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3703,7 +3769,7 @@
    "sources": []
   }
  },
- "notes": "Talk-show conversations mix his views with guests' and jokes; only statements he clearly made as his own were used. Views changed over time: 2019-20 support for UBI gave way to a 2025 statement against 'free money'; Sanders (2020) to Trump (2024), later criticized Trump on ICE raids, Iran and Epstein. Positions on trans athletes, immigration, Israel, Ukraine, free speech and COVID mandates exist but do not map cleanly to any current statement, so those statements are null. No on-camera political quiz was found. Transcripts of 2024-2026 episodes (Singju Post, speaker-labelled; PodScripts, unlabelled) supplied most answers; only lines labelled as Rogan, or clearly his in context, were used. Rogan often voices guests' framing, so views he only relayed or asked about were skipped.\n\nMerged with an independent claude-sonnet-5-5 audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Based on unofficial auto-generated transcripts and captions that do not label speakers; only passages where Rogan is clearly the speaker (replying directly to a named guest, addressing his producer, or quoted by a commentator) were used. His views have shifted over time (Sanders in 2020, Trump in 2024, criticism of some Trump actions in 2025-26); the most recent clear position is used. Several of his best-known topics (COVID mandates, Ukraine, Israel, trans athletes) were discussed at length but match no statement in the list or could not be attributed reliably. YouTube access was blocked partway through the run, so the Netflix special was not read directly.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass; the existing audit was read for its notes and source inventory, not used to populate answers. All 490 active statements were reviewed. Confidence is medium for clear spoken policy positions, low for qualified evidence; no living-person ideological inferences are included. Research emphasized the existing nulls in world, culture, means, government, technology and ecology. New speaker-labelled guest interviews supplied online voting, direct votes and checks on executive power. The 2018 evidence is dated; later support for voter ID is recorded separately and does not by itself establish a retraction of online voting. The 2026 Hall interview supports combining sensible ideas across camps. The Rachel Wilson interview supplies support for women voting; he does not separately discuss eligibility for office, hence a moderate agreement score. Anti-suffragist claims by either Wilson are not Rogan’s. Searches on Ukraine/Donbas, territorial expansion, civilizing rule, war and national character, class conflict, natural rulers, minority autonomy, racial political organization and interracial marriage did not establish the task’s exact general propositions. Opposing Canada’s annexation or one war was not generalized to a universal territorial or non-intervention doctrine. His February 2022 apology was examined via contemporaneous reporting and CNN’s transcript, but repudiating slurs does not alone establish all the legal and political propositions about racial groups in the table. His discussion of racial IQ scores credits multiple causes; it does not establish that differences are largely genetic. In #2289 he discusses the China/Poland double standard and Nazi history; the surrounding normative case for ethnic homogeneity is Cooper’s, not automatically Rogan’s. Criticism of capitalism and rejection of socialism do not establish a third economic system. AI governance optimism does not establish a general claim that technology solves most human problems, support for unrestricted acceleration, or policy priority for extinction risk. General pollution concern does not by itself establish growth limits, ecological taxes, GM crops, environmental rights or indigenous land authority. No conclusions were drawn from endorsements, jokes, guest assertions or paraphrases he merely relayed. Inclusion is accepted as an outcome, not a target.",
+ "notes": "Talk-show conversations mix his views with guests' and jokes; only statements he clearly made as his own were used. Views changed over time: 2019-20 support for UBI gave way to a 2025 statement against 'free money'; Sanders (2020) to Trump (2024), later criticized Trump on ICE raids, Iran and Epstein. Positions on trans athletes, immigration, Israel, Ukraine, free speech and COVID mandates exist but do not map cleanly to any current statement, so those statements are null. No on-camera political quiz was found. Transcripts of 2024-2026 episodes (Singju Post, speaker-labelled; PodScripts, unlabelled) supplied most answers; only lines labelled as Rogan, or clearly his in context, were used. Rogan often voices guests' framing, so views he only relayed or asked about were skipped.\n\nMerged with an independent claude-sonnet-5-5 audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Based on unofficial auto-generated transcripts and captions that do not label speakers; only passages where Rogan is clearly the speaker (replying directly to a named guest, addressing his producer, or quoted by a commentator) were used. His views have shifted over time (Sanders in 2020, Trump in 2024, criticism of some Trump actions in 2025-26); the most recent clear position is used. Several of his best-known topics (COVID mandates, Ukraine, Israel, trans athletes) were discussed at length but match no statement in the list or could not be attributed reliably. YouTube access was blocked partway through the run, so the Netflix special was not read directly.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass; the existing audit was read for its notes and source inventory, not used to populate answers. All 490 active statements were reviewed. Confidence is medium for clear spoken policy positions, low for qualified evidence; no living-person ideological inferences are included. Research emphasized the existing nulls in world, culture, means, government, technology and ecology. New speaker-labelled guest interviews supplied online voting, direct votes and checks on executive power. The 2018 evidence is dated; later support for voter ID is recorded separately and does not by itself establish a retraction of online voting. The 2026 Hall interview supports combining sensible ideas across camps. The Rachel Wilson interview supplies support for women voting; he does not separately discuss eligibility for office, hence a moderate agreement score. Anti-suffragist claims by either Wilson are not Rogan’s. Searches on Ukraine/Donbas, territorial expansion, civilizing rule, war and national character, class conflict, natural rulers, minority autonomy, racial political organization and interracial marriage did not establish the task’s exact general propositions. Opposing Canada’s annexation or one war was not generalized to a universal territorial or non-intervention doctrine. His February 2022 apology was examined via contemporaneous reporting and CNN’s transcript, but repudiating slurs does not alone establish all the legal and political propositions about racial groups in the table. His discussion of racial IQ scores credits multiple causes; it does not establish that differences are largely genetic. In #2289 he discusses the China/Poland double standard and Nazi history; the surrounding normative case for ethnic homogeneity is Cooper’s, not automatically Rogan’s. Criticism of capitalism and rejection of socialism do not establish a third economic system. AI governance optimism does not establish a general claim that technology solves most human problems, support for unrestricted acceleration, or policy priority for extinction risk. General pollution concern does not by itself establish growth limits, ecological taxes, GM crops, environmental rights or indigenous land authority. No conclusions were drawn from endorsements, jokes, guest assertions or paraphrases he merely relayed. Inclusion is accepted as an outcome, not a target.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 12: added self-defence and citizens' arms (Lex Fridman #127, local corpus; #1824), surveillance (Snowden episode, speaker-labelled) and encryption (his Feb 2025 X post on Apple and the UK). Searched without a usable stated position: political violence (his reactions to the Charlie Kirk assassination condemn celebrating it and warn of civil war, but state no general principle; the Mangione killing likewise), the boat strikes on suspected drug smugglers (he questioned the rationale on #2437 and later credited them with fewer overdoses, no position on killing without trial), the left and identity politics, immigrants learning English. The rest of line 12's statements (revolutionary strategy, colonial borders, monetary reform, land tax and similar) he has not addressed and were not searched. For rules 3, two Wikipedia-only answers were redone: animal-use-humane re-sourced to his own words in Petersen's Hunting (2015), gender-identity-recognition nulled (the Netflix-special lines Wikipedia quotes could not be checked in the original).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3716,6 +3782,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3725,5 +3795,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 4
   }
- ]
+ ],
+ "rules": 3
 }
