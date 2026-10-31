@@ -2,7 +2,10 @@
  "id": "justin-trudeau",
  "name": "Justin Trudeau",
  "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
+ ],
  "living": true,
  "role": "Prime Minister of Canada (2015–2025); Liberal Party leader (2013–2025)",
  "summary": "Liberal leader who governed Canada for nearly a decade with a socially progressive, fiscally expansionary record: carbon pricing, cannabis legalization, medical assistance in dying, a national child benefit and child care system, dental care and an early pharmacare phase. He also backed oil pipelines, assault-style weapon bans, the Emergencies Act in 2022 and, late in his tenure, lower immigration levels.",
@@ -271,6 +274,62 @@
    "author": "Prime Minister's Office",
    "url": "https://www.pm.gc.ca/en/news/news-releases/2022/05/30/further-strengthening-our-gun-control-laws",
    "usedFor": "Handgun freeze"
+  },
+  {
+   "id": "s38",
+   "kind": "reference",
+   "title": "Trudeau would enforce ICC arrest warrants against Netanyahu, Gallant",
+   "author": "The Canadian Jewish News",
+   "url": "https://thecjn.ca/news/trudeau-would-enforce-icc-arrest-warrants-against-netanyahu-gallant-for-post-oct-7-war-crimes-in-gaza",
+   "usedFor": "2024-11-21 remarks: 'We will stand by all the regulations and rulings of the international courts'"
+  },
+  {
+   "id": "s39",
+   "kind": "reference",
+   "title": "Trudeau: Canada will take as many Ukraine refugees as it can",
+   "author": "Associated Press (via KPRC Click2Houston)",
+   "url": "https://www.click2houston.com/news/world/2022/03/10/trudeau-canada-will-take-as-many-ukraine-refugees-as-it-can",
+   "usedFor": "2022-03-10 Warsaw remarks on the ICC referral and holding Putin accountable"
+  },
+  {
+   "id": "s40",
+   "kind": "primary",
+   "title": "Canada to refer the situation in Ukraine to International Criminal Court",
+   "author": "Global Affairs Canada",
+   "url": "https://www.canada.ca/en/global-affairs/news/2022/03/canada-to-refer-the-situation-in-ukraine-to-international-criminal-court.html",
+   "usedFor": "Government's ICC referral, March 2022"
+  },
+  {
+   "id": "s41",
+   "kind": "primary",
+   "title": "Transcript - PM Trudeau discusses the prison farms program during a town hall in Kingston, Ontario",
+   "author": "Justin Trudeau",
+   "url": "https://www.pm.gc.ca/en/node/342",
+   "usedFor": "2017-01-11: affirms his 2015 letter that correction facilities must emphasize rehabilitation; prison farms"
+  },
+  {
+   "id": "s42",
+   "kind": "reference",
+   "title": "Trudeau says Conservatives 'tough on Black Canadians and Indigenous people,' not crime",
+   "author": "Global News",
+   "url": "https://globalnews.ca/news/8845795/justin-trudeau-conservative-tough-on-crime-comment/amp/",
+   "usedFor": "2022-05-18 defence of Bill C-5 repealing mandatory minimums"
+  },
+  {
+   "id": "s43",
+   "kind": "reference",
+   "title": "Canada to impose 100% tariffs on Chinese-made EVs in bid to protect Canadian auto and metal workers",
+   "author": "Kitco News",
+   "url": "https://www.kitco.com/news/article/2024-08-26/canada-impose-100-tariffs-chinese-made-evs-bid-protect-canadian-auto-and",
+   "usedFor": "2024-08-26 tariffs on Chinese EVs, steel and aluminum and his stated reasons"
+  },
+  {
+   "id": "s44",
+   "kind": "reference",
+   "title": "Trudeau says back-to-work legislation for Canada Post never ideal, but government must act",
+   "author": "Global News / Canadian Press",
+   "url": "https://globalnews.ca/news/4690943/trudeau-canada-post-strike-legislation",
+   "usedFor": "2018 Canada Post back-to-work bill (C-89)"
   }
  ],
  "answers": {
@@ -412,10 +471,13 @@
    "sources": []
   },
   "rehabilitation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Wrote in 2015 that 'correction facilities must include an emphasis on rehabilitation' and in 2017 said he still held that view and backed reopening prison farms; defended repealing mandatory minimums (Bill C-5) as ending failed policies. No statement ranking rehabilitation above punishment as such.",
+   "sources": [
+    "s41",
+    "s42"
+   ]
   },
   "traditional-family": {
    "value": null,
@@ -590,10 +652,14 @@
    "sources": []
   },
   "tariffs-protect-industry": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Mixed: in 2024 imposed 100% tariffs on Chinese EVs and 25% on Chinese steel and aluminum to 'level the playing field for Canadian workers' against unfair practices, while pursuing free trade agreements (CUSMA, CETA, CPTPP) throughout.",
+   "sources": [
+    "s43",
+    "s24",
+    "s21"
+   ]
   },
   "state-directs-investment": {
    "value": null,
@@ -1308,10 +1374,12 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Mixed: his government legislated an end to the 2018 Canada Post strikes (Bill C-89), while he said back-to-work legislation is never the ideal approach. No position on strike-ballot or picketing rules.",
+   "sources": [
+    "s44"
+   ]
   },
   "population-causes-poverty": {
    "value": null,
@@ -3128,10 +3196,14 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Said in March 2022 that Canada joined 'the largest referral to the largest criminal court in history' so Putin is held accountable for war crimes, and his government made the referral; in November 2024 said Canada would 'stand by all the regulations and rulings of the international courts', including the ICC warrant for Netanyahu.",
+   "sources": [
+    "s39",
+    "s40",
+    "s38"
+   ]
   },
   "scripture-inerrant": {
    "value": null,
@@ -3352,7 +3424,7 @@
    "sources": []
   }
  },
- "notes": "Living person: answers rest only on his own statements and his government's record. Immigration moved from expansion to reduction in 2024 and the most recent position was used. Several topics could not be sourced from pages opened here (2015 and 2019 platforms, the full 2021 platform, Common Ground, Hansard, mandate letters beyond Finance and Health), so those statements are null.",
+ "notes": "Living person: answers rest only on his own statements and his government's record. Immigration moved from expansion to reduction in 2024 and the most recent position was used. Several topics could not be sourced from pages opened here (2015 and 2019 platforms, the full 2021 platform, Common Ground, Hansard, mandate letters beyond Finance and Health), so those statements are null. 2026-10-31 deepening pass (claude-opus-5-5) on lines 13 and 14: searched international criminal courts (Ukraine referral, Netanyahu warrant), prisons and sentencing (prison farms, Bill C-5), tariffs (2024 China tariffs) and strikes (Canada Post back-to-work bill). Other line-13/14 statements (supranational unions, currencies, refugee return, UN powers, precaution, technology, population, fiscal rules) were not found in his own words and stay null; Bill C-4's union certification ballots were left out as a nearby case.",
  "reviews": [
   {
    "kind": "inference",
@@ -3360,5 +3432,16 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
+  }
+ ],
+ "rules": 3
 }
