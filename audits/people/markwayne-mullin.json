@@ -258,7 +258,7 @@
    "title": "Voteview: Congressional Roll-Call Votes Database (House and Senate roll calls; data downloaded 2026-10-30)",
    "author": "Lewis, Poole, Rosenthal, Boche, Rudkin, Sonnet (UCLA)",
    "url": "https://voteview.com/data",
-   "usedFor": "Mullin votes: Raise the Wage Act 2019 (116th House #495), $17 minimum wage amendment 2025 (119th Senate #184), FIRST STEP Act 2018 (115th House #922, #1155), ICC sanctions bill cloture 2025 (119th Senate #22)"
+   "usedFor": "Mullin votes: Raise the Wage Act 2019 (116th House #495), $17 minimum wage amendment 2025 (119th Senate #184), FIRST STEP Act 2018 (115th House #922, #1155), ICC sanctions bill cloture 2025 (119th Senate #22); ACA repeal 2013 (113th House #153) and American Health Care Act 2017 (115th House #255); Death Tax Repeal Act 2015 (114th House #161); SOAR Act DC vouchers 2015 (114th House #559); balanced budget amendment 2018 (115th House #845); American Rescue Plan 2021 (117th House #48, #71); McKeon amendment to train and equip the Syrian opposition, 17 Sep 2014 (113th House #507)"
   },
   {
    "id": "o2",
@@ -267,18 +267,67 @@
    "author": "CNN interview with Markwayne Mullin",
    "url": "https://transcripts.cnn.com/show/sotu/date/2025-11-30/segment/01",
    "usedFor": "Defence of lethal strikes on suspected drug-smuggling boats"
+  },
+  {
+   "id": "w1",
+   "kind": "primary",
+   "title": "Issues (Mullin for Congress campaign site), archived 5 May 2014",
+   "author": "Mullin for Congress",
+   "url": "https://web.archive.org/web/20140505205659/http://www.mullinforcongress.com/issues/",
+   "usedFor": "His own issue statements: traditional values and marriage, religious freedom, health care, school choice, spending and debt, private sector and jobs"
+  },
+  {
+   "id": "w2",
+   "kind": "reference",
+   "title": "14 GOP Congressional Lawmakers Tell DEA To Keep Marijuana In Schedule I, September 12, 2023",
+   "author": "Marijuana Moment",
+   "url": "https://www.marijuanamoment.net/14-gop-congressional-lawmakers-tell-dea-to-keep-marijuana-in-schedule-i-and-reject-top-health-agencys-recommendation/",
+   "usedFor": "Mullin among signatories of the letter asking the DEA to keep marijuana in Schedule I"
+  },
+  {
+   "id": "w3",
+   "kind": "primary",
+   "title": "H.R.814 (114th Congress), Thin Blue Line Act: bill status and cosponsors",
+   "author": "U.S. Congress via GovInfo",
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/114/hr/BILLSTATUS-114hr814.xml",
+   "usedFor": "Mullin cosponsored (12 Jan 2016) a bill making the killing of a police officer an aggravating factor for the death penalty"
+  },
+  {
+   "id": "w4",
+   "kind": "primary",
+   "title": "H.Con.Res.23 (113th Congress), conditions for the US becoming a signatory to the UN Arms Trade Treaty: bill status",
+   "author": "U.S. Congress via GovInfo",
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/113/hconres/BILLSTATUS-113hconres23.xml",
+   "usedFor": "Mullin an original cosponsor (13 Mar 2013)"
+  },
+  {
+   "id": "w5",
+   "kind": "primary",
+   "title": "EACH Act, H.R.1814 (113th Congress) and H.R.631 (114th Congress): bill status and cosponsors",
+   "author": "U.S. Congress via GovInfo",
+   "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/114/hr/BILLSTATUS-114hr631.xml",
+   "usedFor": "Mullin cosponsored both versions of a religious-conscience exemption from the ACA individual mandate (113th version: https://www.govinfo.gov/bulkdata/BILLSTATUS/113/hr/BILLSTATUS-113hr1814.xml)"
+  },
+  {
+   "id": "w6",
+   "kind": "reference",
+   "title": "Advocacy group: Mullin broke term limits pledge, July 11, 2016",
+   "author": "Public Radio Tulsa (AP)",
+   "url": "https://www.publicradiotulsa.org/local-regional/2016-07-11/advocacy-group-mullin-broke-term-limits-pledge",
+   "usedFor": "2011 pledge to cosponsor and vote for congressional term limits; his later backing off"
   }
  ],
  "answers": {
   "universal-healthcare": {
+   "auditor": "claude-opus-5-5",
    "value": -1,
    "confidence": "medium",
-   "rationale": "Called for ACA repeal and supported market-based health insurance; no statement on universal coverage itself.",
+   "rationale": "His campaign site called Obamacare budget-busting government-run health care and favoured market-based reforms instead; he voted to repeal the ACA (2013) and for the AHCA (2017), and argues Medicaid should not broadly cover able-bodied adults.",
    "sources": [
-    "s2",
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w1",
+    "o1",
+    "b3"
+   ]
   },
   "raise-minimum-wage": {
    "value": -1,
@@ -290,14 +339,14 @@
    "auditor": "claude-opus-5-5"
   },
   "markets-allocate-better": {
-   "value": 2,
+   "auditor": "claude-opus-5-5",
+   "value": 1,
    "confidence": "medium",
-   "rationale": "Opposed federal stimulus spending and stated that excessive government regulation harms job growth.",
+   "rationale": "His campaign site says government does not create jobs, that the private sector is the engine of the economy and that regulation is the biggest obstacle for business; he does not compare market and state allocation as such.",
    "sources": [
-    "s2",
-    "s9"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w1",
+    "b2"
+   ]
   },
   "public-ownership": {
    "value": null,
@@ -367,13 +416,13 @@
    "sources": []
   },
   "legalize-drugs": {
-   "value": -2,
+   "auditor": "claude-opus-5-5",
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Opposed rescheduling marijuana (2023); rated D by NORML.",
+   "rationale": "Signed a September 2023 letter of 14 Republican lawmakers asking the DEA to keep marijuana in Schedule I; a position on cannabis scheduling, with no recorded statement on other drugs.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w2"
+   ]
   },
   "restrict-hate-speech": {
    "value": null,
@@ -448,13 +497,13 @@
    "auditor": "claude-opus-5-5"
   },
   "traditional-family": {
+   "auditor": "claude-opus-5-5",
    "value": 1,
    "confidence": "medium",
-   "rationale": "Described traditional marriage as a sacred institution.",
+   "rationale": "His campaign site lists traditional values and pledges to defend traditional marriage between one man and one woman as a Christian responsibility.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w1"
+   ]
   },
   "same-sex-marriage": {
    "value": -2,
@@ -485,13 +534,12 @@
    ]
   },
   "more-religion-public": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "In 2024 said he wants the Bible taught to children by believing teachers; limited evidence on public life generally.",
-   "sources": [
-    "s12"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "His 2024 remark was that the Bible should be taught by believers rather than by school teachers who may not be, a caution about Bible teaching in public schools, not a call for more religion in public life; no other evidence found.",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": "claude-opus-5-5"
   },
   "correct-racial-injustice": {
    "value": null,
@@ -518,24 +566,22 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supports completing the border wall, rejects amnesty and criticised catch-and-release; earlier cosponsored raising visa caps (mixed).",
-   "sources": [
-    "s1",
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "His recorded positions are against amnesty and for border enforcement (unauthorised migration), and he cosponsored lifting per-country visa caps; nothing found on overall immigration levels.",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": "claude-opus-5-5"
   },
   "empower-international-orgs": {
-   "value": -2,
+   "auditor": "claude-opus-5-5",
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Sponsored a measure opposing the UN Arms Trade Treaty, opposed US troops under UN control and criticised the UN in 2025.",
+   "rationale": "Original cosponsor of a 2013 resolution setting conditions on the US joining the UN Arms Trade Treaty, and voted in 2025 to take up a bill sanctioning the International Criminal Court.",
    "sources": [
-    "s2",
-    "s11"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w4",
+    "o1"
+   ]
   },
   "free-trade": {
    "value": -1,
@@ -638,13 +684,13 @@
    "sources": []
   },
   "tax-inheritance": {
+   "auditor": "claude-opus-5-5",
    "value": -2,
-   "confidence": "high",
-   "rationale": "Supports eliminating the inheritance tax and called the death tax a pernicious double tax.",
+   "confidence": "medium",
+   "rationale": "Voted for the Death Tax Repeal Act in 2015, which would abolish the federal estate tax outright.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "o1"
+   ]
   },
   "basic-income": {
    "value": null,
@@ -1079,22 +1125,24 @@
    "sources": []
   },
   "school-vouchers": {
+   "auditor": "claude-opus-5-5",
    "value": 1,
    "confidence": "medium",
-   "rationale": "Recorded as saying vouchers break the link between low income and low-quality schools.",
+   "rationale": "His campaign site says parents should be able to choose public, private or home schooling, and he voted in 2015 to reauthorise the DC private-school voucher programme (SOAR Act).",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w1",
+    "o1"
+   ]
   },
   "avoid-deficit-stimulus": {
+   "auditor": "claude-opus-5-5",
    "value": 2,
    "confidence": "medium",
-   "rationale": "Opposed federal stimulus spending and the $1.9 trillion relief bill; urged balancing the budget.",
+   "rationale": "His campaign site centres on cutting spending and the growing national debt, and he voted against the American Rescue Plan stimulus in 2021 at both House stages.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w1",
+    "o1"
+   ]
   },
   "economic-freedom": {
    "value": null,
@@ -1548,13 +1596,13 @@
    "sources": []
   },
   "death-penalty": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Supports the death penalty, including for killing police officers.",
+   "auditor": "claude-opus-5-5",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Cosponsored the Thin Blue Line Act (2016), which makes killing a police officer an aggravating factor in death-penalty cases; a cosponsorship rather than a statement of his own.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w3"
+   ]
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1587,17 +1635,13 @@
    "sources": []
   },
   "religious-exemptions": {
+   "auditor": "claude-opus-5-5",
    "value": 1,
    "confidence": "medium",
-   "rationale": "Supported Burwell v. Hobby Lobby and a religious exemption from the ACA individual mandate.",
+   "rationale": "Cosponsored the EACH Act in 2013 and 2015, exempting people with sincere religious objections from the ACA insurance mandate, and his campaign site objects to forcing people of faith to violate their beliefs.",
    "sources": [
-    "s1",
-    "s2",
-    "b17"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
+    "w5",
+    "w1"
    ]
   },
   "encourage-eccentricity": {
@@ -2135,13 +2179,12 @@
    "sources": []
   },
   "individual-pension-accounts": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supports personal retirement accounts for Social Security.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The 2012 Vote Smart survey answer that OnTheIssues reports could not be opened, and no other record of his on personal retirement accounts was found.",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": "claude-opus-5-5"
   },
   "land-use-tenure": {
    "value": null,
@@ -2180,13 +2223,13 @@
    "sources": []
   },
   "arm-foreign-insurgents": {
+   "auditor": "claude-opus-5-5",
    "value": 1,
    "confidence": "low",
-   "rationale": "Voted in 2014 to aid the Syrian opposition with training and equipment.",
+   "rationale": "Voted in September 2014 for the amendment authorising the training and equipping of vetted Syrian opposition fighters, framed mainly against ISIL; one vote.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "o1"
+   ]
   },
   "intervene-in-bloc": {
    "value": null,
@@ -2647,13 +2690,13 @@
    "sources": []
   },
   "term-limits": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Recorded as backing a constitutional amendment for congressional term limits.",
+   "auditor": "claude-opus-5-5",
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Signed a 2011 campaign pledge to cosponsor and vote for congressional term limits, but U.S. Term Limits reported in 2016 that he had backed off it; a pledge his record in office did not bear out, so mixed.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "w6"
+   ]
   },
   "vote-delegation": {
    "value": null,
@@ -2947,10 +2990,13 @@
    "sources": []
   },
   "future-generations": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "His 2014 campaign site backs \"a balanced approach to protecting and preserving our nation’s natural resources for future generations\" and speaks of preserving farmland for them; the qualifier \"balanced\" and his opposition to EPA rules keep this weak.",
+   "sources": [
+    "w1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "women-distinct-values": {
    "value": null,
@@ -3004,13 +3050,13 @@
    "sources": []
   },
   "fiscal-rules-binding": {
+   "auditor": "claude-opus-5-5",
    "value": 2,
-   "confidence": "high",
-   "rationale": "Supports a constitutional balanced budget amendment.",
+   "confidence": "medium",
+   "rationale": "Voted in 2018 for a balanced budget amendment to the Constitution, the strictest form of binding fiscal rule.",
    "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+    "o1"
+   ]
   },
   "restructure-world-economy": {
    "value": null,
@@ -3448,7 +3494,7 @@
    "sources": []
   }
  },
- "notes": "Voted Yea on objections to Arizona and Pennsylvania electors (Jan 2021) and said in 2022 it was absurd that Biden won the most votes; no matching statement exists in the list. Voted for 2022 and 2024 Ukraine aid and worked to pass the 2024 package, but no statement matches. Positions on abortion and same-sex marriage are partly from 2012 statements, confirmed by later votes. Tribal sovereignty evidence is mixed. The mullin.senate.gov site returned HTTP 403 and congress.gov was not used. Most evidence comes from secondary aggregators and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 14 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Earlier audit consulted only for notes and source leads. Congressional votes are medium confidence; administrative promises are distinguished from implementation. Narrow positions on undocumented immigration do not establish a preference to reduce immigration overall. January 2021 electoral objections do not by themselves settle every statement about democracy. No attempt was made to reach the inclusion threshold. Final review left universal healthcare, low-paid-worker tax credits and general minority territorial autonomy null because the retrieved evidence concerned narrower proposals. All 490 statement texts, including the ten priority statements, were reviewed against the source set. Technology searches located military R&D and AI security issues, but no clear position on transferring government decisions to algorithms, enhancement, encryption or technological acceleration. Culture searches located personal faith and Cherokee identity, but these alone do not answer the cultural and theological propositions. Priority statements all remain null. Copy validation uses the unchanged validator in a VM with only personPath redirected to this scratchpad; no production audit was replaced.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: added extrajudicial-killing +1 (CNN State of the Union, 30 Nov 2025, drug-boat strikes), international-criminal-courts -1 (ICC sanctions cloture vote, Jan 2025), rehabilitation 0 low (yea on the House FIRST STEP Act, nay on the final First Step Act, 2018). Re-sourced three Wikipedia-only answers: raise-minimum-wage to his 2019 and 2025 votes (lowered to -1, votes against specific raises), open-borders to the confirmation hearing, force-without-un to the June 2025 CNN interview. Searched without a usable result: Electoral College and third-term remarks (he called a third term a joke and said he would not change the Constitution unless the people choose, which does not answer unlimited re-election), trade surplus (his tariff remarks are about reciprocity, not a surplus), GM-crop labeling votes (none recorded for him), strike and picketing rules (PRO Act objections do not address strikes), precautionary principle and future generations (energy column silent).",
+ "notes": "Voted Yea on objections to Arizona and Pennsylvania electors (Jan 2021) and said in 2022 it was absurd that Biden won the most votes; no matching statement exists in the list. Voted for 2022 and 2024 Ukraine aid and worked to pass the 2024 package, but no statement matches. Positions on abortion and same-sex marriage are partly from 2012 statements, confirmed by later votes. Tribal sovereignty evidence is mixed. The mullin.senate.gov site returned HTTP 403 and congress.gov was not used. Most evidence comes from secondary aggregators and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 14 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Earlier audit consulted only for notes and source leads. Congressional votes are medium confidence; administrative promises are distinguished from implementation. Narrow positions on undocumented immigration do not establish a preference to reduce immigration overall. January 2021 electoral objections do not by themselves settle every statement about democracy. No attempt was made to reach the inclusion threshold. Final review left universal healthcare, low-paid-worker tax credits and general minority territorial autonomy null because the retrieved evidence concerned narrower proposals. All 490 statement texts, including the ten priority statements, were reviewed against the source set. Technology searches located military R&D and AI security issues, but no clear position on transferring government decisions to algorithms, enhancement, encryption or technological acceleration. Culture searches located personal faith and Cherokee identity, but these alone do not answer the cultural and theological propositions. Priority statements all remain null. Copy validation uses the unchanged validator in a VM with only personPath redirected to this scratchpad; no production audit was replaced.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: added extrajudicial-killing +1 (CNN State of the Union, 30 Nov 2025, drug-boat strikes), international-criminal-courts -1 (ICC sanctions cloture vote, Jan 2025), rehabilitation 0 low (yea on the House FIRST STEP Act, nay on the final First Step Act, 2018). Re-sourced three Wikipedia-only answers: raise-minimum-wage to his 2019 and 2025 votes (lowered to -1, votes against specific raises), open-borders to the confirmation hearing, force-without-un to the June 2025 CNN interview. Searched without a usable result: Electoral College and third-term remarks (he called a third term a joke and said he would not change the Constitution unless the people choose, which does not answer unlimited re-election), trade surplus (his tariff remarks are about reciprocity, not a surplus), GM-crop labeling votes (none recorded for him), strike and picketing rules (PRO Act objections do not address strikes), precautionary principle and future generations (energy column silent).\n\nclaude-opus-5-5 OnTheIssues re-sourcing (2026-10-31): 16 answers that cited only OnTheIssues or Wikipedia were traced to originals: Voteview roll calls, GovInfo bill-status records (cosponsorships), his archived 2014 campaign issues page, and press reports. Nulled where the original could not be opened or did not settle the statement: individual-pension-accounts (2012 Vote Smart survey, HTTP 403), reduce-immigration (only unauthorised migration), more-religion-public (the Bible remark cautions against non-believer teachers). Lowered to what the original shows: markets-allocate-better +2 to +1, legalize-drugs -2 to -1, empower-international-orgs -2 to -1, death-penalty +2 to +1, term-limits +2 to 0 (pledge not borne out). Added from the same 2014 page: future-generations +1 low (a balanced approach to preserving natural resources for future generations).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
