@@ -270,6 +270,15 @@ function locate(model, answers) {
   const p = posterior(placementOf(model), known, answers.map((x, j) => (x == null ? null : x - model.mean[j]))); // only `known` is read
   return { at: p.at, reliability: p.lines.map((l) => l.reliability) };
 }
+// How far a list of answers' place on each real line may be off: one standard deviation, from the same
+// posterior as the place (for drawing a range around it). A record with shipped reliability (ideologies,
+// people) uses it; otherwise it is worked out from which statements are answered.
+function lineSpread(model, record) {
+  const ctx = placementOf(model);
+  if (record && record.reliability) return record.reliability.map((r, i) => Math.sqrt(Math.max(0, 1 - r) * ctx.prior[i]));
+  const answers = Array.isArray(record) ? record : record.profile;
+  return lineStats(ctx, answeredIndexes(answers)).map((l) => Math.sqrt(l.variance));
+}
 // Where a list of answers sits on the real lines, or null with nothing answered.
 const place = (model, answers) => { const l = locate(model, answers); return l && l.at; };
 // A list of answers as shipped by the build (ideologies in IDEOLOGIES, people in PEOPLE carry `at` and
@@ -600,5 +609,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, lineStats, lineSpread, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
 }

@@ -81,6 +81,22 @@ function lineScale(vals) {
   return (v) => (v - lo + pad) / (hi - lo + 2 * pad);
 }
 
+// A place on a drawn line, as the range it is likely in (one standard deviation either side,
+// lineSpread in pca.js): one mark everywhere, wider where less is known. A precise place is a short
+// pill (at least MIN_BAND wide) so it stays visible.
+const MIN_BAND = 18;
+// A small band in a key, matching the strips' marks.
+const bandSwatch = (color) => `<svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" style="vertical-align:-1px"><rect x="1" y="2" width="20" height="8" rx="4" fill="${color}" opacity="0.45"></rect><line x1="1" x2="1" y1="0" y2="12" stroke="${color}" stroke-width="2"></line><line x1="21" x2="21" y1="0" y2="12" stroke="${color}" stroke-width="2"></line></svg>`;
+function rangeBand(pos, x, sd, color = "var(--accent)") {
+  const c = pos(x), half = Math.max(MIN_BAND / 2, (pos(x + (sd || 0)) - pos(x - (sd || 0))) / 2);
+  const x1 = Math.max(6, c - half), x2 = Math.min(594, c + half);
+  const f = (v) => v.toFixed(1);
+  return `<g><title>Likely somewhere in this range; it narrows as more positions are known</title>
+    <rect x="${f(x1)}" y="10" width="${f(x2 - x1)}" height="14" rx="7" fill="${color}" opacity="0.45"></rect>
+    <line x1="${f(x1)}" x2="${f(x1)}" y1="8" y2="26" stroke="${color}" stroke-width="2"></line>
+    <line x1="${f(x2)}" x2="${f(x2)}" y1="8" y2="26" stroke="${color}" stroke-width="2"></line></g>`;
+}
+
 // Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
 // found from the data and mix many issues, so a fixed label would go stale). An end whose most extreme
 // ideology has a long name (over END_CHARS) is named by the next one in that fits, from the five
@@ -819,6 +835,7 @@ function showResults(shared = null) {
     };
     return `<div class="sides">${end(L.low, low, high)}${end(L.high, high, low)}</div>`;
   };
+  const youSpread = lineSpread(model, given);
   for (let i = 0; i < SHOWN_LINES; i++) {
     const ax = describeAxis(model, i, QUESTIONS);
     const L = lineInfo(i);
@@ -832,7 +849,7 @@ function showResults(shared = null) {
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
-        <circle cx="${pos(you[i])}" cy="17" r="7" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"><title>${shared ? "Them" : "You"}</title></circle>
+        ${rangeBand(pos, you[i], youSpread[i])}
       </svg>
       <details><summary>What divides ${esc(L.low)} and ${esc(L.high)}?</summary>
         ${sides(L, ax.cluster)}
@@ -1678,19 +1695,21 @@ const onModel = (profile) => profile.slice(0, QUESTIONS.length);
 
 // Where `scores` sits on each shown dividing line, with every ideology as a faint marker. `other`
 // (a second set of scores) adds a filled marker, for comparing two sides.
-function lineStrips(scores, { selfId = null, other = null } = {}) {
+function lineStrips(scores, { selfId = null, other = null, spread = null, otherSpread = null } = {}) {
   return Array.from({ length: SHOWN_LINES }, (_, i) => {
     const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i], other ? other[i] : []);
     const scale = lineScale(vals);
     const pos = (v) => 6 + scale(v) * 588;
+    const otherBand = other ? rangeBand(pos, other[i], otherSpread ? otherSpread[i] : 0, "var(--accent-2)") : "";
+    const band = rangeBand(pos, scores[i], spread ? spread[i] : 0);
     return `<div class="axis">
       <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.filter((d) => d.id !== selfId).map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.35"><title>${esc(d.name)}</title></path>`).join("")}
-        ${other ? `<circle cx="${pos(other[i])}" cy="17" r="7" fill="var(--accent)"></circle>` : ""}
-        <circle cx="${pos(scores[i])}" cy="17" r="8" fill="none" stroke="var(--ink)" stroke-width="3"></circle>
+        ${other ? otherBand : ""}
+        ${band}
       </svg>
     </div>`;
   }).join("");
@@ -1801,7 +1820,7 @@ function renderIdeologyPage(id) {
       </div>
       <section class="stack"><h2>What it stands for</h2>${beliefList(ideo, 6)}</section>
       ${keyFiguresSection(ideo)}
-      <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id })}</section>
+      <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id, spread: lineSpread(model, ideo) })}</section>
       <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
       ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}
       ${comparePicker(`i:${ideo.id}`)}
@@ -1843,7 +1862,7 @@ function renderPersonPage(id) {
       <section class="stack"><h2>Closest ideologies</h2>
         <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
-      <section class="stack"><h2>Where they sit</h2>${lineStrips(positions(model, profile))}</section>
+      <section class="stack"><h2>Where they sit</h2>${lineStrips(positions(model, profile), { spread: lineSpread(model, { ...p, profile }) })}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
       <section class="stack"><h2>Share card</h2>
         <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas></section>
@@ -2050,8 +2069,8 @@ function renderComparePage(aKey, bKey) {
     <h1>${esc(a.name)} and ${esc(b.name)}</h1>
     ${lede}
     <section class="stack"><h2>Where ${they} sit</h2>
-      <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
-      ${lineStrips(positions(model, a.profile), { other: positions(model, b.profile) })}</section>
+      <p class="read-more small">${bandSwatch("var(--accent)")} ${link(a)} · ${bandSwatch("var(--accent-2)")} ${link(b)}</p>
+      ${lineStrips(positions(model, a.profile), { other: positions(model, b.profile), spread: lineSpread(model, a), otherSpread: lineSpread(model, b) })}</section>
     <section class="stack"><h2>${They} agree on ${statements(agree.length)}</h2>
       ${list(agree, 8, (j) => `<li>${topicIcon(QUESTIONS[j])}<span>${statementLink(QUESTIONS[j], stance(QUESTIONS[j], a.profile[j]).text, otherKey)}</span></li>`, `No position ${they} hold on the same side.`)}</section>
     <section class="stack"><h2>${They} part ways on ${statements(apart.length)}</h2>
