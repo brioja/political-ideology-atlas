@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "Governor of California (2019-present); Lieutenant Governor (2011-2019); Mayor of San Francisco (2004-2011)",
@@ -434,6 +435,46 @@
    "author": "California Department of Justice",
    "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-shares-updated-resources-statewide-and-local-rent",
    "usedFor": "Reported enactment and continuing capped-rent framework."
+  },
+  {
+   "id": "o1",
+   "kind": "reference",
+   "title": "California's Newsom criticizes 'chilling' U.S. military strikes on alleged drug-carrying vessels",
+   "author": "Valerie Volcovici and William James, Reuters (via GV Wire)",
+   "url": "https://gvwire.com/2025/11/11/californias-newsom-criticizes-chilling-u-s-military-strikes-on-alleged-drug-carrying-vessels/",
+   "usedFor": "His COP30 remarks (Nov 11, 2025) on the boat strikes: due process and rule of law"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "California's world-leading conservation goals adopted globally",
+   "author": "Office of the Governor",
+   "url": "https://www.gov.ca.gov/2022/12/19/californias-world-leading-conservation-goals-adopted-globally/",
+   "usedFor": "His 30x30 statement on leaving the world better off for future generations"
+  },
+  {
+   "id": "o3",
+   "kind": "reference",
+   "title": "California Gov. Newsom extends cap-and-trade program aimed at curbing carbon emissions",
+   "author": "Sophie Austin, Associated Press (via ABC30)",
+   "url": "https://abc30.com/post/california-gov-gavin-newsom-extends-cap-trade-program-aimed-curbing-carbon-emissions/17849791/",
+   "usedFor": "His Sept 19, 2025 signing statement on cap-and-invest making polluters pay"
+  },
+  {
+   "id": "o4",
+   "kind": "reference",
+   "title": "Gavin Newsom expresses 'openness' to packing SCOTUS, calls Electoral College system 'perverted'",
+   "author": "Lindsay Kornick, Fox News",
+   "url": "https://www.foxnews.com/media/gavin-newsom-expresses-openness-packing-scotus-calls-electoral-college-system-perverted",
+   "usedFor": "His quoted words in the Sept 2026 Don Lemon interview on changing the Electoral College"
+  },
+  {
+   "id": "o5",
+   "kind": "reference",
+   "title": "Newsom, Blakeslee unveil digital tool on government meetings",
+   "author": "CapRadio",
+   "url": "https://capradio.org/articles/2015/05/06/newsom-blakeslee-unveil-digital-tool-on-government-meetings",
+   "usedFor": "His 2015 launch of Digital Democracy, a searchable public archive of legislative hearings"
   }
  ],
  "answers": {
@@ -1799,10 +1840,15 @@
    "sources": []
   },
   "direct-election-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In a 2026 interview he said the Electoral College has 'perverted' politics, that California has 'gone out front saying it's time to change that system' (it joined the national popular vote compact), and 'it's time to make that amendment.' He did not spell out the replacement, so medium.",
+   "sources": [
+    "o4"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "central-bank-independence": {
    "value": null,
@@ -2762,11 +2808,14 @@
   "open-government-data": {
    "value": 1,
    "confidence": "low",
-   "rationale": "Backed the Digital Democracy tool (2015) for following legislative proceedings; limited detail.",
+   "rationale": "As lieutenant governor he co-launched Digital Democracy (2015), a free searchable archive of California legislative hearing video and transcripts; one project, so low.",
    "sources": [
-    "s1"
+    "o5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "interfaith-marriage-restriction": {
    "value": null,
@@ -3139,16 +3188,28 @@
    "auditor": "gpt-6.1-sol"
   },
   "pollution-taxes": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "He extended cap-and-trade to 2045 as 'making polluters pay' (2025), but his main climate tools are mandates such as the 2035 gasoline-car phase-out and subsidies, so the record is mixed on relying on pricing rather than regulation.",
+   "sources": [
+    "o3",
+    "s2"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Marking the global 30x30 agreement in 2022 he said 'we will do our part to leave this world and its natural beauty better off for future generations.' A stated aim rather than a developed doctrine, and his oil-permitting record (SB 237) pulls against it, so medium.",
+   "sources": [
+    "o2",
+    "b10"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "women-distinct-values": {
    "value": null,
@@ -3481,10 +3542,15 @@
    "sources": []
   },
   "extrajudicial-killing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Of the 2025 military strikes killing suspected drug smugglers at sea he said it was 'chilling' and asked 'What happened to due process? What happened to the rule of law?', rejecting killing drug suspects without trial. Said of strikes abroad, not a general statement on drug policy, so medium.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "close-ties-china": {
    "value": null,
@@ -3619,7 +3685,7 @@
    "sources": []
   }
  },
- "notes": "Views shifted on Medi-Cal for undocumented adults (expanded 2022, capped 2025) and on trans athletes (2025 podcast). Research relied on official releases and news reports; his speeches, book and podcast transcripts were not available as full text, so most statements stay null.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass using saved full texts, not copied answers. Reviewed all 490 statements and every remaining null. State-of-the-State and UN remarks were read in full; the assembly also publishes the former as a PDF. The entire Pod Save America interview was read, with advertisements and host questions excluded. The Klein interview was downloaded after headless rendering; topic passages were read from its actual transcript, not its AI-generated notes; some letter speaker labels also mark archival Wilson clips, which were excluded. His faith is used only where he expressly links spiritual belonging to public justice, not to infer particular doctrines. His new federal tax proposal differs from his opposition to California asset taxes; neither cancels the other. The healthcare freeze and benefit reductions qualify his universal-coverage rhetoric. His current oil-well policy answers the fossil-production statement despite climate rhetoric. Diablo Canyon’s extension was checked but continuation alone does not establish expansion of nuclear capacity. Indigenous land returns and stewardship are weighed with the 2026 water and sacred-site vetoes. Proportional representation and equal electoral competition are not inferred from his support for partisan redistricting. Opposition to the Iran war and advocacy of congressional war authorization do not establish defensive-wars-only or a UN-approval rule. Calls for cooperation with China do not establish the statement’s separate preference for relying on China rather than the United States. No inference from party, family, office or a guest’s views. No inferred answers. Source reports of enacted policy remain medium; high confidence is confined to directly inspected orders or formal recognition. Any inclusion-only rejection is accepted. The SB 107 message was downloaded and OCR-read. Generic international cooperation does not settle the priority of national versus global interests, and opposition to military policing does not by itself establish a position on military constitutional guardianship; both remain null. The original March 2026 Politico interview could not be fetched; secondary reproductions were treated as leads only.",
+ "notes": "Views shifted on Medi-Cal for undocumented adults (expanded 2022, capped 2025) and on trans athletes (2025 podcast). Research relied on official releases and news reports; his speeches, book and podcast transcripts were not available as full text, so most statements stay null.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass using saved full texts, not copied answers. Reviewed all 490 statements and every remaining null. State-of-the-State and UN remarks were read in full; the assembly also publishes the former as a PDF. The entire Pod Save America interview was read, with advertisements and host questions excluded. The Klein interview was downloaded after headless rendering; topic passages were read from its actual transcript, not its AI-generated notes; some letter speaker labels also mark archival Wilson clips, which were excluded. His faith is used only where he expressly links spiritual belonging to public justice, not to infer particular doctrines. His new federal tax proposal differs from his opposition to California asset taxes; neither cancels the other. The healthcare freeze and benefit reductions qualify his universal-coverage rhetoric. His current oil-well policy answers the fossil-production statement despite climate rhetoric. Diablo Canyon’s extension was checked but continuation alone does not establish expansion of nuclear capacity. Indigenous land returns and stewardship are weighed with the 2026 water and sacred-site vetoes. Proportional representation and equal electoral competition are not inferred from his support for partisan redistricting. Opposition to the Iran war and advocacy of congressional war authorization do not establish defensive-wars-only or a UN-approval rule. Calls for cooperation with China do not establish the statement’s separate preference for relying on China rather than the United States. No inference from party, family, office or a guest’s views. No inferred answers. Source reports of enacted policy remain medium; high confidence is confined to directly inspected orders or formal recognition. Any inclusion-only rejection is accepted. The SB 107 message was downloaded and OCR-read. Generic international cooperation does not settle the priority of national versus global interests, and opposition to military policing does not by itself establish a position on military constitutional guardianship; both remain null. The original March 2026 Politico interview could not be fetched; secondary reproductions were treated as leads only.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on lines 13 and 14: added boat strikes/extrajudicial killing, future generations (30x30), cap-and-invest/polluter pricing and the Electoral College. Searched and left null: international criminal courts (no Newsom statement on the ICC found), entrenched bill of rights (Prop 1 is one right, nearby case), noncitizen local voting (no position found; 2003 report says he took none), noblesse oblige and deficits (billionaires' tax essay states neither), UN powers, technology, space, precaution and nature's intrinsic value (UN 2026 remarks say none).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3628,6 +3694,11 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
- ]
+ ],
+ "rules": 3
 }
