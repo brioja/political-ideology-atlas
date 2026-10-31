@@ -6,10 +6,10 @@
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
-// Once the answers place you on every dividing line (each more known than unknown: the rule that
-// decides which ideologies and people are shown; placementProgress in pca.js), the quiz says you're
-// done, whether or not your top match has stopped moving: someone between two ideologies may never
-// settle and would otherwise answer every statement.
+// Once the answers place you on every dividing line (every band at most ±DONE_BAND; placementProgress
+// in pca.js, which the next-question selector aims at too), the quiz says you're done, whether or not
+// your top match has stopped moving: someone between two ideologies may never settle and would
+// otherwise answer every statement.
 // Measured from which statements you answered, not counted, so it holds as statements are added.
 const CHOICES = [
   { label: "Strongly disagree", value: -2 },
@@ -23,7 +23,7 @@ const STORAGE_KEY = "ideology-atlas-progress";
 const $ = (id) => document.getElementById(id);
 const SVG_NS = "http://www.w3.org/2000/svg";
 
-// `order` lists statements in the order they were asked (chosen adaptively, one at a time).
+// `order` lists statements in the order they were asked (chosen one at a time: nextQuestion in pca.js).
 // `answers` is indexed by statement: a value, or null when skipped or not asked yet.
 let order = [];
 let answers = [];
@@ -1457,7 +1457,7 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     const y = wrapText(ctx, "Which ideology are you nearest?", 60, 170, 540, 68);
     ctx.fillStyle = CARD.muted;
     ctx.font = `400 26px ${CARD_FONTS.body}`;
-    wrapText(ctx, "Finds the real dividing lines between ideologies, then asks the statements that best tell them apart.", 60, y + 20, 520, 38);
+    wrapText(ctx, "Finds the real dividing lines between ideologies, then asks the statements that best place you on them.", 60, y + 20, 520, 38);
   }
 
   ctx.fillStyle = CARD.ink;

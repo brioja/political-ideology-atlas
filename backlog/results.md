@@ -60,3 +60,34 @@ selector, which only scores statements ideologies have positions on and so effec
 simulated taker can answer). Counting answered statements only: 109 vs 123/143. Undecided: comparing
 selectors fairly needs takers who answer every statement (real ones).
 
+
+Resolved 2026-10-31 with model-generated takers (each at an ideology's place, answering every statement
+as the model predicts there plus its noise; scratchpad tools, test.js section 3 uses the same takers). At
+equal length both selectors place takers about equally well (0.34 SD per line after 49 statements either
+way); narrowing the worst line does better on the worst line (0.85 vs 0.94 SD). What differed was the
+mismatch: the old selector aimed at telling likely matches apart while "Done" measured placement, so it
+reached Done slowly. Shipped: one Done rule (doneGaps in pca.js) that the selector aims at too, measured as
+band width, every band at most ±1. Brandon first picked ±1.25 (fewer statements for the same accuracy),
+but his own result at 35 statements put a sparse ideology first (Post-Marxism: same side on 4 of his
+answers, opposite on 5); at 60 his usual Saint-Simonianism was back level at the top (same side on 33,
+opposite on 3). Results at Done:
+
+| rule (placement selector unless noted) | statements | own ideology first |
+| --- | --- | --- |
+| old selector, 35% share (before) | 46 | 89/143 |
+| band ±1.5 | 25 | 68/143 |
+| band ±1.25 | 35 | 91/143 |
+| **band ±1 (shipped)** | 60 | 111/143 |
+| share 25% / 15% | 32 / 65 | 63 / 100 of 143 |
+
+Band rules find the ideology more often than share rules at the same length; they leave lines 10-14 a
+little looser (0.43-0.51 SD off vs 0.35-0.42). The selector depends only on which statements are answered,
+so the quiz is effectively a fixed sequence: it changes with an ideology audit or a "No opinion" (Brandon:
+fine). The bar is drawn on a log scale of the worst band's gap (a straight scale read half full after two
+statements).
+
+## Two-stage progress bar (idea, 2026-10-31)
+
+Brandon: the bar could fill up twice, once per accuracy level, e.g. "Short quiz done" at a looser band,
+then "Long quiz 10%" toward Done (±1.25 took 35 statements, own ideology first 91/143; ±1 took 60 at
+111). Not started.

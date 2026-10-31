@@ -204,8 +204,8 @@ function varimax(model, k, { iters = 100 } = {}) {
 
 // The same model from parts build.js computed ahead of time (mean and the leading components), so
 // the page skips the eigen-decomposition, which grows with the cube of the statement count.
-// `placement`: the shipped placement context (PLACEMENT in data.js), which the quiz's next-question
-// selector needs (plausibility); the shipped parts hold too few components to work it out.
+// `placement`: the shipped placement context (PLACEMENT in data.js), which placing answers, the quiz's
+// next-question selector and "Done" need; the shipped parts hold too few components to work it out.
 function modelFromParts(ideologies, parts, placement = null) {
   const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], span: parts.span, realLines: parts.realLines,
     placement: placementFromParts(placement), ideologies: [] };
@@ -244,10 +244,9 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // ---- The fit measure ------------------------------------------------------------------------------
 // Everything that says how close a set of answers is to a profile is here, implemented once:
 // placement (answers -> a position), the distance between two positions, the similarity scale
-// (0-100%), how precisely the answers place you (lineStats, which also tells the quiz you're done) and the
-// plausibility the quiz's next-question selector weights ideologies by. Every
-// ranking (match(), topMatch(), matchPeople(), the Compare page), the selector and its progress
-// (weights()) go through these functions only, so changing the measure here
+// (0-100%) and how precisely the answers place you (lineStats, which also drives the quiz's
+// next-question selector and "Done"). Every ranking (match(), topMatch(), matchPeople(), the Compare
+// page), the selector and its progress go through these functions only, so changing the measure here
 // changes them all together and they cannot drift apart.
 //
 // Fit is distance on the real dividing lines (matchLines). Silence (null) is never scored, as "Neither" or as disagreement: a decision,
@@ -330,40 +329,31 @@ const similarity = (model, d) => {
   return span && d != null ? Math.max(0, 1 - d / span) : 0;
 };
 
-// How far the quiz has placed you, from 0 to 1: 1 once your uncertainty on every real line (the same
-// measure that decides who is shown; see uncertainty()) is at most DONE_UNCERTAINTY, and on the way
-// there, how much of its spread your worst line has resolved against that target. It only grows as you
-// answer. The quiz says you're done at 1, so a taker between two ideologies isn't asked every statement,
-// and one is never done while a line is still mostly unknown.
-// Being shown asks "is this a full politics?"; "Done" asks "is the result settled?", so it has its own
-// target. Measured on simulated adherents (Brandon picked ~60 questions, 2026-10-31): at 35% the median
-// taker is done after 64 statements with their own ideology first for 75% (top 3 for 86%); 50% took 35
-// statements at 46%, 25% took 105 at 91%.
-const DONE_UNCERTAINTY = 0.35;
-function placementProgress(model, answers) {
+// "Done", in one place: the quiz is done once every real line's band (±1 standard deviation of your
+// place, as drawn: lineSpread) is at most ±DONE_BAND, in line units. doneGaps says how far each line is
+// from that (1 or less = done on that line); placementProgress and nextQuestion both go through it, so
+// the quiz asks for what "Done" needs. Being shown asks "is this a full politics?" (uncertainty());
+// "Done" asks "is your place settled?", so it has its own measure.
+// Measured on model-generated takers who answer every statement (Brandon picked ±1, 2026-10-31):
+// done after 60 statements, own ideology first for 111 of 143 (the old disagreement selector with a 35%
+// unknown-share target: 46 statements, 89); ±1.25 took 35 statements at 91, ±1.5 took 25 at 68. ±1.25
+// left Brandon's own result unsettled at 35 (a sparse ideology first that he disagreed with as often
+// as not); at 60 his usual one was back level at the top.
+const DONE_BAND = 1;
+const doneGaps = (ctx, variances, band = DONE_BAND) => variances.map((v) => Math.sqrt(v) / band);
+// How far the quiz has placed you, from 0 to 1: how much of the way from no answers (worst line's gap
+// g0) to Done (gap 1) the worst line has come, on a log scale (the bands narrow fastest early on, so a
+// straight scale read half full after two statements; this only changes how the bar is drawn). It only
+// grows as you answer; the quiz says you're done at 1, so a taker between two ideologies isn't asked
+// every statement. `band` is for scripts comparing Done targets.
+function placementProgress(model, answers, band = DONE_BAND) {
   if (!answers.some((x) => x != null)) return 0;
-  return Math.min(1, (1 - worstUncertainty(placementOf(model), answeredIndexes(answers))) / (1 - DONE_UNCERTAINTY));
+  const ctx = placementOf(model), worst = (v) => Math.max(...doneGaps(ctx, v, band));
+  const g0 = worst(ctx.prior), g = worst(lineStats(ctx, answeredIndexes(answers)).map((l) => l.variance));
+  return Math.min(1, Math.log(g0 / g) / Math.log(g0));
 }
 
-// How plausible each ideology is given the answers so far (weights summing to 1), from its distance
-// `d` (fitTo): a Gaussian, exp(-d² / 2s²), whose width s is how far off the distance itself may be
-// from your placement error: on each line, its variance weighted the way distance weighs that line
-// (distanceSpread), so there is no tuning constant. A line you haven't
-// answered adds neither distance nor width; a loosely placed one keeps every nearby ideology in play.
-// Before any answer (d null) all weigh the same.
-function plausibility(model, answers, d) {
-  const m = model.ideologies.length;
-  if (!d) return new Array(m).fill(1 / m);
-  const s = distanceSpread(placementOf(model), answeredIndexes(answers));
-  if (!(s > 0)) return new Array(m).fill(1 / m);
-  const logs = d.map((x) => -(x * x) / (2 * s * s));
-  const top = Math.max(...logs);
-  const w = logs.map((l) => Math.exp(l - top));
-  const total = w.reduce((t, x) => t + x, 0);
-  return w.map((x) => x / total);
-}
-
-// The placement context plausibility() measures with: shipped (modelFromParts), or worked out from a
+// The placement context answers are placed with: shipped (modelFromParts), or worked out from a
 // model built here (buildModel), which has every component.
 function placementOf(model) {
   if (model.placement === undefined) model.placement = placementContext(model);
@@ -408,24 +398,17 @@ function matchPeople(model, answers, people) {
     .sort((a, b) => a.distance - b.distance);
 }
 
-// How plausible each ideology is given the answers so far (see plausibility).
-const weights = (model, answers) => plausibility(model, answers, fitTo(model, answers, model.ideologies));
-
-// Picks the unasked statement on which the currently plausible ideologies disagree most.
-// With no answers that is simply the most divisive statement overall; later it is the one
-// that best separates your remaining candidates. `gain` is that weighted disagreement.
-function nextQuestion(model, answers, asked) {
-  const w = weights(model, answers);
+// Picks the unasked statement that most narrows the line furthest from Done (doneGaps), from the
+// posterior covariance with that statement added (an exact rank-one update, lineVariancesWith). It
+// depends on which statements you answered, not how: "No opinion" leaves a statement asked but unknown.
+// `worst` is the worst line's gap after answering it. `band` is for scripts comparing Done targets.
+function nextQuestion(model, answers, asked, band = DONE_BAND) {
+  const ctx = placementOf(model), C = posteriorCov(ctx, answeredIndexes(answers)), v = lineVariances(ctx, C);
   let best = null;
   for (let q = 0; q < answers.length; q++) {
     if (asked.has(q)) continue;
-    // Only ideologies with a position on it can be told apart by it.
-    let mean = 0, known = 0;
-    model.ideologies.forEach((i, k) => { if (i.profile[q] != null) { mean += w[k] * i.profile[q]; known += w[k]; } });
-    if (known) mean /= known;
-    let gain = 0;
-    model.ideologies.forEach((i, k) => { if (i.profile[q] != null) gain += w[k] * (i.profile[q] - mean) ** 2; });
-    if (!best || gain > best.gain) best = { q, gain };
+    const worst = Math.max(...doneGaps(ctx, lineVariancesWith(ctx, C, v, q), band));
+    if (!best || worst < best.worst) best = { q, worst };
   }
   return best;
 }
@@ -505,14 +488,15 @@ function placementFromParts(parts) {
 // line moves the position there only part of the way, as far as it narrows the line, with no tuned
 // constant. Which statements are answered decides the precision; the answers decide only the place.
 // Everything uses this: matching and drawing (locate, place), who is shown and "Done" (uncertainty),
-// the selector's plausibility width (distanceSpread).
+// the selector and "Done" (doneGaps), how far apart two ideologies must be to be told apart (distanceSpread).
 function lineStats(ctx, knownIdx) {
   return posterior(ctx, knownIdx).lines;
 }
-function posterior(ctx, knownIdx, centred = null) {
-  const { model, k, noise, lines, prior } = ctx;
+// The posterior covariance on the components, C = (Λ⁻¹ + AᵀA / noise)⁻¹, for statements `knownIdx`.
+function posteriorCov(ctx, knownIdx) {
+  const { model, k, noise } = ctx;
   const comps = model.components.slice(0, k);
-  const M = comps.map((ca, a) => comps.map(() => 0));
+  const M = comps.map(() => comps.map(() => 0));
   for (const j of knownIdx) {
     for (let a = 0; a < k; a++) {
       const x = comps[a].vector[j] / noise;
@@ -520,11 +504,22 @@ function posterior(ctx, knownIdx, centred = null) {
     }
   }
   for (let a = 0; a < k; a++) { M[a][a] += 1 / comps[a].eigenvalue; for (let b = 0; b < a; b++) M[a][b] = M[b][a]; }
-  const C = comps.map((_, i) => solve(M, comps.map((__, j) => (j === i ? 1 : 0)))); // M⁻¹ (symmetric)
-  const out = { lines: lines.map((row, i) => {
-    const variance = row.reduce((s, x, a) => s + x * row.reduce((t, y, b) => t + C[a][b] * y, 0), 0);
-    return { variance, reliability: Math.max(0, 1 - variance / prior[i]) };
-  }) };
+  return comps.map((_, i) => solve(M, comps.map((__, j) => (j === i ? 1 : 0)))); // M⁻¹ (symmetric)
+}
+// Each line's variance under covariance C.
+const lineVariances = (ctx, C) => ctx.lines.map((row) => row.reduce((s, x, a) => s + x * row.reduce((t, y, b) => t + C[a][b] * y, 0), 0));
+// Each line's variance after also answering statement j (exact rank-one update of C), without rebuilding C.
+function lineVariancesWith(ctx, C, v, j) {
+  const u = ctx.model.components.slice(0, ctx.k).map((c) => c.vector[j]);
+  const Cu = C.map((r) => r.reduce((s, x, b) => s + x * u[b], 0));
+  const denom = ctx.noise + u.reduce((s, x, a) => s + x * Cu[a], 0);
+  return ctx.lines.map((row, i) => v[i] - row.reduce((s, x, a) => s + x * Cu[a], 0) ** 2 / denom);
+}
+function posterior(ctx, knownIdx, centred = null) {
+  const { model, k, noise, lines, prior } = ctx;
+  const comps = model.components.slice(0, k);
+  const C = posteriorCov(ctx, knownIdx);
+  const out = { lines: lineVariances(ctx, C).map((variance, i) => ({ variance, reliability: Math.max(0, 1 - variance / prior[i]) })) };
   if (centred) {
     // Mean on the components: C · Aᵀy / noise; on the lines: lines · that.
     const rhs = comps.map((c) => knownIdx.reduce((s, j) => s + c.vector[j] * centred[j], 0) / noise);
@@ -540,7 +535,7 @@ function posterior(ctx, knownIdx, centred = null) {
 // (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY on every
 // line: every line more known than unknown, except a line given its own temporary limit
 // (`maxUncertainty` in the placement context, from audits/line-allowances.json). The same rule for ideologies, people and AI models; the quiz's "Done"
-// uses the same measure with its own target (DONE_UNCERTAINTY).
+// uses the same posterior, measured as band width (DONE_BAND).
 const MAX_UNCERTAINTY = 0.5;
 function worstUncertainty(ctx, knownIdx) {
   return Math.max(...lineStats(ctx, knownIdx).map((l) => 1 - l.reliability));
@@ -556,8 +551,8 @@ function uncertainty(ctx, profile) {
 
 // How far off a distance may be from placement error alone, for a list of answers with positions on `knownIdx`:
 // on each line its variance, weighted the way distance weighs that line (s² = Σ reliability ·
-// variance). The selector's plausibility width, and, for every statement answered, the closest two
-// ideologies can be and still be told apart.
+// variance). For every statement answered: the closest two ideologies can be and still be told apart
+// (build.js).
 function distanceSpread(ctx, knownIdx) {
   return Math.sqrt(lineStats(ctx, knownIdx).reduce((t, l) => t + l.reliability * l.variance, 0));
 }
@@ -609,5 +604,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, lineStats, lineSpread, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_BAND, doneGaps, placementFromParts, placementProgress, describeAxis };
 }

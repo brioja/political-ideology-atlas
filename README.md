@@ -83,8 +83,9 @@ person's own words and record, and a statement with no reliable evidence is `nul
   spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). One line, unity
   across borders, may be up to 60% unknown until it has statements ordinary politicians answer
   (`audits/line-allowances.json`). The rule is the
-  same for ideologies, people and AI models; the quiz says you're done by the same measure, at its own
-  target (35% unknown at most on every line, `DONE_UNCERTAINTY`). There is no other bar: nothing
+  same for ideologies, people and AI models; the quiz says you're done from the same placement, once
+  every line's band (±1 standard deviation) is at most ±1 (`DONE_BAND`); it picks each next
+  statement to narrow the line furthest from that (`nextQuestion`). There is no other bar: nothing
   compares a list of answers with the gap between neighbouring ideologies, and people are held to
   the same rule as ideologies (2026-10-31).
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
