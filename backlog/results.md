@@ -91,3 +91,13 @@ statements).
 Brandon: the bar could fill up twice, once per accuracy level, e.g. "Short quiz done" at a looser band,
 then "Long quiz 10%" toward Done (±1.25 took 35 statements, own ideology first 91/143; ±1 took 60 at
 111). Not started.
+
+## Sparse ideologies leading (open, 2026-10-31)
+
+A mild taker matching a mild ideology is fine (Brandon). A sparse one leading is probably an issue: an
+ideology with few positions (Post-Marxism, 103, vs Saint-Simonianism, 252) is placed nearer the centre and
+less certainly on lines 10-14, and distance weighs those lines by reliability, so it can come first while
+disagreeing with the taker on the statements both answered. Brandon's 35-statement run: Post-Marxism first
+with 4 same side / 5 opposite on 13 shared statements; at 60 it was level with Saint-Simonianism (8/7 on
+22 vs 33/3 on 50). Like-with-like matching was decided against (decided-against.md). No fix chosen; list
+options before picking (deepening sparse audits is the route that needs no change to matching).
