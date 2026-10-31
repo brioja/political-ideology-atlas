@@ -3,7 +3,8 @@
  "name": "Zohran Mamdani",
  "auditedAt": "2026-10-22",
  "auditor": [
-  "claude-sonnet-5-5"
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "Mayor of New York City (2026–); member of the New York State Assembly (2021–2025)",
@@ -281,6 +282,70 @@
    "author": "Breitbart",
    "url": "https://www.breitbart.com/2nd-amendment/2025/06/26/nycs-democratic-socialist-zohran-mamdani-we-need-to-ban-all-guns/",
    "usedFor": "his May 2022 tweet and listed Assembly gun votes (as reported by an opposing outlet)"
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "Zohran Mamdani: The Democratic party 'has to be willing to fight for working people' (interview with Jonathan Karl, June 28, 2026)",
+   "author": "ABC News",
+   "url": "https://www.youtube.com/watch?v=AbARdcqmWTY",
+   "usedFor": "States that privilege one religion; equal rights; two-state question; international law"
+  },
+  {
+   "id": "o2",
+   "kind": "reference",
+   "title": "Mamdani calls Trump on Venezuela to oppose 'pursuit of regime change'",
+   "author": "Sahalie Donaldson, City & State NY (January 3, 2026)",
+   "url": "https://www.cityandstateny.com/politics/2026/01/mamdani-calls-trump-venezuela-oppose-pursuit-regime-change/410441/",
+   "usedFor": "Opposition to the US strike on Venezuela as an act of war violating federal and international law"
+  },
+  {
+   "id": "o3",
+   "kind": "reference",
+   "title": "'Never again': NYC Mayor Mamdani promises to fight antisemitism on eve of Yom HaShoah",
+   "author": "The Tribune (April 2026), quoting his post on X",
+   "url": "https://www.tribuneindia.com/news/usa-news/never-again-nyc-mayor-mamdani-promises-to-fight-antisemitism-on-eve-of-yom-hashoah/",
+   "usedFor": "Holocaust remembrance"
+  },
+  {
+   "id": "o4",
+   "kind": "primary",
+   "title": "Mayor Mamdani signs executive orders to crack down on junk fees and subscription tricks and traps",
+   "author": "NYC Department of Consumer and Worker Protection (January 2026)",
+   "url": "https://www.nyc.gov/site/dca/news/004-26/mayor-mamdani-signs-executive-orders-crack-down-junk-fees-subscription-tricks-traps-and",
+   "usedFor": "Executive Orders 9 and 10 on junk fees and subscriptions"
+  },
+  {
+   "id": "o5",
+   "kind": "reference",
+   "title": "Mamdani criticizes Iranian regime's 'brutal government' while still condemning U.S. and Israeli attacks",
+   "author": "Sahalie Donaldson, City & State NY (March 3, 2026)",
+   "url": "https://www.cityandstateny.com/politics/2026/03/mamdani-criticizes-iranian-regimes-brutal-government-while-still-condemning-us-and-israeli-attacks/411859",
+   "usedFor": "Repression of dissent in Iran"
+  },
+  {
+   "id": "o6",
+   "kind": "reference",
+   "title": "Mamdani breaks silence about Maduro and Cuban president Díaz-Canel",
+   "author": "Alicia Civita and Matias Civita, Latin Times (September 25, 2025)",
+   "url": "https://www.latintimes.com/mamdani-breaks-silence-about-maduro-cuban-president-diaz-canel-how-jorge-ramos-daughter-paola-589809",
+   "usedFor": "Campaign statement calling Maduro and Díaz-Canel dictators"
+  },
+  {
+   "id": "o7",
+   "kind": "primary",
+   "title": "Assembly Bill A9081 (2023-2024): employee-owned enterprises and worker cooperatives as preferred public contractors",
+   "author": "New York State Assembly (sponsor: Mamdani)",
+   "url": "https://www.nysenate.gov/legislation/bills/2023/A9081",
+   "usedFor": "Worker cooperatives"
+  },
+  {
+   "id": "o8",
+   "kind": "reference",
+   "title": "Queens lawmaker joins hunger strike to get mayor to allocate more relief for taxi cab drivers",
+   "author": "QNS (October 27, 2021)",
+   "url": "https://qns.com/2021/10/queens-lawmaker-joins-hunger-to-get-mayor-to-allocate-more-relief-for-taxi-cab-drivers",
+   "usedFor": "2021 taxi-driver hunger strike"
   }
  ],
  "answers": {
@@ -388,16 +453,11 @@
   "regulate-corporations": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "City banned junk fees and he proposes higher corporate taxes; framing is regulation of corporate behaviour.",
+   "rationale": "As mayor ordered the consumer protection agency to pursue hidden junk fees and subscription traps, saying companies must be held to account.",
    "sources": [
-    "s1",
-    "s2",
-    "b1"
+    "o4"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-opus-5-5"
   },
   "cut-welfare": {
    "value": -2,
@@ -417,11 +477,11 @@
   "worker-ownership": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Primary sponsor of a 2024 bill adding worker cooperatives to preferred public contractors; supports expanding worker-owned cooperatives alongside public enterprise.",
+   "rationale": "Sponsored a 2024 Assembly bill making worker cooperatives and employee-owned firms preferred contractors for state contracts.",
    "sources": [
-    "b2"
+    "o7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "surveillance-ok": {
    "value": -1,
@@ -728,13 +788,13 @@
    "sources": []
   },
   "one-party-rule": {
-   "value": -2,
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Condemned Venezuela's Maduro and Cuba's Diaz-Canel as dictators while criticizing US sanctions on both.",
+   "rationale": "His campaign said Maduro and Díaz-Canel are dictators whose governments stifled free and fair elections and jailed opponents, though he avoided the word in the interview itself.",
    "sources": [
-    "b2"
+    "o6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "monarchy-legitimate": {
    "value": null,
@@ -929,12 +989,12 @@
   "direct-action": {
    "value": 0,
    "confidence": "low",
-   "rationale": "Took part in hunger strikes and arrests at demonstrations, but pursued change through elections and office.",
+   "rationale": "Joined a 2021 taxi-driver hunger strike and was arrested at a protest blocking traffic, yet he has pursued his programme mainly through elected office.",
    "sources": [
-    "b2",
-    "b1"
+    "o8",
+    "b9"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "means-match-ends": {
    "value": null,
@@ -1105,11 +1165,12 @@
   "jewish-state-israel": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "Says Israel has a right to exist 'as a state with equal rights' but declined to support it as a Jewish state, citing religious hierarchy of citizenship.",
+   "rationale": "Says Israel has a right to exist 'as a state with equal rights' but, asked again in June 2026, would not support it as a Jewish state because it privileges one religion.",
    "sources": [
     "s8",
     "b25",
-    "b2"
+    "b2",
+    "o1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
@@ -1167,16 +1228,12 @@
   "force-without-un": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "Condemned unilateral US strikes on Venezuela and Iran as acts of war.",
+   "rationale": "Called the January 2026 US strike on Venezuela an act of war violating federal and international law, and called for an end to the US war with Iran.",
    "sources": [
-    "s2",
-    "b2",
+    "o2",
     "b7"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ]
+   "auditor": "claude-opus-5-5"
   },
   "reason-over-faith": {
    "value": null,
@@ -1310,11 +1367,12 @@
   "night-watchman-state": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Program is a large expansion of public provision (childcare, buses, groceries, housing).",
+   "rationale": "His platform adds fare-free buses, free child care from six weeks to five years and city-owned grocery stores, functions far beyond defence, justice and property.",
    "sources": [
-    "b2"
+    "s5",
+    "b9"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1638,13 +1696,11 @@
    "sources": []
   },
   "religious-exemptions": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Said he would protect Hasidic yeshivas' way of life from accusations that they fail state education standards.",
-   "sources": [
-    "b2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "An earlier pass reported a remark protecting Hasidic yeshivas from education-standard enforcement, but only Wikipedia and opinion columns report it; no verifiable source found.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "encourage-eccentricity": {
    "value": null,
@@ -1731,14 +1787,11 @@
    "sources": []
   },
   "annexed-territory-occupation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Called for ending the occupation of Palestinian territory and opposed Russia's invasion of Ukraine.",
-   "sources": [
-    "s8",
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "His calls to end the occupation of Palestinian territory and his opposition to Russia's invasion of Ukraine are not statements about annexed territory as such; no recorded position on annexation found.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "subordinate-church-to-state": {
    "value": null,
@@ -1773,11 +1826,12 @@
   "flat-income-tax": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Proposes a higher income tax rate on city residents earning over $1 million, the opposite of a flat tax.",
+   "rationale": "Proposed a new 2% city income tax only on incomes over $1 million, a rate that rises with income.",
    "sources": [
-    "b2"
+    "s5",
+    "b7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "character-from-environment": {
    "value": null,
@@ -2329,19 +2383,23 @@
    "sources": []
   },
   "national-law-over-international": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Pledged to enforce ICC arrest warrants in city practice.",
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Says the city should comply with international law and that Netanyahu belongs in The Hague, but also that he will act on the ICC warrant only as far as New York law allows; the evidence points both ways.",
    "sources": [
-    "s2"
+    "b8",
+    "b9"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "religious-nation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Rejects any state that privileges one religion and says everyone should be considered equal whatever their faith, describing equal rights as the bedrock of being American.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "deference-to-leading-power": {
    "value": null,
@@ -2449,11 +2507,11 @@
   "holocaust-denial": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "As mayor released a plan to expand Holocaust education in city schools.",
+   "rationale": "Marked Yom HaShoah by honouring 'the six million Jewish victims of the Nazis' systematic program of mass murder'.",
    "sources": [
-    "b1"
+    "o3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "criminalize-homosexuality": {
    "value": -2,
@@ -2473,11 +2531,12 @@
   "suppress-opposition": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Criticized the Iranian regime's violence against anti-government protesters and called Maduro and Diaz-Canel dictators.",
+   "rationale": "Condemned Iran's government for systematic repression and for killing thousands who sought to express dissent, and faulted Maduro and Díaz-Canel for jailing political opponents.",
    "sources": [
-    "b2"
+    "o5",
+    "o6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "punish-blasphemy": {
    "value": null,
@@ -3344,20 +3403,14 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": null,
+   "value": 2,
    "confidence": "high",
-   "rationale": "Said he would seek to enforce ICC warrants against Netanyahu and Putin.",
+   "rationale": "Said Netanyahu 'belongs in The Hague' as a leader charged by the International Criminal Court, and that anybody the ICC has called for should be honoured.",
    "sources": [
-    "s2",
-    "s1",
     "b8",
-    "b2"
+    "b9"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
-   ],
-   "nulledFrom": 2
+   "auditor": "claude-opus-5-5"
   },
   "scripture-inerrant": {
    "value": null,
@@ -3384,10 +3437,13 @@
    "sources": []
   },
   "national-church-status": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Told ABC that he cannot support any state that privileges one religion over another, whether Israel, Saudi Arabia or anywhere else, because people should be equal whatever their faith.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "minority-territorial-autonomy": {
    "value": null,
@@ -3577,7 +3633,7 @@
    "sources": []
   }
  },
- "notes": "Born October 18, 1991; living. Positions have shifted in office: he reversed his opposition to mayoral control of schools, retreated from 'defund the police' rhetoric, and later dropped some earlier stances (SHSAT). Most evidence on specific issues comes from secondary reports; positions not directly documented are left null.\n\nMerged with an independent claude-sonnet-5-5 audit: 23 answers taken from it, 28 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Shifts: in 2020 he voiced support for defunding the NYPD and called it racist; as a candidate and mayor he said he would work with police, apologized for the earlier remark, kept Commissioner Tisch and still pursues disbanding the Strategic Response Group and a Department of Community Safety. He campaigned to end mayoral control of schools but lobbied for a two-year extension as mayor. City grocery stores were first proposed as city-run and then to be run by a private operator. On Israel he has said it has a right to exist but will not endorse it as a Jewish state, and he supports a permanent ceasefire, an end to occupation and equal rights for all. DSA platform planks (for example leaving NATO) were not counted because he said his positions are the ones he states himself. Government (elections, courts, executive power) and several world topics (Ukraine, NATO, trade, aid) remain thin because he has not spoken to them in sources found.",
+ "notes": "Born October 18, 1991; living. Positions have shifted in office: he reversed his opposition to mayoral control of schools, retreated from 'defund the police' rhetoric, and later dropped some earlier stances (SHSAT). Most evidence on specific issues comes from secondary reports; positions not directly documented are left null.\n\nMerged with an independent claude-sonnet-5-5 audit: 23 answers taken from it, 28 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Shifts: in 2020 he voiced support for defunding the NYPD and called it racist; as a candidate and mayor he said he would work with police, apologized for the earlier remark, kept Commissioner Tisch and still pursues disbanding the Strategic Response Group and a Department of Community Safety. He campaigned to end mayoral control of schools but lobbied for a two-year extension as mayor. City grocery stores were first proposed as city-run and then to be run by a private operator. On Israel he has said it has a right to exist but will not endorse it as a Jewish state, and he supports a permanent ceasefire, an end to occupation and equal rights for all. DSA platform planks (for example leaving NATO) were not counted because he said his positions are the ones he states himself. Government (elections, courts, executive power) and several world topics (Ukraine, NATO, trade, aid) remain thin because he has not spoken to them in sources found.\n\nclaude-opus-5-5 deepening pass (2026-10-31), aimed at line 13 (nationalism, irredentism, supranational union). Searched his interviews (NYT The Interview, Jon Stewart, Odd Lots, Hasan Piker, ABC This Week June 2026, CBS 100-day interview, 9/11 interview), the three mayoral debates and the victory speech (captions downloaded and searched), plus the web, for: pan-national or civilizational unity (pan-African, Muslim world), the EU or pooled sovereignty, territorial claims and reunification (Kashmir, Ukraine and Crimea, Greenland), territorial expansion, an anti-Western front or the Global South, land redistribution, national rebirth, a third way between capitalism and communism, settler colonialism, the Palestinian right of return, colonial reparations (only a remark about the Kohinoor diamond, which is not reparations), immigration levels and open borders. None of these has a stated position: line 13 statements stay null. Added: ICC trials (+2), national church status (-1) and a religiously defined nation (-1). Reviewed the world answers: annexed-territory-occupation set to null (occupation and the Ukraine invasion are not annexation), national-law-over-international lowered to 0 (he backs the ICC warrant but says he will act only within New York law), force-without-un re-sourced from Wikipedia to City & State and his interview. Nine answers that rested only on Wikipedia were re-sourced to the reports or documents behind them (regulate-corporations, worker-ownership, one-party-rule (lowered to -1), suppress-opposition, direct-action, night-watchman-state, flat-income-tax, holocaust-denial); religious-exemptions became null for lack of a verifiable source.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3586,6 +3642,10 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-25"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3595,5 +3655,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 4
   }
- ]
+ ],
+ "rules": 3
 }

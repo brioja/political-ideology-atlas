@@ -20,6 +20,9 @@ const flagFor = (id) => {
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
 const statements = activeStatements();
+// Rounding for what data.js and people.js ship (defined first: the --people path uses them too).
+const r6 = (x) => Math.round(x * 1e6) / 1e6;
+const r4 = (x) => Math.round(x * 1e4) / 1e4;
 let included, stale, missing, notPlaced, notIdeology, awaiting;
 const awaitingReaudit = require("./lib").awaitingReaudit();
 
@@ -92,8 +95,6 @@ const landscape = complete.length >= 3 ? buildModel(complete, { realLines: meani
 // The page needs only the leading components: the real lines (matchLines in pca.js, which partial
 // answer sets are also fitted on) and the shown ones, if fewer lines are real than are shown.
 const SHIPPED_COMPONENTS = Math.max(MAX_SHOWN_LINES, meaningful);
-const r6 = (x) => Math.round(x * 1e6) / 1e6;
-const r4 = (x) => Math.round(x * 1e4) / 1e4;
 // Every line that beats noise is rotated so each is one cluster of statements (rotating only the
 // shown ones blends the clusters left out into them); the shown lines (as app.js counts them) are
 // named from audits/line-labels.json the way factors are named: by the statements that load most.
