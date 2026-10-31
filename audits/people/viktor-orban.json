@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-22",
  "auditor": [
   "claude-haiku-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "Prime minister of Hungary (1998–2002, 2010–2026); leader of Fidesz",
@@ -178,6 +179,54 @@
    "author": "Reuters",
    "url": "https://www.investing.com/news/world-news/orban-reelected-as-fidesz-party-leader-in-hungary-despite-election-loss-4741038",
    "usedFor": "Election defeat, actual transfer to opposition and current role."
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "Prime Minister Viktor Orbán's speech on the 62nd anniversary of the 1956 Revolution and Freedom Fight (23 October 2018), official English translation",
+   "author": "Viktor Orbán",
+   "url": "https://2015-2022.miniszterelnok.hu/prime-minister-viktor-orbans-speech-on-the-62nd-anniversary-of-the-1956-revolution-and-freedom-fight/",
+   "usedFor": "revolution-justified, intervene-in-bloc"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "Prime Minister Viktor Orbán's commemoration speech on the 63rd anniversary of the 1956 Revolution and Freedom Fight (23 October 2019), official English translation",
+   "author": "Viktor Orbán",
+   "url": "https://2015-2022.miniszterelnok.hu/prime-minister-viktor-orbans-commemoration-speech-on-the-63rd-anniversary-of-the-1956-revolution-and-freedom-fight/",
+   "usedFor": "revolution-justified"
+  },
+  {
+   "id": "o3",
+   "kind": "primary",
+   "title": "Prime Minister Viktor Orbán's speech at the official ceremony marking the 60th anniversary of the 1956 Revolution (23 October 2016), official English translation",
+   "author": "Viktor Orbán",
+   "url": "https://2015-2022.miniszterelnok.hu/prime-minister-viktor-orbans-speech-at-the-official-ceremony-marking-the-60th-anniversary-of-the-1956-revolution/",
+   "usedFor": "intervene-in-bloc"
+  },
+  {
+   "id": "o4",
+   "kind": "primary",
+   "title": "Many in the West today are still making excuses for the crimes of communism (MTI report of his Memorial Day for the Victims of Communism speech, 25 February 2017, with quotations)",
+   "author": "Prime Minister's Office / MTI",
+   "url": "https://2015-2022.miniszterelnok.hu/many-in-the-west-today-are-still-making-excuses-for-the-crimes-of-communism/",
+   "usedFor": "security-forces-accountable"
+  },
+  {
+   "id": "o5",
+   "kind": "primary",
+   "title": "Children's sexual education is parents' job (Prime Minister's Office/MTI report of his dpa interview, 23 June 2021)",
+   "author": "Prime Minister's Office / MTI",
+   "url": "https://2015-2022.miniszterelnok.hu/childrens-sexual-education-is-parents-job/",
+   "usedFor": "sex-ed-in-schools"
+  },
+  {
+   "id": "o6",
+   "kind": "primary",
+   "title": "Hungary is an ideal pillar of the One Belt, One Road initiative (Prime Minister's Office report of his Beijing Leaders' Roundtable speech, 1 June 2017)",
+   "author": "Prime Minister's Office",
+   "url": "https://2015-2022.miniszterelnok.hu/hungary-is-an-ideal-pillar-of-the-one-belt-one-road-initiative/",
+   "usedFor": "close-ties-china"
   }
  ],
  "answers": {
@@ -501,10 +550,14 @@
    ]
   },
   "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources consulted.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "In his 23 October speeches he honours the 1956 revolutionaries who raised 'their arms and their weapons against the occupiers' and calls their uprising a rational decision, presenting the armed revolution against the communist regime as a model of national courage.",
+   "sources": [
+    "o1",
+    "o2"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "experts-over-public": {
    "value": null,
@@ -1135,10 +1188,13 @@
    "sources": []
   },
   "security-forces-accountable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources consulted.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the 2017 memorial for victims of communism he regretted that, unlike Nazism's crimes judged by an international military court, communism's crimes never received a similarly strict verdict, and said they cannot be excused.",
+   "sources": [
+    "o4"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "night-watchman-state": {
    "value": null,
@@ -1191,13 +1247,11 @@
    "sources": []
   },
   "no-religion-state-schools": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "His government introduced religion classes into the national curriculum and enlisted churches to provide education, the opposite of keeping religious instruction out of state schools.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-haiku-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The earlier answer cited only Wikipedia; under rules 3 it needs the law or his own words, which this pass did not get to, so no position is recorded.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "state-strengthens-encirclement": {
    "value": null,
@@ -1462,11 +1516,11 @@
   "sex-ed-in-schools": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "His party proposed and his government backed a 2021 law severely restricting sex education and LGBT-related content in schools, a position opposite to this statement.",
+   "rationale": "He told dpa in 2021 that children's sexual education is their parents' job 'under any circumstances', defending the 2021 law that restricts what schools may teach on sexuality.",
    "sources": [
-    "s1"
+    "o5"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "creationism-in-schools": {
    "value": null,
@@ -1807,13 +1861,11 @@
    "sources": []
   },
   "patriotic-education": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "His government amended the kindergarten curriculum to promote national identity, patriotism and attachment to homeland, and the 2014 speech called for the state to preserve cultural heritage.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-haiku-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The earlier answer cited only Wikipedia; under rules 3 it needs the law or his own words, which this pass did not get to, so no position is recorded.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "end-racial-preferences": {
    "value": null,
@@ -2098,10 +2150,14 @@
    "sources": []
   },
   "intervene-in-bloc": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources consulted.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He condemns the 1956 Soviet intervention that crushed Hungary's attempt to leave the Soviet bloc as occupation, celebrating those who 'attacked the Soviet tanks' and lamenting that Hungary was 'abandoned to our fate'.",
+   "sources": [
+    "o1",
+    "o3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "corporate-influence": {
    "value": null,
@@ -2374,13 +2430,11 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "His government ended legal recognition of transgender people in 2020.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-haiku-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The earlier answer cited only Wikipedia; under rules 3 it needs the law or his own words, which this pass did not get to, so no position is recorded.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "assisted-dying": {
    "value": null,
@@ -3077,10 +3131,13 @@
    "sources": []
   },
   "democracy-is-procedure": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources consulted.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his 2019 Bălvănyos speech he rejects the claim that democracy is necessarily liberal, arguing that a state with democratic institutions and equal votes remains a democracy while pursuing illiberal, Christian-national policies.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "premarital-sex": {
    "value": null,
@@ -3215,13 +3272,14 @@
    "sources": []
   },
   "close-ties-china": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Hungary joined China's Belt and Road Initiative in 2015, Orbán has maintained close ties with Beijing throughout his tenure, and he backed China's Ukraine peace plan in 2023.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He has said Hungary was the first EU member state to join the Belt and Road Initiative and is an ideal pillar for it, while keeping Hungary in the Western military alliance rather than replacing it.",
    "sources": [
-    "s1"
+    "o6",
+    "b3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "protect-kin-minorities": {
    "value": 2,
@@ -3357,7 +3415,7 @@
    "sources": []
   }
  },
- "notes": "Views changed: as a young liberal and anti-communist founder of Fidesz (late 1980s to 1990s) he held positions that are not used here; answers reflect his positions from roughly 2010 to 2025. Two of his key speeches are covered only by secondary reporting: the 2014 Băile Tușnad speech (summarised in Wikipedia; the full English text was not reachable) and the 2022 Băile Tușnad remarks (Insight Hungary). Answers that rely on them are medium at most. Judgment calls: elite-replacement was answered +1 rather than +2 because he speaks of 'political forces' and 'people' rather than elites; discourage-race-mixing and diversity-weakens-cohesion were left null as nearby but not matching; restrict-foreign-funding and party-controls-media were set at +1 low because they rest on contested record evidence.\n\nMerged with an independent gpt-6.1-sol audit: 30 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent research under the October 28 source-priority rules. No existing answers copied; no living-person inferences. The 2026 election observation documents substantial incumbent advantages, while the subsequent transfer of power prevents treating Hungary as a closed single-party state. Criticism of EU integration is not opposition to all international cooperation. Cross-border national solidarity is not a territorial annexation demand. Immigration and mixed-society rhetoric does not explicitly settle the separate proposition about interracial marriage and childbearing. Personal moral opposition to abortion is distinguished from his explicit 2022 support for retaining its broad legal framework. The original 2014 speech endpoint, current prime-minister site and original EUR-Lex judgments were unavailable; none is cited as read. Court findings below use the court’s own press account. The 2011 constitutional text is used only with his personal ownership of that constitutional project, not to attribute every clause. All remaining nulls reviewed against the complete 490-statement list.",
+ "notes": "Views changed: as a young liberal and anti-communist founder of Fidesz (late 1980s to 1990s) he held positions that are not used here; answers reflect his positions from roughly 2010 to 2025. Two of his key speeches are covered only by secondary reporting: the 2014 Băile Tușnad speech (summarised in Wikipedia; the full English text was not reachable) and the 2022 Băile Tușnad remarks (Insight Hungary). Answers that rely on them are medium at most. Judgment calls: elite-replacement was answered +1 rather than +2 because he speaks of 'political forces' and 'people' rather than elites; discourage-race-mixing and diversity-weakens-cohesion were left null as nearby but not matching; restrict-foreign-funding and party-controls-media were set at +1 low because they rest on contested record evidence.\n\nMerged with an independent gpt-6.1-sol audit: 30 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent research under the October 28 source-priority rules. No existing answers copied; no living-person inferences. The 2026 election observation documents substantial incumbent advantages, while the subsequent transfer of power prevents treating Hungary as a closed single-party state. Criticism of EU integration is not opposition to all international cooperation. Cross-border national solidarity is not a territorial annexation demand. Immigration and mixed-society rhetoric does not explicitly settle the separate proposition about interracial marriage and childbearing. Personal moral opposition to abortion is distinguished from his explicit 2022 support for retaining its broad legal framework. The original 2014 speech endpoint, current prime-minister site and original EUR-Lex judgments were unavailable; none is cited as read. Court findings below use the court’s own press account. The 2011 constitutional text is used only with his personal ownership of that constitutional project, not to attribute every clause. All remaining nulls reviewed against the complete 490-statement list.\n\nclaude-opus-5-5 deepening pass (2026-10-31), on line 12: searched the official English archive of 2015-2022.miniszterelnok.hu (23 October 1956 anniversary speeches 2016-2021, Bălvănyos 2018/2019/2022, Memorial Day for the Victims of Communism, the police centenary and military swearing-in speeches, journalists' Q&A) for revolution, the 1956 Soviet intervention, democracy, accountability for communist crimes, surveillance/Pegasus, terrorism, language for immigrants, trade surplus, martyrs and foreign bases. Added revolution-justified, intervene-in-bloc, democracy-is-procedure and security-forces-accountable. Nothing of his own found on surveillance (the Pegasus record is the government's claim of legality, not his position on the statement), martyrs (he honours 1956's 'heroes', which does not settle 'martyrs and saints'), immigrants' language, trade surplus or foreign bases. Rules 3 re-sourcing: sex-ed-in-schools and close-ties-china re-sourced to his office's reports (close-ties-china lowered to +1 medium: the source shows close ties with China alongside, not instead of, the Western alliance); no-religion-state-schools, patriotic-education and gender-identity-recognition cited only Wikipedia and are null until a pass cites the laws or his words. The 2014 Tusnádfürdő speech and the 1989 Nagy reburial speech could not be fetched (the 2010-2014 government page is gone and miniszterelnok.hu is under reconstruction).",
  "passes": [
   {
    "auditor": "claude-haiku-5-5",
@@ -3366,6 +3424,11 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
- ]
+ ],
+ "rules": 3
 }
