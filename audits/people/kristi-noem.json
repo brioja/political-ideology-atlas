@@ -308,28 +308,57 @@
    "author": "KOTA Territory News",
    "url": "https://www.kotatv.com/2020/11/05/noem-marijuana-measures-approved-by-voters-the-wrong-choice-for-south-dakota",
    "usedFor": "legalize-drugs"
+  },
+  {
+   "id": "o5",
+   "kind": "primary",
+   "title": "House roll call 14, January 19, 2011 (H.R. 2, Repealing the Job-Killing Health Care Law Act)",
+   "author": "Clerk of the U.S. House of Representatives",
+   "url": "https://clerk.house.gov/evs/2011/roll014.xml",
+   "usedFor": "universal-healthcare"
+  },
+  {
+   "id": "o6",
+   "kind": "primary",
+   "title": "House roll call 692, December 19, 2017 (H.R. 1, Tax Cuts and Jobs Act conference report)",
+   "author": "Clerk of the U.S. House of Representatives",
+   "url": "https://clerk.house.gov/evs/2017/roll692.xml",
+   "usedFor": "tax-the-wealthy"
+  },
+  {
+   "id": "o7",
+   "kind": "primary",
+   "title": "House roll call 507, September 17, 2014 (McKeon amendment to H.J.Res. 124, training and equipping the Syrian opposition)",
+   "author": "Clerk of the U.S. House of Representatives",
+   "url": "https://clerk.house.gov/evs/2014/roll507.xml",
+   "usedFor": "arm-foreign-insurgents"
   }
  ],
  "answers": {
   "universal-healthcare": {
-   "value": -2,
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Voted to repeal the Affordable Care Act and opposed Medicaid expansion in South Dakota as too costly.",
+   "rationale": "Voted in 2011 to repeal the Affordable Care Act outright; a vote shows opposition to that law's expansion of government-backed coverage, not a stated view on universal provision, so -1.",
    "sources": [
-    "s1",
-    "s2"
+    "o5"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "tax-the-wealthy": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Helped write the 2017 tax-cut law, cut the corporate rate to 21%, signed the Taxpayer Protection Pledge and opposes the estate tax.",
+   "rationale": "Voted for the 2017 Tax Cuts and Jobs Act and in 2015 for full repeal of the estate tax, which falls only on large estates; votes, so medium.",
    "sources": [
-    "s1",
-    "s2"
+    "o6",
+    "b13"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "tax-inheritance": {
    "value": -2,
@@ -353,13 +382,12 @@
    "nulledFrom": 1
   },
   "no-compulsory-union": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Supports keeping right-to-work laws (2018).",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found: OnTheIssues cites a 2018 campaign statement whose original could not be opened.",
+   "sources": [],
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 2
   },
   "limit-guns": {
    "value": -2,
@@ -419,14 +447,16 @@
    ]
   },
   "gender-identity-recognition": {
-   "value": -2,
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Pushed to bar transgender athletes from girls' sports (2021) and supported prohibiting medical treatment for transgender minors (2023).",
+   "rationale": "Her 2021 veto letter on the transgender sports bill affirmed sports categories by biological sex, refusing recognition by gender identity in school sports; it says nothing about legal recognition elsewhere, so -1.",
    "sources": [
-    "s2",
-    "s3"
+    "b26"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "more-religion-public": {
    "value": 2,
@@ -584,51 +614,57 @@
    ]
   },
   "military-superiority": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supported high military budgets (2015) and prevention of an Iranian nuclear weapon.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found: OnTheIssues cites a 2015 budget vote and Iran policy, which are nearby questions, not military superiority.",
+   "sources": [],
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 1
   },
   "individual-pension-accounts": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Opposed private retirement accounts and said she would not privatize Social Security (2010).",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found: OnTheIssues cites her 2010 campaign site, which could not be found; press reports of the 2010 debate only paraphrase her denial of backing privatization.",
+   "sources": [],
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": -2
   },
   "close-ties-china": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Called the Chinese Communist Party the greatest external challenge and signed 2022-23 device bans on Chinese-owned apps.",
+   "rationale": "Her 2024 State of the State address calls China one of the 'evil foreign governments' and 'our enemies' trying to control America's food supply, the opposite of seeking close ties.",
    "sources": [
-    "s2",
-    "s3"
+    "b3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "foreign-land-ownership": {
    "value": 1,
-   "confidence": "medium",
-   "rationale": "Signed a 2024 law barring entities from China and five other states from buying South Dakota farmland; opposed Chinese purchases. Not an all-foreigners ban.",
+   "confidence": "low",
+   "rationale": "Her 2024 address sought to bar foreign adversaries such as China from buying South Dakota farmland, saying the freedom to farm 'should not extend to our enemies'; she limited it to adversaries, not all foreigners, so low.",
    "sources": [
-    "s2",
-    "s3"
+    "b3",
+    "b2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "arm-foreign-insurgents": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Called for training and equipping the Syrian opposition (2014).",
+   "rationale": "Voted for the 2014 McKeon amendment authorizing the military to train and equip vetted Syrian opposition forces fighting the Assad government; a vote, so medium.",
    "sources": [
-    "s2"
+    "o7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "freedom-to-discriminate": {
    "value": null,
@@ -3513,7 +3549,7 @@
    "sources": []
   }
  },
- "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 12: found five answers. Surveillance from House roll calls (she also voted for the 2014 USA FREEDOM Act, per Voteview, which ended bulk collection but kept the programmes, so +1 not +2). Arms monopoly and self-defence from her 2023 'Freedom, Guaranteed' column. Revolution from her 2017 'A Common Country' column. Drug-boat strikes from the official record of the December 2, 2025 Cabinet meeting. Searched without result: political violence as such (her 2017, 2024 and 2025 statements condemn particular attacks on her side, a narrower case), running government like a business, and MediaSum interviews. Not searched: statements with no plausible link to her record. Under rules 3, three Wikipedia-only answers were re-sourced or nulled: legalize-drugs re-sourced to her November 2020 statement (lowered to medium), separate-church-state to her 2018 'One Nation, Under God' column, and cut-welfare nulled (no primary source on dependency or cuts found in budget).",
+ "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 12: found five answers. Surveillance from House roll calls (she also voted for the 2014 USA FREEDOM Act, per Voteview, which ended bulk collection but kept the programmes, so +1 not +2). Arms monopoly and self-defence from her 2023 'Freedom, Guaranteed' column. Revolution from her 2017 'A Common Country' column. Drug-boat strikes from the official record of the December 2, 2025 Cabinet meeting. Searched without result: political violence as such (her 2017, 2024 and 2025 statements condemn particular attacks on her side, a narrower case), running government like a business, and MediaSum interviews. Not searched: statements with no plausible link to her record. Under rules 3, three Wikipedia-only answers were re-sourced or nulled: legalize-drugs re-sourced to her November 2020 statement (lowered to medium), separate-church-state to her 2018 'One Nation, Under God' column, and cut-welfare nulled (no primary source on dependency or cuts found in budget).\n\nclaude-opus-5-5 OnTheIssues fix (2026-10-31): OnTheIssues-only answers re-sourced to what it cites (House roll calls, her 2024 State of the State, her 2021 veto letter) or nulled (military-superiority, individual-pension-accounts, no-compulsory-union). universal-healthcare lowered -2 to -1 and gender-identity-recognition -2 to -1 to what the originals show; foreign-land-ownership lowered to low (adversaries only).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
