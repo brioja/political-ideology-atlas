@@ -53,6 +53,10 @@ none), with today's selector:
 
 ±1.5 is the knee, but the gain is measured only on idealised one-ideology takers, while it costs every
 real taker ~30 statements; kept at 35% until real takers say results feel unsettled. A selector that
-narrows the worst line instead of separating likely matches reaches Done in half the statements but
-finds the right ideology far less often (45/143 vs 110/143): the disagreement selector stays.
+narrows the worst line instead of separating likely matches looked far less accurate (45/143 vs 110/143),
+but the comparison is unfair: the simulated takers are copies of ideology audits and answer "No opinion"
+wherever their audit is blank, so 45% of the narrowing selector's questions were wasted (26% for today's
+selector, which only scores statements ideologies have positions on and so effectively knows which ones a
+simulated taker can answer). Counting answered statements only: 109 vs 123/143. Undecided: comparing
+selectors fairly needs takers who answer every statement (real ones).
 
