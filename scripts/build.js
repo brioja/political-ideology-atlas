@@ -3,6 +3,9 @@
 //   node scripts/build.js --status   only reports which ideologies are audited, incomplete or missing
 //   node scripts/build.js --people   only rewrites people.js against the model in data.js (seconds);
 //                                    people never feed back into the ideologies, so nothing else changes
+//   node scripts/build.js --resort-lines
+//                                    puts the dividing lines back in order of size, once; later builds
+//                                    keep that order (see keepLineOrder)
 // Candidate statements (status "candidate") are left out of the test until promoted.
 const fs = require("fs");
 const path = require("path");
@@ -104,9 +107,10 @@ const lines = rotatedLines.slice(0, SHIPPED_COMPONENTS);
 // order, or move a line out of the shown ones, while the space they span stays the same. So each line
 // keeps the slot of the previous build's line it matches best (the data.js being replaced); lines
 // with no counterpart take the slots left, biggest first. A line that matches only loosely is reported.
+// --resort-lines skips this once, so the order is by size again (Brandon re-sorted them on 2026-10-31).
 function keepLineOrder(rotated, k) {
   const file = path.join(ROOT, "data.js");
-  if (!fs.existsSync(file)) return rotated;
+  if (!fs.existsSync(file) || process.argv.includes("--resort-lines")) return rotated;
   const prev = require(file);
   if (!prev.MODEL || !prev.QUESTIONS) return rotated;
   const at = Object.fromEntries(prev.QUESTIONS.map((q, j) => [q.id, j]));
