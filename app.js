@@ -6,9 +6,10 @@
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
-// Once the answers place you to within the typical gap between neighbouring ideologies (precision 1, see
-// placementPrecision in pca.js), more barely change anything, so the quiz says you're done, settled
-// or not: someone between two ideologies may never settle and would otherwise answer every statement.
+// Once the answers place you to within the typical gap between neighbouring ideologies on every
+// dividing line (precision 1, see placementPrecision in pca.js), the quiz says you're done, whether or
+// not your top match has stopped moving: someone between two ideologies may never settle and would
+// otherwise answer every statement.
 // Measured from which statements you answered, not counted, so it holds as statements are added.
 const DONE_PRECISION = 1;
 const CHOICES = [
@@ -356,27 +357,19 @@ function renderQuestion() {
   const q = order[position];
   const asked = new Set(order);
   const answered = answers.filter((a) => a !== null).length;
-  const sure = certainty(model, answers, asked);
-  // Conservative on purpose: no reading until there's at least one answer per real dividing line, and
-  // "See your result" waits until no simulated taker at this reading changed their top match.
-  const hold = answered >= Math.max(1, REAL_LINES) ? stability(quizCalibration(), sure) : null;
-  const early = hold != null;
-  const settled = early && hold >= 1;
   $("counter").textContent = `Statement ${position + 1}`;
-  // The bar and the text show the same figure. It stays empty for the first statements, and stays
-  // where it was while there's no calibrated reading ("Narrowing it down…").
-  if (hold != null || answered < REAL_LINES) $("bar").style.width = pct(hold ?? 0);
-  // The figure is calibrated on simulated takers who are noisy copies of one ideology, so it overstates
-  // how likely a real (mixed) taker's top match is to hold: it's shown as progress, not a probability.
+  // The bar and the text show one figure: how precisely the answers place you on every dividing line,
+  // as a share of the precision the quiz calls done (placementPrecision in pca.js).
+  const precision = placementPrecision(model, answers);
+  const done = precision >= DONE_PRECISION;
+  const early = answered >= Math.max(1, REAL_LINES);
+  $("bar").style.width = pct(Math.min(1, precision / DONE_PRECISION));
   const status = $("certainty");
-  const done = placementPrecision(model, answers) >= DONE_PRECISION;
-  status.classList.toggle("ready", settled || done);
-  if (settled || done) {
-    status.innerHTML = `✓ ${done ? "Done, your result is as sharp as it gets" : "Your top match has settled"} · <a href="#/results" id="ready-link">See your result →</a>`;
+  status.classList.toggle("ready", done);
+  if (done) {
+    status.innerHTML = `✓ Done, you're placed on every dividing line · <a href="#/results" id="ready-link">See your result →</a>`;
     $("ready-link").onclick = (e) => { e.preventDefault(); finishQuiz(); };
-  } else status.textContent = answered < Math.max(1, REAL_LINES) ? "Most telling statements first"
-    : hold == null ? "Narrowing it down…"
-    : `Narrowing it down · ${pct(hold)}`;
+  } else status.textContent = early ? `Placing you on every dividing line · ${pct(Math.min(1, precision / DONE_PRECISION))}` : "Most telling statements first";
   $("statement").textContent = QUESTIONS[q].text;
   // Opened from a comparison: the compared sides' answers are marked beside yours.
   if (comparing && comparing.q !== q) comparing = null;
@@ -387,7 +380,7 @@ function renderQuestion() {
     b.querySelector(".their-tag").textContent = names.join(" · ");
   }
   $("back").disabled = position === 0;
-  setHeaderAction(settled || done ? "results" : early ? "early" : "none");
+  setHeaderAction(done ? "results" : early ? "early" : "none");
   // "No opinion" shows as chosen when this statement was already shown and skipped.
   const buttons = [...SHOWN_CHOICES.map((c, i) => [$(`choice-${i}`), answers[q] === c.value]),
     [$("choice-none"), answers[q] === null && !opened.has(q) && position < order.length - 1]];

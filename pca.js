@@ -334,17 +334,18 @@ const similarity = (model, d) => {
   return span && d != null ? Math.max(0, 1 - d / span) : 0;
 };
 
-// s: how precisely the answers place you on the real lines (the expected distance from your true
-// place; placementUncertainty), with the landscape's noise per statement (the variance ideology
-// profiles leave off the real lines, as salience uses), so it only shrinks as you answer. Always
+// s: how precisely the answers place you on every real line (lineUncertainty, the same measure
+// salience judges ideologies and people by), with the landscape's noise per statement, so it only
+// shrinks as you answer. Precise answers on a few lines don't make up for none on another. Always
 // positive and finite: it starts from the ideologies' own spread on each line.
 function placementSpread(model, answers) {
-  return placementUncertainty(placementOf(model), answeredIndexes(answers));
+  return lineUncertainty(placementOf(model), answeredIndexes(answers));
 }
 
 // How precisely a set of answers places someone, in units of the typical gap between neighbouring
-// ideologies (the placement context's bar): 1 means s is about one such gap. The quiz says you're done
-// at a fixed precision (app.js), so a taker between two ideologies isn't asked every statement.
+// ideologies (the placement context's bar): 1 means s is about one such gap on every line. The quiz
+// says you're done at a fixed precision (app.js), so a taker between two ideologies isn't asked every
+// statement, and one is never done while a line is still unknown.
 function placementPrecision(model, answers) {
   if (!answers.some((x) => x != null)) return 0;
   return placementOf(model).bar / placementSpread(model, answers);
@@ -583,17 +584,6 @@ function salienceContext(model, ideologies, { lines } = {}) {
   return ctx;
 }
 
-// `noise`: the variance per statement off the real lines (the landscape's; salience and a taker's s).
-function placementUncertainty(ctx, knownIdx, noise = ctx.noise) {
-  const { model, k } = ctx;
-  const comps = model.components.slice(0, k);
-  const M = comps.map((ca, a) => comps.map((cb, b) =>
-    (a === b ? 1 / ca.eigenvalue : 0) + knownIdx.reduce((s, j) => s + ca.vector[j] * cb.vector[j], 0) / noise));
-  // Trace of M⁻¹: solve M x = e_i for each axis.
-  let trace = 0;
-  for (let i = 0; i < k; i++) trace += solve(M, comps.map((_, j) => (j === i ? 1 : 0)))[i];
-  return Math.sqrt(trace);
-}
 
 // The placement context salience() needs, rebuilt from what the build ships (PLACEMENT in data.js):
 // the page's MODEL carries only the rotated lines, not the unrotated components or the noise level.
