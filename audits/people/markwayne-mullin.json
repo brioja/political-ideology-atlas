@@ -1,10 +1,11 @@
 {
  "id": "markwayne-mullin",
  "name": "Markwayne Mullin",
- "auditedAt": "2026-10-23",
+ "auditedAt": "2026-10-31",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "US Senator from Oklahoma (2023–2026), US Representative (2013–2023), US Secretary of Homeland Security (from March 2026)",
@@ -250,6 +251,22 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Markwayne_Mullin",
    "usedFor": "Career overview, religious exemptions, electoral objections and issue leads"
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "Voteview: Congressional Roll-Call Votes Database (House and Senate roll calls; data downloaded 2026-10-30)",
+   "author": "Lewis, Poole, Rosenthal, Boche, Rudkin, Sonnet (UCLA)",
+   "url": "https://voteview.com/data",
+   "usedFor": "Mullin votes: Raise the Wage Act 2019 (116th House #495), $17 minimum wage amendment 2025 (119th Senate #184), FIRST STEP Act 2018 (115th House #922, #1155), ICC sanctions bill cloture 2025 (119th Senate #22)"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "State of the Union with Dana Bash, November 30, 2025 (transcript)",
+   "author": "CNN interview with Markwayne Mullin",
+   "url": "https://transcripts.cnn.com/show/sotu/date/2025-11-30/segment/01",
+   "usedFor": "Defence of lethal strikes on suspected drug-smuggling boats"
   }
  ],
  "answers": {
@@ -264,13 +281,13 @@
    "auditor": "claude-sonnet-5-5"
   },
   "raise-minimum-wage": {
-   "value": -2,
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Opposed the proposed rise of the federal minimum wage to $10.10.",
+   "rationale": "Voted against the Raise the Wage Act ($15 federal minimum) in 2019 and against a 2025 Senate amendment to allow a $17 minimum; votes against specific raises, with no stated view of his own on raising it at all.",
    "sources": [
-    "s1"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "markets-allocate-better": {
    "value": 2,
@@ -422,10 +439,13 @@
    ]
   },
   "rehabilitation": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Voted for the House FIRST STEP Act of May 2018, built around recidivism-reduction programmes in federal prisons, but against the final First Step Act in December 2018; a mixed record with no statement of his own on the aim of prisons.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "traditional-family": {
    "value": 1,
@@ -546,11 +566,11 @@
   "open-borders": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Supports completing the border wall and criticised Biden border policies.",
+   "rationale": "At his 2026 confirmation hearing he said DHS has \"a job to secure the border\" with physical barriers and technology, which rejects opening national borders.",
    "sources": [
-    "s1"
+    "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "limit-growth": {
    "value": null,
@@ -1097,11 +1117,11 @@
   "force-without-un": {
    "value": 1,
    "confidence": "low",
-   "rationale": "Praised the 2025 US strikes on Iranian nuclear sites; no stated view on UN authorisation.",
+   "rationale": "Defended the 2025 US strikes on Iranian nuclear sites, which had no Security Council approval, as a necessary mission; he did not address UN approval as such.",
    "sources": [
-    "s1"
+    "b15"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "reason-over-faith": {
    "value": null,
@@ -3203,10 +3223,13 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Voted in January 2025 to take up a bill sanctioning the International Criminal Court for any effort to investigate or prosecute protected persons of the US and its allies.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "scripture-inerrant": {
    "value": null,
@@ -3281,10 +3304,13 @@
    "sources": []
   },
   "extrajudicial-killing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Defended the 2025 lethal military strikes on suspected drug-smuggling boats, asking \"Why do we care if we take them out in international water?\" and calling the smugglers terrorists at war with the US; he frames it as war, not as killing dealers in general.",
+   "sources": [
+    "o2"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "close-ties-china": {
    "value": null,
@@ -3422,7 +3448,7 @@
    "sources": []
   }
  },
- "notes": "Voted Yea on objections to Arizona and Pennsylvania electors (Jan 2021) and said in 2022 it was absurd that Biden won the most votes; no matching statement exists in the list. Voted for 2022 and 2024 Ukraine aid and worked to pass the 2024 package, but no statement matches. Positions on abortion and same-sex marriage are partly from 2012 statements, confirmed by later votes. Tribal sovereignty evidence is mixed. The mullin.senate.gov site returned HTTP 403 and congress.gov was not used. Most evidence comes from secondary aggregators and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 14 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Earlier audit consulted only for notes and source leads. Congressional votes are medium confidence; administrative promises are distinguished from implementation. Narrow positions on undocumented immigration do not establish a preference to reduce immigration overall. January 2021 electoral objections do not by themselves settle every statement about democracy. No attempt was made to reach the inclusion threshold. Final review left universal healthcare, low-paid-worker tax credits and general minority territorial autonomy null because the retrieved evidence concerned narrower proposals. All 490 statement texts, including the ten priority statements, were reviewed against the source set. Technology searches located military R&D and AI security issues, but no clear position on transferring government decisions to algorithms, enhancement, encryption or technological acceleration. Culture searches located personal faith and Cherokee identity, but these alone do not answer the cultural and theological propositions. Priority statements all remain null. Copy validation uses the unchanged validator in a VM with only personPath redirected to this scratchpad; no production audit was replaced.",
+ "notes": "Voted Yea on objections to Arizona and Pennsylvania electors (Jan 2021) and said in 2022 it was absurd that Biden won the most votes; no matching statement exists in the list. Voted for 2022 and 2024 Ukraine aid and worked to pass the 2024 package, but no statement matches. Positions on abortion and same-sex marriage are partly from 2012 statements, confirmed by later votes. Tribal sovereignty evidence is mixed. The mullin.senate.gov site returned HTTP 403 and congress.gov was not used. Most evidence comes from secondary aggregators and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 14 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Earlier audit consulted only for notes and source leads. Congressional votes are medium confidence; administrative promises are distinguished from implementation. Narrow positions on undocumented immigration do not establish a preference to reduce immigration overall. January 2021 electoral objections do not by themselves settle every statement about democracy. No attempt was made to reach the inclusion threshold. Final review left universal healthcare, low-paid-worker tax credits and general minority territorial autonomy null because the retrieved evidence concerned narrower proposals. All 490 statement texts, including the ten priority statements, were reviewed against the source set. Technology searches located military R&D and AI security issues, but no clear position on transferring government decisions to algorithms, enhancement, encryption or technological acceleration. Culture searches located personal faith and Cherokee identity, but these alone do not answer the cultural and theological propositions. Priority statements all remain null. Copy validation uses the unchanged validator in a VM with only personPath redirected to this scratchpad; no production audit was replaced.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: added extrajudicial-killing +1 (CNN State of the Union, 30 Nov 2025, drug-boat strikes), international-criminal-courts -1 (ICC sanctions cloture vote, Jan 2025), rehabilitation 0 low (yea on the House FIRST STEP Act, nay on the final First Step Act, 2018). Re-sourced three Wikipedia-only answers: raise-minimum-wage to his 2019 and 2025 votes (lowered to -1, votes against specific raises), open-borders to the confirmation hearing, force-without-un to the June 2025 CNN interview. Searched without a usable result: Electoral College and third-term remarks (he called a third term a joke and said he would not change the Constitution unless the people choose, which does not answer unlimited re-election), trade surplus (his tariff remarks are about reciprocity, not a surplus), GM-crop labeling votes (none recorded for him), strike and picketing rules (PRO Act objections do not address strikes), precautionary principle and future generations (energy column silent).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3431,6 +3457,11 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
- ]
+ ],
+ "rules": 3
 }
