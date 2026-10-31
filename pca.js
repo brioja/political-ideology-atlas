@@ -1,4 +1,4 @@
-// PCA over the ideology x question matrix, plus projection and matching.
+// PCA over the ideology x question matrix, plus placement and matching.
 // No dependencies: the covariance matrix is symmetric, so Householder reduction to tridiagonal form
 // and the implicit QL method (tred2 + tql2, as in EISPACK/JAMA) give all eigenvalues/eigenvectors.
 
@@ -165,8 +165,8 @@ function buildModel(ideologies, opts = {}) {
   // The real lines are counted on this bare model (parallel analysis) before anything is placed on
   // them; the build counts them once and passes `realLines` in.
   model.realLines = opts.realLines ?? meaningfulAxes(model, ideologies);
-  model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile), at: place(model, i.profile) }));
-  model.ideologies.forEach((i) => Object.assign(i, locatedAt(model, i.profile, i.at)));
+  model.ideologies = ideologies.map((i) => ({ ...i }));
+  model.ideologies.forEach((i) => { Object.assign(i, locate(model, i.profile)); i.scores = positions(model, i.profile, i.at); });
   return model;
 }
 
@@ -209,50 +209,12 @@ function varimax(model, k, { iters = 100 } = {}) {
 function modelFromParts(ideologies, parts, placement = null) {
   const model = { mean: parts.mean, components: parts.components, kept: parts.kept, labels: parts.labels || [], span: parts.span, realLines: parts.realLines,
     placement: placementFromParts(placement), ideologies: [] };
-  // When every shipped line is a real one (the usual case), an ideology's scores are its place, so
-  // each is projected once.
+  // An ideology's scores (drawn) are its place on the real lines (matched), from the build when shipped.
   model.ideologies = ideologies.map((i) => {
-    const at = i.at || place(model, i.profile);
-    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), ...locatedAt(model, i.profile, at, i.reliability) };
+    const l = located(model, i);
+    return { ...i, ...l, scores: positions(model, i.profile, l && l.at) };
   });
   return model;
-}
-
-// Places a set of answers on the axes. Skipped or unasked statements are null, and so are
-// statements an ideology has no known position on, so ideologies are placed the same way.
-// With every statement answered this is the exact projection. With only some, the unanswered
-// statements are filled in from a least-squares fit of the answered ones on every axis, then
-// projected the same way, so they don't drag the result toward the center. (The fit's coefficients
-// aren't scores themselves: the rotated axes aren't orthogonal, and ideologies are placed by projection.)
-// Only the first `dims` scores are returned (all by default).
-function project(model, answers, dims = model.components.length) {
-  const out = model.components.slice(0, dims);
-  const rows = [];
-  answers.forEach((x, j) => { if (x != null) rows.push(j); });
-  if (rows.length === answers.length) {
-    const y = answers.map((x, j) => x - model.mean[j]);
-    return out.map((c) => dot(y, c.vector));
-  }
-  if (rows.length === 0) return new Array(out.length).fill(0);
-  const { sol } = lineFit(model, answers);
-  const full = answers.map((x, j) => (x != null ? x - model.mean[j]
-    : sol.reduce((s, v, i) => s + v * model.components[i].vector[j], 0)));
-  return out.map((c) => dot(full, c.vector));
-}
-
-// The least-squares fit of the answered statements on the real lines (matchLines), so the build, the
-// tests and the page place alike: solves (AᵀA + λI) s = Aᵀy, where A holds the answered rows of the
-// line vectors. `sol` are coefficients on the line vectors, not scores (the rotated lines aren't
-// orthogonal), so the fitted answer to statement j is mean[j] + Σ sol[i] · vector[i][j].
-function lineFit(model, answers) {
-  const rows = answeredIndexes(answers);
-  const y = rows.map((j) => answers[j] - model.mean[j]);
-  const d = Math.min(matchLines(model), rows.length);
-  const A = rows.map((j) => model.components.slice(0, d).map((c) => c.vector[j]));
-  const M = Array.from({ length: d }, (_, a) =>
-    Array.from({ length: d }, (_, b) => A.reduce((s, r) => s + r[a] * r[b], 0) + (a === b ? 0.05 : 0)));
-  const rhs = Array.from({ length: d }, (_, a) => A.reduce((s, r, i) => s + r[a] * y[i], 0));
-  return { rows, y, A, sol: solve(M, rhs) };
 }
 
 // Gaussian elimination with partial pivoting for a small dense system.
@@ -291,8 +253,8 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // Fit is distance on the real dividing lines (matchLines). Comparing statement by statement favoured
 // whoever had answered the most and whoever held the mildest views, and two sparse records often
 // share few statements. Silence (null) is never scored, as "Neither" or as disagreement: a decision,
-// not a default (test.js checks it). Placement solves the real lines from the answered statements
-// only (see project), and with nothing answered there is no position at all.
+// not a default (test.js checks it). Placement reads the real lines from the answered statements
+// only (see posterior), and with nothing answered there is no position at all.
 //
 // Each line counts as far as both records are placed on it (lineStats, the same per-line precision
 // that decides who is placed well enough to be shown and tells the quiz you're done). A line a record says nothing about would
@@ -301,22 +263,30 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // precision, it counts for nothing until it is answered, so ideologies that differ only there stay
 // tied, and the next-question selector asks about it because they disagree there.
 
-// Where a set of answers sits on the real lines, or null with nothing answered.
-function place(model, answers) {
-  if (!answers.some((x) => x != null)) return null;
-  return project(model, answers, matchLines(model));
-}
-
-// Where a set of answers sits on the real lines (`at`, from place()) and how reliably on each
-// (`reliability`, 0 for a line it says nothing about to 1 for a line it pins down; see lineStats), or
-// null with nothing answered. Ideologies in a model carry both (modelFromParts, buildModel).
+// Where a list of answers sits on the real lines (`at`) and how reliably on each (`reliability`, 0 for
+// a line it says nothing about to 1 for a line it pins down), both from one posterior, or null with
+// nothing answered. Ideologies in a model carry both (modelFromParts, buildModel).
 function locate(model, answers) {
-  return locatedAt(model, answers, place(model, answers));
+  const known = answeredIndexes(answers);
+  if (!known.length) return null;
+  const p = posterior(placementOf(model), known, answers.map((x, j) => (x == null ? 0 : x - model.mean[j])));
+  return { at: p.at, reliability: p.lines.map((l) => l.reliability) };
 }
-// `at` and `reliability`: shipped by the build for ideologies and people (IDEOLOGIES, PEOPLE), so the
-// page doesn't work them out for every one (test.js checks they are current).
-const locatedAt = (model, answers, at, reliability = null) =>
-  at && { at, reliability: reliability || lineStats(placementOf(model), answeredIndexes(answers)).map((l) => l.reliability) };
+// Where a list of answers sits on the real lines, or null with nothing answered.
+const place = (model, answers) => { const l = locate(model, answers); return l && l.at; };
+// A record as shipped by the build (ideologies in IDEOLOGIES, people in PEOPLE carry `at` and
+// `reliability`, so the page doesn't work them out for each; test.js checks they are current), or
+// located here.
+const located = (model, r) => (r.at && r.reliability ? { at: r.at, reliability: r.reliability } : locate(model, r.profile));
+// Scores on every component the model has, for drawing: the real lines from the posterior (place());
+// components past them aren't placed (0, their middle). The page draws only real lines, so that is
+// only ever a model built here with every component (buildModel), whose extra scores nothing reads.
+function positions(model, answers, at = place(model, answers)) {
+  const k = model.components.length;
+  const out = new Array(k).fill(0);
+  if (at) at.slice(0, k).forEach((x, i) => { out[i] = x; });
+  return out;
+}
 
 // The distance between two located records (locate): Euclidean on the real lines, each line weighted
 // by how reliably both are placed on it. No position is no basis for a match.
@@ -402,7 +372,7 @@ function match(model, answers) {
   const ranked = model.ideologies
     .map((i, k) => ({ ...i, distance: d ? d[k] : 0, similarity: d ? similarity(model, d[k]) : 0 }))
     .sort((x, y) => x.distance - y.distance);
-  return { you: project(model, answers), ranked };
+  return { you: positions(model, answers), ranked };
 }
 
 // The index of the smallest distance; ties (and no basis at all) go to the earlier one, as in match().
@@ -425,7 +395,7 @@ function matchLines(model) {
 // Ranks people (or any profiles: the Compare page ranks one ideology against another this way) by fit,
 // on the same scale as ideologies, closest first. Nothing answered: an empty list.
 function matchPeople(model, answers, people) {
-  const d = fitTo(model, answers, people.map((p) => locatedAt(model, p.profile, p.at || place(model, p.profile), p.reliability)));
+  const d = fitTo(model, answers, people.map((p) => located(model, p)));
   if (!d) return [];
   return people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
     .sort((a, b) => a.distance - b.distance);
@@ -518,12 +488,21 @@ function placementFromParts(parts) {
     lines: parts.lines || parts.components.map((_, i) => parts.components.map((__, a) => (a === i ? 1 : 0))) });
 }
 
-// How precisely a record with positions on `knownIdx` is placed on each real line, in the order
-// matching uses them: `variance`, its expected squared error there, and `reliability`, the share of
-// the line's spread its answers account for (1 - variance / prior: 0 with nothing on the line, near 1
-// once pinned down). One posterior for every use: distance weighs lines by reliability, the
-// selector's plausibility takes its width from it, and who is shown and "Done" from the worst line.
+// The one placement of a list of answers on the real lines (Bayesian): before any answer, a position
+// is as spread out as the ideologies are along each component (its eigenvalue) and sits at the
+// middle; each answered statement (`knownIdx`) is a noisy reading of the components it loads on
+// (noise: the landscape's per-statement variance off the real lines). The posterior gives, on each
+// line in the order matching uses them, `variance` (expected squared error) and `reliability` (the
+// share of the line's spread the answers account for: 1 - variance / prior), and, given the answers
+// centred on the statement means (`centred`), `at`: the posterior mean position. Thin evidence on a
+// line moves the position there only part of the way, as far as it narrows the line, with no tuned
+// constant. Which statements are answered decides the precision; the answers decide only the place.
+// Everything uses this: matching and drawing (locate, place), who is shown and "Done" (uncertainty),
+// the selector's plausibility width (distanceSpread).
 function lineStats(ctx, knownIdx) {
+  return posterior(ctx, knownIdx).lines;
+}
+function posterior(ctx, knownIdx, centred = null) {
   const { model, k, noise, lines, prior } = ctx;
   const comps = model.components.slice(0, k);
   const M = comps.map((ca, a) => comps.map(() => 0));
@@ -535,10 +514,17 @@ function lineStats(ctx, knownIdx) {
   }
   for (let a = 0; a < k; a++) { M[a][a] += 1 / comps[a].eigenvalue; for (let b = 0; b < a; b++) M[a][b] = M[b][a]; }
   const C = comps.map((_, i) => solve(M, comps.map((__, j) => (j === i ? 1 : 0)))); // M⁻¹ (symmetric)
-  return lines.map((row, i) => {
+  const out = { lines: lines.map((row, i) => {
     const variance = row.reduce((s, x, a) => s + x * row.reduce((t, y, b) => t + C[a][b] * y, 0), 0);
     return { variance, reliability: Math.max(0, 1 - variance / prior[i]) };
-  });
+  }) };
+  if (centred) {
+    // Mean on the components: C · Aᵀy / noise; on the lines: lines · that.
+    const rhs = comps.map((c) => knownIdx.reduce((s, j) => s + c.vector[j] * centred[j], 0) / noise);
+    const z = C.map((row) => row.reduce((s, x, b) => s + x * rhs[b], 0));
+    out.at = lines.map((row) => row.reduce((s, x, a) => s + x * z[a], 0));
+  }
+  return out;
 }
 
 // A political ideology or figure takes positions across every dividing line; a record that speaks to
@@ -614,5 +600,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
 }

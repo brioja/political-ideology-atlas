@@ -1251,7 +1251,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const lh = lines > 1 ? Math.min(64, room / (lines - 1)) : 0;
   // The closest person, if any, gets a third marker: a faint diamond, so shape tells the three apart.
   const near = people[0] || null;
-  const nearScores = near ? project(model, near.profile) : null;
+  const nearScores = near ? positions(model, near.profile) : null;
   // The ring is hollow, so a dot or diamond under it stays visible.
   const ringMark = (x, yy, r, w) => {
     ctx.strokeStyle = CARD.ink; ctx.lineWidth = w;
@@ -1843,7 +1843,7 @@ function renderPersonPage(id) {
       <section class="stack"><h2>Closest ideologies</h2>
         <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
-      <section class="stack"><h2>Where they sit</h2>${lineStrips(project(model, profile))}</section>
+      <section class="stack"><h2>Where they sit</h2>${lineStrips(positions(model, profile))}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
       <section class="stack"><h2>Share card</h2>
         <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas></section>
@@ -1852,7 +1852,7 @@ function renderPersonPage(id) {
       ${sourcesList(audit)}`;
     // The same card a visitor gets, with this person in the "you" spot.
     const ranked = match(model, profile).ranked;
-    drawShareCard($("person-card"), { ranked, you: project(model, profile), subject: p, people: similar.slice(0, 4) });
+    drawShareCard($("person-card"), { ranked, you: positions(model, profile), subject: p, people: similar.slice(0, 4) });
   };
   draw(null);
   loadAudit(auditFolder(p), p.id).then((a) => { if (a && $("page-person").dataset.id === id) draw(a); });
@@ -2051,7 +2051,7 @@ function renderComparePage(aKey, bKey) {
     ${lede}
     <section class="stack"><h2>Where ${they} sit</h2>
       <p class="read-more small"><span aria-hidden="true">○</span> ${link(a)} · <span aria-hidden="true" style="color:var(--accent)">●</span> ${link(b)}</p>
-      ${lineStrips(project(model, a.profile), { other: project(model, b.profile) })}</section>
+      ${lineStrips(positions(model, a.profile), { other: positions(model, b.profile) })}</section>
     <section class="stack"><h2>${They} agree on ${statements(agree.length)}</h2>
       ${list(agree, 8, (j) => `<li>${topicIcon(QUESTIONS[j])}<span>${statementLink(QUESTIONS[j], stance(QUESTIONS[j], a.profile[j]).text, otherKey)}</span></li>`, `No position ${they} hold on the same side.`)}</section>
     <section class="stack"><h2>${They} part ways on ${statements(apart.length)}</h2>

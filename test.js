@@ -76,7 +76,7 @@ if (!PEOPLE_ONLY) {
   assert(!bad.length, `"What it stands for" is missing or not from stated positions (run a full build): ${bad.slice(0, 5).join(", ")}`);
 }
 // Silence is never scored: fit is distance on the real lines, placed from the answered statements only
-// (project in pca.js), so a statement with no known position (null) is neither "Neither" nor
+// (posterior in pca.js), so a statement with no known position (null) is neither "Neither" nor
 // disagreement (a decision; see audits/AUDIT_RULES.md). With nothing answered there is no basis: no
 // position, no ranking, every ideology equally plausible. And the model reads an ideology's null as null.
 {
