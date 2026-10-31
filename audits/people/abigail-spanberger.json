@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "Governor of Virginia (2026–present); U.S. Representative from Virginia (2019–2025)",
@@ -298,6 +299,94 @@
    "author": "Abigail Spanberger, interviewed by Bonnie Fuller, Dogwood",
    "url": "https://vadogwood.com/news/elections/spanberger-speaks-how-shell-fight-medicaid-cuts-create-more-affordable-housing-and-protect-public-schools/",
    "usedFor": "Explicit opposition to school vouchers."
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "House Roll Call 50 (2020), H.R. 2474 Protecting the Right to Organize Act, passage",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/202050",
+   "usedFor": "PRO Act vote (2020)"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "House Roll Call 70 (2021), H.R. 842 Protecting the Right to Organize Act, passage",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/202170",
+   "usedFor": "PRO Act vote (2021)"
+  },
+  {
+   "id": "o3",
+   "kind": "primary",
+   "title": "H.R. 842 (117th Congress), Protecting the Right to Organize Act, text",
+   "author": "U.S. Congress (GPO)",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr842rfs/html/BILLS-117hr842rfs.htm",
+   "usedFor": "strike provisions of the PRO Act"
+  },
+  {
+   "id": "o4",
+   "kind": "primary",
+   "title": "House Roll Call 182 (2023), H.R. 1 Lower Energy Costs Act, passage",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/2023182",
+   "usedFor": "vote on fossil-fuel production bill"
+  },
+  {
+   "id": "o5",
+   "kind": "primary",
+   "title": "H.R. 1 (118th Congress), Lower Energy Costs Act, engrossed text",
+   "author": "U.S. Congress (GPO)",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr1eh/html/BILLS-118hr1eh.htm",
+   "usedFor": "content of H.R. 1"
+  },
+  {
+   "id": "o6",
+   "kind": "primary",
+   "title": "House Roll Call 93 (2023), H.R. 21 Strategic Production Response Act, passage",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/202393",
+   "usedFor": "vote on federal-lands oil and gas bill"
+  },
+  {
+   "id": "o7",
+   "kind": "primary",
+   "title": "H.R. 21 (118th Congress), Strategic Production Response Act, engrossed text",
+   "author": "U.S. Congress (GPO)",
+   "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr21eh/html/BILLS-118hr21eh.htm",
+   "usedFor": "content of H.R. 21"
+  },
+  {
+   "id": "o8",
+   "kind": "reference",
+   "title": "Virginia Democratic gubernatorial candidate embraces renewables, natural gas and community planning for data centers (Inside Climate News, Aug 3, 2025)",
+   "author": "Inside Climate News",
+   "url": "https://insideclimatenews.org/news/03082025/virginia-democratic-gubernatorial-candidate-abigail-spanberger/",
+   "usedFor": "her interview remarks on natural gas"
+  },
+  {
+   "id": "o9",
+   "kind": "primary",
+   "title": "House Roll Call 49 (2021), H.R. 1319 American Rescue Plan Act, passage",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/202149",
+   "usedFor": "ARP vote"
+  },
+  {
+   "id": "o10",
+   "kind": "primary",
+   "title": "House Roll Call 72 (2021), H.R. 1319 American Rescue Plan Act, concur in Senate amendment",
+   "author": "U.S. House Clerk",
+   "url": "https://clerk.house.gov/Votes/202172",
+   "usedFor": "ARP final vote"
+  },
+  {
+   "id": "o11",
+   "kind": "reference",
+   "title": "Cost of Biden’s Covid Rescue Plan Revised Up to $2.1 Trillion (The Fiscal Times, May 21, 2021)",
+   "author": "The Fiscal Times",
+   "url": "https://www.thefiscaltimes.com/2021/05/21/Cost-Biden-s-Covid-Rescue-Plan-Revised-21-Trillion",
+   "usedFor": "CBO deficit effect of ARP"
   }
  ],
  "answers": {
@@ -1119,10 +1208,15 @@
    ]
   },
   "avoid-deficit-stimulus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Voted twice for the 2021 American Rescue Plan, a pandemic relief and stimulus law that CBO estimated adds $1.8 trillion to deficits over 2021-2031; a vote on one bill, so medium.",
+   "sources": [
+    "o9",
+    "o10",
+    "o11"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "economic-freedom": {
    "value": null,
@@ -1143,13 +1237,11 @@
    "sources": []
   },
   "force-without-un": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Reported to have supported the June 2025 US strikes on Iranian nuclear sites, which were carried out without UN Security Council authorization; no statement on the UN question itself.",
-   "sources": [
-    "s19"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "Only Wikipedia reported support for the June 2025 Iran strikes; no statement of hers was found to re-source it to, so null under rules 3.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "reason-over-faith": {
    "value": null,
@@ -1221,10 +1313,17 @@
    "sources": []
   },
   "expand-fossil-fuels": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Voted against the Lower Energy Costs Act and the Strategic Production Response Act, both written to increase domestic oil and gas production; but in 2025 she said natural gas will be part of Virginia's energy mix, asking only that new gas infrastructure be scrutinised for cost and lifespan.",
+   "sources": [
+    "o4",
+    "o5",
+    "o6",
+    "o7",
+    "o8"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "assimilate-immigrants": {
    "value": null,
@@ -1410,10 +1509,15 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Voted for the PRO Act in 2020 and 2021, which bars employers from permanently replacing strikers and says a strike's duration, frequency or intermittence cannot make it unprotected; votes on a bill, so medium.",
+   "sources": [
+    "o1",
+    "o2",
+    "o3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "population-causes-poverty": {
    "value": null,
@@ -3479,7 +3583,7 @@
    "sources": []
   }
  },
- "notes": "Most recent positions win. She became governor on January 17, 2026. Her 2020 remarks on 'defund the police' and 'socialism' came from a leaked caucus call; she said the labels hurt Democrats in swing districts. On transgender school policy she said decisions belong to local communities and avoided a direct yes or no in the 2025 debate. Positions on Israel, taxes on the wealthy, voter ID and most foreign policy statements were not found in her own words and are left null.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass; no living-person inferences. All ten priority doctrine/nation/religious-authority statements were checked and remain null. The public-employee bargaining veto qualifies her stated support. Cannabis reform is not an answer on all recreational drugs; affordable ACA coverage is not by itself universal government healthcare. AI regulation does not establish algorithmic government or general acceleration. Research includes the full January address, roll calls, recent governor records, interviews and all 490 statements. Source texts retained in this folder. The main lane decides inclusion and legacy-list changes.",
+ "notes": "Most recent positions win. She became governor on January 17, 2026. Her 2020 remarks on 'defund the police' and 'socialism' came from a leaked caucus call; she said the labels hurt Democrats in swing districts. On transgender school policy she said decisions belong to local communities and avoided a direct yes or no in the 2025 debate. Positions on Israel, taxes on the wealthy, voter ID and most foreign policy statements were not found in her own words and are left null.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass; no living-person inferences. All ten priority doctrine/nation/religious-authority statements were checked and remain null. The public-employee bargaining veto qualifies her stated support. Cannabis reform is not an answer on all recreational drugs; affordable ACA coverage is not by itself universal government healthcare. AI regulation does not establish algorithmic government or general acceleration. Research includes the full January address, roll calls, recent governor records, interviews and all 490 statements. Source texts retained in this folder. The main lane decides inclusion and legacy-list changes.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: searched Voteview roll calls (PRO Act, ARP, energy-production bills, balanced budget, CBDC, offshore drilling), MediaSum CNN/NPR transcripts (deficits, prisons, future generations, natural gas, corruption, war crimes), her January 2026 address, and governor releases on probation reform and Second Chance Month. Added restrict-strikes-picketing, expand-fossil-fuels and avoid-deficit-stimulus. Left null: rehabilitation (probation reform, voting-rights restoration and a Second Chance Month proclamation are nearby cases, not a stated view on prisons' purpose), future-generations and the remaining line-14 statements (no statements found). Note for the integrator: her PRO Act votes were for a bill whose section 111 overrides state right-to-work laws for fair-share fees, while as governor she pledges not to repeal Virginia's right-to-work law; no-compulsory-union is left at its existing answer (the most recent position wins). force-without-un nulled: its only source was Wikipedia (support for the June 2025 Iran strikes) and a search found no statement of hers.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3488,6 +3592,11 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
- ]
+ ],
+ "rules": 3
 }
