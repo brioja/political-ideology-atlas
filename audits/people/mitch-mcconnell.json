@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-22",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "US senator from Kentucky (1985-2027); Senate Republican leader (2007-2025)",
@@ -258,18 +259,41 @@
    "author": "Mitch McConnell",
    "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-12/pdf/CREC-2026-03-12-senate.pdf",
    "usedFor": "His clearly delimited remarks on Iran and Ukraine"
+  },
+  {
+   "id": "b25",
+   "kind": "primary",
+   "title": "Voteview: Congressional Roll-Call Votes Database (Senate roll calls; data downloaded 2026-10-30)",
+   "author": "Lewis, Poole, Rosenthal, Boche, Rudkin, Sonnet (UCLA)",
+   "url": "https://voteview.com/data",
+   "usedFor": "McConnell's votes: RFRA 1993 (103rd #330-331), Contra aid 1985-86 (99th #112, #427, #432), ICC 1991 (102nd #27), 2001 (107th #358-359), 2025 (119th #22), First Step Act 2018 (115th #596); ACA 2009 (111th #396), Protect America Act 2007 (110th #309), estate tax 2001-2002 (107th #123-158, #529-531), Iraq AUMF 2002 (107th #617), balanced budget amendment 2011 (112th #229)"
+  },
+  {
+   "id": "b26",
+   "kind": "primary",
+   "title": "Brief for amici curiae 55 Members of the United States Senate ... in support of respondent, District of Columbia v. Heller, No. 07-290 (2008); McConnell listed as a signatory",
+   "author": "Stephen P. Halbrook, counsel for amici",
+   "url": "https://www.scotusblog.com/wp-content/uploads/2008/02/heller-congress-brief-2-8-08.pdf",
+   "usedFor": "Individual right to keep arms for self-defense"
+  },
+  {
+   "id": "b27",
+   "kind": "primary",
+   "title": "McConnell v. Federal Election Commission, 540 U.S. 93 (2003), syllabus",
+   "author": "Supreme Court of the United States (Legal Information Institute)",
+   "url": "https://www.law.cornell.edu/supct/html/02-1674.ZS.html",
+   "usedFor": "McConnell as lead plaintiff asking the courts to strike down BCRA"
   }
  ],
  "answers": {
   "universal-healthcare": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Led Senate opposition to the Affordable Care Act, pushed repeal in 2014 and 2017, and criticised Medicare for All.",
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Voted against final passage of the Affordable Care Act on 24 December 2009 and for amendments to strip its new entitlement programs; votes alone, and his criticism of Medicare for All was found only on Wikipedia, so -1 medium.",
    "sources": [
-    "s1",
-    "s2"
+    "b25"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "raise-minimum-wage": {
    "value": -2,
@@ -302,12 +326,12 @@
   },
   "tax-inheritance": {
    "value": -2,
-   "confidence": "high",
-   "rationale": "Introduced legislation in 2019 to eliminate the estate tax.",
+   "confidence": "medium",
+   "rationale": "Voted in 2002 to permanently repeal the estate tax and against motions to keep it with a higher exemption, and in 2001 against amendments preserving it for the largest estates; a consistent voting record, so medium.",
    "sources": [
-    "s2"
+    "b25"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "regulate-corporations": {
    "value": -1,
@@ -362,22 +386,20 @@
    ]
   },
   "legalize-drugs": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Said in 2018 he does not support marijuana legalization, and he removed the SAFE Banking Act from the 2022 defense bill.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "Re-sourcing under rules 3: the earlier answer cited only Wikipedia, and the underlying statement was not found in this pass, so no known position.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "surveillance-ok": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Introduced the Protect America Act of 2007, authorising warrantless monitoring of suspected terrorists' communications abroad.",
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Voted for the Protect America Act of 2007 (S. 1927, passed 60-28), which authorised acquiring foreign intelligence without individual warrants; a vote, so medium.",
    "sources": [
-    "s2"
+    "b25"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "empower-police-military": {
    "value": null,
@@ -522,11 +544,11 @@
   "defensive-wars-only": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Voted for the 2002 Iraq war authorisation and the 2007 surge, so did not limit force to defense against attack.",
+   "rationale": "Voted for the 2002 joint resolution authorising force against Iraq (77-23), a war not fought in response to an attack on the United States.",
    "sources": [
-    "s2"
+    "b25"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "multipolar-world": {
    "value": -2,
@@ -553,30 +575,26 @@
   },
   "fiscal-rules-binding": {
    "value": 2,
-   "confidence": "high",
-   "rationale": "Introduced a Constitutional Balanced Budget Amendment in 2011.",
+   "confidence": "medium",
+   "rationale": "Voted in 2011 for S.J.Res. 10, a constitutional balanced budget amendment, the most binding fiscal rule available; a vote, so medium.",
    "sources": [
-    "s2"
+    "b25"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-opus-5-5"
   },
   "avoid-deficit-stimulus": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Blamed deficits on spending and introduced a balanced budget amendment, but also led the 2017 tax cut and COVID relief; position on stimulus itself is mixed.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "Re-sourcing under rules 3: the earlier answer cited only Wikipedia, and the underlying statement was not found in this pass, so no known position.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "voter-id": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In 2019 argued voter ID laws would have prevented fraud in NC-9; blocked Democratic voting reform bills.",
-   "sources": [
-    "s2"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "Re-sourcing under rules 3: the earlier answer cited only Wikipedia, and the underlying statement was not found in this pass, so no known position.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "strong-leader": {
    "value": -1,
@@ -663,10 +681,14 @@
    "sources": []
   },
   "rehabilitation": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Brought the First Step Act, which expands recidivism-reduction programming in federal prisons, to the floor and voted for it (87-12) in December 2018; no stated view on rehabilitation versus punishment was found, and his law-and-order rhetoric elsewhere keeps this low.",
+   "sources": [
+    "b25",
+    "b13"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "traditional-family": {
    "value": null,
@@ -1635,10 +1657,13 @@
    "sources": []
   },
   "religious-exemptions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Voted for the 1993 Religious Freedom Restoration Act (97-3), which lets people claim exemption from general laws that substantially burden their religious exercise, and voted against an amendment excluding prisoners from it.",
+   "sources": [
+    "b25"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "encourage-eccentricity": {
    "value": null,
@@ -1683,10 +1708,13 @@
    "sources": []
   },
   "direct-election-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In his January 6, 2021 speech he warned that overturning the result would end the Electoral College, which he said most Republicans had been defending for years.",
+   "sources": [
+    "b2"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "central-bank-independence": {
    "value": null,
@@ -1878,10 +1906,13 @@
    "sources": []
   },
   "courts-bound-by-majority": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "He was lead plaintiff in McConnell v. FEC, asking the Supreme Court to strike down provisions of the 2002 campaign finance law Congress had passed, so he holds that courts may constrain elected majorities.",
+   "sources": [
+    "b27"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "gender-parity-bodies": {
    "value": null,
@@ -2220,10 +2251,13 @@
    "sources": []
   },
   "arm-foreign-insurgents": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Voted in 1986 for the $100 million package of military and other aid to the Nicaraguan Contras fighting the Sandinista government, and against substitutes barring aid to paramilitary groups in Nicaragua; votes alone, so medium.",
+   "sources": [
+    "b25"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "intervene-in-bloc": {
    "value": null,
@@ -2743,10 +2777,13 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Heller amicus brief he signed defends the right of law-abiding persons to keep usable firearms for lawful self-defense in the home, which treats armed self-defense as legitimate.",
+   "sources": [
+    "b26"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -2980,10 +3017,13 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Signed the 2008 congressional amicus brief in Heller arguing that the Second Amendment protects individuals unaffiliated with any militia in keeping firearms at home; a signed brief, not his own speech, so medium.",
+   "sources": [
+    "b26"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3196,10 +3236,13 @@
    "sources": []
   },
   "international-criminal-courts": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Mixed record: in 1991 he voted for a resolution urging an international criminal court or tribunal to try Saddam Hussein, but he voted in 2001 to shield US personnel from ICC prosecution and in 2025 for cloture on a bill sanctioning the ICC for pursuing US or allied officials.",
+   "sources": [
+    "b25"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "scripture-inerrant": {
    "value": null,
@@ -3406,7 +3449,7 @@
    "sources": []
   }
  },
- "notes": "Living person: answers are limited to votes, sponsored bills and his own statements; everything else is null. Early in his career he reportedly held more moderate views on abortion and public unions; his mature position is used. Position on tariffs is from 2025 and reverses nothing earlier. Speeches s3-s5 and Senate vote records s6-s7 were downloaded as raw text/XML and checked directly; Wikipedia pages were read through a summarising fetch tool. Searches for full floor texts on campaign finance, the filibuster and hemp did not surface usable pages, so those positions stay unrecorded or rest on Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 17 answers taken from it, 15 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Prior answers not read. Downloaded full 2012 First Amendment address, January 6 and impeachment speeches, 2025 interview, 22 indexed Senate releases, 2026 Congressional Record texts and official roll calls. Government-page release IDs worked when direct permalink downloads did not. Votes alone are medium at most. The July 2025 vote for a 39.6% ultra-high-income rate is retained alongside tax-cut votes, not ignored. Do not attribute neighbouring Congressional Record speakers’ AI and energy remarks to McConnell: the March 12, 2026 speech attributed to him concerns Iran and Ukraine. Vaccines and military space investment do not establish views on technology solving most problems or civilian space expansion. Support for modest gun legislation does not by itself settle strictly limited ownership; that item remains null. Hemp is not all recreational drugs; education decisions are not general subsidiarity. Social protection during emergencies is not a position on all welfare dependency. Nine of the ten priority theories remain unknown; profit-exploitation is answered from his own explicit rejection of profit implying employee abuse. Reviewed every remaining null against the full statement list. Condemnation of January 6 alone does not establish an exceptionless rule against every form of political violence; that statement remains null.",
+ "notes": "Living person: answers are limited to votes, sponsored bills and his own statements; everything else is null. Early in his career he reportedly held more moderate views on abortion and public unions; his mature position is used. Position on tariffs is from 2025 and reverses nothing earlier. Speeches s3-s5 and Senate vote records s6-s7 were downloaded as raw text/XML and checked directly; Wikipedia pages were read through a summarising fetch tool. Searches for full floor texts on campaign finance, the filibuster and hemp did not surface usable pages, so those positions stay unrecorded or rest on Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 17 answers taken from it, 15 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass. Prior answers not read. Downloaded full 2012 First Amendment address, January 6 and impeachment speeches, 2025 interview, 22 indexed Senate releases, 2026 Congressional Record texts and official roll calls. Government-page release IDs worked when direct permalink downloads did not. Votes alone are medium at most. The July 2025 vote for a 39.6% ultra-high-income rate is retained alongside tax-cut votes, not ignored. Do not attribute neighbouring Congressional Record speakers’ AI and energy remarks to McConnell: the March 12, 2026 speech attributed to him concerns Iran and Ukraine. Vaccines and military space investment do not establish views on technology solving most problems or civilian space expansion. Support for modest gun legislation does not by itself settle strictly limited ownership; that item remains null. Hemp is not all recreational drugs; education decisions are not general subsidiarity. Social protection during emergencies is not a position on all welfare dependency. Nine of the ten priority theories remain unknown; profit-exploitation is answered from his own explicit rejection of profit implying employee abuse. Reviewed every remaining null against the full statement list. Condemnation of January 6 alone does not establish an exceptionless rule against every form of political violence; that statement remains null.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on lines 12, 13 and 14: searched the Voteview roll calls (RFRA, First Step Act, ICC, New START, Contra aid, Syria train-and-equip), the 2008 Heller congressional amicus brief, McConnell v. FEC, his Electoral College remarks and ICC statements. Eight answers added. The 2024 letter threatening ICC sanctions was found only in press reports, and his court-packing floor remarks and the statement answering Governor Beshear on the Electoral College were blocked (403), so they are not cited. New START votes and the 2014 Syria CR vote were left out as nearby cases (one treaty is not arms reduction in general; the CR covered much else). Rules 3 re-sourcing: universal-healthcare (-2 high to -1 medium), surveillance-ok (2 high to 1 medium), tax-inheritance (high to medium), defensive-wars-only and fiscal-rules-binding (2 high to 2 medium) now rest on Voteview roll calls; legalize-drugs, voter-id and avoid-deficit-stimulus rested only on Wikipedia and are now null.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3415,6 +3458,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3424,5 +3471,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "rules": 3
 }
