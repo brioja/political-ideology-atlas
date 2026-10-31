@@ -149,10 +149,16 @@ function validate(id) {
       && INFERRED.test(answers[st.id].rationale || "") && !NOT_LOW.test(answers[st.id].rationale)
       && !/^Inferred:/.test(answers[st.id].rationale)).map((st) => st.id);
     if (unmarked.length) errors.push(`${unmarked.join(", ")}: an inferred answer's rationale begins "Inferred:"`);
-    const wiki = new Set(sources.filter((s) => /wikipedia\.org/i.test(s.url || "")).map((s) => s.id));
-    const wikiOnly = statements.filter((st) => answers[st.id] && answers[st.id].value !== null && !/^Inferred:/.test(answers[st.id].rationale || "")
-      && (answers[st.id].sources || []).length && answers[st.id].sources.every((sid) => wiki.has(sid))).map((st) => st.id);
+    // Wikipedia, OnTheIssues and similar compilations are only a way to find evidence (AUDIT_RULES.md).
+    const onlyFrom = (pattern) => {
+      const ids = new Set(sources.filter((s) => pattern.test(s.url || "")).map((s) => s.id));
+      return statements.filter((st) => answers[st.id] && answers[st.id].value !== null && !/^Inferred:/.test(answers[st.id].rationale || "")
+        && (answers[st.id].sources || []).length && answers[st.id].sources.every((sid) => ids.has(sid))).map((st) => st.id);
+    };
+    const wikiOnly = onlyFrom(/wikipedia\.org/i);
     if (wikiOnly.length) errors.push(`${wikiOnly.join(", ")}: Wikipedia is only a way to find evidence; cite the source it cites`);
+    const compiledOnly = onlyFrom(/ontheissues\.org|wikipedia\.org/i).filter((id) => !wikiOnly.includes(id));
+    if (compiledOnly.length) errors.push(`${compiledOnly.join(", ")}: OnTheIssues is only a way to find evidence; cite the source it cites`);
   }
   // Rules 3 has no inferences: every answer is stated or null (audits/AUDIT_RULES.md, section 3).
   if (a.rules >= 3) {
