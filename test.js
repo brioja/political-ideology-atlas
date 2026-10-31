@@ -118,6 +118,22 @@ for (const ideo of IDEOLOGIES) {
   if (tied.length) twins.push(`${ideo.name} = ${tied.join(", ")}`);
   else assert.strictEqual(topMatch(shipped, ideo.profile), ideo.id, `topMatch() disagrees with match() for ${ideo.name}`);
 }
+// Frozen (Brandon, 2026-10-30): matching is distance on the 14 real lines only. Statement-by-statement
+// matching (averaging gaps over the statements two records share) is sparse for ideologies, people and
+// takers alike and must not come back, under any name: pca.js exports no such function, the build
+// ships no per-ideology statement spread, and match() ranks by line distance alone.
+{
+  const pca = require("./pca.js");
+  for (const name of ["fit", "miss", "gap", "spreadOn", "matchOnStatements", "fullSpread", "lineSpan"]) {
+    assert(!(name in pca), `pca.js exports ${name}: statement-based matching is frozen out (backlog/decided-against.md)`);
+  }
+  assert(!require("fs").existsSync(require("path").join(__dirname, "audits", "spreads.json")), "audits/spreads.json is back: statement-based matching is frozen out");
+  assert(!("fullSpread" in MODEL) && !IDEOLOGIES.some((i) => "spread" in i), "data.js ships a statement spread: statement-based matching is frozen out");
+  // Two takers who share no statement still get a line distance (statement overlap plays no part).
+  const n = QUESTIONS.length, a = Array(n).fill(null), b = Array(n).fill(null);
+  a[0] = 2; b[1] = -2;
+  assert(fitTo(shipped, a, [place(shipped, b)]) != null, "match needs shared statements: statement-based matching is back");
+}
 // s (placementSpread) only shrinks as answers come in: one more answered statement never widens it.
 {
   const own = IDEOLOGIES[0].profile;

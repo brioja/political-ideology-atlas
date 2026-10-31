@@ -50,3 +50,12 @@ explicit decision from the maintainer.
 - The chance each ideology is the closest (plausibility weights): that is uncertainty, not likeness;
   uncertainty, if shown, is a range around the % match (see results.md).
 - Uncertainty from simulated answers to unasked statements: scores silence.
+
+## Statement-based matching (frozen 2026-10-30)
+
+Matching two records by the statements both answered (average gap over the overlap, per-ideology
+spreads) is gone for good: ideologies, people and takers are all sparse, so overlaps are small and
+vary, and a sparse record wins on a handful of shared statements. All matching (results, people,
+Compare, the next-question selector, "Done", calibration) is distance on the 14 real lines. test.js
+fails if a statement-matching function, audits/spreads.json or a shipped statement spread returns.
+Display lists of shared statements ("why they matched") stay: they explain, they don't rank.
