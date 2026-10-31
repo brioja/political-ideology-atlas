@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "Chief Minister of Tamil Nadu (since 10 May 2026); president of Tamilaga Vettri Kazhagam (TVK); former film actor",
@@ -130,6 +131,14 @@
    "author": "N. Manoharan and Saanvi Banyana, Indian Express",
    "url": "https://indianexpress.com/article/opinion/columns/vijay-foreign-policy-challenge-sri-lanka-tvk-tamils-fishermen-10685398/",
    "usedFor": "Documented Sri Lankan Tamil policy; authors’ predictions excluded"
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "'South states deserve justice, not punishment': Vijay's statement on delimitation, 5 March 2025 (report quoting his statement, posted on @TVKVijayHQ)",
+   "author": "OneIndia",
+   "url": "https://www.oneindia.com/chennai/south-states-deserve-justice-not-punishment-thalapathy-vijay-on-delimitation-plans-4086841.html",
+   "usedFor": "His own statement praising the southern states' population control through family planning."
   }
  ],
  "answers": {
@@ -639,10 +648,13 @@
    "sources": []
   },
   "limit-population": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his March 2025 statement on delimitation he called the southern states' population control through family planning 'remarkable progress' and a 'success', and objected only to their being punished for it in seat allocation.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "industrial-civilization-disaster": {
    "value": null,
@@ -3244,7 +3256,7 @@
    "sources": []
   }
  },
- "notes": "Most positions come from the 2026 manifesto and party declarations, which are collective party documents. NEET, delimitation, caste census, Governor and liquor policy have no statement in the list that matches them closely, so they are left null. 'Proportional representation' in his speeches means caste-proportional representation, not electoral PR. He deferred the party's stance on reservation. Wikipedia lists him alive (born 22 June 1974).\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing audit answers not read. Full Tamil manifesto downloaded this session, repaired as a PDF and searched through raw OCR; source hash and OCR provenance saved separately. Original page 86 visually checked. Raw source OCR reused from a byte-identical previously downloaded source, not from prior analysis or audit answers. Official party image edition cross-checked. Unverified third-party HTML translations and fan-site summaries are discovery only and are not cited evidence: some claims differ from the original. Every statement, all existing blanks and the ten priorities reviewed. None of the ten revolutionary or property-system propositions has direct evidence. Public-land titles and farm-loan relief are not redistribution of large private estates; targeted women’s cash assistance is not a universal basic income. Caste-proportional representation is not electoral proportional representation, and caste remedies are not automatically positions about racial categories. Protection for Tamil refugees does not settle general immigration levels or territorial expansion. Public religious subsidies coexist with his secular political identity; no inference from personal faith or film roles. Manifesto commitments remain medium rather than high confidence, and unsigned departmental measures are not treated as his record. Searches for land reform, socialist economic theory, union politics, political violence, press freedom, religion, international institutions and military policy found no further precise statements. The investment authority explicitly takes government equity positions in semiconductors, EVs, aerospace and AI. The Parandur cancellation protects particular farms while retaining airport expansion elsewhere, so it is not treated as opposition to economic growth or as a general theory of property.",
+ "notes": "Most positions come from the 2026 manifesto and party declarations, which are collective party documents. NEET, delimitation, caste census, Governor and liquor policy have no statement in the list that matches them closely, so they are left null. 'Proportional representation' in his speeches means caste-proportional representation, not electoral PR. He deferred the party's stance on reservation. Wikipedia lists him alive (born 22 June 1974).\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing audit answers not read. Full Tamil manifesto downloaded this session, repaired as a PDF and searched through raw OCR; source hash and OCR provenance saved separately. Original page 86 visually checked. Raw source OCR reused from a byte-identical previously downloaded source, not from prior analysis or audit answers. Official party image edition cross-checked. Unverified third-party HTML translations and fan-site summaries are discovery only and are not cited evidence: some claims differ from the original. Every statement, all existing blanks and the ten priorities reviewed. None of the ten revolutionary or property-system propositions has direct evidence. Public-land titles and farm-loan relief are not redistribution of large private estates; targeted women’s cash assistance is not a universal basic income. Caste-proportional representation is not electoral proportional representation, and caste remedies are not automatically positions about racial categories. Protection for Tamil refugees does not settle general immigration levels or territorial expansion. Public religious subsidies coexist with his secular political identity; no inference from personal faith or film roles. Manifesto commitments remain medium rather than high confidence, and unsigned departmental measures are not treated as his record. Searches for land reform, socialist economic theory, union politics, political violence, press freedom, religion, international institutions and military policy found no further precise statements. The investment authority explicitly takes government equity positions in semiconductors, EVs, aerospace and AI. The Parandur cancellation protects particular farms while retaining airport expansion elsewhere, so it is not treated as opposition to economic growth or as a general theory of property.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on lines 13, 12, 14 and 10: re-OCRed the Tamil manifesto (all 96 pages, tesseract tam) and searched it for prisons, police, taxes, debt, fossil fuels, GM crops, strikes, population, Sri Lanka and Katchatheevu, and searched the web for his statements on delimitation, Samsung and transport strikes, hydrocarbon projects, US tariffs, state debt, encounter killings, the Jana Nayagan censorship row, Sri Lankan war-crimes accountability and portraits/cutouts. One position added (population control). Left null as nearby cases: police pay rises without more authority (empower-police-military), drug-rehabilitation fund (not prisons), property-tax cut (not consumption tax), duty-free cotton imports and support for exporters hit by US tariffs (not domestic tariffs), criticism of inherited state debt (no stated fiscal rule), Mullivaikkal solidarity (no call for an international court).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3253,6 +3265,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3262,5 +3278,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "rules": 3
 }
