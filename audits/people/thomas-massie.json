@@ -4,11 +4,12 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
- "role": "US Representative from Kentucky (2012–present)",
- "summary": "Massie is a libertarian-leaning Republican who opposes spending increases and debt, wants to abolish the Federal Reserve, and opposes warrantless surveillance, foreign aid and military interventions. He is a Second Amendment advocate and holds pro-life views on abortion. He often casts lone dissenting votes and has broken with party leadership and Donald Trump.",
+ "role": "US Representative from Kentucky (2012–present; lost the May 2026 Republican primary)",
+ "summary": "Massie is a libertarian-leaning Republican who opposes spending increases and debt, wants to abolish the Federal Reserve, and opposes warrantless surveillance, foreign aid and military interventions. He is a Second Amendment advocate and holds pro-life views on abortion. He often casts lone dissenting votes and has broken with party leadership and Donald Trump. He lost the May 2026 Republican primary to the Trump-endorsed Ed Gallrein.",
  "wikipedia": "https://en.wikipedia.org/wiki/Thomas_Massie",
  "sources": [
   {
@@ -202,6 +203,54 @@
    "author": "Thomas Massie",
    "url": "https://massie.house.gov/news/documentsingle.aspx?DocumentID=395782",
    "usedFor": "Rejection of permanent military entanglements."
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "Voteview roll calls for Thomas Massie (icpsr 31102): H.Res.1125 (2022-05-18, #660), H.R.6090 Antisemitism Awareness Act (2024-05-01, #890), FIRST STEP Act H.R.5682 (2018-05-22, #922) and S.756 (2018-12-20, #1155), H.R.5403 CBDC Anti-Surveillance State Act (2024-05-23, #948), H.R.4405 Epstein Files Transparency Act (2025-11-18, #288); also H.R.1105 Death Tax Repeal Act (2015-04-16, #160), H.R.10 SOAR Reauthorization Act (2015-10-21, #557), H.R.3 Keystone XL (2013-05-22, #178), H.R.2231 Offshore Energy and Jobs Act (2013-06-28, #303), H.J.Res.38 Stream Protection Rule disapproval (2017-02-01, #72), H.J.Res.2 balanced budget amendment (2018-04-12, #845), H.J.Res.139 balanced budget amendment (2026-03-18, #455), H.R.1044 Fairness for High-Skilled Immigrants Act (2019-07-10, #436), H.R.5038 Farm Workforce Modernization Act (2019-12-11, #673), H.R.2 Secure the Border Act (2023-05-11, #208)",
+   "author": "Lewis, Poole, Rosenthal et al., Voteview: Congressional Roll-Call Votes Database",
+   "url": "https://voteview.com/person/31102/thomas-massie",
+   "usedFor": "His recorded votes on hate-speech measures, prison reform, a surveillance-capable digital dollar and release of government files. Also taxes, school vouchers, energy, balanced-budget amendments and immigration."
+  },
+  {
+   "id": "o2",
+   "kind": "reference",
+   "title": "Thomas Massie has a point when he says Congress' antisemitism resolution has a free speech problem (quotes his 19 May 2022 X post)",
+   "author": "Reason",
+   "url": "https://reason.com/2022/05/19/thomas-massie-has-a-point-when-he-says-congress-antisemitism-resolution-has-a-free-speech-problem",
+   "usedFor": "His own stated reason for the lone vote against H.Res.1125."
+  },
+  {
+   "id": "o3",
+   "kind": "primary",
+   "title": "H.R.4405, Epstein Files Transparency Act (119th Congress), sponsor Thomas Massie",
+   "author": "Congress.gov",
+   "url": "https://www.congress.gov/bill/119th-congress/house-bill/4405",
+   "usedFor": "He sponsored the law requiring release of the Justice Department's Epstein files."
+  },
+  {
+   "id": "o4",
+   "kind": "reference",
+   "title": "Republicans Target D.C. Gun Laws in Wake of Shooting (quotes his 15 June 2017 statement)",
+   "author": "Roll Call (Lindsey McPherson)",
+   "url": "https://rollcall.com/2017/06/15/republicans-target-d-c-gun-laws-in-wake-of-shooting/",
+   "usedFor": "His statement on the right to self-defense and armed defence after the congressional baseball shooting."
+  },
+  {
+   "id": "o5",
+   "kind": "reference",
+   "title": "Massie Tells Senate the Second Amendment Exists to Thwart Tyranny (quotes his remarks at the Senate Homeland Security and Governmental Affairs Committee Second Amendment hearing, 15 April 2026)",
+   "author": "My 2A Today (reprinting AmmoLand)",
+   "url": "https://my2atoday.blogspot.com/2026/04/massie-tells-senate-second-amendment.html",
+   "usedFor": "His own words on the Second Amendment as defence of home and community and against tyrannical government."
+  },
+  {
+   "id": "o6",
+   "kind": "reference",
+   "title": "Trump-backed Gallrein defeats Rep. Thomas Massie in GOP primary (AP, 19-20 May 2026)",
+   "author": "PBS NewsHour / Associated Press",
+   "url": "https://www.pbs.org/newshour/politics/trump-backed-gallrein-defeats-rep-thomas-massie-in-gop-primary",
+   "usedFor": "His defeat in the May 2026 Kentucky 4th District Republican primary (role and summary only)."
   }
  ],
  "answers": {
@@ -302,11 +351,15 @@
   "restrict-hate-speech": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "Alone voted against the 2022 antisemitism resolution, saying it promoted censorship.",
+   "rationale": "Lone vote against H.Res.1125 (2022), saying in his own post that 'government can't legislate thought' and that the resolution 'promoted internet censorship and violations of the 1st amendment'; voted against the 2024 Antisemitism Awareness Act (H.R.6090). Votes on specific measures, so medium.",
    "sources": [
-    "s1"
+    "o1",
+    "o2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "strong-leader": {
    "value": null,
@@ -358,10 +411,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "rehabilitation": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Voted for the FIRST STEP Act in May 2018 and its final version in December 2018, which created recidivism-reduction programmes; also opposes mandatory minimums. Votes for one bill, no stated view on what prisons are for, so low.",
+   "sources": [
+    "o1",
+    "b13"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "traditional-family": {
    "value": null,
@@ -423,12 +480,14 @@
   "reduce-immigration": {
    "value": 0,
    "confidence": "low",
-   "rationale": "Mixed record: cosponsored bills raising high-skill and family visa caps and voted for ending birthright citizenship for children of undocumented immigrants (2026); also voted against H-2B expansion.",
+   "rationale": "Mixed votes: for the Fairness for High-Skilled Immigrants Act (2019, lifts per-country green-card caps), against the Farm Workforce Modernization Act (2019, expands farmworker visas) and against the 2023 Secure the Border Act. No stated position on overall immigration levels.",
    "sources": [
-    "s1",
-    "s4"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "empower-international-orgs": {
    "value": -2,
@@ -539,11 +598,14 @@
   "tax-inheritance": {
    "value": -2,
    "confidence": "medium",
-   "rationale": "Supports repealing the estate (\"death\") tax immediately and permanently; calls it a pernicious double tax.",
+   "rationale": "Voted for the Death Tax Repeal Act (H.R.1105, April 2015), which abolishes the federal estate tax outright. A vote on a bill, so medium.",
    "sources": [
-    "s4"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "basic-income": {
    "value": null,
@@ -981,11 +1043,14 @@
   "school-vouchers": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Supports parents choosing public, private or home school and said vouchers break the link between low-income and low-quality schools.",
+   "rationale": "Voted for the SOAR Reauthorization Act (H.R.10, October 2015), which renews the D.C. Opportunity Scholarship voucher programme for private schools. A vote on one programme, so medium and +1.",
    "sources": [
-    "s4"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "avoid-deficit-stimulus": {
    "value": 2,
@@ -1098,12 +1163,14 @@
   "expand-fossil-fuels": {
    "value": 2,
    "confidence": "medium",
-   "rationale": "Supports free-market domestic energy, offshore drilling and exploring proven oil and gas reserves; opposes greenhouse gas regulation; voted to repeal the Stream Protection Rule on coal mining.",
+   "rationale": "Voted to approve Keystone XL (2013), for the Offshore Energy and Jobs Act opening offshore leasing (2013) and to overturn the Stream Protection Rule on coal mining (2017). Consistent votes, but votes only, so medium.",
    "sources": [
-    "s1",
-    "s4"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "assimilate-immigrants": {
    "value": null,
@@ -1875,10 +1942,13 @@
    "sources": []
   },
   "resist-lawless-ruler": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "April 2026 Senate hearing: the Second Amendment is for defence 'not only from a lone assailant, but from the whole of tyrannical government', warning of 'a corrupt and dangerous few' who 'attempt to subjugate the masses'. Speaks to resisting tyranny in general, not to lawfully removing a ruler, and reported secondhand, so low.",
+   "sources": [
+    "o5"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "parliament-supreme": {
    "value": null,
@@ -2043,13 +2113,12 @@
    "sources": []
   },
   "individual-pension-accounts": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Listed as supporting personal retirement accounts for Social Security (2012).",
-   "sources": [
-    "s4"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The earlier answer rested only on an OnTheIssues listing taken from an interest-group rating (2012); no vote, bill or statement of his on Social Security personal accounts found.",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": "claude-opus-5-5"
   },
   "land-use-tenure": {
    "value": null,
@@ -2145,13 +2214,11 @@
    "sources": []
   },
   "non-intervention": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Opposes US intervention in other countries' internal affairs and sanctions; the statement's \"for any reason\" wording goes beyond what he said.",
-   "sources": [
-    "s1"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "Re-checked under rules 3: the earlier answer cited only Wikipedia. His own words oppose particular interventions (Venezuela, Iran) on war-powers grounds and say Congress should vote if military action is justified, which does not reach 'for any reason'. No stated position on the statement as worded.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "industrial-unions": {
    "value": null,
@@ -2173,12 +2240,16 @@
   },
   "public-access-to-information": {
    "value": 1,
-   "confidence": "medium",
-   "rationale": "Pushed Federal Reserve transparency legislation and the Epstein Files Transparency Act (2025).",
+   "confidence": "low",
+   "rationale": "Sponsored the Epstein Files Transparency Act (H.R.4405) requiring the Justice Department to publish its Epstein files, and voted for it (2025). A specific disclosure law, not a stated general right of access, so low.",
    "sources": [
-    "s1"
+    "o3",
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "local-production": {
    "value": null,
@@ -2646,10 +2717,14 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Calls self-defense a right guaranteed in the Constitution and says 'the only thing that stops a bad guy with a gun is a good guy with a gun' (2017 statement); told a Senate hearing in April 2026 that the Second Amendment exists 'for the defense of one's home, one's family, and one's community'. Quoted in press reports, so medium.",
+   "sources": [
+    "o4",
+    "o5"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -2766,10 +2841,13 @@
    "sources": []
   },
   "anonymous-payments": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Voted for the CBDC Anti-Surveillance State Act (H.R.5403, 2024), which bars a central bank digital currency the government could use to surveil transactions. A vote on one bill, not a stated view on untraceable payments generally, so low.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "online-anonymity": {
    "value": null,
@@ -2914,13 +2992,16 @@
    "sources": []
   },
   "fiscal-rules-binding": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Stated demand for a balanced budget amendment and for limiting federal spending growth (2010 campaign positions).",
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Voted for the balanced budget amendment H.J.Res.139 (March 2026) but against H.J.Res.2 (April 2018); the most recent vote is for a binding constitutional rule. Votes only, one each way, so low.",
    "sources": [
-    "s4"
+    "o1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "restructure-world-economy": {
    "value": null,
@@ -3145,10 +3226,13 @@
    "sources": []
   },
   "indirect-election": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "March 2025 interview: he would 'repeal the year 1913', including the 17th Amendment 'which allowed direct election of senators', calling direct election of senators and direct taxation 'really dangerous to this country, injurious to our Republic'. Favours senators chosen by state legislatures; spoken about the Senate only, so medium.",
+   "sources": [
+    "b1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "national-church-status": {
    "value": null,
@@ -3340,7 +3424,7 @@
    "sources": []
   }
  },
- "notes": "Many answers rest on aggregator or news summaries of his votes; his House issue pages were not reachable at guessed URLs. Not answered for lack of a stated position on the statement as worded: tariffs and free trade (sources conflict: sugar tariffs sponsored in 2013, later reported opposition to Trump tariffs not verified in an opened page), recreational drug legalization (supports hemp and medical cannabis), same-sex marriage, Israel statehood, war powers principles beyond opposing specific wars.\n\nMerged with an independent gpt-6.1-sol audit: 28 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass under the October 28 source-priority rules. Existing notes and sources only were consulted; no existing answers copied, and no living-person inference used. Full original interviews, congressional passages and official releases were checked across all 490 statements, including remaining nulls. Rhetoric is medium or lower. The March 2025 interview is available in full in the publisher’s public magazine PDF, although its separate webpage is paywalled. The June 2025 public interview PDF was opened through web after direct download failed. Ratings and interviewer opinions are excluded. The privacy amendment contains exceptions for lawful surveillance and telecommunications mandates, hence qualified answers rather than a claim he rejects every warrant or requires mathematically unbreakable systems. His NATO withdrawal bill explicitly rejects permanent foreign entanglements; UN withdrawal is kept distinct from a military treaty. His endorsement of broad low revenue tariffs in place of income taxation is distinguished from selective protection of favoured industries. Opposition to a particular war does not establish an exceptionless non-intervention or defensive-war-only doctrine. The anti-abortion statement addresses legal protection of unborn life, not merely attendance at a march; the 2025 bill confirms continuity. A 2012 signed term-limit pledge is an institutional amendment pledge, not a promise to leave after three terms before such an amendment exists. Personal off-grid living and family preferences are not converted into cultural prescriptions; no specific culture statement established. Vote-by-mail objections do not justify presidential lawmaking in his stated view. No same-sex-marriage legality inferred solely from opposition to federal codification.",
+ "notes": "Many answers rest on aggregator or news summaries of his votes; his House issue pages were not reachable at guessed URLs. Not answered for lack of a stated position on the statement as worded: tariffs and free trade (sources conflict: sugar tariffs sponsored in 2013, later reported opposition to Trump tariffs not verified in an opened page), recreational drug legalization (supports hemp and medical cannabis), same-sex marriage, Israel statehood, war powers principles beyond opposing specific wars.\n\nMerged with an independent gpt-6.1-sol audit: 28 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass under the October 28 source-priority rules. Existing notes and sources only were consulted; no existing answers copied, and no living-person inference used. Full original interviews, congressional passages and official releases were checked across all 490 statements, including remaining nulls. Rhetoric is medium or lower. The March 2025 interview is available in full in the publisher’s public magazine PDF, although its separate webpage is paywalled. The June 2025 public interview PDF was opened through web after direct download failed. Ratings and interviewer opinions are excluded. The privacy amendment contains exceptions for lawful surveillance and telecommunications mandates, hence qualified answers rather than a claim he rejects every warrant or requires mathematically unbreakable systems. His NATO withdrawal bill explicitly rejects permanent foreign entanglements; UN withdrawal is kept distinct from a military treaty. His endorsement of broad low revenue tariffs in place of income taxation is distinguished from selective protection of favoured industries. Opposition to a particular war does not establish an exceptionless non-intervention or defensive-war-only doctrine. The anti-abortion statement addresses legal protection of unborn life, not merely attendance at a march; the 2025 bill confirms continuity. A 2012 signed term-limit pledge is an institutional amendment pledge, not a promise to leave after three terms before such an amendment exists. Personal off-grid living and family preferences are not converted into cultural prescriptions; no specific culture statement established. Vote-by-mail objections do not justify presidential lawmaking in his stated view. No same-sex-marriage legality inferred solely from opposition to federal codification.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on lines 12 and 14: searched his votes (Voteview: antisemitism measures, ICC sanctions, First Step Act, anti-CBDC bill, Epstein files), the March 2025 New American interview (17th Amendment), gun-rights statements (2017 D.C. reciprocity, April 2026 Senate hearing), the Venezuela boat strikes and war powers (only war-powers objections found, no stated view on killing suspected traffickers, so extrajudicial-killing stays null), CBDC and financial privacy, 'Epstein class' remarks (about specific people, not elites generally) and trade deficits (nothing found). He voted present (abstain) on both ICC sanctions bills (H.R.8282, 2024; H.R.23, 2025), so international-criminal-courts stays null. non-intervention nulled (Wikipedia-only, his words do not reach 'for any reason'); restrict-hate-speech and public-access-to-information re-sourced to his votes, bill and own post. Several older answers rest only on OnTheIssues (s4: tax-inheritance, school-vouchers, individual-pension-accounts, fiscal-rules-binding, flat-income-tax in part) and were not re-checked in this pass.\n\nIntegrator follow-up (claude-opus-5-5, 2026-10-31): OnTheIssues-only answers re-sourced to his Voteview votes (reduce-immigration, tax-inheritance, school-vouchers, expand-fossil-fuels); fiscal-rules-binding lowered from +2 high to +1 low (2018 nay, 2026 yea on balanced budget amendments); individual-pension-accounts nulled (OnTheIssues cited only an interest-group rating). Note: corpora/tools/voteview.js misses 114th-Congress votes (icpsr stored as '31102.0' there); those were read from HSall_votes.csv directly.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3349,6 +3433,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3358,5 +3446,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 2
   }
- ]
+ ],
+ "rules": 3
 }
