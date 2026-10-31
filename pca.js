@@ -482,7 +482,7 @@ function withLines(ctx) {
 // The placement context, rebuilt from what the build ships (PLACEMENT in data.js): the page's MODEL
 // carries only the rotated lines, not the unrotated components or the noise level.
 function placementFromParts(parts) {
-  return parts && withLines({ model: { components: parts.components }, k: parts.k, noise: parts.noise,
+  return parts && withLines({ model: { components: parts.components }, k: parts.k, noise: parts.noise, maxUncertainty: parts.maxUncertainty,
     lines: parts.lines || parts.components.map((_, i) => parts.components.map((__, a) => (a === i ? 1 : 0))) });
 }
 
@@ -528,8 +528,9 @@ function posterior(ctx, knownIdx, centred = null) {
 // A political ideology or figure takes positions across every dividing line; a list of answers that speaks
 // to only some of them holds opinions, not a full politics, and isn't shown (Brandon, 2026-10-31).
 // Uncertainty: on a list of answers' worst line, the share of that line's spread its answers leave unknown
-// (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY: every
-// line more known than unknown. The same rule for ideologies, people and AI models; the quiz's "Done"
+// (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY on every
+// line: every line more known than unknown, except a line given its own temporary limit
+// (`maxUncertainty` in the placement context, from audits/line-allowances.json). The same rule for ideologies, people and AI models; the quiz's "Done"
 // uses the same measure with its own target (DONE_UNCERTAINTY).
 const MAX_UNCERTAINTY = 0.5;
 function worstUncertainty(ctx, knownIdx) {
@@ -539,8 +540,9 @@ function worstUncertainty(ctx, knownIdx) {
 function uncertainty(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
   const lines = lineStats(ctx, known).map((l) => 1 - l.reliability);
-  const worst = Math.max(...lines);
-  return { known: known.length, uncertainty: worst, lines, max: MAX_UNCERTAINTY, placed: worst <= MAX_UNCERTAINTY };
+  const limits = lines.map((_, i) => (ctx.maxUncertainty && ctx.maxUncertainty[i]) || MAX_UNCERTAINTY);
+  return { known: known.length, uncertainty: Math.max(...lines), lines, limits, max: MAX_UNCERTAINTY,
+    placed: lines.every((x, i) => x <= limits[i]) };
 }
 
 // How far off a distance may be from placement error alone, for a list of answers with positions on `knownIdx`:

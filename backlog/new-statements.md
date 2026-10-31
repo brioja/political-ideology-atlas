@@ -4,6 +4,17 @@
 every person audit, for little improvement on the site. Collect candidates here, but don't start a
 batch unless that trade-off changes.
 
+- **Mainstream statements for the unity-across-borders line** (2026-10-31; the line anchored on
+  civilizational-union, kin-peoples-union, pool-sovereignty and common-currency). Its core statements
+  are ones mainstream politicians rarely address, so it may be up to 60% unknown
+  (`audits/line-allowances.json`) until it has statements they do. Drafts: free movement within a
+  regional union; membership of a regional economic union; developing countries acting together
+  (BRICS) for a bigger say in the IMF, World Bank and Security Council; closer ties with countries
+  sharing a language or history (a commonwealth); and, for US politicians, staying in trade
+  agreements with neighbours (USMCA) and paying into the UN and the WHO. Where each lands is decided by
+  the ideologies' answers, so sample ~100 ideologies before a full backfill. Remove the allowance once
+  the line passes for politicians without it.
+
 Candidate statements and the plan for choosing them. Statements are the only way to tell apart
 ideologies the test can barely separate, and each one costs a backfill across every audit, so they
 are chosen together in one batch and held to the bar in `audits/statements/STANDARD.md`.

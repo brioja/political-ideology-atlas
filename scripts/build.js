@@ -157,7 +157,24 @@ const onLandscape = (ideos) => modelFromParts(ideos, { mean: landscape.mean, com
 // The one placement context (lines and noise), judged on the rotated lines matching uses: it judges
 // the uncertainty of ideologies and people (scripts/lib.js), weighs each line in every distance and
 // tells a taker how far they're placed, and data.js ships it as PLACEMENT.
-const shippedPlacement = landscape && judgeParts(placementContext(landscape, { rotated: rotatedLines }));
+const shippedPlacement = landscape && judgeParts(withAllowances(placementContext(landscape, { rotated: rotatedLines })));
+// Temporary per-line exceptions to the 50% (audits/line-allowances.json), each found by its anchors among
+// the line's 10 strongest statements, as line names are.
+function withAllowances(ctx) {
+  const entries = readJson(path.join(ROOT, "audits", "line-allowances.json")).lines;
+  const qi = Object.fromEntries(statements.map((s, j) => [s.id, j]));
+  const max = rotatedLines.slice(0, ctx.k).map(() => null);
+  for (const a of entries) {
+    const i = rotatedLines.slice(0, ctx.k).findIndex((c) => {
+      const top = new Set(c.vector.map((w, j) => [Math.abs(w), j]).sort((x, y) => y[0] - x[0]).slice(0, 10).map(([, j]) => j));
+      return a.anchors.filter((id) => top.has(qi[id])).length >= 2;
+    });
+    if (i < 0) console.warn(`No dividing line matches the allowance anchored on ${a.anchors.join(", ")}: it is not applied.`);
+    else { max[i] = a.maxUncertainty; console.log(`Line ${i + 1} may be up to ${a.maxUncertainty * 100}% unknown (audits/line-allowances.json).`); }
+  }
+  ctx.maxUncertainty = max.some((x) => x != null) ? max : null;
+  return ctx;
+}
 const judge = shippedPlacement && judgeFrom(shippedPlacement, statements.map((s) => s.id));
 classify(judge);
 

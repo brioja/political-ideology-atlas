@@ -43,6 +43,8 @@ const judgeParts = (ctx) => ({
   components: ctx.model.components.slice(0, ctx.k).map((c) => ({ eigenvalue: r6(c.eigenvalue), vector: c.vector.map((x) => Math.round(x * 1e4) / 1e4) })),
   // Each matched line in terms of the components (placementContext in pca.js), in the shipped order.
   lines: ctx.lines.map((row) => row.map(r6)),
+  // Per-line exceptions to the 50% (audits/line-allowances.json), null where a line has none.
+  maxUncertainty: ctx.maxUncertainty || null,
 });
 // `ids`: the statement ids, in the order of the parts' vectors.
 const judgeFrom = (parts, ids) => ({ ctx: require(path.join(ROOT, "pca.js")).placementFromParts(parts), ids });

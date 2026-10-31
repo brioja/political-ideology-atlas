@@ -187,8 +187,8 @@ function validate(id) {
     const s = PEOPLE ? personUncertainty(answers) : ideologyUncertainty(a);
     if (!s.placed) {
       const pct = (x) => `${Math.round(x * 100)}%`;
-      const weak = s.lines.map((u, i) => [u, i]).filter(([u]) => u > s.max).sort((x, y) => y[0] - x[0])
-        .map(([u, i]) => `${lineName(i)} ${pct(u)}`);
+      const weak = s.lines.map((u, i) => [u, i]).filter(([u, i]) => u > s.limits[i]).sort((x, y) => y[0] - x[0])
+        .map(([u, i]) => `${lineName(i)} ${pct(u)}${s.limits[i] !== s.max ? ` (limit ${pct(s.limits[i])})` : ""}`);
       errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} more unknown than known (over ${pct(s.max)}): ${weak.join(", ")}`);
     }
   }

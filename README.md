@@ -80,7 +80,9 @@ person's own words and record, and a statement with no reliable evidence is `nul
 - **Uncertainty:** a political ideology or figure takes positions across every dividing line; one
   that speaks to only some of them holds opinions, not a full politics. A record is included only
   if, on each of the real dividing lines, its known positions leave at most half of the line's
-  spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). The rule is the
+  spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). One line, unity
+  across borders, may be up to 60% unknown until it has statements ordinary politicians answer
+  (`audits/line-allowances.json`). The rule is the
   same for ideologies, people and AI models; the quiz says you're done by the same measure, at its own
   target (35% unknown at most on every line, `DONE_UNCERTAINTY`). There is no other bar: nothing
   compares a list of answers with the gap between neighbouring ideologies, and people are held to
