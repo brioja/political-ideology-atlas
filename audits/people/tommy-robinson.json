@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-24",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "English anti-Islam activist; founder of the English Defence League (2009-2013) and organiser of Unite the Kingdom rallies",
@@ -106,6 +107,14 @@
    "author": "Tommy Robinson, interviewed by Nick Freitas",
    "url": "https://www.youtube.com/watch?v=FjiAvlqLtJc",
    "usedFor": "Five principles and electoral mobilization, approximately 39–46 and 58–61 minutes"
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "The Alex Jones Show, 14 December 2015, Tommy Robinson guest segment (WhisperX machine transcript, file 2015/20151214_Mon_Alex.txt, from 02:24:57)",
+   "author": "Tommy Robinson, interviewed by Alex Jones",
+   "url": "https://github.com/Fudge/infowars",
+   "usedFor": "His first-person reply after Jones's question (mirror of the InfoWars archive; no speaker labels, only the unambiguous answer used)"
   }
  ],
  "answers": {
@@ -1379,10 +1388,15 @@
    "sources": []
   },
   "educated-out-of-touch": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Asked about the left on Infowars (14 Dec 2015, about 02:27:50), he contrasts his lived experience with people who say 'we've gone to university, we've got a degree and we've read this', replying that they 'haven't lived it' and have 'no experience at all'; aimed at left-wing graduates rather than all graduates, so not +2.",
+   "sources": [
+    "o1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "death-penalty": {
    "value": null,
@@ -3209,7 +3223,7 @@
    "sources": []
   }
  },
- "notes": "Evidence is mainly long-form interviews (auto captions) and reported quotes; he has given little on economic policy. Positions at the EDL stage (e.g. 2013 Quilliam statement apologising for earlier remarks and rejecting violence) differ in tone from recent ones; most recent used.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 10 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; prior answers not read. Full Triggernometry and Brand transcripts, the February 2026 Timcast interview and September 2026 Freitas captions were downloaded and searched. Timcast has several speakers; only identifiable Robinson passages used. Freitas advertisements and host opinions excluded. The ten priority economic theories remain unknown: neither tariff advocacy nor criticism of corporations benefiting from migration establishes a general view of capitalism, public ownership, value theory or alienated labour. Welfare child caps are not a statement that all welfare creates dependency. Opposition to LGBT instruction is not opposition to all sex education, and liberal treatment of homosexuals is not a stated marriage policy. Visits and allies’ policies do not establish his positions. The Russia statement does not settle NATO withdrawal or support for invasion. Ecological and technological searches found no matching stated position; social-media use is not technological optimism. All remaining null statements reviewed. Earlier street violence is distinguished from political violence; participation by violent supporters is not attributed to him without evidence he directed it. Inclusion-only validation failure retained; no answers added to clear the gate. Self-defence remarks do not explicitly address killing, and rejection of Sharia does not establish a position on all scriptural law.",
+ "notes": "Evidence is mainly long-form interviews (auto captions) and reported quotes; he has given little on economic policy. Positions at the EDL stage (e.g. 2013 Quilliam statement apologising for earlier remarks and rejecting violence) differ in tone from recent ones; most recent used.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 10 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; prior answers not read. Full Triggernometry and Brand transcripts, the February 2026 Timcast interview and September 2026 Freitas captions were downloaded and searched. Timcast has several speakers; only identifiable Robinson passages used. Freitas advertisements and host opinions excluded. The ten priority economic theories remain unknown: neither tariff advocacy nor criticism of corporations benefiting from migration establishes a general view of capitalism, public ownership, value theory or alienated labour. Welfare child caps are not a statement that all welfare creates dependency. Opposition to LGBT instruction is not opposition to all sex education, and liberal treatment of homosexuals is not a stated marriage policy. Visits and allies’ policies do not establish his positions. The Russia statement does not settle NATO withdrawal or support for invasion. Ecological and technological searches found no matching stated position; social-media use is not technological optimism. All remaining null statements reviewed. Earlier street violence is distinguished from political violence; participation by violent supporters is not attributed to him without evidence he directed it. Inclusion-only validation failure retained; no answers added to clear the gate. Self-defence remarks do not explicitly address killing, and rejection of Sharia does not establish a position on all scriptural law.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: searched climate/net zero, prisons and rehabilitation, the ICC, digital ID and online anonymity (he promoted the Online Safety Act repeal petition, which does not settle anonymity), monarchy and head of state, strong leaders/Trump, and his guest segments on The Alex Jones Show (local corpus) plus the Triggernometry, Brand and Timcast transcripts. Only one new stated position was found (educated-out-of-touch). Peterson and Freitas captions could not be downloaded (YouTube 429); the European Conservative interview was offline (503, no archive copy).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3218,6 +3232,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3227,5 +3245,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "rules": 3
 }
