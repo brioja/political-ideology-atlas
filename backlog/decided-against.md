@@ -67,3 +67,13 @@ its own spread would show 604 ideologies and 413 people (controls still fail), b
 small enough to pass with nothing answered. Brandon: those lines are 1% of the weight but still
 meaningful, and records silent on them are how loose matches like Jared Kushner came in. Every
 line keeps its own 50%.
+
+## Like-with-like matching (2026-10-31)
+
+At Done, takers whose ideology sits near the edge of the lines are pulled about 10% toward the centre
+(the posterior plays safe on lines they answered little), and find their own ideology first 68% of the
+time against 89% for central ones. Proposed fix: compare the taker with each ideology as it would be
+placed from the taker's answered statements, so both carry the same pull (edge +4 points, top 3 +3-4
+in two simulated runs). Brandon: it changes what takers are compared with ("changing question takers'
+answers"); matching compares the taker with each ideology's real place. Narrowing the bars by asking
+more isn't a practical alternative either: line 13 is still 5% unknown with every statement answered.
