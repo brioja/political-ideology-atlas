@@ -59,3 +59,11 @@ vary, and a sparse record wins on a handful of shared statements. All matching (
 Compare, the next-question selector, "Done") is distance on the 14 real lines. test.js
 fails if a statement-matching function, audits/spreads.json or a shipped statement spread returns.
 Display lists of shared statements ("why they matched") stay: they explain, they don't rank.
+
+## An absolute uncertainty allowance (2026-10-31)
+
+Allowing every line the same absolute uncertainty (half the average line's spread) instead of 50% of
+its own spread would show 604 ideologies and 413 people (controls still fail), but lines 10-14 are
+small enough to pass with nothing answered. Brandon: those lines are 1% of the weight but still
+meaningful, and records silent on them are how loose matches like Jared Kushner came in. Every
+line keeps its own 50%.
