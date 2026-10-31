@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-24",
  "auditor": [
   "gpt-6.1-sol",
-  "claude-sonnet-5-5"
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
  ],
  "living": false,
  "role": "Shah of Iran (1925–1941); earlier army commander and prime minister",
@@ -194,6 +195,14 @@
    "author": "Reza Shah (letter drafted at the Marble Palace)",
    "url": "https://www.asriran.com/fa/news/1094971/%D9%85%D8%AA%D9%86-%D8%A7%D8%B3%D8%AA%D8%B9%D9%81%D8%A7%DB%8C-%D8%B1%D8%B6%D8%A7%D8%B4%D8%A7%D9%87-%D8%AF%D8%B1-%DB%B2%DB%B5-%D8%B4%D9%87%D8%B1%DB%8C%D9%88%D8%B1-%DB%B1%DB%B3%DB%B2%DB%B0-%D9%86%D8%A7%D8%AA%D9%88%D8%A7%D9%86-%D8%B4%D8%AF%D9%87%E2%80%8C%D8%A7%D9%85",
    "usedFor": "His signed transfer of the monarchy to the crown prince"
+  },
+  {
+   "id": "c1",
+   "kind": "primary",
+   "title": "Mazandaran travelogue, chapter 5",
+   "author": "Reza Shah; recorded by Faraj-Allah Bahrami",
+   "url": "https://bonyadhomayoun.com/%D9%82%D8%B3%D9%85%D8%AA-5/",
+   "usedFor": "Downloaded (Persian, own translation): his statement that he is wholly devoted to modern civilization but will not strip ancient Iran, \"my sacred homeland\", of its essence; its legacy must blend with modern civilization."
   }
  ],
  "answers": {
@@ -3210,10 +3219,16 @@
    "sources": []
   },
   "homeland-spiritual-bond": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his travelogue he says he worships his homeland, gives his soul to the very soil, stones and forest of Savadkuh, the resting place of his ancestors, calls Iran his sacred homeland, and assures his late father that the homeland is no longer in danger. Rhetoric of devotion rather than a stated doctrine of the land, so +1.",
+   "sources": [
+    "s4",
+    "c1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "extrajudicial-killing": {
    "value": null,
@@ -3276,10 +3291,15 @@
    "sources": []
   },
   "tech-with-ancestral-values": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his travelogue he says he has repeatedly declared himself wholly devoted to modern civilization yet never willing to strip ancient Iran and its legacy of its essence, and that this legacy must blend with the principles of modern civilization rather than drown in new appearances. He speaks of heritage (calligraphy, ancient glories) more than a return to ancestral values, so not +2.",
+   "sources": [
+    "c1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "wife-divorce-without-consent": {
    "value": null,
@@ -3357,7 +3377,7 @@
    "sources": []
   }
  },
- "notes": "No inferred answers. The seven-chapter Persian travelogue was downloaded and searched across the statement themes; its dictated first-person text is distinguished from publisher introductions. Chapters 3 and 5 were also read for context. Formal assent alone is not used as evidence. Later secondhand accounts are medium at most. The later White Revolution, women’s suffrage, forest nationalization and post-1956 conservation measures belong to his son’s period and are not assigned to him. Support for a women’s congress does not establish every demand adopted there. The coronation speech preserves religion as a source of unity, while the diary rejects its fusion with politics; this does not establish atheism or a comprehensive position on every religious liberty. Modern technology advocacy does not establish that technology solves most human problems. No inclusion padding; remaining statements reviewed against the full list.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second audit; reached by sources other than the first audit's Persian travelogue and Iranica set. Searched by theme: government (elections, parliament, press, cabinet, army), world (oil, capitulations, neutrality), society (clergy, conscription). Primary sources are scarce in English: no speech collection or memoir could be opened, so most answers rest on scholarly reports of his record (medium at most). Many answers describe acts of his government that scholars tie to him (oil cancellation, the 1924 election rigging, conscription decree); the banking and capital-control answers rest on measures by his team and are weaker. Not found or not opened: Iranica articles (blocked by Cloudflare), Chehabi on dress (paywalled), so unveiling, language, education, minorities and women's issues are left null.",
+ "notes": "No inferred answers. The seven-chapter Persian travelogue was downloaded and searched across the statement themes; its dictated first-person text is distinguished from publisher introductions. Chapters 3 and 5 were also read for context. Formal assent alone is not used as evidence. Later secondhand accounts are medium at most. The later White Revolution, women’s suffrage, forest nationalization and post-1956 conservation measures belong to his son’s period and are not assigned to him. Support for a women’s congress does not establish every demand adopted there. The coronation speech preserves religion as a source of unity, while the diary rejects its fusion with politics; this does not establish atheism or a comprehensive position on every religious liberty. Modern technology advocacy does not establish that technology solves most human problems. No inclusion padding; remaining statements reviewed against the full list.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second audit; reached by sources other than the first audit's Persian travelogue and Iranica set. Searched by theme: government (elections, parliament, press, cabinet, army), world (oil, capitulations, neutrality), society (clergy, conscription). Primary sources are scarce in English: no speech collection or memoir could be opened, so most answers rest on scholarly reports of his record (medium at most). Many answers describe acts of his government that scholars tie to him (oil cancellation, the 1924 election rigging, conscription decree); the banking and capital-control answers rest on measures by his team and are weaker. Not found or not opened: Iranica articles (blocked by Cloudflare), Chehabi on dress (paywalled), so unveiling, language, education, minorities and women's issues are left null.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 14: re-downloaded all seven travelogue chapters and searched them for homeland, ancestors, heritage, imports/exports, customs and factories; added homeland-spiritual-bond and tech-with-ancestral-values from chapters 1 and 5. Chapter 6 hopes surplus harvests will be exported as national capital, which is not a stated aim of an export surplus, so trade-surplus stays null; ancient glories in chapter 5 come with talk of Iran's rises and declines, so unbroken-national-continuity stays null. Also searched: Amanat ch. 8 (statues of the shah in squares, not shown to be his own initiative: leader-cult null), FRUS 1927 and 1938 audiences (nothing on line 14), Tarafdari 2021/2024 on the Ferdowsi millennium (his Tus speech is reported but not quoted; its text was not found).",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3366,7 +3386,11 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
- "rules": 2
+ "rules": 3
 }
