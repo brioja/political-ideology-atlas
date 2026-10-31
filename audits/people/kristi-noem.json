@@ -5,7 +5,8 @@
  "auditor": [
   "claude-sonnet-5-5",
   "gpt-6.1-sol",
-  "claude-haiku-5-5"
+  "claude-haiku-5-5",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "U.S. Representative from South Dakota (2011–2019), governor of South Dakota (2019–2025), U.S. Secretary of Homeland Security (2025–2026)",
@@ -275,6 +276,38 @@
    "author": "Thomas Frank and Avery Ellfeldt, E&E News",
    "url": "https://www.eenews.net/articles/kristi-noem-rejected-climate-change-and-money-to-fight-it/",
    "usedFor": "Rejection of federal climate programs and her participation in climate-regulation challenges."
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "House roll call 36, February 14, 2011 (H.R. 514, PATRIOT Act extension)",
+   "author": "Clerk of the U.S. House of Representatives",
+   "url": "https://clerk.house.gov/evs/2011/roll036.xml",
+   "usedFor": "surveillance-ok"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "House roll call 412, July 24, 2013 (Amash amendment to H.R. 2397 on NSA phone records)",
+   "author": "Clerk of the U.S. House of Representatives",
+   "url": "https://clerk.house.gov/evs/2013/roll412.xml",
+   "usedFor": "surveillance-ok"
+  },
+  {
+   "id": "o3",
+   "kind": "primary",
+   "title": "Remarks Prior to a Cabinet Meeting and an Exchange With Reporters, December 2, 2025 (Daily Compilation of Presidential Documents DCPD-202501155)",
+   "author": "Office of the Federal Register",
+   "url": "https://www.govinfo.gov/content/pkg/DCPD-202501155/html/DCPD-202501155.htm",
+   "usedFor": "extrajudicial-killing"
+  },
+  {
+   "id": "o4",
+   "kind": "primary",
+   "title": "Noem: Marijuana measures approved by voters 'the wrong choice' for South Dakota, November 5, 2020 (her statement)",
+   "author": "KOTA Territory News",
+   "url": "https://www.kotatv.com/2020/11/05/noem-marijuana-measures-approved-by-voters-the-wrong-choice-for-south-dakota",
+   "usedFor": "legalize-drugs"
   }
  ],
  "answers": {
@@ -312,14 +345,12 @@
    ]
   },
   "cut-welfare": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Backed Medicaid cuts in the Ryan budget, declined the federal $300 unemployment supplement (2020) and rejected federal summer-meal money as governor.",
-   "sources": [
-    "s1",
-    "s3"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found on cutting welfare for creating dependency: the earlier answer cited only Wikipedia, and work requirements and declining federal supplements are nearby cases.",
+   "sources": [],
+   "auditor": "claude-opus-5-5",
+   "nulledFrom": 1
   },
   "no-compulsory-union": {
    "value": 2,
@@ -347,12 +378,15 @@
   },
   "legalize-drugs": {
    "value": -2,
-   "confidence": "high",
-   "rationale": "Opposed the 2020 legalization ballot measures and sued to overturn Amendment A; vetoed an industrial hemp bill in 2019.",
+   "confidence": "medium",
+   "rationale": "After voters approved recreational cannabis in 2020 she said she was personally opposed to the measures and that they were the wrong choice for South Dakota, then ratified the lawsuit that struck the amendment down.",
    "sources": [
-    "s3"
+    "o4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "abortion-legal": {
    "value": -2,
@@ -411,11 +445,14 @@
   "separate-church-state": {
    "value": -1,
    "confidence": "medium",
-   "rationale": "Pushed prayer in public schools (2022) and signed a religious-refusal law.",
+   "rationale": "Her 2018 column says Billy Graham shaped how she sees faith's role in government, that she has worked to restore faith in public life, and that she helped lift FEMA's bar on aid to houses of worship.",
    "sources": [
-    "s3"
+    "b8"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+   ]
   },
   "no-religion-state-schools": {
    "value": null,
@@ -656,10 +693,16 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Voted to extend the PATRIOT Act's business-records, lone-wolf terrorist and roving-wiretap powers (2011), against the 2013 amendment to defund NSA bulk phone-record collection, and for the 2018 Section 702 reauthorization. These are votes, not her own words, so medium.",
+   "sources": [
+    "o1",
+    "o2",
+    "b18",
+    "b19"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "restrict-hate-speech": {
    "value": null,
@@ -773,10 +816,14 @@
    "sources": []
   },
   "revolution-justified": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Her 2017 column praises the Founders for orchestrating a revolution so later generations would not be ruled by a monarch who suppressed religion, speech and press, treating that revolution as justified.",
+   "sources": [
+    "b4",
+    "b12"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "experts-over-public": {
    "value": -2,
@@ -2796,10 +2843,13 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Her 2023 column says God gave people the right to defend themselves and their families and boasts of strengthening South Dakota's Stand Your Ground law, which covers deadly force in self-defence.",
+   "sources": [
+    "b9"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3039,10 +3089,13 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Her 2023 column calls keeping and bearing arms a God-given right and cites constitutional carry for all law-abiding South Dakotans as her first signed bill, so she rejects arms being reserved to the army and police.",
+   "sources": [
+    "b9"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3331,10 +3384,13 @@
    "sources": []
   },
   "extrajudicial-killing": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the December 2025 Cabinet meeting she praised the military strikes on suspected drug boats in the Caribbean, which killed those aboard without trial, saying they had saved hundreds of millions of lives.",
+   "sources": [
+    "o3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "protect-kin-minorities": {
    "value": null,
@@ -3457,7 +3513,7 @@
    "sources": []
   }
  },
- "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.",
+ "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 12: found five answers. Surveillance from House roll calls (she also voted for the 2014 USA FREEDOM Act, per Voteview, which ended bulk collection but kept the programmes, so +1 not +2). Arms monopoly and self-defence from her 2023 'Freedom, Guaranteed' column. Revolution from her 2017 'A Common Country' column. Drug-boat strikes from the official record of the December 2, 2025 Cabinet meeting. Searched without result: political violence as such (her 2017, 2024 and 2025 statements condemn particular attacks on her side, a narrower case), running government like a business, and MediaSum interviews. Not searched: statements with no plausible link to her record. Under rules 3, three Wikipedia-only answers were re-sourced or nulled: legalize-drugs re-sourced to her November 2020 statement (lowered to medium), separate-church-state to her 2018 'One Nation, Under God' column, and cut-welfare nulled (no primary source on dependency or cuts found in budget).",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3469,6 +3525,10 @@
   },
   {
    "auditor": "claude-haiku-5-5",
+   "auditedAt": "2026-10-31"
+  },
+  {
+   "auditor": "claude-opus-5-5",
    "auditedAt": "2026-10-31"
   }
  ],
