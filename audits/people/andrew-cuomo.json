@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "passes": [
   {
@@ -18,6 +19,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "living": true,
@@ -464,6 +469,38 @@
    "author": "Andrew Cuomo",
    "url": "https://andrewcuomo.com/news/2026/democrats-must-resist-shifting-far-left",
    "usedFor": "Latest position on taxation, borders and checks on presidential power; 2026.txt."
+  },
+  {
+   "id": "d1",
+   "kind": "reference",
+   "title": "Governor Cuomo Signs Legislation Adding New York State to the National Popular Vote Compact (Apr 15, 2014 governor's release, reprinted)",
+   "author": "LongIsland.com",
+   "url": "https://longisland.com/news/04-16-14/cuomo-nys-national-popular-vote.html",
+   "usedFor": "His signing statement on the National Popular Vote compact"
+  },
+  {
+   "id": "d2",
+   "kind": "reference",
+   "title": "Cuomo casts doubt on gas tax bill combating climate change (May 2021)",
+   "author": "Adirondack Daily Enterprise",
+   "url": "https://www.adirondackdailyenterprise.com/news/local-news/2021/05/cuomo-casts-doubt-on-gas-tax-bill-combating-climate-change/",
+   "usedFor": "His reaction to the Climate and Community Investment Act carbon fee"
+  },
+  {
+   "id": "d3",
+   "kind": "primary",
+   "title": "New York State of the State Address 2012 (transcript, Jan 4, 2012)",
+   "author": "Gov. Andrew M. Cuomo",
+   "url": "https://stateline.org/2012/01/04/new-york-state-of-the-state-address-2012/",
+   "usedFor": "Flat tax: 'a flat tax is not a fair tax'"
+  },
+  {
+   "id": "d4",
+   "kind": "primary",
+   "title": "Governor issues op-ed on tax reform (Dec 2011)",
+   "author": "Gov. Andrew M. Cuomo (via WNY Public Broadcasting)",
+   "url": "https://www.btpm.org/2011-12-05/governor-issues-op-ed-on-tax-reform",
+   "usedFor": "Same marginal rate on $20,000 and $20 million called unfair; new brackets"
   }
  ],
  "answers": {
@@ -729,10 +766,10 @@
   "correct-racial-injustice": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Set a 20 percent minority and women business contracting goal and framed cannabis legalization as ending the disproportionate impact on communities of color.",
+   "rationale": "Raised the state's minority- and women-owned business contracting goal from 20 to 30 percent in 2014 and proposed extending it to state-funded contracts (2016 policy book); framed cannabis legalization as reducing 'impacts of criminalization affecting communities of color' (2019 policy book).",
    "sources": [
-    "s18",
-    "s16"
+    "s1",
+    "s3"
    ],
    "auditor": "claude-sonnet-5-5"
   },
@@ -886,10 +923,13 @@
    "sources": []
   },
   "tariffs-protect-industry": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "His 2019 State of the State book (p. 134 of the PDF) faults 'a federal government determined to cut us off from the rest of the world' for imposing 'damaging tariffs' that restrict markets and raise costs for New York farms.",
+   "sources": [
+    "s3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "state-directs-investment": {
    "value": 1,
@@ -1875,10 +1915,13 @@
    "sources": []
   },
   "direct-election-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Signed New York into the National Popular Vote compact in 2014 (and made membership permanent in 2016), saying that 'by aligning the Electoral College with the voice of the nation's voters' it ensures 'the equality of votes'. He backs the national popular vote deciding the presidency through the compact rather than abolishing the Electoral College outright.",
+   "sources": [
+    "d1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "central-bank-independence": {
    "value": null,
@@ -1958,9 +2001,10 @@
   "flat-income-tax": {
    "value": -2,
    "confidence": "high",
-   "rationale": "Said in his 2012 State of the State that a flat tax is not a fair tax and added brackets for middle-class and high earners.",
+   "rationale": "In his 2012 State of the State address he said 'a flat tax is not a fair tax', and in a December 2011 op-ed called it unfair that $20,000 and $20 million of taxable income faced the same marginal rate; the 2011 tax law he pushed added brackets.",
    "sources": [
-    "s13"
+    "d3",
+    "d4"
    ],
    "auditor": "claude-sonnet-5-5"
   },
@@ -2177,11 +2221,10 @@
   "freedom-to-discriminate": {
    "value": -2,
    "confidence": "high",
-   "rationale": "Signed marriage equality, said clerks unable to issue licenses should leave the job, ordered state travel bans on states with anti-LGBT laws, and pledged not to stand for discrimination.",
+   "rationale": "Signed marriage equality and pushed the Gender Expression Non-Discrimination Act, writing that discrimination against transgender New Yorkers 'in housing, employment and public accommodations' is 'unacceptable' (2019 policy book); his 2015 regulations barred discrimination on gender identity.",
    "sources": [
-    "s12",
-    "s5",
-    "s18"
+    "s3",
+    "b1"
    ],
    "auditor": "claude-sonnet-5-5"
   },
@@ -3234,10 +3277,14 @@
    ]
   },
   "pollution-taxes": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Mixed: of the 2021 carbon-fee bill (Climate and Community Investment Act) he said 'I understand the concept, and the concept, it makes sense' but 'you can't do it that way', questioning its economic impact; as governor he relied mainly on mandates and subsidies for clean power.",
+   "sources": [
+    "d2",
+    "s4"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "future-generations": {
    "value": 1,
@@ -3729,5 +3776,6 @@
    "sources": []
   }
  },
- "notes": "Positions rest mainly on his State of the State books (2016, 2017, 2019, 2020), compiled quotes from his books and speeches, and 2025 campaign coverage. Earlier State of the State addresses (2011-2015, 2018, 2021) and his books were not available as full text. Positions on taxes on the wealthy and on cannabis changed or were mixed over time.\n\nMerged with an independent claude-sonnet-5-5 audit: 2 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: His father Mario Cuomo's positions are not used. Most recent position wins on taxes (he signed higher rates on top earners in 2011 and 2021 but opposes 'tax the rich' in 2026). The campaign-site op-ed text was read through a summarizing fetch tool. NYT and governor.ny.gov pages were not reachable, so governor-era laws rest on his own record page, the state program page and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass, no existing answers copied. Reviewed all 490 statements and the ranked table. Core new sources are HUD’s full address, the 2018 and 2021 policy books, and speaker-labelled 2025 debate material. Ethnic-nation is answered from an explicit statement that common ancestry and color are unnecessary for nationhood. The 2025 responsible-capitalism op-ed answers neither-capitalism-nor-communism negatively; centrist opposition to extremists alone does not establish left-right-obsolete. His appeal to Jewish voters to mobilize against antisemitism is not generalized into a doctrine that all racial groups should organize separate political interests. No evidence established ancestry-based transnational union, a linguistic definition of nationhood, kin-territorial claims, revolutionary strategy, class determinism or ethnic economic ownership. Progressive rebirth rhetoric concerns political reform, not radical national regeneration from decadence. The 2018 term-limit proposal is weighed against later reelection bids. Nursing-home-data concealment is weighed against transparency pledges. Tax policy changed: the August 2026 explicit opposition is the most recent position, superseding his governor-era tax increases. Cannabis legalization is not a position on every recreational drug: the broader drug answer uses the explicit 2025 opposition to legalizing the drug trade. Boycott evidence concerns Israel specifically; no opinion on excluding every religious minority is assumed. His sexual-harassment findings and resignation were reviewed as well as his legal reforms; no unrelated position was inferred from misconduct. Speech claims about legislation were cross-checked with the governing record; primary rhetorical positions are medium, enacted signature measures high. Failed direct campaign downloads are retained, and the usable browser-extracted text is saved separately. No living-person inferred answers."
+ "notes": "Positions rest mainly on his State of the State books (2016, 2017, 2019, 2020), compiled quotes from his books and speeches, and 2025 campaign coverage. Earlier State of the State addresses (2011-2015, 2018, 2021) and his books were not available as full text. Positions on taxes on the wealthy and on cannabis changed or were mixed over time.\n\nMerged with an independent claude-sonnet-5-5 audit: 2 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: His father Mario Cuomo's positions are not used. Most recent position wins on taxes (he signed higher rates on top earners in 2011 and 2021 but opposes 'tax the rich' in 2026). The campaign-site op-ed text was read through a summarizing fetch tool. NYT and governor.ny.gov pages were not reachable, so governor-era laws rest on his own record page, the state program page and Wikipedia.\n\nMerged with an independent gpt-6.1-sol audit: 12 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass, no existing answers copied. Reviewed all 490 statements and the ranked table. Core new sources are HUD’s full address, the 2018 and 2021 policy books, and speaker-labelled 2025 debate material. Ethnic-nation is answered from an explicit statement that common ancestry and color are unnecessary for nationhood. The 2025 responsible-capitalism op-ed answers neither-capitalism-nor-communism negatively; centrist opposition to extremists alone does not establish left-right-obsolete. His appeal to Jewish voters to mobilize against antisemitism is not generalized into a doctrine that all racial groups should organize separate political interests. No evidence established ancestry-based transnational union, a linguistic definition of nationhood, kin-territorial claims, revolutionary strategy, class determinism or ethnic economic ownership. Progressive rebirth rhetoric concerns political reform, not radical national regeneration from decadence. The 2018 term-limit proposal is weighed against later reelection bids. Nursing-home-data concealment is weighed against transparency pledges. Tax policy changed: the August 2026 explicit opposition is the most recent position, superseding his governor-era tax increases. Cannabis legalization is not a position on every recreational drug: the broader drug answer uses the explicit 2025 opposition to legalizing the drug trade. Boycott evidence concerns Israel specifically; no opinion on excluding every religious minority is assumed. His sexual-harassment findings and resignation were reviewed as well as his legal reforms; no unrelated position was inferred from misconduct. Speech claims about legislation were cross-checked with the governing record; primary rhetorical positions are medium, enacted signature measures high. Failed direct campaign downloads are retained, and the usable browser-extracted text is saved separately. No living-person inferred answers.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: added direct election of the head of state +1 medium (2014 National Popular Vote compact signing statement), tariffs -1 medium (2019 State of the State book on 'damaging tariffs'), pollution taxes 0 low (2021 carbon-fee bill: concept 'makes sense' but 'you can't do it that way'). Searched without a usable answer: ICC (only his defence of Netanyahu against one warrant, a nearby case, left null), binding fiscal rules (his 2 percent spending cap was a self-imposed budget practice, not a legal borrowing limit; no debt-cap proposal of his found), deficit stimulus, Amazon HQ2 incentives (not a position on business privileges as such), elites and the educated (his 2024 op-ed calls the Democratic Party elitist and disconnected, not political elites in general), strikes, gradual change. MediaSum CNN/NPR transcripts searched for Electoral College, term limits, deficits, tariffs, carbon tax, Amazon and stimulus. Three older answers that cited only OnTheIssues or Wikipedia were re-sourced to his own texts, values unchanged: flat income tax (2012 State of the State transcript, Dec 2011 op-ed), correcting racial injustice (2016 and 2019 policy books), freedom to discriminate (2019 policy book, campaign record page).",
+ "rules": 3
 }
