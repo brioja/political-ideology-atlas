@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "U.S. Representative for Texas’s 30th district (2023–present); Texas state representative (2021–2023); lost the 2026 Democratic Senate primary",
@@ -514,6 +515,54 @@
    "author": "Jasmine Crockett, interviewed by The Breakfast Club; transcript via PodScripts",
    "url": "https://podscripts.co/podcasts/the-breakfast-club/interview-jasmine-crockett-talks-trump-administration-elon-muskusaid-nancy-mace-chile-dems-more",
    "usedFor": "Her continuous answers at 08:04–08:44 defend USAID funding against closure, citing deaths abroad; host questions and unrelated advertisements excluded."
+  },
+  {
+   "id": "o1",
+   "kind": "primary",
+   "title": "Voteview: Congressional Roll-Call Votes Database (download of 2026-10-30), Jasmine Crockett (icpsr 22312): FISA votes 2024 and 2026",
+   "author": "Lewis, Poole, Rosenthal, Boche, Rudkin, Sonnet (UCLA)",
+   "url": "https://voteview.com/data",
+   "usedFor": "Her House votes on FISA Section 702: H.R.7888 (2024) and the 2026 extensions S.4465 and H.R.9238 (Nay)"
+  },
+  {
+   "id": "o2",
+   "kind": "primary",
+   "title": "Roll Call 114, 12 April 2024: Biggs of Arizona Amendment No. 1 to H.R.7888 (warrant requirement), failed 212-212",
+   "author": "Clerk, U.S. House",
+   "url": "https://clerk.house.gov/evs/2024/roll114.xml",
+   "usedFor": "Her Aye on requiring a warrant for searches of Section 702 data"
+  },
+  {
+   "id": "o3",
+   "kind": "primary",
+   "title": "Roll Call 119, 12 April 2024: H.R.7888, Reforming Intelligence and Securing America Act, on passage",
+   "author": "Clerk, U.S. House",
+   "url": "https://clerk.house.gov/evs/2024/roll119.xml",
+   "usedFor": "Her Aye on reauthorising Section 702 surveillance"
+  },
+  {
+   "id": "o4",
+   "kind": "primary",
+   "title": "Crockett Statement on Anniversary of January 6 Insurrection (6 Jan 2025)",
+   "author": "Rep. Jasmine Crockett",
+   "url": "https://crockett.house.gov/media/press-releases/crockett-statement-anniversary-january-6-insurrection",
+   "usedFor": "Condemns the violent insurrection as an attempted coup and a threat to democracy"
+  },
+  {
+   "id": "o5",
+   "kind": "primary",
+   "title": "Statement from Rep. Crockett on Threat to D.C. Office (20 Nov 2025)",
+   "author": "Rep. Jasmine Crockett",
+   "url": "https://crockett.house.gov/media/press-releases/statement-rep-crockett-threat-dc-office",
+   "usedFor": "Says political violence fuelled by the president cannot become the norm"
+  },
+  {
+   "id": "o6",
+   "kind": "reference",
+   "title": "Jasmine Crockett’s social media posts about WHCD shooting show different tones (28 Apr 2026)",
+   "author": "Fox News",
+   "url": "https://www.foxnews.com/politics/jasmine-crocketts-social-media-posts-about-whcd-shooting-show-different-tones",
+   "usedFor": "Quotes her official X post: \"The political violence is unacceptable and must stop.\""
   }
  ],
  "answers": {
@@ -627,10 +676,15 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Her record on Section 702 points both ways: in April 2024 she voted to reauthorise it (H.R.7888) but also for the failed amendment requiring warrants, and in 2026 she voted against both extension bills.",
+   "sources": [
+    "o3",
+    "o2",
+    "o1"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "legalize-drugs": {
    "value": null,
@@ -987,10 +1041,15 @@
    "sources": []
   },
   "political-violence-never": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "She condemned January 6 as a violent attempted coup, said after threats to her office that political violence \"cannot become the norm\", and posted after the April 2026 WHCD shooting that \"the political violence is unacceptable and must stop\"; she has not stated it as an absolute principle.",
+   "sources": [
+    "o4",
+    "o5",
+    "o6"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "war-builds-character": {
    "value": null,
@@ -3265,10 +3324,13 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Told the Guardian she owns guns and is licensed to carry, and rejected the idea that Democrats want to take people's guns away, while backing an assault-weapons ban; she wants civilian arms regulated, not reserved to the army and police.",
+   "sources": [
+    "s41"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3728,7 +3790,7 @@
    "sources": []
   }
  },
- "notes": "Announced a U.S. Senate run in December 2025 and lost the March 3, 2026 Democratic primary to James Talarico; she remains in the House through 2026. Her Israel position is mixed (support for Israeli civilians and allies, votes for aid, but a 2024 letter urging limits on weapons transfers and statements that aid should stop if international law is violated), so no Israel statement is answered. Medical-cannabis expansion (Texas HB 1535, 2021) is not a position on recreational legalization.\n\nMerged with an independent gpt-6.1-sol audit: 11 answers taken from it, 25 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass; no inference. Faith-guided career choices do not establish divine political sovereignty. General LGBTQIA+ safeguards do not settle legal gender recognition. Election strategy does not establish a general rejection of direct action. Figurative fighting and quorum tactics do not establish revolutionary doctrine. The nuclear passage vote is medium. Ukraine recommittal was procedural; final passage was Yea, but neither establishes treaty collective defence. Priority items remain null.",
+ "notes": "Announced a U.S. Senate run in December 2025 and lost the March 3, 2026 Democratic primary to James Talarico; she remains in the House through 2026. Her Israel position is mixed (support for Israeli civilians and allies, votes for aid, but a 2024 letter urging limits on weapons transfers and statements that aid should stop if international law is violated), so no Israel statement is answered. Medical-cannabis expansion (Texas HB 1535, 2021) is not a position on recreational legalization.\n\nMerged with an independent gpt-6.1-sol audit: 11 answers taken from it, 25 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass; no inference. Faith-guided career choices do not establish divine political sovereignty. General LGBTQIA+ safeguards do not settle legal gender recognition. Election strategy does not establish a general rejection of direct action. Figurative fighting and quorum tactics do not establish revolutionary doctrine. The nuclear passage vote is medium. Ukraine recommittal was procedural; final passage was Yea, but neither establishes treaty collective defence. Priority items remain null.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 12: searched her House press releases (all 223 listed), Voteview for FISA, surveillance, Venezuela and war-powers votes, and interviews on political violence and guns. Added surveillance-ok (0 low: mixed FISA votes), political-violence-never (+1 medium) and state-arms-monopoly (-1 medium: owns and carries guns). Her votes for war-powers resolutions on the Caribbean boat strikes and Venezuela concern congressional authorisation, and no quote of hers on killing drug suspects without trial was found, so extrajudicial-killing stays null; her grant- and ICE-flight transparency bills are too narrow for the general access-to-information statements.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3737,6 +3799,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3746,5 +3812,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "rules": 3
 }
