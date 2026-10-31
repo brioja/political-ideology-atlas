@@ -37,3 +37,22 @@ rule was in the top 5 for 44 of 140 simulated adherents after 77 statements, and
 regression takers. A wider edge (2 SD, the line's ends) would separate them more, but how wide is a
 chosen number, the same choice as the 50% inclusion cut-off in another form.
 
+## A stricter "Done" (measured 2026-10-31, kept as is)
+
+"Done" is every line at most 35% of its own spread unknown. A fixed band width instead, measured on 143
+simulated believers (every 4th shown ideology, ~20% of answers nudged, "No opinion" where the audit has
+none), with today's selector:
+
+| Done when | median statements | own ideology first | top 3 |
+|---|---|---|---|
+| 35% of own spread (now) | 64 | 110/143 | 130/143 |
+| every band at most ±2 | 59 | 87/143 | 108/143 |
+| every band at most ±1.5 | 94 | 126-128/143 | 136-138/143 |
+| every band at most ±1.25 | 119 | 130-135/143 | 136-142/143 |
+| every band at most ±1 | 196 | 120/143 | 123/143 |
+
+±1.5 is the knee, but the gain is measured only on idealised one-ideology takers, while it costs every
+real taker ~30 statements; kept at 35% until real takers say results feel unsettled. A selector that
+narrows the worst line instead of separating likely matches reaches Done in half the statements but
+finds the right ideology far less often (45/143 vs 110/143): the disagreement selector stays.
+
