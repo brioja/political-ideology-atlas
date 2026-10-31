@@ -1,8 +1,11 @@
 {
  "id": "ken-paxton",
  "name": "Ken Paxton",
- "auditedAt": "2026-10-23",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-10-31",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
+ ],
  "living": true,
  "role": "Texas Attorney General (since 2015); Republican nominee for U.S. Senate in 2026",
  "summary": "Ken Paxton is a hard-right Republican who served in the Texas House (2003-2013) and Senate (2013-2015) before becoming attorney general. He has used the office to bring suits against Obama and Biden policies on immigration, climate rules, healthcare, guns and LGBT issues, to enforce bans on abortion, gender transition care and DEI, and to pursue Big Tech on privacy and antitrust grounds. He is a Trump ally who won the 2026 Senate nomination and campaigns on border enforcement, tax deductions and America First policy.",
@@ -479,6 +482,30 @@
    "author": "Texas Attorney General",
    "url": "https://www.texasattorneygeneral.gov/news/releases/paxton-takes-steps-stop-bidens-unlawful-federal-student-loan-program",
    "usedFor": "Student loan cancellation opposition"
+  },
+  {
+   "id": "s60",
+   "kind": "primary",
+   "title": "Texas Attorney General Ken Paxton Says Guns At Church Could Protect Against Shootings (All Things Considered, 6 Nov 2017; MediaSum NPR transcript, Zhu et al. 2021)",
+   "author": "NPR",
+   "url": "https://www.npr.org/2017/11/06/562393725/texas-attorney-general-ken-paxton-says-guns-at-church-could-protect-against-shoo",
+   "usedFor": "Armed church members and volunteer security as defence of innocent lives after the Sutherland Springs shooting"
+  },
+  {
+   "id": "s61",
+   "kind": "primary",
+   "title": "Texas AG Backs Pardon After Daniel Perry Convicted for Killing Gun-Wielding Protester",
+   "author": "NTD News",
+   "url": "https://ntd.com/texas-ag-backs-pardon-after-daniel-perry-convicted-for-killing-gun-wielding-protester_912462.html",
+   "usedFor": "Paxton emailed statement (April 2023): \"Self-defense is a God-given right, not a crime\""
+  },
+  {
+   "id": "s62",
+   "kind": "reference",
+   "title": "Paxton, Talarico spar over gas tax suspension amid rising prices",
+   "author": "Texas Tribune",
+   "url": "https://www.texastribune.org/2026/09/26/texas-gas-tax-paxton-talarico-senate/",
+   "usedFor": "Paxton statement (26 Sep 2026) that the federal gas tax should be suspended permanently"
   }
  ],
  "answers": {
@@ -2881,10 +2908,12 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Backed a pardon for Daniel Perry, convicted of murder for shooting dead an armed protester, saying \"Self-defense is a God-given right, not a crime\" (April 2023).",
+   "sources": [
+    "s61"
+   ]
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3126,10 +3155,14 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "After the 2017 Sutherland Springs shooting he urged churches to train and arm their own members or pay security, since police can be 20 to 30 minutes away (NPR), and sued over federal gun rules as Second Amendment violations.",
+   "sources": [
+    "s60",
+    "s28",
+    "s29"
+   ]
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3468,10 +3501,12 @@
    "sources": []
   },
   "cut-consumption-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Supports repeal of the federal gas tax according to press coverage; no stated position on consumption taxes generally.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Said in September 2026 that the federal gas tax should be suspended \"permanently\" so drivers keep money at the pump and roads are funded by cutting waste; a single excise, with no stated view on sales taxes generally.",
+   "sources": [
+    "s62"
+   ]
   },
   "targeted-social-spending": {
    "value": null,
@@ -3576,5 +3611,16 @@
    "sources": []
   }
  },
- "notes": "Attorney general suits count only where Paxton personally announced or championed them. Same-sex sodomy law remarks (2022) and defense of state laws as state lawyer were not counted. Tariff and Iran-war support come from press summaries. His mixed record on Big Tech/antitrust versus deregulation leaves regulate-corporations at 0."
+ "notes": "Attorney general suits count only where Paxton personally announced or championed them. Same-sex sodomy law remarks (2022) and defense of state laws as state lawyer were not counted. Tariff and Iran-war support come from press summaries. His mixed record on Big Tech/antitrust versus deregulation leaves regulate-corporations at 0. Opus pass (2026-10-31) searched line 12 themes: self-defence and arms (NPR 2017 MediaSum transcript, Perry pardon statement), gas and sales taxes, foreign funding of NGOs/universities, English for immigrants (only a CDL English-proficiency probe found: not counted), surveillance/encryption (WhatsApp deception suit only: not counted), trade balance, Texas Independence/revolution; nothing usable found for the others.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
+  }
+ ],
+ "rules": 3
 }
