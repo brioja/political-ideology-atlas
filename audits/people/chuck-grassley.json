@@ -2,7 +2,10 @@
  "id": "chuck-grassley",
  "name": "Chuck Grassley",
  "auditedAt": "2026-10-28",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
+ ],
  "living": true,
  "role": "U.S. Senator from Iowa (since 1981; House 1975-1981); President pro tempore of the Senate; long-time Judiciary and Finance committee chair",
  "summary": "Grassley is a Republican senator known for fiscal conservatism, support for tax cuts and a balanced-budget amendment, opposition to the Affordable Care Act and to expanded gun control, and socially conservative positions on abortion and marriage. He also leads whistleblower, FOIA, farm-payment-limit and biofuel efforts, backs NATO and Ukraine aid, supports USMCA while criticising tariffs, and stresses Congress's Article I role against executive overreach.",
@@ -671,6 +674,22 @@
    "author": "Voteview (UCLA)",
    "url": "https://voteview.com/",
    "usedFor": "Used only to locate roll-call numbers; every vote was then checked in the Senate's own roll-call XML"
+  },
+  {
+   "id": "s84",
+   "kind": "primary",
+   "title": "Prepared statement of Sen. Chuck Grassley, Judiciary Committee hearing 'Going Dark: Encryption, Technology, and the Balance Between Public Safety and Privacy' (July 8 2015), reprinted by the River Cities' Reader",
+   "author": "Chuck Grassley",
+   "url": "https://www.rcreader.com/node/30983",
+   "usedFor": "His own view on warrant-proof encryption (grassley.senate.gov copy refused the fetch; this is a reprint of the same release)"
+  },
+  {
+   "id": "s85",
+   "kind": "primary",
+   "title": "Grassley Continues to Press for Information About Possible Encryption Solution (press release, Feb 2016), reprinted by the River Cities' Reader",
+   "author": "Chuck Grassley",
+   "url": "https://www.rcreader.com/node/38928",
+   "usedFor": "His own view on the 'going dark' problem and law-enforcement access"
   }
  ],
  "answers": {
@@ -1488,10 +1507,13 @@
    "sources": []
   },
   "unbreakable-encryption": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Opening the 2015 'Going Dark' hearing he called devices encrypted so that even the company cannot unlock them under a warrant 'a dangerous state of affairs' and asked how to give law enforcement judicially sanctioned access; in 2016 he pressed for a solution that lets law enforcement keep that ability. He framed it as an open question and backed no bill, so medium.",
+   "sources": [
+    "s84",
+    "s85"
+   ]
   },
   "restore-past-order": {
    "value": null,
@@ -3372,10 +3394,12 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "His 2016 floor statement calls the Second Amendment right to keep and bear arms an individual, fundamental constitutional right on a par with free speech and religion, which rules out restricting arms to the army and police.",
+   "sources": [
+    "s18"
+   ]
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3768,5 +3792,16 @@
    "sources": []
   }
  },
- "notes": "Living person: answers rest on his votes (Senate roll-call XML), bill records, floor speeches, op-eds and press-release statements; everything else is null. senate.gov and grassley.senate.gov block automated fetches, so their pages and vote files were read from Internet Archive copies of the same URLs; the URLs cited are the originals. Voteview was used only to find roll-call numbers. Votes alone are medium. Where his own words and recent votes conflict (tariffs; same-sex marriage; TARP vs auto bailout) the answer is mixed at low. The first-pass search summary attributed a \"political violence has no place\" post to him after the Kirk assassination; the source shows that wording was Sen. Ernst's, so political-violence-never stays null. Whistleblower law itself (False Claims Act amendments, whistleblower protections) matches no statement directly. Searches on immigration levels, unions, encryption, term limits, nuclear power and school prayer found no statement of his on the wording, so those stay null."
+ "notes": "Living person: answers rest on his votes (Senate roll-call XML), bill records, floor speeches, op-eds and press-release statements; everything else is null. senate.gov and grassley.senate.gov block automated fetches, so their pages and vote files were read from Internet Archive copies of the same URLs; the URLs cited are the originals. Voteview was used only to find roll-call numbers. Votes alone are medium. Where his own words and recent votes conflict (tariffs; same-sex marriage; TARP vs auto bailout) the answer is mixed at low. The first-pass search summary attributed a \"political violence has no place\" post to him after the Kirk assassination; the source shows that wording was Sen. Ernst's, so political-violence-never stays null. Whistleblower law itself (False Claims Act amendments, whistleblower protections) matches no statement directly. Searches on immigration levels, unions, term limits, nuclear power and school prayer found no statement of his on the wording, so those stay null. Opus deepening pass (2026-10-31) on line 12: added state-arms-monopoly (from his 2016 Second Amendment floor statement) and unbreakable-encryption (2015 Going Dark hearing statement and 2016 release, read in reprints because grassley.senate.gov refuses fetches). Searched and left null: political-violence-never (his statements condemn specific attacks, the Jan. 6 riot and 'violence in our democracy', not political violence as such; a campaign-account post was not his Senate record), immigrants-learn-language (he voted for the 2006 and 2007 Inhofe 'English as national language' amendments, but their naturalization provisions could not be read in the original), restrict-foreign-funding, open-government-data and arms-reduction (no statement on the wording found).",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
+  }
+ ],
+ "rules": 3
 }
