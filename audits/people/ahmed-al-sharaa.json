@@ -4,7 +4,8 @@
  "auditedAt": "2026-10-23",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": true,
  "role": "President of Syria (2025–); former leader of Hay'at Tahrir al-Sham (as Abu Mohammad al-Jolani)",
@@ -186,6 +187,14 @@
    "author": "Martin Smith / FRONTLINE",
    "url": "https://www.pbs.org/wgbh/frontline/article/abu-mohammad-al-jolani-interview-hayat-tahrir-al-sham-syria-al-qaeda/",
    "usedFor": "His own responses on HTS detentions contrasted with documented abuses; career context."
+  },
+  {
+   "id": "u1",
+   "kind": "primary",
+   "title": "Statement by Ahmed al-Sharaa, President of the Syrian Arab Republic, UN General Assembly general debate, 80th session (24 September 2025), English interpretation",
+   "author": "Ahmed al-Sharaa; UN General Debate Corpus (Baturo, Dasandi and Mikhaylov), Harvard Dataverse version 14",
+   "url": "https://doi.org/10.7910/DVN/0TJX8Y",
+   "usedFor": "His own account of the armed overthrow as the only means, and of dissolving all previous civil and military formations."
   }
  ],
  "answers": {
@@ -670,10 +679,16 @@
    "auditor": "gpt-6.1-sol"
   },
   "gradual-change": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "At the UN in September 2025 he said Syrians had no choice but to organise militarily to oust the regime and that his government then dissolved all previous civil and military formations; he defends the armed overthrow (see revolution-justified). He now sets a five-year transition before elections, but that is a timetable for elections, not a stated preference for gradual social change, so low.",
+   "sources": [
+    "u1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "reduce-immigration": {
    "value": null,
@@ -1455,10 +1470,17 @@
    "sources": []
   },
   "party-commands-army": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Article 9 of the Constitutional Declaration he issued (March 2025) calls the army a professional national institution that only the state may create, and bars any person or group from forming armed units; at the UN in September 2025 he said his government dissolved all previous military formations (his own HTS included) into restructured state institutions, and in August 2026 he insisted on state control of arms. Command by a ruling party contradicts this; no ruling party exists.",
+   "sources": [
+    "b2",
+    "u1",
+    "b5"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "long-naturalization-wait": {
    "value": null,
@@ -3355,7 +3377,7 @@
    "sources": []
   }
  },
- "notes": "Positions changed sharply: answers use his most recent statements as president (2025-2026). His earlier jihadist statements were not the latest record on any answered topic. Many topics (social issues, taxes, welfare, most foreign policy) are null because he has made no direct statement; several later-reported items (Chatham House 2026) were reachable only through secondary summaries and were not used.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass, no inference. Three priorities answered: regional neutrality, national culture and national rebirth. All other priorities remain null. Market adoption is not a theory of capitalism’s historical role. Avoiding specific wars is not absolute non-intervention; rejecting transit of arms is not a general foreign-insurgent funding doctrine. His personally commissioned constitution is distinguished from formal assent. Rights claims are qualified against appointment-controlled institutions and his own defence of earlier HTS detentions. Current abuses are not assumed his personal orders. Arabic text checked against the automated English translation. The August 2026 CNN broadcast repeats December 2025 remarks. The Atlantic Council’s automated transcript is used only for clear passages corroborated by Arabic interviews, excluding its erroneous age claim. Ecology and technology searches found no further matching positions. All 490 statements checked; main lane decides inclusion.",
+ "notes": "Positions changed sharply: answers use his most recent statements as president (2025-2026). His earlier jihadist statements were not the latest record on any answered topic. Many topics (social issues, taxes, welfare, most foreign policy) are null because he has made no direct statement; several later-reported items (Chatham House 2026) were reachable only through secondary summaries and were not used.\n\nMerged with an independent gpt-6.1-sol audit: 19 answers taken from it, 19 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent full-list pass, no inference. Three priorities answered: regional neutrality, national culture and national rebirth. All other priorities remain null. Market adoption is not a theory of capitalism’s historical role. Avoiding specific wars is not absolute non-intervention; rejecting transit of arms is not a general foreign-insurgent funding doctrine. His personally commissioned constitution is distinguished from formal assent. Rights claims are qualified against appointment-controlled institutions and his own defence of earlier HTS detentions. Current abuses are not assumed his personal orders. Arabic text checked against the automated English translation. The August 2026 CNN broadcast repeats December 2025 remarks. The Atlantic Council’s automated transcript is used only for clear passages corroborated by Arabic interviews, excluding its erroneous age claim. Ecology and technology searches found no further matching positions. All 490 statements checked; main lane decides inclusion.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: searched his 2025 UN speech (UNGDC), the Constitutional Declaration's Arabic text (army, parties, presidential term, budget, transitional justice, environment), the 60 Minutes (Oct 2025), Amanpour (Dec 2025) and Atlantic Council (Sept 2026) interviews, and Arabic and English reporting on his portraits/personality cult, the ICC, borrowing for reconstruction, oil and gas output, and crony privileges. Added party-commands-army -1 medium and gradual-change -1 low. Left null: leader-cult (only reports of confiscated flags with his image, no statement of his), international-criminal-courts (he seeks Assad's trial 'by all legal means' and Syria has not joined the ICC), avoid-deficit-stimulus (his no-loans-for-reconstruction pledge is reported second-hand and concerns foreign borrowing, not deficit stimulus), expand-fossil-fuels (output targets are his ministers'), no-business-privileges (he denies economic power centres exist, a description not a position; Al-Khaleej original blocked), strong-leader and direct-election-head-of-state (he says authority is an institution not an individual and that every person will get one vote, but neither settles the statement), unlimited-reelection (the declaration sets no presidential term rule; he says he will stand). Most line-14 statements (ecology, technology, Marxist doctrine) have no record.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3364,6 +3386,11 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-27"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
- ]
+ ],
+ "rules": 3
 }
