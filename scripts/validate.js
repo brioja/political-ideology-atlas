@@ -4,14 +4,14 @@
 //   add --links to also check that every source URL responds
 //   add --people to validate person audits (audits/people) instead of ideologies
 //   add --controls to validate the negative-control audits (audits/controls)
-//   add --no-uncertainty to skip the uncertainty rule (whether the record places them on every
-//   dividing line; it loads the whole model: slow). --no-salience, its old name, still works.
+//   add --no-uncertainty to skip the uncertainty rule (whether the audit places them on every
+//   dividing line; it loads the whole model: slow).
 const fs = require("fs");
 const lib = require("./lib");
 const { readJson, allStatements, isCandidate, personUncertainty, ideologyUncertainty } = lib;
 const CONTROLS = process.argv.includes("--controls");
 const PEOPLE = CONTROLS || process.argv.includes("--people");
-const UNCERTAINTY = !process.argv.includes("--no-uncertainty") && !process.argv.includes("--no-salience");
+const UNCERTAINTY = !process.argv.includes("--no-uncertainty");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;

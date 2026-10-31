@@ -82,10 +82,9 @@ person's own words and record, and a statement with no reliable evidence is `nul
   if, on each of the real dividing lines, its known positions leave at most half of the line's
   spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). The rule is the
   same for ideologies, people and AI models; the quiz says you're done by the same measure, at its own
-  target (35% unknown at most on every line, `DONE_UNCERTAINTY`). It
-  replaced salience (2026-10-31), which asked whether a record was placed within the typical gap
-  between neighbouring ideologies: it dropped full ideologies in crowded parts of the map, and
-  needed a separate, looser bar for people.
+  target (35% unknown at most on every line, `DONE_UNCERTAINTY`). There is no other bar: nothing
+  compares a list of answers with the gap between neighbouring ideologies, and people are held to
+  the same rule as ideologies (2026-10-31).
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
