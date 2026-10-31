@@ -1,10 +1,11 @@
 {
  "id": "elizabeth-i",
  "name": "Elizabeth I of England",
- "auditedAt": "2026-10-23",
+ "auditedAt": "2026-10-31",
  "auditor": [
   "claude-sonnet-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "living": false,
  "role": "Queen of England and Ireland (1558-1603)",
@@ -170,6 +171,22 @@
    "author": "Elizabeth I; Norton text reproduced by Luminarium",
    "url": "https://www.luminarium.org/renlit/tilbury.htm",
    "usedFor": "Reported battlefield speech; surviving wording is retrospective."
+  },
+  {
+   "id": "s11",
+   "kind": "primary",
+   "title": "Proclamation Enforcing Statutes of Apparel, Greenwich, 15 June 1574 (16 Elizabeth I), transcription at elizabethan.org",
+   "author": "Elizabeth I (royal proclamation)",
+   "url": "https://www.elizabethan.org/sumptuary/who-wears-what.html",
+   "usedFor": "Preamble on excess of apparel, superfluous foreign wares draining the realm treasure, young gentlemen ruined seeking status by dress"
+  },
+  {
+   "id": "s12",
+   "kind": "reference",
+   "title": "The rise and fall of sumptuary laws (Folger Shakespeare Library, Shakespeare & Beyond, 8 Sept 2017)",
+   "author": "Karen Lyon",
+   "url": "https://www.folger.edu/blogs/shakespeare-and-beyond/sumptuary-laws-rules-dressing-shakespeare-england/",
+   "usedFor": "Elizabeth issued twelve dress edicts by prerogative (Henry VIII five); the 1574 proclamation read as her views; aim of keeping wealth in England and the balance of trade"
   }
  ],
  "answers": {
@@ -309,13 +326,13 @@
    ]
   },
   "restrict-conversion": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "After the 1570 papal bull Parliament made converting subjects away from allegiance to her a treasonable offence (1581), though she mitigated other anti-Catholic bills; evidence of her own stance is partial.",
-   "sources": [
-    "s7"
-   ],
-   "auditor": "claude-sonnet-5-5"
+   "rationale": "The earlier answer rested only on Wikipedia (the 1581 act); her own stance on the act was not found in her collected speeches and letters, so no known position.",
+   "sources": [],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "divine-source-of-authority": {
    "value": 1,
@@ -649,10 +666,15 @@
    "sources": []
   },
   "gradual-change": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Mixed: in 1585 she told Parliament she would tolerate no newfangleness in the church and would keep the established order against Puritans and Romanists, yet in 1586 she recalled that at her accession she made a great alteration of religion knowing its dangers.",
+   "sources": [
+    "s1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "empower-international-orgs": {
    "value": null,
@@ -1357,8 +1379,12 @@
   "trade-surplus": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "The 1574 apparel proclamation is issued in her name, but PROMPT_PEOPLE counts a proclamation only when the monarch personally drove the measure, and no source shows she drove the sumptuary edicts herself (integrator, 2026-10-31).",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "population-transfer": {
    "value": null,
@@ -1625,10 +1651,16 @@
    "sources": []
   },
   "direct-election-head-of-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "To Maitland in 1561 she said that while she lived she would be queen and after her death they should succeed who had most right, and that she was sworn not to alter the realm laws: the crown passes by right of blood, not by any vote. Reported by Maitland, so medium.",
+   "sources": [
+    "s1",
+    "b1"
+   ],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "central-bank-independence": {
    "value": null,
@@ -2116,8 +2148,12 @@
   "consumerism-harmful": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "The 1574 apparel proclamation is issued in her name, but PROMPT_PEOPLE counts a proclamation only when the monarch personally drove the measure, and no source shows she drove the sumptuary edicts herself (integrator, 2026-10-31).",
+   "sources": [],
+   "nulledFrom": 1,
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "intervene-in-bloc": {
    "value": null,
@@ -2634,13 +2670,13 @@
    "sources": []
   },
   "never-kill-self-defence": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The Tilbury account endorses armed resistance to invasion, including personal participation.",
-   "sources": [
-    "b10"
-   ],
-   "auditor": "gpt-6.1-sol"
+   "value": null,
+   "confidence": "low",
+   "rationale": "The Tilbury speech is about the realm resisting invasion, which is state defence, not a person right to kill in self-defence; no statement of hers on personal self-defence was found.",
+   "sources": [],
+   "auditor": [
+    "claude-opus-5-5"
+   ]
   },
   "unbroken-national-continuity": {
    "value": null,
@@ -3316,7 +3352,7 @@
    "sources": []
   }
  },
- "notes": "Her 1601 monopolies retreat is treated as her latest position on patents. Wording of the Collected Works was searched from a full-text scan. Not retrieved: Luminarium Golden Speech page, Fordham, Wikisource Act of Uniformity, text of the 1571 act and Poor Law 1601; the Poor Law and 1596 policy are ministerial/contested and so mostly unanswered. 'Windows into men's souls' comes only via Bacon, so is not counted.\n\nMerged with an independent gpt-6.1-sol audit: 15 answers taken from it, 18 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass using original correspondence and archival transcripts. Routine acts merely assented to are excluded. Deportation authorizations were limited and their personal attribution is uncertain; no completed general expulsion is claimed. No supported ecology or technology answer was found.",
+ "notes": "Her 1601 monopolies retreat is treated as her latest position on patents. Wording of the Collected Works was searched from a full-text scan. Not retrieved: Luminarium Golden Speech page, Fordham, Wikisource Act of Uniformity, text of the 1571 act and Poor Law 1601; the Poor Law and 1596 policy are ministerial/contested and so mostly unanswered. 'Windows into men's souls' comes only via Bacon, so is not counted.\n\nMerged with an independent gpt-6.1-sol audit: 15 answers taken from it, 18 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass using original correspondence and archival transcripts. Routine acts merely assented to are excluded. Deportation authorizations were limited and their personal attribution is uncertain; no completed general expulsion is claimed. No supported ecology or technology answer was found.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: searched the full text of the Collected Works (local copy in scratchpad/sources/elizabeth-i) for innovation and change, rule by example, subsidies and parliamentary supply, the poor, trade and treasure, and searched the sumptuary proclamations. Added consumerism-harmful and trade-surplus (1574 apparel proclamation, low because Council drafting is unclear), direct-election-head-of-state (1561 Maitland conversation) and gradual-change (0, mixed). Nulled restrict-conversion (Wikipedia-only) and never-kill-self-defence (Tilbury is state defence, not personal self-defence). Rule by example (1564 Cambridge speech says only that a prince example has the force of law), budget approval (she rejected tying subsidies to conditions but never said spending needs no vote) and technology, ecology and party statements have no record and stay null.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3325,6 +3361,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-28"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "reviews": [
@@ -3334,5 +3374,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 1
   }
- ]
+ ],
+ "rules": 3
 }
