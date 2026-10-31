@@ -5,7 +5,8 @@
  "auditor": [
   "claude-sonnet-5-5",
   "claude-haiku-5-5",
-  "gpt-6.1-sol"
+  "gpt-6.1-sol",
+  "claude-opus-5-5"
  ],
  "passes": [
   {
@@ -19,6 +20,10 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-10-31"
   }
  ],
  "living": true,
@@ -545,6 +550,54 @@
    "author": "Mark Kelly",
    "url": "https://www.kelly.senate.gov/newsroom/press-releases/watch-on-senate-floor-kelly-calls-for-urgent-action-on-ai-announces-new-make-ai-work-for-americans-act/",
    "usedFor": "Existential risk and legislative urgency; primary-browser.json."
+  },
+  {
+   "id": "d1",
+   "kind": "primary",
+   "title": "Senate Roll Call Vote 110 (117th Congress, 1st session, Mar 6 2021), H.R. 1319 American Rescue Plan Act, passage",
+   "author": "U.S. Senate",
+   "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1171/vote_117_1_00110.htm",
+   "usedFor": "Kelly voted Yea on ARP passage (50-49); read from the Voteview roll-call corpus"
+  },
+  {
+   "id": "d2",
+   "kind": "reference",
+   "title": "Cost of Biden’s Covid Rescue Plan Revised Up to $2.1 Trillion (The Fiscal Times, May 21, 2021)",
+   "author": "The Fiscal Times",
+   "url": "https://www.thefiscaltimes.com/2021/05/21/Cost-Biden-s-Covid-Rescue-Plan-Revised-21-Trillion",
+   "usedFor": "CBO deficit effect of the ARP"
+  },
+  {
+   "id": "d3",
+   "kind": "primary",
+   "title": "ICYMI: Kelly on Artemis II Launch: “This is inspiring and it’s exciting, and it’s something that we can only really do in this country.” (Apr 2 2026)",
+   "author": "Sen. Mark Kelly",
+   "url": "https://capitolreleases.com/releases/68749930-0e5e-452e-a683-092dae514166",
+   "usedFor": "His interview quotes on Artemis II: Moon presence and economy, Mars"
+  },
+  {
+   "id": "d4",
+   "kind": "reference",
+   "title": "Kelly talks space exploration on 50th anniversary of Moon launch (KJZZ, Jul 16 2019)",
+   "author": "KJZZ",
+   "url": "https://www.kjzz.org/2019-07-16/content-1064686-kelly-talks-space-exploration-50th-anniversary-moon-launch",
+   "usedFor": "His quotes: back to the Moon, keep the ISS, send people to Mars"
+  },
+  {
+   "id": "d5",
+   "kind": "reference",
+   "title": "Defunding police isn't solution, Senate candidate Mark Kelly says (KTAR News 92.3 FM, Jun 12 2020)",
+   "author": "KTAR News",
+   "url": "https://ktar.com/arizona-news/defunding-police-isnt-solution-senate-candidate-mark-kelly-says",
+   "usedFor": "Interview on Arizona's Morning News: 'deep systemic issues here with racism', 'I do not agree that we should defund the police'"
+  },
+  {
+   "id": "d6",
+   "kind": "reference",
+   "title": "No, Mark Kelly does not want to defund the police (PolitiFact, Aug 31 2020)",
+   "author": "PolitiFact",
+   "url": "https://www.politifact.com/factchecks/2020/aug/31/martha-mcsally/no-mark-kelly-does-not-want-defund-police/",
+   "usedFor": "His KTAR remarks and his campaign statement against defunding police"
   }
  ],
  "answers": {
@@ -763,13 +816,11 @@
    "sources": []
   },
   "correct-racial-injustice": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Called for accountability on deep systemic racism and for addressing racial justice issues threatening Black lives.",
-   "sources": [
-    "b3"
-   ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "Re-checked (rules 3): the only evidence was an OnTheIssues summary of his 2020 remarks on present-day systemic racism in policing and the justice system; that is not a position on correcting historical racial injustices, so null.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "gender-social-construct": {
    "value": null,
@@ -1076,13 +1127,11 @@
    "sources": []
   },
   "indigenous-land-authority": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Co-introduced bills that secured water rights and land for several Arizona tribes, signed in January 2023.",
-   "sources": [
-    "b1"
-   ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "rationale": "Re-checked (rules 3): the only source was Wikipedia on tribal water-rights settlement bills; a water-rights settlement is not a position on indigenous authority over traditional lands, and no statement of his on land authority was found, so null.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "colonial-reparations": {
    "value": null,
@@ -1372,16 +1421,15 @@
    "auditor": "gpt-6.1-sol"
   },
   "avoid-deficit-stimulus": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "Voted for the $900 billion COVID relief law and the $1.9 trillion American Rescue Plan and backed federal aid to states; he also criticised tax breaks that explode the national debt, so evidence leans against avoiding deficit stimulus but is not a stated view on the principle.",
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Voted Yea on Senate passage of the 2021 American Rescue Plan (roll call 110, 50-49), a $1.9 trillion pandemic relief and stimulus law that CBO scored as adding about $1.8 trillion to deficits; a vote on one bill, so medium.",
    "sources": [
-    "s34",
-    "s22",
-    "b3"
+    "d1",
+    "d2",
+    "s34"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
-   "nulledFrom": -1
+   "auditor": "claude-opus-5-5"
   },
   "economic-freedom": {
    "value": null,
@@ -1551,10 +1599,11 @@
   "equal-moral-worth": {
    "value": 2,
    "confidence": "medium",
-   "rationale": "Says Dreamers are as American as anyone and supports equal rights for LGBTQ people, including marriage.",
+   "rationale": "Said 'marriage equality is a fundamental right' when the Respect for Marriage Act passed, cosponsors the Equality Act so LGBTQ Arizonans 'have equal protections under the law', and calls Dreamers as American as anyone.",
    "sources": [
-    "b1",
-    "b3"
+    "s8",
+    "s38",
+    "s43"
    ],
    "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
   },
@@ -1675,10 +1724,14 @@
    "sources": []
   },
   "restrict-strikes-picketing": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "In March 2025 he backed (cosponsored) the PRO Act, which bars permanent replacement of strikers and lifts limits on secondary and intermittent strikes; his statement speaks of organizing and union power, not strikes as such, and he had held back from the bill before, so low.",
+   "sources": [
+    "s6",
+    "b4"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "population-causes-poverty": {
    "value": null,
@@ -2022,10 +2075,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "space-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Says the US must return to the Moon and ‘one day, we’ve got to send people to Mars’ (KJZZ, 2019); at the Artemis II launch (2026) he said ‘we’re going to build a presence there. We’re going to build an economy there’ and co-led calls for Mars-mission funding. He frames it as national pride, inspiration and jobs rather than a goal of civilization, so +1.",
+   "sources": [
+    "d3",
+    "d4"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "mixed-constitution": {
    "value": null,
@@ -2939,8 +2996,8 @@
    "confidence": "medium",
    "rationale": "In June 2020 he said 'I do not agree that we should defund the police' and favored reforming policing; he did not address prisons.",
    "sources": [
-    "s30",
-    "b3"
+    "d5",
+    "d6"
    ],
    "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
   },
@@ -3248,13 +3305,11 @@
    "sources": []
   },
   "future-generations": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "On Earth Day 2020 he said Arizona's treasures must be protected for future generations and 'we have an obligation to continue working to protect and preserve our environment'.",
-   "sources": [
-    "s31"
-   ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "value": null,
+   "confidence": "low",
+   "rationale": "Re-checked (rules 3): the earlier answer rested on an OnTheIssues quote of a 50th Earth Day (Apr 22 2020) campaign statement ('treasures that we must protect for future generations'); the original markkelly.com post could not be opened, so null until it is re-sourced.",
+   "sources": [],
+   "auditor": "claude-opus-5-5"
   },
   "women-distinct-values": {
    "value": null,
@@ -3689,9 +3744,9 @@
   "racism-not-main-obstacle": {
    "value": -1,
    "confidence": "low",
-   "rationale": "Calls for accountability on deep systemic issues with racism, which points against the claim that racism is no longer the main obstacle.",
+   "rationale": "In June 2020 he said 'We have some deep systemic issues here with racism in the country, and we've got to demand accountability' (KTAR), which points against the claim that racism is no longer the main obstacle; he does not rank obstacles, so low.",
    "sources": [
-    "b3"
+    "d5"
    ],
    "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
   },
@@ -3738,7 +3793,7 @@
    "sources": []
   }
  },
- "notes": "Wikipedia and Senate pages show he is alive and the sitting senator (term to 2029). Positions come mainly from his 2020 campaign pages, Senate press releases and floor remarks, so some older campaign positions may have shifted: he declined in 2020 to take a position on the filibuster but in 2022 said he would back a majority-vote change for voting-rights bills (no statement in the test covers this). Many answers are null because no statement of his speaks to them; his wife Gabby Giffords' positions were not used. His 2026 break with Israel arms transfers is noted under jewish-state-israel, which concerns Israel's right to exist, not arms policy.\n\nMerged with an independent claude-haiku-5-5 audit: 7 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Evidence is thin on labor, Ukraine (2022 statements could not be opened), China, technology and marijuana: kelly.senate.gov, markkelly.com, congress.gov, Vote Smart and the 2020/2022 debate transcripts returned 403 or no transcript, so those themes rely on news reports and dated quotes from compilations. Many answers are null because no opened source addressed the statement. Kelly's 2026 AI proposal (Make AI Work for Americans Act) was not mapped to any statement. His 2020 Vote Smart questionnaire answers could not be read.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass. All 490 statements reviewed against saved sources; no prior answers copied. The ranked Marxist, historical-materialist and religious-doctrine statements remain null: science advocacy does not establish reason as the only guide, and school-voucher opposition does not establish opposition to religious instruction in state schools. The voucher release quotes outside religious-liberty organizations; those words are not Kelly’s. Military duty to refuse unlawful orders is not refusal of interstate war generally, and a constitutional oath does not itself answer party-commands-army. No inference from party, his wife’s positions or his occupation. The 2025 AI roadmap was examined for worker, investment, technology and ecological positions; qualified support for safe AI is not acceleration regardless of disruption or full automation of paid work. Nuclear modernisation and cleanup support are not inferred opposition to environmental review. Iran-war opposition alone does not establish non-intervention in all cases. All scored positions use medium confidence; votes, bill sponsorship and rhetoric alone are not high. Recent defense of due process must be read alongside his Laken Riley Act vote; no sweeping answer asserting universal procedural protection was assigned. Direct source fetches blocked by access controls are retained, with the usable browser text saved separately.",
+ "notes": "Wikipedia and Senate pages show he is alive and the sitting senator (term to 2029). Positions come mainly from his 2020 campaign pages, Senate press releases and floor remarks, so some older campaign positions may have shifted: he declined in 2020 to take a position on the filibuster but in 2022 said he would back a majority-vote change for voting-rights bills (no statement in the test covers this). Many answers are null because no statement of his speaks to them; his wife Gabby Giffords' positions were not used. His 2026 break with Israel arms transfers is noted under jewish-state-israel, which concerns Israel's right to exist, not arms policy.\n\nMerged with an independent claude-haiku-5-5 audit: 7 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Evidence is thin on labor, Ukraine (2022 statements could not be opened), China, technology and marijuana: kelly.senate.gov, markkelly.com, congress.gov, Vote Smart and the 2020/2022 debate transcripts returned 403 or no transcript, so those themes rely on news reports and dated quotes from compilations. Many answers are null because no opened source addressed the statement. Kelly's 2026 AI proposal (Make AI Work for Americans Act) was not mapped to any statement. His 2020 Vote Smart questionnaire answers could not be read.\n\nMerged with an independent gpt-6.1-sol audit: 8 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent third pass. All 490 statements reviewed against saved sources; no prior answers copied. The ranked Marxist, historical-materialist and religious-doctrine statements remain null: science advocacy does not establish reason as the only guide, and school-voucher opposition does not establish opposition to religious instruction in state schools. The voucher release quotes outside religious-liberty organizations; those words are not Kelly’s. Military duty to refuse unlawful orders is not refusal of interstate war generally, and a constitutional oath does not itself answer party-commands-army. No inference from party, his wife’s positions or his occupation. The 2025 AI roadmap was examined for worker, investment, technology and ecological positions; qualified support for safe AI is not acceleration regardless of disruption or full automation of paid work. Nuclear modernisation and cleanup support are not inferred opposition to environmental review. Iran-war opposition alone does not establish non-intervention in all cases. All scored positions use medium confidence; votes, bill sponsorship and rhetoric alone are not high. Recent defense of due process must be read alongside his Laken Riley Act vote; no sweeping answer asserting universal procedural protection was assigned. Direct source fetches blocked by access controls are retained, with the usable browser text saved separately.\n\nclaude-opus-5-5 deepening pass (2026-10-31) on line 14: added avoid-deficit-stimulus -1 (ARP passage vote, from the Voteview corpus), restrict-strikes-picketing -1 low (PRO Act backing) and space-expansion +1 (his Moon/Mars remarks). Searched without a usable answer: carbon tax (only a party-line Nay on a 2021 vote-a-rama amendment against a carbon tax, not his stated view), the Electoral College / popular vote (a 2020 AZPM debate preview is offline), impoundment and the power of the purse (votes against pocket rescissions concern spending what Congress appropriated, not budget approval), the ICC (he called Putin a war criminal in March 2022 but said nothing about trying him in an international court). MediaSum interviews searched for space themes: nothing new. Rules-3 re-sourcing: abolish-police-prisons, racism-not-main-obstacle and equal-moral-worth re-sourced to KTAR/PolitiFact and his own releases; correct-racial-injustice and indigenous-land-authority nulled (evidence was off-wording); future-generations nulled only because the original Apr 22 2020 markkelly.com Earth Day statement could not be opened (Wayback timed out): restore +1 medium if the integrator can cite it.",
  "reviews": [
   {
    "kind": "inference",
@@ -3746,5 +3801,6 @@
    "reviewedAt": "2026-10-30",
    "nulled": 2
   }
- ]
+ ],
+ "rules": 3
 }
