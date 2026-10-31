@@ -106,14 +106,6 @@ const linesKey = (ideologies) => require("crypto").createHash("sha1")
   .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
   .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
   .digest("hex");
-// The inputs of the quiz's progress calibration, hashed (see build.js and test.js): pca.js, the
-// shown ideologies' answers and the placement context it measures fit with (PLACEMENT, as shipped).
-const calibrationKey = (ideologies, placement) => require("crypto").createHash("sha1")
-  .update(fs.readFileSync(path.join(ROOT, "pca.js"), "utf8"))
-  .update(JSON.stringify(ideologies.map((i) => [i.id, i.profile])))
-  .update(JSON.stringify(placement))
-  .digest("hex");
-
 // Ideologies held off the site until re-audited (audits/awaiting-reaudit.json). Their old audits still
 // shape the dividing lines, like audits that fail the uncertainty rule.
 const awaitingReaudit = () => {
@@ -121,6 +113,6 @@ const awaitingReaudit = () => {
   return new Set(fs.existsSync(f) ? readJson(f).ids : []);
 };
 
-module.exports = { awaitingReaudit, linesKey, calibrationKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

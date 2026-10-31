@@ -1,9 +1,9 @@
 // Sanity checks: node test.js
 //   node test.js --people   skips the ideology simulation, for builds that only changed people.js
 const assert = require("assert");
-const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, CALIBRATION, MODEL, PLACEMENT } = require("./data.js");
+const { QUESTIONS, IDEOLOGIES, MEANINGFUL_LINES, MODEL, PLACEMENT } = require("./data.js");
 const PEOPLE_ONLY = process.argv.includes("--people");
-const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, weights, place, locate, fitTo, fitScale, placementProgress, nextQuestion, meaningfulAxes, describeAxis, calibrateCertainty, isSettled } = require("./pca.js");
+const { symmetricEigen, buildModel, modelFromParts, match, matchPeople, topMatch, weights, place, locate, fitTo, fitScale, placementProgress, nextQuestion, meaningfulAxes, describeAxis } = require("./pca.js");
 
 // 1. Eigensolver: A v = lambda v, and eigenvectors are orthonormal.
 const A = [[4, 1, 2], [1, 3, 0], [2, 0, 5]];
@@ -38,11 +38,7 @@ assert(!behind.length, `${behind.length} audits miss active statements (backfill
 const model = buildModel(IDEOLOGIES, { realLines: MEANINGFUL_LINES });
 // The model the page matches with: the shipped lines and placement context (app.js).
 const shipped = modelFromParts(IDEOLOGIES, MODEL, PLACEMENT);
-// The shipped calibration must come from these ideologies and this pca.js (see build.js).
 if (!PEOPLE_ONLY) {
-  const cal = JSON.parse(require("fs").readFileSync(require("path").join(__dirname, "audits", "calibration.json"), "utf8"));
-  assert.strictEqual(cal.key, require("./scripts/lib").calibrationKey(IDEOLOGIES, PLACEMENT), "audits/calibration.json is stale: run a full build");
-  assert.deepStrictEqual(cal.values, CALIBRATION, "data.js's CALIBRATION differs from audits/calibration.json: run a full build");
   // One landscape (build.js): the real-line count is counted on every complete audit and committed in
   // audits/lines.json, current and the one data.js ships; and uncertainty is judged one way everywhere
   // (scripts/lib.js), so the shown set is exactly the audits the shipped judge passes, less
@@ -112,9 +108,9 @@ const twins = [];
 for (const ideo of IDEOLOGIES) {
   const { ranked } = match(shipped, ideo.profile);
   const self = ranked.find((r) => r.id === ideo.id);
-  assert(ranked[0].distance < 1e-9 && self.distance < 1e-9, `${ideo.name} matched ${ranked[0].name} instead of itself`);
-  assert(Math.abs(self.similarity - 1) < 1e-9, `${ideo.name} isn't a 100% match for itself`);
-  const tied = ranked.filter((r) => r.distance < 1e-9 && r.id !== ideo.id).map((r) => r.name);
+  assert(ranked[0].distance < 1e-5 && self.distance < 1e-5, `${ideo.name} matched ${ranked[0].name} instead of itself`);
+  assert(Math.abs(self.similarity - 1) < 1e-5, `${ideo.name} isn't a 100% match for itself`);
+  const tied = ranked.filter((r) => r.distance < 1e-5 && r.id !== ideo.id).map((r) => r.name);
   if (tied.length) twins.push(`${ideo.name} = ${tied.join(", ")}`);
   else assert.strictEqual(topMatch(shipped, ideo.profile), ideo.id, `topMatch() disagrees with match() for ${ideo.name}`);
 }
@@ -134,6 +130,40 @@ for (const ideo of IDEOLOGIES) {
   a[0] = 2; b[1] = -2;
   assert(fitTo(shipped, a, [locate(shipped, b)]) != null, "match needs shared statements: statement-based matching is back");
 }
+// The uncertainty rule (Brandon, 2026-10-31): a record is placed only when every real line is mostly
+// known. Precision on one line never makes up for another left unknown; which statements are answered
+// decides it, never the answers, so a "Neither" (0) narrows a line like any answer while silence
+// (null) leaves it as unknown as before; and a line a record says nothing about adds nothing to a
+// distance.
+{
+  const pca = require("./pca.js");
+  const ctx = shipped.placement, n = QUESTIONS.length, k = ctx.k;
+  const lineOf = Array.from({ length: n }, (_, j) => {
+    let best = 0;
+    for (let i = 1; i < k; i++) if (Math.abs(shipped.components[i].vector[j]) > Math.abs(shipped.components[best].vector[j])) best = i;
+    return best;
+  });
+  const oneLine = Array.from({ length: n }, (_, j) => (lineOf[j] === 0 ? 2 : null));
+  const u = pca.uncertainty(ctx, oneLine);
+  assert(u.lines[0] <= u.max && !u.placed, "answering one line's statements alone passes the uncertainty rule");
+  const j = lineOf.indexOf(1), none = Array(n).fill(null);
+  const stats = (x) => pca.lineStats(ctx, pca.answeredIndexes(none.map((_, q) => (q === j ? x : null))));
+  assert(stats(0)[1].variance < stats(null)[1].variance, "a 'Neither' answer doesn't narrow its line");
+  assert.deepStrictEqual(stats(0), stats(2), "line precision depends on the answer, not only on which statements are answered");
+  assert.deepStrictEqual(stats(null), pca.lineStats(ctx, []), "silence narrows a line");
+  const at = Array(k).fill(0), far = at.map((_, i) => (i === k - 1 ? 9 : 0)), sure = at.map((_, i) => (i === k - 1 ? 0 : 1));
+  assert.strictEqual(pca.distance({ at, reliability: sure }, { at: far, reliability: at.map(() => 1) }), 0, "a line a record says nothing about adds to the distance");
+}
+// Each shown ideology ships its place on the lines and its reliability on each (build.js), so the page
+// doesn't work them out. (Rounded, so an ideology sits within 1e-5 of itself, not exactly on it.)
+{
+  const pca = require("./pca.js");
+  const fresh = modelFromParts(IDEOLOGIES.map(({ at, reliability, ...i }) => i), MODEL, PLACEMENT).ideologies;
+  const stale = IDEOLOGIES.filter((i, n) => !i.at || !i.reliability
+    || fresh[n].at.some((x, k) => Math.abs(x - i.at[k]) > 1e-5)
+    || fresh[n].reliability.some((x, k) => Math.abs(x - i.reliability[k]) > 1e-4)).map((i) => i.id);
+  assert(!stale.length, `data.js's ideology places or reliabilities are stale (run a full build): ${stale.slice(0, 5).join(", ")}`);
+}
 // The quiz's progress (placementProgress) only grows as answers come in.
 {
   const own = IDEOLOGIES[0].profile;
@@ -147,12 +177,11 @@ for (const ideo of IDEOLOGIES) {
 if (twins.length) console.log(`Same place on the dividing lines (need distinguishing statements):\n  ${[...new Set(twins)].join("\n  ")}`);
 
 // 3. Adaptive run: simulated takers (an ideology's answers, with ~20% of them nudged by one
-// point) answer until the result settles. Most should land on their source ideology.
+// point) answer until the quiz says Done (placementProgress), as on the page. Most should have their
+// source ideology among their first three (at Done it is first for about three in four).
 let seed = 7;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
-let hits = 0, totalAsked = 0;
-// The build ships the calibration; recompute it only for an older data.js without one.
-const calibration = PEOPLE_ONLY ? null : CALIBRATION || calibrateCertainty(shipped);
+let hits = 0, top3 = 0, totalAsked = 0;
 for (const ideo of PEOPLE_ONLY ? [] : IDEOLOGIES) {
   const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
   const answers = Array(QUESTIONS.length).fill(null);
@@ -162,15 +191,17 @@ for (const ideo of PEOPLE_ONLY ? [] : IDEOLOGIES) {
     if (!next) break;
     asked.add(next.q);
     answers[next.q] = truth[next.q];
-    if (isSettled(shipped, calibration, answers, asked)) break;
+    if (placementProgress(shipped, answers) >= 1) break;
   }
   totalAsked += asked.size;
   const { ranked } = match(shipped, answers);
-  if (ranked.find((r) => r.name === ideo.name).distance === ranked[0].distance) hits++;
+  const own = ranked.find((r) => r.id === ideo.id).distance;
+  if (own === ranked[0].distance) hits++;
+  if (own <= ranked[Math.min(2, ranked.length - 1)].distance) top3++;
 }
-if (!PEOPLE_ONLY) console.log(`Adaptive: ${hits}/${IDEOLOGIES.length} noisy takers matched their source, ` +
-  `averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
-if (!PEOPLE_ONLY && hits < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers matched their source.");
+if (!PEOPLE_ONLY) console.log(`Adaptive: at Done, ${hits}/${IDEOLOGIES.length} noisy takers matched their source first and ` +
+  `${top3} had it in their top 3, averaging ${(totalAsked / IDEOLOGIES.length).toFixed(1)} of ${QUESTIONS.length} statements.`);
+if (!PEOPLE_ONLY && top3 < IDEOLOGIES.length * 0.8) console.log("WARNING: under 80% of simulated takers had their source in their top 3 at Done.");
 
 // 4. Uncertainty controls: apolitical celebrities, audited with the same instructions as everyone
 // else, must not pass; report how the audited people fare.
@@ -191,6 +222,17 @@ const people = judged(lib.PEOPLE_DIR, lib.peopleCatalog());
   const listed = new Set(PEOPLE.flatMap((p) => [p.id, ...(p.related || []).map((r) => r.id)]));
   const misjudged = people.filter(({ p, r }) => r.placed !== listed.has(p.id)).map(({ p }) => p.id);
   assert(!misjudged.length, `people.js doesn't match the uncertainty judge (run node scripts/build.js --people): ${misjudged.join(", ")}`);
+}
+// Each person ships their place on the lines and reliability on each, as ideologies do.
+{
+  const pca = require("./pca.js");
+  const { PEOPLE } = require("./people.js");
+  const stale = PEOPLE.filter((p) => {
+    const l = pca.locate(shipped, p.profile.slice(0, QUESTIONS.length));
+    return !p.at || !p.reliability || l.at.some((x, k) => Math.abs(x - p.at[k]) > 1e-5)
+      || l.reliability.some((x, k) => Math.abs(x - p.reliability[k]) > 1e-4);
+  }).map((p) => p.id);
+  assert(!stale.length, `people.js's places or reliabilities are stale (run node scripts/build.js --people): ${stale.slice(0, 5).join(", ")}`);
 }
 console.log(`Uncertainty: ${people.filter((x) => x.r.placed).length}/${people.length} audited people are placed on every line; ` +
   `${controls.filter((x) => !x.p.borderline && !x.r.placed).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);

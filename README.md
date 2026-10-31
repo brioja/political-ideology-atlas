@@ -141,5 +141,5 @@ them, so search engines can find them. Those files are written at deploy and nev
 The person audits are AI-researched estimates of public figures' views, not their own answers, so
 they are not ground truth for anything else. Ideology data may shape how people are shown
 (placement, matches, comparisons), but nothing about the ideologies, statements, dividing lines,
-uncertainty rule, labels, colors or quiz calibration is derived from people data. This keeps the
+uncertainty rule, labels, colors or the quiz's Done target is derived from people data. This keeps the
 subsystems loosely coupled: a change to the people catalog or a person audit never moves the test.

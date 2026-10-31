@@ -290,10 +290,6 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
   draw();
 }
 
-// Calibration for the "likely to hold" figure: precomputed by build.js, otherwise computed once
-// on the first quiz screen (fast for the small interim data set).
-let calibrationCache = typeof CALIBRATION !== "undefined" ? CALIBRATION : null;
-const quizCalibration = () => (calibrationCache ??= calibrateCertainty(model));
 
 // ---------- Pages ----------
 

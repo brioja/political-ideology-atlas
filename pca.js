@@ -167,7 +167,6 @@ function buildModel(ideologies, opts = {}) {
   model.realLines = opts.realLines ?? meaningfulAxes(model, ideologies);
   model.ideologies = ideologies.map((i) => ({ ...i, scores: project(model, i.profile), at: place(model, i.profile) }));
   model.ideologies.forEach((i) => Object.assign(i, locatedAt(model, i.profile, i.at)));
-  model.initialGain = nextQuestion(model, Array(n).fill(null), new Set()).gain;
   return model;
 }
 
@@ -213,10 +212,9 @@ function modelFromParts(ideologies, parts, placement = null) {
   // When every shipped line is a real one (the usual case), an ideology's scores are its place, so
   // each is projected once.
   model.ideologies = ideologies.map((i) => {
-    const at = place(model, i.profile);
-    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), ...locatedAt(model, i.profile, at) };
+    const at = i.at || place(model, i.profile);
+    return { ...i, scores: at && at.length === model.components.length ? at : project(model, i.profile), ...locatedAt(model, i.profile, at, i.reliability) };
   });
-  model.initialGain = nextQuestion(model, Array(parts.mean.length).fill(null), new Set()).gain;
   return model;
 }
 
@@ -284,10 +282,10 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // ---- The fit measure ------------------------------------------------------------------------------
 // Everything that says how close a set of answers is to a profile is here, implemented once:
 // placement (answers -> a position), the distance between two positions, the similarity scale
-// (0-100%), how precisely the answers place you (s, which also tells the quiz you're done) and the
+// (0-100%), how precisely the answers place you (lineStats, which also tells the quiz you're done) and the
 // plausibility the quiz's next-question selector weights ideologies by. Every
 // ranking (match(), topMatch(), matchPeople(), the Compare page), the selector and its progress
-// (weights()) and the calibration go through these functions only, so changing the measure here
+// (weights()) go through these functions only, so changing the measure here
 // changes them all together and they cannot drift apart.
 //
 // Fit is distance on the real dividing lines (matchLines). Comparing statement by statement favoured
@@ -315,8 +313,10 @@ function place(model, answers) {
 function locate(model, answers) {
   return locatedAt(model, answers, place(model, answers));
 }
-const locatedAt = (model, answers, at) =>
-  at && { at, reliability: lineStats(placementOf(model), answeredIndexes(answers)).map((l) => l.reliability) };
+// `at` and `reliability`: shipped by the build for ideologies and people (IDEOLOGIES, PEOPLE), so the
+// page doesn't work them out for every one (test.js checks they are current).
+const locatedAt = (model, answers, at, reliability = null) =>
+  at && { at, reliability: reliability || lineStats(placementOf(model), answeredIndexes(answers)).map((l) => l.reliability) };
 
 // The distance between two located records (locate): Euclidean on the real lines, each line weighted
 // by how reliably both are placed on it. No position is no basis for a match.
@@ -425,7 +425,7 @@ function matchLines(model) {
 // Ranks people (or any profiles: the Compare page ranks one ideology against another this way) by fit,
 // on the same scale as ideologies, closest first. Nothing answered: an empty list.
 function matchPeople(model, answers, people) {
-  const d = fitTo(model, answers, people.map((p) => locate(model, p.profile)));
+  const d = fitTo(model, answers, people.map((p) => locatedAt(model, p.profile, p.at || place(model, p.profile), p.reliability)));
   if (!d) return [];
   return people.map((p, k) => ({ ...p, distance: d[k], similarity: similarity(model, d[k]) }))
     .sort((a, b) => a.distance - b.distance);
@@ -451,15 +451,6 @@ function nextQuestion(model, answers, asked) {
     if (!best || gain > best.gain) best = { q, gain };
   }
   return best;
-}
-
-// How settled the result is, from 0 to 1: the share of the starting disagreement that the
-// remaining statements could still resolve, or the leading ideology's weight if that is higher.
-function certainty(model, answers, asked) {
-  const next = nextQuestion(model, answers, asked);
-  const lead = Math.max(...weights(model, answers));
-  const resolved = next ? 1 - next.gain / model.initialGain : 1;
-  return Math.min(1, Math.max(lead, resolved));
 }
 
 // The most dividing lines the site shows (and build.js names and rotates for), however many beat noise.
@@ -493,94 +484,6 @@ function meaningfulAxes(model, ideologies, { runs = 60, quantile = 0.95, seed = 
   }
   return count;
 }
-
-// A result counts as settled when the calibrated chance that the top match holds is at least this
-// (see calibrateCertainty). test.js's simulated takers stop here; the quiz (app.js) waits for 100%.
-const SETTLE = { hold: 0.9 };
-function isSettled(model, calibration, answers, asked) {
-  const h = stability(calibration, certainty(model, answers, asked));
-  return h != null && h >= SETTLE.hold;
-}
-
-// Calibration: turns the quiz's "how settled" reading into an honest probability. Simulated takers
-// (each ideology's answers, ~20% nudged by one point) answer every statement in the adaptive order;
-// at each step we record the reading and whether their top match then is their final top match.
-// The result is, per tenth of the reading, the share whose top match held (made non-decreasing).
-// It is the slowest part of the build, so each step measures fit once (fitTo, as weights() and
-// topMatch() do) and inlines nextQuestion() and certainty() over a packed typed array, in the same
-// arithmetic order.
-function calibrateCertainty(model, { takers = 200, seed = 11 } = {}) {
-  let state = seed;
-  const rand = () => ((state = (state * 1103515245 + 12345) % 2147483648) / 2147483648);
-  const ideos = model.ideologies;
-  const m = ideos.length, n = ideos[0].profile.length;
-  const positions = ideos;
-  // NaN marks no known position, which nextQuestion() leaves out.
-  const colMajor = new Float64Array(n * m);
-  ideos.forEach((i, k) => i.profile.forEach((x, q) => { colMajor[q * m + k] = x ?? NaN; }));
-  const answers = new Array(n), asked = new Uint8Array(n);
-  let w, d;
-
-  // weights() and topMatch(), from one fit measurement.
-  const measure = () => { d = fitTo(model, answers, positions); w = plausibility(model, answers, d); };
-  // nextQuestion(): the unasked statement with the largest weighted disagreement.
-  const next = () => {
-    let bestQ = -1, bestGain = 0;
-    for (let q = 0; q < n; q++) {
-      if (asked[q]) continue;
-      const base = q * m;
-      let mean = 0, known = 0;
-      for (let k = 0; k < m; k++) { const x = colMajor[base + k]; if (x === x) { mean += w[k] * x; known += w[k]; } }
-      if (known) mean /= known;
-      let gain = 0;
-      for (let k = 0; k < m; k++) { const x = colMajor[base + k]; if (x === x) gain += w[k] * (x - mean) ** 2; }
-      if (bestQ < 0 || gain > bestGain) { bestQ = q; bestGain = gain; }
-    }
-    return bestQ < 0 ? null : { q: bestQ, gain: bestGain };
-  };
-
-  const reps = Math.max(1, Math.ceil(takers / m));
-  const held = Array.from({ length: 10 }, () => [0, 0]);
-  for (let rep = 0; rep < reps; rep++) {
-    for (const ideo of ideos) {
-      const truth = ideo.profile.map((x) => (rand() < 0.2 && x != null ? Math.max(-2, Math.min(2, x + (rand() < 0.5 ? -1 : 1))) : x));
-      asked.fill(0);
-      answers.fill(null);
-      measure();
-      const steps = [];
-      let ask = next();
-      while (ask) {
-        asked[ask.q] = 1;
-        // A statement its ideology has no position on, the simulated taker skips ("No opinion").
-        if (truth[ask.q] != null) answers[ask.q] = truth[ask.q];
-        measure();
-        ask = next(); // certainty() reads the same next question the loop asks after this one
-        let lead = -Infinity;
-        for (let k = 0; k < m; k++) if (w[k] > lead) lead = w[k];
-        const resolved = ask ? 1 - ask.gain / model.initialGain : 1;
-        steps.push({ c: Math.min(1, Math.max(lead, resolved)), top: nearest(d) });
-      }
-      const final = nearest(d);
-      for (const st of steps) {
-        const bin = held[Math.min(9, Math.floor(st.c * 10))];
-        bin[1]++;
-        if (st.top === final) bin[0]++;
-      }
-    }
-  }
-  // Readings no simulated taker produced stay null (shown as words, never a made-up number).
-  const out = [];
-  let floor = 0;
-  for (const [h, cnt] of held) {
-    if (!cnt) { out.push(null); continue; }
-    floor = Math.max(floor, h / cnt);
-    out.push(floor);
-  }
-  return out;
-}
-
-// The calibrated chance that the current top match will hold, for a "how settled" reading.
-const stability = (calibration, c) => calibration[Math.min(9, Math.floor(c * 10))];
 
 // The placement context: how precisely a record is placed on each real line. Depends only on WHICH
 // statements have a recorded position, never on the answers, so unusual views are not penalized.
@@ -711,5 +614,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, certainty, calibrateCertainty, stability, isSettled, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis, SETTLE };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, lineStats, distance, fitTo, fitScale, similarity, plausibility, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, project, match, matchPeople, weights, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_UNCERTAINTY, placementFromParts, placementProgress, describeAxis };
 }
