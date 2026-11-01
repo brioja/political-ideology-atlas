@@ -3488,9 +3488,9 @@ const QUESTIONS = [
   "id": "economy-in-majority-hands",
   "theme": "economy",
   "text": "A country's economic life should be in the hands of members of the national majority rather than of minority groups.",
-  "agree": "Trade and business should mainly be run by the national majority.",
-  "disagree": "National majority control of a country's economic life should not take priority over minority groups' share in it.",
-  "note": "About whether economic life should be tied to nationality.",
+  "agree": "Businesses and property should mainly be owned and run by the country's main national or ethnic group, rather than by minorities.",
+  "disagree": "The country's main national or ethnic group should not get priority in owning and running businesses.",
+  "note": "About tying who owns and runs businesses to nationality or ethnicity.",
   "icon": "🏪"
  },
  {
