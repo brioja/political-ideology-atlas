@@ -83,3 +83,11 @@ more isn't a practical alternative either: line 13 is still 5% unknown with ever
 A faint uncolored outline of the globe mark was tried behind the home page hero and the share card
 (top right, then bottom right). Brandon: no on the home page; on the card it made the text harder to
 read. Both left plain.
+
+## Showing all 14 lines on the page (2026-11-01)
+
+Lines 9-14 would need names. End names by movement (e.g. "Social conservatism ↔ Intersectionality")
+cast one side as opposing the other's values (Brandon: "saying feminism opposes traditional family is an
+issue"); topic names overlap too much with lines 1-8. The page keeps the 8 drawn lines; matching and
+inclusion still use all 14. A shared true-width scale across lines was also weighed: each line stays
+stretched to its own extremes, since band width relative to the line is what the uncertainty rule measures.
