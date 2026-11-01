@@ -86,15 +86,15 @@ function lineScale(vals) {
 // pill (at least MIN_BAND wide) so it stays visible.
 const MIN_BAND = 18;
 // A small band in a key, matching the strips' marks.
-const bandSwatch = (color) => `<svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" style="vertical-align:-1px"><rect x="1" y="2" width="20" height="8" rx="4" fill="${color}" opacity="0.45"></rect><line x1="1" x2="1" y1="0" y2="12" stroke="${color}" stroke-width="2"></line><line x1="21" x2="21" y1="0" y2="12" stroke="${color}" stroke-width="2"></line></svg>`;
+const bandSwatch = (color) => `<svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true" style="vertical-align:-1px"><rect x="1" y="2" width="20" height="8" rx="4" fill="${color}" fill-opacity="0.6" stroke="${color}" stroke-width="1"></rect><line x1="1" x2="1" y1="0" y2="12" stroke="${color}" stroke-width="2"></line><line x1="21" x2="21" y1="0" y2="12" stroke="${color}" stroke-width="2"></line></svg>`;
 function rangeBand(pos, x, sd, color = "var(--accent)") {
   const c = pos(x), half = Math.max(MIN_BAND / 2, (pos(x + (sd || 0)) - pos(x - (sd || 0))) / 2);
   const x1 = Math.max(6, c - half), x2 = Math.min(594, c + half);
   const f = (v) => v.toFixed(1);
   return `<g><title>Likely somewhere in this range; it narrows as more positions are known</title>
-    <rect x="${f(x1)}" y="10" width="${f(x2 - x1)}" height="14" rx="7" fill="${color}" opacity="0.45"></rect>
-    <line x1="${f(x1)}" x2="${f(x1)}" y1="8" y2="26" stroke="${color}" stroke-width="2"></line>
-    <line x1="${f(x2)}" x2="${f(x2)}" y1="8" y2="26" stroke="${color}" stroke-width="2"></line></g>`;
+    <rect x="${f(x1)}" y="9" width="${f(x2 - x1)}" height="16" rx="8" fill="${color}" fill-opacity="0.6" stroke="${color}" stroke-width="1.5" vector-effect="non-scaling-stroke"></rect>
+    <line x1="${f(x1)}" x2="${f(x1)}" y1="5" y2="29" stroke="${color}" stroke-width="2.5" vector-effect="non-scaling-stroke"></line>
+    <line x1="${f(x2)}" x2="${f(x2)}" y1="5" y2="29" stroke="${color}" stroke-width="2.5" vector-effect="non-scaling-stroke"></line></g>`;
 }
 
 // Dividing line i, named by the ideologies at its two ends (no hand-written names: the lines are
