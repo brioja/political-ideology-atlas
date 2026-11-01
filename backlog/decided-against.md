@@ -77,3 +77,9 @@ placed from the taker's answered statements, so both carry the same pull (edge +
 in two simulated runs). Brandon: it changes what takers are compared with ("changing question takers'
 answers"); matching compares the taker with each ideology's real place. Narrowing the bars by asking
 more isn't a practical alternative either: line 13 is still 5% unknown with every statement answered.
+
+## Background artwork on the home page and share card (2026-11-01)
+
+A faint uncolored outline of the globe mark was tried behind the home page hero and the share card
+(top right, then bottom right). Brandon: no on the home page; on the card it made the text harder to
+read. Both left plain.
