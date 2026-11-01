@@ -80,15 +80,14 @@ person's own words and record, and a statement with no reliable evidence is `nul
 
 - **Uncertainty:** a political ideology or figure takes positions across every dividing line; one
   that speaks to only some of them holds opinions, not a full politics. A record is included only
-  if, on each of the real dividing lines, its known positions leave at most half of the line's
-  spread unknown (Bayesian placement, `lineStats` and `uncertainty` in `pca.js`). One line, unity
-  across borders, may be up to 60% unknown until it has statements ordinary politicians answer
-  (`audits/line-allowances.json`). Overall, the lines may be at most 25% unknown on average, so the
-  error bars are on average no wider than half a line's spread: a record precise on some lines but
-  near the limit on several others isn't included. The rule is the
-  same for ideologies, people and AI models; the quiz says you're done from the same placement, once
-  every line's band (±1 standard deviation) is at most ±1 (`DONE_BAND`); it picks each next
-  statement to narrow the line furthest from that (`nextQuestion`). There is no other bar: nothing
+  if its error bars are narrow enough: on each real dividing line, ±1 standard deviation of its
+  place, measured from its known positions alone (`lineBars` and `uncertainty` in `pca.js`), in the
+  line units distances are measured in. No line's bar may be wider than ±4 (`MAX_BAR`), and the
+  bars may average at most ±2 over the lines (`MAX_MEAN_BAR`). A line its known positions don't
+  reach has an infinite bar, so a record silent on a whole line is never included. The rule is the
+  same for ideologies, people and AI models; the quiz says you're done from the same bars at half
+  those limits, once no line's bar is wider than ±2 and they average at most ±1 (`DONE`); it picks
+  each next statement to bring the bars closest to that (`nextQuestion`). There is no other bar: nothing
   compares a list of answers with the gap between neighbouring ideologies, and people are held to
   the same rule as ideologies (2026-10-31).
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.

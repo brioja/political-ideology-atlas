@@ -192,11 +192,11 @@ function validate(id) {
     // For ideologies only stated positions count; inferred answers don't.
     const s = PEOPLE ? personUncertainty(answers) : ideologyUncertainty(a);
     if (!s.placed) {
-      const pct = (x) => `${Math.round(x * 100)}%`;
-      const weak = s.lines.map((u, i) => [u, i]).filter(([u, i]) => u > s.limits[i]).sort((x, y) => y[0] - x[0])
-        .map(([u, i]) => `${lineName(i)} ${pct(u)}${s.limits[i] !== s.max ? ` (limit ${pct(s.limits[i])})` : ""}`);
-      if (weak.length) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} more unknown than known (over ${pct(s.max)}): ${weak.join(", ")}`);
-      if (s.mean > s.maxMean) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${pct(s.mean)} unknown on average over the dividing lines (over ${pct(s.maxMean)}); the weakest: ${s.lines.map((u, i) => [u, i]).sort((x, y) => y[0] - x[0]).slice(0, 4).map(([u, i]) => `${lineName(i)} ${pct(u)}`).join(", ")}`);
+      const bar = (b) => (isFinite(b) ? `±${b.toFixed(2)}` : "no position reaches it");
+      const weak = s.bars.map((b, i) => [b, i]).filter(([b]) => b > s.maxBar).sort((x, y) => y[0] - x[0])
+        .map(([b, i]) => `${lineName(i)} ${bar(b)}`);
+      if (weak.length) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave ${weak.length > 1 ? "these dividing lines" : "a dividing line"} with an error bar over ±${s.maxBar}: ${weak.join(", ")}`);
+      if (s.mean > s.maxMean) errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} positions leave error bars of ${isFinite(s.mean) ? `±${s.mean.toFixed(2)}` : "infinite width"} on average over the dividing lines (over ±${s.maxMean}); the widest: ${s.bars.map((b, i) => [b, i]).sort((x, y) => y[0] - x[0]).slice(0, 4).map(([b, i]) => `${lineName(i)} ${bar(b)}`).join(", ")}`);
     }
   }
   const zeros = vals.filter((x) => x.value === 0).length;

@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, MAX_UNCERTAINTY, MAX_MEAN_UNCERTAINTY, MAX_SHOWN_LINES } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -23,6 +23,9 @@ const statements = activeStatements();
 // Rounding for what data.js and people.js ship (defined first: the --people path uses them too).
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
 const r4 = (x) => Math.round(x * 1e4) / 1e4;
+// A list of answers' bars as shipped (lineBars in pca.js): rounded, null for a line its answers don't
+// reach (JSON has no Infinity; lineSpread reads null as infinite).
+const barsOf = (ctx, profile) => lineBars(ctx, answeredIndexes(profile)).map((b) => (isFinite(b) ? r4(b) : null));
 let included, stale, missing, notPlaced, notIdeology, awaiting;
 const awaitingReaudit = require("./lib").awaitingReaudit();
 
@@ -157,24 +160,7 @@ const onLandscape = (ideos) => modelFromParts(ideos, { mean: landscape.mean, com
 // The one placement context (lines and noise), judged on the rotated lines matching uses: it judges
 // the uncertainty of ideologies and people (scripts/lib.js), weighs each line in every distance and
 // tells a taker how far they're placed, and data.js ships it as PLACEMENT.
-const shippedPlacement = landscape && judgeParts(withAllowances(placementContext(landscape, { rotated: rotatedLines })));
-// Temporary per-line exceptions to the 50% (audits/line-allowances.json), each found by its anchors among
-// the line's 10 strongest statements, as line names are.
-function withAllowances(ctx) {
-  const entries = readJson(path.join(ROOT, "audits", "line-allowances.json")).lines;
-  const qi = Object.fromEntries(statements.map((s, j) => [s.id, j]));
-  const max = rotatedLines.slice(0, ctx.k).map(() => null);
-  for (const a of entries) {
-    const i = rotatedLines.slice(0, ctx.k).findIndex((c) => {
-      const top = new Set(c.vector.map((w, j) => [Math.abs(w), j]).sort((x, y) => y[0] - x[0]).slice(0, 10).map(([, j]) => j));
-      return a.anchors.filter((id) => top.has(qi[id])).length >= 2;
-    });
-    if (i < 0) console.warn(`No dividing line matches the allowance anchored on ${a.anchors.join(", ")}: it is not applied.`);
-    else { max[i] = a.maxUncertainty; console.log(`Line ${i + 1} may be up to ${a.maxUncertainty * 100}% unknown (audits/line-allowances.json).`); }
-  }
-  ctx.maxUncertainty = max.some((x) => x != null) ? max : null;
-  return ctx;
-}
+const shippedPlacement = landscape && judgeParts(placementContext(landscape, { rotated: rotatedLines }));
 const judge = shippedPlacement && judgeFrom(shippedPlacement, statements.map((s) => s.id));
 classify(judge);
 
@@ -250,11 +236,12 @@ function writePeople(model, judge = undefined) {
   const kept = new Set(reachable.map((p) => p.id));
   const dropped = people.filter((p) => !kept.has(p.id));
   people.splice(0, people.length, ...people.filter((p) => kept.has(p.id)));
-  // Each person's place on the lines and reliability on each, as ideologies ship theirs.
+  // Each person's place on the lines, reliability and bars on each, as ideologies ship theirs.
   for (const p of people) {
     const l = locate(model, p.profile);
     p.at = l.at.map(r6);
     p.reliability = l.reliability.map(r4);
+    p.bars = barsOf(model.placement, p.profile);
   }
   models -= dropped.filter((p) => p.kind === "model").length;
   console.log(`${people.length - models} people included, ${excludedPeople} excluded as not placed on every line.`);
@@ -277,7 +264,7 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
 
 console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
 if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
-if (notPlaced.length) console.log(`Excluded as not placed on every line (uncertainty over ${MAX_UNCERTAINTY * 100}% on one, or over ${MAX_MEAN_UNCERTAINTY * 100}% on average): ${notPlaced.join(", ")}`);
+if (notPlaced.length) console.log(`Excluded as not placed on every line (an error bar over ±${MAX_BAR} on one, or over ±${MAX_MEAN_BAR} on average): ${notPlaced.join(", ")}`);
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);
 if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
@@ -296,11 +283,13 @@ const shippedModel = {
   labels,
   realLines: meaningful,
 };
-// Each shown ideology's place on the shipped lines and its reliability on each (locate in pca.js), so
-// the page doesn't work them out for every ideology at load; people.js ships people's the same way.
+// Each shown ideology's place on the shipped lines, its reliability on each (locate in pca.js) and its
+// bars (lineBars: how far the place may be off, as drawn), so the page doesn't work them out for every
+// ideology at load; people.js ships people's the same way.
 modelFromParts(included, shippedModel, shippedPlacement).ideologies.forEach((i, k) => {
   included[k].at = i.at.map(r6);
   included[k].reliability = i.reliability.map(r4);
+  included[k].bars = barsOf(judge.ctx, i.profile);
 });
 // The similarity scale's 0% end (fitScale in pca.js): the widest distance between two shown ideologies.
 shippedModel.span = r6(fitScale(modelFromParts(included, shippedModel, shippedPlacement)));

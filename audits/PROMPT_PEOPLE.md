@@ -128,7 +128,7 @@ cited from the primary source; tiers 3 and 4 are `medium` at most. Cosponsoring 
 alone is `medium`: it shows support for the bill, not for every way a statement could be read.
 
 **Uncertainty** (AUDIT_RULES.md, section 5) counts every recorded position (not `null`). When it
-fails, the validator names the dividing lines the record leaves mostly unknown; when deepening, search
+fails, the validator names the dividing lines whose error bars are too wide; when deepening, search
 those first for stated positions. If the record really has nothing more, stop.
 
 ## 3. Output format

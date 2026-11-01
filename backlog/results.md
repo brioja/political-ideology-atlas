@@ -107,7 +107,10 @@ didn't decide that run. Earlier, at 35 answers, Post-Marxism came first with 4 s
 13 shared statements. Like-with-like matching was decided against (decided-against.md). Watch for a
 thinner ideology leading on real links; deepening its audit is the route that needs no change to matching.
 
-## A 20% overall average (measured 2026-11-01, kept at 25%)
+## A 20% overall average (measured 2026-11-01, kept at 25%; superseded the same day)
+
+Superseded: the rule moved to error bars the same day (below), which measure what this section
+measured in the units distances use.
 
 The uncertainty rule's overall check allows 25% unknown on average over the 14 lines (error bars on
 average no wider than half a line's spread). At 20%, 23 of 559 shown ideologies and 72 of 338 shown
@@ -116,3 +119,19 @@ would be among them. Too drastic for now: revisit only if takers complain about 
 case for any change here: Brandon's own results matching Jared Kushner, with whom he disagrees on
 lines 10-14 (a thin record on those lines pulled toward him); a change that makes that match
 stronger, not weaker, is going the wrong way.
+
+## Uncertainty rule moved to error bars (2026-11-01)
+
+Brandon: the share-of-spread rule (each line at most 50% unknown, 25% on average, line 13 allowed 60%)
+let ideologies in that were placed poorly on the big lines. Bars now come from the known positions
+alone (no baseline: a line nothing reaches has an infinite bar), in line units, the units distances use;
+shown when no bar exceeds ±4 and they average at most ±2 (`MAX_BAR`, `MAX_MEAN_BAR` in pca.js). The
+quiz's Done, the next-question selector, the progress bar and the drawn bars use the same
+bars, at half the limits: Done when no bar exceeds ±2 and they average at most ±1 (simulated takers:
+48 statements, own ideology first 107/134; every bar ±1 took 80 statements for 111). Per line, 50%
+unknown had allowed about ±6 on lines 1-2 but under ±2 on lines 12-14. Measured on
+the audits at the time: 559 -> 536 ideologies (+6 that failed only on line 14, -29), 338 -> 268 people
+(+2, -72, about half of them US politicians close to the line whose Congress records are not yet
+searched; Joe Rogan and Alex Jones among them). Line 13's allowance was removed with it. A Joe Rogan
+Experience transcript mirror was tried to fill his line 11 (secession) and deleted: his silence there is
+real.

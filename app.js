@@ -6,7 +6,7 @@
   if (at) history.replaceState(null, "", `/${location.search}${location.hash || `#/${at[1]}/${at[2]}`}`);
 }
 const model = typeof MODEL !== "undefined" ? modelFromParts(IDEOLOGIES, MODEL, typeof PLACEMENT !== "undefined" ? PLACEMENT : null) : buildModel(IDEOLOGIES);
-// Once the answers place you on every dividing line (every band at most ±DONE_BAND; placementProgress
+// Once the answers place you on every dividing line (no bar wider than ±2, ±1 on average: DONE; placementProgress
 // in pca.js, which the next-question selector aims at too), the quiz says you're done, whether or not
 // your top match has stopped moving: someone between two ideologies may never settle and would
 // otherwise answer every statement.

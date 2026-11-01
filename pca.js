@@ -253,8 +253,8 @@ const answeredIndexes = (answers) => answers.flatMap((x, j) => (x == null ? [] :
 // not a default (test.js checks it). Placement reads the real lines from the answered statements
 // only (see posterior), and with nothing answered there is no position at all.
 //
-// Each line counts as far as both lists of answers are placed on it (lineStats, the same per-line
-// precision that decides who is shown and tells the quiz you're done). A line a list says nothing
+// Each line counts as far as both lists of answers are placed on it (lineStats' reliability; who is
+// shown and the quiz's Done use the bars, lineBars, the same answers measured without the baseline). A line a list says nothing
 // about would otherwise sit at its middle by default and count in full, as if it were moderate there:
 // someone placed only on economics would match whoever sits mid-way on religion. Weighted by
 // precision, it counts for nothing until it is answered, so ideologies that differ only there stay
@@ -269,14 +269,14 @@ function locate(model, answers) {
   const p = posterior(placementOf(model), known, answers.map((x, j) => (x == null ? null : x - model.mean[j]))); // only `known` is read
   return { at: p.at, reliability: p.lines.map((l) => l.reliability) };
 }
-// How far a list of answers' place on each real line may be off: one standard deviation, from the same
-// posterior as the place (for drawing a range around it). A record with shipped reliability (ideologies,
-// people) uses it; otherwise it is worked out from which statements are answered.
+// How far a list of answers' place on each real line may be off, for drawing a range around it: its
+// bars (lineBars: one standard deviation from the answers alone, Infinity on a line they don't reach,
+// drawn across the whole strip). A record with shipped bars (ideologies, people) uses them; otherwise
+// they are worked out from which statements are answered.
 function lineSpread(model, record) {
-  const ctx = placementOf(model);
-  if (record && record.reliability) return record.reliability.map((r, i) => Math.sqrt(Math.max(0, 1 - r) * ctx.prior[i]));
+  if (record && record.bars) return record.bars.map((b) => (b == null ? Infinity : b));
   const answers = Array.isArray(record) ? record : record.profile;
-  return lineStats(ctx, answeredIndexes(answers)).map((l) => Math.sqrt(l.variance));
+  return lineBars(placementOf(model), answeredIndexes(answers));
 }
 // Where a list of answers sits on the real lines, or null with nothing answered.
 const place = (model, answers) => { const l = locate(model, answers); return l && l.at; };
@@ -329,28 +329,38 @@ const similarity = (model, d) => {
   return span && d != null ? Math.max(0, 1 - d / span) : 0;
 };
 
-// "Done", in one place: the quiz is done once every real line's band (±1 standard deviation of your
-// place, as drawn: lineSpread) is at most ±DONE_BAND, in line units. doneGaps says how far each line is
-// from that (1 or less = done on that line); placementProgress and nextQuestion both go through it, so
-// the quiz asks for what "Done" needs. Being shown asks "is this a full politics?" (uncertainty());
-// "Done" asks "is your place settled?", so it has its own measure.
-// Measured on model-generated takers who answer every statement (Brandon picked ±1, 2026-10-31):
-// done after 60 statements, own ideology first for 111 of 143 (the old disagreement selector with a 35%
-// unknown-share target: 46 statements, 89); ±1.25 took 35 statements at 91, ±1.5 took 25 at 68. ±1.25
-// left Brandon's own result unsettled at 35 (a sparse ideology first that he disagreed with as often
-// as not); at 60 his usual one was back level at the top.
-const DONE_BAND = 1;
-const doneGaps = (ctx, variances, band = DONE_BAND) => variances.map((v) => Math.sqrt(v) / band);
-// How far the quiz has placed you, from 0 to 1: how much of the way from no answers (worst line's gap
-// g0) to Done (gap 1) the worst line has come, on a log scale (the bands narrow fastest early on, so a
-// straight scale read half full after two statements; this only changes how the bar is drawn). It only
-// grows as you answer; the quiz says you're done at 1, so a taker between two ideologies isn't asked
-// every statement. `band` is for scripts comparing Done targets.
-function placementProgress(model, answers, band = DONE_BAND) {
+// "Done", in one place: the quiz is done once your place is settled on every line and overall: no real
+// line's bar (lineBars: ±1 standard deviation of your place from your answers alone, as drawn:
+// lineSpread) wider than ±DONE.widest, and the bars averaging at most ±DONE.mean, in line units
+// (Brandon, 2026-11-01: half the limits of the rule for who is shown, uncertainty(): ±MAX_BAR, ±MAX_MEAN_BAR).
+// doneGap says how far a set of bars is from that (1 or less = done); placementProgress and nextQuestion
+// both go through it, so the quiz asks for what "Done" needs.
+// Measured on model-generated takers who answer every statement, 2026-11-01: done after 48 statements,
+// own ideology first for 107 of 134, top 3 for 125 (every bar ±1: 80 statements, 111, 127; average ±0.9:
+// 59, 107; ±0.8: 77, 114; ±1.1: 39, 98). The average decides: the selector narrows the widest line, so
+// at Done the widest bar is about ±1.2 and ±2 is a floor for a lopsided set. Before the bars (2026-10-31,
+// every band ±1 with the baseline): 60 statements, 111 of 143; ±1.25 left Brandon's own result unsettled
+// at 35 statements.
+const DONE = { widest: 2, mean: 1 };
+function doneGap(ctx, variances, done = DONE) {
+  const bars = variances.map(Math.sqrt);
+  return Math.max(Math.max(...bars) / done.widest, bars.reduce((t, b) => t + b, 0) / bars.length / done.mean);
+}
+// How far the quiz has placed you, from 0 to 1: how much of the way from no answers (the gap g0) to Done
+// (gap 1) you have come, on a log scale (bars narrow fastest early on, so a straight scale read half full
+// after two statements; this only changes how the bar is drawn). It only grows as you answer; the quiz
+// says you're done at 1, so a taker between two ideologies isn't asked every statement. `done` is for
+// scripts comparing Done targets.
+// Bars start infinite (nothing answered on a line) until the answers reach every line, so the progress is
+// the average of two such scales, both from the gap at no answers with the baseline (g0): the baseline's
+// narrowing (lineStats), which moves from the first answer, and the bars' own, which moves once they are
+// narrower than g0. Each only grows; the average reaches 1 exactly when the bars are Done (a bar is never
+// narrower than the baseline's band).
+function placementProgress(model, answers, done = DONE) {
   if (!answers.some((x) => x != null)) return 0;
-  const ctx = placementOf(model), worst = (v) => Math.max(...doneGaps(ctx, v, band));
-  const g0 = worst(ctx.prior), g = worst(lineStats(ctx, answeredIndexes(answers)).map((l) => l.variance));
-  return Math.min(1, Math.log(g0 / g) / Math.log(g0));
+  const ctx = placementOf(model), known = answeredIndexes(answers), gap = (v) => doneGap(ctx, v, done);
+  const g0 = gap(ctx.prior), scale = (g) => Math.max(0, Math.min(1, Math.log(g0 / g) / Math.log(g0)));
+  return (scale(gap(lineStats(ctx, known).map((l) => l.variance))) + scale(gap(barVariances(ctx, known)))) / 2;
 }
 
 // The placement context answers are placed with: shipped (modelFromParts), or worked out from a
@@ -398,16 +408,20 @@ function matchPeople(model, answers, people) {
     .sort((a, b) => a.distance - b.distance);
 }
 
-// Picks the unasked statement that most narrows the line furthest from Done (doneGaps), from the
-// posterior covariance with that statement added (an exact rank-one update, lineVariancesWith). It
-// depends on which statements you answered, not how: "No opinion" leaves a statement asked but unknown.
-// `worst` is the worst line's gap after answering it. `band` is for scripts comparing Done targets.
-function nextQuestion(model, answers, asked, band = DONE_BAND) {
-  const ctx = placementOf(model), C = posteriorCov(ctx, answeredIndexes(answers)), v = lineVariances(ctx, C);
+// Picks the unasked statement that brings the bars closest to Done (doneGap), from
+// the covariance with that statement added (an exact rank-one update, lineVariancesWith). It depends on
+// which statements you answered, not how: "No opinion" leaves a statement asked but unknown. Until the
+// answers reach every line (bars still infinite: the first k answers at least), the baseline's
+// covariance (posteriorCov) ranks the statements instead, the same narrowing measured from the
+// ideologies' spread. `worst` is the gap to Done after answering it. `done` is for scripts comparing
+// Done targets.
+function nextQuestion(model, answers, asked, done = DONE) {
+  const ctx = placementOf(model), known = answeredIndexes(answers);
+  const C = barVariances(ctx, known).every(isFinite) ? barCov(ctx, known) : posteriorCov(ctx, known), v = lineVariances(ctx, C);
   let best = null;
   for (let q = 0; q < answers.length; q++) {
     if (asked.has(q)) continue;
-    const worst = Math.max(...doneGaps(ctx, lineVariancesWith(ctx, C, v, q), band));
+    const worst = doneGap(ctx, lineVariancesWith(ctx, C, v, q), done);
     if (!best || worst < best.worst) best = { q, worst };
   }
   return best;
@@ -474,7 +488,7 @@ function withLines(ctx) {
 // The placement context, rebuilt from what the build ships (PLACEMENT in data.js): the page's MODEL
 // carries only the rotated lines, not the unrotated components or the noise level.
 function placementFromParts(parts) {
-  return parts && withLines({ model: { components: parts.components }, k: parts.k, noise: parts.noise, maxUncertainty: parts.maxUncertainty,
+  return parts && withLines({ model: { components: parts.components }, k: parts.k, noise: parts.noise,
     lines: parts.lines || parts.components.map((_, i) => parts.components.map((__, a) => (a === i ? 1 : 0))) });
 }
 
@@ -487,8 +501,9 @@ function placementFromParts(parts) {
 // centred on the statement means (`centred`), `at`: the posterior mean position. Thin evidence on a
 // line moves the position there only part of the way, as far as it narrows the line, with no tuned
 // constant. Which statements are answered decides the precision; the answers decide only the place.
-// Everything uses this: matching and drawing (locate, place), who is shown and "Done" (uncertainty),
-// the selector and "Done" (doneGaps), how far apart two ideologies must be to be told apart (distanceSpread).
+// Matching uses this (locate, place: the position and each line's weight in a distance), and so does
+// how far apart two ideologies must be to be told apart (distanceSpread). How far a place may be off,
+// for drawing, who is shown and "Done", is measured from the answers alone instead (lineBars, below).
 function lineStats(ctx, knownIdx) {
   return posterior(ctx, knownIdx).lines;
 }
@@ -515,6 +530,48 @@ function lineVariancesWith(ctx, C, v, j) {
   const denom = ctx.noise + u.reduce((s, x, a) => s + x * Cu[a], 0);
   return ctx.lines.map((row, i) => v[i] - row.reduce((s, x, a) => s + x * Cu[a], 0) ** 2 / denom);
 }
+// ---- Bars: how far a place may be off, from the answers alone ----
+// The information the answered statements give about the components, without the baseline: AᵀA / noise
+// (posteriorCov adds the baseline, Λ⁻¹, to it).
+function information(ctx, knownIdx) {
+  const comps = ctx.model.components.slice(0, ctx.k), k = ctx.k;
+  const M = comps.map(() => new Array(k).fill(0));
+  for (const j of knownIdx) {
+    for (let a = 0; a < k; a++) {
+      const x = comps[a].vector[j] / ctx.noise;
+      for (let b = a; b < k; b++) M[a][b] += x * comps[b].vector[j];
+    }
+  }
+  for (let a = 0; a < k; a++) for (let b = 0; b < a; b++) M[a][b] = M[b][a];
+  return M;
+}
+// Each real line's variance from the answers alone: Infinity on a line they don't reach (a line with a
+// share in a direction no answered statement measures). From the eigen decomposition of the information
+// (a pseudo-inverse); a direction counts as measured above 1e-9 of the best-measured one, as components
+// count as carrying variance (buildModel).
+function barVariances(ctx, knownIdx) {
+  if (!knownIdx.length) return ctx.lines.map(() => Infinity);
+  const eig = symmetricEigen(information(ctx, knownIdx)), top = eig[0].value;
+  return ctx.lines.map((row) => {
+    let v = 0;
+    for (const e of eig) {
+      const x = dot(row, e.vector);
+      if (e.value > top * 1e-9) v += (x * x) / e.value;
+      else if (x * x > 1e-9 * dot(row, row)) return Infinity;
+    }
+    return v;
+  });
+}
+// The bars: ±1 standard deviation of a place on each real line, from the answers alone. What the page
+// draws (lineSpread), who is shown (uncertainty) and the quiz's Done (DONE) all use them.
+const lineBars = (ctx, knownIdx) => barVariances(ctx, knownIdx).map(Math.sqrt);
+// The covariance on the components from the answers alone, once they reach every line (information
+// invertible): the selector's rank-one updates start from it (nextQuestion).
+function barCov(ctx, knownIdx) {
+  const M = information(ctx, knownIdx);
+  return M.map((_, i) => solve(M, M.map((__, j) => (j === i ? 1 : 0))));
+}
+
 function posterior(ctx, knownIdx, centred = null) {
   const { model, k, noise, lines, prior } = ctx;
   const comps = model.components.slice(0, k);
@@ -531,27 +588,21 @@ function posterior(ctx, knownIdx, centred = null) {
 
 // A political ideology or figure takes positions across every dividing line; a list of answers that speaks
 // to only some of them holds opinions, not a full politics, and isn't shown (Brandon, 2026-10-31).
-// Uncertainty: on a list of answers' worst line, the share of that line's spread its answers leave unknown
-// (1 with nothing on it, near 0 once pinned down). Shown when it is at most MAX_UNCERTAINTY on every
-// line: every line more known than unknown, except a line given its own temporary limit
-// (`maxUncertainty` in the placement context, from audits/line-allowances.json). The same rule for ideologies, people and AI models; the quiz's "Done"
-// uses the same posterior, measured as band width (DONE_BAND).
-// Overall, too (Brandon, 2026-11-01): averaged over the lines, at most MAX_MEAN_UNCERTAINTY unknown, so the
-// error bars are on average (root mean square) no wider than half a line's spread. It catches a record
-// placed precisely on some lines but near the limit on several others.
-const MAX_UNCERTAINTY = 0.5;
-const MAX_MEAN_UNCERTAINTY = 0.25;
-function worstUncertainty(ctx, knownIdx) {
-  return Math.max(...lineStats(ctx, knownIdx).map((l) => 1 - l.reliability));
-}
-
+// Measured by its bars (lineBars), in line units, the units distances are in (Brandon, 2026-11-01):
+// shown when no line's bar is wider than ±MAX_BAR and the bars average at most ±MAX_MEAN_BAR over the
+// real lines. A line its answers don't reach has an infinite bar, so it never passes. The same rule for
+// ideologies, people and AI models; the quiz's "Done" asks the same bars for half that (DONE).
+// (Replaced shares of each line's spread, at most 50% unknown per line and 25% on average: those
+// allowed the widest error on the big lines, which carry most of a distance, and barely any on the
+// small ones.)
+const MAX_BAR = 4;
+const MAX_MEAN_BAR = 2;
 function uncertainty(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
-  const lines = lineStats(ctx, known).map((l) => 1 - l.reliability);
-  const limits = lines.map((_, i) => (ctx.maxUncertainty && ctx.maxUncertainty[i]) || MAX_UNCERTAINTY);
-  const mean = lines.reduce((t, x) => t + x, 0) / lines.length;
-  return { known: known.length, uncertainty: Math.max(...lines), lines, limits, max: MAX_UNCERTAINTY,
-    mean, maxMean: MAX_MEAN_UNCERTAINTY, placed: lines.every((x, i) => x <= limits[i]) && mean <= MAX_MEAN_UNCERTAINTY };
+  const bars = lineBars(ctx, known);
+  const mean = bars.reduce((t, x) => t + x, 0) / bars.length, worst = Math.max(...bars);
+  return { known: known.length, bars, worst, mean, maxBar: MAX_BAR, maxMean: MAX_MEAN_BAR,
+    placed: worst <= MAX_BAR && mean <= MAX_MEAN_BAR };
 }
 
 // How far off a distance may be from placement error alone, for a list of answers with positions on `knownIdx`:
@@ -609,5 +660,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, MAX_MEAN_UNCERTAINTY, DONE_BAND, doneGaps, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, describeAxis };
 }

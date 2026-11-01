@@ -129,15 +129,15 @@ least one source id from your `sources` list.
 
 A political ideology or figure takes positions across all of the test's dividing lines; a record
 that speaks to only some of them holds opinions, not a full politics. The validator measures, on
-each line, how much of it the subject's known positions leave unknown, and the subject is shown only
-if every line is more known than unknown (at most 50% unknown, `MAX_UNCERTAINTY` in `pca.js`; a line
-listed in `audits/line-allowances.json` has its own, temporary limit), and if the lines are, on
-average, at most 25% unknown (`MAX_MEAN_UNCERTAINTY`: the error bars no wider than half a line's
-spread overall), so a record precise on some lines but near the limit on several others is not shown.
+each line, the error bar the subject's known positions leave (±1 standard deviation of their place,
+from those positions alone, in line units), and the subject is shown only if no line's bar is wider
+than ±4 (`MAX_BAR` in `pca.js`) and the bars average at most ±2 over the lines (`MAX_MEAN_BAR`), so a
+record precise on some lines but loose on several others is not shown. A line no known position
+reaches has an infinite bar and always fails.
 The same rule applies to
 ideologies, people and AI models. Every answer resting on evidence counts,
 whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
-rules 2 still hold. A failure names the lines left unknown. Don't pad answers to pass: an honest
+rules 2 still hold. A failure names the lines whose bars are too wide. Don't pad answers to pass: an honest
 rejection is the correct outcome.
 
 ## 6. Deepening an existing audit

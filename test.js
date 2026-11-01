@@ -156,7 +156,8 @@ for (const ideo of IDEOLOGIES) {
   });
   const oneLine = Array.from({ length: n }, (_, j) => (lineOf[j] === 0 ? 2 : null));
   const u = pca.uncertainty(ctx, oneLine);
-  assert(u.lines[0] <= u.max && !u.placed, "answering one line's statements alone passes the uncertainty rule");
+  assert(u.bars[0] <= u.maxBar && !u.placed, "answering one line's statements alone passes the uncertainty rule");
+  assert(pca.lineBars(ctx, []).every((b) => b === Infinity), "a line with nothing answered has a finite error bar");
   const j = lineOf.indexOf(1), none = Array(n).fill(null);
   const stats = (x) => pca.lineStats(ctx, pca.answeredIndexes(none.map((_, q) => (q === j ? x : null))));
   assert(stats(0)[1].variance < stats(null)[1].variance, "a 'Neither' answer doesn't narrow its line");
@@ -172,8 +173,9 @@ for (const ideo of IDEOLOGIES) {
   const fresh = modelFromParts(IDEOLOGIES.map(({ at, reliability, ...i }) => i), MODEL, PLACEMENT).ideologies;
   const stale = IDEOLOGIES.filter((i, n) => !i.at || !i.reliability
     || fresh[n].at.some((x, k) => Math.abs(x - i.at[k]) > 1e-5)
-    || fresh[n].reliability.some((x, k) => Math.abs(x - i.reliability[k]) > 1e-4)).map((i) => i.id);
-  assert(!stale.length, `data.js's ideology places or reliabilities are stale (run a full build): ${stale.slice(0, 5).join(", ")}`);
+    || fresh[n].reliability.some((x, k) => Math.abs(x - i.reliability[k]) > 1e-4)
+    || !i.bars || pca.lineBars(shipped.placement, pca.answeredIndexes(i.profile)).some((b, k) => Math.abs(b - (i.bars[k] ?? Infinity)) > 1e-4)).map((i) => i.id);
+  assert(!stale.length, `data.js's ideology places, reliabilities or bars are stale (run a full build): ${stale.slice(0, 5).join(", ")}`);
 }
 // The quiz's progress (placementProgress) only grows as answers come in.
 {
@@ -187,7 +189,8 @@ if (twins.length) console.log(`Same place on the dividing lines (need distinguis
 // with the page's next-question selector. Each taker sits where an ideology is placed (every 4th) and
 // answers every statement as the model predicts there, plus the model's own noise, rounded to -2..2
 // (copying audits instead would answer "No opinion" wherever an audit is blank, which favours one
-// selector over another). Measured 2026-10-31: done after 60 statements, own ideology first for 111 of 143.
+// selector over another). Measured 2026-10-31: done after 60 statements, own ideology first for 111 of 143;
+// with the bars (2026-11-01), Done at widest ±2 and average ±1: 48 statements, 107 of 134.
 let seed = 11;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 const gauss = () => Math.sqrt(-2 * Math.log(rand() || 1e-9)) * Math.cos(2 * Math.PI * rand());
@@ -235,7 +238,8 @@ const judged = (dir, list) => list.filter((p) => fs.existsSync(require("path").j
   .map((p) => ({ p, r: lib.personUncertainty(lib.readJson(require("path").join(dir, `${p.id}.json`)).answers) }));
 const controls = judged(lib.CONTROLS_DIR, lib.controlsCatalog());
 for (const { p, r } of controls) {
-  const line = `${p.name}: ${r.known} positions, worst line ${Math.round(r.uncertainty * 100)}% unknown (at most ${Math.round(r.max * 100)}%)`;
+  const bar = (b) => (isFinite(b) ? `±${b.toFixed(1)}` : "infinite");
+  const line = `${p.name}: ${r.known} positions, widest error bar ${bar(r.worst)} (at most ±${r.maxBar}), average ${bar(r.mean)} (at most ±${r.maxMean})`;
   if (p.borderline) console.log(`Borderline control ${line} -> ${r.placed ? "included" : "excluded"}`);
   else assert(!r.placed, `control passed the uncertainty rule: ${line}`);
 }
@@ -254,9 +258,10 @@ const people = judged(lib.PEOPLE_DIR, lib.peopleCatalog());
   const stale = PEOPLE.filter((p) => {
     const l = pca.locate(shipped, p.profile.slice(0, QUESTIONS.length));
     return !p.at || !p.reliability || l.at.some((x, k) => Math.abs(x - p.at[k]) > 1e-5)
-      || l.reliability.some((x, k) => Math.abs(x - p.reliability[k]) > 1e-4);
+      || l.reliability.some((x, k) => Math.abs(x - p.reliability[k]) > 1e-4)
+      || !p.bars || pca.lineBars(shipped.placement, pca.answeredIndexes(p.profile.slice(0, QUESTIONS.length))).some((b, k) => Math.abs(b - (p.bars[k] ?? Infinity)) > 1e-4);
   }).map((p) => p.id);
-  assert(!stale.length, `people.js's places or reliabilities are stale (run node scripts/build.js --people): ${stale.slice(0, 5).join(", ")}`);
+  assert(!stale.length, `people.js's places, reliabilities or bars are stale (run node scripts/build.js --people): ${stale.slice(0, 5).join(", ")}`);
 }
 console.log(`Uncertainty: ${people.filter((x) => x.r.placed).length}/${people.length} audited people are placed on every line; ` +
   `${controls.filter((x) => !x.p.borderline && !x.r.placed).length}/${controls.filter((x) => !x.p.borderline).length} controls correctly excluded.`);
