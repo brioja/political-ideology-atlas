@@ -1732,7 +1732,7 @@ function lineStrips(scores, { selfId = null, other = null, spread = null, otherS
         ${other ? otherBand : ""}
         ${band}
       </svg>
-      ${L.unnamed ? `<details><summary>What divides its two ends?</summary>${lineSides(L, describeAxis(model, i, QUESTIONS).cluster)}</details>` : ""}
+      <details><summary>${L.unnamed ? "What divides its two ends?" : `What divides ${esc(L.low)} and ${esc(L.high)}?`}</summary>${lineSides(L, describeAxis(model, i, QUESTIONS).cluster)}</details>
     </div>`;
   };
   return Array.from({ length: SHOWN_LINES }, (_, i) => strip(i)).join("") + (more ? moreLines(strip) : "");
