@@ -1,6 +1,7 @@
 // Builds the people catalog from data instead of hand-picking: every human on Wikidata with a
-// political occupation (politician, political activist, political pundit, political scientist) or
-// a public office held, who has an English Wikipedia article, ranked by English Wikipedia views
+// political occupation (politician, political activist, political pundit, political scientist), a
+// public office held, a stated political ideology, or plain "activist" as an occupation (popular
+// figures with a political cause, celebrities among them), who has an English Wikipedia article, ranked by English Wikipedia views
 // over the last 12 full months. The uncertainty rule, not this list, decides who appears in the test.
 //
 // Fetching views for every such person is too slow, so the query keeps those whose article exists
@@ -12,7 +13,7 @@
 //   node scripts/candidates.js
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, PEOPLE_DIR } = require("./lib");
+const { ROOT, readJson, PEOPLE_DIR, viewsPeriod } = require("./lib");
 const { sparql } = require("./sparql");
 
 const MIN_LINKS = 10;
@@ -29,12 +30,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdfs: <http://www.w3.org/
 // political philosopher, philosopher, economist, and activists for a named cause: women's rights,
 // civil rights, human rights, social, peace, environment, trade unionist, revolutionary, social
 // reformer, suffragist, feminist, anarchist. Philosophers and economists bring in thinkers such as
-// Adam Smith, Engels, Friedman and Rand, whom Wikidata never calls political. Plain "activist" and
-// "philanthropist" are left out because Wikidata gives them to celebrities, and "writer" is too broad.
+// Adam Smith, Engels, Friedman and Rand, whom Wikidata never calls political. Plain "activist" is
+// its own branch below; "philanthropist" stays out (donors, not positions), and "writer" is too broad.
 // Also pundit (Wikidata often tags commentators plain "pundit", not "political pundit": Tucker Carlson),
 // monarch as an occupation (rulers with no office record: Genghis Khan), jihadist, terrorist and
-// military leader (Osama bin Laden). "Podcaster", "journalist" and plain "activist" stay out: they
-// bring in entertainers and reporters wholesale.
+// military leader (Osama bin Laden). "Podcaster" and "journalist" stay out: they bring in
+// entertainers and reporters wholesale.
 const OCCUPATIONS = ["Q82955", "Q11499147", "Q11499163", "Q1238570", "Q15994177", "Q18930007", "Q4964182", "Q188094",
   "Q28692502", "Q1021386", "Q1476215", "Q8359428", "Q16323111", "Q3578589", "Q15627169", "Q3242115", "Q16611574",
   "Q27532437", "Q34074720", "Q12359071"].map((q) => `wd:${q}`).join(" ");
@@ -51,6 +52,12 @@ const BRANCHES = [
   `VALUES ?o { ${OCCUPATIONS_2} } ?item wdt:P106 ?o .`,
   `?item wdt:P106 wd:Q1642960 . FILTER NOT EXISTS { VALUES ?x { ${NOT_PUNDITS} } ?item wdt:P106/wdt:P279* ?x }`,
   `VALUES ?office { ${OFFICES} } ?item wdt:P39 ?pos . ?pos wdt:P31*/wdt:P279* ?office .`,
+  // A popular figure with a stated or defined political ideology (George Orwell, Selena Gomez), or
+  // "activist" as an occupation (Joan Baez, Bono). These bring in politically active celebrities on
+  // purpose since 2026-11-01: the uncertainty rule, not this list, decides who is shown, and someone
+  // without positions across every dividing line fails it like the negative controls.
+  `?item wdt:P1142 ?ideology .`,
+  `?item wdt:P106 wd:Q15253558 .`,
 ];
 const query = (branch, linkFilter, extra = "") => `${PREFIX}
 SELECT ?item (SAMPLE(?article) AS ?wiki) (SAMPLE(?name) AS ?label) (SAMPLE(?g) AS ?gender)
@@ -105,15 +112,12 @@ const toPerson = (b) => ({
   wikipedia: b.wiki.value,
 });
 
-// Last 12 full months, as in pageviews.js.
-const now = new Date();
-const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0));
-const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
-const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
+// The views period (lib.js) moves every two months.
+const { start, end, ymd, label: periodLabel } = viewsPeriod();
 
 // Fetching views for ~66k people takes hours, so every count is appended to a cache outside the
 // repo as soon as it arrives. A rerun (or a resume after a crash) only fetches what's missing, and
-// a different cutoff needs no fetching at all. Keyed by article and period, so a new month refetches.
+// a different cutoff needs no fetching at all. Keyed by article and period, so a new period refetches.
 const CACHE = path.join(process.env.XDG_CACHE_HOME || path.join(require("os").homedir(), ".cache"),
   "political-ideology-atlas", "pageviews.jsonl");
 fs.mkdirSync(path.dirname(CACHE), { recursive: true });
@@ -122,9 +126,9 @@ const cache = new Map(fs.existsSync(CACHE) ? fs.readFileSync(CACHE, "utf8").spli
 const remember = (key, n) => (fs.appendFileSync(CACHE, JSON.stringify({ key, views: n }) + "\n"), cache.set(key, n), n);
 
 // QLever and Wikidata's own endpoint often time out or run out of memory partway through the run,
-// so each SPARQL result is kept for the month (the views period changes monthly too): a rerun
-// repeats only the queries that hadn't come back.
-const QUERY_CACHE = path.join(path.dirname(CACHE), `sparql-${new Date().toISOString().slice(0, 7)}`);
+// so each SPARQL result is kept for the views period: a rerun repeats only the queries that hadn't
+// come back.
+const QUERY_CACHE = path.join(path.dirname(CACHE), `sparql-${ymd(end)}`);
 fs.mkdirSync(QUERY_CACHE, { recursive: true });
 async function cachedSparql(q) {
   const file = path.join(QUERY_CACHE, require("crypto").createHash("sha1").update(q).digest("hex") + ".json");
@@ -252,11 +256,11 @@ async function main() {
 
   const dropped = old.people.filter((p) => !seen.has(p.id)).map((p) => p.name);
   fs.writeFileSync(CATALOG, JSON.stringify({
-    _comment: "People to audit, generated by scripts/candidates.js from Wikidata (political occupation, cause activist, philosopher or economist, or a political office held) and ranked by English Wikipedia views. `living` is a hint for auditors to verify.",
+    _comment: "People to audit, generated by scripts/candidates.js from Wikidata (political occupation, activist, philosopher or economist, a political office held, or a stated political ideology) and ranked by English Wikipedia views. `living` is a hint for auditors to verify.",
     criteria: { occupations: ["politician", "political activist", "political pundit", "political scientist", "political theorist",
       "political philosopher", "philosopher", "economist", "pundit", "monarch", "jihadist", "terrorist", "military leader", "cause activists (women's rights, civil rights, human rights, social, peace, environment), trade unionist, revolutionary, social reformer, suffragist, feminist, anarchist"], orPoliticalOfficeHeld: ["public office", "head of state",
-      "head of government", "monarch", "legislator"], minLanguages: MIN_LINKS, minLanguagesWaivedFor: "articles in English Wikipedia's monthly top 1,000", minViews12m: cutoff },
-    viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
+      "head of government", "monarch", "legislator"], orActivist: true, orPoliticalIdeologyStated: true, minLanguages: MIN_LINKS, minLanguagesWaivedFor: "articles in English Wikipedia's monthly top 1,000", minViews12m: cutoff },
+    viewsPeriod: periodLabel,
     people,
   }, null, 1) + "\n");
   console.log(`Wrote ${people.length} people (more than ${cutoff} views). Dropped from the old catalog: ${dropped.length ? dropped.join(", ") : "none"}`);

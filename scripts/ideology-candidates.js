@@ -73,9 +73,7 @@ async function ideologyItems(ids) {
 }
 
 // 3. English Wikipedia views over the last 12 full months, as in pageviews.js.
-const now = new Date();
-const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0));
-const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
+const { start, end } = require("./lib").viewsPeriod(); // moves every two months
 const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
 async function views(title) {
   const t = encodeURIComponent(title.replace(/ /g, "_"));
@@ -126,7 +124,7 @@ async function main() {
 
   const report = {
     rule: `Union of the current catalog and articles linked from en.wikipedia ${LIST} that Wikidata classes as a political ideology (or a subclass), ideology or political philosophy, or as a direct subclass of one, leaving out articles on one place, a history or a list`,
-    viewsPeriod: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`,
+    viewsPeriod: require("./lib").viewsPeriod().label,
     listed: listed.size, found: found.length, alreadyInCatalog: found.length - added.length, added: added.length,
     addedList: entries.map((e) => `${e.name} (${e.views12m})`),
     droppedNoArticle: dropped.map((e) => e.name),

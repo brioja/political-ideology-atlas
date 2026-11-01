@@ -70,7 +70,8 @@ audits valid; rewording one needs a new id.
 
 `audits/people-catalog.json` lists about 2,800 public figures taken from data, not hand-picked:
 people Wikidata lists with a political occupation (including political theorists, philosophers,
-economists and cause activists) or a political office, ranked by English Wikipedia views
+economists and activists), a political office, or a stated political ideology, ranked by English
+Wikipedia views over 12 months (the period moves every two months)
 (`scripts/candidates.js`). Nobody is added or dropped by hand; to change who is in, change the
 criteria in that script. `node scripts/people-report.js` reports the mix of gender, region and
 era, and an imbalance is reported rather than corrected by hand. Each gets
@@ -90,7 +91,7 @@ person's own words and record, and a statement with no reliable evidence is `nul
   the same rule as ideologies (2026-10-31).
   A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
-  hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities audited with
+  hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities outside the catalog criteria, audited with
   the same instructions) must fail it; `node test.js` checks this. Excluded audits make the
   validator exit with code 2 so they aren't re-audited.
 - **Tie-break:** when two people are within 3 points of each other, the one with more English

@@ -50,9 +50,7 @@ async function main() {
   }
 
   // 2. Sum monthly views over the last 12 full months.
-  const now = new Date();
-  const end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0));
-  const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
+  const { start, end } = require("./lib").viewsPeriod(); // moves every two months
   const views = async (title) => {
     const t = encodeURIComponent(title.replace(/ /g, "_"));
     const r = await getJson(`https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`);
@@ -72,7 +70,7 @@ async function main() {
     }
     p.views12m = (await views(titleOf(p.wikipedia))) || 0;
   }
-  data.viewsPeriod = `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}`;
+  data.viewsPeriod = require("./lib").viewsPeriod().label;
   fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");
   const top = [...people].sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
   console.log(`Views for ${data.viewsPeriod}. Most viewed: ${top.slice(0, 5).map((p) => `${p.name} ${p.views12m}`).join(", ")}`);

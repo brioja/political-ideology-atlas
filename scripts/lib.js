@@ -6,6 +6,16 @@ const ROOT = path.join(__dirname, "..");
 const PROFILES_DIR = path.join(ROOT, "audits", "profiles");
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
+// English Wikipedia views are summed over 12 full months ending in an odd-numbered month (Jan, Mar,
+// ... Nov), so the period moves every two months, not monthly: a new period refetches views for
+// everyone (hours for the people candidates), and a month's shift barely changes anyone's rank.
+function viewsPeriod(now = new Date()) {
+  let end = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 0)); // last full month
+  if ((end.getUTCMonth() + 1) % 2 === 0) end = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), 0));
+  const start = new Date(Date.UTC(end.getUTCFullYear() - 1, end.getUTCMonth() + 1, 1));
+  const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");
+  return { start, end, ymd, label: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}` };
+}
 const allStatements = () => readJson(path.join(ROOT, "statements.json")).statements;
 // Candidates are answered by audits but not asked in the test until audits show they are
 // contested (audits/statements/STANDARD.md).
@@ -115,6 +125,6 @@ const awaitingReaudit = () => {
   return new Set(fs.existsSync(f) ? readJson(f).ids : []);
 };
 
-module.exports = { awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

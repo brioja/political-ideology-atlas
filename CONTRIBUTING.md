@@ -72,7 +72,7 @@ node scripts/build.js               # rebuild data.js and people.js
 node test.js                        # math checks, plus the uncertainty controls
 ```
 
-`test.js` checks that apolitical celebrities (`audits/controls/`, audited with the same rules) are
+`test.js` checks that apolitical celebrities (`audits/controls/`, outside the people catalog's criteria, audited with the same rules) are
 still excluded. If your change makes one of them pass, something has gone wrong.
 
 ## Code and design

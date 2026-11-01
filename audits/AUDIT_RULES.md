@@ -28,6 +28,10 @@ words; don't paste long passages.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (an archive.org
   copy, another site hosting the same text, the official record) before giving up.
+- Song lyrics are the subject's own words only if the subject wrote or co-wrote them. Lyrics
+  written by someone else and only performed by the subject are not evidence of the subject's views.
+  Check the songwriting credit (the album notes or a rights database such as ASCAP, BMI or PRS) and
+  cite it with the lyrics.
 - Do not use political-quiz sites (12axes, 8values, Political Compass, IDRlabs, the polcompball
   wiki and similar) as sources: a site's guess at where someone stands isn't evidence.
 - Research theme by theme. Each statement has a `theme` (economy, government, society, world,
