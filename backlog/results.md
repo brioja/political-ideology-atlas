@@ -92,7 +92,7 @@ Brandon: the bar could fill up twice, once per accuracy level, e.g. "Short quiz 
 then "Long quiz 10%" toward Done (±1.25 took 35 statements, own ideology first 91/143; ±1 took 60 at
 111). Not started.
 
-## Thinner ideologies leading (watch, 2026-10-31; narrowed 2026-11-01)
+## Thinner ideologies leading (watch 2026-10-31; CLOSED 2026-11-01)
 
 A mild taker matching a mild ideology is fine (Brandon). The worry was that an ideology with fewer
 positions (Post-Marxism, 103, vs Saint-Simonianism, 252) could come first because distance weighs each
@@ -106,6 +106,13 @@ Saint-Simonianism's reliability on every line moves it only from 10.70 to 11.00.
 didn't decide that run. Earlier, at 35 answers, Post-Marxism came first with 4 same side / 5 opposite on
 13 shared statements. Like-with-like matching was decided against (decided-against.md). Watch for a
 thinner ideology leading on real links; deepening its audit is the route that needs no change to matching.
+
+Closed 2026-11-01 (Brandon): the error-bar rule now keeps records with loose places off the site (no bar
+over ±4, average at most ±2). On Brandon's fresh 48-statement run (Done at widest ±2, average ±1)
+Post-Marxism led again at 8.95 against Saint-Simonianism's 10.23; with Saint-Simonianism's reliability
+on every line it would be 9.22, still first. Post-Marxism remains thinner than 96% of shown ideologies
+(average bar ±1.00), so thinness still nudges, but it decided neither run. Reopen only if real takers
+complain; deepening the audit stays the route.
 
 ## A 20% overall average (measured 2026-11-01, kept at 25%; superseded the same day)
 
