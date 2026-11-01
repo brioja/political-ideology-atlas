@@ -46,7 +46,8 @@ words; don't paste long passages.
   there with its title, url and download date.
 - Bulk public records are kept locally in `~/.cache/political-ideology-atlas/corpora/` (never
   committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789, US Congress floor speeches since 1873 and committee hearing
-  transcripts (each member's own turns, with the citation),
+  transcripts (each member's own turns, with the citation), UK House of Commons Hansard since 1919
+  (debates, Westminster Hall, written answers; each MP's own words),
   European Parliament roll calls since 2019, interview and show transcripts. Check them before
   searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
   source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
