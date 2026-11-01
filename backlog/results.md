@@ -96,8 +96,9 @@ then "Long quiz 10%" toward Done (±1.25 took 35 statements, own ideology first 
 
 A mild taker matching a mild ideology is fine (Brandon). The worry was that an ideology with fewer
 positions (Post-Marxism, 103, vs Saint-Simonianism, 252) could come first because distance weighs each
-line by reliability. Post-Marxism isn't sparse where it shows: its reliability on lines 1-8 is 0.93-0.98
-(Saint-Simonianism 0.96-0.99); it is only thinner on lines 10-14 (0.79-0.89 vs 0.90-0.94). On Brandon's
+line by reliability. Post-Marxism is thinner on every line: its error bars (±1 SD) are ±0.78-1.06, wider
+than 90-96% of the 570 shown ideologies on 13 of 14 lines and 1.5-1.8 times Saint-Simonianism's
+(±0.50-0.73); they look short on the page only because the lines span about ±10. On Brandon's
 60-answer mobile run (2026-10-31, with the misread economy-in-majority-hands answer corrected),
 Saint-Simonianism is closer (8.9 vs 10.7). Two-thirds of Post-Marxism's squared distance is on the drawn
 lines (Globalism-Nationalism alone 38 of 115: Brandon -10.8, Post-Marxism -4.2), and giving it
