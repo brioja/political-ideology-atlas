@@ -9,6 +9,11 @@ explicit decision from the maintainer.
   **adjusting a bar to include or exclude one person or ideology.**
 - **Grouping place twins** (Quebec / Catalan nationalism) on the page, **ideology families**, and
   **breaking near-ties by Wikipedia views**.
+- **Amplifying answers by direction** (reading a ±1 as a firmer position on its side). A mild answer
+  is often a lean the taker could flip: the maintainer's own runs gave "Major industries like energy,
+  rail and utilities should be publicly owned" +1 on 2026-10-31 and -1 the next day. Taken at face
+  value, the flip moves the result a little, as the doubt warrants; amplified, a coin-flip would
+  swing it (2026-11-01).
 - **Fixing mild takers.** A taker who answers mildly lands on a softer ideology on the same sides;
   correcting it would override their answers.
 - **Naming dividing lines the page doesn't draw.**
