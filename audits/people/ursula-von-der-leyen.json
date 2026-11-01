@@ -2,7 +2,10 @@
   "id": "ursula-von-der-leyen",
   "name": "Ursula von der Leyen",
   "auditedAt": "2026-10-24",
-  "auditor": "claude-sonnet-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+  ],
   "living": true,
   "role": "President of the European Commission (since 2019); former German federal minister of family, labour and defence",
   "summary": "Centre-right Christian Democrat and strongly pro-integration, she champions the EU's social market economy, the Green Deal, a European Defence Union and a rules-based, partnership-oriented trade policy. She combines social protection and gender and LGBTIQ equality with firm border management, returns and rearmament, and in recent years a more competitiveness- and security-focused agenda.",
@@ -79,6 +82,42 @@
       "author": "Al Jazeera",
       "url": "https://www.aljazeera.com/news/2023/1/17/special-tribunal-needed-for-russian-war-crimes-in-ukraine-eu",
       "usedFor": "Her call for a special tribunal for Russian war crimes"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "title": "Davos 2026: Special address by Ursula von der Leyen, President of the European Commission",
+      "author": "Ursula von der Leyen",
+      "url": "https://www.weforum.org/stories/forum-in-focus/davos-2026-special-address-ursula-von-der-leyen",
+      "date": "2026-01-20",
+      "usedFor": "Tariffs, trade, nuclear and renewables, Ukraine, Greenland; World Economic Forum, CC BY-NC-ND 4.0"
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "title": "Davos 2025: Special address by Europe's Ursula von der Leyen",
+      "author": "Ursula von der Leyen",
+      "url": "https://www.weforum.org/stories/global-cooperation/davos-2025-special-address-by-ursela-von-der-leyen-president-of-the-european-commission",
+      "date": "2025-01-21",
+      "usedFor": "Simplification of due diligence rules, trade defence on Chinese EVs, nature credits, Paris Agreement; World Economic Forum, CC BY-NC-ND 4.0"
+    },
+    {
+      "id": "s12",
+      "kind": "primary",
+      "title": "Davos 23: Special Address by Ursula von der Leyen, President of the European Commission",
+      "author": "Ursula von der Leyen",
+      "url": "https://www.weforum.org/stories/forum-in-focus/davos-23-special-address-by-ursula-von-der-leyen-president-of-the-european-commission",
+      "date": "2023-01-17",
+      "usedFor": "Green Deal Industrial Plan, de-risking from China, trade (read; no answer changed); World Economic Forum, CC BY-NC-ND 4.0"
+    },
+    {
+      "id": "s13",
+      "kind": "primary",
+      "title": "What did Ursula von der Leyen tell Davos Agenda Week?",
+      "author": "Ursula von der Leyen",
+      "url": "https://www.weforum.org/stories/forum-in-focus/ursula-von-der-leyen-european-commission-davos-agenda",
+      "date": "2021-01-26",
+      "usedFor": "Business case for biodiversity, due diligence, power of big digital companies; World Economic Forum, CC BY-NC-ND 4.0"
     }
   ],
   "answers": {
@@ -139,11 +178,13 @@
     "regulate-corporations": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Pushed tougher enforcement of the Digital Services and Markets Acts and the AI Act on big tech, while also leading simplification omnibuses that cut reporting obligations for companies; mixed evidence.",
+      "rationale": "Pushed tougher enforcement of the Digital Services and Markets Acts and the AI Act on big tech, while also leading simplification omnibuses that cut reporting obligations for companies; mixed evidence. Her Davos addresses show the shift: in 2021 'we need to contain this immense power of the big digital companies' and 'we will propose to strengthen due diligence for companies'; in 2025 'we will launch a far-reaching simplification of our sustainable finance and due diligence rules' and cut 'unnecessary red tape'. Still mixed overall, so unchanged.",
       "sources": [
         "s7",
         "s4",
-        "s5"
+        "s5",
+        "s13",
+        "s11"
       ]
     },
     "cut-welfare": {
@@ -246,12 +287,10 @@
       ]
     },
     "same-sex-marriage": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Spoke out for same-sex marriage and adoption, and in June 2017 voted against her parliamentary group's majority for introducing same-sex marriage in Germany.",
-      "sources": [
-        "s8"
-      ]
+      "value": null,
+      "confidence": "low",
+      "rationale": "Earlier answer (2, high) cited only Wikipedia for her June 2017 Bundestag vote for same-sex marriage; under rules 3 Wikipedia alone cannot settle an answer and the primary source was not found in this pass, so null until re-sourced.",
+      "sources": []
     },
     "abortion-legal": {
       "value": null,
@@ -433,11 +472,13 @@
     "tariffs-protect-industry": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Said 'I do not believe in tariffs. Tariffs are taxes', yet proposed a new long-term steel trade instrument, anti-subsidy action on Chinese EVs and a carbon border mechanism to protect industry from unfair competition.",
+      "rationale": "Said 'I do not believe in tariffs. Tariffs are taxes', yet proposed a new long-term steel trade instrument, anti-subsidy action on Chinese EVs and a carbon border mechanism to protect industry from unfair competition. Her Davos addresses keep the mix: in 2025 'Defensive trade measures are being adopted across the world... This is also why Europe has taken measures, for instance on electric cars'; in 2026 'we are choosing fair trade over tariffs, partnership over isolation' and 'the proposed additional tariffs are a mistake, especially between long-standing allies'.",
       "sources": [
         "s5",
         "s4",
-        "s1"
+        "s1",
+        "s11",
+        "s10"
       ]
     },
     "state-directs-investment": {
@@ -1605,12 +1646,10 @@
       "sources": []
     },
     "women-must-cover": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Declined to wear a hijab on a 2016 visit to Saudi Arabia, saying it annoys her when women are pushed into wearing the abaya.",
-      "sources": [
-        "s8"
-      ]
+      "value": null,
+      "confidence": "low",
+      "rationale": "Earlier answer (-2, medium) cited only Wikipedia for her 2016 refusal to wear an abaya in Saudi Arabia; under rules 3 Wikipedia alone cannot settle an answer and the primary source was not found in this pass, so null until re-sourced.",
+      "sources": []
     },
     "common-currency": {
       "value": 2,
@@ -2904,10 +2943,13 @@
       "sources": []
     },
     "nature-as-capital": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In her 2021 Davos address she made 'the business case' for nature: 'More than half of global GDP is dependent on high-functioning biodiversity and ecosystems', and backed the EU taxonomy and green bond standard; in 2025 she listed 'developing nature credits' among climate priorities. She frames ecosystems as economic assets, but never spells out full natural-capital accounting, so medium.",
+      "sources": [
+        "s13",
+        "s11"
+      ]
     },
     "sacred-nation": {
       "value": null,
@@ -3319,5 +3361,16 @@
       "sources": []
     }
   },
-  "notes": "Commission policy is counted only where she personally presented or championed it. Abortion, healthcare and similar areas stay null because the Commission's formal replies (for example to the My Voice, My Choice initiative) are not recorded as her own positions. Her positions have shifted over time: more sceptical of nuclear power earlier in her career and a vocal nuclear supporter since 2024; a more interest-driven foreign-policy tone in March 2026 that she then softened by reaffirming support for international law."
+  "notes": "Commission policy is counted only where she personally presented or championed it. Abortion, healthcare and similar areas stay null because the Commission's formal replies (for example to the My Voice, My Choice initiative) are not recorded as her own positions. Her positions have shifted over time: more sceptical of nuclear power earlier in her career and a vocal nuclear supporter since 2024; a more interest-driven foreign-policy tone in March 2026 that she then softened by reaffirming support for international law. Opus pass 2026-11-01 read her four Davos special addresses (2021, 2023, 2025, 2026) in full: they are about the economy, energy, climate, trade, China, Ukraine and Greenland; they settle one new statement (nature-as-capital) and add evidence to tariffs and corporate regulation without changing those answers. Healthcare, social and religious themes are not addressed in them.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-24"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-11-01"
+    }
+  ],
+  "rules": 3
 }
