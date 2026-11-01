@@ -130,7 +130,10 @@ A political ideology or figure takes positions across all of the test's dividing
 that speaks to only some of them holds opinions, not a full politics. The validator measures, on
 each line, how much of it the subject's known positions leave unknown, and the subject is shown only
 if every line is more known than unknown (at most 50% unknown, `MAX_UNCERTAINTY` in `pca.js`; a line
-listed in `audits/line-allowances.json` has its own, temporary limit). The same rule applies to
+listed in `audits/line-allowances.json` has its own, temporary limit), and if the lines are, on
+average, at most 25% unknown (`MAX_MEAN_UNCERTAINTY`: the error bars no wider than half a line's
+spread overall), so a record precise on some lines but near the limit on several others is not shown.
+The same rule applies to
 ideologies, people and AI models. Every answer resting on evidence counts,
 whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred:") that audits under
 rules 2 still hold. A failure names the lines left unknown. Don't pad answers to pass: an honest

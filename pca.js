@@ -536,7 +536,11 @@ function posterior(ctx, knownIdx, centred = null) {
 // line: every line more known than unknown, except a line given its own temporary limit
 // (`maxUncertainty` in the placement context, from audits/line-allowances.json). The same rule for ideologies, people and AI models; the quiz's "Done"
 // uses the same posterior, measured as band width (DONE_BAND).
+// Overall, too (Brandon, 2026-11-01): averaged over the lines, at most MAX_MEAN_UNCERTAINTY unknown, so the
+// error bars are on average (root mean square) no wider than half a line's spread. It catches a record
+// placed precisely on some lines but near the limit on several others.
 const MAX_UNCERTAINTY = 0.5;
+const MAX_MEAN_UNCERTAINTY = 0.25;
 function worstUncertainty(ctx, knownIdx) {
   return Math.max(...lineStats(ctx, knownIdx).map((l) => 1 - l.reliability));
 }
@@ -545,8 +549,9 @@ function uncertainty(ctx, profile) {
   const known = profile.flatMap((x, j) => (x == null ? [] : [j]));
   const lines = lineStats(ctx, known).map((l) => 1 - l.reliability);
   const limits = lines.map((_, i) => (ctx.maxUncertainty && ctx.maxUncertainty[i]) || MAX_UNCERTAINTY);
+  const mean = lines.reduce((t, x) => t + x, 0) / lines.length;
   return { known: known.length, uncertainty: Math.max(...lines), lines, limits, max: MAX_UNCERTAINTY,
-    placed: lines.every((x, i) => x <= limits[i]) };
+    mean, maxMean: MAX_MEAN_UNCERTAINTY, placed: lines.every((x, i) => x <= limits[i]) && mean <= MAX_MEAN_UNCERTAINTY };
 }
 
 // How far off a distance may be from placement error alone, for a list of answers with positions on `knownIdx`:
@@ -604,5 +609,5 @@ function decodeShare(s, ids, slots) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, DONE_BAND, doneGaps, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, worstUncertainty, MAX_UNCERTAINTY, MAX_MEAN_UNCERTAINTY, DONE_BAND, doneGaps, placementFromParts, placementProgress, describeAxis };
 }

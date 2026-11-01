@@ -46,7 +46,8 @@ When in doubt, the entry is audited, and gate 3 decides on the evidence.
 An audited ideology is shown in the results, and helps define the axes, only if it **takes stated
 positions on the questions the other ideologies answer**. That means enough stated answers (not `null`, and not
 the marked inferences older audits hold) across the statements to place it on every one of the
-test's dividing lines, each more known than unknown. This is the same uncertainty rule people get
+test's dividing lines, each more known than unknown, and on average at most 25% unknown (error bars no
+wider than half a line's spread overall). This is the same uncertainty rule people get
 (`uncertainty` in `pca.js`; see the README).
 
 An ideology that only speaks to one issue, or whose sources are silent on most statements, stays in the

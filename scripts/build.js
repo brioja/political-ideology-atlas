@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, MAX_UNCERTAINTY, MAX_SHOWN_LINES } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, MAX_UNCERTAINTY, MAX_MEAN_UNCERTAINTY, MAX_SHOWN_LINES } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -277,7 +277,7 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
 
 console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
 if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
-if (notPlaced.length) console.log(`Excluded as not placed on every line (uncertainty over ${MAX_UNCERTAINTY * 100}% on one): ${notPlaced.join(", ")}`);
+if (notPlaced.length) console.log(`Excluded as not placed on every line (uncertainty over ${MAX_UNCERTAINTY * 100}% on one, or over ${MAX_MEAN_UNCERTAINTY * 100}% on average): ${notPlaced.join(", ")}`);
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);
 if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
