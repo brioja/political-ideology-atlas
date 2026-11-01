@@ -106,3 +106,13 @@ Saint-Simonianism's reliability on every line moves it only from 10.70 to 11.00.
 didn't decide that run. Earlier, at 35 answers, Post-Marxism came first with 4 same side / 5 opposite on
 13 shared statements. Like-with-like matching was decided against (decided-against.md). Watch for a
 thinner ideology leading on real links; deepening its audit is the route that needs no change to matching.
+
+## A 20% overall average (measured 2026-11-01, kept at 25%)
+
+The uncertainty rule's overall check allows 25% unknown on average over the 14 lines (error bars on
+average no wider than half a line's spread). At 20%, 23 of 559 shown ideologies and 72 of 338 shown
+people would leave (list kept outside the repo, `~/work/average-20-percent.md`); Black feminism (24%)
+would be among them. Too drastic for now: revisit only if takers complain about matching. Control
+case for any change here: Brandon's own results matching Jared Kushner, with whom he disagrees on
+lines 10-14 (a thin record on those lines pulled toward him); a change that makes that match
+stronger, not weaker, is going the wrong way.
