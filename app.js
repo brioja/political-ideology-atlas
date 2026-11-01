@@ -1007,7 +1007,7 @@ async function pngWithText(canvas, fields, alt) {
 }
 
 // The card uses a fixed light palette: it's an image that gets posted elsewhere, not page UI.
-const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#5b6776", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b", point: "#5b6776" };
+const CARD = { bg: "#eef1f4", surface: "#ffffff", ink: "#17202b", muted: "#3f4a57", line: "#d3d9e1", accent: "#1f6f78", accent2: "#8a3b6b", point: "#5b6776" };
 // An ideology's traditional color for marks on the card: its first color that stands out against the
 // light background (3:1, the usual minimum for graphics), else its darkest one darkened until it does.
 // Ideologies without colors keep the neutral point color.
@@ -1148,12 +1148,20 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const photos = await Promise.all(people.map(loadPhoto));
 
   // Background: neutral, with a soft wash of the top ideology's traditional colors (or its family
-  // color when it has none), blended corner to corner so the colors set a mood without being a flag.
+  // color when it has none), blended corner to corner so the colors set a mood without being a flag,
+  // and three large soft glows of the same colors, in the colors' own order.
   ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
   const wash = top.flag && top.flag.colors.length ? top.flag.colors.map((x) => x.hex) : [markColor(top)];
   const grad = ctx.createLinearGradient(0, 0, W, H);
   (wash.length === 1 ? [wash[0], wash[0]] : wash).forEach((col, i, all) => grad.addColorStop(i / (all.length - 1), col));
-  ctx.globalAlpha = 0.16; ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1;
+  ctx.globalAlpha = 0.16; ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+  // Glows: top right, bottom left, lower right.
+  [[W * 0.95, H * 0.08, W * 0.75], [W * 0.05, H * 0.95, W * 0.85], [W * 0.9, H * 0.7, W * 0.5]].forEach(([x, y0, r], i) => {
+    const col = wash[i % wash.length], glow = ctx.createRadialGradient(x, y0, 0, x, y0, r);
+    glow.addColorStop(0, col); glow.addColorStop(1, col.slice(0, 7) + "00");
+    ctx.globalAlpha = 0.12; ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+  });
+  ctx.globalAlpha = 1;
   ctx.textBaseline = "alphabetic";
 
   // Header: site name (so a post says which test this is), then the ideology name.
@@ -1274,9 +1282,12 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     ctx.strokeStyle = CARD.ink; ctx.lineWidth = w;
     ctx.beginPath(); ctx.arc(x, yy, r, 0, Math.PI * 2); ctx.stroke();
   };
+  // A thin, soft ink outline keeps the dot visible on a background washed in its own colors, without
+  // changing the ideology's color; soft, so it isn't mistaken for the black "You" ring.
   const dotMark = (x, yy, r) => {
-    ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top);
-    ctx.fill(new Path2D(shapePath(styleOf(top).shape, x, yy, r))); ctx.globalAlpha = 1;
+    const d = new Path2D(shapePath(styleOf(top).shape, x, yy, r));
+    ctx.globalAlpha = 0.85; ctx.fillStyle = markColor(top); ctx.fill(d);
+    ctx.globalAlpha = 0.55; ctx.strokeStyle = CARD.ink; ctx.lineWidth = 1.5; ctx.stroke(d); ctx.globalAlpha = 1;
   };
   const diamondMark = (x, yy, r) => {
     // Kept in the background: a faint outline, so you and your ideology stay the strongest marks.

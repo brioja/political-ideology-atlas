@@ -82,7 +82,9 @@ more isn't a practical alternative either: line 13 is still 5% unknown with ever
 
 A faint uncolored outline of the globe mark was tried behind the home page hero and the share card
 (top right, then bottom right). Brandon: no on the home page; on the card it made the text harder to
-read. Both left plain.
+read. The home page stays plain. The card later got soft color glows instead (no shapes, so nothing
+echoes the dividing lines) and darker grey text; sorting the colors darkest-first (black at the top) was tried and dropped. Grey bars and lines were rejected for clashing
+with the line tracks, and a separate white panel for the lines for taking their space.
 
 ## Showing all 14 lines on the page (2026-11-01)
 
