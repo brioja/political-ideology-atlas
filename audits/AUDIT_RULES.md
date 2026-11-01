@@ -45,7 +45,8 @@ words; don't paste long passages.
   committed), so later passes reuse them: check its `index.json` first, and list each file you add
   there with its title, url and download date.
 - Bulk public records are kept locally in `~/.cache/political-ideology-atlas/corpora/` (never
-  committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789,
+  committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789, US Congress floor speeches since 1873 (each member's own
+  turns, with their Congressional Record citation),
   European Parliament roll calls since 2019, interview and show transcripts. Check them before
   searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
   source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
