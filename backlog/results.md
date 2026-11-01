@@ -92,12 +92,16 @@ Brandon: the bar could fill up twice, once per accuracy level, e.g. "Short quiz 
 then "Long quiz 10%" toward Done (±1.25 took 35 statements, own ideology first 91/143; ±1 took 60 at
 111). Not started.
 
-## Sparse ideologies leading (open, 2026-10-31)
+## Thinner ideologies leading (watch, 2026-10-31; narrowed 2026-11-01)
 
-A mild taker matching a mild ideology is fine (Brandon). A sparse one leading is probably an issue: an
-ideology with few positions (Post-Marxism, 103, vs Saint-Simonianism, 252) is placed nearer the centre and
-less certainly on lines 10-14, and distance weighs those lines by reliability, so it can come first while
-disagreeing with the taker on the statements both answered. Brandon's 35-statement run: Post-Marxism first
-with 4 same side / 5 opposite on 13 shared statements; at 60 it was level with Saint-Simonianism (8/7 on
-22 vs 33/3 on 50). Like-with-like matching was decided against (decided-against.md). No fix chosen; list
-options before picking (deepening sparse audits is the route that needs no change to matching).
+A mild taker matching a mild ideology is fine (Brandon). The worry was that an ideology with fewer
+positions (Post-Marxism, 103, vs Saint-Simonianism, 252) could come first because distance weighs each
+line by reliability. Post-Marxism isn't sparse where it shows: its reliability on lines 1-8 is 0.93-0.98
+(Saint-Simonianism 0.96-0.99); it is only thinner on lines 10-14 (0.79-0.89 vs 0.90-0.94). On Brandon's
+60-answer mobile run (2026-10-31, with the misread economy-in-majority-hands answer corrected),
+Saint-Simonianism is closer (8.9 vs 10.7). Two-thirds of Post-Marxism's squared distance is on the drawn
+lines (Globalism-Nationalism alone 38 of 115: Brandon -10.8, Post-Marxism -4.2), and giving it
+Saint-Simonianism's reliability on every line moves it only from 10.70 to 11.00. So thinness nudges, it
+didn't decide that run. Earlier, at 35 answers, Post-Marxism came first with 4 same side / 5 opposite on
+13 shared statements. Like-with-like matching was decided against (decided-against.md). Watch for a
+thinner ideology leading on real links; deepening its audit is the route that needs no change to matching.
