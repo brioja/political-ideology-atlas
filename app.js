@@ -108,6 +108,8 @@ const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(
 
 const END_CHARS = 20;
 function lineInfo(i) {
+  // Past the drawn lines: unnamed (see moreLines).
+  if (i >= SHOWN_LINES) return { name: `Line ${i + 1}`, low: "Left end", high: "Right end", lowId: null, highId: null, unnamed: true };
   // A rotated line named in audits/line-labels.json (see build.js) is named by its theme.
   const named = model.labels && model.labels[i];
   if (named) return { name: `${named.low} ↔ ${named.high}`, low: named.low, high: named.high, lowId: null, highId: null };
@@ -116,9 +118,29 @@ function lineInfo(i) {
   const low = pick(sorted.slice(0, 5)), high = pick(sorted.slice(-5).reverse());
   return { name: `${low.name} ↔ ${high.name}`, low: low.name, high: high.name, lowId: low.id, highId: high.id };
 }
+// The real lines past the drawn ones (SHOWN_LINES..REAL_LINES), unnamed, in a collapsed section;
+// `strip(i)` draws line i. Names for these were decided against (backlog/decided-against.md), so each
+// is titled by its number and its statements say what it divides.
+function moreLines(strip) {
+  const n = REAL_LINES - SHOWN_LINES;
+  if (n <= 0) return "";
+  return `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary>
+    ${Array.from({ length: n }, (_, k) => strip(SHOWN_LINES + k)).join("")}</details>`;
+}
+// Three of the line's cluster statements per end. A rotated line often loads on one end only, so
+// an end short of its own is topped up with the other end's spare ones, in their disagree wording.
+function lineSides(L, cluster) {
+  const low = cluster.filter((p) => p.w < 0), high = cluster.filter((p) => p.w > 0);
+  const end = (name, own, other) => {
+    const items = own.slice(0, 3).map((p) => p.text)
+      .concat(other.slice(3, 3 + 3 - Math.min(own.length, 3)).map((p) => esc(QUESTIONS[p.q].disagree)));
+    return `<div><p class="pull-head">${esc(name)}</p><ul class="plain">${items.map((t) => `<li>${t}</li>`).join("")}</ul></div>`;
+  };
+  return `<div class="sides">${end(L.low, low, high)}${end(L.high, high, low)}</div>`;
+}
 // The line's name with each end linked to that ideology's page.
 const endTitle = (name, id) => (id ? `<a href="${ideologyHref(id)}">${esc(name)}</a>` : esc(name));
-const lineTitle = (L) => `${endTitle(L.low, L.lowId)} ↔ ${endTitle(L.high, L.highId)}`;
+const lineTitle = (L) => (L.unnamed ? esc(L.name) : `${endTitle(L.low, L.lowId)} ↔ ${endTitle(L.high, L.highId)}`);
 
 // ---------- Markers ----------
 // Ideologies are told apart by where they sit on the dividing lines and by name, not by color. An
@@ -824,38 +846,26 @@ function showResults(shared = null) {
   `;
 
   const axesBox = $("axes");
-  // Three of the line's cluster statements per end. A rotated line often loads on one end only, so
-  // an end short of its own is topped up with the other end's spare ones, in their disagree wording.
-  const sides = (L, cluster) => {
-    const low = cluster.filter((p) => p.w < 0), high = cluster.filter((p) => p.w > 0);
-    const end = (name, own, other) => {
-      const items = own.slice(0, 3).map((p) => p.text)
-        .concat(other.slice(3, 3 + 3 - Math.min(own.length, 3)).map((p) => esc(QUESTIONS[p.q].disagree)));
-      return `<div><p class="pull-head">${esc(name)}</p><ul class="plain">${items.map((t) => `<li>${t}</li>`).join("")}</ul></div>`;
-    };
-    return `<div class="sides">${end(L.low, low, high)}${end(L.high, high, low)}</div>`;
-  };
   const youSpread = lineSpread(model, given);
-  for (let i = 0; i < SHOWN_LINES; i++) {
+  const resultAxis = (i) => {
     const ax = describeAxis(model, i, QUESTIONS);
     const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(you[i]);
     const scale = lineScale(vals);
     const pos = (v) => 6 + scale(v) * 588;
-    const div = document.createElement("div");
-    div.className = "axis";
-    div.innerHTML = `
+    return `<div class="axis">
       <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
         ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
         ${rangeBand(pos, you[i], youSpread[i])}
       </svg>
-      <details><summary>What divides ${esc(L.low)} and ${esc(L.high)}?</summary>
-        ${sides(L, ax.cluster)}
-      </details>`;
-    axesBox.append(div);
-  }
+      <details><summary>${L.unnamed ? "What divides its two ends?" : `What divides ${esc(L.low)} and ${esc(L.high)}?`}</summary>
+        ${lineSides(L, ax.cluster)}
+      </details>
+    </div>`;
+  };
+  axesBox.innerHTML = Array.from({ length: SHOWN_LINES }, (_, i) => resultAxis(i)).join("") + moreLines(resultAxis);
 
   const near = new Set(ranked.slice(0, 8).map((r) => r.name));
   const simById = new Map(ranked.map((r) => [r.id, r.similarity]));
@@ -1706,8 +1716,8 @@ const onModel = (profile) => profile.slice(0, QUESTIONS.length);
 
 // Where `scores` sits on each shown dividing line, with every ideology as a faint marker. `other`
 // (a second set of scores) adds a filled marker, for comparing two sides.
-function lineStrips(scores, { selfId = null, other = null, spread = null, otherSpread = null } = {}) {
-  return Array.from({ length: SHOWN_LINES }, (_, i) => {
+function lineStrips(scores, { selfId = null, other = null, spread = null, otherSpread = null, more = false } = {}) {
+  const strip = (i) => {
     const L = lineInfo(i);
     const vals = model.ideologies.map((d) => d.scores[i]).concat(scores[i], other ? other[i] : []);
     const scale = lineScale(vals);
@@ -1722,8 +1732,10 @@ function lineStrips(scores, { selfId = null, other = null, spread = null, otherS
         ${other ? otherBand : ""}
         ${band}
       </svg>
+      ${L.unnamed ? `<details><summary>What divides its two ends?</summary>${lineSides(L, describeAxis(model, i, QUESTIONS).cluster)}</details>` : ""}
     </div>`;
-  }).join("");
+  };
+  return Array.from({ length: SHOWN_LINES }, (_, i) => strip(i)).join("") + (more ? moreLines(strip) : "");
 }
 
 
@@ -1831,7 +1843,7 @@ function renderIdeologyPage(id) {
       </div>
       <section class="stack"><h2>What it stands for</h2>${beliefList(ideo, 6)}</section>
       ${keyFiguresSection(ideo)}
-      <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id, spread: lineSpread(model, ideo) })}</section>
+      <section class="stack"><h2>Where it sits</h2>${lineStrips(ideo.scores, { selfId: ideo.id, spread: lineSpread(model, ideo), more: true })}</section>
       <section class="stack"><h2>Closest ideologies</h2><ul class="matches">${neighbors.map(ideologyRow).join("")}</ul></section>
       ${people.length ? `<section class="stack"><h2>People closest to it</h2><ul class="matches">${people.map(personRow).join("")}</ul></section>` : ""}
       ${comparePicker(`i:${ideo.id}`)}
@@ -1873,7 +1885,7 @@ function renderPersonPage(id) {
       <section class="stack"><h2>Closest ideologies</h2>
         <p class="muted small">Based on the ${profile.filter((x) => x != null).length} statements where ${esc(p.name)} has a known position.</p>
         <ul class="matches">${closest.map(ideologyRow).join("")}</ul></section>
-      <section class="stack"><h2>Where they sit</h2>${lineStrips(positions(model, profile), { spread: lineSpread(model, { ...p, profile }) })}</section>
+      <section class="stack"><h2>Where they sit</h2>${lineStrips(positions(model, profile), { spread: lineSpread(model, { ...p, profile }), more: true })}</section>
       ${similar.length ? `<section class="stack"><h2>Similar people</h2><ul class="matches">${similar.map(personRow).join("")}</ul></section>` : ""}
       <section class="stack"><h2>Share card</h2>
         <canvas id="person-card" class="card-preview" width="1080" height="1350" aria-label="Shareable image of ${esc(p.name)}'s result"></canvas></section>
@@ -2081,7 +2093,7 @@ function renderComparePage(aKey, bKey) {
     ${lede}
     <section class="stack"><h2>Where ${they} sit</h2>
       <p class="read-more small">${bandSwatch("var(--accent)")} ${link(a)} · ${bandSwatch("var(--accent-2)")} ${link(b)}</p>
-      ${lineStrips(positions(model, a.profile), { other: positions(model, b.profile), spread: lineSpread(model, a), otherSpread: lineSpread(model, b) })}</section>
+      ${lineStrips(positions(model, a.profile), { other: positions(model, b.profile), spread: lineSpread(model, a), otherSpread: lineSpread(model, b), more: true })}</section>
     <section class="stack"><h2>${They} agree on ${statements(agree.length)}</h2>
       ${list(agree, 8, (j) => `<li>${topicIcon(QUESTIONS[j])}<span>${statementLink(QUESTIONS[j], stance(QUESTIONS[j], a.profile[j]).text, otherKey)}</span></li>`, `No position ${they} hold on the same side.`)}</section>
     <section class="stack"><h2>${They} part ways on ${statements(apart.length)}</h2>

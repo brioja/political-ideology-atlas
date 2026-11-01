@@ -97,3 +97,5 @@ cast one side as opposing the other's values (Brandon: "saying feminism opposes 
 issue"); topic names overlap too much with lines 1-8. The page keeps the 8 drawn lines; matching and
 inclusion still use all 14. A shared true-width scale across lines was also weighed: each line stays
 stretched to its own extremes, since band width relative to the line is what the uncertainty rule measures.
+Later the same day lines 9-14 were added unnamed ("Line 9"...) in a collapsed "6 smaller dividing lines"
+section on the results, Compare, ideology and person pages, each with its statements per end; not on the share card.
