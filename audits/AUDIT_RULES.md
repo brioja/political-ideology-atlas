@@ -109,10 +109,13 @@ free trade, not about markets in general.
   rigged or cancelled, a single party kept in power while praising pluralism), the record wins; if
   the evidence is genuinely mixed, answer 0 at `low`. Words alone are never `high` where the record
   pulls the other way. Each prompt says what counts as the subject's own record.
-- **Over time.** A later record overrides an earlier one; later words override earlier words; words
-  alone never override a record (speeches praising peace or tolerance after a campaign of conquest or
-  repression change nothing) unless the subject has explicitly repudiated that act, in which case
-  answer at most `medium`.
+- **Over time.** Answer the subject's mature position: the one held longest and set out most fully
+  (main works, time in office, core programmes). A later position replaces it only when the change
+  was explicit and sustained (kept for years, in words and, where they held power, in acts); a late
+  remark, a one-off reversal or a final act against a long record makes the answer mixed at most.
+  Words alone never override a record (speeches praising peace or tolerance after a campaign of
+  conquest or repression change nothing) unless the subject explicitly repudiated that act and kept
+  to it, in which case answer at most `medium`. Say in the rationale when a position changed.
 - **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
   says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
   past a check.
