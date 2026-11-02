@@ -123,11 +123,10 @@ The uncertainty rule's overall check allows 25% unknown on average over the 14 l
 average no wider than half a line's spread). At 20%, 23 of 559 shown ideologies and 72 of 338 shown
 people would leave (list kept outside the repo, `~/work/average-20-percent.md`); Black feminism (24%)
 would be among them. Too drastic for now: revisit only if takers complain about matching. Control
-case for any change here: Brandon's own results matching Jared Kushner, with whom he disagrees on
-lines 10-14 (a thin record on those lines pulled toward him); a change that makes that match
-stronger, not weaker, is going the wrong way. Measure it on his result links against Kushner's record
-even when Kushner is not shown (him leaving the site is not the control). 2026-11-01 unsourced-answer
-cleanup: neutral (73-83% before and after, within a point on every run).
+case for any change here: Jared Kushner must not be Brandon's top match. He once was, though they
+disagree on lines 10-14 (a thin record there pulled him close). How similar the two stay doesn't
+matter; Kushner coming out first again on Brandon's result links would mean a change went the wrong
+way. Kushner leaving the site isn't the control either.
 
 ## Uncertainty rule moved to error bars (2026-11-01)
 
