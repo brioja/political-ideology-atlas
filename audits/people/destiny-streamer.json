@@ -2,7 +2,10 @@
   "id": "destiny-streamer",
   "name": "Destiny (Steven Bonnell II)",
   "auditedAt": "2026-11-02",
-  "auditor": "claude-sonnet-5-5",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "codex"
+  ],
   "rules": 3,
   "living": true,
   "role": "American live streamer and political commentator",
@@ -80,6 +83,30 @@
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Destiny_(streamer)",
       "usedFor": "Role, birth date and general description only; no answer rests on it"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "title": "Politics — Destiny Positions (official GitHub mirror, main commit 37361a5c1983e008f47313917dd8d859b643f1a0)",
+      "author": "Steven Bonnell II (Destiny)",
+      "url": "https://github.com/destinygg/destinypositions/blob/main/docs/politics.md",
+      "usedFor": "Own written positions, especially Global Warming, Voting, Capitalism, Omniliberalism, Socialism / Communism, Reparations and Social Justice. Read from the official repository after positions.destiny.gg returned 403; GitHub page also opened."
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "title": "Ben Shapiro vs Destiny Debate — Lex Fridman Podcast #410, speaker-labelled transcript (2024-01-23)",
+      "author": "Lex Fridman with Ben Shapiro and Destiny",
+      "url": "https://lexfridman.com/ben-shapiro-destiny-debate-transcript/",
+      "usedFor": "Only Destiny-labelled turns, including Iran at 00:50:07 and opposition to overturning an election at 01:23:22; full transcript read and searched."
+    },
+    {
+      "id": "s12",
+      "kind": "primary",
+      "title": "Israel-Palestine Debate — Lex Fridman Podcast #418, speaker-labelled transcript (2024-03-14)",
+      "author": "Lex Fridman with Norman Finkelstein, Benny Morris, Mouin Rabbani and Steven Bonnell",
+      "url": "https://lexfridman.com/israel-palestine-debate-transcript/",
+      "usedFor": "Researched Steven Bonnell-labelled turns on territorial negotiations, settlement, refugees and international law; no new answer attributed from another speaker or from a descriptive historical argument."
     }
   ],
   "answers": {
@@ -89,7 +116,8 @@
       "rationale": "In 2016 he backed the Affordable Care Act and said a single-payer system would probably be better, preferring a switch to single payer.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "raise-minimum-wage": {
       "value": 1,
@@ -98,7 +126,8 @@
       "sources": [
         "s3",
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "markets-allocate-better": {
       "value": null,
@@ -119,7 +148,8 @@
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "unions-good": {
       "value": 1,
@@ -128,7 +158,8 @@
       "sources": [
         "s3",
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "property-fundamental": {
       "value": 0,
@@ -137,7 +168,8 @@
       "sources": [
         "s5",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "regulate-corporations": {
       "value": 1,
@@ -145,19 +177,26 @@
       "rationale": "Said it is definitely true that corporations cannot be trusted to protect the environment without regulation (2017) and agreed that a free market needs rules against monopolies.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "In Capitalism and Omniliberalism he advocates stronger redistribution and free markets with strong social safety nets; he identifies inadequate redistribution as a problem in the United States.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "worker-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In Co-ops he supports worker-owned firms where they improve productivity but questions extending that model to everyone, citing capital-raising problems. He advocates retaining private capitalist ownership rather than replacing it throughout the economy.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "surveillance-ok": {
       "value": -2,
@@ -166,7 +205,8 @@
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "legalize-drugs": {
       "value": null,
@@ -204,7 +244,8 @@
       "rationale": "He suggests police may need more funding and higher standards, but criticizes no-knock raids and civil forfeiture as overreach.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "legalize-sex-work": {
       "value": null,
@@ -225,7 +266,8 @@
       "sources": [
         "s4",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "traditional-family": {
       "value": null,
@@ -239,7 +281,8 @@
       "rationale": "Said yes to legalizing same-sex marriage in 2016 and called it an important issue he feels strongly about.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abortion-legal": {
       "value": 1,
@@ -249,7 +292,8 @@
         "s1",
         "s3",
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "more-religion-public": {
       "value": null,
@@ -258,10 +302,13 @@
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Social Justice says new policies must take account of the continuing effects of historical disadvantages. Reparations specifically supports repaying the unfulfilled land promise to former slaves.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "gender-social-construct": {
       "value": null,
@@ -282,7 +329,8 @@
       "sources": [
         "s8",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "reduce-immigration": {
       "value": null,
@@ -327,10 +375,13 @@
       "sources": []
     },
     "drastic-climate-action": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Global Warming calls for aggressive incentives for greener energy and carbon pricing. The Green New Deal section explicitly supports strong climate action while rejecting the bundling of unrelated policies into that proposal.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "tech-solves-problems": {
       "value": null,
@@ -344,7 +395,8 @@
       "rationale": "In 2016 he said any politician against nuclear power is a fool and said yes to more sustainable energy.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "revolution-justified": {
       "value": 1,
@@ -352,7 +404,8 @@
       "rationale": "He describes protest against an aggressive government escalating, if nothing else works, to riots and civil war as justified self-defence.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "experts-over-public": {
       "value": null,
@@ -361,16 +414,22 @@
       "sources": []
     },
     "central-planning": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In The Academic Arguments he says the calculation problem has not been adequately solved for any country, and that firms still rely on market conditions rather than councils to determine inputs and outputs.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "socialized-markets": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "His Capitalism section endorses private capitalist enterprise under government regulation, while Co-ops treats worker ownership as an option judged by productivity. His acceptance of markets does not require social ownership of businesses.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "land-value-tax": {
       "value": null,
@@ -444,7 +503,8 @@
       "rationale": "On Lex Fridman he says you cannot be pro-democracy and anti-free speech, and defends democracy's responsiveness.",
       "sources": [
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "direct-votes": {
       "value": null,
@@ -476,7 +536,8 @@
       "rationale": "He says protest can escalate to rioting and civil war against a government that aggresses on a group, while rejecting rioting against private property.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "war-builds-character": {
       "value": null,
@@ -490,7 +551,8 @@
       "rationale": "Said yes in 2016 to removing references to God from money to support separation of church and state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "laws-from-scripture": {
       "value": null,
@@ -511,10 +573,13 @@
       "sources": []
     },
     "ethnic-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "In Protecting our Demographics he rejects the project of maintaining a community's ethnic composition, including a claimed right to preserve its voting representation by excluding immigrants. Diversity positively endorses diverse national populations.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "class-struggle-history": {
       "value": null,
@@ -552,7 +617,8 @@
       "rationale": "His stated ethics is that what is good is what satisfies one's own happiness, achieved through exchange with others.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "duties-before-rights": {
       "value": null,
@@ -602,7 +668,8 @@
       "rationale": "In 2016 he said Apple should not unlock an iPhone for the government.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "restore-past-order": {
       "value": null,
@@ -611,16 +678,22 @@
       "sources": []
     },
     "results-over-ideology": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "In Omniliberalism he explicitly says he would advocate whichever economic system consistently produced better economic and social outcomes, without dogmatic attachment to capitalism or socialism.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "direct-action": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "In Voting he says present problems are best solved by working within the current system, building coalitions and electing candidates locally and nationally; Political Ineffectiveness also urges pressure on representatives for feasible policies.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "means-match-ends": {
       "value": null,
@@ -682,7 +755,8 @@
       "rationale": "He calls taxes a justified form of theft for the common benefit and says those who call taxation thievery are incompatible with his society; he accepts the label but rejects the verdict.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "harm-principle": {
       "value": null,
@@ -702,7 +776,8 @@
       "rationale": "Said a firm no, service should be a choice, to requiring every 18-year-old to do a year of military service (2016).",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "exit-over-voice": {
       "value": null,
@@ -734,7 +809,8 @@
       "rationale": "Said he is not big on race realism (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "organic-representation": {
       "value": null,
@@ -784,7 +860,8 @@
       "rationale": "Says he does not believe in objective morality or moral realism and calls meta-ethics a waste of time.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "single-common-good": {
       "value": null,
@@ -864,7 +941,8 @@
       "rationale": "In 2020 he said illegal immigrants should probably have access to subsidized health care, which cuts against reserving welfare benefits for citizens.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "work-for-welfare": {
       "value": 1,
@@ -872,7 +950,8 @@
       "rationale": "In 2016 he agreed able adults on welfare should at least prove they are looking for work, with benefits expiring after two years.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "class-collaboration": {
       "value": null,
@@ -916,7 +995,8 @@
       "rationale": "Rejected the view that races should keep to their own kind with an emphatic no (2017); the law-based version contradicts it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "state-class-instrument": {
       "value": null,
@@ -972,7 +1052,8 @@
       "rationale": "Said probably not to preventing people with serious inheritable disabilities from reproducing (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "security-forces-accountable": {
       "value": null,
@@ -981,10 +1062,13 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "His Capitalism section assigns government responsibility for redistribution, correcting unequal bargaining power and environmental harms, extending its role beyond defence, courts and property protection.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "discourage-race-mixing": {
       "value": -2,
@@ -992,7 +1076,8 @@
       "rationale": "Rejected the view that different types of people should keep to their own kind with an emphatic no (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "equal-moral-worth": {
       "value": 2,
@@ -1000,7 +1085,8 @@
       "rationale": "Answered no, emphatically, to one race being inherently superior to others (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "socialism-one-country": {
       "value": null,
@@ -1047,8 +1133,10 @@
     "consent-of-governed": {
       "value": null,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Integrator review: his condemnation of the false-elector scheme (Shapiro debate, 01:23:22) is a narrower case; opposing an attempt to overturn an election does not settle whether authority is legitimate only by consent of the governed.",
+      "sources": [
+        "s11"
+      ]
     },
     "trade-surplus": {
       "value": null,
@@ -1068,7 +1156,8 @@
       "rationale": "He defends enforcing taxes by force on those who refuse and treats taxation as justified compulsion, so he rejects a ban on initiating force.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "competition-drives-progress": {
       "value": null,
@@ -1089,10 +1178,13 @@
       "sources": []
     },
     "separated-powers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In his 2024 institutionalist clip he argues that legislators should impeach Supreme Court justices for misconduct rather than disliked rulings, calling the latter a legislative overstep into the judicial role.",
+      "sources": [
+        "s8"
+      ],
+      "auditor": "codex"
     },
     "vanguard-party": {
       "value": null,
@@ -1233,7 +1325,8 @@
       "sources": [
         "s6",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "abolish-rental-housing": {
       "value": null,
@@ -1271,7 +1364,8 @@
       "rationale": "Agreed with 'there is no savage, uncivilized people, only different cultures', with a hedge (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "death-penalty": {
       "value": -1,
@@ -1280,7 +1374,8 @@
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "sex-ed-in-schools": {
       "value": 1,
@@ -1288,7 +1383,8 @@
       "rationale": "In 2020 he agreed with a sex-education approach to reducing abortions as his exact stance and said yes to adding gender equality to education.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "creationism-in-schools": {
       "value": null,
@@ -1302,7 +1398,8 @@
       "rationale": "Agreed that pornography involving consenting adults is no business of the state (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "citizenship-by-descent": {
       "value": 0,
@@ -1311,7 +1408,8 @@
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "minority-language-support": {
       "value": null,
@@ -1379,7 +1477,8 @@
       "rationale": "In 2016 he answered no to Congress auditing the Federal Reserve and said he does not trust Congress with the money supply.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-land-for-peace": {
       "value": null,
@@ -1412,7 +1511,8 @@
       "sources": [
         "s6",
         "s2"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1564,7 +1664,8 @@
       "rationale": "Agreed in 2017 that a free market needs restrictions on predatory multinationals creating monopolies.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "no-bailouts": {
       "value": null,
@@ -1573,10 +1674,13 @@
       "sources": []
     },
     "courts-bound-by-majority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In the 2024 institutionalist clip he opposes using legislative impeachment to remove Supreme Court justices merely for rulings legislators dislike, defending judicial independence from that political pressure.",
+      "sources": [
+        "s8"
+      ],
+      "auditor": "codex"
     },
     "gender-parity-bodies": {
       "value": null,
@@ -1633,10 +1737,13 @@
       "sources": []
     },
     "end-racial-preferences": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Affirmative Action says preferential admissions can be useful when properly implemented but criticizes excessive preferences and mismatch. He favors preparatory educational opportunities and explicitly declines a strong overall position.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "public-money-creation": {
       "value": null,
@@ -1674,7 +1781,8 @@
       "rationale": "Hesitated but chose that all customers should be treated equally over a religious business's right to refuse service (2016).",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "entrenched-bill-of-rights": {
       "value": null,
@@ -1874,7 +1982,8 @@
       "rationale": "Said probably not to moving government workers' pensions into private accounts, because people are too stupid, in 2016.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "land-use-tenure": {
       "value": null,
@@ -1967,10 +2076,13 @@
       "sources": []
     },
     "non-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "At 00:50:07 in the Shapiro debate he explicitly endorses the US killing of Iranian commander Soleimani, while favoring nuclear inspections and negotiations as the broader path forward with Iran. That endorsement rejects an absolute prohibition on intervention for any reason.",
+      "sources": [
+        "s11"
+      ],
+      "auditor": "codex"
     },
     "industrial-unions": {
       "value": null,
@@ -2122,7 +2234,8 @@
       "rationale": "Agreed that what happens in a private bedroom between consenting adults is no business of the state (2017) and rejected the idea that no one is naturally homosexual.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "suppress-opposition": {
       "value": null,
@@ -2178,7 +2291,8 @@
       "rationale": "In 2016 said yes, of course, to terminally ill patients being allowed to end their lives.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "left-right-obsolete": {
       "value": null,
@@ -2217,10 +2331,13 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "In Capitalism he explicitly calls for strong government to correct monopoly power, unequal bargaining power and environmental externalities, using Nordic economies as his model. Omniliberalism adds strong social safety nets to that market system.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2354,7 +2471,8 @@
       "rationale": "On defunding the police he says the goal is not to eliminate police, who serve an important role, and suggests police may need more funding.",
       "sources": [
         "s7"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "power-sharing-divided-societies": {
       "value": null,
@@ -2368,7 +2486,8 @@
       "rationale": "Answered probably not to charity being better than social security for helping the disadvantaged, in 2017.",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "term-limits": {
       "value": 1,
@@ -2376,7 +2495,8 @@
       "rationale": "Said no first on term limits for Congress (experience matters), then chose yes in 2016.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "vote-delegation": {
       "value": null,
@@ -2408,7 +2528,8 @@
       "rationale": "In the 2020 quiz he said he does not think foreign residents should vote, while adding that anyone who pays taxes should; he settled on no.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "rent-control": {
       "value": null,
@@ -2458,7 +2579,8 @@
       "rationale": "Argues at length that killing is justified in self-defence, including to protect property, once the aggressor is on notice.",
       "sources": [
         "s5"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "unbroken-national-continuity": {
       "value": null,
@@ -2658,7 +2780,8 @@
       "rationale": "Said yes to the federal government paying for four-year college tuition in 2020, with a hesitation that it be partial.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "pollution-taxes": {
       "value": null,
@@ -2733,10 +2856,13 @@
       "sources": []
     },
     "smash-state-machine": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His Voting prescription is to work within the existing political system and build electoral coalitions. In Political Ineffectiveness he specifically recommends debating feasible government policies and pressing existing representatives to enact them.",
+      "sources": [
+        "s10"
+      ],
+      "auditor": "codex"
     },
     "free-economic-experiment": {
       "value": null,
@@ -2780,7 +2906,8 @@
       "rationale": "Rejected a ban on public funding of broadcasters, asking about NPR (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religions-one-truth": {
       "value": null,
@@ -2794,7 +2921,8 @@
       "rationale": "After reading about farm subsidies, he said he would oppose them in 2016 since they go mostly to huge farms.",
       "sources": [
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "keep-nuclear-weapons": {
       "value": 1,
@@ -2802,7 +2930,8 @@
       "rationale": "Argues that Ukraine gave up its nuclear weapons against promises and then was attacked, describing nukes as protection against Russia.",
       "sources": [
         "s6"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "workers-own-party": {
       "value": null,
@@ -2846,7 +2975,8 @@
       "rationale": "Said that mandatory minimum sentences are usually stupid, in the 2020 quiz.",
       "sources": [
         "s1"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "immigrants-learn-language": {
       "value": null,
@@ -2867,7 +2997,8 @@
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "religious-equal-recognition": {
       "value": null,
@@ -2887,7 +3018,8 @@
       "rationale": "Said no to sex outside marriage being usually immoral (2017).",
       "sources": [
         "s4"
-      ]
+      ],
+      "auditor": "claude-sonnet-5-5"
     },
     "internet-shutdowns": {
       "value": null,
@@ -3148,5 +3280,15 @@
       "sources": []
     }
   },
-  "notes": "Quiz answers come from three on-camera quizzes (2016, 2017, 2020); the 2020 ISideWith-style quiz was weighted highest and 2016 and 2017 answers used only where nothing later contradicts them (the 2016 and 2017 answers on citizenship are mixed). Searched: healthcare, taxes, immigration, abortion, guns, drugs, trade, NATO and Ukraine, Israel, police, free speech, capitalism and socialism. Debates with other speakers were not used because captions do not label speakers; no position on Israel, guns, trans issues or sex work is recorded for that reason."
+  "notes": "Quiz answers come from three on-camera quizzes (2016, 2017, 2020); the 2020 ISideWith-style quiz was weighted highest and 2016 and 2017 answers used only where nothing later contradicts them (the 2016 and 2017 answers on citizenship are mixed). Searched: healthcare, taxes, immigration, abortion, guns, drugs, trade, NATO and Ukraine, Israel, police, free speech, capitalism and socialism. Debates with other speakers were not used because captions do not label speakers; no position on Israel, guns, trans issues or sex work is recorded for that reason. Codex deepening (2026-11-02): searched the saved caption collection and the local Lex #337 corpus across economic systems, labour, welfare, elections, courts, religion, war, alliances, immigration, gender, climate and technology. MediaSum search for Bonnell found no relevant interview; the parliamentary and presidential datasets are not his own record. Read the official positions repository (politics, philosophy, current events and about), and speaker-labelled Lex #410 and #418 transcripts. The positions website returned 403, so no retry or crawler workaround was attempted; its own GitHub repository supplied the text. No YouTube caption pulls were made. Reviewed the remaining statement list against this evidence; secession, monarchy, religious institutions, minority constitutional arrangements and most technology policy remain undocumented. Trade-agreement support was not stretched into a claim that trade benefits everyone; historical descriptions of displacement were not treated as his normative endorsement. The old note about avoiding debates describes the first pass; this pass used only clearly speaker-labelled turns.",
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-02"
+    },
+    {
+      "auditor": "codex",
+      "auditedAt": "2026-11-02"
+    }
+  ]
 }
