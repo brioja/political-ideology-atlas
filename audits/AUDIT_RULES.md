@@ -51,7 +51,9 @@ words; don't paste long passages.
   European Parliament roll calls since 2019, interview and show transcripts. Check them before
   searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
   source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
-  dataset by its publisher's page and version, a transcript by its original broadcast or page, and a
+  dataset by its publisher's page and version, a transcript by its original broadcast or page (if that page no longer opens, link a Wayback
+  Machine copy; if there is none, link the dataset's page and name the transcript's id in the title,
+  e.g. "via the MediaSum corpus, transcript CNN-18377", keeping the dead address in `original`), and a
   mirror as a mirror of the original. Machine transcripts without speaker labels count only where
   the speaker is unambiguous, at medium confidence at most.
 - The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself).
