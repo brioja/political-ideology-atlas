@@ -857,7 +857,7 @@ function showResults(shared = null) {
       <div class="axis-head"><h3>${lineTitle(L)}</h3>${weightBar(i)}</div>
       <svg viewBox="0 0 600 34" style="width:100%;height:auto;display:block" aria-hidden="true">
         <line x1="6" x2="594" y1="17" y2="17" stroke="var(--line)" stroke-width="2"></line>
-        ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, d.name === top.name ? 6 : 4)}" fill="${colorOf(d)}" opacity="${d.name === top.name ? 1 : 0.45}"><title>${esc(d.name)}</title></path>`).join("")}
+        ${model.ideologies.map((d) => `<path d="${shapePath(styleOf(d).shape, pos(d.scores[i]), 17, 4)}" fill="${colorOf(d)}" opacity="0.45"><title>${esc(d.name)}</title></path>`).join("")}
         ${rangeBand(pos, you[i], youSpread[i])}
       </svg>
       <details><summary>${L.unnamed ? "What divides its two ends?" : `What divides ${esc(L.low)} and ${esc(L.high)}?`}</summary>
