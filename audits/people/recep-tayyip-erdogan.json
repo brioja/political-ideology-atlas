@@ -1,7 +1,7 @@
 {
  "id": "recep-tayyip-erdogan",
  "name": "Recep Tayyip Erdoğan",
- "auditedAt": "2026-10-24",
+ "auditedAt": "2026-11-02",
  "auditor": [
   "gpt-6.1-sol",
   "claude-sonnet-5-5"
@@ -250,14 +250,41 @@
    "author": "TRT World",
    "url": "https://www.trtworld.com/article/15037084",
    "usedFor": "2023 UNGA address as quoted by TRT"
+  },
+  {
+   "id": "p1",
+   "kind": "primary",
+   "title": "TBMM Tutanak Dergisi, 24th term, 6th sitting, 8 July 2011 (programme of the 61st Government read by Prime Minister Erdoğan)",
+   "author": "Recep Tayyip Erdoğan / Turkish Grand National Assembly",
+   "url": "https://www5.tbmm.gov.tr/tutanaklar/TUTANAK/TBMM/d24/c001/tbmm24001006.pdf",
+   "usedFor": "Official Turkish record of the 2011 government programme: health, welfare, privatisation, trade, investment incentives, constitution and tutelage, diversity"
+  },
+  {
+   "id": "pm",
+   "kind": "primary",
+   "title": "ParlaMint 5.0, Turkish Grand National Assembly, speeches of Recep Tayyip Erdoğan 2011-2022 (English machine translation)",
+   "author": "Erjavec et al. (CLARIN.SI); speeches by Recep Tayyip Erdoğan",
+   "url": "https://www.clarin.si/repository/xmlui/handle/11356/2006",
+   "usedFor": "Yearly openings of parliament and the 2011 programme; machine-translated, so at most medium confidence unless checked in the Turkish record"
+  },
+  {
+   "id": "ug",
+   "kind": "primary",
+   "title": "UN General Debate Corpus: Erdoğan's General Assembly addresses 2009-2025 (official English text)",
+   "author": "Recep Tayyip Erdoğan / Baturo, Dasandi and Mikhaylov (UNGDC)",
+   "url": "https://doi.org/10.7910/DVN/0TJX8Y",
+   "usedFor": "His own General Assembly speeches: Crimea, occupation, aid, trade, NATO, Turkic states, Gaza and the Holocaust"
   }
  ],
  "answers": {
   "universal-healthcare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "In the 2011 programme he read to parliament (wording checked in the Turkish record) his government 'recognises health care as a basic human right' and makes covering all citizens by general health insurance its main goal.",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "raise-minimum-wage": {
    "value": 2,
@@ -278,10 +305,13 @@
    "auditor": "claude-sonnet-5-5"
   },
   "public-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The same programme (Turkish record checked) says his government gave importance to privatising electricity generation and distribution, the opposite of keeping energy publicly owned.",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "tax-the-wealthy": {
    "value": null,
@@ -311,10 +341,13 @@
    "sources": []
   },
   "cut-welfare": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The 2011 programme (Turkish record checked) expands social assistance and sets the aim of ending absolute poverty by 2023, pairing aid with job referral rather than cutting it for dependency.",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "worker-ownership": {
    "value": null,
@@ -470,10 +503,14 @@
    "sources": []
   },
   "free-trade": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 2011 programme (Turkish record checked) pledges to keep defending free trade and capital movements, and at the UN in 2018 he said Turkey has always favoured free trade and warned against protectionism; this is his stated line, not an unqualified record.",
+   "sources": [
+    "p1",
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "nation-first": {
    "value": null,
@@ -576,10 +613,13 @@
    "sources": []
   },
   "state-directs-investment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 2011 programme (Turkish record checked) keeps the state investment-incentive system started in 2009 and strengthens the regional and sectoral incentive system.",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "widespread-small-property": {
    "value": null,
@@ -637,10 +677,13 @@
    "sources": []
   },
   "right-to-secede": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He took the presidential oath to the 'indivisible integrity' of the country and nation (2014, 2018) and in 2017 rejected the Iraqi Kurdistan independence referendum as having no standing.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "natural-rulers": {
    "value": null,
@@ -1292,10 +1335,13 @@
    "sources": []
   },
   "diversity-weakens-cohesion": {
-   "value": null,
+   "value": -1,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "The 2011 programme (Turkish record checked) calls differences a wealth to be removed as a source of conflict and asks for a constitution that treats social diversity as a wealth; he does not discuss cohesion costs. Integrator review: low, because the 2011 words (“toplumsal çeşitliliği bir zenginlik”) stand against a record on Kurdish politics that pulls the other way.",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "offices-by-lottery": {
    "value": null,
@@ -1528,10 +1574,13 @@
    "sources": []
   },
   "rich-countries-aid-poor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the UN he calls official development assistance the main resource for the poorest countries, cites Turkey's aid against the 0.7 per cent target (2016) and pledged annual aid to the least developed countries (2011); he does not state it as a duty.",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "independent-nuclear-deterrent": {
    "value": 1,
@@ -1603,10 +1652,13 @@
    "auditor": "claude-sonnet-5-5"
   },
   "annexed-territory-occupation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "He says Turkey will never recognise the annexation of Crimea, one case; no general rule stated, and Northern Cyprus pulls the other way.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the UN in 2021 he said annexation and illegal occupation must end, that Turkey does not recognise the annexation of Crimea, and he repeatedly calls Armenian control of Azerbaijani land an illegitimate occupation. Integrator review: lowered from +2 because the “without the consent of its people” clause is not stated, and Turkey’s own position on northern Cyprus pulls the other way.",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "subordinate-church-to-state": {
    "value": null,
@@ -1729,10 +1781,13 @@
    "sources": []
   },
   "kin-peoples-union": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "At the UN in 2024 and 2025 he promised to strengthen the unity of the Turkic world through the Organization of Turkic States and wants it to become a global actor. Integrator review: the Organization of Turkic States is intergovernmental cooperation, not political union across borders, so low.",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "national-cultural-autonomy": {
    "value": null,
@@ -1753,10 +1808,13 @@
    "sources": []
   },
   "ban-cartels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his 2021 opening he announced the government would act firmly against companies that disrupt competition, abuse market dominance or fix prices arbitrarily.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "no-bailouts": {
    "value": null,
@@ -2017,10 +2075,14 @@
    "sources": []
   },
   "military-guardian-role": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "In the 2011 programme (Turkish record checked) he says the 1982 constitution was imposed by an intervention and that his government strengthened the national will against tutelage, and his 2012-2014 openings of parliament condemn coups and post-coup institutions placing themselves above parliament.",
+   "sources": [
+    "p1",
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "paid-care-work": {
    "value": null,
@@ -2307,10 +2369,13 @@
    "sources": []
   },
   "holocaust-denial": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "At the UN in 2025 he described genocide 'like the Holocaust' as a shameful, barbaric concept of mass extermination, and in 2014 he said Turkey opposes anti-Semitism; he accepts the Holocaust as historians describe it.",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "criminalize-homosexuality": {
    "value": null,
@@ -2420,10 +2485,13 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He credits regulation with letting markets work freely in a competitive setting and says economic policy was joined with strong social policy (2011 programme, Turkish record checked).",
+   "sources": [
+    "p1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "abolish-armed-forces": {
    "value": null,
@@ -2438,10 +2506,13 @@
    "sources": []
   },
   "stay-neutral-between-blocs": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "At the UN in 2022 he presented Turkey as a strong NATO ally celebrating 70 years of membership and in 2025 announced the 2026 NATO summit in Ankara, though he also speaks of Turkey keeping its own axis.",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "dynastic-succession": {
    "value": null,
@@ -2456,10 +2527,13 @@
    "sources": []
   },
   "refuse-lender-austerity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In 2019 he said Turkey closed its IMF book in May 2013 so the Fund could not rule countries behind the scenes with political criteria.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "property-franchise": {
    "value": null,
@@ -2654,10 +2728,13 @@
    "sources": []
   },
   "unbroken-national-continuity": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In 2019 and 2020 he said Turkey has a state tradition of over 2,200 years with uninterrupted government experience and that this continuity means the nation never accepted captivity.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "sex-socially-constructed": {
    "value": null,
@@ -2672,10 +2749,13 @@
    "sources": []
   },
   "martyrs-honoured": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "His openings of parliament honour all martyrs as blessed and in 2016 he asked the government to make 15 July an official memorial, the Day of Democracy and Freedom.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "politics-spiritual-struggle": {
    "value": null,
@@ -2858,10 +2938,13 @@
    "sources": []
   },
   "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In 2021 he said Turkey's green development policy carries its responsibility to humanity, citizens and future generations.",
+   "sources": [
+    "pm"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "women-distinct-values": {
    "value": null,
@@ -2921,10 +3004,13 @@
    "sources": []
   },
   "restructure-world-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the UN he asks for an international system that removes global injustice and economic inequality (2023) and for aligning the global financial architecture with leaving no one behind (2025).",
+   "sources": [
+    "ug"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "smash-state-machine": {
    "value": null,
@@ -3341,7 +3427,7 @@
    "sources": []
   }
  },
- "notes": "Whole-career reference review supplemented by full interview and recent labor and development texts. Later orthodox monetary-policy support is distinguished from earlier low-rate advocacy. Unavailable UN speech archives were not used to assign additional positions. Every remaining null was checked against the collected evidence. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 13 answers taken from it, 5 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched UN General Assembly addresses (2023, 2024), 2017 referendum campaign speeches, 2016 death-penalty remarks, 2014 women's-conference speech, 2015 education speech, 2018 and 2022 interest-rate and free-market remarks, climate summits, NATO and Syria remarks, 2022 refugee remarks and the 2025 PKK dissolution speech. Many original pages (tccb.gov.tr, UN PDF, Washington Post) blocked automated download, so most quotes come via press or official readouts of his speeches, which caps confidence at medium. Answers about what governments did (Syria operations, imam hatip expansion) rest on his own statements about them. Themes still thin: economy (welfare, health, ownership), liberty and civil rights, ecology beyond climate, technology.",
+ "notes": "Whole-career reference review supplemented by full interview and recent labor and development texts. Later orthodox monetary-policy support is distinguished from earlier low-rate advocacy. Unavailable UN speech archives were not used to assign additional positions. Every remaining null was checked against the collected evidence. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 13 answers taken from it, 5 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched UN General Assembly addresses (2023, 2024), 2017 referendum campaign speeches, 2016 death-penalty remarks, 2014 women's-conference speech, 2015 education speech, 2018 and 2022 interest-rate and free-market remarks, climate summits, NATO and Syria remarks, 2022 refugee remarks and the 2025 PKK dissolution speech. Many original pages (tccb.gov.tr, UN PDF, Washington Post) blocked automated download, so most quotes come via press or official readouts of his speeches, which caps confidence at medium. Answers about what governments did (Syria operations, imam hatip expansion) rest on his own statements about them. Themes still thin: economy (welfare, health, ownership), liberty and civil rights, ecology beyond climate, technology.\n\nclaude-sonnet-5-5 deepening pass 2026-11-02 (rules 3): read all 85 Turkish Grand National Assembly utterances of Erdoğan in ParlaMint 5.0 (2011 government programme, 2011-2022 openings of parliament; English machine translation) and checked the 2011 programme against the Turkish record (TBMM Tutanak Dergisi, 24th term, 6th sitting); read his 14 UN General Assembly addresses 2007-2025 (UNGDC, official English) and the two Security Council speeches (2009, 2014). Answers resting on the Turkish-checked 2011 programme are marked in their rationales; the rest rest on machine translation or on UN English and are at most medium. Not answerable from these records: most economy, liberty and ecology statements.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3350,9 +3436,13 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-02"
   }
  ],
- "rules": 2,
+ "rules": 3,
  "reviews": [
   {
    "kind": "inference",
