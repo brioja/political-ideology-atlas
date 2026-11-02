@@ -1,7 +1,7 @@
 {
  "id": "rand-paul",
  "name": "Rand Paul",
- "auditedAt": "2026-10-24",
+ "auditedAt": "2026-11-01",
  "auditor": [
   "gpt-6.1-sol",
   "claude-sonnet-5-5"
@@ -402,6 +402,86 @@
    "author": "CBS News, May 2014",
    "url": "https://cbsnews.com/news/sen-rand-paul-gops-voter-id-push-completely-crazy",
    "usedFor": "voter ID"
+  },
+  {
+   "id": "c1",
+   "kind": "primary",
+   "title": "Hearing: Nominations of the 113th Congress (Committee on Foreign Relations), 7 May 2013",
+   "author": "Rand Paul (own turns, GovInfo CHRG-113shrg88305)",
+   "url": "https://www.govinfo.gov/app/details/CHRG-113shrg88305",
+   "usedFor": "Blasphemy laws"
+  },
+  {
+   "id": "c2",
+   "kind": "primary",
+   "title": "160 Cong. Rec. S4211 (7 Jul 2014), Highway Trust Fund",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2014-07-07/CREC-2014-07-07-pt1-PgS4211",
+   "usedFor": "Foreign aid and persecution for changing religion"
+  },
+  {
+   "id": "c3",
+   "kind": "primary",
+   "title": "162 Cong. Rec. S5921 (21 Sep 2016), Motion to discharge S.J. Res. 39",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2016-09-21/CREC-2016-09-21-pt1-PgS5921",
+   "usedFor": "Death for conversion in Saudi Arabia"
+  },
+  {
+   "id": "c4",
+   "kind": "primary",
+   "title": "159 Cong. Rec. S1181 (6 Mar 2013), Unanimous consent request, Executive Calendar",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2013-03-06/CREC-2013-03-06-pt1-PgS1181",
+   "usedFor": "Al-Awlaki, treason trial and death penalty"
+  },
+  {
+   "id": "c5",
+   "kind": "primary",
+   "title": "157 Cong. Rec. S1715 (16 Mar 2011), SBIR/STTR Reauthorization Act, amendment text in Paul's turn",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2011-03-16/CREC-2011-03-16-pt1-PgS1715-2",
+   "usedFor": "Defunding the Corporation for Public Broadcasting"
+  },
+  {
+   "id": "c6",
+   "kind": "reference",
+   "title": "Voteview: Congressional Roll-Call Votes Database, Senate 119th #397 (HR4), 16 Jul 2025",
+   "author": "Lewis, Poole, Rosenthal, Boche, Rudkin, Sonnet",
+   "url": "https://voteview.com",
+   "usedFor": "Paul NAY on striking the Corporation for Public Broadcasting rescission"
+  },
+  {
+   "id": "c7",
+   "kind": "primary",
+   "title": "170 Cong. Rec. S2295 (8 Mar 2024), Legislative session",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2024-03-08/CREC-2024-03-08-pt1-PgS2295",
+   "usedFor": "Racism and opportunity"
+  },
+  {
+   "id": "c8",
+   "kind": "primary",
+   "title": "Hearing: Reforming Federal Records Management to Improve Transparency and Accountability (Committee on Homeland Security and Governmental Affairs), 20 Mar 2024",
+   "author": "Rand Paul (own turns, GovInfo CHRG-118shrg55395)",
+   "url": "https://www.govinfo.gov/app/details/CHRG-118shrg55395",
+   "usedFor": "Disclosure of government records and FOIA"
+  },
+  {
+   "id": "c9",
+   "kind": "primary",
+   "title": "169 Cong. Rec. S5269 (1 Nov 2023), Legislative session",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2023-11-01/CREC-2023-11-01-pt1-PgS5269",
+   "usedFor": "Consent of the governed and unelected bureaucrats"
+  },
+  {
+   "id": "c10",
+   "kind": "primary",
+   "title": "159 Cong. Rec. S8724 (11 Dec 2013), Nomination of Patricia M. Wald",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2013-12-11/CREC-2013-12-11-pt1-PgS8724",
+   "usedFor": "Campaign contributions and Obamacare waivers"
   }
  ],
  "answers": {
@@ -1480,10 +1560,13 @@
    "sources": []
   },
   "consent-of-governed": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Argues from the Declaration of Independence that 'governments derive their just powers from the consent of the governed' to object that unelected bureaucrats make policy; he adopts the principle but does not say it is the only test of legitimacy. The statement says legitimacy rests only on consent, which he does not claim, so +1.",
+   "sources": [
+    "c9"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "trade-surplus": {
    "value": null,
@@ -1722,10 +1805,13 @@
    "sources": []
   },
   "death-penalty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "On the al-Awlaki case he said he thought the man could have been tried for treason and that 'I would have voted his guilt and for his death'; he also noted others' doubts about the death penalty without stating his own opposition.",
+   "sources": [
+    "c4"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1965,10 +2051,14 @@
    "sources": []
   },
   "apostasy-punishable": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He denounced a Sudanese woman being 'on death row for the crime of changing religion' and demanded Saudi Arabia 'stop putting people who convert to Christianity to death'; his framing is persecution of Christians, so medium.",
+   "sources": [
+    "c2",
+    "c3"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "women-must-cover": {
    "value": null,
@@ -2392,10 +2482,13 @@
    "sources": []
   },
   "corporate-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Said special interests 'paid first. They gave their campaign contributions' and so 'got access to the White House, and they got a waiver', calling this unequal protection; he blames government favour-dealing, so medium.",
+   "sources": [
+    "c10"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "restrict-foreign-funding": {
    "value": null,
@@ -2468,7 +2561,7 @@
   "public-access-to-information": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
+   "rationale": "No known position on a general legal right of access: he held a 2024 hearing criticising the executive branch's evasion of Congress and records requests, a nearby case, not the right itself (AUDIT_RULES 3).",
    "sources": []
   },
   "local-production": {
@@ -2604,10 +2697,14 @@
    "sources": []
   },
   "punish-blasphemy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Telling a Foreign Relations hearing about a woman jailed under Pakistan's blasphemy law, he said that 'having them on the books is a great human rights abuse', and he repeatedly condemns death sentences for blasphemy.",
+   "sources": [
+    "c1",
+    "c2"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "colonies-serve-metropole": {
    "value": null,
@@ -3249,10 +3346,14 @@
    "sources": []
   },
   "public-service-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Amendment text in his turn (2011) defunds the Corporation for Public Broadcasting, and in 2025 he voted Nay on striking its rescission; his record, not a stated argument.",
+   "sources": [
+    "c5",
+    "c6"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "religions-one-truth": {
    "value": null,
@@ -3584,10 +3685,13 @@
    "sources": []
   },
   "racism-not-main-obstacle": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Said 'there has never been less racism, less bigotry' than now and called claims that nobody will hire people because of their race or ethnicity 'completely untrue'; he does not say 'main obstacle' in those words.",
+   "sources": [
+    "c7"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "unjust-law-not-binding": {
    "value": null,
@@ -3632,7 +3736,7 @@
    "sources": []
   }
  },
- "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.",
+ "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.\n\nclaude-sonnet-5-5 deepening pass 2026-11-01 (local corpora: Senate floor speeches 2011-2026, hearings, Voteview, NPR/CNN): searched religion and the state (blasphemy, apostasy, church and state, creationism, religion in schools), death penalty, drugs and marijuana, immigration and birthright citizenship, tribes and treaties, official language, genocide recognition, encryption, FOIA and transparency, public broadcasting, race. Most statements on the failing lines are never addressed in his own words and stay null. Encryption (he only predicts user-held encryption and accepts warrants), same-sex marriage and religious freedom were not converted into answers; his questions to witnesses were not treated as positions. Review 2026-11-01 (integrator): quotes checked in the Record and hearings; public-access-to-information nulled (nearby case); consent-of-governed lowered to +1 (he does not say consent is the only test).",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3641,7 +3745,11 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-01"
   }
  ],
- "rules": 2
+ "rules": 3
 }
