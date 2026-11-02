@@ -2,11 +2,14 @@
  "id": "xqc",
  "name": "xQc (Félix Lengyel)",
  "auditedAt": "2026-11-02",
- "auditor": "claude-sonnet-5-5",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "codex"
+ ],
  "rules": 3,
  "living": true,
  "role": "Canadian Twitch streamer and content creator (born 1995)",
- "summary": "A gaming streamer with no political record beyond taking political quizzes on stream. Across those runs he is pro-universal healthcare, public utilities and abortion rights, supports same-sex marriage, and is against worker ownership, gun limits and drug legalization; he wants regulation of monopolies and corporations but is sceptical of government-funded media and of equal distribution by need.",
+ "summary": "A Canadian gaming streamer who discusses politics on stream as well as taking political quizzes. His recorded positions favor universal healthcare, public utilities, abortion rights and same-sex marriage, alongside private business ownership and restrictions on monopolies; he opposes broad drug legalization and defends gun ownership. He also defends substantial immigration to offset low birth rates, while criticizing Canada's admission numbers as excessive.",
  "wikipedia": "https://en.wikipedia.org/wiki/XQc",
  "sources": [
   {
@@ -56,6 +59,22 @@
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/XQc",
    "usedFor": "Biographical context only (no political positions stated there)"
+  },
+  {
+   "id": "s7",
+   "kind": "primary",
+   "title": "xQc Defends Canada's Mass Immigration (22 November 2025; automatic captions)",
+   "author": "xQc Clips",
+   "url": "https://www.youtube.com/watch?v=2dZKXFaYmQw",
+   "usedFor": "Immigration context: defends substantial immigration to offset low births, while saying Canada overshot its numbers; does not explicitly prescribe a reduction in current levels."
+  },
+  {
+   "id": "s8",
+   "kind": "scholarly",
+   "title": "‘Live’ and a leftist: Twitch, political livestreaming, and Hasan Piker (MA thesis, May 2022)",
+   "author": "Alexander Rudenshiold",
+   "url": "https://www.researchgate.net/publication/386253765_'Live'_and_a_leftist_Twitch_political_livestreaming_and_Hasan_Piker",
+   "usedFor": "Context only: discussion of xQc participating in a unionization conversation in October 2021; no positions borrowed from Piker."
   }
  ],
  "answers": {
@@ -160,12 +179,11 @@
    "sources": []
   },
   "strong-leader": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "8Values: agreed 'the stronger the leadership, the better' as a core concept; the item does not mention bypassing gridlock.",
-   "sources": [
-    "s3"
-   ]
+   "rationale": "His agreement that stronger leadership is better does not address bypassing political gridlock. No stated position on that additional condition was found.",
+   "sources": [],
+   "auditor": "codex"
   },
   "state-harmful": {
    "value": -2,
@@ -300,10 +318,14 @@
    ]
   },
   "open-borders": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In the 8Values transcript (about 1:20:29), he rejects open borders while also rejecting closed borders, advocating admissions calibrated to population and labor needs. His November 2025 immigration clip likewise defends substantial immigration but says admission numbers can overshoot those needs.",
+   "sources": [
+    "s3",
+    "s7"
+   ],
+   "auditor": "codex"
   },
   "limit-growth": {
    "value": null,
@@ -801,12 +823,11 @@
    "sources": []
   },
   "avoid-deficit-stimulus": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "8Values: strongly agreed a balanced budget beats welfare for all citizens, arguing a government borrowing trillions cannot sustain spending; this is a nearby but not identical item.",
-   "sources": [
-    "s3"
-   ]
+   "value": null,
+   "confidence": "low",
+   "rationale": "His preference for balancing the budget over welfare expenditure does not settle borrowing to stimulate the economy. No stated position on deficit stimulus was found.",
+   "sources": [],
+   "auditor": "codex"
   },
   "economic-freedom": {
    "value": null,
@@ -827,13 +848,11 @@
    "sources": []
   },
   "force-without-un": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Same Compass item (strongly agreed in the second run): force that defies international law is sometimes justified, which covers acting without UN approval.",
-   "sources": [
-    "s2",
-    "s1"
-   ]
+   "value": null,
+   "confidence": "low",
+   "rationale": "His acceptance of military action that violates international law does not identify UN Security Council authorization as the rule he would bypass. No stated position on that specific authorization requirement was found.",
+   "sources": [],
+   "auditor": "codex"
   },
   "reason-over-faith": {
    "value": null,
@@ -917,13 +936,11 @@
    "sources": []
   },
   "assimilate-immigrants": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "8Values: only slightly agreed immigrants should integrate into the culture, not strongly, as locals are not held to that standard; he also thinks first-generation immigrants can fully integrate.",
-   "sources": [
-    "s3",
-    "s2"
-   ]
+   "rationale": "He expects some cultural integration, while explicitly resisting demands greater than those made of existing residents. The reviewed remarks do not say immigrants should give up their original culture, as this statement requires.",
+   "sources": [],
+   "auditor": "codex"
   },
   "elite-replacement": {
    "value": null,
@@ -1555,10 +1572,13 @@
    ]
   },
   "no-bailouts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "While discussing government intervention and bank rescues in the 8Values stream (about 15:00–15:35), he calls bailouts a mistake and explicitly says to stop rescuing firms and let them collapse. His position is clear in the supplied automatic transcript.",
+   "sources": [
+    "s3"
+   ],
+   "auditor": "codex"
   },
   "courts-bound-by-majority": {
    "value": null,
@@ -2207,10 +2227,14 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In the first Compass run he explicitly defends a free market alongside enforceable ethical rules, and he separately demands restrictions on monopolies. In the 8Values run he also defends government social programs against replacing them with charity; these are his stated components of a regulated market with social protection.",
+   "sources": [
+    "s1",
+    "s3"
+   ],
+   "auditor": "codex"
   },
   "abolish-armed-forces": {
    "value": null,
@@ -3022,10 +3046,13 @@
    "sources": []
   },
   "targeted-social-spending": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Discussing redistributive taxes in the 8Values stream (about 11:00–13:00), he rejects directing the extra revenue only to poor people and instead wants public services and basic necessities improved for everyone. He argues that universal improvements can also help people escape poverty.",
+   "sources": [
+    "s3"
+   ],
+   "auditor": "codex"
   },
   "bypass-parties-groups": {
    "value": null,
@@ -3124,5 +3151,15 @@
    "sources": []
   }
  },
- "notes": "Quiz runs that disagreed: marijuana possession (agree in Compass runs vs. drugs should stay illegal in 8Values: newest wins for legalize-drugs); surveillance (Compass runs sceptical, 8Values accepting); cultures-equal-different and heritable-defect-limits answered 0 low. Jokey or unclear answers skipped (prostitution, United Nations, national sovereignty polarity, shareholders-only responsibility which flipped between runs, violence against authoritarian regimes). Chat-read lines and the 2024 comparison/results videos gave no item-level answers. Web and local corpora searches found no other stated positions; Wikipedia states none."
+ "notes": "Quiz runs that disagreed: marijuana possession (agree in Compass runs vs. drugs should stay illegal in 8Values: newest wins for legalize-drugs); surveillance (Compass runs sceptical, 8Values accepting); cultures-equal-different and heritable-defect-limits answered 0 low. Jokey or unclear answers skipped (prostitution, United Nations, national sovereignty polarity, shareholders-only responsibility which flipped between runs, violence against authoritarian regimes). Chat-read lines and the 2024 comparison/results videos gave no item-level answers. Web and local corpora searches found no other stated positions; Wikipedia states none. Deepening by codex, 2026-11-02: reviewed the three maintainer-supplied quiz transcripts and existing answers; searched local MediaSum for Lengyel (hits were General Joseph Lengyel, not the subject) MediaSum for xQc (0 of 463,596 transcripts matched), and Lex Fridman for xQc (no matching episode). The other indexed corpora are public-office or historical-author records, not his own words. Web topics searched: government/elections/Trump, Canadian and Quebec politics, immigration/language, world affairs (Ukraine/NATO and Israel/Gaza), taxes, gambling regulation, AI/art/copyright, unions and labor. Used 17 web search/open requests, 3 sequential ytsearch queries and 1 caption pull; no video or audio downloaded and no bot challenge encountered. AI-art, Trump-meeting, Gaza-reaction and union-discussion leads did not yield original statements settling additional quiz items within the budget; Reddit commenters were not used as evidence. The November 2025 immigration clip says Canada overshot its numbers but does not explicitly call for reducing current admissions, so reduce-immigration remains null. No added answers on hereditary monarchy, electoral institutions, regional autonomy or alliances: the evidence does not settle them. Read the remaining null statement texts against the gathered evidence; rejected nearby-topic extensions (automation benefits do not establish shorter paid working hours; support for inheritance does not establish opposition to heavy inheritance taxation). Four additions recover explicit positions overlooked in the supplied transcripts; four prior nearby-topic mappings are nulled. Untouched earlier answers retain their original provenance. The earlier note describing newest quiz answers as automatically decisive is not the rule used in this pass; sustained change, rather than recency alone, is required.",
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-02"
+  },
+  {
+   "auditor": "codex",
+   "auditedAt": "2026-11-02"
+  }
+ ]
 }
