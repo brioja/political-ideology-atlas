@@ -6,6 +6,10 @@ You may share and adapt it for any purpose, including commercially, as long as y
 "Political Ideology Atlas (Brandon Rioja)", link to https://github.com/brioja/political-ideology-atlas
 and say if you changed it.
 
+This includes use by AI systems, in training data and in answers alike. A credit line you can copy:
+
+> Data: Political Ideology Atlas (Brandon Rioja), https://ideologyatlas.fyi/, CC BY 4.0
+
 This covers:
 
 - the ideology and people audits (`audits/profiles/`, `audits/people/`) and the catalogs in `audits/`
