@@ -1,7 +1,7 @@
 {
  "id": "mario-draghi",
  "name": "Mario Draghi",
- "auditedAt": "2026-10-23",
+ "auditedAt": "2026-11-02",
  "auditor": [
   "gpt-6.1-sol",
   "claude-sonnet-5-5"
@@ -202,6 +202,33 @@
    "author": "Mario Draghi",
    "url": "https://www.ecb.europa.eu/press/pressconf/2012/html/is120906.en.html",
    "usedFor": "Conditionality attached to ECB bond purchases; independence"
+  },
+  {
+   "id": "pm0519",
+   "kind": "primary",
+   "title": "ParlaMint 5.0 (CLARIN.SI), Italian Senate, English machine translation; utterance ParlaMint-IT_2022-05-19-LEG18-Senato-sed-435.ana.u5 (Draghi, communications on the war in Ukraine, 19 May 2022)",
+   "author": "Mario Draghi",
+   "url": "https://www.clarin.si/repository/xmlui/handle/11356/2006",
+   "original": "http://www.senato.it/japp/bgt/showdoc/frame.jsp?tipodoc=Resaula&leg=18&id=1350768",
+   "usedFor": "Machine-translated English only; the official senato.it record could not be opened (403), so not checked in the Italian original: medium confidence at most"
+  },
+  {
+   "id": "pm1020",
+   "kind": "primary",
+   "title": "ParlaMint 5.0 (CLARIN.SI), Italian Senate, English machine translation; utterance ParlaMint-IT_2021-10-20-LEG18-Senato-sed-369.ana.u37 (Draghi, reply before the European Council, 20 October 2021)",
+   "author": "Mario Draghi",
+   "url": "https://www.clarin.si/repository/xmlui/handle/11356/2006",
+   "original": "http://www.senato.it/japp/bgt/showdoc/frame.jsp?tipodoc=Resaula&leg=18&id=1315736",
+   "usedFor": "Machine-translated English only; the official senato.it record could not be opened (403), so not checked in the Italian original: medium confidence at most"
+  },
+  {
+   "id": "pm0427",
+   "kind": "primary",
+   "title": "ParlaMint 5.0 (CLARIN.SI), Italian Senate, English machine translation; utterance ParlaMint-IT_2021-04-27-LEG18-Senato-sed-320.ana.u7 (Draghi, presentation of the National Recovery Plan, 27 April 2021)",
+   "author": "Mario Draghi",
+   "url": "https://www.clarin.si/repository/xmlui/handle/11356/2006",
+   "original": "http://www.senato.it/japp/bgt/showdoc/frame.jsp?tipodoc=Resaula&leg=18&id=1295352",
+   "usedFor": "Machine-translated English only; the official senato.it record could not be opened (403), so not checked in the Italian original: medium confidence at most"
   }
  ],
  "answers": {
@@ -997,8 +1024,11 @@
   "national-self-determination": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Integrator review: he endorses the Helsinki principles, which pair self-determination of peoples with territorial integrity, and Ukraine’s independence; neither says every nation has a right to a state of its own.",
+   "sources": [
+    "pm0519",
+    "b5"
+   ]
   },
   "force-without-un": {
    "value": null,
@@ -1593,10 +1623,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "annexed-territory-occupation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the UN General Assembly (2022, English original) he condemned the Donbas referendums as a violation of international law, and told the Senate Russia annexed Crimea with an illegal referendum; he did not use the word occupation for the annexed areas, so this is implied rather than stated.",
+   "sources": [
+    "b5",
+    "pm0519"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "subordinate-church-to-state": {
    "value": null,
@@ -2138,8 +2172,10 @@
   "pronatalist-incentives": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Integrator review: he presents the child-allowance reform as support for births but also calls legal immigration a resource, so he does not hold the statement’s “rather than rely on immigration”; the statement as a whole is not settled.",
+   "sources": [
+    "pm0427"
+   ]
   },
   "residents-only-property": {
    "value": null,
@@ -2208,10 +2244,13 @@
    "sources": []
   },
   "national-law-over-international": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "He called national constitutional courts' claims of primacy over the European Court of Justice a challenge to European integrity and backed the Commission against them; this concerns EU law and courts only, not international law generally.",
+   "sources": [
+    "pm1020"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "religious-nation": {
    "value": null,
@@ -3378,7 +3417,7 @@
    "sources": []
   }
  },
- "notes": "No inferred answers. Reviewed downloaded full texts of the 2021 programme, 2024 competitiveness strategy and 2026 Aachen address across all statement themes. The 2020 pandemic proposal and later investment programme qualify the fiscal consolidation arguments of 2012. Citizenship income is means-tested support, not evidence for an unconditional universal basic income. His secular-state response expressly declined to decide the merits of the Zan bill, so it is not coded as support for every provision of that bill. General commitments to rights, technology and democracy do not answer their more specific quiz variants. Expert preparation of tax reform is not treated as a general demand to subordinate voters to experts. Support for means-tested income aid does not settle the broader dependency-and-welfare-cuts statement. The proposed wage floor is recorded through the explicit collective-bargaining position; no numerical call for a substantial minimum-wage increase was established.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 16 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass from sources not used in the first audit: ECB speeches, hearings and press conference 2012-2019, Bank of Italy final considerations, the 2022 Parliament and Senate speeches, UN speeches 2021-22, Rimini 2025, and the 2024 report. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means, globalism. Statements as ECB President speak for the institution's mandate; where his personal speeches differ they were preferred. Most social, liberty, culture and government statements have no recorded personal position in the texts read. His 2014 Jackson Hole speech favours firm-level wage agreements, which qualifies the collective-bargaining answer. Not opened: Rimini 2020 text (page 404; mirror behind Cloudflare), Britannica (Cloudflare), Oviedo 2025 PDF (timeout).",
+ "notes": "No inferred answers. Reviewed downloaded full texts of the 2021 programme, 2024 competitiveness strategy and 2026 Aachen address across all statement themes. The 2020 pandemic proposal and later investment programme qualify the fiscal consolidation arguments of 2012. Citizenship income is means-tested support, not evidence for an unconditional universal basic income. His secular-state response expressly declined to decide the merits of the Zan bill, so it is not coded as support for every provision of that bill. General commitments to rights, technology and democracy do not answer their more specific quiz variants. Expert preparation of tax reform is not treated as a general demand to subordinate voters to experts. Support for means-tested income aid does not settle the broader dependency-and-welfare-cuts statement. The proposed wage floor is recorded through the explicit collective-bargaining position; no numerical call for a substantial minimum-wage increase was established.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 16 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass from sources not used in the first audit: ECB speeches, hearings and press conference 2012-2019, Bank of Italy final considerations, the 2022 Parliament and Senate speeches, UN speeches 2021-22, Rimini 2025, and the 2024 report. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means, globalism. Statements as ECB President speak for the institution's mandate; where his personal speeches differ they were preferred. Most social, liberty, culture and government statements have no recorded personal position in the texts read. His 2014 Jackson Hole speech favours firm-level wage agreements, which qualifies the collective-bargaining answer. Not opened: Rimini 2020 text (page 404; mirror behind Cloudflare), Britannica (Cloudflare), Oviedo 2025 PDF (timeout).\n\n2026-11-02 deepening pass (claude-sonnet-5-5): read all 26 ParlaMint Senate utterances (2021-2022), the EUSpeech ECB speeches by keyword, Davos/UN corpora and the local source library for every unanswered statement. Four answers added. Senate (ParlaMint) passages are machine translations and the senato.it records returned 403, so none was checked in the Italian original (medium at most). No usable record found on tax, welfare, wages, social, liberty, culture or technology statements.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3387,7 +3426,11 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-02"
   }
  ],
- "rules": 2
+ "rules": 3
 }
