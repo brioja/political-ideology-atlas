@@ -71,18 +71,17 @@ speech from the throne setting out the government's programme; use only views th
 themselves and measures they personally drove. Likewise, what a government did under someone
 (executions, a state policy) is their position only where they drove it or spoke to it.
 
-When the person's own record directly contradicts their words on a statement (elections they
-rigged or cancelled, term limits they wrote themselves out of, a single party they kept in power
-while praising pluralism), the record wins. If the evidence is genuinely mixed, answer 0 at `low`.
-Where words and record pull apart, rhetoric alone is never `high`. This applies at every confidence level, including `low` answers, and
-it applies where they were silent: what a ruler did with power themselves (inheriting and keeping
+Where the person has a record on a statement, answer from the record alone and leave their words
+on it out (AUDIT_RULES.md, "Record over words"): elections they rigged or cancelled, term limits
+they wrote themselves out of, a single party they kept in power while praising pluralism. A record
+that itself points both ways is 0 at `low`. The record answers even where they were silent: what a ruler did with power themselves (inheriting and keeping
 office within a family, a cult of their own portraits, arming groups abroad, a security apparatus
 drawn from one sect) answers the matching statement from the record even if they never spoke to it.
-A repudiation made under pressure (in court, in exile) does not cancel a lifetime's record; weigh it
-as mixed at most. The same goes for campaign promises: for someone who then governed, a pledge
-their time in office contradicted (balanced budgets with debt tripled, free trade with new
-tariffs, civil liberties with indefinite detention signed into law) is mixed at most, and a pledge
-alone is never `high`.
+A repudiation (in court, in exile, late in life) is words and does not change a record. The same
+goes for campaign promises: for someone who then governed, their time in office answers the
+statement and the pledge is left out (balanced budgets with debt tripled, free trade with new
+tariffs, civil liberties with indefinite detention signed into law); a pledge alone, with no
+record, is never `high`.
 
 A state's use of force (war, counter-insurgency, executions) is not "political violence":
 `political-violence-never` is about violence for political ends outside lawful authority (coups,
@@ -109,9 +108,10 @@ disagree, the higher tier wins.
 1. **Primary record:** laws signed, votes, orders, official acts, court records, cited from the
    document itself. Can be `high`.
 2. **Own words:** speeches, interview transcripts, books, letters, op-eds, posts, party programmes
-   they led, cited from the original. Can be `high`, unless tier 1 or tier 3 contradicts them (the record wins, above).
+   they led, cited from the original. Can be `high`. Used only where tiers 1 and 3 have no record on
+   the statement (record over words, above).
 3. **Secondhand report of the record:** a press, NGO or scholarly report (a secondary source) stating
-   that a vote, law, arrest, election result or other act happened. `medium` at most, but it still overrides tier 2:
+   that a vote, law, arrest, election result or other act happened. `medium` at most, but where it exists tier 2 is left out:
    a ruler's pro-democracy speeches don't outweigh reported arrests of opponents. A scholarly
    reference work or biography stating their views (AUDIT_RULES.md, section 2) is tier 3 too.
 4. **Ancient or attributed accounts:** for figures whose own words and records don't survive, the

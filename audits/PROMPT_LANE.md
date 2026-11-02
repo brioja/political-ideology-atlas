@@ -28,14 +28,14 @@ many will have a thin political record; the early-exit rule makes those quick.
    finishing. Prefer full texts of their own words (books, speeches, transcripts, laws they
    signed), downloaded and searched, over summaries.
 3. **Confidence:** `high` only when the person states the position directly; `medium` when it is
-   clearly implied by what they said or did; `low` when ambiguous or contested. When their record
-   directly contradicts their words (rigged elections, term limits they exempted themselves from),
-   the record wins; genuinely mixed evidence is 0 at `low`. Rhetoric alone is never `high`.
+   clearly implied by what they said or did; `low` when ambiguous or contested. Where they have a
+   record on a statement (votes, laws, orders, acts), answer from the record alone and leave their
+   words on it out; a record pointing both ways is 0 at `low`.
 4. **No inference** (AUDIT_RULES.md, section 3): no evidence means null, for living and historical
    people. Answer only where their own stated position settles the statement, never from party,
    label or theme. Use their mature position (held longest, set out most fully); a later one wins
-   only if the change was explicit and sustained, and later words never override their record
-   unless they explicitly repudiated the act (then at most `medium`) (AUDIT_RULES.md, "Over time").
+   only if the change was explicit and sustained, and later words never override their record,
+   not even a repudiation (AUDIT_RULES.md, "Over time").
    Answers must match each
    statement's actual wording; if the evidence is about something nearby, answer null.
 5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).

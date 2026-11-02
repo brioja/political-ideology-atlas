@@ -77,9 +77,9 @@ record it in `scope`:
   power (`null`), but a doctrine of rule by competence settles hereditary office.
 - Its own record, for "record over words", is that of regimes where it was the official doctrine of
   the state or ruling party (Juche, Kemalism, Ba'athism, Marxism-Leninism in power): their
-  sustained, documented practice is part of the ideology. Where it consistently contradicts the
-  doctrine's words (one-party rule alongside praise of popular democracy, a leader cult alongside
-  collective leadership), answer from the practice. A lapse of one regime or one period is not the
+  sustained, documented practice is part of the ideology. Where that practice answers a statement,
+  answer from the practice and leave the doctrine's words on it out (one-party rule alongside praise
+  of popular democracy, a leader cult alongside collective leadership). A lapse of one regime or one period is not the
   ideology's position, and parties that governed as one party among others are not the ideology's
   record.
 - Audits written before the shared rules (no `"rules"`) recorded silence as 0 and inferences without
