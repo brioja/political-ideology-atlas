@@ -482,6 +482,22 @@
    "author": "Rand Paul (Congressional Record)",
    "url": "https://www.govinfo.gov/app/details/CREC-2013-12-11/CREC-2013-12-11-pt1-PgS8724",
    "usedFor": "Campaign contributions and Obamacare waivers"
+  },
+  {
+   "id": "c11",
+   "kind": "primary",
+   "title": "167 Cong. Rec. S6975 (7 Oct 2021), Legislative session",
+   "author": "Rand Paul (Congressional Record)",
+   "url": "https://www.govinfo.gov/app/details/CREC-2021-10-07/CREC-2021-10-07-pt1-PgS6975",
+   "usedFor": "Equality before the law versus equality of outcome"
+  },
+  {
+   "id": "c12",
+   "kind": "primary",
+   "title": "Hearing: Remain in Mexico (Committee on Homeland Security and Governmental Affairs), 16 Jan 2025",
+   "author": "Rand Paul (own turns, GovInfo CHRG-119shrg58505)",
+   "url": "https://www.govinfo.gov/app/details/CHRG-119shrg58505",
+   "usedFor": "Lawful immigration levels"
   }
  ],
  "answers": {
@@ -753,10 +769,13 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Told a hearing 'I am one who is for more lawful immigration' and is 'more than willing to double the legal amount', citing his bills to double employment-based visas, while wanting 'zero illegal immigration'; he opposes cutting levels but the statement does not separate lawful from illegal.",
+   "sources": [
+    "c12"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "empower-international-orgs": {
    "value": -2,
@@ -1015,10 +1034,13 @@
    "sources": []
   },
   "equal-outcomes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Told the Senate 'we are offering equality before the law, not equality of outcome', and that equal outcomes and equality before the law 'are mutually exclusive' because you would have to treat people unequally.",
+   "sources": [
+    "c11"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "indigenous-land-authority": {
    "value": null,
@@ -3736,7 +3758,7 @@
    "sources": []
   }
  },
- "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.\n\nclaude-sonnet-5-5 deepening pass 2026-11-01 (local corpora: Senate floor speeches 2011-2026, hearings, Voteview, NPR/CNN): searched religion and the state (blasphemy, apostasy, church and state, creationism, religion in schools), death penalty, drugs and marijuana, immigration and birthright citizenship, tribes and treaties, official language, genocide recognition, encryption, FOIA and transparency, public broadcasting, race. Most statements on the failing lines are never addressed in his own words and stay null. Encryption (he only predicts user-held encryption and accepts warrants), same-sex marriage and religious freedom were not converted into answers; his questions to witnesses were not treated as positions. Review 2026-11-01 (integrator): quotes checked in the Record and hearings; public-access-to-information nulled (nearby case); consent-of-governed lowered to +1 (he does not say consent is the only test).",
+ "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.\n\nclaude-sonnet-5-5 deepening pass 2026-11-01 (local corpora: Senate floor speeches 2011-2026, hearings, Voteview, NPR/CNN): searched religion and the state (blasphemy, apostasy, church and state, creationism, religion in schools), death penalty, drugs and marijuana, immigration and birthright citizenship, tribes and treaties, official language, genocide recognition, encryption, FOIA and transparency, public broadcasting, race. Most statements on the failing lines are never addressed in his own words and stay null. Encryption (he only predicts user-held encryption and accepts warrants), same-sex marriage and religious freedom were not converted into answers; his questions to witnesses were not treated as positions. Review 2026-11-01 (integrator): quotes checked in the Record and hearings; public-access-to-information nulled (nearby case); consent-of-governed lowered to +1 (he does not say consent is the only test). claude-sonnet-5-5 second deepening pass 2026-11-01 (local corpora, mainstream statements): searched equal outcomes, income inequality, small business, recall, term limits, public housing, diversity, Davis-Bacon and right to work, minimum wage, Social Security, private accounts, immigration, birthright citizenship, official language, welfare for immigrants, unions. Added equal outcomes and reduce immigration. Not answered: Davis-Bacon amendments and a mention of right-to-work states (narrower or not his position), a 2011 remark on refugees and welfare (narrower), 'wants diversity' remark (describing companies), Social Security eligibility changes (not private accounts); nothing found on birthright citizenship, official language, recall, public housing, worker ownership.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3745,6 +3767,10 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-01"
   },
   {
    "auditor": "claude-sonnet-5-5",
