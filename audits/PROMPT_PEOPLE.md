@@ -56,6 +56,7 @@ Use -2 (strongly disagree) to +2 (strongly agree) for the position the person ac
 holds. If their views changed, use their mature or most recent public position and say so. When
 sources from different times disagree (two runs of the same quiz, an old interview and a new one),
 the more recent clear statement wins; leave it null only if the recent position itself is unclear.
+A later statement never overrides their record on its own (AUDIT_RULES.md, "Over time").
 
 If there is no reliable evidence of their position, answer `null` ("no known position"). There
 are no inferences, for living or historical people (AUDIT_RULES.md, section 3): a statement is

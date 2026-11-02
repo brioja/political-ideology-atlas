@@ -33,7 +33,8 @@ many will have a thin political record; the early-exit rule makes those quick.
    the record wins; genuinely mixed evidence is 0 at `low`. Rhetoric alone is never `high`.
 4. **No inference** (AUDIT_RULES.md, section 3): no evidence means null, for living and historical
    people. Answer only where their own stated position settles the statement, never from party,
-   label or theme. The most recent clear position wins. Answers must match each
+   label or theme. The most recent clear position wins, but later words never override their
+   record unless they explicitly repudiated the act (then at most `medium`). Answers must match each
    statement's actual wording; if the evidence is about something nearby, answer null.
 5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).
 6. Write only `audits/people/<id>.json`, and only once it is finished: build it in your scratch

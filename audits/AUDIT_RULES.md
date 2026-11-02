@@ -109,6 +109,10 @@ free trade, not about markets in general.
   rigged or cancelled, a single party kept in power while praising pluralism), the record wins; if
   the evidence is genuinely mixed, answer 0 at `low`. Words alone are never `high` where the record
   pulls the other way. Each prompt says what counts as the subject's own record.
+- **Over time.** A later record overrides an earlier one; later words override earlier words; words
+  alone never override a record (speeches praising peace or tolerance after a campaign of conquest or
+  repression change nothing) unless the subject has explicitly repudiated that act, in which case
+  answer at most `medium`.
 - **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
   says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
   past a check.
