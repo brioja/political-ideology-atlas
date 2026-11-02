@@ -1,8 +1,11 @@
 {
   "id": "tammy-baldwin",
   "name": "Tammy Baldwin",
-  "auditedAt": "2026-10-23",
-  "auditor": "gpt-6.1-sol",
+  "auditedAt": "2026-11-01",
+  "auditor": [
+    "gpt-6.1-sol",
+    "claude-sonnet-5-5"
+  ],
   "living": true,
   "role": "U.S. senator from Wisconsin since 2013; U.S. representative, 1999–2013",
   "summary": "Baldwin advocates universal health coverage, labor bargaining rights, worker participation in corporate governance and protections for LGBTQ people. She supports domestic manufacturing and targeted trade barriers, while favoring climate action, NATO cooperation and congressional checks on presidential war powers.",
@@ -223,6 +226,62 @@
       "author": "Tammy Baldwin and fellow signatories",
       "url": "https://www.baldwin.senate.gov/news/press-releases/us-senator-tammy-baldwin-to-education-department-stop-profiting-off-student-loans-and-fulfill-congressional-directives-to-help-struggling-borrowers",
       "usedFor": "Call to discharge debts for harmed students and help borrowers unable to pay."
+    },
+    {
+      "id": "s28",
+      "kind": "primary",
+      "title": "Remarks on H.J. Res. 140 (Boundary Waters), 172 Cong. Rec. S1790, April 15, 2026",
+      "author": "Tammy Baldwin, Senate floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2026-04-15/CREC-2026-04-15-pt1-PgS1790-3",
+      "usedFor": "Her own words on treaty rights of the Chippewa of Lake Superior (read in the local GovInfo copy)."
+    },
+    {
+      "id": "s29",
+      "kind": "primary",
+      "title": "Remarks on the Community Solutions Act (H.R. 7), 147 Cong. Rec. H4222, July 19, 2001",
+      "author": "Tammy Baldwin, House floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2001-07-19/CREC-2001-07-19-pt1-PgH4222-5",
+      "usedFor": "Her own words on separation of church and State."
+    },
+    {
+      "id": "s30",
+      "kind": "primary",
+      "title": "Remarks on Iraq, 149 Cong. Rec. H1659, March 6, 2003",
+      "author": "Tammy Baldwin, House floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2003-03-06/CREC-2003-03-06-pt1-PgH1659-2",
+      "usedFor": "Her own words on the International Criminal Court."
+    },
+    {
+      "id": "s31",
+      "kind": "primary",
+      "title": "Remarks on prohibiting federal funding of National Public Radio, 157 Cong. Rec. H1953, March 17, 2011",
+      "author": "Tammy Baldwin, House floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2011-03-17/CREC-2011-03-17-pt1-PgH1953",
+      "usedFor": "Her own words defending federal funding of public radio."
+    },
+    {
+      "id": "s32",
+      "kind": "primary",
+      "title": "Tribute to Chris Ahmuty, 162 Cong. Rec. S6459, November 17, 2016",
+      "author": "Tammy Baldwin, Senate floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2016-11-17/CREC-2016-11-17-pt1-PgS6459",
+      "usedFor": "Her own words on Wisconsin voter ID laws."
+    },
+    {
+      "id": "s33",
+      "kind": "primary",
+      "title": "Voteview roll-call record: H.Con.Res. 83 (2003), H.Res. 1109 (2008), H.R. 23 cloture (2025)",
+      "author": "Voteview (UCLA), Lewis, Poole, Rosenthal et al.",
+      "url": "https://voteview.com",
+      "usedFor": "Her recorded votes (member icpsr 29940), read in the local copy downloaded 2026-10-30."
+    },
+    {
+      "id": "s34",
+      "kind": "primary",
+      "title": "Remarks on gun violence, Commerce, Justice, Science appropriations, 162 Cong. Rec. S3880, June 15, 2016",
+      "author": "Tammy Baldwin, Senate floor",
+      "url": "https://www.govinfo.gov/app/details/CREC-2016-06-15/CREC-2016-06-15-pt1-PgS3880-3",
+      "usedFor": "Her own words on background checks and the terror gap."
     }
   ],
   "answers": {
@@ -338,9 +397,9 @@
     "limit-guns": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "She supports enhanced firearm background checks and measures preventing abusers from obtaining guns.",
+      "rationale": "In 2016 she called for \"getting a vote on closing the terror gap\" and \"making sure that background checks occur with regard to every purchase\", and backed an amendment barring people convicted of misdemeanor hate crimes from possessing weapons.",
       "sources": [
-        "s1"
+        "s34"
       ]
     },
     "empower-police-military": {
@@ -626,10 +685,12 @@
       "sources": []
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She urged the House to \"reaffirm our commitment to separation of church and State\" and called it \"a mistake for government and religion to become entangled\".",
+      "sources": [
+        "s29"
+      ]
     },
     "laws-from-scripture": {
       "value": null,
@@ -1403,12 +1464,10 @@
       "sources": []
     },
     "death-penalty": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Her documented record opposes capital punishment.",
-      "sources": [
-        "s1"
-      ]
+      "value": null,
+      "confidence": "low",
+      "rationale": "The earlier answer cited only Wikipedia and no original source was found in this pass, so no position is recorded.",
+      "sources": []
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -2212,10 +2271,12 @@
       "sources": []
     },
     "treaties-binding": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Speaking against H.J. Res. 140 she said voting for it \"would betray our centuries-old treaties between the United States and the Chippewa of Lake Superior\".",
+      "sources": [
+        "s28"
+      ]
     },
     "cooperative-communities": {
       "value": null,
@@ -2576,10 +2637,12 @@
       "sources": []
     },
     "recognise-genocide": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She voted yea on H.Con.Res. 83 (2003) honoring the victims of the Cambodian genocide and on H.Res. 1109 (2008) acknowledging the victims of past genocides.",
+      "sources": [
+        "s33"
+      ]
     },
     "income-for-work-not-ownership": {
       "value": null,
@@ -2814,12 +2877,10 @@
       ]
     },
     "arms-reduction": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "She supports negotiated reductions in the role and number of nuclear weapons while preserving strategic stability.",
-      "sources": [
-        "s1"
-      ]
+      "value": null,
+      "confidence": "low",
+      "rationale": "The earlier answer cited only Wikipedia and no original source was found in this pass, so no position is recorded.",
+      "sources": []
     },
     "open-diplomacy": {
       "value": null,
@@ -2916,10 +2977,12 @@
       "sources": []
     },
     "public-service-media": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She opposed the bill ending federal funding of NPR as an attack on \"a vital public radio system\", and in 2025 objected to rescinding public broadcasting funds; she did not address editorial independence.",
+      "sources": [
+        "s31"
+      ]
     },
     "religions-one-truth": {
       "value": null,
@@ -2996,10 +3059,12 @@
       "sources": []
     },
     "voter-id": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "She described Wisconsin's voter ID laws as ones that \"threaten to disenfranchise or discourage Wisconsin voters\".",
+      "sources": [
+        "s32"
+      ]
     },
     "religious-equal-recognition": {
       "value": null,
@@ -3062,10 +3127,13 @@
       "sources": []
     },
     "international-criminal-courts": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She criticised the US \"rejection of ... the International Criminal Court\" (2003) and in January 2025 voted against cloture on a bill to sanction the Court.",
+      "sources": [
+        "s30",
+        "s33"
+      ]
     },
     "scripture-inerrant": {
       "value": null,
@@ -3282,5 +3350,16 @@
       "sources": []
     }
   },
-  "notes": "All 490 statements were reviewed, including every remaining null, against whole-career evidence. Downloaded full campaign statements, the 2012 speech, 2014 oral history, 2025 report and 2026 trade letter were read or searched across the statement themes. Senate statements were read in full where local downloads failed. Her single-payer advocacy predates the Senate; later public-option proposals still seek universal coverage. Her 2026 support for targeted industrial tariffs coexists with opposition to broad trade-war tariffs, not endorsement of all protectionism. Opposition to the Iraq and Iran wars is not treated as absolute nonintervention. Her explicit 2026 support for Israeli self-defense remains alongside opposition to specified arms sales. No numerical immigration position, total worker ownership, universal free university education or blanket religious exemption is inferred. Police funding is not treated as opposition to every conceivable private security arrangement. Colleagues’ words, party identity, relatives and endorsements do not establish her views. No historical inferences."
+  "notes": "All 490 statements were reviewed, including every remaining null, against whole-career evidence. Downloaded full campaign statements, the 2012 speech, 2014 oral history, 2025 report and 2026 trade letter were read or searched across the statement themes. Senate statements were read in full where local downloads failed. Her single-payer advocacy predates the Senate; later public-option proposals still seek universal coverage. Her 2026 support for targeted industrial tariffs coexists with opposition to broad trade-war tariffs, not endorsement of all protectionism. Opposition to the Iraq and Iran wars is not treated as absolute nonintervention. Her explicit 2026 support for Israeli self-defense remains alongside opposition to specified arms sales. No numerical immigration position, total worker ownership, universal free university education or blanket religious exemption is inferred. Police funding is not treated as opposition to every conceivable private security arrangement. Colleagues’ words, party identity, relatives and endorsements do not establish her views. No historical inferences. Pass 2 (claude-sonnet-5-5, 2026-11-01) searched her floor speeches 1999-2026 and Voteview on church and state, religion, Israel and Palestine, genocide recognition, tribes and treaties, the ICC, UN and treaties, language, immigration and citizenship, drugs, prisons, public broadcasting, voter ID, term limits, FOIA, worker ownership, foreign takeovers and farmland, conscription, and Ukraine. Most topics have no statement of her own position; Tibet (Middle Way) and the Wisconsin Point land return are narrower cases and left null, and the 2025 birthright-citizenship mention is a passing item in a list, also null. Six answers added, all from the local corpora. The earlier death-penalty and arms-reduction answers rested only on Wikipedia and are nulled; limit-guns is re-sourced to her 2016 floor speech.",
+  "passes": [
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-01"
+    }
+  ],
+  "rules": 3
 }
