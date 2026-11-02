@@ -873,12 +873,13 @@
    ]
   },
   "harm-principle": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties popular democracy to Mill's harm principle, and majoritarian voting could set limits on liberty beyond harm.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "individual-rights-only": {
    "value": -1,
@@ -1264,12 +1265,13 @@
    ]
   },
   "security-forces-accountable": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Accountability to the people follows from popular sovereignty, though the sources do not mention transitional justice.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "night-watchman-state": {
    "value": -1,
@@ -4378,6 +4380,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 136
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

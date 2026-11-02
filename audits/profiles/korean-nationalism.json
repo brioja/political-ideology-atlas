@@ -3076,12 +3076,13 @@
       "nulledFrom": 0
     },
     "reification": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not a nationalist theme; Shin's anarchism criticised exploitation but no source uses this concept.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "press-owned-by-wealth": {
       "value": null,
@@ -3415,12 +3416,13 @@
       "nulledFrom": 0
     },
     "economy-in-majority-hands": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Minjok nationalism treats the nation as a descent community and scholars note resistance to multiethnic participation, but no source states an economic ownership rule.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "single-unit-for-people": {
       "value": 2,
@@ -4376,6 +4378,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 201
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

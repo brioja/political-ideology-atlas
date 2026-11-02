@@ -2372,12 +2372,13 @@
       ]
     },
     "paid-care-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Vox backs family support but the sources do not mention paid care work.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "filial-duty": {
       "value": null,
@@ -4297,6 +4298,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 178
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

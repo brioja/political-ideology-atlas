@@ -2977,13 +2977,14 @@
       ]
     },
     "criminalize-homosexuality": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Liberal Orthodox feminists operate in democracies; JOFA lists homosexuality as a community issue and no source supports criminalisation.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "suppress-opposition": {
       "value": -2,
@@ -3480,12 +3481,13 @@
       "nulledFrom": 0
     },
     "sex-socially-constructed": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement accepts halakhic sex categories as given, though sources don't discuss the theory.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "no-fixed-category-of-women": {
       "value": null,
@@ -4535,6 +4537,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 238
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

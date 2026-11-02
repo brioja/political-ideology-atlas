@@ -216,12 +216,13 @@
       "nulledFrom": 0
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between protecting the marginalized from degradation and free-expression concerns; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": null,
@@ -303,12 +304,13 @@
       ]
     },
     "more-religion-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents want faith to inform justice but also criticize church authority; no source supports a larger public religious role as such.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "correct-racial-injustice": {
       "value": 1,
@@ -381,12 +383,13 @@
       "nulledFrom": -2
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Peace activism argues one way and concern for victims of oppression the other; adherents are split and no source decides it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": 0,
@@ -884,12 +887,13 @@
       "nulledFrom": 0
     },
     "capitalism-causes-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ruether criticized militarism and colonialism but the inevitability claim is not in the sources.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "taxation-theft": {
       "value": null,
@@ -1280,12 +1284,13 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Prophetic tradition challenges rulers but no source asserts a corruption thesis.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "heritable-defect-limits": {
       "value": -2,
@@ -1683,12 +1688,13 @@
       "nulledFrom": -1
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ecofeminism praises nature but no source claims rural life is morally healthier.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": null,
@@ -1851,12 +1857,13 @@
       "nulledFrom": 0
     },
     "central-bank-independence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Central bank design is not in the sources; democratic-socialist leanings and technocratic concerns point in different directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-land-for-peace": {
       "value": null,
@@ -4470,6 +4477,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 311
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

@@ -121,12 +121,13 @@
       "nulledFrom": -1
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "He accepted private property within sharia limits and also state redistribution; no source gives a view on nationalizing industry.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-the-wealthy": {
       "value": null,
@@ -4507,6 +4508,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 212
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

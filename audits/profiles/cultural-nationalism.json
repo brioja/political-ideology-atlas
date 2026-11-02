@@ -1950,12 +1950,13 @@
       "nulledFrom": 1
     },
     "sovereign-above-law": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Herder favoured republican limits on rulers and no source supports an unbound sovereign.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "space-expansion": {
       "value": null,
@@ -2027,12 +2028,13 @@
       ]
     },
     "apostasy-punishable": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Cultural nationalists who treat religion as culture, such as the RSS, rely on inclusive cultural framing, and no source supports punishment.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "women-must-cover": {
       "value": null,
@@ -2478,12 +2480,13 @@
       ]
     },
     "military-guardian-role": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Cultural nationalism is a civil-society movement and Herder opposed militarism; no source supports a political army.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "paid-care-work": {
       "value": null,
@@ -3418,12 +3421,13 @@
       "nulledFrom": 1
     },
     "politics-spiritual-struggle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fichte speaks of national spirit, but no source frames politics as a struggle of good against evil; adherents are split.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homeland-cultural-centre": {
       "value": null,
@@ -3976,12 +3980,13 @@
       "nulledFrom": 0
     },
     "voter-id": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Cultural nationalism defines the nation by culture, not legal citizenship procedure; no source treats voting rules, so adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religious-equal-recognition": {
       "value": 0,
@@ -4011,12 +4016,13 @@
       "nulledFrom": 0
     },
     "internet-shutdowns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it; cultural nationalists stress education and expression of the culture, which pulls against shutdowns, but order concerns pull the other way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "negative-income-tax": {
       "value": null,
@@ -4443,6 +4449,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 104
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

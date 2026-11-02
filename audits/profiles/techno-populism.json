@@ -435,12 +435,13 @@
       ]
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Efficiency and output language and technolibertarian strands do not favour planning, though no source addresses it directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -732,12 +733,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Technology enthusiasm is strong, but the claim to protect the people from disruptive institutions and elites varies; no source states acceleration at the cost of institutions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": null,
@@ -928,12 +930,13 @@
       "nulledFrom": 0
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-establishment rhetoric might agree, but the strand also relies on experts; no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -1869,12 +1872,13 @@
       "nulledFrom": 0
     },
     "subordinate-church-to-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The review says technopopulists erode church influence as an intermediary body, but no source says they curb church property.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nonpartisan-head-of-state": {
       "value": null,
@@ -1930,12 +1934,13 @@
       "nulledFrom": 0
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Technology enthusiasm gives some sympathy, but no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-above-law": {
       "value": -1,
@@ -4397,6 +4402,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 148
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

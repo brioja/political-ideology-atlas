@@ -698,12 +698,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Hindu reverence for rivers and the sacred land exists, but no source ties it to this ideology politically.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": 0,
@@ -747,12 +748,13 @@
       "nulledFrom": 0
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A security-minded movement leans against it, but no source states a view, so the answer stays neutral.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": 1,
@@ -1246,12 +1248,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Eugenic limits on reproduction are not in the sources; Golwalkar praised German racial policy toward Jews, but not this policy.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "security-forces-accountable": {
       "value": null,
@@ -1353,12 +1356,13 @@
       ]
     },
     "trade-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Jana Sangh was economic-nationalist, which could favour exporting, but no source states a surplus target.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-transfer": {
       "value": 0,
@@ -1437,20 +1441,22 @@
       ]
     },
     "restrict-strikes-picketing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Labour law rules are not in the sources; Sangh-linked unions pursue cooperation but have no stated position on ballots.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-causes-poverty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Hindutva writers raise demography chiefly in communal terms; no source ties population to poverty causation.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diversity-weakens-cohesion": {
       "value": 1,
@@ -1747,12 +1753,13 @@
       "nulledFrom": 0
     },
     "restrict-freedoms-for-growth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Jana Sangh sought growth but within parliamentary democracy, and no source endorses trading freedoms for growth.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rich-countries-aid-poor": {
       "value": null,
@@ -4486,6 +4493,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 278
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

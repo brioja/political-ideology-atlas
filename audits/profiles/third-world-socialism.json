@@ -2990,12 +2990,13 @@
       ]
     },
     "press-owned-by-wealth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nkrumah describes wealthy powers steering outcomes, but press freedom critique is not in the sources.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "promulgated-standing-laws": {
       "value": 0,
@@ -3347,12 +3348,13 @@
       ]
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Constitutional design is not in the sources, and states varied between unicameral and bicameral models.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": -1,
@@ -4276,6 +4278,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 117
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -226,13 +226,14 @@
       ]
     },
     "state-harmful": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Restricting immigration presupposes a state that controls borders and membership, so the claim that the state is harmful is clearly rejected; no source discusses anarchism.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-guns": {
       "value": -1,
@@ -723,12 +724,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmental strain is cited against immigration, but no source shows adherents taking a view on nature's intrinsic value.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": 0,
@@ -927,12 +929,13 @@
       "nulledFrom": -1
     },
     "state-as-business": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Citizens as customers who can leave sits oddly with an emphasis on membership and borders, but no source addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "positive-liberty": {
       "value": null,
@@ -1893,12 +1896,13 @@
       ]
     },
     "force-to-prevent-secession": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "National unity favors it, but no source addresses it and adherents differ by case.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "region-keeps-system": {
       "value": null,
@@ -3164,12 +3168,13 @@
       "nulledFrom": 1
     },
     "racial-franchise": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses a racial franchise; rejection is assumed because the scope covers mainstream parties that accept equal citizenship for naturalised citizens.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "online-participation": {
       "value": 0,
@@ -3196,12 +3201,13 @@
       ]
     },
     "boycott-minority-shops": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses boycotts; rejection is assumed because the scope excludes bigoted fringes and mainstream parties seek assimilation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "citizens-assembly": {
       "value": null,
@@ -4276,12 +4282,13 @@
       "nulledFrom": 1
     },
     "no-denominational-politics": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Restrictionists differ, from secular civic nationalists to Christian-identity parties; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tech-with-ancestral-values": {
       "value": null,
@@ -4456,6 +4463,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

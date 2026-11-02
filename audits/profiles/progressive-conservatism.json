@@ -749,12 +749,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source covers encryption policy; security and privacy concerns split adherents, so neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -1,
@@ -922,12 +923,13 @@
       "nulledFrom": 0
     },
     "hereditarian-race": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Modern progressive conservatism stresses equal opportunity and minority rights; no source supports this claim.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "organic-representation": {
       "value": null,
@@ -1238,12 +1240,13 @@
       ]
     },
     "security-forces-accountable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses accountability for past abuses by security forces; adherents are mixed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "night-watchman-state": {
       "value": -2,
@@ -1254,12 +1257,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A reformist tradition backing minority rights would not discourage intermarriage, though no source raises the issue.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-moral-worth": {
       "value": 1,
@@ -2010,12 +2014,13 @@
       "nulledFrom": -2
     },
     "common-currency": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses currency union; adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "kin-peoples-union": {
       "value": null,
@@ -2575,12 +2580,13 @@
       "nulledFrom": -1
     },
     "arm-foreign-insurgents": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Disraeli-era imperialism and Cameron-era caution point different ways, so adherents are split; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "intervene-in-bloc": {
       "value": null,
@@ -2699,12 +2705,13 @@
       "nulledFrom": 1
     },
     "local-production": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position on localised production; neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "informal-organisation": {
       "value": -2,
@@ -3806,12 +3813,13 @@
       "nulledFrom": 1
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressive conservatives pair welfare with fiscal prudence, but they are pragmatic about rules; adherents are split and no source states a view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restructure-world-economy": {
       "value": 0,
@@ -3985,12 +3993,13 @@
       ]
     },
     "mandatory-sentences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses sentencing, and progressive conservatives split between law-and-order and reformist views.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "immigrants-learn-language": {
       "value": null,
@@ -4366,12 +4375,13 @@
       ]
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position; adherents' market-friendly pragmatism and willingness to steer the economy leave this split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": 0,
@@ -4481,6 +4491,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 276
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

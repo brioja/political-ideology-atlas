@@ -2365,12 +2365,13 @@
       "nulledFrom": 1
     },
     "slavery-not-civil-war-cause": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A US question that unionist sources never discuss; mildly against by inference from mainstream consensus.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "preserve-contested-monuments": {
       "value": null,
@@ -2528,12 +2529,13 @@
       ]
     },
     "intervene-in-bloc": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Unionist sources never discuss great-power intervention in allies; mildly against since the UK frames its alliances as consensual.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "corporate-influence": {
       "value": 0,
@@ -4343,6 +4345,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 217
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

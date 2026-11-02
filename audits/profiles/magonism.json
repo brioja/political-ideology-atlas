@@ -3575,12 +3575,13 @@
       ]
     },
     "abolish-rental-housing": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The manifesto has each person keep their own house but through expropriation and common allocation, not by a state ban on renting; no source discusses rent specifically.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "native-born-offices": {
       "value": -2,
@@ -4355,6 +4356,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 207
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

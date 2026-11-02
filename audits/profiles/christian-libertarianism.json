@@ -636,12 +636,13 @@
       ]
     },
     "ethnic-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses ethnic nations; equal natural rights point against it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "class-struggle-history": {
       "value": null,
@@ -2618,12 +2619,13 @@
       "nulledFrom": 0
     },
     "minority-conspiracy": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Conspiracy claims about a group conflict with equal natural rights and the individual focus of the ideology; no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": 0,
@@ -4315,6 +4317,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 163
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

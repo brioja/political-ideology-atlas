@@ -378,12 +378,13 @@
       "nulledFrom": 0
     },
     "free-trade": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view, and socialists of the era were split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nation-first": {
       "value": -1,
@@ -755,12 +756,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a view on speeding technological disruption; the movement's engineering optimism was about sanitation and utilities, not disruption.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": null,
@@ -1238,12 +1240,13 @@
       ]
     },
     "proportional-representation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Early American socialists generally supported proportional representation, but no source opened states it for this movement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-mission": {
       "value": -2,
@@ -1431,12 +1434,13 @@
       "nulledFrom": 1
     },
     "separated-powers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address checks and balances, which the movement did not make a theme.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "vanguard-party": {
       "value": -2,
@@ -2150,12 +2154,13 @@
       ]
     },
     "history-own-civilization": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Berger criticised school teaching of patriotism and inherited prejudice, but no source states a view on how history should be centred, so the answer is split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizing-tutelage": {
       "value": -2,
@@ -4457,6 +4462,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 200
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

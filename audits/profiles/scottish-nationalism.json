@@ -2209,12 +2209,13 @@
       "nulledFrom": 1
     },
     "colonial-treaties-void": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties Scottish nationalism to colonial-era treaties, though its own claim concerns the 1707 Union rather than imposed division of a people.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "elective-rulers": {
       "value": 0,
@@ -2293,12 +2294,13 @@
       ]
     },
     "ruling-class-consent": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "This is a Gramscian analysis that the party does not use, and no source gives its view of how power is maintained.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "world-economy-extracts-surplus": {
       "value": -1,
@@ -4399,6 +4401,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 220
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

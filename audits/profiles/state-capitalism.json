@@ -405,12 +405,13 @@
    ]
   },
   "drastic-climate-action": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents split: strong state capacity could enforce it, but growth priority cuts against it; no source speaks to it.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "tech-solves-problems": {
    "value": null,
@@ -689,12 +690,13 @@
    "nulledFrom": -1
   },
   "colonial-reparations": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Developmentalism arose in resisting imperialism, but no source gives a stance on reparations.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "civilizational-union": {
    "value": null,
@@ -1229,12 +1231,13 @@
    ]
   },
   "assimilate-immigrants": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties the ideology to assimilation policy, and adherent states such as Singapore and China handle it differently.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "elite-replacement": {
    "value": null,
@@ -1492,12 +1495,13 @@
    ]
   },
   "diversity-weakens-cohesion": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherent states differ on diversity, with Singapore managing multiethnic quotas, and no source ties the ideology to a view.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "offices-by-lottery": {
    "value": -2,
@@ -4518,6 +4522,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 285
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

@@ -4193,13 +4193,14 @@
       "nulledFrom": -1
     },
     "scripture-inerrant": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Southern Agrarians were often religious traditionalists but Jeffersonian agrarians were deists; adherents are split and no source treats literalism.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gendered-self-government": {
       "value": null,
@@ -4437,13 +4438,14 @@
       "nulledFrom": 1
     },
     "financial-transactions-tax": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Agrarians distrust finance and speculators; a tax on financial trading follows from that suspicion, though no source states it.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "racism-not-main-obstacle": {
       "value": 0,
@@ -4547,6 +4549,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 265
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

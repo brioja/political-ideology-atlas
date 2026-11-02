@@ -679,12 +679,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmental ethics is outside a doctrine about cultural norms and personal liberty, and no source ties it to either side.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -3376,12 +3377,13 @@
       "nulledFrom": -1
     },
     "independent-unions": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal freedom of association points to unions free from state and party control; no source states it directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "socialism-needs-workers-power": {
       "value": null,
@@ -4319,6 +4321,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 162
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

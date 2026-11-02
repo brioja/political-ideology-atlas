@@ -1805,12 +1805,13 @@
       ]
     },
     "abolish-hereditary-privilege": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Bulletin's republican, egalitarian stance opposed titles and privilege, though no source states this about titles.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "abolish-legal-marriage": {
       "value": null,
@@ -2885,12 +2886,13 @@
       "nulledFrom": -1
     },
     "racial-franchise": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The restrictive tradition denied non-whites rights in practice, but the sources do not cover the franchise; contested.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "recallable-delegates": {
       "value": null,
@@ -4413,6 +4415,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 251
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

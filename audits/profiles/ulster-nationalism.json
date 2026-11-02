@@ -153,12 +153,13 @@
       "nulledFrom": 0
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view on nationalised industry; the only economic stress is on social deprivation, so adherents are treated as split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-the-wealthy": {
       "value": null,
@@ -988,12 +989,13 @@
       ]
     },
     "total-state": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The proposals limit the state by a written constitution, bill of rights and supreme court. No source discusses totalitarianism directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "national-rebirth": {
       "value": 0,
@@ -1249,12 +1251,13 @@
       "nulledFrom": 0
     },
     "elite-replacement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions replacement theories; the movement's concerns are internal to Northern Ireland and not migration-driven.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "proportional-representation": {
       "value": 2,
@@ -1816,12 +1819,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Common Sense proposes a US-modelled written constitution, as Beyond the Religious Divide did, but no sources state whether the head of state would be elected.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": null,
@@ -1841,12 +1845,13 @@
       ]
     },
     "property-serves-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a property doctrine, and the Protestant unionist base would be split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "soviet-state-capitalist": {
       "value": 0,
@@ -2030,12 +2035,13 @@
       "nulledFrom": -2
     },
     "women-must-cover": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "No source addresses religious dress law; the Common Sense bill of rights and the Protestant culture of the movement rule it out.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "common-currency": {
       "value": null,
@@ -2308,12 +2314,13 @@
       "nulledFrom": 1
     },
     "noblesse-oblige": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses duties of the privileged; Common Sense stresses rights and shared responsibility among communities instead.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "withdraw-from-politics": {
       "value": null,
@@ -2771,12 +2778,13 @@
       "nulledFrom": 0
     },
     "religion-illusion": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The movement is rooted in Protestant identity and the Orange tradition, so the Marxist view of religion is foreign to it. No source discusses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "capitalism-progressive": {
       "value": null,
@@ -4377,6 +4385,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 190
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

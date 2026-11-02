@@ -3258,12 +3258,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic doctrine treats creation as God's work but Rex's sources never address nature or the environment; no clear lean.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "never-kill-self-defence": {
       "value": null,
@@ -3807,12 +3808,13 @@
       "nulledFrom": 1
     },
     "women-property-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic traditionalism and a limited public role for women point one way, but the sources do not mention inheritance rights.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-language-many-names": {
       "value": null,
@@ -4326,6 +4328,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 215
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

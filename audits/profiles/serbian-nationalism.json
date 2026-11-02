@@ -2887,12 +2887,13 @@
       "nulledFrom": 1
     },
     "neither-capitalism-nor-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Radical Party mixes protectionism and nationalism, but no source describes a third-way doctrine; adherents are split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "historical-land-claim": {
       "value": 2,
@@ -4371,12 +4372,13 @@
       ]
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view; the Radical Party's protectionism and its Eurosceptic stance point both ways on a tax tied to global finance.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4487,6 +4489,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 252
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

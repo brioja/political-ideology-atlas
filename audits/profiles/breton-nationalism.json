@@ -315,12 +315,13 @@
       "nulledFrom": 1
     },
     "gender-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The UDB backs equality of women and men, but no source takes a position on whether gender is socially constructed.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-national-culture": {
       "value": 2,
@@ -381,12 +382,13 @@
       "nulledFrom": 0
     },
     "open-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The UDB welcomes refugees, but no source endorses abolishing borders and small-nation nationalists value borders.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-growth": {
       "value": null,
@@ -457,12 +459,13 @@
       "nulledFrom": 1
     },
     "land-value-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches it; no tax-reform tradition in Breton nationalism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-inheritance": {
       "value": null,
@@ -509,12 +512,13 @@
       "nulledFrom": 0
     },
     "abolish-money-wages": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Even the UDB's 1970s Marxist line sought collective ownership within a nationalist-autonomist frame, and no source calls for abolishing wages.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "abolish-central-banks": {
       "value": -2,
@@ -1539,12 +1543,13 @@
       "nulledFrom": -1
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The UDB's Marxist phase might favour it but no source says so.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-discipline-binding": {
       "value": null,
@@ -1589,12 +1594,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The UDB's 1970s anti-imperialism might have sympathy but no source states the position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "censor-art-for-virtue": {
       "value": -2,
@@ -1650,12 +1656,13 @@
       "nulledFrom": -1
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Breton rural culture is valued but no source makes a moral claim.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": 1,
@@ -1751,12 +1758,13 @@
       "nulledFrom": 0
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-imperialism might support it but no source addresses debt.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independence-needs-economic-change": {
       "value": 1,
@@ -1873,12 +1881,13 @@
       ]
     },
     "subordinate-church-to-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalists wanted freedom from clerical influence, but no source proposes state control over churches.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nonpartisan-head-of-state": {
       "value": null,
@@ -2038,12 +2047,13 @@
       "nulledFrom": 1
     },
     "kin-peoples-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement builds cultural ties with other Celtic nations, but no source calls for political union with them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-cultural-autonomy": {
       "value": null,
@@ -2125,12 +2135,13 @@
       "nulledFrom": 1
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses work incentives, and the UDB's former Marxist line and the centrist Parti breton would answer differently.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": -1,
@@ -4431,6 +4442,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 260
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 11
     }
   ]
 }

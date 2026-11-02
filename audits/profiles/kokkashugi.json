@@ -95,13 +95,14 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents backed worker welfare and class harmony but no source addresses wage floors; positions varied between Kita's labor rights and managerial control.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": -1,
@@ -698,12 +699,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses nature's intrinsic value; Shinto reverence for nature existed but was not a political position of the doctrine.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -1915,12 +1917,13 @@
       "nulledFrom": -1
     },
     "flat-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kokkashugi favoured state direction of the economy but no source states a tax-structure position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "character-from-environment": {
       "value": 1,
@@ -1988,12 +1991,13 @@
       ]
     },
     "land-redistribution": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kita Ikki's plan capped private holdings but other adherents protected property, so views split; no source covers land reform.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "refugee-return": {
       "value": null,
@@ -2076,12 +2080,13 @@
       ]
     },
     "ban-cartels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kita planned to break up concentrated wealth, but state-cooperating cartels were favored by other adherents; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-bailouts": {
       "value": null,
@@ -2256,12 +2261,13 @@
       ]
     },
     "colonial-treaties-void": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties kokkashugi to colonial treaty questions; Japan itself held colonies.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "elective-rulers": {
       "value": -2,
@@ -2725,12 +2731,13 @@
       "nulledFrom": -1
     },
     "local-production": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Economic nationalism and state direction are documented, but no source addresses localism in production; neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "informal-organisation": {
       "value": null,
@@ -3364,12 +3371,13 @@
       "nulledFrom": -2
     },
     "rent-control": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kokkashugi favoured state direction of the economy and class harmony, but no source addresses rent caps; adherents could favour them or see them as outside its concerns.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-ip": {
       "value": null,
@@ -3737,12 +3745,13 @@
       "nulledFrom": 1
     },
     "free-public-college": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Education was a state duty, but no source gives a position on tuition.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-taxes": {
       "value": null,
@@ -4398,12 +4407,13 @@
       "nulledFrom": -1
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses financial levies; state economic direction would allow it but nothing documents a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4504,6 +4514,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 238
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

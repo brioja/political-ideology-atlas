@@ -433,12 +433,13 @@
       "nulledFrom": -1
     },
     "tax-inheritance": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The cited sources do not mention inheritance tax; the plan's general aim of lowering the tax burden on those who pay much points mildly against heavy inheritance taxes.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "basic-income": {
       "value": 0,
@@ -597,12 +598,13 @@
       ]
     },
     "military-superiority": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Militarism is a component, though no source states rivalry goals.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "ethnic-nation": {
       "value": null,
@@ -2647,12 +2649,13 @@
       "nulledFrom": -2
     },
     "public-access-to-information": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source documents a position; the government was criticised over secrecy yet adherents back open records against the left.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "local-production": {
       "value": null,
@@ -4392,6 +4395,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 248
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

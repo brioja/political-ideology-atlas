@@ -3425,12 +3425,13 @@
       "nulledFrom": 1
     },
     "recognise-genocide": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Its inclusive stance on minorities makes official recognition of past atrocities plausible; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "income-for-work-not-ownership": {
       "value": 2,
@@ -4526,6 +4527,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 222
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

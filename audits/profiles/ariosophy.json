@@ -392,13 +392,14 @@
       ]
     },
     "limit-growth": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Lanz promotes technology-dependent rule and expansion by the elite; degrowth is not in the sources. List valued living with nature, so not strongly negative.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "drastic-climate-action": {
       "value": null,
@@ -462,12 +463,13 @@
       ]
     },
     "land-value-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "List wanted a feudal land system with inheritance to the eldest son; replacing taxes by a land levy is not in the sources.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-inheritance": {
       "value": -1,
@@ -4467,6 +4469,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 262
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

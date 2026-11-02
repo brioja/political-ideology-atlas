@@ -2820,12 +2820,13 @@
       "nulledFrom": -1
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement prized Anglo-Saxon roots in language but no source here shows a program of purging loanwords.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "treaties-binding": {
       "value": -1,
@@ -4475,6 +4476,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 262
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

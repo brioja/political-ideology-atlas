@@ -1304,12 +1304,13 @@
       "nulledFrom": 0
     },
     "restrict-conversion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source documents a position on conversion; Maurras valued Catholicism socially but was agnostic.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -2574,12 +2575,13 @@
       "nulledFrom": 1
     },
     "job-guarantee": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Proto-fascists wanted class peace under the state but no source documents a job guarantee.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "democratic-peace": {
       "value": -2,
@@ -2644,12 +2646,13 @@
       "nulledFrom": -1
     },
     "local-production": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "National economic strength mattered but no source addresses local production.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "informal-organisation": {
       "value": -2,
@@ -4382,6 +4385,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 236
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -960,12 +960,13 @@
       "nulledFrom": 1
     },
     "media-academia-power": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "hereditarian-race": {
       "value": -2,
@@ -1026,12 +1027,13 @@
       "nulledFrom": -2
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties Catalan nationalism to an epistemological stance, so it is neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "universal-morality": {
       "value": null,
@@ -1876,12 +1878,13 @@
       "nulledFrom": 1
     },
     "subordinate-church-to-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "ERC is secular but the sources do not mention curbing church property.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nonpartisan-head-of-state": {
       "value": -1,
@@ -4367,6 +4370,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 178
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -1224,12 +1224,13 @@
       "nulledFrom": 1
     },
     "elite-replacement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Not a doctrine of the movement; no source.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "proportional-representation": {
       "value": null,
@@ -1648,12 +1649,13 @@
       "nulledFrom": 1
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rushdoony admired agrarian-era America, but no source directly states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": null,
@@ -2851,12 +2853,13 @@
       ]
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Not a movement doctrine; no source.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": 2,
@@ -4404,6 +4407,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 190
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -2747,12 +2747,13 @@
       "nulledFrom": 1
     },
     "religious-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Part 3 treats religion and nationalism as the two bonds of society, so adherents combine the two; no source defines the nation by religion alone.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "deference-to-leading-power": {
       "value": null,
@@ -3166,13 +3167,14 @@
       "nulledFrom": 1
     },
     "open-government-data": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Green Book favours popular rule but the Jamahiriya practised secrecy; no source settles it.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "interfaith-marriage-restriction": {
       "value": 1,
@@ -4445,6 +4447,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 225
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

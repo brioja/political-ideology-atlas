@@ -222,12 +222,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source records a stance on firearms; Australian opinion is mainstream and split on rural versus urban lines.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": 1,
@@ -282,12 +283,13 @@
       "nulledFrom": 1
     },
     "abortion-legal": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a movement position and adherents appear split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "more-religion-public": {
       "value": null,
@@ -585,12 +587,13 @@
       ]
     },
     "political-violence-never": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Secessionism has pursued votes and petitions; no source records violent campaigning.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "war-builds-character": {
       "value": -1,
@@ -1146,12 +1149,13 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports this; the party identifies as progressive.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-interest": {
       "value": -2,
@@ -1202,12 +1206,13 @@
       ]
     },
     "proportional-representation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A small new party would benefit, but no source states a position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-mission": {
       "value": -2,
@@ -1251,12 +1256,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-moral-worth": {
       "value": null,
@@ -1377,12 +1383,13 @@
       "nulledFrom": 0
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The federal-domination narrative resembles it, but no source states the principle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": null,
@@ -1452,12 +1459,13 @@
       ]
     },
     "emergency-suspend-protections": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports this and the movement is constitutionalist.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "price-controls-essentials": {
       "value": -1,
@@ -1559,12 +1567,13 @@
       ]
     },
     "unlimited-reelection": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "recall-officials": {
       "value": null,
@@ -2170,12 +2179,13 @@
       ]
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Australia lacks a federal bill of rights and no source records the movement proposing one, so adherents are divided.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": 0,
@@ -2267,12 +2277,13 @@
       ]
     },
     "world-economy-extracts-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents say Canberra extracts WA revenue, but the statement concerns poor countries and no source applies it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "native-born-offices": {
       "value": -1,
@@ -2591,12 +2602,13 @@
       "nulledFrom": 0
     },
     "minority-conspiracy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links the movement to conspiracy claims about a minority, and the modern party's progressive self-description contradicts such claims.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": -1,
@@ -4349,6 +4361,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 157
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 12
     }
   ]
 }

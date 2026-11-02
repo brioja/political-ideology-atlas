@@ -152,20 +152,22 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "CBE frames its mission as biblical justice and community for the marginalised, which sits uneasily with cutting aid, though no source addresses welfare.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches workplace ownership; adherents are not united on economic structure.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "surveillance-ok": {
       "value": null,
@@ -329,12 +331,13 @@
       "nulledFrom": -1
     },
     "empower-international-orgs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses international institutions; adherents are divided.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "free-trade": {
       "value": 0,
@@ -421,12 +424,13 @@
       "nulledFrom": 0
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses economic systems; the movement's emphasis on empowering others and distributed gifts weakly counts against central direction.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -446,12 +450,13 @@
       ]
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses inheritance, and adherents differ on economics.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "basic-income": {
       "value": 0,
@@ -534,12 +539,13 @@
       "nulledFrom": 0
     },
     "democracy-best": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Rejection of rule by one group over another and the equal worth of every person support democratic equality, but no source ranks forms of government.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "direct-votes": {
       "value": null,
@@ -611,20 +617,22 @@
       ]
     },
     "private-courts-defense": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches this question.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "military-superiority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches this question.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ethnic-nation": {
       "value": -2,
@@ -635,20 +643,22 @@
       ]
     },
     "class-struggle-history": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses historical materialism; egalitarians read history through creation, fall and redemption, so they reject class conflict as the main driver.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "equal-outcomes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Equality in egalitarianism means equal dignity and access to roles, not equal outcomes, and no source goes further.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "indigenous-land-authority": {
       "value": null,
@@ -863,12 +873,13 @@
       "nulledFrom": 0
     },
     "taxation-theft": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats taxation as theft; adherents include libertarian-leaning evangelicals but the movement as such does not.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "harm-principle": {
       "value": null,
@@ -1726,12 +1737,13 @@
       "nulledFrom": 0
     },
     "restrict-pornography": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "CBE treats the demeaning of women as injustice, which supports restriction, but liberty-minded adherents differ and the sources do not mention pornography.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "citizenship-by-descent": {
       "value": null,
@@ -1806,12 +1818,13 @@
       "nulledFrom": -1
     },
     "rich-countries-aid-poor": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "CBE's mission of justice and community and its global membership (65 countries) incline adherents to support aid, but no source addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -4452,6 +4465,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 151
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 13
     }
   ]
 }

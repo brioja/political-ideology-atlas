@@ -2170,13 +2170,14 @@
       ]
     },
     "abolish-hereditary-privilege": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Mixed: the current wanted a hierarchical elite and an Evolian order, but of philosophers and not of birth; no source addresses titles.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "history-own-civilization": {
       "value": null,
@@ -4232,12 +4233,13 @@
       "nulledFrom": -1
     },
     "keep-colonial-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address colonial borders; an anti-Western stance and a pan-European aim point in different directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "simple-living": {
       "value": null,
@@ -4527,6 +4529,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 278
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

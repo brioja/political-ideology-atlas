@@ -177,12 +177,13 @@
       ]
     },
     "worker-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Yugoslav workers' self-management is associated with the communist order nationalists rejected; no source records support for collective worker ownership.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "surveillance-ok": {
       "value": null,
@@ -264,12 +265,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source covers penal philosophy; conservative adherents lean toward punishment while Croatian law stresses resocialisation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": 2,
@@ -314,12 +316,13 @@
       "nulledFrom": -1
     },
     "gender-social-construct": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Conservative Croatian parties campaigned against gender ideology and the Istanbul Convention's gender language, but the sources do not cover this directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "preserve-national-culture": {
       "value": 2,
@@ -1079,12 +1082,13 @@
       ]
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's documented tools are constitutions, parties and elections, not rule by rulers' example; this is a neutral inference with no source support.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-self-determination": {
       "value": 2,
@@ -1482,12 +1486,13 @@
       ]
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source records a nationalist position on price caps; Croatia's governments have used temporary caps on food and fuel under pressure, so adherents split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-controls-media": {
       "value": -1,
@@ -2127,12 +2132,13 @@
       "nulledFrom": 0
     },
     "public-money-creation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Money creation is not in the sources; Croatia's central bank follows eurozone rules and the movement has no monetary reform programme.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capitalism-adapts": {
       "value": 1,
@@ -2359,12 +2365,13 @@
       ]
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not mention this; conservative critics of gender policy sometimes raise it, but no documented line exists.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": null,
@@ -2516,12 +2523,13 @@
       "nulledFrom": -1
     },
     "corporate-influence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not cover lobbying; HDZ's privatisation scandals and the party's 2014 corruption verdict point to concern about influence, but no doctrine is documented.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -4328,6 +4336,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 147
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

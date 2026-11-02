@@ -1550,12 +1550,13 @@
       ]
     },
     "party-discipline-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nativism is a stance on immigrants and nation, not on party organisation, and nativist parties vary; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pool-sovereignty": {
       "value": -2,
@@ -4044,13 +4045,14 @@
       "nulledFrom": -1
     },
     "women-suffrage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The 1856 American Party platform and modern nativists accept citizens voting; women voted in modern nativist movements and no source opposes it.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religion-oppresses-women": {
       "value": null,
@@ -4442,6 +4444,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 197
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

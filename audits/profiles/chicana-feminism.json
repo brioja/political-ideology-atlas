@@ -214,12 +214,13 @@
       "nulledFrom": 0
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anzaldua condemns linguistic and cultural suppression, which cuts against restriction, yet the movement also opposes racist and sexist speech; adherents are split and no source decides.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": -2,
@@ -264,12 +265,13 @@
       "nulledFrom": 0
     },
     "decide-locally": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Community responsibility is stressed, but no source takes a stand on devolution versus national government.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rehabilitation": {
       "value": null,
@@ -555,12 +557,13 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Inherited rule contradicts the movement's anti-hierarchical, anti-colonial politics; no source discusses monarchy, so this is an inference from core principles.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "democracy-best": {
       "value": null,
@@ -648,12 +651,13 @@
       ]
     },
     "military-superiority": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Anzaldua's border and anti-imperialist politics reject military dominance; no source discusses it directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "ethnic-nation": {
       "value": -2,
@@ -4374,6 +4378,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 180
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

@@ -677,12 +677,13 @@
    "nulledFrom": -1
   },
   "indigenous-land-authority": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "His inaugural wanted indigenous peoples included in the peace process, but no source covers land authority.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "colonial-reparations": {
    "value": null,
@@ -1946,12 +1947,13 @@
    "nulledFrom": 0
   },
   "sacred-ruler": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The personality cult involves leader worship without claims of divinity; no source addresses sacral rule, so this is a guess.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "flat-income-tax": {
    "value": null,
@@ -2911,20 +2913,22 @@
    "nulledFrom": 0
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source links the movement to the topic; rejection is assumed.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "criminalize-homosexuality": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records support for criminalisation; the answer is a guess.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "suppress-opposition": {
    "value": 1,
@@ -3405,12 +3409,13 @@
    "nulledFrom": 0
   },
   "sex-socially-constructed": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source links the movement to this question; disagreement is guessed from its conservative populist base.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "no-fixed-category-of-women": {
    "value": -1,
@@ -4451,6 +4456,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 158
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 5
   }
  ]
 }

@@ -406,12 +406,13 @@
    "nulledFrom": -1
   },
   "tech-solves-problems": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The regime backed railways and industrial development as progress, but no source states a belief that technology solves most problems.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "expand-nuclear": {
    "value": null,
@@ -809,12 +810,13 @@
    ]
   },
   "abolish-division-of-labor": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses the division of labour; rejection is assumed from the regime's commercial and industrial base.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "distribute-by-need": {
    "value": null,
@@ -844,12 +846,13 @@
    "nulledFrom": -2
   },
   "dictatorship-of-proletariat": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "The idea postdates the regime's founding and no source discusses it; rejection is assumed from a regime that repressed workers' and republican movements.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "collective-farming": {
    "value": -2,
@@ -1519,12 +1522,13 @@
    "nulledFrom": 0
   },
   "representatives-worker-pay": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Deputies had to meet a high tax qualification, so the regime meant office for the wealthy, but no source addresses deputies' pay.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "party-discipline-binding": {
    "value": -1,
@@ -2095,12 +2099,13 @@
    "nulledFrom": -1
   },
   "moral-incentives": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses replacing material incentives; rejection is assumed from the regime's ethos of enrichment and property.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "armed-group-creates-revolution": {
    "value": -2,
@@ -3860,12 +3865,13 @@
    "nulledFrom": 1
   },
   "pollution-tort-liability": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Inviolable property rights point toward suits, but the regime also licensed and regulated industry; no source settles it.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "customary-chiefs-lawmaking": {
    "value": null,
@@ -4379,6 +4385,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 204
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

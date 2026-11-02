@@ -117,12 +117,13 @@
       "nulledFrom": 0
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses ownership of utilities; Ihud-era Zionism had cooperative strands but the modern movement takes no stand.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-the-wealthy": {
       "value": null,
@@ -142,12 +143,13 @@
       ]
     },
     "property-fundamental": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The federal constitution is meant to guarantee everyone's rights, but no source says property rights are central or overridable.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "regulate-corporations": {
       "value": null,
@@ -229,12 +231,13 @@
       "nulledFrom": 0
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Policing is a cantonal function in the plan and security a federal one, but no source calls for more funding or authority.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "legalize-sex-work": {
       "value": null,
@@ -263,12 +266,13 @@
       "nulledFrom": 0
     },
     "traditional-family": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Family norms are left to each canton's own culture; no source states a stance, and secular and religious adherents would differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "same-sex-marriage": {
       "value": null,
@@ -338,12 +342,13 @@
       ]
     },
     "empower-international-orgs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Shahaf says the EU and US would not oppose the plan and the program seeks international acceptance, but no source calls for strengthening the UN.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "free-trade": {
       "value": null,
@@ -355,12 +360,13 @@
       "nulledFrom": 0
     },
     "nation-first": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The plan is Israel-centred but seeks international legitimacy for settlements; no source states a nation-first line.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "humanitarian-intervention": {
       "value": null,
@@ -399,12 +405,13 @@
       "nulledFrom": 0
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches this; it is not related to the federal structure.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": null,
@@ -469,12 +476,13 @@
       "nulledFrom": 0
     },
     "basic-income": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions income guarantees; the plan's welfare content is limited to camp and Bedouin rehabilitation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tariffs-protect-industry": {
       "value": null,
@@ -634,12 +642,13 @@
       ]
     },
     "military-superiority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The plan keeps security with a central government and the IDF as the only military force, implying maintained defence capacity, but no source discusses superiority.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "ethnic-nation": {
       "value": -1,
@@ -1065,12 +1074,13 @@
       "nulledFrom": 0
     },
     "school-vouchers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Education is a cantonal function in the plan, but no source takes a view on vouchers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "avoid-deficit-stimulus": {
       "value": null,
@@ -1826,12 +1836,13 @@
       "nulledFrom": 0
     },
     "central-bank-independence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The federal level handles macroeconomic policy but no source says who controls the central bank.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-land-for-peace": {
       "value": 1,
@@ -2758,12 +2769,13 @@
       "nulledFrom": -2
     },
     "regional-revenue-retention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The federal level handles macroeconomic policy and cantons local functions, but no source says how revenue is split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "personal-possessions-private": {
       "value": 0,
@@ -4429,6 +4441,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 136
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 12
     }
   ]
 }

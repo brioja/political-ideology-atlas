@@ -3192,13 +3192,14 @@
       "nulledFrom": 1
     },
     "open-lgbt-military-service": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Guevara's Cuba persecuted homosexuals in work camps and he shared the era's moral view of the New Man; no source records him supporting open service, so low-to-medium inference.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-promotes-atheism": {
       "value": null,
@@ -4466,6 +4467,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 191
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

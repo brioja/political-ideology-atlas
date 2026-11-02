@@ -401,12 +401,13 @@
    "nulledFrom": 0
   },
   "tech-solves-problems": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Enlightenment-influenced elites valued progress, but no source states a view on technology solving problems.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "expand-nuclear": {
    "value": null,
@@ -600,12 +601,13 @@
    ]
   },
   "war-builds-character": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source states the view; the heroic independence wars produced a cult of founders, but also warnings about violence.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "separate-church-state": {
    "value": -1,
@@ -2030,12 +2032,13 @@
    ]
   },
   "common-currency": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Bolívar wanted American union, but no source shows a shared currency as a goal.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "kin-peoples-union": {
    "value": 1,
@@ -3129,12 +3132,13 @@
    ]
   },
   "reinterpret-religion": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Creoles generally kept Catholic doctrine as it stood, and the sources do not mention reinterpretation for modern conditions.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "wealth-concentration-endangers-liberty": {
    "value": -1,
@@ -3603,12 +3607,13 @@
    ]
   },
   "arms-reduction": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Creole states built armies to win and defend independence, so arms reductions were not an aim, though no source states a view.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "open-diplomacy": {
    "value": 0,
@@ -3678,12 +3683,13 @@
    ]
   },
   "free-economic-experiment": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Creoles sought uniform national institutions rather than letting communities try different economic systems, but no source states it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "nature-as-capital": {
    "value": 0,
@@ -4335,6 +4341,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 128
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

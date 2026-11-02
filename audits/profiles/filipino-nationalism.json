@@ -433,12 +433,13 @@
       ]
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalists favored state guidance and Filipino control but no source shows support for a centrally planned economy.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": 0,
@@ -980,12 +981,13 @@
       ]
     },
     "welfare-for-citizens": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalist logic prioritizes citizens' welfare but the sources never discuss immigrants and welfare.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "class-collaboration": {
       "value": 1,
@@ -1471,12 +1473,13 @@
       ]
     },
     "sovereign-debt-cancellation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marcos-era debt was criticized as deepening foreign dependence, and economic nationalists support debt relief, though no source states cancellation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "independence-needs-economic-change": {
       "value": 2,
@@ -4273,6 +4276,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 126
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

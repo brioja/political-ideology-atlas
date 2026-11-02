@@ -158,12 +158,13 @@
       "nulledFrom": -1
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties cosmopolitanism to worker ownership; Marxist and liberal cosmopolitans would split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "surveillance-ok": {
       "value": null,
@@ -185,12 +186,13 @@
       "nulledFrom": 0
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Cosmopolitans value respect for difference but also free exchange; no source states a position, so adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": -1,
@@ -228,12 +230,13 @@
       ]
     },
     "legalize-sex-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it; liberal cosmopolitans would lean permissive but others object on equality grounds.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "decide-locally": {
       "value": -1,
@@ -4472,6 +4475,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 252
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

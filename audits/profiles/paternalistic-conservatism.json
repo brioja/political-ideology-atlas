@@ -102,12 +102,13 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Paternalists accept wage protection for workers but no source commits them to a substantial rise; adherents split between protecting workers and avoiding disruption of the market.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": -1,
@@ -373,12 +374,13 @@
       "nulledFrom": 0
     },
     "open-borders": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Organic national community with obligations among its members is incompatible with open borders; no source supports it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-growth": {
       "value": null,
@@ -638,12 +640,13 @@
       ]
     },
     "class-struggle-history": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The tradition sees society as an organic whole bound by mutual obligation between classes, not as a history of class conflict; no source addresses the Marxist thesis itself.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-outcomes": {
       "value": -2,
@@ -779,12 +782,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to this, and paternalists use state authority for benevolent ends without claiming means must mirror them.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -1002,12 +1006,13 @@
       "nulledFrom": 1
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address Zionism, and adherents have held varied views, so no position is inferable.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -1178,12 +1183,13 @@
       ]
     },
     "expand-fossil-fuels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses energy production, and state-minded paternalists and business-minded ones differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assimilate-immigrants": {
       "value": 0,
@@ -1466,12 +1472,13 @@
       ]
     },
     "emergency-suspend-protections": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Paternalists value authority and order, but Burke-style constitutionalism distrusts arbitrary power; no source covers emergencies and adherents split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "price-controls-essentials": {
       "value": 0,
@@ -4460,6 +4467,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 252
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

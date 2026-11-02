@@ -2428,13 +2428,14 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The EPP and liberal conservatives support environmental protection and humane values; sources do not mention animals.",
       "sources": [
         "s2",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "animal-use-humane": {
       "value": null,
@@ -3304,13 +3305,14 @@
       ]
     },
     "online-participation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Parties are split between embracing digital participation and prioritising representative institutions; no source settles it.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-government-data": {
       "value": 1,
@@ -4593,6 +4595,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 148
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -585,12 +585,13 @@
    ]
   },
   "war-builds-character": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "The tradition is peaceful, Iceland has no army, and no source ties national character to war.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "separate-church-state": {
    "value": -1,
@@ -910,12 +911,13 @@
    ]
   },
   "media-academia-power": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records a view; populist nationalists may say so but the mainstream movement, led by university-educated figures, does not.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "hereditarian-race": {
    "value": null,
@@ -1842,12 +1844,13 @@
    ]
   },
   "subordinate-church-to-state": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The state church is a national institution and the nationalist tradition does not call for curbing it, but no source says more.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "nonpartisan-head-of-state": {
    "value": null,
@@ -1883,12 +1886,13 @@
    ]
   },
   "flat-income-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Independence Party favours low taxes, but the sources do not mention a flat tax.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "character-from-environment": {
    "value": 0,
@@ -1958,12 +1962,13 @@
    "nulledFrom": -1
   },
   "refugee-return": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties the tradition to refugee return, and nationalist views on immigration are divided.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "co-ethnic-territorial-claim": {
    "value": -2,
@@ -2346,12 +2351,13 @@
    ]
   },
   "antifascism-founding-value": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties the movement to the question, and conservatives of the tradition are divided.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "totalitarianisms-equivalent": {
    "value": null,
@@ -2611,12 +2617,13 @@
    ]
   },
   "industrial-unions": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source links the tradition to a union structure.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "minority-conspiracy": {
    "value": null,
@@ -2864,12 +2871,13 @@
    ]
   },
   "participatory-democracy": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The movement is parliamentary, yet referendums such as 1944 are used; no source records a stance.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "intersecting-oppressions": {
    "value": null,
@@ -2897,12 +2905,13 @@
    ]
   },
   "left-right-obsolete": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Icelandic nationalism spans parties, but no source states that left and right are obsolete.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "alienated-labor": {
    "value": -1,
@@ -2930,12 +2939,13 @@
    ]
   },
   "religious-dress-in-state": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records a nationalist stance on religious dress, and adherents are divided.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "ban-nda-harassment": {
    "value": 0,
@@ -3073,20 +3083,22 @@
    ]
   },
   "boycott-minority-shops": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Contrary to the liberal free-state values; no source describes it in Icelandic nationalism.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "citizens-assembly": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Iceland's 2010 national forum used random selection, but no source ties the idea to the nationalist tradition.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "reinterpret-religion": {
    "value": null,
@@ -3313,12 +3325,13 @@
    "nulledFrom": -1
   },
   "homeland-cultural-centre": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Iceland has a diaspora in North America, but no source records the movement's view on its role.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "culture-before-state": {
    "value": 1,
@@ -3550,12 +3563,13 @@
    ]
   },
   "foreign-partition-plot": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source documents such a belief in the mainstream movement, whose threats were Danish rule and later foreign control.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "free-public-college": {
    "value": null,
@@ -4321,6 +4335,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 189
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 14
   }
  ]
 }

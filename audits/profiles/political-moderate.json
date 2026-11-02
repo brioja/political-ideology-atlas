@@ -91,12 +91,13 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates accept some redistribution but avoid \"substantial\" shifts either way; no source gives a moderate position on wage floors, so this is treated as split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": 0,
@@ -205,12 +206,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Gun policy splits self-described moderates, who tend to favor some regulation without strict limits; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": 0,
@@ -245,12 +247,13 @@
       ]
     },
     "traditional-family": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates sit between traditionalist and progressive views on family; no source assigns a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "same-sex-marriage": {
       "value": 1,
@@ -295,12 +298,13 @@
       ]
     },
     "preserve-national-culture": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates sit between cosmopolitan and nationalist poles; no source indicates a view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gradual-change": {
       "value": 2,
@@ -343,12 +347,13 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates are divided on intervention and no source gives a shared position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": -1,
@@ -595,12 +600,13 @@
       ]
     },
     "military-superiority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates hold varied views on defense policy and no source gives a common position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ethnic-nation": {
       "value": -1,
@@ -850,12 +856,13 @@
       "nulledFrom": 0
     },
     "conscription": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates vary by country and no source gives a common stance.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "exit-over-voice": {
       "value": null,
@@ -2661,12 +2668,13 @@
       ]
     },
     "treaties-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates favor honoring agreements but also negotiated compromise; with no source on this question they are treated as split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "majority-settlement": {
       "value": -2,
@@ -3069,12 +3077,13 @@
       "nulledFrom": 1
     },
     "charity-over-state-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates accept a mixed welfare state but disagree about the role of charity; no source gives a position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "term-limits": {
       "value": 0,
@@ -3353,12 +3362,13 @@
       "nulledFrom": -1
     },
     "family-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates are split on wage policy and family structure, and no source addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "faster-drug-approval": {
       "value": 0,
@@ -3369,20 +3379,22 @@
       ]
     },
     "ageing-research-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source places moderates on ageing research, and attitudes vary by country and party.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "anonymous-payments": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Moderates divide between civil-liberty and law-enforcement concerns on financial privacy; no source settles it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "online-anonymity": {
       "value": 1,
@@ -3418,12 +3430,13 @@
       ]
     },
     "gm-crops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses agricultural technology, and moderates hold mixed views.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dense-cities": {
       "value": 0,
@@ -3831,12 +3844,13 @@
       "nulledFrom": -1
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A mixed economy with a welfare state is documented, but moderates divide on replacing programs with one cash payment; no source addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-suffrage": {
       "value": 2,
@@ -4237,6 +4251,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 148
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 14
     }
   ]
 }

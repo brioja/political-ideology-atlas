@@ -667,12 +667,13 @@
       ]
     },
     "indigenous-land-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Property rights and equal citizenship pull in different directions here, and the sources do not mention indigenous claims.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-reparations": {
       "value": -1,
@@ -1105,12 +1106,13 @@
       "nulledFrom": 1
     },
     "force-without-un": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address when force may be used abroad; adherents split between unilateral and multilateral views.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reason-over-faith": {
       "value": -1,
@@ -2175,12 +2177,13 @@
       "nulledFrom": 0
     },
     "end-racial-preferences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss preferences; adherents split between opportunity-focused and remedial views.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "public-money-creation": {
       "value": null,
@@ -4405,6 +4408,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 220
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

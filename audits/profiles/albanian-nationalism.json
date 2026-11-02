@@ -181,12 +181,13 @@
       ]
     },
     "regulate-corporations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties Albanian nationalism to corporate regulation; left and right nationalists differ.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-welfare": {
       "value": null,
@@ -632,12 +633,13 @@
       ]
     },
     "war-builds-character": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Skanderbeg and Jashari myths glorify fighting, but no source states war builds character.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separate-church-state": {
       "value": 2,
@@ -762,12 +764,13 @@
       "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; nationalism sought national development.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "accelerate-technology": {
       "value": null,
@@ -1209,12 +1212,13 @@
       ]
     },
     "ban-interest": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; Albanian nationalism is not an Islamic economic movement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "racial-segregation-law": {
       "value": -2,
@@ -1291,12 +1295,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; foreign to the tradition.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "night-watchman-state": {
       "value": -1,
@@ -1488,12 +1493,13 @@
       "nulledFrom": 0
     },
     "population-causes-poverty": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; the movement ties poverty to ignorance and foreign rule.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "diversity-weakens-cohesion": {
       "value": 0,
@@ -1504,12 +1510,13 @@
       ]
     },
     "offices-by-lottery": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; modern nationalists use elections.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "emergency-suspend-protections": {
       "value": null,
@@ -1617,12 +1624,13 @@
       "nulledFrom": -2
     },
     "censor-art-for-virtue": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; Hoxha-era censorship is rejected today.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "unlimited-reelection": {
       "value": null,
@@ -2243,12 +2251,13 @@
       ]
     },
     "freedom-to-discriminate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; ethnic equality is a nationalist claim for Albanians abroad.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "entrenched-bill-of-rights": {
       "value": 1,
@@ -2276,12 +2285,13 @@
       ]
     },
     "minority-veto": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; contrasts with Albanian demands for majority self-rule.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "resist-lawless-ruler": {
       "value": 1,
@@ -2749,12 +2759,13 @@
       ]
     },
     "regional-revenue-retention": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; the movement is for a unified state.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "personal-possessions-private": {
       "value": null,
@@ -2810,12 +2821,13 @@
       "nulledFrom": 0
     },
     "socialized-care": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; a communist idea.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "purge-loanwords": {
       "value": 0,
@@ -2835,12 +2847,13 @@
       "nulledFrom": 0
     },
     "cooperative-communities": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports small cooperative communities; the movement aims at a unified national state.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "majority-settlement": {
       "value": -1,
@@ -3147,12 +3160,13 @@
       ]
     },
     "boycott-minority-shops": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; inconsistent with religious unity.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "citizens-assembly": {
       "value": null,
@@ -4428,6 +4442,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 126
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 14
     }
   ]
 }

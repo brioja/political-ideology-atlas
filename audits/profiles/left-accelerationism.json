@@ -780,12 +780,13 @@
       ]
     },
     "abolish-division-of-labor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "They want to reduce work and the work ethic, but no source says the division of labour itself should go.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "distribute-by-need": {
       "value": null,
@@ -1391,12 +1392,13 @@
       "nulledFrom": 0
     },
     "vanguard-party": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The manifesto wants vertical authority and an organised ecology of groups but also a broad populist coalition, and no source commits to a disciplined vanguard.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "priority-to-poor": {
       "value": 1,
@@ -1632,12 +1634,13 @@
       ]
     },
     "cultures-equal-different": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Universal human values are stressed, but no source rules on cultural hierarchy; adherents would split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "death-penalty": {
       "value": null,
@@ -1902,12 +1905,13 @@
       ]
     },
     "space-expansion": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Prometheanism is about mastery beyond natural limits, but the sources do not mention space.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "mixed-constitution": {
       "value": null,
@@ -2083,12 +2087,13 @@
       "nulledFrom": 1
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "They want to diminish the work ethic, which cuts against moral incentives, but also collective duty; no source rules.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": -1,
@@ -4290,6 +4295,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 163
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

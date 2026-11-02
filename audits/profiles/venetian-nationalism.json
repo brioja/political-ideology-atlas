@@ -377,12 +377,13 @@
       ]
     },
     "open-borders": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Integration is supported but no source endorses open borders; Venetists want their own border control.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "limit-growth": {
       "value": -1,
@@ -1513,12 +1514,13 @@
       "nulledFrom": 0
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pay of elected officials is not a Venetist theme, though anti-Rome complaints about a costly political class might favour it; no source confirms.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-discipline-binding": {
       "value": null,
@@ -1621,12 +1623,13 @@
       "nulledFrom": -1
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Venetism praises heritage and roots, but Veneto is heavily urbanised and industrial, and no source ranks rural over city life.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": 1,
@@ -1960,12 +1963,13 @@
       ]
     },
     "refugee-return": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Venetists have no expelled-population grievance comparable to this, though 19th-century mass emigration is remembered; no source applies it to return rights.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "co-ethnic-territorial-claim": {
       "value": 0,
@@ -2077,12 +2081,13 @@
       ]
     },
     "trade-labor-env-standards": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is pro-EU and export-oriented, but binding trade standards are not in the sources, so it stays neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "moral-incentives": {
       "value": -2,
@@ -2161,12 +2166,13 @@
       "nulledFrom": 1
     },
     "former-empire-influence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Venetists remember the Republic of Venice's Mediterranean empire, but no source calls for modern influence in its former lands.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "delink-world-market": {
       "value": -2,
@@ -2185,12 +2191,13 @@
       ]
     },
     "freedom-to-discriminate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The 2012 manifesto rejected xenophobic statements, and no source endorses a right to discriminate.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "entrenched-bill-of-rights": {
       "value": null,
@@ -2551,12 +2558,13 @@
       ]
     },
     "restrict-foreign-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Venetists are internationalist toward Europe and the Plebiscito.eu vote drew foreign commentary, but no source addresses NGO funding limits.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pronatalist-incentives": {
       "value": null,
@@ -3269,12 +3277,13 @@
       "nulledFrom": -1
     },
     "martyrs-honoured": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Venetists commemorate Republic of Venice and Manin's 1848 republic, but no source describes a martyr cult for those who die for the nation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "politics-spiritual-struggle": {
       "value": -1,
@@ -4340,6 +4349,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 171
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

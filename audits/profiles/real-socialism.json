@@ -321,12 +321,13 @@
       ]
     },
     "reduce-immigration": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Article 38 grants asylum to left-leaning foreigners, but migration was tightly state-controlled; no sources address reducing it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "empower-international-orgs": {
       "value": 0,
@@ -642,12 +643,13 @@
       ]
     },
     "colonial-reparations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Article 28 supports national liberation and the bloc backed anti-colonial states, but the sources do not mention reparations.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": -2,
@@ -682,12 +684,13 @@
       ]
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The bloc leaned pronatalist (see Article 35 support for mothers); no source argues for active limits.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -4155,6 +4158,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 76
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

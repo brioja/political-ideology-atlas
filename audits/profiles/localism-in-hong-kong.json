@@ -633,12 +633,13 @@
       "nulledFrom": -1
     },
     "separate-church-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Localism is secular-civic; no source records a religious-state demand.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "laws-from-scripture": {
       "value": null,
@@ -755,12 +756,13 @@
       ]
     },
     "industrial-civilization-disaster": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Localists defend Hong Kong's modern urban order; no source supports rejecting industrial civilization.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "accelerate-technology": {
       "value": 0,
@@ -789,12 +791,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Localists faced state surveillance and prosecution, so privacy tools are plausibly welcomed, but no source states it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restore-past-order": {
       "value": 0,
@@ -855,12 +858,13 @@
       "nulledFrom": -1
     },
     "production-for-use": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it; localists have no socialist program.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "profit-exploitation": {
       "value": -1,
@@ -956,12 +960,13 @@
       "nulledFrom": 0
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Chin Wan lost his Lingnan post and criticised left-leaning activists, but no source states this thesis.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -1,
@@ -1475,12 +1480,13 @@
       "nulledFrom": 1
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Public housing is a localist concern, mostly about newcomers' access, but no source takes a view on tenants' right to buy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": null,
@@ -2334,13 +2340,14 @@
       "nulledFrom": 0
     },
     "withdraw-from-politics": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Localism is an activist movement of electoral and street politics, the opposite of withdrawal; no source discusses the question as such.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "mass-culture-pacifies": {
       "value": null,
@@ -2491,12 +2498,13 @@
       "nulledFrom": 0
     },
     "filial-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Chin Wan favours restoring Chinese culture but sources don't discuss filial duty; split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "office-by-exam": {
       "value": -1,
@@ -3750,12 +3758,13 @@
       "nulledFrom": 0
     },
     "sacred-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Chin Wan's city-state uses religious motifs, but no source calls the nation sacred and other strands are secular, so adherents split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "student-debt-relief": {
       "value": null,
@@ -4392,6 +4401,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 137
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

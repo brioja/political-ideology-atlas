@@ -1875,13 +1875,14 @@
    ]
   },
   "party-discipline-binding": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Movements stress discipline within the community, but binding party members is a political-organisation matter the sources do not cover.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "head-commands-forces": {
    "value": 0,
@@ -3207,12 +3208,13 @@
    ]
   },
   "treaties-binding": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Not a religious question; no source gives a fundamentalist position on treaties with indigenous nations.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "majority-settlement": {
    "value": 0,
@@ -3309,12 +3311,13 @@
    ]
   },
   "online-participation": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Fundamentalist movements use the internet heavily for preaching, but no source addresses online deliberation or decision making.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "open-government-data": {
    "value": 0,
@@ -4284,12 +4287,13 @@
    ]
   },
   "financial-transactions-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties fundamentalism to taxing finance; some strands, such as Islamic revivalists, criticise speculation, but others do not.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "racism-not-main-obstacle": {
    "value": 0,
@@ -4407,6 +4411,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 124
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

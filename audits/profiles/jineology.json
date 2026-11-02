@@ -170,12 +170,13 @@
       "nulledFrom": -1
     },
     "legalize-drugs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address drug policy; the movement's moral emphasis on community discipline makes adherents split or silent.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-hate-speech": {
       "value": null,
@@ -2869,12 +2870,13 @@
       "nulledFrom": 0
     },
     "left-right-obsolete": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement locates itself within the left and socialist tradition while rejecting statism, and no source addresses this claim.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "alienated-labor": {
       "value": 1,
@@ -4334,6 +4336,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 198
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

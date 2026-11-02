@@ -2941,12 +2941,13 @@
       "nulledFrom": -2
     },
     "colonies-serve-metropole": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "America First puts national interest first, but the sources never address colonial-style governance; territorial remarks about Greenland and Panama are strategic claims, so the answer is genuinely unclear.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "defensive-jihad-duty": {
       "value": null,
@@ -4474,6 +4475,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 267
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

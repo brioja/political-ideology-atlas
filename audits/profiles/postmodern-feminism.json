@@ -287,20 +287,22 @@
       ]
     },
     "abortion-legal": {
-      "value": 2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Postmodern feminists stand with reproductive autonomy as part of feminism; no source states it, but it is the near-universal feminist position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "more-religion-public": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The school treats grand narratives and norm-laden institutions with suspicion; no source addresses religion directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "correct-racial-injustice": {
       "value": null,
@@ -556,12 +558,13 @@
       ]
     },
     "direct-votes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source on referendums; the school distrusts representation of fixed identities but is not committed to direct votes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-councils": {
       "value": null,
@@ -846,12 +849,13 @@
       ]
     },
     "collective-farming": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; programmatic collectivization conflicts with the anti-totalizing stance.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capitalism-causes-war": {
       "value": 0,
@@ -895,12 +899,13 @@
       "nulledFrom": -2
     },
     "exit-over-voice": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source; libertarian exit logic is foreign to the school.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-as-business": {
       "value": -2,
@@ -1138,12 +1143,13 @@
       "nulledFrom": -1
     },
     "dominated-front": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source on blocs of states resisting Western powers; the school's anti-colonial sympathy is offset by distrust of unitary identities, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-nation": {
       "value": -2,
@@ -2528,12 +2534,13 @@
       ]
     },
     "consumerism-harmful": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Haraway discusses technology and labor, not consumption; no source supports a view on consumerism.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "arm-foreign-insurgents": {
       "value": null,
@@ -4365,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 205
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

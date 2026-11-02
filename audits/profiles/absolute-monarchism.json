@@ -2383,12 +2383,13 @@
       "nulledFrom": -1
     },
     "antifascism-founding-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fascism postdates the doctrine and the sources never discuss constitutional founding values; monarchists could split on it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "totalitarianisms-equivalent": {
       "value": 1,
@@ -2426,12 +2427,13 @@
       "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address domestic-violence policy; a paternal order protects family members but gives no view on symmetry.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "institutions-fit-civilization": {
       "value": 1,
@@ -3809,12 +3811,13 @@
       ]
     },
     "ban-fgm": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss it; Christian European monarchies would not have it at issue and Gulf monarchies differ, so adherents are split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-property-inheritance": {
       "value": null,
@@ -4324,6 +4327,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 160
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

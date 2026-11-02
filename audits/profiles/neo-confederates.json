@@ -1618,12 +1618,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats a nation split by an outside-drawn border as an issue; the Southern case is about separation, not reunification.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": 1,
@@ -2313,13 +2314,14 @@
       "nulledFrom": -1
     },
     "native-born-offices": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The League favors Anglo-Celtic cultural dominance and tight immigration limits, but no source states a native-born office rule, and heritage groups would not back one.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-own-road": {
       "value": null,
@@ -3583,12 +3585,13 @@
       "nulledFrom": -1
     },
     "foreign-partition-plot": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "They blame the federal government, not foreign powers, for threats to the South; no source claims foreign partition plots.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "free-public-college": {
       "value": -2,
@@ -4369,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 226
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

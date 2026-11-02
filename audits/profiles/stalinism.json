@@ -386,12 +386,13 @@
       ]
     },
     "limit-growth": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rapid industrial growth was the central aim of the Five-Year Plans (s1), so limiting growth is rejected, though no source addresses growth limits.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "drastic-climate-action": {
       "value": null,
@@ -542,12 +543,13 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The regime was a revolutionary opponent of monarchy (s1). No source discusses monarchy's legitimacy directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "democracy-best": {
       "value": -1,
@@ -806,12 +808,13 @@
       ]
     },
     "return-to-foraging": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Industrialisation was the goal (s1), the opposite of a return to foraging, which no source discusses.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
       "value": 1,
@@ -4336,6 +4339,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 227
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

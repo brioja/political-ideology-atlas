@@ -274,12 +274,13 @@
    "nulledFrom": 2
   },
   "more-religion-public": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Wikipedia links authoritarian state feminism to secularism (Turkey) and liberal state feminism is secular; no source addresses a larger public religious role.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "correct-racial-injustice": {
    "value": null,
@@ -2862,12 +2863,13 @@
    "nulledFrom": -1
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "A rights-based, liberal programme rejects denial; no source discusses it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "criminalize-homosexuality": {
    "value": -2,
@@ -4392,6 +4394,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 219
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

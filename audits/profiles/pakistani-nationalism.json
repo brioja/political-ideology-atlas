@@ -721,12 +721,13 @@
       "nulledFrom": 1
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Iqbal's spiritual outlook might support some intrinsic value in nature, but sources never address environmental ethics.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -930,12 +931,13 @@
       "nulledFrom": -1
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social justice is invoked in the Objectives Resolution, yet no source frames freedom as requiring material means; adherents are split.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "media-academia-power": {
       "value": null,
@@ -1054,12 +1056,13 @@
       ]
     },
     "workplace-democracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never address company governance; the PPP strand might favour worker voice while League business interests would not.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "school-vouchers": {
       "value": 0,
@@ -1402,12 +1405,13 @@
       ]
     },
     "ban-extremist-parties": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pakistan has banned parties for militancy while also tolerating religious ones, and no source shows a settled adherent view.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-as-non-domination": {
       "value": 0,
@@ -4330,6 +4334,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 143
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

@@ -1624,12 +1624,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The Whigs were long the party of war against France, so defeatism is foreign to them. No source discusses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "censor-art-for-virtue": {
       "value": -1,
@@ -4463,6 +4464,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 256
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -1098,12 +1098,13 @@
       ]
     },
     "welfare-for-citizens": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses the welfare state; the Catholic duty of charity is universal, but a restriction to citizens is equally compatible with an organic national society.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "work-for-welfare": {
       "value": null,
@@ -4346,6 +4347,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 165
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

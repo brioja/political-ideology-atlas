@@ -492,12 +492,13 @@
       ]
     },
     "widespread-small-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Distributist ideas appear in some Catholic social thought but not in the sources for the wider ideology.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-money-wages": {
       "value": -2,
@@ -3746,12 +3747,13 @@
       "nulledFrom": 0
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fiscal doctrine varies across movements and no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restructure-world-economy": {
       "value": 0,
@@ -4420,6 +4422,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 211
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

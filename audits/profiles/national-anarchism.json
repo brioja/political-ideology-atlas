@@ -3634,12 +3634,13 @@
       ]
     },
     "soldiers-refuse-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Southgate opposes the state and supranational wars but also accepts violence; no source states a view on soldiers refusing orders.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-bargaining": {
       "value": null,
@@ -4338,6 +4339,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 205
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

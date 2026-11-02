@@ -1572,13 +1572,14 @@
       "nulledFrom": -2
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Neoreaction values property but treats state subsidy and public housing as part of the Cathedral's welfare system; no source addresses tenant purchase, so treated as split.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": null,
@@ -3176,12 +3177,13 @@
       "nulledFrom": -1
     },
     "assisted-dying": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss it; the movement's libertarian roots favour individual choice while its authoritarian and traditionalist strands do not, so it is split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "left-right-obsolete": {
       "value": -1,
@@ -4409,13 +4411,14 @@
       "nulledFrom": -1
     },
     "national-church-status": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address this; Yarvin's restorationist and Land's accelerationist strands differ and neither stresses a state church.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -4744,6 +4747,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 289
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

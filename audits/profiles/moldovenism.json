@@ -1382,12 +1382,13 @@
    ]
   },
   "consent-of-governed": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Moldovenist parties compete in elections under a constitution grounded in popular sovereignty; no source debates this directly.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "trade-surplus": {
    "value": null,
@@ -1557,12 +1558,13 @@
    "nulledFrom": 0
   },
   "representatives-worker-pay": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records a view; populist rhetoric might back it while party practice does not.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "party-discipline-binding": {
    "value": null,
@@ -1835,12 +1837,13 @@
    "nulledFrom": 1
   },
   "central-bank-independence": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records a view; left populism would question independence while market orthodoxy favours it.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "no-land-for-peace": {
    "value": null,
@@ -1911,12 +1914,13 @@
    "nulledFrom": 1
   },
   "force-to-prevent-secession": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The unitary indivisible state is defended, though no source records endorsement of force.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "region-keeps-system": {
    "value": 1,
@@ -2238,12 +2242,13 @@
    "nulledFrom": -1
   },
   "labor-aristocracy": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "A Marxist-Leninist theory that no source links to Moldovenism.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "freedom-to-discriminate": {
    "value": null,
@@ -2263,12 +2268,13 @@
    ]
   },
   "colonial-treaties-void": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The 1812 Treaty of Bucharest is central to Moldovenist history, but no source states a view on voiding it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "elective-rulers": {
    "value": 1,
@@ -2378,12 +2384,13 @@
    "nulledFrom": 0
   },
   "party-own-road": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source records a view on national roads to socialism; Communists were pro-Russian but did not take Moscow's direction.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "self-reliance-over-aid": {
    "value": null,
@@ -2892,12 +2899,13 @@
    "nulledFrom": -2
   },
   "criminalize-homosexuality": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The Socialists oppose LGBT rights but no source says they seek criminalisation.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "suppress-opposition": {
    "value": -2,
@@ -3494,12 +3502,13 @@
    "nulledFrom": 1
   },
   "second-chamber": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Moldova has a unicameral parliament and no source seeks a second chamber.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "municipal-property": {
    "value": null,
@@ -4433,6 +4442,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 263
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 9
   }
  ]
 }

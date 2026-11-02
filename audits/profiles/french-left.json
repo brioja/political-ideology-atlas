@@ -3306,12 +3306,13 @@
       "nulledFrom": -1
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Laicite keeps religion out of the programme; adherents who care are usually favourable but no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": null,
@@ -4321,6 +4322,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 94
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

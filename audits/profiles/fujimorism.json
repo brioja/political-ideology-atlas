@@ -4229,12 +4229,13 @@
       "nulledFrom": -1
     },
     "scripture-inerrant": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fujimorism combines a Catholic-leaning social conservatism with evangelical allies, and no source ties it to scriptural literalism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gendered-self-government": {
       "value": null,
@@ -4591,6 +4592,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 302
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

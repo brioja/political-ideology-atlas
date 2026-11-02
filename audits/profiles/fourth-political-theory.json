@@ -69,12 +69,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Dugin's social-justice, anti-liberal framing points to state-guaranteed basic services, but no source here speaks to healthcare itself.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "raise-minimum-wage": {
       "value": null,
@@ -508,12 +509,13 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "He prizes traditional organic forms of rule but no source states a monarchist position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "democracy-best": {
       "value": -2,
@@ -1632,12 +1634,13 @@
       ]
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religion in education is welcomed but no source touches on evolution.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": null,
@@ -2025,12 +2028,13 @@
       "nulledFrom": 0
     },
     "moral-incentives": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "His third way and moral-religious emphasis could favour moral incentives, but no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "armed-group-creates-revolution": {
       "value": null,
@@ -4243,6 +4247,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 98
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

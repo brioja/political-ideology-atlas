@@ -129,12 +129,13 @@
       "nulledFrom": 1
     },
     "unions-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "State-aligned unions exist in the communist strand but nationalism is indifferent to the question; no source addresses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-fundamental": {
       "value": 0,
@@ -189,12 +190,13 @@
       "nulledFrom": -1
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between state speech control and liberal quoc gia views; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": null,
@@ -249,12 +251,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties the ideology to penal philosophy; adherents split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": null,
@@ -420,12 +423,13 @@
       ]
     },
     "experts-over-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source position; party cadre rule versus mass line.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-planning": {
       "value": 0,
@@ -512,12 +516,13 @@
       "nulledFrom": -1
     },
     "corporatist-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties either strand to this.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-party-rule": {
       "value": 0,
@@ -3347,12 +3352,13 @@
       "nulledFrom": 0
     },
     "economy-in-majority-hands": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-Chinese sentiment appears in contemporary discourse but no source documents a program reserving the economy to the Viet majority.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "single-unit-for-people": {
       "value": 1,
@@ -4309,6 +4315,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 171
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

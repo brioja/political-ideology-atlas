@@ -744,12 +744,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Benn wanted security services accountable, but no source addresses encryption.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -2,
@@ -981,12 +982,13 @@
       "nulledFrom": 0
     },
     "universal-morality": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Benn drew on Christian ethics ('Jesus the prophet') but no source states a view on universal rational moral truths.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "single-common-good": {
       "value": null,
@@ -1121,12 +1123,13 @@
       ]
     },
     "dominated-front": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Benn's anti-imperialism points to sympathy with non-aligned cooperation, but no source states this.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-nation": {
       "value": -2,
@@ -1310,12 +1313,13 @@
       "nulledFrom": -2
     },
     "no-religion-state-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The bill is secular but Benn was Methodist-influenced; no source on schools.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-strengthens-encirclement": {
       "value": -2,
@@ -1784,12 +1788,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not sourced; Benn criticised Soviet-style socialism but no source gives this term.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": null,
@@ -2202,12 +2207,13 @@
       ]
     },
     "resist-lawless-ruler": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Benn said without consent systems are overthrown, but sources don't state a right to resist.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "parliament-supreme": {
       "value": 1,
@@ -2434,12 +2440,13 @@
       "nulledFrom": 1
     },
     "recallable-delegates": {
-      "value": 2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Mandatory reselection of MPs and Benn's accountability questions bring representatives under their members' control, though no source states binding mandates.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "individual-pension-accounts": {
       "value": -2,
@@ -2476,12 +2483,13 @@
       "nulledFrom": -1
     },
     "foreign-land-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Strategy B controlled capital flows but sources do not mention land purchases by foreigners.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "disparate-impact-discrimination": {
       "value": null,
@@ -3074,12 +3082,13 @@
       "nulledFrom": 0
     },
     "reinterpret-religion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Benn's own faith was Christian-socialist and reform-minded, but no source addresses interpretation of religious law.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "wealth-concentration-endangers-liberty": {
       "value": 2,
@@ -3150,12 +3159,13 @@
       "nulledFrom": 0
     },
     "existential-risk-priority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Unilateral nuclear disarmament relates to extinction risk but no source frames it as a top priority generally.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-in-religious-leadership": {
       "value": null,
@@ -4295,6 +4305,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 156
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

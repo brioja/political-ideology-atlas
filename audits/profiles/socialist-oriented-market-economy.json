@@ -92,12 +92,13 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Art. 57 has the State protect workers and build harmonious labour relations; an adherent backs rising wage floors as growth allows, but the sources never discuss minimum wage levels directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "markets-allocate-better": {
       "value": -1,
@@ -452,12 +453,13 @@
       "nulledFrom": -1
     },
     "basic-income": {
-      "value": -1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Art. 59 builds a targeted social security system for the poor and elderly, not an unconditional income for all adults; no source supports universal payments.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tariffs-protect-industry": {
       "value": 0,
@@ -681,12 +683,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Art. 63 protects nature and biodiversity but in terms of managed resources and development; no source takes up intrinsic value.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -1398,12 +1401,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Art. 59 has the State develop housing; Doi Moi privatised much state housing, but no source states a right-to-buy policy.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": null,
@@ -1782,12 +1786,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Art. 63 commits the State to act on environmental protection and climate response but no source states a precautionary standard.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": null,
@@ -2452,12 +2457,13 @@
       ]
     },
     "disparate-impact-discrimination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Art. 16 bans discrimination but no source supports an outcome-based test.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "consumerism-harmful": {
       "value": 1,
@@ -3560,13 +3566,14 @@
       ]
     },
     "arms-reduction": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Party stresses peaceful relations but also a strong national defence; the sources never address arms levels.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-diplomacy": {
       "value": null,
@@ -4270,6 +4277,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 161
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

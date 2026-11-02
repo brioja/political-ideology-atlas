@@ -451,12 +451,13 @@
       ]
     },
     "land-value-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses land taxation; the dirigiste state would tax as it sees fit, and a single-tax scheme is a liberal reform idea fascism has no stake in.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-inheritance": {
       "value": -1,
@@ -993,12 +994,13 @@
       "nulledFrom": -1
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fascism rejects Enlightenment positivism and rationalism, yet no source frames it in these terms.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "universal-morality": {
       "value": -1,
@@ -2164,12 +2166,13 @@
       ]
     },
     "end-racial-preferences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses affirmative action; ultranationalists oppose preferences for minorities but ethnocentric variants might favour preferences for the core nation, so neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "public-money-creation": {
       "value": null,
@@ -2469,12 +2472,13 @@
       "nulledFrom": 1
     },
     "office-by-exam": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Griffin says the elite is chosen by commitment to the national vision, not examination; no source on civil service exams, so neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "foreign-takeover-block": {
       "value": 1,
@@ -4401,6 +4405,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 166
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

@@ -79,12 +79,13 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Family-wage arguments favor decent pay for breadwinners, but familialist sources never address the minimum wage and adherents split on markets.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": 0,
@@ -956,12 +957,13 @@
       "nulledFrom": 0
     },
     "personal-loyalty-rule": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bonald's family-state analogy has a personal-authority flavor, but feudal oaths are not in the sources.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "bound-labor": {
       "value": null,
@@ -3742,12 +3744,13 @@
       "nulledFrom": 1
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address fiscal rules and adherents are split between spending on family policy and fiscal conservatism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restructure-world-economy": {
       "value": null,
@@ -4423,6 +4426,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 166
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

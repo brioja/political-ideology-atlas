@@ -310,12 +310,13 @@
    ]
   },
   "gradual-change": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Populists promise quick gains for voters and reject austerity-style gradual consolidation, so patience is not their style, though no source states this on social change.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "reduce-immigration": {
    "value": 0,
@@ -433,12 +434,13 @@
    "nulledFrom": 0
   },
   "land-value-tax": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "A tax shift that raises revenue to replace others cuts against the tax-cut appeal, but the source does not mention it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "tax-inheritance": {
    "value": null,
@@ -509,12 +511,13 @@
    ]
   },
   "one-party-rule": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Fiscal populists in the Japanese example compete in multiparty elections; no source says they want a single party.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "monarchy-legitimate": {
    "value": 0,
@@ -806,12 +809,13 @@
    "nulledFrom": 0
   },
   "distribute-by-need": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The approach emphasises distribution, but no source says it adopts the communist principle of need.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "production-for-use": {
    "value": null,
@@ -831,12 +835,13 @@
    ]
   },
   "dictatorship-of-proletariat": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Fiscal populists compete in elections; no source ties them to proletarian dictatorship.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "collective-farming": {
    "value": null,
@@ -1375,12 +1380,13 @@
    "nulledFrom": 1
   },
   "trade-surplus": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Populist programmes in the Latin American cases ran external deficits, but no source states a view on export targets.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "population-transfer": {
    "value": null,
@@ -1436,12 +1442,13 @@
    ]
   },
   "vanguard-party": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Fiscal populists work through ordinary parties and elections; no source ties them to vanguard parties.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "priority-to-poor": {
    "value": 1,
@@ -1470,12 +1477,13 @@
    "nulledFrom": -1
   },
   "population-causes-poverty": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The approach blames lack of demand and distribution rather than population, but no source states it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "offices-by-lottery": {
    "value": null,
@@ -1547,12 +1555,13 @@
    "nulledFrom": 0
   },
   "pool-sovereignty": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Fiscal populists resist external fiscal limits, such as EU debt rules, but no source states it for this question.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "head-commands-forces": {
    "value": 0,
@@ -2031,12 +2040,13 @@
    "nulledFrom": -1
   },
   "common-currency": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "A shared currency removes control over deficit financing, which fiscal populists prize, though no source says it directly.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "kin-peoples-union": {
    "value": null,
@@ -2126,12 +2136,13 @@
    "nulledFrom": 0
   },
   "moral-incentives": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The approach relies on material gains for voters, though no source discusses moral incentives.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "armed-group-creates-revolution": {
    "value": -1,
@@ -2580,12 +2591,13 @@
    "nulledFrom": 0
   },
   "consumerism-harmful": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "A programme built on boosting consumption and incomes does not treat it as harmful, though no source states this.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "arm-foreign-insurgents": {
    "value": null,
@@ -3052,12 +3064,13 @@
    "nulledFrom": 0
   },
   "rich-first": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The approach stresses direct distribution to broad groups, though no source discusses trickle-down.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "stay-neutral-between-blocs": {
    "value": null,
@@ -4452,6 +4465,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 67
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 13
   }
  ]
 }

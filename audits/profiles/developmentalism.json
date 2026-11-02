@@ -241,12 +241,13 @@
       ]
     },
     "legalize-sex-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Outside the doctrine's scope; no source position and adherents vary by country.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "decide-locally": {
       "value": -1,
@@ -607,12 +608,13 @@
       "nulledFrom": 0
     },
     "war-builds-character": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Developmentalism stresses economic construction and peace for growth; no source endorses war as character-building.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "separate-church-state": {
       "value": null,
@@ -1257,12 +1259,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never mention eugenics; opposition is a guess.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": null,
@@ -2768,12 +2771,13 @@
       ]
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never mention the Holocaust; rejection is assumed.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": 0,
@@ -4359,6 +4363,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 137
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

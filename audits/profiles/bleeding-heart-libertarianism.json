@@ -1043,12 +1043,13 @@
       "nulledFrom": -1
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source covers this and libertarian-leaning thinkers hold varied views on national states; split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -1112,12 +1113,13 @@
       "nulledFrom": -2
     },
     "national-self-determination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers differ on the nation-state and the sources never address it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "force-without-un": {
       "value": null,
@@ -1223,12 +1225,13 @@
       ]
     },
     "expand-fossil-fuels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Market-friendly views might favor production, but environmental concern splits adherents and no source discusses it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assimilate-immigrants": {
       "value": null,
@@ -1572,12 +1575,13 @@
       "nulledFrom": -1
     },
     "pool-sovereignty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers welcome free movement but distrust supranational bureaucracy, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "head-commands-forces": {
       "value": null,
@@ -1753,12 +1757,13 @@
       "nulledFrom": -1
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers differ over exemptions from general laws, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "encourage-eccentricity": {
       "value": null,
@@ -1831,12 +1836,13 @@
       "nulledFrom": 0
     },
     "central-bank-independence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers range from abolishing central banks to accepting independent ones, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-land-for-peace": {
       "value": null,
@@ -2059,12 +2065,13 @@
       "nulledFrom": -2
     },
     "national-cultural-autonomy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers might favor voluntary cultural bodies but not state-defined ones, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rights-where-you-live": {
       "value": null,
@@ -2310,12 +2317,13 @@
       "nulledFrom": 1
     },
     "animal-use-humane": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents hold varied views on animal use and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "noblesse-oblige": {
       "value": null,
@@ -2377,12 +2385,13 @@
       ]
     },
     "self-reliance-over-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers criticize aid yet concern for the poor pulls the other way, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-lost-territory": {
       "value": null,
@@ -3286,12 +3295,13 @@
       ]
     },
     "abolish-ip": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers disagree sharply about intellectual property, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniformed-youth": {
       "value": -2,
@@ -4026,12 +4036,13 @@
       ]
     },
     "international-criminal-courts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian-leaning thinkers differ on international courts, and no source decides it; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-inerrant": {
       "value": -2,
@@ -4389,6 +4400,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 280
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 11
     }
   ]
 }

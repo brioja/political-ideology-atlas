@@ -3345,12 +3345,13 @@
       "nulledFrom": -2
     },
     "homeland-cultural-centre": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address diaspora homelands; anarchists reject the state yet may value cultural centres, so they split.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "culture-before-state": {
       "value": null,
@@ -4355,6 +4356,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 249
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -1934,12 +1934,13 @@
       "nulledFrom": -2
     },
     "women-must-cover": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Feminist neo-Marxists oppose legal compulsion over women's dress, and the tradition's secular egalitarianism points the same way; no source addresses dress law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "common-currency": {
       "value": 0,
@@ -2161,12 +2162,13 @@
       ]
     },
     "minority-veto": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses consensus or individual vetoes; disagreement is assumed from the tradition's collective, majority-based politics.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "resist-lawless-ruler": {
       "value": 1,
@@ -4308,6 +4310,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 180
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

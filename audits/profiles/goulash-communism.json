@@ -1860,12 +1860,13 @@
       ]
     },
     "subordinate-church-to-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist-Leninist states supervised churches, though the sources do not cover Hungarian church policy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "nonpartisan-head-of-state": {
       "value": null,
@@ -2261,12 +2262,13 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses animals, and the doctrine has no stance, so adherents are split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "animal-use-humane": {
       "value": 0,
@@ -4325,6 +4327,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 179
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

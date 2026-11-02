@@ -426,12 +426,13 @@
    ]
   },
   "land-value-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Green parties sometimes support land taxes among eco-taxes, but the sources do not mention a land value tax.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "tax-inheritance": {
    "value": null,
@@ -443,12 +444,13 @@
    "nulledFrom": 1
   },
   "basic-income": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Many green parties back basic income but the sources do not mention it and municipalists favour local provision.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "tariffs-protect-industry": {
    "value": 0,
@@ -1264,12 +1266,13 @@
    "nulledFrom": 0
   },
   "settler-state-colonial": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Global Greens back Indigenous self-determination and land rights but no source applies the colonial label to settler states.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "uniform-civil-code": {
    "value": null,
@@ -1990,12 +1993,13 @@
    ]
   },
   "ban-cartels": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The Global Greens want corporate influence curbed and subsidies transparent, though the sources do not mention cartels.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "no-bailouts": {
    "value": null,
@@ -2097,12 +2101,13 @@
    ]
   },
   "public-money-creation": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Greens criticise financialised capitalism but the sources do not mention money creation.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "capitalism-adapts": {
    "value": -1,
@@ -2919,12 +2924,13 @@
    ]
   },
   "interest-free-mutual-credit": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Greens favour community-based economies but the sources do not mention mutual credit.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "refuse-lender-austerity": {
    "value": 1,
@@ -4219,6 +4225,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 99
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

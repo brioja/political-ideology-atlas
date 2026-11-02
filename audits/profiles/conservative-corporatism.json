@@ -414,12 +414,13 @@
       ]
     },
     "experts-over-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Occupational bodies give weight to functional expertise, but no source addresses experts versus the public generally.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-planning": {
       "value": -2,
@@ -1946,12 +1947,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Custody law is not covered; the family model has distinct parental roles, but no source addresses separated parents.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 0,
@@ -2140,12 +2142,13 @@
       "nulledFrom": 1
     },
     "civilizing-tutelage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Never addressed; paternal hierarchy might support it but no source.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "patriotic-education": {
       "value": null,
@@ -2166,12 +2169,13 @@
       "nulledFrom": 0
     },
     "public-money-creation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pius XI criticises concentrated control of credit, but no source supports public money creation specifically.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capitalism-adapts": {
       "value": null,
@@ -4381,6 +4385,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 149
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

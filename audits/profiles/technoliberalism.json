@@ -62,20 +62,22 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Wikipedia lists publicly funded education and a guaranteed minimum income, so a left-liberal welfare floor extends plausibly to health care, though no source names it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The ideology prefers a negative income tax or basic income to wage floors, and sources never mention minimum wages, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": 1,
@@ -633,12 +635,13 @@
       ]
     },
     "indigenous-land-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address indigenous land rights, and liberal individualism and decentralization pull in different directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-reparations": {
       "value": null,
@@ -3784,12 +3787,13 @@
       "nulledFrom": 2
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to language naming; liberal respect for local identity and faith in connecting systems pull in opposite directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": -1,
@@ -3836,12 +3840,13 @@
       ]
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never mention union membership rules; adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": null,
@@ -4292,6 +4297,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 188
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

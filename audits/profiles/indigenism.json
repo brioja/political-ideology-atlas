@@ -584,12 +584,13 @@
       ]
     },
     "war-builds-character": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Article 7 protects peoples' right to live in peace and security, and no source praises war.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "separate-church-state": {
       "value": null,
@@ -4374,6 +4375,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 176
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

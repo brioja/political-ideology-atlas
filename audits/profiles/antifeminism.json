@@ -847,12 +847,13 @@
       ]
     },
     "war-builds-character": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Antifeminists defend male protector roles, but no source ties this to war strengthening a nation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "private-courts-defense": {
       "value": null,
@@ -4509,6 +4510,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 335
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

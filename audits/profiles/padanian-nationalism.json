@@ -1779,12 +1779,13 @@
    "nulledFrom": 0
   },
   "property-serves-common-good": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Padanist small-property outlook protects ownership, but no source frames it as conditional on the common good.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "soviet-state-capitalist": {
    "value": null,
@@ -3090,12 +3091,13 @@
    ]
   },
   "boycott-minority-shops": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The anti-Islam stance targets immigration and identity rather than organized shop boycotts, which the sources do not mention.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "citizens-assembly": {
    "value": null,
@@ -4392,6 +4394,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 206
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

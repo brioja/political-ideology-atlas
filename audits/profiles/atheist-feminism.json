@@ -437,12 +437,13 @@
       "nulledFrom": -1
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties atheist feminism to a view on foreign force; some adherents cite women's rights abuses as grounds for intervention while others oppose war, so the movement is split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": null,
@@ -2100,12 +2101,13 @@
       "nulledFrom": -2
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Feminists are divided on a presumption of equal parenting time and no source addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -4593,6 +4595,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 268
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

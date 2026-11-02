@@ -3970,12 +3970,13 @@
       "nulledFrom": -1
     },
     "ban-fgm": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Islamists are divided: some scholars call the practice un-Islamic while others defend it as custom; no source here settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-property-inheritance": {
       "value": -1,
@@ -4505,6 +4506,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 236
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

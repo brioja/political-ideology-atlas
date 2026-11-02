@@ -241,12 +241,13 @@
       "nulledFrom": -1
     },
     "strong-leader": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Equity feminism rests on equal legal rights and limits on state power; a leader bypassing institutions runs against that, though sources never address it.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-harmful": {
       "value": -1,
@@ -282,12 +283,13 @@
       ]
     },
     "decide-locally": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to centralisation; equal rights are usually sought through national law, but the libertarian wing favours decentralisation.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rehabilitation": {
       "value": null,
@@ -673,12 +675,13 @@
       "nulledFrom": 0
     },
     "military-superiority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to it; adherents range from libertarian to conservative.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ethnic-nation": {
       "value": -2,
@@ -925,12 +928,13 @@
       "nulledFrom": 0
     },
     "harm-principle": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Individualist feminists oppose government interference in adults' choices about their own bodies (s6), which matches the harm principle; no source cites it by name.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "individual-rights-only": {
       "value": 1,
@@ -949,20 +953,22 @@
       ]
     },
     "exit-over-voice": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The tradition demanded the vote (s5) but no source weighs the freedom to leave a country against it, so this is left neutral.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-as-business": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats governments as firms; individualist feminists distrust the state but equity feminists still rely on it for legal equality.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "positive-liberty": {
       "value": -1,
@@ -1222,20 +1228,22 @@
       ]
     },
     "ban-interest": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "A legal ban on lending at interest conflicts with the strand's contract and market emphasis (s6), though no source discusses it.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Equal rights before the law regardless of group is the core of the tradition, which grew out of abolitionism (s5, s6); no source discusses segregation directly.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": -2,
@@ -1369,12 +1377,13 @@
       "nulledFrom": 0
     },
     "uniform-civil-code": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Equal treatment under one law is the core of equity feminism (s1), though no source discusses religious personal-status law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restrict-conversion": {
       "value": null,
@@ -1598,12 +1607,13 @@
       "nulledFrom": -1
     },
     "party-discipline-binding": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Binding party discipline sits poorly with individualism (s6); no source discusses it, so low confidence.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "pool-sovereignty": {
       "value": null,
@@ -1685,12 +1695,13 @@
       "nulledFrom": 0
     },
     "abolish-rental-housing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Forbidding rent conflicts with the contract and property emphasis of the strand (s6); no source discusses housing.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "people-in-arms": {
       "value": null,
@@ -2274,12 +2285,13 @@
       ]
     },
     "delink-world-market": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The strand's pro-market, free-trade lean (s6) is opposed to economic delinking; sources never address development theory.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "labor-aristocracy": {
       "value": -2,
@@ -3359,12 +3371,13 @@
       "nulledFrom": -2
     },
     "abolish-ip": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian feminists differ among themselves on patents and copyrights, and no source covers it.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniformed-youth": {
       "value": null,
@@ -4476,6 +4489,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 229
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 13
     }
   ]
 }

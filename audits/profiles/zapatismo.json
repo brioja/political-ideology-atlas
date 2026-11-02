@@ -1822,12 +1822,13 @@
       ]
     },
     "constituent-assembly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Convention acted as a revolutionary legislature, but the sources do not mention a call for an elected constituent assembly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -4509,6 +4510,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 190
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -2088,12 +2088,13 @@
       "nulledFrom": 1
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Equivalence economy rewards labor; no sourced stance on moral versus material incentives.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": -2,
@@ -4355,13 +4356,14 @@
       "nulledFrom": -1
     },
     "unjust-law-not-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The project works through constituent assemblies and constitutional law; no source discusses whether unjust law binds, so it is split.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "automate-paid-work": {
       "value": null,
@@ -4465,6 +4467,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 185
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

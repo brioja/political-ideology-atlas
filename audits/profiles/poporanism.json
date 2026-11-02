@@ -351,12 +351,13 @@
       "nulledFrom": -1
     },
     "nation-first": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's nationalism is described as pronounced, but statement concerns foreign policy trade-offs that sources do not cover.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "humanitarian-intervention": {
       "value": 0,
@@ -835,12 +836,13 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Stere's war stance was strategic, and no sourced view on capitalism and imperialism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "taxation-theft": {
       "value": -2,
@@ -1601,12 +1603,13 @@
       ]
     },
     "abolish-rental-housing": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A forced end to renting has no source in poporanism, which dealt with rural landholding and not urban housing.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "people-in-arms": {
       "value": null,
@@ -3935,12 +3938,13 @@
       "nulledFrom": -1
     },
     "abolish-central-banks": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Stere's programme involved rural credit and banks but no documented view on central banking; adherents have no sourced position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "annexed-territory-occupation": {
       "value": 0,
@@ -4368,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 143
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

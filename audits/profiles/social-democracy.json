@@ -2830,12 +2830,13 @@
       ]
     },
     "industrial-unions": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Industrial and general unions dominate the Nordic and German labour movements, though the sources don't address the question directly.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "minority-conspiracy": {
       "value": -2,
@@ -4632,6 +4633,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 215
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

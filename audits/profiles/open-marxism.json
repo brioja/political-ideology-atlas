@@ -322,12 +322,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses gun control; adherents are anti-state yet not pro-gun as such, so genuinely unstated.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": -2,
@@ -516,12 +517,13 @@
       ]
     },
     "expand-nuclear": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches energy policy and no principle decides it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revolution-justified": {
       "value": 2,
@@ -974,12 +976,13 @@
       ]
     },
     "collective-farming": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses agriculture; the anti-statist stress on voluntary self-organisation cuts against both compulsion and collective mandates, so it is left split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capitalism-causes-war": {
       "value": null,
@@ -3088,12 +3091,13 @@
       "nulledFrom": -2
     },
     "defensive-jihad-duty": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A religious doctrine the sources never discuss; adherents lean against religious-law duty.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "unreligious-rulers-fought": {
       "value": null,
@@ -4623,6 +4627,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 290
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

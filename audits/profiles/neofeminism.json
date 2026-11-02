@@ -87,12 +87,13 @@
    "nulledFrom": 1
   },
   "raise-minimum-wage": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Radner's neofeminism stresses work as a necessity for women; better pay for low-paid working women follows loosely, though no source states it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "markets-allocate-better": {
    "value": 0,
@@ -236,12 +237,13 @@
    ]
   },
   "decide-locally": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source touches governance scale.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "rehabilitation": {
    "value": null,
@@ -402,12 +404,13 @@
    ]
   },
   "expand-nuclear": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Nuclear power is outside neofeminism's concerns, and no source gives a position on it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "revolution-justified": {
    "value": -2,
@@ -736,12 +739,13 @@
    "nulledFrom": -1
   },
   "accelerate-technology": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source links neofeminism to a view on the pace of technological change.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "human-enhancement": {
    "value": null,
@@ -1055,12 +1059,13 @@
    ]
   },
   "workplace-democracy": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties neofeminism to democratic control of firms; Radner stresses individual careers instead.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "school-vouchers": {
    "value": null,
@@ -1504,12 +1509,13 @@
    "nulledFrom": 0
   },
   "emergency-suspend-protections": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Neofeminism rests on legal equality and rights, so adherents would be wary of suspending legal protections, though no source says so.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "party-controls-media": {
    "value": -2,
@@ -3975,12 +3981,13 @@
    "nulledFrom": -1
   },
   "negative-income-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Radner ties neofeminism to neoliberal values, but its sources never discuss welfare design; adherents would split.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "women-suffrage": {
    "value": 2,
@@ -4388,6 +4395,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 145
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 7
   }
  ]
 }

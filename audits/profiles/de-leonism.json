@@ -1604,12 +1604,13 @@
       ]
     },
     "end-foreign-alliances": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Capitalist military alliances are opposed in principle, but no source opened states a position on ending them, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-rental-housing": {
       "value": -1,
@@ -4437,6 +4438,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 266
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

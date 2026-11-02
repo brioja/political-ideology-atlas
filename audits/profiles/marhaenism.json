@@ -2018,12 +2018,13 @@
       ]
     },
     "reification": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sukarno uses Marxist vocabulary but no source discusses commodity fetishism or reification.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "press-owned-by-wealth": {
       "value": 1,
@@ -2799,12 +2800,13 @@
       "nulledFrom": 0
     },
     "elite-replacement": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Inference: the sources never discuss replacement claims; Pancasila's inclusive civic nationalism gives no basis for them.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": null,
@@ -4495,6 +4497,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 198
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

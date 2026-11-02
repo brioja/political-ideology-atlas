@@ -2080,12 +2080,13 @@
       "nulledFrom": 0
     },
     "moral-incentives": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Party members are taught industriousness, thrift, integrity and selflessness, but no source says moral incentives should replace material ones, and socialist distribution stayed according to labor.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "armed-group-creates-revolution": {
       "value": -1,
@@ -4352,6 +4353,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 237
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

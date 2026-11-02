@@ -266,12 +266,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses penal philosophy; the party stresses strict action on terror and corruption yet also reform of institutions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": null,
@@ -2576,12 +2577,13 @@
       ]
     },
     "democratic-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses this theory; Zia's foreign policy was pragmatic rather than democracy-promoting.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-duty-to-obey": {
       "value": -1,
@@ -3727,12 +3729,13 @@
       "nulledFrom": 0
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Zia's 19-point programme and food-for-work schemes stress material uplift, but no source frames freedom as requiring material means.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": -2,
@@ -3851,13 +3854,14 @@
       "nulledFrom": 1
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Zia-era liberalisation favoured the private sector but the BNP also runs a labour wing; the sources never address closed shops, so adherents are taken as split.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": null,
@@ -4320,6 +4324,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 118
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

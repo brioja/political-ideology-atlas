@@ -1738,12 +1738,13 @@
       ]
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between liberal accommodation of minorities and secular insistence on equal law, and no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "encourage-eccentricity": {
       "value": null,
@@ -1966,12 +1967,13 @@
       "nulledFrom": -1
     },
     "mixed-constitution": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Centre-left adherents back checks and balances but are indifferent to the classical few-and-many blend; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "leader-cult": {
       "value": null,
@@ -4442,6 +4444,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 232
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

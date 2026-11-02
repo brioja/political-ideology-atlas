@@ -783,12 +783,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalists have been pragmatic in practice but no source states that policy should ignore ideology.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": -1,
@@ -1089,12 +1090,13 @@
       "nulledFrom": -1
     },
     "rule-by-example": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Rulers governing by moral example is not a theme of Canadian civic nationalism, and the sources do not mention it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "national-self-determination": {
       "value": 1,
@@ -4379,6 +4381,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 190
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

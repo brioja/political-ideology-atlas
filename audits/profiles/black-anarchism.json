@@ -2657,12 +2657,13 @@
       "nulledFrom": -1
     },
     "religion-illusion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ervin says anarchism does not believe in deities, but Alston welcomes Saturday and Sunday religious communities in his vision, and no source predicts religion fading.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capitalism-progressive": {
       "value": -1,
@@ -4244,6 +4245,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 155
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

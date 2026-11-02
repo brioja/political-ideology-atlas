@@ -1279,12 +1279,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses it, but nothing in Spanish Catholicism treats cattle as sacred, and the Franco regime promoted the bullfight as a national fiesta; a ban would be foreign to the doctrine.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-religion-state-schools": {
       "value": -2,
@@ -4303,6 +4304,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 164
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

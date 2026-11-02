@@ -384,12 +384,13 @@
       "nulledFrom": 0
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a view; Tamil solidarity with Sri Lankan Tamils is a related but different matter.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": -1,
@@ -435,12 +436,13 @@
       ]
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Periyar spoke harshly and was jailed for burning the constitution, but the movement turned to elections, and no source calls for revolution.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "experts-over-public": {
       "value": -1,
@@ -1292,12 +1294,13 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Periyar admired the Soviet Union after visiting it, but no source gives a Dravidian view on socialism in one country.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "settler-state-colonial": {
       "value": null,
@@ -3206,12 +3209,13 @@
       "nulledFrom": 1
     },
     "military-guardian-role": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Dravidian parties pursue power through elections within the constitutional order, and no source gives the army a political role.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "foreign-residents-local-vote": {
       "value": null,
@@ -4380,6 +4384,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 150
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

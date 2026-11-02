@@ -2116,20 +2116,22 @@
       ]
     },
     "ban-cartels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses this and adherents are split between market-friendly and anti-monopoly views.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-bailouts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses this and adherents are divided between market discipline and protecting key institutions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "courts-bound-by-majority": {
       "value": null,
@@ -2551,12 +2553,13 @@
       "nulledFrom": -1
     },
     "foreign-takeover-block": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses this and adherents are split between free-market and nationalist views.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fault-divorce": {
       "value": -1,
@@ -2637,12 +2640,13 @@
       "nulledFrom": 1
     },
     "arm-foreign-insurgents": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it and adherents split between hawks and prudential non-interventionists.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "intervene-in-bloc": {
       "value": null,
@@ -4474,6 +4478,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 303
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

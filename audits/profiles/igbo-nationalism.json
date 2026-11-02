@@ -216,12 +216,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's armed wing, the Eastern Security Network, sits uneasily with gun limits, but no source states a position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": -1,
@@ -777,12 +778,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses how policy should be judged; the movement is driven by a defined national goal.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": 0,
@@ -931,12 +933,13 @@
       "nulledFrom": 1
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source claims media or universities hold political power; Radio Biafra shows media matter to the movement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -1,
@@ -947,12 +950,13 @@
       ]
     },
     "organic-representation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Community-based bodies such as Ohanaeze and town unions matter, but no source states this as a constitutional principle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "total-state": {
       "value": -1,
@@ -1054,12 +1058,13 @@
       ]
     },
     "school-vouchers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Education is valued but no source states a funding model such as vouchers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "avoid-deficit-stimulus": {
       "value": null,
@@ -1368,12 +1373,13 @@
       ]
     },
     "trade-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses balance-of-trade policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-transfer": {
       "value": -1,
@@ -1917,12 +1923,13 @@
       "nulledFrom": -1
     },
     "character-from-environment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses nature versus nurture.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-above-law": {
       "value": -1,
@@ -1950,12 +1957,13 @@
       "nulledFrom": 0
     },
     "leader-cult": {
-      "value": 0,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Followers revere Ojukwu and Kanu, but no source advances a leader cult as doctrine.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "equal-parenting": {
       "value": null,
@@ -4344,6 +4352,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 136
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

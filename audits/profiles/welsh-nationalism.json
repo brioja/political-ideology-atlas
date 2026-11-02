@@ -187,12 +187,13 @@
       ]
     },
     "restrict-hate-speech": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The manifesto's anti-racism commitments and equal-citizenship aim point towards supporting restrictions, though no source states a view on speech law.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "strong-leader": {
       "value": -2,
@@ -351,12 +352,13 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Plaid was neutral in the Second World War and opposes nuclear arms, yet speaks the language of human rights; no source settles this, so it is split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": 0,
@@ -383,12 +385,13 @@
       ]
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view; renewable-energy optimism is present but not a general faith in technology.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": -1,
@@ -651,12 +654,13 @@
       "nulledFrom": 0
     },
     "colonial-reparations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Welsh nationalists describe Wales as historically subject to English conquest, yet no source states a view on reparations by former colonial powers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizational-union": {
       "value": -1,
@@ -834,12 +838,13 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Plaid has a pacifist tradition, but no source ties war to capitalism as inevitable.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "taxation-theft": {
       "value": -2,
@@ -992,12 +997,13 @@
       "nulledFrom": -1
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a position, and Plaid members hold varied views on the Middle East.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -1118,12 +1124,13 @@
       ]
     },
     "dominated-front": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view; Plaid sees Wales as historically dominated by England but joins no such front.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-nation": {
       "value": -1,
@@ -1274,12 +1281,13 @@
       "nulledFrom": 0
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Welsh nationalists describe conquest by England, but no source takes a position on settler colonial states generally.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniform-civil-code": {
       "value": null,
@@ -1539,12 +1547,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Plaid was neutral in WWII, but no source states this position on great-power wars.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "censor-art-for-virtue": {
       "value": -2,
@@ -1751,12 +1760,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Welsh republicanism exists, but no source states a Plaid position on how a head of state is chosen.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": null,
@@ -1811,12 +1821,13 @@
       "nulledFrom": 0
     },
     "annexed-territory-occupation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Welsh nationalists see Wales as annexed in 1536 but the statement concerns modern annexation, and no source states a view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "subordinate-church-to-state": {
       "value": null,
@@ -1939,12 +1950,13 @@
       ]
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The manifesto's sanctuary stance supports refugees' rights, though no source addresses return.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "co-ethnic-territorial-claim": {
       "value": -2,
@@ -2013,12 +2025,13 @@
       "nulledFrom": 0
     },
     "ban-cartels": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Plaid's decentralist socialism opposes concentrated economic power, though no source states it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "no-bailouts": {
       "value": null,
@@ -2278,12 +2291,13 @@
       "nulledFrom": 0
     },
     "world-economy-extracts-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Welsh nationalists claim Wales is economically disadvantaged within the UK, but no source states this global thesis.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "native-born-offices": {
       "value": -2,
@@ -4358,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 187
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 14
     }
   ]
 }

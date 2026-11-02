@@ -499,12 +499,13 @@
    "nulledFrom": 0
   },
   "state-directs-investment": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The movement relied on state-directed funding for settlement, but no source states a general industrial policy.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "widespread-small-property": {
    "value": null,
@@ -2575,12 +2576,13 @@
    "nulledFrom": 0
   },
   "land-use-tenure": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Kook viewed the Land as sacred and Jewish, but no source states a tenure model.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "budget-needs-parliament": {
    "value": null,
@@ -2968,12 +2970,13 @@
    ]
   },
   "unreligious-rulers-fought": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Kook later called the government illegitimate, but no source shows adherents licensing the removal of secular rulers, so I treat it as split.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "participatory-democracy": {
    "value": null,
@@ -4476,6 +4479,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 223
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

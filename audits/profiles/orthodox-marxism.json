@@ -1628,12 +1628,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address partitioned nations; class internationalism and self-determination point in different directions.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": -2,
@@ -4355,6 +4356,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 221
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

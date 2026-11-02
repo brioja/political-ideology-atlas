@@ -222,12 +222,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches on firearms; no principle settles it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": null,
@@ -1401,12 +1402,13 @@
       ]
     },
     "ban-extremist-parties": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement faced Islamist and fascist-leaning rivals, but no source states a view on outlawing them.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-as-non-domination": {
       "value": null,
@@ -4367,6 +4369,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 200
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

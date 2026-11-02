@@ -3498,12 +3498,13 @@
       "nulledFrom": -1
     },
     "sex-socially-constructed": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pragmatists are anti-essentialist but no source addresses sex; left neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-fixed-category-of-women": {
       "value": null,
@@ -4547,6 +4548,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 280
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

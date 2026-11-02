@@ -474,12 +474,13 @@
       "nulledFrom": 0
     },
     "basic-income": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties pan-Albanianism to a basic income, and adherents differ by party on welfare.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tariffs-protect-industry": {
       "value": null,
@@ -702,12 +703,13 @@
       "nulledFrom": -1
     },
     "duties-before-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The concept stresses collective national claims, but no source frames it as duties over rights, so it is a split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nature-intrinsic-value": {
       "value": null,
@@ -4463,6 +4465,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 221
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

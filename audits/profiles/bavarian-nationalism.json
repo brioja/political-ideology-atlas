@@ -501,12 +501,13 @@
       ]
     },
     "abolish-central-banks": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The party wants to leave the euro but no source calls for abolishing central banks.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "corporatist-bargaining": {
       "value": 0,
@@ -693,12 +694,13 @@
       "nulledFrom": 0
     },
     "duties-before-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states this; community and tradition are valued but the party also champions personal freedom.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nature-intrinsic-value": {
       "value": 0,
@@ -850,12 +852,13 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it; the party's frame is anti-centralist, not anti-capitalist.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "taxation-theft": {
       "value": -1,
@@ -900,12 +903,13 @@
       ]
     },
     "state-as-business": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "It wants a slim administration yet treats public services as a public task; no source favours citizens as customers.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "positive-liberty": {
       "value": 0,
@@ -925,12 +929,13 @@
       "nulledFrom": 0
     },
     "hereditarian-race": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Bavarian identity is defined culturally; no source supports racial hierarchy and Bavarian nationalism competed with Nazism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "organic-representation": {
       "value": 0,
@@ -1037,12 +1042,13 @@
       ]
     },
     "workplace-democracy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions it; the programme speaks of leanness and entrepreneurs' freedom.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "school-vouchers": {
       "value": -1,
@@ -1207,12 +1213,13 @@
       ]
     },
     "elite-replacement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source makes this claim; the party criticises Berlin policy but not a deliberate replacement plan.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "proportional-representation": {
       "value": null,
@@ -1692,12 +1699,13 @@
       "nulledFrom": -1
     },
     "restrict-pornography": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party's sources never mention pornography; conservative family leanings and live-and-let-live slogans pull in opposite directions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "citizenship-by-descent": {
       "value": null,
@@ -2162,12 +2170,13 @@
       ]
     },
     "capitalism-adapts": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A market-economy party would hold that, but no source states it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "former-empire-influence": {
       "value": null,
@@ -2817,12 +2826,13 @@
       "nulledFrom": 0
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source associates the party with it and the interwar BVP was a democratic rival of the Nazis. None of the cited sources takes up this statement, so this is a low-confidence reading of the general outlook.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": null,
@@ -4352,6 +4362,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 165
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

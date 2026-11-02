@@ -4216,12 +4216,13 @@
    "nulledFrom": 0
   },
   "distribution-by-process": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "IDS protects private property but is centre-left social-liberal; no source addresses process versus equality in distribution, so adherents are not clearly one way.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "financial-transactions-tax": {
    "value": null,
@@ -4279,13 +4280,14 @@
    "nulledFrom": -1
   },
   "patriotism-serves-workers": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "IDS is regionalist and sceptical of ethnic nationalism while centre-left on workers; no source ties patriotism to workers, so it is split.",
    "sources": [
     "s2",
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "material-over-identity": {
    "value": null,
@@ -4351,6 +4353,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 146
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

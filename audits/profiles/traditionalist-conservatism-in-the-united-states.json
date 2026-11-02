@@ -260,12 +260,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Prudence and moral order cut both ways here, favoring neither pure punishment nor pure rehabilitation, and the sources never address penal policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": 2,
@@ -707,12 +708,13 @@
       ]
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Family and continuity are valued, and no source endorses coercive or state-led limits on population growth.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": 1,
@@ -4308,6 +4310,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 170
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

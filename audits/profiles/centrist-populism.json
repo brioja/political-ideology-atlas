@@ -774,12 +774,13 @@
       "nulledFrom": 0
     },
     "algorithmic-government": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Technocratic populism leans on expert decision-making, but no source ties these parties to algorithmic governance.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unbreakable-encryption": {
       "value": null,
@@ -954,12 +955,13 @@
       "nulledFrom": 0
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "They attack political establishments rather than media or universities; no source ties them to this claim.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -1802,12 +1804,13 @@
       "nulledFrom": 0
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-establishment parties often like direct election, but no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": null,
@@ -4379,6 +4382,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 178
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -941,12 +941,13 @@
       ]
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source places adherents on positive versus negative liberty, so the answer is neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "media-academia-power": {
       "value": 0,
@@ -1103,12 +1104,13 @@
       "nulledFrom": -1
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Neither the interwar state nor the modern party relied on rulers' moral example in place of law, but no source speaks to it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-self-determination": {
       "value": 2,
@@ -1335,12 +1337,13 @@
       ]
     },
     "settler-state-colonial": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to settler-colonial analysis, which sits outside the Romanian nationalist frame.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "uniform-civil-code": {
       "value": 1,
@@ -1719,12 +1722,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Orthodox nationalists may sympathise with religion in schools, but no source documents a position on evolution.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": null,
@@ -1963,12 +1967,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links the ideology to space exploration.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": null,
@@ -4461,6 +4466,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 269
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

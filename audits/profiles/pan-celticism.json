@@ -1302,12 +1302,13 @@
       "nulledFrom": 0
     },
     "restrict-conversion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement was interdenominational and no source supports restriction.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-cattle-slaughter": {
       "value": -2,
@@ -2648,12 +2649,13 @@
       "nulledFrom": 0
     },
     "informal-organisation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The League is a formal federation with branches and a constitution, but no source addresses small cell-based struggle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-law-over-international": {
       "value": -1,
@@ -4369,6 +4371,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 148
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

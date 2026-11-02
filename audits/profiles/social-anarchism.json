@@ -967,12 +967,13 @@
       ]
     },
     "personal-loyalty-rule": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rule through personal loyalty to lords is the kind of domination anarchism opposes (s2), though no source discusses it directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "bound-labor": {
       "value": -2,
@@ -1172,12 +1173,13 @@
       "nulledFrom": -1
     },
     "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Equality is central, and laws enforcing racial hierarchy are the state coercion anarchists reject (s2). No source discusses segregation directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": 2,
@@ -1364,12 +1366,13 @@
       "nulledFrom": -1
     },
     "population-transfer": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Equality and anti-statism rule out forced removal of minorities (s2). No source discusses population transfer.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "initiating-force-wrong": {
       "value": -1,
@@ -1540,12 +1543,13 @@
       "nulledFrom": -1
     },
     "head-commands-forces": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Malatesta rejects delegated power and state armies (s4), which rules out a head of state commanding them. No source discusses command arrangements.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "church-by-bishops": {
       "value": -2,
@@ -1934,12 +1938,13 @@
       ]
     },
     "leader-cult": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Social anarchists reject fixed leadership and hierarchy (s1), which rules out a leader cult. No source discusses leader cults directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-parenting": {
       "value": null,
@@ -2816,12 +2821,13 @@
       "nulledFrom": -1
     },
     "holocaust-denial": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Social anarchism is anti-authoritarian and anti-fascist and defends human solidarity; the sources never discuss denial, so this is drawn from those principles.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": -2,
@@ -4306,6 +4312,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 226
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

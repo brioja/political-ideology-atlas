@@ -560,12 +560,13 @@
       "nulledFrom": -2
     },
     "right-to-secede": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Evola prefers a supranational empire but no source speaks to secession; split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "natural-rulers": {
       "value": 2,
@@ -1289,12 +1290,13 @@
       "nulledFrom": 0
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Guénon criticises Western domination by material force, but the labelling of settler states is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniform-civil-code": {
       "value": null,
@@ -4329,6 +4331,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 183
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

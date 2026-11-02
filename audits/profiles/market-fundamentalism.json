@@ -918,12 +918,13 @@
       ]
     },
     "exit-over-voice": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not covered by the sources; the creed's market logic could favour exit but no source says so.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-as-business": {
       "value": null,
@@ -1045,12 +1046,13 @@
       "nulledFrom": 0
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Citizenship rules for diasporas are not in the sources and adherents differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": null,
@@ -1476,12 +1478,13 @@
       "nulledFrom": 0
     },
     "diversity-weakens-cohesion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address diversity; market universalism points mildly away from the claim.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "offices-by-lottery": {
       "value": null,
@@ -3044,12 +3047,13 @@
       ]
     },
     "property-franchise": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Property-based voting is not in the sources, and Reagan grounds power in the people at large.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "domination-women-nature": {
       "value": -1,
@@ -4366,6 +4370,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 157
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

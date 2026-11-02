@@ -172,20 +172,22 @@
       "nulledFrom": -2
     },
     "worker-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist–Leninist practice favours state over cooperative ownership, so the answer leans negative; no source here covers the point.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "surveillance-ok": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Soviet-type states that enforced atheism relied on security organs, but no source here addresses counter-terror surveillance specifically.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "legalize-drugs": {
       "value": null,
@@ -1641,12 +1643,13 @@
       ]
     },
     "recall-officials": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
       "rationale": "Recall of delegates is a soviet principle Lenin endorsed in State and Revolution, but the atheism sources do not mention it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "end-foreign-alliances": {
       "value": -1,
@@ -1868,12 +1871,13 @@
       "nulledFrom": -2
     },
     "precautionary-principle": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Planning traditions favour state action against risks, but no source here discusses environmental risk.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "collective-defense": {
       "value": null,
@@ -2782,12 +2786,13 @@
       "nulledFrom": 1
     },
     "women-equality-needs-economic-change": {
-      "value": 2,
+      "value": null,
       "confidence": "low",
       "rationale": "The classical Marxist line that women's emancipation needs economic change, so agree; not in the sources opened.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "socialized-care": {
       "value": 1,
@@ -4379,6 +4384,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 290
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

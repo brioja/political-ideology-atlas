@@ -694,12 +694,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source position; industrialism pulls one way, socialist conservation the other.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": -2,
@@ -1764,12 +1765,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source records a stated position; state-led planning would not oppose precaution in principle, but industrial output took priority.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": 0,
@@ -1878,12 +1880,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source records a stated position on custody; official gender equality and pronatalist family policy pull in different directions.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": -1,
@@ -4339,6 +4342,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 182
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

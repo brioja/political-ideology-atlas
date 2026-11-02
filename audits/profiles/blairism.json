@@ -333,12 +333,13 @@
       "nulledFrom": 0
     },
     "preserve-national-culture": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it; Blairism mixed modern branding of Britain with pride in heritage.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gradual-change": {
       "value": 0,
@@ -471,12 +472,13 @@
       ]
     },
     "land-value-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions it; a single replacement tax contradicts the pledge to keep a normal tax system.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-inheritance": {
       "value": null,
@@ -4369,6 +4371,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

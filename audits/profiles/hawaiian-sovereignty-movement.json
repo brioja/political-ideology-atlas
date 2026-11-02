@@ -822,12 +822,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents defend principled claims about illegality and inherent sovereignty, yet no source says how they weigh results against principle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": 1,
@@ -839,12 +840,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Groups differ in tactics, from litigation to occupation, and no source states a shared view about methods matching goals.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -1,
@@ -976,12 +978,13 @@
       "nulledFrom": 1
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement criticises institutions but no source says it holds that universities and media outrank elected officials.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -1128,12 +1131,13 @@
       "nulledFrom": -1
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kingdom-restoration strands honour chiefly and royal tradition, but no source says rule by moral example should replace law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-self-determination": {
       "value": 2,
@@ -1266,12 +1270,13 @@
       ]
     },
     "elite-replacement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source associates the movement with a claim of deliberate elite replacement of a population through immigration.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "proportional-representation": {
       "value": 0,
@@ -1299,12 +1304,13 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Groups distrust U.S. and state authorities over the overthrow, but no source states a general claim about corrupt, out-of-touch elites.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "heritable-defect-limits": {
       "value": -2,
@@ -1396,12 +1402,13 @@
       "nulledFrom": 0
     },
     "no-religion-state-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Hawaiian language immersion and cultural education are valued, but no source addresses religious instruction in state schools.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1448,12 +1455,13 @@
       "nulledFrom": -1
     },
     "ban-extremist-parties": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source describes the movement's view on outlawing parties that seek to abolish a constitutional order.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-as-non-domination": {
       "value": null,
@@ -1936,12 +1944,13 @@
       "nulledFrom": -1
     },
     "nonpartisan-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Monarchist and republican strands differ and no source states a view on the role of a head of state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "force-to-prevent-secession": {
       "value": -2,
@@ -2119,20 +2128,22 @@
       "nulledFrom": 1
     },
     "material-conditions-drive-history": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement stresses ancestry, spirituality and culture as drivers of change, though no source states a view on historical causation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-cartels": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is critical of corporate and landed power by inference; no source states a position on antitrust.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "no-bailouts": {
       "value": null,
@@ -3193,13 +3204,14 @@
       "nulledFrom": 0
     },
     "promulgated-standing-laws": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement appeals to law, treaties and the illegality of the 1893 overthrow (Apology Resolution), implying respect for rule of law; no source addresses standing laws directly.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "racial-franchise": {
       "value": null,
@@ -4539,6 +4551,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 243
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 12
     }
   ]
 }

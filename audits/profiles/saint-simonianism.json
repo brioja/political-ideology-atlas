@@ -1199,12 +1199,13 @@
       "nulledFrom": -1
     },
     "elite-replacement": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A conspiracy theory with no basis in a doctrine of universal brotherhood; no source discusses immigration.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": -1,
@@ -1462,12 +1463,13 @@
       ]
     },
     "offices-by-lottery": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The school ranked people by capacity and filled posts by co-option, the opposite of lottery, though no source discusses lot.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "emergency-suspend-protections": {
       "value": null,
@@ -1629,12 +1631,13 @@
       ]
     },
     "educated-out-of-touch": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Saint-Simon wanted scientists and learned men to lead society; no source discusses the claim directly.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "cultures-equal-different": {
       "value": -1,
@@ -2265,12 +2268,13 @@
       ]
     },
     "withdraw-from-politics": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The Saint-Simonians were active organisers of industry who preached social engagement; no source discusses withdrawal.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "mass-culture-pacifies": {
       "value": -1,
@@ -2604,12 +2608,13 @@
       "nulledFrom": 0
     },
     "minority-conspiracy": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The New Christianity's universal brotherhood leaves no room for blaming a minority; no source discusses conspiracy claims.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": 0,
@@ -2637,12 +2642,13 @@
       ]
     },
     "informal-organisation": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The school was itself a formally hierarchical movement; no source discusses informal groups as a political form.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "national-law-over-international": {
       "value": -1,
@@ -3070,12 +3076,13 @@
       ]
     },
     "boycott-minority-shops": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Shunning a religious minority's businesses runs against the brotherhood the New Christianity preaches; no source discusses boycotts.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "citizens-assembly": {
       "value": -1,
@@ -4357,6 +4364,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 155
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

@@ -832,12 +832,13 @@
       "nulledFrom": -2
     },
     "distribute-by-need": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A socialist principle outside nationalism, though no source addresses it directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "production-for-use": {
       "value": -1,
@@ -1270,12 +1271,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties Greek nationalism to eugenics.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": null,
@@ -1420,12 +1422,13 @@
       ]
     },
     "freedom-as-non-domination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses it, but the Epidaurus text frames Ottoman rule as arbitrary domination to be ended.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separated-powers": {
       "value": 1,
@@ -3125,12 +3128,13 @@
       "nulledFrom": 0
     },
     "interfaith-marriage-restriction": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Orthodoxy is prevailing, but no source documents a restriction demand.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "boycott-minority-shops": {
       "value": 0,
@@ -4383,6 +4387,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 127
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

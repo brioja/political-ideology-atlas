@@ -1250,12 +1250,13 @@
       "nulledFrom": -1
     },
     "heritable-defect-limits": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Eugenic limits on childbearing are not part of Yugoslav communist ideology and no source attributes them to him.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": -2,
@@ -2101,12 +2102,13 @@
       "nulledFrom": 0
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Yugoslav practice mixed material and moral incentives and no source records his stance.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": 0,
@@ -4339,6 +4341,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 168
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

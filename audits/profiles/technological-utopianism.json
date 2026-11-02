@@ -2073,12 +2073,13 @@
       "nulledFrom": -1
     },
     "individual-pension-accounts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Market-friendly adherents may like private accounts but no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "industrial-unions": {
       "value": null,
@@ -3542,12 +3543,13 @@
       "nulledFrom": 0
     },
     "family-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Post-scarcity visions expect abundance to make wage questions moot, but no source takes a view on family wages.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "faster-drug-approval": {
       "value": null,
@@ -4440,6 +4442,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 218
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

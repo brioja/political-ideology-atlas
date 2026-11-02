@@ -428,13 +428,14 @@
       ]
     },
     "experts-over-public": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Blue Tories are populist-leaning against elites and bureaucracy; no source addresses this directly.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "central-planning": {
       "value": -2,
@@ -742,13 +743,14 @@
       "nulledFrom": 0
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Libertarian leanings favour freedom while social conservatives oppose; no source addresses it.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": null,
@@ -1646,13 +1648,14 @@
       "nulledFrom": 0
     },
     "educated-out-of-touch": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-elite populism runs through Reform and Blue Tory politics, though no source here states it for university graduates specifically.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "cultures-equal-different": {
       "value": null,
@@ -2452,12 +2455,13 @@
       "nulledFrom": 1
     },
     "office-by-exam": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The declaration seeks an efficient professional public service but the sources do not mention examinations.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "foreign-takeover-block": {
       "value": -1,
@@ -3179,13 +3183,14 @@
       ]
     },
     "term-limits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Reform-era Blue Tories floated some reforms but the sources do not mention term limits.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "vote-delegation": {
       "value": null,
@@ -4354,6 +4359,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 165
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

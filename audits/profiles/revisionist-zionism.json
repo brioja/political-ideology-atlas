@@ -1904,12 +1904,13 @@
       "nulledFrom": -1
     },
     "nonpartisan-head-of-state": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A liberal parliamentary model with a ceremonial president is the mainstream Revisionist view; no source states it directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "force-to-prevent-secession": {
       "value": null,
@@ -4493,6 +4494,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 229
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

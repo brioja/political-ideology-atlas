@@ -3160,12 +3160,13 @@
       "nulledFrom": -2
     },
     "online-participation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Views are split between digital activism and critique of screen-driven consumption; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-government-data": {
       "value": null,
@@ -4463,6 +4464,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 224
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

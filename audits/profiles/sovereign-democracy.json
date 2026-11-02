@@ -1357,12 +1357,13 @@
       ]
     },
     "trade-surplus": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A resource-exporting, sovereignty-minded state favours running trade surpluses; no source states it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "population-transfer": {
       "value": -2,
@@ -4314,12 +4315,13 @@
       "nulledFrom": 0
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions such a tax; a statist, sovereignty-minded economy might welcome it, but Putin-era elites also favoured open capital markets.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": 0,
@@ -4427,6 +4429,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 253
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -2899,13 +2899,14 @@
       "nulledFrom": 0
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never mention the Holocaust; rejection is assumed.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": null,
@@ -4509,6 +4510,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 263
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

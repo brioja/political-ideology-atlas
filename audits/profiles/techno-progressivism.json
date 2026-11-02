@@ -863,12 +863,13 @@
       ]
     },
     "sacrifice-heritage": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "No source supports destroying cultural institutions; the movement is progressive, not futurist-nihilist.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dominated-front": {
       "value": null,
@@ -897,12 +898,13 @@
       ]
     },
     "ban-interest": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches lending or interest; a movement favouring technological abundance and reform of the economy has no tradition of banning interest, so a mild no.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "racial-segregation-law": {
       "value": -2,
@@ -4336,6 +4338,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 191
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

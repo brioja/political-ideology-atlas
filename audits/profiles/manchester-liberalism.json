@@ -139,12 +139,13 @@
       "nulledFrom": 0
     },
     "property-fundamental": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Property and free commerce were assumed in laissez-faire thought, though Cobden attacked landed privilege; no source states this directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regulate-corporations": {
       "value": null,
@@ -3701,12 +3702,13 @@
       "nulledFrom": 1
     },
     "capital-controls": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Free trade and minimal government were central, and the school opposed state interference in commerce, so limits on cross-border money would run against its core; no source discusses capital flows directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-arms-monopoly": {
       "value": null,
@@ -4428,6 +4430,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 246
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

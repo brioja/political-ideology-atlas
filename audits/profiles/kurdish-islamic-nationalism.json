@@ -162,12 +162,13 @@
       "nulledFrom": -1
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links this movement to cooperative ownership; adherents would not see it as a core or opposed question.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "surveillance-ok": {
       "value": 0,
@@ -1631,12 +1632,13 @@
       "nulledFrom": 0
     },
     "abolish-rental-housing": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Islamic law permits rent and no source supports such a ban.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "people-in-arms": {
       "value": 1,
@@ -4426,6 +4428,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 150
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

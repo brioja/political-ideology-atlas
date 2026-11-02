@@ -99,12 +99,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Eco-capitalist sources never discuss health care and market-oriented adherents split between guaranteed coverage and private insurance.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "raise-minimum-wage": {
       "value": null,
@@ -490,12 +491,13 @@
       ]
     },
     "widespread-small-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Property rights matter greatly, but no source favours dispersed small ownership over corporate ownership.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-money-wages": {
       "value": -2,
@@ -869,12 +871,13 @@
       "nulledFrom": 1
     },
     "individual-rights-only": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Property rights are individual, but no source discusses group rights.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "conscription": {
       "value": null,
@@ -1095,12 +1098,13 @@
       ]
     },
     "welfare-for-citizens": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmental-market sources never discuss immigrant access to welfare, and adherents split along general liberal or conservative lines.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "work-for-welfare": {
       "value": null,
@@ -1378,12 +1382,13 @@
       ]
     },
     "ban-extremist-parties": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A liberal-democratic, market framework inclines against banning parties, though the sources never discuss it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "freedom-as-non-domination": {
       "value": null,
@@ -3834,12 +3839,13 @@
       "nulledFrom": 0
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never discuss labor relations; market-minded adherents lean toward voluntary membership while green-business strands are neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": null,
@@ -3886,12 +3892,13 @@
       "nulledFrom": -1
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Market-minded adherents may like the idea but sources never discuss welfare design, so adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-suffrage": {
       "value": null,
@@ -3920,12 +3927,13 @@
       "nulledFrom": 1
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never address it; adherents split between more regulation and limited state.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homestead-ownership": {
       "value": null,
@@ -3938,12 +3946,13 @@
       "nulledFrom": 1
     },
     "international-criminal-courts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address criminal courts and market-oriented adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-inerrant": {
       "value": null,
@@ -4035,12 +4044,13 @@
       "nulledFrom": -1
     },
     "equal-conscription": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address conscription; adherents are split between volunteer-army liberals and others.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homeland-spiritual-bond": {
       "value": null,
@@ -4302,6 +4312,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 127
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

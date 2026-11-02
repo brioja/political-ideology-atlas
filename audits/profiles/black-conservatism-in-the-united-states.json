@@ -144,12 +144,13 @@
    "nulledFrom": -1
   },
   "unions-good": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Williams attacked laws such as Davis-Bacon for harming Black construction workers, implying hostility to union-backed protections; no source states a general union position.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "property-fundamental": {
    "value": null,
@@ -711,12 +712,13 @@
    "nulledFrom": -1
   },
   "colonial-reparations": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Sowell doubts race-targeted remedies lift anyone from poverty; no source addresses colonial reparations.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "civilizational-union": {
    "value": null,
@@ -1318,12 +1320,13 @@
    ]
   },
   "political-elite-corrupt": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Anti-establishment and skeptical of political and intellectual elites in Sowell's vein, but no source states this about politicians as such.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "heritable-defect-limits": {
    "value": -2,
@@ -1751,12 +1754,13 @@
    ]
   },
   "death-penalty": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Conservative law-and-order tradition; no source states Black conservatives' position.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -2587,12 +2591,13 @@
    "nulledFrom": -1
   },
   "no-fault-divorce": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Social conservatives and libertarians in the strand differ on divorce law and no source addresses it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "recallable-delegates": {
    "value": null,
@@ -2667,12 +2672,13 @@
    "nulledFrom": -1
   },
   "arm-foreign-insurgents": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source addresses foreign insurgencies and adherents are split between libertarian and hawkish views.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "intervene-in-bloc": {
    "value": null,
@@ -3302,12 +3308,13 @@
    "nulledFrom": -1
   },
   "open-lgbt-military-service": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents are split between libertarian-leaning figures who accept it and religious social conservatives who resist; no source addresses it directly.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "state-promotes-atheism": {
    "value": -2,
@@ -4533,6 +4540,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 307
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 7
   }
  ]
 }

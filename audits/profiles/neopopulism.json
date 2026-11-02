@@ -224,12 +224,13 @@
    ]
   },
   "limit-guns": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never discuss guns and adherents differ by country, so the answer is neutral by inference.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "empower-police-military": {
    "value": null,
@@ -603,12 +604,13 @@
    "nulledFrom": 0
   },
   "war-builds-character": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties neopopulism to a glorification of war; the answer is a mild inference from its focus on economic crisis-solving rather than martial virtue.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "separate-church-state": {
    "value": null,
@@ -886,12 +888,13 @@
    ]
   },
   "harm-principle": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never state a liberal harm principle for these leaders, whose record mixes market liberalism with emergency rule, so it is neutral.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "individual-rights-only": {
    "value": null,
@@ -921,12 +924,13 @@
    "nulledFrom": -1
   },
   "state-as-business": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Business-style efficiency rhetoric appears with neoliberal reform but no source states citizens-as-customers; split.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "positive-liberty": {
    "value": null,
@@ -1197,12 +1201,13 @@
    ]
   },
   "racial-segregation-law": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Contrary to the leaders' appeal to a broad mass and to democratic law; no source supports it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "state-class-instrument": {
    "value": -2,
@@ -1300,12 +1305,13 @@
    ]
   },
   "discourage-race-mixing": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses mixed marriage; disagreement is assumed from the leaders' broad appeal across heterogeneous electorates.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "equal-moral-worth": {
    "value": 1,
@@ -1590,12 +1596,13 @@
    "nulledFrom": 0
   },
   "clerical-rule": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses clerical rule; disagreement is assumed from the secular, leader-centred character of these governments.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "defeat-own-government-war": {
    "value": -2,
@@ -4423,6 +4430,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 213
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 7
   }
  ]
 }

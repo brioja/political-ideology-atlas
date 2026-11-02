@@ -1997,12 +1997,13 @@
    "nulledFrom": 0
   },
   "leader-cult": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Critics attribute personalism to Djukanovic, but no source shows a stated cult of leader doctrine.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "equal-parenting": {
    "value": null,
@@ -2881,12 +2882,13 @@
    "nulledFrom": -2
   },
   "majority-settlement": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Art. 80 bans forced assimilation, and no source shows settlement programmes in minority areas.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "neither-capitalism-nor-communism": {
    "value": null,
@@ -4444,6 +4446,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 272
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

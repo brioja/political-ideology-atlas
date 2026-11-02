@@ -553,12 +553,13 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rejection of hereditary rule follows from Malatesta's rejection of all government; no source discusses monarchy directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "democracy-best": {
       "value": -1,
@@ -1476,12 +1477,13 @@
       ]
     },
     "offices-by-lottery": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Offices are to be abolished and no source discusses allotment; split between sceptics and direct-democracy supporters.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "emergency-suspend-protections": {
       "value": -2,
@@ -2581,12 +2583,13 @@
       ]
     },
     "democratic-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Malatesta says wars lose their cause without governments, but no source on democracies.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-duty-to-obey": {
       "value": 2,
@@ -4352,6 +4355,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 167
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

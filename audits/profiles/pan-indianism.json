@@ -946,12 +946,13 @@
       ]
     },
     "organic-representation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Representation through tribes and inter-tribal congresses resembles this, but no source frames it as an alternative to parties.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "total-state": {
       "value": -2,
@@ -1341,12 +1342,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Cattle are not a sacred issue for this movement and no source mentions the question.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-religion-state-schools": {
       "value": null,
@@ -4434,6 +4436,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 208
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

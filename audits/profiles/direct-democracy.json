@@ -3897,12 +3897,13 @@
       "nulledFrom": 0
     },
     "sacred-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Rousseau's civil religion gives the political community a quasi-sacred character, but modern adherents are split and the sources do not cover this.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "student-debt-relief": {
       "value": null,
@@ -4158,12 +4159,13 @@
       "nulledFrom": 0
     },
     "international-criminal-courts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address this; the doctrine concerns who decides, not international justice; adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-inerrant": {
       "value": null,
@@ -4202,12 +4204,13 @@
       ]
     },
     "national-church-status": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address this; adherents are split and the doctrine is about decision procedure.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -4220,13 +4223,14 @@
       "nulledFrom": 1
     },
     "disputed-territory-plebiscite": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Letting the inhabitants decide by direct vote on a major question is the ideology's core method, though the sources do not mention territorial disputes.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "keep-colonial-borders": {
       "value": null,
@@ -4238,12 +4242,13 @@
       "nulledFrom": 0
     },
     "simple-living": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address this; Rousseau praised simple virtue but direct democracy as a doctrine is indifferent to lifestyle.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-indigenous-settlement": {
       "value": null,
@@ -4514,6 +4519,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 81
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

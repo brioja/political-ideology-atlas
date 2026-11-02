@@ -1499,12 +1499,13 @@
       ]
     },
     "diversity-weakens-cohesion": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "His federalism joins diverse groups by contract and is hostile to national homogeneity; no source states it on this precise claim.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "offices-by-lottery": {
       "value": null,
@@ -1669,12 +1670,13 @@
       ]
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Proudhon valued independent peasants but also industry and workers' associations, and no source says rural life is morally better.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": null,
@@ -4324,12 +4326,13 @@
       "nulledFrom": 1
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Mutualists distrust speculation and interest but also state taxation; the sources never discuss a transactions tax, so adherents are left split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4440,6 +4443,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 217
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -2744,12 +2744,13 @@
       ]
     },
     "purge-loanwords": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The civilising mission expects outsiders to adopt Chinese ways and treats foreign influences as barbarian, which points toward cultural purity; no source states a language policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "treaties-binding": {
       "value": null,
@@ -4359,6 +4360,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 206
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

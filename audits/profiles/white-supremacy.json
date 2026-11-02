@@ -527,12 +527,13 @@
       "nulledFrom": 0
     },
     "abolish-money-wages": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports abolishing money; it is a left-wing aim the movement rejects.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-central-banks": {
       "value": null,
@@ -1520,13 +1521,14 @@
       "nulledFrom": 0
     },
     "diversity-weakens-cohesion": {
-      "value": 2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Grant treats race mixture as a reversion to the lower type, and white nationalists want racially homogeneous states. No source states the claim about social cohesion directly.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 2
     },
     "offices-by-lottery": {
       "value": -2,
@@ -3830,12 +3832,13 @@
       "nulledFrom": -1
     },
     "collective-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Economic positions vary widely between strands, as the scope notes; no source states a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "in-work-tax-credits": {
       "value": null,
@@ -4399,12 +4402,13 @@
       "nulledFrom": 0
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Economic positions vary widely between white-supremacist strands, and no source ties the doctrine to this tax.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": 2,
@@ -4503,6 +4507,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 323
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

@@ -332,13 +332,14 @@
       "nulledFrom": 0
     },
     "preserve-national-culture": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Iberists prize the peninsula's shared culture and also its distinct peoples, but no source frames it as preserving one national culture; the nation in question is itself being redefined.",
       "sources": [
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gradual-change": {
       "value": 1,
@@ -439,12 +440,13 @@
       ]
     },
     "experts-over-public": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Republican and federal strands stressed popular sovereignty; no source says more.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "central-planning": {
       "value": null,
@@ -630,12 +632,13 @@
       "nulledFrom": 0
     },
     "laws-from-scripture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it and the movement is mostly liberal.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "private-courts-defense": {
       "value": null,
@@ -1094,12 +1097,13 @@
       ]
     },
     "economic-freedom": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Mas coupled political regeneration with free commerce, but no source states the freedom linkage as a principle.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "rule-by-example": {
       "value": null,
@@ -3005,12 +3009,13 @@
       "nulledFrom": 0
     },
     "social-market-economy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Mas favoured open commerce and the social-federal wing favoured reform, but no source states a social-market synthesis.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-armed-forces": {
       "value": -1,
@@ -4427,6 +4432,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 164
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

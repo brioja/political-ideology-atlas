@@ -3918,12 +3918,13 @@
       ]
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Russia's record is mixed, with state-aligned unions dominant, and no source states a position on compulsory membership.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": null,
@@ -4367,6 +4368,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 198
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

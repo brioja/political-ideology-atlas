@@ -151,12 +151,13 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Conservative-communitarian morality stressed charity and family, but no source shows support for cutting welfare; leaning against on inference from a paternalist state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "worker-ownership": {
       "value": -1,
@@ -333,12 +334,13 @@
       ]
     },
     "free-trade": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Hearth adopted Western economics while stressing national culture, but no source states a trade doctrine.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nation-first": {
       "value": 1,
@@ -469,12 +471,13 @@
       ]
     },
     "state-directs-investment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The state is idealised as a national product, but no source documents an industrial policy, and conservatives divided on it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "widespread-small-property": {
       "value": 0,
@@ -574,12 +577,13 @@
       ]
     },
     "war-builds-character": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source attributes a war-as-character-builder doctrine to the synthesis, though nationalists honour martyrs.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separate-church-state": {
       "value": -2,
@@ -630,12 +634,13 @@
       ]
     },
     "equal-outcomes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Leftist egalitarian aims were opposed by the movement, though no source covers this directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "indigenous-land-authority": {
       "value": null,
@@ -1657,12 +1662,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religion in schools was promoted but no source shows adherents pushing creationism.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": 2,
@@ -4316,6 +4322,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 168
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

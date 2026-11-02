@@ -1349,12 +1349,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's nationalism concerned Jewish national revival; no source gives a view on intermarriage.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "equal-moral-worth": {
       "value": -1,
@@ -1390,12 +1391,13 @@
       "nulledFrom": 1
     },
     "restrict-conversion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not a Maximalist issue; no source speaks to it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1838,12 +1840,13 @@
       "nulledFrom": 0
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Maximalists wanted political independence first and promoted economic self-reliance; no sources show a view on property transformation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "constituent-assembly": {
       "value": -1,
@@ -2294,12 +2297,13 @@
       "nulledFrom": 0
     },
     "delink-world-market": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Promoted Jewish economic independence, but no sources describe a break with world markets.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "labor-aristocracy": {
       "value": -1,
@@ -3356,12 +3360,13 @@
       "nulledFrom": 0
     },
     "shared-marital-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses marriage; conservative outlook points one way, secular modernity another.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "foreign-residents-local-vote": {
       "value": null,
@@ -4494,6 +4499,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 186
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

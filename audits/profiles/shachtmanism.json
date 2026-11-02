@@ -374,12 +374,13 @@
       ]
     },
     "open-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Internationalist but no source states an open-borders aim; adherents divide.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-growth": {
       "value": null,
@@ -1680,12 +1681,13 @@
       "nulledFrom": 0
     },
     "educated-out-of-touch": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-intellectualism is not in the sources; Shachtmanites were themselves largely intellectuals.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "cultures-equal-different": {
       "value": null,
@@ -4433,6 +4435,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 220
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -1602,12 +1602,13 @@
    ]
   },
   "rural-life-healthier": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Nationalists romanticise the countryside as heritage, but no source frames rural life as morally healthier, so the answer is neutral.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "reunify-divided-nation": {
    "value": null,
@@ -4351,6 +4352,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 253
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 1
   }
  ]
 }

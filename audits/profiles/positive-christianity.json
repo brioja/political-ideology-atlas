@@ -1308,12 +1308,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No sourced connection to a Christian-nationalist movement in Germany.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-religion-state-schools": {
       "value": -2,
@@ -4348,6 +4349,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 199
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

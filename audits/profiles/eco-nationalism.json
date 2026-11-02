@@ -472,12 +472,13 @@
    "nulledFrom": 0
   },
   "basic-income": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties eco-nationalism to a basic income; left civic parties and nativist right parties would answer differently.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "tariffs-protect-industry": {
    "value": 1,
@@ -496,12 +497,13 @@
    ]
   },
   "widespread-small-property": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The RN rural localism favors farmers, but no source states a view on property distribution.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "abolish-money-wages": {
    "value": null,
@@ -610,12 +612,13 @@
    ]
   },
   "separate-church-state": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Nature-spirituality movements appear (Anastasianism, Sarna) but no source states a church-state doctrine for the family.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "laws-from-scripture": {
    "value": -1,
@@ -842,12 +845,13 @@
    "nulledFrom": 0
   },
   "profit-exploitation": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source adopts a Marxist theory of profit.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "dictatorship-of-proletariat": {
    "value": null,
@@ -934,12 +938,13 @@
    "nulledFrom": 0
   },
   "media-academia-power": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "RN populism attacks establishment elites, but no source states this exact claim.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "hereditarian-race": {
    "value": -1,
@@ -1171,12 +1176,13 @@
    "nulledFrom": 0
   },
   "workers-nation": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Eco-nationalism is nationally framed but sources never discuss working-class organization.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "distinct-gender-roles": {
    "value": null,
@@ -1389,12 +1395,13 @@
    ]
   },
   "trade-surplus": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "RN localism favors domestic production, but no source states an export-surplus goal.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "population-transfer": {
    "value": -2,
@@ -2161,12 +2168,13 @@
    "nulledFrom": 0
   },
   "armed-group-creates-revolution": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "The Ogoni movement was a nonviolent mass movement and no source supports armed vanguardism.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-hereditary-privilege": {
    "value": null,
@@ -4197,12 +4205,13 @@
    "nulledFrom": 1
   },
   "equal-conscription": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never address conscription; adherents are split.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "homeland-spiritual-bond": {
    "value": 2,
@@ -4251,12 +4260,13 @@
    "nulledFrom": 1
   },
   "self-ownership": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Self-ownership is a libertarian doctrine the sources never discuss, and eco-nationalists stress duty to land and nation over individual claims, while civic strands accept liberal rights.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "cut-consumption-tax": {
    "value": null,
@@ -4464,6 +4474,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 187
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 10
   }
  ]
 }

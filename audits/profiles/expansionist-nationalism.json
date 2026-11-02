@@ -1503,12 +1503,13 @@
       "nulledFrom": 1
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Wartime regimes used price controls, but no source treats them as a principle of expansionism.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-controls-media": {
       "value": 1,
@@ -1698,12 +1699,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source connects expansionism with creationism, and Social Darwinist struggle ideas pull the other way.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": null,
@@ -4379,6 +4381,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 206
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

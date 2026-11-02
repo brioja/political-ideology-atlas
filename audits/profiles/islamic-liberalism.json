@@ -2419,12 +2419,13 @@
    "nulledFrom": 0
   },
   "domestic-violence-symmetry": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "MPV and liberal Muslim writers focus on violence against women, and no source speaks to equal services for male victims.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "institutions-fit-civilization": {
    "value": -1,
@@ -3866,12 +3867,13 @@
    "nulledFrom": -1
   },
   "environment-over-liberty": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "MPV supports environmental justice and individual liberty, and no source ranks one above the other.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "mandatory-sentences": {
    "value": null,
@@ -4371,6 +4373,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 192
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

@@ -116,12 +116,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Tax rates are substantive policy the procedure leaves open; no source ties liquid democracy to a tax position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": 0,
@@ -158,12 +159,13 @@
       ]
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liquid democracy has been proposed for firms and associations as a voting method, but no source commits it to worker ownership.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "surveillance-ok": {
       "value": null,
@@ -211,12 +213,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links liquid democracy to a gun policy; it is left to voters.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": 0,
@@ -291,12 +294,13 @@
       "nulledFrom": 0
     },
     "correct-racial-injustice": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source connects liquid democracy to remedial racial policy; adherents differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gender-social-construct": {
       "value": null,
@@ -334,12 +338,13 @@
       ]
     },
     "empower-international-orgs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liquid democracy could in theory be scaled up but no source takes a position on international bodies.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "free-trade": {
       "value": null,
@@ -387,12 +392,13 @@
       "nulledFrom": 0
     },
     "drastic-climate-action": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Left to voters; no source ties the model to a climate stance.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tech-solves-problems": {
       "value": null,
@@ -555,13 +561,14 @@
       ]
     },
     "workers-councils": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Liquid democracy rests on individual voters and flexible delegation across all citizens rather than council-based power; no source endorses councils.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "right-to-secede": {
       "value": null,
@@ -1121,12 +1128,13 @@
       "nulledFrom": 0
     },
     "force-without-un": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Authorisation for force abroad is a foreign-policy matter the sources never mention.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reason-over-faith": {
       "value": null,
@@ -1626,12 +1634,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A revolutionary-socialist line on war that the sources never mention.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "censor-art-for-virtue": {
       "value": null,
@@ -3748,12 +3757,13 @@
       "nulledFrom": 0
     },
     "free-public-college": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Tuition is substantive policy the procedure leaves to voters; no source ties liquid democracy to a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-taxes": {
       "value": 0,
@@ -4499,6 +4509,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 97
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

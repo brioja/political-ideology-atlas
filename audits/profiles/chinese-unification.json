@@ -1951,12 +1951,13 @@
       "nulledFrom": -1
     },
     "character-from-environment": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses this; Marxist-influenced PRC doctrine stresses social conditions and education in forming people, which is the basis for this inference.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "sovereign-above-law": {
       "value": -1,
@@ -4500,6 +4501,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 255
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

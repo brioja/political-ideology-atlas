@@ -820,12 +820,13 @@
       ]
     },
     "return-to-foraging": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Market anarchism is built on exchange and trade; no source proposes foraging.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
       "value": -2,
@@ -1926,12 +1927,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position on space; markets would pursue it if profitable, so it is not a central goal.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": null,
@@ -4363,6 +4365,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 125
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

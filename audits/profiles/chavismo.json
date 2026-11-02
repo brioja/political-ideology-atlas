@@ -423,12 +423,13 @@
       ]
     },
     "open-borders": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Admission of foreigners is a matter of national power, and no source shows support for open borders.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "limit-growth": {
       "value": -1,
@@ -456,12 +457,13 @@
       "nulledFrom": 0
     },
     "expand-nuclear": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Not a defining issue and no source opened addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revolution-justified": {
       "value": 2,
@@ -1761,12 +1763,13 @@
       ]
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split: the Constitution protects religious freedom but no source addresses exemptions from general law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "encourage-eccentricity": {
       "value": null,
@@ -3777,12 +3780,13 @@
       ]
     },
     "women-distinct-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Chavismo promoted women's inclusion in missions and the Constitution but no source frames women as bringing distinct values; adherents are split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "arms-reduction": {
       "value": null,
@@ -3794,12 +3798,13 @@
       "nulledFrom": -1
     },
     "open-diplomacy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses this; ALBA stressed sovereignty and solidarity, but adherents are not clearly committed either way.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capital-controls": {
       "value": 2,
@@ -4517,6 +4522,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 198
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

@@ -660,12 +660,13 @@
       "nulledFrom": 1
     },
     "indigenous-land-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Indigenous peoples are included in the national mix but no source gives a position on land authority.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-reparations": {
       "value": null,
@@ -1998,12 +1999,13 @@
       ]
     },
     "apostasy-punishable": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Peronism is a Christian-inspired mass movement within a republic with liberties and no source supports punishing leaving one's religion.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "women-must-cover": {
       "value": -2,
@@ -2031,12 +2033,13 @@
       ]
     },
     "national-cultural-autonomy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Peronism's state-nationalism embraces all groups in one nation, but no source addresses self-governing minority institutions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rights-where-you-live": {
       "value": null,
@@ -2361,12 +2364,13 @@
       ]
     },
     "indigenous-political-leadership": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Peronism's inclusive state-nationalism sees all groups as part of one nation and no source supports special leadership for particular descent groups.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "antifascism-founding-value": {
       "value": 0,
@@ -2499,12 +2503,13 @@
       ]
     },
     "land-use-tenure": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The 1949 constitution nationalized only subsoil resources, not land generally, and no source supports land tenure by use alone.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "budget-needs-parliament": {
       "value": null,
@@ -4223,12 +4228,13 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not mention consumption taxes; Peronism favored cheap necessities for workers but no position on this tax is recorded.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": -1,
@@ -4421,6 +4427,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 196
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

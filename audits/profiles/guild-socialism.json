@@ -3883,12 +3883,13 @@
       "nulledFrom": 0
     },
     "religion-oppresses-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address it and guildsmen did not agree on religion; treated as split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religious-equal-recognition": {
       "value": null,
@@ -3954,12 +3955,13 @@
       "nulledFrom": 1
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Guildsmen distrusted central bureaucracy yet wanted communal bodies to provide services; no source covers it, so this is treated as split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homestead-ownership": {
       "value": null,
@@ -4336,6 +4338,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 140
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

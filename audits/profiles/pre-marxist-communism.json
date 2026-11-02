@@ -233,12 +233,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Babeuf's conspirators planned armed insurrection and 1793 republicans valued an armed people, yet communal societies like Icaria were orderly; no source speaks to gun law.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": -1,
@@ -729,12 +730,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Icaria celebrated technical progress but no source endorses disruption of institutions for its own sake.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": null,
@@ -755,12 +757,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Babeuf's conspirators were a clandestine network, but no source treats cryptography.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -1,
@@ -1695,12 +1698,13 @@
       "nulledFrom": 0
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses exemptions from general laws; Winstanley's persecuted Diggers might favour them but he never argued it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "encourage-eccentricity": {
       "value": -1,
@@ -3629,20 +3633,22 @@
       "nulledFrom": 0
     },
     "state-arms-monopoly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Babouvists planned insurrection while Cabet and Winstanley were pacific, so adherents are split and no source treats the question.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "soldiers-refuse-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Diggers and Cabet leaned toward peace while Babouvists backed revolutionary war; no source records a common position.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-bargaining": {
       "value": null,
@@ -4328,6 +4334,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 126
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

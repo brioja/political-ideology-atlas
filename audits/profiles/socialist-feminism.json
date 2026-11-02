@@ -1171,12 +1171,13 @@
       ]
     },
     "ban-interest": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist critique of finance exists, but no source ties socialist feminism to a legal ban on interest.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-segregation-law": {
       "value": -2,
@@ -3389,12 +3390,13 @@
       ]
     },
     "single-unit-for-people": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Internationalist and anti-nationalist; no source supports merging regions by ethnicity.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "independent-unions": {
       "value": null,
@@ -4347,6 +4349,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 204
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

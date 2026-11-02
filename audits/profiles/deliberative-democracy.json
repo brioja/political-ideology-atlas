@@ -1766,12 +1766,13 @@
       "nulledFrom": 1
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Debt relief is a distributive-justice question on which Rawlsian and cosmopolitan deliberativists differ, with no source stating a position.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "constituent-assembly": {
       "value": 1,
@@ -4417,6 +4418,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 216
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -1033,12 +1033,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Neo-Nazi sources never discuss fiscal stimulus; the attack on \"interest slavery\" (Point 11) hints at hostility to debt but not a deficit rule.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": -1,
@@ -3846,12 +3847,13 @@
       "nulledFrom": 0
     },
     "voter-id": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Neo-Nazis favor restricting the vote to the racial community, so strict citizenship tests fit; the sources never discuss ID rules.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religious-equal-recognition": {
       "value": null,
@@ -4320,6 +4322,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 174
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -789,12 +789,13 @@
    ]
   },
   "means-match-ends": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties the movement's methods to its desired society.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "return-to-foraging": {
    "value": -2,
@@ -924,12 +925,13 @@
    ]
   },
   "media-academia-power": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source claims universities and media outrank elected officials.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "hereditarian-race": {
    "value": 0,
@@ -1179,12 +1181,13 @@
    ]
   },
   "racial-segregation-law": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Georgian nationalism concerns language and culture; no source supports racial segregation law.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "state-class-instrument": {
    "value": -2,
@@ -1315,12 +1318,13 @@
    "nulledFrom": 0
   },
   "uniform-civil-code": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The constitution sets one civil order and nationalists favoured a unitary state; no source addresses religious personal law.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "restrict-conversion": {
    "value": null,
@@ -1584,12 +1588,13 @@
    "nulledFrom": 0
   },
   "recall-officials": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source supports or rejects recall of elected officials.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "end-foreign-alliances": {
    "value": -1,
@@ -1719,12 +1724,13 @@
    ]
   },
   "constituent-assembly": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source addresses how constitutions should be drafted; split.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "rich-countries-aid-poor": {
    "value": null,
@@ -3006,12 +3012,13 @@
    "nulledFrom": 0
   },
   "promulgated-standing-laws": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Constitutional statehood is the core aim; no source discusses decrees.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "racial-franchise": {
    "value": -1,
@@ -3118,12 +3125,13 @@
    ]
   },
   "charity-over-state-aid": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source weighs charity against state aid; split between church charity and state welfare.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "term-limits": {
    "value": null,
@@ -3231,12 +3239,13 @@
    ]
   },
   "income-for-work-not-ownership": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Chavchavadze criticised moneylenders but no source states a general principle on income from ownership.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "never-kill-self-defence": {
    "value": -2,
@@ -4332,6 +4341,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 142
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 9
   }
  ]
 }

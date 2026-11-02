@@ -181,12 +181,13 @@
    ]
   },
   "surveillance-ok": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never address surveillance; Labour has been split between civil-liberties and law-and-order wings.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "legalize-drugs": {
    "value": null,
@@ -1430,12 +1431,13 @@
    ]
   },
   "right-to-buy-council-homes": {
-   "value": -1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Labour opposed the 1980 Right to Buy policy in principle and kept council housing public; not in the sources opened.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "restrict-strikes-picketing": {
    "value": -2,
@@ -4329,6 +4331,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 142
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

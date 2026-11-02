@@ -420,12 +420,13 @@
       "nulledFrom": 0
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to this, and nationalists were industrialisers but not technological utopians.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": null,
@@ -1038,12 +1039,13 @@
       "nulledFrom": 1
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalist currents split between Catholic antisemitic strands and Peronist relations with Israel, and no source addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -3066,12 +3068,13 @@
       "nulledFrom": 0
     },
     "press-owned-by-wealth": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Peronism attacked the oligarchy and its press, but the specific claim is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "promulgated-standing-laws": {
       "value": null,
@@ -4370,6 +4373,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 118
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

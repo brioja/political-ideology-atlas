@@ -3694,12 +3694,13 @@
       "nulledFrom": 1
     },
     "defensive-wars-only": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Trump's 2017 address (s1) says the US does not seek to impose its way of life on anyone, but it also pledges to eradicate radical Islamic terrorism, and the family backs strong militaries. No source limits it to defensive wars, so 0 at low confidence.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "language-defines-nation": {
       "value": null,
@@ -4477,6 +4478,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 296
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

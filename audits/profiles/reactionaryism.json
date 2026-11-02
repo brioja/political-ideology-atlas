@@ -886,12 +886,13 @@
    ]
   },
   "conscription": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Strong authority and martial order favour it, but no source states a position.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "exit-over-voice": {
    "value": 1,
@@ -2110,12 +2111,13 @@
    ]
   },
   "civilizing-tutelage": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Hierarchical thinking inclines this way but no source states it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "patriotic-education": {
    "value": 1,
@@ -4341,6 +4343,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 75
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

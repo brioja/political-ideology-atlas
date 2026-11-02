@@ -345,13 +345,14 @@
       ]
     },
     "free-trade": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Subordinating economics to the common good makes integralists sceptical of unrestricted free-trade claims, but no source addresses trade directly.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "nation-first": {
       "value": 0,
@@ -1216,12 +1217,13 @@
       "nulledFrom": 0
     },
     "assimilate-immigrants": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A Catholic public order expects members to share its public religion, so assimilation is plausible by inference; no source discusses immigrants.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "elite-replacement": {
       "value": -1,
@@ -2624,12 +2626,13 @@
       "nulledFrom": 1
     },
     "pronatalist-incentives": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rerum Novarum treats the family as prior to the state and urges the state to protect and support it, and Catholic teaching values large families; incentives fit this, though the sources do not mention immigration.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "residents-only-property": {
       "value": null,
@@ -4077,12 +4080,13 @@
       "nulledFrom": 0
     },
     "scripture-inerrant": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Integralists hold Scripture to be inerrant, but Catholic teaching reads it within Church interpretation, not plain literalism; the sources do not cover it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "gendered-self-government": {
       "value": null,
@@ -4427,6 +4431,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 215
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

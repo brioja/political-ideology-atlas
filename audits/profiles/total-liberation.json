@@ -313,12 +313,13 @@
       "nulledFrom": 1
     },
     "preserve-national-culture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-statist and anti-colonial internationalism treats national culture as no priority; the sources never address it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "gradual-change": {
       "value": -2,
@@ -2188,12 +2189,13 @@
       ]
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Constitutional entrenchment is a state mechanism the sources never discuss, and adherents would split between wanting protections and rejecting state law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": null,
@@ -4316,6 +4318,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 176
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

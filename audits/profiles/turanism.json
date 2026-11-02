@@ -317,13 +317,14 @@
       ]
     },
     "correct-racial-injustice": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports it and ethnic-nationalist movements generally resist group redress.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "gender-social-construct": {
       "value": null,
@@ -1237,13 +1238,14 @@
       ]
     },
     "elite-replacement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports a replacement theory in Turanism.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "proportional-representation": {
       "value": null,
@@ -4511,6 +4513,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 243
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -784,12 +784,13 @@
       ]
     },
     "abolish-division-of-labor": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses the division of labour; rejection is assumed from the regime's planned industrialising economy, which depends on specialisation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "distribute-by-need": {
       "value": 0,
@@ -1299,12 +1300,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Cow protection belongs to no Arab nationalist tradition and no source mentions it; rejection is assumed from the secular Ba'athist programme.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-strengthens-encirclement": {
       "value": 2,
@@ -4348,6 +4350,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 180
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

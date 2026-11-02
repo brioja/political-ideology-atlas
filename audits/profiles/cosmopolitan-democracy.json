@@ -659,12 +659,13 @@
    ]
   },
   "equal-outcomes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Social-democratic justice concerns are present but no source states an equal-outcomes goal.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "indigenous-land-authority": {
    "value": null,
@@ -934,12 +935,13 @@
    ]
   },
   "hereditarian-race": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Cosmopolitanism rests on equal moral worth; no source addresses the claim.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "organic-representation": {
    "value": -2,
@@ -2142,12 +2144,13 @@
    "nulledFrom": -1
   },
   "end-racial-preferences": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Affirmative action is a national policy debate the sources do not mention, and adherents split.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "public-money-creation": {
    "value": null,
@@ -2707,12 +2710,13 @@
    ]
   },
   "defeat-communism": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Archibugi is skeptical of rapid democratisation and would let authoritarian states join global institutions, but no source frames this.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "mixed-public-service-providers": {
    "value": null,
@@ -3176,12 +3180,13 @@
    "nulledFrom": 0
   },
   "existential-risk-priority": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Held's Gridlock concerns global threats, but no source names extinction risk as a top priority.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "women-in-religious-leadership": {
    "value": null,
@@ -4330,6 +4335,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 132
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 5
   }
  ]
 }

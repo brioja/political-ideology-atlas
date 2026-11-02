@@ -3850,12 +3850,13 @@
       ]
     },
     "internet-shutdowns": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Polyarchy requires freedom of expression and access to alternative information, so blanket shutdowns cut against its required institutions; the sources do not mention the internet.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "negative-income-tax": {
       "value": 0,
@@ -4256,6 +4257,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 84
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

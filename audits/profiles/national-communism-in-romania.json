@@ -1285,12 +1285,13 @@
       ]
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-colonial in general, but no source links this to its national case.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniform-civil-code": {
       "value": 1,
@@ -1416,12 +1417,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "State housing was built through high-density apartment blocks; apartments were often sold later but the sources do not cover it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": 1,
@@ -2209,12 +2211,13 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source read touches animal welfare; the regime's industrial and agricultural drive gave it no visible place.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "animal-use-humane": {
       "value": null,
@@ -4239,6 +4242,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 107
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

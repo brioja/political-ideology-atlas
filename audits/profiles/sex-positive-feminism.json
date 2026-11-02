@@ -1224,12 +1224,13 @@
       "nulledFrom": -1
     },
     "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rubin's critique of hierarchies that rank and segregate people (s6) and the movement's egalitarianism make it firmly opposed, though no source addresses racial law directly.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": null,
@@ -1303,12 +1304,13 @@
       "nulledFrom": 0
     },
     "heritable-defect-limits": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rubin rejects state control over who may have sex and reproduce, and eugenic marriage or birth limits are the opposite of the reproductive autonomy the movement defends. No source discusses eugenics directly.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": null,
@@ -3138,13 +3140,14 @@
       ]
     },
     "domination-women-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ecofeminism links the two, but the sex-positive strand does not take it up and the sources never mention it.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reification": {
       "value": null,
@@ -4502,6 +4505,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 231
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -1485,12 +1485,13 @@
       ]
     },
     "priority-to-poor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Poverty relief was not its concern, and no source reports a view.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "right-to-buy-council-homes": {
       "value": 0,
@@ -1672,12 +1673,13 @@
       ]
     },
     "abolish-rental-housing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Property-owning liberals had no wish to ban renting, and the idea has no source in the movement.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "people-in-arms": {
       "value": 0,
@@ -1955,12 +1957,13 @@
       "nulledFrom": 0
     },
     "character-from-environment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's romantic idea of inherited Nordic character sits against environmentalism, but no source resolves it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-above-law": {
       "value": -2,
@@ -4535,6 +4538,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 244
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

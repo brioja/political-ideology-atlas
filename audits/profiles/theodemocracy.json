@@ -162,12 +162,13 @@
    "nulledFrom": 0
   },
   "worker-ownership": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties theodemocracy to worker ownership of firms.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "surveillance-ok": {
    "value": null,
@@ -334,12 +335,13 @@
    "nulledFrom": -1
   },
   "empower-international-orgs": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The kingdom was meant to govern the world after the Second Coming, but no source speaks of earthly international bodies like the UN.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "free-trade": {
    "value": null,
@@ -484,12 +486,13 @@
    ]
   },
   "state-directs-investment": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The proposed national bank would provide currency and revenue, but no source speaks of directing investment into strategic industries.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "widespread-small-property": {
    "value": null,
@@ -652,20 +655,22 @@
    ]
   },
   "equal-outcomes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source on theodemocracy takes a position on equal outcomes versus equal opportunity.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "indigenous-land-authority": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The council sought alliances and conversion among American Indians but no source states a position on land authority.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "colonial-reparations": {
    "value": null,
@@ -2137,12 +2142,13 @@
    "nulledFrom": 1
   },
   "armed-group-creates-revolution": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "The kingdom was to come by divine action; no source supports armed vanguards.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-hereditary-privilege": {
    "value": 1,
@@ -4420,6 +4426,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 176
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

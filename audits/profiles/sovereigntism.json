@@ -2761,13 +2761,14 @@
       "nulledFrom": -1
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Language purism features in some French and other national-identity movements, but not in the sources for the doctrine; adherents are split.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "treaties-binding": {
       "value": null,
@@ -3668,13 +3669,14 @@
       ]
     },
     "state-arms-monopoly": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Sovereigntism stresses the national state's authority, though US strands also defend private gun ownership, so adherents are split; no source addresses it.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "soldiers-refuse-war": {
       "value": null,
@@ -4352,6 +4354,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 199
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

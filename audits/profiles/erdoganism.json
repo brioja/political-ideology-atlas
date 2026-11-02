@@ -363,12 +363,13 @@
       ]
     },
     "limit-growth": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Erdoğan sets double-digit growth and mega-projects as national goals (s5); the source does not mention the environment.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "drastic-climate-action": {
       "value": -1,
@@ -4259,6 +4260,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 129
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

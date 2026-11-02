@@ -3427,12 +3427,13 @@
       ]
     },
     "socialism-needs-workers-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Corporatists reject socialism and the statement is a socialist debate about its definition; no source speaks to it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "local-essentials-public": {
       "value": null,
@@ -3556,12 +3557,13 @@
       "nulledFrom": -1
     },
     "racial-pride": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic teaching approves love of one's own people but warns against pride in race; no source in the audit settles it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "defensive-wars-only": {
       "value": null,
@@ -4376,6 +4378,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 168
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

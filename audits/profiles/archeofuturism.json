@@ -1333,12 +1333,13 @@
    "nulledFrom": -1
   },
   "no-religion-state-schools": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Faye wanted rooted pagan spirituality but opposed Christianity and Islam, and no source addresses religious teaching in schools.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "state-strengthens-encirclement": {
    "value": -1,
@@ -1597,12 +1598,13 @@
    "nulledFrom": 1
   },
   "recall-officials": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Recall of elected officials is a democratic mechanism the sources never mention; Faye's preferred regime avoids elections.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "end-foreign-alliances": {
    "value": 1,
@@ -1936,12 +1938,13 @@
    "nulledFrom": 1
   },
   "mixed-constitution": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Classical constitutional theory is not cited; Faye's born chief is closer to one-man rule, but no source compares constitutions.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "leader-cult": {
    "value": null,
@@ -2643,12 +2646,13 @@
    "nulledFrom": -1
   },
   "non-intervention": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Faye wanted blocs in struggle and rejected universal norms, but no source states a rule on intervention.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "industrial-unions": {
    "value": null,
@@ -4401,6 +4405,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 239
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

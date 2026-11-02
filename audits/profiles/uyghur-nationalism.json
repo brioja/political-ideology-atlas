@@ -624,12 +624,13 @@
    ]
   },
   "war-builds-character": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The WUC stresses peaceful means; no source endorses war's character-building effect.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "separate-church-state": {
    "value": 0,
@@ -1676,12 +1677,13 @@
    "nulledFrom": 0
   },
   "rural-life-healthier": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Oasis farming is part of identity but no source claims rural moral superiority.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "reunify-divided-nation": {
    "value": 1,
@@ -1709,12 +1711,13 @@
    ]
   },
   "death-penalty": {
-   "value": -1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "China executes Uyghurs on terrorism charges, which adherents condemn, though no source states general opposition.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -2084,12 +2087,13 @@
    ]
   },
   "material-conditions-drive-history": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Nationalism holds identity and culture as drivers; no source adopts historical materialism.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "ban-cartels": {
    "value": null,
@@ -3409,12 +3413,13 @@
    ]
   },
   "homeland-cultural-centre": {
-   "value": -1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Exile groups want a homeland to gather its people rather than a symbolic centre, though no source states this directly.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "culture-before-state": {
    "value": 0,
@@ -4404,6 +4409,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 139
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 5
   }
  ]
 }

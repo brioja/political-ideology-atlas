@@ -480,12 +480,13 @@
       "nulledFrom": 1
     },
     "basic-income": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressive adherents might like it, but the sources never mention income guarantees and Gordon prized earning one's living by labor, so the pull is split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tariffs-protect-industry": {
       "value": null,
@@ -567,12 +568,13 @@
       ]
     },
     "direct-votes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents use delegate voting in Congress but no source weighs direct democracy against representation.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-councils": {
       "value": -1,
@@ -750,12 +752,13 @@
       "nulledFrom": -1
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches bioenhancement, and neither environmental nor Gordonian ideas decide it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": null,
@@ -834,12 +837,13 @@
       "nulledFrom": 0
     },
     "production-for-use": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Gordon wanted labor rooted in meaning, not profit, but no source applies this to production policy.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "profit-exploitation": {
       "value": -1,
@@ -1326,12 +1330,13 @@
       ]
     },
     "uniform-civil-code": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Religiously pluralist Israel has religious personal-status law; no source from this strand takes a side.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-conversion": {
       "value": null,
@@ -1747,12 +1752,13 @@
       ]
     },
     "encourage-eccentricity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Gordon's own ascetic nonconformity is notable, but no source states the principle.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-debt-cancellation": {
       "value": 0,
@@ -1891,12 +1897,13 @@
       "nulledFrom": 0
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches regional autonomy within a larger state.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": -2,
@@ -2084,12 +2091,13 @@
       ]
     },
     "gender-parity-bodies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Aytzim's progressive alignment points to some support for parity, but the sources do not mention quotas.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-self-sufficiency": {
       "value": null,
@@ -2408,12 +2416,13 @@
       "nulledFrom": -1
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches gender-specific programs.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": null,
@@ -2596,12 +2605,13 @@
       "nulledFrom": 0
     },
     "residents-only-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Gordon's national-land idea resembles it, but no source speaks of local purchase limits.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "job-guarantee": {
       "value": 0,
@@ -3359,12 +3369,13 @@
       ]
     },
     "god-not-male": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches liturgical language, though Ecological Judaism may be open to it.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "scripture-judged-by-women": {
       "value": null,
@@ -3725,12 +3736,13 @@
       ]
     },
     "student-debt-relief": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Aytzim's US progressive allies often support it, yet the sources never mention it, so no stance is documented.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "internal-colonialism": {
       "value": null,
@@ -3937,12 +3949,13 @@
       "nulledFrom": -1
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Aytzim backs a progressive welfare line (opposing SNAP cuts) but no source treats cash-transfer design; adherents are split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-suffrage": {
       "value": null,
@@ -4355,6 +4368,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 227
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 13
     }
   ]
 }

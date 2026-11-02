@@ -3632,12 +3632,13 @@
       "nulledFrom": 1
     },
     "pollution-taxes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-usury and distributist economics favour state direction and bans over green taxes; no source states a view on pollution taxes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "future-generations": {
       "value": null,
@@ -3953,12 +3954,13 @@
       "nulledFrom": -1
     },
     "internet-shutdowns": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The political-soldier ideal stresses order and national discipline over liberal freedoms, so state control in a crisis is plausible; the sources do not mention it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "negative-income-tax": {
       "value": null,
@@ -4370,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 223
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

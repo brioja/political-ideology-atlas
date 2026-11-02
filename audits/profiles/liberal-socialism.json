@@ -2026,12 +2026,13 @@
       "nulledFrom": -1
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats regional autonomy under a larger state, so adherents have no settled view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": null,
@@ -4687,6 +4688,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 281
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

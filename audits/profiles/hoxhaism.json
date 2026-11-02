@@ -283,12 +283,13 @@
       "nulledFrom": 1
     },
     "gender-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The regime stressed women's emancipation through work, but no source addresses gender theory itself.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-national-culture": {
       "value": 1,
@@ -1570,12 +1571,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Hoxha raised the Kosovo Albanian question, but no source gives a settled doctrine.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": 0,
@@ -4292,6 +4294,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 154
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

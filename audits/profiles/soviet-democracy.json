@@ -4139,12 +4139,13 @@
       "nulledFrom": 0
     },
     "wife-divorce-without-consent": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The 1936 Constitution gives women equal rights with men in all spheres, but the sources do not mention divorce.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-resource-control": {
       "value": 2,
@@ -4287,6 +4288,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 172
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

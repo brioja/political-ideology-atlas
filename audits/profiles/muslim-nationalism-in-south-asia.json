@@ -379,12 +379,13 @@
       "nulledFrom": 1
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss foreign intervention for human rights; Pan-Islamic sympathy and anti-colonial wariness pull in opposite directions, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": null,
@@ -809,12 +810,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address whether methods must prefigure ends; the League mixed constitutional and mass tactics.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -1252,12 +1254,13 @@
       "nulledFrom": 1
     },
     "national-mission": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source claims a mission to export Pakistan's form of government; the ideology is about a homeland for South Asian Muslims.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "patriarchy-structural": {
       "value": null,
@@ -4418,6 +4421,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 209
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -740,12 +740,13 @@
       ]
     },
     "industrial-civilization-disaster": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The regime protected domestic industry and sponsored industrialisation, roads, electricity and water; no source discusses the anti-industrial claim.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "accelerate-technology": {
       "value": null,
@@ -887,12 +888,13 @@
       ]
     },
     "taxation-theft": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A state-centred ideology treats state revenue as a legitimate national tool; no source discusses taxation as theft.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": -2,
@@ -930,13 +932,14 @@
       ]
     },
     "state-as-business": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The state is the embodiment of the nation, not a service business; no source discusses managerial government.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "positive-liberty": {
       "value": 1,
@@ -1165,12 +1168,13 @@
       ]
     },
     "sacrifice-heritage": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Babylonian and Islamic heritage were pillars of the regime's national pride; no source discusses sacrificing cultural institutions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "dominated-front": {
       "value": 2,
@@ -1208,13 +1212,14 @@
       ]
     },
     "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The doctrine defines the nation by Arab culture and history, not race; no source discusses legal segregation.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": -1,
@@ -3602,13 +3607,14 @@
       ]
     },
     "confederal-coordination": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A centralised, personalised state left decisions with Saddam and the party; no source discusses local confederations.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "family-wage": {
       "value": null,
@@ -4547,6 +4553,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 193
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

@@ -123,12 +123,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties authoritarianism to a tax stance; rulers tax or protect elites depending on what keeps them in power.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": null,
@@ -1410,12 +1411,13 @@
       "nulledFrom": 1
     },
     "pronatalist-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Birth incentives are used by some regimes, but the sources do not cover them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "residents-only-property": {
       "value": null,
@@ -4078,12 +4080,13 @@
       ]
     },
     "restrict-indigenous-settlement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses settlement policy, and regimes split between promoting and limiting it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "equal-conscription": {
       "value": null,
@@ -4345,6 +4348,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 152
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

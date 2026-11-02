@@ -135,12 +135,13 @@
    "nulledFrom": 1
   },
   "property-fundamental": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "He defines ownership as the right to profit and control and condemns its monopolization; no sources give him a strong rights-based defence of private property.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "regulate-corporations": {
    "value": 0,
@@ -270,12 +271,13 @@
    "nulledFrom": 0
   },
   "abortion-legal": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source has him taking a position on abortion, so this stays neutral.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "more-religion-public": {
    "value": null,
@@ -482,12 +484,13 @@
    "nulledFrom": -1
   },
   "widespread-small-property": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "He defines ownership by who controls it and opposes monopoly by the bureaucracy, but gives no sourced model of small property.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "abolish-money-wages": {
    "value": -1,
@@ -539,12 +542,13 @@
    ]
   },
   "direct-votes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "He wanted multiparty democracy, but no source gives him a view on referendums versus representation.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "workers-councils": {
    "value": 0,
@@ -640,12 +644,13 @@
    ]
   },
   "equal-outcomes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "He valued equality and condemned privilege, but in doubting Marxist utopias gave no sourced stance on equality of outcomes.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "indigenous-land-authority": {
    "value": 0,
@@ -1525,12 +1530,13 @@
    "nulledFrom": 0
   },
   "representatives-worker-pay": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "He condemned official privileges and salaries but made no sourced proposal.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "party-discipline-binding": {
    "value": -1,
@@ -4431,6 +4437,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 172
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

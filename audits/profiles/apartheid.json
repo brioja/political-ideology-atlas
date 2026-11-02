@@ -3553,13 +3553,14 @@
       ]
     },
     "language-defines-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Apartheid ideology treated each African language group (Xhosa, Zulu, Tswana) as a separate nation with its own homeland wherever its members lived, and Afrikaner nationalism defined its own people by language and history; this leans toward agreement, though no source states it in these terms.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "communal-electorates": {
       "value": null,
@@ -4355,6 +4356,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 205
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -1194,12 +1194,13 @@
       ]
     },
     "elite-replacement": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties it to a replacement narrative.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": null,
@@ -1537,12 +1538,13 @@
       ]
     },
     "church-by-bishops": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Episcopal church governance does not apply to Sunni Islam, and no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "clerical-rule": {
       "value": -1,
@@ -1935,12 +1937,13 @@
       "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "A Maoist question premised on socialism; outside this ideology, and no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "land-redistribution": {
       "value": -2,
@@ -4421,6 +4424,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 236
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

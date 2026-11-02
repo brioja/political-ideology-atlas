@@ -597,13 +597,14 @@
       ]
     },
     "war-builds-character": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Sukarno's mass mobilisation campaigns and permanent revolution rhetoric valorised struggle, though a direct statement is not in the sources.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "separate-church-state": {
       "value": -1,
@@ -865,12 +866,13 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Sukarno's anti-imperialist rhetoric linked imperialism to capitalist powers, but exact theory is not in the sources.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "taxation-theft": {
       "value": -2,
@@ -4456,6 +4458,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 164
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

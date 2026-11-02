@@ -263,12 +263,13 @@
       ]
     },
     "regulate-corporations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties monarchism to corporate regulation, and paternalist and laissez-faire royalists disagree.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-welfare": {
       "value": 0,
@@ -1160,12 +1161,13 @@
       "nulledFrom": 0
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Language revival is a nationalist cause that monarchist sources never address, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": -1,
@@ -1244,12 +1246,13 @@
       ]
     },
     "work-for-welfare": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Workfare is a welfare-policy question that monarchist sources never discuss; adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-collaboration": {
       "value": 1,
@@ -2694,12 +2697,13 @@
       "nulledFrom": -1
     },
     "consumerism-harmful": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address consumerism; traditionalists may agree but liberal royalists do not.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "arm-foreign-insurgents": {
       "value": null,
@@ -4011,12 +4015,13 @@
       "nulledFrom": 1
     },
     "women-property-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Monarchists are split: modern crowns have equal succession, but traditional and divine-right strands defended male-line inheritance and custom; no source addresses women's land rights.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-language-many-names": {
       "value": null,
@@ -4328,13 +4333,14 @@
       "nulledFrom": 0
     },
     "resources-common-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The view that appropriators owe compensation to all is foreign to Filmer's and James's derivation of property from the ruler and to Kuehnelt-Leddihn's defence of property; low as no source discusses it.",
       "sources": [
         "s5",
         "s15"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "self-ownership": {
       "value": -1,
@@ -4389,13 +4395,14 @@
       ]
     },
     "tech-with-ancestral-values": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Monarchists keep an ancestral institution within modern states, as Hegel's modern constitutional monarchy shows, but no source frames it this way, so low.",
       "sources": [
         "s10",
         "s17"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "wife-divorce-without-consent": {
       "value": null,
@@ -4518,6 +4525,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 178
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

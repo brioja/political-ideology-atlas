@@ -182,12 +182,13 @@
       "nulledFrom": -1
     },
     "surveillance-ok": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Modern nativists back border enforcement and security measures framed against foreign threats, but no source states a surveillance position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "legalize-drugs": {
       "value": null,
@@ -499,12 +500,13 @@
       ]
     },
     "widespread-small-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties nativism to distributism; the 1856 platform respects vested property rights.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-money-wages": {
       "value": null,
@@ -1704,12 +1706,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Know Nothings pushed Protestant Bible reading in schools, but sources do not mention evolution, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": 0,
@@ -1773,12 +1776,13 @@
       "nulledFrom": 0
     },
     "constituent-assembly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nativists defend the existing US Constitution, so rewriting it is not on their agenda, yet no source states a view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -2345,12 +2349,13 @@
       "nulledFrom": 0
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nativist sources never address price controls, and modern adherents split between market and interventionist wings.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "native-born-offices": {
       "value": 2,
@@ -4457,6 +4462,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 222
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

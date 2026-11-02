@@ -175,12 +175,13 @@
       "nulledFrom": 0
     },
     "cut-welfare": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No welfare state existed; no source ties the Anti-Federalists to a stance, and local relief versus federal cost cannot be resolved.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "worker-ownership": {
       "value": null,
@@ -607,12 +608,13 @@
       ]
     },
     "war-builds-character": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Brutus saw standing armies and military power as destructive of liberty; no sourced praise of war.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "separate-church-state": {
       "value": 0,
@@ -2141,12 +2143,13 @@
       "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Guerrilla-vanguard theory is not in the sources; they relied on conventions and ratification.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "abolish-hereditary-privilege": {
       "value": 1,
@@ -2175,12 +2178,13 @@
       "nulledFrom": -1
     },
     "patriotic-education": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Civic education was valued in republican thought generally, but the sources used do not state a stance on loyalty teaching.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "end-racial-preferences": {
       "value": null,
@@ -4436,6 +4440,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 204
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

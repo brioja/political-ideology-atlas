@@ -1552,12 +1552,13 @@
       "nulledFrom": 0
     },
     "representatives-worker-pay": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses pay of legislators; a populist pay cap is not part of the programme.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "party-discipline-binding": {
       "value": null,
@@ -1603,12 +1604,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Sturzo records the party's rejection of revolution and class war and its appeal to national ends; no source discusses wartime defeatism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "censor-art-for-virtue": {
       "value": null,
@@ -1665,12 +1667,13 @@
       "nulledFrom": -2
     },
     "rural-life-healthier": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party drew strength from rural Catholic communities, but no source claims rural life is morally superior.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reunify-divided-nation": {
       "value": 0,
@@ -3764,12 +3767,13 @@
       "nulledFrom": 0
     },
     "smash-state-machine": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The party rejected revolution and sought to reform a constitutional, decentralised state; no source discusses smashing the state machine.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "free-economic-experiment": {
       "value": null,
@@ -4399,6 +4403,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 234
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

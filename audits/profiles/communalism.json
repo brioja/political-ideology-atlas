@@ -306,12 +306,13 @@
       "nulledFrom": -1
     },
     "empower-international-orgs": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "He wants power moved down to municipal confederations, away from nation-states, and no source endorses supranational bodies like the UN.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "free-trade": {
       "value": -2,
@@ -688,12 +689,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "He rejects technology-centred fixes and favours human-scale, durable production; no source speaks to accelerating change.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "human-enhancement": {
       "value": null,
@@ -1044,12 +1046,13 @@
       ]
     },
     "force-without-un": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "He opposes national power politics and the nation-state, but no source speaks to force abroad.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "reason-over-faith": {
       "value": 1,
@@ -4339,6 +4342,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 182
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -125,12 +125,13 @@
       ]
     },
     "public-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Imperial adherents defended private commerce and colonial enterprise; no source advances public ownership of utilities, so a mild inference against.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-the-wealthy": {
       "value": null,
@@ -376,12 +377,13 @@
       ]
     },
     "open-borders": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Imperial powers claimed rights over others' territory while holding their own borders; no source supports open borders.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "limit-growth": {
       "value": null,
@@ -1154,12 +1156,13 @@
       ]
     },
     "workers-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The mission's texts do not address how workers should organize; Ferry's appeal to national rank hints nationally, but no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "distinct-gender-roles": {
       "value": null,
@@ -4453,6 +4456,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 239
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

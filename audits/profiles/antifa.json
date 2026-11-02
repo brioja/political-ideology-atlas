@@ -362,13 +362,14 @@
       "nulledFrom": -1
     },
     "open-borders": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Migrant solidarity and sanctuary work point to support for open borders; no source states a formal open-borders program. None of the cited sources takes up this statement, so this is a low-confidence reading of the general outlook.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "limit-growth": {
       "value": 0,
@@ -1018,12 +1019,13 @@
       "nulledFrom": 0
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses language revival; anti-nationalism and minority-language solidarity point in different directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": 1,
@@ -1652,12 +1654,13 @@
       "nulledFrom": 1
     },
     "death-penalty": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The state executing people runs against adherents' anti-state and anti-police stance, but no source addresses capital punishment.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -1678,12 +1681,13 @@
       "nulledFrom": -2
     },
     "restrict-pornography": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents split between anti-censorship libertarian and anti-patriarchy feminist views; no source speaks to it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "citizenship-by-descent": {
       "value": null,
@@ -1815,12 +1819,13 @@
       ]
     },
     "precautionary-principle": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Environmentalists take part in the movement, but no source states a position on risk regulation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "collective-defense": {
       "value": null,
@@ -4408,6 +4413,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 255
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

@@ -532,12 +532,13 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A revolutionary socialist republic led by army officers rejected hereditary rule; no source reports adherents praising monarchy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "democracy-best": {
       "value": -1,
@@ -727,12 +728,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The regime wanted development but was cautious and isolated, and no source indicates support for disruptive technological acceleration.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": null,
@@ -1162,12 +1164,13 @@
       "nulledFrom": 0
     },
     "ban-interest": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "State banking, not a religious ban on interest, was the policy; no sources show a prohibition.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-segregation-law": {
       "value": -1,
@@ -3429,12 +3432,13 @@
       ]
     },
     "local-essentials-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Industry, trade and banking were nationalised, so basic services fit state ownership; no source covers local services specifically.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "second-chamber": {
       "value": -2,
@@ -4256,12 +4260,13 @@
       "nulledFrom": -1
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The doctrine was isolationist and statist but the sources do not mention a financial transactions tax.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4359,6 +4364,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 197
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

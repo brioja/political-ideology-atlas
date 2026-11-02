@@ -965,12 +965,13 @@
       ]
     },
     "personal-loyalty-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "A feudal arrangement the sources never mention, plainly outside a modern capitalist movement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "bound-labor": {
       "value": -2,
@@ -999,12 +1000,13 @@
       "nulledFrom": 1
     },
     "single-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never discuss this; industrialists and populists would differ on whether one common good exists.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "jewish-state-israel": {
       "value": null,
@@ -4410,6 +4412,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 286
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -1270,12 +1270,13 @@
    ]
   },
   "heritable-defect-limits": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Deng did not address eugenics; the reform-era state did regulate births, but no source here supports a eugenic position.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "security-forces-accountable": {
    "value": -1,
@@ -1855,12 +1856,13 @@
    ]
   },
   "annexed-territory-occupation": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Deng did not address occupation law; his claims over Taiwan rest on sovereignty, not consent of residents, but no source here addresses annexation.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "subordinate-church-to-state": {
    "value": 1,
@@ -2443,12 +2445,13 @@
    "nulledFrom": 0
   },
   "filial-duty": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Not part of theory; family ethics in official culture favour it, but no source here.",
    "sources": [
     "s7"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "office-by-exam": {
    "value": 1,
@@ -2467,12 +2470,13 @@
    ]
   },
   "no-fault-divorce": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Family law is outside Deng's texts; 1980 PRC marriage law moved to mutual consent but this is not in the sources used.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "recallable-delegates": {
    "value": -1,
@@ -4393,6 +4397,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 156
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

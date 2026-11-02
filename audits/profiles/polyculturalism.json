@@ -195,12 +195,13 @@
    "nulledFrom": 1
   },
   "restrict-hate-speech": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents oppose racism but the sources never address legal speech limits, so this is genuinely open.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "strong-leader": {
    "value": null,
@@ -378,12 +379,13 @@
    "nulledFrom": -1
   },
   "open-borders": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Follows loosely from the idea that boundaries between peoples are blurred and ethno-nationalism is a barrier; no source states an open-borders programme.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "limit-growth": {
    "value": null,
@@ -683,12 +685,13 @@
    "nulledFrom": 1
   },
   "colonial-reparations": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Prashad's anti-colonial work makes reparations plausible, but no source states it for polyculturalism.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "civilizational-union": {
    "value": -1,
@@ -1752,12 +1755,13 @@
    "nulledFrom": 0
   },
   "citizenship-by-descent": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Kelley argues identity cannot be explained by biological descent, which undercuts citizenship by descent; no source discusses nationality law.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "minority-language-support": {
    "value": 1,
@@ -2775,12 +2779,13 @@
    "nulledFrom": -1
   },
   "religious-nation": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Wikipedia describes polyculturalism as treating cultures as fluid and ethno-nationalism as a barrier, which rules out a nation bounded by religion; no source discusses religion and nationhood directly.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "deference-to-leading-power": {
    "value": null,
@@ -3346,12 +3351,13 @@
    "nulledFrom": 1
   },
   "abolish-ip": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Kelley's account of cultural borrowing could favour open exchange but the sources never discuss it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "uniformed-youth": {
    "value": null,
@@ -4467,6 +4473,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 287
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

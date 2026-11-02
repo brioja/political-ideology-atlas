@@ -173,12 +173,13 @@
       "nulledFrom": -1
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Historic democratic socialism, but no source shows the ARF demanding worker ownership of firms.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "surveillance-ok": {
       "value": 0,
@@ -355,12 +356,13 @@
       ]
     },
     "free-trade": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses trade policy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nation-first": {
       "value": 1,
@@ -466,12 +468,13 @@
       "nulledFrom": 0
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives an ARF position on inheritance tax, and a social-justice platform could go either way.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "basic-income": {
       "value": 0,
@@ -677,12 +680,13 @@
       "nulledFrom": 1
     },
     "colonial-reparations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The ARF campaigns for genocide reparations, an analogue, but the sources do not mention colonialism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": -1,
@@ -1202,12 +1206,13 @@
       "nulledFrom": 0
     },
     "expand-fossil-fuels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Armenia has little domestic oil or gas and no source discusses energy production.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assimilate-immigrants": {
       "value": null,
@@ -1490,12 +1495,13 @@
       "nulledFrom": -1
     },
     "emergency-suspend-protections": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses emergency powers, and the ARF's freedoms program and its wartime needs pull in opposite directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "price-controls-essentials": {
       "value": null,
@@ -1833,12 +1839,13 @@
       "nulledFrom": 1
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The ARF opposed Soviet rule, but this specific theory is not in the sources.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": null,
@@ -2250,12 +2257,13 @@
       ]
     },
     "minority-veto": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses unanimity rules or minority vetoes.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "resist-lawless-ruler": {
       "value": 1,
@@ -4362,6 +4370,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 151
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

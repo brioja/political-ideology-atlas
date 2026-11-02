@@ -91,12 +91,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic social teaching favors care for the poor but the sources never discuss a state health service, so adherents' view is unknown and plausibly split between charity-led and state provision.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "raise-minimum-wage": {
       "value": null,
@@ -616,12 +617,13 @@
       ]
     },
     "war-builds-character": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Carlists had a martial tradition, but no source states that war ennobles a nation.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "separate-church-state": {
       "value": -2,
@@ -1237,12 +1239,13 @@
       "nulledFrom": 1
     },
     "elite-replacement": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source records the claim in the tradition.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "proportional-representation": {
       "value": -1,
@@ -1354,12 +1357,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Cattle protection has no basis in Catholic Spanish tradition; Carlist sources do not mention it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-religion-state-schools": {
       "value": -2,
@@ -1472,12 +1476,13 @@
       "nulledFrom": 1
     },
     "restrict-strikes-picketing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sindicatos Libres favored cooperation but no source covers strike law.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-causes-poverty": {
       "value": -1,
@@ -3014,12 +3019,13 @@
       "nulledFrom": -1
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss harassment or contracts; Catholic corporatism cuts both ways between protecting workers and defending traditional contract and property.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "social-market-economy": {
       "value": 0,
@@ -4415,6 +4421,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 214
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

@@ -1280,12 +1280,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The army applied eugenic criteria to conscripts under Vargas, yet no source shows the nationalist mainstream endorsing state discouragement of reproduction.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "security-forces-accountable": {
       "value": null,
@@ -3627,12 +3628,13 @@
       ]
     },
     "open-diplomacy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Diplomacy by secret treaty was normal in the period; no source shows this movement demanding openness.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capital-controls": {
       "value": 2,
@@ -4349,6 +4351,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 172
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

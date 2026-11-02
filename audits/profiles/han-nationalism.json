@@ -1693,12 +1693,13 @@
    "nulledFrom": 1
   },
   "citizenship-by-descent": {
-   "value": 2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "The ethnic definition of the nation by Han bloodline points to descent-based citizenship, though no source states a citizenship rule.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 2
   },
   "minority-language-support": {
    "value": -1,
@@ -2446,12 +2447,13 @@
    ]
   },
   "office-by-exam": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The Confucian tradition favors examination, yet the stated sources don't mention it; weak.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "foreign-takeover-block": {
    "value": null,
@@ -4410,6 +4412,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 176
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

@@ -1179,12 +1179,13 @@
       "nulledFrom": 0
     },
     "workers-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is national but does not organise the working class as such, and no source links the two.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "distinct-gender-roles": {
       "value": null,
@@ -1812,12 +1813,13 @@
       "nulledFrom": -1
     },
     "constituent-assembly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Constitution-making is not detailed; a Circassian assembly appears in no source I opened.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -2317,12 +2319,13 @@
       ]
     },
     "minority-veto": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses consensus or veto rules; the historic tribal democracy is mentioned only in general terms.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "resist-lawless-ruler": {
       "value": null,
@@ -4539,6 +4542,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 187
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

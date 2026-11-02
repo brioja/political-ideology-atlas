@@ -523,12 +523,13 @@
       ]
     },
     "democracy-best": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "LCR works through the democratic Republican party and affirms equality and liberty, though no source states the claim about democracy outright.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "direct-votes": {
       "value": null,
@@ -566,12 +567,13 @@
       "nulledFrom": -1
     },
     "political-violence-never": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The movement's strategy is argument, litigation and party work, and Sullivan calls for belonging rather than rebellion; no source states an absolute ban.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "war-builds-character": {
       "value": null,
@@ -649,12 +651,13 @@
       "nulledFrom": -1
     },
     "colonial-reparations": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Free-market, personal-responsibility conservatives oppose reparations as a rule; no source addresses the issue directly.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "civilizational-union": {
       "value": null,
@@ -717,12 +720,13 @@
       ]
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Individual liberty favours freedom while social conservatism raises doubts; no source addresses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": null,
@@ -734,12 +738,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Security hawkishness and liberty instincts conflict; adherents are split and no source addresses it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -1,
@@ -993,12 +998,13 @@
       "nulledFrom": -1
     },
     "jewish-state-israel": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Strong-defense Republicans are generally pro-Israel; no source states a position.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "diaspora-return-right": {
       "value": null,
@@ -1027,12 +1033,13 @@
       ]
     },
     "school-vouchers": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Free-market, limited-government conservatism usually favours vouchers; no source states it directly.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "avoid-deficit-stimulus": {
       "value": 1,
@@ -1409,12 +1416,13 @@
       "nulledFrom": 0
     },
     "right-to-buy-council-homes": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Free-market, property-owning conservatism supports tenant purchase, but the sources do not mention it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restrict-strikes-picketing": {
       "value": null,
@@ -1601,12 +1609,13 @@
       "nulledFrom": -1
     },
     "rural-life-healthier": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Gay conservatives are largely urban and the claim is not in the sources.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "reunify-divided-nation": {
       "value": null,
@@ -2111,12 +2120,13 @@
       "nulledFrom": -1
     },
     "patriotic-education": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Strong-defense Republicans usually support patriotic schooling, but the sources do not mention it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "end-racial-preferences": {
       "value": null,
@@ -4332,6 +4342,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 207
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

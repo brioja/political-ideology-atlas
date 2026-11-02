@@ -943,12 +943,13 @@
       ]
     },
     "hereditarian-race": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is cultural and civic and no source links it to racial hierarchy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "organic-representation": {
       "value": null,
@@ -1227,12 +1228,13 @@
       "nulledFrom": -1
     },
     "elite-replacement": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Sardism to replacement conspiracy claims.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": null,
@@ -1297,12 +1299,13 @@
       "nulledFrom": -1
     },
     "discourage-race-mixing": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Sardism to such views.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-moral-worth": {
       "value": null,
@@ -1383,20 +1386,22 @@
       ]
     },
     "trade-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Export-surplus doctrine is not in the sources; island isolation is cited as a handicap for export, but no mercantilist line follows.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "population-transfer": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is documented as peaceful and democratic; no source supports expelling minorities.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "initiating-force-wrong": {
       "value": null,
@@ -2012,12 +2017,13 @@
       ]
     },
     "apostasy-punishable": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Penalising leaving a religion contradicts the liberal-democratic character of Sardism and has no source support.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "women-must-cover": {
       "value": -2,
@@ -2080,12 +2086,13 @@
       "nulledFrom": 0
     },
     "no-bailouts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bailout policy is not in the sources, and strands would differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "courts-bound-by-majority": {
       "value": null,
@@ -2668,12 +2675,13 @@
       "nulledFrom": 0
     },
     "minority-conspiracy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Sardism to such claims.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": null,
@@ -2779,12 +2787,13 @@
       "nulledFrom": -1
     },
     "capitalism-progressive": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Marxist-style appraisal of capitalism is not in the sources, and strands differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-equality-needs-economic-change": {
       "value": 0,
@@ -2855,20 +2864,22 @@
       ]
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Sardism to denial.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Criminal penalties for same-sex relations have no source basis in Sardism and contradict its liberal-democratic character.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "suppress-opposition": {
       "value": -2,
@@ -3935,12 +3946,13 @@
       "nulledFrom": -1
     },
     "voter-id": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No stated position; Sardism is peaceful and democratic but the sources do not mention voter identification.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religious-equal-recognition": {
       "value": null,
@@ -4277,13 +4289,14 @@
       "nulledFrom": 0
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never mention a financial transactions tax; its neocolonial-exploitation critique (s3) points mildly one way but adherents across the left-right spectrum are split.",
       "sources": [
         "s3",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4402,6 +4415,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 204
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 13
     }
   ]
 }

@@ -1112,12 +1112,13 @@
       ]
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats the link between economic and political freedom, and adherents do not claim political freedom as their goal.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": null,
@@ -1372,12 +1373,13 @@
       ]
     },
     "restrict-conversion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Judaism discourages conversion and does not proselytise, but adherents are split over whether the law should restrict it, and no source addresses the matter.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-cattle-slaughter": {
       "value": -2,
@@ -1544,12 +1546,13 @@
       "nulledFrom": -1
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to price controls.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-controls-media": {
       "value": null,
@@ -1947,12 +1950,13 @@
       "nulledFrom": -1
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No stated view; the community prizes autonomy but there is no source on regional federalism.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": -2,
@@ -2137,12 +2141,13 @@
       "nulledFrom": 0
     },
     "courts-bound-by-majority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to constitutional constraints on majorities.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "gender-parity-bodies": {
       "value": -2,
@@ -3545,12 +3550,13 @@
       "nulledFrom": 0
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses legislative structure; Satmar rejects participating in the state altogether.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": null,
@@ -3771,12 +3777,13 @@
       "nulledFrom": 0
     },
     "capital-controls": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss capital flows, and adherents are split between communal economic insularity and ordinary commerce.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-arms-monopoly": {
       "value": null,
@@ -4495,6 +4502,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 224
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

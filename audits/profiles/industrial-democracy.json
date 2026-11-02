@@ -480,12 +480,13 @@
       "nulledFrom": 1
     },
     "basic-income": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Unions and labour-left theorists are split; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tariffs-protect-industry": {
       "value": 0,
@@ -584,12 +585,13 @@
       ]
     },
     "right-to-secede": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Secession by regions concerns territorial politics, whereas industrial democracy concerns who governs firms; no source links the two.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "natural-rulers": {
       "value": -2,
@@ -868,12 +870,13 @@
       ]
     },
     "collective-farming": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Industrial democracy concerns industrial firms; cooperative farming appears in cooperative movements but no source makes collectivised agriculture a requirement.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capitalism-causes-war": {
       "value": null,
@@ -1177,12 +1180,13 @@
       ]
     },
     "workers-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Unions organised internationally but the sources don't address the question.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "distinct-gender-roles": {
       "value": null,
@@ -4449,6 +4453,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 169
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

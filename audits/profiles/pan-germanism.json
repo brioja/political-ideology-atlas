@@ -1378,12 +1378,13 @@
       ]
     },
     "ban-extremist-parties": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The League itself was extreme, but no source states its stance on banning parties.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-as-non-domination": {
       "value": null,
@@ -1643,12 +1644,13 @@
       ]
     },
     "death-penalty": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Authoritarian, militarist nationalism leans toward harsh punishment, but no source states it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "sex-ed-in-schools": {
       "value": -1,
@@ -1786,12 +1788,13 @@
       ]
     },
     "property-serves-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nation-first and propertied membership pull in different directions, and no source states a view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "soviet-state-capitalist": {
       "value": null,
@@ -2739,12 +2742,13 @@
       "nulledFrom": -2
     },
     "purge-loanwords": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The League's statutes aim at preserving German identity, and the language-purity movements in that milieu supported this, though the source does not mention loanwords.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "treaties-binding": {
       "value": null,
@@ -3933,12 +3937,13 @@
       "nulledFrom": 1
     },
     "religious-equal-recognition": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses legal precedence among interpretations of a religion; Away from Rome favoured Protestant churches on national grounds but the League itself stayed denominationally mixed.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "democracy-is-procedure": {
       "value": -1,
@@ -4375,6 +4380,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 212
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

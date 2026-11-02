@@ -211,12 +211,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses firearms; the movement's emphasis on order and patriotism cuts both ways.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": null,
@@ -1050,12 +1051,13 @@
       "nulledFrom": 0
     },
     "revive-national-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses language revival; French was already the state language in their setting.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workplace-democracy": {
       "value": -1,
@@ -1195,12 +1197,13 @@
       ]
     },
     "racial-segregation-law": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Biétry was antisemitic but no source documents segregation by race law; unknown.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "state-class-instrument": {
       "value": -2,
@@ -1977,12 +1980,13 @@
       "nulledFrom": 1
     },
     "leader-cult": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Biétry was a charismatic leader but no source documents a leader cult.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "equal-parenting": {
       "value": null,
@@ -2893,12 +2897,13 @@
       "nulledFrom": 0
     },
     "suppress-opposition": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A strong authoritarian state is described, but no source records Biétry calling for suppression of opposition; he sat in parliament as an independent.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "punish-blasphemy": {
       "value": -1,
@@ -3124,12 +3129,13 @@
       "nulledFrom": 1
     },
     "racial-franchise": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Antisemitic but no source documents exclusion of Jews from the vote.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "online-participation": {
       "value": null,
@@ -3490,13 +3496,14 @@
       ]
     },
     "local-essentials-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The program opposes state collectivism but backs a strong state and social assistance; no source addresses local services.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "second-chamber": {
       "value": 0,
@@ -4442,6 +4449,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

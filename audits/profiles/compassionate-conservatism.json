@@ -1144,12 +1144,13 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Traditional family support but no sourced support for legal role distinctions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-interest": {
       "value": -2,
@@ -4157,12 +4158,13 @@
       "nulledFrom": 1
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bush's tax cuts targeted income taxes; no source discusses consumption taxes.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": 1,
@@ -4356,6 +4358,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 215
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

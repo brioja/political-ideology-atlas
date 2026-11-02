@@ -220,12 +220,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between a workers' militia tradition and modern gun-control views; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": -2,
@@ -734,20 +735,22 @@
       "nulledFrom": -2
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address technological disruption; adherents split between welcoming development and fearing capitalist misuse.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source in the tradition addresses it, and adherents have no settled view on bodily enhancement.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "algorithmic-government": {
       "value": null,
@@ -2033,12 +2036,13 @@
       "nulledFrom": 0
     },
     "rights-where-you-live": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents vary on Zionism and emigration; no source.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "material-conditions-drive-history": {
       "value": 1,
@@ -4393,6 +4397,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 284
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

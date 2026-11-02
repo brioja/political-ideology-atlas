@@ -241,12 +241,13 @@
       ]
     },
     "legalize-sex-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches the question; liberal individualism and conservative republican morality pull in opposite directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "decide-locally": {
       "value": null,
@@ -368,12 +369,13 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never cover intervention; Kemalism's non-expansionist foreign policy and Western orientation point in opposite directions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-borders": {
       "value": null,
@@ -456,12 +458,13 @@
       "nulledFrom": -1
     },
     "land-value-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports a single land tax; the party sought lower, broad-based taxation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "tax-inheritance": {
       "value": 0,
@@ -1684,12 +1687,13 @@
       ]
     },
     "restrict-pornography": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss pornography, and liberal and conservative-republican instincts point in different directions.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "citizenship-by-descent": {
       "value": -1,
@@ -1889,12 +1893,13 @@
       ]
     },
     "flat-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party sought lower taxes overall, but no source mentions a flat income tax, so neutral.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "character-from-environment": {
       "value": 1,
@@ -2426,12 +2431,13 @@
       ]
     },
     "paid-care-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ağaoğlu wanted women educated and active in public life, but no source addresses paying for domestic work.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "filial-duty": {
       "value": null,
@@ -2572,12 +2578,13 @@
       "nulledFrom": -1
     },
     "pronatalist-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ağaoğlu tied women's emancipation to better motherhood, but no source documents state incentives, so adherents are split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "residents-only-property": {
       "value": null,
@@ -3128,12 +3135,13 @@
       "nulledFrom": 1
     },
     "wealth-concentration-endangers-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ağaoğlu opposed inherited privilege and monopolies were attacked by the party, but no source states that wealth endangers liberty.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "open-lgbt-military-service": {
       "value": null,
@@ -3179,12 +3187,13 @@
       ]
     },
     "term-limits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ağaoğlu criticized entrenched power but the sources never mention term limits.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "vote-delegation": {
       "value": null,
@@ -3683,12 +3692,13 @@
       "nulledFrom": 0
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party wanted lower taxes and less state intervention, but no source mentions binding fiscal rules.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restructure-world-economy": {
       "value": null,
@@ -4326,6 +4336,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 180
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

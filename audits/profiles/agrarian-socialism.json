@@ -1199,12 +1199,13 @@
       "nulledFrom": -1
     },
     "elite-replacement": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports a replacement theory; it blames capitalism, not immigration.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": null,
@@ -2210,13 +2211,14 @@
       "nulledFrom": -2
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The CCF and SRs favoured democratic assemblies and legislative power over social reform, but also adopted rights language; no source settles entrenchment.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": null,
@@ -4467,6 +4469,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 239
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

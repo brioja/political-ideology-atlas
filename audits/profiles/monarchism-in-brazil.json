@@ -398,12 +398,13 @@
       "nulledFrom": -1
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source treats technology; the movement's focus is institutional and moral, so no lean can be drawn.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": null,
@@ -1806,12 +1807,13 @@
       ]
     },
     "no-land-for-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Brazil has no such territorial dispute; no source treats it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-serves-common-good": {
       "value": null,
@@ -2089,12 +2091,13 @@
       "nulledFrom": -1
     },
     "economic-self-sufficiency": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Autarky is not part of the program; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "trade-labor-env-standards": {
       "value": null,
@@ -2657,12 +2660,13 @@
       ]
     },
     "minority-conspiracy": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Opposed in spirit by the reconciliation message of C2; no source discusses conspiracies.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": -2,
@@ -2682,12 +2686,13 @@
       "nulledFrom": 1
     },
     "local-production": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links the monarchist program to localist economics; economic organization is left to the Prime Minister's government (intro).",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "informal-organisation": {
       "value": null,
@@ -3537,12 +3542,13 @@
       ]
     },
     "racial-group-interests": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Opposed by the call to unite all Brazilians (C1); no source addresses racial organizing.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "racial-pride": {
       "value": null,
@@ -4386,6 +4392,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 220
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

@@ -110,12 +110,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Reformists use progressive taxation to spread wealth, and Bernstein favoured shifting tax burdens off small producers, though no source here gives a forceful call for far higher rates.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "unions-good": {
       "value": 2,
@@ -1138,12 +1139,13 @@
       "nulledFrom": -1
     },
     "assimilate-immigrants": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Reformist parties are split between integration with cultural pluralism and expectations of assimilation, and no source settles it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "elite-replacement": {
       "value": -2,
@@ -1421,12 +1423,13 @@
       ]
     },
     "long-naturalization-wait": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Equal rights and citizenship lean reformists toward moderate waiting periods, though centre-left parties differ and no source sets a length.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "representatives-worker-pay": {
       "value": 0,
@@ -4287,6 +4290,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 206
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

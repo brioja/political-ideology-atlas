@@ -3991,12 +3991,13 @@
    ]
   },
   "disputed-territory-plebiscite": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The constitution allows referendums on important matters, but no source addresses votes on disputed territory.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "keep-colonial-borders": {
    "value": null,
@@ -4285,6 +4286,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 88
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 1
   }
  ]
 }

@@ -2008,12 +2008,13 @@
       ]
     },
     "apostasy-punishable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kahanism wants halakha as state law, which treats apostasy as a sin, but no source says Kahane advocated punishing it; adherents are treated as split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-must-cover": {
       "value": null,
@@ -3684,12 +3685,13 @@
       "nulledFrom": -1
     },
     "future-generations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kahane stressed Jewish continuity across generations, but no source addresses environmental duty.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-distinct-values": {
       "value": null,
@@ -4432,6 +4434,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 300
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

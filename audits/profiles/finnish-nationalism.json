@@ -190,12 +190,13 @@
       ]
     },
     "worker-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalist workers rejected class-struggle socialism, and no source shows support for collective worker ownership.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "surveillance-ok": {
       "value": null,
@@ -521,12 +522,13 @@
       "nulledFrom": -2
     },
     "corporatist-bargaining": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Finns Party defends workers without socialism, but no source supports state-recognised wage-setting bodies.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "one-party-rule": {
       "value": -2,
@@ -914,12 +916,13 @@
       "nulledFrom": 0
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Finns Party criticises elites but no sourced doctrine.",
       "sources": [
         "s7"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -1,
@@ -4265,6 +4268,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 77
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

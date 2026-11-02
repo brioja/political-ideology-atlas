@@ -478,12 +478,13 @@
    ]
   },
   "widespread-small-property": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Geolibertarianism shares land rents rather than redistributing holdings; no source calls for spreading property among small owners.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "abolish-money-wages": {
    "value": -2,
@@ -703,20 +704,22 @@
    "nulledFrom": -1
   },
   "industrial-civilization-disaster": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Pro-market and pro-growth Georgist; no source states it but the claim conflicts with his stance.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "accelerate-technology": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source on technology pace; adherents are not committed either way.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "human-enhancement": {
    "value": null,
@@ -4330,6 +4333,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 147
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

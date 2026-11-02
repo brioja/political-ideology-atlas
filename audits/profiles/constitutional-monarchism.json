@@ -158,12 +158,13 @@
       ]
     },
     "worker-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Radical economic restructuring is at odds with the gradualist, institution-preserving temper of the movement, though no source addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "surveillance-ok": {
       "value": null,
@@ -175,12 +176,13 @@
       "nulledFrom": 0
     },
     "legalize-drugs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A matter of ordinary politics on which adherents differ; no source ties it to monarchy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-hate-speech": {
       "value": 0,
@@ -864,12 +866,13 @@
       "nulledFrom": 0
     },
     "conscription": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Military manpower is a matter for ministers in constitutional monarchies, and no source ties it to the Crown.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "exit-over-voice": {
       "value": -1,
@@ -3773,12 +3776,13 @@
       "nulledFrom": 0
     },
     "representatives-worker-pay": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Pay-capped representatives are a socialist device foreign to Bagehot-style parliament, though no source mentions it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "central-bank-independence": {
       "value": null,
@@ -4262,6 +4266,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 84
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

@@ -2498,12 +2498,13 @@
       ]
     },
     "individual-pension-accounts": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Private accounts replace a state program with market arrangements, fitting fusionism's economic outlook, though sources do not mention pensions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "land-use-tenure": {
       "value": -2,
@@ -4368,6 +4369,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 206
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

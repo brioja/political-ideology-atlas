@@ -798,12 +798,13 @@
       ]
     },
     "distribute-by-need": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Distribution by need is a communist principle; Dmowski's anti-socialist nationalism rejects it, though no source addresses the formula itself.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "production-for-use": {
       "value": null,
@@ -897,12 +898,13 @@
       "nulledFrom": -1
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source opened discusses the material preconditions of freedom; Polish nationalism puts national independence first and is split on social rights.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "media-academia-power": {
       "value": null,
@@ -1056,12 +1058,13 @@
       ]
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source opened discusses government by moral example; Dmowski stressed national discipline and institutions, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-self-determination": {
       "value": 2,
@@ -1506,12 +1509,13 @@
       "nulledFrom": 1
     },
     "representatives-worker-pay": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches representatives' pay; this is a socialist demand not part of Polish nationalism.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "party-discipline-binding": {
       "value": 0,
@@ -2204,12 +2208,13 @@
       "nulledFrom": -1
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalists prefer majority will, yet the program values constitutional order; no source states a view.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": null,
@@ -2254,28 +2259,31 @@
       ]
     },
     "animal-suffering-matters": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses animals; this is widely held across the spectrum, so mild agreement.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "animal-use-humane": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses animal use; mainstream conservative view assumed with low confidence.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "noblesse-oblige": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic social duty of the wealthy is part of the conservative tradition, but no source states it; mild.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "withdraw-from-politics": {
       "value": -2,
@@ -2387,12 +2395,13 @@
       ]
     },
     "male-disadvantage-attention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses it; conservatives often endorse attention to men and boys but sources are silent.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "domestic-violence-symmetry": {
       "value": null,
@@ -4360,6 +4369,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 229
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

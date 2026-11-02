@@ -687,12 +687,13 @@
       "nulledFrom": 1
     },
     "colonial-reparations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "It is anti-imperialist and neocolonialism is blamed for mass migrations, but the sources do not mention reparations.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": -1,
@@ -2558,12 +2559,13 @@
       ]
     },
     "residents-only-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The programme contains housing and territorial measures, but the sources do not mention such a limit.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "job-guarantee": {
       "value": 1,
@@ -3036,12 +3038,13 @@
       ]
     },
     "online-participation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The charter's direct participation ideal supports it, but the sources do not mention online tools.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "open-government-data": {
       "value": null,
@@ -4282,6 +4285,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 105
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

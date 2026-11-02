@@ -120,12 +120,13 @@
       "nulledFrom": -1
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address ownership of industry, and Jewish feminists range from socialist to liberal, so this is genuinely split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-the-wealthy": {
       "value": null,
@@ -554,12 +555,13 @@
       "nulledFrom": -1
     },
     "democracy-best": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Jewish feminists work through democratic institutions such as the Israeli courts and legislature, and Greenberg wants women to take part in communal decisions, though no source ranks democracy over bad outcomes.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "direct-votes": {
       "value": null,
@@ -851,12 +853,13 @@
       "nulledFrom": 0
     },
     "profit-exploitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Some Jewish feminists are Marxist-influenced but the movement as a whole is not, and sources never address it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "dictatorship-of-proletariat": {
       "value": null,
@@ -1721,12 +1724,13 @@
       "nulledFrom": -1
     },
     "cultures-equal-different": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Jewish feminists criticise patriarchal elements in their own tradition while valuing it; no source gives a view on comparing cultures.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "death-penalty": {
       "value": null,
@@ -1863,12 +1867,13 @@
       "nulledFrom": 0
     },
     "no-land-for-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Jewish feminists are divided on Israeli territorial questions, and no source records a movement view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-serves-common-good": {
       "value": null,
@@ -2101,12 +2106,13 @@
       "nulledFrom": 1
     },
     "rights-where-you-live": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Jewish feminists in the US and elsewhere work for equal rights within their home countries, though Zionism complicates the picture; no source states this as doctrine.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "material-conditions-drive-history": {
       "value": 0,
@@ -2671,12 +2677,13 @@
       "nulledFrom": -1
     },
     "pronatalist-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Jewish communal concern with birth rates pulls one way and reproductive-autonomy views pull another; no source resolves it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "residents-only-property": {
       "value": null,
@@ -2988,12 +2995,13 @@
       "nulledFrom": -2
     },
     "participatory-democracy": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Greenberg wants women to take part in halakhic decision-making and communal leadership, and the movement's logic is wider participation in authority, though no source extends this to national democracy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "intersecting-oppressions": {
       "value": 1,
@@ -4500,6 +4508,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 267
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

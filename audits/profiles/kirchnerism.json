@@ -372,12 +372,13 @@
       ]
     },
     "open-borders": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses open borders; the movement is welcoming to immigrants but strongly focused on national sovereignty, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-growth": {
       "value": -2,
@@ -700,12 +701,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states a view; the movement promoted oil, gas and mining development, but Argentine progressive politics also supports environmental protection, so adherents are split.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -886,12 +888,13 @@
       "nulledFrom": -1
     },
     "conscription": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The speech wants a professionalized military; Argentina ended conscription in 1994, and no source supports reinstating it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "exit-over-voice": {
       "value": -2,
@@ -1762,12 +1765,13 @@
       ]
     },
     "independent-nuclear-deterrent": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The speech stresses multilateral law and a professional, development-oriented military; Argentina has no weapons programme and no source proposes one.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "direct-election-head-of-state": {
       "value": 1,
@@ -2058,12 +2062,13 @@
       ]
     },
     "gender-parity-bodies": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Argentina's gender quota tradition and the movement's liberal gender approach support it, but no source states the exact policy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "economic-self-sufficiency": {
       "value": -1,
@@ -4386,6 +4391,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 157
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

@@ -1601,12 +1601,13 @@
       ]
     },
     "censor-art-for-virtue": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A liberal movement that strengthened individual freedoms would not endorse moral censorship, though no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "unlimited-reelection": {
       "value": null,
@@ -1763,12 +1764,13 @@
       ]
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement pursued national unification and industrial protection, but no source ties independence to property restructuring.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "constituent-assembly": {
       "value": 1,
@@ -4399,6 +4401,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 206
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

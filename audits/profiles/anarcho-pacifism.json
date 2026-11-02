@@ -1967,12 +1967,13 @@
       "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A debate internal to Marxism-Leninism that the nonviolent anarchist sources never mention.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "land-redistribution": {
       "value": 1,
@@ -2008,12 +2009,13 @@
       ]
     },
     "women-must-cover": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A state dress mandate is coercion, which the strand refuses; the sources do not mention dress codes, so the answer is derived from nonviolence.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "common-currency": {
       "value": null,
@@ -2393,12 +2395,13 @@
       "nulledFrom": 1
     },
     "slavery-not-civil-war-cause": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A historical question the sources never address; no ideological position follows.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "preserve-contested-monuments": {
       "value": null,
@@ -4373,6 +4376,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 197
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -599,12 +599,13 @@
       ]
     },
     "war-builds-character": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Palacký's small-nation outlook sought security through legal equality; no source ties Czech nationalism to war as a virtue.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "separate-church-state": {
       "value": 1,
@@ -656,12 +657,13 @@
       ]
     },
     "equal-outcomes": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Left nationalist parties exist, but no source supports it as a national position; weak lean against.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "indigenous-land-authority": {
       "value": null,
@@ -706,12 +708,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Revival romanticised the Czech landscape and countryside, but no source states a view on nature's intrinsic worth.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -4266,6 +4269,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 111
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

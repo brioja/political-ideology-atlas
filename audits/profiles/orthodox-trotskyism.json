@@ -2256,12 +2256,13 @@
    "nulledFrom": 0
   },
   "animal-use-humane": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never address animal use, so the tradition has no stated position and adherents differ.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "noblesse-oblige": {
    "value": -1,
@@ -4304,6 +4305,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 183
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 1
   }
  ]
 }

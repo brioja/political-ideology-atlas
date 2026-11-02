@@ -1047,12 +1047,13 @@
    ]
   },
   "rule-by-example": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source claims rulers' moral example should replace law; the programme is built on constitutional and state institutions, so this is a weak inference.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "national-self-determination": {
    "value": 2,
@@ -1694,12 +1695,13 @@
    ]
   },
   "constituent-assembly": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The constitution was adopted by party convention and Nasser's charter by an appointed congress; no source demands an elected constituent assembly.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "restrict-freedoms-for-growth": {
    "value": 1,
@@ -4054,12 +4056,13 @@
    "nulledFrom": -1
   },
   "disputed-territory-plebiscite": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents backed self-determination of Arabs yet were hostile to disputed-territory votes that could cede territory; no source discusses plebiscites.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "keep-colonial-borders": {
    "value": -2,
@@ -4377,6 +4380,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 175
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

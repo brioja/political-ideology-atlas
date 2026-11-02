@@ -797,12 +797,13 @@
    ]
   },
   "ban-cartels": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties Somali nationalism to antitrust policy, and Somalia's small economy gave the movement no occasion to take a position on cartels.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "no-bailouts": {
    "value": 0,
@@ -959,12 +960,13 @@
    ]
   },
   "entrenched-bill-of-rights": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The 1960 constitution has rights provisions, but no source says nationalists demanded entrenchment.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "colonial-treaties-void": {
    "value": 2,
@@ -1840,12 +1842,13 @@
    ]
   },
   "war-builds-character": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Nationalists fought wars, but no source states the view that war builds national character.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "separate-church-state": {
    "value": -2,
@@ -2269,12 +2272,13 @@
    ]
   },
   "diaspora-return-right": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Nationalists want Somalis everywhere to be part of Somalia, and refugees from Ogaden fled to Somalia, but no source states a diaspora right of return.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "revive-national-language": {
    "value": 0,
@@ -2819,12 +2823,13 @@
    ]
   },
   "censor-art-for-virtue": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Poetry is central to Somali nationalism, as Samatar's study of oral poetry shows, but no source gives a censorship stance.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "unlimited-reelection": {
    "value": 0,
@@ -2869,12 +2874,13 @@
    ]
   },
   "rural-life-healthier": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Pastoral life is central to Somali culture in the nationalist poetry tradition, but no source states a moral claim about rural life.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "reunify-divided-nation": {
    "value": 2,
@@ -3326,12 +3332,13 @@
    "nulledFrom": -1
   },
   "martyrs-honoured": {
-   "value": 1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "The nationalist tradition honours the Darawiish and those killed in the Ogaden struggle; no source details the practice, so medium.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "politics-spiritual-struggle": {
    "value": 0,
@@ -4189,12 +4196,13 @@
    "nulledFrom": 0
   },
   "national-resource-control": {
-   "value": 1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Barre's nationalist regime nationalised key sectors and a nation-state ideology favours national control of resources, though no source states it directly.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "distribution-by-process": {
    "value": null,
@@ -4319,6 +4327,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 87
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 8
   }
  ]
 }

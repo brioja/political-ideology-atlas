@@ -409,12 +409,13 @@
       "nulledFrom": -1
     },
     "expand-nuclear": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source or principle decides the issue.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revolution-justified": {
       "value": 0,
@@ -867,12 +868,13 @@
       "nulledFrom": 0
     },
     "capitalism-causes-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Butler criticises state violence and profiteering, but no source ties war to capitalism as a necessity.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "taxation-theft": {
       "value": -2,
@@ -3893,13 +3895,14 @@
       ]
     },
     "ban-fgm": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between concern for harm to women and suspicion of universalist, colonial framing of non-Western practices; no source settles it.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-property-inheritance": {
       "value": null,
@@ -4434,6 +4437,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 277
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

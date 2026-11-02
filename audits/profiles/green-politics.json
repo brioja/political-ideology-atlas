@@ -2047,12 +2047,13 @@
       "nulledFrom": 1
     },
     "material-conditions-drive-history": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Greens hold that values and ecological awareness drive change, though no source addresses historical causation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-cartels": {
       "value": 1,
@@ -2106,12 +2107,13 @@
       ]
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Greens value social responsibility, but no source addresses replacing material incentives; adherents split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": -2,
@@ -2532,12 +2534,13 @@
       ]
     },
     "foreign-land-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Greens are cosmopolitan but also oppose corporate land purchases; adherents are split and no source states a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "disparate-impact-discrimination": {
       "value": null,
@@ -4382,6 +4385,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 191
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

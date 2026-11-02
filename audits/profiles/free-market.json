@@ -248,12 +248,13 @@
       "nulledFrom": -1
     },
     "legalize-drugs": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Friedman is widely known for supporting drug legalization, though the opened sources do not cover it and other market advocates disagree.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "restrict-hate-speech": {
       "value": null,
@@ -1233,12 +1234,13 @@
       "nulledFrom": -1
     },
     "workers-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address class organization along national lines, and the doctrine is not class-based.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "distinct-gender-roles": {
       "value": -1,
@@ -4509,6 +4511,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 233
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

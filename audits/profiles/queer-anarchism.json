@@ -889,12 +889,13 @@
       ]
     },
     "media-academia-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source compares the power of media and universities with elected officials; queer anarchists locate power in state and capital instead.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "hereditarian-race": {
       "value": -2,
@@ -1109,12 +1110,13 @@
       "nulledFrom": 0
     },
     "dominated-front": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-imperialist in spirit but opposed to states forming blocs; no source addresses this, so adherents are neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-nation": {
       "value": -2,
@@ -4368,6 +4370,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 248
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

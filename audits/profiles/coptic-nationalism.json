@@ -1196,12 +1196,13 @@
    ]
   },
   "proportional-representation": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents press for fair representation of Copts, which proportional systems serve better than majority rules, but no source states a preference.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "national-mission": {
    "value": null,
@@ -3300,12 +3301,13 @@
    "nulledFrom": 0
   },
   "homeland-cultural-centre": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Egypt is both homeland and home for most Copts, with a large diaspora; no source describes the homeland as a diaspora centre.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "culture-before-state": {
    "value": -1,
@@ -4337,6 +4339,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 118
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

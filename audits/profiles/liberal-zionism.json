@@ -175,13 +175,14 @@
       ]
     },
     "property-fundamental": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Market liberalism supports property rights but the Progressive social-liberal strand accepted limits; no source gives a defining view.",
       "sources": [
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "regulate-corporations": {
       "value": 0,
@@ -798,13 +799,14 @@
       ]
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Zionism has promoted Jewish immigration and demographic majority, and no source supports active population limits.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -842,12 +844,13 @@
       "nulledFrom": -1
     },
     "unbreakable-encryption": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal civil liberties argue for it while Israeli security thinking argues against, and no source settles the question.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restore-past-order": {
       "value": -2,
@@ -1651,20 +1654,22 @@
       "nulledFrom": -2
     },
     "long-naturalization-wait": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Israel gives Jews immediate citizenship under the Law of Return, and no source gives liberal Zionist views on waits for others.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "representatives-worker-pay": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source documents a view on legislator pay, and the market-liberal tradition does not call for such caps.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "party-discipline-binding": {
       "value": 0,
@@ -1780,12 +1785,13 @@
       ]
     },
     "reunify-divided-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The statement concerns divided states like Korea, which liberal Zionist sources never address.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "educated-out-of-touch": {
       "value": -1,
@@ -2243,12 +2249,13 @@
       ]
     },
     "trade-labor-env-standards": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Free-trade liberals and social liberals would split on binding standards, and no source gives a position.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "moral-incentives": {
       "value": -2,
@@ -2277,12 +2284,13 @@
       "nulledFrom": 1
     },
     "history-own-civilization": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal Zionists value Jewish history and Hebrew culture, but no source says how school history should be centred.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizing-tutelage": {
       "value": -2,
@@ -2956,13 +2964,14 @@
       "nulledFrom": -2
     },
     "treaties-binding": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal rule-of-law commitments and the Declaration's pledge to uphold the UN Charter and agreements support treating treaties as binding; no source addresses internal nations directly.",
       "sources": [
         "s2",
         "s6"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "cooperative-communities": {
       "value": null,
@@ -4188,13 +4197,14 @@
       "nulledFrom": -1
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between market-liberal and social-democratic positions, and the sources do not mention a negative income tax.",
       "sources": [
         "s5",
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-suffrage": {
       "value": 2,
@@ -4623,6 +4633,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 228
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 10
     }
   ]
 }

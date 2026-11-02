@@ -777,12 +777,13 @@
       "nulledFrom": 1
     },
     "return-to-foraging": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Social liberalism is a reformist industrial-era ideology committed to progress through the welfare state (s3), so a return to foraging is rejected. No source discusses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
       "value": -2,
@@ -4481,6 +4482,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 252
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

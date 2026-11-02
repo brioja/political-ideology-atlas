@@ -684,12 +684,13 @@
       ]
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist tradition rejects Malthusian population arguments and places causes in social structure; no source addresses it directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -1258,12 +1259,13 @@
       ]
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives the faction a view on settler states; split because Soviet anti-colonialism points one way and the Soviet line on Israel is unstated here.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "uniform-civil-code": {
       "value": 1,
@@ -1455,12 +1457,13 @@
       ]
     },
     "party-commands-army": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Soviet practice, but no source on Finnish Taistoist views.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "long-naturalization-wait": {
       "value": null,
@@ -1472,12 +1475,13 @@
       "nulledFrom": -1
     },
     "representatives-worker-pay": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A Leninist tradition (Paris Commune) favours it, though the sources do not mention it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "party-discipline-binding": {
       "value": 2,
@@ -1816,12 +1820,13 @@
       "nulledFrom": 0
     },
     "force-to-prevent-secession": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a Taistoist view on suppressing secession; neutral, though Soviet practice favoured state unity.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "region-keeps-system": {
       "value": null,
@@ -4257,6 +4262,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 143
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

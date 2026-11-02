@@ -662,12 +662,13 @@
    ]
   },
   "abolish-money-wages": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Cooperative businesses are not abolition of money; no source supports it.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "abolish-central-banks": {
    "value": null,
@@ -756,12 +757,13 @@
    "nulledFrom": -1
   },
   "war-builds-character": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source supports glorifying war.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "separate-church-state": {
    "value": null,
@@ -982,12 +984,13 @@
    ]
   },
   "abolish-division-of-labor": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source supports it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "distribute-by-need": {
    "value": null,
@@ -1729,12 +1732,13 @@
    "nulledFrom": 0
   },
   "party-discipline-binding": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source describes party discipline; Karenga's US Organization was disciplined but the ideology states no rule on it.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "pool-sovereignty": {
    "value": 2,
@@ -1816,12 +1820,13 @@
    "nulledFrom": 0
   },
   "abolish-rental-housing": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source addresses housing tenure; a ban on renting is not part of Kawaida's cooperative-economics principle.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "people-in-arms": {
    "value": 0,
@@ -2210,12 +2215,13 @@
    ]
   },
   "women-must-cover": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source supports this.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "common-currency": {
    "value": null,
@@ -2289,12 +2295,13 @@
    "nulledFrom": -1
   },
   "gender-parity-bodies": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Asante says analysis considers sex and gender, but no source states a position on quotas; adherents appear split.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "economic-self-sufficiency": {
    "value": null,
@@ -2323,12 +2330,13 @@
    ]
   },
   "armed-group-creates-revolution": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Karenga's US Organization trained a youth self-defense wing, but no source states a theory of armed vanguard revolution.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "abolish-hereditary-privilege": {
    "value": null,
@@ -2499,12 +2507,13 @@
    "nulledFrom": 1
   },
   "animal-use-humane": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Genuinely indifferent: no source takes a position, and adherents hold varied views.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "noblesse-oblige": {
    "value": null,
@@ -3424,12 +3433,13 @@
    "nulledFrom": 1
   },
   "open-lgbt-military-service": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Afrocentric thinkers are split, with some cultural nationalists traditionalist on sexuality and others supportive; no source states a common position.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "state-promotes-atheism": {
    "value": null,
@@ -3496,13 +3506,14 @@
    "nulledFrom": 0
   },
   "women-in-religious-leadership": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Adherents are split between tradition-minded and egalitarian views, and Kawaida emphasises complementary gender roles in some writings; no source settles it.",
    "sources": [
     "s4",
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "shared-marital-authority": {
    "value": 0,
@@ -4300,12 +4311,13 @@
    "nulledFrom": -1
   },
   "international-criminal-courts": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Afrocentrism's sources never address international criminal courts, and adherents are split between distrust of Western-dominated courts and support for accountability.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "scripture-inerrant": {
    "value": null,
@@ -4650,6 +4662,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 251
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 12
   }
  ]
 }

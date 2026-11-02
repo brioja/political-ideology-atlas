@@ -2783,12 +2783,13 @@
       "nulledFrom": -1
     },
     "holocaust-denial": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Denial falsifies history and is incompatible with the scientific Marxism the school defends (s1), though no source discusses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": null,
@@ -3668,12 +3669,13 @@
       ]
     },
     "in-work-tax-credits": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Tax credits are a reformist welfare device that the school would treat as ambiguous, accommodating capitalism while aiding workers, and the sources never discuss them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "fiscal-rules-binding": {
       "value": null,
@@ -4353,6 +4355,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 190
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

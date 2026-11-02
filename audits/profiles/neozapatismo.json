@@ -232,12 +232,13 @@
       ]
     },
     "legalize-sex-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Women's Law stresses freedom from coercion and fair work, but no source states a view on sex work, so this is left split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "decide-locally": {
       "value": 2,
@@ -265,12 +266,13 @@
       ]
     },
     "same-sex-marriage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a Zapatista position on same-sex marriage, and the movement's rural communities are reported to hold mixed views, so it is left split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abortion-legal": {
       "value": 0,
@@ -852,12 +854,13 @@
       ]
     },
     "harm-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Communities set binding collective rules by assembly, which sits uneasily with a pure harm principle, but no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "individual-rights-only": {
       "value": -2,
@@ -1691,12 +1694,13 @@
       "nulledFrom": 0
     },
     "encourage-eccentricity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Communities stress collective agreements and shared norms, but also plural ways of living; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-debt-cancellation": {
       "value": 1,
@@ -4386,6 +4390,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

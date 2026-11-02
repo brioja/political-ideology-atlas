@@ -1796,12 +1796,13 @@
       "nulledFrom": 0
     },
     "property-serves-common-good": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Consequentialist libertarians justify private property by its good effects for society rather than as a natural right (s2), which matches the statement's conditional justification in spirit; no source states the 'only so far' claim.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "soviet-state-capitalist": {
       "value": 0,
@@ -3511,12 +3512,13 @@
       ]
     },
     "foreign-partition-plot": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A conspiratorial claim that no source of the tradition endorses.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "free-public-college": {
       "value": -1,
@@ -4299,6 +4301,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 158
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

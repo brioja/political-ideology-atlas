@@ -117,12 +117,13 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The camp includes social democrats and Islamic socialists alongside market liberals; a wage floor is a plausible shared concern but no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "markets-allocate-better": {
       "value": 1,
@@ -142,12 +143,13 @@
       "nulledFrom": -1
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The religious-nationalist camp spans social democrats and market liberals, and no source gives a tax position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": 1,
@@ -166,12 +168,13 @@
       ]
     },
     "regulate-corporations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The camp is described as divided between economic liberals and social democrats, and no source addresses corporate regulation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-welfare": {
       "value": null,
@@ -233,12 +236,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches gun policy for this camp.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": -1,
@@ -702,12 +706,13 @@
       ]
     },
     "self-interest-moral": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Religious values guide the camp, which tends to reject pure self-interest as a moral basis, though no source says so.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "duties-before-rights": {
       "value": -1,
@@ -1039,12 +1044,13 @@
       "nulledFrom": -1
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches on diaspora citizenship, though many of the camp's own leaders lived in exile.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": null,
@@ -1168,12 +1174,13 @@
       ]
     },
     "workers-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The camp is nationalist but not class-based, and the sources never discuss how workers should organise.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "distinct-gender-roles": {
       "value": null,
@@ -1185,12 +1192,13 @@
       "nulledFrom": 0
     },
     "ban-interest": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Islamic socialists might support it, economic liberals not; no source gives a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racial-segregation-law": {
       "value": -2,
@@ -2369,12 +2377,13 @@
       ]
     },
     "self-reliance-over-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "National independence is valued but economic liberalism favours foreign investment; no source resolves this.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-lost-territory": {
       "value": null,
@@ -2862,12 +2871,13 @@
       "nulledFrom": 0
     },
     "holocaust-denial": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "No source attributes denial to this camp, whose liberal wing opposes the Islamic Republic's stance.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": null,
@@ -4109,12 +4119,13 @@
       ]
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Economic liberalism and social justice both feature in the camp, but no source mentions income-support design.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "power-sharing-divided-societies": {
       "value": null,
@@ -4396,6 +4407,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 142
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 11
     }
   ]
 }

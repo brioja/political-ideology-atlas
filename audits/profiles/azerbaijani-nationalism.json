@@ -566,12 +566,13 @@
    ]
   },
   "direct-votes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Constitution allows referendums but no source shows a strong direct democracy preference.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "workers-councils": {
    "value": -2,
@@ -606,12 +607,13 @@
    ]
   },
   "war-builds-character": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Victory narratives glorify the army but no source states war builds character.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "separate-church-state": {
    "value": 1,
@@ -1588,12 +1590,13 @@
    ]
   },
   "unlimited-reelection": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Art. 101 sets seven-year terms; whether terms are limited is not in the sources read, so adherents are split between Elchibey's democratic strand and the Aliyev presidency.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "recall-officials": {
    "value": null,
@@ -2715,12 +2718,13 @@
    ]
   },
   "religion-illusion": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "No source addresses the statement; the movement's Muslim heritage leans against it, though its secular, Soviet-shaped outlook makes strong disagreement doubtful.",
    "sources": [
     "s6"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "capitalism-progressive": {
    "value": 0,
@@ -2797,12 +2801,13 @@
    ]
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties the movement to denial, and Azerbaijan has close relations with Israel.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "criminalize-homosexuality": {
    "value": null,
@@ -4284,6 +4289,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 139
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 5
   }
  ]
 }

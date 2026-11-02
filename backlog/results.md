@@ -125,7 +125,9 @@ people would leave (list kept outside the repo, `~/work/average-20-percent.md`);
 would be among them. Too drastic for now: revisit only if takers complain about matching. Control
 case for any change here: Brandon's own results matching Jared Kushner, with whom he disagrees on
 lines 10-14 (a thin record on those lines pulled toward him); a change that makes that match
-stronger, not weaker, is going the wrong way.
+stronger, not weaker, is going the wrong way. Measure it on his result links against Kushner's record
+even when Kushner is not shown (him leaving the site is not the control). 2026-11-01 unsourced-answer
+cleanup: neutral (73-83% before and after, within a point on every run).
 
 ## Uncertainty rule moved to error bars (2026-11-01)
 

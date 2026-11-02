@@ -720,12 +720,13 @@
       "nulledFrom": 0
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "State population policy is coercive and not endorsed; no source discusses it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -780,12 +781,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is ideological and technological at once; no source takes a side, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": 1,
@@ -855,12 +857,13 @@
       "nulledFrom": -2
     },
     "collective-farming": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Compulsory collectivization is state coercion; no source supports it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "capitalism-causes-war": {
       "value": -2,
@@ -3887,13 +3890,14 @@
       ]
     },
     "no-compulsory-union": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Crypto-anarchists are market-anarchist and treat employment as voluntary contract, so compulsion to join or pay a union is rejected, though the sources never discuss unions directly.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "voter-id": {
       "value": null,
@@ -4379,6 +4383,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 144
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

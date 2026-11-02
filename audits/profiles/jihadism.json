@@ -128,12 +128,13 @@
       ]
     },
     "unions-good": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Unions are a secular class organisation outside the sharia framework, so adherents would be cool toward them, though no source addresses them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "property-fundamental": {
       "value": null,
@@ -145,12 +146,13 @@
       "nulledFrom": 1
     },
     "regulate-corporations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to corporate regulation; sharia commercial rules could justify it but adherents have not taken a position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-welfare": {
       "value": null,
@@ -1495,12 +1497,13 @@
       "nulledFrom": 0
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pay for elected representatives presupposes parliaments that jihadists reject, and no source discusses officials' salaries.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-discipline-binding": {
       "value": 1,
@@ -1559,12 +1562,13 @@
       ]
     },
     "unlimited-reelection": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A caliph or amir rules without term limits under a lifelong oath, though no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "recall-officials": {
       "value": 1,
@@ -2143,12 +2147,13 @@
       ]
     },
     "delink-world-market": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bin Laden attacks plunder but no source argues for economic delinking.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "labor-aristocracy": {
       "value": 0,
@@ -2605,12 +2610,13 @@
       ]
     },
     "public-access-to-information": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Freedom of information laws belong to liberal-democratic governance, which jihadists reject, but no source takes up transparency itself.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "local-production": {
       "value": 0,
@@ -4301,6 +4307,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 156
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

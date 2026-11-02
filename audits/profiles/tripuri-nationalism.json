@@ -439,12 +439,13 @@
       ]
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source mentions inheritance or its taxation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "basic-income": {
       "value": 0,
@@ -677,12 +678,13 @@
       "nulledFrom": -1
     },
     "duties-before-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ranks community duty over individual rights, although its claims are group rights.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nature-intrinsic-value": {
       "value": null,
@@ -754,12 +756,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "TIPRA Motha has combined agitation with pragmatic accords, but no source states a view on judging policy by results.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": -1,
@@ -999,12 +1002,13 @@
       "nulledFrom": 0
     },
     "single-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement openly pursues group interests, but no source addresses whether politics has one common good.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "jewish-state-israel": {
       "value": null,
@@ -1016,12 +1020,13 @@
       "nulledFrom": 0
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses a diaspora right of return for Tripuris.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": 1,
@@ -1372,12 +1377,13 @@
       ]
     },
     "population-transfer": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents want reversal of settlement effects but no source supports expulsion; the mainstream rejects it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "initiating-force-wrong": {
       "value": null,
@@ -1398,12 +1404,13 @@
       "nulledFrom": 0
     },
     "ban-extremist-parties": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source on the movement discusses banning parties, though some militant groups were banned.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "freedom-as-non-domination": {
       "value": 0,
@@ -1657,12 +1664,13 @@
       ]
     },
     "educated-out-of-touch": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's leaders are themselves educated and no source expresses anti-intellectualism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cultures-equal-different": {
       "value": null,
@@ -1752,12 +1760,13 @@
       "nulledFrom": 0
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Its demands are political and cultural; no source links autonomy to economic transformation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "constituent-assembly": {
       "value": 0,
@@ -2959,12 +2968,13 @@
       "nulledFrom": 0
     },
     "left-right-obsolete": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "TIPRA Motha presents itself as regional and issue-driven, but no source states the claim.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "alienated-labor": {
       "value": 0,
@@ -3390,12 +3400,13 @@
       "nulledFrom": 1
     },
     "politics-spiritual-struggle": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's politics is framed in ethnic and constitutional rather than cosmic terms, but no source speaks to this.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "homeland-cultural-centre": {
       "value": null,
@@ -3758,12 +3769,13 @@
       "nulledFrom": 0
     },
     "smash-state-machine": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement seeks to change the state's arrangements through the constitution, but no source addresses smashing state machinery.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "free-economic-experiment": {
       "value": null,
@@ -4387,6 +4399,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 135
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 12
     }
   ]
 }

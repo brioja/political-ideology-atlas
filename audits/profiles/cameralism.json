@@ -1373,12 +1373,13 @@
       ]
     },
     "population-transfer": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports expelling minorities; cameralists wanted more subjects, although religious dissenters were sometimes banished in the era.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "competition-drives-progress": {
       "value": -1,
@@ -1697,12 +1698,13 @@
       ]
     },
     "citizenship-by-descent": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Territorial states recruited immigrants and subject status followed residence and allegiance; no source requires descent.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "minority-language-support": {
       "value": null,
@@ -4614,6 +4616,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 240
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

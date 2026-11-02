@@ -189,12 +189,13 @@
       ]
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Lumumba urged people to forget tribal quarrels, but no sources show a stance on legally restricting hate speech.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": 1,
@@ -455,12 +456,13 @@
       "nulledFrom": 0
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source describes the movement's view of inheritance taxes, so adherents are not shown to take a side.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "basic-income": {
       "value": 0,
@@ -497,12 +499,13 @@
       "nulledFrom": 0
     },
     "corporatist-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source describes Congolese nationalists organising labour into state bodies, though the Mobutu regime later controlled unions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-party-rule": {
       "value": 0,
@@ -644,12 +647,13 @@
       "nulledFrom": 0
     },
     "colonial-reparations": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The speech describes eighty years of forced labour and humiliation, and the nation made claims on Belgium, but explicit reparations demands are not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": 0,
@@ -989,12 +993,13 @@
       "nulledFrom": 0
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a Congolese nationalist position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -4321,6 +4326,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 110
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

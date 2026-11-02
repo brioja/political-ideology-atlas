@@ -119,12 +119,13 @@
       ]
     },
     "public-ownership": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Katarists favour communal over private economic forms, so public or communal control of major utilities is a plausible fit; no source discusses utilities.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "tax-the-wealthy": {
       "value": 1,
@@ -186,12 +187,13 @@
       "nulledFrom": -1
     },
     "legalize-drugs": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Quispe defended coca against eradication as part of Aymara culture, but no source takes a position on recreational drugs generally.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-hate-speech": {
       "value": null,
@@ -509,12 +511,13 @@
       ]
     },
     "abolish-money-wages": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Quispe describes ayllu exchange as barter and reciprocity, but no source proposes abolishing money in modern conditions.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-central-banks": {
       "value": null,
@@ -568,12 +571,13 @@
       "nulledFrom": 1
     },
     "workers-councils": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Community and union assemblies are the movement's base, so councils suit its model, but the sources do not mention them.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "right-to-secede": {
       "value": 1,
@@ -739,12 +743,13 @@
       ]
     },
     "accelerate-technology": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Manifesto wants modernization on the movement's own terms and warns against disruptive imported development; no source supports speeding disruption.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "human-enhancement": {
       "value": null,
@@ -2135,12 +2140,13 @@
       "nulledFrom": 0
     },
     "economic-self-sufficiency": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Manifesto seeks home-grown development but not closed blocs, which no source discusses.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "trade-labor-env-standards": {
       "value": null,
@@ -2238,12 +2244,13 @@
       "nulledFrom": -1
     },
     "delink-world-market": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Quispe opposed neoliberal integration but no source calls for delinking.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "labor-aristocracy": {
       "value": null,
@@ -4450,6 +4457,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 208
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

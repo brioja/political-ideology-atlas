@@ -1695,12 +1695,13 @@
       "nulledFrom": 0
     },
     "sovereign-debt-cancellation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-imperialist inclinations favour it, but the sources do not mention it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "independence-needs-economic-change": {
       "value": null,
@@ -3929,12 +3930,13 @@
       "nulledFrom": 1
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Austromarxists backed social reform but the sources do not mention dedicated gender-equality agencies.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homestead-ownership": {
       "value": null,
@@ -4192,12 +4194,13 @@
       ]
     },
     "financial-transactions-tax": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Centrists backed reforms within capitalism while awaiting socialism, so a levy on speculation would fit; the sources never mention one.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4308,6 +4311,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 172
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -436,12 +436,13 @@
       ]
     },
     "central-planning": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-capitalist but no sources endorse central planning; adherents emphasise grassroots agency.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "socialized-markets": {
       "value": null,
@@ -488,12 +489,13 @@
       ]
     },
     "state-directs-investment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-neoliberal, but no source supports state-led investment and adherents are wary of the state.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "widespread-small-property": {
       "value": null,
@@ -953,13 +955,14 @@
       ]
     },
     "hereditarian-race": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The field treats race as socially and colonially constructed and rejects essentialising group differences; no source discusses heritability of ability.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "organic-representation": {
       "value": null,
@@ -1212,13 +1215,14 @@
       "nulledFrom": 0
     },
     "racial-segregation-law": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Racism and its colonial roots are central objects of the field's critique; no source discusses segregation law directly.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "state-class-instrument": {
       "value": 0,
@@ -1248,12 +1252,13 @@
       ]
     },
     "elite-replacement": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The conspiracy theory runs against the field's anti-racist outlook; no source discusses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": null,
@@ -1318,12 +1323,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The field critiques racial hierarchy; no source discusses marriage across races.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-moral-worth": {
       "value": 2,
@@ -2728,12 +2734,13 @@
       "nulledFrom": 0
     },
     "minority-conspiracy": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The field opposes racial and religious scapegoating; no source discusses conspiracy claims.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-legal-marriage": {
       "value": null,
@@ -3138,12 +3145,13 @@
       ]
     },
     "property-franchise": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Limiting the vote by wealth runs against the field's concern for the excluded; no source discusses the franchise.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "domination-women-nature": {
       "value": 1,
@@ -3218,12 +3226,13 @@
       ]
     },
     "boycott-minority-shops": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Religious scapegoating runs against the field's anti-racism; no source discusses boycotts.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "citizens-assembly": {
       "value": null,
@@ -4483,6 +4492,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 253
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

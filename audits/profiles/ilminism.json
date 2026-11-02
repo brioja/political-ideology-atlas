@@ -4323,13 +4323,14 @@
    "nulledFrom": 1
   },
   "extrajudicial-killing": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The doctrine is anti-communist and puts the state above individuals, but no source discusses drug policy or killing without trial.",
    "sources": [
     "s3",
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "close-ties-china": {
    "value": null,
@@ -4571,6 +4572,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 177
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 1
   }
  ]
 }

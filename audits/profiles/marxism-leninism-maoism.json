@@ -894,13 +894,14 @@
       ]
     },
     "conscription": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A people's army and armed people are central and the party-led state could draft citizens, but these sources do not mention conscription explicitly.",
       "sources": [
         "s2",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "exit-over-voice": {
       "value": -2,
@@ -1249,12 +1250,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Eugenics runs against the movement's social and class analysis of human conditions; no source discusses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": 0,
@@ -1427,12 +1429,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses public housing sales; personal property is protected but selling off public assets is condemned as privatisation, so adherents are split.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": -2,
@@ -4390,6 +4393,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 189
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

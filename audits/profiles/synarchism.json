@@ -78,13 +78,14 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Synarchy stresses class cooperation through corporate bodies rather than statutory wage floors, and the sources never mention wages, so adherents are not placed either way.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": null,
@@ -484,12 +485,13 @@
       ]
     },
     "state-directs-investment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses investment policy; a corporate economic council could do so but the claim says state.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "widespread-small-property": {
       "value": null,
@@ -832,12 +834,13 @@
       ]
     },
     "production-for-use": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses the purpose of production; his commerce council is not described as profit-oriented or not.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "profit-exploitation": {
       "value": -2,
@@ -943,12 +946,13 @@
       "nulledFrom": 0
     },
     "hereditarian-race": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source shows racial hierarchy in his writing, and he was favourable to Jews; weak inference.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "organic-representation": {
       "value": 2,
@@ -1079,13 +1083,14 @@
       "nulledFrom": 0
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source states his view; a structured economy under a council differs from laissez-faire.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": null,
@@ -1606,12 +1611,13 @@
       ]
     },
     "censor-art-for-virtue": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The spiritual council's concern with morals and education might point toward it, but the sources do not mention censorship.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unlimited-reelection": {
       "value": 0,
@@ -2043,12 +2049,13 @@
       "nulledFrom": -1
     },
     "common-currency": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "A federal European order points to common institutions, though no source mentions currency.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "kin-peoples-union": {
       "value": 0,
@@ -2584,12 +2591,13 @@
       "nulledFrom": 0
     },
     "consumerism-harmful": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses consumption culture.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "arm-foreign-insurgents": {
       "value": -2,
@@ -3485,13 +3493,14 @@
       ]
     },
     "local-essentials-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never mention public services; a corporatist order could support public or corporate provision.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "second-chamber": {
       "value": null,
@@ -4460,6 +4469,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 143
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

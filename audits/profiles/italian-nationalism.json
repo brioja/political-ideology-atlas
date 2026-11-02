@@ -2434,12 +2434,13 @@
       "nulledFrom": 1
     },
     "office-by-exam": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not cover civil-service selection; an elitist ruling class might favour merit but nothing is documented.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "foreign-takeover-block": {
       "value": null,
@@ -4334,6 +4335,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 184
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

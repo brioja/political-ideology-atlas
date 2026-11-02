@@ -2230,12 +2230,13 @@
       ]
     },
     "rich-countries-aid-poor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Kemalist self-reliance wariness of foreign dependence is balanced by Western orientation, and no source addresses aid duties.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -2912,12 +2913,13 @@
       ]
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address harassment or confidentiality contracts; Kemalist women's-rights reforms favour protection, but statism gave no stance on private contract law.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "social-market-economy": {
       "value": 0,
@@ -4304,6 +4306,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 180
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -128,13 +128,14 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Duties of the rich to give from surplus are taught, but no source speaks to tax rates, so adherents are not committed either way.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": 1,
@@ -2923,12 +2924,13 @@
       "nulledFrom": -1
     },
     "participatory-democracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Subsidiarity and civic fraternities favour participation but no source states it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "intersecting-oppressions": {
       "value": null,
@@ -3488,12 +3490,13 @@
       ]
     },
     "confederal-coordination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Subsidiarity favours local decision but no source states confederalism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "family-wage": {
       "value": 1,
@@ -3828,12 +3831,13 @@
       ]
     },
     "farm-price-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The just-price tradition is relevant but no source opened addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "keep-nuclear-weapons": {
       "value": null,
@@ -4397,6 +4401,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 192
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

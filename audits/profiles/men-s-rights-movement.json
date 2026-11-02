@@ -4126,12 +4126,13 @@
       "nulledFrom": 0
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement has no economic programme, so adherents are split and the sources never discuss welfare reform.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "women-suffrage": {
       "value": null,
@@ -4571,6 +4572,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 117
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

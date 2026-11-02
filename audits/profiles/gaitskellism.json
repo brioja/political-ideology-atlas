@@ -503,12 +503,13 @@
       "nulledFrom": 1
     },
     "widespread-small-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Gaitskell said Labour would not nationalise small shops and pubs, but no source supports a distributist aim.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "abolish-money-wages": {
       "value": -2,
@@ -687,12 +688,13 @@
       "nulledFrom": -1
     },
     "civilizational-union": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Gaitskell prized the Commonwealth but no source supports civilizational political union.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "self-interest-moral": {
       "value": -1,
@@ -1101,12 +1103,13 @@
       ]
     },
     "reason-over-faith": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address the epistemic role of faith; Labour moderates included both believers and secularists, so adherents were split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "welfare-for-citizens": {
       "value": null,
@@ -1900,12 +1903,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Space policy was beyond the faction's concerns in the 1950s and early 1960s, and no source speaks to it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": null,
@@ -4350,6 +4354,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 157
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

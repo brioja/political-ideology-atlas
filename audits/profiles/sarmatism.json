@@ -3051,12 +3051,13 @@
       "nulledFrom": 0
     },
     "open-government-data": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sejm sessions were public among nobles but traceability of records was not a theme; no sourced position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "interfaith-marriage-restriction": {
       "value": null,
@@ -4329,6 +4330,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 186
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

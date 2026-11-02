@@ -294,12 +294,13 @@
       ]
     },
     "gender-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The participatory-democracy sources never discuss the nature of gender, and adherents hold varied views.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-national-culture": {
       "value": 0,
@@ -519,12 +520,13 @@
       "nulledFrom": 0
     },
     "one-party-rule": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Wikipedia defines participatory democracy as citizens taking part directly in decisions, which leaves no room for a single ruling party; no source discusses one-party rule as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "monarchy-legitimate": {
       "value": null,
@@ -1014,12 +1016,13 @@
       "nulledFrom": 0
     },
     "single-common-good": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Participatory theorists generally stress deliberation among differing interests and views; Barber-type unity is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "jewish-state-israel": {
       "value": null,
@@ -4238,12 +4241,13 @@
       "nulledFrom": 1
     },
     "self-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents combine individual autonomy with collective decision-making; no source settles it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-consumption-tax": {
       "value": null,
@@ -4344,12 +4348,13 @@
       ]
     },
     "unjust-law-not-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "New Left participants practised civil disobedience, but no source states a legal-philosophical position.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "automate-paid-work": {
       "value": null,
@@ -4448,6 +4453,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 244
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

@@ -603,12 +603,13 @@
       ]
     },
     "war-builds-character": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "He supported entry into World War I and revanchism but sources don't state war as character-building.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "separate-church-state": {
       "value": -2,
@@ -1480,12 +1481,13 @@
       ]
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Dirigiste instincts could favor it, but no source documents price control views, so neutral.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-controls-media": {
       "value": -1,
@@ -4363,6 +4365,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 197
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

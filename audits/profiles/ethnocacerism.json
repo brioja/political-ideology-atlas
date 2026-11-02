@@ -1885,12 +1885,13 @@
       "nulledFrom": 1
     },
     "subordinate-church-to-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source shows the movement taking sides on church property or clergy, as religion is peripheral to it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "nonpartisan-head-of-state": {
       "value": null,
@@ -2125,12 +2126,13 @@
       ]
     },
     "trade-labor-env-standards": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source describes the movement's view on binding standards in trade pacts; it rejects free trade more generally.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "moral-incentives": {
       "value": null,
@@ -2681,12 +2683,13 @@
       ]
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position on union organisation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "minority-conspiracy": {
       "value": 1,
@@ -3726,12 +3729,13 @@
       "nulledFrom": -2
     },
     "open-diplomacy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents distrust elites' dealings with Chile, which favours openness, but a conspiratorial military movement also values secrecy; no source settles it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capital-controls": {
       "value": null,
@@ -3863,12 +3867,13 @@
       "nulledFrom": -1
     },
     "religions-one-truth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement draws on Inca and Andean heritage but no source shows it taking a position on religions sharing one truth.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "farm-price-support": {
       "value": null,
@@ -3916,12 +3921,13 @@
       ]
     },
     "one-language-many-names": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement values Quechua heritage alongside Spanish, but no source addresses how language varieties are named.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-tort-liability": {
       "value": null,
@@ -3942,12 +3948,13 @@
       "nulledFrom": 1
     },
     "environment-over-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position, and an authoritarian outlook points one way while developmentalism points the other.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mandatory-sentences": {
       "value": null,
@@ -4433,6 +4440,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 291
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

@@ -2856,12 +2856,13 @@
    "nulledFrom": -1
   },
   "holocaust-denial": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses it; rejection is assumed.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "criminalize-homosexuality": {
    "value": null,
@@ -2966,12 +2967,13 @@
    ]
   },
   "islam-incompatible": {
-   "value": -2,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Group-level cultural hierarchy contradicts the movement's rejection of dualisms and domination; no source discusses Islam specifically.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "divine-source-of-authority": {
    "value": -2,
@@ -4435,6 +4437,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 235
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

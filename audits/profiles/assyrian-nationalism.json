@@ -681,12 +681,13 @@
       ]
     },
     "colonial-reparations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Assyrians themselves seek redress from Britain's unmet promises, but the statement is general; no source discusses reparations from colonial powers.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizational-union": {
       "value": -1,
@@ -799,12 +800,13 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses the relation of means to ends beyond ADM's turn from armed struggle to elections.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
       "value": -2,
@@ -1286,12 +1288,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Identity preservation across churches is a theme and endogamy is traditional, but no source supports discouragement by policy.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "equal-moral-worth": {
       "value": 2,
@@ -2457,12 +2460,13 @@
       "nulledFrom": 0
     },
     "no-fault-divorce": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Church-aligned norms lean against; no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "recallable-delegates": {
       "value": null,
@@ -2762,12 +2766,13 @@
       "nulledFrom": -1
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalist language revival may stress Aramaic purity but no source is read.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "treaties-binding": {
       "value": null,
@@ -3702,12 +3707,13 @@
       "nulledFrom": 1
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement has little economic doctrine and the sources never mention fiscal rules, so there is no basis for a lean.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restructure-world-economy": {
       "value": 0,
@@ -4082,12 +4088,13 @@
       "nulledFrom": 0
     },
     "simple-living": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No sources address lifestyle; the movement is a national-rights cause without a position on simplicity.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-indigenous-settlement": {
       "value": null,
@@ -4364,6 +4371,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 121
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

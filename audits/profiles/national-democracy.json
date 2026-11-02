@@ -1275,12 +1275,13 @@
       "nulledFrom": 1
     },
     "restrict-conversion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Dmowski tied Polishness to Catholicism, which might favour discouraging leaving it, but no source documents a legal restriction.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-cattle-slaughter": {
       "value": 0,
@@ -2501,12 +2502,13 @@
       ]
     },
     "pronatalist-incentives": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Nation-strength thinking favours a larger Polish population, though the sources never discuss family subsidies.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "residents-only-property": {
       "value": null,
@@ -2694,12 +2696,13 @@
       ]
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "ND defended Polish language against Germanisation, but no source documents a campaign against loanwords.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "treaties-binding": {
       "value": 0,
@@ -3324,12 +3327,13 @@
       "nulledFrom": 0
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Dmowski wanted a strong Sejm, but no source discusses a Senate.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": -2,
@@ -4257,6 +4261,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 143
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

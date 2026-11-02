@@ -378,12 +378,13 @@
    ]
   },
   "drastic-climate-action": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Wikipedia notes climate change harms Indigenous women's food security, and the tradition frames care for land as a duty, but no source calls for drastic action by the settler state, of which Smith is wary; this is an inference.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "tech-solves-problems": {
    "value": null,
@@ -730,12 +731,13 @@
    "nulledFrom": -1
   },
   "human-enhancement": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never discuss body modification technology; adherents' concern with bodily autonomy and with state control of bodies pulls both ways.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "algorithmic-government": {
    "value": null,
@@ -1042,12 +1044,13 @@
    "nulledFrom": 1
   },
   "school-vouchers": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never mention school funding models; the concern in them is Indigenous control of education and language, which vouchers do not directly address.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "avoid-deficit-stimulus": {
    "value": null,
@@ -2254,12 +2257,13 @@
    "nulledFrom": 0
   },
   "minority-veto": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Smith's consensus-oriented, relational governance resonates, but no source endorses individual vetoes.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "resist-lawless-ruler": {
    "value": 1,
@@ -4378,6 +4382,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 222
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

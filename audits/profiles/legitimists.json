@@ -878,12 +878,13 @@
       ]
     },
     "exit-over-voice": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The ideology rejects both democratic voting and a market of states, and no source ranks exit against voice, so neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "state-as-business": {
       "value": -2,
@@ -1044,12 +1045,13 @@
       ]
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The camp opposed liberal individualism but defended property; no source ties political freedom to economic freedom, so neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": null,
@@ -1295,12 +1297,13 @@
       ]
     },
     "restrict-conversion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Catholic confessional monarchy favoured religious establishment, yet no source says conversion should be legally restricted, so split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "ban-cattle-slaughter": {
       "value": null,
@@ -1791,12 +1794,13 @@
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Soviet debate between Marxists is outside Legitimist concerns, and no source offers a view.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "precautionary-principle": {
       "value": 0,
@@ -2564,12 +2568,13 @@
       ]
     },
     "intervene-in-bloc": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The doctrine of legitimacy favoured monarchical solidarity, but no source on forcing allies to stay; split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "corporate-influence": {
       "value": null,
@@ -4423,6 +4428,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 232
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

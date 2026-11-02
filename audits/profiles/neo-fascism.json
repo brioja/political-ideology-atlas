@@ -1561,13 +1561,14 @@
       "nulledFrom": -1
     },
     "defeat-own-government-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Ultranationalism makes loyalty to the nation in war a supreme duty and treats defeatism as betrayal; no source discusses revolutionary defeatism.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "censor-art-for-virtue": {
       "value": null,
@@ -2596,12 +2597,13 @@
       "nulledFrom": 1
     },
     "intervene-in-bloc": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents are split between Europeanist bloc loyalty and national sovereignty; no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "corporate-influence": {
       "value": null,
@@ -4081,12 +4083,13 @@
       "nulledFrom": -1
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents split between a social wing and a traditionalist wing; no source states a position on equality agencies.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homestead-ownership": {
       "value": null,
@@ -4450,6 +4453,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 240
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

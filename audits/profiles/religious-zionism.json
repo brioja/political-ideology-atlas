@@ -3220,13 +3220,14 @@
       "nulledFrom": -1
     },
     "citizens-assembly": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Religious Zionism treats halakha and rabbinic authority as the guide for public life and values Knesset and rabbinic leadership over chance-chosen lay panels; no source opened mentions assemblies, so this is a low-confidence inference from its authority structure.",
       "sources": [
         "s4",
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "reinterpret-religion": {
       "value": null,
@@ -4485,6 +4486,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 171
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

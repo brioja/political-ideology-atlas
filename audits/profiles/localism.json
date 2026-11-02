@@ -988,12 +988,13 @@
       ]
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Localists prize local knowledge, but no source adopts the claim that knowledge reflects power; left neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "universal-morality": {
       "value": 0,
@@ -1375,12 +1376,13 @@
       "nulledFrom": -1
     },
     "population-transfer": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Civic localism is non-ethnic and community-based; no source endorses expulsion.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "initiating-force-wrong": {
       "value": 0,
@@ -1811,12 +1813,13 @@
       "nulledFrom": 0
     },
     "no-land-for-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Territorial concessions in peace deals are not a localist question, so no source supports a view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-serves-common-good": {
       "value": null,
@@ -4428,6 +4431,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 213
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

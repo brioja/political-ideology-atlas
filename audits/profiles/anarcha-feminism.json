@@ -1776,12 +1776,13 @@
       "nulledFrom": -1
     },
     "state-as-business": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "It opposes both the state and capitalism, so a state run on commercial lines is rejected on principle, though the sources never discuss it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "positive-liberty": {
       "value": 2,
@@ -1835,12 +1836,13 @@
       ]
     },
     "territorial-expansion": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Anti-statism rules out a nation expanding its territory, though no source addresses expansion.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "personal-loyalty-rule": {
       "value": null,
@@ -4505,6 +4507,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 272
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -1663,12 +1663,13 @@
       ]
     },
     "minority-language-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No sourced position; the Lega ally wanted regional identity while Forza Italia was national, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religious-exemptions": {
       "value": null,
@@ -1721,12 +1722,13 @@
       ]
     },
     "rich-countries-aid-poor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No sourced position; a social-market tradition accepts some duty but liberista adherents resist large aid.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independent-nuclear-deterrent": {
       "value": -1,
@@ -2107,12 +2109,13 @@
       "nulledFrom": 1
     },
     "public-money-creation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A liberista outlook accepts the existing private-bank system; no source addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capitalism-adapts": {
       "value": 1,
@@ -2147,12 +2150,13 @@
       ]
     },
     "freedom-to-discriminate": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "A libertarian and Catholic-conservative mixture; no source gives a stance, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "entrenched-bill-of-rights": {
       "value": null,
@@ -3315,12 +3319,13 @@
       ]
     },
     "single-unit-for-people": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Merging regions for one people is not a Berlusconist theme, and no source ties the movement to it, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independent-unions": {
       "value": null,
@@ -4254,6 +4259,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 163
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

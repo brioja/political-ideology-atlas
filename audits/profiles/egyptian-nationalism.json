@@ -1065,12 +1065,13 @@
       ]
     },
     "job-guarantee": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source credits the Wafd-era movement with a state employment guarantee; labor policy there was limited to conciliation boards.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "democratic-peace": {
       "value": null,
@@ -1621,12 +1622,13 @@
       ]
     },
     "charity-over-state-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives the nationalists a view on charity versus state welfare, so adherents are treated as split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "term-limits": {
       "value": null,
@@ -3399,12 +3401,13 @@
       "nulledFrom": 1
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The nationalists wanted a unified state, and no source discusses autonomous regions with separate systems.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sacred-ruler": {
       "value": -2,
@@ -4302,6 +4305,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 117
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

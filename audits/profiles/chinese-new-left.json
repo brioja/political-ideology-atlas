@@ -840,20 +840,22 @@
       ]
     },
     "means-match-ends": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses prefigurative politics; Maoist and statist adherents would differ on this, so the answer is neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "return-to-foraging": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement seeks development and modernization of China, so a return to hunter-gathering is plainly outside its program, though no source discusses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
       "value": -1,
@@ -1033,12 +1035,13 @@
       "nulledFrom": -2
     },
     "bound-labor": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Serfdom-like obligations contradict the egalitarian socialist outlook and the movement's rural-equality agenda, though no source discusses them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-neutral-knowledge": {
       "value": 1,
@@ -1628,12 +1631,13 @@
       "nulledFrom": 0
     },
     "clerical-rule": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Rule by religious scholars contradicts the secular socialist tradition, though no source discusses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-own-government-war": {
       "value": -2,
@@ -1750,12 +1754,13 @@
       "nulledFrom": 0
     },
     "creationism-in-schools": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "A secular Marxist-influenced movement favours teaching evolution, though no source addresses creationism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "restrict-pornography": {
       "value": null,
@@ -2171,12 +2176,13 @@
       ]
     },
     "trade-labor-env-standards": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Binding social standards in trade fit the movement's critique of neoliberal globalization, but the sources do not mention them.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "moral-incentives": {
       "value": null,
@@ -2523,12 +2529,13 @@
       ]
     },
     "paid-care-work": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Socialist feminist ideas of valuing care work fit the heritage, but the sources do not mention it, so support is a weak inference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "filial-duty": {
       "value": 0,
@@ -4589,6 +4596,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 277
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

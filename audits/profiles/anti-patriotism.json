@@ -154,12 +154,13 @@
       ]
     },
     "cut-welfare": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No sourced position; the solidarity ethos of the strands sampled opposes cutting support for the poor.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "worker-ownership": {
       "value": 1,
@@ -264,12 +265,13 @@
       ]
     },
     "same-sex-marriage": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Progressive and libertarian adherents lean yes, though anarchists may reject state marriage altogether; not in the sources.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "abortion-legal": {
       "value": null,
@@ -3059,12 +3061,13 @@
       ]
     },
     "domination-women-nature": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Eco-anarchist adherents agree; not in the sources.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "reification": {
       "value": null,
@@ -4386,6 +4389,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 230
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

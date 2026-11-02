@@ -119,12 +119,13 @@
       "nulledFrom": -1
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties the doctrine to a tax position; adherents are divided between populist and elitist currents.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": null,
@@ -3023,12 +3024,13 @@
       ]
     },
     "reification": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Marxist concept of reification is not in the sources, so neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "press-owned-by-wealth": {
       "value": null,
@@ -4328,6 +4330,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 191
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

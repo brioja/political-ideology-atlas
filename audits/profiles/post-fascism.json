@@ -216,13 +216,14 @@
       ]
     },
     "state-harmful": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A state-centred national right that wants an efficient, authoritative state; no source discusses anarchism.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-guns": {
       "value": null,
@@ -565,13 +566,14 @@
       ]
     },
     "workers-councils": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The strand works within parliamentary democracy and its programme proposes a presidential reform, not council power; no source discusses councils.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "right-to-secede": {
       "value": -2,
@@ -653,12 +655,13 @@
       ]
     },
     "class-struggle-history": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The strand stresses national solidarity over class conflict; no source discusses the Marxist theory of history.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-outcomes": {
       "value": -2,
@@ -869,13 +872,14 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The strand treats capitalism as compatible with the national interest; no source discusses the theory of imperialism.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "taxation-theft": {
       "value": -1,
@@ -1272,13 +1276,14 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Post-fascists repudiated the fascist past and the Catholic-leaning right opposes eugenics; no source discusses it.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "security-forces-accountable": {
       "value": -1,
@@ -3443,13 +3448,14 @@
       "nulledFrom": -1
     },
     "independent-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Post-fascist parties work within democracy and accept unions, but no source states a position on their independence.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "socialism-needs-workers-power": {
       "value": null,
@@ -4399,6 +4405,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 199
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

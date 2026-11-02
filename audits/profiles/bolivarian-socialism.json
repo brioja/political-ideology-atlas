@@ -750,12 +750,13 @@
    "nulledFrom": 0
   },
   "human-enhancement": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source discusses enhancement and it has no link to Bolivarian themes, so the answer is a neutral placeholder.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "algorithmic-government": {
    "value": null,
@@ -2156,12 +2157,13 @@
    ]
   },
   "labor-aristocracy": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Anti-imperialist framing might support the idea, but the sources never state it.",
    "sources": [
     "s6"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "freedom-to-discriminate": {
    "value": null,
@@ -2364,12 +2366,13 @@
    "nulledFrom": 0
   },
   "domestic-violence-symmetry": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "The Plan's gender-equality commitment points to prioritising violence against women, though no source states it.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "institutions-fit-civilization": {
    "value": 1,
@@ -2714,12 +2717,13 @@
    ]
   },
   "purge-loanwords": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Bolivarianism is nationalist but has no linguistic purism; the sources never mention it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "treaties-binding": {
    "value": null,
@@ -3438,12 +3442,13 @@
    "nulledFrom": 1
   },
   "gm-crops": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "Chavista government banned GM seeds in 2004 under food sovereignty, though not in the sources I read.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "dense-cities": {
    "value": null,
@@ -3511,12 +3516,13 @@
    ]
   },
   "pollution-taxes": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The Plan rejects carbon markets but the sources do not mention pollution taxes.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "future-generations": {
    "value": 1,
@@ -4247,6 +4253,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 64
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

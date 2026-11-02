@@ -92,12 +92,13 @@
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties the cause to tax policy and the economy had few very wealthy people; no basis to lean either way.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": 0,
@@ -623,12 +624,13 @@
       ]
     },
     "colonial-reparations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents blame colonial and Ethiopian partition for lost territories, but no source shows a reparations demand.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": -1,
@@ -683,12 +685,13 @@
       "nulledFrom": -1
     },
     "accelerate-technology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's aims are territorial, and no source links it to speeding up technological disruption.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "human-enhancement": {
       "value": null,
@@ -726,12 +729,13 @@
       ]
     },
     "results-over-ideology": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pan-Somalism is a fixed national goal pursued regardless of cost, but no source states a view on judging policy by results.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "direct-action": {
       "value": 0,
@@ -867,12 +871,13 @@
       "nulledFrom": -1
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The constitution lists rights and welfare duties but no source frames freedom as requiring material means, so the answer is neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "media-academia-power": {
       "value": null,
@@ -1019,12 +1024,13 @@
       "nulledFrom": 0
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The cause links political freedom to national self-determination, not to economic freedom, and no source connects them.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": -1,
@@ -1068,12 +1074,13 @@
       "nulledFrom": 0
     },
     "work-for-welfare": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The constitution promises social assistance by law but no source sets work conditions for it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-collaboration": {
       "value": null,
@@ -1226,12 +1233,13 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Somali identity is based on language and descent, not race, with intermarriage with Arabs and others common; no source supports this.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "equal-moral-worth": {
       "value": 1,
@@ -1318,12 +1326,13 @@
       "nulledFrom": 0
     },
     "population-transfer": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The cause demands that Somalis remain on their land, not be expelled; no source supports pressuring minorities out.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "initiating-force-wrong": {
       "value": -1,
@@ -1471,12 +1480,13 @@
       ]
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source on parliamentary pay in the cause; the 1960 constitution only provides emoluments by law.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-discipline-binding": {
       "value": null,
@@ -1521,12 +1531,13 @@
       ]
     },
     "defeat-own-government-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Somali nationalism supports defending the nation in conflict; no source for defeatism.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "censor-art-for-virtue": {
       "value": null,
@@ -1951,12 +1962,13 @@
       "nulledFrom": -1
     },
     "common-currency": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The cause envisaged one Somali state with one currency, but no source takes a view on multinational currency unions.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "kin-peoples-union": {
       "value": 2,
@@ -2172,12 +2184,13 @@
       ]
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The cause sought political union and borders redrawn, not property reform; no source ties independence to economic transformation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": 2,
@@ -4331,6 +4344,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 192
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 13
     }
   ]
 }

@@ -400,12 +400,13 @@
       "nulledFrom": 0
     },
     "tech-solves-problems": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Hutu Power to any view on technological progress; its concerns are ethnic power, so this is a neutral inference.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "expand-nuclear": {
       "value": null,
@@ -1720,12 +1721,13 @@
       ]
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Debt relief is not in the sources; the regime depended on donors but the ideology gives no stand.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independence-needs-economic-change": {
       "value": 1,
@@ -4438,6 +4440,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 230
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

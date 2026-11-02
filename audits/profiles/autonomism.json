@@ -4149,12 +4149,13 @@
       ]
     },
     "indirect-election": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents favour horizontal self-organisation and councils but also direct, absolute democracy; no source settles delegate election, so it is split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-church-status": {
       "value": -2,
@@ -4492,6 +4493,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 243
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

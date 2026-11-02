@@ -275,12 +275,13 @@
    "nulledFrom": 1
   },
   "abortion-legal": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never state a position and religious progressives are split on abortion.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "more-religion-public": {
    "value": 1,
@@ -369,12 +370,13 @@
    ]
   },
   "open-borders": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "National borders should eventually be open: Lerner's global generosity pulls toward openness, yet the sources never discuss migration and adherents divide over open borders.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "limit-growth": {
    "value": 1,
@@ -438,12 +440,13 @@
    "nulledFrom": -1
   },
   "socialized-markets": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Lerner's economic democracy could fit this but no source states it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "land-value-tax": {
    "value": 0,
@@ -505,12 +508,13 @@
    "nulledFrom": -2
   },
   "abolish-central-banks": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
    "rationale": "A market-led money regime clashes with the New Bottom Line critique of market ethics, though no source mentions central banks.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -1
   },
   "corporatist-bargaining": {
    "value": null,
@@ -556,12 +560,13 @@
    "nulledFrom": 0
   },
   "workers-councils": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Economic democracy is advocated generally, but no source proposes councils as the basis of political power.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "right-to-secede": {
    "value": null,
@@ -581,12 +586,13 @@
    ]
   },
   "political-violence-never": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Lerner promotes a peace movement and a Strategy of Generosity, but no source speaks of an absolute ban on political violence.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "war-builds-character": {
    "value": -2,
@@ -1066,20 +1072,22 @@
    "nulledFrom": -1
   },
   "rule-by-example": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Moral exemplars matter to Wallis's prophetic style, but no source says government should rely on rulers' example instead of laws.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "national-self-determination": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Supports two states in Israel and Palestine, but no source states a general principle of self-determination.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "force-without-un": {
    "value": -2,
@@ -1148,20 +1156,22 @@
    ]
   },
   "distinct-gender-roles": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Law fixing gender roles opposes the progressive orientation, though no source addresses it.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "ban-interest": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Usury is a historic religious theme but no source makes it part of the modern spiritual left.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "racial-segregation-law": {
    "value": -2,
@@ -2404,12 +2414,13 @@
    "nulledFrom": 1
   },
   "filial-duty": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Filial duty is a shared religious value, but no source discusses it as politics and liberal and traditional adherents differ.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "office-by-exam": {
    "value": null,
@@ -3098,12 +3109,13 @@
    "nulledFrom": 1
   },
   "open-lgbt-military-service": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Not covered; the sources never discuss gays in the military and Christian strands are divided.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "state-promotes-atheism": {
    "value": -2,
@@ -4322,6 +4334,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 146
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 12
   }
  ]
 }

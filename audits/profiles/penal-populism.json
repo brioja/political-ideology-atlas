@@ -110,12 +110,13 @@
       "nulledFrom": 0
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links penal populism to views on public ownership of industry.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-the-wealthy": {
       "value": null,
@@ -609,12 +610,13 @@
       ]
     },
     "laws-from-scripture": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Penal populists justify punishment by public opinion and victims, not by scripture, and no source ties them to religious law.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "private-courts-defense": {
       "value": null,
@@ -996,12 +998,13 @@
       "nulledFrom": 0
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pratt notes distrust of academic expertise, but no source shows adherents adopting the power-shapes-truth thesis.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "universal-morality": {
       "value": null,
@@ -1298,12 +1301,13 @@
       "nulledFrom": 0
     },
     "equal-moral-worth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pratt says it casts offenders as favored over victims, but no source rejects equal rights before the law, so adherents are split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "socialism-one-country": {
       "value": null,
@@ -2671,12 +2675,13 @@
       "nulledFrom": 0
     },
     "no-duty-to-obey": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "A law-and-order outlook stresses obedience to the law, though no source states this directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "non-intervention": {
       "value": null,
@@ -4500,6 +4505,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 69
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

@@ -176,12 +176,13 @@
    "nulledFrom": -1
   },
   "restrict-hate-speech": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "French law restricts hate speech and rattachists want to adopt French law, but no source addresses the point.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "strong-leader": {
    "value": null,
@@ -411,12 +412,13 @@
    ]
   },
   "experts-over-public": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Rattachists rely on referendums for the decisive step, but no source says how they weigh expertise against the public in policy.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "central-planning": {
    "value": -1,
@@ -686,12 +688,13 @@
    "nulledFrom": 0
   },
   "duties-before-rights": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source ties rattachism to a duties-first or rights-first philosophy.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "nature-intrinsic-value": {
    "value": 0,
@@ -1782,12 +1785,13 @@
    "nulledFrom": 0
   },
   "independent-nuclear-deterrent": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "France has its own deterrent and Belgium does not, but no source says what rattachists think.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "political-elite-corrupt": {
    "value": 0,
@@ -3732,12 +3736,13 @@
    "nulledFrom": 0
   },
   "future-generations": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "The movement argues for Wallonia's long-term stability, but the sources never discuss the environment; the answer is a weak inference.",
    "sources": [
     "s4"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "women-distinct-values": {
    "value": null,
@@ -4393,13 +4398,14 @@
    "nulledFrom": 0
   },
   "automate-paid-work": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never address automation; supporters are split and the movement has no economic programme on it.",
    "sources": [
     "s1",
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "multipolar-world": {
    "value": null,
@@ -4486,6 +4492,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 188
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 6
   }
  ]
 }

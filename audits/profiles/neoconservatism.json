@@ -2009,12 +2009,13 @@
       "nulledFrom": 0
     },
     "sacred-ruler": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses divine kingship; rejection is assumed from the movement's defence of republican democratic government.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "flat-income-tax": {
       "value": 0,
@@ -2501,12 +2502,13 @@
       "nulledFrom": -1
     },
     "indigenous-political-leadership": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss settler and pre-colonial descent groups; rejection is assumed from the movement's equal-citizenship liberalism.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "antifascism-founding-value": {
       "value": null,
@@ -3268,13 +3270,14 @@
       "nulledFrom": 1
     },
     "racial-franchise": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses racial limits on the vote; rejection is assumed from the universal democratic ideals behind their democracy promotion.",
       "sources": [
         "s3",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "online-participation": {
       "value": null,
@@ -4611,6 +4614,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 289
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

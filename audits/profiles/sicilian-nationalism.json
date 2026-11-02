@@ -120,12 +120,13 @@
       ]
     },
     "unions-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources do not mention unions; the movement spans socialist and conservative strands that would differ.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "property-fundamental": {
       "value": null,
@@ -1323,12 +1324,13 @@
       "nulledFrom": -1
     },
     "ban-cattle-slaughter": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Not applicable to Sicilian culture; sources do not mention.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-religion-state-schools": {
       "value": null,
@@ -3917,12 +3919,13 @@
       "nulledFrom": 0
     },
     "no-compulsory-union": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is transversal across left and right and the sources never discuss union rules, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "voter-id": {
       "value": null,
@@ -4381,6 +4384,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 131
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

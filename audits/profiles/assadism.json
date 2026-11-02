@@ -491,12 +491,13 @@
       ]
     },
     "abolish-money-wages": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The planned socialist economy of Art. 13 kept money, wages and state salaries; no source shows any aim of abolishing them.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-central-banks": {
       "value": -2,
@@ -862,12 +863,13 @@
       ]
     },
     "taxation-theft": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "A state-run planned economy with public ownership depends on state revenue, and no source shows any hostility to taxation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": -2,
@@ -4344,6 +4346,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 139
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

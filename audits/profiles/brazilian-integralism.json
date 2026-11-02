@@ -2824,12 +2824,13 @@
       ]
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Integralism's cultural nationalism drew on Tupi symbolism and the Anauê salute, but no source shows a policy to purge foreign words, so it is split or indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "treaties-binding": {
       "value": 0,
@@ -4522,6 +4523,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 252
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

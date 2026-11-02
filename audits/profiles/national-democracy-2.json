@@ -2754,12 +2754,13 @@
       ]
     },
     "gender-identity-recognition": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Allied groups support LGBT rights, but my sources don't state it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "assisted-dying": {
       "value": null,
@@ -4273,6 +4274,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 151
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

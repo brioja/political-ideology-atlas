@@ -213,12 +213,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses gun control; the regime armed its own militias while disarming opponents, so no principled answer emerges.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": 2,
@@ -1853,12 +1854,13 @@
       ]
     },
     "space-expansion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Space was not on the interwar agenda; the Doctrine's worship of expansion could be stretched to it, but no source does so.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "mixed-constitution": {
       "value": -1,
@@ -2878,12 +2880,13 @@
       ]
     },
     "interest-free-mutual-credit": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Monetary reform is not in the mystics' writings; the Iron Guard condemned finance, but no source gives the Italian view.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "refuse-lender-austerity": {
       "value": null,
@@ -4216,6 +4219,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 107
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

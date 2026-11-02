@@ -85,12 +85,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Nationalisation and economic independence point to a statist outlook, so state-guaranteed health care is a plausible inference; the sources do not mention health policy.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "raise-minimum-wage": {
       "value": null,
@@ -683,12 +684,13 @@
       ]
     },
     "self-interest-moral": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The nationalist ethos stresses duty to the nation, yet no source takes a stand on individual self-interest as morally good, so the answer is left neutral.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "duties-before-rights": {
       "value": 1,
@@ -2199,12 +2201,13 @@
       ]
     },
     "delink-world-market": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Self-sufficiency and an end to foreign dependence were stated goals, which resemble delinking; held at low confidence since the sources do not mention it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "labor-aristocracy": {
       "value": null,
@@ -2385,12 +2388,13 @@
       ]
     },
     "totalitarianisms-equivalent": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party was anti-communist, but its own critics label it fascist and no source records its stance on equating the two.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "slavery-not-civil-war-cause": {
       "value": null,
@@ -2758,12 +2762,13 @@
       "nulledFrom": 0
     },
     "religion-illusion": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party is secular and hostile to Islam's cultural influence, but no source records that it called religion an illusion, so adherents are split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "capitalism-progressive": {
       "value": null,
@@ -4403,6 +4408,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 228
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

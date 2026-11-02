@@ -858,12 +858,13 @@
       "nulledFrom": 0
     },
     "taxation-theft": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Ujamaa relied on public revenue and public ownership to fund services, so calling taxes theft runs against it. No source discusses the claim directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": -1,
@@ -1384,13 +1385,14 @@
       ]
     },
     "competition-drives-progress": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Ujamaa grounds development in cooperation and familyhood and treats competitive acquisitiveness as a capitalist attitude. No source states a view on competition as the engine of progress.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "ban-extremist-parties": {
       "value": 1,
@@ -2065,12 +2067,13 @@
       "nulledFrom": 0
     },
     "gender-parity-bodies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The women's organisation UWT existed but the sources do not mention parity quotas.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-self-sufficiency": {
       "value": 1,
@@ -4438,6 +4441,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 191
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

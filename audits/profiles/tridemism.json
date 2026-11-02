@@ -70,12 +70,13 @@
   ],
   "answers": {
     "universal-healthcare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Livelihood covers food, clothing, housing and transport provided with state help and welfare, so health care is a plausible extension, but the sources never mention it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "raise-minimum-wage": {
       "value": null,
@@ -234,12 +235,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sources never address penal philosophy, and Confucian moral education points one way while order points another.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": 1,
@@ -965,12 +967,13 @@
       "nulledFrom": -1
     },
     "universal-morality": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun appealed to Confucian virtues as universal in the Great Learning's programme, but the sources do not cover this question directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "single-common-good": {
       "value": null,
@@ -1296,12 +1299,13 @@
       ]
     },
     "no-religion-state-schools": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The doctrine is secular and moral rather than religious, but the sources do not mention this.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -2262,12 +2266,13 @@
       ]
     },
     "native-born-offices": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun's examination system chose officials by ability, not birthplace, but the sources do not mention foreign-born candidates.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "party-own-road": {
       "value": null,
@@ -2438,12 +2443,13 @@
       ]
     },
     "budget-needs-parliament": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun's constitution gives legislative and control powers to separate branches, but a budget rule is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "single-official-language": {
       "value": null,
@@ -2541,12 +2547,13 @@
       "nulledFrom": 0
     },
     "democratic-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun linked kingly rule to peace and might to war, but the democratic-peace thesis is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "no-duty-to-obey": {
       "value": -2,
@@ -2986,12 +2993,13 @@
       ]
     },
     "press-owned-by-wealth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun feared wealth dominating livelihood, but his sources do not mention press ownership.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "promulgated-standing-laws": {
       "value": null,
@@ -3507,12 +3515,13 @@
       ]
     },
     "free-public-college": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Sun valued examination and learning, but tuition policy is not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "pollution-taxes": {
       "value": null,
@@ -4291,6 +4300,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 129
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

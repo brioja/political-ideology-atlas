@@ -437,12 +437,13 @@
    "nulledFrom": 0
   },
   "land-value-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source on tripartism discusses land taxation.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "tax-inheritance": {
    "value": null,
@@ -1965,12 +1966,13 @@
    ]
   },
   "common-currency": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
    "rationale": "Social partnership in the EU context and the Benelux and Nordic states is compatible with monetary union, but no source states it.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "kin-peoples-union": {
    "value": -1,
@@ -3078,12 +3080,13 @@
    "nulledFrom": 0
   },
   "duties-before-rights": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Catholic social teaching fed into tripartism while the ILO tradition stresses workers' rights, and no source ranks duties over rights.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "independence-needs-economic-change": {
    "value": null,
@@ -4339,6 +4342,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 122
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

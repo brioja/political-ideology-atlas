@@ -2660,13 +2660,14 @@
       ]
     },
     "restrict-foreign-funding": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement's hostility to the Versailles West and its capital leans toward restricting foreign money, but no source discusses funding of NGOs, media or universities.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "pronatalist-incentives": {
       "value": null,
@@ -2930,13 +2931,14 @@
       "nulledFrom": 1
     },
     "holocaust-denial": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Paetel's group opposed the Nazis and no sourced strand here asserts denial; later neo-fascist groups are excluded from the scope.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "criminalize-homosexuality": {
       "value": 0,
@@ -4496,6 +4498,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 320
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

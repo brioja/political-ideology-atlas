@@ -687,12 +687,13 @@
       ]
     },
     "indigenous-land-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties Ba'athism to indigenous land claims; the sources are about Arab nationhood, so adherents have no distinctive position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-reparations": {
       "value": null,
@@ -1241,12 +1242,13 @@
       ]
     },
     "proportional-representation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The constitution promises a representative constitutional regime but the sources never discuss electoral formulas.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-mission": {
       "value": null,
@@ -2499,12 +2501,13 @@
       ]
     },
     "budget-needs-parliament": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The constitution says the executive answers to the people, but the sources do not mention parliamentary budget control.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "single-official-language": {
       "value": 1,
@@ -4214,12 +4217,13 @@
       "nulledFrom": -1
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never mention consumption taxes; a socialist state may value progressive taxation but adherents are not recorded taking a side.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": null,
@@ -4425,6 +4429,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 167
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

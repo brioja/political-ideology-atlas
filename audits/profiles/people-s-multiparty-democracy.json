@@ -302,12 +302,13 @@
       "nulledFrom": 1
     },
     "gender-social-construct": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address gender theory, and adherents are not clearly split or aligned.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "preserve-national-culture": {
       "value": 1,
@@ -669,12 +670,13 @@
       "nulledFrom": 0
     },
     "colonial-reparations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-imperialism is part of the line, but no source mentions reparations, so adherents' view cannot be stated and is left neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizational-union": {
       "value": null,
@@ -2250,12 +2252,13 @@
       ]
     },
     "minority-veto": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The programme provides for majority government with a minority in opposition, which leaves no room for a minority veto; no source discusses minority consent as such.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "resist-lawless-ruler": {
       "value": 1,
@@ -3846,13 +3849,14 @@
       "nulledFrom": 1
     },
     "women-property-inheritance": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The programme commits to human rights, equality and social justice, and Nepali communist parties backed women's property rights; the sources do not mention inheritance directly.",
       "sources": [
         "s1",
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "one-language-many-names": {
       "value": null,
@@ -4258,12 +4262,13 @@
       "nulledFrom": -1
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not mention a financial transactions tax; a Marxist-Leninist party wary of global finance might favour it but the programme's welcome to foreign capital pulls the other way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -4373,6 +4378,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 242
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

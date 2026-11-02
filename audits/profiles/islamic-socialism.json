@@ -3186,13 +3186,14 @@
       "nulledFrom": 1
     },
     "racial-franchise": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Al-Siba'i's doctrine rests on equal rights for all and Islamic socialists reject nationalism by blood; no source supports a racial franchise.",
       "sources": [
         "s2",
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "online-participation": {
       "value": null,
@@ -3205,12 +3206,13 @@
       "nulledFrom": 1
     },
     "open-government-data": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Reformist Islamic socialists stress accountability of rulers to the community, so open records fit; no source discusses it directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "interfaith-marriage-restriction": {
       "value": null,
@@ -4534,6 +4536,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 226
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

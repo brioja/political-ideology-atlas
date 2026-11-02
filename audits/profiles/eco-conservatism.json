@@ -4414,12 +4414,13 @@
    "nulledFrom": 1
   },
   "financial-transactions-tax": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources never discuss financial taxes; green conservatives accept pollution pricing but split on taxing trading.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "racism-not-main-obstacle": {
    "value": null,
@@ -4529,6 +4530,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 157
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 1
   }
  ]
 }

@@ -126,12 +126,13 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Singapore has no minimum wage and the model prizes labour competitiveness and self-reliance; the sources never address the question directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "markets-allocate-better": {
       "value": 1,
@@ -399,12 +400,13 @@
       ]
     },
     "limit-growth": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Scholars describe the model's legitimacy as resting on rapid growth and rising living standards, which puts growth ahead of environmental limits; no source states a position on limiting growth.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "drastic-climate-action": {
       "value": null,
@@ -466,12 +468,13 @@
       ]
     },
     "land-value-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Singapore owns most land and leases it, but no source ties the model to a land-value tax replacing others.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-inheritance": {
       "value": null,
@@ -634,12 +637,13 @@
       ]
     },
     "private-courts-defense": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The model centres a strong state that monopolises security and justice, so privatised courts and defence are rejected; no source discusses the idea.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "military-superiority": {
       "value": null,
@@ -686,12 +690,13 @@
       "nulledFrom": -1
     },
     "colonial-reparations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Asian-values advocates criticised Western hypocrisy, but no source commits them to reparations.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizational-union": {
       "value": -1,
@@ -810,20 +815,22 @@
       ]
     },
     "return-to-foraging": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The model's legitimacy rests on industrial growth, so returning to foraging is rejected; no source discusses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-division-of-labor": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Specialised firms and wage labour are part of state and private capitalism, so abolishing the division of labour is rejected; no source discusses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "distribute-by-need": {
       "value": -2,
@@ -870,20 +877,22 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Defenders present capitalism as compatible with stable rule and global trade, so the claim that it inevitably breeds war is not theirs; no source discusses it directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "taxation-theft": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The model relies on a strong state that taxes and directs the economy, so this libertarian claim is rejected; no source discusses it directly.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "harm-principle": {
       "value": -2,
@@ -994,12 +1003,13 @@
       "nulledFrom": -1
     },
     "bound-labor": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The model relies on wage labour in markets, so bound labour runs against it; no source discusses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-neutral-knowledge": {
       "value": null,
@@ -1181,12 +1191,13 @@
       "nulledFrom": 0
     },
     "ban-interest": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "State control of credit allocation, which the model uses to steer investment, presupposes interest-bearing lending; no source discusses banning interest.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "racial-segregation-law": {
       "value": -2,
@@ -3048,13 +3059,14 @@
       "nulledFrom": -1
     },
     "interest-free-mutual-credit": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The model keeps profit-making private and state-guided finance rather than user-owned mutual credit; the sources never mention mutual banks.",
       "sources": [
         "s5",
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "refuse-lender-austerity": {
       "value": 0,
@@ -4467,6 +4479,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 189
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 12
     }
   ]
 }

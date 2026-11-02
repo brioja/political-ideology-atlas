@@ -996,12 +996,13 @@
       "nulledFrom": 0
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The Chinese ultra-left sources never mention Zionism or Israel.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": 0,
@@ -1418,12 +1419,13 @@
       ]
     },
     "right-to-buy-council-homes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Housing tenure is not in the sources; privatization of public housing is at odds with its anti-property stance but no source says so.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-strikes-picketing": {
       "value": -2,
@@ -2116,12 +2118,13 @@
       "nulledFrom": 2
     },
     "history-own-civilization": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source on how the ultra-left would want history taught; its class framing is neither nation-centered nor explicitly against it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizing-tutelage": {
       "value": -2,
@@ -2317,12 +2320,13 @@
       ]
     },
     "party-own-road": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The text criticizes drift toward the Soviet road, but no source on whether parties should choose their own path.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "self-reliance-over-aid": {
       "value": 0,
@@ -2665,12 +2669,13 @@
       "nulledFrom": 0
     },
     "informal-organisation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "It organized as loose alliances of rebel groups, but no source states a preference for small trust-based groups.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-law-over-international": {
       "value": null,
@@ -3188,12 +3193,13 @@
       "nulledFrom": 0
     },
     "vote-delegation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The group wants cadres recallable by the masses, but no source supports individual proxy delegation of votes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "existential-risk-priority": {
       "value": null,
@@ -4349,6 +4355,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 170
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

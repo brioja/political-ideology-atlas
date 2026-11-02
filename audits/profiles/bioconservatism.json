@@ -2736,12 +2736,13 @@
    "nulledFrom": 0
   },
   "minority-conspiracy": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
    "rationale": "Equal dignity of all humans is central to the camp and no source supports conspiracy claims against a minority. None of the cited sources takes up this statement, so this is a low-confidence reading of the general outlook.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": -2
   },
   "abolish-legal-marriage": {
    "value": null,
@@ -2868,12 +2869,13 @@
    "nulledFrom": 0
   },
   "socialized-care": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Kass defends the family as the setting for child-rearing, but no source addresses public care provision.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "purge-loanwords": {
    "value": 0,
@@ -3574,12 +3576,13 @@
    "nulledFrom": 0
   },
   "family-wage": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Kass defends the family but the sources never address wage levels.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "faster-drug-approval": {
    "value": null,
@@ -4496,6 +4499,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 146
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

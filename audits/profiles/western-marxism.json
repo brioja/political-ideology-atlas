@@ -2768,12 +2768,13 @@
       ]
     },
     "mixed-public-service-providers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Mixed provision is a social-democratic design the Frankfurt School criticised as reformism, but no source addresses service delivery.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religion-illusion": {
       "value": 0,
@@ -4452,6 +4453,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 224
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

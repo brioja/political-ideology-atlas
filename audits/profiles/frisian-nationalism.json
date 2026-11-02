@@ -583,12 +583,13 @@
       "nulledFrom": 0
     },
     "workers-councils": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source connects the movement to council rule; it operates through parliaments and provincial councils.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "right-to-secede": {
       "value": 0,
@@ -1109,12 +1110,13 @@
       "nulledFrom": 0
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source links Frisian nationalists to the claim that political freedom depends on economic freedom, and a centre-left regionalist party would not treat it as central.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": null,
@@ -1294,12 +1296,13 @@
       "nulledFrom": 1
     },
     "political-elite-corrupt": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "It criticises The Hague for ignoring regions, but no source charges corruption.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "heritable-defect-limits": {
       "value": null,
@@ -2357,12 +2360,13 @@
       "nulledFrom": 1
     },
     "noblesse-oblige": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses duties of the privileged; the party's solidarity value is stated but not tied to elites.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "withdraw-from-politics": {
       "value": -2,
@@ -3020,12 +3024,13 @@
       ]
     },
     "alienated-labor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement has no Marxist analysis of work, and no source discusses alienation.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "islam-incompatible": {
       "value": null,
@@ -4469,6 +4474,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 237
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

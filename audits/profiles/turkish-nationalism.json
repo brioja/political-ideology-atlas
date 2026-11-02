@@ -289,12 +289,13 @@
       ]
     },
     "rehabilitation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a penal philosophy; nationalists often favour harsher punishment but not uniformly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "traditional-family": {
       "value": 1,
@@ -490,12 +491,13 @@
       "nulledFrom": 0
     },
     "tax-inheritance": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social-justice language is balanced by acceptance of property; no sourced position.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "basic-income": {
       "value": null,
@@ -949,12 +951,13 @@
       ]
     },
     "hereditarian-race": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Early pan-Turkism drew on racial thinking, but modern mainstream nationalism downplays it and no source states this.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "organic-representation": {
       "value": 1,
@@ -1262,12 +1265,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Early pan-Turkists drew on social Darwinism, but no source ties Turkish nationalism to eugenic policy.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "security-forces-accountable": {
       "value": -1,
@@ -1535,12 +1539,13 @@
       "nulledFrom": 1
     },
     "representatives-worker-pay": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "No source supports this; Kemalism and the doctrine are not class-levelling.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "pool-sovereignty": {
       "value": -2,
@@ -2878,13 +2883,14 @@
       "nulledFrom": -1
     },
     "defensive-jihad-duty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents split between secular Kemalists and the Turkish-Islamic strand, and the sources do not cover jihad.",
       "sources": [
         "s2",
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unreligious-rulers-fought": {
       "value": -2,
@@ -4380,6 +4386,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 187
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

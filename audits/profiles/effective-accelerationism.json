@@ -1172,12 +1172,13 @@
       ]
     },
     "sacrifice-heritage": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement is future-oriented but no source calls for destroying cultural institutions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "dominated-front": {
       "value": null,
@@ -4231,12 +4232,13 @@
       ]
     },
     "indirect-election": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never address this; it favours decentralization generally but takes no stated view on how offices are filled.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-church-status": {
       "value": null,
@@ -4565,6 +4567,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 268
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -205,12 +205,13 @@
       ]
     },
     "limit-guns": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source opened addresses gun policy; adherents emphasised order and state power but also paramilitary self-defence stewards.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "empower-police-military": {
       "value": 1,
@@ -1196,12 +1197,13 @@
       ]
     },
     "heritable-defect-limits": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Eugenics were favoured by the National Front, but the opened BUF sources do not mention it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "security-forces-accountable": {
       "value": -2,
@@ -2906,12 +2908,13 @@
       "nulledFrom": -1
     },
     "assisted-dying": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "British fascism spoke of national vitality and eugenics, but no source gives a position on assisted dying; split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "left-right-obsolete": {
       "value": 2,
@@ -4428,6 +4431,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 201
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -1052,12 +1052,13 @@
       "nulledFrom": -2
     },
     "diaspora-return-right": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses a Malay diaspora's return rights; the movement focused on rights inside Malaya.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "revive-national-language": {
       "value": null,
@@ -1717,12 +1718,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Islamic schooling is valued but the sources do not mention evolution teaching.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": null,
@@ -1864,12 +1866,13 @@
       "nulledFrom": 0
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses environmental risk policy for this movement.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "collective-defense": {
       "value": null,
@@ -1925,12 +1928,13 @@
       "nulledFrom": 0
     },
     "sacred-ruler": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Malay rulers are revered, but divine descent claims are not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "flat-income-tax": {
       "value": null,
@@ -2819,12 +2823,13 @@
       ]
     },
     "treaties-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Malay nationalists treat treaties with the Rulers as binding, but no source gives a general rule.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cooperative-communities": {
       "value": -1,
@@ -4367,6 +4372,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

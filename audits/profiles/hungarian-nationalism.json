@@ -223,12 +223,13 @@
       ]
     },
     "legalize-sex-work": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Christian-conservative morality opposes legalisation, though no source addresses it directly.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "decide-locally": {
       "value": -1,
@@ -3981,12 +3982,13 @@
       "nulledFrom": -1
     },
     "self-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Communitarian national conservatism stresses nation and family over individual autonomy, but no source states a position.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "cut-consumption-tax": {
       "value": -1,
@@ -4175,6 +4177,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 93
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -355,12 +355,13 @@
       "nulledFrom": 1
     },
     "reduce-immigration": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Internationalist and liberal outlook argues against cuts; the sources do not cover migration.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "empower-international-orgs": {
       "value": 1,
@@ -576,12 +577,13 @@
       ]
     },
     "direct-votes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Swiss GLP works in a direct-democracy system, but no source says it wants more.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-councils": {
       "value": null,
@@ -610,12 +612,13 @@
       ]
     },
     "political-violence-never": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal constitutionalism favours peaceful politics; no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "war-builds-character": {
       "value": null,
@@ -1266,12 +1269,13 @@
       "nulledFrom": -2
     },
     "proportional-representation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Swiss GLP operates under proportional representation; no source states a position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "national-mission": {
       "value": null,
@@ -2042,12 +2046,13 @@
       "nulledFrom": -1
     },
     "refugee-return": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal human-rights principles generally support a right of return for the displaced; the sources do not cover it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "co-ethnic-territorial-claim": {
       "value": null,
@@ -3609,12 +3614,13 @@
       "nulledFrom": 0
     },
     "online-anonymity": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Civil-liberties liberalism usually supports anonymity online, but no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "person-over-state": {
       "value": 1,
@@ -4096,12 +4102,13 @@
       ]
     },
     "religion-oppresses-women": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Socially liberal and secular but the sources never discuss this claim; adherents would be split or indifferent.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "race-social-construct": {
       "value": null,
@@ -4470,6 +4477,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 321
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

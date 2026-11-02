@@ -573,12 +573,13 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "As a Marxist-Leninist-Maoist tendency it grounds law in class rule and materialism; no source discusses scriptural law.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "private-courts-defense": {
       "value": -2,
@@ -866,12 +867,13 @@
       ]
     },
     "state-as-business": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "A proletarian state is the opposite of treating citizens as customers, though the sources never address the idea.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "media-academia-power": {
       "value": -1,
@@ -1489,12 +1491,13 @@
       ]
     },
     "clerical-rule": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Rule by religious scholars is incompatible with an atheist, materialist communist programme; no source discusses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "defeat-own-government-war": {
       "value": 2,
@@ -4344,6 +4347,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 220
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

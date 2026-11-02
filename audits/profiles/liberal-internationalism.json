@@ -3114,13 +3114,14 @@
       "nulledFrom": -2
     },
     "citizens-assembly": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Liberal internationalism is a foreign-policy doctrine that says little on domestic institutions. Its proponents are liberal-democratic and favour democratic legitimacy, but the sources never discuss deliberation by lot, so adherents are treated as split between representative and participatory views.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "reinterpret-religion": {
       "value": null,
@@ -4367,6 +4368,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 227
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

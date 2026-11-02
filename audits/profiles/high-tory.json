@@ -420,12 +420,13 @@
       ]
     },
     "limit-growth": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Agrarian, rural-minded and sceptical of commercial values, but no source supports growth limits; mildly negative inference.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "drastic-climate-action": {
       "value": 0,
@@ -745,12 +746,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Stewardship of land is part of agrarian Toryism but no source states a view on intrinsic value.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": -1,
@@ -927,12 +929,13 @@
       ]
     },
     "conscription": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Order and duty favour it mildly; no source addresses it.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "exit-over-voice": {
       "value": -1,
@@ -1053,12 +1056,13 @@
       "nulledFrom": 0
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a distinct High Tory view on a Jewish state, and the tradition is split between imperial-era and pro-Israel attitudes.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": null,
@@ -1231,12 +1235,13 @@
       ]
     },
     "expand-fossil-fuels": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source covers energy production, and rural-heritage concerns offset the economic case, so adherents are split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assimilate-immigrants": {
       "value": 1,
@@ -1938,12 +1943,13 @@
       ]
     },
     "flat-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source covers tax structure, and High Tories split between low-tax and paternalist outlooks.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "character-from-environment": {
       "value": -1,
@@ -3831,12 +3837,13 @@
       "nulledFrom": 1
     },
     "public-service-media": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Paternalist and cultural-elite attachment to national institutions makes public broadcasting plausible; the sources never discuss media.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "religions-one-truth": {
       "value": null,
@@ -4221,12 +4228,13 @@
       "nulledFrom": -1
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss consumption taxes; protectionist traditionalists and landed interests split on how to raise revenue.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "targeted-social-spending": {
       "value": null,
@@ -4412,6 +4420,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 219
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

@@ -166,12 +166,13 @@
       ]
     },
     "worker-ownership": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The programme favours individual property formation and small business over collective ownership; no source discusses worker-owned firms.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "surveillance-ok": {
       "value": null,
@@ -504,12 +505,13 @@
       "nulledFrom": -1
     },
     "corporatist-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Schönerer's popular solidarism hints at national class cooperation but no source describes state-recognised wage bodies.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-party-rule": {
       "value": -1,
@@ -993,12 +995,13 @@
       ]
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Schönerer's antisemitism opposed Jews in public life and the sources do not mention Zionism, while modern FPÖ figures differ.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "diaspora-return-right": {
       "value": 1,
@@ -1290,12 +1293,13 @@
       ]
     },
     "ban-cattle-slaughter": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "No source touches the matter; the programme rejects religious dogma in lawmaking.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "no-religion-state-schools": {
       "value": null,
@@ -4278,6 +4282,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 140
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

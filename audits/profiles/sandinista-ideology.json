@@ -1617,12 +1617,13 @@
    ]
   },
   "rural-life-healthier": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Peasants were the core of Fonseca's strategy, but no source claims rural life is morally healthier.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "reunify-divided-nation": {
    "value": 0,
@@ -2275,12 +2276,13 @@
    "nulledFrom": 1
   },
   "ruling-class-consent": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The movement was Marxist-influenced but no source documents a hegemony theory; split.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "world-economy-extracts-surplus": {
    "value": 1,
@@ -2396,12 +2398,13 @@
    ]
   },
   "military-guardian-role": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The army was the party's own Sandinista army, but no source documents a guardian doctrine.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "paid-care-work": {
    "value": 0,
@@ -2894,12 +2897,13 @@
    ]
   },
   "alienated-labor": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "Fonseca used Marxist classics but no source documents alienation theory.",
    "sources": [
     "s2"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "islam-incompatible": {
    "value": -2,
@@ -4358,6 +4362,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 192
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 4
   }
  ]
 }

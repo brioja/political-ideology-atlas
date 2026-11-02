@@ -126,12 +126,13 @@
       "nulledFrom": 0
     },
     "property-fundamental": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "The AfD programme calls protection of private ownership indispensable (10.2), though no source asks that it be nearly impossible to override.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "regulate-corporations": {
       "value": null,
@@ -4309,6 +4310,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 208
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

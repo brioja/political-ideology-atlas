@@ -104,12 +104,13 @@
       "nulledFrom": 1
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social Gaullists favoured social justice while the liberal wing stressed efficiency; no source ties the movement to a position on the wage floor.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "markets-allocate-better": {
       "value": -1,
@@ -130,12 +131,13 @@
       "nulledFrom": 1
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social Gaullism sought stability through social justice rather than redistribution doctrine, and no source gives a tax position.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "unions-good": {
       "value": null,
@@ -199,12 +201,13 @@
       "nulledFrom": -1
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The constitution guarantees equality regardless of origin, race or religion, but no source ties Gaullism to speech restrictions.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": 1,
@@ -1177,12 +1180,13 @@
       "nulledFrom": -1
     },
     "workers-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Class unity inside the national community is the Gaullist stance; no source discusses international organisation directly.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "distinct-gender-roles": {
       "value": null,
@@ -2654,12 +2658,13 @@
       "nulledFrom": -1
     },
     "job-guarantee": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Social Gaullists favoured state-guided growth but no source records a job guarantee; adherents are split.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "democratic-peace": {
       "value": null,
@@ -4324,12 +4329,13 @@
       "nulledFrom": -1
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Classical Gaullism predates the proposal; it favoured state economic direction but there is no source on this tax, and later Gaullists, such as Chirac, supported one.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "racism-not-main-obstacle": {
       "value": 0,
@@ -4444,6 +4450,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 254
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 6
     }
   ]
 }

@@ -1048,12 +1048,13 @@
       ]
     },
     "avoid-deficit-stimulus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Fiscal stance on deficits is not in the sources; the party's state-led economy could justify stimulus while its stability concerns could cut the other way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "economic-freedom": {
       "value": -1,
@@ -4106,12 +4107,13 @@
       "nulledFrom": -1
     },
     "equal-conscription": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The party's stress on women's equality and on mobilising the whole people pulls both ways; no source states a position, so adherents are effectively split.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homeland-spiritual-bond": {
       "value": null,
@@ -4358,6 +4360,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 197
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

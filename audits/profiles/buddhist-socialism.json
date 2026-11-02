@@ -205,12 +205,13 @@
       "nulledFrom": 0
     },
     "legalize-drugs": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Intoxicants are discouraged by the fifth precept and U Nu's state promoted Buddhist morality, though no source addresses legalization.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "restrict-hate-speech": {
       "value": null,
@@ -481,12 +482,13 @@
       "nulledFrom": 1
     },
     "land-value-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ambedkar favored state ownership of agricultural land rather than a single land tax, and no source discusses a land-value tax.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "tax-inheritance": {
       "value": null,
@@ -550,12 +552,13 @@
       ]
     },
     "corporatist-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source discusses state-recognized wage bargaining; Buddhadasa's call for sharing surplus and U Nu's planning could be read either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "one-party-rule": {
       "value": -2,
@@ -601,12 +604,13 @@
       ]
     },
     "right-to-secede": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "U Nu's government fought ethnic rebellions and sought unity, though no source states a principle.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "natural-rulers": {
       "value": 0,
@@ -643,13 +647,14 @@
       ]
     },
     "laws-from-scripture": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Dhamma principles inform policy, but U Nu's measures were statutes, not scriptural law; no source calls for scriptural law as such.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "private-courts-defense": {
       "value": -2,
@@ -704,12 +709,13 @@
       "nulledFrom": 0
     },
     "colonial-reparations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement arose against colonialism but no source takes a reparations position.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "civilizational-union": {
       "value": 0,
@@ -1187,12 +1193,13 @@
       "nulledFrom": -2
     },
     "dominated-front": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-colonial solidarity was part of the movement's origin, but no source describes a front against Western powers.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "workers-nation": {
       "value": null,
@@ -1840,12 +1847,13 @@
       ]
     },
     "direct-election-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ambedkar favored parliamentary government, but no source states a view on electing the head of state.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "central-bank-independence": {
       "value": null,
@@ -2821,12 +2829,13 @@
       ]
     },
     "capitalism-progressive": {
-      "value": -1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "U Nu saw capitalism as un-Buddhist; no source credits it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "women-equality-needs-economic-change": {
       "value": null,
@@ -4509,6 +4518,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 203
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 9
     }
   ]
 }

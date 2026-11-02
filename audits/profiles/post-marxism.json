@@ -2881,12 +2881,13 @@
       "nulledFrom": -2
     },
     "neither-capitalism-nor-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "They claim to remain socialist and criticise Soviet domination, yet no source here frames a third course.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "historical-land-claim": {
       "value": null,
@@ -3253,12 +3254,13 @@
       "nulledFrom": 1
     },
     "state-promotes-atheism": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Radical democracy deepens liberal pluralism, so a state imposing unbelief is at odds with it; no source discusses state atheism directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "abolish-police-prisons": {
       "value": null,
@@ -3538,12 +3540,13 @@
       ]
     },
     "local-essentials-public": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Radical reformism with deepened democracy and pluralism, and left-populist demands to restore public services against neoliberalism, fit public control of local essentials; the sources do not mention local services directly.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "second-chamber": {
       "value": null,
@@ -3681,13 +3684,14 @@
       "nulledFrom": -1
     },
     "racial-pride": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Anti-racist struggle is part of the project, but the sources never discuss racial pride; adherents' views would be split.",
       "sources": [
         "s2",
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "defensive-wars-only": {
       "value": null,
@@ -4493,6 +4497,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 326
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 4
     }
   ]
 }

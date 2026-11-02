@@ -1084,12 +1084,13 @@
       "nulledFrom": -2
     },
     "distribute-by-need": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Left members stress social justice but no source states a need-based distribution principle.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "production-for-use": {
       "value": null,
@@ -4457,6 +4458,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 248
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

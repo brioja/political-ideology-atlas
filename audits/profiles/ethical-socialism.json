@@ -967,12 +967,13 @@
       ]
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Ethical socialists rooted their politics in moral claims held to be true, not in a theory that knowledge reflects power, but no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "universal-morality": {
       "value": 2,
@@ -1571,12 +1572,13 @@
       "nulledFrom": -1
     },
     "recall-officials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Recall of representatives is not in the sources; democratic sympathies favour it but parliamentary practice does not, so neutral.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "end-foreign-alliances": {
       "value": null,
@@ -2174,12 +2176,13 @@
       ]
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Tawney's British tradition relied on parliament and no source on this movement addresses entrenched rights.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "colonial-treaties-void": {
       "value": null,
@@ -2731,12 +2734,13 @@
       "nulledFrom": 0
     },
     "purge-loanwords": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Linguistic purism is not a theme of the tradition, and no source addresses it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "treaties-binding": {
       "value": null,
@@ -3162,12 +3166,13 @@
       "nulledFrom": 0
     },
     "women-in-religious-leadership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources do not cover ordination; Tawney's Anglicanism and later liberal Christianity differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "shared-marital-authority": {
       "value": null,
@@ -4331,6 +4336,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 169
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

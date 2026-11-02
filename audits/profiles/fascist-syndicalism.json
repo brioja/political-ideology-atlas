@@ -881,12 +881,13 @@
       ]
     },
     "collective-farming": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Syndicalists organised agricultural workers in corporations but the regime kept private farming, and no source supports collectivised agriculture.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "capitalism-causes-war": {
       "value": -1,
@@ -1203,12 +1204,13 @@
       "nulledFrom": 1
     },
     "ban-interest": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Rossoni attacked industrialists and shopkeepers as profiteers but no source shows a call to ban interest, which the regime never did.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "racial-segregation-law": {
       "value": -1,
@@ -4428,6 +4430,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 202
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

@@ -484,12 +484,13 @@
       ]
     },
     "state-directs-investment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The reformers backed state-led education and reform, yet no source states a view on directing investment.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "widespread-small-property": {
       "value": null,
@@ -646,12 +647,13 @@
       "nulledFrom": 0
     },
     "moral-incentives": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Modernist ethics stress duty and character, but no source proposes replacing material incentives.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "armed-group-creates-revolution": {
       "value": -2,
@@ -1022,12 +1024,13 @@
       "nulledFrom": 1
     },
     "recallable-delegates": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Imperative mandates were not a modernist idea; no source discusses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "individual-pension-accounts": {
       "value": 0,
@@ -1794,12 +1797,13 @@
       "nulledFrom": 0
     },
     "colonial-reparations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Modernists were anti-colonial and opposed Western exploitation, but no source states reparations.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "civilizational-union": {
       "value": 1,
@@ -2483,12 +2487,13 @@
       ]
     },
     "initiating-force-wrong": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Modernists held defensive jihad legitimate but no source states an absolute rule against initiating force.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "competition-drives-progress": {
       "value": null,
@@ -2840,20 +2845,22 @@
       ]
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The reformers opposed Western exploitation, yet no source addresses debt cancellation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Modernists sought both political and educational renewal, but no source ties independence to property transformation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "constituent-assembly": {
       "value": 1,
@@ -3051,12 +3058,13 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Child custody was part of family-law reform, but no source states an equal-time presumption.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "class-struggle-under-socialism": {
       "value": 0,
@@ -4346,6 +4354,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 159
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

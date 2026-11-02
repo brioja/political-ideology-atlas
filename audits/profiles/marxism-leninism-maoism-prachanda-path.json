@@ -1338,12 +1338,13 @@
    ]
   },
   "trade-surplus": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The sources do not mention trade balances; the self-reliance theme gives no clear answer.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "population-transfer": {
    "value": -2,
@@ -2606,12 +2607,13 @@
    ]
   },
   "industrial-unions": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "The opened sources never mention union structure, and the party organises workers through its own fronts, so adherents are indifferent between craft and industry unions.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "minority-conspiracy": {
    "value": -2,
@@ -3055,12 +3057,13 @@
    ]
   },
   "online-participation": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source addresses digital politics; the party's mass line favours participation but its practice was in villages and on the ground, so no clear lean.",
    "sources": [
     "s3"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "open-government-data": {
    "value": null,
@@ -4313,6 +4316,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 206
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 3
   }
  ]
 }

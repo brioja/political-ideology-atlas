@@ -186,12 +186,13 @@
       "nulledFrom": -1
     },
     "restrict-hate-speech": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents divide between protecting freedom of conscience and expression and protecting dignity from degradation; no source settles it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "strong-leader": {
       "value": -2,
@@ -2826,13 +2827,14 @@
       "nulledFrom": -2
     },
     "treaties-binding": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Maritain's natural-law and rights outlook, and Erasmus's stress on good faith, support honouring agreements; no source addresses internal nations directly.",
       "sources": [
         "s2",
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "cooperative-communities": {
       "value": -1,
@@ -4057,12 +4059,13 @@
       "nulledFrom": 1
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses state machinery for equality; Maritain's pluralism and subsidiarity pull in opposite directions, so adherents would be split.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "homestead-ownership": {
       "value": null,
@@ -4438,6 +4441,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 271
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

@@ -3029,13 +3029,14 @@
       "nulledFrom": -1
     },
     "gender-identity-recognition": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Communitarians are split between rights protection and traditional-community concerns, and the sources never address the question.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "assisted-dying": {
       "value": null,
@@ -3778,13 +3779,14 @@
       "nulledFrom": 0
     },
     "pollution-taxes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Communitarians support protecting the common good and the environment, but the sources never state a preferred tool and moral education and civic action are emphasised over taxes; split.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "future-generations": {
       "value": 1,
@@ -4573,6 +4575,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 274
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

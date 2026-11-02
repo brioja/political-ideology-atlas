@@ -1111,12 +1111,13 @@
       "nulledFrom": 0
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Muhammad urged black enterprise, but no source links economic and political freedom as the statement does.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": null,
@@ -2833,12 +2834,13 @@
       ]
     },
     "national-law-over-international": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The movement rejected US law but no source states a rule on international law.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "religious-nation": {
       "value": 1,
@@ -4625,6 +4627,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 237
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 2
     }
   ]
 }

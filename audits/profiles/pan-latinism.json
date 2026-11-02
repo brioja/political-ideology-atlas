@@ -472,12 +472,13 @@
       "nulledFrom": 0
     },
     "socialized-markets": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source speaks to this; Bilbao's communal ideal makes it neither rejected nor endorsed.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "land-value-tax": {
       "value": null,
@@ -591,12 +592,13 @@
       "nulledFrom": 0
     },
     "workers-councils": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Not in the sources; Bilbao's call for a congress of states points to representative bodies.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "right-to-secede": {
       "value": 0,
@@ -729,12 +731,13 @@
       ]
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bilbao's spiritual outlook might support it, but the sources never mention nature, so adherents are not shown to lean either way.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "limit-population": {
       "value": null,
@@ -848,12 +851,13 @@
       "nulledFrom": -1
     },
     "production-for-use": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bilbao's moral ordering of economy to social ends leans toward it, but no source states it and liberal Latinists differ.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "profit-exploitation": {
       "value": null,
@@ -1094,12 +1098,13 @@
       ]
     },
     "economic-freedom": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source ties political liberty to economic freedom.",
       "sources": [
         "s6"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "rule-by-example": {
       "value": -1,
@@ -1751,12 +1756,13 @@
       "nulledFrom": -1
     },
     "encourage-eccentricity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bilbao's defence of free thought leans toward it, but Latinism leaned on shared cultural conformity and no source states it.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "sovereign-debt-cancellation": {
       "value": null,
@@ -3438,12 +3444,13 @@
       "nulledFrom": 1
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Bilbao's congress with equal state representation resembles a federal chamber, but the sources never discuss bicameralism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "municipal-property": {
       "value": 0,
@@ -4373,6 +4380,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 184
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 7
     }
   ]
 }

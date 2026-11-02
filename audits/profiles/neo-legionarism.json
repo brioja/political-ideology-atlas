@@ -235,12 +235,13 @@
       "nulledFrom": -2
     },
     "decide-locally": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "The demand for one undivided Romanian state points to national rather than local decision-making, but no source addresses decentralisation.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "rehabilitation": {
       "value": null,
@@ -502,12 +503,13 @@
       ]
     },
     "abolish-central-banks": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Hostile to finance and usury, but no source gives a monetary doctrine, so adherents are not clearly for abolition.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "corporatist-bargaining": {
       "value": 1,
@@ -1959,12 +1961,13 @@
       ]
     },
     "refugee-return": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source gives a position on refugee return.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "co-ethnic-territorial-claim": {
       "value": 2,
@@ -4340,6 +4343,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 184
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

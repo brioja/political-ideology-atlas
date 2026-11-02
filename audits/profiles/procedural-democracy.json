@@ -574,12 +574,13 @@
    ]
   },
   "political-violence-never": {
-   "value": 1,
-   "confidence": "medium",
+   "value": null,
+   "confidence": "low",
    "rationale": "Popper presents democracy as the arrangement that makes violence unnecessary for changing governments, though no source states an absolute ban.",
    "sources": [
     "s1"
-   ]
+   ],
+   "nulledFrom": 1
   },
   "war-builds-character": {
    "value": null,
@@ -4158,12 +4159,13 @@
    "nulledFrom": 0
   },
   "tech-with-ancestral-values": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
    "rationale": "No source on procedural democracy addresses technology or ancestral values.",
    "sources": [
     "s5"
-   ]
+   ],
+   "nulledFrom": 0
   },
   "wife-divorce-without-consent": {
    "value": 0,
@@ -4310,6 +4312,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 71
+  },
+  {
+   "kind": "unsourced",
+   "reviewer": "scripts/unsourced-to-null.js",
+   "reviewedAt": "2026-11-02",
+   "nulled": 2
   }
  ]
 }

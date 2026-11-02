@@ -237,12 +237,13 @@
       "nulledFrom": -1
     },
     "legalize-sex-work": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxist-Leninists treat prostitution as capitalist exploitation; no source here addresses it directly.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "decide-locally": {
       "value": null,
@@ -263,12 +264,13 @@
       "nulledFrom": 1
     },
     "traditional-family": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Adherents differ: Hoxha's Albania stressed family and morals, while Maoist currents attacked tradition; no source addresses it.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "same-sex-marriage": {
       "value": null,
@@ -693,12 +695,13 @@
       ]
     },
     "duties-before-rights": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "They stress collective duty and discipline over individual claims; no source states it in these terms.",
       "sources": [
         "s3"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "nature-intrinsic-value": {
       "value": null,
@@ -710,12 +713,13 @@
       "nulledFrom": -1
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "Marxists traditionally reject Malthusian population control, but no source addresses it.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -1309,12 +1313,13 @@
       "nulledFrom": 1
     },
     "restrict-conversion": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
       "rationale": "They are hostile to religion but do not typically legislate against conversion; no source.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -1
     },
     "ban-cattle-slaughter": {
       "value": -2,
@@ -1503,12 +1508,13 @@
       "nulledFrom": 1
     },
     "long-naturalization-wait": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "No source addresses citizenship rules and their internationalism points both ways, so adherents have no settled line.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "representatives-worker-pay": {
       "value": null,
@@ -1684,12 +1690,13 @@
       ]
     },
     "restrict-pornography": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Stalin-line parties treated it as bourgeois decadence; no source.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "citizenship-by-descent": {
       "value": null,
@@ -1982,12 +1989,13 @@
       ]
     },
     "apostasy-punishable": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "Hoxha's Albania banned religious practice outright in 1967 and the movement promoted atheism, so it never sought to punish leaving a religion; but no source addresses apostasy law, and the old claim that these states opposed religious coercion was wrong.",
       "sources": [
         "s5"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "women-must-cover": {
       "value": null,
@@ -4368,6 +4376,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 248
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 8
     }
   ]
 }

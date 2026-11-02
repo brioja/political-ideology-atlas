@@ -1260,12 +1260,13 @@
       "nulledFrom": -2
     },
     "security-forces-accountable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The creed honours the armed forces yet stresses rule of law, and no source speaks to legal accountability for past abuses.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "night-watchman-state": {
       "value": -1,
@@ -4366,6 +4367,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 192
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

@@ -1602,12 +1602,13 @@
       "nulledFrom": -1
     },
     "people-in-arms": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Posadists armed guerrillas and called for workers' militias, though no source states it.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "rural-life-healthier": {
       "value": -2,
@@ -4426,6 +4427,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 312
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 1
     }
   ]
 }

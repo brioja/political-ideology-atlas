@@ -2134,12 +2134,13 @@
       ]
     },
     "ruling-class-consent": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "Gramscian; not in the sources, though Marxism-Leninism sees culture as class-based.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "world-economy-extracts-surplus": {
       "value": null,
@@ -2452,12 +2453,13 @@
       ]
     },
     "capitalism-progressive": {
-      "value": 1,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Classical Marxist view that capitalism created the base for socialism; mentioned in the doctrine, not in the sources.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "women-equality-needs-economic-change": {
       "value": 1,
@@ -2534,12 +2536,13 @@
       ]
     },
     "criminalize-homosexuality": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
       "rationale": "The Stalin-era USSR criminalized male homosexuality from 1934; this is not in the sources read.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 1
     },
     "suppress-opposition": {
       "value": 1,
@@ -4316,6 +4319,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 178
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }

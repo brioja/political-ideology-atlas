@@ -212,13 +212,14 @@
       ]
     },
     "state-harmful": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "One-nation conservatism values inherited institutions and a paternal state that supports the population, which clearly rules out treating the state as harmful; no source addresses anarchism.",
       "sources": [
         "s1",
         "s4"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-guns": {
       "value": null,
@@ -1200,12 +1201,13 @@
       ]
     },
     "elite-replacement": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
       "rationale": "The sources never discuss immigration conspiracies; rejection is assumed from the tradition's mainstream parliamentary character.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "proportional-representation": {
       "value": -1,
@@ -1942,13 +1944,14 @@
       ]
     },
     "class-struggle-under-socialism": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Class reconciliation across Disraeli's \"two nations\" is the tradition's defining aim, which is incompatible with this Maoist thesis; no source addresses it.",
       "sources": [
         "s1",
         "s2"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "land-redistribution": {
       "value": -2,
@@ -2051,12 +2054,13 @@
       ]
     },
     "no-bailouts": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Pragmatic and paternalist, with no sourced stance on bailouts.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "courts-bound-by-majority": {
       "value": 0,
@@ -4123,12 +4127,13 @@
       "nulledFrom": -1
     },
     "indirect-election": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Conservatives defended traditional institutions such as the Lords, but no source addresses delegate selection; adherents are split.",
       "sources": [
         "s4"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "national-church-status": {
       "value": 1,
@@ -4469,6 +4474,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 210
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 5
     }
   ]
 }

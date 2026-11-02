@@ -370,13 +370,14 @@
       ]
     },
     "open-borders": {
-      "value": -2,
-      "confidence": "medium",
+      "value": null,
+      "confidence": "low",
       "rationale": "Ultranationalism's xenophobia and exclusion of foreigners rule out open borders. No source discusses border policy directly.",
       "sources": [
         "s1",
         "s3"
-      ]
+      ],
+      "nulledFrom": -2
     },
     "limit-growth": {
       "value": null,
@@ -432,12 +433,13 @@
       ]
     },
     "central-planning": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "The State directs the economy but no source commits to a planned economy.",
       "sources": [
         "s2"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "socialized-markets": {
       "value": null,
@@ -1720,12 +1722,13 @@
       "nulledFrom": -1
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
       "rationale": "Strands differ, with some tied to the church and others secular; no source addresses creationism.",
       "sources": [
         "s1"
-      ]
+      ],
+      "nulledFrom": 0
     },
     "restrict-pornography": {
       "value": null,
@@ -4479,6 +4482,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 272
+    },
+    {
+      "kind": "unsourced",
+      "reviewer": "scripts/unsourced-to-null.js",
+      "reviewedAt": "2026-11-02",
+      "nulled": 3
     }
   ]
 }
