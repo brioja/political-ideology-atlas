@@ -340,6 +340,78 @@
    "author": "Kristi Noem and US House Committee on Ways and Means; GovInfo CHRG-114hhrg22185",
    "url": "https://www.govinfo.gov/app/details/CHRG-114hhrg22185",
    "usedFor": "treaties-binding"
+  },
+  {
+   "id": "n19",
+   "kind": "primary",
+   "title": "2019 State of the State address, South Dakota (as prepared)",
+   "author": "Kristi Noem",
+   "url": "https://kelo.com/news/articles/2019/jan/09/transcript-gov-noems-state-of-the-state-address/",
+   "usedFor": "Targeted industries, open government websites, online habitat crowdsourcing; read via the State of the State corpus (github.com/leops95/sots)."
+  },
+  {
+   "id": "n20",
+   "kind": "primary",
+   "title": "2020 State of the State address, South Dakota (as prepared)",
+   "author": "Kristi Noem",
+   "url": "https://governor.sd.gov/doc/SOTS-2020.pdf",
+   "usedFor": "Four pillars including limiting government regulation; open government; read via the State of the State corpus (github.com/leops95/sots)."
+  },
+  {
+   "id": "n21",
+   "kind": "primary",
+   "title": "2021 State of the State address, South Dakota (as prepared)",
+   "author": "Kristi Noem",
+   "url": "https://web.archive.org/web/20210421145600/https://news.sd.gov/newsitem.aspx?id=27616",
+   "usedFor": "Family and civic education passages; read via the State of the State corpus (github.com/leops95/sots)."
+  },
+  {
+   "id": "n22",
+   "kind": "primary",
+   "title": "2022 State of the State address, South Dakota (as prepared)",
+   "author": "Kristi Noem",
+   "url": "https://news.sd.gov/newsitem.aspx?id=28835",
+   "usedFor": "Limited government, police, regulation, school prayer, religious exemptions, 1776 Pledge, stewardship; read via the State of the State corpus (github.com/leops95/sots)."
+  },
+  {
+   "id": "n23",
+   "kind": "primary",
+   "title": "House roll calls 777-779, October 12, 2011 (Colombia, Panama and Korea trade agreements), via Voteview",
+   "author": "U.S. House of Representatives",
+   "url": "https://voteview.com/",
+   "usedFor": "Her YEA votes on passage of the three trade agreements (rolls 777, 778, 779; roll 662 of Dec 6, 2017 and roll 444 of Aug 2, 2013 are cited from the same dataset)."
+  },
+  {
+   "id": "n24",
+   "kind": "primary",
+   "title": "House floor speech on trade, April 28, 2014, and Ways and Means hearing, April 22, 2015 (her own turns), via the congress corpora",
+   "author": "Kristi Noem",
+   "url": "https://www.govinfo.gov/app/details/CREC-2014-04-28/CREC-2014-04-28-pt1-PgH3223-2",
+   "usedFor": "Trade agreements expand exports; also CHRG-114hhrg22183 (2015) and CHRG-115hhrg33478 (2017)."
+  },
+  {
+   "id": "n25",
+   "kind": "primary",
+   "title": "Ways and Means hearings on welfare reform, April 30, 2015 (CHRG-114hhrg21283) and May 24, 2016 (CHRG-114hhrg22187), her own turns",
+   "author": "Kristi Noem",
+   "url": "https://www.govinfo.gov/app/details/CHRG-114hhrg22187",
+   "usedFor": "Block grants and state flexibility with federal oversight; TANF work requirements bill."
+  },
+  {
+   "id": "n26",
+   "kind": "primary",
+   "title": "Congress tweets of Rep. Noem, January 10-18, 2018 (via alexlitel/congresstweets dataset; originals twitter.com/RepKristiNoem/statuses/951102211458850816 and /954043279380795392)",
+   "author": "Kristi Noem",
+   "url": "https://github.com/alexlitel/congresstweets",
+   "usedFor": "Work requirements in poverty programs; Conscience Protection Act; NLRB overreach; one-size-fits-all regulation."
+  },
+  {
+   "id": "n27",
+   "kind": "primary",
+   "title": "House floor speech on EPA dust standard, February 18, 2011 (Cong. Rec. H1308), and Tribal Labor Sovereignty speech, January 10, 2018 (H114)",
+   "author": "Kristi Noem",
+   "url": "https://www.govinfo.gov/app/details/CREC-2011-02-18/CREC-2011-02-18-pt2-PgH1308-2",
+   "usedFor": "Opposes federal regulatory overreach; REINS Act vote."
   }
  ],
  "answers": {
@@ -468,16 +540,12 @@
   },
   "more-religion-public": {
    "value": 2,
-   "confidence": "medium",
-   "rationale": "Pushed a school-prayer bill (HB 1015, 2022) and says rights come from God.",
+   "confidence": "high",
+   "rationale": "Introduced a school moment-of-silence bill to restore prayer rights in public schools and says rights come from God (2022); closes speeches with prayer.",
    "sources": [
     "s2",
-    "s3",
-    "b8"
-   ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
+    "b8",
+    "n22"
    ]
   },
   "separate-church-state": {
@@ -725,10 +793,15 @@
    "sources": []
   },
   "regulate-corporations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Named limiting government regulation a pillar of her governorship (2020), said she expands liberty rather than regulating it away (2022), and voted for the REINS Act (2013) and against EPA dust rules.",
+   "sources": [
+    "n20",
+    "n22",
+    "n23",
+    "n27"
+   ]
   },
   "worker-ownership": {
    "value": null,
@@ -761,10 +834,12 @@
    "sources": []
   },
   "state-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Says government's most fundamental role is defending the lives and safety of the people (2022), which rejects the claim that the state is unnecessary.",
+   "sources": [
+    "n22"
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -773,10 +848,14 @@
    "sources": []
   },
   "decide-locally": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "rationale": "Says she sides with giving states flexibility, would block grant programs and opposes federal overreach, but voted for national concealed-carry reciprocity and federal abortion limits.",
+   "sources": [
+    "n25",
+    "n23",
+    "n27"
+   ]
   },
   "rehabilitation": {
    "value": 0,
@@ -790,8 +869,10 @@
   "traditional-family": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Integrator review: she calls the family the cradle of civil society but commits to strengthening families “no matter what they look like” (2021 State of the State), so she does not state that traditional structures in particular are the foundation.",
+   "sources": [
+    "n21"
+   ]
   },
   "correct-racial-injustice": {
    "value": null,
@@ -821,10 +902,13 @@
    "sources": []
   },
   "free-trade": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Voted for the 2011 Colombia, Panama and Korea trade agreements and said in 2014-2017 floor and hearing remarks that trade agreements expand exports and benefit South Dakota; later support for Trump tariffs is words and does not outweigh the votes.",
+   "sources": [
+    "n23",
+    "n24"
+   ]
   },
   "nation-first": {
    "value": 2,
@@ -912,10 +996,14 @@
    "auditor": "gpt-6.1-sol"
   },
   "state-directs-investment": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found: the evidence found addresses a nearby question, not this statement.",
-   "sources": []
+   "rationale": "Charged the state economic development office with identifying and recruiting targeted industries (2019) and funded cybersecurity and bioprocessing, yet her speeches stress government staying out of the way.",
+   "sources": [
+    "n19",
+    "n20",
+    "n22"
+   ]
   },
   "widespread-small-property": {
    "value": null,
@@ -1339,12 +1427,13 @@
   },
   "work-for-welfare": {
    "value": 2,
-   "confidence": "medium",
-   "rationale": "Supported extending work requirements to Medicaid expansion, alongside existing food-assistance and TANF requirements.",
+   "confidence": "high",
+   "rationale": "Tweeted that work requirements are central to the reforms she has championed for Medicaid, poverty programs and food stamps, and authored a bill on TANF work requirements.",
    "sources": [
+    "n26",
+    "n25",
     "b2"
-   ],
-   "auditor": "gpt-6.1-sol"
+   ]
   },
   "class-collaboration": {
    "value": null,
@@ -1443,10 +1532,12 @@
    "sources": []
   },
   "night-watchman-state": {
-   "value": null,
+   "value": 0,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Says government must stay limited to securing God-given rights (2022), but as governor she funded broadband, housing and scholarships and used state law on abortion and sports.",
+   "sources": [
+    "n22"
+   ]
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1774,10 +1865,13 @@
    "sources": []
   },
   "religious-exemptions": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Authored a Conscience Protection Act for health workers who object on religious grounds (2018) and proposed religious exemptions from COVID vaccine mandates (2022).",
+   "sources": [
+    "n26",
+    "n22"
+   ]
   },
   "encourage-eccentricity": {
    "value": null,
@@ -2081,12 +2175,13 @@
   },
   "patriotic-education": {
    "value": 2,
-   "confidence": "medium",
-   "rationale": "Explicitly sought patriotic schooling that teaches children appreciation of living in America.",
+   "confidence": "high",
+   "rationale": "Signed the 1776 Pledge for honest, patriotic education and wants the state's social studies standards to reflect it (2022); wants students taught why the United States is special (2021).",
    "sources": [
-    "b11"
-   ],
-   "auditor": "gpt-6.1-sol"
+    "b11",
+    "n21",
+    "n22"
+   ]
   },
   "end-racial-preferences": {
    "value": null,
@@ -2740,16 +2835,21 @@
    "sources": []
   },
   "online-participation": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "Set up habitat.sd.gov so every South Dakotan can contribute ideas to policymaking online and livestreamed state meetings (2019); a narrow policy area.",
+   "sources": [
+    "n19"
+   ]
   },
   "open-government-data": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Announced and then expanded Open.SD.Gov and posting of agendas, minutes and livestreams of state meetings in one place (2019, 2020).",
+   "sources": [
+    "n19",
+    "n20"
+   ]
   },
   "interfaith-marriage-restriction": {
    "value": null,
@@ -2794,10 +2894,12 @@
    "sources": []
   },
   "abolish-police-prisons": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Says civil society depends on law enforcement and recruited police nationwide to South Dakota (2022).",
+   "sources": [
+    "n22"
+   ]
   },
   "power-sharing-divided-societies": {
    "value": null,
@@ -3106,10 +3208,12 @@
    "sources": []
   },
   "future-generations": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Endorsed Theodore Roosevelt's call to leave the land better for descendants and said South Dakota cares for natural resources for its grandchildren (2022); habitat programmes back this.",
+   "sources": [
+    "n22"
+   ]
   },
   "women-distinct-values": {
    "value": null,
@@ -3560,7 +3664,7 @@
    "sources": []
   }
  },
- "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 12: found five answers. Surveillance from House roll calls (she also voted for the 2014 USA FREEDOM Act, per Voteview, which ended bulk collection but kept the programmes, so +1 not +2). Arms monopoly and self-defence from her 2023 'Freedom, Guaranteed' column. Revolution from her 2017 'A Common Country' column. Drug-boat strikes from the official record of the December 2, 2025 Cabinet meeting. Searched without result: political violence as such (her 2017, 2024 and 2025 statements condemn particular attacks on her side, a narrower case), running government like a business, and MediaSum interviews. Not searched: statements with no plausible link to her record. Under rules 3, three Wikipedia-only answers were re-sourced or nulled: legalize-drugs re-sourced to her November 2020 statement (lowered to medium), separate-church-state to her 2018 'One Nation, Under God' column, and cut-welfare nulled (no primary source on dependency or cuts found in budget).\n\nclaude-opus-5-5 OnTheIssues fix (2026-10-31): OnTheIssues-only answers re-sourced to what it cites (House roll calls, her 2024 State of the State, her 2021 veto letter) or nulled (military-superiority, individual-pension-accounts, no-compulsory-union). universal-healthcare lowered -2 to -1 and gender-identity-recognition -2 to -1 to what the originals show; foreign-land-ownership lowered to low (adversaries only). Sonnet deepening pass (2026-11-01): searched her House floor speeches and hearings (2011-2019, local corpora) for minority/territorial, language, immigration, property, federalism, religion, international, communism and central-bank topics; the record there is mostly bills and constituent items, so almost nothing settles the open statements. Only treaties-binding was added. Birthright citizenship (paraphrase only, her own post not read) and English as official language found no stated words, so left null.",
+ "notes": "Dated positions: same-sex marriage (2010), abortion (federal ban support until 2024, then state-level). Quotes in the DHS release were from a spokesperson. Sources are secondary compilations plus one DHS release; no full texts of her book were available. Removed as DHS Secretary March 2026.\n\nMerged with an independent gpt-6.1-sol audit: 29 answers taken from it, 12 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; existing answers were not consulted. Living person: no inferred answers. Most recent clear statements control. Her 2024 state-level abortion position supersedes earlier support for federal restrictions without changing her personal opposition to abortion. The March 2, 2026 access ruling grants preliminary relief and finds probable unlawfulness; it is not a final merits judgment or a finding that her January memorandum violated the earlier injunction. Allegations by questioners and other speakers are not treated as admissions. General DHS promises of officer accountability do not alone settle legal responsibility for past security-force killings. Sports restrictions do not settle all gender-identity recognition; undocumented migration does not settle overall immigration levels. CBDC opposition was investigated but does not establish untraceable payments or unbreakable encryption. A nuclear-regulatory agreement alone does not demonstrate a personally driven nuclear-expansion policy. Conservation for hunting does not establish nature’s intrinsic value. The firearm answer rests on measures she publicly promoted, not mere formal assent. Rhetoric and roll-call votes are medium at most; genuinely mixed positions are low. Full speeches, hearings, court opinion, legislative text and source extracts are saved alongside this draft.\n\nclaude-haiku-5-5 deepening pass (2026-10-31), lines 12 and 13: searched political violence (only Jan. 6 2021 and Minneapolis remarks, too narrow), noncitizen voting in local elections (only federal SAVE Act advocacy, a different level), foreign funding of universities and NGOs (SD contract and farmland bans, plus a university reporting bill whose signing was unconfirmed; none restricts funding), English requirements for immigrants (no statement found), the ICC (no statement found), a national mission to spread government (Shield of the Americas remarks about shared values, not a mission statement), and trade surplus (2018-2025 tariff remarks, no export-surplus position). No answer changed.\n\nclaude-opus-5-5 deepening pass (2026-10-31), line 12: found five answers. Surveillance from House roll calls (she also voted for the 2014 USA FREEDOM Act, per Voteview, which ended bulk collection but kept the programmes, so +1 not +2). Arms monopoly and self-defence from her 2023 'Freedom, Guaranteed' column. Revolution from her 2017 'A Common Country' column. Drug-boat strikes from the official record of the December 2, 2025 Cabinet meeting. Searched without result: political violence as such (her 2017, 2024 and 2025 statements condemn particular attacks on her side, a narrower case), running government like a business, and MediaSum interviews. Not searched: statements with no plausible link to her record. Under rules 3, three Wikipedia-only answers were re-sourced or nulled: legalize-drugs re-sourced to her November 2020 statement (lowered to medium), separate-church-state to her 2018 'One Nation, Under God' column, and cut-welfare nulled (no primary source on dependency or cuts found in budget).\n\nclaude-opus-5-5 OnTheIssues fix (2026-10-31): OnTheIssues-only answers re-sourced to what it cites (House roll calls, her 2024 State of the State, her 2021 veto letter) or nulled (military-superiority, individual-pension-accounts, no-compulsory-union). universal-healthcare lowered -2 to -1 and gender-identity-recognition -2 to -1 to what the originals show; foreign-land-ownership lowered to low (adversaries only). Sonnet deepening pass (2026-11-01): searched her House floor speeches and hearings (2011-2019, local corpora) for minority/territorial, language, immigration, property, federalism, religion, international, communism and central-bank topics; the record there is mostly bills and constituent items, so almost nothing settles the open statements. Only treaties-binding was added. Birthright citizenship (paraphrase only, her own post not read) and English as official language found no stated words, so left null.\n\nclaude-sonnet-5-5 deepening pass (2026-11-02): read all four State of the State addresses 2019-2022 (local sots corpus, 'as prepared' text), searched her House floor speeches, hearings and roll calls (2011-2019), congress tweets (2017-2019) and MediaSum. Searched without a settling position: minimum wage, unions (only NLRB overreach words, left null), eminent domain, term limits, voter ID, English language, affirmative action, student debt, same-sex military service, death penalty, mandatory sentences, assisted dying, bailouts and Ex-Im Bank (votes only, no reasons). No web fetches or YouTube used.",
  "passes": [
   {
    "auditor": "claude-sonnet-5-5",
@@ -3581,6 +3685,10 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-11-01"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-02"
   }
  ],
  "reviews": [
