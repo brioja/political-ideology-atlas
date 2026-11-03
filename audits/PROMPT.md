@@ -55,7 +55,8 @@ record it in `scope`:
 - If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
   from sources that define the family's own tenets directly: comparative scholarship that defines it
   (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where
-  it has them (the Doctrine of Fascism), and data that measures what the label itself means: surveys
+  the family as such has them (not a member movement's: the Doctrine of Fascism is Italian Fascism's,
+  which has its own entry), and data that measures what the label itself means: surveys
   asking experts or voters what "left" stands for, or expert surveys (Chapel Hill) placing parties on
   the label's own scale and on each issue, read on each scale's own midpoint (all parties the survey
   places on that side of the general scale on one side of an issue's midpoint is an answer; both
