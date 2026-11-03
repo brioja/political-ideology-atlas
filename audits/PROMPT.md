@@ -52,8 +52,11 @@ When in doubt, audit it: a thin ideology is excluded later by the uncertainty ru
 Many names cover several strands. Before answering, decide which one the profile represents, and
 record it in `scope`:
 - If there is a canonical core (founding texts, a defining thinker, a party program), use it.
-- If the name covers a family, use the mainstream of the family as it exists today, or as it
-  existed at its peak if it is historical. Name the thinkers, texts or movements you based it on.
+- If the name covers a family (fascism, social democracy, conservatism, feminism), answer only what
+  its branches share: a position counts when at least two separate branches state it and no major
+  branch states the opposite. One branch alone, even the original or the largest, doesn't speak for
+  the family (`null`), and opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian Fascism, Nazism) is audited there, not here. Name
+  the branches, thinkers and texts you based it on.
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.
