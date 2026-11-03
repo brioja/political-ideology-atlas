@@ -154,9 +154,11 @@ for (const ideo of IDEOLOGIES) {
     for (let i = 1; i < k; i++) if (Math.abs(shipped.components[i].vector[j]) > Math.abs(shipped.components[best].vector[j])) best = i;
     return best;
   });
-  const oneLine = Array.from({ length: n }, (_, j) => (lineOf[j] === 0 ? 2 : null));
-  const u = pca.uncertainty(ctx, oneLine);
-  assert(u.bars[0] <= u.maxBar && !u.placed, "answering one line's statements alone passes the uncertainty rule");
+  // Each line answered alone: never placed. At least one line's own statements must pin that line
+  // (which one varies with the build), so the check is about the other lines, not a vague answer set.
+  const alone = Array.from({ length: k }, (_, L) => pca.uncertainty(ctx, Array.from({ length: n }, (_, j) => (lineOf[j] === L ? 2 : null))));
+  assert(alone.some((u, L) => u.bars[L] <= u.maxBar), "no line's own statements pin that line");
+  assert(alone.every((u) => !u.placed), "answering one line's statements alone passes the uncertainty rule");
   assert(pca.lineBars(ctx, []).every((b) => b === Infinity), "a line with nothing answered has a finite error bar");
   const j = lineOf.indexOf(1), none = Array(n).fill(null);
   const stats = (x) => pca.lineStats(ctx, pca.answeredIndexes(none.map((_, q) => (q === j ? x : null))));
