@@ -86,3 +86,11 @@ reason (Stoicism, cosmopolitans), the difference principle (egalitarianism, Rawl
 Full lists: soviet-anti-zionism, budapest-school, valencian-nationalism, fat-feminism,
 right-wing-antiglobalism, alter-globalization, technolibertarianism, indigenismo, blaverism,
 slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.json).
+
+- **Positive disagree sentences (statement standard test 4, cf8461ac).** 418 of the 490 `disagree`
+  sentences are the statement with "not" added. Draft a positive position for each, true of every
+  audited ideology that disagrees (from their rationales), keeping the plain negation where no exact
+  positive exists; flag statements whose disagree side can only be a hard-to-read negation for
+  rewording (new id, re-answer: decide each). Display text only (ids stay), but visible copy: a
+  before/after doc before pushing. Parked 2026-11-03 for tokens (about 10 agents of ~50 statements).
+  New statements follow test 4 from now on.
