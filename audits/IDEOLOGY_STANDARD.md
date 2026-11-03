@@ -21,7 +21,9 @@ An entry is in `audits/catalog.json` only if it meets both:
   "Political ideology navigational boxes") links it, Wikidata classes it the same way, and a
   pre-check of the whole article finds it meets the definition of a political ideology (a set of
   ideas, not a group, state, event, concept or label; `"source": "sidebar-template"` in the
-  catalog); or a contributor suggests it.
+  catalog); or the List links it but Wikidata files it elsewhere, and the same whole-article
+  pre-check finds it meets the definition (`"source": "list-precheck"`); or a contributor suggests
+  it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 
 One exception: a redirect to a broader article counts when that article covers branches with
 opposite positions, so it can't be audited as one ideology (Left and Right-wing accelerationism,
