@@ -1,7 +1,7 @@
 {
  "id": "alex-jones",
  "name": "Alex Jones",
- "auditedAt": "2026-10-24",
+ "auditedAt": "2026-11-03",
  "auditor": [
   "gpt-6.1-sol",
   "claude-sonnet-5-5"
@@ -178,6 +178,22 @@
    "author": "CNN",
    "url": "http://transcripts.cnn.com/TRANSCRIPTS/1301/08/cnr.13.html",
    "usedFor": "Gun control"
+  },
+  {
+   "id": "s14",
+   "kind": "primary",
+   "title": "The Great Reset: And the War for the World",
+   "author": "Alex Jones",
+   "url": "https://www.skyhorsepublishing.com/9781510774049/the-great-reset/",
+   "usedFor": "His 2022 book (Skyhorse), maintainer-supplied full text searched by chapter. Only Jones's own narration used, not the globalist or guest texts he quotes."
+  },
+  {
+   "id": "s15",
+   "kind": "primary",
+   "title": "The Great Awakening: Defeating the Globalists and Launching the Next Great Renaissance",
+   "author": "Alex Jones and Kent Heckenlively",
+   "url": "https://books.google.com/books?vid=ISBN9781510779020",
+   "usedFor": "His 2023 book (Simon & Schuster/Skyhorse), maintainer-supplied full text, written in his first-person voice (co-author Kent Heckenlively); only the narrator's own statements used, not quoted authors or guests."
   }
  ],
  "answers": {
@@ -241,8 +257,11 @@
   "cut-welfare": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Review (11-03): the books state an attitude close to this statement, not the statement itself: not settled. The Great Awakening chs. 2 and 4: blames the welfare state for pushing fathers out of black families and says Democrats want people more dependent on the federal government; no explicit cut.",
+   "sources": [
+    "s15"
+   ],
+   "nulledFrom": 1
   },
   "worker-ownership": {
    "value": null,
@@ -251,10 +270,13 @@
    "sources": []
   },
   "surveillance-ok": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "He lists mass government surveillance of the public among the scandals (Awakening ch. 2) and objects that a car kill-switch backdoor would need no warrant (Reset ch. 7).",
+   "sources": [
+    "s15",
+    "s14"
+   ]
   },
   "legalize-drugs": {
    "value": -1,
@@ -281,10 +303,12 @@
    "sources": []
   },
   "state-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 2: says the Constitution holds the state, while necessary, poses an enormous danger and should serve humanity like a fire; he rejects the idea that the state is unnecessary.",
+   "sources": [
+    "s15"
+   ]
   },
   "limit-guns": {
    "value": -2,
@@ -325,10 +349,12 @@
    "sources": []
   },
   "traditional-family": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 2-3: says the family is the essential unit of society and refers to the demonstrated superiority of the two-parent family, with men and women complementary.",
+   "sources": [
+    "s15"
+   ]
   },
   "same-sex-marriage": {
    "value": 1,
@@ -347,10 +373,12 @@
    "sources": []
   },
   "more-religion-public": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 12-13: says turning the tide begins with acknowledging God, treats banning school prayer as an assault on God, and wants the nation to return to Christian principles.",
+   "sources": [
+    "s15"
+   ]
   },
   "correct-racial-injustice": {
    "value": null,
@@ -359,16 +387,20 @@
    "sources": []
   },
   "gender-social-construct": {
-   "value": null,
+   "value": -2,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "The Great Awakening ch. 3: names male and female as possibly fixed parts of human nature and says men and women are very different yet complementary.",
+   "sources": [
+    "s15"
+   ]
   },
   "preserve-national-culture": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 1 and 12: says each country should be first for itself and that he values the different cultures as part of the tapestry God created.",
+   "sources": [
+    "s15"
+   ]
   },
   "gradual-change": {
    "value": null,
@@ -463,10 +495,12 @@
    "sources": []
   },
   "expand-nuclear": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Reset ch. 7: lists the phase-out of nuclear power with fossil fuels as reckless policy given the lack of a replacement for reliable energy.",
+   "sources": [
+    "s14"
+   ]
   },
   "revolution-justified": {
    "value": 1,
@@ -529,10 +563,12 @@
    "sources": []
   },
   "widespread-small-property": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Reset ch. 8: laments the fall in independent farms and in small retailers while a few large corporations consolidate farmland and food; no stated programme.",
+   "sources": [
+    "s14"
+   ]
   },
   "abolish-money-wages": {
    "value": null,
@@ -564,8 +600,11 @@
   "monarchy-legitimate": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Review (11-03): the books state an attitude close to this statement, not the statement itself: not settled. The Great Reset ch. 1: he endorses the reading that God was suspicious from the start of having a king or any ruler and prefers people keeping Him in their hearts.",
+   "sources": [
+    "s14"
+   ],
+   "nulledFrom": -1
   },
   "democracy-best": {
    "value": null,
@@ -574,10 +613,12 @@
    "sources": []
   },
   "direct-votes": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Great Reset ch. 3: he says by democracy he means not pure democracy but the constitutional republic with elected representatives who decide and answer at the next election.",
+   "sources": [
+    "s14"
+   ]
   },
   "workers-councils": {
    "value": null,
@@ -614,10 +655,12 @@
    "sources": []
   },
   "separate-church-state": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "The Great Awakening ch. 2 counts separation of church and state among the Enlightenment ideals he claims as a child of the Enlightenment, but ch. 13 laments banning prayer in public schools, so the strictness is mixed.",
+   "sources": [
+    "s15"
+   ]
   },
   "laws-from-scripture": {
    "value": null,
@@ -836,10 +879,12 @@
    "sources": []
   },
   "conscription": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Great Reset ch. 5: lists the military among the few justified common tasks while noting approvingly that a volunteer military is preferable to a draft.",
+   "sources": [
+    "s14"
+   ]
   },
   "exit-over-voice": {
    "value": null,
@@ -887,16 +932,20 @@
    "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "national-rebirth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 12: calls the present the bad times of a great republic, in a cycle of decadence and tyranny, and calls for a rebirth of freedom and a Great Renaissance.",
+   "sources": [
+    "s15"
+   ]
   },
   "territorial-expansion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 5-6: says democracy is incompatible with empire and criticizes the US for 750 bases in eighty countries and wars in 25.",
+   "sources": [
+    "s15"
+   ]
   },
   "personal-loyalty-rule": {
    "value": null,
@@ -989,10 +1038,12 @@
    "sources": []
   },
   "reason-over-faith": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 13: says he reaches God through his creative mind not his rational mind, and that trying to be good without God will fail.",
+   "sources": [
+    "s15"
+   ]
   },
   "welfare-for-citizens": {
    "value": null,
@@ -1055,10 +1106,12 @@
    "sources": []
   },
   "expand-fossil-fuels": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Great Reset ch. 7: condemns policies that stifle domestic energy production and says the answer is increasing domestic supply rather than phasing out fossil fuels.",
+   "sources": [
+    "s14"
+   ]
   },
   "assimilate-immigrants": {
    "value": null,
@@ -1082,10 +1135,12 @@
    "sources": []
   },
   "national-mission": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 1 and 5: says each country should be first for itself (America-First, France-First) and mocks policymakers who hope foreigners will welcome liberation by force.",
+   "sources": [
+    "s15"
+   ]
   },
   "patriarchy-structural": {
    "value": null,
@@ -1120,10 +1175,12 @@
    "sources": []
   },
   "night-watchman-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 4: says the Founders held the best government limited in power, protecting individual rights or mediating disputes between individuals; he does not itemize defence or property.",
+   "sources": [
+    "s15"
+   ]
   },
   "discourage-race-mixing": {
    "value": null,
@@ -1132,10 +1189,13 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Great Reset ch. 5: people are fellow children of God, all equally valuable, and embracing equality brings one closer to God's order; he also invokes the Constitution's equality of all (Awakening ch. 5).",
+   "sources": [
+    "s14",
+    "s15"
+   ]
   },
   "socialism-one-country": {
    "value": null,
@@ -1180,10 +1240,12 @@
    "sources": []
   },
   "consent-of-governed": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Reset ch. 1: he says the founding documents place the people as the true masters and rulers serve the people, not the reverse.",
+   "sources": [
+    "s14"
+   ]
   },
   "trade-surplus": {
    "value": null,
@@ -1549,10 +1611,12 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 13: condemns regimes that crushed religion or brought churches under state control, and likens COVID church restrictions to them.",
+   "sources": [
+    "s15"
+   ]
   },
   "nonpartisan-head-of-state": {
    "value": null,
@@ -1585,10 +1649,12 @@
    "sources": []
   },
   "character-from-environment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 3: rejects blank-slate theories, argues innate inherited knowledge and instincts exist in people, while granting some behaviour can be changed.",
+   "sources": [
+    "s15"
+   ]
   },
   "sovereign-above-law": {
    "value": -2,
@@ -1600,14 +1666,12 @@
    "auditor": "gpt-6.1-sol+claude-sonnet-5-5"
   },
   "space-expansion": {
-   "value": null,
+   "value": 1,
    "confidence": "medium",
-   "rationale": "States 'I want to go to the stars' as part of the future he wants (20260402_Thu 00:16:44); not stated as the central goal of civilization.",
+   "rationale": "The Great Awakening ch. 12: says the coming renaissance will see humanity spread out into the stars as a civilization worthy of the name; one of several aims.",
    "sources": [
-    "c1"
-   ],
-   "auditor": "claude-sonnet-5-5",
-   "nulledFrom": 1
+    "s15"
+   ]
   },
   "mixed-constitution": {
    "value": null,
@@ -1756,8 +1820,11 @@
   "civilizing-tutelage": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Review (11-03): the books state an attitude close to this statement, not the statement itself: not settled. The Great Awakening ch. 5: says empires rule people who want the occupier gone only by ruthless suppression and conflict with democratic values; he doesn't discuss improvement as a justification.",
+   "sources": [
+    "s15"
+   ],
+   "nulledFrom": -1
   },
   "patriotic-education": {
    "value": null,
@@ -1871,10 +1938,12 @@
    "sources": []
   },
   "mass-culture-pacifies": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 1 and 12: says elites divide and pacify people through social media, games, streaming and a managed diet of information.",
+   "sources": [
+    "s15"
+   ]
   },
   "ruling-class-consent": {
    "value": null,
@@ -1973,10 +2042,12 @@
    "sources": []
   },
   "filial-duty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 3: treats the need to honor our parents as a basic human value, and ch. 2 praises caring for an ailing parent for years.",
+   "sources": [
+    "s15"
+   ]
   },
   "office-by-exam": {
    "value": null,
@@ -2057,10 +2128,13 @@
    "sources": []
   },
   "corporate-influence": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He calls technocracy a monopoly on power held jointly by Big Business and Big Government (Reset ch. 3) and says government decisions turned free-market capitalism into crony capitalism and captured regulators (Awakening chs. 4-5).",
+   "sources": [
+    "s14",
+    "s15"
+   ]
   },
   "restrict-foreign-funding": {
    "value": null,
@@ -2175,10 +2249,12 @@
    "sources": []
   },
   "defeat-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 5: says the US must treat Communist China as Reagan treated the Soviet Union, an evil empire, and endorses Bannon's call for the Chinese people to overthrow its rulers.",
+   "sources": [
+    "s15"
+   ]
   },
   "mixed-public-service-providers": {
    "value": null,
@@ -2187,10 +2263,12 @@
    "sources": []
   },
   "religion-illusion": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 13: calls God a physical reality and says religious people are happier and better grounded; he rejects the view that religion is a consoling illusion.",
+   "sources": [
+    "s15"
+   ]
   },
   "capitalism-progressive": {
    "value": null,
@@ -2271,10 +2349,12 @@
    "sources": []
   },
   "colonies-serve-metropole": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 5: says Britain's empire, ruling people who didn't want a foreign ruler, was at odds with its democratic values and that Britain gave it up for that reason.",
+   "sources": [
+    "s15"
+   ]
   },
   "defensive-jihad-duty": {
    "value": null,
@@ -2336,8 +2416,11 @@
   "divine-source-of-authority": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Review (11-03): the books state an attitude close to this statement, not the statement itself: not settled. In The Great Reset ch. 1 he reads the Samuel story as God distrusting rulers and says the founding documents make the people the true masters, with rulers serving them; authority is placed in the people, though under God.",
+   "sources": [
+    "s14"
+   ],
+   "nulledFrom": -1
   },
   "religious-dress-in-state": {
    "value": null,
@@ -2466,10 +2549,12 @@
    "sources": []
   },
   "wealth-concentration-endangers-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Reset chs. 3 and 8: describes consolidation and monopoly by billionaires, in the Rockefeller mould, as the means by which an elite gains control, which is the book's central warning.",
+   "sources": [
+    "s14"
+   ]
   },
   "open-lgbt-military-service": {
    "value": null,
@@ -2478,10 +2563,12 @@
    "sources": []
   },
   "state-promotes-atheism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 13: sees the devil in the Nazi, Stalinist and Maoist regimes that sought to crush religion and says control of a population starts with an assault on God.",
+   "sources": [
+    "s15"
+   ]
   },
   "abolish-police-prisons": {
    "value": null,
@@ -2595,10 +2682,12 @@
    "sources": []
   },
   "sex-socially-constructed": {
-   "value": null,
+   "value": -2,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "The Great Awakening ch. 3: names male and female as possibly fixed parts of human nature rather than constructs.",
+   "sources": [
+    "s15"
+   ]
   },
   "no-fixed-category-of-women": {
    "value": null,
@@ -2707,10 +2796,12 @@
    "sources": []
   },
   "anonymous-payments": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 4: defends untraceable cash as privacy that keeps society healthy and warns programmable digital currency would let authorities cut people off from their money.",
+   "sources": [
+    "s15"
+   ]
   },
   "online-anonymity": {
    "value": null,
@@ -2719,16 +2810,20 @@
    "sources": []
   },
   "person-over-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 2: the Constitution reveres the individual and the state exists to protect individual rights, not to force compliance; the central theme of his opposition to globalists.",
+   "sources": [
+    "s15"
+   ]
   },
   "spiritual-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening chs. 12-13: says people need nature, religion and prayer to keep their connection to the spiritual realm and cites free will and a soul given by God as the basis of freedom.",
+   "sources": [
+    "s15"
+   ]
   },
   "regional-powers-revocable": {
    "value": null,
@@ -2920,10 +3015,12 @@
    "sources": []
   },
   "shared-human-nature": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 3: argues there is something fixed in human nature that globalist plans to redesign people will fail against, and ch. 12 stresses the innate value of every human being.",
+   "sources": [
+    "s15"
+   ]
   },
   "public-service-media": {
    "value": null,
@@ -2980,10 +3077,12 @@
    "sources": []
   },
   "environment-over-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Reset ch. 9: calling himself an environmentalist, he rejects any universal government right to do what it likes on environmental grounds, calling that the way tyrants take power.",
+   "sources": [
+    "s14"
+   ]
   },
   "mandatory-sentences": {
    "value": null,
@@ -3078,8 +3177,11 @@
   "scripture-inerrant": {
    "value": null,
    "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "rationale": "Review (11-03): the books state an attitude close to this statement, not the statement itself: not settled. The Great Awakening ch. 13: says he is a Christian who fully accepts the teachings of the Bible, while granting that his limited understanding may miss some aspects; he doesn't state inerrancy or literalism.",
+   "sources": [
+    "s15"
+   ],
+   "nulledFrom": 1
   },
   "gendered-self-government": {
    "value": null,
@@ -3154,10 +3256,12 @@
    "sources": []
   },
   "close-ties-china": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Great Awakening ch. 5: attacks Brzezinski's engagement with China and says any political figure who won't call it an evil empire should be presumed an agent of the Chinese Communist Party.",
+   "sources": [
+    "s15"
+   ]
   },
   "protect-kin-minorities": {
    "value": null,
@@ -3247,10 +3351,12 @@
    "sources": []
   },
   "unjust-law-not-binding": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Great Awakening ch. 7: says a higher law supersedes all laws made by temporal authorities and that he would refuse an unethical order whatever the penalty.",
+   "sources": [
+    "s15"
+   ]
   },
   "automate-paid-work": {
    "value": null,
@@ -3292,7 +3398,7 @@
    "sources": []
   }
  },
- "notes": "No inferred answers. Complete accessible broadcast transcripts were downloaded and searched across themes; the full 23-page Mercola interview was read through the PDF tool. A freely accessible complete copy of his Great Reset book was not located, so summaries were not substituted for its text. Allegations are recorded as his claims, not verified facts. His 2022 demand for executions supersedes his 2013 abolition argument; July 2026 impeachment demands qualify earlier support of Trump. August 11, 2024 was guest-hosted by Chase Geiser; October 1, 2026 was mainly hosted by Rex Jones. Their comments, Crowder’s pre-interview monologue, callers, guests and clips were not treated as Jones’s positions. Moral condemnation of abortion does not alone establish his exact legal policy. Opposition to coercive transhumanism does not establish a ban on voluntary enhancement. All 490 statements, including remaining unknowns, were checked against the evidence; criticism of one war does not establish opposition to every possible intervention.\n\nMerged with an independent claude-sonnet-5-5 audit: 1 answers taken from it, 5 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second independent pass. The transcript site podscripts.co returned HTTP 502, so sources are YouTube auto-captions of Jones's own appearances; speakers are unlabeled, so only passages clearly spoken by Jones were used. Joe Rogan Experience episodes #911, #1255 and #1555 were downloaded and searched for economy, immigration, abortion, drugs, trans, Israel and Fed topics, but speaker attribution between Jones and Rogan was unreliable, so nothing was taken from them. Themes searched: economy (tax, welfare, minimum wage, healthcare), society, government, world (Ukraine, NATO, Israel, Iran), technology. Economy has no stated position found. Statements about illegal immigration, voter fraud claims and criticism of single wars were not treated as answers to broader statements.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 7 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Third pass, from the Alex Jones Show transcript mirror (2015-2026 searched theme by theme: tax, welfare, health care, minimum wage, unions, trade, tariffs, Fed, gold, property, abortion, same-sex marriage, trans, drugs, guns, death penalty, surveillance, crypto, climate, nuclear, GMO, population, immigration, UN, voter ID, term limits, secession, Israel, schooling, speech) and MediaSum CNN transcripts. Machine transcripts carry no speaker labels and recent shows are heavily co-hosted, so only first-person host monologue was used; guest, caller and ad passages (e.g. a Newsom clip on universal health care, a guest's 'taxation is theft') were rejected. Several themes (welfare, unions, tariffs, free trade, abortion law, drugs, minimum wage) returned only ambiguous or rhetorical passages and stay null. A 2013 MediaSum search turned up CNN turns only for guns.",
+ "notes": "No inferred answers. Complete accessible broadcast transcripts were downloaded and searched across themes; the full 23-page Mercola interview was read through the PDF tool. A freely accessible complete copy of his Great Reset book was not located, so summaries were not substituted for its text. Allegations are recorded as his claims, not verified facts. His 2022 demand for executions supersedes his 2013 abolition argument; July 2026 impeachment demands qualify earlier support of Trump. August 11, 2024 was guest-hosted by Chase Geiser; October 1, 2026 was mainly hosted by Rex Jones. Their comments, Crowder’s pre-interview monologue, callers, guests and clips were not treated as Jones’s positions. Moral condemnation of abortion does not alone establish his exact legal policy. Opposition to coercive transhumanism does not establish a ban on voluntary enhancement. All 490 statements, including remaining unknowns, were checked against the evidence; criticism of one war does not establish opposition to every possible intervention.\n\nMerged with an independent claude-sonnet-5-5 audit: 1 answers taken from it, 5 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second independent pass. The transcript site podscripts.co returned HTTP 502, so sources are YouTube auto-captions of Jones's own appearances; speakers are unlabeled, so only passages clearly spoken by Jones were used. Joe Rogan Experience episodes #911, #1255 and #1555 were downloaded and searched for economy, immigration, abortion, drugs, trans, Israel and Fed topics, but speaker attribution between Jones and Rogan was unreliable, so nothing was taken from them. Themes searched: economy (tax, welfare, minimum wage, healthcare), society, government, world (Ukraine, NATO, Israel, Iran), technology. Economy has no stated position found. Statements about illegal immigration, voter fraud claims and criticism of single wars were not treated as answers to broader statements.\n\nMerged with an independent claude-sonnet-5-5 audit: 9 answers taken from it, 7 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Third pass, from the Alex Jones Show transcript mirror (2015-2026 searched theme by theme: tax, welfare, health care, minimum wage, unions, trade, tariffs, Fed, gold, property, abortion, same-sex marriage, trans, drugs, guns, death penalty, surveillance, crypto, climate, nuclear, GMO, population, immigration, UN, voter ID, term limits, secession, Israel, schooling, speech) and MediaSum CNN transcripts. Machine transcripts carry no speaker labels and recent shows are heavily co-hosted, so only first-person host monologue was used; guest, caller and ad passages (e.g. a Newsom clip on universal health care, a guest's 'taxation is theft') were rejected. Several themes (welfare, unions, tariffs, free trade, abortion law, drugs, minimum wage) returned only ambiguous or rhetorical passages and stay null. A 2013 MediaSum search turned up CNN turns only for guns.\n\nclaude-sonnet-5-5 deepening pass 2026-11-03 (rules 3): no 'Inferred:' answers were present. Searched the full text of his two books (The Great Reset ch. 1-10; The Great Awakening ch. 1-13) for every theme: economy, liberty, society, world, technology, ecology, government, culture. Quoted authors (Schwab, Harari, Brzezinski, Eisenhower, Kennedy, guests) were not treated as his positions; The Great Awakening is co-written with Kent Heckenlively. Local corpora and web were not searched this pass. Left null: abortion, immigration levels, taxes, unions, trade, Israel, elections, courts.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3305,9 +3411,13 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-10-30"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-03"
   }
  ],
- "rules": 2,
+ "rules": 3,
  "reviews": [
   {
    "kind": "inference",
