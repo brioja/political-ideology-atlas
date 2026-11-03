@@ -174,15 +174,6 @@ function validate(id) {
     if (!Array.isArray(f.sources) || !f.sources.length) errors.push(`keyFigures[${i}]: needs at least one source`);
     else for (const sid of f.sources) if (!sourceIds.has(sid)) errors.push(`keyFigures[${i}]: unknown source '${sid}'`);
   }
-  // A family's branches (PROMPT.md section 1): each named, with the source that classifies it as part of the family.
-  if (!PEOPLE && a.branches !== undefined) {
-    if (!Array.isArray(a.branches) || a.branches.length < 2) errors.push('"branches" must list at least 2 branches');
-    else for (const [i, b] of a.branches.entries()) {
-      if (!b.name || !b.represents) errors.push(`branches[${i}]: needs a name and what represents it`);
-      if (!Array.isArray(b.sources) || !b.sources.length) errors.push(`branches[${i}]: needs a source classifying it as part of the family`);
-      else for (const sid of b.sources) if (!sourceIds.has(sid)) errors.push(`branches[${i}]: unknown source '${sid}'`);
-    }
-  }
   // Defining positions no statement captures (audits/statements/STANDARD.md).
   if (!PEOPLE && a.missingStatements === undefined) warnings.push('no "missingStatements" (list defining positions the statements miss, or [] if none)');
   else if (!PEOPLE && !Array.isArray(a.missingStatements)) errors.push('"missingStatements" must be a list');

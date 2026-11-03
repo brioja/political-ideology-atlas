@@ -25,7 +25,7 @@ words; don't paste long passages.
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
   the original and cite that. An answer whose only source is Wikipedia has no evidence. Wikipedia
-  doesn't decide a subject's scope or what a family includes either: it serves for notability (the
+  doesn't decide a subject's scope or what a family holds either: it serves for notability (the
   catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
   membership counts only through the scholarship or data it cites.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed

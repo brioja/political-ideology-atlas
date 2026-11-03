@@ -52,23 +52,17 @@ When in doubt, audit it: a thin ideology is excluded later by the uncertainty ru
 Many names cover several strands. Before answering, decide which one the profile represents, and
 record it in `scope`:
 - If there is a canonical core (founding texts, a defining thinker, a party program), use it.
-- If the name covers a family (fascism, social democracy, conservatism, feminism), answer only what
-  its branches share: a position counts when several branches that reached it independently (not
-  one borrowing from another) state it and no major branch states the opposite. Two such branches
-  is the minimum and supports `medium` at most; `high` needs most of the family's major branches.
-  One branch alone, even the original or the largest, doesn't speak for the family (`null`), and
-  opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian
-  Fascism, Nazism) is audited there, not here.
-  List the branches in `branches`: each with a name, the groups or texts that represent it, and the
-  source that classifies it as part of the family; each answer's rationale names the branches that
-  state it, and only listed branches count. Membership comes from comparative scholarship that
-  defines the family (Paxton or Griffin for fascism, Mudde for the populist radical right, March for
-  the radical left) or, for positional labels (far-left, left-wing, centre-left, centrism,
-  centre-right, right-wing, far-right), from party-family classifications such as ParlGov or the
-  Chapel Hill Expert Survey. A branch counts only where the sources agree it belongs: if one source
-  includes it and another explicitly excludes it (revolutionary communism counted as left-wing by
-  one, set apart as far-left by another), leave it out. A source that doesn't mention a branch
-  doesn't exclude it.
+- If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
+  from sources that define the family's own tenets directly: comparative scholarship that defines it
+  (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where
+  it has them (the Doctrine of Fascism), and data that measures what the label itself means (surveys
+  asking experts or voters what "left" stands for). Nothing is inherited, in either direction: a
+  member's or branch's positions don't answer for the family, even when several members agree, and
+  the family's positions don't answer for a member (a member with its own entry is audited there).
+  Where the defining sources agree, answer; where one states a tenet and another explicitly rejects
+  it, or a source documents that the family divides on that specific topic, it is a split (0,
+  `low`); a general remark that the family's content varies answers no particular statement
+  (`null`). Wikipedia doesn't define a family (AUDIT_RULES.md section 2).
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.
@@ -143,7 +137,6 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "rules": 3,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
-  "branches": [{ "name": "Family entries only: a branch", "represents": "its groups or texts", "sources": ["s5"] }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }
