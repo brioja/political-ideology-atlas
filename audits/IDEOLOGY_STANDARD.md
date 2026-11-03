@@ -16,8 +16,12 @@ An entry is in `audits/catalog.json` only if it meets both:
 - **A source names it as an ideology.** Either Wikipedia's
   [List of political ideologies](https://en.wikipedia.org/wiki/List_of_political_ideologies)
   links it and Wikidata classes it as an ideology, political ideology or political philosophy, or
-  as a direct subclass of one (Ecofeminism, a social movement under feminism); or a contributor
-  suggests it.
+  as a direct subclass of one (Ecofeminism, a social movement under feminism); or one of Wikipedia's
+  ideology sidebar templates or navboxes (the categories "Political ideology sidebar templates" and
+  "Political ideology navigational boxes") links it, Wikidata classes it the same way, and a
+  pre-check of the whole article finds it meets the definition of a political ideology (a set of
+  ideas, not a group, state, event, concept or label; `"source": "sidebar-template"` in the
+  catalog); or a contributor suggests it.
 
 One exception: a redirect to a broader article counts when that article covers branches with
 opposite positions, so it can't be audited as one ideology (Left and Right-wing accelerationism,
