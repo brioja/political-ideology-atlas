@@ -83,7 +83,8 @@ function validate(id) {
   // A Wikipedia article about a document is a reference, never the document itself.
   const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
   if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
-  if (!sources.some((s) => s.kind === "primary" || s.kind === "program")) errors.push("needs at least one primary or program source");
+  // A family entry (PROMPT.md section 1, "family": true) is answered from the scholarship that defines it, not members' texts.
+  if (!a.family && !sources.some((s) => s.kind === "primary" || s.kind === "program")) errors.push("needs at least one primary or program source");
   if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference")) errors.push("needs at least one scholarly or reference source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 

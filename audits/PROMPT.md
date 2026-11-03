@@ -66,7 +66,8 @@ record it in `scope`:
   Where the defining sources agree, answer; where one states a tenet and another explicitly rejects
   it, or a source documents that the family divides on that specific topic, it is a split (0,
   `low`); a general remark that the family's content varies answers no particular statement
-  (`null`). Wikipedia doesn't define a family (AUDIT_RULES.md section 2).
+  (`null`). Wikipedia doesn't define a family (AUDIT_RULES.md section 2). Mark the audit
+  `"family": true`.
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.

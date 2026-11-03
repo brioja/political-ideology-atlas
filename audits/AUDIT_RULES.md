@@ -20,7 +20,8 @@ words; don't paste long passages.
   visited. Never cite from memory or construct a URL.
 - Use at least 3 sources, including at least one `primary` source (the subject's own texts:
   founding documents, programmes, speeches, books, their record) and at least one `scholarly` or
-  `reference` source.
+  `reference` source. A family entry (`"family": true`, PROMPT.md section 1) is the exception: its
+  evidence is the scholarship that defines it, so it may have no primary source.
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
