@@ -55,10 +55,13 @@ record it in `scope`:
 - If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
   from sources that define the family's own tenets directly: comparative scholarship that defines it
   (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where
-  it has them (the Doctrine of Fascism), and data that measures what the label itself means (surveys
-  asking experts or voters what "left" stands for). Nothing is inherited, in either direction: a
-  member's or branch's positions don't answer for the family, even when several members agree, and
-  the family's positions don't answer for a member (a member with its own entry is audited there).
+  it has them (the Doctrine of Fascism), and data that measures what the label itself means: surveys
+  asking experts or voters what "left" stands for, or expert surveys (Chapel Hill) placing parties on
+  the label's own scale and on each issue, read on each scale's own midpoint (all parties the survey
+  places on that side of the general scale on one side of an issue's midpoint is an answer; both
+  sides is a split). Nothing is inherited, in either direction: a member's own programme or texts
+  don't answer for the family, even when several members agree, and the family's positions don't
+  answer for a member (a member with its own entry is audited there).
   Where the defining sources agree, answer; where one states a tenet and another explicitly rejects
   it, or a source documents that the family divides on that specific topic, it is a split (0,
   `low`); a general remark that the family's content varies answers no particular statement
