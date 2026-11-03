@@ -1754,9 +1754,11 @@ function positionsList(profile, audit, auditUrl = null, key = null) {
   const unknown = all.filter((j) => profile[j] == null);
   const strongest = Math.max(...all.map((j) => Math.abs(profile[j] ?? 0)));
   const byConfidence = (x, y) => (CONF_RANK[answerOf(x)?.confidence] ?? 1) - (CONF_RANK[answerOf(y)?.confidence] ?? 1) || x - y;
-  const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest).sort(byConfidence);
+  // Most distinctive first (distance from the average ideology's answer, as in "what it stands for").
+  const byDistinct = (x, y) => distinctiveness(model.mean, profile, y) - distinctiveness(model.mean, profile, x) || byConfidence(x, y);
+  const known = all.filter((j) => profile[j] != null && strongest > 0 && Math.abs(profile[j]) === strongest).sort(byDistinct);
   const milder = all.filter((j) => profile[j] != null && !known.includes(j))
-    .sort((x, y) => Math.abs(profile[y]) - Math.abs(profile[x]) || byConfidence(x, y));
+    .sort((x, y) => Math.abs(profile[y]) - Math.abs(profile[x]) || byDistinct(x, y));
   const sourceLink = (sid) => {
     const s = audit && (audit.sources || []).find((x) => x.id === sid);
     return s ? `<a href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.title)}">${esc(sid)}</a>` : esc(sid);

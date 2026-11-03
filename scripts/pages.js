@@ -67,7 +67,7 @@ const beliefs = (ideo, n) => `<ul>${(ideo.beliefs || []).slice(0, n).map((q) => 
 // Every known position, strongest first.
 function positions(profile) {
   const known = profile.map((v, q) => ({ v, q })).filter((x) => x.v != null && x.v !== 0)
-    .sort((a, b) => Math.abs(b.v) - Math.abs(a.v));
+    .sort((a, b) => Math.abs(b.v) - Math.abs(a.v) || ctx.distinctiveness(model.mean, profile, b.q) - ctx.distinctiveness(model.mean, profile, a.q) || a.q - b.q);
   return `<ul>${known.map((x) => `<li><strong>${Math.abs(x.v) === 2 ? "Strongly" : "Leans"}:</strong> ${esc(stance(QUESTIONS[x.q], x.v))}</li>`).join("")}</ul>`;
 }
 const ideologyLinks = (ranked) => `<ul>${ranked.map((r) => `<li><a href="${ideologyUrl(r.id)}">${esc(r.name)}</a>${r.similarity != null ? ` (${pct(r.similarity)} match)` : ""}</li>`).join("")}</ul>`;

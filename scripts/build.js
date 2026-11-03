@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePath,
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
-const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES } = require("../pca.js");
+const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES, distinctiveness } = require("../pca.js");
 
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
@@ -301,7 +301,7 @@ const BELIEFS = 6;
 for (const i of included) {
   const stated = require("./lib").statedPositions(readJson(profilePath(i.id)));
   i.beliefs = statements.map((s, j) => j).filter((j) => stated.has(statements[j].id) && Math.abs(i.profile[j]) === 2)
-    .sort((x, y) => Math.abs(i.profile[y] - landscape.mean[y]) - Math.abs(i.profile[x] - landscape.mean[x]) || x - y)
+    .sort((x, y) => distinctiveness(landscape.mean, i.profile, y) - distinctiveness(landscape.mean, i.profile, x) || x - y)
     .slice(0, BELIEFS);
 }
 

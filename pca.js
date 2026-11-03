@@ -659,6 +659,12 @@ function decodeShare(s, ids, slots) {
   });
 }
 
+
+// How distinctive an answer is: its distance from the average ideology's answer to that statement
+// (model.mean). Key positions are listed most distinctive first everywhere: an ideology's "what it
+// stands for", its page and a person's page.
+function distinctiveness(mean, profile, j) { return Math.abs(profile[j] - mean[j]); }
+
 if (typeof module !== "undefined") {
-  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, describeAxis };
+  module.exports = { MAX_SHOWN_LINES, matchLines, place, locate, positions, posterior, posteriorCov, lineStats, lineSpread, distance, fitTo, fitScale, similarity, topMatch, answeredIndexes, encodeShare, decodeShare, symmetricEigen, buildModel, modelFromParts, varimax, match, matchPeople, nextQuestion, meaningfulAxes, placementContext, uncertainty, distanceSpread, lineBars, barVariances, MAX_BAR, MAX_MEAN_BAR, DONE, doneGap, placementFromParts, placementProgress, describeAxis, distinctiveness };
 }
