@@ -1,7 +1,7 @@
 {
  "id": "rand-paul",
  "name": "Rand Paul",
- "auditedAt": "2026-11-01",
+ "auditedAt": "2026-11-03",
  "auditor": [
   "gpt-6.1-sol",
   "claude-sonnet-5-5"
@@ -498,6 +498,14 @@
    "author": "Rand Paul (own turns, GovInfo CHRG-119shrg58505)",
    "url": "https://www.govinfo.gov/app/details/CHRG-119shrg58505",
    "usedFor": "Lawful immigration levels"
+  },
+  {
+   "id": "k1",
+   "kind": "primary",
+   "title": "The Case Against Socialism",
+   "author": "Rand Paul (Broadside Books, 2019; maintainer-supplied full text)",
+   "url": "https://books.google.com/books?id=REZ3wgEACAAJ",
+   "usedFor": "His own statements on markets, welfare, price controls, government force, speech, climate and history (chapter cited per answer)"
   }
  ],
  "answers": {
@@ -538,10 +546,13 @@
    ]
   },
   "public-ownership": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 2 says state ownership of the means of production can only come 'at the end of a truncheon'; Ch. 14 calls government ownership of drug companies a disaster he hopes is never chosen; the Afterword rejects splitting the difference with socialism.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "tax-the-wealthy": {
    "value": -2,
@@ -644,10 +655,13 @@
    ]
   },
   "state-harmful": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 19 (and Ch. 14) says government is a necessary evil, needed for national defence and a legal system, though to be kept limited; so the state is not unnecessary.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "limit-guns": {
    "value": -2,
@@ -826,10 +840,13 @@
    "sources": []
   },
   "limit-growth": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 35 says carbon restrictions would slow our economy and limit our freedom and that climate alarmists want people to give up the prosperity of capitalism; he accepts curbing pollution but not limiting growth.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "drastic-climate-action": {
    "value": -2,
@@ -866,10 +883,13 @@
    "sources": []
   },
   "central-planning": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 19 says in his own voice that central planning does not work as well as the marketplace, and Ch. 32 argues planning a society by reason precludes freedom.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "socialized-markets": {
    "value": null,
@@ -893,10 +913,13 @@
    "auditor": "claude-sonnet-5-5"
   },
   "basic-income": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 35: a guaranteed job or income is another variant of the fallacy of 'something for nothing' and 'should be rejected'; he also argues UBI-style transfers drain productive enterprise.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "tariffs-protect-industry": {
    "value": -2,
@@ -914,10 +937,13 @@
    ]
   },
   "state-directs-investment": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 34 adopts the view that government picking winners through subsidies and tax breaks is socialistic and shows markets 'not free enough'; Ch. 35 criticises trillions given to government-favoured green industries.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "widespread-small-property": {
    "value": null,
@@ -944,10 +970,13 @@
    "sources": []
   },
   "one-party-rule": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Chs. 19 and 33 treat single-party strongman rule as the authoritarian result of socialism and an outcome to resist.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "monarchy-legitimate": {
    "value": null,
@@ -1079,10 +1108,13 @@
    "sources": []
   },
   "limit-population": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 35 calls proposals to restrict human population, including China's one-child policy, 'outright lunacy', mass abortion and mandatory limits.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "industrial-civilization-disaster": {
    "value": null,
@@ -1145,10 +1177,13 @@
    "sources": []
   },
   "abolish-division-of-labor": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Afterword and Ch. 4 praise the prosperity that comes with the division of labor, which he credits with reducing world poverty.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "distribute-by-need": {
    "value": null,
@@ -1163,10 +1198,13 @@
    "sources": []
   },
   "profit-exploitation": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Chs. 6-8 argue that in a free market wealth comes only from selling what people voluntarily buy, and that capitalism creates wealth rather than taking it from workers; he rejects the Marxist class-war framing.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "dictatorship-of-proletariat": {
    "value": null,
@@ -1175,10 +1213,13 @@
    "sources": []
   },
   "collective-farming": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 27 recounts Chinese collective farms producing hunger, and says the farmers' private plots, driven by self-interest, grew five times the food; he calls the thaw toward private property a relief.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "capitalism-causes-war": {
    "value": null,
@@ -1187,10 +1228,13 @@
    "sources": []
   },
   "taxation-theft": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Ch. 19 accepts a minimum of government force for defence and a legal system while calling it a necessary evil to be minimised; he does not call taxation theft.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "harm-principle": {
    "value": null,
@@ -1226,10 +1270,13 @@
    "sources": []
   },
   "positive-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 33 describes positive 'liberty' as the 'freedom' to get health care, a car or a house, which today's socialists yearn for, and sets it against real liberty and the individual.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "media-academia-power": {
    "value": null,
@@ -1250,10 +1297,13 @@
    "sources": []
   },
   "total-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 14 describes the complete-control end of the spectrum, where the state dictates every decision, as totalitarianism that needs force, and he sides with freedom.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "national-rebirth": {
    "value": null,
@@ -1347,10 +1397,13 @@
    ]
   },
   "economic-freedom": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Afterword: he will keep fighting for a free market economy because it is 'the only system consistent with liberty', and says any shift toward socialism threatens liberty; Ch. 19 argues complete economic control requires pervasive state force.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "rule-by-example": {
    "value": null,
@@ -1360,9 +1413,13 @@
   },
   "national-self-determination": {
    "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "confidence": null,
+   "rationale": "Ch. 9 sympathises with nations throwing off a superpower and with Nicaragua, but frames it as anti-domination, not a general right to statehood: not settled.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5",
+   "nulledFrom": 1
   },
   "force-without-un": {
    "value": null,
@@ -1510,10 +1567,13 @@
    ]
   },
   "heritable-defect-limits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 23 treats state control of reproduction as Nazi-style eugenics and warns against any 'ism' that puts the collective above the individual.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "security-forces-accountable": {
    "value": null,
@@ -1698,16 +1758,22 @@
    ]
   },
   "price-controls-essentials": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 3 states as a fundamental law that a government price below the market price causes shortages and a black market, recalls the Carter-era gas lines with anger, and condemns price controls in the US and Venezuela.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "party-controls-media": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 9 rejects Sanders's defence of the Sandinistas closing opposition newspapers, saying America's strength is tolerating even hateful speech; Chs. 19 and 37 condemn state control of speech and propaganda.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "party-commands-army": {
    "value": null,
@@ -2037,10 +2103,13 @@
    "sources": []
   },
   "leader-cult": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 26 condemns the hero worship of Mao and Ch. 24 the demand for enthusiastic applause, using his own slow-clap episode to warn against such enforced adulation.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "equal-parenting": {
    "value": null,
@@ -2368,10 +2437,13 @@
    "sources": []
   },
   "totalitarianisms-equivalent": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Chs. 19-21 treat Nazi and Stalinist socialism as two forms of the same collectivist totalitarianism, both to be condemned.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "slavery-not-civil-war-cause": {
    "value": null,
@@ -2446,10 +2518,13 @@
    "sources": []
   },
   "individual-pension-accounts": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Ch. 14: making Social Security tax voluntary and letting workers choose individual accounts would move the system toward more freedom and capitalism, which he favours; he does not set out a full replacement plan.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "land-use-tenure": {
    "value": null,
@@ -2531,10 +2606,13 @@
    "sources": []
   },
   "job-guarantee": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 35 says a guaranteed job or income should be rejected, in the context of the Green New Deal.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "democratic-peace": {
    "value": null,
@@ -2647,10 +2725,13 @@
    "sources": []
   },
   "capitalism-progressive": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Ch. 4 credits capitalism and the division of labor with the dramatic fall in world poverty over two centuries; Ch. 8: 'Capitalism creates wealth. Socialism does not.'",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "women-equality-needs-economic-change": {
    "value": null,
@@ -2689,10 +2770,13 @@
    "sources": []
   },
   "neither-capitalism-nor-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Afterword: 'I'm not a splitter' and does not want America half socialist, half capitalist; capitalism is the only system consistent with liberty.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "historical-land-claim": {
    "value": null,
@@ -2713,10 +2797,13 @@
    "sources": []
   },
   "suppress-opposition": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Ch. 9 condemns the Sandinista closure of opposition newspapers and Chs. 19 and 30 condemn secret police and purges against opponents.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "punish-blasphemy": {
    "value": -2,
@@ -2807,10 +2894,13 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Afterword: rejects a mix of capitalism and socialism and welfarism ('on socialism, or its fellow traveler, welfarism' no common ground), wanting government to leave voluntary exchange free apart from violence and fraud.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "abolish-armed-forces": {
    "value": null,
@@ -2921,10 +3011,13 @@
    "sources": []
   },
   "wealth-concentration-endangers-liberty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Ch. 6 (titled that inequality does not corrupt government) argues the claim that inequality destroys democracy is unproven and that the republic has held up well; he does allow big money on both sides.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "open-lgbt-military-service": {
    "value": null,
@@ -3006,10 +3099,13 @@
    "sources": []
   },
   "abolish-ip": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Ch. 14 wants drug patents to expire at a set date rather than be extended, but says drugs would still have patent protection; he does not call for abolition.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "uniformed-youth": {
    "value": null,
@@ -3244,10 +3340,13 @@
    "sources": []
   },
   "free-public-college": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Ch. 18 argues 'free' tuition is paid for by the highest middle-class taxes, comes with state control of fields of study and still leaves debt, and that nothing is free; he does not state a flat rule.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "pollution-taxes": {
    "value": null,
@@ -3268,10 +3367,13 @@
    "sources": []
   },
   "arms-reduction": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Afterword: he works for arms control and says negotiating new and continuing old arms treaties matters for survival, citing his Russia meetings on nuclear arms control.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "open-diplomacy": {
    "value": null,
@@ -3304,10 +3406,13 @@
    "sources": []
   },
   "in-work-tax-credits": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Ch. 35 criticises refundable tax credits (EITC, Child Tax Credit) as transfer payments from other workers with high fraud, a variant of basic income; he does not call for abolishing them outright, so -1.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "fiscal-rules-binding": {
    "value": 2,
@@ -3350,10 +3455,13 @@
    "sources": []
   },
   "student-debt-relief": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Ch. 16 lists loan forgiveness among the socialist spending proposals he says can only be paid by massive taxes on everyone; it is a passing mention, so -1.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "internal-colonialism": {
    "value": null,
@@ -3695,10 +3803,13 @@
    "sources": []
   },
   "distribution-by-process": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "Ch. 7: 'If unequal incomes are based on merit and occur as a consequence of voluntary transactions, there is no basis for complaint'; Ch. 6 calls fortunes earned by voluntary exchange 'well-deserved'.",
+   "sources": [
+    "k1"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "financial-transactions-tax": {
    "value": null,
@@ -3758,7 +3869,7 @@
    "sources": []
   }
  },
- "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.\n\nclaude-sonnet-5-5 deepening pass 2026-11-01 (local corpora: Senate floor speeches 2011-2026, hearings, Voteview, NPR/CNN): searched religion and the state (blasphemy, apostasy, church and state, creationism, religion in schools), death penalty, drugs and marijuana, immigration and birthright citizenship, tribes and treaties, official language, genocide recognition, encryption, FOIA and transparency, public broadcasting, race. Most statements on the failing lines are never addressed in his own words and stay null. Encryption (he only predicts user-held encryption and accepts warrants), same-sex marriage and religious freedom were not converted into answers; his questions to witnesses were not treated as positions. Review 2026-11-01 (integrator): quotes checked in the Record and hearings; public-access-to-information nulled (nearby case); consent-of-governed lowered to +1 (he does not say consent is the only test). claude-sonnet-5-5 second deepening pass 2026-11-01 (local corpora, mainstream statements): searched equal outcomes, income inequality, small business, recall, term limits, public housing, diversity, Davis-Bacon and right to work, minimum wage, Social Security, private accounts, immigration, birthright citizenship, official language, welfare for immigrants, unions. Added equal outcomes and reduce immigration. Not answered: Davis-Bacon amendments and a mention of right-to-work states (narrower or not his position), a 2011 remark on refugees and welfare (narrower), 'wants diversity' remark (describing companies), Social Security eligibility changes (not private accounts); nothing found on birthright citizenship, official language, recall, public housing, worker ownership.",
+ "notes": "All statement themes reviewed against official policy texts, current campaign program, recent trade statements and career reference. General privacy principles were not converted into unsupported positions on encryption or online anonymity. Legalisation of all recreational drugs is not inferred from drug-sentencing reform. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.\n\nMerged with an independent claude-sonnet-5-5 audit: 17 answers taken from it, 26 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched theme by theme: economy (tax plan, minimum wage, unions, regulation, Fed, bailouts), liberty (surveillance, guns, policing, sentencing, speech), government (war powers, emergency powers, term limits, voting), world (NATO, aid, trade, arming insurgents, international organisations), society (abortion, marriage, civil rights) and ecology. The senate.gov press pages returned 403 to the tools, so his own words come from his bylined op-eds, interviews and testimony. Nothing found for technology, culture and means statements, and for many specific economy, society and world statements, which are null. Paul's 2013 immigration plans, school choice, death penalty and welfare work requirements were not confirmed in a source opened this session, so they are null. Answers resting on reported words (s22, s27-s30, s33-s36, s39-s41) are at most medium; none rests on what a government did without Paul's own words.\n\nclaude-sonnet-5-5 deepening pass 2026-11-01 (local corpora: Senate floor speeches 2011-2026, hearings, Voteview, NPR/CNN): searched religion and the state (blasphemy, apostasy, church and state, creationism, religion in schools), death penalty, drugs and marijuana, immigration and birthright citizenship, tribes and treaties, official language, genocide recognition, encryption, FOIA and transparency, public broadcasting, race. Most statements on the failing lines are never addressed in his own words and stay null. Encryption (he only predicts user-held encryption and accepts warrants), same-sex marriage and religious freedom were not converted into answers; his questions to witnesses were not treated as positions. Review 2026-11-01 (integrator): quotes checked in the Record and hearings; public-access-to-information nulled (nearby case); consent-of-governed lowered to +1 (he does not say consent is the only test). claude-sonnet-5-5 second deepening pass 2026-11-01 (local corpora, mainstream statements): searched equal outcomes, income inequality, small business, recall, term limits, public housing, diversity, Davis-Bacon and right to work, minimum wage, Social Security, private accounts, immigration, birthright citizenship, official language, welfare for immigrants, unions. Added equal outcomes and reduce immigration. Not answered: Davis-Bacon amendments and a mention of right-to-work states (narrower or not his position), a 2011 remark on refugees and welfare (narrower), 'wants diversity' remark (describing companies), Social Security eligibility changes (not private accounts); nothing found on birthright citizenship, official language, recall, public housing, worker ownership.\n\nclaude-sonnet-5-5 pass 2026-11-03 on the maintainer-supplied text of his own book The Case Against Socialism (2019), searched by theme across all 39 chapters and the Afterword. Quotations of others in the book (Reisman, Mises, Winship, Sanandaji and so on) were not treated as his positions; only his own framing sentences were used. Not answered: welfare for immigrants and Child Tax Credit remarks (narrower), diversity-and-welfare remark in Ch. 14 (descriptive), UBI as Friedman's negative income tax (he does not say whether he would replace welfare), censorship of art (narrative of socialist regimes), political violence (he describes violence against himself but states no rule), algorithmic government (only predictive policing), capital and currency controls (Venezuela narrative), religion, immigration, drugs, abortion and marriage (not addressed in the book). Web: only a Google Books record was opened for the citation.",
  "passes": [
   {
    "auditor": "gpt-6.1-sol",
@@ -3775,6 +3886,10 @@
   {
    "auditor": "claude-sonnet-5-5",
    "auditedAt": "2026-11-01"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-03"
   }
  ],
  "rules": 3
