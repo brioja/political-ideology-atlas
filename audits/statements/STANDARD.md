@@ -6,7 +6,7 @@ qualify, and neither does "Corruption is bad".
 
 ## The standard
 
-A statement is **asked in the test** only when it meets all three:
+A statement is **asked in the test** only when it meets all four:
 
 1. **Real position.** At least one ideology's audit documents a stance on it, with a source. New
    statements enter this way, through an audit's `missingStatements` (see below).
@@ -14,6 +14,12 @@ A statement is **asked in the test** only when it meets all three:
    disagreement (high or medium confidence, not inferred).
 3. **Well-formed.** One claim, read literally, in neutral words that both sides would accept as a
    fair statement of the question.
+4. **Both sides are positions.** Agreeing and disagreeing should each be a position that people and
+   ideologies actually hold and could answer to. Write the `disagree` sentence as a positive position
+   wherever one is true of every audited ideology that disagrees (check their rationales) and means
+   exactly "not the statement"; otherwise keep the plain negation (see Explanations). A statement
+   whose disagree side can only be a hard-to-read negation (a double negative, or two claims bundled)
+   is flagged for rewording.
 
 `node scripts/statements-check.js` reports test 2 for every statement and lists the candidates
 the audits have proposed. A statement that fails test 2 stays in the bank as a `candidate`
