@@ -53,9 +53,11 @@ Many names cover several strands. Before answering, decide which one the profile
 record it in `scope`:
 - If there is a canonical core (founding texts, a defining thinker, a party program), use it.
 - If the name covers a family (fascism, social democracy, conservatism, feminism), answer only what
-  its branches share: a position counts when at least two separate branches state it and no major
-  branch states the opposite. One branch alone, even the original or the largest, doesn't speak for
-  the family (`null`), and opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian Fascism, Nazism) is audited there, not here. Name
+  its branches share: a position counts when several branches that reached it independently (not
+  one borrowing from another) state it and no major branch states the opposite. Two such branches
+  is the minimum and supports `medium` at most; `high` needs most of the family's major branches.
+  One branch alone, even the original or the largest, doesn't speak for the family (`null`), and
+  opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian Fascism, Nazism) is audited there, not here. Name
   the branches, thinkers and texts you based it on.
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
