@@ -57,8 +57,18 @@ record it in `scope`:
   one borrowing from another) state it and no major branch states the opposite. Two such branches
   is the minimum and supports `medium` at most; `high` needs most of the family's major branches.
   One branch alone, even the original or the largest, doesn't speak for the family (`null`), and
-  opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian Fascism, Nazism) is audited there, not here. Name
-  the branches, thinkers and texts you based it on.
+  opposite positions among branches are a split (0, `low`). A branch with its own entry (Italian
+  Fascism, Nazism) is audited there, not here.
+  List the branches in `branches`: each with a name, the groups or texts that represent it, and the
+  source that classifies it as part of the family; each answer's rationale names the branches that
+  state it, and only listed branches count. Membership comes from comparative scholarship that
+  defines the family (Paxton or Griffin for fascism, Mudde for the populist radical right, March for
+  the radical left) or, for positional labels (far-left, left-wing, centre-left, centrism,
+  centre-right, right-wing, far-right), from party-family classifications such as ParlGov or the
+  Chapel Hill Expert Survey. A branch counts only where the sources agree it belongs: if one source
+  includes it and another explicitly excludes it (revolutionary communism counted as left-wing by
+  one, set apart as far-left by another), leave it out. A source that doesn't mention a branch
+  doesn't exclude it.
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer as its political implications are usually drawn by its scholars and modern adherents. Say
   so in `scope`, and expect many low-confidence answers.
@@ -133,6 +143,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "rules": 3,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
+  "branches": [{ "name": "Family entries only: a branch", "represents": "its groups or texts", "sources": ["s5"] }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }
