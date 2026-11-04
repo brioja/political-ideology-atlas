@@ -129,3 +129,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   with overseas troops; Lindbergh-style hemispheric defence keeps outposts while refusing alliances.
   Single-claim candidate `avoid-permanent-military-alliances` added; retire the bundle once audits
   answer it.
+
+- **Obedience to a flawed ruler** (2026-11-04, Madkhalism statement pass): the bank has only the
+  negations ("Subjects may lawfully resist or remove a ruler who breaks the constitutional laws and
+  the trust placed in him."), no positive "subjects must obey their ruler even when he rules badly".
+  Madkhalism's defining position; not proposed because Codex couldn't obtain primary ruler-obedience
+  texts outside movement sites (Sunarwoto 2020 is the lead). Also fits divine-right monarchism.
