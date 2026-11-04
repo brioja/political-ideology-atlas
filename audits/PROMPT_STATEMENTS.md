@@ -101,7 +101,7 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 ```
 
 Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword anything it marks
-("and", "or", "can", "may", "like", "as well as", "not only", "rather", "so", "because", "by") per test 3: no two claims joined, one
+("and", "or", "can", "may", "like", "as well as", "not only", "rather", "so", "because", "by", "through") per test 3: no two claims joined, one
 general word over a list, no "can"/"may", no comparison that adds a claim.
 
 If you were given the queue (`node scripts/statement-pass.js next`), finish with

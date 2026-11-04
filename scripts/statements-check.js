@@ -5,7 +5,7 @@
 //   Proposals: each audit's missingStatements not yet added to statements.json or declined.
 //   node scripts/statements-check.js [--json]
 //   node scripts/statements-check.js --wording [file.json ...]
-//     Test 3: marks every "and" / "or" / "can" / "may" / "like" / "as well as" / "not only" / "rather" / "so" / "because" / "by" in candidate statements, or in the statements of
+//     Test 3: marks every "and" / "or" / "can" / "may" / "like" / "as well as" / "not only" / "rather" / "so" / "because" / "by" / "through" in candidate statements, or in the statements of
 //     proposal or review files (statement-pass and Codex review JSON). Report only. "and"/"or": a list
 //     of things is one claim, two claims joined ("abolished and money left to the market") fail; a
 //     general word beats a list. "can"/"may": a permission is almost always trivially true ("a monarch
@@ -14,7 +14,7 @@
 //     "X rather than Y" asks two things at once, so disagreeing is ambiguous (against X, or against
 //     preferring it to Y?); state X alone when Y is just "not X". "so"/"because": a reason ("limited by
 //     law so that work is shared") splits people who hold the position for other reasons; the bank
-//     asks positions, not reasons. "by": a means ("shared by cutting everyone's hours") is a second
+//     asks positions, not reasons. "by"/"through": a means ("shared by cutting everyone's hours") is a second
 //     claim and hard to negate (against the goal, or the means?); a passive "decided by voters" is fine.
 //     --all also marks the active statements (reference only: rewording them needs new ids).
 const fs = require("fs");
@@ -31,13 +31,13 @@ if (process.argv.includes("--wording")) {
   };
   const list = files.length ? files.flatMap(fromFile)
     : allStatements().filter((s) => process.argv.includes("--all") || isCandidate(s));
-  const joins = /\b(and|or|can|may|like|as well as|not only|rather|so|because|by)\b/gi;
+  const joins = /\b(and|or|can|may|like|as well as|not only|rather|so|because|by|through)\b/gi;
   const flagged = list.filter((s) => joins.test(s.text));
   for (const s of flagged) {
     console.log(`  ${s.from ? `[${s.from}] ` : ""}${s.id}: ${s.text.replace(joins, (m) => `**${m.toUpperCase()}**`)}`);
   }
   console.log(`\n${flagged.length} of ${list.length} statements use "and", "or", "can", "may", "like", "as well as", ` +
-    `"not only", "rather", "so", "because" or "by". Check each against test 3 in audits/statements/STANDARD.md: two claims joined, a list ` +
+    `"not only", "rather", "so", "because", "by" or "through". Check each against test 3 in audits/statements/STANDARD.md: two claims joined, a list ` +
     `where one general word would do, a permission that is trivially true, a comparison that adds a claim, or a reason or means instead of a position.`);
   process.exit(0);
 }
