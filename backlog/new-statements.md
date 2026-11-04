@@ -148,3 +148,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   land should be farmed collectively rather than by individual farmers." doesn't ask how. A plain
   candidate would be "Farmers should never be forced into collective farms." Not proposed: the library
   has the contrast only through Bean (scholarly) and a 1926 paragraph; needs primary passages.
+
+- **`gradual-change` bundles two claims** (2026-11-04, open society statement pass): "Social change
+  should be gradual and respect established institutions." joins pace with respect for what exists;
+  Popper wants small steps but treats institutions as open to redesign. Single-claim candidate
+  `small-step-social-reform` added; retire the bundle once audits answer it.
