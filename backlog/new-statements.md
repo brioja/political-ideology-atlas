@@ -142,3 +142,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   territory they claimed into other regions of the same (former) state. Not proposed: the evidence
   was trial records and historians, not three primary statements of the general position. Added 11-04
   as candidate `remove-other-ethnic-groups` at Brandon's request.
+
+- **Forced collectivisation** (2026-11-04, Bukharinism statement pass): Bukharin's defining split with
+  Stalin is winning peasants over by incentives versus forcing them into collective farms, but "Agricultural
+  land should be farmed collectively rather than by individual farmers." doesn't ask how. A plain
+  candidate would be "Farmers should never be forced into collective farms." Not proposed: the library
+  has the contrast only through Bean (scholarly) and a 1926 paragraph; needs primary passages.
