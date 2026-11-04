@@ -66,6 +66,11 @@ ideology's local source library and (2) propose the defining statements the bank
   The statement is the common core of those passages, in their words wherever those words are
   neutral and plain; replace only what fails a test 3 check (a named country or group, a term only
   adherents use, such as "idolatry"). Don't add a qualifier none of them states.
+- **Lessons from earlier reviews.** One general word over a list ("objects that people worship", not
+  "statues, shrines and tombs"), and never one item picked out of a source's list (a manifesto's six
+  technologies to dismantle is not a statement about computers). Say exactly who and what, in the
+  reading the quotes state: "chosen above" read as election or as superiority, "returned" as
+  voluntary or forced. No jargon ("fiat"). Give each statement its own fitting icon.
 
 ## 3. Output
 Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpad/`):
@@ -96,6 +101,9 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword anything it marks
 ("and", "or", "can", "may", "like", "as well as", "not only", "rather") per test 3: no two claims joined, one
 general word over a list, no "can"/"may", no comparison that adds a claim.
+
+If you were given the queue (`node scripts/statement-pass.js next`), finish with
+`node scripts/statement-pass.js done <id>`: it checks the file and marks the pass done for review.
 
 Do not edit `statements.json`, any audit file, or anything else in the repo. Do not commit.
 Reply with: library size (files, which are primary), defining positions found, how many covered,
