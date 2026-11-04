@@ -30,7 +30,7 @@ A statement is **asked in the test** only when it meets all four:
    - **A general word, not a list.** "Objects that people worship", not "statues, shrines and
      tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
      `node scripts/statements-check.js --wording` marks every "and", "or", "can", "may", "like", "as
-     well as", "not only", "rather", "so" and "because" to check.
+     well as", "not only", "rather", "so", "because" and "by" to check.
    - **No comparison that adds a claim.** "Civilians are legitimate targets, just like its soldiers"
      also asserts that soldiers are; drop the comparison. "X rather than Y" asks two things, so
      disagreeing is ambiguous (against X, or against preferring it to Y?); state X alone when Y is
@@ -39,6 +39,9 @@ A statement is **asked in the test** only when it meets all four:
    - **A position, not a reason.** "So that", "because" and "in order to" add a reason, and people
      who hold the position for another reason would split on it ("working hours should be limited
      by law so that work is shared among more people"). State the position alone.
+   - **No means attached.** "Paid work should be shared among more people by cutting everyone's
+     working hours" joins a goal and a means, and a disagree can't say which it rejects. State one.
+     (A passive "by", "chosen by voters", names who acts and is fine.)
    - **Not already in the bank.** No existing statement already asks it, even in other words; a
      new candidate that does is merged into that statement instead.
 4. **Both sides are positions.** Agreeing and disagreeing should each be a position that people and
