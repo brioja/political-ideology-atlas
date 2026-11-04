@@ -187,3 +187,10 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   general position, e.g. "The country's minority peoples should take on the majority's language and
   culture." (Russification, Turkification, Afshar's Persianisation), has no statement. Not proposed: no
   pass had three primary formulations.
+
+- **Can capitalism be made sustainable?** (2026-11-04, ecological modernization pass): a major green
+  dividing line (ecological modernization, green growth and free-market environmentalism vs eco-socialism
+  and degrowth) has no single statement; limit-growth and tech-solves-problems only approximate it.
+  Candidate wording: "Capitalism cannot be made environmentally sustainable." Spaargaren explicitly
+  rejects presuming it impossible (scratchpad/sources/ecological-modernization/); the eco-socialist side
+  needs its own primary passages (Kovel/Löwy manifesto, Foster).
