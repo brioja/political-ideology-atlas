@@ -92,7 +92,7 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 ```
 
 Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword anything it marks
-("and", "or", "can", "may", "like", "as well as", "not only") per test 3: no two claims joined, one
+("and", "or", "can", "may", "like", "as well as", "not only", "rather") per test 3: no two claims joined, one
 general word over a list, no "can"/"may", no comparison that adds a claim.
 
 Do not edit `statements.json`, any audit file, or anything else in the repo. Do not commit.

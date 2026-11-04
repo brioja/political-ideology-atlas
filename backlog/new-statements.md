@@ -101,3 +101,25 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   can't answer cleanly, and the disagree side fails test 3/4. Fix: a single-claim candidate
   ("There should be no central bank") answered by every audit, then retire the bundled one. It
   rides along with the new-ideology statements' backfill or deepen.
+
+- **No asylum statement** (2026-11-04, Identitarian movement statement pass): the bank has nothing
+  on asylum or on turning back migrant boats (Defend Europe). Not proposed because the library had
+  the campaign only through scholarly paraphrase, no primary statement of a principle. Propose it
+  when an ideology's own texts state one.
+
+- **`central-bank-independence` bundles who and what** (2026-11-04, Social market economy pass):
+  it joins who controls monetary policy with what policy aims at. Erhard's texts state the aim
+  (price stability first, proposed as `price-stability-first`) but never independence. Consider a
+  split if audits show ideologies holding one half only.
+
+- **Coverage gaps Codex found in batch 2** (2026-11-04, `scratchpad/statement-pass/codex-review-batch2.json`,
+  `missedPosition` entries). None drafted: each needs a primary passage first.
+  - Natural aristocracy should rule (esoteric neo-Nazism): "Some people are naturally better suited to
+    rule than others." states aptitude, not a claim to rule.
+  - Spreading property to poorer people (social market economy): "Property should be spread widely
+    among small owners rather than concentrated in corporations or the state." bundles a condition the
+    social market economy doesn't hold (Düsseldorf principle 10 is a lead).
+  - Counter-cyclical safeguards against crises (social market economy): only the negation of "Governments
+    should avoid running large budget deficits to stimulate the economy." carries it (Düsseldorf 13).
+  - Metapolitics, the battle of ideas before power (identitarian movement): "Cultural renewal of a nation
+    should come before building its state." is about statehood, not taking power in an existing state.
