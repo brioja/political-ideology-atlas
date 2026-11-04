@@ -5,40 +5,45 @@
 //   Proposals: each audit's missingStatements not yet added to statements.json or declined.
 //   node scripts/statements-check.js [--json]
 //   node scripts/statements-check.js --wording [file.json ...]
-//     Test 3: marks every "and" / "or" / "can" / "may" / "like" / "as well as" / "not only" / "rather" / "so" / "because" / "by" / "through" in candidate statements, or in the statements of
-//     proposal or review files (statement-pass and Codex review JSON). Report only. "and"/"or": a list
-//     of things is one claim, two claims joined ("abolished and money left to the market") fail; a
-//     general word beats a list. "can"/"may": a permission is almost always trivially true ("a monarch
-//     can be a good ruler"); state the position itself. "like"/"as well as"/"not only": a comparison
-//     slips in a second claim ("civilians are legitimate targets, just like its soldiers"). "rather":
-//     "X rather than Y" asks two things at once, so disagreeing is ambiguous (against X, or against
-//     preferring it to Y?); state X alone when Y is just "not X". "so"/"because": a reason ("limited by
-//     law so that work is shared") splits people who hold the position for other reasons; the bank
-//     asks positions, not reasons. "by"/"through": a means ("shared by cutting everyone's hours") is a second
-//     claim and hard to negate (against the goal, or the means?); a passive "decided by voters" is fine.
+//     Test 3: marks wording in candidate statements, or in the statements of proposal or review
+//     files (statement-pass and Codex review JSON), at two levels (lists and reasons in lib.js WORDING).
+//     Errors almost always mean a defect: "can"/"may" (a permission is almost always trivially true:
+//     "a monarch can be a good ruler"), "rather" ("X rather than Y" asks two things, so a disagree is
+//     ambiguous), "so"/"because" (a reason: the bank asks positions), "as well as"/"not only" (a
+//     comparison slips in a second claim). Warnings are often fine: "and"/"or" (a list of things is
+//     one claim; two claims joined fail), "like", "by"/"through" (a means attached to a goal is hard to
+//     negate; a passive "chosen by voters" is fine), "in" (a vague scope: "in economic life").
+//     Report only; statement-pass.js done refuses unexplained errors.
 //     --all also marks the active statements (reference only: rewording them needs new ids).
 const fs = require("fs");
 const path = require("path");
-const { PROFILES_DIR, readJson, allStatements, isCandidate } = require("./lib");
+const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, wordingMarks } = require("./lib");
 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-  // Statements in a proposal file ({proposals: [{statement}]}) or a review file ([{statement}]).
+  // Statements in a proposal file ({proposals: [{statement}]}) or a review file ([{statement}]). A
+  // proposal's "wordingOk" field explains why an error-level word is right there (e.g. "can" in "cannot").
   const fromFile = (f) => {
     const j = readJson(path.resolve(f));
     const items = Array.isArray(j) ? j : j.proposals || [];
-    return items.filter((x) => x.statement && x.statement.text).map((x) => ({ ...x.statement, from: path.basename(f) }));
+    return items.filter((x) => x.statement && x.statement.text)
+      .map((x) => ({ ...x.statement, wordingOk: x.wordingOk, from: path.basename(f) }));
   };
   const list = files.length ? files.flatMap(fromFile)
     : allStatements().filter((s) => process.argv.includes("--all") || isCandidate(s));
-  const joins = /\b(and|or|can|may|like|as well as|not only|rather|so|because|by|through)\b/gi;
-  const flagged = list.filter((s) => joins.test(s.text));
-  for (const s of flagged) {
-    console.log(`  ${s.from ? `[${s.from}] ` : ""}${s.id}: ${s.text.replace(joins, (m) => `**${m.toUpperCase()}**`)}`);
+  let errors = 0, warnings = 0;
+  for (const s of list) {
+    const m = wordingMarks(s.text);
+    if (!m.errors.length && !m.warnings.length) continue;
+    const level = m.errors.length ? (s.wordingOk ? "error (explained)" : "ERROR") : "warning";
+    if (m.errors.length && !s.wordingOk) errors++; else warnings++;
+    const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings]), (w) => `**${w.toUpperCase()}**`);
+    console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}${s.wordingOk ? ` (${s.wordingOk})` : ""}`);
   }
-  console.log(`\n${flagged.length} of ${list.length} statements use "and", "or", "can", "may", "like", "as well as", ` +
-    `"not only", "rather", "so", "because", "by" or "through". Check each against test 3 in audits/statements/STANDARD.md: two claims joined, a list ` +
-    `where one general word would do, a permission that is trivially true, a comparison that adds a claim, or a reason or means instead of a position.`);
+  console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}: ` +
+    `reword, or explain in the proposal's "wordingOk"), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
+    `check against test 3 in audits/statements/STANDARD.md: two claims joined, a list where one general word would do, ` +
+    `a means instead of a position, a vague scope).`);
   process.exit(0);
 }
 

@@ -100,9 +100,11 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 }
 ```
 
-Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword anything it marks
-("and", "or", "can", "may", "like", "as well as", "not only", "rather", "so", "because", "by", "through") per test 3: no two claims joined, one
-general word over a list, no "can"/"may", no comparison that adds a claim.
+Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword every
+error ("can", "may", "rather", "so", "because", "as well as", "not only"); if one is right (the "can" in
+"cannot"), say why in the proposal's `"wordingOk"` field. Check every warning ("and", "or", "like",
+"by", "through", "in") against test 3: no two claims joined, one general word over a list, no means
+attached to a goal, no vague scope ("in economic life").
 
 If you were given the queue (`node scripts/statement-pass.js next`), finish with
 `node scripts/statement-pass.js done <id>`: it checks the file and marks the pass done for review.

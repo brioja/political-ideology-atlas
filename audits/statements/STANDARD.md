@@ -29,8 +29,10 @@ A statement is **asked in the test** only when it meets all four:
      country's politics could take a side ("public transport on the Sabbath").
    - **A general word, not a list.** "Objects that people worship", not "statues, shrines and
      tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
-     `node scripts/statements-check.js --wording` marks every "and", "or", "can", "may", "like", "as
-     well as", "not only", "rather", "so", "because", "by" and "through" to check.
+     `node scripts/statements-check.js --wording` marks wording at two levels: errors ("can", "may",
+     "rather", "so", "because", "as well as", "not only") are almost always a defect; warnings ("and",
+     "or", "like", "by", "through", "in") are often fine but worth a look ("in economic life" is a
+     vague scope; "in war" is just a place).
    - **No comparison that adds a claim.** "Civilians are legitimate targets, just like its soldiers"
      also asserts that soldiers are; drop the comparison. "X rather than Y" asks two things, so
      disagreeing is ambiguous (against X, or against preferring it to Y?); state X alone when Y is

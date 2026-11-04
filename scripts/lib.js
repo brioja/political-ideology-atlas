@@ -123,6 +123,21 @@ const awaitingReaudit = () => {
   return new Set(fs.existsSync(f) ? readJson(f).ids : []);
 };
 
-module.exports = { viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+// Statement wording markers (STANDARD.md test 3). Errors almost always mean a defect: a permission
+// ("can", "may"), two questions ("rather"), a reason ("so", "because") or a comparison ("as well as",
+// "not only"). Warnings are often fine but worth a look: "and"/"or" (a list may be one claim),
+// "like", "by"/"through" (a means, or just who acts: "chosen by voters"), "in" (a vague scope such as
+// "in economic life", or just a place: "in war").
+const WORDING = {
+  errors: ["can", "may", "rather", "so", "because", "as well as", "not only"],
+  warnings: ["and", "or", "like", "by", "through", "in"],
+};
+const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
+function wordingMarks(text) {
+  const find = (words) => [...new Set((text.match(wordingRe(words)) || []).map((w) => w.toLowerCase()))];
+  return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
+}
+
+module.exports = { WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

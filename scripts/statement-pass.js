@@ -13,7 +13,7 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
-const { ROOT, readJson, catalog, profilePath } = require("./lib");
+const { ROOT, readJson, catalog, profilePath, wordingMarks } = require("./lib");
 
 const DIR = path.join(ROOT, "scratchpad", "statement-pass");
 const f = (id, ext) => path.join(DIR, id + ext);
@@ -44,6 +44,8 @@ if (cmd === "next") {
     const s = p.statement || {};
     for (const k of ["id", "theme", "text", "agree", "disagree", "note", "icon"]) if (!s[k]) problems.push(`${s.id || "?"}: no ${k}`);
     if (!(p.quotes || []).length) problems.push(`${s.id}: no quotes`);
+    const errs = s.text ? wordingMarks(s.text).errors : [];
+    if (errs.length && !p.wordingOk) problems.push(`${s.id}: wording error (${errs.join(", ")}): reword, or explain in the proposal's "wordingOk"`);
   }
   const lib = path.join(ROOT, "scratchpad", "sources", id, "index.json");
   if (!fs.existsSync(lib)) problems.push(`no library index ${path.relative(ROOT, lib)}`);
