@@ -164,3 +164,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   destroying human embryos in research. Both divide real ideologies (consistent life ethic, Catholic
   social teaching vs. some security hawks and science-first liberals). Not proposed: Rehumanize's core
   list is the only direct formulation in the library.
+
+- **No surrogacy statement** (2026-11-04, trans-exclusionary radical feminism and reactionary feminism
+  passes): both oppose surrogacy as reproductive exploitation (the Declaration on Women's Sex-Based
+  Rights covers commercial and altruistic arrangements); the bank asks nothing about it. Candidate
+  wording when three primary passages are in hand: "Surrogate pregnancy should be banned."
