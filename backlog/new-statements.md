@@ -121,7 +121,7 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
     social market economy doesn't hold (Düsseldorf principle 10 is a lead).
   - Counter-cyclical safeguards against crises (social market economy): only the negation of "Governments
     should avoid running large budget deficits to stimulate the economy." carries it (Düsseldorf 13).
-  - Metapolitics, the battle of ideas before power (identitarian movement; Nouvelle Droite too, 11-04): "Cultural renewal of a nation
+  - Metapolitics, the battle of ideas before power (identitarian movement; Nouvelle Droite and Neue Rechte too, 11-04): "Cultural renewal of a nation
     should come before building its state." is about statehood, not taking power in an existing state.
 
 - **`end-foreign-alliances` bundles two claims** (2026-11-04, isolationism statement pass): "My country
