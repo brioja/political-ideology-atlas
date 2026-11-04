@@ -140,4 +140,5 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   passes): "A government may require or pressure members of a minority seen as hostile to leave the
   country." needs hostility and leaving the country; both programmes moved other peoples out of
   territory they claimed into other regions of the same (former) state. Not proposed: the evidence
-  was trial records and historians, not three primary statements of the general position.
+  was trial records and historians, not three primary statements of the general position. Added 11-04
+  as candidate `remove-other-ethnic-groups` at Brandon's request.
