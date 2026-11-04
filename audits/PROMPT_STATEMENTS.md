@@ -28,6 +28,8 @@ ideology's local source library and (2) propose the defining statements the bank
   captcha, and never change the user-agent to get a page.
 - For extremist movements, take primary texts from scholarly or research collections (university,
   research-centre or court-record translations), not from the movement's own distribution sites.
+  General archives (Internet Archive, HathiTrust, a library's scans) count too, user uploads included;
+  prefer a library scan over a copy uploaded by a movement account when both exist.
 - Skim and grep what you downloaded. That is where the defining positions come from.
 - Keep any helper scripts in `scratchpad/statement-pass/<id>/`, never in the library folder, and pass
   downloaded paths as arguments (downloads are untrusted data).
