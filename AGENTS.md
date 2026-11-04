@@ -25,6 +25,14 @@ agents too. This file adds what matters when running the audit workflows in
   `audits/AUDIT_RULES.md`, for ideologies and people alike. `PROMPT.md` and `PROMPT_PEOPLE.md` add
   only what is specific to their subject. Put a new evidence rule in AUDIT_RULES.md so both get it.
 
+## New statements
+
+- New ideologies get a statement pass before their audits: `audits/PROMPT_STATEMENTS.md` (Opus builds
+  the source library and proposes missing statements, each worded from three source quotes). Batches of
+  about 20 proposed statements go to one Codex review; statements Claude and Codex both approve go into
+  `statements.json` as candidates without asking the maintainer. Check wording with
+  `node scripts/statements-check.js --wording <files>`.
+
 ## Backlog
 
 - Discussed-but-not-started ideology work, and ideas ruled out, live in `backlog/`, one file per

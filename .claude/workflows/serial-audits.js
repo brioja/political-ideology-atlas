@@ -1,10 +1,10 @@
 export const meta = {
   name: 'serial-audits',
   description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that also merges its proposed statements and deploys',
-  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents',
+  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"backfill": true} to backfill old audits once 10 new statements build up (off by default: backfill or deepen once at the very end)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per ideology: audit, merge proposals, commit, build, test, push' },
-    { title: 'Backfill', detail: 'when 10+ audits need answers for new statements, answer them and promote contested candidates' },
+    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote contested candidates' },
   ],
 }
 
@@ -12,6 +12,7 @@ const ROOT = '/home/brioja/work/political_ideology_test'
 const opts = args || {}
 const LIMIT = opts.limit || 10
 const model = opts.model ? { model: opts.model } : {}
+const BACKFILL = opts.backfill === true
 
 const TICK = {
   type: 'object',
@@ -38,7 +39,8 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    even loosely, set "addedAs" to that id (your answer to it must agree). Only if none does, append a new statement to
    statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,
    "status": "candidate"), in neutral wording other ideologies could also take a side on, and set "addedAs" to the new id.
-   Or set "declined" with a reason. Keep the bank lean: every statement added must be answered by every future audit.
+   Add a new statement only if this ideology answers it -2 or +2 at high confidence (a defining position, either side);
+   otherwise set "declined": "not strongly held at high confidence". Or set "declined" with another reason. Keep the bank lean: every statement added must be answered by every future audit.
 4. \`git add\` only the audit file and statements.json; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
 5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
@@ -83,7 +85,8 @@ for (let i = 0; i < LIMIT; i++) {
   log(r.report)
   // Backfill once 10 new statements have built up. Every new statement makes every earlier audit
   // pending at once, so counting audits instead would backfill after nearly every audit.
-  if (r.pendingStatements >= 10) {
+  // Off by default: each pass covers every finished audit, so old audits are backfilled (or deepened) once at the end.
+  if (BACKFILL && r.pendingStatements >= 10) {
     phase('Backfill')
     reports.push(`backfill: ${await backfill()}`)
   }

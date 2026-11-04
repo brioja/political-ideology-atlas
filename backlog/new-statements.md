@@ -94,3 +94,10 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   rewording (new id, re-answer: decide each). Display text only (ids stay), but visible copy: a
   before/after doc before pushing. Parked 2026-11-03 for tokens (about 10 agents of ~50 statements).
   New statements follow test 4 from now on.
+
+- **`abolish-central-banks` bundles two claims** (2026-11-03, statement pass pilot): "Central banks
+  should be abolished and money left to the market." Jacksonian democracy holds the first half (no
+  national bank) and rejects the second (gold and silver money, an independent treasury), so it
+  can't answer cleanly, and the disagree side fails test 3/4. Fix: a single-claim candidate
+  ("There should be no central bank") answered by every audit, then retire the bundled one. It
+  rides along with the new-ideology statements' backfill or deepen.

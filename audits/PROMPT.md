@@ -123,7 +123,8 @@ ideology (stated in its primary sources or central in the scholarship) but that 
 captures, even loosely. Leave it as an empty list if there are none, and don't pad it.
 
 - Write each as a candidate statement in the bank's form: one claim, read literally, in neutral
-  words that adherents and opponents would both accept as a fair statement of the question.
+  words that adherents and opponents would both accept as a fair statement of the question. Hold
+  it to every check under test 3 in `audits/statements/STANDARD.md`.
 - Prefer wording that other ideologies could also take a side on ("Laws should follow Islamic
   sharia"), not one that only names this ideology ("Zionism is right").
 - Give this ideology's answer (`value`, -2 to +2, never 0), a one-sentence rationale, and at least

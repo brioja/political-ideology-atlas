@@ -5,7 +5,7 @@ export const meta = {
     { title: 'Pick', detail: 'list the next N pending ideologies by views' },
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
     { title: 'Integrate', detail: 'merge proposals into statements.json, commit, build, test, push' },
-    { title: 'Backfill', detail: 'when 10+ new statements are pending, answer them and promote contested candidates' },
+    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote contested candidates' },
   ],
 }
 
@@ -13,6 +13,8 @@ const ROOT = '/home/brioja/work/political_ideology_test'
 const LANES = (args && args.lanes) || 5
 const WAVES = (args && args.waves) || 2
 const model = args && args.model ? { model: args.model } : {}
+// Off by default: each pass covers every finished audit, so old audits are backfilled (or deepened) once at the end.
+const BACKFILL = !!(args && args.backfill === true)
 
 const PICK = {
   type: 'object',
@@ -62,7 +64,9 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,
    "status": "candidate"), in neutral wording other ideologies could also take a side on, and set "addedAs" to the new id
    in every audit that proposed it; if a wave audit proposed it, that audit must also answer the new statement in its answers,
-   following audits/PROMPT.md's answer format. Or set "declined" with a reason. Keep the bank lean: every statement added must be answered by every future audit.
+   following audits/PROMPT.md's answer format. Add a new statement only if at least one proposing audit answers it -2 or +2
+   at high confidence (a defining position, either side); otherwise set "declined": "not strongly held at high confidence".
+   Or set "declined" with another reason. Keep the bank lean: every statement added must be answered by every future audit.
    Keep each file's own JSON indentation.
 2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the uncertainty judge once);
    fix every error except the uncertainty rule (never raise a confidence to pass it).
@@ -117,6 +121,6 @@ for (let w = 0; w < WAVES; w++) {
   reports.push(`integrate wave ${w + 1}: ${r.report}`)
   log(r.report)
   if (!r.deployed) { ended = 'wave not deployed (tests failed?); stopping'; break }
-  if (r.pendingStatements >= 10) reports.push(`backfill: ${await backfill()}`)
+  if (BACKFILL && r.pendingStatements >= 10) reports.push(`backfill: ${await backfill()}`)
 }
 return { reports, ended }

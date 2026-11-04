@@ -13,7 +13,28 @@ A statement is **asked in the test** only when it meets all four:
 2. **Contested.** Among audited ideologies, at least one states agreement and at least one states
    disagreement (high or medium confidence, not inferred).
 3. **Well-formed.** One claim, read literally, in neutral words that both sides would accept as a
-   fair statement of the question.
+   fair statement of the question. In particular:
+   - **Plain words.** A general reader understands it without a glossary or a theory behind it.
+   - **One reading.** It can't reasonably be read as two different questions ("bear arms" read as
+     private armies by some and private guns by others).
+   - **Not trivially true.** Read literally, it isn't something nearly everyone accepts ("a monarch
+     can be a good ruler": any ruler can). Don't use "can" or "may": a permission is almost always
+     trivially true. State the position itself ("civilians are legitimate targets", not "civilians
+     can be legitimate targets").
+   - **No unstated context.** It can be answered flatly, without "it depends on the country, the
+     case or the circumstances".
+   - **Not relative to the status quo.** It states a position, not "more" or "less" than now, which
+     means different things in different countries ("the minimum wage should be raised").
+   - **General.** It doesn't name an ideology, party or movement, and isn't so local that only one
+     country's politics could take a side ("public transport on the Sabbath").
+   - **A general word, not a list.** "Objects that people worship", not "statues, shrines and
+     tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
+     `node scripts/statements-check.js --wording` marks every "and", "or", "can", "may", "like", "as
+     well as" and "not only" to check.
+   - **No comparison that adds a claim.** "Civilians are legitimate targets, just like its soldiers"
+     also asserts that soldiers are; drop the comparison.
+   - **Not already in the bank.** No existing statement already asks it, even in other words; a
+     new candidate that does is merged into that statement instead.
 4. **Both sides are positions.** Agreeing and disagreeing should each be a position that people and
    ideologies actually hold and could answer to. Write the `disagree` sentence as a positive position
    wherever one is true of every audited ideology that disagrees (check their rationales) and means

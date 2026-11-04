@@ -4,9 +4,38 @@
 //   medium confidence, not inferred). Candidates that pass are ready to be made active.
 //   Proposals: each audit's missingStatements not yet added to statements.json or declined.
 //   node scripts/statements-check.js [--json]
+//   node scripts/statements-check.js --wording [file.json ...]
+//     Test 3: marks every "and" / "or" / "can" / "may" / "like" / "as well as" / "not only" in candidate statements, or in the statements of
+//     proposal or review files (statement-pass and Codex review JSON). Report only. "and"/"or": a list
+//     of things is one claim, two claims joined ("abolished and money left to the market") fail; a
+//     general word beats a list. "can"/"may": a permission is almost always trivially true ("a monarch
+//     can be a good ruler"); state the position itself. "like"/"as well as"/"not only": a comparison
+//     slips in a second claim ("civilians are legitimate targets, just like its soldiers").
+//     --all also marks the active statements (reference only: rewording them needs new ids).
 const fs = require("fs");
 const path = require("path");
 const { PROFILES_DIR, readJson, allStatements, isCandidate } = require("./lib");
+
+if (process.argv.includes("--wording")) {
+  const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+  // Statements in a proposal file ({proposals: [{statement}]}) or a review file ([{statement}]).
+  const fromFile = (f) => {
+    const j = readJson(path.resolve(f));
+    const items = Array.isArray(j) ? j : j.proposals || [];
+    return items.filter((x) => x.statement && x.statement.text).map((x) => ({ ...x.statement, from: path.basename(f) }));
+  };
+  const list = files.length ? files.flatMap(fromFile)
+    : allStatements().filter((s) => process.argv.includes("--all") || isCandidate(s));
+  const joins = /\b(and|or|can|may|like|as well as|not only)\b/gi;
+  const flagged = list.filter((s) => joins.test(s.text));
+  for (const s of flagged) {
+    console.log(`  ${s.from ? `[${s.from}] ` : ""}${s.id}: ${s.text.replace(joins, (m) => `**${m.toUpperCase()}**`)}`);
+  }
+  console.log(`\n${flagged.length} of ${list.length} statements use "and", "or", "can", "may", "like", "as well as" or ` +
+    `"not only". Check each against test 3 in audits/statements/STANDARD.md: two claims joined, a list ` +
+    `where one general word would do, a permission that is trivially true, or a comparison that adds a claim.`);
+  process.exit(0);
+}
 
 const statements = allStatements();
 const audits = fs.readdirSync(PROFILES_DIR).filter((f) => f.endsWith(".json"))
