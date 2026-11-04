@@ -175,3 +175,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   not the positive form, e.g. "The state should encourage people with desirable inherited traits to
   have more children." (Galton; Singapore's 1984 Graduate Mothers scheme). The pass proposed only a
   personal mate-choice rule for women, not added.
+
+- **Buy domestic goods** (2026-11-04, Pan-Thaiism and Thai nationalism passes): Phibun's fifth
+  cultural mandate (buy Thai goods), and Swadeshi, "Buy American" and similar campaigns. The bank
+  has tariffs and foreign-takeover statements but nothing on the consumer preference itself, e.g.
+  "People should prefer goods made in their own country." Not proposed: one brief report each time.
