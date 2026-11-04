@@ -123,3 +123,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
     should avoid running large budget deficits to stimulate the economy." carries it (Düsseldorf 13).
   - Metapolitics, the battle of ideas before power (identitarian movement): "Cultural renewal of a nation
     should come before building its state." is about statehood, not taking power in an existing state.
+
+- **`end-foreign-alliances` bundles two claims** (2026-11-04, isolationism statement pass): "My country
+  should end its permanent military alliances and bring its troops home from abroad." joins alliances
+  with overseas troops; Lindbergh-style hemispheric defence keeps outposts while refusing alliances.
+  Single-claim candidate `avoid-permanent-military-alliances` added; retire the bundle once audits
+  answer it.
