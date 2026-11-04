@@ -107,7 +107,7 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword every
 error ("can", "may", "rather", "so", "because", "as well as", "not only"); if one is right (the "can" in
 "cannot"), say why in the proposal's `"wordingOk"` field. Check every warning ("and", "or", "like",
-"by", "through", "in") against test 3: no two claims joined, one general word over a list, no means
+"by", "through", "in", "not") against test 3: no two claims joined, one general word over a list, no means
 attached to a goal, no vague scope ("in economic life").
 
 If you were given the queue (`node scripts/statement-pass.js next`), finish with

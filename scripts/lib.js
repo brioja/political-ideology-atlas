@@ -127,10 +127,11 @@ const awaitingReaudit = () => {
 // ("can", "may"), two questions ("rather"), a reason ("so", "because") or a comparison ("as well as",
 // "not only"). Warnings are often fine but worth a look: "and"/"or" (a list may be one claim),
 // "like", "by"/"through" (a means, or just who acts: "chosen by voters"), "in" (a vague scope such as
-// "in economic life", or just a place: "in war").
+// "in economic life", or just a place: "in war"), "not" (state the positive position and let an
+// ideology answer -2: "work should be the centre of people's lives", not "work should not be...").
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only"],
-  warnings: ["and", "or", "like", "by", "through", "in"],
+  warnings: ["and", "or", "like", "by", "through", "in", "not"],
 };
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {
