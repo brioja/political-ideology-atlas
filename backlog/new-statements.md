@@ -169,3 +169,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   passes): both oppose surrogacy as reproductive exploitation (the Declaration on Women's Sex-Based
   Rights covers commercial and altruistic arrangements); the bank asks nothing about it. Candidate
   wording when three primary passages are in hand: "Surrogate pregnancy should be banned."
+
+- **Positive eugenics** (2026-11-04, eugenic feminism statement pass): the bank has negative eugenics
+  ("The state should discourage or prevent people with heritable defects from having children.") but
+  not the positive form, e.g. "The state should encourage people with desirable inherited traits to
+  have more children." (Galton; Singapore's 1984 Graduate Mothers scheme). The pass proposed only a
+  personal mate-choice rule for women, not added.
