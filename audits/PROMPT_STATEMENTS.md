@@ -72,7 +72,9 @@ ideology's local source library and (2) propose the defining statements the bank
   reading the quotes state: "chosen above" read as election or as superiority, "returned" as
   voluntary or forced. A claim about the world should be concrete enough to judge: "every political
   system is ruled by a small minority" was too abstract to answer; "in every democracy, real power ends
-  up with a small group of leaders" is not. No jargon ("fiat"). Give each statement its own fitting icon.
+  up with a small group of leaders" is not. Don't presuppose the ideology's goal, which leaves everyone
+  else unable to answer: not "communism should begin with the revolution itself" but "a communist
+  revolution needs no transitional stage before communism". No jargon ("fiat"). Give each statement its own fitting icon.
 
 ## 3. Output
 Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpad/`):
