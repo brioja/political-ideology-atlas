@@ -194,3 +194,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   Candidate wording: "Capitalism cannot be made environmentally sustainable." Spaargaren explicitly
   rejects presuming it impossible (scratchpad/sources/ecological-modernization/); the eco-socialist side
   needs its own primary passages (Kovel/Löwy manifesto, Foster).
+
+- **`abolish-money-wages` bundles two claims** (2026-11-04, Chicago idea pass): "Money and wage labor
+  should eventually be abolished." joins money with wages; the Pittsburgh programme ended wage labour
+  while keeping equivalent exchange. Single-claim candidate `abolish-wage-labour` added; retire the
+  bundle once audits answer it.
