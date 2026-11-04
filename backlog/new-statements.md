@@ -158,3 +158,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   "Public officials and state-school students should not wear religious dress in state institutions."
   Laïcité requires it of officials on duty, while the student rule is disputed within the family. A
   single-claim "Public officials should not wear religious dress while on duty." would split them.
+
+- **No torture or embryo-research statement** (2026-11-04, consistent life ethic statement pass): the
+  bank asks nothing about torture ("Torture is never justified, even to stop an attack.") or about
+  destroying human embryos in research. Both divide real ideologies (consistent life ethic, Catholic
+  social teaching vs. some security hawks and science-first liberals). Not proposed: Rehumanize's core
+  list is the only direct formulation in the library.
