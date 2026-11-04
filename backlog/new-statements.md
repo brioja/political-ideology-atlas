@@ -135,3 +135,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   the trust placed in him."), no positive "subjects must obey their ruler even when he rules badly".
   Madkhalism's defining position; not proposed because Codex couldn't obtain primary ruler-obedience
   texts outside movement sites (Sunarwoto 2020 is the lead). Also fits divine-right monarchism.
+
+- **Forced removal within a country** (2026-11-04, Greater Serbia and Greater Croatia statement
+  passes): "A government may require or pressure members of a minority seen as hostile to leave the
+  country." needs hostility and leaving the country; both programmes moved other peoples out of
+  territory they claimed into other regions of the same (former) state. Not proposed: the evidence
+  was trial records and historians, not three primary statements of the general position.
