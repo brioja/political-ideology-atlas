@@ -180,3 +180,10 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   cultural mandate (buy Thai goods), and Swadeshi, "Buy American" and similar campaigns. The bank
   has tariffs and foreign-takeover statements but nothing on the consumer preference itself, e.g.
   "People should prefer goods made in their own country." Not proposed: one brief report each time.
+
+- **Assimilating native minorities** (2026-11-04, Persian nationalism pass; also Pan-Thaiism's "one Thai
+  name", Ottoman Turkish-for-office, Zaza resisting absorption): "Immigrants should be expected to give
+  up their original culture and assimilate into the national culture." only covers immigrants. The
+  general position, e.g. "The country's minority peoples should take on the majority's language and
+  culture." (Russification, Turkification, Afshar's Persianisation), has no statement. Not proposed: no
+  pass had three primary formulations.
