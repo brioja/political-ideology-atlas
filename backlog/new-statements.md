@@ -153,3 +153,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   should be gradual and respect established institutions." joins pace with respect for what exists;
   Popper wants small steps but treats institutions as open to redesign. Single-claim candidate
   `small-step-social-reform` added; retire the bundle once audits answer it.
+
+- **`religious-dress-in-state` bundles officials with students** (2026-11-04, laicism statement pass):
+  "Public officials and state-school students should not wear religious dress in state institutions."
+  Laïcité requires it of officials on duty, while the student rule is disputed within the family. A
+  single-claim "Public officials should not wear religious dress while on duty." would split them.
