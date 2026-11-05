@@ -6,7 +6,7 @@ alive, so accuracy matters more than completeness: never guess at a real person'
 
 Inputs (filled in by the runner):
 - Person: `{{name}}` (id `{{id}}`), Wikipedia: `{{wikipedia}}`, born `{{born}}`
-- Statements: `statements.json` in the repo root. Answer every statement.
+- Statements: `statements.json` in the repo root. Answer every statement, including the ones marked `"status": "candidate"`.
 
 Output: write `audits/people/{{id}}.json` (or the path the runner gives) in the format below, then
 run the validator command the runner gives and fix every error except the uncertainty rule.
