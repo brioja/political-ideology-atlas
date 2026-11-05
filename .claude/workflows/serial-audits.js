@@ -41,7 +41,7 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    proposal (no "addedAs", no "declined"); proposals are reviewed later, outside this run.
 4. \`git add\` only the audit file; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
-5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
+5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push;
    say why in the report.
 6. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
