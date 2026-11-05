@@ -1,8 +1,9 @@
 // Source check for ideology audits (Brandon, 2026-11-05): the sources have to discuss the ideology.
 //   - A defining source (kind "reference" or "scholarly") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
-//   - A primary source ("primary" or "program") passes if its own text contains the name or an alias,
-//     or if a defining source that passed names it by the head of its title (two words or more).
+//   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
+//     the defining sources that passed name it twice by the head of its title (two words or more):
+//     one mention may be in passing.
 //   - Wikipedia is never a defining source. An alias must be a name, not an everyday word.
 //   - Every alias must appear in at least one defining source, and no two ideologies may share a name
 //     or alias.
@@ -56,6 +57,9 @@ function forms(n) {
   return out.map((f) => ` ${f} `);
 }
 const mentions = (text, names) => names.some((n) => forms(n).some((f) => text.includes(f)));
+// How many times the text names the ideology (any name or alias, any form).
+const count = (text, needles) => needles.reduce((sum, f) => { let k = 0, i = -1; while ((i = text.indexOf(f, i + 1)) !== -1) k++; return sum + k; }, 0);
+const mentionCount = (text, names) => count(text, [...new Set(names.flatMap(forms))]);
 // A primary text is named by the head of its title (before any comma, colon or bracket), only when
 // that head is distinctive: two words or more ("Farewell Address", not "Speech").
 const titleHead = (t) => { const h = norm(String(t || "").split(/[,:;(\u2013\u2014]| - /)[0]); return h.trim().split(" ").length >= 2 ? h : null; };
@@ -108,14 +112,17 @@ function check(id, audit) {
   for (const al of aliases) if (defining.length && !defining.some((t) => mentions(t, [norm(al)]))) problems.push(`alias "${al}" appears in no defining source`);
   for (const s of sources.filter((s) => s.kind === "primary" || s.kind === "program")) {
     const t = sourceText(id, s.url);
-    if (t != null && mentions(t, names)) continue;
+    // Two-mentions floor (Brandon, 2026-11-05): a single mention may be in passing. A primary text
+    // passes if it names the ideology twice, or if the (non-Wikipedia) defining sources name it by
+    // title twice between them.
+    if (t != null && mentionCount(t, names) >= 2) continue;
     // Named by its title in a defining source; an author's name alone isn't enough (a different book
     // by the same author would pass).
     const head = titleHead(s.title);
-    const named = head && defining.some((d) => d.includes(head));
+    const named = head && count(defining.join(" "), [head]) >= 2;
     if (named) continue;
     if (t == null && !defining.length) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" and no defining source names it by title: it isn't tied to the ideology (cite its title as a defining source names it)`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" and the defining sources don't name it by title twice: it isn't tied to the ideology (cite its title as a defining source names it)`);
   }
   return { problems, unchecked };
 }
