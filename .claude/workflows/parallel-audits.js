@@ -5,7 +5,7 @@ export const meta = {
     { title: 'Pick', detail: 'list the next N pending ideologies by views' },
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
     { title: 'Integrate', detail: 'record missing statements (bank frozen), commit, build, test, push' },
-    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote contested candidates' },
+    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote candidates with signal' },
   ],
 }
 
@@ -98,7 +98,7 @@ Keep temporary files in a scratchpad subdirectory named after your first audit i
 Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.join(',')}`, phase: 'Backfill', ...model })))
   return agent(`Working directory: ${ROOT}
 0. Run \`node scripts/pending.js --backfill\`. If it lists any audit, promote nothing: skip step 1 and say which audits still lack answers.
-1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (contested), remove its "status" field in statements.json, keeping the one-line format.
+1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (signal on the real lines), remove its "status" field in statements.json, keeping the one-line format.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
 Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
     { label: 'promote', phase: 'Backfill', effort: 'low' })

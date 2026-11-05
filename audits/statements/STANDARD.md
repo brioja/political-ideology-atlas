@@ -10,8 +10,12 @@ A statement is **asked in the test** only when it meets all four:
 
 1. **Real position.** At least one ideology's audit documents a stance on it, with a source. New
    statements enter this way, through an audit's `missingStatements` (see below).
-2. **Contested.** Among audited ideologies, at least one states agreement and at least one states
-   disagreement (high or medium confidence, not inferred).
+2. **Signal on the real lines.** The ideologies' positions on the real dividing lines predict their
+   answers to the statement better than the same answers shuffled among them, by the test that
+   decides which lines are real (beat 60 shuffles at the 95th percentile;
+   `scripts/statement-signal.js`). Matching uses line distance only, so a statement without signal
+   changes no match. It also needs enough answers: with few, shuffled answers fit as well as real
+   ones, so a new statement waits for more audits.
 3. **Well-formed.** One claim, read literally, in neutral words that both sides would accept as a
    fair statement of the question. In particular:
    - **Plain words.** A general reader understands it without a glossary or a theory behind it.
@@ -55,9 +59,10 @@ A statement is **asked in the test** only when it meets all four:
    whose disagree side can only be a hard-to-read negation (a double negative, or two claims bundled)
    is flagged for rewording.
 
-`node scripts/statements-check.js` reports test 2 for every statement and lists the audits' open
-missing statements. A statement that fails test 2 stays in the bank as a `candidate`
-(answered by audits, not asked) until audits show it is contested.
+`node scripts/statements-check.js` reports test 2 for the candidates and lists the audits' open
+missing statements; `node scripts/statement-signal.js` checks the active statements too (minutes).
+A candidate that passes test 2 is promoted (asked); an active statement that fails it is demoted
+to `candidate` (still answered by audits, not asked) until audits show signal again.
 
 Niche statements are welcome. The test asks whichever statement best separates the ideologies
 still in contention, so "The invention of agriculture was a mistake" only comes up when

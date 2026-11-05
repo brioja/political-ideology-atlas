@@ -5,7 +5,7 @@ export const meta = {
   phases: [
     { title: 'Find', detail: 'list audits missing answers for new statements' },
     { title: 'Backfill', detail: 'answer only the missing statements, a few audits per agent' },
-    { title: 'Check', detail: 'validate and report which candidates are now contested' },
+    { title: 'Check', detail: 'validate and report which candidates now carry signal' },
   ],
 }
 

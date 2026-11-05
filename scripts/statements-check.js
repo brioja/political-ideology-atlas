@@ -1,7 +1,8 @@
 // Checks each statement against the question standard (audits/statements/STANDARD.md) using the
 // ideology audits, and lists the audits' open missing statements.
-//   Contested: at least one audited ideology agrees and one disagrees, both stated (high or
-//   medium confidence, not inferred). Candidates that pass are ready to be made active.
+//   Signal (test 2): the real lines predict a candidate's answers better than shuffled answers
+//   (scripts/statement-signal.js). Candidates that pass are ready to be made active. Agree and
+//   disagree counts are shown for reference only.
 //   Missing statements: each audit's missingStatements not yet added to statements.json or declined.
 //   node scripts/statements-check.js [--json]
 //   node scripts/statements-check.js --wording [file.json ...]
@@ -72,18 +73,18 @@ if (process.argv.includes("--json")) {
 }
 const line = (r) => `  ${r.id}  (${r.agree} agree, ${r.disagree} disagree, answered by ${r.answered}/${audits.length})`;
 console.log(`${audits.length} audited ideologies.\n`);
-const active = rows.filter((r) => !r.candidate);
-const notContested = active.filter((r) => !r.contested);
-console.log(`Active statements: ${active.length - notContested.length}/${active.length} contested.`);
-if (notContested.length) console.log(`Not yet contested:\n${notContested.map(line).join("\n")}`);
 const cands = rows.filter((r) => r.candidate);
 if (cands.length) {
-  const ready = cands.filter((r) => r.contested);
-  console.log(`\nCandidates: ${ready.length}/${cands.length} contested and ready to make active.`);
-  if (ready.length) console.log(`Ready:\n${ready.map(line).join("\n")}`);
-  const waiting = cands.filter((r) => !r.contested);
-  if (waiting.length) console.log(`Waiting:\n${waiting.map(line).join("\n")}`);
+  // Test 2 (audits/statements/STANDARD.md): signal on the real lines, scripts/statement-signal.js.
+  const sig = new Map(require("./statement-signal").signal({ candidatesOnly: true }).map((r) => [r.id, r]));
+  const sline = (r) => { const g = sig.get(r.id); return `${line(r)}  R² ${g.r2.toFixed(2)} vs noise ${g.bar.toFixed(2)}`; };
+  const ready = cands.filter((r) => sig.get(r.id).signal);
+  console.log(`\nCandidates: ${ready.length}/${cands.length} carry signal on the real lines and are ready to make active.`);
+  if (ready.length) console.log(`Ready:\n${ready.map(sline).join("\n")}`);
+  const waiting = cands.filter((r) => !sig.get(r.id).signal);
+  if (waiting.length) console.log(`Waiting:\n${waiting.map(sline).join("\n")}`);
 }
+console.log("\nActive statements are checked by `node scripts/statement-signal.js` (minutes): any without signal is demoted.");
 // Each missing statement is marked once handled: "addedAs" (the statement id it became, or merged into) or
 // "declined" (why not), so the record shows where every statement came from.
 const open = missing.filter((c) => !c.addedAs && !c.declined);

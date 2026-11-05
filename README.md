@@ -63,8 +63,8 @@ stop and resume, since finished audits are skipped. Pass `{"limit": 10}` to do a
 position that ideologies actually disagree on) and how new ones are added. In short: audits
 note the positions no statement captures as missing statements (`missingStatements`); a statement
 pass rewords them, and approved ones join `statements.json` as candidates; the statement-backfill
-workflow answers them in existing audits, and `node scripts/statements-check.js` shows when one is
-contested enough to be asked. Adding or removing a statement leaves existing
+workflow answers them in existing audits, and `node scripts/statements-check.js` shows when one
+carries enough signal on the dividing lines to be asked. Adding or removing a statement leaves existing
 audits valid; rewording one needs a new id.
 
 ## People

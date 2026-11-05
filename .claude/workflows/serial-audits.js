@@ -4,7 +4,7 @@ export const meta = {
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"backfill": true} to backfill old audits once 10 new statements build up (off by default: backfill or deepen once at the very end)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per ideology: audit, record missing statements, commit, build, test, push' },
-    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote contested candidates' },
+    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote candidates with signal' },
   ],
 }
 
@@ -79,7 +79,7 @@ ${batch.map((a) => `- ${a.id}: ${a.statements.join(', ')}`).join('\n')}
 Only edit those audit files. Do not commit.`, { label: `backfill:${batch.map((a) => a.id).join(',')}`, phase: 'Backfill', ...model })
   }
   return agent(`Working directory: ${ROOT}
-1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (contested), remove its "status" field in statements.json, keeping the one-line format.
+1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (signal on the real lines), remove its "status" field in statements.json, keeping the one-line format.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
 Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
     { label: 'promote', phase: 'Backfill', effort: 'low' })

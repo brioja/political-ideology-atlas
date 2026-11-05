@@ -56,6 +56,8 @@ agents too. This file adds what matters when running the audit workflows in
   maintainer rather than being fixed silently.
 - Don't pad rationales by script. `validate.js` rejects high-confidence answers that share a
   rationale; a stock phrase is at most medium confidence.
-- Promote a candidate statement only once every audit has answered it (`scripts/pending.js
-  --backfill` lists the ones that haven't). `node test.js` fails if any audit misses an active
-  statement.
+- Promote a candidate once it carries signal on the real lines (test 2 in
+  `audits/statements/STANDARD.md`; `node scripts/statements-check.js` lists them as Ready), and
+  demote an active statement that loses it (`node scripts/statement-signal.js`). Brandon, 2026-11-05.
+  Until the build treats a missing answer as null, `node test.js` still fails if any audit misses
+  an active statement, so a promotion also needs those answers.
