@@ -73,7 +73,9 @@ source's saved copy that uses the name; validate.js checks the quote is there an
 alias's quote must name the ideology too, showing the source equating the two ("'trans-exclusionary
 radical feminism', or TERFism"). To find that source, look the alias up from its own side
 (a reverse lookup): a dictionary, glossary or encyclopedia entry for the alias ("TERF") usually defines it
-by the ideology's name ("trans-exclusionary radical feminist"). Save every source
+by the ideology's name ("trans-exclusionary radical feminist"). An alias that Wikidata lists for this ideology's item and for no
+other catalog item may instead be given as `{ "name": "TERF", "wikidata": true }` (one to one; Wikidata
+connects names only, never scope or answers). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
   program), use it.

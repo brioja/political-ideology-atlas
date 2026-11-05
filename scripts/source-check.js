@@ -172,11 +172,37 @@ const isEponym = (x, name) => {
   return [x.last, x.first].filter(Boolean).map((w) => norm(w).trim().replace(/ /g, "")).some((w) => w.length >= 3 && n.slice(0, Math.min(5, w.length)) === w.slice(0, Math.min(5, w.length)));
 };
 
+// Wikidata labels and aliases of the catalog's items (corpora/wikidata-aliases/aliases.jsonl). Used only
+// to connect an alias to its ideology, one to one (Brandon, 2026-11-05): the alias must be a label or
+// alias of this ideology's own item and of no other catalog item. It never defines scope or answers.
+let wd = null;
+function wikidataNames() {
+  if (wd) return wd;
+  wd = { byItem: new Map(), owners: new Map() };
+  const f = path.join(require("os").homedir(), ".cache/political-ideology-atlas/corpora/wikidata-aliases/aliases.jsonl");
+  if (!fs.existsSync(f)) return wd;
+  for (const line of fs.readFileSync(f, "utf8").split("\n")) {
+    if (!line.trim()) continue;
+    let e; try { e = JSON.parse(line); } catch { continue; }
+    const names = new Set([...Object.values(e.labels || {}), ...Object.values(e.aliases || {}).flat()].map((n) => norm(n)));
+    wd.byItem.set(e.id, names);
+    for (const n of names) { if (!wd.owners.has(n)) wd.owners.set(n, new Set()); wd.owners.get(n).add(e.id); }
+  }
+  return wd;
+}
+function wikidataLinks(audit, al) {
+  const entry = lib.catalog().find((c) => c.id === audit.id);
+  const q = entry && entry.wikidata, k = norm(al), w = wikidataNames();
+  if (!q || !w.byItem.has(q) || !w.byItem.get(q).has(k)) return false;
+  return [...(w.owners.get(k) || [])].every((o) => o === q);
+}
+
 // Evidence for an alias, author or title: the cited source is in the audit, its saved copy contains the
 // quote, and the quote contains the name (in one of its forms). `strict` audits must give evidence.
 function evidence(id, audit, field, x, strict, contains) {
   const label = `${field} "${entryName(x)}"`;
   if (typeof x === "string") return strict ? [`${label} needs evidence: { "${field === "title" ? "title" : "name"}", "source", "quote" }`] : [];
+  if (field === "alias" && x && x.wikidata && !x.source) return []; // connected by Wikidata instead (checked in check())
   const src = (audit.sources || []).find((s) => s.id === x.source);
   if (!src) return [`${label}: source "${x.source}" is not in the audit`];
   if (typeof x.quote !== "string" || x.quote.trim().length < 10) return [`${label}: needs a verbatim "quote" from ${x.source}`];
@@ -197,6 +223,10 @@ function check(id, audit, { strict = false } = {}) {
   // ("'trans-exclusionary radical feminism', or TERFism") (Brandon, 2026-11-05: traceability).
   for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) {
     problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
+    if (typeof x === "object" && x && x.wikidata) {
+      if (!wikidataLinks(audit, entryName(x))) problems.push(`alias "${entryName(x)}": not a Wikidata label or alias of this ideology's item alone (one to one)`);
+      continue;
+    }
     if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), [norm(audit.name)]))
       problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
   }
