@@ -55,6 +55,14 @@ on the term): what they say it is, which strand it names when the name covers se
 texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
+
+**Every source has to discuss the ideology** (`scripts/source-check.js`, run by validate.js). A
+defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
+`primary` or `program` source must name it too, or be named (by title or author) in a defining source
+that does. List in `aliases` the other names the defining sources use for it (spelling variants,
+"Salafi jihadism" / "jihadi-Salafism", an eponym's own name for "-ism"s named after a person); each
+must appear in a defining source and may not be another ideology's name or alias. Save every source
+you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
   program), use it.
 - If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
@@ -157,6 +165,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "rules": 3,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
+  "aliases": ["Other names the defining sources use for it, or [] for none"],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }

@@ -71,6 +71,16 @@ function validate(id) {
 
   const sources = Array.isArray(a.sources) ? a.sources : [];
   if (sources.length < 3) errors.push(`needs at least 3 sources, has ${sources.length}`);
+  // The sources have to discuss the ideology (scripts/source-check.js). Strict for audits that list
+  // "aliases" (required from 2026-11-06); a warning for older audits.
+  if (!PEOPLE) {
+    const strict = a.aliases !== undefined || (a.auditedAt || "") >= "2026-11-06";
+    if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
+    const { problems, unchecked } = require("./source-check").check(id, a);
+    const out = strict ? errors : warnings;
+    for (const pr of problems) out.push(pr);
+    if (unchecked.length) out.push(`sources ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
+  }
   const sourceIds = new Set();
   for (const s of sources) {
     if (sourceIds.has(s.id)) errors.push(`duplicate source id ${s.id}`);
