@@ -54,3 +54,19 @@ Audit work discussed but not started.
   is borrowing (Valencian nationalism's old answers came from Compromís, Ethiopian nationalism's from Abiy's
   record). Honest re-audits leave most nationalisms short of the bar, so until all are redone, treatment
   differs by whether one has been re-audited. Re-audit them in turn, or decide another scope with Brandon.
+
+## Source check: gaps it can't see (2026-11-05)
+
+`scripts/source-check.js` (run by validate.js) checks whole sources, not the passage an answer rests on.
+Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited"):
+- **A named primary text passes for every answer.** Once a defining source names a text by title, any
+  passage of it can answer anything, including parts unrelated to the ideology.
+- **The right source, the wrong passage.** A source that discusses the ideology can still carry an
+  answer from a passage about something else (Animal rights answering racial segregation from Regan's
+  remarks on apartheid).
+- **A passing mention is enough.** A defining source passes if it names the ideology once. A two-mentions
+  floor (two separate places, like the rule of two) would filter this; proposed, not decided.
+- **The saved copy is trusted.** The check reads the agent's saved text, not the live page.
+What would decide it: passage-level checking needs each answer to quote its passage (a new required
+field, longer audits), so the check can confirm the quote is in the saved text and that its
+surroundings discuss the ideology.
