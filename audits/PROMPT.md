@@ -67,7 +67,8 @@ the ideology's own thinkers as its defining sources name them (each named at lea
 no other ideology's defining author): a primary text by one of them is tied to the ideology. When a
 defining source names a primary text differently from its title ("the 1856 Imperial Rescript" for the
 "Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
-`{ "name" (or "title"), "source": "<source id>", "quote": "<verbatim passage>" }`, a passage from that
+`{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
+"quote": "<verbatim passage>" }`, a passage from that
 source's saved copy that uses the name; validate.js checks the quote is there and contains it. Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
@@ -173,7 +174,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "aliases": [{ "name": "Another name for it", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
-  "authors": [{ "name": "A defining thinker", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
+  "authors": [{ "first": "Chantal", "last": "Mouffe", "source": "s3", "quote": "verbatim passage from s3 that names them" }],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }

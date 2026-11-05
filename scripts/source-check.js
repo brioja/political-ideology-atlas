@@ -89,7 +89,16 @@ const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.lengt
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
 // An alias, author or extra title is a string (older audits) or carries its evidence:
 // { "name" | "title": "...", "source": "s3", "quote": "verbatim passage from that source" }.
-const entryName = (x) => (typeof x === "string" ? x : x && typeof x === "object" ? x.name || x.title || "" : "");
+const entryName = (x) => (typeof x === "string" ? x : x && typeof x === "object"
+  ? x.name || x.title || x.organisation || [x.first, x.last].filter(Boolean).join(" ") : "");
+// The name a defining author is matched by: a person's last name ("last": "de Benoist", "bin Laden"),
+// an organisation's full name. Older entries are a single string: its last word, or the whole string
+// for an organisation (four words or more).
+const authorKey = (x) => {
+  if (x && typeof x === "object" && (x.last || x.organisation)) return norm(x.last || x.organisation);
+  const n = entryName(x).trim(), w = n.split(/\s+/);
+  return norm(w.length >= 4 ? n : w[w.length - 1]);
+};
 const list = (v) => (Array.isArray(v) ? v : []).map(entryName).filter((n) => n && n.trim());
 
 let taken = null;
@@ -162,7 +171,8 @@ function check(id, audit, { strict = false } = {}) {
   }
   for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
-    const w = entryName(x).trim().split(/\s+/); const key = norm(w.length >= 4 ? entryName(x) : w[w.length - 1]);
+    const key = authorKey(x);
+    if (strict && typeof x === "object" && !x.organisation && !(x.first && x.last)) problems.push(`author "${entryName(x)}" needs "first" and "last" (or "organisation")`);
     problems.push(...evidence(id, audit, "author", x, strict, (q) => q.includes(key)));
   }
   for (const src of audit.sources || []) for (const x of Array.isArray(src.titles) ? src.titles : []) {
@@ -203,13 +213,10 @@ function check(id, audit, { strict = false } = {}) {
   // Defining authors ("authors"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "authors". A primary text by one of them is tied to the ideology.
-  const authors = list(audit.authors);
+  const authorEntries = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => entryName(x).trim());
   const authorOk = [];
-  for (const au of authors) {
-    // A person is matched by surname; an organisation (four words or more: "Socialist Party of Great
-    // Britain") by its full name.
-    const words = String(au).trim().split(/\s+/);
-    const sur = norm(words.length >= 4 ? au : words.pop());
+  for (const x of authorEntries) {
+    const au = entryName(x), sur = authorKey(x);
     const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
     if (others.length) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
