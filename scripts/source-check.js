@@ -2,7 +2,8 @@
 //   - A defining source (kind "reference" or "scholarly") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
 //   - A primary source ("primary" or "program") passes if its own text contains the name or an alias,
-//     or if a defining source that passed names it, by the head of its title or its author's surname.
+//     or if a defining source that passed names it by the head of its title (two words or more).
+//   - Wikipedia is never a defining source. An alias must be a name, not an everyday word.
 //   - Every alias must appear in at least one defining source, and no two ideologies may share a name
 //     or alias.
 // Texts are the copies saved in scratchpad/sources/<id>/ (index.json maps each file to its URL): the
@@ -42,12 +43,28 @@ function sourceText(id, url) {
   return texts.length ? norm(texts.join(" ")) : null;
 }
 
-// A name matches in its word forms: "Salafi jihadism" matches "Salafi jihadi" and "Salafi jihadist",
-// "Gandhism" matches "Gandhian" (the last word's -ism, -ist, -ian or plural ending is optional).
-const stem = (n) => { const t = n.trim(); const s = t.replace(/(isms?|ists?|ians?|s)$/, ""); return ` ${s.length >= 4 ? s : t}`; };
-const mentions = (text, names) => names.some((n) => n.trim() && text.includes(stem(n)));
-const titleHead = (t) => norm(String(t || "").split(/[,:;(–—]| - /)[0]);
-const surname = (a) => { const w = norm(a).trim().split(" "); const s = w[w.length - 1] || ""; return s.length >= 4 && w.length <= 4 ? ` ${s} ` : null; };
+// A name matches only as whole words, in its own word forms: an "-ism" also matches as -isms, -ist,
+// -ists, -istic, -ian, -ians and -i ("Salafi jihadism": "Salafi jihadi", "Salafi jihadist";
+// "Gandhism": "Gandhian"); any name also matches its plural. Never a bare prefix: "Communism" must
+// not match "community".
+function forms(n) {
+  const t = n.trim();
+  if (!t) return [];
+  const out = [t, `${t}s`];
+  const m = t.match(/^(.*?)ism$/);
+  if (m && m[1].length >= 3) for (const e of ["isms", "ist", "ists", "istic", "ian", "ians", "i"]) out.push(m[1] + e);
+  return out.map((f) => ` ${f} `);
+}
+const mentions = (text, names) => names.some((n) => forms(n).some((f) => text.includes(f)));
+// A primary text is named by the head of its title (before any comma, colon or bracket), only when
+// that head is distinctive: two words or more ("Farewell Address", not "Speech").
+const titleHead = (t) => { const h = norm(String(t || "").split(/[,:;(\u2013\u2014]| - /)[0]); return h.trim().split(" ").length >= 2 ? h : null; };
+// Wikipedia never defines an ideology (audits/AUDIT_RULES.md section 2): it can't be a defining source.
+const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
+// An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, or a spelling
+// variant of the ideology's name (same first six letters: "communisation" for "communization").
+const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.length >= 2) return true;
+  return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 6 && norm(name).trim().replace(/ /g, "").slice(0, 6) === w[0].slice(0, 6)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
 let taken = null;
@@ -74,6 +91,7 @@ function check(id, audit) {
   if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || aliases.some((x) => typeof x !== "string" || !x.trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
+  for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, or a spelling variant of the name)`);
   const names = [audit.name, ...aliases].map(norm);
   for (const n of [audit.name, ...aliases]) {
     const others = [...(namesTaken().get(norm(n)) || [])].filter((o) => o !== id);
@@ -81,7 +99,7 @@ function check(id, audit) {
   }
   const sources = Array.isArray(audit.sources) ? audit.sources : [];
   const defining = [];
-  for (const s of sources.filter((s) => s.kind === "reference" || s.kind === "scholarly")) {
+  for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
     const t = sourceText(id, s.url);
     if (t == null) { unchecked.push(s.id); continue; }
     if (mentions(t, names)) defining.push(t);
@@ -91,11 +109,13 @@ function check(id, audit) {
   for (const s of sources.filter((s) => s.kind === "primary" || s.kind === "program")) {
     const t = sourceText(id, s.url);
     if (t != null && mentions(t, names)) continue;
-    const head = titleHead(s.title), sur = surname(s.author);
-    const named = defining.some((d) => (head.trim().length >= 6 && d.includes(head)) || (sur && d.includes(sur)));
+    // Named by its title in a defining source; an author's name alone isn't enough (a different book
+    // by the same author would pass).
+    const head = titleHead(s.title);
+    const named = head && defining.some((d) => d.includes(head));
     if (named) continue;
     if (t == null && !defining.length) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" and no defining source names it (by title or author): it isn't tied to the ideology`);
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" and no defining source names it by title: it isn't tied to the ideology (cite its title as a defining source names it)`);
   }
   return { problems, unchecked };
 }

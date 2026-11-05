@@ -20,6 +20,17 @@ const KINDS = ["primary", "scholarly", "reference", "program"];
 const CONFIDENCE = ["high", "medium", "low"];
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
+let grandfatheredIds = null;
+function grandfathered() {
+  if (!grandfatheredIds) {
+    try {
+      grandfatheredIds = new Set(require("child_process").execSync("git ls-tree --name-only 480478e1 audits/profiles/", { cwd: lib.ROOT })
+        .toString().split("\n").filter(Boolean).map((f) => f.replace(/^.*\//, "").replace(/\.json$/, "")));
+    } catch { grandfatheredIds = new Set(); }
+  }
+  return grandfatheredIds;
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -74,12 +85,14 @@ function validate(id) {
   // The sources have to discuss the ideology (scripts/source-check.js). Strict for audits that list
   // "aliases" (required from 2026-11-06); a warning for older audits.
   if (!PEOPLE) {
-    const strict = a.aliases !== undefined || (a.auditedAt || "") >= "2026-11-06";
+    // Audits committed before the check (480478e1) only get warnings, so they aren't re-queued as invalid
+    // (pending.js); every audit written after it, or with "aliases", is held to it.
+    const strict = a.aliases !== undefined || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     const { problems, unchecked } = require("./source-check").check(id, a);
     const out = strict ? errors : warnings;
-    for (const pr of problems) out.push(pr);
-    if (unchecked.length) out.push(`sources ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
+    for (const pr of problems) out.push(`sources: ${pr}`);
+    if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
   }
   const sourceIds = new Set();
   for (const s of sources) {
@@ -263,7 +276,9 @@ async function main() {
 }
 
 // Finished but excluded: by the uncertainty rule, or as not an ideology (the first check).
-const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not an ideology:"));
+// Errors that don't send an existing audit back to the audit queue (pending.js): an honest uncertainty
+// failure, a "not an ideology" record, or a source-check finding (fixed in the audit, not by redoing it).
+const excludedOnly = (errors) => errors.length > 0 && errors.every((e) => e.startsWith("uncertainty:") || e.startsWith("not an ideology:") || e.startsWith("sources:"));
 // A dividing line as the site names it (data.js), or past the drawn ones by its strongest statements.
 function lineName(i) {
   const { MODEL, QUESTIONS } = require(require("path").join(lib.ROOT, "data.js"));
