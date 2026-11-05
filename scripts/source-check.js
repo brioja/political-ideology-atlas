@@ -131,4 +131,4 @@ function check(id, audit) {
   return { problems, unchecked };
 }
 
-module.exports = { check };
+module.exports = { check, norm, forms, mentions, sourceText, isWikipedia, isName, namesTaken };
