@@ -73,12 +73,15 @@ function silentZeros(audit) {
 }
 // An ideology audit's answers as the model takes them. "No known position" stays null: matching leaves
 // it out, like a person's or a taker's (pca.js).
-const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => audit.answers[s.id].value);
-// Every ideology audit that answers all active statements: the landscape the lines come from.
+// A statement the audit hasn't answered yet (promoted after the audit was written) counts as null,
+// like a statement it has no known position on (Brandon, 2026-11-05: the audit's next completing pass
+// answers it).
+const ideologyProfile = (audit, statements = activeStatements()) => statements.map((s) => (audit.answers[s.id] ? audit.answers[s.id].value : null));
+// Every ideology audit (missing answers count as null): the landscape the lines come from.
 const completeIdeologies = (statements = activeStatements()) => catalog()
   .filter((e) => fs.existsSync(profilePath(e.id)))
   .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
-  .filter(({ audit }) => !audit.notAnIdeology && !unanswered(audit.answers, statements).length)
+  .filter(({ audit }) => !audit.notAnIdeology)
   .map(({ id, audit }) => ({ id, name: audit.name, profile: ideologyProfile(audit, statements) }));
 let lastJudge = null;
 const shippedJudge = () => {

@@ -5,6 +5,7 @@ export const meta = {
     { title: 'Pick', detail: 'list the next N pending ideologies by views' },
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
     { title: 'Integrate', detail: 'record missing statements (bank frozen), commit, build, test, push' },
+    { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote candidates with signal' },
   ],
 }
@@ -97,12 +98,22 @@ Your audits: ${batch.join(', ')}. The statement ids each one needs are listed fo
 Keep temporary files in a scratchpad subdirectory named after your first audit id.
 Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.join(',')}`, phase: 'Backfill', ...model })))
   return agent(`Working directory: ${ROOT}
-0. Run \`node scripts/pending.js --backfill\`. If it lists any audit, promote nothing: skip step 1 and say which audits still lack answers.
 1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (signal on the real lines), remove its "status" field in statements.json, keeping the one-line format.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
 Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
     { label: 'promote', phase: 'Backfill', effort: 'low' })
 }
+
+// After the audits: promote candidates that now carry signal on the real lines and demote active
+// statements that lost it (test 2, audits/statements/STANDARD.md; Brandon, 2026-11-05). CPU only.
+const SIGNAL_PROMPT = `Working directory: ${ROOT}.
+1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
+   statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
+2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js
+   audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
+   on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), \`git pull --rebase\`
+   and \`git push\`. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
+Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or not.`
 
 const reports = []
 let ended = `${WAVES} waves of ${LANES} done`
@@ -124,4 +135,7 @@ for (let w = 0; w < WAVES; w++) {
   if (!r.deployed) { ended = 'wave not deployed (tests failed?); stopping'; break }
   if (BACKFILL && r.pendingStatements >= 10) reports.push(`backfill: ${await backfill()}`)
 }
+phase('Signal')
+reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', effort: 'low' })}`)
+
 return { reports, ended }

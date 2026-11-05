@@ -59,5 +59,5 @@ agents too. This file adds what matters when running the audit workflows in
 - Promote a candidate once it carries signal on the real lines (test 2 in
   `audits/statements/STANDARD.md`; `node scripts/statements-check.js` lists them as Ready), and
   demote an active statement that loses it (`node scripts/statement-signal.js`). Brandon, 2026-11-05.
-  Until the build treats a missing answer as null, `node test.js` still fails if any audit misses
-  an active statement, so a promotion also needs those answers.
+  An audit written before a promotion counts that statement as null until its next pass. Every audit
+  run ends with `statement-signal.js --apply` (the Signal phase).

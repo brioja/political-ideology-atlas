@@ -53,7 +53,8 @@ function classify(judge = null) {
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
     const a = readJson(p);
     if (a.notAnIdeology) { notIdeology.push(entry.id); continue; } // the audit's first check said so
-    if (unanswered(a.answers, statements).length) { stale.push(entry.id); continue; }
+    // An active statement promoted after the audit was written counts as null until its next pass.
+    if (unanswered(a.answers, statements).length) stale.push(entry.id);
     // Stated positions on only some of the dividing lines: opinions, not a full ideology (the
     // uncertainty rule, pca.js). Left out of the results; it still shapes the lines (see below).
     if (judge && !ideologyUncertainty(a, judge).placed) { notPlaced.push(entry.id); continue; }
@@ -262,8 +263,8 @@ if (typeof module !== "undefined") module.exports = { PEOPLE };
   }
 }
 
-console.log(`${included.length} audited, ${stale.length} incomplete, ${missing.length} not yet audited (of ${catalog().length}).`);
-if (stale.length) console.log(`Incomplete (answer the missing statements): ${stale.join(", ")}`);
+console.log(`${included.length} audited, ${missing.length} not yet audited (of ${catalog().length}).`);
+if (stale.length) console.log(`Behind the bank (missing answers count as null until their next pass): ${stale.length}`);
 if (notPlaced.length) console.log(`Excluded as not placed on every line (an error bar over ±${MAX_BAR} on one, or over ±${MAX_MEAN_BAR} on average): ${notPlaced.join(", ")}`);
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);

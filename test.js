@@ -25,14 +25,8 @@ for (const s of allStatements()) {
   assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; give the new wording a new id`);
 }
 
-// 1c. A statement is promoted only once every audit answers it: build.js leaves out any audit that
-// misses an active statement, so an early promotion empties the site.
-const { catalog, profilePath, activeStatements, unanswered } = require("./scripts/lib");
-const active = activeStatements();
-const behind = catalog().filter((e) => require("fs").existsSync(profilePath(e.id)))
-  .map((e) => ({ id: e.id, audit: readJson(profilePath(e.id)) }))
-  .filter(({ audit }) => !audit.notAnIdeology && unanswered(audit.answers, active).length);
-assert(!behind.length, `${behind.length} audits miss active statements (backfill before promoting): ${behind.slice(0, 5).map((b) => b.id).join(", ")}`);
+// 1c. An audit that misses an active statement (promoted after it was written) is kept, with that
+// answer counted as null (scripts/lib.js ideologyProfile; Brandon, 2026-11-05).
 
 // 2. Model: shares sum to 1, and each ideology's own answers match itself first.
 const model = buildModel(IDEOLOGIES, { realLines: MEANINGFUL_LINES });
@@ -44,14 +38,14 @@ if (!PEOPLE_ONLY) {
   // (scripts/lib.js), so the shown set is exactly the audits the shipped judge passes, less
   // indistinguishable ones (listed as related on the one kept).
   const lib = require("./scripts/lib");
-  const complete = lib.completeIdeologies(active);
+  const complete = lib.completeIdeologies(lib.activeStatements());
   const lines = readJson(require("path").join(__dirname, "audits", "lines.json"));
   assert.strictEqual(lines.key, lib.linesKey(complete), "audits/lines.json is stale: run a full build");
   assert.strictEqual(lines.realLines, MEANINGFUL_LINES, "data.js's MEANINGFUL_LINES differs from audits/lines.json: run a full build");
   const shown = new Set(IDEOLOGIES.map((i) => i.id));
   const related = new Set(IDEOLOGIES.flatMap((i) => (i.related || []).map((r) => r.id)));
   const awaiting = lib.awaitingReaudit();
-  const misjudged = complete.filter(({ id }) => lib.ideologyUncertainty(readJson(profilePath(id))).placed && !awaiting.has(id)
+  const misjudged = complete.filter(({ id }) => lib.ideologyUncertainty(readJson(lib.profilePath(id))).placed && !awaiting.has(id)
     ? !shown.has(id) && !related.has(id) : shown.has(id)).map(({ id }) => id);
   assert(!misjudged.length, `the shown ideologies don't match the uncertainty judge (run a full build): ${misjudged.join(", ")}`);
 }
@@ -103,7 +97,7 @@ if (!PEOPLE_ONLY) {
   const asNeither = place(shipped, silent.profile.map((x) => x ?? 0));
   assert(place(shipped, silent.profile).some((x, k) => Math.abs(x - asNeither[k]) > 1e-9), `${silent.id}: its silences are placed as "Neither"`);
   const audit = lib.readJson(lib.profilePath(silent.id));
-  assert(lib.activeStatements().every((s, j) => (audit.answers[s.id].value === null) === (silent.profile[j] === null)), `${silent.id}: data.js doesn't keep its 'no known position' answers as null`);
+  assert(lib.activeStatements().every((s, j) => ((audit.answers[s.id] ? audit.answers[s.id].value : null) === null) === (silent.profile[j] === null)), `${silent.id}: data.js doesn't keep its 'no known position' answers as null`);
 }
 // The similarity scale (fitScale, the widest distance between two shown ideologies) ships with the
 // model (build.js), so the page doesn't compare every pair; it must be current.

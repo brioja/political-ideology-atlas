@@ -16,7 +16,8 @@
 // Limitation: a candidate that fills a gap may only make sense together with other new statements
 // (a line that doesn't exist yet); against the current lines it shows no signal.
 //
-//   node scripts/statement-signal.js [--candidates] [--json]
+//   node scripts/statement-signal.js [--candidates] [--json] [--apply]
+// --apply promotes candidates with signal and demotes active statements without it (statements.json).
 // statements-check.js uses the candidate part.
 "use strict";
 const lib = require("./lib");
@@ -110,8 +111,38 @@ function signal({ candidatesOnly = false, progress = false } = {}) {
 }
 module.exports = { signal, LINES: K, IDEOLOGIES: ideologies.length };
 
+// Promote candidates with signal and demote active statements without it, in statements.json
+// (one-line format kept). Returns the ids changed. Needs the full run (not candidatesOnly).
+function apply(results) {
+  const fs = require("fs"), file = require("path").join(lib.ROOT, "statements.json");
+  const lines = fs.readFileSync(file, "utf8").split("\n");
+  const promoted = [], demoted = [];
+  const want = new Map(results.filter((r) => r.candidate === r.signal).map((r) => [r.id, r.signal ? "promote" : "demote"]));
+  for (let n = 0; n < lines.length; n++) {
+    const m = lines[n].match(/^(\s*)(\{"id":"([^"]+)".*\})(,?)\s*$/);
+    if (!m || !want.has(m[3])) continue;
+    const q = JSON.parse(m[2]);
+    if (want.get(m[3]) === "promote") { delete q.status; promoted.push(q.id); }
+    else { const { id, ...rest } = q; Object.keys(q).forEach((k) => delete q[k]); Object.assign(q, { id, status: "candidate", ...rest }); demoted.push(q.id); }
+    lines[n] = m[1] + JSON.stringify(q) + m[4];
+  }
+  if (promoted.length || demoted.length) {
+    const text = lines.join("\n");
+    JSON.parse(text); // still valid JSON
+    fs.writeFileSync(file, text);
+  }
+  return { promoted, demoted };
+}
+module.exports.apply = apply;
+
 if (require.main === module) {
   const results = signal({ candidatesOnly: onlyCandidates, progress: true });
+  if (process.argv.includes("--apply")) {
+    if (onlyCandidates) { console.error("--apply needs the full run (active statements too)"); process.exit(1); }
+    const { promoted, demoted } = apply(results);
+    console.log(`Promoted: ${promoted.join(", ") || "none"}\nDemoted: ${demoted.join(", ") || "none"}`);
+    process.exit(0);
+  }
   if (process.argv.includes("--json")) {
     process.stdout.write(JSON.stringify({ lines: K, ideologies: ideologies.length, results }, null, 1) + "\n");
   } else {

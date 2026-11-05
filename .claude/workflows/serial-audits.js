@@ -4,6 +4,7 @@ export const meta = {
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"backfill": true} to backfill old audits once 10 new statements build up (off by default: backfill or deepen once at the very end)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per ideology: audit, record missing statements, commit, build, test, push' },
+    { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote candidates with signal' },
   ],
 }
@@ -85,6 +86,17 @@ Reply in one line: how many audits were backfilled, which candidates were promot
     { label: 'promote', phase: 'Backfill', effort: 'low' })
 }
 
+// After the audits: promote candidates that now carry signal on the real lines and demote active
+// statements that lost it (test 2, audits/statements/STANDARD.md; Brandon, 2026-11-05). CPU only.
+const SIGNAL_PROMPT = `Working directory: ${ROOT}.
+1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
+   statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
+2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js
+   audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
+   on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), \`git pull --rebase\`
+   and \`git push\`. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
+Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or not.`
+
 const reports = []
 let ended = `limit of ${LIMIT} reached`
 for (let i = 0; i < LIMIT; i++) {
@@ -102,5 +114,8 @@ for (let i = 0; i < LIMIT; i++) {
     reports.push(`backfill: ${await backfill()}`)
   }
 }
+
+phase('Signal')
+reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', effort: 'low' })}`)
 
 return { reports, ended }
