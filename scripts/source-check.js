@@ -62,7 +62,15 @@ const count = (text, needles) => needles.reduce((sum, f) => { let k = 0, i = -1;
 const mentionCount = (text, names) => count(text, [...new Set(names.flatMap(forms))]);
 // A primary text is named by the head of its title (before any comma, colon or bracket), only when
 // that head is distinctive: two words or more ("Farewell Address", not "Speech").
-const titleHead = (t) => { const h = norm(String(t || "").split(/[,:;(\u2013\u2014]| - /)[0]); return h.trim().split(" ").length >= 2 ? h : null; };
+// A title given in another language is often followed by its translation in brackets
+// ("Aufzeichnungen eines Oekonomen (Notes of an Economist)"): both count.
+const titleHeads = (t) => {
+  const raw = String(t || "");
+  const heads = [raw.split(/[,:;(\u2013\u2014]| - /)[0]];
+  const m = raw.match(/^[^(]*\(([^)]+)\)/);
+  if (m) heads.push(m[1]);
+  return heads.map(norm).filter((h) => h.trim().split(" ").length >= 2);
+};
 // Wikipedia never defines an ideology (audits/AUDIT_RULES.md section 2): it can't be a defining source.
 const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
 // An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, the eponym an
@@ -127,9 +135,10 @@ function check(id, audit) {
     pending.push({ s, t });
   }
   for (const { s, t } of pending) {
-    const head = titleHead(s.title);
+    const heads = titleHeads(s.title);
     const own = t || "";
-    const named = head && count(vouching.filter((v) => v !== own).join(" "), [head]) >= 2;
+    const others = vouching.filter((v) => v !== own).join(" ");
+    const named = heads.some((h) => count(others, [h]) >= 2);
     if (named) continue;
     if (t == null && !vouching.length) { unchecked.push(s.id); continue; }
     problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)`);
