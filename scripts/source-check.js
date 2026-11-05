@@ -148,6 +148,30 @@ function authorsTaken() {
   return takenAuthors;
 }
 
+// The same name in another form needs no source equating it with the ideology's name: a translation
+// (marked "type": "translation": "laïcité", "New Right"; or "variant": a reordering such as
+// "Jihadi-Salafism"), a spelling variant (at most two letters differ: "Austro-Marxism", "communisation")
+// or an acronym (initials: "TERF").
+const sameName = (al, name, type) => {
+  if (type === "translation" || type === "variant") return true;
+  const a = norm(al).trim().replace(/ /g, ""), n = norm(name).trim().replace(/ /g, "");
+  const initials = norm(name).trim().split(" ").map((x) => x[0]).join("");
+  // A spelling variant is nearly the same string: s/z and spacing aside, at most two letters differ
+  // ("Austromarxismus", "Greater Serbian", "communisation").
+  const lev = (x, y) => { const d = Array.from({ length: x.length + 1 }, (_, i) => [i]); for (let j = 1; j <= y.length; j++) d[0][j] = j;
+    for (let i = 1; i <= x.length; i++) for (let j = 1; j <= y.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1));
+    return d[x.length][y.length]; };
+  const zs = (x) => x.replace(/z/g, "s");
+  return lev(zs(a), zs(n)) <= 2 || a === initials || a === initials + "s";
+};
+// An eponym: the ideology is named after this author ("Klaus" for Klausism, "Sankara" for Sankarism,
+// "Camilo" for Camilism). Their name counts as the ideology's name.
+const isEponym = (x, name) => {
+  if (!x || typeof x !== "object") return false;
+  const n = norm(name).trim().replace(/ /g, "");
+  return [x.last, x.first].filter(Boolean).map((w) => norm(w).trim().replace(/ /g, "")).some((w) => w.length >= 3 && n.slice(0, Math.min(5, w.length)) === w.slice(0, Math.min(5, w.length)));
+};
+
 // Evidence for an alias, author or title: the cited source is in the audit, its saved copy contains the
 // quote, and the quote contains the name (in one of its forms). `strict` audits must give evidence.
 function evidence(id, audit, field, x, strict, contains) {
@@ -173,7 +197,7 @@ function check(id, audit, { strict = false } = {}) {
   // ("'trans-exclusionary radical feminism', or TERFism") (Brandon, 2026-11-05: traceability).
   for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) {
     problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
-    if (typeof x === "object" && x && typeof x.quote === "string" && !mentions(norm(x.quote), [norm(audit.name)]))
+    if (typeof x === "object" && x && typeof x.quote === "string" && !sameName(entryName(x), audit.name, x.type) && !mentions(norm(x.quote), [norm(audit.name)]))
       problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
   }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
@@ -184,7 +208,9 @@ function check(id, audit, { strict = false } = {}) {
   for (const src of audit.sources || []) for (const x of Array.isArray(src.titles) ? src.titles : []) {
     problems.push(...evidence(id, audit, "title", x, strict, (q) => q.includes(norm(entryName(x)))));
   }
-  const aliases = list(audit.aliases);
+  // Eponymous authors' names count as names of the ideology (as its last name: "Klaus", "Bukharin").
+  const eponyms = (Array.isArray(audit.authors) ? audit.authors : []).filter((x) => isEponym(x, audit.name)).map((x) => x.last || x.first);
+  const aliases = [...list(audit.aliases), ...eponyms];
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
   // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
