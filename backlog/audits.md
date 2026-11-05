@@ -97,3 +97,9 @@ Cleared as borrowing on 2026-11-05 (answers resting only on those sources set to
 (US founding texts), Christian communism (Winstanley), Northwest Territorial Imperative (general reports
 on neo-Nazi groups), Ultraconservatism (a general source on conservatism), Postliberalism (Deneen,
 Vermeule: its defining source never names them), Irish nationalism (no defining source names it).
+- After the 2026-11-05 sourcing pass, still flagged (no source equates the alias, or names the text):
+  Esoteric neo-Nazism ("Esoteric Hitlerism" equated only by Wikipedia; Devi, Serrano untied), Hungarian
+  irredentism ("Greater Hungary"; Apponyi untied), Ultraconservatism (sources say "ultra-royalist", all 9
+  stated answers rest on them), United Armenia (memorandum), Greater Indonesia (Yamin's BPUPK speech),
+  Dirigisme (Monnet note), Producerism (Western Sydney thesis was a 403), Moderate conservatism (Kekes's
+  book behind Cloudflare; its answers were cleared), Irish republican legitimism (s3 reference).
