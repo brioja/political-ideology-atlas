@@ -88,6 +88,20 @@ const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.lengt
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
 let taken = null;
+const ownNames = new Map(); // normalized name -> ideologies whose own name it is
+// How often an ideology's own defining sources (saved, reference or scholarly, never Wikipedia) use a
+// name, in any of its forms. Decides who owns a contested alias.
+const usageCache = new Map();
+function usage(id, n) {
+  const key = id + "|" + n;
+  if (usageCache.has(key)) return usageCache.get(key);
+  let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, id + ".json"), "utf8")); } catch { a = {}; }
+  const text = (a.sources || []).filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))
+    .map((s) => sourceText(id, s.url)).filter(Boolean).join(" ");
+  const u = count(text, [...new Set(forms(n))]);
+  usageCache.set(key, u);
+  return u;
+}
 function namesTaken() {
   if (taken) return taken;
   taken = new Map();
@@ -100,6 +114,7 @@ function namesTaken() {
       const k = norm(n);
       if (!taken.has(k)) taken.set(k, new Set());
       taken.get(k).add(id);
+      if (n === a.name) { if (!ownNames.has(k)) ownNames.set(k, new Set()); ownNames.get(k).add(id); }
     }
   }
   return taken;
@@ -126,11 +141,24 @@ function check(id, audit) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, or a spelling variant of the name)`);
-  const names = [audit.name, ...aliases].map(norm);
-  for (const n of [audit.name, ...aliases]) {
-    const others = [...(namesTaken().get(norm(n)) || [])].filter((o) => o !== id);
-    if (others.length) problems.push(`name or alias "${n}" is also used by ${others.join(", ")}`);
+  // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
+  // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
+  // lose it. A tie leaves it to none of them.
+  namesTaken();
+  const kept = [];
+  for (const al of aliases) {
+    if (typeof al !== "string" || !al.trim()) continue;
+    const k = norm(al);
+    const nameOf = [...(ownNames.get(k) || [])].filter((o) => o !== id);
+    if (nameOf.length) { problems.push(`alias "${al}" is the name of ${nameOf.join(", ")}`); continue; }
+    const rivals = [...(namesTaken().get(k) || [])].filter((o) => o !== id);
+    if (rivals.length) {
+      const mine = usage(id, k), best = Math.max(...rivals.map((o) => usage(o, k)));
+      if (mine <= best) { problems.push(`alias "${al}" belongs to ${rivals.filter((o) => usage(o, k) === best).join(", ")}, whose defining sources use it ${best} times (yours: ${mine})${mine === best ? "; a tie leaves it to none" : ""}`); continue; }
+    }
+    kept.push(al);
   }
+  const names = [audit.name, ...kept].map(norm);
   const sources = Array.isArray(audit.sources) ? audit.sources : [];
   const defining = [];
   for (const s of sources.filter((s) => (s.kind === "reference" || s.kind === "scholarly") && !isWikipedia(s))) {
