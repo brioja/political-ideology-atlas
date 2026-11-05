@@ -85,9 +85,9 @@ function validate(id) {
   // The sources have to discuss the ideology (scripts/source-check.js). Strict for audits that list
   // "aliases" (required from 2026-11-06); a warning for older audits.
   if (!PEOPLE) {
-    // Audits committed before the check (480478e1) only get warnings, so they aren't re-queued as invalid
-    // (pending.js); every audit written after it, or with "aliases", is held to it.
-    const strict = a.aliases !== undefined || (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
+    // Audits committed before the check (480478e1) only get warnings (adding aliases to one later
+    // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
+    const strict = (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     const { problems, unchecked } = require("./source-check").check(id, a);
     const out = strict ? errors : warnings;
