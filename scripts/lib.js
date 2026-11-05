@@ -128,10 +128,11 @@ const awaitingReaudit = () => {
 // "not only"). Warnings are often fine but worth a look: "and"/"or" (a list may be one claim),
 // "like", "by"/"through" (a means, or just who acts: "chosen by voters"), "in" (a vague scope such as
 // "in economic life", or just a place: "in war"), "not" (state the positive position and let an
-// ideology answer -2: "work should be the centre of people's lives", not "work should not be...").
+// ideology answer -2: "work should be the centre of people's lives", not "work should not be..."), "if"/"unless" (a
+// condition is hard to negate: does disagreeing reject the claim or the condition?).
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only"],
-  warnings: ["and", "or", "like", "by", "through", "in", "not"],
+  warnings: ["and", "or", "like", "by", "through", "in", "not", "if", "unless"],
 };
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {
