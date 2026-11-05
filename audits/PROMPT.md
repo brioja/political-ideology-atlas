@@ -129,6 +129,15 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   sharia"), not one that only names this ideology ("Zionism is right").
 - Give this ideology's answer (`value`, -2 to +2, never 0), a one-sentence rationale, and at least
   one source id. These are positions you found, not guesses: cite where they are stated.
+- **Rule of three**, while the sources are open: collect three verbatim passages where the ideology
+  states the position (`quotes`), and word the statement as their common core. Three places show the
+  position is central, and the sources' own words keep the statement from being your paraphrase.
+  Follow the rule and the wording lessons in `audits/PROMPT_STATEMENTS.md` section 2 ("Word it from
+  the sources' own words" and "Lessons from earlier reviews").
+- Then run `node scripts/statements-check.js --wording audits/profiles/<id>.json` and reword every
+  error and every warning that test 3 confirms (two claims joined, a list where one general word
+  would do, a means attached to a goal, a vague scope). If an error-level word is right, say why in
+  the entry's `"wordingOk"` field.
 
 ## 6. Output format
 
@@ -177,7 +186,8 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "text": "A candidate statement in the bank's form.",
       "value": 2,
       "rationale": "Why this defines the ideology and how it answers.",
-      "sources": ["s1"]
+      "sources": ["s1"],
+      "quotes": [{ "text": "verbatim passage", "source": "s1", "where": "page, section or file and line" }]
     }
   ],
   "notes": "Optional: contested points, strands that would answer differently, caveats."

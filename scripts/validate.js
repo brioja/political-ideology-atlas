@@ -184,6 +184,9 @@ function validate(id) {
     if (typeof m.rationale !== "string" || m.rationale.trim().length < 20) errors.push(`missingStatements[${i}]: rationale missing or too short`);
     if (!Array.isArray(m.sources) || !m.sources.length) errors.push(`missingStatements[${i}]: needs at least one source`);
     else for (const sid of m.sources) if (!sourceIds.has(sid)) errors.push(`missingStatements[${i}]: unknown source '${sid}'`);
+    // Rule of three (audits/PROMPT.md section 5): three verbatim passages stating the position.
+    if (!m.addedAs && !m.declined && (!Array.isArray(m.quotes) || m.quotes.filter((q) => q && typeof q.text === "string" && q.text.trim()).length < 3))
+      warnings.push(`missingStatements[${i}]: fewer than 3 quotes (rule of three; say so in the rationale if fewer exist)`);
   }
 
   // Not errors, but signs of a lazy audit worth a look.
