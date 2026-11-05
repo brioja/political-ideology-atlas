@@ -4,6 +4,11 @@
 every person audit, for little improvement on the site. Collect candidates here, but don't start a
 batch unless that trade-off changes.
 
+**2026-11-05: that trade-off changed.** Backfill is gone. A new statement enters as a candidate, new
+audits answer it, older audits answer it at their next completing pass (missing counts as null until
+then), and it is promoted automatically once it carries signal on the real lines (test 2 in
+`audits/statements/STANDARD.md`). "Each one costs a backfill" in the entries below no longer applies.
+
 - **Mainstream statements for the unity-across-borders line** (2026-10-31; the line anchored on
   civilizational-union, kin-peoples-union, pool-sovereignty and common-currency). Its core statements
   are ones mainstream politicians rarely address, so their error bars there stay wide (it had a 60%

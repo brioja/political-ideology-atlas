@@ -6,7 +6,6 @@ export const meta = {
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
     { title: 'Integrate', detail: 'record missing statements (bank frozen), commit, build, test, push' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
-    { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote candidates with signal' },
   ],
 }
 
@@ -14,8 +13,6 @@ const ROOT = '/home/brioja/work/political_ideology_test'
 const LANES = (args && args.lanes) || 5
 const WAVES = (args && args.waves) || 2
 const model = args && args.model ? { model: args.model } : {}
-// Off by default: each pass covers every finished audit, so old audits are backfilled (or deepened) once at the end.
-const BACKFILL = !!(args && args.backfill === true)
 
 const PICK = {
   type: 'object',
@@ -29,13 +26,8 @@ const LANE = {
 }
 const INTEGRATE = {
   type: 'object',
-  properties: { report: { type: 'string' }, deployed: { type: 'boolean' }, pendingStatements: { type: 'integer', description: 'distinct statement ids across `node scripts/pending.js --backfill`' } },
-  required: ['report', 'deployed', 'pendingStatements'],
-}
-const BACKFILL_TODO = {
-  type: 'object',
-  properties: { ids: { type: 'array', items: { type: 'string' } }, count: { type: 'integer', description: 'the number node printed, not your own count' } },
-  required: ['ids', 'count'],
+  properties: { report: { type: 'string' }, deployed: { type: 'boolean' } },
+  required: ['report', 'deployed'],
 }
 
 const lanePrompt = (it) => `You audit one ideology, in parallel with other agents auditing other ideologies in the same working tree. Working directory: ${ROOT}. Today's date is the auditedAt date.
@@ -76,33 +68,8 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
 4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.
-5. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch any other file; leave uncommitted changes you didn't make alone.
 Report: per audit, number of missingStatements, then tests and deploy status.`
-
-async function backfill() {
-  // Only ids pass through the agent: the full list (~65 KB) once came back summarised, and promotion then
-  // dropped every audit that hadn't answered the promoted statements. Each batch agent looks up its own statements.
-  const LIST = `node scripts/pending.js --backfill | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const a=JSON.parse(s);console.log(a.length);console.log(a.map(x=>x.id).join("\\n"))})'`
-  const find = (n) => agent(`In ${ROOT}, run \`${LIST}\`. The first line is the count; return it as "count" and every following line, in full and in order, as "ids". Do nothing else.`,
-    { label: `find-backfill-${n}`, phase: 'Backfill', schema: BACKFILL_TODO, effort: 'low' })
-  let found = await find(1)
-  if (found && found.ids.length !== found.count) found = await find(2)
-  if (!found || found.ids.length !== found.count) return `not run: backfill list came back incomplete (${found ? `${found.ids.length} of ${found.count}` : 'no result'})`
-  const batches = []
-  for (let i = 0; i < found.ids.length; i += 4) batches.push(found.ids.slice(i, i + 4))
-  await parallel(batches.map((batch) => () => agent(`Working directory: ${ROOT}
-Read audits/BACKFILL.md and follow it exactly. The statements are in statements.json.
-Other agents are backfilling other audit files at the same time.
-Your audits: ${batch.join(', ')}. The statement ids each one needs are listed for it by \`node scripts/pending.js --backfill\`.
-Keep temporary files in a scratchpad subdirectory named after your first audit id.
-Only edit those audit files. Do not commit, build or test.`, { label: `backfill:${batch.join(',')}`, phase: 'Backfill', ...model })))
-  return agent(`Working directory: ${ROOT}
-1. Run \`node scripts/statements-check.js\`. For every candidate it lists under "Ready" (signal on the real lines), remove its "status" field in statements.json, keeping the one-line format.
-2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` audits/profiles statements.json data.js people.js audits/statements/texts.json, commit as "Backfill new statements and promote contested ones" (no Co-Authored-By or other attribution line), and \`git push\`. If they fail, don't push.
-Reply in one line: how many audits were backfilled, which candidates were promoted, deployed or not.`,
-    { label: 'promote', phase: 'Backfill', effort: 'low' })
-}
 
 // After the audits: promote candidates that now carry signal on the real lines and demote active
 // statements that lost it (test 2, audits/statements/STANDARD.md; Brandon, 2026-11-05). CPU only.
@@ -133,7 +100,6 @@ for (let w = 0; w < WAVES; w++) {
   reports.push(`integrate wave ${w + 1}: ${r.report}`)
   log(r.report)
   if (!r.deployed) { ended = 'wave not deployed (tests failed?); stopping'; break }
-  if (BACKFILL && r.pendingStatements >= 10) reports.push(`backfill: ${await backfill()}`)
 }
 phase('Signal')
 reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', effort: 'low' })}`)

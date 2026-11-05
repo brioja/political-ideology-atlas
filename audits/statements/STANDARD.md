@@ -74,9 +74,10 @@ Anarcho-primitivism is a live match, and it doesn't make the test longer for any
    `missingStatements` (see `audits/PROMPT.md`). New ideologies are the main source.
 2. Merge candidates that say the same thing, check the wording rule, and add the statement to
    `statements.json` with `"status": "candidate"`.
-3. Backfill: existing audits answer only the new statement (`node scripts/pending.js` lists them
-   as incomplete, not stale). Other answers stay valid.
-4. Once test 2 passes, change the status to `active` (or remove the field) and rebuild.
+3. New audits answer it; an older audit answers it at its next completing pass, and until then a
+   missing answer counts as null. Other answers stay valid. There is no separate backfill.
+4. Once test 2 passes it is promoted automatically: every audit run ends with
+   `node scripts/statement-signal.js --apply`, which also demotes active statements that fail it.
 
 Rewording a statement changes what was answered, so a reworded statement gets a new id.
 

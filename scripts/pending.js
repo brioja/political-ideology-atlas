@@ -1,30 +1,17 @@
 // Prints, as JSON, the catalog entries that still need an audit: missing or failing validation.
 // Used by the audit workflow; also handy on its own.
-//   node scripts/pending.js [--limit N] [--people] [--by-views [--reverse]] [--backfill]
+//   node scripts/pending.js [--limit N] [--people] [--by-views [--reverse]]
 //   --by-views orders by Wikipedia page views (most viewed first), for auditing in order of prominence
 //   --reverse with --by-views lists least viewed first, so a second lane can work from the other end
-//   --backfill instead lists finished audits that still need answers for new (candidate) statements,
-//     with the statement ids, for the statement-backfill workflow
 const fs = require("fs");
 const lib = require("./lib");
-const { readJson, allStatements, unanswered } = lib;
+const { readJson } = lib;
 const PEOPLE = process.argv.includes("--people");
 const catalog = PEOPLE ? lib.peopleCatalog : lib.catalog;
 const profilePath = PEOPLE ? lib.personPath : lib.profilePath;
 
 const limitArg = process.argv.indexOf("--limit");
 const limit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
-if (process.argv.includes("--backfill")) {
-  const statements = allStatements();
-  const todo = catalog().filter((e) => fs.existsSync(profilePath(e.id)))
-    .map((e) => ({ id: e.id, name: e.name, audit: readJson(profilePath(e.id)) }))
-    .filter((e) => !e.audit.notAnIdeology)
-    .map(({ id, name, audit }) => ({ id, name, statements: unanswered(audit.answers, statements) }))
-    .filter((e) => e.statements.length);
-  console.log(JSON.stringify(todo.slice(0, limit)));
-  // Not process.exit(): it cuts piped output off at 64 KB, before stdout has flushed.
-  return;
-}
 
 // Validated in this process, not one validate.js run per audit: the uncertainty judge takes seconds
 // to compute and is cached per process. validate.js reads --people from this command line too.

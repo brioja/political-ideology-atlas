@@ -187,7 +187,7 @@ if (included.length >= 3) {
 const fullModel = included.length >= 3 ? onLandscape(included) : null;
 
 // People: included when placed on every line (the uncertainty rule, pca.js), as ideologies are. A statement added
-// after their audit counts as "no known position" until it is backfilled.
+// after their audit counts as "no known position" until their next completing pass answers it.
 // `model`: the shipped dividing lines (modelFromParts), so people are ranked the way the page ranks them.
 // `judge`: the uncertainty judge; by default the one data.js ships.
 function writePeople(model, judge = undefined) {
