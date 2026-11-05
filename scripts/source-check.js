@@ -2,8 +2,8 @@
 //   - A defining source (kind "reference" or "scholarly") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
 //   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
-//     the defining sources that passed name it twice by the head of its title (two words or more):
-//     one mention may be in passing.
+//     the sources that discuss the ideology (defining sources and primary texts that passed on their
+//     own) name it twice by the head of its title (two words or more): one mention may be in passing.
 //   - Wikipedia is never a defining source. An alias must be a name, not an everyday word.
 //   - Every alias must appear in at least one defining source, and no two ideologies may share a name
 //     or alias.
@@ -114,19 +114,25 @@ function check(id, audit) {
     else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology`);
   }
   for (const al of aliases) if (defining.length && !defining.some((t) => mentions(t, [norm(al)]))) problems.push(`alias "${al}" appears in no defining source`);
-  for (const s of sources.filter((s) => s.kind === "primary" || s.kind === "program")) {
+  // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
+  // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
+  // never Wikipedia) name it by title twice between them. One mention may be in passing; a source
+  // that never names the ideology can't vouch for a text (the World communism case).
+  const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
+  const vouching = [...defining];
+  const pending = [];
+  for (const s of primaries) {
     const t = sourceText(id, s.url);
-    // Two-mentions floor (Brandon, 2026-11-05): a single mention may be in passing. A primary text
-    // passes if it names the ideology twice, or if the (non-Wikipedia) defining sources name it by
-    // title twice between them.
-    if (t != null && mentionCount(t, names) >= 2) continue;
-    // Named by its title in a defining source; an author's name alone isn't enough (a different book
-    // by the same author would pass).
+    if (t != null && !isWikipedia(s) && mentionCount(t, names) >= 2) { vouching.push(t); continue; }
+    pending.push({ s, t });
+  }
+  for (const { s, t } of pending) {
     const head = titleHead(s.title);
-    const named = head && count(defining.join(" "), [head]) >= 2;
+    const own = t || "";
+    const named = head && count(vouching.filter((v) => v !== own).join(" "), [head]) >= 2;
     if (named) continue;
-    if (t == null && !defining.length) { unchecked.push(s.id); continue; }
-    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" and the defining sources don't name it by title twice: it isn't tied to the ideology (cite its title as a defining source names it)`);
+    if (t == null && !vouching.length) { unchecked.push(s.id); continue; }
+    problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)`);
   }
   return { problems, unchecked };
 }
