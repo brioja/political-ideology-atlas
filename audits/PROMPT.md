@@ -49,9 +49,14 @@ When in doubt, audit it: a thin ideology is excluded later by the uncertainty ru
 
 ## 1. Pin down what the ideology is
 
-Many names cover several strands. Before answering, decide which one the profile represents, and
-record it in `scope`:
-- If there is a canonical core (founding texts, a defining thinker, a party program), use it.
+The sources decide the scope, not you (Brandon, 2026-11-05). Before answering, find the reference
+and scholarly works that define the name itself (encyclopedia and dictionary entries, scholarship
+on the term): what they say it is, which strand it names when the name covers several, and which
+texts, thinkers or programs they name as its own. Record that in `scope`, citing those sources. A
+text counts for the subject only as far as they tie it to the subject; don't choose a scope that
+no defining source states.
+- If the defining sources name a canonical core (founding texts, a defining thinker, a party
+  program), use it.
 - If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
   from sources that define the family's own tenets directly: comparative scholarship that defines it
   (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where
