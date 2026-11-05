@@ -64,8 +64,8 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
 - **The right source, the wrong passage.** A source that discusses the ideology can still carry an
   answer from a passage about something else (Animal rights answering racial segregation from Regan's
   remarks on apartheid).
-- **A passing mention is enough.** A defining source passes if it names the ideology once. A two-mentions
-  floor (two separate places, like the rule of two) would filter this; proposed, not decided.
+- **A passing mention is enough (defining sources).** A defining source passes if it names the ideology once. A two-mentions
+  floor for defining sources would filter this; primary texts got one on 2026-11-05.
 - **The saved copy is trusted.** The check reads the agent's saved text, not the live page.
 What would decide it: passage-level checking needs each answer to quote its passage (a new required
 field, longer audits), so the check can confirm the quote is in the saved text and that its
