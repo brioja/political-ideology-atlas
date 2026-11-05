@@ -62,8 +62,7 @@ defining source (`reference` or `scholarly`) must name the ideology, by its name
 that does. List in `aliases` the other names the defining sources use for it, liberally (spelling variants,
 "Salafi jihadism" / "jihadi-Salafism", the eponym of an "-ism" named after a person: "Fortuyn" for
 Fortuynism). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
-for World communism), so an alias may never be another ideology's name. Each
-must appear in a defining source and may not be another ideology's name or alias. List in `authors`
+for World communism), so an alias may never be another ideology's name or alias. List in `authors`
 the ideology's own thinkers as its defining sources name them (each named at least twice there, and
 no other ideology's defining author): a primary text by one of them is tied to the ideology. When a
 defining source names a primary text differently from its title ("the 1856 Imperial Rescript" for the

@@ -5,8 +5,8 @@
 //     the sources that discuss the ideology (defining sources and primary texts that passed on their
 //     own) name it twice by the head of its title (two words or more): one mention may be in passing.
 //   - Wikipedia is never a defining source. An alias must be a name, not an everyday word.
-//   - Every alias must appear in at least one defining source, and no two ideologies may share a name
-//     or alias.
+//   - Aliases are liberal (Brandon, 2026-11-05): any name for the ideology, as long as it is a name
+//     (not an everyday word) and no other ideology's name or alias.
 // Texts are the copies saved in scratchpad/sources/<id>/ (index.json maps each file to its URL): the
 // plain-text extract where there is one, else the gunzipped HTML with its tags stripped. A source
 // with no saved copy can't be checked and is reported as unchecked.
@@ -139,7 +139,6 @@ function check(id, audit) {
     if (mentions(t, names)) defining.push(t);
     else problems.push(`source ${s.id} (${s.kind}) never names "${audit.name}"${aliases.length ? " or an alias" : ""}: a defining source has to discuss the ideology`);
   }
-  for (const al of aliases) if (defining.length && !defining.some((t) => mentions(t, [norm(al)]))) problems.push(`alias "${al}" appears in no defining source`);
   // Primary texts. A text that names the ideology twice passes on its own. Any other passes if the
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
   // never Wikipedia) name it by title twice between them. One mention may be in passing; a source
