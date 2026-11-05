@@ -4,7 +4,7 @@ export const meta = {
   phases: [
     { title: 'Pick', detail: 'list the next N pending ideologies by views' },
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
-    { title: 'Integrate', detail: 'merge proposals into statements.json, commit, build, test, push' },
+    { title: 'Integrate', detail: 'record proposals (bank frozen), commit, build, test, push' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote contested candidates' },
   ],
 }
@@ -57,20 +57,11 @@ Report in 1-3 lines: validator result, stated positions, number of missingStatem
 
 const integratePrompt = (items) => `You integrate a wave of ideology audits written in parallel. Working directory: ${ROOT}.
 Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
-1. For each audit in audits/profiles/<id>.json, handle each missingStatements entry that has neither "addedAs" nor "declined".
-   Look across ALL the wave's proposals together first: proposals from different audits that mean the same thing become one statement.
-   Prefer merging: if an existing statement in statements.json already captures it, even loosely, set "addedAs" to that id
-   (the audit's answer to it must agree; fix the answer only if it is missing). Only if none does, append a new statement to
-   statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,
-   "status": "candidate"), in neutral wording other ideologies could also take a side on, and set "addedAs" to the new id
-   in every audit that proposed it; if a wave audit proposed it, that audit must also answer the new statement in its answers,
-   following audits/PROMPT.md's answer format. Add a new statement only if at least one proposing audit answers it -2 or +2
-   at high confidence (a defining position, either side); otherwise set "declined": "not strongly held at high confidence".
-   Or set "declined" with another reason. Keep the bank lean: every statement added must be answered by every future audit.
-   Keep each file's own JSON indentation.
+1. The statement bank is FROZEN (Brandon, 2026-11-04): do NOT edit statements.json and leave every missingStatements entry
+   as a proposal (no "addedAs", no "declined"). Keep each file's own JSON indentation.
 2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the uncertainty judge once);
    fix every error except the uncertainty rule (never raise a confidence to pass it).
-3. Commit each audit separately as "Audit <name>" (git add only that audit file; statements.json goes with the first commit).
+3. Commit each audit separately as "Audit <name>" (git add only that audit file).
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
 4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.

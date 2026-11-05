@@ -1,9 +1,9 @@
 export const meta = {
   name: 'serial-audits',
-  description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that also merges its proposed statements and deploys',
+  description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that records its proposed statements (bank frozen) and deploys',
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"backfill": true} to backfill old audits once 10 new statements build up (off by default: backfill or deepen once at the very end)',
   phases: [
-    { title: 'Audit', detail: 'one fresh agent per ideology: audit, merge proposals, commit, build, test, push' },
+    { title: 'Audit', detail: 'one fresh agent per ideology: audit, record proposals, commit, build, test, push' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote contested candidates' },
   ],
 }
@@ -35,13 +35,9 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
    except the uncertainty rule (exit code 2 is an honest result: never raise a confidence to pass it).
-3. Handle each missingStatements entry. Prefer merging: if an existing statement in statements.json already captures it,
-   even loosely, set "addedAs" to that id (your answer to it must agree). Only if none does, append a new statement to
-   statements.json in the same one-line format as the others (id, theme, text, agree, disagree, note, icon,
-   "status": "candidate"), in neutral wording other ideologies could also take a side on, and set "addedAs" to the new id.
-   Add a new statement only if this ideology answers it -2 or +2 at high confidence (a defining position, either side);
-   otherwise set "declined": "not strongly held at high confidence". Or set "declined" with another reason. Keep the bank lean: every statement added must be answered by every future audit.
-4. \`git add\` only the audit file and statements.json; commit as "Audit <name>". Commits carry only the repo
+3. The statement bank is FROZEN (Brandon, 2026-11-04): do NOT edit statements.json. Leave each missingStatements entry as a
+   proposal (no "addedAs", no "declined"); proposals are reviewed later, outside this run.
+4. \`git add\` only the audit file; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
 5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push;
