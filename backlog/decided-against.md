@@ -99,3 +99,8 @@ inclusion still use all 14. A shared true-width scale across lines was also weig
 stretched to its own extremes, since band width relative to the line is what the uncertainty rule measures.
 Later the same day lines 9-14 were added unnamed ("Line 9"...) in a collapsed "6 smaller dividing lines"
 section on the results, Compare, ideology and person pages, each with its statements per end; not on the share card.
+
+- **Rewording the active bank's "rather than" statements into priority form** (2026-11-04): 62
+  active statements use "X rather than Y"; turning them into "X should matter more than Y" would
+  need new ids and re-answering in every audit, for little gain to quiz takers (Brandon). New
+  statements avoid "rather than" (wording check); existing ones stay.
