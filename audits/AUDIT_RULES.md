@@ -29,6 +29,9 @@ words; don't paste long passages.
   doesn't decide a subject's scope or what a family holds either: it serves for notability (the
   catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
   membership counts only through the scholarship or data it cites.
+- Cite a publisher's, author's, library's or archive's own copy (university repositories, publisher
+  open-access pages, archive.org scans), never a third-party book-upload site (emaanlibrary, pdfcoffee,
+  dokumen.pub, Scribd uploads); if that is the only copy, leave the source out.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (an archive.org
   copy, another site hosting the same text, the official record) before giving up.
