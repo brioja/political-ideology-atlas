@@ -30,7 +30,9 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
 1. Run \`node scripts/next.js --ideologies\`. If it prints null, reply with done=true and do nothing else.
 2. Audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
-   scopeNote, list missingStatements. Use WebSearch/WebFetch (load them with ToolSearch if deferred); cite only pages you
+   scopeNote, list missingStatements. Start from the source library the statement pass built, if there is one:
+   scratchpad/sources/<id>/index.json and scratchpad/statement-pass/<id>.json (its "notes" say which files matter); read
+   those files first and download only what they lack. Use WebSearch/WebFetch (load them with ToolSearch if deferred); cite only pages you
    opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
