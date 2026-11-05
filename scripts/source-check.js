@@ -75,12 +75,13 @@ const titleHeads = (t) => {
 const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
 // An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, the eponym an
 // "-ism" is named after ("Fortuyn" for "Fortuynism", "Mao" for "Maoism"), or a spelling variant of the
-// name (same first six letters: "communisation" for "communization"). Be liberal with aliases: what
+// name or a translation sharing its first four letters ("communisation" for "communization",
+// "laïcité" for "laicism"). Be liberal with aliases: what
 // the check exists to catch is a broader ideology's name ("communism" for World communism), and the
 // uniqueness check stops that.
 const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.length >= 2) return true;
   const flat = norm(name).trim().replace(/ /g, "");
-  return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 6 && flat.slice(0, 6) === w[0].slice(0, 6)); };
+  return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 5 && flat.slice(0, 4) === w[0].slice(0, 4)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
 let taken = null;
@@ -140,7 +141,9 @@ function check(id, audit) {
     const others = vouching.filter((v) => v !== own).join(" ");
     const named = heads.some((h) => count(others, [h]) >= 2);
     if (named) continue;
-    if (t == null && !vouching.length) { unchecked.push(s.id); continue; }
+    // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
+    // makes an unchecked source an error for them.
+    if (t == null) { unchecked.push(s.id); continue; }
     problems.push(`source ${s.id} (${s.kind}) doesn't name "${audit.name}" twice, and the sources that discuss it don't name it by title twice: it isn't tied to the ideology (cite its title as those sources name it)`);
   }
   return { problems, unchecked };
