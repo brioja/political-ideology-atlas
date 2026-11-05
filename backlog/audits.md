@@ -70,3 +70,30 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
 What would decide it: passage-level checking needs each answer to quote its passage (a new required
 field, longer audits), so the check can confirm the quote is in the saved text and that its
 surroundings discuss the ideology.
+
+## Source check: filtered sources to look at (2026-11-05)
+
+Answers in these audits rest on sources the source check filters (`node scripts/validate.js <id>`
+lists them), but the texts look like the ideology's own, missing a defining author, title or alias
+rather than borrowed. Left as they are; look again when the audit gets its next pass, or add
+`authors` / `titles` / `aliases` with evidence if a defining source supports them.
+- First-wave feminism: Seneca Falls Declaration, Mill's *Subjection of Women*, *History of Woman Suffrage*
+- Asian values: Bangkok Declaration (on site; would leave if cleared)
+- Dirigisme: Monnet's note to de Gaulle
+- Christian Identity: its own sermons
+- Greater Serbia: the Načertanije
+- Esoteric neo-Nazism: Savitri Devi (Kaplan), Serrano interview
+- Soviet anti-Zionism: *Caution: Zionism!*, Kichko's *Judaism Without Embellishment*
+- Producerism: Populist platform, Knights of Labor, Weaver, Peffer, Powderly
+- Two-nation theory: Iqbal's 1930 address
+- Pashtun nationalism: "Pukhtun" Khudai Khidmatgar article, oath, ANP manifesto (on site; would leave if cleared)
+- Ottomanism: the 1876 Constitution (on site; would leave if cleared)
+- Borderline: Black feminism (Third World Women's Alliance statement), Laicism (2010 Constitutional Council ruling),
+  Reactionary feminism, United Armenia, Greater Indonesia, Völkisch nationalism (Chamberlain, Class, Lagarde),
+  Trans-exclusionary radical feminism (Women's Declaration, Jeffreys submission)
+
+Cleared as borrowing on 2026-11-05 (answers resting only on those sources set to null): Arab nationalism
+(Ba'th texts), Majoritarianism (Locke, Dicey), Elitism (Plato), Isolationism and Non-interventionism
+(US founding texts), Christian communism (Winstanley), Northwest Territorial Imperative (general reports
+on neo-Nazi groups), Ultraconservatism (a general source on conservatism), Postliberalism (Deneen,
+Vermeule: its defining source never names them), Irish nationalism (no defining source names it).
