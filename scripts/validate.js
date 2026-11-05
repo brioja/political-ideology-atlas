@@ -89,7 +89,8 @@ function validate(id) {
     // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
     const strict = (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
-    const { problems, unchecked } = require("./source-check").check(id, a);
+    // Evidence for aliases, authors and titles is required from 2026-11-06 on (no backfill).
+    const { problems, unchecked } = require("./source-check").check(id, a, { strict: (a.auditedAt || "") >= "2026-11-06" });
     const out = strict ? errors : warnings;
     for (const pr of problems) out.push(`sources: ${pr}`);
     if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);

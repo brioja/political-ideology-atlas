@@ -87,6 +87,11 @@ const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.lengt
   return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 5 && flat.slice(0, 4) === w[0].slice(0, 4)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
+// An alias, author or extra title is a string (older audits) or carries its evidence:
+// { "name" | "title": "...", "source": "s3", "quote": "verbatim passage from that source" }.
+const entryName = (x) => (typeof x === "string" ? x : x && typeof x === "object" ? x.name || x.title || "" : "");
+const list = (v) => (Array.isArray(v) ? v : []).map(entryName).filter((n) => n && n.trim());
+
 let taken = null;
 const ownNames = new Map(); // normalized name -> ideologies whose own name it is
 // How often an ideology's own defining sources (saved, reference or scholarly, never Wikipedia) use a
@@ -109,7 +114,7 @@ function namesTaken() {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
     const id = f.slice(0, -5);
-    for (const n of [a.name, ...(Array.isArray(a.aliases) ? a.aliases : [])]) {
+    for (const n of [a.name, ...list(a.aliases)]) {
       if (!n) continue;
       const k = norm(n);
       if (!taken.has(k)) taken.set(k, new Set());
@@ -127,19 +132,43 @@ function authorsTaken() {
   for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
     if (!f.endsWith(".json")) continue;
     let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
-    for (const au of Array.isArray(a.authors) ? a.authors : []) {
+    for (const au of list(a.authors)) {
       const k = norm(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(f.slice(0, -5));
     }
   }
   return takenAuthors;
 }
 
-function check(id, audit) {
+// Evidence for an alias, author or title: the cited source is in the audit, its saved copy contains the
+// quote, and the quote contains the name (in one of its forms). `strict` audits must give evidence.
+function evidence(id, audit, field, x, strict, contains) {
+  const label = `${field} "${entryName(x)}"`;
+  if (typeof x === "string") return strict ? [`${label} needs evidence: { "${field === "title" ? "title" : "name"}", "source", "quote" }`] : [];
+  const src = (audit.sources || []).find((s) => s.id === x.source);
+  if (!src) return [`${label}: source "${x.source}" is not in the audit`];
+  if (typeof x.quote !== "string" || x.quote.trim().length < 10) return [`${label}: needs a verbatim "quote" from ${x.source}`];
+  const q = norm(x.quote);
+  if (!contains(q)) return [`${label}: its quote doesn't contain it`];
+  const t = sourceText(id, src.url);
+  if (t == null) return strict ? [`${label}: ${x.source} has no saved copy to check the quote against`] : [];
+  if (!t.includes(q.trim())) return [`${label}: the quote isn't in ${x.source}'s saved copy`];
+  return [];
+}
+
+function check(id, audit, { strict = false } = {}) {
   const problems = [], unchecked = [];
-  const aliases = Array.isArray(audit.aliases) ? audit.aliases : [];
-  if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || aliases.some((x) => typeof x !== "string" || !x.trim()))) {
+  if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
+  for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
+  for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
+    const w = entryName(x).trim().split(/\s+/); const key = norm(w.length >= 4 ? entryName(x) : w[w.length - 1]);
+    problems.push(...evidence(id, audit, "author", x, strict, (q) => q.includes(key)));
+  }
+  for (const src of audit.sources || []) for (const x of Array.isArray(src.titles) ? src.titles : []) {
+    problems.push(...evidence(id, audit, "title", x, strict, (q) => q.includes(norm(entryName(x)))));
+  }
+  const aliases = list(audit.aliases);
   for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
   // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
@@ -174,7 +203,7 @@ function check(id, audit) {
   // Defining authors ("authors"): the ideology's own thinkers, as its defining sources name them. Each
   // must be named (by surname) at least twice in the defining sources and belong to no other
   // ideology's "authors". A primary text by one of them is tied to the ideology.
-  const authors = Array.isArray(audit.authors) ? audit.authors : [];
+  const authors = list(audit.authors);
   const authorOk = [];
   for (const au of authors) {
     // A person is matched by surname; an organisation (four words or more: "Socialist Party of Great
@@ -196,7 +225,7 @@ function check(id, audit) {
   }
   for (const { s, t } of pending) {
     // Other titles the sources that discuss the ideology use for the text ("titles": ["Hatt-ı Hümayun"]).
-    const heads = [...titleHeads(s.title), ...(Array.isArray(s.titles) ? s.titles : []).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
+    const heads = [...titleHeads(s.title), ...list(s.titles).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
     const own = t || "";
     const others = vouching.filter((v) => v !== own).join(" ");
     const named = heads.some((h) => count(others, [h]) >= 2);
