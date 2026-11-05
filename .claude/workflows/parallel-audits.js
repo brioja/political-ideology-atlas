@@ -45,15 +45,18 @@ Your ideology: ${it.name} (id: ${it.id}).
    scopeNote, list missingStatements. Use WebSearch/WebFetch (load them with ToolSearch if deferred); cite only pages you
    opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
-   Wikipedia-style neutral standard.
+   Wikipedia-style neutral standard. Save every source you download beyond the library into scratchpad/sources/${it.id}/ and add it to its
+   index.json (create both if missing), so later passes read local files instead of fetching again.
+   In your report, propose a color for the ideology (the integrator adds it to audits/ideology-colors.json): a documented
+   tradition with its source, or a guess from its imagery.
 2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-uncertainty ${it.id}\` (the integrator checks
    the uncertainty rule for the whole wave); fix every error it reports. Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
    statement; never pad or generate rationales by script to pass a length check.
 3. Leave missingStatements entries unhandled: do NOT set addedAs or declined, and do NOT edit statements.json.
    An integrator handles missing statements from all lanes together.
 Other lanes share your scratchpad directory: keep every temporary file in its own subdirectory named ${it.id}.
-Edit no file other than audits/profiles/${it.id}.json. Do not run build.js or test.js. Do not git add, commit or push.
-Report in 1-3 lines: validator result, stated positions, number of missingStatements.`
+Edit no repo file other than audits/profiles/${it.id}.json (scratchpad/ is fine). Do not run build.js or test.js. Do not git add, commit or push.
+Report in 1-3 lines: validator result, stated positions, number of missingStatements, proposed color.`
 
 const integratePrompt = (items) => `You integrate a wave of ideology audits written in parallel. Working directory: ${ROOT}.
 Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
@@ -61,9 +64,14 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    unhandled (no "addedAs", no "declined"). Keep each file's own JSON indentation.
 2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the uncertainty judge once);
    fix every error except the uncertainty rule (never raise a confidence to pass it).
-3. Commit each audit separately as "Audit <name>" (git add only that audit file).
+3. For each wave audit without an entry in audits/ideology-colors.json, following CONTRIBUTING.md
+     "Ideology colors": a documented color tradition where one exists (cite it in "source"), otherwise a best guess from its
+     imagery with "basis": "guess", a note starting "guess: " and "verified": false; never only grey, black or white. Copy the
+     format of the neighbouring entries and keep the file's indentation.
+   Use the lane's proposed color. Commit each audit separately as "Audit <name>" (git add only that audit file), then the
+   colors file as "Ideology colors for the wave".
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
-4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js and
+4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.
 5. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch any other file; leave uncommitted changes you didn't make alone.
