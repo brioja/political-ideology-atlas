@@ -55,8 +55,8 @@ A statement is **asked in the test** only when it meets all four:
    whose disagree side can only be a hard-to-read negation (a double negative, or two claims bundled)
    is flagged for rewording.
 
-`node scripts/statements-check.js` reports test 2 for every statement and lists the candidates
-the audits have proposed. A statement that fails test 2 stays in the bank as a `candidate`
+`node scripts/statements-check.js` reports test 2 for every statement and lists the audits' open
+missing statements. A statement that fails test 2 stays in the bank as a `candidate`
 (answered by audits, not asked) until audits show it is contested.
 
 Niche statements are welcome. The test asks whichever statement best separates the ideologies

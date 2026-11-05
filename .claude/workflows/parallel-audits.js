@@ -1,10 +1,10 @@
 export const meta = {
   name: 'parallel-audits',
-  description: 'Audit the most-viewed pending ideologies in parallel lanes, then one integrator merges proposals, builds, tests and deploys per wave',
+  description: 'Audit the most-viewed pending ideologies in parallel lanes, then one integrator records missing statements, builds, tests and deploys per wave',
   phases: [
     { title: 'Pick', detail: 'list the next N pending ideologies by views' },
     { title: 'Audit', detail: 'one agent per ideology, writing only its own audit file' },
-    { title: 'Integrate', detail: 'record proposals (bank frozen), commit, build, test, push' },
+    { title: 'Integrate', detail: 'record missing statements (bank frozen), commit, build, test, push' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements are pending, answer them in old audits and promote contested candidates' },
   ],
 }
@@ -49,16 +49,16 @@ Your ideology: ${it.name} (id: ${it.id}).
 2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-uncertainty ${it.id}\` (the integrator checks
    the uncertainty rule for the whole wave); fix every error it reports. Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
    statement; never pad or generate rationales by script to pass a length check.
-3. Leave missingStatements entries as proposals: do NOT set addedAs or declined, and do NOT edit statements.json.
-   An integrator handles proposals from all lanes together.
+3. Leave missingStatements entries unhandled: do NOT set addedAs or declined, and do NOT edit statements.json.
+   An integrator handles missing statements from all lanes together.
 Other lanes share your scratchpad directory: keep every temporary file in its own subdirectory named ${it.id}.
 Edit no file other than audits/profiles/${it.id}.json. Do not run build.js or test.js. Do not git add, commit or push.
-Report in 1-3 lines: validator result, stated positions, number of missingStatements proposals.`
+Report in 1-3 lines: validator result, stated positions, number of missingStatements.`
 
 const integratePrompt = (items) => `You integrate a wave of ideology audits written in parallel. Working directory: ${ROOT}.
 Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
 1. The statement bank is FROZEN (Brandon, 2026-11-04): do NOT edit statements.json and leave every missingStatements entry
-   as a proposal (no "addedAs", no "declined"). Keep each file's own JSON indentation.
+   unhandled (no "addedAs", no "declined"). Keep each file's own JSON indentation.
 2. Run \`node scripts/validate.js <id> <id> ...\` once with every wave audit id (one run builds the uncertainty judge once);
    fix every error except the uncertainty rule (never raise a confidence to pass it).
 3. Commit each audit separately as "Audit <name>" (git add only that audit file).
@@ -67,7 +67,7 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.
 5. Run \`node scripts/pending.js --backfill\` and report how many distinct statement ids appear across it as pendingStatements.
 Do not touch any other file; leave uncommitted changes you didn't make alone.
-Report: per audit, proposals added/merged/declined (with new statement ids), then tests and deploy status.`
+Report: per audit, number of missingStatements, then tests and deploy status.`
 
 async function backfill() {
   // Only ids pass through the agent: the full list (~65 KB) once came back summarised, and promotion then

@@ -1,9 +1,9 @@
 export const meta = {
   name: 'serial-audits',
-  description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that records its proposed statements (bank frozen) and deploys',
+  description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that records its missing statements (bank frozen) and deploys',
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"backfill": true} to backfill old audits once 10 new statements build up (off by default: backfill or deepen once at the very end)',
   phases: [
-    { title: 'Audit', detail: 'one fresh agent per ideology: audit, record proposals, commit, build, test, push' },
+    { title: 'Audit', detail: 'one fresh agent per ideology: audit, record missing statements, commit, build, test, push' },
     { title: 'Backfill', detail: 'only with {backfill: true}: when 10+ new statements build up, answer them in old audits and promote contested candidates' },
   ],
 }
@@ -18,7 +18,7 @@ const TICK = {
   type: 'object',
   properties: {
     done: { type: 'boolean', description: 'true if next.js printed null (no ideology left)' },
-    report: { type: 'string', description: 'one line: name, validator result, stated positions, proposals added/merged/declined, deployed or not' },
+    report: { type: 'string', description: 'one line: name, validator result, stated positions, number of missingStatements, deployed or not' },
     deployed: { type: 'boolean' },
     pendingStatements: { type: 'integer', description: 'number of distinct statement ids across the array printed by `node scripts/pending.js --backfill`' },
   },
@@ -37,8 +37,8 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
    except the uncertainty rule (exit code 2 is an honest result: never raise a confidence to pass it).
-3. The statement bank is FROZEN (Brandon, 2026-11-04): do NOT edit statements.json. Leave each missingStatements entry as a
-   proposal (no "addedAs", no "declined"); proposals are reviewed later, outside this run.
+3. The statement bank is FROZEN (Brandon, 2026-11-04): do NOT edit statements.json. Leave each missingStatements entry
+   unhandled (no "addedAs", no "declined"); missing statements are reviewed later, outside this run.
 4. \`git add\` only the audit file; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
 5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and

@@ -72,7 +72,7 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
   disagree). Two statements would carry each cleanly: rights rest on a shared human nature; human nature
   should not be altered by technology.
 
-## Proposed by the 2026-10-30 honest re-audits (rules 3)
+## Missing statements from the 2026-10-30 honest re-audits (rules 3)
 
 Each re-audit lists defining positions no statement captures (`missingStatements` in its audit file).
 Several ideologies that left the site fell just short of the bar for want of these (Stoicism 1.02x,

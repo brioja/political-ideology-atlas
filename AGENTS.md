@@ -27,8 +27,8 @@ agents too. This file adds what matters when running the audit workflows in
 
 ## New statements
 
-- **The bank is frozen** (Brandon, 2026-11-04): audit runs never edit `statements.json`; they record
-  `missingStatements` as proposals only, reviewed later with the statement-pass process below.
+- **The bank is frozen** (Brandon, 2026-11-04): audit runs never edit `statements.json`; they only record
+  missing statements (`missingStatements`), reviewed later with the statement-pass process below.
 
 - New ideologies get a statement pass before their audits: `audits/PROMPT_STATEMENTS.md` (Opus builds
   the source library and proposes missing statements, each worded from three source quotes). Batches of

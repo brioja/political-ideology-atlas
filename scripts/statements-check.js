@@ -1,8 +1,8 @@
 // Checks each statement against the question standard (audits/statements/STANDARD.md) using the
-// ideology audits, and lists the candidate statements the audits have proposed.
+// ideology audits, and lists the audits' open missing statements.
 //   Contested: at least one audited ideology agrees and one disagrees, both stated (high or
 //   medium confidence, not inferred). Candidates that pass are ready to be made active.
-//   Proposals: each audit's missingStatements not yet added to statements.json or declined.
+//   Missing statements: each audit's missingStatements not yet added to statements.json or declined.
 //   node scripts/statements-check.js [--json]
 //   node scripts/statements-check.js --wording [file.json ...]
 //     Test 3: marks wording in candidate statements, or in the statements of proposal or review
@@ -22,11 +22,15 @@ const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, 
 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-  // Statements in a proposal file ({proposals: [{statement}]}) or a review file ([{statement}]). A
-  // proposal's "wordingOk" field explains why an error-level word is right there (e.g. "can" in "cannot").
+  // Statements in a proposal file ({proposals: [{statement}]}), a review file ([{statement}]) or an
+  // audit file (its open missingStatements). A "wordingOk" field explains why an error-level word is
+  // right there (e.g. "can" in "cannot").
   const fromFile = (f) => {
     const j = readJson(path.resolve(f));
-    const items = Array.isArray(j) ? j : j.proposals || [];
+    const items = Array.isArray(j) ? j : j.missingStatements
+      ? j.missingStatements.filter((m) => !m.addedAs && !m.declined)
+        .map((m, i) => ({ statement: { id: `missing[${i}]`, text: m.text }, wordingOk: m.wordingOk }))
+      : j.proposals || [];
     return items.filter((x) => x.statement && x.statement.text)
       .map((x) => ({ ...x.statement, wordingOk: x.wordingOk, from: path.basename(f) }));
   };
@@ -59,11 +63,12 @@ const rows = statements.map((q) => {
   const answered = audits.filter((a) => a.answers[q.id]).length;
   return { id: q.id, candidate: isCandidate(q), agree, disagree, answered, contested: agree > 0 && disagree > 0 };
 });
-const proposed = audits.flatMap((a) => (a.missingStatements || []).map((m) => ({ from: a.id, ...m })));
+const missing = audits.flatMap((a) => (a.missingStatements || []).map((m) => ({ from: a.id, ...m })));
 
 if (process.argv.includes("--json")) {
-  console.log(JSON.stringify({ audited: audits.length, statements: rows, proposed }, null, 1));
-  process.exit(0);
+  // Exit only once stdout is flushed: a piped output longer than 64 KB is cut off otherwise.
+  process.stdout.write(JSON.stringify({ audited: audits.length, statements: rows, missing }, null, 1) + "\n", () => process.exit(0));
+  return;
 }
 const line = (r) => `  ${r.id}  (${r.agree} agree, ${r.disagree} disagree, answered by ${r.answered}/${audits.length})`;
 console.log(`${audits.length} audited ideologies.\n`);
@@ -79,8 +84,8 @@ if (cands.length) {
   const waiting = cands.filter((r) => !r.contested);
   if (waiting.length) console.log(`Waiting:\n${waiting.map(line).join("\n")}`);
 }
-// Each proposal is marked once handled: "addedAs" (the statement id it became, or merged into) or
+// Each missing statement is marked once handled: "addedAs" (the statement id it became, or merged into) or
 // "declined" (why not), so the record shows where every statement came from.
-const open = proposed.filter((c) => !c.addedAs && !c.declined);
-console.log(`\nProposed by audits: ${proposed.length}, ${open.length} not yet handled.`);
+const open = missing.filter((c) => !c.addedAs && !c.declined);
+console.log(`\nMissing statements in audits: ${missing.length}, ${open.length} not yet handled.`);
 for (const c of open) console.log(`  [${c.from} ${c.value > 0 ? "+" : ""}${c.value}] ${c.text}`);
