@@ -59,8 +59,10 @@ no defining source states.
 **Every source has to discuss the ideology** (`scripts/source-check.js`, run by validate.js). A
 defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
-that does. List in `aliases` the other names the defining sources use for it (spelling variants,
-"Salafi jihadism" / "jihadi-Salafism", an eponym's own name for "-ism"s named after a person); each
+that does. List in `aliases` the other names the defining sources use for it, liberally (spelling variants,
+"Salafi jihadism" / "jihadi-Salafism", the eponym of an "-ism" named after a person: "Fortuyn" for
+Fortuynism). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
+for World communism), so an alias may never be another ideology's name. Each
 must appear in a defining source and may not be another ideology's name or alias. Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party

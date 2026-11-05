@@ -65,10 +65,14 @@ const mentionCount = (text, names) => count(text, [...new Set(names.flatMap(form
 const titleHead = (t) => { const h = norm(String(t || "").split(/[,:;(\u2013\u2014]| - /)[0]); return h.trim().split(" ").length >= 2 ? h : null; };
 // Wikipedia never defines an ideology (audits/AUDIT_RULES.md section 2): it can't be a defining source.
 const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
-// An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, or a spelling
-// variant of the ideology's name (same first six letters: "communisation" for "communization").
+// An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, the eponym an
+// "-ism" is named after ("Fortuyn" for "Fortuynism", "Mao" for "Maoism"), or a spelling variant of the
+// name (same first six letters: "communisation" for "communization"). Be liberal with aliases: what
+// the check exists to catch is a broader ideology's name ("communism" for World communism), and the
+// uniqueness check stops that.
 const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.length >= 2) return true;
-  return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 6 && norm(name).trim().replace(/ /g, "").slice(0, 6) === w[0].slice(0, 6)); };
+  const flat = norm(name).trim().replace(/ /g, "");
+  return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 6 && flat.slice(0, 6) === w[0].slice(0, 6)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
 let taken = null;
