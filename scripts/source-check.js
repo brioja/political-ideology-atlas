@@ -169,7 +169,13 @@ function check(id, audit, { strict = false } = {}) {
   if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }
-  for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
+  // An alias's quote names both the alias and the ideology itself, so the source is seen equating them
+  // ("'trans-exclusionary radical feminism', or TERFism") (Brandon, 2026-11-05: traceability).
+  for (const x of Array.isArray(audit.aliases) ? audit.aliases : []) {
+    problems.push(...evidence(id, audit, "alias", x, strict, (q) => mentions(q, [norm(entryName(x))])));
+    if (typeof x === "object" && x && typeof x.quote === "string" && !mentions(norm(x.quote), [norm(audit.name)]))
+      problems.push(`alias "${entryName(x)}": its quote doesn't name "${audit.name}" too, so it doesn't show the source equating them`);
+  }
   for (const x of Array.isArray(audit.authors) ? audit.authors : []) {
     const key = authorKey(x);
     if (strict && typeof x === "object" && !x.organisation && !(x.first && x.last)) problems.push(`author "${entryName(x)}" needs "first" and "last" (or "organisation")`);

@@ -69,7 +69,9 @@ defining source names a primary text differently from its title ("the 1856 Imper
 "Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
 `{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
 "quote": "<verbatim passage>" }`, a passage from that
-source's saved copy that uses the name; validate.js checks the quote is there and contains it. Save every source
+source's saved copy that uses the name; validate.js checks the quote is there and contains it. An
+alias's quote must name the ideology too, showing the source equating the two ("'trans-exclusionary
+radical feminism', or TERFism"). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
   program), use it.
