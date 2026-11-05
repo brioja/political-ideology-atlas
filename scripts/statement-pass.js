@@ -43,7 +43,7 @@ if (cmd === "next") {
   for (const p of j.proposals || []) {
     const s = p.statement || {};
     for (const k of ["id", "theme", "text", "agree", "disagree", "note", "icon"]) if (!s[k]) problems.push(`${s.id || "?"}: no ${k}`);
-    if (!(p.quotes || []).length) problems.push(`${s.id}: no quotes`);
+    if ((p.quotes || []).length < 2) problems.push(`${s.id}: fewer than two quotes (rule of two: at least two from separate places)`);
     const errs = s.text ? wordingMarks(s.text).errors : [];
     if (errs.length && !p.wordingOk) problems.push(`${s.id}: wording error (${errs.join(", ")}): reword, or explain in the proposal's "wordingOk"`);
   }

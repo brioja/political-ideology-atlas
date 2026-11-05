@@ -129,9 +129,11 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   sharia"), not one that only names this ideology ("Zionism is right").
 - Give this ideology's answer (`value`, -2 to +2, never 0), a one-sentence rationale, and at least
   one source id. These are positions you found, not guesses: cite where they are stated.
-- **Rule of three**, while the sources are open: collect three verbatim passages where the ideology
-  states the position (`quotes`), and word the statement as their common core. Three places show the
-  position is central, and the sources' own words keep the statement from being your paraphrase.
+- **Rule of two**, while the sources are open: collect at least two verbatim passages where the
+  ideology states the position, from two separate places (`quotes`), and word the statement as their
+  common core. A hard floor: a position stated in only one place may be a passing mention, so don't
+  list it. Two places show the position is held, and the sources' own words keep the statement from
+  being your paraphrase.
   Follow the rule and the wording lessons in `audits/PROMPT_STATEMENTS.md` section 2 ("Word it from
   the sources' own words" and "Lessons from earlier reviews").
 - Then run `node scripts/statements-check.js --wording audits/profiles/<id>.json` and reword every

@@ -31,7 +31,7 @@ agents too. This file adds what matters when running the audit workflows in
   missing statements (`missingStatements`), reviewed later with the statement-pass process below.
 
 - New ideologies get a statement pass before their audits: `audits/PROMPT_STATEMENTS.md` (Opus builds
-  the source library and proposes missing statements, each worded from three source quotes). Batches of
+  the source library and proposes missing statements, each worded from at least two source quotes from separate places). Batches of
   about 20 proposed statements go to one Codex review; statements Claude and Codex both approve go into
   `statements.json` as candidates without asking the maintainer. Check wording with
   `node scripts/statements-check.js --wording <files>`.

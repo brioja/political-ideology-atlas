@@ -60,9 +60,10 @@ ideology's local source library and (2) propose the defining statements the bank
   reading, not trivially true, no unstated context, not relative to the status quo, general (other
   ideologies can take a side; never names an ideology), not already in the bank.
 - Write `agree` and `disagree` per STANDARD.md "Explanations" and test 4.
-- **Word it from the sources' own words, not your paraphrase (rule of three).** Collect three
-  verbatim passages where the ideology states the position (the same source stating it three ways is
-  fine; record fewer only if fewer exist, and say so).
+- **Word it from the sources' own words, not your paraphrase (rule of two).** Collect at least two
+  verbatim passages where the ideology states the position, from two separate places (different
+  texts, or clearly separate parts of one long text). This is a hard floor: a position stated in only
+  one place may be a passing mention, not a defining one, so don't propose it.
   The statement is the common core of those passages, in their words wherever those words are
   neutral and plain; replace only what fails a test 3 check (a named country or group, a term only
   adherents use, such as "idolatry"). Don't add a qualifier none of them states.
