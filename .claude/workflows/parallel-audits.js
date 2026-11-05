@@ -43,16 +43,16 @@ Your ideology: ${it.name} (id: ${it.id}).
 1. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
    scopeNote, list missingStatements. Use WebSearch/WebFetch (load them with ToolSearch if deferred); cite only pages you
-   opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
-   overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
+   opened. There is no limit on sources: choose each new source to cover statement areas still unsupported rather than
+   another overview, and deepen within the audit (audits/AUDIT_RULES.md section 6). Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Save every source you download beyond the library into scratchpad/sources/${it.id}/ and add it to its
    index.json (create both if missing), so later passes read local files instead of fetching again:
    a plain-text extract (.txt, the copy you search and read) plus the original, gzipped if it is HTML (.html.gz). Extract a PDF
    with pdftotext (it keeps page breaks for page citations) and keep the PDF only if it yields no text (a scan). List both files in index.json.
    In your report, propose a color for the ideology (the integrator adds it to audits/ideology-colors.json): a documented
    tradition with its source, or a guess from its imagery.
-2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-uncertainty ${it.id}\` (the integrator checks
-   the uncertainty rule for the whole wave); fix every error it reports. Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
+2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js ${it.id}\`; fix every error it reports
+   except the uncertainty rule, and deepen on the lines it names (audits/AUDIT_RULES.md section 6). Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
    statement; never pad or generate rationales by script to pass a length check.
 3. Leave missingStatements entries unhandled: do NOT set addedAs or declined, and do NOT edit statements.json.
    An integrator handles missing statements from all lanes together.

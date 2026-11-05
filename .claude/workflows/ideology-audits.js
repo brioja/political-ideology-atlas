@@ -65,7 +65,7 @@ Read ${ROOT}/audits/PROMPT.md first and follow it exactly. Fill its placeholders
 
 The statements are in ${ROOT}/statements.json. Write your audit to ${ROOT}/audits/profiles/${i.id}.json.
 Use WebSearch and WebFetch (load them with ToolSearch if they are deferred) to read real sources, and cite only pages you opened.
-Be economical: 4-6 well-chosen sources are enough. Prefer open-access sources (Stanford or Internet Encyclopedia of Philosophy,
+There is no limit on sources: research until the record is covered (audits/AUDIT_RULES.md section 6). Prefer open-access sources (Stanford or Internet Encyclopedia of Philosophy,
 marxists.org and similar text archives, party sites, Wikipedia); Britannica and many magazines block automated access.
 Then run \`node ${ROOT}/scripts/validate.js ${i.id}\` and fix every error until it passes. The one exception is an uncertainty
 error (exit code 2): it means the stated positions leave a dividing line mostly unknown, which is an honest result. Leave it and never raise a confidence to pass it.

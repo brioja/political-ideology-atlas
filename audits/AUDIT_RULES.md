@@ -155,10 +155,16 @@ whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred
 rules 2 still hold. A failure names the lines whose bars are too wide. Don't pad answers to pass: an honest
 rejection is the correct outcome.
 
-## 6. Deepening an existing audit
+## 6. Deepening
 
-The runner may ask for another pass on an audit that fails the uncertainty rule or sits close to it.
-Build on the existing audit rather than starting over:
+**Deepening is part of the audit, not a later pass** (Brandon, 2026-11-05). There is no limit on
+sources. If your draft fails the uncertainty rule, keep researching before you finish: the lines the
+validator names, then the statements still null, in new sources (the local corpora too). Stop when
+they are covered or when the record really has nothing more, and say in `notes` which themes you
+searched. Never raise a confidence to pass.
+
+A separate pass on a finished audit happens only when new sources become available (a new corpus, a
+book the maintainer supplies). Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
 - Keep the subject. Don't borrow a related subject's positions (secular humanism's for secularism,
   a party's for one of its members, a relative's or employer's for a person).

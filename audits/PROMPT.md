@@ -196,7 +196,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 }
 ```
 
-## 7. Deepening an existing audit
+## 7. Deepening
 
 Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
 ideology itself states (its programmes, defining thinkers, organisations and the scholarship on
