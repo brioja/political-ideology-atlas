@@ -177,7 +177,10 @@ function check(id, audit) {
   const authors = Array.isArray(audit.authors) ? audit.authors : [];
   const authorOk = [];
   for (const au of authors) {
-    const sur = norm(String(au).trim().split(/\s+/).pop());
+    // A person is matched by surname; an organisation (four words or more: "Socialist Party of Great
+    // Britain") by its full name.
+    const words = String(au).trim().split(/\s+/);
+    const sur = norm(words.length >= 4 ? au : words.pop());
     const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
     if (others.length) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
     if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
