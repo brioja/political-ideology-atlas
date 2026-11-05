@@ -46,7 +46,9 @@ Your ideology: ${it.name} (id: ${it.id}).
    opened. Use 3-4 well-chosen sources, choosing later ones to cover statement areas still unsupported rather than another
    overview. Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Save every source you download beyond the library into scratchpad/sources/${it.id}/ and add it to its
-   index.json (create both if missing), so later passes read local files instead of fetching again.
+   index.json (create both if missing), so later passes read local files instead of fetching again:
+   a plain-text extract (.txt, the copy you search and read) plus the original, gzipped if it is HTML (.html.gz); a PDF
+   stays as it is. List both files in index.json.
    In your report, propose a color for the ideology (the integrator adds it to audits/ideology-colors.json): a documented
    tradition with its source, or a guess from its imagery.
 2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js --no-uncertainty ${it.id}\` (the integrator checks

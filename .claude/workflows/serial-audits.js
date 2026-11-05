@@ -37,7 +37,9 @@ const tickPrompt = `You do one step of a serial ideology audit. Working director
    new source to cover statement areas still unsupported rather than another overview. Prefer open-access sources (SEP/IEP,
    marxists.org, Gutenberg, party sites); Britannica blocks access. Check the local corpora too
    (~/.cache/political-ideology-atlas/corpora/: Marxists, Gutenberg, parliamentary records). Save every source you download beyond the library into scratchpad/sources/<id>/ and add it to its
-   index.json (create both if missing), so later passes read local files instead of fetching again.
+   index.json (create both if missing), so later passes read local files instead of fetching again:
+   a plain-text extract (.txt, the copy you search and read) plus the original, gzipped if it is HTML (.html.gz); a PDF
+   stays as it is. List both files in index.json.
    Wikipedia-style neutral standard. Write audits/profiles/<id>.json and run \`node scripts/validate.js <id>\`; fix every error
    except the uncertainty rule.
    If it fails the uncertainty rule (exit code 2), keep researching before you commit: search the lines and themes the

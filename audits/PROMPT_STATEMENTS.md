@@ -21,7 +21,8 @@ ideology's local source library and (2) propose the defining statements the bank
   `~/.cache/political-ideology-atlas/corpora/` (README.md lists them; `marxists/`, `gutenberg/`,
   `millercenter/`, `reference/text/` are the likely ones; their `tools/*.js` search them).
 - Download open-access full texts into `scratchpad/sources/<id>/` (never committed), as plain text
-  where you can (`.txt`; keep the original next to it if you converted it). List every file in
+  always (`.txt`, the copy you search and read), with the original next to it: gzipped if it is HTML
+  (`.html.gz`), a PDF as it is. List every file in
   `scratchpad/sources/<id>/index.json` as `[{ "file", "title", "url", "downloaded": "YYYY-MM-DD", "kind": "primary"|"scholarly" }]`.
   Check a site's robots.txt **before** the first fetch from it, and skip the site if it blocks AI
   crawlers or Claude; follow its terms; no archive copies of sites that block AI; don't push past a 403, a bot check or a
