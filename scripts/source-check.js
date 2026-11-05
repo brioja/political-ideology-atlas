@@ -102,6 +102,20 @@ function namesTaken() {
   return taken;
 }
 
+let takenAuthors = null;
+function authorsTaken() {
+  if (takenAuthors) return takenAuthors;
+  takenAuthors = new Map();
+  for (const f of fs.readdirSync(lib.PROFILES_DIR)) {
+    if (!f.endsWith(".json")) continue;
+    let a; try { a = JSON.parse(fs.readFileSync(path.join(lib.PROFILES_DIR, f), "utf8")); } catch { continue; }
+    for (const au of Array.isArray(a.authors) ? a.authors : []) {
+      const k = norm(au); if (!takenAuthors.has(k)) takenAuthors.set(k, new Set()); takenAuthors.get(k).add(f.slice(0, -5));
+    }
+  }
+  return takenAuthors;
+}
+
 function check(id, audit) {
   const problems = [], unchecked = [];
   const aliases = Array.isArray(audit.aliases) ? audit.aliases : [];
@@ -127,6 +141,18 @@ function check(id, audit) {
   // sources that discuss the ideology (defining sources, and primary texts that passed on their own;
   // never Wikipedia) name it by title twice between them. One mention may be in passing; a source
   // that never names the ideology can't vouch for a text (the World communism case).
+  // Defining authors ("authors"): the ideology's own thinkers, as its defining sources name them. Each
+  // must be named (by surname) at least twice in the defining sources and belong to no other
+  // ideology's "authors". A primary text by one of them is tied to the ideology.
+  const authors = Array.isArray(audit.authors) ? audit.authors : [];
+  const authorOk = [];
+  for (const au of authors) {
+    const sur = norm(String(au).trim().split(/\s+/).pop());
+    const others = [...(authorsTaken().get(norm(au)) || [])].filter((o) => o !== id);
+    if (others.length) { problems.push(`author "${au}" is also a defining author of ${others.join(", ")}`); continue; }
+    if (count(defining.join(" "), [sur]) < 2) { problems.push(`author "${au}" is named fewer than twice in the defining sources`); continue; }
+    authorOk.push(sur);
+  }
   const primaries = sources.filter((s) => s.kind === "primary" || s.kind === "program");
   const vouching = [...defining];
   const pending = [];
@@ -136,11 +162,14 @@ function check(id, audit) {
     pending.push({ s, t });
   }
   for (const { s, t } of pending) {
-    const heads = titleHeads(s.title);
+    // Other titles the sources that discuss the ideology use for the text ("titles": ["Hatt-ı Hümayun"]).
+    const heads = [...titleHeads(s.title), ...(Array.isArray(s.titles) ? s.titles : []).map(norm).filter((h) => h.trim().split(" ").length >= 2)];
     const own = t || "";
     const others = vouching.filter((v) => v !== own).join(" ");
     const named = heads.some((h) => count(others, [h]) >= 2);
     if (named) continue;
+    // A defining author's text: its author is one the audit lists in "authors" (see below).
+    if (authorOk.length && s.author && authorOk.some((sur) => norm(s.author).includes(sur))) continue;
     // No saved copy: it can't be judged either way. New audits must save every source, and validate.js
     // makes an unchecked source an error for them.
     if (t == null) { unchecked.push(s.id); continue; }

@@ -63,7 +63,11 @@ that does. List in `aliases` the other names the defining sources use for it, li
 "Salafi jihadism" / "jihadi-Salafism", the eponym of an "-ism" named after a person: "Fortuyn" for
 Fortuynism). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
 for World communism), so an alias may never be another ideology's name. Each
-must appear in a defining source and may not be another ideology's name or alias. Save every source
+must appear in a defining source and may not be another ideology's name or alias. List in `authors`
+the ideology's own thinkers as its defining sources name them (each named at least twice there, and
+no other ideology's defining author): a primary text by one of them is tied to the ideology. When a
+defining source names a primary text differently from its title ("the 1856 Imperial Rescript" for the
+"Rescript of Reform"), record those names in the source's `titles`. Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
   program), use it.
@@ -168,6 +172,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "aliases": ["Other names the defining sources use for it, or [] for none"],
+  "authors": ["The ideology's own thinkers as its defining sources name them, or [] for none"],
   "wikipedia": "https://en.wikipedia.org/wiki/… or null",
   "furtherReading": [
     { "title": "Readable title", "url": "https://…", "note": "One line on why it's worth reading" }
