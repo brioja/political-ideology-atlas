@@ -73,7 +73,7 @@ const titleHeads = (t) => {
 };
 // Wikipedia never defines an ideology (audits/AUDIT_RULES.md section 2): it can't be a defining source.
 const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return new URL(s.url).host; } catch { return ""; } })());
-// An alias is a name, not an everyday word: several words, an -ism/-ist/-ian form, the eponym an
+// An alias is a name, not an everyday word: several words, an acronym of the name, an -ism/-ist/-ian form, the eponym an
 // "-ism" is named after ("Fortuyn" for "Fortuynism", "Mao" for "Maoism"), or a spelling variant of the
 // name or a translation sharing its first four letters ("communisation" for "communization",
 // "laïcité" for "laicism"). Be liberal with aliases: what
@@ -81,6 +81,9 @@ const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return ne
 // uniqueness check stops that.
 const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.length >= 2) return true;
   const flat = norm(name).trim().replace(/ /g, "");
+  // An acronym of the name's words ("TERF" for trans-exclusionary radical feminism).
+  const initials = norm(name).trim().split(" ").map((x) => x[0]).join("");
+  if (w[0].length >= 3 && (w[0] === initials || w[0] === initials + "s")) return true;
   return /(isms?|ists?|ians?)$/.test(w[0]) || (w[0].length >= 3 && flat.startsWith(w[0])) || (w[0].length >= 5 && flat.slice(0, 4) === w[0].slice(0, 4)); };
 
 // Every ideology audit's name and aliases, normalized, for the uniqueness check.
