@@ -92,7 +92,7 @@ rather than borrowed. Left as they are; look again when the audit gets its next 
   Reactionary feminism, United Armenia, Greater Indonesia, Völkisch nationalism (Chamberlain, Class, Lagarde),
   Trans-exclusionary radical feminism (Women's Declaration, Jeffreys submission)
 
-Cleared as borrowing on 2026-11-05 (answers resting only on those sources set to null): Arab nationalism
+Cleared as borrowing on 2026-11-05 (answers resting only on those sources set to null): Moderate conservatism (SEP on conservatism, Burke; its "moderate reform" alias was descriptive), Arab nationalism
 (Ba'th texts), Majoritarianism (Locke, Dicey), Elitism (Plato), Isolationism and Non-interventionism
 (US founding texts), Christian communism (Winstanley), Northwest Territorial Imperative (general reports
 on neo-Nazi groups), Ultraconservatism (a general source on conservatism), Postliberalism (Deneen,
