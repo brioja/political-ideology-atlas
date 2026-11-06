@@ -4,8 +4,8 @@
 //
 // The likelihood is learned from the audits already done: a logistic regression on Wikidata facts about
 // each person (offices held, party, stated ideology, occupations, notable works, memberships, number of
-// Wikipedia languages, era; own writings: a Gutenberg author ID, works authored and own books already on
-// disk (fetched by prefetch-books.js before each people run), kept only if they raise the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
+// Wikipedia languages, era; own writings: a Gutenberg author ID, works authored and own full-length books
+// already on disk (about 20,000 words or more; fetched by prefetch-books.js before each people run), kept only if they raise the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
 // person. The regularisation strength is chosen by cross-validation; nothing is hand-weighted. Gender and
 // region are left out on purpose: they would only reproduce who has been documented, not who has a record.
 // Rerun after audits (labels grow): writes audits/people-triage.json, read by pending.js --triage.

@@ -48,5 +48,6 @@ rest on evidence (and record DOES_NOT_INCLUDE_IDEAS where the content has no pol
   on the 202 current-rules audits. The Wikipedia lead sentence plus local corpus gave 0.61 on 211, though "ideology" in the lead
   passed 43% against 17% for "concept" or "form". Gutenberg subject-heading counts anti-predicted: broad topics
   such as Racism and Nationalism have many books. Revisit once more ideologies have current-rules audits. If the
-  pattern firms up, add the downloaded-corpus check to an ideology triage score, the way people do it. No
+  pattern firms up, add the downloaded-corpus check to an ideology triage score, the way people do it, counting
+  full-length books only (about 20,000 words or more), never papers or articles. No
   LLM classification of leads ("too subjective and easy to get wrong").

@@ -116,18 +116,40 @@ async function main() {
   fs.writeFileSync(DOC, md.join("\n"));
   console.log(`${pending.length} people checked; ${added.length} Gutenberg books added to the local corpus; ${order.reduce((n, [, s]) => n + s.wanted.length, 0)} wanted works listed in ${DOC}.`);
 }
-// Own books already on disk for a person (Brandon: download first, then check locally): Gutenberg books in the
-// local corpus, the maintainer's reference library, or a local Marxists Internet Archive section. Used by triage.js.
+// Own books already on disk for a person (Brandon: download first, then check locally), counting full-length
+// books only (Brandon, 2026-11-06: papers, speeches and articles would make the triage look easier to pass):
+// a text of about 20,000 words or more (BOOK_BYTES of plain text). Sources: Gutenberg books in the local
+// corpus, the maintainer's reference library (its index has word counts), and a local Marxists Internet
+// Archive section, where a book is split into chapter files, so a work's folder counts once it adds up to book
+// length. Used by triage.js.
+const BOOK_WORDS = 20000, BOOK_BYTES = BOOK_WORDS * 6;
+function marxistsBooks(dir) {
+  if (!fs.existsSync(dir)) return 0;
+  // A work split into chapters has a folder of its own (works/1917/staterev/ch01.txt...); year folders and the
+  // author's index folders hold separate short pieces, so only a single file of book length counts there.
+  const byWork = new Map(); let single = 0;
+  const walk = (d) => { for (const f of fs.readdirSync(d, { withFileTypes: true })) {
+    const p = path.join(d, f.name);
+    if (f.isDirectory()) { walk(p); continue; }
+    if (!f.name.endsWith(".txt")) continue;
+    const size = fs.statSync(p).size, folder = path.basename(d);
+    if (d === dir || /^\d{4}(-\d{2,4})?$/.test(folder) || /^(works|subject|letters|quotes|index|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|xx)$/i.test(folder)) { if (size >= BOOK_BYTES) single++; }
+    else byWork.set(d, (byWork.get(d) || 0) + size);
+  } };
+  walk(dir);
+  return single + [...byWork.values()].filter((b) => b >= BOOK_BYTES).length;
+}
 function availableBooks(people) {
   const catalog = readCsv(path.join(GUT, "raw", "pg_catalog.csv"));
-  const localGut = new Set(fs.readdirSync(path.join(GUT, "raw", "books")));
-  const refFiles = fs.readdirSync(path.join(CORPORA, "reference", "text")).map(fold);
+  const gutText = new Map(fs.readdirSync(path.join(GUT, "text")).map((f) => [f.split(" ")[0], path.join(GUT, "text", f)]));
+  const refBooks = fs.readFileSync(path.join(CORPORA, "reference", "index.tsv"), "utf8").split("\n")
+    .map((l) => l.split("\t")).filter(([w, f]) => f && Number(w) >= BOOK_WORDS).map(([, f]) => fold(f));
   const out = {};
   for (const p of people) {
     const surname = fold(p.name.split(/\s+/).pop());
-    out[p.id] = gutenbergBooks(catalog, p).filter((b) => localGut.has(b["Text#"])).length
-      + refFiles.filter((f) => f.includes(fold(p.name)) || f.includes(surname + ",")).length
-      + (fs.existsSync(path.join(CORPORA, "marxists", "text", surname)) ? 1 : 0);
+    out[p.id] = gutenbergBooks(catalog, p).filter((b) => gutText.has(b["Text#"]) && fs.statSync(gutText.get(b["Text#"])).size >= BOOK_BYTES).length
+      + refBooks.filter((f) => f.includes(fold(p.name)) || f.includes(surname + ",")).length
+      + marxistsBooks(path.join(CORPORA, "marxists", "text", surname));
   }
   return out;
 }
