@@ -69,7 +69,10 @@ that does. List in `aliases` the other names the defining sources use for it, li
 Fortuynism). The check exists to stop an audit leaning on a broader ideology's sources ("communism"
 for World communism), so an alias may never be another ideology's name or alias. List in `authors`
 the ideology's own thinkers as its defining sources name them (each named at least twice there, and
-no other ideology's defining author): a primary text by one of them is tied to the ideology. When a
+no other ideology's defining author): a primary text by one of them is tied to the ideology. List a
+defining author only when the defining sources present the ideology as that person's body of thought;
+never for a single doctrine, policy or programme named after someone (the Monroe Doctrine), whose
+namesake's other views aren't part of it: tie its texts by title instead (Monroe's 1823 annual message). When a
 defining source names a primary text differently from its title ("the 1856 Imperial Rescript" for the
 "Rescript of Reform"), record those names in the source's `titles`. Give each alias, author and title its evidence:
 `{ "name" (an author: "first" and "last", or "organisation"; a title: "title"), "source": "<source id>",
