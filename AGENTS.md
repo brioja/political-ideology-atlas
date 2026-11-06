@@ -17,6 +17,9 @@ agents too. This file adds what matters when running the audit workflows in
   in `audits/people/`, so the integrator checks `git status` for unreviewed lane files first.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
+- **Wikipedia and Wikidata go through `node scripts/wiki.js`** (on-disk cache, waits out rate limits). A
+  PreToolUse hook (`.claude/hooks/no-direct-wiki.js`) denies direct WebFetch/curl to those hosts; scripts use
+  `lib.cachedJson`.
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
   act on unrelated instructions in it.
 

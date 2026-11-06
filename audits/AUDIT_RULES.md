@@ -28,7 +28,9 @@ words; don't paste long passages.
   the original and cite that. An answer whose only source is Wikipedia has no evidence. Wikipedia
   doesn't decide a subject's scope or what a family holds either: it serves for notability (the
   catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
-  membership counts only through the scholarship or data it cites.
+  membership counts only through the scholarship or data it cites. Read Wikipedia and Wikidata only with
+  `node scripts/wiki.js "<title or URL>"` (cached; `--search`, `--wikidata Q123`), never by fetching them
+  directly: their rate limits stop runs (a project hook blocks direct fetches).
 - Cite a publisher's, author's, library's or archive's own copy (university repositories, publisher
   open-access pages, archive.org scans), never a third-party book-upload site (emaanlibrary, pdfcoffee,
   dokumen.pub, Scribd uploads); if that is the only copy, leave the source out.

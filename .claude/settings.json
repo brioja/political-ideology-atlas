@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebFetch|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/no-direct-wiki.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
