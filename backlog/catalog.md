@@ -38,3 +38,7 @@ form of government, which stays in), or event (war, revolution, election, battle
 An item that Wikidata ALSO files as an ideology, political movement, doctrine or policy is not excluded.
 Periods are NOT filtered. Data: Wikidata P31 + P279* (SPARQL or wbgetentities, slowly; 429 on 11-05).
 Sits beside scripts/resolve-articles.js (notability) and lib.duplicateOf; agents then judge only content.
+Done 2026-11-05: 474 of the re-checked rejects added to the catalog (source "precheck-rerun"): every
+reject whose first Wikipedia sentence isn't a person, party, organization, state, government body or event,
+minus disambiguation pages and articles already in the catalog. 50 entities stay out. The audits decide the
+rest on evidence (and record DOES_NOT_INCLUDE_IDEAS where the content has no political ideas).
