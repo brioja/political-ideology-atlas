@@ -4,8 +4,8 @@
 //
 // The likelihood is learned from the audits already done: a logistic regression on Wikidata facts about
 // each person (offices held, party, stated ideology, occupations, notable works, memberships, number of
-// Wikipedia languages, era; own writings: a Gutenberg author ID and works authored, kept only if they raise
-// the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
+// Wikipedia languages, era; own writings: a Gutenberg author ID, works authored and own books already on
+// disk (fetched by prefetch-books.js before each people run), kept only if they raise the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
 // person. The regularisation strength is chosen by cross-validation; nothing is hand-weighted. Gender and
 // region are left out on purpose: they would only reproduce who has been documented, not who has a record.
 // Rerun after audits (labels grow): writes audits/people-triage.json, read by pending.js --triage.
@@ -88,6 +88,9 @@ async function main() {
   const people = lib.peopleCatalog();
   const facts = await entities([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
   const works = await worksAuthored([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
+  // Own books on disk (local Gutenberg corpus, reference library, Marxists section; prefetch-books.js), counted the
+  // same way for audited and pending people.
+  const available = require("./prefetch-books").availableBooks(people);
   const occCount = new Map();
   for (const f of facts.values()) for (const o of new Set(f.P106)) occCount.set(o, (occCount.get(o) || 0) + 1);
   const occs = [...occCount].filter(([, n]) => n >= MIN_OCC).map(([o]) => o).sort();
@@ -98,12 +101,12 @@ async function main() {
       Math.log1p(f.P800), Math.log1p(f.P463), p.living ? 1 : 0, born < 1500 ? 1 : 0, born >= 1500 && born < 1800 ? 1 : 0,
       born >= 1800 && born < 1900 ? 1 : 0, born >= 1900 && born < 1945 ? 1 : 0, ...occs.map((o) => (f.P106.includes(o) ? 1 : 0)),
       // Own writings (last BOOK_FEATURES columns, so the fit can be compared with and without them).
-      f.gutenberg ? 1 : 0, Math.log1p(works[p.wikidata] || 0)];
+      f.gutenberg ? 1 : 0, Math.log1p(works[p.wikidata] || 0), Math.log1p(available[p.id] || 0)];
   };
   const names = ["log views", "log languages", "log offices held", "party", "stated ideology", "log notable works", "log memberships",
     "living", "born <1500", "born 1500-1799", "born 1800-1899", "born 1900-1944", ...occs.map((o) => `occupation ${o}`),
-    "Gutenberg author", "log works authored"];
-  const BOOK_FEATURES = 2;
+    "Gutenberg author", "log works authored", "log own books available"];
+  const BOOK_FEATURES = 3;
   const all = people.map(raw);
   // Standardise on the whole pool.
   const mean = all[0].map((_, j) => all.reduce((s, r) => s + r[j], 0) / all.length);
@@ -146,7 +149,7 @@ async function main() {
     lambda, crossValidatedAuc: Math.round(cvAuc * 1000) / 1000, viewsOnlyAuc: Math.round(viewsAuc * 1000) / 1000,
     ownWritings: { used: useBooks, aucWith: Math.round(withBooks[1] * 1000) / 1000, aucWithout: Math.round(withoutBooks[1] * 1000) / 1000 },
     topWeights: weights.slice(0, 15), scores }, null, 1) + "\n");
-  console.log(`Own-writings features (Gutenberg author, works authored): AUC ${withBooks[1].toFixed(3)} with, ${withoutBooks[1].toFixed(3)} without -> ${useBooks ? "used" : "left out"}.`);
+  console.log(`Own-writings features (Gutenberg author, works authored, own books available): AUC ${withBooks[1].toFixed(3)} with, ${withoutBooks[1].toFixed(3)} without -> ${useBooks ? "used" : "left out"}.`);
   console.log(`${yl.length} audited (${yl.filter(Boolean).length} passed). Cross-validated AUC ${cvAuc.toFixed(3)} (lambda ${lambda}); views alone ${viewsAuc.toFixed(3)}.`);
   console.log("Strongest weights:", weights.slice(0, 10).map(([n, w]) => `${n} ${w}`).join(", "));
 }

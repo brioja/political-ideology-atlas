@@ -116,4 +116,20 @@ async function main() {
   fs.writeFileSync(DOC, md.join("\n"));
   console.log(`${pending.length} people checked; ${added.length} Gutenberg books added to the local corpus; ${order.reduce((n, [, s]) => n + s.wanted.length, 0)} wanted works listed in ${DOC}.`);
 }
-main().catch((e) => { console.error(e.message); process.exit(1); });
+// Own books already on disk for a person (Brandon: download first, then check locally): Gutenberg books in the
+// local corpus, the maintainer's reference library, or a local Marxists Internet Archive section. Used by triage.js.
+function availableBooks(people) {
+  const catalog = readCsv(path.join(GUT, "raw", "pg_catalog.csv"));
+  const localGut = new Set(fs.readdirSync(path.join(GUT, "raw", "books")));
+  const refFiles = fs.readdirSync(path.join(CORPORA, "reference", "text")).map(fold);
+  const out = {};
+  for (const p of people) {
+    const surname = fold(p.name.split(/\s+/).pop());
+    out[p.id] = gutenbergBooks(catalog, p).filter((b) => localGut.has(b["Text#"])).length
+      + refFiles.filter((f) => f.includes(fold(p.name)) || f.includes(surname + ",")).length
+      + (fs.existsSync(path.join(CORPORA, "marxists", "text", surname)) ? 1 : 0);
+  }
+  return out;
+}
+module.exports = { availableBooks };
+if (require.main === module) main().catch((e) => { console.error(e.message); process.exit(1); });
