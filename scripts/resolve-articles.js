@@ -1,12 +1,16 @@
-// Notability by Wikipedia, decided by data (Brandon, 2026-11-05). For every catalog entry, asks the
-// English Wikipedia API about the entry's name and records in audits/wikipedia-articles.json:
-//   title          the article the name lands on (after a redirect), or null
-//   redirect       the name is a redirect; its categories say what kind
-//   disambiguation the name (or its target) is a disambiguation page
-//   notable        has an article of its own: the name is the article, or a redirect that Wikipedia
+// Notability by Wikipedia, decided by data (Brandon, 2026-11-05). For every catalog entry, starts from
+// the entry's own article link (catalog `wikipedia`, never its display name: title-cased and generic
+// names misread) and records in audits/wikipedia-articles.json:
+//   title          the article the link lands on (after a redirect), or null
+//   redirect       the entry was found through a redirect (wikipediaMatch "redirect", or the link itself
+//                  now redirects); the redirect page's categories say what kind
+//   disambiguation the article is a disambiguation page
+//   notable        has an article of its own: the link is the article, or a redirect that Wikipedia
 //                  files as another name for it (alternative name, spelling, capitalisation,
 //                  abbreviation, other language...). A missing page, a disambiguation page, or a
 //                  redirect to a section, subtopic or related topic is not.
+// For a "redirect" entry the redirect is the name (or its sentence case) that lands on the linked
+// article, as scripts/wikipedia.js found it.
 // scripts/lib.js reads the file: non-notable entries are never queued, built or audited, and
 // duplicates are decided on the resolved titles. Run after the catalog changes:
 //   node scripts/resolve-articles.js
@@ -29,30 +33,49 @@ async function get(params) {
     }
   }
 }
-const sleep = () => Promise.resolve();
 // Redirect categories that make a redirect another name for its target.
 const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
 const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;
 
-async function main() {
-  const entries = lib.catalog();
-  const names = [...new Set(entries.map((e) => e.name))];
-  const info = new Map(); // name -> { title, redirect, fragment, disambiguation, missing }
-  for (let i = 0; i < names.length; i += 50) {
-    const batch = names.slice(i, i + 50);
+const linkTitle = (url) => decodeURIComponent(String(url || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/_/g, " ");
+
+// Resolves titles in batches of 50: title -> { from, title, redirect, fragment, disambiguation, missing }.
+async function resolve(titles) {
+  const info = new Map();
+  for (let i = 0; i < titles.length; i += 50) {
+    const batch = titles.slice(i, i + 50);
     const r = await get({ action: "query", titles: batch.join("|"), redirects: "1", prop: "pageprops", ppprop: "disambiguation" });
     const norm = new Map((r.query.normalized || []).map((x) => [x.from, x.to]));
     const redir = new Map((r.query.redirects || []).map((x) => [x.from, x]));
     const pages = new Map((r.query.pages || []).map((p) => [p.title, p]));
     for (const n of batch) {
       const t0 = norm.get(n) || n, rd = redir.get(t0), target = rd ? rd.to : t0, p = pages.get(target) || {};
-      info.set(n, { from: t0, title: p.missing ? null : target, redirect: !!rd, fragment: rd && rd.tofragment || null,
+      info.set(n, { from: t0, title: p.missing || p.invalid ? null : target, redirect: !!rd, fragment: rd && rd.tofragment || null,
         disambiguation: !!(p.pageprops && "disambiguation" in p.pageprops), missing: !!p.missing || p.invalid === true });
     }
-    await sleep(1000);
+  }
+  return info;
+}
+
+async function main() {
+  const entries = lib.catalog();
+  const links = await resolve([...new Set(entries.map((e) => linkTitle(e.wikipedia)).filter(Boolean))]);
+  // For entries found through a redirect: the name, or its sentence case, that lands on the linked article.
+  const plain = (n) => n.replace(/\s*\(.*?\)\s*/g, " ").trim();
+  const variants = (n) => [...new Set([plain(n), plain(n)[0] + plain(n).slice(1).toLowerCase()])];
+  const viaNames = await resolve([...new Set(entries.filter((e) => e.wikipediaMatch === "redirect").flatMap((e) => variants(e.name)))]);
+  const info = new Map(); // id -> resolved info
+  for (const e of entries) {
+    const l = links.get(linkTitle(e.wikipedia)) || { title: null, missing: true };
+    let x = { ...l };
+    if (e.wikipediaMatch === "redirect" && !l.redirect && l.title) {
+      const v = variants(e.name).map((n) => viaNames.get(n)).find((y) => y && y.redirect && y.title === l.title);
+      if (v) x = { ...l, from: v.from, redirect: true, fragment: v.fragment };
+    }
+    info.set(e.id, x);
   }
   // Categories of the redirect pages themselves (what kind of redirect each is).
-  const redirects = [...info.values()].filter((x) => x.redirect).map((x) => x.from);
+  const redirects = [...new Set([...info.values()].filter((x) => x.redirect).map((x) => x.from))];
   const cats = new Map();
   for (let i = 0; i < redirects.length; i += 50) {
     const batch = redirects.slice(i, i + 50);
@@ -61,12 +84,11 @@ async function main() {
       const r = await get({ action: "query", titles: batch.join("|"), prop: "categories", cllimit: "max", ...cont });
       for (const p of r.query.pages || []) cats.set(p.title, [...(cats.get(p.title) || []), ...(p.categories || []).map((c) => c.title.replace(/^Category:/, ""))]);
       cont = r.continue || {};
-      await sleep(1000);
     } while (cont.clcontinue);
   }
   const out = {};
   for (const e of entries) {
-    const x = info.get(e.name) || {};
+    const x = info.get(e.id) || {};
     const c = x.redirect ? cats.get(x.from) || [] : [];
     let notable = true, reason = "own article";
     if (x.missing || !x.title) { notable = false; reason = "no Wikipedia page"; }
