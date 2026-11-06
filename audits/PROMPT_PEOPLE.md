@@ -31,7 +31,7 @@ is specific to people.
   federalism) and world (wars, alliances, aid, the UN) are the themes most often left thin.
 - For people whose output is mostly video (streamers, podcasters, commentators), search their own
   channels and clips by theme ("<name> on NATO", "<name> Supreme Court", "<name> elections") and
-  read the captions with yt-dlp. Their reactions to news segments state positions too.
+  read the captions with `node scripts/yt.js "<url>"` (search: `node scripts/yt.js --search "<words>"`). Their reactions to news segments state positions too.
 - If a page comes back as an empty JavaScript shell (common on transcript databases), render it with
   headless Chrome: `google-chrome --headless=new --disable-gpu --virtual-time-budget=15000
   --dump-dom <url>`, then strip the tags. Transcripts and captions rarely label speakers: use a
@@ -47,7 +47,7 @@ is specific to people.
   pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
   own answer is direct evidence, so it can be `high` confidence, but only where the quiz item says
   the same thing as our statement; otherwise use it as context. Get the words from the video's
-  captions, e.g. `yt-dlp --skip-download --write-auto-subs --sub-langs en-orig --sub-format vtt <url>`,
+  captions (`node scripts/yt.js "<url>"`),
   cite the video as a `primary` source, and use only answers they clearly give, not jokes or banter.
 
 ## 2. Answer every statement

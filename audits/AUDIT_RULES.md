@@ -30,7 +30,9 @@ words; don't paste long passages.
   catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
   membership counts only through the scholarship or data it cites. Read Wikipedia and Wikidata only with
   `node scripts/wiki.js "<title or URL>"` (cached; `--search`, `--wikidata Q123`), never by fetching them
-  directly: their rate limits stop runs (a project hook blocks direct fetches).
+  directly: their rate limits stop runs (a project hook blocks direct fetches). The same goes for YouTube
+  (`node scripts/yt.js`, captions and search, paced) and Project Gutenberg (`node scripts/gutenberg.js`, its
+  mirror, as its robot policy requires).
 - Cite a publisher's, author's, library's or archive's own copy (university repositories, publisher
   open-access pages, archive.org scans), never a third-party book-upload site (emaanlibrary, pdfcoffee,
   dokumen.pub, Scribd uploads); if that is the only copy, leave the source out.
