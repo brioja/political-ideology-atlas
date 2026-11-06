@@ -42,3 +42,11 @@ Done 2026-11-05: 474 of the re-checked rejects added to the catalog (source "pre
 reject whose first Wikipedia sentence isn't a person, party, organization, state, government body or event,
 minus disambiguation pages and articles already in the catalog. 50 entities stay out. The audits decide the
 rest on evidence (and record DOES_NOT_INCLUDE_IDEAS where the content has no political ideas).
+- **Ideology triage, revisit later** (Brandon, 2026-11-06): ideologies are audited by views, while people go by
+  triage (`scripts/triage.js`: chance of passing from Wikidata facts plus own books on disk). Two tries for
+  ideologies on 11-06 didn't predict passing well enough. Wikidata metadata gave a cross-validated AUC of 0.57
+  on the 202 current-rules audits. The Wikipedia lead sentence plus local corpus gave 0.61 on 211, though "ideology" in the lead
+  passed 43% against 17% for "concept" or "form". Gutenberg subject-heading counts anti-predicted: broad topics
+  such as Racism and Nationalism have many books. Revisit once more ideologies have current-rules audits. If the
+  pattern firms up, add the downloaded-corpus check to an ideology triage score, the way people do it. No
+  LLM classification of leads ("too subjective and easy to get wrong").
