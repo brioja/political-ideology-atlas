@@ -25,6 +25,8 @@ full audit if the entry is:
 - not a set of political beliefs: an organisation, party, movement as a group, event, period,
   office, person, place, prejudice or field of study (for example the Muslim Brotherhood, the
   Progressive Era, ethics);
+  a political current (the Jewish left, left-wing politics) or a name coined by critics (red fascism,
+  neoliberalism) is still a set of ideas: audit it from sources about it, and the uncertainty rule decides;
 - a duplicate: another file in `audits/profiles/` already covers the same ideology under another
   name (for example Maoism and Maoist Communism); or
 - not notable: it has no English Wikipedia article of its own (Wikipedia establishes notability;
