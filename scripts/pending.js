@@ -1,6 +1,7 @@
 // Prints, as JSON, the catalog entries that still need an audit: missing or failing validation.
 // Used by the audit workflow; also handy on its own.
-//   node scripts/pending.js [--limit N] [--people] [--by-views [--reverse]]
+//   node scripts/pending.js [--limit N] [--people] [--by-views [--reverse] | --triage]
+//   --triage (people) orders by estimated chance of passing the audit (audits/people-triage.json, scripts/triage.js)
 //   --by-views orders by Wikipedia page views (most viewed first), for auditing in order of prominence
 //   --reverse with --by-views lists least viewed first, so a second lane can work from the other end
 const fs = require("fs");
@@ -26,5 +27,10 @@ const pending = catalog().filter((entry) => {
 
 if (process.argv.includes("--by-views")) pending.sort((a, b) => (b.views12m || 0) - (a.views12m || 0));
 if (process.argv.includes("--reverse")) pending.reverse();
+if (process.argv.includes("--triage")) {
+  const scores = readJson(require("path").join(lib.ROOT, "audits", "people-triage.json")).scores;
+  // People added to the catalog since the last fit have no score yet: after the scored ones, by views.
+  pending.sort((a, b) => (scores[b.id] ?? -1) - (scores[a.id] ?? -1) || (b.views12m || 0) - (a.views12m || 0));
+}
 console.log(JSON.stringify(pending.slice(0, limit).map(({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }) =>
   ({ id, name, wikipedia, wikipediaMatch, born, living, scopeNote }))));

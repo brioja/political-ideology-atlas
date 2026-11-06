@@ -4,13 +4,15 @@
 //   runs can split the kinds; default: the kind with fewer live on the site, most viewed first)
 const { execFileSync } = require("child_process");
 const path = require("path");
-const pending = (args) => JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--by-views", "--limit", "1", ...args]).toString());
+const pending = (args) => JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--limit", "1", ...args]).toString());
+// People in triage order (most likely to pass first, scripts/triage.js; Brandon 2026-11-06), ideologies by views.
+const TRIAGE = require("fs").existsSync(path.join(__dirname, "..", "audits", "people-triage.json"));
 const { readJson, catalog, peopleCatalog } = require("./lib");
 const views = (list, id) => (list.find((x) => x.id === id) || {}).views12m || 0;
 const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
-const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people"]);
+const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);
 const PEOPLE_ONLY = process.argv.includes("--people");
-const [ideology] = PEOPLE_ONLY ? [] : pending([]);
+const [ideology] = PEOPLE_ONLY ? [] : pending(["--by-views"]);
 const p = person && { kind: "person", ...person, views12m: views(peopleCatalog(), person.id) };
 const i = ideology && { kind: "ideology", ...ideology, views12m: views(catalog(), ideology.id) };
 // Default (Brandon, 2026-11-05): the most-viewed pending entry of whichever kind has fewer live on the

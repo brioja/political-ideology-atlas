@@ -1,9 +1,10 @@
 export const meta = {
   name: 'serial-audits',
-  description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site, most viewed first) one at a time, each in a fresh agent, and deploy',
+  description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site; people most likely to pass first, ideologies most viewed first) one at a time, each in a fresh agent, and deploy',
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
+    { title: 'Triage', detail: 'refit the people triage on the new results (people runs)' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
   ],
 }
@@ -96,6 +97,16 @@ for (let i = 0; i < LIMIT; i++) {
   if (r.done) { ended = 'no ideologies left'; break }
   reports.push(r.report)
   log(r.report)
+}
+
+// People are queued by triage (scripts/triage.js): refit it on this run's results. CPU only (cached Wikidata).
+const TRIAGE_PROMPT = `Working directory: ${ROOT}. Run \`node scripts/triage.js\` (a few minutes at most if new catalog people need
+Wikidata). If it fails, reply with the error and stop. Otherwise \`git add audits/people-triage.json\`, commit as "Triage: refit on
+the latest people audits" (no Co-Authored-By or other attribution line), \`git fetch origin\`, \`git rebase origin/main\` and
+\`git push origin HEAD:main\`. Touch no other file. Reply in one line: the AUC line it printed, pushed or not.`
+if (opts.kind !== 'ideologies') {
+  phase('Triage')
+  reports.push(`triage: ${await agent(TRIAGE_PROMPT, { label: 'triage', phase: 'Triage', effort: 'low' })}`)
 }
 
 // Statement signal depends on ideology audits only, so a people-only run skips it.
