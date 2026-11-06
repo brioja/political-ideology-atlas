@@ -26,10 +26,9 @@ An entry is in `audits/catalog.json` only if it meets both:
   pre-check finds it meets the definition (`"source": "list-precheck"`); or a contributor suggests
   it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 
-One exception: a redirect to a broader article counts when that article covers branches with
-opposite positions, so it can't be audited as one ideology (Left and Right-wing accelerationism,
-both covered by Accelerationism). Otherwise, entries that land on the same article are one
-ideology.
+Entries that land on the same article are one ideology, with no exceptions: the entry whose own
+title is the article owns it (else the most viewed), and the others are duplicates
+(`scripts/lib.js` duplicateOf, checked by test.js).
 
 The article is required because a quiz-taker matched to an ideology needs somewhere to learn more
 about it. `scripts/ideology-candidates.js` applies this gate, and 12-month page views set the

@@ -26,7 +26,7 @@ const r4 = (x) => Math.round(x * 1e4) / 1e4;
 // A list of answers' bars as shipped (lineBars in pca.js): rounded, null for a line its answers don't
 // reach (JSON has no Infinity; lineSpread reads null as infinite).
 const barsOf = (ctx, profile) => lineBars(ctx, answeredIndexes(profile)).map((b) => (isFinite(b) ? r4(b) : null));
-let included, stale, missing, notPlaced, notIdeology, awaiting;
+let included, stale, missing, notPlaced, notIdeology, awaiting, duplicates;
 const awaitingReaudit = require("./lib").awaitingReaudit();
 
 if (process.argv.includes("--people")) {
@@ -44,11 +44,13 @@ if (process.argv.includes("--people")) {
 function classify(judge = null) {
   included = [];
   stale = [];
+  duplicates = [];
   missing = [];
   notPlaced = [];
   notIdeology = [];
   awaiting = [];
   for (const entry of catalog()) {
+    if (require("./lib").duplicateOf(entry.id)) { duplicates.push(entry.id); continue; } // another entry owns its article
     const p = profilePath(entry.id);
     if (!fs.existsSync(p)) { missing.push(entry.id); continue; }
     const a = readJson(p);
@@ -269,6 +271,7 @@ if (notPlaced.length) console.log(`Excluded as not placed on every line (an erro
 if (merged.length) console.log(`Indistinguishable, listed on the closer match's page: ${merged.join(", ")}`);
 if (awaiting.length) console.log(`Off the site until re-audited: ${awaiting.length}`);
 if (notIdeology.length) console.log(`Not an ideology the test can place: ${notIdeology.join(", ")}`);
+if (duplicates.length) console.log(`Duplicates (another entry owns the Wikipedia article): ${duplicates.length}`);
 if (process.argv.includes("--status")) process.exit(0);
 if (included.length < 3) {
   console.error("Need at least 3 audited ideologies to build; data.js left unchanged.");

@@ -23,6 +23,25 @@ const isCandidate = (s) => s.status === "candidate";
 const activeStatements = () => allStatements().filter((s) => !isCandidate(s));
 const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideologies;
 
+// Duplicates, decided by data: one catalog entry per Wikipedia article (after redirects). The owner is
+// the entry whose own title is the article ("exact"), else the most viewed; every other entry on that
+// article is a duplicate of it and is never audited. No exceptions (Brandon, 2026-11-05).
+let dupMap = null;
+const articleKey = (e) => decodeURIComponent(String(e.wikipedia || "")).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "").replace(/_/g, " ").toLowerCase();
+function duplicateOf(id) {
+  if (!dupMap) {
+    dupMap = new Map();
+    const groups = new Map();
+    for (const e of catalog()) { const k = articleKey(e); if (!k) continue; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }
+    for (const g of groups.values()) {
+      if (g.length < 2) continue;
+      const owner = [...g].sort((a, b) => (b.wikipediaMatch === "exact") - (a.wikipediaMatch === "exact") || (b.views12m || 0) - (a.views12m || 0) || a.id.localeCompare(b.id))[0];
+      for (const e of g) if (e !== owner) dupMap.set(e.id, owner.id);
+    }
+  }
+  return dupMap.get(id) || null;
+}
+
 // Audits go stale per statement, not all at once: a new statement only needs answering, and a
 // removed one is ignored. Rewording would silently change what was answered, so a reworded
 // statement gets a new id; audits/statements/texts.json records each id's text and test.js
@@ -143,6 +162,6 @@ function wordingMarks(text) {
   return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
 }
 
-module.exports = { WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { duplicateOf, articleKey, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

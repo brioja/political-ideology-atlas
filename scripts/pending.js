@@ -17,6 +17,7 @@ const limit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 // to compute and is cached per process. validate.js reads --people from this command line too.
 const { validate, excludedOnly } = require("./validate");
 const pending = catalog().filter((entry) => {
+  if (!PEOPLE && lib.duplicateOf(entry.id)) return false; // another entry owns its Wikipedia article
   if (!fs.existsSync(profilePath(entry.id))) return true;
   const { errors } = validate(entry.id);
   return errors.length > 0 && !excludedOnly(errors); // complete but excluded: don't redo it
