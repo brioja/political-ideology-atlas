@@ -168,6 +168,10 @@ const sameName = (al, name, type) => {
 // "Camilo" for Camilism). Their name counts as the ideology's name.
 const isEponym = (x, name) => {
   if (!x || typeof x !== "object") return false;
+  // Only a name built from the person's name as one word (Klausism, Gandhism, Thatcherism, Sorelianism),
+  // never "Monroe Doctrine" or "Marshall Plan": those cover one part of the person's views, so the person's
+  // name must not count as the ideology's (Brandon, 2026-11-05).
+  if (!/^\S+(ism|ist|ian|ianism)$/i.test(String(name).trim())) return false;
   const n = norm(name).trim().replace(/ /g, "");
   return [x.last, x.first].filter(Boolean).map((w) => norm(w).trim().replace(/ /g, "")).some((w) => w.length >= 3 && n.slice(0, Math.min(5, w.length)) === w.slice(0, Math.min(5, w.length)));
 };
