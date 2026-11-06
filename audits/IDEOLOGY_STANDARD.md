@@ -11,8 +11,9 @@ An entry is in `audits/catalog.json` only if it meets both:
   name for the article's subject (Anarcho-Communism → Anarchist communism, Tridemism → Three
   Principles of the People). A redirect to a broader or different topic (a parent ideology, a
   section, a person) means Wikipedia doesn't treat the entry as independently notable. An article
-  about an ideology in one place, its history, or a list ("Feminism in India", "History of
-  democracy") isn't an ideology's own article either.
+  about an ideology as held in one place ("Conservatism in Australia") is its own article: it is a set
+  of ideas, audited from sources about it (Brandon, 2026-11-05). A history or a list ("History of
+  democracy") isn't.
 - **A source names it as an ideology.** Either Wikipedia's
   [List of political ideologies](https://en.wikipedia.org/wiki/List_of_political_ideologies)
   links it and Wikidata classes it as an ideology, political ideology or political philosophy, or
@@ -20,8 +21,8 @@ An entry is in `audits/catalog.json` only if it meets both:
   ideology sidebar templates or navboxes (the categories "Political ideology sidebar templates" and
   "Political ideology navigational boxes") links it, Wikidata classes it the same way, and a
   pre-check of the whole article finds it meets the definition of a political ideology (a set of
-  ideas, not a group, state, event, concept or label; `"source": "sidebar-template"` in the
-  catalog); or the List links it but Wikidata files it elsewhere, and the same whole-article
+  political ideas for how to run a society, judged by its content, as in gate 2; `"source":
+  "sidebar-template"` in the catalog); or the List links it but Wikidata files it elsewhere, and the same whole-article
   pre-check finds it meets the definition (`"source": "list-precheck"`); or a contributor suggests
   it. The pre-check's verdicts stand as they are, with no hand-picking in either direction.
 

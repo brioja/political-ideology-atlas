@@ -17,7 +17,10 @@ Economism, Autonomist Marxism, Constantinianism, Jewish supremacy, Postcoloniali
 Federal republicanism, Kinism, Buharism, Persian nationalism, Zaza nationalism, Sahrawi nationalism,
 Dataism, Calderonism, Kaczyzm, Danish nationalism, Liberal Marxism.
 
-**Probably not an ideology the test can place** (a concept, practice, policy, field or phenomenon):
+**Set aside under the old first check** (a concept, practice, policy, field or phenomenon). Since
+2026-11-05 the first check judges content only (a set of political ideas for how to run a society;
+prejudices, doctrines and practices pass), so most of these would now pass if they meet the catalog's
+notability gate; re-check before adding:
 Cultural imperialism, Historical negationism, Terrorism, Referendum, Realpolitik, Bush Doctrine,
 Islamophobia, Scientism, Anti-Americanism, Equality of outcome, Realism (international relations),
 Racial politics, Racial whitening, Laissez-faire racism, Symbolic racism, Racism on the Internet,
