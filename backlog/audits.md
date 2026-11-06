@@ -64,8 +64,9 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
 - **The right source, the wrong passage.** A source that discusses the ideology can still carry an
   answer from a passage where the author speaks for themselves or describes someone else's view (a
   scholar's own argument, critics' responses), not the ideology's position. Not borrowing (no other
-  ideology is involved). Regan on apartheid in Animal rights is probably NOT an example: it follows from the
-  rights view's own equal-inherent-value argument.
+  ideology is involved). Animal rights' racial-segregation-law and racial-franchise answers (−2, medium) rest on
+  Regan's apartheid premise against contractarianism, which AUDIT_RULES section 3 now says is not a
+  position ("a premise is not a position", 2026-11-05): null them on the audit's next pass.
 - **A passing mention is enough (defining sources).** A defining source passes if it names the ideology once. A two-mentions
   floor for defining sources would filter this; primary texts got one on 2026-11-05.
 - **The saved copy is trusted.** The check reads the agent's saved text, not the live page.
