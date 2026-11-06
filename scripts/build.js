@@ -13,6 +13,11 @@ const { ROOT, readJson, activeStatements, unanswered, TEXTS, catalog, profilePat
   peopleCatalog, personPath, personUncertainty, ideologyUncertainty, ideologyProfile, judgeParts, judgeFrom } = require("./lib");
 const { buildModel, modelFromParts, meaningfulAxes, placementContext, distanceSpread, varimax, matchPeople, fitScale, distance, locate, lineBars, answeredIndexes, MAX_BAR, MAX_MEAN_BAR, MAX_SHOWN_LINES, distinctiveness } = require("../pca.js");
 
+// Summaries and roles are spelled in the English variety the entry's Wikipedia article declares (Brandon,
+// 2026-11-06; scripts/english-variety.js, scripts/spelling.js); undeclared ones stay as written.
+const VARIETY_FILE = path.join(ROOT, "audits", "english-variety.json");
+const variety = fs.existsSync(VARIETY_FILE) ? readJson(VARIETY_FILE).entries : {};
+const spelled = (id, text) => require("./spelling").spell(text, variety[id]);
 const COLORS_FILE = path.join(ROOT, "audits", "ideology-colors.json");
 const traditionalColors = fs.existsSync(COLORS_FILE) ? readJson(COLORS_FILE) : {};
 const flagFor = (id) => {
@@ -66,7 +71,7 @@ function classify(judge = null) {
     included.push({
       id: entry.id,
       name: entry.name,
-      summary: a.summary,
+      summary: spelled(entry.id, a.summary),
       audited: true,
       // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
       flag: flagFor(entry.id),
@@ -204,7 +209,7 @@ function writePeople(model, judge = undefined) {
     const answers = statements.map((s) => a.answers[s.id] || { value: null });
     if (!personUncertainty(a.answers, judge).placed) { excludedPeople++; continue; }
     people.push({
-      id: entry.id, name: entry.name, role: a.role, summary: a.summary, region: entry.region, born: entry.born,
+      id: entry.id, name: entry.name, role: spelled(entry.id, a.role), summary: spelled(entry.id, a.summary), region: entry.region, born: entry.born,
       living: a.living ?? entry.living, wikipedia: a.wikipedia || entry.wikipedia, views12m: entry.views12m || 0,
       image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
       profile: answers.map((x) => x.value), // null = no known position
