@@ -45,7 +45,8 @@ function duplicateOf(id) {
   if (!dupMap) {
     dupMap = new Map();
     const groups = new Map();
-    for (const e of catalog()) { const k = articleKey(e); if (!k || !notable(e.id)) continue; // a redirect to a subtopic or related article is not notable, not a duplicate if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }
+    // A redirect to a subtopic or related article is not notable, so it is not a duplicate either.
+    for (const e of catalog()) { const k = articleKey(e); if (!k || !notable(e.id)) continue; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }
     for (const g of groups.values()) {
       if (g.length < 2) continue;
       const owner = [...g].sort((a, b) => (b.wikipediaMatch === "exact") - (a.wikipediaMatch === "exact") || (b.views12m || 0) - (a.views12m || 0) || a.id.localeCompare(b.id))[0];
