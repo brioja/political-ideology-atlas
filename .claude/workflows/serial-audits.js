@@ -1,15 +1,18 @@
 export const meta = {
   name: 'serial-audits',
   description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site, most viewed first) one at a time, each in a fresh agent, and deploy',
-  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents',
+  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
   ],
 }
 
-const ROOT = '/home/brioja/work/political_ideology_test'
 const opts = args || {}
+// Two serial runs may run at once only if they split the kinds (kind: people / ideologies) and each has its
+// own checkout (root), e.g. a git worktree for the ideology run (Brandon, 2026-11-06).
+const ROOT = opts.root || '/home/brioja/work/political_ideology_test'
+const KIND = opts.kind === 'people' ? ' --people' : opts.kind === 'ideologies' ? ' --ideologies' : ''
 const LIMIT = opts.limit || 10
 const model = opts.model ? { model: opts.model } : {}
 
@@ -25,15 +28,14 @@ const TICK = {
 
 const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT}. Today's date is the auditedAt date.
 
-1. Run \`node scripts/next.js\`. It prints the next entry as JSON with "kind": "ideology" or "person" (whichever kind has
-   fewer live on the site). If it prints null, reply with done=true and do nothing else.
+1. Run \`node scripts/next.js${KIND}\`. It prints the next entry as JSON with "kind": "ideology" or "person". If it prints null, reply with done=true and do nothing else.
    If "kind" is "person": audit that person yourself following audits/AUDIT_RULES.md and audits/PROMPT_PEOPLE.md exactly
    (answer every statement, candidates included; no source limit; deepen within the audit; local corpora first; save every
    source in scratchpad/sources/<id>/; YouTube at most 5 requests). Write audits/people/<id>.json, run
    \`node scripts/validate.js --people <id>\` and fix every error except the uncertainty rule (never raise a confidence to pass
-   it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line). Run
-   \`node scripts/build.js --people\` and \`node test.js --people\`; if they pass, commit people.js as "Rebuild people data" (no
-   attribution line), \`git pull --rebase\` and \`git push\`. Then skip to the end (steps 2-5 are for ideologies).
+   it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
+   DEPLOY (below) with \`node scripts/build.js --people\` and \`node test.js --people\`, committing people.js as "Rebuild people
+   data". Then skip to the end (steps 2-5 are for ideologies).
 2. If "kind" is "ideology": audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
    scopeNote, list missingStatements. Start from the source library the statement pass built, if there is one:
@@ -60,10 +62,18 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    unhandled (no "addedAs", no "declined"); missing statements are reviewed later, outside this run.
 4. \`git add\` only the audit file and audits/ideology-colors.json; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
-5. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and
-   audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push;
-   say why in the report.
-Do not touch scripts/candidates.js or any other repo file (scratchpad/ is fine).`
+5. DEPLOY (below) with \`node scripts/build.js\` and \`node test.js\`, committing any changed data.js, people.js,
+   audits/lines.json and audits/statements/texts.json as "Rebuild site data".
+Do not touch scripts/candidates.js or any other repo file (scratchpad/ is fine).
+
+DEPLOY (another serial run may be pushing to origin main from its own checkout at the same time):
+a. \`git fetch origin\` and \`git rebase origin/main\` (your audit commit never conflicts).
+b. Run the build and the tests named above. If tests fail, do not push: \`git checkout\` the generated files and say why in
+   the report.
+c. Commit the changed generated files (no attribution line) and \`git push origin HEAD:main\`.
+d. If the push is rejected: \`git fetch origin\` and \`git rebase origin/main\`. If the rebase stops on a conflict in a
+   generated file (data.js, people.js, audits/lines.json, audits/statements/texts.json), run \`git rebase --skip\` (drops only
+   your rebuild commit), then go back to b. Never resolve a generated file by hand, never force-push.`
 
 // After the audits: promote candidates that now carry signal on the real lines and demote active
 // statements that lost it (test 2, audits/statements/STANDARD.md; Brandon, 2026-11-05). CPU only.
@@ -72,8 +82,9 @@ const SIGNAL_PROMPT = `Working directory: ${ROOT}.
    statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js
    audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
-   on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), \`git pull --rebase\`
-   and \`git push\`. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
+   on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), then \`git fetch origin\`,
+   \`git rebase origin/main\` and \`git push origin HEAD:main\`; if the rebase stops on a generated file, \`git rebase --skip\`,
+   rerun the signal script, build and tests, and commit again. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
 Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or not.`
 
 const reports = []
@@ -87,7 +98,10 @@ for (let i = 0; i < LIMIT; i++) {
   log(r.report)
 }
 
+// Statement signal depends on ideology audits only, so a people-only run skips it.
+if (opts.kind !== 'people') {
 phase('Signal')
 reports.push(`signal: ${await agent(SIGNAL_PROMPT, { label: 'signal', phase: 'Signal', effort: 'low' })}`)
+}
 
 return { reports, ended }
