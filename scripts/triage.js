@@ -4,7 +4,8 @@
 //
 // The likelihood is learned from the audits already done: a logistic regression on Wikidata facts about
 // each person (offices held, party, stated ideology, occupations, notable works, memberships, number of
-// Wikipedia languages, era) plus page views, fitted to pass/fail (on the site or not) of every audited
+// Wikipedia languages, era; own writings: a Gutenberg author ID and works authored, kept only if they raise
+// the cross-validated AUC) plus page views, fitted to pass/fail (on the site or not) of every audited
 // person. The regularisation strength is chosen by cross-validation; nothing is hand-weighted. Gender and
 // region are left out on purpose: they would only reproduce who has been documented, not who has a record.
 // Rerun after audits (labels grow): writes audits/people-triage.json, read by pending.js --triage.
@@ -35,10 +36,30 @@ async function entities(qids) {
       const c = e.claims || {};
       const vals = (p) => (c[p] || []).map((s) => s.mainsnak && s.mainsnak.datavalue && s.mainsnak.datavalue.value && s.mainsnak.datavalue.value.id).filter(Boolean);
       out.set(q, { P39: (c.P39 || []).length, P102: (c.P102 || []).length, P1142: (c.P1142 || []).length, P800: (c.P800 || []).length,
-        P463: (c.P463 || []).length, P106: vals("P106"), sitelinks: Object.keys(e.sitelinks || {}).length });
+        P463: (c.P463 || []).length, P106: vals("P106"), sitelinks: Object.keys(e.sitelinks || {}).length, gutenberg: (c.P1938 || []).length > 0 });
     }
   }
   return out;
+}
+
+// How many works Wikidata lists with the person as author (P50), scholarly articles left out: a proxy for
+// own writings an audit can read. Cached on disk; SPARQL in batches of 200.
+const WORKS_CACHE = path.join(require("os").homedir(), ".cache", "political-ideology-atlas", "triage-works.json");
+async function worksAuthored(qids) {
+  const cache = fs.existsSync(WORKS_CACHE) ? JSON.parse(fs.readFileSync(WORKS_CACHE, "utf8")) : {};
+  const todo = qids.filter((q) => !(q in cache));
+  const { sparql } = require("./sparql");
+  for (let i = 0; i < todo.length; i += 200) {
+    const batch = todo.slice(i, i + 200);
+    const rows = await sparql(`PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+SELECT ?a (COUNT(DISTINCT ?w) AS ?n) WHERE { VALUES ?a { ${batch.map((q) => "wd:" + q).join(" ")} } ?w wdt:P50 ?a .
+FILTER NOT EXISTS { ?w wdt:P31 wd:Q13442814 } } GROUP BY ?a`);
+    for (const q of batch) cache[q] = 0;
+    for (const b of rows) cache[b.a.value.replace(/.*\//, "")] = Number(b.n.value);
+    fs.writeFileSync(WORKS_CACHE, JSON.stringify(cache));
+    await new Promise((res) => setTimeout(res, 2000));
+  }
+  return cache;
 }
 
 function fit(X, y, lambda, iters = 1500) {
@@ -66,6 +87,7 @@ function auc(scores, y) {
 async function main() {
   const people = lib.peopleCatalog();
   const facts = await entities([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
+  const works = await worksAuthored([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
   const occCount = new Map();
   for (const f of facts.values()) for (const o of new Set(f.P106)) occCount.set(o, (occCount.get(o) || 0) + 1);
   const occs = [...occCount].filter(([, n]) => n >= MIN_OCC).map(([o]) => o).sort();
@@ -74,10 +96,14 @@ async function main() {
     const born = p.born == null ? 1950 : p.born;
     return [Math.log1p(p.views12m || 0), Math.log1p(f.sitelinks), Math.log1p(f.P39), f.P102 > 0 ? 1 : 0, f.P1142 > 0 ? 1 : 0,
       Math.log1p(f.P800), Math.log1p(f.P463), p.living ? 1 : 0, born < 1500 ? 1 : 0, born >= 1500 && born < 1800 ? 1 : 0,
-      born >= 1800 && born < 1900 ? 1 : 0, born >= 1900 && born < 1945 ? 1 : 0, ...occs.map((o) => (f.P106.includes(o) ? 1 : 0))];
+      born >= 1800 && born < 1900 ? 1 : 0, born >= 1900 && born < 1945 ? 1 : 0, ...occs.map((o) => (f.P106.includes(o) ? 1 : 0)),
+      // Own writings (last BOOK_FEATURES columns, so the fit can be compared with and without them).
+      f.gutenberg ? 1 : 0, Math.log1p(works[p.wikidata] || 0)];
   };
   const names = ["log views", "log languages", "log offices held", "party", "stated ideology", "log notable works", "log memberships",
-    "living", "born <1500", "born 1500-1799", "born 1800-1899", "born 1900-1944", ...occs.map((o) => `occupation ${o}`)];
+    "living", "born <1500", "born 1500-1799", "born 1800-1899", "born 1900-1944", ...occs.map((o) => `occupation ${o}`),
+    "Gutenberg author", "log works authored"];
+  const BOOK_FEATURES = 2;
   const all = people.map(raw);
   // Standardise on the whole pool.
   const mean = all[0].map((_, j) => all.reduce((s, r) => s + r[j], 0) / all.length);
@@ -101,20 +127,26 @@ async function main() {
     }
     return auc(sc, yl);
   };
-  const allCols = (x) => x, viewsOnly = (x) => [x[0]];
+  const allCols = (x) => x, noBooks = (x) => x.slice(0, x.length - BOOK_FEATURES), viewsOnly = (x) => [x[0]];
   const grid = [0.003, 0.01, 0.03, 0.1, 0.3, 1, 3];
-  const scored = grid.map((l) => [l, cv(l, allCols)]);
-  const [lambda, cvAuc] = scored.sort((a, b) => b[1] - a[1])[0];
+  const best = (cols) => grid.map((l) => [l, cv(l, cols)]).sort((a, b) => b[1] - a[1])[0];
+  const withBooks = best(allCols), withoutBooks = best(noBooks);
+  // The own-writings features stay only if they raise the cross-validated AUC.
+  const useBooks = withBooks[1] > withoutBooks[1];
+  const cols = useBooks ? allCols : noBooks;
+  const [lambda, cvAuc] = useBooks ? withBooks : withoutBooks;
   const viewsAuc = cv(0.01, viewsOnly);
-  const model = fit(Xl, yl, lambda);
+  const model = fit(Xl.map(cols), yl, lambda);
   const scores = {};
-  people.forEach((p, i) => { scores[p.id] = Math.round(predict(model, X[i]) * 1000) / 1000; });
-  const weights = names.map((n, j) => [n, Math.round(model.w[j] * 100) / 100]).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
+  people.forEach((p, i) => { scores[p.id] = Math.round(predict(model, cols(X[i])) * 1000) / 1000; });
+  const weights = cols(names).map((n, j) => [n, Math.round(model.w[j] * 100) / 100]).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]));
   fs.writeFileSync(OUT, JSON.stringify({
     note: "Generated by scripts/triage.js: each catalog person's estimated chance of passing the audit, from a logistic regression on Wikidata facts fitted to the people already audited. Orders the people queue (pending.js --triage); excludes nobody.",
     fitted: new Date().toISOString().slice(0, 10), labelled: yl.length, passed: yl.filter(Boolean).length,
     lambda, crossValidatedAuc: Math.round(cvAuc * 1000) / 1000, viewsOnlyAuc: Math.round(viewsAuc * 1000) / 1000,
+    ownWritings: { used: useBooks, aucWith: Math.round(withBooks[1] * 1000) / 1000, aucWithout: Math.round(withoutBooks[1] * 1000) / 1000 },
     topWeights: weights.slice(0, 15), scores }, null, 1) + "\n");
+  console.log(`Own-writings features (Gutenberg author, works authored): AUC ${withBooks[1].toFixed(3)} with, ${withoutBooks[1].toFixed(3)} without -> ${useBooks ? "used" : "left out"}.`);
   console.log(`${yl.length} audited (${yl.filter(Boolean).length} passed). Cross-validated AUC ${cvAuc.toFixed(3)} (lambda ${lambda}); views alone ${viewsAuc.toFixed(3)}.`);
   console.log("Strongest weights:", weights.slice(0, 10).map(([n, w]) => `${n} ${w}`).join(", "));
 }
