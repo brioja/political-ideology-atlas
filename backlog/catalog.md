@@ -49,5 +49,10 @@ rest on evidence (and record DOES_NOT_INCLUDE_IDEAS where the content has no pol
   passed 43% against 17% for "concept" or "form". Gutenberg subject-heading counts anti-predicted: broad topics
   such as Racism and Nationalism have many books. Revisit once more ideologies have current-rules audits. If the
   pattern firms up, add the downloaded-corpus check to an ideology triage score, the way people do it, counting
-  full-length books only (about 20,000 words or more), never papers or articles. No
+  full-length books only (about 20,000 words or more), never papers or articles. 11-06 corrected count (books
+  the stated answers cite, compressed copies read properly): 24% passed with none, 39% with one, so a used
+  book does help. But an ideology's own books are mostly found during the audit, not before it, so a
+  pre-audit check needs a way to find them first: Wikidata "founded by", the article's key figures and texts,
+  or the statement pass's source library. Decision (Brandon, 11-06): stay with views. Auditing each entry
+  once is more efficient overall, even if less likely passes come first. No
   LLM classification of leads ("too subjective and easy to get wrong").
