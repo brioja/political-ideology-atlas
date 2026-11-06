@@ -26,7 +26,7 @@ full audit if the entry is:
   an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
-- not a set of political ideas for how to run a society (`NO_POLITICAL_IDEAS`): its content holds none
+- not a set of political ideas for how to run a society (`DOES_NOT_INCLUDE_IDEAS`): its content holds none
   (notability and duplicates are checked in code before an entry reaches you). Judge the content,
   not who holds it: a regime type, doctrine, practice, institution, current or a name coined by critics
   passes if its content describes how a society is run. It fails
@@ -45,7 +45,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
-  "notAnIdeology": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | NO_POLITICAL_IDEAS", "explanation": "One or two sentences on why." },
+  "notAnIdeology": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | DOES_NOT_INCLUDE_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
 ```

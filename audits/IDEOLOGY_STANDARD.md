@@ -41,7 +41,7 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
 - **something that has ideas but isn't a set of ideas:** a person, party, organization, state,
   government body (not a form of government) or event (`notAnIdeology.reason` PERSON, PARTY,
   ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
-- **not a set of political ideas for how to run a society** (NO_POLITICAL_IDEAS): judged by its content,
+- **not a set of political ideas for how to run a society** (DOES_NOT_INCLUDE_IDEAS): judged by its content,
   not by who holds it (a regime type, doctrine, practice or critics' name passes if its content describes
   how a society is run); it fails when the content holds no such ideas, only other
   ideologies' ideas, or several opposing sets; prejudices and attitudes pass (their content says who

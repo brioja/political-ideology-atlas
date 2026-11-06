@@ -19,7 +19,7 @@ const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.p
 const KINDS = ["primary", "scholarly", "reference", "program"];
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
-const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "NO_POLITICAL_IDEAS"];
+const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
