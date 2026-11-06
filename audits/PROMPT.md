@@ -22,11 +22,14 @@ The catalog is built generously from loose sources (Wikipedia's list of politica
 older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
 Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
 full audit if the entry is:
-- not a set of political beliefs: an organisation, party, movement as a group, event, period,
-  office, person, place, prejudice or field of study (for example the Muslim Brotherhood, the
-  Progressive Era, ethics);
-  a political current (the Jewish left, left-wing politics) or a name coined by critics (red fascism,
-  neoliberalism) is still a set of ideas: audit it from sources about it, and the uncertainty rule decides;
+- not a set of political ideas for how to run a society: its content holds none. Judge the content,
+  not who holds it or what kind of thing it is: a regime type, doctrine, practice, institution, current,
+  organisation or a name coined by critics passes if its content describes how a society is run. It fails
+  when the content is the absence of political ideas (political apathy), only distance from the mainstream
+  (extremism), only other ideologies' ideas (political syncretism), several opposing sets of ideas grouped
+  by what they oppose or by place (criticism of Marxism), a subject other than running a society (a
+  biogeographic term, an arts movement, a method in philosophy), or who took part in an event without ideas
+  of their own; and, for now, a prejudice (Brandon, 2026-11-05);
 - a duplicate: another file in `audits/profiles/` already covers the same ideology under another
   name (for example Maoism and Maoist Communism); or
 - not notable: it has no English Wikipedia article of its own (Wikipedia establishes notability;
