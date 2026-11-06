@@ -1,7 +1,7 @@
 export const meta = {
   name: 'serial-audits',
   description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site; people most likely to pass first, ideologies most viewed first) one at a time, each in a fresh agent, and deploy',
-  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout)',
+  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout), {"skip": ["id", ...]} to pass over entries (e.g. people waiting for books)',
   phases: [
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
     { title: 'Triage', detail: 'refit the people triage on the new results (people runs)' },
@@ -13,7 +13,8 @@ const opts = args || {}
 // Two serial runs may run at once only if they split the kinds (kind: people / ideologies) and each has its
 // own checkout (root), e.g. a git worktree for the ideology run (Brandon, 2026-11-06).
 const ROOT = opts.root || '/home/brioja/work/political_ideology_test'
-const KIND = opts.kind === 'people' ? ' --people' : opts.kind === 'ideologies' ? ' --ideologies' : ''
+const KIND = (opts.kind === 'people' ? ' --people' : opts.kind === 'ideologies' ? ' --ideologies' : '')
+  + (opts.skip && opts.skip.length ? ` --skip ${opts.skip.join(',')}` : '')
 const LIMIT = opts.limit || 10
 const model = opts.model ? { model: opts.model } : {}
 
