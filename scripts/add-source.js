@@ -12,7 +12,7 @@ const path = require("path");
 const zlib = require("zlib");
 const { execFileSync } = require("child_process");
 
-const [id, url, saved] = process.argv.slice(2);
+const [id, url, saved] = process.argv.slice(2).filter((a) => a !== "--short-ok");
 if (!id || !/^[a-z0-9-]+$/.test(id) || !/^https?:\/\//.test(url || "")) {
   console.error("usage: node scripts/add-source.js <audit id> <url> [saved file]");
   process.exit(1);
@@ -48,6 +48,14 @@ if (head === "%PDF-") {
     .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
     .replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")
     .replace(/[ \t]+/g, " ").replace(/\n\s*\n+/g, "\n\n").trim();
+  // A landing page, a JavaScript shell or a bot check is not the document: refuse it rather than save it.
+  if (text.split(/\s+/).length < 300 && !process.argv.includes("--short-ok")) {
+    fs.rmSync(raw);
+    console.error(`only ${text.split(/\s+/).length} words of text: a landing page, JavaScript shell or bot check, not the document. ` +
+      `Open it in your browser, save the document itself, then:\n  node scripts/add-source.js ${id} "${url}" <saved file>` +
+      "\n(add --short-ok if the page really is that short)");
+    process.exit(1);
+  }
   fs.writeFileSync(txt, text + "\n");
   original = base + ".html.gz";
   fs.writeFileSync(path.join(dir, original), zlib.gzipSync(html));
