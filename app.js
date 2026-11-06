@@ -1,4 +1,7 @@
 // UI: intro map, one-statement-at-a-time quiz, results.
+// Search ignores accents and case, so "bao dai" finds "Bảo Đại" and "erdogan" finds "Erdoğan".
+const fold = (s) => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  .replace(/đ/g, "d").replace(/ł/g, "l").replace(/ø/g, "o").replace(/æ/g, "ae").replace(/œ/g, "oe").replace(/ß/g, "ss").replace(/ı/g, "i");
 // Search engines land on static pages at /ideologies/<id>/ and /people/<id>/ (scripts/pages.js).
 // The app runs on "#/" routes from the site root, so it moves the address there before anything reads it.
 {
@@ -1614,9 +1617,9 @@ function drawExample() {
 // ---------- Explore ----------
 
 function renderExplore() {
-  const query = $("explore-search").value.trim().toLowerCase();
+  const query = fold($("explore-search").value.trim());
   const shown = model.ideologies
-    .filter((i) => !query || i.name.toLowerCase().includes(query) || (i.summary || "").toLowerCase().includes(query))
+    .filter((i) => !query || fold(i.name).includes(query) || fold(i.summary || "").includes(query))
     .sort((a, b) => a.name.localeCompare(b.name));
   $("explore-count").textContent = shown.length === model.ideologies.length
     ? `${shown.length} ideologies`
@@ -1682,9 +1685,9 @@ function renderPeople() {
     $("people-status").textContent = "Coming soon: profiles of around 250 people are being researched, each from their own words and record. Once they're ready, your results will include the people who think most like you.";
     return;
   }
-  const q = $("people-search").value.trim().toLowerCase();
+  const q = fold($("people-search").value.trim());
   const shown = list.filter((p) => (!peopleRegion || p.region === peopleRegion) &&
-    (!q || p.name.toLowerCase().includes(q) || (p.role || "").toLowerCase().includes(q)))
+    (!q || fold(p.name).includes(q) || fold(p.role || "").includes(q)))
     .sort((a, b) => a.name.localeCompare(b.name));
   $("people-count").textContent = `${shown.length} of ${list.length} people`;
   $("people-list").innerHTML = shown.map(personRow).join("") || `<li class="muted">No one matches “${esc(q)}”.</li>`;
@@ -1963,17 +1966,17 @@ function comboBox(id, text, key = "", self = "") {
 function comboOpen(input) {
   const list = $(`${input.id}-list`);
   const options = compareOptions();
-  const q = input.value.trim().toLowerCase();
+  const q = fold(input.value.trim());
   // A box that already names something shows everything, so it's easy to switch.
-  const all = !q || options.some((o) => o.label.toLowerCase() === q);
+  const all = !q || options.some((o) => fold(o.label) === q);
   // Browsing (nothing typed): you, then ideologies and people A–Z under headings. Searching: every
   // match, best first (where the text appears earliest in the name).
   const byName = (x, y) => x.label.localeCompare(y.label);
   const group = (kind) => options.filter((o) => (kind === "me" ? o.key === "me" : o.key.startsWith(kind)));
   const groups = all
     ? [["", group("me")], ["Ideologies", group("i:").sort(byName)], ["People", group("p:").sort(byName)]]
-    : [["", options.filter((o) => o.label.toLowerCase().includes(q))
-      .sort((x, y) => x.label.toLowerCase().indexOf(q) - y.label.toLowerCase().indexOf(q) || byName(x, y))]];
+    : [["", options.filter((o) => fold(o.label).includes(q))
+      .sort((x, y) => fold(x.label).indexOf(q) - fold(y.label).indexOf(q) || byName(x, y))]];
   let n = 0;
   list.innerHTML = groups.filter(([, items]) => items.length).map(([title, items]) =>
     (title ? `<li class="combo-group" role="presentation">${title}</li>` : "") +
