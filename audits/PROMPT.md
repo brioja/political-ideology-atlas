@@ -1,7 +1,7 @@
 # Ideology audit instructions
 
-You are auditing one ideology for Political Ideology Atlas, a political ideology test. Your job is to work
-out how a committed adherent of this ideology would answer each test statement, and to show your
+You are auditing one ideology for Political Ideology Atlas, a political ideology test. Your job is to record
+the ideology's positions on each test statement as its own sources state them, and to show your
 evidence. Each answer you give becomes one coordinate of the ideology's profile, which test takers
 are matched against. Getting it wrong puts real people into the wrong ideology.
 
@@ -102,8 +102,7 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
   (`null`). Wikipedia doesn't define a family (AUDIT_RULES.md section 2). Mark the audit
   `"family": true`.
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
-  answer as its political implications are usually drawn by its scholars and modern adherents. Say
-  so in `scope`, and expect many low-confidence answers.
+  answer from the political implications its own texts and its scholars draw. Say so in `scope`, and expect many low-confidence answers.
 
 ## 2. Sources for an ideology
 
@@ -116,9 +115,9 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
 
 ## 3. Answering for an ideology
 
-- Answer as a typical committed adherent would, not a fringe member or a critic.
-- A documented split among its strands or adherents (Labor Zionism's cooperatives against
-  Revisionist Zionism's private enterprise) is 0 at `low`, a real position. Silence is `null`.
+- Answer from the ideology's own sources (section 1), not from adherents, member organisations or
+  critics. Where its own sources take opposite positions on a statement, it is a split: 0 at `low`, a
+  real position. Silence is `null`.
 - The ideology's stated position settles a statement only where the statement couldn't be true
   without contradicting it: a 19th-century ideology's stated view on industry doesn't settle nuclear
   power (`null`), but a doctrine of rule by competence settles hereditary office.
@@ -210,7 +209,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
     "<statement id>": {
       "value": 2,
       "confidence": "high | medium | low",
-      "rationale": "Why an adherent answers this way.",
+      "rationale": "What the ideology's own sources state on this.",
       "sources": ["s1"]
     },
     "<statement id>": {
@@ -229,7 +228,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "quotes": [{ "text": "verbatim passage", "source": "s1", "where": "page, section or file and line" }]
     }
   ],
-  "notes": "Optional: contested points, strands that would answer differently, caveats."
+  "notes": "Optional: contested points, caveats, themes searched."
 }
 ```
 

@@ -81,8 +81,8 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-- **0 is a documented middle:** the evidence genuinely points both ways (a mixed record, strands or
-  adherents split), or the subject deliberately takes no side (laïcité refuses to rule on religious
+- **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
+  record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
 - **±2** only when the position is central or stated explicitly and forcefully.
 - **Every answer is stated or null; there are no inferences.** An answer is stated when the
@@ -112,12 +112,11 @@ free trade, not about markets in general.
 - **A related subject's sources aren't the subject's.** Sources about a broader, narrower or related
   subject don't answer for the subject, in either direction: secularism's not for Jewish
   secularism, nor American Jewish secularism's for Jewish secularism as a whole; a party's not for
-  one of its members. That is borrowing, not evidence: without the subject's own
-  sources the answer is `null`. A branch's position (one country, strand or organisation) is never
-  the whole subject's, however many branches share it: organisations can agree on something that
-  isn't part of the ideology (Brandon, 2026-11-06). Only the subject's own sources answer: its
-  defining sources and the texts they tie to it. Where those take opposite positions on the same
-  question, it is a split (0, `low`), never one side and never `null`.
+  one of its members, nor one organisation's or several organisations' for an ideology they share
+  (organisations can agree on something that isn't part of the ideology; Brandon, 2026-11-06). That
+  is borrowing, not evidence: only the subject's own sources answer (for an ideology, its defining
+  sources and the texts they tie to it), and without them the answer is `null`. Where the subject's
+  own sources take opposite positions on the same question, it is a split (0, `low`).
 - **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
   lobby's scorecard grade), are not evidence of a position.
 - **Record over words.** Where the subject has a record on a statement (acts, not words), answer
@@ -145,10 +144,10 @@ least one source id from your `sources` list.
   that source, or (for an ideology) settled in the scholarship. The rationale says what the source
   states about this statement; a stock phrase ("Nationalism rejected.") or a position the sources
   never discuss is at most `medium`.
-- `medium`: clearly implied by what the subject said or did on this statement's topic; reported by a
-  secondary or scholarly source; or (for an ideology) the documented majority view of adherents.
-- `low`: mixed or contested. If the rationale has to say that the evidence or adherents are split,
-  the answer is `low`. A question anachronistic for the subject (it couldn't have taken a side on it)
+- `medium`: clearly implied by what the subject said or did on this statement's topic, or reported
+  by a secondary or scholarly source.
+- `low`: mixed or contested. If the rationale has to say that the evidence is split, the answer is
+  `low`. A question anachronistic for the subject (it couldn't have taken a side on it)
   is `null`, unless the subject's own texts settle it anyway.
 
 ## 5. Uncertainty: placed on every dividing line
