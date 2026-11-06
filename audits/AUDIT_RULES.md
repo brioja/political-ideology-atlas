@@ -113,9 +113,11 @@ free trade, not about markets in general.
   subject don't answer for the subject, in either direction: secularism's not for Jewish
   secularism, nor American Jewish secularism's for Jewish secularism as a whole; a party's not for
   one of its members. That is borrowing, not evidence: without the subject's own
-  sources the answer is `null`. One branch's position (one country, strand or organisation) is the
-  whole subject's only where sources show the other branches share it; where they take opposite
-  positions on the same question, it is a split (0, `low`), never one side and never `null`.
+  sources the answer is `null`. A branch's position (one country, strand or organisation) is never
+  the whole subject's, however many branches share it: organisations can agree on something that
+  isn't part of the ideology (Brandon, 2026-11-06). Only the subject's own sources answer: its
+  defining sources and the texts they tie to it. Where those take opposite positions on the same
+  question, it is a split (0, `low`), never one side and never `null`.
 - **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
   lobby's scorecard grade), are not evidence of a position.
 - **Record over words.** Where the subject has a record on a statement (acts, not words), answer
