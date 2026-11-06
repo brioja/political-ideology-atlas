@@ -27,8 +27,9 @@ full audit if the entry is:
   Progressive Era, ethics);
 - a duplicate: another file in `audits/profiles/` already covers the same ideology under another
   name (for example Maoism and Maoist Communism); or
-- too obscure to document: it has no English Wikipedia article of its own, or no reliable source
-  describes its positions. A redirect counts only if it is another name for the article's subject,
+- not notable: it has no English Wikipedia article of its own (Wikipedia establishes notability;
+  a thin record is not a reason: audit it, and the uncertainty rule decides). A redirect counts only if
+  it is another name for the article's subject,
   not a broader topic (unless that topic holds branches with opposite positions, like
   Accelerationism).
 
