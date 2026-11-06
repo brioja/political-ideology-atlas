@@ -43,10 +43,6 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
   its content describes how a society is run); it fails when the content holds no such ideas, only other
   ideologies' ideas, or several opposing sets; prejudices and attitudes pass (their content says who
   belongs or who should hold power);
-- **a duplicate** of another audited ideology under another name (an entry with its own
-  Wikipedia article, not a redirect, is distinct, even when it overlaps heavily with another:
-  Arab nationalism and Pan-Arabism, Socialist democracy and Democratic socialism; a disambiguation
-  page is no article); or
 - **not notable:** no English Wikipedia article of its own. Wikipedia establishes notability; a thin
   record is never a reason to exclude (Brandon, 2026-11-05).
 
