@@ -65,6 +65,8 @@ const articleText = (e) => { const h = articleHtml(e); return h && htmlToText(h)
 const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf(await cachedJson(articleUrl(t), { pauseMs: 3000 })) : null; };
 // Notability by Wikipedia, decided by data: an article of its own (resolve-articles.js). Entries not yet
 // resolved count as notable until the file says otherwise.
+// Other names for an entry's article: redirects Wikipedia files as another name for it (resolve-articles.js).
+const wikipediaOtherNames = (id) => { const a = wikipediaArticles()[id]; return (a && a.otherNames) || []; };
 const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
 const articleKey = (e) => {
   const a = wikipediaArticles()[e.id];
@@ -209,6 +211,6 @@ function wordingMarks(text) {
   return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
 }
 
-module.exports = { cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

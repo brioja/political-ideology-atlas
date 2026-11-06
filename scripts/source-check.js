@@ -265,6 +265,15 @@ function check(id, audit, { strict = false } = {}) {
     }
     kept.push(al);
   }
+  // Other names Wikipedia files as redirects to this ideology's article are aliases automatically, one to one
+  // (Brandon, 2026-11-06: "Leftism", "Leftist" for left-wing politics). One that is an everyday word, the name of
+  // another ideology or an alias another audit claims is simply left out.
+  for (const raw of lib.wikipediaOtherNames(id)) {
+    const al = raw.replace(/\s*\([^)]*\)\s*$/, "").trim(), k = norm(al);
+    if (!al || k === norm(audit.name) || kept.some((x) => norm(x) === k) || !isName(al, audit.name)) continue;
+    if ([...(ownNames.get(k) || [])].some((o) => o !== id) || [...(namesTaken().get(k) || [])].some((o) => o !== id)) continue;
+    kept.push(al);
+  }
   const names = [audit.name, ...kept].map(norm);
   const sources = Array.isArray(audit.sources) ? audit.sources : [];
   const defining = [];
