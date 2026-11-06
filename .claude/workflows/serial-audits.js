@@ -3,6 +3,7 @@ export const meta = {
   description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site; people most likely to pass first, ideologies most viewed first) one at a time, each in a fresh agent, and deploy',
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout), {"skip": ["id", ...]} to pass over entries (e.g. people waiting for books)',
   phases: [
+    { title: 'Books', detail: 'people runs: fetch the next people\'s public-domain books, list the rest in ~/work/books-wanted.md' },
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
     { title: 'Triage', detail: 'refit the people triage on the new results (people runs)' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
@@ -89,7 +90,16 @@ const SIGNAL_PROMPT = `Working directory: ${ROOT}.
    rerun the signal script, build and tests, and commit again. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
 Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or not.`
 
+// Before a people run: the next people in triage order get their public-domain books into the local corpora, and
+// their other works go into the maintainer's books-wanted document (audits with own books pass more often).
+const BOOKS_PROMPT = `Working directory: ${ROOT}. Run \`node scripts/prefetch-books.js --next ${LIMIT}${opts.skip && opts.skip.length ? ` --skip ${opts.skip.join(',')}` : ''}\`
+(it can take several minutes: Gutenberg mirror downloads one second apart). It changes no repo file. Reply with the line it printed, or the error.`
+
 const reports = []
+if (opts.kind === 'people') {
+  phase('Books')
+  reports.push(`books: ${await agent(BOOKS_PROMPT, { label: 'books', phase: 'Books', effort: 'low' })}`)
+}
 let ended = `limit of ${LIMIT} reached`
 for (let i = 0; i < LIMIT; i++) {
   phase('Audit')
