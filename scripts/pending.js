@@ -18,6 +18,7 @@ const limit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 const { validate, excludedOnly } = require("./validate");
 const pending = catalog().filter((entry) => {
   if (!PEOPLE && lib.duplicateOf(entry.id)) return false; // another entry owns its Wikipedia article
+  if (!PEOPLE && !lib.notable(entry.id)) return false; // no Wikipedia article of its own
   if (!fs.existsSync(profilePath(entry.id))) return true;
   const { errors } = validate(entry.id);
   return errors.length > 0 && !excludedOnly(errors); // complete but excluded: don't redo it

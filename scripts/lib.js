@@ -27,12 +27,25 @@ const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideolo
 // the entry whose own title is the article ("exact"), else the most viewed; every other entry on that
 // article is a duplicate of it and is never audited. No exceptions (Brandon, 2026-11-05).
 let dupMap = null;
-const articleKey = (e) => decodeURIComponent(String(e.wikipedia || "")).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "").replace(/_/g, " ").toLowerCase();
+// What Wikipedia says about each entry's name (scripts/resolve-articles.js), when it has been fetched.
+let articles = null;
+const wikipediaArticles = () => {
+  if (articles === null) { const f = path.join(ROOT, "audits", "wikipedia-articles.json"); articles = fs.existsSync(f) ? readJson(f).entries : {}; }
+  return articles;
+};
+// Notability by Wikipedia, decided by data: an article of its own (resolve-articles.js). Entries not yet
+// resolved count as notable until the file says otherwise.
+const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
+const articleKey = (e) => {
+  const a = wikipediaArticles()[e.id];
+  if (a && a.title) return a.title.toLowerCase();
+  return decodeURIComponent(String(e.wikipedia || "")).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "").replace(/_/g, " ").toLowerCase();
+};
 function duplicateOf(id) {
   if (!dupMap) {
     dupMap = new Map();
     const groups = new Map();
-    for (const e of catalog()) { const k = articleKey(e); if (!k) continue; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }
+    for (const e of catalog()) { const k = articleKey(e); if (!k || !notable(e.id)) continue; // a redirect to a subtopic or related article is not notable, not a duplicate if (!groups.has(k)) groups.set(k, []); groups.get(k).push(e); }
     for (const g of groups.values()) {
       if (g.length < 2) continue;
       const owner = [...g].sort((a, b) => (b.wikipediaMatch === "exact") - (a.wikipediaMatch === "exact") || (b.views12m || 0) - (a.views12m || 0) || a.id.localeCompare(b.id))[0];
@@ -41,6 +54,9 @@ function duplicateOf(id) {
   }
   return dupMap.get(id) || null;
 }
+// The names of an entry's duplicates (catalog names that Wikipedia redirects to its article) are its
+// aliases: a redirect has one target, so the link is one to one ("Neoreaction" for Dark Enlightenment).
+const redirectAliases = (id) => { duplicateOf("_"); return catalog().filter((e) => dupMap.get(e.id) === id).map((e) => e.name); };
 
 // Audits go stale per statement, not all at once: a new statement only needs answering, and a
 // removed one is ignored. Rewording would silently change what was answered, so a reworded
@@ -162,6 +178,6 @@ function wordingMarks(text) {
   return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
 }
 
-module.exports = { duplicateOf, articleKey, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

@@ -1,0 +1,85 @@
+// Notability by Wikipedia, decided by data (Brandon, 2026-11-05). For every catalog entry, asks the
+// English Wikipedia API about the entry's name and records in audits/wikipedia-articles.json:
+//   title          the article the name lands on (after a redirect), or null
+//   redirect       the name is a redirect; its categories say what kind
+//   disambiguation the name (or its target) is a disambiguation page
+//   notable        has an article of its own: the name is the article, or a redirect that Wikipedia
+//                  files as another name for it (alternative name, spelling, capitalisation,
+//                  abbreviation, other language...). A missing page, a disambiguation page, or a
+//                  redirect to a section, subtopic or related topic is not.
+// scripts/lib.js reads the file: non-notable entries are never queued, built or audited, and
+// duplicates are decided on the resolved titles. Run after the catalog changes:
+//   node scripts/resolve-articles.js
+"use strict";
+const fs = require("fs");
+const path = require("path");
+const https = require("https");
+const lib = require("./lib");
+
+const OUT = path.join(lib.ROOT, "audits", "wikipedia-articles.json");
+const UA = "ideology-atlas-catalog-check/1.0 (research script)";
+const get = (params) => new Promise((resolve, reject) => {
+  const q = new URLSearchParams({ format: "json", formatversion: "2", ...params }).toString();
+  https.get({ host: "en.wikipedia.org", path: `/w/api.php?${q}`, headers: { "User-Agent": UA } }, (res) => {
+    let d = ""; res.on("data", (c) => (d += c)); res.on("end", () => {
+      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
+      try { resolve(JSON.parse(d)); } catch (e) { reject(e); }
+    });
+  }).on("error", reject);
+});
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Redirect categories that make a redirect another name for its target.
+const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
+const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;
+
+async function main() {
+  const entries = lib.catalog();
+  const names = [...new Set(entries.map((e) => e.name))];
+  const info = new Map(); // name -> { title, redirect, fragment, disambiguation, missing }
+  for (let i = 0; i < names.length; i += 50) {
+    const batch = names.slice(i, i + 50);
+    const r = await get({ action: "query", titles: batch.join("|"), redirects: "1", prop: "pageprops", ppprop: "disambiguation" });
+    const norm = new Map((r.query.normalized || []).map((x) => [x.from, x.to]));
+    const redir = new Map((r.query.redirects || []).map((x) => [x.from, x]));
+    const pages = new Map((r.query.pages || []).map((p) => [p.title, p]));
+    for (const n of batch) {
+      const t0 = norm.get(n) || n, rd = redir.get(t0), target = rd ? rd.to : t0, p = pages.get(target) || {};
+      info.set(n, { from: t0, title: p.missing ? null : target, redirect: !!rd, fragment: rd && rd.tofragment || null,
+        disambiguation: !!(p.pageprops && "disambiguation" in p.pageprops), missing: !!p.missing || p.invalid === true });
+    }
+    await sleep(1000);
+  }
+  // Categories of the redirect pages themselves (what kind of redirect each is).
+  const redirects = [...info.values()].filter((x) => x.redirect).map((x) => x.from);
+  const cats = new Map();
+  for (let i = 0; i < redirects.length; i += 50) {
+    const batch = redirects.slice(i, i + 50);
+    let cont = {};
+    do {
+      const r = await get({ action: "query", titles: batch.join("|"), prop: "categories", cllimit: "max", ...cont });
+      for (const p of r.query.pages || []) cats.set(p.title, [...(cats.get(p.title) || []), ...(p.categories || []).map((c) => c.title.replace(/^Category:/, ""))]);
+      cont = r.continue || {};
+      await sleep(1000);
+    } while (cont.clcontinue);
+  }
+  const out = {};
+  for (const e of entries) {
+    const x = info.get(e.name) || {};
+    const c = x.redirect ? cats.get(x.from) || [] : [];
+    let notable = true, reason = "own article";
+    if (x.missing || !x.title) { notable = false; reason = "no Wikipedia page"; }
+    else if (x.disambiguation) { notable = false; reason = "disambiguation page"; }
+    else if (x.redirect) {
+      if (x.fragment) { notable = false; reason = `redirect to a section (${x.title}#${x.fragment})`; }
+      else if (c.some((k) => OTHER.test(k))) { notable = false; reason = `redirect to a related topic (${x.title}; ${c.find((k) => OTHER.test(k))})`; }
+      else if (c.some((k) => SAME.test(k))) { reason = `another name for ${x.title}`; }
+      else { reason = `redirect to ${x.title} (uncategorised: counted as another name)`; }
+    }
+    out[e.id] = { name: e.name, title: x.title || null, redirect: !!x.redirect, disambiguation: !!x.disambiguation, notable, reason, ...(c.length ? { redirectCategories: c } : {}) };
+  }
+  fs.writeFileSync(OUT, JSON.stringify({ note: "Generated by scripts/resolve-articles.js from the English Wikipedia API: the article each catalog entry's name lands on and whether it is the entry's own (notability). Read by scripts/lib.js.", fetched: new Date().toISOString().slice(0, 10), entries: out }, null, 1) + "\n");
+  const n = Object.values(out);
+  console.log(`${n.length} entries: ${n.filter((x) => x.notable).length} notable, ${n.filter((x) => !x.notable).length} not.`);
+  for (const [id, x] of Object.entries(out)) if (!x.notable) console.log(`  ${id}: ${x.reason}`);
+}
+main().catch((e) => { console.error(e.message); process.exit(1); });
