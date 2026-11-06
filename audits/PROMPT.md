@@ -22,7 +22,8 @@ The catalog is built generously from loose sources (Wikipedia's list of politica
 older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
 Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
 full audit if the entry is:
-- not a set of political ideas for how to run a society: its content holds none. Judge the content,
+- not a set of political ideas for how to run a society: its content holds none (notability and
+  duplicates are checked in code before an entry reaches you). Judge the content,
   not who holds it or what kind of thing it is: a regime type, doctrine, practice, institution, current,
   organisation or a name coined by critics passes if its content describes how a society is run. It fails
   when the content is the absence of political ideas (political apathy), only distance from the mainstream
@@ -30,12 +31,7 @@ full audit if the entry is:
   by what they oppose or by place (criticism of Marxism), a subject other than running a society (a
   biogeographic term, an arts movement, a method in philosophy), or who took part in an event without ideas
   of their own (Brandon, 2026-11-05). Prejudices and attitudes pass: their content says who belongs,
-  who comes first or who should hold power;
-- not notable: it has no English Wikipedia article of its own (Wikipedia establishes notability;
-  a thin record is not a reason: audit it, and the uncertainty rule decides). A redirect counts only if
-  it is another name for the article's subject,
-  not a broader topic (unless that topic holds branches with opposite positions, like
-  Accelerationism).
+  who comes first or who should hold power.
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
 
