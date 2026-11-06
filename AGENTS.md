@@ -8,11 +8,9 @@ agents too. This file adds what matters when running the audit workflows in
 
 - **Launch by script path**, not by name. Launching by name can run a copy cached when the
   session started, so edits to the workflow file are silently ignored.
-- **At most two `serial-audits` workflows at once, split by kind** (Brandon, 2026-11-06): one with
-  `{"kind": "people"}`, one with `{"kind": "ideologies"}`, each in its own checkout (`root`: the
-  ideology run uses the git worktree `../political_ideology_test-ideologies`, whose `scratchpad`
-  links to the main one). Two runs in one checkout race on builds and git; two of the same kind
-  pick the same entry. Only the ideology run does the Signal phase.
+- **One `serial-audits` workflow at a time** (two at once, split by kind in separate checkouts, was tried
+  2026-11-06 and dropped: agents wrote into the wrong checkout). Alternate `{"kind": "people"}` and
+  `{"kind": "ideologies"}` runs instead.
 - **Parallel runs:** each lane writes only its own audit file. A single integrator merges
   proposed statements, builds, tests and pushes. A second people lane run from another agent
   follows [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md); `build.js --people` picks up every file
