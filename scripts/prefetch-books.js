@@ -146,10 +146,13 @@ function availableBooks(people) {
     .map((l) => l.split("\t")).filter(([w, f]) => f && Number(w) >= BOOK_WORDS).map(([, f]) => fold(f));
   const out = {};
   for (const p of people) {
-    const surname = fold(p.name.split(/\s+/).pop());
-    out[p.id] = gutenbergBooks(catalog, p).filter((b) => gutText.has(b["Text#"]) && fs.statSync(gutText.get(b["Text#"])).size >= BOOK_BYTES).length
-      + refBooks.filter((f) => f.includes(fold(p.name)) || f.includes(surname + ",")).length
-      + marxistsBooks(path.join(CORPORA, "marxists", "text", surname));
+    // The catalog name and the Wikipedia title both count ("Aurobindo Ghosh" is "Sri Aurobindo" on Wikipedia).
+    const title = decodeURIComponent(String(p.wikipedia || "").replace(/^.*\/wiki\//, "")).replace(/_/g, " ").replace(/\s*\([^)]*\)$/, "");
+    const names = [...new Set([p.name, title].filter(Boolean).map(fold))];
+    const surnames = [...new Set(names.map((n) => n.split(/\s+/).pop()))];
+    out[p.id] = gutenbergBooks(catalog, { ...p, name: names.join(" ") }).filter((b) => gutText.has(b["Text#"]) && fs.statSync(gutText.get(b["Text#"])).size >= BOOK_BYTES).length
+      + refBooks.filter((f) => names.some((n) => f.includes(n)) || surnames.some((sn) => f.includes(sn + ","))).length
+      + Math.max(0, ...surnames.map((sn) => marxistsBooks(path.join(CORPORA, "marxists", "text", sn))));
   }
   return out;
 }
