@@ -39,11 +39,14 @@ audit order.
 The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the entry is:
 
 - **not a set of political beliefs:** an organisation, party, movement as a group, event, period,
-  office, person, place, prejudice or field of study;
+  office, person, place, prejudice or field of study; a political current or a name coined by critics is still a set
+  of ideas;
 - **a duplicate** of another audited ideology under another name (an entry with its own
   Wikipedia article, not a redirect, is distinct, even when it overlaps heavily with another:
-  Arab nationalism and Pan-Arabism, Socialist democracy and Democratic socialism); or
-- **undocumented:** no reliable source describes its positions.
+  Arab nationalism and Pan-Arabism, Socialist democracy and Democratic socialism; a disambiguation
+  page is no article); or
+- **not notable:** no English Wikipedia article of its own. Wikipedia establishes notability; a thin
+  record is never a reason to exclude (Brandon, 2026-11-05).
 
 When in doubt, the entry is audited, and gate 3 decides on the evidence.
 
