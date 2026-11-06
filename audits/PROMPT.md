@@ -22,10 +22,14 @@ The catalog is built generously from loose sources (Wikipedia's list of politica
 older hand-made list), so some entries aren't ideologies. Before researching, open the suggested
 Wikipedia article and check (the full criteria are in `audits/IDEOLOGY_STANDARD.md`). Skip the
 full audit if the entry is:
-- not a set of political ideas for how to run a society: its content holds none (notability and
-  duplicates are checked in code before an entry reaches you). Judge the content,
-  not who holds it or what kind of thing it is: a regime type, doctrine, practice, institution, current,
-  organisation or a name coined by critics passes if its content describes how a society is run. It fails
+- something that has ideas but isn't a set of ideas: a person (`PERSON`), a political party (`PARTY`),
+  an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
+  France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
+  such as a war, revolution, election, battle or protest (`EVENT`); or
+- not a set of political ideas for how to run a society (`NO_POLITICAL_IDEAS`): its content holds none
+  (notability and duplicates are checked in code before an entry reaches you). Judge the content,
+  not who holds it: a regime type, doctrine, practice, institution, current or a name coined by critics
+  passes if its content describes how a society is run. It fails
   when the content is the absence of political ideas (political apathy), only distance from the mainstream
   (extremism), only other ideologies' ideas (political syncretism), several opposing sets of ideas grouped
   by what they oppose or by place (criticism of Marxism), a subject other than running a society (a
@@ -41,7 +45,7 @@ Then write only this to `audits/profiles/{{id}}.json` and stop (the validator ac
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id>",
-  "notAnIdeology": "One or two sentences on why.",
+  "notAnIdeology": { "reason": "PERSON | PARTY | ORGANIZATION | STATE | GOVERNMENT_BODY | EVENT | NO_POLITICAL_IDEAS", "explanation": "One or two sentences on why." },
   "sources": [{ "id": "s1", "kind": "reference", "title": "…", "url": "https://… (a page you opened)" }]
 }
 ```

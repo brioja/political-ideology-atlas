@@ -13,21 +13,11 @@
 "use strict";
 const fs = require("fs");
 const path = require("path");
-const https = require("https");
 const lib = require("./lib");
 
 const OUT = path.join(lib.ROOT, "audits", "wikipedia-articles.json");
-const UA = "ideology-atlas-catalog-check/1.0 (research script)";
-const get = (params) => new Promise((resolve, reject) => {
-  const q = new URLSearchParams({ format: "json", formatversion: "2", ...params }).toString();
-  https.get({ host: "en.wikipedia.org", path: `/w/api.php?${q}`, headers: { "User-Agent": UA } }, (res) => {
-    let d = ""; res.on("data", (c) => (d += c)); res.on("end", () => {
-      if (res.statusCode !== 200) return reject(new Error(`HTTP ${res.statusCode}`));
-      try { resolve(JSON.parse(d)); } catch (e) { reject(e); }
-    });
-  }).on("error", reject);
-});
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const get = (params) => lib.cachedJson(`https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`);
+const sleep = () => Promise.resolve();
 // Redirect categories that make a redirect another name for its target.
 const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
 const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;

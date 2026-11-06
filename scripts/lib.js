@@ -23,6 +23,24 @@ const isCandidate = (s) => s.status === "candidate";
 const activeStatements = () => allStatements().filter((s) => !isCandidate(s));
 const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideologies;
 
+// Wikipedia and Wikidata requests, cached on disk (~/.cache/political-ideology-atlas/http/<sha1>.json)
+// so a rerun reads local copies instead of asking Wikimedia again (rate limits). Polite: one request
+// at a time, a pause after each network fetch, and a 429 stops the run (never retried in a loop).
+const HTTP_CACHE = path.join(process.env.XDG_CACHE_HOME || path.join(require("os").homedir(), ".cache"), "political-ideology-atlas", "http");
+async function cachedJson(url, { body = null, headers = {}, pauseMs = 1000 } = {}) {
+  fs.mkdirSync(HTTP_CACHE, { recursive: true });
+  const key = require("crypto").createHash("sha1").update(url + "\n" + (body || "")).digest("hex");
+  const file = path.join(HTTP_CACHE, key + ".json");
+  if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, "utf8"));
+  const res = await fetch(url, { method: body ? "POST" : "GET", body, headers: { "User-Agent": "ideology-atlas-catalog-check/1.0 (research script)", ...headers } });
+  if (res.status === 429) throw new Error(`HTTP 429 from ${new URL(url).host} (retry-after ${res.headers.get("retry-after") || "?"} s): stopping`);
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url.slice(0, 120)}`);
+  const json = await res.json();
+  fs.writeFileSync(file, JSON.stringify(json));
+  await new Promise((r) => setTimeout(r, pauseMs));
+  return json;
+}
+
 // Duplicates, decided by data: one catalog entry per Wikipedia article (after redirects). The owner is
 // the entry whose own title is the article ("exact"), else the most viewed; every other entry on that
 // article is a duplicate of it and is never audited. No exceptions (Brandon, 2026-11-05).
@@ -179,6 +197,6 @@ function wordingMarks(text) {
   return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
 }
 
-module.exports = { duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { cachedJson, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

@@ -38,9 +38,12 @@ audit order.
 
 The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the entry is:
 
-- **not a set of political ideas for how to run a society:** judged by its content, not by who holds it
-  or what kind of thing it is (a regime type, doctrine, practice, organisation or critics' name passes if
-  its content describes how a society is run); it fails when the content holds no such ideas, only other
+- **something that has ideas but isn't a set of ideas:** a person, party, organization, state,
+  government body (not a form of government) or event (`notAnIdeology.reason` PERSON, PARTY,
+  ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
+- **not a set of political ideas for how to run a society** (NO_POLITICAL_IDEAS): judged by its content,
+  not by who holds it (a regime type, doctrine, practice or critics' name passes if its content describes
+  how a society is run); it fails when the content holds no such ideas, only other
   ideologies' ideas, or several opposing sets; prejudices and attitudes pass (their content says who
   belongs or who should hold power). Notability and duplicates are gate 1, checked in code.
 

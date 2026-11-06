@@ -17,6 +17,9 @@ const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : li
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
+// Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
+// but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
+const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "NO_POLITICAL_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
@@ -45,10 +48,14 @@ function validate(id) {
   // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
   if (!PEOPLE && a.notAnIdeology !== undefined) {
-    if (typeof a.notAnIdeology !== "string" || a.notAnIdeology.trim().length < 20) errors.push('"notAnIdeology" needs a reason of at least a sentence');
+    // { "reason": one of NOT_AN_IDEOLOGY_REASONS, "explanation": "..." }; older records are a plain string.
+    const n = a.notAnIdeology, legacy = typeof n === "string";
+    if (legacy) { if (n.trim().length < 20) errors.push('"notAnIdeology" needs a reason of at least a sentence'); else warnings.push('"notAnIdeology" is free text: new records use { "reason", "explanation" }'); }
+    else if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notAnIdeology.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
+    else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notAnIdeology.explanation" needs at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
     if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notAnIdeology" needs at least one source with an http(s) url');
-    if (!errors.length) errors.push(`not an ideology: ${a.notAnIdeology}`);
+    if (!errors.length) errors.push(`not an ideology: ${legacy ? n : `${n.reason}: ${n.explanation}`}`);
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
