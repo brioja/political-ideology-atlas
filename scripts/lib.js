@@ -27,10 +27,10 @@ const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideolo
 // so a rerun reads local copies instead of asking Wikimedia again (rate limits). Polite: one request
 // at a time, a pause after each network fetch, and a 429 stops the run (never retried in a loop).
 const HTTP_CACHE = path.join(process.env.XDG_CACHE_HOME || path.join(require("os").homedir(), ".cache"), "political-ideology-atlas", "http");
+const cacheFile = (url, body = null) => path.join(HTTP_CACHE, require("crypto").createHash("sha1").update(url + "\n" + (body || "")).digest("hex") + ".json");
 async function cachedJson(url, { body = null, headers = {}, pauseMs = 1000 } = {}) {
   fs.mkdirSync(HTTP_CACHE, { recursive: true });
-  const key = require("crypto").createHash("sha1").update(url + "\n" + (body || "")).digest("hex");
-  const file = path.join(HTTP_CACHE, key + ".json");
+  const file = cacheFile(url, body);
   if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, "utf8"));
   const res = await fetch(url, { method: body ? "POST" : "GET", body, headers: { "User-Agent": "ideology-atlas-catalog-check/1.0 (research script)", ...headers } });
   if (res.status === 429) throw new Error(`HTTP 429 from ${new URL(url).host} (retry-after ${res.headers.get("retry-after") || "?"} s): stopping`);
@@ -51,6 +51,18 @@ const wikipediaArticles = () => {
   if (articles === null) { const f = path.join(ROOT, "audits", "wikipedia-articles.json"); articles = fs.existsSync(f) ? readJson(f).entries : {}; }
   return articles;
 };
+// An entry's whole Wikipedia page (the article the catalog resolved it to) as Wikipedia renders it,
+// references and external links included, cached like every other Wikipedia request (Brandon, 2026-11-06).
+// articleHtml / articleText read the cache only (null if never fetched); fetchArticle fills it.
+const articleTitle = (e) => { const a = wikipediaArticles()[e.id]; return (a && a.title) || decodeURIComponent(String(e.wikipedia || "")).replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "").replace(/_/g, " ") || null; };
+const articleUrl = (title) => `https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", action: "parse", prop: "text", redirects: "1", page: title })}`;
+const htmlOf = (json) => (json && json.parse && json.parse.text) || null;
+const htmlToText = (html) => html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ")
+  .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/[ \t]+/g, " ");
+const articleHtml = (e) => { const t = articleTitle(e), f = t && cacheFile(articleUrl(t)); return f && fs.existsSync(f) ? htmlOf(JSON.parse(fs.readFileSync(f, "utf8"))) : null; };
+const articleText = (e) => { const h = articleHtml(e); return h && htmlToText(h); };
+const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf(await cachedJson(articleUrl(t), { pauseMs: 3000 })) : null; };
 // Notability by Wikipedia, decided by data: an article of its own (resolve-articles.js). Entries not yet
 // resolved count as notable until the file says otherwise.
 const notable = (id) => { const a = wikipediaArticles()[id]; return !a || a.notable; };
@@ -197,6 +209,6 @@ function wordingMarks(text) {
   return { errors: find(WORDING.errors), warnings: find(WORDING.warnings) };
 }
 
-module.exports = { cachedJson, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

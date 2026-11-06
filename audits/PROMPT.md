@@ -26,16 +26,10 @@ full audit if the entry is:
   an organization (`ORGANIZATION`), a state (`STATE`), a government body such as "the Government of
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
-- not a set of political ideas for how to run a society (`DOES_NOT_INCLUDE_IDEAS`): its content holds none
-  (notability and duplicates are checked in code before an entry reaches you). Judge the content,
-  not who holds it: a regime type, doctrine, practice, institution, current or a name coined by critics
-  passes if its content describes how a society is run. It fails
-  when the content is the absence of political ideas (political apathy), only distance from the mainstream
-  (extremism), only other ideologies' ideas (political syncretism), several opposing sets of ideas grouped
-  by what they oppose or by place (criticism of Marxism), a subject other than running a society (a
-  biogeographic term, an arts movement, a method in philosophy), or who took part in an event without ideas
-  of their own (Brandon, 2026-11-05). Prejudices and attitudes pass: their content says who belongs,
-  who comes first or who should hold power.
+- not a set of political ideas for how to run a society (`DOES_NOT_INCLUDE_IDEAS`): its content holds
+  none. It must also pass a code check: if the entry's Wikipedia article says "ideas" anywhere,
+  `scripts/validate.js` rejects the reason (Brandon, 2026-11-06), and you audit the entry in full.
+  Notability and duplicates are also checked in code before an entry reaches you.
 
 Then write only this to `audits/profiles/{{id}}.json` and stop (the validator accepts it):
 

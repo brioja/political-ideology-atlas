@@ -55,6 +55,13 @@ function validate(id) {
     else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notAnIdeology.explanation" needs at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
     if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notAnIdeology" needs at least one source with an http(s) url');
+    // An article that talks about the entry's "ideas" holds ideas (Brandon, 2026-11-06): no DOES_NOT_INCLUDE_IDEAS
+    // then; audit it. Reads the cached page (validate.js main fetches it first).
+    if (!legacy && n && n.reason === "DOES_NOT_INCLUDE_IDEAS" && entry) {
+      const text = lib.articleText(entry);
+      const hits = text ? (text.match(/\bideas\b/gi) || []).length : 0;
+      if (hits) errors.push(`DOES_NOT_INCLUDE_IDEAS not allowed: its Wikipedia article (${lib.articleTitle(entry)}) says "ideas" ${hits} time${hits > 1 ? "s" : ""}; audit it in full`);
+    }
     if (!errors.length) errors.push(`not an ideology: ${legacy ? n : `${n.reason}: ${n.explanation}`}`);
     return { errors, warnings };
   }
@@ -266,9 +273,17 @@ async function main() {
   let ids = args.filter((x) => !x.startsWith("--"));
   if (ids.length === 0) ids = fs.existsSync(PROFILES_DIR) ? fs.readdirSync(PROFILES_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 
+  const fetchFailed = new Map();
+  // Fetch (once, then cached) the whole Wikipedia page the DOES_NOT_INCLUDE_IDEAS check reads.
+  if (!PEOPLE) for (const id of ids) {
+    let a; try { a = readJson(profilePath(id)); } catch { continue; }
+    const entry = a && a.notAnIdeology && a.notAnIdeology.reason === "DOES_NOT_INCLUDE_IDEAS" && catalog().find((c) => c.id === id);
+    if (entry) try { await lib.fetchArticle(entry); } catch (e) { fetchFailed.set(id, e.message); }
+  }
   let failed = 0, excluded = 0;
   for (const id of ids.sort()) {
     const { errors, warnings, sources = [] } = validate(id);
+    if (fetchFailed.has(id)) errors.unshift(`DOES_NOT_INCLUDE_IDEAS unchecked: its Wikipedia page could not be fetched (${fetchFailed.get(id)}); validate again later`);
     if (links && errors.length === 0) for (const b of await checkLinks(sources)) errors.push(`dead link: ${b}`);
     if (errors.length) failed++;
     if (excludedOnly(errors)) excluded++;

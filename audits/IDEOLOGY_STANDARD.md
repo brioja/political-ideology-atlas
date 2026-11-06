@@ -41,11 +41,10 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
 - **something that has ideas but isn't a set of ideas:** a person, party, organization, state,
   government body (not a form of government) or event (`notAnIdeology.reason` PERSON, PARTY,
   ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
-- **not a set of political ideas for how to run a society** (DOES_NOT_INCLUDE_IDEAS): judged by its content,
-  not by who holds it (a regime type, doctrine, practice or critics' name passes if its content describes
-  how a society is run); it fails when the content holds no such ideas, only other
-  ideologies' ideas, or several opposing sets; prejudices and attitudes pass (their content says who
-  belongs or who should hold power). Notability and duplicates are gate 1, checked in code.
+- **not a set of political ideas for how to run a society** (DOES_NOT_INCLUDE_IDEAS): its content holds none,
+  and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
+  `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full (Brandon, 2026-11-06).
+  Notability and duplicates are gate 1, checked in code.
 
 When in doubt, the entry is audited, and gate 3 decides on the evidence.
 
