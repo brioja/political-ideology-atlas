@@ -41,7 +41,8 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
 - **not a set of political ideas for how to run a society:** judged by its content, not by who holds it
   or what kind of thing it is (a regime type, doctrine, practice, organisation or critics' name passes if
   its content describes how a society is run); it fails when the content holds no such ideas, only other
-  ideologies' ideas, or several opposing sets; prejudices stay excluded for now;
+  ideologies' ideas, or several opposing sets; prejudices and attitudes pass (their content says who
+  belongs or who should hold power);
 - **a duplicate** of another audited ideology under another name (an entry with its own
   Wikipedia article, not a redirect, is distinct, even when it overlaps heavily with another:
   Arab nationalism and Pan-Arabism, Socialist democracy and Democratic socialism; a disambiguation

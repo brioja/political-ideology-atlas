@@ -29,7 +29,8 @@ full audit if the entry is:
   (extremism), only other ideologies' ideas (political syncretism), several opposing sets of ideas grouped
   by what they oppose or by place (criticism of Marxism), a subject other than running a society (a
   biogeographic term, an arts movement, a method in philosophy), or who took part in an event without ideas
-  of their own; and, for now, a prejudice (Brandon, 2026-11-05);
+  of their own (Brandon, 2026-11-05). Prejudices and attitudes pass: their content says who belongs,
+  who comes first or who should hold power;
 - a duplicate: another file in `audits/profiles/` already covers the same ideology under another
   name (for example Maoism and Maoist Communism); or
 - not notable: it has no English Wikipedia article of its own (Wikipedia establishes notability;
