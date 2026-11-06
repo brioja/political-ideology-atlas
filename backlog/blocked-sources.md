@@ -81,3 +81,13 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Clintonism** (re-audit 2026-10-30, 43 stated, 1.01x the bar, off the site): Putting People First (1992,
   archive.org lending-only) and the full DLC New Orleans Declaration (1990) and New American Choice (1991)
   weren't reached; Clinton's own books were not tried. Any of them could carry it over the bar.
+- **Left-wing politics** (re-audit 2026-11-06, 7 known, off the site): Noël and Thérien's chapters on left and
+  right (paywalled), a Leiden thesis and a UPF paper (bot checks). Answers rest on Bobbio alone.
+- **Woke** (2026-11-06, 7 known, held by Brandon): Merriam-Webster, SAGE, Cardiff ORCA (VanDreew et al. 2025,
+  *Research & Politics*) and Black Lives Matter pages returned 403. Not yet looked for: Lahtinen's Critical Social
+  Justice Attitudes Scale (2024), Bunyasi and Smith, *Stay Woke* (NYU Press 2019), al-Gharbi, *We Have Never
+  Been Woke* (Princeton 2024).
+- **Pharaonism** (re-audit 2026-11-06, 8 known, off the site; Brandon: no deepen pass): Gershoni and
+  Jankowski, *Egypt, Islam and the Arabs*, Hindawi's Arabic editions, the Potenza, Geer and CUNY theses and
+  the Wilson Center piece were blocked or lending-only. Hussein's *Mustaqbal al-thaqafa fi Misr* is now in the
+  reference corpus.
