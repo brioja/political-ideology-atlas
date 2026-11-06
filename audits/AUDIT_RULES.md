@@ -93,6 +93,12 @@ free trade, not about markets in general.
   that campaigns for gay rights has a position on criminalising homosexuality. If the statement
   could be true without contradicting anything the subject states, the answer is `null`, however
   likely an answer seems.
+- **A premise is not a position.** A view the source assumes in order to argue something else (a
+  moral judgment it expects every reader to share, a premise used to refute a rival theory) isn't a
+  position the source presents as part of the subject. Regan's "there would be nothing wrong with
+  apartheid ... if few white South Africans were upset" refutes contractarianism; it doesn't state animal
+  rights' position on segregation laws, so that statement is `null`. Answer only from what the source
+  presents as the subject's own position (Brandon, 2026-11-05).
 - **A general value doesn't answer a specific statement.** Humanism, liberty, equality, democracy,
   "freedom of religion" or "equal rights for all" say nothing about returning to foraging, apostasy
   laws or blasphemy: `null`.
