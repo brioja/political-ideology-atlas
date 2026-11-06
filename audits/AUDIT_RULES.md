@@ -39,8 +39,9 @@ words; don't paste long passages.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (an archive.org
   copy, another site hosting the same text, the official record) before giving up. A site that refuses
-  scripted access (403, a bot check, a captcha, a 429) stays refused: never change the user agent, borrow
-  cookies or retry through another tool to get past it (Brandon: site terms are followed).
+  scripted access (403, a bot check, a captcha, a 429) stays refused: don't change the user agent, borrow
+  cookies or retry through another tool. Name the page in your report instead; the maintainer can open it
+  by hand (`backlog/blocked-sources.md` tracks audits held back this way).
 - Song lyrics are the subject's own words only if the subject wrote or co-wrote them. Lyrics
   written by someone else and only performed by the subject are not evidence of the subject's views.
   Check the songwriting credit (the album notes or a rights database such as ASCAP, BMI or PRS) and
