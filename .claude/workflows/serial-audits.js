@@ -1,9 +1,9 @@
 export const meta = {
   name: 'serial-audits',
-  description: 'Audit the most-viewed pending ideologies one at a time, each in a fresh agent that records its missing statements (bank frozen) and deploys',
+  description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site, most viewed first) one at a time, each in a fresh agent, and deploy',
   whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents',
   phases: [
-    { title: 'Audit', detail: 'one fresh agent per ideology: audit, record missing statements, commit, build, test, push' },
+    { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
     { title: 'Signal', detail: 'promote candidates with signal on the real lines, demote active statements without it' },
   ],
 }
@@ -17,16 +17,24 @@ const TICK = {
   type: 'object',
   properties: {
     done: { type: 'boolean', description: 'true if next.js printed null (no ideology left)' },
-    report: { type: 'string', description: 'one line: name, validator result, stated positions, number of missingStatements, deployed or not' },
+    report: { type: 'string', description: 'one line: kind and name, validator result, stated positions, number of missingStatements (ideologies), deployed or not' },
     deployed: { type: 'boolean' },
   },
   required: ['done', 'report', 'deployed'],
 }
 
-const tickPrompt = `You do one step of a serial ideology audit. Working directory: ${ROOT}. Today's date is the auditedAt date.
+const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT}. Today's date is the auditedAt date.
 
-1. Run \`node scripts/next.js --ideologies\`. If it prints null, reply with done=true and do nothing else.
-2. Audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
+1. Run \`node scripts/next.js\`. It prints the next entry as JSON with "kind": "ideology" or "person" (whichever kind has
+   fewer live on the site). If it prints null, reply with done=true and do nothing else.
+   If "kind" is "person": audit that person yourself following audits/AUDIT_RULES.md and audits/PROMPT_PEOPLE.md exactly
+   (answer every statement, candidates included; no source limit; deepen within the audit; local corpora first; save every
+   source in scratchpad/sources/<id>/; YouTube at most 5 requests). Write audits/people/<id>.json, run
+   \`node scripts/validate.js --people <id>\` and fix every error except the uncertainty rule (never raise a confidence to pass
+   it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line). Run
+   \`node scripts/build.js --people\` and \`node test.js --people\`; if they pass, commit people.js as "Rebuild people data" (no
+   attribution line), \`git pull --rebase\` and \`git push\`. Then skip to the end (steps 2-5 are for ideologies).
+2. If "kind" is "ideology": audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
    scopeNote, list missingStatements. Start from the source library the statement pass built, if there is one:
    scratchpad/sources/<id>/index.json and scratchpad/statement-pass/<id>.json (its "notes" say which files matter); read
