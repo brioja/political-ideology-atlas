@@ -28,3 +28,13 @@ ideas for how to run a society (regime types, doctrines, practices, prejudices a
 Re-run both pre-checks with the new definition (same pipeline, `scripts/ideology-candidates.js`) so the
 rejected entries are judged the same way; their verdicts then stand as they are. Costs one cheap
 agent pass over the rejected articles.
+
+## Entity check in code (agreed with Brandon 2026-11-05; build when Wikidata allows requests)
+
+An entry whose Wikidata item is an entity that HAS ideas but isn't one is excluded in code, before it
+reaches an agent: instance of (or subclass of) human, political party, organization, state (country,
+sovereign state, historical country), government (a specific body, e.g. "Government of France"; never a
+form of government, which stays in), or event (war, revolution, election, battle, protest, occurrence).
+An item that Wikidata ALSO files as an ideology, political movement, doctrine or policy is not excluded.
+Periods are NOT filtered. Data: Wikidata P31 + P279* (SPARQL or wbgetentities, slowly; 429 on 11-05).
+Sits beside scripts/resolve-articles.js (notability) and lib.duplicateOf; agents then judge only content.
