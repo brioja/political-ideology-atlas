@@ -217,15 +217,16 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   setLibraryForTests(null);
 }
 
-// A later pass comes at least a week after the previous one (from 2026-11-08; earlier passes stand).
+// A later pass comes at least two weeks after the previous one (from 2026-11-08; earlier passes stand).
 {
   const two = (d1, d2) => E(base(), (a) => { a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"]; a.auditedAt = d2;
     a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: d1 }, { auditor: "claude-opus-5-5", auditedAt: d2 }]; });
-  fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 7 days after the previous one \(2026-11-10\)/);
-  ok("later pass a week after the previous one", two("2026-11-10", "2026-11-17"));
+  fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 14 days after the previous one \(2026-11-10\)/);
+  fails("later pass 13 days after the previous one", two("2026-11-10", "2026-11-23"), /at least 14 days/);
+  ok("later pass two weeks after the previous one", two("2026-11-10", "2026-11-24"));
   ok("close passes before the rule stand", two("2026-10-27", "2026-10-31"));
-  assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-11-17", "next pass date from the latest pass"); n++;
-  assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-11-15", "next pass date from a single audit"); n++;
+  assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-11-24", "next pass date from the latest pass"); n++;
+  assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-11-22", "next pass date from a single audit"); n++;
 }
 
 setCommittedForTests(null);

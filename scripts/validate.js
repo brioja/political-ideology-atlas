@@ -22,7 +22,7 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
-const REAUDIT_DAYS = 7, REAUDIT_FROM = "2026-11-08"; // minimum gap between audit passes, and the date it applies from
+const REAUDIT_DAYS = 14, REAUDIT_FROM = "2026-11-08"; // minimum gap between audit passes, and the date it applies from
 // The earliest date a later pass on this audit may carry ("" when there is no earlier pass).
 const nextPassFrom = (a) => { const d = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop(); return d ? new Date(Date.parse(d) + REAUDIT_DAYS * 864e5).toISOString().slice(0, 10) : ""; };
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];

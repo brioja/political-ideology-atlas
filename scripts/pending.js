@@ -24,7 +24,7 @@ const pending = catalog().filter((entry) => {
   if (!fs.existsSync(profilePath(entry.id))) return true;
   const { errors } = validate(entry.id);
   if (!(errors.length > 0 && !excludedOnly(errors))) return false; // complete but excluded: don't redo it
-  // A later pass waits at least a week after the previous one (validate.js): not pending until then.
+  // A later pass waits at least two weeks after the previous one (validate.js): not pending until then.
   return nextPassFrom(readJson(profilePath(entry.id))) <= today;
 });
 

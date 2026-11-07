@@ -210,7 +210,7 @@ book the maintainer supplies). Build on the existing audit rather than starting 
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general
   value is `null`.
-- A later pass comes at least a week after the previous one (`validate.js` enforces it).
+- A later pass comes at least two weeks after the previous one (`validate.js` enforces it).
 - Use a model that hasn't audited the subject yet. Add your model id to `auditor` (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
