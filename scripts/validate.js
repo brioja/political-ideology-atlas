@@ -35,19 +35,19 @@ function grandfathered() {
   return grandfatheredIds;
 }
 
-// The committed copy of an audit, for the append-only review history; read only for files whose committed copy
-// has a "reviewHistory" (one git grep per run), so a full validation stays fast.
-let withHistory;
-function committedVersion(id) {
-  const rel = require("path").relative(lib.ROOT, require("path").join(PROFILES_DIR, `${id}.json`));
-  if (!withHistory) {
-    try {
-      withHistory = new Set(require("child_process").execFileSync("git", ["grep", "-l", '"reviewHistory"', "HEAD", "--", "audits/"], { cwd: lib.ROOT })
-        .toString().split("\n").filter(Boolean).map((l) => l.replace(/^HEAD:/, "")));
-    } catch { withHistory = new Set(); }
-  }
-  if (!withHistory.has(rel)) return null;
-  try { return JSON.parse(require("child_process").execFileSync("git", ["show", `HEAD:${rel}`], { cwd: lib.ROOT }).toString()); } catch { return null; }
+// The committed copy of an audit, to check a later pass's edits against it (append-only history, no sourced
+// answer changed without a talk-page record). Read only when the audit can differ from it: a draft checked from
+// elsewhere, a file with uncommitted changes, or one with a committed history (one git call each per run).
+let withHistory, modified;
+function committedVersion(id, readFrom) {
+  const path = require("path"), cp = require("child_process");
+  const canonical = path.join(PROFILES_DIR, `${id}.json`), rel = path.relative(lib.ROOT, canonical);
+  const git = (args) => { try { return cp.execFileSync("git", args, { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"] }).toString(); } catch { return ""; } };
+  if (!withHistory) withHistory = new Set(git(["grep", "-l", '"reviewHistory"', "HEAD", "--", "audits/"]).split("\n").filter(Boolean).map((l) => l.replace(/^HEAD:/, "")));
+  if (!modified) modified = new Set(git(["diff", "--name-only", "HEAD", "--", "audits/"]).split("\n").filter(Boolean));
+  if (path.resolve(readFrom) === canonical && !modified.has(rel) && !withHistory.has(rel)) return null;
+  const text = git(["show", `HEAD:${rel}`]);
+  try { return text ? JSON.parse(text) : null; } catch { return null; }
 }
 
 function validate(id) {
@@ -306,13 +306,23 @@ function validate(id) {
   if (historyIds.length && firstAudit) errors.push(`${historyIds.join(", ")}: "reviewHistory" in a first audit: its answers are the original text and have no history; only a later pass or review (recorded in "passes" or "reviews") replaces answers`);
   else if (nulledCount !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
   // Append-only: the committed history must still be there, unchanged, at the start of each list.
-  const before = committedVersion(id);
+  const before = committedVersion(id, p);
   if (before && before.answers) {
     for (const [sid, old] of Object.entries(before.answers)) {
       const prev = old && Array.isArray(old.reviewHistory) ? old.reviewHistory : [];
       if (!prev.length) continue;
       const cur = answers[sid] && Array.isArray(answers[sid].reviewHistory) ? answers[sid].reviewHistory : [];
       if (cur.length < prev.length || prev.some((e, i) => JSON.stringify(e) !== JSON.stringify(cur[i]))) errors.push(`${sid}: "reviewHistory" was changed or shortened; it is append-only`);
+    }
+    // A later pass never edits a sourced answer away: a committed answer with sources that is now changed or gone
+    // must be in that statement's reviewHistory, word for word (an unsourced one has nothing to review).
+    const same = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
+    for (const [sid, old] of Object.entries(before.answers)) {
+      if (!old || !Array.isArray(old.sources) || !old.sources.length) continue;
+      const cur = answers[sid];
+      if (cur && same(old, cur)) continue;
+      if (!cur) { errors.push(`${sid}: a sourced answer was removed; change it instead, keeping the old version in its "reviewHistory"`); continue; }
+      if (!(Array.isArray(cur.reviewHistory) && cur.reviewHistory.some((e) => e && same(e, old)))) errors.push(`${sid}: a sourced answer was changed without a talk-page record: add the committed version, word for word, to its "reviewHistory"`);
     }
     const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
     if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
