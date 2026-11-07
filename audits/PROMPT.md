@@ -210,7 +210,6 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
     "<statement id>": {
       "value": null,
       "confidence": "low",
-      "nullKey": "no-evidence-after-search",
       "rationale": "The sources record no position on this, and no stated principle bears on it.",
       "sources": ["s1"]
     }

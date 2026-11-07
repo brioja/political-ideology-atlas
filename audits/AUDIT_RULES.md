@@ -6,7 +6,7 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 
 "The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
-rules 4 tags every source as actions or words and gives every null a specific four- or five-word key, below.)
+rules 4 tags every source as actions or words, below.)
 
 ## 1. Standard
 
@@ -89,16 +89,6 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-- **Every null has a specific key.** Give each `null` a `"nullKey"`: four or five lowercase words
-  joined by hyphens that name the specific kind of reason, such as `no-evidence-after-search`,
-  `borrowed-from-nearby-case`, `borrowed-from-party-election-platform` or `general-value-too-broad`.
-  The words are there to make the key specific, not generic: use the fifth word to narrow it
-  (`borrowed-from-procedural-vote-sanctions`), never to pad with "a" or "the". Reuse a key already in use where it fits
-  (`node scripts/null-keys.js` lists them) and coin a new one only when none does. The rationale
-  gives the reason in full (which question, subject, value or premise), and `sources` cites the
-  evidence set aside; only `no-evidence-after-search` may cite none. A null citing an action needs
-  a `borrowed-from-...` key: an action on the statement's own question is the record, and the
-  record answers it.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
@@ -158,8 +148,8 @@ free trade, not about markets in general.
   orders, acts, policies, or a report that they happened), `"words"` when it records what the subject
   said or wrote (speeches, interviews, books, posts, programmes, or a summary of their views). A
   source that holds both (a day of the Congressional Record with a speech and a roll call) is listed
-  twice, once per kind, each entry cited for what it holds. An answer citing both kinds fails
-  `validate.js`: where there is an action, it answers alone, and words from before or after are left
+  twice, once per kind, each entry cited for what it holds. An answer citing both kinds, a `null`
+  included, fails `validate.js`: where there is an action, it answers alone, and words from before or after are left
   out.
 - **Over time.** Answer the subject's mature position: the one held longest and set out most fully
   (main works, time in office, core programmes). A later position replaces it only when the change
