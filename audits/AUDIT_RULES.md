@@ -91,7 +91,8 @@ free trade, not about markets in general.
   disagreement.
   A `null` cites the source behind its reason in `sources`, like any answer (a source that records
   nothing on the statement, or the evidence that shows why it doesn't answer it); the same source
-  can serve many nulls. Evidence a null sets aside goes in `"setAside"`. An action can set aside
+  can serve many nulls. Every `null` also lists the evidence it sets aside in `"setAside"`, never
+  empty (it can be the same source as in `sources`). An action can set aside
   words or an action; words can set aside only words, never an action (see "Record over words").
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious

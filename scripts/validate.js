@@ -208,7 +208,8 @@ function validate(id) {
   // Rules 4: every source is tagged as the subject's actions or words (audits/AUDIT_RULES.md, "Record over words";
   // Brandon, 2026-11-07). An answer never cites both: where there is a record, it answers alone. A null cites the
   // source behind its reason in "sources" (one source can serve many nulls) and the evidence it sets aside in
-  // "setAside": an action can set aside words or an action, words can set aside only words.
+  // "setAside" (required, never empty; it can repeat the reason's source): an action can set aside words or an
+  // action, words can set aside only words.
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
@@ -224,8 +225,8 @@ function validate(id) {
         continue;
       }
       if (!cited.length) { errors.push(`${st.id}: a null cites the source behind its reason in "sources" (the same one can serve many nulls)`); continue; }
-      const aside = x.setAside === undefined ? [] : x.setAside;
-      if (!Array.isArray(aside)) { errors.push(`${st.id}: "setAside" must be a list of source ids`); continue; }
+      const aside = x.setAside;
+      if (!Array.isArray(aside) || !aside.length) { errors.push(`${st.id}: a null lists the evidence it sets aside in "setAside" (source ids, never empty; it can be the same source as in "sources")`); continue; }
       for (const sid of [...cited, ...aside]) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
       const asideActions = kinds(aside, "action"), reasonWords = kinds(cited, "words");
       if (asideActions.length && reasonWords.length) errors.push(`${st.id}: null sets aside actions (${asideActions.join(", ")}) on words (${reasonWords.join(", ")}); words can't set aside an action: answer from the action, or give an action as the reason`);
