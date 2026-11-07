@@ -37,7 +37,7 @@ many will have a thin political record; the early-exit rule makes those quick.
    only if the change was explicit and sustained, and later words never override their record,
    not even a repudiation (AUDIT_RULES.md, "Over time").
    Answers must match each
-   statement's actual wording; if the evidence is about something nearby, answer null.
+   statement's actual wording; evidence that fits either answer settles nothing: answer null.
 5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).
 6. Write only `audits/people/<id>.json`, and only once it is finished: build it in your scratch
    folder and move it into `audits/people/` as the last step, so the main lane never picks up a

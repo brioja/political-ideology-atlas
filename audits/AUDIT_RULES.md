@@ -116,13 +116,15 @@ free trade, not about markets in general.
   produce (what experts would conclude, what a planner would choose), a contemporary consensus, or
   what adherents would probably think is `null`: a technocracy whose experts decided against sex
   education would still be a technocracy.
-- **A narrower or nearby case doesn't answer a broader or different statement:** cannabis is not all
-  drugs, unauthorized migration is not immigration levels, refugee relief is not development aid, a
-  state's right of defence is not a person's right to kill in self-defence, and a vote on sanctioning
-  the International Criminal Court doesn't answer "leaders should be tried before international
-  criminal courts". A source counts by what it is about, not by its type: the subject's own votes,
-  laws, acts, speeches, writings, interviews and posts answer the question they are about, and only
-  that one.
+- **Evidence answers only the statement it settles.** A vote, act or statement answers a statement only
+  if the statement couldn't be true (or couldn't be false) without contradicting it. Evidence that
+  fits either answer supports neither agree nor disagree: `null`, however related the topic. Voting
+  against sanctioning the International Criminal Court fits both believing leaders should be tried
+  there and opposing the bill for other reasons, so it doesn't settle "leaders should be tried before
+  international criminal courts"; cannabis legalisation doesn't settle all drugs, and a crackdown on
+  unauthorized migration doesn't settle immigration levels. A source counts by what it settles, not by
+  its type: the subject's own votes, laws, acts, speeches, writings, interviews and posts answer only
+  the statements they settle.
 - **No coatracks.** A coatrack hangs another subject's positions on this one: another movement,
   organisation, party or person (a relative, an employer), or a broader, narrower or related ideology,
   used as if its sources were the subject's. Sources about a related subject don't answer for the
