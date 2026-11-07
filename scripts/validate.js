@@ -228,9 +228,9 @@ function validate(id) {
   //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
-  // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
-  //   An audit never overturns its own answers: if its own evidence doesn't answer a statement, it doesn't cite
-  //   it there. A null citing an action with no review history is an error: an action on the statement answers it.
+  // - A null found nothing and cites nothing ("sources": []). An audit never overturns its own answers: if its own
+  //   evidence doesn't answer a statement, it doesn't cite it there. Only a nulling by a later pass (with a
+  //   reviewHistory) cites the source behind its reason.
   // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
   //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the first sourced
   //   version; each later entry is a reply that changed it (bold or revert), signed by the pass that wrote it.
@@ -256,9 +256,13 @@ function validate(id) {
         if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
         continue;
       }
-      if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the source searched; one source can serve many nulls)`); continue; }
-      const action = kinds(cited, "action");
-      if (x.reviewHistory === undefined && action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
+      // A null found nothing: it cites nothing. Only a nulling (a later pass, with a reviewHistory) cites the
+      // source behind its reason.
+      if (x.reviewHistory === undefined) {
+        const action = kinds(cited, "action");
+        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
+        else if (cited.length) errors.push(`${st.id}: a null found nothing, so it cites nothing ("sources": []); evidence that doesn't answer the statement isn't cited here`);
+      } else if (!cited.length) errors.push(`${st.id}: a nulling cites the source behind its reason in "sources"`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
@@ -320,7 +324,7 @@ function validate(id) {
     const same = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
     for (const [sid, old] of Object.entries(before.answers)) {
       if (!old || !Array.isArray(old.sources) || !old.sources.length) continue;
-      // An original null (nothing found, never answered) has nothing to review either: a later pass replaces it freely.
+      // An original null (nothing found) has nothing to review either: a later pass replaces it freely.
       if (old.value === null && !(Array.isArray(old.reviewHistory) && old.reviewHistory.length)) continue;
       const cur = answers[sid];
       if (cur && same(old, cur)) continue;
