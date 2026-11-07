@@ -246,6 +246,17 @@ function validate(id) {
       if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't null an action (${action.join(", ")}): answer from the action, or rest the nulling on an action`);
     }
   }
+  // A first audit never uses setAside: only a later review nulls answers, and each review that does adds
+  // { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews" (the reviewed count). The nulled
+  // counts add up to the number of setAside entries, so every nulling is owned by a review.
+  const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
+  for (const r of nullings) if (!isId(r.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(r.reviewedAt || "") || !(Number.isInteger(r.nulled) && r.nulled > 0)) {
+    errors.push('a "nulling" review is { "kind": "nulling", "reviewer": who nulled, "reviewedAt": "YYYY-MM-DD", "nulled": how many answers }');
+  }
+  const setAsideIds = statements.filter((st) => answers[st.id] && answers[st.id].setAside !== undefined).map((st) => st.id);
+  const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
+  if (setAsideIds.length && !nullings.length) errors.push(`${setAsideIds.join(", ")}: "setAside" in an audit with no nulling review: the first audit never sets aside its own answers (leave them null with their source); only a later review nulls, and records it in "reviews"`);
+  else if (setAsideIds.length !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but ${setAsideIds.length} carry "setAside"; each nulling review records how many it nulled`);
   for (const st of statements) {
     const x = answers[st.id], sa = x && x.setAside;
     if (sa === undefined) continue;
