@@ -212,7 +212,14 @@ function validate(id) {
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
     for (const st of statements) {
       const x = answers[st.id];
-      if (!x || !Array.isArray(x.sources)) continue;
+      if (!x) continue;
+      // A null cites the source behind its reason too (the evidence it set aside, or a source that records
+      // nothing on it); one source can serve many nulls.
+      if (x.value === null) {
+        if (!Array.isArray(x.sources) || !x.sources.length) { errors.push(`${st.id}: a null cites the source behind its reason (the same one can serve many nulls)`); continue; }
+        for (const sid of x.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      }
+      if (!Array.isArray(x.sources)) continue;
       const action = x.sources.filter((sid) => ev.get(sid) === "action"), words = x.sources.filter((sid) => ev.get(sid) === "words");
       if (action.length && words.length) errors.push(`${st.id}: ${x.value === null ? "null " : ""}cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
     }
