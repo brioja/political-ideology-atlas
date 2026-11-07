@@ -6,7 +6,7 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 
 "The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
-rules 4 tags every source as actions or words and gives every null a four-word key, below.)
+rules 4 tags every source as actions or words and gives every null a specific four- or five-word key, below.)
 
 ## 1. Standard
 
@@ -89,10 +89,11 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-- **Every null has a four-word key.** Give each `null` a `"nullKey"`: four lowercase words joined
-  by hyphens that name the specific kind of reason, such as `no-evidence-after-search`,
-  `borrowed-from-nearby-case`, `borrowed-from-party-position` or `general-value-too-broad`. Every
-  word must add something; don't pad with "a" or "the". Reuse a key already in use where it fits
+- **Every null has a specific key.** Give each `null` a `"nullKey"`: four or five lowercase words
+  joined by hyphens that name the specific kind of reason, such as `no-evidence-after-search`,
+  `borrowed-from-nearby-case`, `borrowed-from-party-election-platform` or `general-value-too-broad`.
+  The words are there to make the key specific, not generic: use the fifth word to narrow it
+  (`borrowed-from-procedural-vote-sanctions`), never to pad with "a" or "the". Reuse a key already in use where it fits
   (`node scripts/null-keys.js` lists them) and coin a new one only when none does. The rationale
   gives the reason in full (which question, subject, value or premise), and `sources` cites the
   evidence set aside; only `no-evidence-after-search` may cite none. A null citing an action needs

@@ -18,7 +18,7 @@ const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.p
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
-const NULL_KEY = /^[a-z]+(-[a-z]+){3}$/, NULL_NOTHING_FOUND = "no-evidence-after-search"; // rules 4: a null's four-word key
+const NULL_KEY = /^[a-z]+(-[a-z]+){3,4}$/, NULL_NOTHING_FOUND = "no-evidence-after-search"; // rules 4: a null's key, four or five words
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
@@ -217,13 +217,13 @@ function validate(id) {
       const action = x.sources.filter((sid) => ev.get(sid) === "action"), words = x.sources.filter((sid) => ev.get(sid) === "words");
       if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
     }
-    // A null has a four-word key ("nullKey"); its rationale gives the reason and its sources the evidence set aside; only
+    // A null has a four- or five-word key ("nullKey"); its rationale gives the reason and its sources the evidence set aside; only
     // no-evidence-after-search cites none. An action on the statement's own question is the record and
     // answers it, so a null citing an action must be borrowed from another question or subject.
     for (const st of statements) {
       const x = answers[st.id];
       if (!x || x.value !== null) continue;
-      if (typeof x.nullKey !== "string" || !NULL_KEY.test(x.nullKey)) { errors.push(`${st.id}: a null needs "nullKey": a key of four lowercase words joined by hyphens, e.g. ${NULL_NOTHING_FOUND} or borrowed-from-nearby-case (node scripts/null-keys.js lists those in use)`); continue; }
+      if (typeof x.nullKey !== "string" || !NULL_KEY.test(x.nullKey)) { errors.push(`${st.id}: a null needs "nullKey": a key of four or five lowercase words joined by hyphens, specific enough to tell it from other keys, e.g. ${NULL_NOTHING_FOUND} or borrowed-from-nearby-case (node scripts/null-keys.js lists those in use)`); continue; }
       const cited = Array.isArray(x.sources) ? x.sources : [];
       for (const sid of cited) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
       if (x.nullKey !== NULL_NOTHING_FOUND && !cited.length) errors.push(`${st.id}: null key ${x.nullKey} needs the evidence it set aside in "sources"`);

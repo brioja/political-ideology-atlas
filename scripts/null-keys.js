@@ -1,5 +1,5 @@
-// Lists the four-word null keys ("nullKey", rules 4) used in audits so far, most used first, so a
-// new audit reuses a key that fits before coining one (audits/AUDIT_RULES.md, "Every null has a four-word key").
+// Lists the null keys (four or five words) ("nullKey", rules 4) used in audits so far, most used first, so a
+// new audit reuses a key that fits before coining one (audits/AUDIT_RULES.md, "Every null has a specific key").
 //   node scripts/null-keys.js
 const fs = require("fs"), path = require("path");
 const ROOT = path.join(__dirname, "..");
