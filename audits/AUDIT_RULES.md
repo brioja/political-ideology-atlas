@@ -116,29 +116,23 @@ free trade, not about markets in general.
   produce (what experts would conclude, what a planner would choose), a contemporary consensus, or
   what adherents would probably think is `null`: a technocracy whose experts decided against sex
   education would still be a technocracy.
-- **No borrowing.** Borrowing is answering a statement with evidence about something else. Say what
-  it was borrowed from:
-  - *another subject*: a party, organisation, relative, employer, or a broader, narrower or related
-    ideology (next rule);
-  - *another question*: a nearby, narrower or broader case (the rule after it), such as a vote on
-    sanctioning the International Criminal Court used for "leaders should be tried before
-    international criminal courts".
-
-  Using the subject's own evidence on the statement is not borrowing, whatever its form: their
-  votes, laws, acts, speeches, writings, interviews, posts, or an ideology's defining sources.
-  A source counts by what it is about, not by its type: the same vote is evidence on its own
-  question and borrowing on another.
-- **A narrower or nearby case doesn't answer a broader or different statement** (borrowed from
-  another question): cannabis is not all drugs, unauthorized migration is not immigration levels,
-  refugee relief is not development aid, and a state's right of defence is not a person's right to kill in self-defence.
-- **A related subject's sources aren't the subject's.** Sources about a broader, narrower or related
-  subject don't answer for the subject, in either direction: secularism's not for Jewish
-  secularism, nor American Jewish secularism's for Jewish secularism as a whole; a party's not for
-  one of its members, nor one organisation's or several organisations' for an ideology they share
-  (organisations can agree on something that isn't part of the ideology; Brandon, 2026-11-06). That
-  is borrowed from another subject, not evidence: only the subject's own sources answer (for an ideology, its defining
-  sources and the texts they tie to it), and without them the answer is `null`. Where the subject's
-  own sources take opposite positions on the same question, it is a split (0, `low`).
+- **A narrower or nearby case doesn't answer a broader or different statement:** cannabis is not all
+  drugs, unauthorized migration is not immigration levels, refugee relief is not development aid, a
+  state's right of defence is not a person's right to kill in self-defence, and a vote on sanctioning
+  the International Criminal Court doesn't answer "leaders should be tried before international
+  criminal courts". A source counts by what it is about, not by its type: the subject's own votes,
+  laws, acts, speeches, writings, interviews and posts answer the question they are about, and only
+  that one.
+- **No coatracks.** A coatrack hangs another subject's positions on this one: another movement,
+  organisation, party or person (a relative, an employer), or a broader, narrower or related ideology,
+  used as if its sources were the subject's. Sources about a related subject don't answer for the
+  subject, in either direction: secularism's not for Jewish secularism, nor American Jewish
+  secularism's for Jewish secularism as a whole; a party's not for one of its members, nor one
+  organisation's or several organisations' for an ideology they share (organisations can agree on
+  something that isn't part of the ideology; Brandon, 2026-11-06). Only the subject's own sources
+  answer (for an ideology, its defining sources and the texts they tie to it), and without them the
+  answer is `null`. Where the subject's own sources take opposite positions on the same question, it
+  is a split (0, `low`).
 - **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
   lobby's scorecard grade), are not evidence of a position.
 - **Record over words.** Where the subject has a record on a statement (acts, not words), answer
@@ -201,7 +195,7 @@ A later pass on a finished audit has one of two reasons: new sources became avai
 book the maintainer supplies), or the audit predates the shared rules (no `"rules"` field) and is brought
 up to them. Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
-- Keep the subject. Don't borrow from another subject: a broader ideology's (secularism's for
+- Keep the subject: no coatracks. Not a broader ideology's (secularism's for
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
   secularism), a party's for one of its members, a relative's or employer's for a person.
 - To change an earlier answer (null it, change it or revert it), write the new answer with its reason
