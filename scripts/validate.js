@@ -232,13 +232,14 @@ function validate(id) {
   //   An audit never sets aside its own answers: if its own evidence doesn't answer a statement, it doesn't cite
   //   it there. A null citing an action with no setAside is an error: an action on the statement answers it.
   // - "setAside" is the statement's nulling history, an array, oldest first. A later pass (a review, the
-  //   integrator, a deepen pass) that nulls an answer appends { "value", "confidence", "rationale", "sources":
-  //   the answer as it was; "reason": why it was nulled; "reasonSources": the source behind that reason;
-  //   "reviewer", "reviewedAt" }. While null, the answer keeps that rationale and sources unchanged.
+  //   integrator, a deepen pass) that nulls an answer appends { "value", "confidence": the answer's as it was;
+  //   "reason": why it was nulled; "reasonSources": the source behind that reason; "reviewer", "reviewedAt" }.
+  //   While null, the answer itself keeps the nulled "rationale" and "sources", so the entry doesn't repeat
+  //   them; a pass that answers the statement again first moves them into that entry, so nothing is lost.
   // - Words never null an action: if the nulled answer rests on an action, the reason must rest on actions too
   //   (e.g. the vote itself shows it was on another question).
-  // - The history is append-only (checked against the committed file) and stays when a later pass answers the
-  //   statement again. That answer needs new evidence: at least one source not in the last nulled answer's
+  // - The history is append-only (checked against the committed file; the only change allowed to an entry is
+  //   adding the moved rationale and sources) and stays when a later pass answers the statement again. That answer needs new evidence: at least one source not in the last nulled answer's
   //   sources, and an action if the nulled answer rested on one.
   // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews";
   //   their counts add up to the setAside entries, so a first audit (no nulling review) can't use setAside.
@@ -275,14 +276,20 @@ function validate(id) {
     for (const [i, e] of sa.entries()) {
       const where = `${st.id}: setAside[${i}]`;
       if (!e || typeof e !== "object" || ![-2, -1, 0, 1, 2].includes(e.value) || !CONFIDENCE.includes(e.confidence)
-        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources) || !e.sources.length
         || typeof e.reason !== "string" || !e.reason.trim() || !Array.isArray(e.reasonSources) || !e.reasonSources.length
         || !isId(e.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(e.reviewedAt || "")) {
-        errors.push(`${where} is { "value", "confidence", "rationale", "sources": the nulled answer as it was; "reason", "reasonSources": why it was nulled and the source behind that; "reviewer", "reviewedAt" }`);
+        errors.push(`${where} is { "value", "confidence": the nulled answer's; "reason", "reasonSources": why it was nulled and the source behind that; "reviewer", "reviewedAt" }`);
         continue;
       }
-      for (const sid of [...e.sources, ...e.reasonSources]) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
-      const act = kinds(e.sources, "action"), why = kinds(e.reasonSources, "words");
+      // The latest entry of a null leaves the nulled rationale and sources on the answer; every other entry
+      // holds them (moved there when the statement was answered again).
+      const current = x.value === null && i === sa.length - 1;
+      const moved = typeof e.rationale === "string" && e.rationale.trim() && Array.isArray(e.sources) && e.sources.length;
+      if (current && (e.rationale !== undefined || e.sources !== undefined)) errors.push(`${where}: while the answer is null its rationale and sources stay on the answer; don't repeat them in the entry`);
+      if (!current && !moved) errors.push(`${where}: the statement was answered again, so this entry holds the nulled "rationale" and "sources" (moved from the answer)`);
+      const nulled = current ? (Array.isArray(x.sources) ? x.sources : []) : (moved ? e.sources : []);
+      for (const sid of [...nulled, ...e.reasonSources]) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
+      const act = kinds(nulled, "action"), why = kinds(e.reasonSources, "words");
       if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
     }
     // Answered again after a nulling: only on new evidence, and an action if the nulled answer rested on one.
@@ -303,7 +310,13 @@ function validate(id) {
       const prev = old && Array.isArray(old.setAside) ? old.setAside : [];
       if (!prev.length) continue;
       const cur = answers[sid] && Array.isArray(answers[sid].setAside) ? answers[sid].setAside : [];
-      if (cur.length < prev.length || prev.some((e, i) => JSON.stringify(e) !== JSON.stringify(cur[i]))) errors.push(`${sid}: "setAside" history was changed or dropped; it is append-only`);
+      // An entry may gain the moved rationale and sources, or drop them while the null still carries the same
+      // text on the answer itself (nothing is lost either way); nothing else in it may change.
+      const ans = answers[sid] || {};
+      const kept = (e, c, i) => c && Object.keys(e).every((k) => JSON.stringify(e[k]) === JSON.stringify(c[k])
+          || (!(k in c) && (k === "rationale" || k === "sources") && ans.value === null && i === cur.length - 1 && JSON.stringify(ans[k]) === JSON.stringify(e[k])))
+        && Object.keys(c).every((k) => k in e || k === "rationale" || k === "sources");
+      if (cur.length < prev.length || prev.some((e, i) => !kept(e, cur[i], i))) errors.push(`${sid}: "setAside" history was changed or dropped; it is append-only`);
     }
     const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
     if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
