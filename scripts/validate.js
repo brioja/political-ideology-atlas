@@ -231,10 +231,11 @@ function validate(id) {
   // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
   //   An audit never overturns its own answers: if its own evidence doesn't answer a statement, it doesn't cite
   //   it there. A null citing an action with no review history is an error: an action on the statement answers it.
-  // - "reviewHistory" lists a statement's past answers, oldest first. A later pass (a review, the integrator, a
-  //   deepen pass) that replaces an answer appends the old one as it was: { "value", "confidence", "rationale",
-  //   "sources", "reviewer", "reviewedAt": who replaced it, when }. The answer itself always shows the current
-  //   rationale (what people see); for a nulling that is the reason for the null, citing its source.
+  // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
+  //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the original audit's
+  //   answer, signed by the first auditor; each later entry is a reply that changed it (bold or revert), signed by
+  //   the pass that wrote it. So a history has at least 2 entries, and the last one is the current answer
+  //   (what people see), word for word.
   // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
   //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
   //   only on an action.
@@ -266,36 +267,38 @@ function validate(id) {
   }
   let nulledCount = 0;
   const historyIds = [];
+  const firstAuditor = Array.isArray(a.passes) && a.passes.length ? a.passes[0].auditor : [].concat(a.auditor)[0];
+  const sameAnswer = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
   for (const st of statements) {
     const x = answers[st.id], h = x && x.reviewHistory;
     if (h === undefined) continue;
     historyIds.push(st.id);
-    if (!Array.isArray(h) || !h.length) { errors.push(`${st.id}: "reviewHistory" lists past answers, a non-empty array`); continue; }
+    if (!Array.isArray(h) || h.length < 2) { errors.push(`${st.id}: "reviewHistory" has the original answer and at least one reply that changed it (2 or more entries)`); continue; }
     let ok = true;
     for (const [i, e] of h.entries()) {
       const where = `${st.id}: reviewHistory[${i}]`;
       if (!e || typeof e !== "object" || !(e.value === null || [-2, -1, 0, 1, 2].includes(e.value)) || !CONFIDENCE.includes(e.confidence)
         || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources)
-        || !isId(e.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(e.reviewedAt || "")) {
-        errors.push(`${where} is the past answer as it was { "value", "confidence", "rationale", "sources" } plus "reviewer" and "reviewedAt" (who replaced it, when)`);
+        || !isId(e.author) || !/^\d{4}-\d{2}-\d{2}$/.test(e.date || "")) {
+        errors.push(`${where} is a signed version of the answer { "value", "confidence", "rationale", "sources", "author", "date" }`);
         ok = false; continue;
       }
       for (const sid of e.sources) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
     }
     if (!ok) continue;
-    // Walk the answers in order (past ones, then the current one) and check each replacement.
-    const seq = [...h, x];
+    if (firstAuditor && !String(h[0].author).startsWith(firstAuditor)) errors.push(`${st.id}: reviewHistory[0] is the original audit's answer, signed by the first auditor (${firstAuditor})`);
+    if (!sameAnswer(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word`);
+    // Walk the versions in order and check each change.
     let lastNulled = null;
-    for (let i = 1; i < seq.length; i++) {
-      const prev = seq[i - 1], next = seq[i], where = `${st.id}: ${i < h.length ? `reviewHistory[${i}]` : "current answer"}`;
-      const nextSources = Array.isArray(next.sources) ? next.sources : [];
+    for (let i = 1; i < h.length; i++) {
+      const prev = h[i - 1], next = h[i], where = `${st.id}: reviewHistory[${i}]`;
       if (prev.value !== null && next.value === null) {
         nulledCount++;
         lastNulled = prev;
-        const act = kinds(prev.sources, "action"), why = kinds(nextSources, "words");
+        const act = kinds(prev.sources, "action"), why = kinds(next.sources, "words");
         if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
       } else if (prev.value === null && next.value !== null && lastNulled) {
-        if (kinds(lastNulled.sources, "action").length && !kinds(nextSources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
+        if (kinds(lastNulled.sources, "action").length && !kinds(next.sources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
       }
     }
   }

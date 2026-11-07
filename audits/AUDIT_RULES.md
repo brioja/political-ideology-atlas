@@ -201,9 +201,9 @@ book the maintainer supplies). Build on the existing audit rather than starting 
 - Keep the subject. Don't borrow from another subject: a broader ideology's (secularism's for
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
   secularism), a party's for one of its members, a relative's or employer's for a person.
-- To replace an earlier answer (null it or change it), move the old answer into its
-  `reviewHistory` (`validate.js` says how) and write the current reason as the rationale. Words never
-  overturn an action.
+- To change an earlier answer (null it, change it or revert it), write the new answer with its reason
+  as the rationale and add it, signed, to the statement's `reviewHistory`, the talk page that keeps
+  every version (`validate.js` says how). Words never overturn an action.
 - Change an answer or raise its confidence only on evidence you found and cite. Check every answer
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general
