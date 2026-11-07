@@ -1623,8 +1623,7 @@ function renderExplore() {
   const tier = (i) => (!query || fold(i.name).includes(query) ? 0 : alias(i) ? 1 : 2);
   const shown = model.ideologies
     .filter((i) => !query || fold(i.name).includes(query) || alias(i) || fold(i.summary || "").includes(query))
-    .sort((a, b) => tier(a) - tier(b) || a.name.localeCompare(b.name))
-    .map((i) => (alias(i) ? { ...i, alsoKnownAs: alias(i) } : i));
+    .sort((a, b) => tier(a) - tier(b) || a.name.localeCompare(b.name));
   $("explore-count").textContent = shown.length === model.ideologies.length
     ? `${shown.length} ideologies`
     : `${shown.length} of ${model.ideologies.length} ideologies`;
@@ -1809,7 +1808,7 @@ function loadAudit(folder, id) {
 }
 
 function ideologyRow(r) { return `<li><a class="row-link" href="${ideologyHref(r.id)}">
-  <span class="match-name">${posGlyph(r)}${esc(r.name)}${r.alsoKnownAs ? ` <span class="muted small">(also: ${esc(r.alsoKnownAs)})</span>` : ""}</span>
+  <span class="match-name">${posGlyph(r)}${esc(r.name)}</span>
   ${r.similarity != null ? `<span class="mono small">${pct(r.similarity)}</span>` : ""}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)}">
@@ -1986,7 +1985,7 @@ function comboOpen(input) {
   let n = 0;
   list.innerHTML = groups.filter(([, items]) => items.length).map(([title, items]) =>
     (title ? `<li class="combo-group" role="presentation">${title}</li>` : "") +
-    items.map((o) => `<li id="${input.id}-opt-${n++}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}${o.also ? ` <span class="muted small">(also: ${esc(o.also)})</span>` : ""}</li>`).join("")).join("")
+    items.map((o) => `<li id="${input.id}-opt-${n++}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}</li>`).join("")).join("")
     || `<li class="muted" aria-disabled="true">No match</li>`;
   list.hidden = false;
   input.setAttribute("aria-expanded", "true");
@@ -2009,7 +2008,7 @@ function comboMove(input, step) {
 // Choosing: on a page's own box, open that comparison; on the Compare tab, move to the other box until
 // both are set, then open the pair.
 function comboChoose(input, li) {
-  input.value = (compareOptions().find((o) => o.key === li.dataset.key) || {}).label || li.textContent; // the name, not "(also: …)"
+  input.value = li.textContent;
   input.dataset.key = li.dataset.key;
   comboClose(input);
   if (input.id === "compare-pick") { go(compareHref(input.dataset.self, li.dataset.key)); return; }
