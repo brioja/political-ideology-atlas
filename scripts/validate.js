@@ -38,8 +38,9 @@ function grandfathered() {
 // The committed copy of an audit, to check a later pass's edits against it (append-only history, no sourced
 // answer changed without a talk-page record). Read only when the audit can differ from it: a draft checked from
 // elsewhere, a file with uncommitted changes, or one with a committed history (one git call each per run).
-let withHistory, modified;
+let withHistory, modified, committedForTests = null;
 function committedVersion(id, readFrom) {
+  if (committedForTests) return committedForTests(id);
   const path = require("path"), cp = require("child_process");
   const canonical = path.join(PROFILES_DIR, `${id}.json`), rel = path.relative(lib.ROOT, canonical);
   const git = (args) => { try { return cp.execFileSync("git", args, { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"] }).toString(); } catch { return ""; } };
@@ -442,4 +443,6 @@ function lineName(i) {
 }
 
 if (require.main === module) main();
-module.exports = { validate, excludedOnly };
+// Tests (tests/validate-rules.test.js) stand in for the committed copy of an audit.
+const setCommittedForTests = (fn) => { committedForTests = fn; };
+module.exports = { validate, excludedOnly, setCommittedForTests };

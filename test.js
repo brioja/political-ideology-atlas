@@ -322,4 +322,9 @@ model.components.slice(0, 6).forEach((c, i) => {
   console.log(`   + ${ax.positive.map((p) => p.text).join(" / ")}`);
   console.log(`   - ${ax.negative.map((p) => p.text).join(" / ")}`);
 });
+// Audit rules: every rule validate.js and source-check.js enforce has a fixture test (tests/; ~2 s, so it runs in
+// --people mode too). Each runs in its own process: validate.js reads --people from the command line.
+for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
+  console.log(require("child_process").execFileSync("node", [require("path").join(__dirname, "tests", t)], { encoding: "utf8" }).trim());
+}
 console.log("\nAll checks passed.");
