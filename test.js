@@ -310,6 +310,20 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   const v2 = "2." + fileSlots.slice(0, 490).map((_, k) => (k === 0 ? "4" : "-")).join("");
   assert.strictEqual(decodeShare(v2, ids, fileSlots)[ids.indexOf(fileSlots[0])], 2, "v2 share link");
   assert.strictEqual(decodeShare("2.4", ids, fileSlots), null, "a short v2 link is rejected");
+  // "3." links (one character per slot) still open, and give the same answers as the "4." link made from them.
+  const v3 = "3." + fileSlots.map((id) => { const a = given[ids.indexOf(id)]; return a == null ? "-" : "01234"[a + 2]; }).join("").replace(/-+$/, "");
+  assert.deepStrictEqual(decodeShare(v3, ids, fileSlots), given, "v3 share link");
+  assert.deepStrictEqual(decodeShare(encodeShare(decodeShare(v3, ids, fileSlots), ids, fileSlots), ids, fileSlots), given, "v3 -> v4 round-trip");
+  // "4." links are gap-packed: a sparse result is short, long skips are exact, nothing answered is "4.".
+  const sparse = ids.map(() => null);
+  for (const [k, a] of [[0, -2], [11, 2], [12, 0], [200, 1], [fileSlots.length - 1, -1]]) sparse[ids.indexOf(fileSlots[k])] = a;
+  const s4 = encodeShare(sparse, ids, fileSlots);
+  assert(/^4\.[A-Za-z0-9_-]+$/.test(s4) && s4.length < 15, `sparse v4 link is short and URL-safe: ${s4}`);
+  assert.deepStrictEqual(decodeShare(s4, ids, fileSlots), sparse, "sparse v4 round-trip (gaps of 0, 10, 0, 187, and to the last slot)");
+  assert.strictEqual(encodeShare(ids.map(() => null), ids, fileSlots), "4.", "an empty result");
+  assert(encodeShare(given, ids, fileSlots).length <= fileSlots.length + 2, "a v4 link is never longer than one character per slot");
+  assert.strictEqual(decodeShare("4.______A", ids, fileSlots), null, "a v4 link past the last slot is rejected");
+  assert.strictEqual(decodeShare("4.a=b", ids, fileSlots), null, "a v4 link with other characters is rejected");
 }
 
 // Report what the data found.

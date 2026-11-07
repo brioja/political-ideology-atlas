@@ -633,26 +633,49 @@ function describeAxis(model, index, questions, count = 3) {
   };
 }
 
-// Share links carry only the answers: "3." + one character per slot in SHARE_SLOTS
-// (audits/share-slots.json, append-only), 0-4 for strongly disagree..strongly agree and "-" for
-// skipped, not asked or no longer asked. Trailing "-" are dropped, and a shorter string reads its
-// missing slots as not asked, so links keep working as statements are added. "2." links (before
-// v1.0) hold exactly one character per statement as of v1.0, which are the first V2_SLOTS slots.
+// Share links carry only the answers, by slot in SHARE_SLOTS (audits/share-slots.json, append-only), so links
+// keep working as statements are added. "4." links (2026-11-07, Brandon: long links weren't being shared) are
+// gap-packed: one URL-safe character per answered slot, holding how many slots were skipped before it (0-11) and
+// the answer (0-4 for strongly disagree..strongly agree): 5 x 12 = 60 characters, plus 4 that skip 12, 24, 48 or
+// 96 more slots. A typical result (~48 answers) is ~66 characters; unanswered slots cost nothing.
+// Older links still open: "3." holds one character per slot (0-4, "-" for skipped, not asked or no longer asked;
+// trailing "-" dropped, missing slots read as not asked); "2." (before v1.0) exactly one per v1.0 statement, which
+// are the first V2_SLOTS slots.
 const SHARE_CODE = "01234";
 const V2_SLOTS = 490;
+const SHARE_B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+const SHARE_SKIPS = [12, 24, 48, 96]; // characters 60..63
 function encodeShare(given, ids, slots) {
   const at = new Map(ids.map((id, j) => [id, j]));
-  const chars = slots.map((id) => {
+  let out = "", gap = 0;
+  for (const id of slots) {
     const a = at.has(id) ? given[at.get(id)] : null;
-    return a == null ? "-" : SHARE_CODE[a + 2];
-  });
-  return "3." + chars.join("").replace(/-+$/, "");
+    if (a == null) { gap++; continue; }
+    for (let k = SHARE_SKIPS.length - 1; k >= 0; k--) while (gap >= 12 && gap >= SHARE_SKIPS[k]) { out += SHARE_B64[60 + k]; gap -= SHARE_SKIPS[k]; }
+    out += SHARE_B64[gap * 5 + a + 2];
+    gap = 0;
+  }
+  return "4." + out;
 }
 // Answers indexed like `ids`, or null if the string isn't a share link.
 function decodeShare(s, ids, slots) {
+  const at = new Map(slots.map((id, k) => [id, k]));
+  const v4 = /^4\.([A-Za-z0-9_-]*)$/.exec(s || "");
+  if (v4) {
+    const bySlot = new Map();
+    let pos = 0;
+    for (const ch of v4[1]) {
+      const c = SHARE_B64.indexOf(ch);
+      if (c >= 60) { pos += SHARE_SKIPS[c - 60]; continue; }
+      pos += Math.floor(c / 5);
+      if (pos >= slots.length) return null;
+      bySlot.set(pos, (c % 5) - 2);
+      pos++;
+    }
+    return ids.map((id) => (bySlot.has(at.get(id)) ? bySlot.get(at.get(id)) : null));
+  }
   const m = /^([23])\.([0-4-]*)$/.exec(s || "");
   if (!m || m[2].length > slots.length || (m[1] === "2" && m[2].length !== V2_SLOTS)) return null;
-  const at = new Map(slots.map((id, k) => [id, k]));
   return ids.map((id) => {
     const c = m[2][at.get(id)];
     return c == null || c === "-" ? null : SHARE_CODE.indexOf(c) - 2;
