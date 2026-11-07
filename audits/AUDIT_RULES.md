@@ -4,8 +4,9 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 3` in the audit
-file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none.)
+"The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
+file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
+rules 4 tags every source as actions or words, below.)
 
 ## 1. Standard
 
@@ -143,6 +144,13 @@ free trade, not about markets in general.
   (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
   them). Words answer a statement only where there is no record on it. A record that itself points
   both ways is 0 at `low`. Each prompt says what counts as the subject's own record.
+  Tag every source with `"evidence"`: `"action"` when it records what the subject did (votes, laws,
+  orders, acts, policies, or a report that they happened), `"words"` when it records what the subject
+  said or wrote (speeches, interviews, books, posts, programmes, or a summary of their views). A
+  source that holds both (a day of the Congressional Record with a speech and a roll call) is listed
+  twice, once per kind, each entry cited for what it holds. An answer citing both kinds fails
+  `validate.js`: where there is an action, it answers alone, and words from before or after are left
+  out.
 - **Over time.** Answer the subject's mature position: the one held longest and set out most fully
   (main works, time in office, core programmes). A later position replaces it only when the change
   was explicit and sustained (kept for years, in words and, where they held power, in acts); a late
@@ -205,6 +213,7 @@ book the maintainer supplies). Build on the existing audit rather than starting 
 - Use a model that hasn't audited the subject yet. Add your model id to `auditor` (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 3`, which requires no "Inferred:" answer left.
+  the date of your pass. Set `"rules": 4`, which requires no "Inferred:" answer left and an `"evidence"` tag on every
+  source, older ones included.
 - If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.

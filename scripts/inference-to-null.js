@@ -30,7 +30,7 @@ for (const id of ids.length ? ids : (people ? peopleCatalog() : catalog()).map((
   if (!fs.existsSync(file)) continue;
   const text = fs.readFileSync(file, "utf8");
   const a = JSON.parse(text);
-  if (a.rules === 3 || a.notAnIdeology || !a.answers) continue;
+  if (a.rules >= 3 || a.notAnIdeology || !a.answers) continue;
   let n = 0;
   for (const x of Object.values(a.answers)) {
     if (x && x.value != null && INFERRED.test(x.rationale || "")) { Object.assign(x, { nulledFrom: x.value, value: null }); n++; }

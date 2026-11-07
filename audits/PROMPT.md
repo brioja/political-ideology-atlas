@@ -177,7 +177,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
-  "rules": 3,
+  "rules": 4,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",
   "aliases": [{ "name": "Another name for it", "source": "s3", "quote": "verbatim passage from s3 that uses it" }],
@@ -193,6 +193,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
     {
       "id": "s1",
       "kind": "primary | scholarly | reference | program",
+      "evidence": "action | words",
       "title": "Title of the work or page",
       "author": "Author or publisher",
       "url": "https://… (the page you actually opened)",

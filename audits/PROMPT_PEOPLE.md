@@ -140,13 +140,13 @@ those first for stated positions. If the record really has nothing more, stop.
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
-  "rules": 3,
+  "rules": 4,
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",
   "wikipedia": "https://en.wikipedia.org/wiki/…",
   "sources": [
-    { "id": "s1", "kind": "primary | scholarly | reference | program", "title": "…", "author": "…", "url": "https://…", "usedFor": "…" }
+    { "id": "s1", "kind": "primary | scholarly | reference | program", "evidence": "action | words", "title": "…", "author": "…", "url": "https://…", "usedFor": "…" }
   ],
   "answers": {
     "<statement id>": { "value": 1, "confidence": "high | medium | low", "rationale": "…", "sources": ["s1"] },

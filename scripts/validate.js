@@ -17,6 +17,7 @@ const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : li
 const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
+const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
@@ -203,6 +204,18 @@ function validate(id) {
   if (a.rules >= 3) {
     const inferred = statements.filter((st) => answers[st.id] && /^Inferred:/.test(answers[st.id].rationale || "")).map((st) => st.id);
     if (inferred.length) errors.push(`${inferred.join(", ")}: rules 3 has no inferences; answer from a stated position that settles the statement, or null`);
+  }
+  // Rules 4: every source is tagged as the subject's actions or words, and an answer never cites both:
+  // where there is a record, it answers alone (audits/AUDIT_RULES.md, "Record over words"; Brandon, 2026-11-07).
+  if (a.rules >= 4) {
+    const ev = new Map(sources.map((s) => [s.id, s.evidence]));
+    for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
+    for (const st of statements) {
+      const x = answers[st.id];
+      if (!x || x.value === null || !Array.isArray(x.sources)) continue;
+      const action = x.sources.filter((sid) => ev.get(sid) === "action"), words = x.sources.filter((sid) => ev.get(sid) === "words");
+      if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
+    }
   }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
