@@ -35,14 +35,14 @@ function grandfathered() {
   return grandfatheredIds;
 }
 
-// The committed copy of an audit, for the append-only nulling history; read only for files whose committed copy
-// has a "setAside" (one git grep per run), so a full validation stays fast.
+// The committed copy of an audit, for the append-only review history; read only for files whose committed copy
+// has a "reviewHistory" (one git grep per run), so a full validation stays fast.
 let withHistory;
 function committedVersion(id) {
   const rel = require("path").relative(lib.ROOT, require("path").join(PROFILES_DIR, `${id}.json`));
   if (!withHistory) {
     try {
-      withHistory = new Set(require("child_process").execFileSync("git", ["grep", "-l", '"setAside"', "HEAD", "--", "audits/"], { cwd: lib.ROOT })
+      withHistory = new Set(require("child_process").execFileSync("git", ["grep", "-l", '"reviewHistory"', "HEAD", "--", "audits/"], { cwd: lib.ROOT })
         .toString().split("\n").filter(Boolean).map((l) => l.replace(/^HEAD:/, "")));
     } catch { withHistory = new Set(); }
   }
@@ -229,20 +229,19 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
-  //   An audit never sets aside its own answers: if its own evidence doesn't answer a statement, it doesn't cite
-  //   it there. A null citing an action with no setAside is an error: an action on the statement answers it.
-  // - "setAside" is the statement's nulling history, an array, oldest first. A later pass (a review, the
-  //   integrator, a deepen pass) that nulls an answer appends { "value", "confidence": the answer's as it was;
-  //   "reason": why it was nulled; "reasonSources": the source behind that reason; "reviewer", "reviewedAt" }.
-  //   While null, the answer itself keeps the nulled "rationale" and "sources", so the entry doesn't repeat
-  //   them; a pass that answers the statement again first moves them into that entry, so nothing is lost.
-  // - Words never null an action: if the nulled answer rests on an action, the reason must rest on actions too
-  //   (e.g. the vote itself shows it was on another question).
-  // - The history is append-only (checked against the committed file; the only change allowed to an entry is
-  //   adding the moved rationale and sources) and stays when a later pass answers the statement again. That answer needs new evidence: at least one source not in the last nulled answer's
-  //   sources, and an action if the nulled answer rested on one.
-  // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews";
-  //   their counts add up to the setAside entries, so a first audit (no nulling review) can't use setAside.
+  //   An audit never overturns its own answers: if its own evidence doesn't answer a statement, it doesn't cite
+  //   it there. A null citing an action with no review history is an error: an action on the statement answers it.
+  // - "reviewHistory" lists a statement's past answers, oldest first. A later pass (a review, the integrator, a
+  //   deepen pass) that replaces an answer appends the old one as it was: { "value", "confidence", "rationale",
+  //   "sources", "reviewer", "reviewedAt": who replaced it, when }. The answer itself always shows the current
+  //   rationale (what people see); for a nulling that is the reason for the null, citing its source.
+  // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
+  //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
+  //   only on an action.
+  // - A nulled answer comes back only on new evidence: at least one source not in the nulled answer's sources.
+  // - The history is append-only (checked against the committed file).
+  // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews"; their
+  //   counts add up to the nullings in the history, so a first audit (no nulling review) can't have one.
   const ev = new Map(sources.map((s) => [s.id, s.evidence]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
   if (a.rules >= 4) {
@@ -258,65 +257,60 @@ function validate(id) {
       }
       if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the source searched; one source can serve many nulls)`); continue; }
       const action = kinds(cited, "action");
-      if (x.setAside === undefined && action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
+      if (x.reviewHistory === undefined && action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
     }
   }
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
   for (const r of nullings) if (!isId(r.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(r.reviewedAt || "") || !(Number.isInteger(r.nulled) && r.nulled > 0)) {
     errors.push('a "nulling" review is { "kind": "nulling", "reviewer": who nulled, "reviewedAt": "YYYY-MM-DD", "nulled": how many answers }');
   }
-  let entries = 0;
+  let nulledCount = 0;
   const historyIds = [];
   for (const st of statements) {
-    const x = answers[st.id], sa = x && x.setAside;
-    if (sa === undefined) continue;
+    const x = answers[st.id], h = x && x.reviewHistory;
+    if (h === undefined) continue;
     historyIds.push(st.id);
-    if (!Array.isArray(sa) || !sa.length) { errors.push(`${st.id}: "setAside" is the nulling history, a non-empty array`); continue; }
-    entries += sa.length;
-    for (const [i, e] of sa.entries()) {
-      const where = `${st.id}: setAside[${i}]`;
-      if (!e || typeof e !== "object" || ![-2, -1, 0, 1, 2].includes(e.value) || !CONFIDENCE.includes(e.confidence)
-        || typeof e.reason !== "string" || !e.reason.trim() || !Array.isArray(e.reasonSources) || !e.reasonSources.length
+    if (!Array.isArray(h) || !h.length) { errors.push(`${st.id}: "reviewHistory" lists past answers, a non-empty array`); continue; }
+    let ok = true;
+    for (const [i, e] of h.entries()) {
+      const where = `${st.id}: reviewHistory[${i}]`;
+      if (!e || typeof e !== "object" || !(e.value === null || [-2, -1, 0, 1, 2].includes(e.value)) || !CONFIDENCE.includes(e.confidence)
+        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources)
         || !isId(e.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(e.reviewedAt || "")) {
-        errors.push(`${where} is { "value", "confidence": the nulled answer's; "reason", "reasonSources": why it was nulled and the source behind that; "reviewer", "reviewedAt" }`);
-        continue;
+        errors.push(`${where} is the past answer as it was { "value", "confidence", "rationale", "sources" } plus "reviewer" and "reviewedAt" (who replaced it, when)`);
+        ok = false; continue;
       }
-      // The latest entry of a null leaves the nulled rationale and sources on the answer; every other entry
-      // holds them (moved there when the statement was answered again).
-      const current = x.value === null && i === sa.length - 1;
-      const moved = typeof e.rationale === "string" && e.rationale.trim() && Array.isArray(e.sources) && e.sources.length;
-      if (current && (e.rationale !== undefined || e.sources !== undefined)) errors.push(`${where}: while the answer is null its rationale and sources stay on the answer; don't repeat them in the entry`);
-      if (!current && !moved) errors.push(`${where}: the statement was answered again, so this entry holds the nulled "rationale" and "sources" (moved from the answer)`);
-      const nulled = current ? (Array.isArray(x.sources) ? x.sources : []) : (moved ? e.sources : []);
-      for (const sid of [...nulled, ...e.reasonSources]) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
-      const act = kinds(nulled, "action"), why = kinds(e.reasonSources, "words");
-      if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
+      for (const sid of e.sources) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
     }
-    // Answered again after a nulling: only on new evidence, and an action if the nulled answer rested on one.
-    const last = sa[sa.length - 1];
-    if (x.value !== null && last && Array.isArray(last.sources)) {
-      const cited = Array.isArray(x.sources) ? x.sources : [];
-      if (!cited.some((sid) => !last.sources.includes(sid))) errors.push(`${st.id}: answered again on the evidence that was nulled (${last.sources.join(", ")}); a new answer needs a new source`);
-      if (kinds(last.sources, "action").length && !kinds(cited, "action").length) errors.push(`${st.id}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
+    if (!ok) continue;
+    // Walk the answers in order (past ones, then the current one) and check each replacement.
+    const seq = [...h, x];
+    let lastNulled = null;
+    for (let i = 1; i < seq.length; i++) {
+      const prev = seq[i - 1], next = seq[i], where = `${st.id}: ${i < h.length ? `reviewHistory[${i}]` : "current answer"}`;
+      const nextSources = Array.isArray(next.sources) ? next.sources : [];
+      if (prev.value !== null && next.value === null) {
+        nulledCount++;
+        lastNulled = prev;
+        const act = kinds(prev.sources, "action"), why = kinds(nextSources, "words");
+        if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
+      } else if (prev.value === null && next.value !== null && lastNulled) {
+        if (!nextSources.some((sid) => !lastNulled.sources.includes(sid))) errors.push(`${where}: answered again on the evidence that was nulled (${lastNulled.sources.join(", ")}); a new answer needs a new source`);
+        if (kinds(lastNulled.sources, "action").length && !kinds(nextSources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
+      }
     }
   }
   const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
-  if (historyIds.length && !nullings.length) errors.push(`${historyIds.join(", ")}: "setAside" in an audit with no nulling review: the first audit never sets aside its own answers (leave them null with their source); only a later review nulls, and records it in "reviews"`);
-  else if (entries !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "setAside" holds ${entries} nulling(s); each nulling review records how many it nulled`);
-  // Append-only: no nulling history or nulling review in the committed file may be dropped or rewritten.
+  if (historyIds.length && !nullings.length) errors.push(`${historyIds.join(", ")}: "reviewHistory" in an audit with no nulling review: the first audit never overturns its own answers; only a later review does, and records it in "reviews"`);
+  else if (nulledCount !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
+  // Append-only: the committed history must still be there, unchanged, at the start of each list.
   const before = committedVersion(id);
   if (before && before.answers) {
     for (const [sid, old] of Object.entries(before.answers)) {
-      const prev = old && Array.isArray(old.setAside) ? old.setAside : [];
+      const prev = old && Array.isArray(old.reviewHistory) ? old.reviewHistory : [];
       if (!prev.length) continue;
-      const cur = answers[sid] && Array.isArray(answers[sid].setAside) ? answers[sid].setAside : [];
-      // An entry may gain the moved rationale and sources, or drop them while the null still carries the same
-      // text on the answer itself (nothing is lost either way); nothing else in it may change.
-      const ans = answers[sid] || {};
-      const kept = (e, c, i) => c && Object.keys(e).every((k) => JSON.stringify(e[k]) === JSON.stringify(c[k])
-          || (!(k in c) && (k === "rationale" || k === "sources") && ans.value === null && i === cur.length - 1 && JSON.stringify(ans[k]) === JSON.stringify(e[k])))
-        && Object.keys(c).every((k) => k in e || k === "rationale" || k === "sources");
-      if (cur.length < prev.length || prev.some((e, i) => !kept(e, cur[i], i))) errors.push(`${sid}: "setAside" history was changed or dropped; it is append-only`);
+      const cur = answers[sid] && Array.isArray(answers[sid].reviewHistory) ? answers[sid].reviewHistory : [];
+      if (cur.length < prev.length || prev.some((e, i) => JSON.stringify(e) !== JSON.stringify(cur[i]))) errors.push(`${sid}: "reviewHistory" was changed or shortened; it is append-only`);
     }
     const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
     if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
