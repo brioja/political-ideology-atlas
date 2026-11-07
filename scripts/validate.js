@@ -205,23 +205,30 @@ function validate(id) {
     const inferred = statements.filter((st) => answers[st.id] && /^Inferred:/.test(answers[st.id].rationale || "")).map((st) => st.id);
     if (inferred.length) errors.push(`${inferred.join(", ")}: rules 3 has no inferences; answer from a stated position that settles the statement, or null`);
   }
-  // Rules 4: every source is tagged as the subject's actions or words, and an answer, null included, never
-  // cites both: where there is a record, it answers alone (audits/AUDIT_RULES.md, "Record over words"; Brandon, 2026-11-07).
+  // Rules 4: every source is tagged as the subject's actions or words (audits/AUDIT_RULES.md, "Record over words";
+  // Brandon, 2026-11-07). An answer never cites both: where there is a record, it answers alone. A null cites the
+  // source behind its reason in "sources" (one source can serve many nulls) and the evidence it sets aside in
+  // "setAside": an action can set aside words or an action, words can set aside only words.
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
+    const kinds = (ids, k) => ids.filter((sid) => ev.get(sid) === k);
     for (const st of statements) {
       const x = answers[st.id];
       if (!x) continue;
-      // A null cites the source behind its reason too (the evidence it set aside, or a source that records
-      // nothing on it); one source can serve many nulls.
-      if (x.value === null) {
-        if (!Array.isArray(x.sources) || !x.sources.length) { errors.push(`${st.id}: a null cites the source behind its reason (the same one can serve many nulls)`); continue; }
-        for (const sid of x.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      const cited = Array.isArray(x.sources) ? x.sources : [];
+      if (x.value !== null) {
+        const action = kinds(cited, "action"), words = kinds(cited, "words");
+        if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
+        if (x.setAside !== undefined) errors.push(`${st.id}: "setAside" is only for a null`);
+        continue;
       }
-      if (!Array.isArray(x.sources)) continue;
-      const action = x.sources.filter((sid) => ev.get(sid) === "action"), words = x.sources.filter((sid) => ev.get(sid) === "words");
-      if (action.length && words.length) errors.push(`${st.id}: ${x.value === null ? "null " : ""}cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
+      if (!cited.length) { errors.push(`${st.id}: a null cites the source behind its reason in "sources" (the same one can serve many nulls)`); continue; }
+      const aside = x.setAside === undefined ? [] : x.setAside;
+      if (!Array.isArray(aside)) { errors.push(`${st.id}: "setAside" must be a list of source ids`); continue; }
+      for (const sid of [...cited, ...aside]) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      const asideActions = kinds(aside, "action"), reasonWords = kinds(cited, "words");
+      if (asideActions.length && reasonWords.length) errors.push(`${st.id}: null sets aside actions (${asideActions.join(", ")}) on words (${reasonWords.join(", ")}); words can't set aside an action: answer from the action, or give an action as the reason`);
     }
   }
   // People most associated with the ideology, shown as "Key figures".

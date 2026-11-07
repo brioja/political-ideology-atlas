@@ -89,8 +89,10 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-  A `null` cites the source behind its reason, like any answer: the evidence it set aside, or a
-  source that records nothing on the statement. The same source can serve many nulls.
+  A `null` cites the source behind its reason in `sources`, like any answer (a source that records
+  nothing on the statement, or the evidence that shows why it doesn't answer it); the same source
+  can serve many nulls. Evidence a null sets aside goes in `"setAside"`. An action can set aside
+  words or an action; words can set aside only words, never an action (see "Record over words").
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
@@ -150,9 +152,9 @@ free trade, not about markets in general.
   orders, acts, policies, or a report that they happened), `"words"` when it records what the subject
   said or wrote (speeches, interviews, books, posts, programmes, or a summary of their views). A
   source that holds both (a day of the Congressional Record with a speech and a roll call) is listed
-  twice, once per kind, each entry cited for what it holds. An answer citing both kinds, a `null`
-  included, fails `validate.js`: where there is an action, it answers alone, and words from before or after are left
-  out.
+  twice, once per kind, each entry cited for what it holds. An answer citing both kinds fails
+  `validate.js`, and so does a `null` that sets aside an action on words: where there is an
+  action, it answers alone, and words from before or after are left out.
 - **Over time.** Answer the subject's mature position: the one held longest and set out most fully
   (main works, time in office, core programmes). A later position replaces it only when the change
   was explicit and sustained (kept for years, in words and, where they held power, in acts); a late
