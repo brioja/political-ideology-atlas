@@ -75,7 +75,10 @@ function personBooks(name, born) {
   }
   if (!lib0) return null;
   const parts = fold(name).split(/\s+/).filter(Boolean), full = parts.join(" "), surname = parts[parts.length - 1], first = parts[0];
-  const ref = lib0.reference.filter((f) => fold(f).replace(/[^a-z0-9]+/g, " ").includes(full.replace(/[^a-z0-9]+/g, " ")));
+  // Either order: "Hannah Arendt - …" or a library's "Arendt, Hannah - …".
+  const words = (x) => ` ${fold(x).replace(/[^a-z0-9]+/g, " ").trim()} `;
+  const forms = [words(full), words(`${surname} ${parts.slice(0, -1).join(" ")}`)];
+  const ref = lib0.reference.filter((f) => forms.some((n) => words(f).includes(n)));
   const gut = lib0.gutenberg.filter((b) => { const a = fold(b.authors); return a.startsWith(`${surname},`) && (born ? a.includes(String(born)) : a.includes(first)); }).map((b) => b.file);
   return [...ref, ...gut];
 }

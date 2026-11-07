@@ -201,16 +201,18 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
 {
   const parts = subject.name.split(/\s+/), surname = parts[parts.length - 1], first = parts[0];
   const own = `${subject.name} - My Memoir.txt`, critic = `The Case Against ${subject.name} - Someone Else.txt`;
+  const surnameFirst = `${surname}, ${parts.slice(0, -1).join(" ")} - ${surname}, ${parts.slice(0, -1).join(" ")} - Essays (1990).txt`;
   const gut = `99999 ${surname} - Collected Speeches.txt`;
-  setLibraryForTests({ reference: [own, critic, "Unrelated Author - Another Book.txt"],
+  setLibraryForTests({ reference: [own, critic, surnameFirst, "Unrelated Author - Another Book.txt"],
     gutenberg: [{ file: gut, authors: `${surname}, ${first}, ${subject.born || 1900}-` }, { file: "88888 Other - A Book.txt", authors: "Other, Person, 1800-1850" }] });
   const r5 = () => E(base(), (a) => { a.rules = 5; });
   const cite = (a, file, id) => { a.sources.push({ id, kind: "primary", evidence: "words", title: file, url: `https://example.org/${id}`, library: file }); };
   fails("rules 5: own book neither cited nor declined", r5(), new RegExp(`book in the local library not used: "${own.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
   fails("rules 5: Gutenberg book by them not accounted for", r5(), /book in the local library not used: "99999 /);
-  ok("rules 5: every book cited or declined", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2");
+  fails("rules 5: a 'Surname, First' library file is theirs too", r5(), new RegExp(`book in the local library not used: "${surname},`));
+  ok("rules 5: every book cited or declined", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); cite(a, surnameFirst, "b3");
     a.booksNotUsed = [{ file: critic, reason: "A critic's polemic that only names them; not evidence of their views." }]; }));
-  fails("rules 5: decline without a reason", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); a.booksNotUsed = [{ file: critic, reason: "critic" }]; }), /"booksNotUsed" entries are/);
+  fails("rules 5: decline without a reason", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); cite(a, surnameFirst, "b3"); a.booksNotUsed = [{ file: critic, reason: "critic" }]; }), /"booksNotUsed" entries are/);
   ok("rules 4: no book check", base());
   setLibraryForTests(null);
 }
