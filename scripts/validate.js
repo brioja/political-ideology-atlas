@@ -241,7 +241,7 @@ function validate(id) {
   // - A nulled answer can come back (a revert included, no label needed) under the same rules as any change.
   // - The history is append-only (checked against the committed file).
   // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews"; their
-  //   counts add up to the nullings in the history, so a first audit (no nulling review) can't have one.
+  //   counts add up to the nullings in the history. A first audit (one pass, no nulling review) has no history.
   const ev = new Map(sources.map((s) => [s.id, s.evidence]));
   const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
   if (a.rules >= 4) {
@@ -300,7 +300,9 @@ function validate(id) {
     }
   }
   const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
-  if (historyIds.length && !nullings.length) errors.push(`${historyIds.join(", ")}: "reviewHistory" in an audit with no nulling review: the first audit never overturns its own answers; only a later review does, and records it in "reviews"`);
+  // A first audit (one pass, no nulling review) is the original text: it has no review history.
+  const firstAudit = !(Array.isArray(a.passes) && a.passes.length > 1) && !nullings.length;
+  if (historyIds.length && firstAudit) errors.push(`${historyIds.join(", ")}: "reviewHistory" in a first audit: its answers are the original text and have no history; only a later pass or review (recorded in "passes" or "reviews") replaces answers`);
   else if (nulledCount !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
   // Append-only: the committed history must still be there, unchanged, at the start of each list.
   const before = committedVersion(id);
