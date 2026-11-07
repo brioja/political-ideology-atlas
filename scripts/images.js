@@ -2,7 +2,8 @@
 // (thumbnail URL plus author and license, for attribution) in audits/people-catalog.json or
 // audits/catalog.json. Images are loaded from Wikimedia's servers by the site; only the URLs and
 // credits are stored here. Only entries without an image are looked up; --refresh looks up every
-// entry again (for newer lead images and credits, e.g. when tagging a release).
+// entry again (for newer lead images and credits, e.g. when tagging a release). A lookup that finds no usable
+// image stores "image": null, so test.js can tell "none free" from "never looked up" (Brandon, 2026-11-07).
 //   node scripts/images.js [--ideologies] [--refresh]
 const fs = require("fs");
 const path = require("path");
@@ -88,7 +89,7 @@ async function main() {
   const data = readJson(CATALOG);
   // Ideologies found only by a Wikipedia search may point at the wrong article: no image for them.
   const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch))
-    && (REFRESH || !p.image));
+    && (REFRESH || p.image === undefined));
   for (let i = 0; i < people.length; i += 50) {
     const batch = people.slice(i, i + 50);
     // 1. Lead image, free licenses only (non-free "fair use" images can't be reused here).
@@ -104,7 +105,8 @@ async function main() {
       }
       // No lead image reported: keep the stored one. The page-image API drops lead images
       // intermittently (Hitler, Reagan, Modi and others went missing at once), and a stored image
-      // was already checked as freely licensed.
+      // was already checked as freely licensed. Never looked up before: record that there is none.
+      else if (p.image === undefined) p.image = null;
     }
     // 2. Author and license for attribution.
     if (files.length) {
@@ -128,7 +130,7 @@ async function main() {
     const withImage = people.filter((p) => p.image);
     const person = await showsRealPerson(withImage.map((p) => p.image.file));
     const dropped = withImage.filter((p) => person.has(p.image.file.replace(/_/g, " ")));
-    for (const p of dropped) delete p.image;
+    for (const p of dropped) p.image = null;
     console.log(`Left out ${dropped.length} images that show a real person: ${dropped.map((p) => p.name).join(", ")}`);
   }
   fs.writeFileSync(CATALOG, JSON.stringify(data, null, 1) + "\n");

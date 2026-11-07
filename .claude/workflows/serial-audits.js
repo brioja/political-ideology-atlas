@@ -41,8 +41,9 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    source in scratchpad/sources/<id>/; YouTube at most 5 requests). Write audits/people/<id>.json, run
    \`node scripts/validate.js --people <id>\` and fix every error except the uncertainty rule (never raise a confidence to pass
    it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
-   DEPLOY (below) with \`node scripts/build.js --people\` and \`node test.js --people\`, committing people.js as "Rebuild people
-   data". Then skip to the end (steps 2-5 are for ideologies).
+   DEPLOY (below) with \`node scripts/images.js && node scripts/build.js --people\` and \`node test.js --people\` (images.js
+   looks up the photo of anyone added since its last run), committing people.js and audits/people-catalog.json as
+   "Rebuild people data". Then skip to the end (steps 2-5 are for ideologies).
 2. If "kind" is "ideology": audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
    scopeNote, list missingStatements. Start from the source library the statement pass built, if there is one:

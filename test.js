@@ -338,6 +338,15 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   }
 }
 
+// 6c. People thumbnails: every shown person has had their photo looked up (scripts/images.js). A lookup that found
+// no free photo stores "image": null; no "image" field at all means the lookup never ran since they were added.
+{
+  const people = lib.readJson(require("path").join(__dirname, "audits", "people-catalog.json")).people;
+  const byId = new Map(people.map((p) => [p.id, p]));
+  const never = PEOPLE.filter((p) => p.kind !== "model" && byId.has(p.id) && byId.get(p.id).wikipedia && !("image" in byId.get(p.id))).map((p) => p.id);
+  assert(!never.length, `shown people whose photo was never looked up (run node scripts/images.js, then a people build): ${never.join(", ")}`);
+}
+
 // Report what the data found.
 let cum = 0;
 console.log(`${model.components.length} axes carry variance; ${MEANINGFUL_LINES ?? meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);
