@@ -212,7 +212,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
       "confidence": "low",
       "rationale": "The sources record no position on this, and no stated principle bears on it.",
       "sources": ["s1"],
-      "setAside": ["s1"]
+      "setAside": { "rationale": "Nothing on this statement in the sources searched.", "sources": ["s1"] }
     }
   },
   "missingStatements": [

@@ -213,10 +213,11 @@ function validate(id) {
   //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
-  // - A null cites the source behind its reason in "sources" (one source can serve many nulls) and the evidence
-  //   it sets aside in "setAside": required, never empty, and it may repeat the reason's source (a nothing-found
-  //   null lists the source it searched in both).
-  // - An action can set aside words or an action; words can set aside only words.
+  // - A null keeps the audit's own "rationale" and "sources" (the evidence it found, or the source it searched)
+  //   and adds "setAside": { "rationale": why that evidence gives no answer, "sources": the source behind that
+  //   reason }. A nothing-found null says so there, citing the source it searched.
+  // - Words never set aside an action: when the null's own sources include an action, the setAside reason must
+  //   rest on actions too (e.g. the vote itself shows it was on another question).
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
@@ -231,12 +232,16 @@ function validate(id) {
         if (x.setAside !== undefined) errors.push(`${st.id}: "setAside" is only for a null`);
         continue;
       }
-      if (!cited.length) { errors.push(`${st.id}: a null cites the source behind its reason in "sources" (the same one can serve many nulls)`); continue; }
-      const aside = x.setAside;
-      if (!Array.isArray(aside) || !aside.length) { errors.push(`${st.id}: a null lists the evidence it sets aside in "setAside" (source ids, never empty; it can be the same source as in "sources")`); continue; }
-      for (const sid of [...cited, ...aside]) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
-      const asideActions = kinds(aside, "action"), reasonWords = kinds(cited, "words");
-      if (asideActions.length && reasonWords.length) errors.push(`${st.id}: null sets aside actions (${asideActions.join(", ")}) on words (${reasonWords.join(", ")}); words can't set aside an action: answer from the action, or give an action as the reason`);
+      if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the evidence found, or the source searched; one source can serve many nulls)`); continue; }
+      const sa = x.setAside;
+      if (!sa || typeof sa !== "object" || Array.isArray(sa) || typeof sa.rationale !== "string" || !sa.rationale.trim()
+        || !Array.isArray(sa.sources) || !sa.sources.length) {
+        errors.push(`${st.id}: a null needs "setAside": { "rationale": why its evidence gives no answer (or that nothing was found), "sources": [the source behind that reason] }`);
+        continue;
+      }
+      for (const sid of [...cited, ...sa.sources]) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      const action = kinds(cited, "action"), reasonWords = kinds(sa.sources, "words");
+      if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't set aside an action (${action.join(", ")}): answer from the action, or rest the setAside reason on an action`);
     }
   }
   // People most associated with the ideology, shown as "Key figures".
