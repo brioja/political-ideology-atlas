@@ -150,9 +150,7 @@ those first for stated positions. If the record really has nothing more, stop.
   ],
   "answers": {
     "<statement id>": { "value": 1, "confidence": "high | medium | low", "rationale": "…", "sources": ["s1"] },
-    "<statement id>": { "value": null, "confidence": "low", "rationale": "No recorded position found.", "sources": ["s1"] },
-    "<statement id>": { "value": null, "confidence": "low", "rationale": "Voted against advancing the 2025 bill to sanction the ICC.", "sources": ["s2"],
-      "setAside": { "rationale": "The vote was on sanctioning the court, not on trying leaders there.", "sources": ["s2"] } }
+    "<statement id>": { "value": null, "confidence": "low", "rationale": "No recorded position found.", "sources": ["s1"] }
   },
   "notes": "Optional: changes of view over time, contested points."
 }

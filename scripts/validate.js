@@ -214,12 +214,15 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
-  // - Nulling is the act of overriding evidence found: such a null keeps the audit's own "rationale" and
-  //   "sources" and adds "setAside": { "rationale": why that evidence gives no answer, "sources": the source
-  //   behind that reason }. A nothing-found null overrides nothing and has no setAside; an audit never sets
-  //   aside its own text (it would clear it, or cite the text directly).
-  // - A null citing an action is nulling it, so it needs a setAside, and words never set aside an action: the
-  //   setAside reason must rest on actions too (e.g. the vote itself shows it was on another question).
+  //   An audit never uses setAside: if its own evidence doesn't answer a statement, it doesn't cite it there.
+  // - "setAside" records a nulling: a later pass (a review, the integrator, a deepen pass) turning an existing
+  //   answer into null. The null keeps the overturned answer's "rationale" and "sources" unchanged and adds
+  //   "setAside": { "value", "confidence": the overturned answer's, "rationale": why it was nulled, "sources":
+  //   the source behind that reason }.
+  // - A null citing an action without a setAside is an error: an action on the statement answers it.
+  // - Words never null an action: when the overturned answer rests on an action, the nulling reason must rest on
+  //   actions too (e.g. the vote itself shows it was on another question).
+  // setAside is checked in every audit that has one; the action/words parts need the rules-4 "evidence" tags.
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
@@ -231,25 +234,28 @@ function validate(id) {
       if (x.value !== null) {
         const action = kinds(cited, "action"), words = kinds(cited, "words");
         if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
-        if (x.setAside !== undefined) errors.push(`${st.id}: "setAside" is only for a null`);
         continue;
       }
-      if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the evidence found, or the source searched; one source can serve many nulls)`); continue; }
-      for (const sid of cited) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
-      const action = kinds(cited, "action"), sa = x.setAside;
-      if (sa === undefined) {
-        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it, or add "setAside": { "rationale": why it gives no answer, "sources": [the source behind that reason] }`);
+      if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the source searched; one source can serve many nulls)`); continue; }
+      const action = kinds(cited, "action");
+      if (x.setAside === undefined) {
+        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
         continue;
       }
-      if (!sa || typeof sa !== "object" || Array.isArray(sa) || typeof sa.rationale !== "string" || !sa.rationale.trim()
-        || !Array.isArray(sa.sources) || !sa.sources.length) {
-        errors.push(`${st.id}: "setAside" is { "rationale": why the evidence found gives no answer, "sources": [the source behind that reason] }; a nothing-found null has none`);
-        continue;
-      }
-      for (const sid of sa.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
-      const reasonWords = kinds(sa.sources, "words");
-      if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't set aside an action (${action.join(", ")}): answer from the action, or rest the setAside reason on an action`);
+      const reasonWords = kinds(Array.isArray(x.setAside.sources) ? x.setAside.sources : [], "words");
+      if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't null an action (${action.join(", ")}): answer from the action, or rest the nulling on an action`);
     }
+  }
+  for (const st of statements) {
+    const x = answers[st.id], sa = x && x.setAside;
+    if (sa === undefined) continue;
+    if (x.value !== null) { errors.push(`${st.id}: "setAside" is only on a null (it records a nulling)`); continue; }
+    if (!sa || typeof sa !== "object" || Array.isArray(sa) || ![-2, -1, 0, 1, 2].includes(sa.value) || !CONFIDENCE.includes(sa.confidence)
+      || typeof sa.rationale !== "string" || !sa.rationale.trim() || !Array.isArray(sa.sources) || !sa.sources.length) {
+      errors.push(`${st.id}: "setAside" records a nulling as { "value", "confidence" (the overturned answer's), "rationale": why it was nulled, "sources": [the source behind that reason] }`);
+      continue;
+    }
+    for (const sid of sa.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
   }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
