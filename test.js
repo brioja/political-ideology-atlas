@@ -326,6 +326,18 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   assert.strictEqual(decodeShare("4.a=b", ids, fileSlots), null, "a v4 link with other characters is rejected");
 }
 
+// 6b. Search aliases (build.js searchNames): each other name finds exactly one shown ideology, and is never
+// another ideology's own name, so typing it can't send someone to the wrong entry.
+{
+  const fold = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const names = new Set(IDEOLOGIES.map((i) => fold(i.name))), seen = new Map();
+  for (const i of IDEOLOGIES) for (const al of i.aliases || []) {
+    assert(!names.has(fold(al)), `alias "${al}" of ${i.id} is another ideology's name`);
+    assert(!seen.has(fold(al)), `alias "${al}" belongs to both ${seen.get(fold(al))} and ${i.id}`);
+    seen.set(fold(al), i.id);
+  }
+}
+
 // Report what the data found.
 let cum = 0;
 console.log(`${model.components.length} axes carry variance; ${MEANINGFUL_LINES ?? meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);

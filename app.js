@@ -1618,9 +1618,13 @@ function drawExample() {
 
 function renderExplore() {
   const query = fold($("explore-search").value.trim());
+  // Name matches first, then other names ("MAGA"), then summaries; A-Z within each.
+  const alias = (i) => (query && !fold(i.name).includes(query) ? (i.aliases || []).find((n) => fold(n).includes(query)) : null);
+  const tier = (i) => (!query || fold(i.name).includes(query) ? 0 : alias(i) ? 1 : 2);
   const shown = model.ideologies
-    .filter((i) => !query || fold(i.name).includes(query) || fold(i.summary || "").includes(query))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .filter((i) => !query || fold(i.name).includes(query) || alias(i) || fold(i.summary || "").includes(query))
+    .sort((a, b) => tier(a) - tier(b) || a.name.localeCompare(b.name))
+    .map((i) => (alias(i) ? { ...i, alsoKnownAs: alias(i) } : i));
   $("explore-count").textContent = shown.length === model.ideologies.length
     ? `${shown.length} ideologies`
     : `${shown.length} of ${model.ideologies.length} ideologies`;
@@ -1805,7 +1809,7 @@ function loadAudit(folder, id) {
 }
 
 function ideologyRow(r) { return `<li><a class="row-link" href="${ideologyHref(r.id)}">
-  <span class="match-name">${posGlyph(r)}${esc(r.name)}</span>
+  <span class="match-name">${posGlyph(r)}${esc(r.name)}${r.alsoKnownAs ? ` <span class="muted small">(also: ${esc(r.alsoKnownAs)})</span>` : ""}</span>
   ${r.similarity != null ? `<span class="mono small">${pct(r.similarity)}</span>` : ""}
   <span class="arrow" aria-hidden="true">→</span></a></li>`; }
 function personRow(p) { return `<li><a class="row-link" href="${personHref(p.id)}">
@@ -1937,7 +1941,7 @@ const compareHref = (a, b) => `#/compare/${encodeURIComponent(a)}/${encodeURICom
 // Every ideology, person and AI model as a picker option: the label is what the visitor types.
 const compareOptions = () => [
   ...(myAnswers() ? [{ key: "me", label: "You (your answers)" }] : []),
-  ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name })),
+  ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name, aliases: i.aliases || [] })),
   // Names show plainly; a person who shares a name with an ideology gets "(person)" to tell them apart.
   ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: model.ideologies.some((i) => i.name === p.name) ? `${p.name} (person)` : p.name })),
 ];
@@ -1975,12 +1979,14 @@ function comboOpen(input) {
   const group = (kind) => options.filter((o) => (kind === "me" ? o.key === "me" : o.key.startsWith(kind)));
   const groups = all
     ? [["", group("me")], ["Ideologies", group("i:").sort(byName)], ["People", group("p:").sort(byName)]]
-    : [["", options.filter((o) => fold(o.label).includes(q))
-      .sort((x, y) => fold(x.label).indexOf(q) - fold(y.label).indexOf(q) || byName(x, y))]];
+    : [["", options.filter((o) => fold(o.label).includes(q) || (o.aliases || []).some((n) => fold(n).includes(q)))
+      // Name matches first (earliest in the name first), then other names ("MAGA" finds Make America Great Again).
+      .map((o) => (fold(o.label).includes(q) ? o : { ...o, also: o.aliases.find((n) => fold(n).includes(q)) }))
+      .sort((x, y) => !!x.also - !!y.also || (x.also ? 0 : fold(x.label).indexOf(q) - fold(y.label).indexOf(q)) || byName(x, y))]];
   let n = 0;
   list.innerHTML = groups.filter(([, items]) => items.length).map(([title, items]) =>
     (title ? `<li class="combo-group" role="presentation">${title}</li>` : "") +
-    items.map((o) => `<li id="${input.id}-opt-${n++}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}</li>`).join("")).join("")
+    items.map((o) => `<li id="${input.id}-opt-${n++}" role="option" data-key="${esc(o.key)}" aria-selected="false">${esc(o.label)}${o.also ? ` <span class="muted small">(also: ${esc(o.also)})</span>` : ""}</li>`).join("")).join("")
     || `<li class="muted" aria-disabled="true">No match</li>`;
   list.hidden = false;
   input.setAttribute("aria-expanded", "true");
@@ -2003,7 +2009,7 @@ function comboMove(input, step) {
 // Choosing: on a page's own box, open that comparison; on the Compare tab, move to the other box until
 // both are set, then open the pair.
 function comboChoose(input, li) {
-  input.value = li.textContent;
+  input.value = (compareOptions().find((o) => o.key === li.dataset.key) || {}).label || li.textContent; // the name, not "(also: …)"
   input.dataset.key = li.dataset.key;
   comboClose(input);
   if (input.id === "compare-pick") { go(compareHref(input.dataset.self, li.dataset.key)); return; }
