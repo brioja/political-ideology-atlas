@@ -35,6 +35,21 @@ function grandfathered() {
   return grandfatheredIds;
 }
 
+// The committed copy of an audit, for the append-only nulling history; read only for files whose committed copy
+// has a "setAside" (one git grep per run), so a full validation stays fast.
+let withHistory;
+function committedVersion(id) {
+  const rel = require("path").relative(lib.ROOT, require("path").join(PROFILES_DIR, `${id}.json`));
+  if (!withHistory) {
+    try {
+      withHistory = new Set(require("child_process").execFileSync("git", ["grep", "-l", '"setAside"', "HEAD", "--", "audits/"], { cwd: lib.ROOT })
+        .toString().split("\n").filter(Boolean).map((l) => l.replace(/^HEAD:/, "")));
+    } catch { withHistory = new Set(); }
+  }
+  if (!withHistory.has(rel)) return null;
+  try { return JSON.parse(require("child_process").execFileSync("git", ["show", `HEAD:${rel}`], { cwd: lib.ROOT }).toString()); } catch { return null; }
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -214,19 +229,23 @@ function validate(id) {
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
   // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
-  //   An audit never uses setAside: if its own evidence doesn't answer a statement, it doesn't cite it there.
-  // - "setAside" records a nulling: a later pass (a review, the integrator, a deepen pass) turning an existing
-  //   answer into null. The null keeps the overturned answer's "rationale" and "sources" unchanged and adds
-  //   "setAside": { "value", "confidence": the overturned answer's, "rationale": why it was nulled, "sources":
-  //   the source behind that reason }.
-  // - A null citing an action without a setAside is an error: an action on the statement answers it.
-  // - Words never null an action: when the overturned answer rests on an action, the nulling reason must rest on
-  //   actions too (e.g. the vote itself shows it was on another question).
-  // setAside is checked in every audit that has one; the action/words parts need the rules-4 "evidence" tags.
+  //   An audit never sets aside its own answers: if its own evidence doesn't answer a statement, it doesn't cite
+  //   it there. A null citing an action with no setAside is an error: an action on the statement answers it.
+  // - "setAside" is the statement's nulling history, an array, oldest first. A later pass (a review, the
+  //   integrator, a deepen pass) that nulls an answer appends { "value", "confidence", "rationale", "sources":
+  //   the answer as it was; "reason": why it was nulled; "reasonSources": the source behind that reason;
+  //   "reviewer", "reviewedAt" }. While null, the answer keeps that rationale and sources unchanged.
+  // - Words never null an action: if the nulled answer rests on an action, the reason must rest on actions too
+  //   (e.g. the vote itself shows it was on another question).
+  // - The history is append-only (checked against the committed file) and stays when a later pass answers the
+  //   statement again. That answer needs new evidence: at least one source not in the last nulled answer's
+  //   sources, and an action if the nulled answer rested on one.
+  // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews";
+  //   their counts add up to the setAside entries, so a first audit (no nulling review) can't use setAside.
+  const ev = new Map(sources.map((s) => [s.id, s.evidence]));
+  const kinds = (ids, k) => (Array.isArray(ids) ? ids : []).filter((sid) => ev.get(sid) === k);
   if (a.rules >= 4) {
-    const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
-    const kinds = (ids, k) => ids.filter((sid) => ev.get(sid) === k);
     for (const st of statements) {
       const x = answers[st.id];
       if (!x) continue;
@@ -238,35 +257,56 @@ function validate(id) {
       }
       if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the source searched; one source can serve many nulls)`); continue; }
       const action = kinds(cited, "action");
-      if (x.setAside === undefined) {
-        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
-        continue;
-      }
-      const reasonWords = kinds(Array.isArray(x.setAside.sources) ? x.setAside.sources : [], "words");
-      if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't null an action (${action.join(", ")}): answer from the action, or rest the nulling on an action`);
+      if (x.setAside === undefined && action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it (or don't cite it here if it is about another question)`);
     }
   }
-  // A first audit never uses setAside: only a later review nulls answers, and each review that does adds
-  // { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews" (the reviewed count). The nulled
-  // counts add up to the number of setAside entries, so every nulling is owned by a review.
   const nullings = (Array.isArray(a.reviews) ? a.reviews : []).filter((r) => r && r.kind === "nulling");
   for (const r of nullings) if (!isId(r.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(r.reviewedAt || "") || !(Number.isInteger(r.nulled) && r.nulled > 0)) {
     errors.push('a "nulling" review is { "kind": "nulling", "reviewer": who nulled, "reviewedAt": "YYYY-MM-DD", "nulled": how many answers }');
   }
-  const setAsideIds = statements.filter((st) => answers[st.id] && answers[st.id].setAside !== undefined).map((st) => st.id);
-  const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
-  if (setAsideIds.length && !nullings.length) errors.push(`${setAsideIds.join(", ")}: "setAside" in an audit with no nulling review: the first audit never sets aside its own answers (leave them null with their source); only a later review nulls, and records it in "reviews"`);
-  else if (setAsideIds.length !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but ${setAsideIds.length} carry "setAside"; each nulling review records how many it nulled`);
+  let entries = 0;
+  const historyIds = [];
   for (const st of statements) {
     const x = answers[st.id], sa = x && x.setAside;
     if (sa === undefined) continue;
-    if (x.value !== null) { errors.push(`${st.id}: "setAside" is only on a null (it records a nulling)`); continue; }
-    if (!sa || typeof sa !== "object" || Array.isArray(sa) || ![-2, -1, 0, 1, 2].includes(sa.value) || !CONFIDENCE.includes(sa.confidence)
-      || typeof sa.rationale !== "string" || !sa.rationale.trim() || !Array.isArray(sa.sources) || !sa.sources.length) {
-      errors.push(`${st.id}: "setAside" records a nulling as { "value", "confidence" (the overturned answer's), "rationale": why it was nulled, "sources": [the source behind that reason] }`);
-      continue;
+    historyIds.push(st.id);
+    if (!Array.isArray(sa) || !sa.length) { errors.push(`${st.id}: "setAside" is the nulling history, a non-empty array`); continue; }
+    entries += sa.length;
+    for (const [i, e] of sa.entries()) {
+      const where = `${st.id}: setAside[${i}]`;
+      if (!e || typeof e !== "object" || ![-2, -1, 0, 1, 2].includes(e.value) || !CONFIDENCE.includes(e.confidence)
+        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources) || !e.sources.length
+        || typeof e.reason !== "string" || !e.reason.trim() || !Array.isArray(e.reasonSources) || !e.reasonSources.length
+        || !isId(e.reviewer) || !/^\d{4}-\d{2}-\d{2}$/.test(e.reviewedAt || "")) {
+        errors.push(`${where} is { "value", "confidence", "rationale", "sources": the nulled answer as it was; "reason", "reasonSources": why it was nulled and the source behind that; "reviewer", "reviewedAt" }`);
+        continue;
+      }
+      for (const sid of [...e.sources, ...e.reasonSources]) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
+      const act = kinds(e.sources, "action"), why = kinds(e.reasonSources, "words");
+      if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
     }
-    for (const sid of sa.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+    // Answered again after a nulling: only on new evidence, and an action if the nulled answer rested on one.
+    const last = sa[sa.length - 1];
+    if (x.value !== null && last && Array.isArray(last.sources)) {
+      const cited = Array.isArray(x.sources) ? x.sources : [];
+      if (!cited.some((sid) => !last.sources.includes(sid))) errors.push(`${st.id}: answered again on the evidence that was nulled (${last.sources.join(", ")}); a new answer needs a new source`);
+      if (kinds(last.sources, "action").length && !kinds(cited, "action").length) errors.push(`${st.id}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
+    }
+  }
+  const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
+  if (historyIds.length && !nullings.length) errors.push(`${historyIds.join(", ")}: "setAside" in an audit with no nulling review: the first audit never sets aside its own answers (leave them null with their source); only a later review nulls, and records it in "reviews"`);
+  else if (entries !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "setAside" holds ${entries} nulling(s); each nulling review records how many it nulled`);
+  // Append-only: no nulling history or nulling review in the committed file may be dropped or rewritten.
+  const before = committedVersion(id);
+  if (before && before.answers) {
+    for (const [sid, old] of Object.entries(before.answers)) {
+      const prev = old && Array.isArray(old.setAside) ? old.setAside : [];
+      if (!prev.length) continue;
+      const cur = answers[sid] && Array.isArray(answers[sid].setAside) ? answers[sid].setAside : [];
+      if (cur.length < prev.length || prev.some((e, i) => JSON.stringify(e) !== JSON.stringify(cur[i]))) errors.push(`${sid}: "setAside" history was changed or dropped; it is append-only`);
+    }
+    const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
+    if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
   }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
