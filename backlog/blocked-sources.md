@@ -91,3 +91,6 @@ when that gap plausibly cost answers (not for a reference page that had other co
   Jankowski, *Egypt, Islam and the Arabs*, Hindawi's Arabic editions, the Potenza, Geer and CUNY theses and
   the Wilson Center piece were blocked or lending-only. Hussein's *Mustaqbal al-thaqafa fi Misr* is now in the
   reference corpus.
+- **Decolonization** (audit 2026-11-07, 29 known, off the site): Fanon's "Concerning Violence" chapter of
+  *The Wretched of the Earth* and the Bandung communique could not be opened from an official copy (403 and a
+  bot check); the violence answers rest on an encyclopedia entry's report of Fanon.
