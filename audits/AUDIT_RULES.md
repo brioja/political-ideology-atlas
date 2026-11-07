@@ -6,7 +6,7 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 
 "The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
-rules 4 tags every source as actions or words, below.)
+rules 4 tags every source as actions or words.)
 
 ## 1. Standard
 
@@ -89,11 +89,6 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-  A `null` cites the source behind its reason in `sources`, like any answer (a source that records
-  nothing on the statement, or the evidence that shows why it doesn't answer it); the same source
-  can serve many nulls. Every `null` also lists the evidence it sets aside in `"setAside"`, never
-  empty (it can be the same source as in `sources`). An action can set aside
-  words or an action; words can set aside only words, never an action (see "Record over words").
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
@@ -149,13 +144,8 @@ free trade, not about markets in general.
   (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
   them). Words answer a statement only where there is no record on it. A record that itself points
   both ways is 0 at `low`. Each prompt says what counts as the subject's own record.
-  Tag every source with `"evidence"`: `"action"` when it records what the subject did (votes, laws,
-  orders, acts, policies, or a report that they happened), `"words"` when it records what the subject
-  said or wrote (speeches, interviews, books, posts, programmes, or a summary of their views). A
-  source that holds both (a day of the Congressional Record with a speech and a roll call) is listed
-  twice, once per kind, each entry cited for what it holds. An answer citing both kinds fails
-  `validate.js`, and so does a `null` that sets aside an action on words: where there is an
-  action, it answers alone, and words from before or after are left out.
+  Words never set aside an action. Tag each source as the subject's actions or words;
+  `validate.js` enforces how they combine.
 - **Over time.** Answer the subject's mature position: the one held longest and set out most fully
   (main works, time in office, core programmes). A later position replaces it only when the change
   was explicit and sustained (kept for years, in words and, where they held power, in acts); a late
@@ -218,7 +208,7 @@ book the maintainer supplies). Build on the existing audit rather than starting 
 - Use a model that hasn't audited the subject yet. Add your model id to `auditor` (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 4`, which requires no "Inferred:" answer left and an `"evidence"` tag on every
-  source, older ones included.
+  the date of your pass. Set `"rules": 4` and bring the whole file up to it, older answers
+  and sources included (`validate.js` says what is missing).
 - If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.

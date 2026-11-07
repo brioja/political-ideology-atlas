@@ -205,11 +205,18 @@ function validate(id) {
     const inferred = statements.filter((st) => answers[st.id] && /^Inferred:/.test(answers[st.id].rationale || "")).map((st) => st.id);
     if (inferred.length) errors.push(`${inferred.join(", ")}: rules 3 has no inferences; answer from a stated position that settles the statement, or null`);
   }
-  // Rules 4: every source is tagged as the subject's actions or words (audits/AUDIT_RULES.md, "Record over words";
-  // Brandon, 2026-11-07). An answer never cites both: where there is a record, it answers alone. A null cites the
-  // source behind its reason in "sources" (one source can serve many nulls) and the evidence it sets aside in
-  // "setAside" (required, never empty; it can repeat the reason's source): an action can set aside words or an
-  // action, words can set aside only words.
+  // Rules 4 (Brandon, 2026-11-07). AUDIT_RULES.md states only the principle ("Record over words": where the
+  // subject has a record on a statement it answers alone, and words never set aside an action); the mechanics
+  // live here, and each error message says how to fix it.
+  // - Every source has "evidence": "action" when it records what the subject did (votes, laws, orders, acts,
+  //   policies, or a report that they happened), "words" when it records what they said or wrote (speeches,
+  //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
+  //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
+  // - An answer (not null) never cites both kinds: the actions answer alone.
+  // - A null cites the source behind its reason in "sources" (one source can serve many nulls) and the evidence
+  //   it sets aside in "setAside": required, never empty, and it may repeat the reason's source (a nothing-found
+  //   null lists the source it searched in both).
+  // - An action can set aside words or an action; words can set aside only words.
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
