@@ -189,16 +189,17 @@ whatever its confidence; `null` doesn't, nor do the marked inferences ("Inferred
 rules 2 still hold. A failure names the lines whose bars are too wide. Don't pad answers to pass: an honest
 rejection is the correct outcome.
 
-## 6. Deepening
+## 6. Research to the end, and later passes
 
-**Deepening is part of the audit, not a later pass** (Brandon, 2026-11-05). There is no limit on
-sources. If your draft fails the uncertainty rule, keep researching before you finish: the lines the
-validator names, then the statements still null, in new sources (the local corpora too). Stop when
-they are covered or when the record really has nothing more, and say in `notes` which themes you
-searched. Never raise a confidence to pass.
+**An audit goes as deep as the record allows** (Brandon, 2026-11-05 and 11-07). There is no limit on
+sources, and no later pass will fill gaps: never stop early. If your draft fails the uncertainty rule,
+keep researching before you finish: the lines the validator names, then the statements still null, in
+new sources (the local corpora too). Stop when they are covered or when the record really has nothing
+more, and say in `notes` which themes you searched. Never raise a confidence to pass.
 
-A separate pass on a finished audit happens only when new sources become available (a new corpus, a
-book the maintainer supplies). Build on the existing audit rather than starting over:
+A later pass on a finished audit has one of two reasons: new sources became available (a new corpus, a
+book the maintainer supplies), or the audit predates the shared rules (no `"rules"` field) and is brought
+up to them. Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
 - Keep the subject. Don't borrow from another subject: a broader ideology's (secularism's for
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for

@@ -12,7 +12,7 @@ Inputs (filled in by the runner):
 Output: write `audits/profiles/{{id}}.json` in the format below. Then run
 `node scripts/validate.js {{id}}` and fix every error it reports until it passes.
 
-Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, deepening)
+Read `audits/AUDIT_RULES.md` first. Its rules (sources, answers, confidence, uncertainty, research to the end)
 apply to every audit, ideologies and people alike, and apply here in full; this file adds only what
 is specific to ideologies.
 
@@ -227,7 +227,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
 }
 ```
 
-## 7. Deepening
+## 7. Research to the end
 
 Follow audits/AUDIT_RULES.md, section 6. For an ideology, keep its `scope`: research what the
 ideology itself states (its programmes, defining thinkers, organisations and the scholarship on

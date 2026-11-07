@@ -37,7 +37,7 @@ Your ideology: ${it.name} (id: ${it.id}).
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
    scopeNote, list missingStatements. Use WebSearch/WebFetch (load them with ToolSearch if deferred); cite only pages you
    opened. There is no limit on sources: choose each new source to cover statement areas still unsupported rather than
-   another overview, and deepen within the audit (audits/AUDIT_RULES.md section 6). Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
+   another overview, and research to the end within the audit, since no later pass fills gaps (audits/AUDIT_RULES.md section 6). Prefer open-access sources (SEP/IEP, marxists.org, Gutenberg, party sites, Wikipedia); Britannica blocks access.
    Wikipedia-style neutral standard. Save every source you download beyond the library into scratchpad/sources/${it.id}/ and add it to its
    index.json (create both if missing), so later passes read local files instead of fetching again:
    a plain-text extract (.txt, the copy you search and read) plus the original, gzipped if it is HTML (.html.gz). Extract a PDF
@@ -45,7 +45,7 @@ Your ideology: ${it.name} (id: ${it.id}).
    In your report, propose a color for the ideology (the integrator adds it to audits/ideology-colors.json): a documented
    tradition with its source, or a guess from its imagery.
 2. Write audits/profiles/${it.id}.json and run \`node scripts/validate.js ${it.id}\`; fix every error it reports
-   except the uncertainty rule, and deepen on the lines it names (audits/AUDIT_RULES.md section 6). Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
+   except the uncertainty rule, and keep researching the lines it names before you finish (audits/AUDIT_RULES.md section 6). Never raise a confidence to make an audit pass the uncertainty rule. Write each rationale yourself, specific to its
    statement; never pad or generate rationales by script to pass a length check.
 3. Leave missingStatements entries unhandled: do NOT set addedAs or declined, and do NOT edit statements.json.
    An integrator handles missing statements from all lanes together.
