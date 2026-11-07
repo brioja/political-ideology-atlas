@@ -18,6 +18,7 @@ const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.p
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
+const NULL_REASON = /^[a-z]+(-[a-z]+){3}$/, NULL_NOTHING_FOUND = "no-evidence-after-search"; // rules 4: why a null is null, in four words
 // Why an entry isn't audited (the first check, audits/PROMPT.md). The first six are things that HAVE ideas
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
@@ -215,6 +216,19 @@ function validate(id) {
       if (!x || x.value === null || !Array.isArray(x.sources)) continue;
       const action = x.sources.filter((sid) => ev.get(sid) === "action"), words = x.sources.filter((sid) => ev.get(sid) === "words");
       if (action.length && words.length) errors.push(`${st.id}: cites actions (${action.join(", ")}) and words (${words.join(", ")}); record over words: answer from the actions alone and drop the words`);
+    }
+    // A null says why in four words ("nullReason") and cites the evidence it set aside; only
+    // no-evidence-after-search cites none. An action on the statement's own question is the record and
+    // answers it, so a null citing an action must be borrowed from another question or subject.
+    for (const st of statements) {
+      const x = answers[st.id];
+      if (!x || x.value !== null) continue;
+      if (typeof x.nullReason !== "string" || !NULL_REASON.test(x.nullReason)) { errors.push(`${st.id}: a null needs "nullReason": four lowercase words joined by hyphens, e.g. ${NULL_NOTHING_FOUND} or borrowed-from-nearby-case (node scripts/null-reasons.js lists those in use)`); continue; }
+      const cited = Array.isArray(x.sources) ? x.sources : [];
+      for (const sid of cited) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      if (x.nullReason !== NULL_NOTHING_FOUND && !cited.length) errors.push(`${st.id}: nullReason ${x.nullReason} needs the evidence it set aside in "sources"`);
+      const action = cited.filter((sid) => ev.get(sid) === "action");
+      if (action.length && !x.nullReason.startsWith("borrowed-from-")) errors.push(`${st.id}: null cites actions (${action.join(", ")}); an action on this statement answers it (record over words), so answer from it, or give the borrowed-from-... reason it is about another question or subject`);
     }
   }
   // People most associated with the ideology, shown as "Key figures".

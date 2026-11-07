@@ -150,7 +150,7 @@ those first for stated positions. If the record really has nothing more, stop.
   ],
   "answers": {
     "<statement id>": { "value": 1, "confidence": "high | medium | low", "rationale": "…", "sources": ["s1"] },
-    "<statement id>": { "value": null, "confidence": "low", "rationale": "No recorded position found.", "sources": [] }
+    "<statement id>": { "value": null, "confidence": "low", "nullReason": "no-evidence-after-search", "rationale": "No recorded position found.", "sources": [] }
   },
   "notes": "Optional: changes of view over time, contested points."
 }
