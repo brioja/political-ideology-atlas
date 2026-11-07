@@ -17,7 +17,7 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests, setLibraryForTests } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests, nextPassFrom } = require("../scripts/validate");
 
 const st = lib.activeStatements().map((s) => s.id);
 const [A, B, C, D] = st; // A: answered from an action, B: answered from words, C and D: nothing found
@@ -215,6 +215,17 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   fails("rules 5: decline without a reason", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); cite(a, surnameFirst, "b3"); a.booksNotUsed = [{ file: critic, reason: "critic" }]; }), /"booksNotUsed" entries are/);
   ok("rules 4: no book check", base());
   setLibraryForTests(null);
+}
+
+// A later pass comes at least a week after the previous one (from 2026-11-08; earlier passes stand).
+{
+  const two = (d1, d2) => E(base(), (a) => { a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"]; a.auditedAt = d2;
+    a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: d1 }, { auditor: "claude-opus-5-5", auditedAt: d2 }]; });
+  fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 7 days after the previous one \(2026-11-10\)/);
+  ok("later pass a week after the previous one", two("2026-11-10", "2026-11-17"));
+  ok("close passes before the rule stand", two("2026-10-27", "2026-10-31"));
+  assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-11-17", "next pass date from the latest pass"); n++;
+  assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-11-15", "next pass date from a single audit"); n++;
 }
 
 setCommittedForTests(null);
