@@ -4,7 +4,12 @@
 // credits are stored here. Only entries without an image are looked up; --refresh looks up every
 // entry again (for newer lead images and credits, e.g. when tagging a release). A lookup that finds no usable
 // image stores "image": null, so test.js can tell "none free" from "never looked up" (Brandon, 2026-11-07).
-//   node scripts/images.js [--ideologies] [--refresh]
+//   node scripts/images.js [--ideologies] [--refresh] [--check]
+// Monthly photo check (Brandon, 2026-11-07): Commons renames files, which breaks the stored URL (Nicholas II's photo,
+// renamed 2026-11-05). Every run for people reads audits/photo-check.json; when its date is 30 or more days old (or
+// with --check) it tests every shown person's photo URL, follows a renamed file to its new name (the same picture),
+// clears a deleted one so this run looks it up again, and writes today's date. Serial people deploys run this script,
+// so the check runs about once a month on its own.
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson } = require("./lib");
@@ -85,8 +90,43 @@ async function showsRealPerson(fileNames) {
 const titleOf = (url) => decodeURIComponent(url.split("/wiki/")[1]).replace(/_/g, " ");
 const plain = (html) => (html || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 
+const CHECK_FILE = path.join(ROOT, "audits", "photo-check.json"), CHECK_DAYS = 30;
+async function checkPhotos(data) {
+  const shown = new Set(require(path.join(ROOT, "people.js")).PEOPLE.map((p) => p.id));
+  let renamed = 0, gone = 0, checked = 0;
+  for (const p of data[LIST].filter((x) => shown.has(x.id) && x.image && x.image.url)) {
+    await sleep(150);
+    checked++;
+    let status;
+    try { status = (await fetch(p.image.url, { method: "HEAD", headers: HEADERS })).status; } catch { continue; } // network trouble: next month
+    if (status !== 404) continue;
+    // Renamed on Commons: the old file page redirects to the new name; take the new name's thumbnail.
+    const r = await api({ action: "query", redirects: "1", titles: `File:${p.image.file}`, prop: "imageinfo", iiprop: "url", iiurlwidth: "330" }, COMMONS);
+    const pg = (r.query.pages || [])[0];
+    const info = pg && !pg.missing && pg.imageinfo && pg.imageinfo[0];
+    if (info && info.thumburl) {
+      const file = pg.title.replace(/^File:/, "").replace(/ /g, "_");
+      Object.assign(p.image, { url: info.thumburl.split("?")[0], file, source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file)}` });
+      renamed++;
+      console.log(`Photo of ${p.name}: renamed on Commons, now ${file}`);
+    } else {
+      delete p.image; // deleted: looked up again below, which finds the article's current lead image
+      gone++;
+      console.log(`Photo of ${p.name}: deleted on Commons, looking up the article's current image`);
+    }
+  }
+  fs.writeFileSync(CHECK_FILE, JSON.stringify({ lastChecked: new Date().toISOString().slice(0, 10), everyDays: CHECK_DAYS,
+    note: "scripts/images.js checks shown people's photo URLs when this date is 30 or more days old" }, null, 1) + "\n");
+  console.log(`Photo check: ${checked} photos, ${renamed} renamed, ${gone} deleted.`);
+}
+
 async function main() {
   const data = readJson(CATALOG);
+  if (!IDEOLOGIES) {
+    const last = fs.existsSync(CHECK_FILE) ? readJson(CHECK_FILE).lastChecked : null;
+    const due = !last || (Date.now() - Date.parse(last)) / 86400000 >= CHECK_DAYS;
+    if (process.argv.includes("--check") || due) await checkPhotos(data);
+  }
   // Ideologies found only by a Wikipedia search may point at the wrong article: no image for them.
   const people = data[LIST].filter((p) => p.wikipedia && (!IDEOLOGIES || ["exact", "redirect"].includes(p.wikipediaMatch))
     && (REFRESH || p.image === undefined));
