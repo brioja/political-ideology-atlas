@@ -232,10 +232,10 @@ function validate(id) {
   //   An audit never overturns its own answers: if its own evidence doesn't answer a statement, it doesn't cite
   //   it there. A null citing an action with no review history is an error: an action on the statement answers it.
   // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
-  //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the original audit's
-  //   answer, signed by the first auditor; each later entry is a reply that changed it (bold or revert), signed by
-  //   the pass that wrote it. So a history has at least 2 entries, and the last one is the current answer
-  //   (what people see), word for word.
+  //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the first sourced
+  //   version; each later entry is a reply that changed it (bold or revert), signed by the pass that wrote it.
+  //   An unsourced version has nothing to review and is left out; a statement with fewer than 2 sourced versions
+  //   has no history (the field is absent). The last entry is the current answer (what people see), word for word.
   // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
   //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
   //   only on an action.
@@ -267,7 +267,6 @@ function validate(id) {
   }
   let nulledCount = 0;
   const historyIds = [];
-  const firstAuditor = Array.isArray(a.passes) && a.passes.length ? a.passes[0].auditor : [].concat(a.auditor)[0];
   const sameAnswer = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
   for (const st of statements) {
     const x = answers[st.id], h = x && x.reviewHistory;
@@ -278,15 +277,14 @@ function validate(id) {
     for (const [i, e] of h.entries()) {
       const where = `${st.id}: reviewHistory[${i}]`;
       if (!e || typeof e !== "object" || !(e.value === null || [-2, -1, 0, 1, 2].includes(e.value)) || !CONFIDENCE.includes(e.confidence)
-        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources)
+        || typeof e.rationale !== "string" || !e.rationale.trim() || !Array.isArray(e.sources) || !e.sources.length
         || !isId(e.author) || !/^\d{4}-\d{2}-\d{2}$/.test(e.date || "")) {
-        errors.push(`${where} is a signed version of the answer { "value", "confidence", "rationale", "sources", "author", "date" }`);
+        errors.push(`${where} is a signed, sourced version of the answer { "value", "confidence", "rationale", "sources" (not empty: an unsourced version has nothing to review, leave it out), "author", "date" }`);
         ok = false; continue;
       }
       for (const sid of e.sources) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
     }
     if (!ok) continue;
-    if (firstAuditor && !String(h[0].author).startsWith(firstAuditor)) errors.push(`${st.id}: reviewHistory[0] is the original audit's answer, signed by the first auditor (${firstAuditor})`);
     if (!sameAnswer(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word`);
     // Walk the versions in order and check each change.
     let lastNulled = null;
