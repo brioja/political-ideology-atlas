@@ -238,7 +238,7 @@ function validate(id) {
   // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
   //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
   //   only on an action.
-  // - A nulled answer comes back only on new evidence: at least one source not in the nulled answer's sources.
+  // - A nulled answer can come back (a revert included, no label needed) under the same rules as any change.
   // - The history is append-only (checked against the committed file).
   // - Each review that nulls adds { "kind": "nulling", "reviewer", "reviewedAt", "nulled": N } to "reviews"; their
   //   counts add up to the nullings in the history, so a first audit (no nulling review) can't have one.
@@ -295,7 +295,6 @@ function validate(id) {
         const act = kinds(prev.sources, "action"), why = kinds(nextSources, "words");
         if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
       } else if (prev.value === null && next.value !== null && lastNulled) {
-        if (!nextSources.some((sid) => !lastNulled.sources.includes(sid))) errors.push(`${where}: answered again on the evidence that was nulled (${lastNulled.sources.join(", ")}); a new answer needs a new source`);
         if (kinds(lastNulled.sources, "action").length && !kinds(nextSources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
       }
     }
