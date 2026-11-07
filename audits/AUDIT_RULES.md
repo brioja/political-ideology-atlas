@@ -195,8 +195,9 @@ searched. Never raise a confidence to pass.
 A separate pass on a finished audit happens only when new sources become available (a new corpus, a
 book the maintainer supplies). Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
-- Keep the subject. Don't borrow from another subject (secular humanism's for secularism,
-  a party's for one of its members, a relative's or employer's for a person).
+- Keep the subject. Don't borrow from another subject: a broader ideology's (secularism's for
+  Jewish secularism, or for a person who holds it), a related one's (secular humanism's for
+  secularism), a party's for one of its members, a relative's or employer's for a person.
 - Change an answer or raise its confidence only on evidence you found and cite. Check every answer
   you touch against these rules, and every "Inferred:" answer an older pass left: each becomes
   stated (cite the source of the position that settles it) or `null`. One deduced from a general
