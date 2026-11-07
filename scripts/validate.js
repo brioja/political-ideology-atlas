@@ -22,9 +22,14 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
-const REAUDIT_DAYS = 14, REAUDIT_FROM = "2026-11-08"; // minimum gap between audit passes, and the date it applies from
+// Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
+// of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
+const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
+const days = (a, b) => (Date.parse(b) - Date.parse(a)) / 864e5;
+const reauditGap = (date) => Math.ceil(days(PROJECT_START, date) / 2);
 // The earliest date a later pass on this audit may carry ("" when there is no earlier pass).
-const nextPassFrom = (a) => { const d = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop(); return d ? new Date(Date.parse(d) + REAUDIT_DAYS * 864e5).toISOString().slice(0, 10) : ""; };
+const nextPassFrom = (a) => { const d = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop(); // gap >= (next - start) / 2  <=>  next >= d + (d - start): the earliest next pass waits as long as the project was old at d.
+  return d ? new Date(Date.parse(d) + Math.max(0, days(PROJECT_START, d)) * 864e5).toISOString().slice(0, 10) : ""; };
 const BANNED_HOSTS = ["12axes", "8values", "politicalcompass", "idrlabs", "polcompball", "sapplyvalues"];
 
 let grandfatheredIds = null;
@@ -134,11 +139,12 @@ function validate(id) {
       errors.push('"passes" must list every audit pass as { "auditor": model id, "auditedAt": "YYYY-MM-DD" }');
     } else {
       for (const m of [].concat(a.auditor)) if (!passes.some((p) => p.auditor === m)) errors.push(`"passes" has no pass by ${m}`);
-      // A later pass comes at least REAUDIT_DAYS after the previous one (Brandon, 2026-11-07: the same audits were
-      // re-audited several times within days). Passes from REAUDIT_FROM on; earlier ones stand as they are.
+      // A later pass comes at least half the project's age after the previous one (Brandon, 2026-11-07: the same audits
+      // were re-audited several times within days; fixed 14 days, then half the project's age the same day).
+      // Passes from REAUDIT_FROM on; earlier ones stand as they are.
       const dates = passes.map((p) => p.auditedAt).sort(), last = dates[dates.length - 1], prev = dates[dates.length - 2];
-      if (prev && last >= REAUDIT_FROM && (Date.parse(last) - Date.parse(prev)) / 864e5 < REAUDIT_DAYS) {
-        errors.push(`"passes": a later pass comes at least ${REAUDIT_DAYS} days after the previous one (${prev}); this one is dated ${last}`);
+      if (prev && last >= REAUDIT_FROM && days(prev, last) < days(PROJECT_START, last) / 2) {
+        errors.push(`"passes": a later pass comes at least ${reauditGap(last)} days (half the project's age) after the previous one (${prev}); this one is dated ${last}`);
       }
     }
   }
@@ -517,4 +523,4 @@ if (require.main === module) main();
 // Tests (tests/validate-rules.test.js) stand in for the committed copy of an audit.
 const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
-module.exports = { validate, excludedOnly, setCommittedForTests, setLibraryForTests, nextPassFrom, REAUDIT_DAYS };
+module.exports = { validate, excludedOnly, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap, PROJECT_START };

@@ -17,7 +17,7 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests, setLibraryForTests, nextPassFrom } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap } = require("../scripts/validate");
 
 const st = lib.activeStatements().map((s) => s.id);
 const [A, B, C, D] = st; // A: answered from an action, B: answered from words, C and D: nothing found
@@ -217,16 +217,20 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   setLibraryForTests(null);
 }
 
-// A later pass comes at least two weeks after the previous one (from 2026-11-08; earlier passes stand).
+// A later pass comes at least half the project's age after the previous one (from 2026-11-08; earlier passes stand).
 {
   const two = (d1, d2) => E(base(), (a) => { a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"]; a.auditedAt = d2;
     a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: d1 }, { auditor: "claude-opus-5-5", auditedAt: d2 }]; });
-  fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 14 days after the previous one \(2026-11-10\)/);
-  fails("later pass 13 days after the previous one", two("2026-11-10", "2026-11-23"), /at least 14 days/);
-  ok("later pass two weeks after the previous one", two("2026-11-10", "2026-11-24"));
+  // 2026-11-12: the project is 29 days old, so the gap is 14.5 days, i.e. 15 whole days.
+  fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 15 days \(half the project's age\) after the previous one \(2026-11-10\)/);
+  // A pass on 2026-11-10 (project 27 days old) allows the next from 2026-12-07 (gap 27 = half of 54).
+  fails("later pass one day short of half the project's age", two("2026-11-10", "2026-12-06"), /at least 27 days/);
+  ok("later pass at half the project's age", two("2026-11-10", "2026-12-07"));
   ok("close passes before the rule stand", two("2026-10-27", "2026-10-31"));
-  assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-11-24", "next pass date from the latest pass"); n++;
-  assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-11-22", "next pass date from a single audit"); n++;
+  assert.strictEqual(reauditGap("2026-11-07"), 12, "gap today: half of 24 days"); n++;
+  assert.strictEqual(reauditGap("2026-11-13"), 15, "gap a week later: half of 30 days"); n++;
+  assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-12-07", "next pass date from the latest pass"); n++;
+  assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-12-03", "next pass date from a single audit"); n++;
 }
 
 setCommittedForTests(null);
