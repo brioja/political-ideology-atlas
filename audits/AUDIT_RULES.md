@@ -6,7 +6,7 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 
 "The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
-rules 4 tags every source as actions or words and gives every null a four-word reason, below.)
+rules 4 tags every source as actions or words and gives every null a four-word key, below.)
 
 ## 1. Standard
 
@@ -89,14 +89,14 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
-- **Every null says why, in four words.** Give each `null` a `"nullReason"`: four lowercase words
-  joined by hyphens that name the specific reason, such as `no-evidence-after-search`,
+- **Every null has a four-word key.** Give each `null` a `"nullKey"`: four lowercase words joined
+  by hyphens that name the specific kind of reason, such as `no-evidence-after-search`,
   `borrowed-from-nearby-case`, `borrowed-from-party-position` or `general-value-too-broad`. Every
-  word must add something; don't pad with "a" or "the". Reuse a label already in use where it fits
-  (`node scripts/null-reasons.js` lists them) and coin a new one only when none does. The rationale
-  gives the details (which question, subject, value or premise), and `sources` cites the evidence
-  set aside; only `no-evidence-after-search` may cite none. A null citing an action needs a
-  `borrowed-from-...` reason: an action on the statement's own question is the record, and the
+  word must add something; don't pad with "a" or "the". Reuse a key already in use where it fits
+  (`node scripts/null-keys.js` lists them) and coin a new one only when none does. The rationale
+  gives the reason in full (which question, subject, value or premise), and `sources` cites the
+  evidence set aside; only `no-evidence-after-search` may cite none. A null citing an action needs
+  a `borrowed-from-...` key: an action on the statement's own question is the record, and the
   record answers it.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
