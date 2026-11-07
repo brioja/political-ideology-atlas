@@ -234,7 +234,7 @@ function validate(id) {
   // - "reviewHistory" is a statement's talk page (WP:BRD): every version of the answer, oldest first, each signed
   //   { "value", "confidence", "rationale", "sources", "author", "date" }. The first entry is the first sourced
   //   version; each later entry is a reply that changed it (bold or revert), signed by the pass that wrote it.
-  //   An unsourced version has nothing to review and is left out; a statement with fewer than 2 sourced versions
+  //   An unsourced version, or a null before the first answer (nothing found), has nothing to review and is left out; a statement with fewer than 2 sourced versions
   //   has no history (the field is absent). The last entry is the current answer (what people see), word for word.
   // - Words never overturn an action: an answer resting on an action can be nulled only on an action (e.g. the
   //   vote itself shows it was on another question), and a nulled answer that rested on an action comes back
@@ -285,6 +285,7 @@ function validate(id) {
       for (const sid of e.sources) if (!sourceIds.has(sid)) errors.push(`${where}: unknown source '${sid}'`);
     }
     if (!ok) continue;
+    if (h[0].value === null) errors.push(`${st.id}: reviewHistory starts at the first answer: a null before it found nothing and has nothing to review, so leave it out`);
     if (!sameAnswer(h[h.length - 1], x)) errors.push(`${st.id}: the last reviewHistory entry is the current answer, word for word`);
     // Walk the versions in order and check each change.
     let lastNulled = null;
@@ -319,6 +320,8 @@ function validate(id) {
     const same = (p, q) => JSON.stringify([p.value, p.confidence, p.rationale, p.sources || []]) === JSON.stringify([q.value, q.confidence, q.rationale, q.sources || []]);
     for (const [sid, old] of Object.entries(before.answers)) {
       if (!old || !Array.isArray(old.sources) || !old.sources.length) continue;
+      // An original null (nothing found, never answered) has nothing to review either: a later pass replaces it freely.
+      if (old.value === null && !(Array.isArray(old.reviewHistory) && old.reviewHistory.length)) continue;
       const cur = answers[sid];
       if (cur && same(old, cur)) continue;
       if (!cur) { errors.push(`${sid}: a sourced answer was removed; change it instead, keeping the old version in its "reviewHistory"`); continue; }
