@@ -94,3 +94,9 @@ when that gap plausibly cost answers (not for a reference page that had other co
 - **Decolonization** (audit 2026-11-07, 29 known, off the site): Fanon's "Concerning Violence" chapter of
   *The Wretched of the Earth* and the Bandung communique could not be opened from an official copy (403 and a
   bot check); the violence answers rest on an encyclopedia entry's report of Fanon.
+- **Chicano Movement** (audit 2026-11-07, 36 known, off the site at ±2.10, line 4 ±4.70): public.websites.umich.edu,
+  archives.calstate.edu and core.ac.uk (403), UCSD library pages (bot check) and the SAGE reference body text
+  (paywall) were refused; the Plan de Santa Barbara is only the condensed USC copy. Lacks the full Plan and the
+  archive texts on religion, gender and economy.
+- **State atheism** (audit 2026-11-07, 15 known, off the site): Karataş (2020, Albania) and the 2025 *Religions*
+  article sat behind bot checks (403); open by hand. Lacks the Albanian record beyond the ban on religion.
