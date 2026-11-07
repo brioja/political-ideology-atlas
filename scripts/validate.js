@@ -213,11 +213,13 @@ function validate(id) {
   //   interviews, books, posts, programmes, a summary of their views). A source holding both (a day of the
   //   Congressional Record with a speech and a roll call) is listed twice, once per kind.
   // - An answer (not null) never cites both kinds: the actions answer alone.
-  // - A null keeps the audit's own "rationale" and "sources" (the evidence it found, or the source it searched)
-  //   and adds "setAside": { "rationale": why that evidence gives no answer, "sources": the source behind that
-  //   reason }. A nothing-found null says so there, citing the source it searched.
-  // - Words never set aside an action: when the null's own sources include an action, the setAside reason must
-  //   rest on actions too (e.g. the vote itself shows it was on another question).
+  // - A null cites its source in "sources" like any answer (the source it searched, or the evidence it found).
+  // - Nulling is the act of overriding evidence found: such a null keeps the audit's own "rationale" and
+  //   "sources" and adds "setAside": { "rationale": why that evidence gives no answer, "sources": the source
+  //   behind that reason }. A nothing-found null overrides nothing and has no setAside; an audit never sets
+  //   aside its own text (it would clear it, or cite the text directly).
+  // - A null citing an action is nulling it, so it needs a setAside, and words never set aside an action: the
+  //   setAside reason must rest on actions too (e.g. the vote itself shows it was on another question).
   if (a.rules >= 4) {
     const ev = new Map(sources.map((s) => [s.id, s.evidence]));
     for (const s of sources) if (!EVIDENCE.includes(s.evidence)) errors.push(`source ${s.id}: "evidence" must be one of ${EVIDENCE.join(", ")}`);
@@ -233,14 +235,19 @@ function validate(id) {
         continue;
       }
       if (!cited.length) { errors.push(`${st.id}: a null cites its source in "sources" (the evidence found, or the source searched; one source can serve many nulls)`); continue; }
-      const sa = x.setAside;
-      if (!sa || typeof sa !== "object" || Array.isArray(sa) || typeof sa.rationale !== "string" || !sa.rationale.trim()
-        || !Array.isArray(sa.sources) || !sa.sources.length) {
-        errors.push(`${st.id}: a null needs "setAside": { "rationale": why its evidence gives no answer (or that nothing was found), "sources": [the source behind that reason] }`);
+      for (const sid of cited) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      const action = kinds(cited, "action"), sa = x.setAside;
+      if (sa === undefined) {
+        if (action.length) errors.push(`${st.id}: null cites an action (${action.join(", ")}): an action on the statement answers it, so answer from it, or add "setAside": { "rationale": why it gives no answer, "sources": [the source behind that reason] }`);
         continue;
       }
-      for (const sid of [...cited, ...sa.sources]) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
-      const action = kinds(cited, "action"), reasonWords = kinds(sa.sources, "words");
+      if (!sa || typeof sa !== "object" || Array.isArray(sa) || typeof sa.rationale !== "string" || !sa.rationale.trim()
+        || !Array.isArray(sa.sources) || !sa.sources.length) {
+        errors.push(`${st.id}: "setAside" is { "rationale": why the evidence found gives no answer, "sources": [the source behind that reason] }; a nothing-found null has none`);
+        continue;
+      }
+      for (const sid of sa.sources) if (!sourceIds.has(sid)) errors.push(`${st.id}: unknown source '${sid}'`);
+      const reasonWords = kinds(sa.sources, "words");
       if (action.length && reasonWords.length) errors.push(`${st.id}: words (${reasonWords.join(", ")}) can't set aside an action (${action.join(", ")}): answer from the action, or rest the setAside reason on an action`);
     }
   }
