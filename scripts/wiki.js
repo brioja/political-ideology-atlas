@@ -5,6 +5,8 @@
 //   node scripts/wiki.js --html "<title or URL>"                   the rendered article HTML (links, references)
 //   node scripts/wiki.js --wikidata Q12345                         the Wikidata item (labels, aliases, claims) as JSON
 //   node scripts/wiki.js --search "<words>"                        article titles matching the words
+//   node scripts/wiki.js --commons "File:<name>"                   a Commons file: where it redirects, and its log
+//                                                                  (renames, deletions), as JSON
 // Wikipedia is for leads only (audits/AUDIT_RULES.md section 2): follow its citations to the originals.
 "use strict";
 const lib = require("./lib");
@@ -25,7 +27,15 @@ const api = (host, params) => `https://${host}/w/api.php?${new URLSearchParams({
 
 async function main() {
   const [flag, arg] = process.argv[2] && process.argv[2].startsWith("--") ? [process.argv[2], process.argv[3]] : [null, process.argv[2]];
-  if (!arg) { console.error("usage: node scripts/wiki.js [--html | --wikidata | --search] <title, URL, Q-id or words>"); process.exit(1); }
+  if (!arg) { console.error("usage: node scripts/wiki.js [--html | --wikidata | --search | --commons] <title, URL, Q-id, words or File:name>"); process.exit(1); }
+  if (flag === "--commons") {
+    const t = String(arg).replace(/^https?:\/\/commons\.wikimedia\.org\/wiki\//, "").replace(/_/g, " ");
+    const page = await cached(api("commons.wikimedia.org", { action: "query", redirects: "1", titles: t, prop: "imageinfo", iiprop: "url" }));
+    const log = await cached(api("commons.wikimedia.org", { action: "query", list: "logevents", letitle: t, lelimit: "10" }));
+    console.log(JSON.stringify({ page: page.query, log: (log.query.logevents || []).map((e) => ({ when: e.timestamp, type: e.type, action: e.action,
+      comment: e.comment, target: e.params && e.params.target_title })) }, null, 1));
+    return;
+  }
   if (flag === "--wikidata") {
     const r = await cached(api("www.wikidata.org", { action: "wbgetentities", ids: arg, props: "labels|aliases|descriptions|claims|sitelinks", languages: "en" }));
     console.log(JSON.stringify(r.entities && r.entities[arg], null, 1));
