@@ -116,6 +116,22 @@ try {
   fails("alias from a source not in the audit", E(base(), (a) => { a.aliases = [{ name: `${N}ists`, source: "s9", quote: `${N}ists and ${N}` }]; }), /source "s9" is not in the audit/);
   fails("author not named twice in the defining sources", E(base(), (a) => { a.authors = [{ first: "Imaginary", last: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /author "Imaginary Zorblatt"/);
   fails("author without first and last", E(base(), (a) => { a.authors = [{ name: "Zorblatt", source: "s1", quote: "Zorblatt wrote it" }]; }), /needs "first" and "last"/);
+  // A source cited only on talk pages (reviewHistory) or as a nulling's reason documents what was replaced: the
+  // tie check skips it. The same source behind a stated answer is still checked.
+  {
+    const withOld = (stated) => E(base(), (a) => {
+      a.sources.push({ id: "s4", kind: "primary", evidence: "words", title: "An unrelated old text", url: "https://example.org/unrelated" });
+      a.auditor = ["claude-sonnet-5-5", "claude-opus-5-5"];
+      a.passes = [{ auditor: "claude-sonnet-5-5", auditedAt: "2026-10-21" }, { auditor: "claude-opus-5-5", auditedAt: "2026-11-07" }];
+      const B = st[1], was = { value: 1, confidence: "medium", rationale: "Answered from an unrelated old text, now set aside.", sources: ["s4"], author: "claude-sonnet-5-5", date: "2026-10-21" };
+      const now = stated ? { value: 1, confidence: "medium", rationale: "Still answered from the unrelated old text.", sources: ["s4"] }
+        : { value: null, confidence: "low", rationale: "Nulled: the old text is not a source of this ideology.", sources: ["s4"] };
+      a.answers[B] = { ...now, reviewHistory: [was, { ...now, author: "claude-opus-5-5", date: "2026-11-07" }] };
+      if (!stated) a.reviews = [{ kind: "nulling", reviewer: "claude-opus-5-5", reviewedAt: "2026-11-07", nulled: 1 }];
+    });
+    ok("source cited only on a talk page and as a nulling's reason", withOld(false));
+    fails("the same source behind a stated answer is still tied", withOld(true), /source s4 \(primary\)/);
+  }
   // Rules 4 is shared with people: one case to show it runs for ideologies too.
   fails("ideology answer mixes action and words", E(base(), (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "action", title: "Regime decree", url: "https://example.org/manifesto" }); a.answers[A].sources = ["s2", "s4"]; }), /cites actions \(s4\) and words \(s2\)/);
 } finally {

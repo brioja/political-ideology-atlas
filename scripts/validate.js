@@ -162,7 +162,20 @@ function validate(id) {
     const strict = (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
     // Evidence for aliases, authors and titles is required from 2026-11-06 on (no backfill).
-    const { problems, unchecked } = require("./source-check").check(id, a, { strict: (a.auditedAt || "") >= "2026-11-06" });
+    // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
+    // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
+    // position, so the tie check skips it.
+    const citedNow = new Set([
+      ...Object.values(a.answers || {}).flatMap((x) => (x && x.value !== null && Array.isArray(x.sources) ? x.sources : [])),
+      ...(Array.isArray(a.keyFigures) ? a.keyFigures : []).flatMap((f) => f.sources || []),
+      ...(Array.isArray(a.missingStatements) ? a.missingStatements : []).flatMap((m) => [...(m.sources || []), ...(m.quotes || []).map((q) => q.source)]),
+      ...[...(Array.isArray(a.aliases) ? a.aliases : []), ...(Array.isArray(a.authors) ? a.authors : [])].map((x) => x && x.source),
+      ...(Array.isArray(a.sources) ? a.sources : []).flatMap((s) => (s.titles || []).map((t) => t && t.source)),
+    ].filter(Boolean));
+    const historyOnly = new Set(Object.values(a.answers || {}).flatMap((x) => (x && Array.isArray(x.reviewHistory) ? x.reviewHistory : []))
+      .flatMap((e) => (e && Array.isArray(e.sources) ? e.sources : [])).filter((sid) => !citedNow.has(sid)));
+    const checked = historyOnly.size ? { ...a, sources: (a.sources || []).filter((s) => !historyOnly.has(s.id)) } : a;
+    const { problems, unchecked } = require("./source-check").check(id, checked, { strict: (a.auditedAt || "") >= "2026-11-06" });
     const out = strict ? errors : warnings;
     for (const pr of problems) out.push(`sources: ${pr}`);
     if (unchecked.length) out.push(`sources: ${unchecked.join(", ")} have no saved copy in scratchpad/sources/${id}/ to check (save every source you cite)`);
