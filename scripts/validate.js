@@ -51,6 +51,35 @@ function committedVersion(id, readFrom) {
   try { return text ? JSON.parse(text) : null; } catch { return null; }
 }
 
+// A person's own books in the local corpora (Brandon, 2026-11-07: audits missed books already on disk): files in
+// the maintainer reference library whose name holds the person's full name, and Gutenberg books (selection.tsv)
+// whose catalog author is the person (surname, plus birth year or first name). Local to this machine: where the
+// corpora aren't present the check is skipped.
+let libraryForTests = null, libraryCache;
+function personBooks(name, born) {
+  const fold = (x) => String(x || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  let lib0 = libraryForTests;
+  if (!lib0) {
+    if (libraryCache === undefined) {
+      const root = require("path").join(require("os").homedir(), ".cache", "political-ideology-atlas", "corpora");
+      try {
+        const reference = fs.readdirSync(require("path").join(root, "reference", "text"));
+        const texts = fs.readdirSync(require("path").join(root, "gutenberg", "text"));
+        const byId = new Map(texts.map((f) => [f.split(" ")[0], f]));
+        const gutenberg = fs.readFileSync(require("path").join(root, "gutenberg", "selection.tsv"), "utf8").split("\n").filter(Boolean)
+          .map((l) => l.split("\t")).filter((r) => byId.has(r[0])).map((r) => ({ file: byId.get(r[0]), authors: r[1] || "" }));
+        libraryCache = { reference, gutenberg };
+      } catch { libraryCache = null; }
+    }
+    lib0 = libraryCache;
+  }
+  if (!lib0) return null;
+  const parts = fold(name).split(/\s+/).filter(Boolean), full = parts.join(" "), surname = parts[parts.length - 1], first = parts[0];
+  const ref = lib0.reference.filter((f) => fold(f).replace(/[^a-z0-9]+/g, " ").includes(full.replace(/[^a-z0-9]+/g, " ")));
+  const gut = lib0.gutenberg.filter((b) => { const a = fold(b.authors); return a.startsWith(`${surname},`) && (born ? a.includes(String(born)) : a.includes(first)); }).map((b) => b.file);
+  return [...ref, ...gut];
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -335,6 +364,23 @@ function validate(id) {
     const prevReviews = (before.reviews || []).filter((r) => r && r.kind === "nulling");
     if (prevReviews.some((r) => !nullings.some((n) => JSON.stringify(n) === JSON.stringify(r)))) errors.push('a committed "nulling" review was changed or dropped; reviews are append-only');
   }
+  // Rules 5, people: every one of the person's own books in the local library is read and cited (a source with
+  // "library": its file name) or declined in "booksNotUsed": [{ "file", "reason" }] (e.g. a critic's book that
+  // only names them). Each error names the book.
+  if (PEOPLE && a.rules >= 5) {
+    const entry0 = catalog().find((c) => c.id === id) || {};
+    const books = personBooks(a.name || entry0.name, entry0.born);
+    if (books) {
+      const cited = new Set(sources.map((s) => s.library).filter(Boolean));
+      const declined = Array.isArray(a.booksNotUsed) ? a.booksNotUsed : [];
+      for (const d of declined) if (!d || typeof d.file !== "string" || typeof d.reason !== "string" || d.reason.trim().length < 20) {
+        errors.push('"booksNotUsed" entries are { "file": the library file name, "reason": why it is not used (a sentence) }'); break;
+      }
+      for (const f of books) if (!cited.has(f) && !declined.some((d) => d && d.file === f)) {
+        errors.push(`book in the local library not used: "${f}": read it and cite it (a source with "library": "${f}"), or list it in "booksNotUsed" with the reason`);
+      }
+    }
+  }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');
@@ -445,4 +491,5 @@ function lineName(i) {
 if (require.main === module) main();
 // Tests (tests/validate-rules.test.js) stand in for the committed copy of an audit.
 const setCommittedForTests = (fn) => { committedForTests = fn; };
-module.exports = { validate, excludedOnly, setCommittedForTests };
+const setLibraryForTests = (l) => { libraryForTests = l; };
+module.exports = { validate, excludedOnly, setCommittedForTests, setLibraryForTests };

@@ -17,7 +17,7 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests } = require("../scripts/validate");
 
 const st = lib.activeStatements().map((s) => s.id);
 const [A, B, C, D] = st; // A: answered from an action, B: answered from words, C and D: nothing found
@@ -194,6 +194,26 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
 // Warnings.
 { const w = warningsFor(E(base(), (a) => { const ids = st.slice(4, 4 + Math.ceil(st.length * 0.31)); for (const id of ids) a.answers[id] = { value: 0, confidence: "low", rationale: `Mixed record on this statement (${id}).`, sources: ["s1"] }; }));
   assert(w.some((x) => /neutral answers \(over 30%\)/.test(x)) && w.some((x) => /low-confidence answers \(over 50%\)/.test(x)) || w.some((x) => /neutral answers/.test(x)), `expected the neutral-answers warning, got ${w}`); n++; }
+
+// Rules 5: every one of the person's own books in the local library is cited (a source with "library") or declined
+// in "booksNotUsed" with a reason. A stand-in library: one reference book with their full name, one critic's book
+// naming them, one Gutenberg book by them (catalog author "Surname, First, born-") and one by someone else.
+{
+  const parts = subject.name.split(/\s+/), surname = parts[parts.length - 1], first = parts[0];
+  const own = `${subject.name} - My Memoir.txt`, critic = `The Case Against ${subject.name} - Someone Else.txt`;
+  const gut = `99999 ${surname} - Collected Speeches.txt`;
+  setLibraryForTests({ reference: [own, critic, "Unrelated Author - Another Book.txt"],
+    gutenberg: [{ file: gut, authors: `${surname}, ${first}, ${subject.born || 1900}-` }, { file: "88888 Other - A Book.txt", authors: "Other, Person, 1800-1850" }] });
+  const r5 = () => E(base(), (a) => { a.rules = 5; });
+  const cite = (a, file, id) => { a.sources.push({ id, kind: "primary", evidence: "words", title: file, url: `https://example.org/${id}`, library: file }); };
+  fails("rules 5: own book neither cited nor declined", r5(), new RegExp(`book in the local library not used: "${own.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+  fails("rules 5: Gutenberg book by them not accounted for", r5(), /book in the local library not used: "99999 /);
+  ok("rules 5: every book cited or declined", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2");
+    a.booksNotUsed = [{ file: critic, reason: "A critic's polemic that only names them; not evidence of their views." }]; }));
+  fails("rules 5: decline without a reason", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); a.booksNotUsed = [{ file: critic, reason: "critic" }]; }), /"booksNotUsed" entries are/);
+  ok("rules 4: no book check", base());
+  setLibraryForTests(null);
+}
 
 setCommittedForTests(null);
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });

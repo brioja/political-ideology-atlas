@@ -4,9 +4,10 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 4` in the audit
+"The subject" below is the ideology or the person being audited. Write `"rules": 5` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
-rules 4 tags every source as actions or words.)
+rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
+in the local library.)
 
 ## 1. Standard
 
@@ -212,7 +213,7 @@ book the maintainer supplies). Build on the existing audit rather than starting 
 - Use a model that hasn't audited the subject yet. Add your model id to `auditor` (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 4` and bring the whole file up to it, older answers
+  the date of your pass. Set `"rules": 5` and bring the whole file up to it, older answers
   and sources included (`validate.js` says what is missing).
 - If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.
