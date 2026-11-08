@@ -1159,7 +1159,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const markColor = cardColor;
   const photos = await Promise.all(people.map(loadPhoto));
 
-  // Background: neutral, with a soft wash of the top ideology's traditional colors (or its family
+  // Background: neutral, with a soft wash of the top ideology's traditional colors (or its mark
   // color when it has none), blended corner to corner so the colors set a mood without being a flag,
   // and three large soft glows of the same colors, in the colors' own order.
   ctx.fillStyle = CARD.bg; ctx.fillRect(0, 0, W, H);
