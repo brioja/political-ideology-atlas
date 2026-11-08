@@ -7,7 +7,9 @@ explicit decision from the maintainer.
   Silence is never scored unless the maintainer reopens it for an explicit reason (2026-10-29).
 - **Tuned weights** in matching (distance or confidence weights; reverted 2026-10-28) and
   **adjusting a bar to include or exclude one person or ideology.**
-- **Grouping place twins** (Quebec / Catalan nationalism) on the page, **ideology families**, and
+- **Grouping place twins** (Quebec / Catalan nationalism) on the page: no source defines a group
+  containing both, so the grouping would be a category of our own. **Ideology families** (retired
+  2026-11-08 for the same reason: every ideology is answered from its own defining sources), and
   **breaking near-ties by Wikipedia views**.
 - **Fixing mild takers** (2026-10-29), e.g. by amplifying answers by direction (reading a ±1 as a
   firmer position on its side). A taker who answers mildly lands on a softer ideology on the same
