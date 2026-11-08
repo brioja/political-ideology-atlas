@@ -1,10 +1,12 @@
 // Stores each person's (or, with --ideologies, each ideology's) freely licensed Wikipedia lead image
 // (thumbnail URL plus author and license, for attribution) in audits/people-catalog.json or
-// audits/catalog.json. Images are loaded from Wikimedia's servers by the site; only the URLs and
-// credits are stored here. Only entries without an image are looked up; --refresh looks up every
+// audits/catalog.json, then downloads the thumbnail of every audited person and ideology into img/people/
+// and img/ideologies/ (both kinds on every run), so the site serves them itself and a visit never contacts
+// Wikimedia (Brandon, 2026-11-08: Privacy Badger flagged thumb.wikimedia.org as a tracker). Files no
+// catalog entry uses any more are deleted. Only entries without an image are looked up; --refresh looks up every
 // entry again (for newer lead images and credits, e.g. when tagging a release). A lookup that finds no usable
 // image stores "image": null, so test.js can tell "none free" from "never looked up" (Brandon, 2026-11-07).
-//   node scripts/images.js [--ideologies] [--refresh] [--check]
+//   node scripts/images.js [--ideologies] [--refresh] [--check]   or   --thumbs (downloads only; build.js runs this)
 // Monthly photo check (Brandon, 2026-11-07): Commons renames files, which breaks the stored URL (Nicholas II's photo,
 // renamed 2026-11-05). Every run for people reads audits/photo-check.json; when its date is 30 or more days old (or
 // with --check) it tests every shown person's photo URL, follows a renamed file to its new name (the same picture),
@@ -12,7 +14,7 @@
 // so the check runs about once a month on its own.
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson } = require("./lib");
+const { ROOT, readJson, thumbPath, catalog, peopleCatalog, profilePath, personPath } = require("./lib");
 
 const IDEOLOGIES = process.argv.includes("--ideologies");
 const REFRESH = process.argv.includes("--refresh");
@@ -179,4 +181,39 @@ async function main() {
   if (missing.length) console.log(`No free lead image: ${missing.join(", ")}`);
 }
 
-main();
+const toWebp = (buf) => require("child_process").execFileSync("convert", ["-[0]", "-resize", "330x330>", "-quality", "80", "webp:-"], { input: buf, maxBuffer: 1 << 26 });
+
+// Downloads each audited entry's thumbnail to img/<kind>/ (only files not there yet) and deletes files
+// that no catalog entry points at any more (a replaced or dropped image).
+async function saveThumbs() {
+  for (const [kind, entries, audited] of [["people", peopleCatalog(), personPath], ["ideologies", catalog(), profilePath]]) {
+    const dir = path.join(ROOT, "img", kind);
+    fs.mkdirSync(dir, { recursive: true });
+    const wanted = new Set(), failed = [];
+    let saved = 0;
+    for (const e of entries.filter((x) => x.image && x.image.url && fs.existsSync(audited(x.id)))) {
+      const rel = thumbPath(kind, e.id, e.image.url), file = path.join(ROOT, rel);
+      wanted.add(path.basename(rel));
+      if (fs.existsSync(file)) continue;
+      let res;
+      for (let attempt = 0; ; attempt++) {
+        await sleep(300);
+        try { res = await fetch(e.image.url, { headers: HEADERS }); } catch { res = null; }
+        if (res && res.status === 429 && attempt < 5) { await sleep(5000 * (attempt + 1)); continue; }
+        break;
+      }
+      if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); continue; }
+      // Re-encoded with ImageMagick: some stored URLs are full-size originals or large PNG thumbnails.
+      try { fs.writeFileSync(file, toWebp(Buffer.from(await res.arrayBuffer()))); }
+      catch (err) { failed.push(`${e.id} (convert: ${err.message.split("\n")[0]})`); continue; }
+      saved++;
+    }
+    const stale = fs.readdirSync(dir).filter((f) => !wanted.has(f));
+    for (const f of stale) fs.unlinkSync(path.join(dir, f));
+    console.log(`Thumbnails (${kind}): ${saved} downloaded, ${stale.length} unused deleted, ${wanted.size} in img/${kind}/.`);
+    if (failed.length) console.warn(`Could not download: ${failed.join(", ")} (shown without a picture until the next run)`);
+  }
+}
+
+// --thumbs: only the download stage (build.js runs it first, so every build ships the thumbnails it needs).
+(process.argv.includes("--thumbs") ? saveThumbs() : main().then(saveThumbs));

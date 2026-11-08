@@ -347,6 +347,23 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   assert(!never.length, `shown people whose photo was never looked up (run node scripts/images.js, then a people build): ${never.join(", ")}`);
 }
 
+// 6d. Thumbnails are served from the site (img/), never hotlinked: a visit contacts no third party (Brandon,
+// 2026-11-08, Privacy Badger). Every shipped image is a local file, and every shown entry whose catalog has an
+// image ships it (a missing file means scripts/images.js hasn't run since the entry was added).
+{
+  const fs = require("fs"), path = require("path"), lib = require("./scripts/lib");
+  const shown = [["people", PEOPLE.filter((p) => p.kind !== "model"), lib.peopleCatalog()], ["ideologies", IDEOLOGIES, lib.catalog()]];
+  for (const [kind, list, cat] of shown) {
+    const byId = new Map(cat.map((e) => [e.id, e]));
+    const remote = list.filter((x) => x.image && !/^img\/[a-z]+\/[^/]+\.webp$/.test(x.image.url)).map((x) => x.id);
+    assert(!remote.length, `${kind} with an image not served from img/: ${remote.join(", ")}`);
+    const absent = list.filter((x) => x.image && !fs.existsSync(path.join(__dirname, x.image.url))).map((x) => x.id);
+    assert(!absent.length, `${kind} whose image file is missing: ${absent.join(", ")}`);
+    const notSaved = list.filter((x) => !x.image && byId.get(x.id)?.image?.url).map((x) => x.id);
+    assert(!notSaved.length, `${kind} shown without their image (run node scripts/images.js, then build): ${notSaved.join(", ")}`);
+  }
+}
+
 // Report what the data found.
 let cum = 0;
 console.log(`${model.components.length} axes carry variance; ${MEANINGFUL_LINES ?? meaningfulAxes(model, IDEOLOGIES)} beat shuffled noise (parallel analysis).\n`);

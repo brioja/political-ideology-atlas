@@ -66,7 +66,7 @@ Audits in this wave: ${items.map((i) => `${i.name} (${i.id})`).join(', ')}.
    Use the lane's proposed color. Commit each audit separately as "Audit <name>" (git add only that audit file), then the
    colors file as "Ideology colors for the wave".
    Commits carry only the repo owner's name: add no Co-Authored-By or other attribution line.
-4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js, audits/lines.json and
+4. Run \`node scripts/build.js\` (it can take over 2 minutes; run it in the background if needed) and check its output: every wave id must appear in data.js or in the build's excluded / not-an-ideology lists. If any is missing, run the build again (another session may have built at the same time). Then run \`node test.js\`. If tests pass, commit any changed data.js, people.js, img/, audits/lines.json and
    audits/statements/texts.json as "Rebuild site data" (no attribution line) and \`git push\`. If they fail, do not push; say why.
 Do not touch any other file; leave uncommitted changes you didn't make alone.
 Report: per audit, number of missingStatements, then tests and deploy status.`
@@ -76,7 +76,7 @@ Report: per audit, number of missingStatements, then tests and deploy status.`
 const SIGNAL_PROMPT = `Working directory: ${ROOT}.
 1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
    statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
-2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js
+2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js img/
    audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
    on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), \`git pull --rebase\`
    and \`git push\`. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.

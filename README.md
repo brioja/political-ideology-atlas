@@ -100,8 +100,9 @@ person's own words and record, and a statement with no reliable evidence is `nul
   Wikipedia page views (last 12 months, from `node scripts/pageviews.js`) ranks first. The counts
   are stored in the catalog; the site never calls Wikipedia.
 - **Photos:** `node scripts/images.js` stores each person's freely licensed Wikipedia lead image
-  (URL, author, license) in the catalog; the site shows it with a credit line and falls back to
-  initials when there's no free image. It only looks up people without an image; run it with
+  (URL, author, license) in the catalog and saves a 330 px WebP copy in `img/` (needs ImageMagick);
+  the site serves that copy itself, so a visit never contacts Wikimedia. It shows the photo with a
+  credit line and falls back to initials when there's no free image. It only looks up people without an image; run it with
   `--refresh` when tagging a release to pick up newer lead images and credits.
 - To run the audits, ask Claude Code to "run the people-audits workflow" (about 75k tokens per person).
 

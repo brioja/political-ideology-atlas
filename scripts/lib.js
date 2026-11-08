@@ -104,6 +104,19 @@ const profilePath = (id) => path.join(PROFILES_DIR, `${id}.json`);
 const PEOPLE_DIR = path.join(ROOT, "audits", "people");
 const peopleCatalog = () => readJson(path.join(ROOT, "audits", "people-catalog.json")).people;
 const personPath = (id) => path.join(PEOPLE_DIR, `${id}.json`);
+// Thumbnails are served from the site itself (img/<kind>/), never hotlinked from Wikimedia, so a visit
+// contacts no third party (Brandon, 2026-11-08, after Privacy Badger flagged thumb.wikimedia.org). The file
+// name carries a hash of the Commons URL: a new image gets a new name, so browsers never show a stale one.
+// scripts/images.js downloads the files; build.js ships the local path when the file exists.
+// Every file is WebP, at most 330 px (the site draws them at 220 px or less), which keeps logos' transparency.
+const thumbPath = (kind, id, url) => `img/${kind}/${id}-${require("crypto").createHash("sha1").update(url).digest("hex").slice(0, 8)}.webp`;
+// The image object build.js ships: the local copy plus the Commons credit, or null when there's no copy yet.
+const shippedImage = (kind, entry) => {
+  const im = entry.image;
+  if (!im || !im.url) return null;
+  const local = thumbPath(kind, entry.id, im.url);
+  return fs.existsSync(path.join(ROOT, local)) ? { url: local, artist: im.artist, license: im.license, source: im.source } : null;
+};
 // Negative controls: apolitical celebrities audited the same way, expected to fail the uncertainty rule.
 const CONTROLS_DIR = path.join(ROOT, "audits", "controls");
 const controlsCatalog = () => readJson(path.join(ROOT, "audits", "controls-catalog.json")).people;
@@ -212,5 +225,5 @@ function wordingMarks(text) {
 }
 
 module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
-  PEOPLE_DIR, peopleCatalog, personPath, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
+  PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

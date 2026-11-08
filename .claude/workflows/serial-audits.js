@@ -42,7 +42,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    \`node scripts/validate.js --people <id>\` and fix every error except the uncertainty rule (never raise a confidence to pass
    it). \`git add\` only that file and commit as "Audit <name>" (no Co-Authored-By or other attribution line), then
    DEPLOY (below) with \`node scripts/images.js && node scripts/build.js --people\` and \`node test.js --people\` (images.js
-   looks up the photo of anyone added since its last run), committing people.js and audits/people-catalog.json as
+   looks up the photo of anyone added since its last run), committing people.js, img/ and audits/people-catalog.json as
    "Rebuild people data". Then skip to the end (steps 2-5 are for ideologies).
 2. If "kind" is "ideology": audit that ideology yourself. Read audits/PROMPT.md and follow it exactly: answer every statement in statements.json
    (including "status": "candidate" ones), confirm or correct the suggested wikipedia link, 2-4 furtherReading, follow any
@@ -71,7 +71,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
 4. \`git add\` only the audit file and audits/ideology-colors.json; commit as "Audit <name>". Commits carry only the repo
    owner's name: add no Co-Authored-By or other attribution line.
 5. DEPLOY (below) with \`node scripts/build.js\` and \`node test.js\`, committing any changed data.js, people.js,
-   audits/lines.json and audits/statements/texts.json as "Rebuild site data".
+   img/, audits/lines.json and audits/statements/texts.json as "Rebuild site data".
 Do not touch scripts/candidates.js or any other repo file (scratchpad/ is fine).
 
 DEPLOY (another serial run may be pushing to origin main from its own checkout at the same time):
@@ -88,7 +88,7 @@ d. If the push is rejected: \`git fetch origin\` and \`git rebase origin/main\`.
 const SIGNAL_PROMPT = `Working directory: ${ROOT}.
 1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
    statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
-2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js
+2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js img/
    audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
    on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), then \`git fetch origin\`,
    \`git rebase origin/main\` and \`git push origin HEAD:main\`; if the rebase stops on a generated file, \`git rebase --skip\`,

@@ -25,6 +25,12 @@ const flagFor = (id) => {
   return c && c.colors && c.colors.length ? { colors: c.colors, note: c.note || "" } : null;
 };
 const statements = activeStatements();
+// Thumbnails the site serves itself (img/): download any an audited entry still lacks before shipping images.
+// A failure only warns; test.js then names who is shown without their image.
+if (!process.argv.includes("--status")) {
+  try { process.stdout.write(require("child_process").execFileSync(process.execPath, [path.join(__dirname, "images.js"), "--thumbs"], { encoding: "utf8" })); }
+  catch (err) { console.warn(`Thumbnail download failed: ${err.message.split("\n")[0]}`); }
+}
 // Rounding for what data.js and people.js ship (defined first: the --people path uses them too).
 const r6 = (x) => Math.round(x * 1e6) / 1e6;
 const r4 = (x) => Math.round(x * 1e4) / 1e4;
@@ -75,8 +81,8 @@ function classify(judge = null) {
       audited: true,
       // Traditional colors (flag, party or symbol), when the ideology has a documented tradition.
       flag: flagFor(entry.id),
-      // The Wikipedia article's freely licensed lead image, with its credit (scripts/images.js).
-      image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
+      // The Wikipedia article's freely licensed lead image, with its credit, served from img/ (scripts/images.js).
+      image: require("./lib").shippedImage("ideologies", entry),
       wikipedia: "wikipedia" in a ? a.wikipedia : ["exact", "redirect"].includes(entry.wikipediaMatch) ? entry.wikipedia : null,
       furtherReading: a.furtherReading || [],
       keyFigures: (a.keyFigures || []).map(({ name, role, wikipedia }) => ({ name, role, wikipedia })),
@@ -226,7 +232,7 @@ function writePeople(model, judge = undefined) {
     people.push({
       id: entry.id, name: entry.name, role: spelled(entry.id, a.role), summary: spelled(entry.id, a.summary), region: entry.region, born: entry.born,
       living: a.living ?? entry.living, wikipedia: a.wikipedia || entry.wikipedia, views12m: entry.views12m || 0,
-      image: entry.image ? { url: entry.image.url, artist: entry.image.artist, license: entry.image.license, source: entry.image.source } : null,
+      image: require("./lib").shippedImage("people", entry),
       profile: answers.map((x) => x.value), // null = no known position
     });
   }
@@ -272,8 +278,8 @@ function writePeople(model, judge = undefined) {
   models -= dropped.filter((p) => p.kind === "model").length;
   console.log(`${people.length - models} people included, ${excludedPeople} excluded as not placed on every line.`);
   if (twins.length) console.log(`Not uniquely reachable, listed on the closer match's page: ${twins.join(", ")}`);
-  // Photos come from the catalog (scripts/images.js looks up only entries without one), so a person with
-  // none usually means the lookup hasn't run since they were added, not that no free photo exists.
+  // Photos come from the catalog and img/people/ (scripts/images.js looks up and downloads only what's missing), so
+  // a person with none usually means it hasn't run since they were added, not that no free photo exists.
   const noPhoto = people.filter((p) => p.kind !== "model" && !p.image).map((p) => p.id);
   if (noPhoto.length) console.warn(`No photo stored for ${noPhoto.join(", ")}: run node scripts/images.js (some have no free photo at all).`);
   if (models || excludedModels) console.log(`${models} AI models included, ${excludedModels} excluded as not placed on every line.`);

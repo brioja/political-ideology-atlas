@@ -1087,7 +1087,6 @@ function loadPhoto(p) {
   return new Promise((resolve) => {
     if (!p || !p.image) return resolve(null);
     const img = new Image();
-    img.crossOrigin = "anonymous"; // Wikimedia allows it, so the canvas can still be saved
     img.onload = () => { img.logo = !!p.image.logo; resolve(img); };
     img.onerror = () => resolve(null);
     img.src = p.image.url;
@@ -1405,11 +1404,10 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
     ctx.globalAlpha = 1;
   }
   ctx.textBaseline = "alphabetic";
-  // Photos load from Wikimedia (CORS-enabled, so the canvas can still be saved).
+  // Photos are served from the site itself (img/), so the canvas can still be saved.
   const photos = result && result.people ? await Promise.all(result.people.slice(0, 3).map((p) => new Promise((resolve) => {
     if (!p.image) return resolve(null);
     const img = new Image();
-    img.crossOrigin = "anonymous";
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
     img.src = p.image.url;
