@@ -1,5 +1,6 @@
 // Prints the single most-viewed item (person or ideology) still needing an audit, as JSON with a
-// "kind" field, so audits can run one at a time in order of Wikipedia popularity.
+// "kind" field, so audits can run one at a time in order of Wikipedia popularity. Pages getting search traffic
+// (audits/search-priority.json) come first when due for a later pass; the JSON then has a "reason".
 //   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so two serial
 //   runs can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
 //   over those, e.g. people waiting for books)
@@ -13,8 +14,50 @@ const TRIAGE = require("fs").existsSync(path.join(__dirname, "..", "audits", "pe
 const { readJson, catalog, peopleCatalog } = require("./lib");
 const views = (list, id) => (list.find((x) => x.id === id) || {}).views12m || 0;
 const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
-const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);
 const PEOPLE_ONLY = process.argv.includes("--people");
+
+// Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, and right after
+// a person their 3 closest ideologies. One is due when its audit predates the shared rules (no "rules" field) and
+// the re-audit gap has passed; it then gets a later pass (audits/AUDIT_RULES.md section 6).
+function searchPriority() {
+  const fs = require("fs"), lib = require("./lib");
+  const file = path.join(__dirname, "..", "audits", "search-priority.json");
+  if (!fs.existsSync(file)) return null;
+  const { nextPassFrom } = require("./validate");
+  const today = new Date().toISOString().slice(0, 10);
+  const pca = require(path.join(__dirname, "..", "pca.js"));
+  const data = require(path.join(__dirname, "..", "data.js"));
+  const shownPeople = require(path.join(__dirname, "..", "people.js")).PEOPLE;
+  let model = null;
+  const closest = (id) => {
+    const p = shownPeople.find((x) => x.id === id);
+    if (!p) return [];
+    model = model || pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
+    return pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3).map((r) => ({ kind: "ideology", id: r.id, via: p.name }));
+  };
+  const due = ({ kind, id }) => {
+    if (SKIP.has(id) || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) return false;
+    const f = kind === "person" ? lib.personPath(id) : lib.profilePath(id);
+    if (!fs.existsSync(f)) return false;
+    const a = readJson(f);
+    return a.rules == null && !a.notAnIdeology && nextPassFrom(a) <= today;
+  };
+  for (const page of readJson(file).pages) {
+    for (const c of [page, ...(page.kind === "person" ? closest(page.id) : [])]) {
+      if (!due(c)) continue;
+      const entry = (c.kind === "person" ? peopleCatalog() : catalog()).find((x) => x.id === c.id);
+      if (!entry) continue;
+      const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
+      return { kind: c.kind, id: c.id, name, wikipedia, wikipediaMatch, born, living, scopeNote,
+        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, pre-rules later pass` : `search traffic (${page.clicks} clicks), pre-rules later pass` };
+    }
+  }
+  return null;
+}
+const priority = searchPriority();
+if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
+
+const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);
 const [ideology] = PEOPLE_ONLY ? [] : pending(["--by-views"]);
 const p = person && { kind: "person", ...person, views12m: views(peopleCatalog(), person.id) };
 const i = ideology && { kind: "ideology", ...ideology, views12m: views(catalog(), ideology.id) };
