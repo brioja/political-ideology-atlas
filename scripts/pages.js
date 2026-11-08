@@ -72,6 +72,20 @@ function positions(profile) {
 }
 const ideologyLinks = (ranked) => `<ul>${ranked.map((r) => `<li><a href="${ideologyUrl(r.id)}">${esc(r.name)}</a>${r.similarity != null ? ` (${pct(r.similarity)} match)` : ""}</li>`).join("")}</ul>`;
 const personLinks = (list) => `<ul>${list.map((p) => `<li><a href="${personUrl(p.id)}">${esc(p.name)}</a> (${pct(p.similarity)} alike)</li>`).join("")}</ul>`;
+// The page's image (scripts/images.js saves it in img/), in the crawler copy with its credit: search engines pick a
+// result thumbnail from the page's images, and without scripts there would be none (Brandon, 2026-11-08).
+const figure = (x, what) => x.image ? `<figure><img src="/${esc(x.image.url)}" alt="${esc(what)}">
+    <figcaption class="small">${x.image.logo ? "Logo" : "Image"}: ${esc(x.image.artist)}, <a href="${esc(x.image.source)}">${esc(x.image.license)}</a>, via Wikimedia Commons</figcaption></figure>` : "";
+// schema.org data naming the page's subject and its image (og:image stays the site card, so shared links keep it).
+function structured(url, title, description, subject, x) {
+  const image = x.image ? { "@type": "ImageObject", url: `${SITE}/${x.image.url}`, creditText: x.image.artist,
+    acquireLicensePage: x.image.source } : undefined;
+  const data = { "@context": "https://schema.org", "@type": "WebPage", url: `${SITE}${url}`, name: title, description,
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE}/` },
+    about: { ...subject, ...(image ? { image: image.url } : {}), ...(x.wikipedia ? { sameAs: x.wikipedia } : {}) },
+    ...(image ? { primaryImageOfPage: image } : {}) };
+  return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`;
+}
 const nav = (section, label) => `<p class="small"><a href="/">${SITE_NAME}</a> · <a href="/#/${section}">${label}</a> · <a href="/#/test">Take the test</a></p>`;
 
 function ideologyBody(ideo) {
@@ -80,6 +94,7 @@ function ideologyBody(ideo) {
   const figures = ideo.keyFigures || [];
   return `${nav("ideologies", "All ideologies")}
     <h1>${esc(ideo.name)}</h1>
+    ${figure(ideo, `Image for ${ideo.name}`)}
     ${ideo.summary ? `<p>${esc(ideo.summary)}</p>` : ""}
     ${ideo.wikipedia ? `<p class="small"><a href="${esc(ideo.wikipedia)}">Wikipedia</a></p>` : ""}
     <h2>What it stands for</h2>${beliefs(ideo, 6)}
@@ -96,6 +111,7 @@ function personBody(p) {
   return `${nav("people", "All people")}
     <p class="small">${esc(p.region)} · ${esc(life)}</p>
     <h1>${esc(p.name)}</h1>
+    ${figure(p, `Photo of ${p.name}`)}
     ${p.role ? `<p>${esc(p.role)}</p>` : ""}
     ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
     ${p.wikipedia ? `<p class="small"><a href="${esc(p.wikipedia)}">Wikipedia</a></p>` : ""}
@@ -118,7 +134,7 @@ function swap(html, pattern, replacement) {
   if (!pattern.test(html)) throw new Error(`index.html no longer matches ${pattern}`);
   return html.replace(pattern, replacement);
 }
-function page({ url, title, description, body }) {
+function page({ url, title, description, body, ld = "" }) {
   let html = template;
   html = swap(html, /<title>[^<]*<\/title>/, `<title>${esc(title)} · ${SITE_NAME}</title>`);
   html = swap(html, /<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(description)}">`);
@@ -129,15 +145,16 @@ function page({ url, title, description, body }) {
   // Same files as the home page, from any depth.
   html = html.replace(/(src|href)="(?![a-z]+:|\/|#)([^"]+)"/g, '$1="/$2"');
   // Browsers that run the app hide the plain copy before it paints.
-  html = swap(html, /<\/head>/, `<script>document.documentElement.classList.add("js")</script>
-<style>.js .prerender { display: none; } .prerender { padding-top: 24px; padding-bottom: 48px; }</style>
+  html = swap(html, /<\/head>/, `${ld}<script>document.documentElement.classList.add("js")</script>
+<style>.js .prerender { display: none; } .prerender { padding-top: 24px; padding-bottom: 48px; } .prerender figure img { max-width: 220px; height: auto; border-radius: 8px; }</style>
 </head>`);
   html = swap(html, /<body([^>]*)>/, `<body$1>\n<main class="prerender wrap narrow stack">${body}</main>`);
   return html;
 }
 
-const urls = ["/"];
-function write(url, html) {
+const urls = ["/"], images = new Map();
+function write(url, html, x) {
+  if (x && x.image) images.set(url, `${SITE}/${x.image.url}`);
   const dir = path.join(ROOT, url);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, "index.html"), html);
@@ -148,17 +165,19 @@ for (const ideo of model.ideologies) {
   write(ideologyUrl(ideo.id), page({
     url: ideologyUrl(ideo.id), title: ideo.name, body: ideologyBody(ideo),
     description: describe(ideo.summary, `${ideo.name}: what it stands for, its key positions and the ideologies and people closest to it.`),
-  }));
+    ld: structured(ideologyUrl(ideo.id), ideo.name, describe(ideo.summary, ideo.name), { "@type": "Thing", name: ideo.name }, ideo),
+  }), ideo);
 }
 for (const p of people) {
   write(personUrl(p.id), page({
     url: personUrl(p.id), title: `${p.name}: political views`, body: personBody(p),
     description: describe(p.summary, `${p.name}'s political views: closest ideologies, similar people and known positions.`),
-  }));
+    ld: p.kind === "model" ? "" : structured(personUrl(p.id), `${p.name}: political views`, describe(p.summary, p.name), { "@type": "Person", name: p.name }, p),
+  }), p);
 }
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${SITE}${u}</loc></url>`).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map((u) => `  <url><loc>${SITE}${u}</loc>${images.has(u) ? `<image:image><image:loc>${images.get(u)}</image:loc></image:image>` : ""}</url>`).join("\n")}
 </urlset>
 `);
 console.log(`${model.ideologies.length} ideology pages, ${people.length} people pages, sitemap.xml with ${urls.length} URLs`);
