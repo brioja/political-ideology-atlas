@@ -178,8 +178,9 @@ fails("answer cites an unknown source", E(base(), (a) => { a.answers[A].sources 
 fails("high answers share one rationale", E(base(), (a) => { a.answers[A].confidence = "high"; a.answers[C] = { ...a.answers[A] }; }), /high-confidence answers share one rationale/);
 fails("medium answer that calls itself contested", E(base(), (a) => { a.answers[A].rationale = "His record on this is contested among historians and writers."; }), /so the confidence is low/);
 ok("'not contested' is not self-low", E(base(), (a) => { a.answers[A].rationale = "His vote here is not contested by anyone who studied it."; }));
-fails("living person's answer with no evidence", E(base(), (a) => { a.answers[A].rationale = "There is no record of his view, but the bill he voted for fits."; }), /no evidence of this living person's view/);
-ok("historical person may say 'no record of'", E(base(), (a) => { a.living = false; a.answers[A].rationale = "Voted for the bill; there is no record of a later change of view."; }));
+fails("answer with no evidence", E(base(), (a) => { a.answers[A].rationale = "There is no record of his view, but the bill he voted for fits."; }), /no evidence of this position/);
+{ const a = base(); a.living = false; a.answers[A].rationale = "No record of his view, but the bill he voted for fits."; fails("historical person's answer with no evidence (every subject)", a, /no evidence of this position/); }
+fails("historical person: 'no record of' fails like anyone's (state the evidence)", E(base(), (a) => { a.living = false; a.answers[A].rationale = "Voted for the bill; there is no record of a later change of view."; }), /no evidence of this position/);
 fails("high answer the sources don't address", E(base(), (a) => { a.answers[A].confidence = "high"; a.answers[A].rationale = "The sources do not address this, but the vote settles it."; }), /at most medium/);
 fails("rules 2: unmarked inference", E(base(), (a) => { a.rules = 2; a.answers[A].confidence = "low"; a.answers[A].rationale = "By inference from the bill he voted for on this statement."; for (const x of a.sources) delete x.evidence; }), /an inferred answer's rationale begins "Inferred:"/);
 fails("rules 3: no inferences at all", E(base(), (a) => { a.answers[A].confidence = "low"; a.answers[A].rationale = "Inferred: from the bill he voted for on this statement."; }), /rules 3 has no inferences/);

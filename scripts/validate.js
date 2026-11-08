@@ -253,12 +253,13 @@ function validate(id) {
   }
   if (mentionsInference.length) errors.push(`${mentionsInference.join(", ")}: rationale mentions inference; rules 3 has none: state the evidence that settles the statement, and don't say whether it is an inference (or answer null if there is none)`);
   if (selfLow.length) errors.push(`${selfLow.join(", ")}: rationale says inferred, split, contested or anachronistic, so the confidence is low`);
-  // A living person's view needs evidence (audits/PROMPT_PEOPLE.md): an answer whose rationale says it
-  // is inferred, or that nothing records their view, is "no known position" instead.
+  // Every answer needs evidence (no inferences, for every subject since rules 3; Brandon 2026-11-08, after the check
+  // had covered living people only): an answer whose rationale says it is inferred, or that nothing records the
+  // position, is "no known position" instead.
   const NO_EVIDENCE = /\b(inferred|by inference|no record of|no source (states|says|addresses)|no known (statement|position))\b/i;
-  if (PEOPLE && a.living !== false) {
+  {
     const guessed = statements.filter((st) => answers[st.id] && answers[st.id].value !== null && NO_EVIDENCE.test(answers[st.id].rationale || "")).map((st) => st.id);
-    if (guessed.length) errors.push(`${guessed.join(", ")}: the rationale says there's no evidence of this living person's view, so answer null (no known position)`);
+    if (guessed.length) errors.push(`${guessed.join(", ")}: the rationale says there's no evidence of this position, so answer null (no known position)`);
   }
   if (unaddressedHigh.length) errors.push(`${unaddressedHigh.join(", ")}: rationale says the sources don't address it, so the confidence is at most medium`);
   // Audits under the shared rules (audits/AUDIT_RULES.md, "rules": 2): an inference is marked, so
