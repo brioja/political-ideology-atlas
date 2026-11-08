@@ -17,7 +17,8 @@ const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
 const PEOPLE_ONLY = process.argv.includes("--people");
 
 // Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, and right after
-// a person their 3 closest ideologies. One is due when its audit predates the shared rules (no "rules" field) and
+// a person their 3 closest ideologies. Those are worked out once and saved in the file ("closest"), so they stay put
+// until the next pasted list: re-audits change the model, and recomputing them each time kept the loop on one person. One is due when its audit predates the shared rules (no "rules" field) and
 // the re-audit gap has passed; it then gets a later pass (audits/AUDIT_RULES.md section 6).
 function searchPriority() {
   const fs = require("fs"), lib = require("./lib");
@@ -29,12 +30,18 @@ function searchPriority() {
   const data = require(path.join(__dirname, "..", "data.js"));
   const shownPeople = require(path.join(__dirname, "..", "people.js")).PEOPLE;
   let model = null;
-  const closest = (id) => {
-    const p = shownPeople.find((x) => x.id === id);
-    if (!p) return [];
+  const list = readJson(file);
+  let saved = false;
+  for (const page of list.pages.filter((x) => x.kind === "person" && !x.closest)) {
+    const p = shownPeople.find((x) => x.id === page.id);
+    if (!p) { page.closest = []; continue; }
     model = model || pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
-    return pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3).map((r) => ({ kind: "ideology", id: r.id, via: p.name }));
-  };
+    page.closest = pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3).map((r) => r.id);
+    saved = true;
+  }
+  if (saved) fs.writeFileSync(file, JSON.stringify(list, null, 1) + "\n");
+  const nameOf = (id) => (peopleCatalog().find((x) => x.id === id) || {}).name || id;
+  const closest = (page) => (page.closest || []).map((id) => ({ kind: "ideology", id, via: nameOf(page.id) }));
   const due = ({ kind, id }) => {
     if (SKIP.has(id) || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) return false;
     const f = kind === "person" ? lib.personPath(id) : lib.profilePath(id);
@@ -42,8 +49,8 @@ function searchPriority() {
     const a = readJson(f);
     return a.rules == null && !a.notAnIdeology && nextPassFrom(a) <= today;
   };
-  for (const page of readJson(file).pages) {
-    for (const c of [page, ...(page.kind === "person" ? closest(page.id) : [])]) {
+  for (const page of list.pages) {
+    for (const c of [page, ...(page.kind === "person" ? closest(page) : [])]) {
       if (!due(c)) continue;
       const entry = (c.kind === "person" ? peopleCatalog() : catalog()).find((x) => x.id === c.id);
       if (!entry) continue;
