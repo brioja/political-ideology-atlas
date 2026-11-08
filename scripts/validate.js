@@ -22,6 +22,8 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 // but aren't a set of ideas (Brandon, 2026-11-05); the last is content that holds no political ideas.
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
+// The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
+const CURRENT_RULES = 5;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
 // of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
 const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
@@ -123,6 +125,12 @@ function validate(id) {
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);
+  // An old audit passes the checks of the rules it was written under, not the current ones (a pass at "rules" 3
+  // predates the coatrack rule and the source-tie check): say so first, so a pass isn't read as meeting today's rules.
+  if ((a.rules || 0) < CURRENT_RULES) {
+    let from = ""; try { from = nextPassFrom(a); } catch { /* an invalid date is reported by its own check */ }
+    warnings.push(`old audit: written under ${a.rules ? `rules ${a.rules}` : "no rules version"} (current ${CURRENT_RULES}), so later rules aren't checked here; a later pass brings it up to rules ${CURRENT_RULES}${from ? ` (from ${from})` : ""}`);
+  }
   for (const f of PEOPLE ? ["name", "auditedAt", "summary", "role"] : ["name", "auditedAt", "summary", "scope"]) {
     if (typeof a[f] !== "string" || !a[f].trim()) errors.push(`"${f}" must be a non-empty string`);
   }
@@ -532,4 +540,4 @@ if (require.main === module) main();
 // Tests (tests/validate-rules.test.js) stand in for the committed copy of an audit.
 const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
-module.exports = { validate, excludedOnly, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap, PROJECT_START };
+module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap, PROJECT_START };

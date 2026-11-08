@@ -17,7 +17,7 @@ assert(subject, "needs one catalog ideology without an audit or source library t
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-ideology-")), `${subject.id}.json`);
 const profilePath = lib.profilePath;
 lib.profilePath = (id) => (id === subject.id ? tmp : profilePath(id));
-const { validate, setCommittedForTests } = require("../scripts/validate");
+const { validate, setCommittedForTests, CURRENT_RULES } = require("../scripts/validate");
 setCommittedForTests(() => null);
 
 // The saved source texts the source check reads.
@@ -139,6 +139,13 @@ try {
   ok("defining scholarship alone, no primary source", E(base(), (a) => { a.sources[1].kind = "scholarly"; }));
   // A rationale states the evidence; it never mentions inference, not even to deny it.
   fails("ideology rationale denies an inference", E(base(), (a) => { a.answers[A].rationale = "The manifesto states it, rather than an inference from its aims."; }), /mentions inference/);
+  // An audit under an older rules version says so, with the date its later pass may carry.
+  warns("old rules version", E(base(), (a) => { a.rules = 3; a.auditedAt = "2026-10-30"; }), /^old audit: written under rules 3 \(current \d+\).*from 2026-11-15/);
+  // The current version is the one the prompts tell audits to write.
+  for (const f of ["audits/AUDIT_RULES.md", "audits/PROMPT.md", "audits/PROMPT_PEOPLE.md"]) {
+    const v = [...fs.readFileSync(path.join(lib.ROOT, f), "utf8").matchAll(/"rules": (\d+)/g)].map((m) => +m[1]);
+    assert(v.length && v.every((x) => x === CURRENT_RULES), `${f} writes "rules" ${v.join(", ")}; validate.js CURRENT_RULES is ${CURRENT_RULES}`); n++;
+  }
 } finally {
   setCommittedForTests(null);
   fs.rmSync(libDir, { recursive: true, force: true });
