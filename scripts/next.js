@@ -61,7 +61,29 @@ function searchPriority() {
   }
   return null;
 }
-const priority = searchPriority();
+// Then audits queued because they applied a rule since found misapplied (audits/reaudit-queue.json, AUDIT_RULES.md
+// section 6), in the order listed. One is due once the re-audit gap allows and done once it has a pass dated on or
+// after its group's queuedAt (Brandon, 2026-11-08).
+function reauditQueue() {
+  const fs = require("fs"), lib = require("./lib");
+  const file = path.join(__dirname, "..", "audits", "reaudit-queue.json");
+  if (!fs.existsSync(file) || PEOPLE_ONLY) return null;
+  const { nextPassFrom } = require("./validate");
+  const today = new Date().toISOString().slice(0, 10);
+  for (const g of readJson(file).groups) for (const id of g.ids) {
+    const f = lib.profilePath(id);
+    if (SKIP.has(id) || !fs.existsSync(f)) continue;
+    const a = readJson(f);
+    const last = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
+    if (a.notAnIdeology || last >= g.queuedAt || nextPassFrom(a) > today) continue;
+    const entry = catalog().find((x) => x.id === id);
+    if (!entry) continue;
+    const { name, wikipedia, wikipediaMatch, scopeNote } = entry;
+    return { kind: "ideology", id, name, wikipedia, wikipediaMatch, scopeNote, views12m: entry.views12m || 0, reason: `queued later pass: ${g.reason}` };
+  }
+  return null;
+}
+const priority = searchPriority() || reauditQueue();
 if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
 
 const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);

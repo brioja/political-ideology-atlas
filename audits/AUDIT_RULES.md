@@ -130,8 +130,11 @@ free trade, not about markets in general.
   subject, in either direction: secularism's not for Jewish secularism, nor a member movement's for
   the name it belongs to (the Iron Guard's programme not for national mysticism), nor American Jewish
   secularism's for Jewish secularism as a whole; a party's not for one of its members, nor one
-  organisation's or several organisations' for an ideology they share (organisations can agree on
-  something that isn't part of the ideology; Brandon, 2026-11-06). Only the subject's own sources
+  organisation's or several organisations' platform for an ideology they share (organisations can agree
+  on something that isn't part of the ideology; Brandon, 2026-11-06). An organisation's or thinker's own
+  account of what the ideology is, its tenets as they define them, is one of the ideology's defining
+  sources (Brandon, 2026-11-08: the DSA's account of democratic socialism counts; the DSA's platform
+  doesn't). Only the subject's own sources
   answer (for an ideology, its defining sources and the texts they tie to it), and without them the
   answer is `null`. Where the subject's own sources take opposite positions on the same question, it
   is a split (0, `low`).
@@ -196,9 +199,10 @@ keep researching before you finish: the lines the validator names, then the stat
 new sources (the local corpora too). Stop when they are covered or when the record really has nothing
 more, and say in `notes` which themes you searched. Never raise a confidence to pass.
 
-A later pass on a finished audit has one of two reasons: new sources became available (a new corpus, a
-book the maintainer supplies), or the audit predates the shared rules (no `"rules"` field) and is brought
-up to them. Build on the existing audit rather than starting over:
+A later pass on a finished audit has one of three reasons: new sources became available (a new corpus, a
+book the maintainer supplies), the audit predates the shared rules (no `"rules"` field) and is brought
+up to them, or it applied a rule the maintainer has since found misapplied (`audits/reaudit-queue.json`
+says which rule). Build on the existing audit rather than starting over:
 - Read its sources and answers. Research the lines the validator names, then the thinnest themes.
 - Keep the subject: no coatracks. Not a broader ideology's (secularism's for
   Jewish secularism, or for a person who holds it), a related one's (secular humanism's for

@@ -33,8 +33,9 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
 
 1. Run \`node scripts/next.js${KIND}\`. It prints the next entry as JSON with "kind": "ideology" or "person". If it prints null, reply with done=true and do nothing else.
    If an audit file for it already exists (audits/people/<id>.json or audits/profiles/<id>.json), it failed validation,
-   or (when the JSON has a "reason") it gets search traffic and predates the shared rules, so this pass brings it up to them
-   ("rules" set to the current version, every answer checked against audits/AUDIT_RULES.md). Either way,
+   or (when the JSON has a "reason") it is due for a later pass for that reason (search traffic on a pre-rules audit, or a
+   queued rule that was misapplied): this pass brings it up to the current rules ("rules" set to the current version,
+   every answer checked against audits/AUDIT_RULES.md, the reason's rule above all). Either way,
    build on it as a later pass (audits/AUDIT_RULES.md section 6), never overwrite it from scratch. Use a model not yet in its
    "auditor", add yours to "auditor" and "passes", and keep every committed sourced answer you change in that statement's
    "reviewHistory" (scripts/validate.js explains it); validate.js checks this against the committed file.
