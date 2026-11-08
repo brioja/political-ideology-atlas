@@ -42,11 +42,10 @@ is specific to people.
   other things): if the Wikipedia article and two or three targeted searches ("<name> politics",
   "<name> views on …") turn up no stated political positions, record the few you found, answer the
   rest null, and finish. Failing the uncertainty rule is then the correct outcome, and a long search is wasted.
-- Political-quiz sites are not sources (AUDIT_RULES.md). The exception is the person taking a quiz
-  themselves, answers read aloud, as some streamers and
-  pundits have done on camera (search "<name> political test" or "<name> political quiz"). Their
-  own answer is direct evidence, so it can be `high` confidence, but only where the quiz item says
-  the same thing as our statement; otherwise use it as context. Get the words from the video's
+- A quiz site's placement of someone is another's account of their views, not evidence. The person
+  answering a quiz themselves, answers read aloud on camera as some streamers and pundits have done
+  (search "<name> political test" or "<name> political quiz"), is their own words: it answers our
+  statement where the quiz item says the same thing. Get the words from the video's
   captions (`node scripts/yt.js "<url>"`),
   cite the video as a `primary` source, and use only answers they clearly give, not jokes or banter.
 
@@ -64,12 +63,6 @@ answered only where their own stated position settles it, never from their party
 general principle they voiced ("freedom of religion", "equal rights for all") doesn't answer a specific
 statement it never addressed (apostasy laws, covering laws, blasphemy): for a person those stay
 null unless they spoke to them.
-
-A monarch's or head of state's formal assent is not their position. Laws, constitutions and
-policies they only signed or proclaimed on ministers' or parliament's advice don't count, nor does a
-speech from the throne setting out the government's programme; use only views they expressed
-themselves and measures they personally drove. Likewise, what a government did under someone
-(executions, a state policy) is their position only where they drove it or spoke to it.
 
 Where the person has a record on a statement, answer from the record alone and leave their words
 on it out (AUDIT_RULES.md, "Record over words"): elections they rigged or cancelled, term limits

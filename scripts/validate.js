@@ -214,7 +214,7 @@ function validate(id) {
     // (audits/PROMPT.md), at low confidence.
     if (ans.value === null) {
       if (!ans.rationale) errors.push(`${st.id}: say why there is no known position`);
-      if (!PEOPLE && ans.confidence !== "low") errors.push(`${st.id}: a "no known position" answer is low confidence`);
+      if (ans.confidence !== "low") errors.push(`${st.id}: a "no known position" answer is low confidence`);
       continue;
     }
     if (![-2, -1, 0, 1, 2].includes(ans.value)) errors.push(`${st.id}: value must be an integer from -2 to 2 or null`);

@@ -129,7 +129,9 @@ free trade, not about markets in general.
   used as if its sources were the subject's. Sources about a related subject don't answer for the
   subject, in either direction: secularism's not for Jewish secularism, nor a member movement's for
   the name it belongs to (the Iron Guard's programme not for national mysticism), nor American Jewish
-  secularism's for Jewish secularism as a whole; a party's not for one of its members, nor one
+  secularism's for Jewish secularism as a whole; a party's not for one of its members, nor a
+  government's for the monarch or head of state who only signed or proclaimed its measures on advice
+  (their position is what they drove or said themselves), nor one
   organisation's or several organisations' platform for an ideology they share (organisations can agree
   on something that isn't part of the ideology; Brandon, 2026-11-06). An organisation's or thinker's own
   account of what the ideology is, its tenets as they define them, is one of the ideology's defining
@@ -173,8 +175,7 @@ least one source id from your `sources` list.
 - `medium`: clearly implied by what the subject said or did on this statement's topic, or reported
   by a secondary or scholarly source.
 - `low`: mixed or contested. If the rationale has to say that the evidence is split, the answer is
-  `low`. A question anachronistic for the subject (it couldn't have taken a side on it)
-  is `null`, unless the subject's own texts settle it anyway.
+  `low`.
 
 ## 5. Uncertainty: placed on every dividing line
 

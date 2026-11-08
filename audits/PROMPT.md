@@ -87,8 +87,6 @@ you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the chec
   under the name are other subjects: their texts answer only where the defining sources make them the
   ideology's own (no coatracks, AUDIT_RULES.md section 3). A general remark that its content varies
   answers no particular statement (`null`).
-- If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
-  answer from the political implications its own texts and its scholars draw. Say so in `scope`, and expect many low-confidence answers.
 
 ## 2. Sources for an ideology
 
