@@ -20,15 +20,14 @@ words; don't paste long passages.
 
 - Use web search and fetch tools and cite only pages you opened in this session, by the URL you
   visited. Never cite from memory or construct a URL.
-- Use at least 3 sources, including at least one `primary` source (the subject's own texts:
-  founding documents, programmes, speeches, books, their record) and at least one `scholarly` or
-  `reference` source. A family entry (`"family": true`, PROMPT.md section 1) is the exception: its
-  evidence is the scholarship that defines it, so it may have no primary source.
+- Use at least 3 of the subject's defining sources, whatever their kind: its own texts (founding
+  documents, programmes, speeches, books, its record) where it has them, and the scholarship and
+  reference works that define it. One rule for every subject (Brandon, 2026-11-08).
 - Scholarly reference works (the Stanford and Internet Encyclopedias of Philosophy, Britannica,
   Oxford or Routledge reference works) are scholarship, and count as evidence. Wikipedia,
   OnTheIssues and similar compilations are only a way to find evidence: follow their citations to
   the original and cite that. An answer whose only source is Wikipedia has no evidence. Wikipedia
-  doesn't decide a subject's scope or what a family holds either: it serves for notability (the
+  doesn't decide a subject's scope or what it holds either: it serves for notability (the
   catalog), the reader's `wikipedia` link and finding leads, and what it says about scope or
   membership counts only through the scholarship or data it cites. Read Wikipedia and Wikidata only with
   `node scripts/wiki.js "<title or URL>"` (cached; `--search`, `--wikidata Q123`), never by fetching them
@@ -72,7 +71,7 @@ words; don't paste long passages.
   Machine copy; if there is none, link the dataset's page and name the transcript's id in the title,
   e.g. "via the MediaSum corpus, transcript CNN-18377", keeping the dead address in `original`), and a
   mirror as a mirror of the original. Machine transcripts without speaker labels count only where
-  the speaker is unambiguous, at medium confidence at most.
+  the speaker is unambiguous and the passage reads coherently in context.
 - The runner may hand you a text the maintainer supplied (a book you couldn't fetch yourself).
   Treat it as a primary source and search it the same way. Cite it as the published work, with the
   url of a publisher or library catalog page for it that you opened (e.g. openlibrary.org/isbn/…),
@@ -128,15 +127,19 @@ free trade, not about markets in general.
 - **No coatracks.** A coatrack hangs another subject's positions on this one: another movement,
   organisation, party or person (a relative, an employer), or a broader, narrower or related ideology,
   used as if its sources were the subject's. Sources about a related subject don't answer for the
-  subject, in either direction: secularism's not for Jewish secularism, nor American Jewish
+  subject, in either direction: secularism's not for Jewish secularism, nor a member movement's for
+  the name it belongs to (the Iron Guard's programme not for national mysticism), nor American Jewish
   secularism's for Jewish secularism as a whole; a party's not for one of its members, nor one
   organisation's or several organisations' for an ideology they share (organisations can agree on
   something that isn't part of the ideology; Brandon, 2026-11-06). Only the subject's own sources
   answer (for an ideology, its defining sources and the texts they tie to it), and without them the
   answer is `null`. Where the subject's own sources take opposite positions on the same question, it
   is a split (0, `low`).
-- **Critics aren't evidence.** What opponents say about the subject, and interest-group ratings (a
-  lobby's scorecard grade), are not evidence of a position.
+- **Sources count by what they are, not by who publishes them.** Anyone's account of what the subject
+  thinks is a way to find evidence, not evidence. A quotation of the subject, whoever publishes it,
+  counts only once checked in the primary source with its context (section 2); a full transcript is a
+  primary source, an excerpt is not. A report that the subject did something counts as a report of
+  the record. Interest-group ratings (a lobby's scorecard grade) aren't evidence of a position.
 - **Record over words.** Where the subject has a record on a statement (acts, not words), answer
   from the record alone and leave their words on it out entirely, whether they agree with it or not
   (elections rigged or cancelled while praising pluralism; deficits signed into law while condemning
@@ -153,7 +156,7 @@ free trade, not about markets in general.
   Say in the rationale when a position changed.
 - **Fix the answer, not the wording.** When the validator rejects an answer, change the answer: if it
   says contested evidence must be `low`, lower the confidence; never rephrase a rationale to slip
-  past a check.
+  past a check. A rationale states the evidence; it doesn't say that an answer isn't an inference.
 
 Each rationale is one or two plain sentences that explain the answer, not restate it, and cites at
 least one source id from your `sources` list.

@@ -134,6 +134,11 @@ try {
   }
   // Rules 4 is shared with people: one case to show it runs for ideologies too.
   fails("ideology answer mixes action and words", E(base(), (a) => { a.sources.push({ id: "s4", kind: "primary", evidence: "action", title: "Regime decree", url: "https://example.org/manifesto" }); a.answers[A].sources = ["s2", "s4"]; }), /cites actions \(s4\) and words \(s2\)/);
+  // One rule for every ideology (Brandon, 2026-11-08): no "family" exemption, so no primary-source requirement; an
+  // audit cites its defining sources, whatever kind they are.
+  ok("defining scholarship alone, no primary source", E(base(), (a) => { a.sources[1].kind = "scholarly"; }));
+  // A rationale states the evidence; it never mentions inference, not even to deny it.
+  fails("ideology rationale denies an inference", E(base(), (a) => { a.answers[A].rationale = "The manifesto states it, rather than an inference from its aims."; }), /mentions inference/);
 } finally {
   setCommittedForTests(null);
   fs.rmSync(libDir, { recursive: true, force: true });

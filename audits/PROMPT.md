@@ -81,20 +81,12 @@ connects names only, never scope or answers). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
 - If the defining sources name a canonical core (founding texts, a defining thinker, a party
   program), use it.
-- If the name covers a family (fascism, social democracy, conservatism, feminism, left-wing), answer
-  from sources that define the family's own tenets directly: comparative scholarship that defines it
-  (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where
-  the family as such has them (not a member movement's: the Doctrine of Fascism is Italian Fascism's,
-  which has its own entry), and data that measures what the label itself means (surveys asking
-  experts or voters what "left" stands for). Nothing is inherited, in either direction: members'
-  positions don't answer for the family, whether from their own texts or from surveys scoring them
-  (pooling parties' expert-survey scores is inheritance), even when several members agree; and the
-  family's positions don't answer for a member (a member with its own entry is audited there).
-  Where the defining sources agree, answer; where one states a tenet and another explicitly rejects
-  it, or a source documents that the family divides on that specific topic, it is a split (0,
-  `low`); a general remark that the family's content varies answers no particular statement
-  (`null`). Wikipedia doesn't define a family (AUDIT_RULES.md section 2). Mark the audit
-  `"family": true`.
+- If the name covers several movements (fascism, social democracy, conservatism, feminism, left-wing),
+  its defining sources are those that define the name itself: comparative scholarship that defines it
+  (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where it
+  has them, and data that measures what the label itself means (surveys asking experts or voters what
+  "left" stands for). Its member movements are other subjects (no coatracks, AUDIT_RULES.md section 3);
+  a general remark that its content varies answers no particular statement (`null`).
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer from the political implications its own texts and its scholars draw. Say so in `scope`, and expect many low-confidence answers.
 

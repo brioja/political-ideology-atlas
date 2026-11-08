@@ -164,7 +164,7 @@ fails("source url not http", E(base(), (a) => { a.sources[2].url = "ftp://exampl
 fails("political-quiz site", E(base(), (a) => { a.sources[2].url = "https://www.politicalcompass.org/x"; }), /political-quiz sites are not allowed/);
 fails("source title missing", E(base(), (a) => { delete a.sources[2].title; }), /source s3: missing title/);
 fails("Wikipedia as primary", E(base(), (a) => { a.sources[2].url = "https://en.wikipedia.org/wiki/Example"; }), /a Wikipedia article is a "reference" source/);
-fails("no primary source", E(base(), (a) => { for (const x of a.sources) x.kind = "reference"; }), /needs at least one primary or program source/);
+ok("no primary-source requirement (one rule for every subject, 2026-11-08)", E(base(), (a) => { for (const x of a.sources) x.kind = "reference"; }));
 fails("no scholarly or reference source", E(base(), (a) => { a.sources[4].kind = "primary"; }), /needs at least one scholarly or reference source/);
 fails("only Wikipedia sources", E(base(), (a) => { a.sources.forEach((x, i) => { x.kind = "reference"; x.url = `https://en.wikipedia.org/wiki/Page_${i}`; }); }), /Wikipedia cannot be the only kind of source/);
 // Answers.
@@ -232,6 +232,12 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   assert.strictEqual(nextPassFrom({ passes: [{ auditedAt: "2026-11-10" }, { auditedAt: "2026-11-01" }] }), "2026-12-07", "next pass date from the latest pass"); n++;
   assert.strictEqual(nextPassFrom({ auditedAt: "2026-11-08" }), "2026-12-03", "next pass date from a single audit"); n++;
 }
+
+// Rules 3 has no inferences, so a rationale doesn't mention one, not even to deny it (Brandon, 2026-11-08).
+{ const a = base(); a.answers[B].rationale = "His own stated rule rather than an inference from law enforcement."; fails("rationale denies an inference", a, /mentions inference; rules 3 has none/); }
+{ const a = base(); a.answers[B].rationale = "Said so in a 2020 interview; not inferred."; fails("'not inferred' is no exception", a, /mentions inference/); }
+{ const a = base(); a.answers[B].confidence = "high"; a.answers[B].rationale = "Said in a 2020 interview that this statement is wrong."; ok("rationale that states the evidence", a); }
+{ const a = base(); a.rules = 2; a.answers[B].rationale = "Said so; not inferred."; fails("older audits: no 'not inferred' exception either", a, /so the confidence is low/); }
 
 setCommittedForTests(null);
 fs.rmSync(path.dirname(tmp), { recursive: true, force: true });

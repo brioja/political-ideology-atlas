@@ -198,8 +198,6 @@ function validate(id) {
   // A Wikipedia article about a document is a reference, never the document itself.
   const wikiPrimary = sources.filter((s) => (s.kind === "primary" || s.kind === "program") && /wikipedia\.org/i.test(s.url || "")).map((s) => s.id);
   if (wikiPrimary.length) errors.push(`${wikiPrimary.join(", ")}: a Wikipedia article is a "reference" source, not "primary" or "program"`);
-  // A family entry (PROMPT.md section 1, "family": true) is answered from the scholarship that defines it, not members' texts.
-  if (!a.family && !sources.some((s) => s.kind === "primary" || s.kind === "program")) errors.push("needs at least one primary or program source");
   if (!sources.some((s) => s.kind === "scholarly" || s.kind === "reference")) errors.push("needs at least one scholarly or reference source");
   if (sources.length && sources.every((s) => /wikipedia\.org/.test(s.url || ""))) errors.push("Wikipedia cannot be the only kind of source");
 
@@ -239,15 +237,21 @@ function validate(id) {
   // A rationale that calls its own answer an inference, split or anachronistic is describing a low
   // answer, and one that says the sources don't address it can't be high (audits/PROMPT.md).
   const SELF_LOW = /\b(inferred|by inference|an inference|(adherents|supporters|members|followers|strands?) (are |were )?(split|divided)|(is|are|was|were|remains?) (split|divided|contested)|contested among|anachronis\w*|speculative)\b/i;
-  const NOT_LOW = /\bnot (inferred|an inference|contested|speculative)\b/i;
+  const NOT_LOW = /\bnot (contested|speculative)\b/i;
+  // Rules 3 has no inferences, so a rationale has no reason to mention one, not even to deny it: it states the evidence
+  // (Brandon, 2026-11-08, after "rather than an inference" read as a confession).
+  const INFERENCE = /\b(inferred|inferring|by inference|an inference|inferences?)\b/i;
+  const mentionsInference = [];
   const UNADDRESSED = /\b(not addressed|never address\w*|not discussed|no documented position|sources? (do|does) not (discuss|address|mention))\b/i;
   const selfLow = [], unaddressedHigh = [];
   for (const st of statements) {
     const ans = answers[st.id];
     if (!ans?.rationale) continue;
-    if (ans.confidence === "medium" && SELF_LOW.test(ans.rationale) && !NOT_LOW.test(ans.rationale)) selfLow.push(st.id);
+    if (a.rules >= 3 && ans.value !== null && INFERENCE.test(ans.rationale)) mentionsInference.push(st.id);
+    else if (ans.confidence === "medium" && SELF_LOW.test(ans.rationale) && !NOT_LOW.test(ans.rationale)) selfLow.push(st.id);
     if (ans.confidence === "high" && UNADDRESSED.test(ans.rationale)) unaddressedHigh.push(st.id);
   }
+  if (mentionsInference.length) errors.push(`${mentionsInference.join(", ")}: rationale mentions inference; rules 3 has none: state the evidence that settles the statement, and don't say whether it is an inference (or answer null if there is none)`);
   if (selfLow.length) errors.push(`${selfLow.join(", ")}: rationale says inferred, split, contested or anachronistic, so the confidence is low`);
   // A living person's view needs evidence (audits/PROMPT_PEOPLE.md): an answer whose rationale says it
   // is inferred, or that nothing records their view, is "no known position" instead.
