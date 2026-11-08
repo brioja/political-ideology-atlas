@@ -136,7 +136,9 @@ free trade, not about markets in general.
   on something that isn't part of the ideology; Brandon, 2026-11-06). An organisation's or thinker's own
   account of what the ideology is, its tenets as they define them, is one of the ideology's defining
   sources (Brandon, 2026-11-08: the DSA's account of democratic socialism counts; the DSA's platform
-  doesn't). Only the subject's own sources
+  doesn't). A passage counts when its author presents it as a tenet or requirement of the ideology; a
+  proposed measure, a current campaign or an organisational choice doesn't become one by appearing in a
+  declaration or an article about what the ideology is. Only the subject's own sources
   answer (for an ideology, its defining sources and the texts they tie to it), and without them the
   answer is `null`. Where the subject's own sources take opposite positions on the same question, it
   is a split (0, `low`).

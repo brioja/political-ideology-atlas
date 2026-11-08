@@ -226,6 +226,7 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   fails("later pass two days after the previous one", two("2026-11-10", "2026-11-12"), /a later pass comes at least 15 days \(half the project's age\) after the previous one \(2026-11-10\)/);
   // A pass on 2026-11-10 (project 27 days old) allows the next from 2026-12-07 (gap 27 = half of 54).
   fails("later pass one day short of half the project's age", two("2026-11-10", "2026-12-06"), /at least 27 days/);
+  { const a = two("2026-11-10", "2026-12-06"); a.passes[1].gapException = "Merged early as a rule test (Brandon, 2026-12-06)"; ok("early pass the maintainer merged with a recorded gapException", a); }
   ok("later pass at half the project's age", two("2026-11-10", "2026-12-07"));
   ok("close passes before the rule stand", two("2026-10-27", "2026-10-31"));
   assert.strictEqual(reauditGap("2026-11-07"), 12, "gap today: half of 24 days"); n++;

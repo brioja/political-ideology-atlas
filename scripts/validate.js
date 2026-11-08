@@ -142,8 +142,12 @@ function validate(id) {
       // A later pass comes at least half the project's age after the previous one (Brandon, 2026-11-07: the same audits
       // were re-audited several times within days; fixed 14 days, then half the project's age the same day).
       // Passes from REAUDIT_FROM on; earlier ones stand as they are.
-      const dates = passes.map((p) => p.auditedAt).sort(), last = dates[dates.length - 1], prev = dates[dates.length - 2];
-      if (prev && last >= REAUDIT_FROM && days(prev, last) < days(PROJECT_START, last) / 2) {
+      // The gap paces normal runs; it doesn't block development: a pass the maintainer merges early carries
+      // "gapException": "<why> (<maintainer>, <date>)" and is exempt (Brandon, 2026-11-08, the Democratic socialism test).
+      const sorted = [...passes].sort((x, y) => x.auditedAt.localeCompare(y.auditedAt));
+      const dates = sorted.map((p) => p.auditedAt), last = dates[dates.length - 1], prev = dates[dates.length - 2];
+      const excepted = typeof sorted[sorted.length - 1].gapException === "string" && sorted[sorted.length - 1].gapException.trim().length >= 10;
+      if (prev && !excepted && last >= REAUDIT_FROM && days(prev, last) < days(PROJECT_START, last) / 2) {
         errors.push(`"passes": a later pass comes at least ${reauditGap(last)} days (half the project's age) after the previous one (${prev}); this one is dated ${last}`);
       }
     }
