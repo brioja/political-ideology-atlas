@@ -79,14 +79,14 @@ by the ideology's name ("trans-exclusionary radical feminist"). An alias that Wi
 other catalog item may instead be given as `{ "name": "TERF", "wikidata": true }` (one to one; Wikidata
 connects names only, never scope or answers). Save every source
 you cite in `scratchpad/sources/<id>/` with its URL in `index.json`, so the check can read it.
-- If the defining sources name a canonical core (founding texts, a defining thinker, a party
-  program), use it.
-- If the name covers several movements (fascism, social democracy, conservatism, feminism, left-wing),
-  its defining sources are those that define the name itself: comparative scholarship that defines it
-  (Payne, Paxton or Griffin for fascism; Bobbio for left and right), its own self-definitions where it
-  has them, and data that measures what the label itself means (surveys asking experts or voters what
-  "left" stands for). Its member movements are other subjects (no coatracks, AUDIT_RULES.md section 3);
-  a general remark that its content varies answers no particular statement (`null`).
+- Answer from what the defining sources say the ideology holds: the texts they make canonical
+  (founding texts, a defining thinker, a party programme) where they name any, and their own account
+  of its tenets. Where no text is canonical (fascism, left-wing), the defining sources are the
+  scholarship that defines the name (Payne, Paxton or Griffin for fascism; Bobbio for left and right)
+  and data on what the label means (surveys asking what "left" stands for). Movements and offshoots
+  under the name are other subjects: their texts answer only where the defining sources make them the
+  ideology's own (no coatracks, AUDIT_RULES.md section 3). A general remark that its content varies
+  answers no particular statement (`null`).
 - If the name is a philosophy rather than a political program (for example Stoicism or Platonism),
   answer from the political implications its own texts and its scholars draw. Say so in `scope`, and expect many low-confidence answers.
 
