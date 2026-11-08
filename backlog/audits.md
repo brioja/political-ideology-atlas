@@ -2,7 +2,7 @@
 
 Audit work discussed but not started.
 
-- **Remaining silence.** `scripts/silence-to-null.js` turned 56,931 "no doctrine" zeros into "no
+- **Remaining silence.** A one-off script (silence-to-null.js, 10-29; removed 2026-11-08, in git history) turned 56,931 "no doctrine" zeros into "no
   known position"; about 47,000 zeros remain, most of them real splits but roughly a third silence
   written with a "but" clause. Re-audits under `audits/AUDIT_RULES.md` (`"rules": 2`) pick these up.
 - **Loosely placed shown ideologies.** After any re-audit wave, deepen the shown ideologies left close
