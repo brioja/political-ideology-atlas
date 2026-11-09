@@ -17,37 +17,36 @@ const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
 const PEOPLE_ONLY = process.argv.includes("--people");
 
 // Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, and right after
-// a person their 3 closest ideologies. Those are worked out once and saved in the file ("closest"), so they stay put
-// until the next pasted list: re-audits change the model, and recomputing them each time kept the loop on one person. One is due when its audit predates the shared rules (no "rules" field) and
-// the re-audit gap has passed; it then gets a later pass (audits/AUDIT_RULES.md section 6).
+// a person their 3 closest ideologies. The closest are recomputed on every call (Brandon, 2026-11-09: when a later pass
+// moves another ideology into a person's top 3, it gets its pass too); each one is passed once and then waits out the
+// re-audit gap, so the loop moves on once a person's top 3 are all up to date. One is due when its audit is under an
+// older rules version than the current one (or none) and the re-audit gap has passed; it then gets a later pass
+// (audits/AUDIT_RULES.md section 6).
 function searchPriority() {
   const fs = require("fs"), lib = require("./lib");
   const file = path.join(__dirname, "..", "audits", "search-priority.json");
   if (!fs.existsSync(file)) return null;
-  const { nextPassFrom } = require("./validate");
+  const { nextPassFrom, CURRENT_RULES } = require("./validate");
   const today = new Date().toISOString().slice(0, 10);
   const pca = require(path.join(__dirname, "..", "pca.js"));
   const data = require(path.join(__dirname, "..", "data.js"));
   const shownPeople = require(path.join(__dirname, "..", "people.js")).PEOPLE;
   let model = null;
   const list = readJson(file);
-  let saved = false;
-  for (const page of list.pages.filter((x) => x.kind === "person" && !x.closest)) {
-    const p = shownPeople.find((x) => x.id === page.id);
-    if (!p) { page.closest = []; continue; }
-    model = model || pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
-    page.closest = pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3).map((r) => r.id);
-    saved = true;
-  }
-  if (saved) fs.writeFileSync(file, JSON.stringify(list, null, 1) + "\n");
   const nameOf = (id) => (peopleCatalog().find((x) => x.id === id) || {}).name || id;
-  const closest = (page) => (page.closest || []).map((id) => ({ kind: "ideology", id, via: nameOf(page.id) }));
+  const closest = (page) => {
+    const p = shownPeople.find((x) => x.id === page.id);
+    if (!p) return [];
+    model = model || pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
+    return pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3)
+      .map((r) => ({ kind: "ideology", id: r.id, via: nameOf(page.id) }));
+  };
   const due = ({ kind, id }) => {
     if (SKIP.has(id) || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) return false;
     const f = kind === "person" ? lib.personPath(id) : lib.profilePath(id);
     if (!fs.existsSync(f)) return false;
     const a = readJson(f);
-    return a.rules == null && !a.notAnIdeology && nextPassFrom(a) <= today;
+    return (a.rules || 0) < CURRENT_RULES && !a.notAnIdeology && nextPassFrom(a) <= today;
   };
   for (const page of list.pages) {
     for (const c of [page, ...(page.kind === "person" ? closest(page) : [])]) {
@@ -56,7 +55,7 @@ function searchPriority() {
       if (!entry) continue;
       const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
       return { kind: c.kind, id: c.id, name, wikipedia, wikipediaMatch, born, living, scopeNote,
-        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, pre-rules later pass` : `search traffic (${page.clicks} clicks), pre-rules later pass` };
+        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, later pass to current rules` : `search traffic (${page.clicks} clicks), later pass to current rules` };
     }
   }
   return null;
