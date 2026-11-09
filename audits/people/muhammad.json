@@ -1,8 +1,11 @@
 {
   "id": "muhammad",
   "name": "Muhammad",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-09",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+  ],
   "living": false,
   "role": "Prophet of Islam; founder and ruler of the Medinan state (c. 571-632)",
   "summary": "Muhammad proclaimed the Quran as divine revelation and led the community in Medina as religious teacher, lawgiver, judge and military commander. His recorded positions combine religious law, mutual defence and welfare duties such as zakat with a ban on interest. He ruled through a covenant that included Jewish tribes as allies, and later expelled or fought some of them.",
@@ -14,7 +17,8 @@
       "title": "The Quran, Sahih International translation (full text)",
       "author": "Muhammad (proclaimed text); translation Sahih International",
       "url": "https://api.alquran.cloud/v1/quran/en.sahih",
-      "usedFor": "Verses by surah:verse, searched in full text"
+      "usedFor": "Verses by surah:verse, searched in full text",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "Constitution of Medina (Lecker translation, as printed in Wikipedia)",
       "author": "Attributed to Muhammad; trans. Michael Lecker",
       "url": "https://en.wikipedia.org/wiki/Constitution_of_Medina",
-      "usedFor": "Clauses on ummah, Jewish tribes, mutual defence, disputes"
+      "usedFor": "Clauses on ummah, Jewish tribes, mutual defence, disputes (first pass only; replaced by the texts it cites, kept for the review history)",
+      "evidence": "action"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "Farewell Sermon (Sahih Muslim 15:159 and other narrations)",
       "author": "Attributed to Muhammad",
       "url": "https://en.wikipedia.org/wiki/Farewell_Sermon",
-      "usedFor": "Property, usury, spouses' rights"
+      "usedFor": "Property, usury, spouses' rights (first pass only; replaced by the texts it cites, kept for the review history)",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "Sahih al-Bukhari, English (via fawazahmed0 hadith-api; sunnah.com blocked)",
       "author": "al-Bukhari",
       "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari.json",
-      "usedFor": "Hadith 2237, 2335, 2480, 3318, 3445, 6922, 7056, 7144"
+      "usedFor": "Sayings reported of him, by hadith number",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +53,8 @@
       "title": "Sahih Muslim, English (via fawazahmed0 hadith-api; sunnah.com blocked)",
       "author": "Muslim ibn al-Hajjaj",
       "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim.json",
-      "usedFor": "Slaughter and expulsion hadith"
+      "usedFor": "Sayings reported of him, by hadith number in this edition",
+      "evidence": "words"
     },
     {
       "id": "s6",
@@ -54,7 +62,8 @@
       "title": "Muhammad (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Muhammad",
-      "usedFor": "Career as ruler of Medina, expulsions, raids"
+      "usedFor": "Career as ruler of Medina, expulsions, raids (first pass only; replaced by the texts it cites, kept for the review history)",
+      "evidence": "action"
     },
     {
       "id": "s7",
@@ -62,7 +71,8 @@
       "title": "First Islamic state (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/First_Islamic_state",
-      "usedFor": "Medina state, expulsion of Jewish tribes"
+      "usedFor": "Medina state, expulsion of Jewish tribes (first pass only; replaced by the texts it cites, kept for the review history)",
+      "evidence": "action"
     },
     {
       "id": "s8",
@@ -70,7 +80,62 @@
       "title": "Conquest of Mecca (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Conquest_of_Mecca",
-      "usedFor": "Amnesty and its exceptions"
+      "usedFor": "Amnesty and its exceptions (first pass only; replaced by the texts it cites, kept for the review history)",
+      "evidence": "action"
+    },
+    {
+      "id": "s9",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Sahih al-Bukhari, English (fawazahmed0 hadith-api edition), reports of his acts and orders",
+      "author": "al-Bukhari",
+      "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari.json",
+      "usedFor": "Acts and orders by hadith number: 1395, 2278-2279, 2338, 4028, 4037, 4287, 4418, 5068, 5273, 5558, 6773, 6802, 6815, 6831"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Sahih Muslim, English (fawazahmed0 hadith-api edition), reports of his acts",
+      "author": "Muslim ibn al-Hajjaj",
+      "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim.json",
+      "usedFor": "Not cited in answers; listed so acts reported there are not tagged as words"
+    },
+    {
+      "id": "s11",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Ibn Ishaq, The Life of Muhammad (Sirat Rasul Allah), trans. A. Guillaume (Oxford, 1955), archive.org scan text: his speeches",
+      "author": "Ibn Ishaq (ed. Ibn Hisham); trans. Alfred Guillaume",
+      "url": "https://archive.org/download/GuillaumeLifeOfMuhammad/Guillaume--Life%20of%20Muhammad_djvu.txt",
+      "usedFor": "Farewell Sermon (p. 651) and other speeches, by page"
+    },
+    {
+      "id": "s12",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Ibn Ishaq, The Life of Muhammad (Sirat Rasul Allah), trans. A. Guillaume (Oxford, 1955), archive.org scan text: his acts",
+      "author": "Ibn Ishaq (ed. Ibn Hisham); trans. Alfred Guillaume",
+      "url": "https://archive.org/download/GuillaumeLifeOfMuhammad/Guillaume--Life%20of%20Muhammad_djvu.txt",
+      "usedFor": "Covenant of Medina (pp. 231-233), Khaybar (p. 515), conquest of Mecca (pp. 549-551), Tabuk and the Ayla treaty (p. 607)"
+    },
+    {
+      "id": "s13",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Sunan Abi Dawud, English (fawazahmed0 hadith-api edition)",
+      "author": "Abu Dawud al-Sijistani",
+      "url": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud.json",
+      "usedFor": "Sayings by hadith number: 495, 1633, 3450, 3451, 5116"
+    },
+    {
+      "id": "s14",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Muhammad at Medina (Oxford, 1956), Universal Library scan on archive.org",
+      "author": "W. Montgomery Watt",
+      "url": "https://archive.org/download/muhammadatmedina029655mbp/muhammadatmedina029655mbp_djvu.txt",
+      "usedFor": "His position and powers in Medina, the first expeditions, his opponents (ch. V, VII)"
     }
   ],
   "answers": {
@@ -113,10 +178,34 @@
     "property-fundamental": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Farewell Sermon (Sahih Muslim 15:159): \"your blood, your property are as sacred and inviolable\"; Quran 4:29 forbids consuming wealth unjustly. Zakat and fifths of spoils (59:7) qualify this.",
+      "rationale": "In the Farewell Sermon he declared his hearers' blood and property sacrosanct and said only what a brother gives willingly may be taken (Ibn Ishaq, p. 651); Quran 4:29 forbids consuming wealth unjustly. Zakat and the fifth of spoils (59:7, 8:41) qualify this.",
       "sources": [
-        "s3",
+        "s11",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Farewell Sermon (Sahih Muslim 15:159): \"your blood, your property are as sacred and inviolable\"; Quran 4:29 forbids consuming wealth unjustly. Zakat and fifths of spoils (59:7) qualify this.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In the Farewell Sermon he declared his hearers' blood and property sacrosanct and said only what a brother gives willingly may be taken (Ibn Ishaq, p. 651); Quran 4:29 forbids consuming wealth unjustly. Zakat and the fifth of spoils (59:7, 8:41) qualify this.",
+          "sources": [
+            "s11",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "regulate-corporations": {
@@ -128,10 +217,32 @@
     "cut-welfare": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "He instituted zakat, an obligatory levy distributed first to the poor and needy (Quran 9:60, 59:7); Bukhari 1470 separately praises earning over begging.",
+      "rationale": "He sent Mu'adh to Yemen with orders that zakat be taken from the wealthy and given to the poor (Bukhari 1395): a standing levy for the poor, not one to be cut.",
       "sources": [
-        "s1",
-        "s4"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He instituted zakat, an obligatory levy distributed first to the poor and needy (Quran 9:60, 59:7); Bukhari 1470 separately praises earning over begging.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He sent Mu'adh to Yemen with orders that zakat be taken from the wealthy and given to the poor (Bukhari 1395): a standing levy for the poor, not one to be cut.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "worker-ownership": {
@@ -149,9 +260,31 @@
     "legalize-drugs": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Quran 5:90 calls intoxicants \"defilement from the work of Satan, so avoid it\". Drugs other than wine are not named.",
+      "rationale": "He had a drunk man beaten with palm-leaf stalks and shoes (Bukhari 6773), punishing intoxication as an offence.",
       "sources": [
-        "s1"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Quran 5:90 calls intoxicants \"defilement from the work of Satan, so avoid it\". Drugs other than wine are not named.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He had a drunk man beaten with palm-leaf stalks and shoes (Bukhari 6773), punishing intoxication as an offence.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "restrict-hate-speech": {
@@ -228,10 +361,32 @@
     "more-religion-public": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "He made religion the organising basis of the Medinan community (Constitution clause 2, the ummah) and governed by revealed law.",
+      "rationale": "The covenant he issued at Medina founded the community on faith, the believers being 'one community (umma) to the exclusion of all men', and referred disputes to God and Muhammad (Ibn Ishaq, pp. 231-233).",
       "sources": [
-        "s2",
-        "s6"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He made religion the organising basis of the Medinan community (Constitution clause 2, the ummah) and governed by revealed law.",
+          "sources": [
+            "s2",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The covenant he issued at Medina founded the community on faith, the believers being 'one community (umma) to the exclusion of all men', and referred disputes to God and Muhammad (Ibn Ishaq, pp. 231-233).",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "correct-racial-injustice": {
@@ -323,11 +478,33 @@
     "revolution-justified": {
       "value": 1,
       "confidence": "low",
-      "rationale": "He overturned the Quraysh order at Mecca by force after emigrating, and Quran 22:39-40 permits fighting those who expelled the believers. This is a religious-political conquest, not an uprising against a government as such.",
+      "rationale": "After emigrating he led armed forces against the Quraysh order of his home city and took Mecca in 630 (Ibn Ishaq, pp. 549-551). This was war between two polities as much as an uprising, so low.",
       "sources": [
-        "s1",
-        "s6",
-        "s8"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He overturned the Quraysh order at Mecca by force after emigrating, and Quran 22:39-40 permits fighting those who expelled the believers. This is a religious-political conquest, not an uprising against a government as such.",
+          "sources": [
+            "s1",
+            "s6",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "After emigrating he led armed forces against the Quraysh order of his home city and took Mecca in 630 (Ibn Ishaq, pp. 549-551). This was war between two polities as much as an uprising, so low.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "experts-over-public": {
@@ -385,10 +562,12 @@
       "sources": []
     },
     "abolish-money-wages": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He hired a guide for the emigration to Medina (Bukhari 2263) and paid his cuppers in wages or food (Bukhari 2278), taking hired labour as normal.",
+      "sources": [
+        "s9"
+      ]
     },
     "abolish-central-banks": {
       "value": null,
@@ -446,11 +625,33 @@
     },
     "political-violence-never": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "He proclaimed permission to fight those who wronged the believers (Quran 22:39, 2:190) and led or sent armed expeditions as ruler of Medina, so he did not hold that political violence is never justified.",
+      "confidence": "medium",
+      "rationale": "He asked for a volunteer to kill the poet Ka'b ibn al-Ashraf, who had 'hurt Allah and His Apostle', and allowed the killer to deceive him to do it (Bukhari 4037): an assassination outside battle.",
       "sources": [
-        "s1",
-        "s6"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He proclaimed permission to fight those who wronged the believers (Quran 22:39, 2:190) and led or sent armed expeditions as ruler of Medina, so he did not hold that political violence is never justified.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He asked for a volunteer to kill the poet Ka'b ibn al-Ashraf, who had 'hurt Allah and His Apostle', and allowed the killer to deceive him to do it (Bukhari 4037): an assassination outside battle.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "war-builds-character": {
@@ -462,19 +663,63 @@
     "separate-church-state": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "He combined religious and political authority in Medina; the Constitution refers disputes to God and Muhammad and Quran 5:48 tells him to rule by revelation.",
+      "rationale": "Under his covenant, disputes among the people of Medina were to be 'referred to God and to Muhammad the apostle of God' (Ibn Ishaq, pp. 232-233): the prophet was also the community's judge.",
       "sources": [
-        "s2",
-        "s1"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He combined religious and political authority in Medina; the Constitution refers disputes to God and Muhammad and Quran 5:48 tells him to rule by revelation.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Under his covenant, disputes among the people of Medina were to be 'referred to God and to Muhammad the apostle of God' (Ibn Ishaq, pp. 232-233): the prophet was also the community's judge.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "laws-from-scripture": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Quran 5:48 instructs him to judge between people by what Allah has revealed (also 5:44-47); the Constitution of Medina refers disputes to God and Muhammad. He governed Medina by the revealed text.",
+      "confidence": "medium",
+      "rationale": "He ordered that an unmarried person guilty of fornication be flogged a hundred stripes (Bukhari 6831), the penalty the Quran sets, and judged by revealed rulings.",
       "sources": [
-        "s1",
-        "s2"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Quran 5:48 instructs him to judge between people by what Allah has revealed (also 5:44-47); the Constitution of Medina refers disputes to God and Muhammad. He governed Medina by the revealed text.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He ordered that an unmarried person guilty of fornication be flogged a hundred stripes (Bukhari 6831), the penalty the Quran sets, and judged by revealed rulings.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "private-courts-defense": {
@@ -526,10 +771,32 @@
     "civilizational-union": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Quran 49:10 says believers are brothers and 21:92 calls the community one ummah; the Constitution makes believers one political unit distinct from others.",
+      "rationale": "His covenant joined the believers of Quraysh and of the Medinan clans, of different tribes, into one political community bound to make war and peace together (Ibn Ishaq, pp. 231-232).",
       "sources": [
-        "s1",
-        "s2"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quran 49:10 says believers are brothers and 21:92 calls the community one ummah; the Constitution makes believers one political unit distinct from others.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "His covenant joined the believers of Quraysh and of the Medinan clans, of different tribes, into one political community bound to make war and peace together (Ibn Ishaq, pp. 231-232).",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "self-interest-moral": {
@@ -663,10 +930,34 @@
     "taxation-theft": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Quran 9:103 tells him to take zakat from believers' wealth and 9:60 lists collectors among its recipients; he levied zakat as an obligation. Zakat is framed as a religious duty, so medium.",
+      "rationale": "He made zakat a compulsory levy collected by his agents: Mu'adh was sent to take it from the wealthy of Yemen (Bukhari 1395), and Ibn Khatal was sent out to collect the poor tax (Ibn Ishaq, p. 550).",
       "sources": [
-        "s1",
-        "s6"
+        "s9",
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Quran 9:103 tells him to take zakat from believers' wealth and 9:60 lists collectors among its recipients; he levied zakat as an obligation. Zakat is framed as a religious duty, so medium.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He made zakat a compulsory levy collected by his agents: Mu'adh was sent to take it from the wealthy of Yemen (Bukhari 1395), and Ibn Khatal was sent out to collect the poor tax (Ibn Ishaq, p. 550).",
+          "sources": [
+            "s9",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "harm-principle": {
@@ -684,10 +975,32 @@
     "conscription": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "He mobilised the community for Tabuk and the Quran rebukes and threatens those who held back (9:38-39, 9:81-83); the Constitution says none may go out to fight without his permission.",
+      "rationale": "When three Muslims stayed behind from the Tabuk expedition without excuse, he forbade all Muslims to speak to them (Bukhari 4418), sanctioning those who did not answer his call to arms.",
       "sources": [
-        "s1",
-        "s2"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He mobilised the community for Tabuk and the Quran rebukes and threatens those who held back (9:38-39, 9:81-83); the Constitution says none may go out to fight without his permission.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "When three Muslims stayed behind from the Tabuk expedition without excuse, he forbade all Muslims to speak to them (Bukhari 4418), sanctioning those who did not answer his call to arms.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "exit-over-voice": {
@@ -741,17 +1054,41 @@
     "territorial-expansion": {
       "value": 1,
       "confidence": "low",
-      "rationale": "The Medinan state grew across Arabia under him (Khaybar, Mecca, Tabuk, tribal submissions), but this was also defended as defence of the community, so contested.",
+      "rationale": "Under him Medina's rule spread to Mecca, Khaybar and, during the Tabuk expedition, to Ayla, Jarba and Adhruh, which paid him poll tax, while Duma's ruler was seized (Ibn Ishaq, pp. 515, 549-551, 607). Several campaigns answered attacks or treaty breaches, so low.",
       "sources": [
-        "s6",
-        "s7"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The Medinan state grew across Arabia under him (Khaybar, Mecca, Tabuk, tribal submissions), but this was also defended as defence of the community, so contested.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Under him Medina's rule spread to Mecca, Khaybar and, during the Tabuk expedition, to Ayla, Jarba and Adhruh, which paid him poll tax, while Duma's ruler was seized (Ibn Ishaq, pp. 515, 549-551, 607). Several campaigns answered attacks or treaty breaches, so low.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "personal-loyalty-rule": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Watt (Muhammad at Medina, pp. 230-234) describes pledges of war and of obedience made to him personally, and his demand that weak tribes seeking alliance promise to obey him; his authority also rested on prophethood, so low.",
+      "sources": [
+        "s14"
+      ]
     },
     "bound-labor": {
       "value": null,
@@ -854,10 +1191,12 @@
       "sources": []
     },
     "work-for-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Distributing alms at the Farewell Pilgrimage, he told two robust men there was no share in it 'for a rich man or for one who is strong and able to earn' (Abu Dawud 1633).",
+      "sources": [
+        "s13"
+      ]
     },
     "class-collaboration": {
       "value": null,
@@ -886,19 +1225,67 @@
     "distinct-gender-roles": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Quran 4:34 says men are in charge of women with maintenance duties; 4:11 and 2:282 give different shares and testimony weights. The Farewell Sermon gives husbands and wives distinct rights and duties.",
+      "rationale": "Quran 4:34 says men are in charge of women and must maintain them, and 4:11 and 2:282 give women different inheritance shares and testimony weight; the Farewell Sermon sets out separate rights and duties of husbands and wives (Ibn Ishaq, p. 651).",
       "sources": [
         "s1",
-        "s3"
+        "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quran 4:34 says men are in charge of women with maintenance duties; 4:11 and 2:282 give different shares and testimony weights. The Farewell Sermon gives husbands and wives distinct rights and duties.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quran 4:34 says men are in charge of women and must maintain them, and 4:11 and 2:282 give women different inheritance shares and testimony weight; the Farewell Sermon sets out separate rights and duties of husbands and wives (Ibn Ishaq, p. 651).",
+          "sources": [
+            "s1",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "ban-interest": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Quran 2:275: \"Allah has permitted trade and forbidden interest\"; 2:278-279 demand giving up outstanding interest. In the Farewell Sermon (Sahih Muslim 15:159) he abolished pre-Islamic usury, starting with that owed to his uncle al-Abbas.",
+      "rationale": "Quran 2:275 says God has permitted trade and forbidden interest, and in the Farewell Sermon he declared 'all usury is abolished', starting with that owed to his uncle al-'Abbas (Ibn Ishaq, p. 651).",
       "sources": [
         "s1",
-        "s3"
+        "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Quran 2:275: \"Allah has permitted trade and forbidden interest\"; 2:278-279 demand giving up outstanding interest. In the Farewell Sermon (Sahih Muslim 15:159) he abolished pre-Islamic usury, starting with that owed to his uncle al-Abbas.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Quran 2:275 says God has permitted trade and forbidden interest, and in the Farewell Sermon he declared 'all usury is abolished', starting with that owed to his uncle al-'Abbas (Ibn Ishaq, p. 651).",
+          "sources": [
+            "s1",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "racial-segregation-law": {
@@ -982,10 +1369,34 @@
     "equal-moral-worth": {
       "value": 1,
       "confidence": "low",
-      "rationale": "Quran 49:13 says the most noble before God is the most righteous, and the Farewell Sermon reports equal rights of spouses; law nonetheless differed by sex, status and faith, so low.",
+      "rationale": "Quran 49:13 says the noblest before God is the most righteous, and the Farewell Sermon says every Muslim is a Muslim's brother (Ibn Ishaq, p. 651); law still differed by sex, faith and free or slave status, so low.",
       "sources": [
         "s1",
-        "s3"
+        "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Quran 49:13 says the most noble before God is the most righteous, and the Farewell Sermon reports equal rights of spouses; law nonetheless differed by sex, status and faith, so low.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Quran 49:13 says the noblest before God is the most righteous, and the Farewell Sermon says every Muslim is a Muslim's brother (Ibn Ishaq, p. 651); law still differed by sex, faith and free or slave status, so low.",
+          "sources": [
+            "s1",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1003,17 +1414,41 @@
     "uniform-civil-code": {
       "value": -1,
       "confidence": "low",
-      "rationale": "Constitution of Medina lets the Jewish tribes keep their own religion and bear their own expenses; Quran 5:42-43 lets him judge between them or decline. Law was partly separate by community.",
+      "rationale": "His covenant let the Jewish clans keep their religion ('the Jews have their religion and the Muslims have theirs') and bear their own expenses, and kept each clan's custom on blood-money (Ibn Ishaq, pp. 232-233); law was partly separate by community.",
       "sources": [
-        "s2",
-        "s1"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Constitution of Medina lets the Jewish tribes keep their own religion and bear their own expenses; Quran 5:42-43 lets him judge between them or decline. Law was partly separate by community.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "His covenant let the Jewish clans keep their religion ('the Jews have their religion and the Muslims have theirs') and bear their own expenses, and kept each clan's custom on blood-money (Ibn Ishaq, pp. 232-233); law was partly separate by community.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "restrict-conversion": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His order to kill the apostate 'Abdullah b. Sa'd (Ibn Ishaq, p. 550) bears on leaving Islam only, while conversion into Islam was sought, so low.",
+      "sources": [
+        "s12"
+      ]
     },
     "ban-cattle-slaughter": {
       "value": -2,
@@ -1053,20 +1488,64 @@
     "population-transfer": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "Wikipedia records that he expelled the Banu Qaynuqa and the Banu Nadir from Medina after they were judged to have broken the covenant (some historians date the first after his death); Bukhari/Muslim report him saying he would expel Jews and Christians from the Arabian Peninsula (Muslim 4594 in this edition).",
+      "rationale": "He exiled the Banu al-Nadir after they broke their treaty and later exiled the Jews of Medina, Banu Qaynuqa among them (Bukhari 4028).",
       "sources": [
-        "s6",
-        "s7",
-        "s5"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Wikipedia records that he expelled the Banu Qaynuqa and the Banu Nadir from Medina after they were judged to have broken the covenant (some historians date the first after his death); Bukhari/Muslim report him saying he would expel Jews and Christians from the Arabian Peninsula (Muslim 4594 in this edition).",
+          "sources": [
+            "s6",
+            "s7",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He exiled the Banu al-Nadir after they broke their treaty and later exiled the Jews of Medina, Banu Qaynuqa among them (Bukhari 4028).",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "initiating-force-wrong": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "Wikipedia's account records that he launched raids on Meccan caravans from Medina and later marched on Mecca; Quran 2:190 forbids transgression, so the record points both ways but includes initiating force.",
+      "rationale": "Watt (Muhammad at Medina, p. 231) records that the first expeditions from Medina were offensive raids meant to ambush Meccan caravans, led by Muhammad or men he appointed.",
       "sources": [
-        "s6",
-        "s1"
+        "s14"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Wikipedia's account records that he launched raids on Meccan caravans from Medina and later marched on Mecca; Quran 2:190 forbids transgression, so the record points both ways but includes initiating force.",
+          "sources": [
+            "s6",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Watt (Muhammad at Medina, p. 231) records that the first expeditions from Medina were offensive raids meant to ambush Meccan caravans, led by Muhammad or men he appointed.",
+          "sources": [
+            "s14"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "competition-drives-progress": {
@@ -1088,10 +1567,12 @@
       "sources": []
     },
     "separated-powers": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He came to combine judging disputes, command of the expeditions and the fifth of the spoils, though in his first years clan chiefs still limited his authority (Watt, Muhammad at Medina, pp. 228-232), so low.",
+      "sources": [
+        "s14"
+      ]
     },
     "vanguard-party": {
       "value": null,
@@ -1144,10 +1625,12 @@
       "sources": []
     },
     "price-controls-essentials": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "When prices shot up and people asked him to fix them, he refused: God fixes prices, and he wished no one to have a claim against him for an injustice in property (Abu Dawud 3451).",
+      "sources": [
+        "s13"
+      ]
     },
     "party-controls-media": {
       "value": null,
@@ -1188,9 +1671,31 @@
     "head-commands-forces": {
       "value": 1,
       "confidence": "low",
-      "rationale": "The record shows him commanding the Medinan forces and appointing commanders and officials; there was no legislature.",
+      "rationale": "Watt (Muhammad at Medina, pp. 231-232) records that every expedition was led by Muhammad or an Emigrant he appointed, and that a fifth of all spoils went to him as head of the umma. There was no legislature to compare with, so low.",
       "sources": [
-        "s6"
+        "s14"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The record shows him commanding the Medinan forces and appointing commanders and officials; there was no legislature.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Watt (Muhammad at Medina, pp. 231-232) records that every expedition was led by Muhammad or an Emigrant he appointed, and that a fifth of all spoils went to him as head of the umma. There was no legislature to compare with, so low.",
+          "sources": [
+            "s14"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "church-by-bishops": {
@@ -1273,11 +1778,33 @@
     },
     "death-penalty": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Quran 5:33 prescribes killing or crucifixion for those who wage war against Allah and His Messenger and spread corruption; 2:178 and Constitution of Medina clause on intentional murder prescribe retaliation by death unless the heir accepts blood money.",
+      "confidence": "medium",
+      "rationale": "He ordered a married man who confessed to adultery stoned to death (Bukhari 6815) and had the men of 'Ukl who killed his herdsman put to death (Bukhari 6802).",
       "sources": [
-        "s1",
-        "s2"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Quran 5:33 prescribes killing or crucifixion for those who wage war against Allah and His Messenger and spread corruption; 2:178 and Constitution of Medina clause on intentional murder prescribe retaliation by death unless the heir accepts blood money.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He ordered a married man who confessed to adultery stoned to death (Bukhari 6815) and had the men of 'Ukl who killed his herdsman put to death (Bukhari 6802).",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "sex-ed-in-schools": {
@@ -1398,10 +1925,32 @@
     },
     "collective-defense": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Constitution of Medina: the signatories \"shall have each other's help in the event of any force invading Yathrib\" and if anyone fights the people of the code their mutual help applies.",
+      "confidence": "medium",
+      "rationale": "His covenant bound its parties to 'help one another against any attack on Yathrib' and each to help the other 'against anyone who attacks the people of this document' (Ibn Ishaq, p. 233).",
       "sources": [
-        "s2"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Constitution of Medina: the signatories \"shall have each other's help in the event of any force invading Yathrib\" and if anyone fights the people of the code their mutual help applies.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "His covenant bound its parties to 'help one another against any attack on Yathrib' and each to help the other 'against anyone who attacks the people of this document' (Ibn Ishaq, p. 233).",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "annexed-territory-occupation": {
@@ -1429,10 +1978,12 @@
       "sources": []
     },
     "region-keeps-system": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His covenant let each Medinan clan keep paying blood-money 'according to their present custom' and the Jewish clans keep their religion (Ibn Ishaq, pp. 232-233), and Ayla kept its ships and roads under his protection for poll tax (p. 607); autonomy beyond that is not recorded, so low.",
+      "sources": [
+        "s12"
+      ]
     },
     "sacred-ruler": {
       "value": -2,
@@ -1450,10 +2001,12 @@
       "sources": []
     },
     "character-from-environment": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He said every child is born with the true faith and its parents make it Jewish, Christian or Magian (Bukhari 1385): an innate nature that upbringing can change, so low.",
+      "sources": [
+        "s4"
+      ]
     },
     "sovereign-above-law": {
       "value": null,
@@ -1514,18 +2067,42 @@
     },
     "apostasy-punishable": {
       "value": 1,
-      "confidence": "low",
-      "rationale": "Contested: Bukhari 6922 reports him saying \"Whoever changed his Islamic religion, then kill him\", while Quran 2:256 says there is no compulsion in religion and prescribes no worldly penalty for apostasy.",
+      "confidence": "medium",
+      "rationale": "At the taking of Mecca he ordered 'Abdullah b. Sa'd killed because he had been a Muslim and apostatized, and granted him immunity only reluctantly when 'Uthman pleaded for him (Ibn Ishaq, p. 550).",
       "sources": [
-        "s4",
-        "s1"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Contested: Bukhari 6922 reports him saying \"Whoever changed his Islamic religion, then kill him\", while Quran 2:256 says there is no compulsion in religion and prescribes no worldly penalty for apostasy.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "At the taking of Mecca he ordered 'Abdullah b. Sa'd killed because he had been a Muslim and apostatized, and granted him immunity only reluctantly when 'Uthman pleaded for him (Ibn Ishaq, p. 550).",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "women-must-cover": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Quran 24:31 tells believing women to draw their head-coverings over their chests and 33:59 tells them to draw their outer garments over themselves; how much of the body is meant is disputed, so low.",
+      "sources": [
+        "s1"
+      ]
     },
     "common-currency": {
       "value": null,
@@ -1992,11 +2569,35 @@
     "minority-conspiracy": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Contested: the Constitution treats the Jewish tribes as allies, while Quran 5:82 and the accounts of Banu Nadir and Banu Qurayza describe some Jewish tribes as covenant-breakers.",
+      "rationale": "His covenant took the Jewish clans in as allies, 'one community with the believers' (Ibn Ishaq, p. 233), yet he later fought and expelled particular Jewish tribes for breaking their treaty (Bukhari 4028); his record points both ways.",
       "sources": [
-        "s2",
-        "s1",
-        "s6"
+        "s12",
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Contested: the Constitution treats the Jewish tribes as allies, while Quran 5:82 and the accounts of Banu Nadir and Banu Qurayza describe some Jewish tribes as covenant-breakers.",
+          "sources": [
+            "s2",
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His covenant took the Jewish clans in as allies, 'one community with the believers' (Ibn Ishaq, p. 233), yet he later fought and expelled particular Jewish tribes for breaking their treaty (Bukhari 4028); his record points both ways.",
+          "sources": [
+            "s12",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "abolish-legal-marriage": {
@@ -2034,9 +2635,31 @@
     "religious-nation": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Contested: the Constitution makes the Muslim believers one ummah distinct from others, yet counts Jewish tribes as \"one community with the believers\", each keeping its own religion.",
+      "rationale": "His covenant made the believers one umma 'to the exclusion of all men', yet counted the Jews of B. 'Auf 'one community with the believers', each keeping its religion (Ibn Ishaq, pp. 232-233).",
       "sources": [
-        "s2"
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Contested: the Constitution makes the Muslim believers one ummah distinct from others, yet counts Jewish tribes as \"one community with the believers\", each keeping its own religion.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His covenant made the believers one umma 'to the exclusion of all men', yet counted the Jews of B. 'Auf 'one community with the believers', each keeping its religion (Ibn Ishaq, pp. 232-233).",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "deference-to-leading-power": {
@@ -2146,19 +2769,67 @@
     "suppress-opposition": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Contested: Quran 9:73 orders striving against hypocrites and 9:107 describes a rival mosque, yet the Medina record shows he left known hypocrites such as Abdullah ibn Ubayy unpunished, and the Mecca amnesty spared most opponents.",
+      "rationale": "Watt (Muhammad at Medina, pp. 228-229) records that he could not act directly against his Medinan opponent Ibn Ubayy, who was left unpunished, while at Mecca he ordered a few opponents killed even if found under the curtains of the Ka'ba (Ibn Ishaq, p. 550); the record points both ways.",
       "sources": [
-        "s1",
-        "s8"
+        "s14",
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Contested: Quran 9:73 orders striving against hypocrites and 9:107 describes a rival mosque, yet the Medina record shows he left known hypocrites such as Abdullah ibn Ubayy unpunished, and the Mecca amnesty spared most opponents.",
+          "sources": [
+            "s1",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Watt (Muhammad at Medina, pp. 228-229) records that he could not act directly against his Medinan opponent Ibn Ubayy, who was left unpunished, while at Mecca he ordered a few opponents killed even if found under the curtains of the Ka'ba (Ibn Ishaq, p. 550); the record points both ways.",
+          "sources": [
+            "s14",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "punish-blasphemy": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Contested: Quran 6:108 tells believers not to revile what others invoke, but 9:12 threatens treaty-breakers who defame the religion, and the Mecca account records some who insulted him being excluded from the amnesty.",
+      "rationale": "He had Ka'b ibn al-Ashraf killed for having 'hurt Allah and His Apostle' (Bukhari 4037) and ordered Ibn Khatal's singing-girls, who sang satires about him, killed (Ibn Ishaq, p. 551), yet his covenant let the Jewish clans keep their religion (p. 233): insult punished, other scriptural religions tolerated.",
       "sources": [
-        "s1",
-        "s8"
+        "s9",
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Contested: Quran 6:108 tells believers not to revile what others invoke, but 9:12 threatens treaty-breakers who defame the religion, and the Mecca account records some who insulted him being excluded from the amnesty.",
+          "sources": [
+            "s1",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He had Ka'b ibn al-Ashraf killed for having 'hurt Allah and His Apostle' (Bukhari 4037) and ordered Ibn Khatal's singing-girls, who sang satires about him, killed (Ibn Ishaq, p. 551), yet his covenant let the Jewish clans keep their religion (p. 233): insult punished, other scriptural religions tolerated.",
+          "sources": [
+            "s9",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "colonies-serve-metropole": {
@@ -2203,10 +2874,12 @@
       "sources": []
     },
     "assisted-dying": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He told of a man who, impatient with the pain of a wound, cut his hand until he died, and of God forbidding him Paradise for hastening his death (Bukhari 3463).",
+      "sources": [
+        "s4"
+      ]
     },
     "left-right-obsolete": {
       "value": null,
@@ -2254,11 +2927,33 @@
     },
     "abolish-armed-forces": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "He maintained an army in Medina and Quran 8:60 tells believers to prepare all the force they can.",
+      "confidence": "medium",
+      "rationale": "Watt (Muhammad at Medina, pp. 231-232 and the list of expeditions) records the forces he raised and led or sent out from Medina, from the first raids and Badr onward.",
       "sources": [
-        "s1",
-        "s6"
+        "s14"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He maintained an army in Medina and Quran 8:60 tells believers to prepare all the force they can.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Watt (Muhammad at Medina, pp. 231-232 and the list of expeditions) records the forces he raised and led or sent out from Medina, from the first raids and Badr onward.",
+          "sources": [
+            "s14"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "rich-first": {
@@ -2430,10 +3125,34 @@
     "shared-marital-authority": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Quran 4:34 says men are in charge of women, and 2:228 says men have a degree over them, alongside similar rights; the Farewell Sermon assigns the husband authority over household access.",
+      "rationale": "Quran 4:34 says men are in charge of women and 2:228 gives men a degree over them; in the Farewell Sermon he allowed husbands to confine and beat, 'but not with severity', wives guilty of open unseemliness (Ibn Ishaq, p. 651).",
       "sources": [
         "s1",
-        "s3"
+        "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Quran 4:34 says men are in charge of women, and 2:228 says men have a degree over them, alongside similar rights; the Farewell Sermon assigns the husband authority over household access.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Quran 4:34 says men are in charge of women and 2:228 gives men a degree over them; in the Farewell Sermon he allowed husbands to confine and beat, 'but not with severity', wives guilty of open unseemliness (Ibn Ishaq, p. 651).",
+          "sources": [
+            "s1",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "foreign-residents-local-vote": {
@@ -2518,10 +3237,12 @@
       "sources": []
     },
     "politics-spiritual-struggle": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Quran 4:76 says believers fight in the cause of God and unbelievers in the cause of false gods, and 58:19-22 sets the party of Satan against the party of God.",
+      "sources": [
+        "s1"
+      ]
     },
     "homeland-cultural-centre": {
       "value": null,
@@ -2628,10 +3349,32 @@
     "spiritual-nature": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Quran 15:29 speaks of God breathing spirit into humans, and 2:201 asks for good in this world and the next; the Constitution joins worship and communal governance.",
+      "rationale": "Quran 15:29 speaks of God breathing His spirit into the first human, and 2:201 asks for good in this world and in the Hereafter.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quran 15:29 speaks of God breathing spirit into humans, and 2:201 asks for good in this world and the next; the Constitution joins worship and communal governance.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quran 15:29 speaks of God breathing His spirit into the first human, and 2:201 asks for good in this world and in the Hereafter.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "regional-powers-revocable": {
@@ -2659,18 +3402,44 @@
       "sources": []
     },
     "racial-pride": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He said God had removed the pre-Islamic pride and boasting in ancestors and told people to stop boasting of their forefathers, since all are sons of Adam (Abu Dawud 5116).",
+      "sources": [
+        "s13"
+      ]
     },
     "defensive-wars-only": {
-      "value": 0,
-      "confidence": "low",
-      "rationale": "Contested: Quran 2:190 limits fighting to those who fight you and 22:39 permits it to the wronged, while 9:29 and the campaigns against Khaybar, Mecca and Tabuk went beyond immediate defence.",
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His first expeditions were caravan raids rather than defence (Watt, Muhammad at Medina, p. 231), and he later besieged and took Khaybar and its property (Ibn Ishaq, p. 515).",
       "sources": [
-        "s1",
-        "s6"
+        "s14",
+        "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Contested: Quran 2:190 limits fighting to those who fight you and 22:39 permits it to the wronged, while 9:29 and the campaigns against Khaybar, Mecca and Tabuk went beyond immediate defence.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His first expeditions were caravan raids rather than defence (Watt, Muhammad at Medina, p. 231), and he later besieged and took Khaybar and its property (Ibn Ishaq, p. 515).",
+          "sources": [
+            "s14",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "language-defines-nation": {
@@ -2919,10 +3688,32 @@
     },
     "premarital-sex": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "Quran 24:2 prescribes a hundred lashes for unmarried women and men guilty of sexual intercourse, and 17:32 says not to approach unlawful sexual intercourse.",
+      "confidence": "medium",
+      "rationale": "He ordered unmarried people guilty of illicit intercourse flogged and exiled for a year (Bukhari 6831), and the Quran prescribes a hundred lashes for unmarried women and men alike.",
       "sources": [
-        "s1"
+        "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Quran 24:2 prescribes a hundred lashes for unmarried women and men guilty of sexual intercourse, and 17:32 says not to approach unlawful sexual intercourse.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He ordered unmarried people guilty of illicit intercourse flogged and exiled for a year (Bukhari 6831), and the Quran prescribes a hundred lashes for unmarried women and men alike.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        }
       ]
     },
     "internet-shutdowns": {
@@ -2938,10 +3729,12 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Told that the Persians had crowned Khosrau's daughter, he said 'Such people as ruled by a lady will never be successful' (Bukhari 4425), rejecting women's equal right to hold the highest office.",
+      "sources": [
+        "s4"
+      ]
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3026,10 +3819,13 @@
       "sources": []
     },
     "simple-living": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He told Ibn 'Umar to 'be in this world as if you were a stranger or a traveler' (Bukhari 6416), while Quran 7:32 asks who has forbidden the adornment and good things God brought forth, so low.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
     },
     "restrict-indigenous-settlement": {
       "value": null,
@@ -3038,10 +3834,12 @@
       "sources": []
     },
     "equal-conscription": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "When 'A'isha asked to take part in jihad, he told her 'Your Jihad is the performance of Hajj' (Bukhari 2875): the duty to fight fell on men.",
+      "sources": [
+        "s4"
+      ]
     },
     "homeland-spiritual-bond": {
       "value": null,
@@ -3086,10 +3884,12 @@
       "sources": []
     },
     "targeted-social-spending": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Quran 9:60 limits zakat to listed categories, first the poor and the needy, rather than paying it to everyone.",
+      "sources": [
+        "s1"
+      ]
     },
     "bypass-parties-groups": {
       "value": null,
@@ -3116,10 +3916,12 @@
       "sources": []
     },
     "wife-divorce-without-consent": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "When the wife of Thabit b. Qays asked to leave him without blaming his character, he had her return the garden given as her dower and told Thabit to divorce her (Bukhari 5273).",
+      "sources": [
+        "s9"
+      ]
     },
     "national-resource-control": {
       "value": null,
@@ -3188,9 +3990,693 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "He disapproved of the killing of a woman found dead after a raid, condemning the killing of women and children (Bukhari 3014), yet said of night raids that might hit them 'they are from them' (Bukhari 3012), so low.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "destroy-worshipped-objects": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "On entering Mecca at its conquest he struck the 360 idols around the Ka'ba with a stick, saying 'Truth has come and Falsehood will neither start nor reappear' (Bukhari 4287).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "religious-offensive-war": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "On the Tabuk expedition he brought Christian Ayla and the towns of Jarba and Adhruh under his protection in return for poll tax, and sent Khalid to seize the Christian ruler of Duma (Ibn Ishaq, p. 607).",
+      "sources": [
+        "s12"
+      ]
+    },
+    "human-decline-since-golden-age": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Anas reported him saying that no time will come but the time following it will be worse (Bukhari 7068); the decline runs from his own age, not an ancient golden age, so low.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": -1,
+      "confidence": "low",
+      "rationale": "Quran 49:13 says peoples and tribes were made to know one another and the noblest is the most righteous, though 3:110 calls the believers the best community raised for mankind, so low.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-supports-good-ways-of-life": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As ruler he enforced religious morals by penalty, beating drunkards and flogging fornicators (Bukhari 6773, 6831).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He slaughtered two rams with his own hands as sacrifices (Bukhari 5558).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "avoid-permanent-military-alliances": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His covenant at Medina was a standing defensive alliance binding Muslims and Jewish clans to help one another against any attack (Ibn Ishaq, p. 233).",
+      "sources": [
+        "s12"
+      ]
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Asked twice to fix prices, he declined, saying he would pray instead and that it is God who makes prices low and high (Abu Dawud 3450).",
+      "sources": [
+        "s13"
+      ]
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He was married to nine wives at once (Bukhari 5068).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Of future rulers who would not follow his guidance, he said to listen to the ruler and obey 'even if your back is flogged and your wealth is snatched' (Muslim 4785 in this edition).",
+      "sources": [
+        "s5"
+      ]
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He paid the man who cupped him his wages, and Ibn 'Abbas adds that he would not have paid them had it been disliked (Bukhari 2279).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "When he conquered Khaybar its land became 'the property of Allah, His Apostle, and the Muslims', and the Jews stayed on it only as sharecroppers (Bukhari 2338).",
+      "sources": [
+        "s9"
+      ]
+    },
+    "torture-always-illegal": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "At Khaybar he ordered al-Zubayr to 'torture him until you extract what he has' when Kinana b. al-Rabi' would not reveal the rest of a treasure (Ibn Ishaq, p. 515).",
+      "sources": [
+        "s12"
+      ]
+    },
+    "ban-spanking": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He said to command children to pray at seven and to beat them for it at ten (Abu Dawud 495).",
+      "sources": [
+        "s13"
+      ]
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "Quran treated as his proclaimed words; hadith (Bukhari, Muslim) are later reports and capped at medium or low. sunnah.com was unreachable (Cloudflare challenge), so hadith text came from a GitHub-hosted mirror. Several verses and reports point in different directions on apostasy, blasphemy and war; those are answered 0 or low. Later jurists' rulings are not used.",
+  "notes": "The Quran is treated as his proclaimed words; hadith (Bukhari, Muslim, Abu Dawud) and Ibn Ishaq's biography are later reports (tier 4) and capped at medium. sunnah.com was unreachable (Cloudflare challenge), so hadith text comes from the fawazahmed0 hadith-api edition; Muslim numbers are that edition's. Later pass 2026-11-09 (claude-opus-5-5), bringing the audit to rules 5: Wikipedia sources (s2, s3, s6-s8) replaced by the texts they cite: the Covenant of Medina and the Farewell Sermon from Ibn Ishaq (Guillaume trans.), the record from Bukhari and from Watt, Muhammad at Medina (1956). Record over words: where the reports record his acts (executions, the assassination of Ka'b ibn al-Ashraf, the expulsions, zakat collection, punishments for drinking and fornication, the order to kill an apostate at Mecca) the answer rests on them; Quranic verses answer only where no act is recorded. Themes searched in this pass: government (his powers in Medina, pledges, judging), world (Tabuk, Ayla treaty, Khaybar, alliances), economy (price fixing, wages, zakat, land), society (women in office and war, divorce, polygyny, children), and the candidate statements. Several verses and reports point in different directions on apostasy, blasphemy and war; those are answered 0 or low. Later jurists' rulings are not used. Modern institutions (parliaments, central banks, the UN, elections) have no counterpart in his record and stay null.",
   "reviews": [
     {
       "kind": "inference",
@@ -3198,5 +4684,16 @@
       "reviewedAt": "2026-10-30",
       "nulled": 4
     }
-  ]
+  ],
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-11-09"
+    }
+  ],
+  "rules": 5
 }
