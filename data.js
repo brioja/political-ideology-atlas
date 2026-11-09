@@ -94,9 +94,9 @@ const QUESTIONS = [
  {
   "id": "surveillance-ok",
   "theme": "liberty",
-  "text": "Government surveillance is acceptable if it prevents terrorism.",
+  "text": "Government surveillance to prevent terrorism is acceptable.",
   "agree": "It is acceptable for the government to monitor people when that helps prevent terrorism.",
-  "disagree": "Government surveillance is not acceptable even if it prevents terrorism.",
+  "disagree": "Government surveillance is not acceptable, even to prevent terrorism.",
   "note": "About security versus civil liberties.",
   "icon": "📹"
  },
@@ -1345,7 +1345,7 @@ const QUESTIONS = [
  {
   "id": "consent-of-governed",
   "theme": "government",
-  "text": "Political authority is legitimate only if it rests on the consent of the governed.",
+  "text": "Political authority needs the consent of the governed to be legitimate.",
   "agree": "Rulers have a right to rule only because the people they rule have agreed to it.",
   "disagree": "Consent of the governed is not the only basis of legitimate political authority.",
   "note": "About where a government gets its right to rule.",
@@ -1588,9 +1588,9 @@ const QUESTIONS = [
  {
   "id": "censor-art-for-virtue",
   "theme": "society",
-  "text": "Art, poetry and stories should be censored if they harm citizens' moral character.",
+  "text": "Art should be censored to protect citizens' moral character.",
   "agree": "Art, poetry and stories that harm people's moral character should be censored.",
-  "disagree": "Art, poetry and stories should not be censored if they harm citizens' moral character.",
+  "disagree": "Art should not be censored for its effect on people's moral character.",
   "note": "About whether the state should police culture for moral effect.",
   "icon": "🎭"
  },
@@ -3496,9 +3496,9 @@ const QUESTIONS = [
  {
   "id": "socialism-needs-workers-power",
   "theme": "economy",
-  "text": "A society cannot be called socialist unless the working class itself holds real political power.",
+  "text": "Socialism requires the working class itself to hold real political power.",
   "agree": "Without workers' own political power, state ownership is not socialism.",
-  "disagree": "A society can be called socialist even if the working class itself does not hold real political power.",
+  "disagree": "A society can be socialist without the working class itself holding political power.",
   "note": "About what counts as socialism.",
   "icon": "🏭"
  },
@@ -3937,7 +3937,7 @@ const QUESTIONS = [
  {
   "id": "environment-over-liberty",
   "theme": "ecology",
-  "text": "Protecting the environment should take priority over individual liberty when the two conflict.",
+  "text": "Protecting the environment should take priority over individual liberty.",
   "agree": "When people's freedom to do something harms the environment, the law should limit that freedom.",
   "disagree": "When people's freedom to do something harms the environment, protecting the environment should not take priority over that freedom.",
   "note": "About everyday freedoms, such as how people use their land, run their businesses, travel and what they buy, when these harm the environment.",
@@ -3991,9 +3991,9 @@ const QUESTIONS = [
  {
   "id": "democracy-is-procedure",
   "theme": "government",
-  "text": "A government is democratic if its rulers are chosen and removed in free and fair competitive elections, whatever policies it pursues.",
+  "text": "Fair elections are all a government needs to be democratic, whatever policies it pursues.",
   "agree": "Democracy is a method for choosing and removing rulers, and fair elections are enough to make a government democratic.",
-  "disagree": "A government is not democratic merely because its rulers are chosen and removed in free and fair competitive elections, whatever policies it pursues.",
+  "disagree": "A government needs more than fair elections to be democratic.",
   "note": "About what makes a government democratic.",
   "icon": "🗳️"
  },
