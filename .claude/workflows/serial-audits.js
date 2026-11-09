@@ -92,10 +92,10 @@ const SIGNAL_PROMPT = `Working directory: ${ROOT}.
 1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
    statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js img/
-   audits/lines.json audits/statements/texts.json (those that changed), commit as "Statements: promote/demote by signal
+   audits/lines.json audits/statements/texts.json audits/share-slots.json (those that changed; a promotion appends share slots), commit as "Statements: promote/demote by signal
    on the real lines" listing the ids in the message (no Co-Authored-By or other attribution line), then \`git fetch origin\`,
    \`git rebase origin/main\` and \`git push origin HEAD:main\`; if the rebase stops on a generated file, \`git rebase --skip\`,
-   rerun the signal script, build and tests, and commit again. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json\` and say why.
+   rerun the signal script, build and tests, and commit again. If tests fail, run \`git checkout statements.json data.js people.js audits/lines.json audits/share-slots.json\` and say why.
 Touch no other file. Reply in one line: promoted ids, demoted ids, deployed or not.`
 
 // Before a people run: the next people in triage order get their public-domain books into the local corpora, and
