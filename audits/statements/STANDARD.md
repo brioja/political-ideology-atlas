@@ -35,9 +35,9 @@ A statement is **asked in the test** only when it meets all four:
      tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
      `node scripts/statements-check.js --wording` marks wording at two levels: errors ("can", "may",
      "rather", "so", "because", "as well as", "not only") are almost always a defect; warnings ("and",
-     "or", "like", "by", "through", "in", "not", "if", "unless") are often fine but worth a look ("in economic life"
+     "or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "provided", "as long as") are often fine but worth a look ("in economic life"
      is a vague scope; "in war" is just a place; a "not" statement usually has a positive form that
-     is easier to answer; an "if" or "unless" condition is hard to negate, since a disagree could reject
+     is easier to answer; an "if", "unless" or "when" condition is hard to negate, since a disagree could reject
      the claim or the condition).
    - **No comparison that adds a claim.** "Civilians are legitimate targets, just like its soldiers"
      also asserts that soldiers are; drop the comparison. "X rather than Y" asks two things, so
