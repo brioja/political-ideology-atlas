@@ -1,7 +1,7 @@
 export const meta = {
   name: 'serial-audits',
   description: 'Audit the next pending person or ideology (whichever kind has fewer live on the site; people most likely to pass first, ideologies most viewed first) one at a time, each in a fresh agent, and deploy',
-  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout), {"skip": ["id", ...]} to pass over entries (e.g. people waiting for books)',
+  whenToUse: 'The serial audit loop without a long-running session. Optional args: {"limit": N} audits this run (default 10), {"model": "sonnet"} for the audit agents, {"kind": "people" | "ideologies"} to take only that kind (two runs at once must split the kinds and use separate checkouts), {"root": "<checkout>"} (default the main checkout), {"skip": ["id", ...]} to pass over entries (e.g. people waiting for books), {"pauseMinutes": N} between audits',
   phases: [
     { title: 'Books', detail: 'people runs: fetch public-domain books for the next 3x people, list the rest in ~/work/books-wanted.md, refit triage on books on disk' },
     { title: 'Audit', detail: 'one fresh agent per person or ideology: audit, commit, build, test, push' },
@@ -124,6 +124,12 @@ for (let i = 0; i < LIMIT; i++) {
   if (r.done) { ended = 'no ideologies left'; break }
   reports.push(r.report)
   log(r.report)
+  // {"pauseMinutes": N}: wait between audits to spread usage over the day (Brandon, 2026-11-09: 10 on weekdays).
+  if (opts.pauseMinutes && i < LIMIT - 1) {
+    const ms = opts.pauseMinutes * 60000
+    if (typeof setTimeout === 'function') await new Promise((res) => setTimeout(res, ms))
+    else await agent(`Wait ${opts.pauseMinutes} minutes, then reply "ok". Use the Monitor tool (load it with ToolSearch) with an until-loop that ends once ${opts.pauseMinutes * 60} seconds have passed since you started. Do nothing else.`, { label: `pause-${i + 1}`, phase: 'Audit', model: 'haiku', effort: 'low' })
+  }
 }
 
 if (opts.kind !== 'ideologies') {
