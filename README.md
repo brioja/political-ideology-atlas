@@ -53,9 +53,10 @@ be re-run.
 - `node scripts/build.js` compiles valid audits into `data.js` (`--status` just reports progress).
 - `node scripts/wikipedia.js` refreshes suggested Wikipedia links in the catalog.
 
-To run every pending audit, ask Claude Code to "run the ideology-audits workflow"
-(`.claude/workflows/ideology-audits.js`). It costs roughly 75k tokens per ideology and is safe to
-stop and resume, since finished audits are skipped. Pass `{"limit": 10}` to do a batch.
+To run audits, ask Claude Code to run the serial-audits workflow
+(`.claude/workflows/serial-audits.js`): it audits the next pending person or ideology one at a time,
+each in a fresh agent, and deploys after each (`{"limit": N}` audits per run, default 10). Other
+sessions can audit alongside it as lanes following `audits/PROMPT_LANE.md`.
 
 ## Statements
 
@@ -103,7 +104,7 @@ person's own words and record, and a statement with no reliable evidence is `nul
   the site serves that copy itself, so a visit never contacts Wikimedia. It shows the photo with a
   credit line and falls back to initials when there's no free image. It only looks up people without an image; run it with
   `--refresh` when tagging a release to pick up newer lead images and credits.
-- To run the audits, ask Claude Code to "run the people-audits workflow" (about 75k tokens per person).
+- People are audited by the same serial-audits workflow as ideologies.
 
 ## License
 
