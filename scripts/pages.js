@@ -76,10 +76,21 @@ const personLinks = (list) => `<ul>${list.map((p) => `<li><a href="${personUrl(p
 // result thumbnail from the page's images, and without scripts there would be none (Brandon, 2026-11-08).
 const figure = (x, what) => x.image ? `<figure><img src="/${esc(x.image.url)}" alt="${esc(what)}">
     <figcaption class="small">${x.image.logo ? "Logo" : "Image"}: ${esc(x.image.artist)}, <a href="${esc(x.image.source)}">${esc(x.image.license)}</a>, via Wikimedia Commons</figcaption></figure>` : "";
+// A Creative Commons short name ("CC BY-SA 3.0 de", "CC0") as its deed URL; Commons doesn't always give one.
+function ccUrl(name) {
+  if (name === "CC0") return "https://creativecommons.org/publicdomain/zero/1.0/";
+  const m = /^CC (BY(?:-SA|-ND|-NC|-NC-SA|-NC-ND)?) (\d\.\d)(?: ([a-z]{2}))?$/.exec(name || "");
+  return m ? `https://creativecommons.org/licenses/${m[1].toLowerCase()}/${m[2]}/${m[3] ? m[3] + "/" : ""}` : undefined;
+}
 // schema.org data naming the page's subject and its image (og:image stays the site card, so shared links keep it).
 function structured(url, title, description, subject, x) {
-  const image = x.image ? { "@type": "ImageObject", url: `${SITE}/${x.image.url}`, creditText: x.image.artist,
-    acquireLicensePage: x.image.source } : undefined;
+  // Google's image metadata: creator, license (the license's own URL, else the Commons file page that states it) and
+  // copyrightNotice. An unknown author gets no creator rather than an invented one.
+  const i = x.image, known = i && i.artist && i.artist !== "Unknown author";
+  const image = i ? { "@type": "ImageObject", url: `${SITE}/${i.url}`, creditText: i.artist,
+    ...(known ? { creator: { "@type": "Person", name: i.artist } } : {}),
+    license: i.licenseUrl || ccUrl(i.license) || i.source, acquireLicensePage: i.source,
+    copyrightNotice: i.license === "Public domain" ? "Public domain" : `${known ? `${i.artist}, ` : ""}${i.license}` } : undefined;
   const data = { "@context": "https://schema.org", "@type": "WebPage", url: `${SITE}${url}`, name: title, description,
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: `${SITE}/` },
     about: { ...subject, ...(image ? { image: image.url } : {}), ...(x.wikipedia ? { sameAs: x.wikipedia } : {}) },
