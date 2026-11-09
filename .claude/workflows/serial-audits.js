@@ -75,7 +75,7 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    owner's name: add no Co-Authored-By or other attribution line.
 5. DEPLOY (below) with \`node scripts/build.js\` and \`node test.js\`, committing any changed data.js, people.js,
    img/, audits/lines.json and audits/statements/texts.json as "Rebuild site data".
-Do not touch scripts/candidates.js or any other repo file (scratchpad/ is fine).
+Do not touch scripts/candidate-triage.js, scripts/candidate-filter.js or any other repo file (scratchpad/ is fine).
 
 DEPLOY (another serial run may be pushing to origin main from its own checkout at the same time):
 a. \`git fetch origin\` and \`git rebase origin/main\` (your audit commit never conflicts).

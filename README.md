@@ -69,12 +69,12 @@ audits valid; rewording one needs a new id.
 
 ## People
 
-`audits/people-catalog.json` lists about 2,800 public figures taken from data, not hand-picked:
-people Wikidata lists with a political occupation (including political theorists, philosophers,
-economists and activists), a political office, or a stated political ideology, ranked by English
-Wikipedia views over 12 months (the period moves every two months)
-(`scripts/candidates.js`). Nobody is added or dropped by hand; to change who is in, change the
-criteria in that script. `node scripts/people-report.js` reports the mix of gender, region and
+`audits/people-catalog.json` lists about 3,000 public figures taken from data, not hand-picked:
+everyone above a cutoff of English Wikipedia views over 12 months (the period moves every two
+months; `scripts/candidate-filter.js`, the only filter). Whose views are checked comes from
+Wikidata labels (a political occupation including political theorists, philosophers, economists
+and activists, a political office, or a stated political ideology; `scripts/candidate-triage.js`):
+the labels are triage, not a filter, so someone above the cutoff without one can be added too. `node scripts/people-report.js` reports the mix of gender, region and
 era, and an imbalance is reported rather than corrected by hand. Each gets
 an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
