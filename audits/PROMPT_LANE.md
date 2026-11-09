@@ -1,52 +1,44 @@
-# Second people-audit lane
+# Audit lane
 
-For running people audits from another agent (e.g. Codex) alongside the main lane. The main lane
-works from the most-viewed end of the queue and integrates; this lane works from the other end and
-only writes audit files. Start it with one line:
+For running audits from another session (Codex, or a second Claude session) alongside the
+integrator: the session running the `serial-audits` workflow, which reviews lane files, builds, tests
+and pushes. A lane only writes audit drafts. Start it with one line:
 
 > Follow audits/PROMPT_LANE.md.
 
-## Which people
+Follow the integrator's instructions (which subjects, in what order, how to report) when it sends
+them; they take precedence over this file.
 
-If you were given a list of ids, audit those first (skip any that already have a file in
-`audits/people/`). Then cycle: run
+## Which subjects
 
-    node scripts/pending.js --people --by-views --reverse --limit 1
+Audit the ids the integrator gives you, people or ideologies. With no list, take the next one with
 
-and audit the person it prints. Repeat until told to stop. The least-viewed people come first, so
-many will have a thin political record; the early-exit rule makes those quick.
+    node scripts/next.js --skip <id>,<id>,...   (the ids the integrator and other lanes have taken)
 
-## For each person
+(add `--people` or `--ideologies` if the integrator assigned you a kind) and tell the integrator
+which id you took, so the two sessions never work on the same subject.
 
-1. Read `audits/PROMPT_PEOPLE.md` and follow it exactly, including its early-exit rule. Take name,
-   wikipedia, born and living from the pending output or `audits/people-catalog.json`. Set
-   `auditedAt` to today's date and `auditor` to your full, exact model id
-   including version and variant (e.g. `gpt-6.1-sol`, `claude-haiku-5-5`), not a family name like
-   `gpt-6`, so audits can be revisited by model later.
-2. **Depth:** cover the person's whole career, not only recent speeches. Go theme by theme through
-   the statement themes and look for their best-known positions and controversies in each before
-   finishing. Prefer full texts of their own words (books, speeches, transcripts, laws they
-   signed), downloaded and searched, over summaries.
-3. **Confidence:** `high` only when the person states the position directly; `medium` when it is
-   clearly implied by what they said or did; `low` when ambiguous or contested. Where they have a
-   record on a statement (votes, laws, orders, acts), answer from the record alone and leave their
-   words on it out; a record pointing both ways is 0 at `low`.
-4. **No inference** (AUDIT_RULES.md, section 3): no evidence means null, for living and historical
-   people. Answer only where their own stated position settles the statement, never from party,
-   label or theme. Use their mature position (held longest, set out most fully); a later one wins
-   only if the change was explicit and sustained, and later words never override their record,
-   not even a repudiation (AUDIT_RULES.md, "Over time").
-   Answers must match each
-   statement's actual wording; evidence that fits either answer settles nothing: answer null.
-5. Put downloads and helper scripts in `scratchpad/<lane>-<id>/` (e.g. `scratchpad/codex-<id>/`).
-6. Write only `audits/people/<id>.json`, and only once it is finished: build it in your scratch
-   folder and move it into `audits/people/` as the last step, so the main lane never picks up a
-   half-written file. Run `node scripts/validate.js --people <id>` and fix every
-   error except the uncertainty rule. Never add or strengthen an answer to clear it; failing
-   it is an acceptable outcome. When it fails, search the dividing lines it names first, then accept
-   what the record gives.
-7. Do not edit any other file. Do not build, test, commit or push: the main lane reviews each file,
-   rebuilds and pushes.
+## For each subject
 
-After each person, print one line: id, known answers out of 490, and whether
-the uncertainty rule passed (or the lines it names).
+1. Follow `audits/AUDIT_RULES.md` and `audits/PROMPT.md` (ideology) or `audits/PROMPT_PEOPLE.md`
+   (person) exactly, with `{{id}}`, `{{name}}` and the other fields taken from the next.js output
+   or the catalog. Answer every statement in statements.json, candidates included, and set `rules`
+   to the current version (`CURRENT_RULES` in scripts/validate.js). Research to the end (section 6):
+   no later pass fills the gaps.
+2. If the subject already has an audit (or next.js gives a "reason"), this is a later pass: start
+   from the committed file and follow `audits/AUDIT_RULES.md` section 6 (reviewHistory, `passes`,
+   your model in `auditor`), never rewrite it from scratch. `auditor` is your full model id
+   (e.g. `gpt-6.1-sol`, `claude-opus-5-5`), not a family name.
+3. Sources go in `scratchpad/sources/<id>/`; helper scripts in `scratchpad/<lane>-<id>/`.
+4. Write the audit to `scratchpad/lane-out/<lane>/<id>.json`, never into `audits/`: the integrator's
+   build would pick up a file there before it is reviewed. Validate it there:
+
+       node scripts/validate.js [--people] --dir scratchpad/lane-out/<lane> <id>
+
+   and fix every error except the uncertainty rule. Never add or strengthen an answer to pass it;
+   failing it is an acceptable outcome.
+5. Edit no other file. Do not build, test, commit or push.
+
+After each subject, tell the integrator one line: id, kind, known answers, and whether the
+uncertainty rule passed (or the lines it names). The integrator moves the file into `audits/`
+after review, builds, tests and pushes.

@@ -4,6 +4,7 @@
 //   add --links to also check that every source URL responds
 //   add --people to validate person audits (audits/people) instead of ideologies
 //   add --controls to validate the negative-control audits (audits/controls)
+//   add --dir <folder> to read the audits from that folder instead (a lane's drafts, audits/PROMPT_LANE.md)
 //   add --no-uncertainty to skip the uncertainty rule (whether the audit places them on every
 //   dividing line; it loads the whole model: slow).
 const fs = require("fs");
@@ -14,7 +15,8 @@ const PEOPLE = CONTROLS || process.argv.includes("--people");
 const UNCERTAINTY = !process.argv.includes("--no-uncertainty");
 const PROFILES_DIR = CONTROLS ? lib.CONTROLS_DIR : PEOPLE ? lib.PEOPLE_DIR : lib.PROFILES_DIR;
 const catalog = CONTROLS ? lib.controlsCatalog : PEOPLE ? lib.peopleCatalog : lib.catalog;
-const profilePath = CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
+const DIR = process.argv.includes("--dir") ? process.argv[process.argv.indexOf("--dir") + 1] : null;
+const profilePath = DIR ? (id) => require("path").resolve(DIR, `${id}.json`) : CONTROLS ? lib.controlPath : PEOPLE ? lib.personPath : lib.profilePath;
 
 const KINDS = ["primary", "scholarly", "reference", "program"];
 const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the subject (AUDIT_RULES.md, "Record over words")
@@ -494,8 +496,9 @@ async function checkLinks(sources) {
 async function main() {
   const args = process.argv.slice(2);
   const links = args.includes("--links");
-  let ids = args.filter((x) => !x.startsWith("--"));
-  if (ids.length === 0) ids = fs.existsSync(PROFILES_DIR) ? fs.readdirSync(PROFILES_DIR).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
+  let ids = args.filter((x, i) => !x.startsWith("--") && args[i - 1] !== "--dir");
+  const dir = DIR || PROFILES_DIR;
+  if (ids.length === 0) ids = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)) : [];
 
   const fetchFailed = new Map();
   // Fetch (once, then cached) the whole Wikipedia page the DOES_NOT_INCLUDE_IDEAS check reads.

@@ -11,10 +11,11 @@ agents too. This file adds what matters when running the audit workflows in
 - **One `serial-audits` workflow at a time** (two at once, split by kind in separate checkouts, was tried
   2026-11-06 and dropped: agents wrote into the wrong checkout). Alternate `{"kind": "people"}` and
   `{"kind": "ideologies"}` runs instead.
-- **Parallel runs:** each lane writes only its own audit file. A single integrator merges
-  proposed statements, builds, tests and pushes. A second people lane run from another agent
-  follows [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md); `build.js --people` picks up every file
-  in `audits/people/`, so the integrator checks `git status` for unreviewed lane files first.
+- **Parallel runs:** more sessions (Codex, or other Claude sessions; web search's hourly ceiling is
+  per session) run as lanes following [audits/PROMPT_LANE.md](audits/PROMPT_LANE.md): each writes
+  only its own drafts, in `scratchpad/lane-out/<lane>/`, never into `audits/`. The integrator (the
+  session running `serial-audits`) reviews each draft, moves it into `audits/`, builds, tests and
+  pushes, and tells lanes which subjects to take.
 - **Give each agent its own scratchpad folder** (`scratchpad/<id>/`). Agents sharing one folder
   overwrite each other's helper scripts.
 - **Rate-limited sites go through cached tools:** Wikipedia/Wikidata `node scripts/wiki.js`, YouTube
