@@ -13,7 +13,7 @@ Audit work discussed but not started.
   ideologies' six listed positions, about 59k tokens; it flagged the old Jewish secularism list
   correctly, so the method works, but flagged 45 of 51, many for one minor point). Leads it found,
   each to confirm before acting:
-  - **Borrowed scope, re-audit candidates** (as Jewish secularism was): Stoicism (modern positions
+  - **Coatrack scope, re-audit candidates** (as Jewish secularism was): Stoicism (modern positions
     on ethnicity and religion instead of virtue, nature and reason); Egalitarianism (generic
     democratic positions instead of equal worth or equalising resources).
   - **Inferences shown as stated positions:** older audits mark some deductions from a general value
@@ -32,7 +32,7 @@ Audit work discussed but not started.
     wording fixes; full output in `scratchpad/beliefs-check-all/`, ranked in `summary.json`): 120
     ideologies have at least one flagged position on their current list (79 one, 32 two). Re-audit
     candidates, most flagged first:
-    - **Borrowed scope or deductions across the list:** Soviet anti-Zionism (6 of 6: general Soviet
+    - **Coatrack scope or deductions across the list:** Soviet anti-Zionism (6 of 6: general Soviet
       state features), Budapest School (6 of 6: rejections deduced from anti-nationalism), Valencian
       nationalism (4: the Compromís coalition's wider politics), Right-wing antiglobalism (3: the
       wider right), Alter-globalization (3), Technolibertarianism (3), Indigenismo (3), Blaverism (3),
@@ -44,14 +44,14 @@ Audit work discussed but not started.
     Not checked by a second reader yet (`~/work/codex-beliefs-check.md` is ready for Codex); a single
     reader repeats only about half its flags, so confirm before re-auditing the one- and two-flag
     cases.
-  - **Jewish secularism re-audit (8fe2108) borrows downward:** about a dozen of its answers rest on
+  - **Jewish secularism re-audit (8fe2108) has branch coatracks:** about a dozen of its answers rest on
     the American Society for Humanistic Judaism and JFASD alone (same-sex marriage, abortion,
-    assisted dying, vouchers), which AUDIT_RULES.md now calls borrowing unless other branches,
+    assisted dying, vouchers), which AUDIT_RULES.md now calls a coatrack unless other branches,
     Israeli secularists above all, are shown to share the position. It is off the site already, so
     this matters only if it is deepened again.
 - **Nationalisms not yet re-audited may carry their main party's programme** (2026-10-30). Under rules 3 a
   nationalism's doctrine is its position on the nation; a carrying party's or government's wider programme
-  is borrowing (Valencian nationalism's old answers came from Compromís, Ethiopian nationalism's from Abiy's
+  is a coatrack (Valencian nationalism's old answers came from Compromís, Ethiopian nationalism's from Abiy's
   record). Honest re-audits leave most nationalisms short of the bar, so until all are redone, treatment
   differs by whether one has been re-audited. Re-audit them in turn, or decide another scope with Brandon.
 
@@ -63,7 +63,7 @@ Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited")
   passage of it can answer anything, including parts unrelated to the ideology.
 - **The right source, the wrong passage.** A source that discusses the ideology can still carry an
   answer from a passage where the author speaks for themselves or describes someone else's view (a
-  scholar's own argument, critics' responses), not the ideology's position. Not borrowing (no other
+  scholar's own argument, critics' responses), not the ideology's position. Not a coatrack (no other
   ideology is involved). Animal rights' racial-segregation-law and racial-franchise answers (−2, medium) rest on
   Regan's apartheid premise against contractarianism, which AUDIT_RULES section 3 now says is not a
   position ("a premise is not a position", 2026-11-05): null them on the audit's next pass.
@@ -78,7 +78,7 @@ surroundings discuss the ideology.
 
 Answers in these audits rest on sources the source check filters (`node scripts/validate.js <id>`
 lists them), but the texts look like the ideology's own, missing a defining author, title or alias
-rather than borrowed. Left as they are; look again when the audit gets its next pass, or add
+rather than coatracks. Left as they are; look again when the audit gets its next pass, or add
 `authors` / `titles` / `aliases` with evidence if a defining source supports them.
 - First-wave feminism: Seneca Falls Declaration, Mill's *Subjection of Women*, *History of Woman Suffrage*
 - Asian values: Bangkok Declaration (on site; would leave if cleared)
@@ -95,7 +95,7 @@ rather than borrowed. Left as they are; look again when the audit gets its next 
   Reactionary feminism, United Armenia, Greater Indonesia, Völkisch nationalism (Chamberlain, Class, Lagarde),
   Trans-exclusionary radical feminism (Women's Declaration, Jeffreys submission)
 
-Cleared as borrowing on 2026-11-05 (answers resting only on those sources set to null): Moderate conservatism (SEP on conservatism, Burke; its "moderate reform" alias was descriptive), Arab nationalism
+Cleared as coatracks on 2026-11-05 (answers resting only on those sources set to null): Moderate conservatism (SEP on conservatism, Burke; its "moderate reform" alias was descriptive), Arab nationalism
 (Ba'th texts), Majoritarianism (Locke, Dicey), Elitism (Plato), Isolationism and Non-interventionism
 (US founding texts), Christian communism (Winstanley), Northwest Territorial Imperative (general reports
 on neo-Nazi groups), Ultraconservatism (a general source on conservatism), Postliberalism (Deneen,
