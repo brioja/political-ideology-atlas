@@ -75,7 +75,7 @@ Anarcho-primitivism is a live match, and it doesn't make the test longer for any
 2. Merge candidates that say the same thing, check the wording rule, and add the statement to
    `statements.json` with `"status": "candidate"`.
 3. New audits answer it; an older audit answers it at its next completing pass, and until then a
-   missing answer counts as null. Other answers stay valid. There is no separate backfill.
+   missing answer counts as null. Other answers stay valid.
 4. Once test 2 passes it is promoted automatically: every audit run ends with
    `node scripts/statement-signal.js --apply`, which also demotes active statements that fail it.
 

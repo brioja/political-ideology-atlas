@@ -179,7 +179,7 @@ function validate(id) {
     // doesn't change that); every audit written after it, or dated 2026-11-06 on, is held to it.
     const strict = (a.auditedAt || "") >= "2026-11-06" || !grandfathered().has(id);
     if (a.aliases === undefined && strict) errors.push('"aliases" is required: other names the defining sources use for the ideology ([] for none)');
-    // Evidence for aliases, authors and titles is required from 2026-11-06 on (no backfill).
+    // Evidence for aliases, authors and titles is required from 2026-11-06 on (older audits get it at their next pass).
     // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
     // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
     // position, so the tie check skips it.

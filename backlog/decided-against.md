@@ -23,7 +23,7 @@ explicit decision from the maintainer.
   `equal-moral-worth`, `head-commands-forces`, `end-foreign-alliances`, `abolish-rental-housing`,
   `sex-ed-in-schools`, `encourage-eccentricity`, `central-bank-independence`,
   `economic-self-sufficiency`, `labor-aristocracy`, `democratic-peace`, `religion-illusion`,
-  `left-right-obsolete`). Rewording a text means a new statement and a backfill of every audit; not
+  `left-right-obsolete`). Rewording a text means a new statement that every audit answers again; not
   worth it for these.
 - **Ordering "What it stands for" by how *defining* a position is** (2026-10-29). It stays ordered by
   how unusual each strongly held stated position is among all ideologies: that can be checked against

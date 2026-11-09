@@ -1,13 +1,9 @@
 # New statements
 
-**Low priority** (2026-10-29): every new statement has to be backfilled across every ideology and
-every person audit, for little improvement on the site. Collect candidates here, but don't start a
-batch unless that trade-off changes.
-
-**2026-11-05: that trade-off changed.** Backfill is gone. A new statement enters as a candidate, new
-audits answer it, older audits answer it at their next completing pass (missing counts as null until
-then), and it is promoted automatically once it carries signal on the real lines (test 2 in
-`audits/statements/STANDARD.md`). "Each one costs a backfill" in the entries below no longer applies.
+A new statement enters as a candidate through a statement pass (`audits/PROMPT_STATEMENTS.md`); new
+audits answer it, older audits answer it at their next pass (missing counts as null until then), and it
+is promoted automatically once it carries signal on the real lines (test 2 in
+`audits/statements/STANDARD.md`).
 
 - **Mainstream statements for the unity-across-borders line** (2026-10-31; the line anchored on
   civilizational-union, kin-peoples-union, pool-sovereignty and common-currency). Its core statements
@@ -17,20 +13,19 @@ then), and it is promoted automatically once it carries signal on the real lines
   (BRICS) for a bigger say in the IMF, World Bank and Security Council; closer ties with countries
   sharing a language or history (a commonwealth); and, for US politicians, staying in trade
   agreements with neighbours (USMCA) and paying into the UN and the WHO. Where each lands is decided by
-  the ideologies' answers, so sample ~100 ideologies before a full backfill. The secession line
+  the ideologies' answers, so sample ~100 ideologies first. The secession line
   (right-to-secede, minority-territorial-autonomy, minority-language-support) has the same gap: it is
   the widest bar for many politicians removed on 2026-11-01.
 
 Candidate statements and the plan for choosing them. Statements are the only way to tell apart
-ideologies the test can barely separate, and each one costs a backfill across every audit, so they
-are chosen together in one batch and held to the bar in `audits/statements/STANDARD.md`.
+ideologies the test can barely separate; they are chosen together in one batch and held to the bar in `audits/statements/STANDARD.md`.
 
 - **Confused pairs.** `node scripts/separation.js` lists neighbouring ideologies with fewer than 3
   statements that separate them (2+ notches apart, at least one side firmly held). For each pair, an
   agent reads both audits and proposes a general, sourced, contested statement on their real divide,
   never naming either ideology. Then pick the set that splits the most pairs (an estimated 10-40
-  statements, not one per pair), hold each to the bar in `audits/statements/STANDARD.md`, backfill
-  with the statement-backfill workflow, and promote only those that firmly split their targets. Some
+  statements, not one per pair), hold each to the bar in `audits/statements/STANDARD.md`, and
+  promote only those that firmly split their targets. Some
   pairs are synonyms or subsets instead (Marxism / Classical Marxism, African socialism / Ujamaa):
   those are a catalog decision, not a statement.
 - **From Jewish secularism's audit** (it left the site after an honest re-audit: 59 stated
@@ -61,7 +56,7 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
   while the means of production are held in common"), a bad statement: a communist distinction
   that Centrism, US modern liberalism, Capitalism and others reject only for its second half, yet
   their "What it stands for" shows the whole of it negated (13 lists). The plain statement would
-  carry this position cleanly for dozens of ideologies on both sides; worth a backfill. Once it is
+  carry this position cleanly for dozens of ideologies on both sides. Once it is
   active, consider retiring `personal-possessions-private`.
 
 
@@ -81,8 +76,7 @@ are chosen together in one batch and held to the bar in `audits/statements/STAND
 
 Each re-audit lists defining positions no statement captures (`missingStatements` in its audit file).
 Several ideologies that left the site fell just short of the bar for want of these (Stoicism 1.02x,
-Egalitarianism 1.12x, Right-wing antiglobalism 1.31x). Not added: each would need a backfill across
-every ideology and person. Candidates worth weighing first, because more than one ideology would answer
+Egalitarianism 1.12x, Right-wing antiglobalism 1.31x). Candidates worth weighing first, because more than one ideology would answer
 them: citizens' political influence independent of money (egalitarianism; likely many), tax havens
 dismantled (alter-globalization), migration governed by national law only and no international court
 jurisdiction over citizens (right-wing antiglobalism, national conservatives), encryption back doors
@@ -104,8 +98,8 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   should be abolished and money left to the market." Jacksonian democracy holds the first half (no
   national bank) and rejects the second (gold and silver money, an independent treasury), so it
   can't answer cleanly, and the disagree side fails test 3/4. Fix: a single-claim candidate
-  ("There should be no central bank") answered by every audit, then retire the bundled one. It
-  rides along with the new-ideology statements' backfill or deepen.
+  ("There should be no central bank") answered by every audit, then retire the bundled one. Older
+  audits answer it at their next pass.
 
 - **No asylum statement** (2026-11-04, Identitarian movement statement pass): the bank has nothing
   on asylum or on turning back migrant boats (Defend Europe). Not proposed because the library had

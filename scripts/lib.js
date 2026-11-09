@@ -17,8 +17,8 @@ function viewsPeriod(now = new Date()) {
   return { start, end, ymd, label: `${start.toISOString().slice(0, 10)} to ${end.toISOString().slice(0, 10)}` };
 }
 const allStatements = () => readJson(path.join(ROOT, "statements.json")).statements;
-// Candidates are answered by audits but not asked in the test until audits show they are
-// contested (audits/statements/STANDARD.md).
+// Candidates are answered by audits but not asked in the test until they carry signal on the real
+// lines (audits/statements/STANDARD.md test 2, scripts/statement-signal.js).
 const isCandidate = (s) => s.status === "candidate";
 const activeStatements = () => allStatements().filter((s) => !isCandidate(s));
 const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideologies;

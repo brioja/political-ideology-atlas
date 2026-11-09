@@ -62,7 +62,7 @@ const rows = statements.map((q) => {
   const agree = audits.filter((a) => stated(a, q.id) && a.answers[q.id].value > 0).length;
   const disagree = audits.filter((a) => stated(a, q.id) && a.answers[q.id].value < 0).length;
   const answered = audits.filter((a) => a.answers[q.id]).length;
-  return { id: q.id, candidate: isCandidate(q), agree, disagree, answered, contested: agree > 0 && disagree > 0 };
+  return { id: q.id, candidate: isCandidate(q), agree, disagree, answered };
 });
 const missing = audits.flatMap((a) => (a.missingStatements || []).map((m) => ({ from: a.id, ...m })));
 
