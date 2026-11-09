@@ -105,7 +105,7 @@ try {
     assert(e.length === 1 && /^not an ideology: PARTY/.test(e[0]), `valid notAnIdeology record: got ${e}`); n++; }
   fails("notAnIdeology reason not in the list", nai({ reason: "CLUB", explanation: "It is a club, not a set of political ideas at all." }), /"notAnIdeology\.reason" must be one of/);
   fails("notAnIdeology explanation too short", nai({ reason: "PARTY", explanation: "A party." }), /"notAnIdeology\.explanation" needs at least a sentence/);
-  fails("notAnIdeology legacy text too short", nai("A party."), /"notAnIdeology" needs a reason of at least a sentence/);
+  fails("notAnIdeology as free text", nai("It is a political party, not a set of political ideas."), /"notAnIdeology\.reason" must be one of/);
   fails("notAnIdeology without an http source", E(nai({ reason: "PARTY", explanation: "It is a political party, not a set of political ideas." }), (a) => { a.sources[0].url = "none"; }), /"notAnIdeology" needs at least one source with an http\(s\) url/);
   // Source check: defining sources must discuss the ideology; every source needs a saved copy.
   fails("defining source never names the ideology", E(base(), (a) => { a.sources[2].url = "https://example.org/unrelated"; }), /source s3 \(scholarly\) never names/);

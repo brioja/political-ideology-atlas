@@ -107,21 +107,20 @@ function validate(id) {
   // The first check (audits/PROMPT.md): an entry that isn't an ideology the test can place gets a
   // short record instead of an audit. It's finished, and excluded like an uncertainty failure.
   if (!PEOPLE && a.notAnIdeology !== undefined) {
-    // { "reason": one of NOT_AN_IDEOLOGY_REASONS, "explanation": "..." }; older records are a plain string.
-    const n = a.notAnIdeology, legacy = typeof n === "string";
-    if (legacy) { if (n.trim().length < 20) errors.push('"notAnIdeology" needs a reason of at least a sentence'); else warnings.push('"notAnIdeology" is free text: new records use { "reason", "explanation" }'); }
-    else if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notAnIdeology.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
+    // { "reason": one of NOT_AN_IDEOLOGY_REASONS, "explanation": "..." }.
+    const n = a.notAnIdeology;
+    if (!n || !NOT_AN_IDEOLOGY_REASONS.includes(n.reason)) errors.push(`"notAnIdeology.reason" must be one of ${NOT_AN_IDEOLOGY_REASONS.join(", ")}`);
     else if (typeof n.explanation !== "string" || n.explanation.trim().length < 20) errors.push('"notAnIdeology.explanation" needs at least a sentence');
     const src = Array.isArray(a.sources) ? a.sources : [];
     if (!src.length || src.some((x) => !/^https?:\/\/\S+$/.test(x.url || ""))) errors.push('"notAnIdeology" needs at least one source with an http(s) url');
     // An article that talks about the entry's "ideas" holds ideas (Brandon, 2026-11-06): no DOES_NOT_INCLUDE_IDEAS
     // then; audit it. Reads the cached page (validate.js main fetches it first).
-    if (!legacy && n && n.reason === "DOES_NOT_INCLUDE_IDEAS" && entry) {
+    if (n && n.reason === "DOES_NOT_INCLUDE_IDEAS" && entry) {
       const text = lib.articleText(entry);
       const hits = text ? (text.match(/\bideas\b/gi) || []).length : 0;
       if (hits) errors.push(`DOES_NOT_INCLUDE_IDEAS not allowed: its Wikipedia article (${lib.articleTitle(entry)}) says "ideas" ${hits} time${hits > 1 ? "s" : ""}; audit it in full`);
     }
-    if (!errors.length) errors.push(`not an ideology: ${legacy ? n : `${n.reason}: ${n.explanation}`}`);
+    if (!errors.length) errors.push(`not an ideology: ${n.reason}: ${n.explanation}`);
     return { errors, warnings };
   }
   if (a.id !== id) errors.push(`"id" is '${a.id}', expected '${id}'`);

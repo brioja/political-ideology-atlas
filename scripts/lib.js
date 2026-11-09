@@ -175,24 +175,22 @@ const shippedJudge = () => {
 // The uncertainty rule (pca.js), from audit answers.
 const judged = (answers, judge) =>
   require(path.join(ROOT, "pca.js")).uncertainty(judge.ctx, judge.ids.map((id) => (answers[id] ? answers[id].value : null)));
-// Uncertainty counts every answer resting on evidence, whatever its confidence (audits/AUDIT_RULES.md,
-// section 5): inferences, which begin "Inferred:", and "no known position" (null) don't count. They
-// still count for matching, so nobody is shown on the strength of inferences.
+// Uncertainty counts every answer with a position, whatever its confidence (audits/AUDIT_RULES.md,
+// section 5); "no known position" (null) doesn't count.
 const RULES = 2;
-const evidenceOnly = (answers) => Object.fromEntries(Object.entries(answers)
-  .map(([id, a]) => [id, /^Inferred:/.test((a && a.rationale) || "") ? { ...a, value: null } : a]));
-const personUncertainty = (answers, judge = shippedJudge()) => judged(evidenceOnly(answers), judge);
+const personUncertainty = (answers, judge = shippedJudge()) => judged(answers, judge);
 
 // Ideology audits written before the shared rules (no "rules": 2) recorded silence as 0 and inferences
 // unmarked, so only their medium and high answers count until they are re-audited.
 const mediumOrHigh = (answers) => Object.fromEntries(Object.entries(answers)
   .map(([id, a]) => [id, { ...a, value: a.confidence === "low" ? null : a.value }]));
-// The statements an ideology audit has a stated position on, as its uncertainty counts them: evidence,
-// not "Inferred:" (or, in audits from before the shared rules, medium or high only); never null.
-const statedPositions = (audit) => new Set(Object.entries((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers))
+// The statements an ideology audit has a stated position on, as its uncertainty counts them (in audits
+// from before the shared rules, medium or high only); never null.
+const counted = (audit) => (audit.rules >= RULES ? audit.answers : mediumOrHigh(audit.answers));
+const statedPositions = (audit) => new Set(Object.entries(counted(audit))
   .filter(([, a]) => a.value != null).map(([id]) => id));
 const ideologyUncertainty = (audit, judge = shippedJudge()) =>
-  judged((audit.rules >= RULES ? evidenceOnly : mediumOrHigh)(audit.answers), judge);
+  judged(counted(audit), judge);
 
 // The inputs of the real-line count (build.js, audits/lines.json): pca.js and the answers of the
 // ideologies it is counted on (`id` and `profile`, in catalog order).

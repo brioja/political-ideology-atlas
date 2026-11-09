@@ -91,7 +91,6 @@ person's own words and record, and a statement with no reliable evidence is `nul
   each next statement to bring the bars closest to that (`nextQuestion`). There is no other bar: nothing
   compares a list of answers with the gap between neighbouring ideologies, and people are held to
   the same rule as ideologies (2026-10-31).
-  A historical figure's inferred answers (rationale starting "Inferred:") don't count toward it.
   It depends on which statements have a recorded position, not on the answers, and has no
   hand-picked cut-off. Negative controls (`audits/controls/`, apolitical celebrities outside the catalog criteria, audited with
   the same instructions) must fail it; `node test.js` checks this. Excluded audits make the
