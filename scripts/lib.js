@@ -221,8 +221,10 @@ const WORDING = {
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {
   const find = (words, t = text) => [...new Set((t.match(wordingRe(words)) || []).map((w) => w.toLowerCase()))];
-  // "even when" stresses the claim rather than adding a condition, so it isn't marked (Brandon, 2026-11-09).
-  return { errors: find(WORDING.errors), warnings: find(WORDING.warnings, text.replace(/\beven when\b/gi, "")) };
+  // "even when"/"even if" stress the claim rather than adding a condition, so they aren't marked; "provided" is
+  // marked only as a condition ("provided that", or opening a clause), not as a verb ("provided by") (Brandon, 2026-11-09).
+  const t = text.replace(/\beven (when|if)\b/gi, "").replace(/\bprovided\b(?! that\b)/gi, (w, at, s) => /(^|[,;:]\s*)$/.test(s.slice(0, at)) ? w : "");
+  return { errors: find(WORDING.errors), warnings: find(WORDING.warnings, t) };
 }
 
 module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
