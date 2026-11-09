@@ -16,10 +16,11 @@ const views = (list, id) => (list.find((x) => x.id === id) || {}).views12m || 0;
 const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
 const PEOPLE_ONLY = process.argv.includes("--people");
 
-// Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, and right after
-// a person their 3 closest ideologies. The closest are recomputed on every call (Brandon, 2026-11-09: when a later pass
-// moves another ideology into a person's top 3, it gets its pass too); each one is passed once and then waits out the
-// re-audit gap, so the loop moves on once a person's top 3 are all up to date. One is due when its audit is under an
+// Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, each page itself
+// and right after it the 5 its page lists as closest: a person's 5 closest ideologies, an ideology's 5 closest people
+// (Brandon, 2026-11-09: visitors read those lists, so they should be accurate too). The closest are recomputed on every
+// call (when a later pass moves someone into a page's top 5, they get their pass too); each one is passed once and then
+// waits out the re-audit gap, so the loop moves on once a page's top 5 are all up to date. One is due when its audit is under an
 // older rules version than the current one (or none) and the re-audit gap since its last pass has passed; an audit
 // already under the current rules is up to date (Brandon, 2026-11-09). It then gets a later pass (audits/AUDIT_RULES.md
 // section 6).
@@ -35,12 +36,20 @@ function searchPriority() {
   let model = null;
   const list = readJson(file);
   const nameOf = (id) => (peopleCatalog().find((x) => x.id === id) || {}).name || id;
+  const TOP = 5; // as many as the page lists (scripts/pages.js)
+  const Q = data.QUESTIONS.length;
   const closest = (page) => {
-    const p = shownPeople.find((x) => x.id === page.id);
-    if (!p) return [];
     model = model || pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
-    return pca.match(model, p.profile.slice(0, data.QUESTIONS.length)).ranked.slice(0, 3)
-      .map((r) => ({ kind: "ideology", id: r.id, via: nameOf(page.id) }));
+    if (page.kind === "person") {
+      const p = shownPeople.find((x) => x.id === page.id);
+      if (!p) return [];
+      return pca.match(model, p.profile.slice(0, Q)).ranked.slice(0, TOP)
+        .map((r) => ({ kind: "ideology", id: r.id, via: nameOf(page.id) }));
+    }
+    const i = data.IDEOLOGIES.find((x) => x.id === page.id);
+    if (!i) return [];
+    return pca.matchPeople(model, i.profile, shownPeople.map((p) => ({ ...p, profile: p.profile.slice(0, Q) }))).slice(0, TOP)
+      .map((r) => ({ kind: "person", id: r.id, via: i.name }));
   };
   const due = ({ kind, id }) => {
     if (SKIP.has(id) || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) return false;
@@ -50,13 +59,13 @@ function searchPriority() {
     return (a.rules || 0) < CURRENT_RULES && !a.notAnIdeology && nextPassFrom(a) <= today;
   };
   for (const page of list.pages) {
-    for (const c of [page, ...(page.kind === "person" ? closest(page) : [])]) {
+    for (const c of [page, ...closest(page)]) {
       if (!due(c)) continue;
       const entry = (c.kind === "person" ? peopleCatalog() : catalog()).find((x) => x.id === c.id);
       if (!entry) continue;
       const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
       return { kind: c.kind, id: c.id, name, wikipedia, wikipediaMatch, born, living, scopeNote,
-        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, later pass to current rules` : `search traffic (${page.clicks} clicks), later pass to current rules` };
+        views12m: entry.views12m || 0, reason: c.via ? `search traffic: ${c.kind === "person" ? "among the closest people" : "among the closest ideologies"} of ${c.via}, later pass to current rules` : `search traffic (${page.clicks} clicks), later pass to current rules` };
     }
   }
   return null;
