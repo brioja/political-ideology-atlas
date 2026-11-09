@@ -19,14 +19,15 @@ const PEOPLE_ONLY = process.argv.includes("--people");
 // Search traffic first (Brandon, 2026-11-08): pages in audits/search-priority.json, most clicks first, and right after
 // a person their 3 closest ideologies. The closest are recomputed on every call (Brandon, 2026-11-09: when a later pass
 // moves another ideology into a person's top 3, it gets its pass too); each one is passed once and then waits out the
-// re-audit gap, so the loop moves on once a person's top 3 are all up to date. One is due by date alone: once the
-// re-audit gap since its last pass has passed, whatever rules version it has (Brandon, 2026-11-09), it gets a later
-// pass (audits/AUDIT_RULES.md section 6), so viewed pages keep getting passes as the project ages.
+// re-audit gap, so the loop moves on once a person's top 3 are all up to date. One is due when its audit is under an
+// older rules version than the current one (or none) and the re-audit gap since its last pass has passed; an audit
+// already under the current rules is up to date (Brandon, 2026-11-09). It then gets a later pass (audits/AUDIT_RULES.md
+// section 6).
 function searchPriority() {
   const fs = require("fs"), lib = require("./lib");
   const file = path.join(__dirname, "..", "audits", "search-priority.json");
   if (!fs.existsSync(file)) return null;
-  const { nextPassFrom } = require("./validate");
+  const { nextPassFrom, CURRENT_RULES } = require("./validate");
   const today = new Date().toISOString().slice(0, 10);
   const pca = require(path.join(__dirname, "..", "pca.js"));
   const data = require(path.join(__dirname, "..", "data.js"));
@@ -46,7 +47,7 @@ function searchPriority() {
     const f = kind === "person" ? lib.personPath(id) : lib.profilePath(id);
     if (!fs.existsSync(f)) return false;
     const a = readJson(f);
-    return !a.notAnIdeology && nextPassFrom(a) <= today;
+    return (a.rules || 0) < CURRENT_RULES && !a.notAnIdeology && nextPassFrom(a) <= today;
   };
   for (const page of list.pages) {
     for (const c of [page, ...(page.kind === "person" ? closest(page) : [])]) {
@@ -55,7 +56,7 @@ function searchPriority() {
       if (!entry) continue;
       const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
       return { kind: c.kind, id: c.id, name, wikipedia, wikipediaMatch, born, living, scopeNote,
-        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, later pass` : `search traffic (${page.clicks} clicks), later pass` };
+        views12m: entry.views12m || 0, reason: c.via ? `search traffic: closest ideology of ${c.via}, later pass to current rules` : `search traffic (${page.clicks} clicks), later pass to current rules` };
     }
   }
   return null;
