@@ -1518,11 +1518,33 @@
       ]
     },
     "minority-language-support": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Support for regional self-government goes with language rights, which unitarists want to reduce; weak inference.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale calls the answer a weak inference, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Support for regional self-government goes with language rights, which unitarists want to reduce; weak inference.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale calls the answer a weak inference, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-exemptions": {
@@ -3760,6 +3782,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 80
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

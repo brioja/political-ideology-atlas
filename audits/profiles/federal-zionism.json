@@ -1361,11 +1361,33 @@
       ]
     },
     "minority-language-support": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Cantons reflect local populations and Arabs and Druze keep cultural ties, so minority-language support in Arab and Druze cantons is plausible, but unstated.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale calls public-language support plausible but unstated, an inference, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Cantons reflect local populations and Arabs and Druze keep cultural ties, so minority-language support in Arab and Druze cantons is plausible, but unstated.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale calls public-language support plausible but unstated, an inference, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-exemptions": {
@@ -3342,6 +3364,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 12
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

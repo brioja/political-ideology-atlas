@@ -1444,11 +1444,33 @@
    ]
   },
   "minority-language-support": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Language policy appears nowhere in the sources; local councils would decide, so neutral.",
+   "rationale": "Nulled (statement review, 2026-11-10): its rationale records no position; silence is not a position, so the sources cited here do not answer this statement.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Language policy appears nowhere in the sources; local councils would decide, so neutral.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-10): its rationale records no position; silence is not a position, so the sources cited here do not answer this statement.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "religious-exemptions": {
@@ -3525,6 +3547,12 @@
    "reviewer": "scripts/unsourced-to-null.js",
    "reviewedAt": "2026-11-02",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }

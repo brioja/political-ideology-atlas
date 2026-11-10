@@ -1531,11 +1531,33 @@
       ]
     },
     "minority-language-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "None of the consulted developmentalist sources take a position on minority language policy, so no answer can be drawn from its principles beyond neutrality.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says none of the sources take a position; silence is not a position, so the sources cited here do not answer this statement.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "None of the consulted developmentalist sources take a position on minority language policy, so no answer can be drawn from its principles beyond neutrality.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says none of the sources take a position; silence is not a position, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-exemptions": {
@@ -3747,6 +3769,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     },
     {
       "kind": "nulling",
