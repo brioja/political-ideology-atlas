@@ -1,92 +1,385 @@
 {
   "id": "winston-churchill",
   "name": "Winston Churchill",
-  "auditedAt": "2026-10-22",
-  "auditor": "gpt-6.1-sol",
+  "auditedAt": "2026-11-10",
+  "auditor": [
+    "gpt-6.1-sol",
+    "claude-opus-5-5"
+  ],
+  "rules": 5,
+  "passes": [
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-22"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-11-10"
+    }
+  ],
   "living": false,
   "role": "British prime minister (1940–1945; 1951–1955)",
-  "summary": "Churchill defended parliamentary government, private enterprise and constitutional monarchy while supporting social insurance and a national health service. He favoured strong Western defence and European cooperation, and his imperial outlook included opposition to much colonial independence and hierarchical views of peoples.",
+  "summary": "Churchill defended parliamentary government, constitutional monarchy and private enterprise against socialism, while as a Liberal minister he created trade boards, labour exchanges and unemployment insurance and as a Conservative backed compulsory national insurance and a national health service. He was a lifelong imperialist who ranked peoples and civilisations, resisted Indian independence and supported Zionism, and in foreign policy he championed rearmament, the wartime and Cold War alliance with the United States, a British nuclear deterrent and European unity.",
   "wikipedia": "https://en.wikipedia.org/wiki/Winston_Churchill",
   "sources": [
     {
       "id": "peace",
       "kind": "primary",
-      "title": "The Sinews of Peace (1946)",
+      "evidence": "words",
+      "title": "The Sinews of Peace (Fulton, 5 March 1946)",
       "author": "Winston Churchill",
       "url": "https://winstonchurchill.org/resources/speeches/1946-1963-elder-statesman/the-sinews-of-peace/",
-      "usedFor": "empower-international-orgs; nation-first; one-party-rule; separated-powers; end-foreign-alliances; entrenched-bill-of-rights; suppress-opposition; democracy-is-procedure"
+      "usedFor": "UN armed force, Anglo-American association and joint bases, free elections, free speech and independent courts, non-interference"
     },
     {
       "id": "nuclear",
       "kind": "primary",
+      "evidence": "words",
       "title": "Never Despair: speech of 1 March 1955",
       "author": "Winston Churchill",
       "url": "https://winstonchurchill.org/resources/speeches/1946-1963-elder-statesman/never-despair/",
-      "usedFor": "military-superiority; independent-nuclear-deterrent; no-nuclear-weapons-on-territory; arms-reduction; open-diplomacy; keep-nuclear-weapons"
+      "usedFor": "nuclear deterrent, disarmament, diplomacy"
     },
     {
       "id": "liberal",
       "kind": "primary",
+      "evidence": "words",
       "title": "Liberalism and the Social Problem (1909)",
       "author": "Winston Churchill",
-      "url": "https://www.gutenberg.org/files/18419/18419-h/18419-h.htm",
-      "usedFor": "raise-minimum-wage; tax-the-wealthy; unions-good; regulate-corporations; land-value-tax"
+      "url": "https://www.gutenberg.org/ebooks/18419",
+      "library": "18419 Churchill - Liberalism and the Social Problem.txt",
+      "usedFor": "Liberal speeches 1906-1909: trade unions, minimum standards, collectivism and individualism, House of Lords"
     },
     {
       "id": "conservative",
       "kind": "primary",
-      "title": "Speech to the Conservative Party Conference (1946)",
+      "evidence": "words",
+      "title": "Speech to the Conservative Party Conference (5 October 1946), Internet Modern History Sourcebook text",
       "author": "Winston Churchill",
       "url": "https://sourcebooks.web.fordham.edu/mod/1946churchill-conservatism.asp",
-      "usedFor": "markets-allocate-better; public-ownership; cut-welfare; traditional-family; central-planning; widespread-small-property; class-collaboration; ban-cartels; no-compulsory-union"
+      "usedFor": "free enterprise, property-owning democracy, closed shop, monopolies, Christian religion, safeguards"
     },
     {
       "id": "science",
       "kind": "primary",
-      "title": "Fifty Years Hence (1931)",
+      "evidence": "words",
+      "title": "Fifty Years Hence (Strand Magazine, December 1931)",
       "author": "Winston Churchill",
-      "url": "https://teachingamericanhistory.org/document/fifty-years-hence/",
-      "usedFor": "tech-solves-problems; industrial-civilization-disaster; human-enhancement; shared-human-nature"
+      "url": "https://www.nationalchurchillmuseum.org/fifty-years-hence.html",
+      "usedFor": "science, human nature, technology"
     },
     {
       "id": "race",
       "kind": "reference",
+      "evidence": "words",
       "title": "Churchill and the Race Question: A Perennial Controversy",
-      "author": "Richard M. Langworth",
+      "author": "Richard M. Langworth (Hillsdale College Churchill Project)",
       "url": "https://winstonchurchill.hillsdale.edu/race-racism/",
-      "usedFor": "indigenous-land-authority; jewish-state-israel; racial-segregation-law; cultures-equal-different; historical-land-claim"
+      "usedFor": "his 1937 Peel Commission testimony; wartime segregation of US troops; equal rights of civilised men"
     },
     {
       "id": "democracy",
       "kind": "primary",
+      "evidence": "words",
       "title": "Parliament Bill debate: Churchill speech (11 November 1947)",
       "author": "Winston Churchill",
       "url": "https://api.parliament.uk/historic-hansard/commons/1947/nov/11/parliament-bill",
-      "usedFor": "strong-leader; gradual-change; democracy-best; consent-of-governed; second-chamber"
+      "usedFor": "democracy, second chamber, gradual change, consent"
     },
     {
       "id": "health",
       "kind": "reference",
+      "evidence": "words",
       "title": "Churchill in 1943 on National Health Insurance and Taxation",
-      "author": "The Churchill Project",
+      "author": "The Churchill Project, Hillsdale College",
       "url": "https://winstonchurchill.hillsdale.edu/national-health-insurance/",
-      "usedFor": "universal-healthcare; tax-the-wealthy"
+      "usedFor": "national health service, taxation"
     },
     {
       "id": "europe",
       "kind": "primary",
-      "title": "Speech at the Congress of Europe (7 May 1948)",
+      "evidence": "words",
+      "title": "Speech at the Congress of Europe (The Hague, 7 May 1948)",
       "author": "Winston Churchill",
       "url": "https://www.cvce.eu/content/publication/1999/1/1/58118da1-af22-48c0-bc88-93cda974f42c/publishable_en.pdf",
-      "usedFor": "preserve-national-culture; civilizational-union; pool-sovereignty; totalitarianisms-equivalent; person-over-state"
+      "usedFor": "European unity, sovereignty, Charter of Human Rights, national traditions"
     },
     {
       "id": "reference",
       "kind": "reference",
+      "evidence": "words",
       "title": "Winston Churchill",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Winston_Churchill",
-      "usedFor": "monarchy-legitimate; political-violence-never; national-self-determination; former-empire-influence; defensive-wars-only"
+      "usedFor": "earlier pass only (replaced)"
+    },
+    {
+      "id": "fouryears",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "A Four Years' Plan (BBC broadcast, 21 March 1943), text from Vital Speeches of the Day",
+      "author": "Winston Churchill",
+      "url": "https://www.ibiblio.org/pha/policy/1943/1943-03-21a.html",
+      "usedFor": "national insurance, health service, agriculture, education, equal opportunity, idleness, monarchy"
+    },
+    {
+      "id": "riverwar",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The River War: An Account of the Reconquest of the Soudan (1902 edition)",
+      "author": "Winston Churchill",
+      "url": "https://www.gutenberg.org/ebooks/4943",
+      "library": "4943 Churchill - The River War An Account of the Reconquest of the Sudan.txt",
+      "usedFor": "civilisation and colonial rule, hierarchy of peoples"
+    },
+    {
+      "id": "hc1909",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 28 April 1909: \"Trade Boards Bill\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1909/apr/28/trade-boards-bill",
+      "usedFor": "minimum wages in sweated trades, collective bargaining"
+    },
+    {
+      "id": "hc1910",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 12 July 1910: \"Parliamentary Franchise (Women) Bill\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1910/jul/12/parliamentary-franchise-women-bill-1",
+      "usedFor": "women's suffrage"
+    },
+    {
+      "id": "hc1931",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 2 June 1931: \"Representation of the People (No. 2) Bill\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1931/jun/02/representation-of-the-people-no-2-bill",
+      "usedFor": "alternative vote, proportional representation, second ballot"
+    },
+    {
+      "id": "hc1934",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 28 November 1934: \"Debate on the Address\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1934/nov/28/debate-on-the-address",
+      "usedFor": "air rearmament, superiority over Germany"
+    },
+    {
+      "id": "hc1936",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 10 December 1936: \"Members of the House of Commons (abdication statement)\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1936/dec/10/members-of-the-house-of-commons",
+      "usedFor": "Crown and Parliament"
+    },
+    {
+      "id": "hc1941",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 9 September 1941: \"War Situation\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1941/sep/09/war-situation",
+      "usedFor": "Atlantic Charter and the Empire"
+    },
+    {
+      "id": "hc1946",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 1 August 1946: \"Palestine\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1946/aug/01/palestine",
+      "usedFor": "Zionism, Jewish National Home"
+    },
+    {
+      "id": "hc1947",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 6 March 1947: \"India (Government Policy)\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1947/mar/06/india-government-policy",
+      "usedFor": "Indian independence"
+    },
+    {
+      "id": "hc1948",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 15 July 1948: \"Clause 1 (Suspension of death penalty for murder)\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1948/jul/15/clause-1-suspension-of-death-penalty-for",
+      "usedFor": "capital punishment"
+    },
+    {
+      "id": "hc1948rp",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 17 February 1948: \"Representation of the People Bill\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1948/feb/17/presentation-of-the-people-bill",
+      "usedFor": "proportional representation"
+    },
+    {
+      "id": "hc1950h",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 6 November 1950: \"Housing\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1950/nov/06/housing",
+      "usedFor": "controls, middle course, free enterprise"
+    },
+    {
+      "id": "hc1953",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 11 May 1953: \"Foreign Affairs\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1953/may/11/foreign-affairs",
+      "usedFor": "Israel, Soviet Union, summit"
+    },
+    {
+      "id": "hc1919",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Hansard, House of Commons, 29 July 1919: \"Supplementary Vote on Account\" (Churchill's speeches)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1919/jul/29/supplementary-vote-on-account",
+      "usedFor": "Russia"
+    },
+    {
+      "id": "eugenics",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Keeping the Record Accurate: Churchill and the Sterilisation Issue (Finest Hour 131)",
+      "author": "Paul Addison",
+      "url": "https://www.winstonchurchill.org/publications/finest-hour/finest-hour-131/keeping-the-record-accurate-churchill-and-the-sterilisation-issue/",
+      "usedFor": "his 1910-1911 Home Office minutes on sterilising and segregating the \"feeble-minded\""
+    },
+    {
+      "id": "eugenics2",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Churchill and Eugenics (Finest Hour extras)",
+      "author": "Martin Gilbert",
+      "url": "https://winstonchurchill.org/publications/finest-hour-extras/churchill-and-eugenics-1/",
+      "usedFor": "his December 1910 letter to Asquith on the \"multiplication of the unfit\""
+    },
+    {
+      "id": "act1909",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Trade Boards Act 1909 (9 Edw. 7 c. 22), the bill he introduced as President of the Board of Trade",
+      "author": "UK Parliament (legislation.gov.uk)",
+      "url": "https://www.legislation.gov.uk/ukpga/Edw7/9/22/contents",
+      "usedFor": "minimum wages set by trade boards"
+    },
+    {
+      "id": "act1925",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Gold Standard Act 1925 (15 & 16 Geo. 5 c. 29), carried by him as Chancellor of the Exchequer",
+      "author": "UK Parliament (legislation.gov.uk)",
+      "url": "https://www.legislation.gov.uk/ukpga/Geo5/15-16/29/contents",
+      "usedFor": "return to the gold standard"
+    },
+    {
+      "id": "gold1925",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 28 April 1925: \"Return to Gold Standard\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1925/apr/28/return-to-gold-standard",
+      "usedFor": "his budget announcement of the return to gold"
+    },
+    {
+      "id": "act1953",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Iron and Steel Act 1953 (1 & 2 Eliz. 2 c. 15), passed by his second government",
+      "author": "UK Parliament (legislation.gov.uk)",
+      "url": "https://www.legislation.gov.uk/ukpga/Eliz2/1-2/15/contents",
+      "usedFor": "denationalisation of iron and steel"
+    },
+    {
+      "id": "transport1952",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 21 May 1952: \"Transport (Government Policy)\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1952/may/21/transport-government-policy",
+      "usedFor": "his government's reversal of road haulage nationalisation"
+    },
+    {
+      "id": "ns1953",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 10 February 1953: \"National Service (Government Policy)\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1953/feb/10/national-service-government-policy",
+      "usedFor": "his government keeping two-year National Service"
+    },
+    {
+      "id": "dyer1920",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 8 July 1920: \"Army Council and General Dyer\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1920/jul/08/army-council-and-general-dyer",
+      "usedFor": "the Army Council decision, under him as Secretary for War, that Dyer be relieved and not re-employed"
+    },
+    {
+      "id": "greece1944",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 8 December 1944: \"Liberated Europe (British Intervention)\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1944/dec/08/liberated-europe-british-intervention",
+      "usedFor": "British forces ordered into the Athens fighting against ELAS"
+    },
+    {
+      "id": "russia1919",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Hansard, House of Commons, 29 July 1919: \"Supplementary Vote on Account\" (record of the measure)",
+      "author": "Winston Churchill",
+      "url": "https://api.parliament.uk/historic-hansard/commons/1919/jul/29/supplementary-vote-on-account",
+      "usedFor": "munitions and supplies sent to the anti-Bolshevik armies of Denikin and Kolchak while he was Secretary for War"
+    },
+    {
+      "id": "homesec",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Top Cop in a Top Hat: Churchill as Home Secretary (Finest Hour 143)",
+      "author": "International Churchill Society",
+      "url": "https://winstonchurchill.org/publications/finest-hour/finest-hour-143/top-cop-in-a-top-hat",
+      "usedFor": "his record on capital cases (21 of 43 reprieved), prison and young-offender reforms, strikes"
+    },
+    {
+      "id": "whitepaper1922",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "British White Paper of June 1922 (the Churchill White Paper on Palestine)",
+      "author": "Colonial Office under Winston Churchill (Avalon Project copy)",
+      "url": "https://avalon.law.yale.edu/20th_century/brwh1922.asp",
+      "usedFor": "Jewish National Home \"as of right\", immigration by economic absorptive capacity"
+    },
+    {
+      "id": "bombing",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Royal Air Force 1939-1945, Vol. II, ch. 7 (HMSO official history)",
+      "author": "Denis Richards and Hilary St. G. Saunders",
+      "url": "https://ibiblio.org/hyperwar/UN/UK/UK-RAF-II/UK-RAF-II-7.html",
+      "usedFor": "the February 1942 directive aiming Bomber Command at \"the morale of the enemy civil population\", backed by the Prime Minister"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "file": "43035 Churchill - My African Journey.txt",
+      "reason": "My African Journey: an account of his 1907 tour of East Africa as Under-Secretary for the Colonies; searched by theme, its remarks on railways, settlers and native administration add no position on the statements beyond The River War (cited)."
     }
   ],
   "answers": {
@@ -101,9 +394,31 @@
     "raise-minimum-wage": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "He established trade boards to set minimum wages in sweated trades, rather than endorsing unlimited wage increases.",
+      "rationale": "As President of the Board of Trade he carried the Trade Boards Act 1909, which set legal minimum wages in sweated trades; it raised the floor in those trades rather than wages generally.",
       "sources": [
-        "liberal"
+        "act1909"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He established trade boards to set minimum wages in sweated trades, rather than endorsing unlimited wage increases.",
+          "sources": [
+            "liberal"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "As President of the Board of Trade he carried the Trade Boards Act 1909, which set legal minimum wages in sweated trades; it raised the floor in those trades rather than wages generally.",
+          "sources": [
+            "act1909"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "markets-allocate-better": {
@@ -116,19 +431,67 @@
     },
     "public-ownership": {
       "value": -1,
-      "confidence": "high",
-      "rationale": "He favoured free enterprise as the general rule and opposed additional state trading and nationalisation.",
+      "confidence": "medium",
+      "rationale": "His second government denationalised iron and steel by the Iron and Steel Act 1953 and sold off nationalised road haulage, while leaving coal, rail and the utilities in public hands.",
       "sources": [
-        "conservative"
+        "act1953",
+        "transport1952"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "He favoured free enterprise as the general rule and opposed additional state trading and nationalisation.",
+          "sources": [
+            "conservative"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "His second government denationalised iron and steel by the Iron and Steel Act 1953 and sold off nationalised road haulage, while leaving coal, rail and the utilities in public hands.",
+          "sources": [
+            "act1953",
+            "transport1952"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "tax-the-wealthy": {
       "value": 0,
-      "confidence": "medium",
-      "rationale": "His earlier progressive-tax campaign gave way to warnings that postwar taxation must preserve initiative and enterprise.",
+      "confidence": "low",
+      "rationale": "His 1909 Liberal speeches backed graduated taxes on large incomes and land values, while his 1943 and later statements warned that postwar taxation must leave room for enterprise; his words point both ways.",
       "sources": [
         "health",
         "liberal"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "medium",
+          "rationale": "His earlier progressive-tax campaign gave way to warnings that postwar taxation must preserve initiative and enterprise.",
+          "sources": [
+            "health",
+            "liberal"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His 1909 Liberal speeches backed graduated taxes on large incomes and land values, while his 1943 and later statements warned that postwar taxation must leave room for enterprise; his words point both ways.",
+          "sources": [
+            "health",
+            "liberal"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "unions-good": {
@@ -206,10 +569,12 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Through the 1930s he campaigned in the Commons for rapid air rearmament, demanding an air force stronger than Germany's whatever the cost.",
+      "sources": [
+        "hc1934"
+      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -224,10 +589,12 @@
       "sources": []
     },
     "rehabilitation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As Home Secretary he cut imprisonment for unpaid fines and extended the Children Act approach to offenders aged 16-21, with more weight on rehabilitation and alternatives to prison.",
+      "sources": [
+        "homesec"
+      ]
     },
     "traditional-family": {
       "value": 1,
@@ -442,9 +809,33 @@
     "monarchy-legitimate": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He served and defended Britain’s constitutional monarchy, including close cooperation with Elizabeth II.",
+      "rationale": "In 1943 he called \"our ancient monarchy\" the bulwark of British liberties and a barrier against dictatorships, and at the abdication he praised a sovereign bound by ministerial advice.",
       "sources": [
-        "reference"
+        "fouryears",
+        "hc1936"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He served and defended Britain’s constitutional monarchy, including close cooperation with Elizabeth II.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In 1943 he called \"our ancient monarchy\" the bulwark of British liberties and a barrier against dictatorships, and at the abdication he praised a sovereign bound by ministerial advice.",
+          "sources": [
+            "fouryears",
+            "hc1936"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-best": {
@@ -480,11 +871,33 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He led Britain’s armed resistance in the Second World War and supported subsequent military operations.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "As Secretary for War he directed munitions and supplies to the anti-Bolshevik armies of Denikin and Kolchak fighting the Soviet government, backing armed force outside a recognised state's lawful authority.",
       "sources": [
-        "reference"
+        "russia1919"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He led Britain’s armed resistance in the Second World War and supported subsequent military operations.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "As Secretary for War he directed munitions and supplies to the anti-Bolshevik armies of Denikin and Kolchak fighting the Soviet government, backing armed force outside a recognised state's lawful authority.",
+          "sources": [
+            "russia1919"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "war-builds-character": {
@@ -512,11 +925,35 @@
       "sources": []
     },
     "military-superiority": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He argued that Western military strength and nuclear deterrence were necessary to prevent Soviet coercion.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "In 1934 he urged that Britain maintain \"at all costs\" an air force substantially stronger than Germany's and called it a high crime against the State to let it fall below; in 1955 he still rested peace on Western nuclear superiority.",
       "sources": [
+        "hc1934",
         "nuclear"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He argued that Western military strength and nuclear deterrence were necessary to prevent Soviet coercion.",
+          "sources": [
+            "nuclear"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In 1934 he urged that Britain maintain \"at all costs\" an air force substantially stronger than Germany's and called it a high crime against the State to let it fall below; in 1955 he still rested peace on Western nuclear superiority.",
+          "sources": [
+            "hc1934",
+            "nuclear"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "ethnic-nation": {
@@ -532,17 +969,41 @@
       "sources": []
     },
     "equal-outcomes": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "high",
+      "rationale": "In his 1943 broadcast he said human beings differ and \"we cannot make them all the same\", but that it was in our power \"to secure equal opportunities for all\".",
+      "sources": [
+        "fouryears"
+      ]
     },
     "indigenous-land-authority": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "His 1937 testimony denied that prior Indigenous occupation gave a final right to exclude European settlement.",
+      "confidence": "medium",
+      "rationale": "In his 1937 Peel Commission testimony, as quoted by the Churchill Project, he denied that Native Americans or Aboriginal Australians had any right to keep their continents from European settlers.",
       "sources": [
         "race"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His 1937 testimony denied that prior Indigenous occupation gave a final right to exclude European settlement.",
+          "sources": [
+            "race"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "In his 1937 Peel Commission testimony, as quoted by the Churchill Project, he denied that Native Americans or Aboriginal Australians had any right to keep their continents from European settlers.",
+          "sources": [
+            "race"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "colonial-reparations": {
@@ -622,10 +1083,13 @@
       "sources": []
     },
     "results-over-ideology": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "high",
+      "rationale": "In 1946 he said Conservatives should not seek \"some rigid, symmetrical form of doctrine\", and in 1906 he urged judging each proposal on its merits, using private enterprise where State enterprise would be ineffective.",
+      "sources": [
+        "conservative",
+        "liberal"
+      ]
     },
     "direct-action": {
       "value": null,
@@ -706,10 +1170,12 @@
       "sources": []
     },
     "conscription": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As Prime Minister in 1953 he told the Commons that no reduction in the two-year period of National Service could be contemplated, keeping peacetime conscription in force.",
+      "sources": [
+        "ns1953"
+      ]
     },
     "exit-over-voice": {
       "value": null,
@@ -797,10 +1263,34 @@
     },
     "jewish-state-israel": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "He defended a Jewish homeland developing into a Jewish state and later supported UN statehood plans.",
+      "confidence": "medium",
+      "rationale": "In 1953 he said he had been a faithful supporter of the Zionist cause since the Balfour Declaration and praised the State of Israel for building a nation; in 1946 he called the Jewish National Home \"our undoubted pledge\".",
       "sources": [
-        "race"
+        "hc1953",
+        "hc1946"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He defended a Jewish homeland developing into a Jewish state and later supported UN statehood plans.",
+          "sources": [
+            "race"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "In 1953 he said he had been a faithful supporter of the Zionist cause since the Balfour Declaration and praised the State of Israel for building a nation; in 1946 he called the Jewish National Home \"our undoubted pledge\".",
+          "sources": [
+            "hc1953",
+            "hc1946"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "diaspora-return-right": {
@@ -834,10 +1324,13 @@
       "sources": []
     },
     "economic-freedom": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He argued that the wage-earner has more freedom when he can choose and change his employer than under \"one all-powerful employer called the State\", and warned against a society where enterprise gains no reward.",
+      "sources": [
+        "conservative",
+        "fouryears"
+      ]
     },
     "rule-by-example": {
       "value": null,
@@ -848,9 +1341,31 @@
     "national-self-determination": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "He defended retention of the British Empire and resisted colonial independence, despite selectively accepting new settlements.",
+      "rationale": "Explaining the Atlantic Charter in 1941 he said its promise of self-government applied to the states under the Nazi yoke and did not qualify British policy in India, Burma or other parts of the Empire.",
       "sources": [
-        "reference"
+        "hc1941"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He defended retention of the British Empire and resisted colonial independence, despite selectively accepting new settlements.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Explaining the Atlantic Charter in 1941 he said its promise of self-government applied to the states under the Nazi yoke and did not qualify British policy in India, Burma or other parts of the Empire.",
+          "sources": [
+            "hc1941"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "force-without-un": {
@@ -872,10 +1387,12 @@
       "sources": []
     },
     "work-for-welfare": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "In the same broadcast that backed compulsory national insurance he said \"we cannot afford to have idle people\" and that no one in his working prime must stand aside, but he named no work condition on benefits.",
+      "sources": [
+        "fouryears"
+      ]
     },
     "class-collaboration": {
       "value": 2,
@@ -948,10 +1465,13 @@
       "sources": []
     },
     "proportional-representation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In 1931 he said he had always disliked proportional representation for its complications, accepting it only in the great cities as the least objectionable change, and in 1948 said he did not favour it as a whole.",
+      "sources": [
+        "hc1931",
+        "hc1948rp"
+      ]
     },
     "national-mission": {
       "value": null,
@@ -972,16 +1492,21 @@
       "sources": []
     },
     "heritable-defect-limits": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As Home Secretary he pressed officials to examine the Indiana sterilisation law and wrote to Asquith that the \"multiplication of the unfit\" was a terrible danger to the race, favouring segregation and sterilisation of the \"feeble-minded\".",
+      "sources": [
+        "eugenics",
+        "eugenics2"
+      ]
     },
     "security-forces-accountable": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As Secretary for War he backed the Army Council's decision that General Dyer, who ordered the Amritsar massacre, be relieved of his command and not employed again, though Dyer was not prosecuted.",
+      "sources": [
+        "dyer1920"
+      ]
     },
     "night-watchman-state": {
       "value": null,
@@ -996,10 +1521,12 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "He urged in 1906 \"equal rights of civilized men irrespective of colour\", but the same record includes his talk of a \"higher-grade race\" displacing others; his words point both ways.",
+      "sources": [
+        "race"
+      ]
     },
     "socialism-one-country": {
       "value": null,
@@ -1270,16 +1797,42 @@
     "cultures-equal-different": {
       "value": -2,
       "confidence": "high",
-      "rationale": "His testimony described European settlers as higher-grade and more worldly-wise than displaced Indigenous peoples.",
+      "rationale": "The River War ranks the Sudan's peoples as \"savages\" of \"low development\" and casts European civilisation as penetrating \"the inner darkness\"; his 1937 Peel Commission testimony spoke of \"a higher-grade race\".",
       "sources": [
+        "riverwar",
         "race"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His testimony described European settlers as higher-grade and more worldly-wise than displaced Indigenous peoples.",
+          "sources": [
+            "race"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The River War ranks the Sudan's peoples as \"savages\" of \"low development\" and casts European civilisation as penetrating \"the inner darkness\"; his 1937 Peel Commission testimony spoke of \"a higher-grade race\".",
+          "sources": [
+            "riverwar",
+            "race"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "death-penalty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As Home Secretary in 1910-1911 he reviewed 43 capital cases and reprieved 21, letting the other death sentences be carried out.",
+      "sources": [
+        "homesec"
+      ]
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -1416,10 +1969,12 @@
       "sources": []
     },
     "nonpartisan-head-of-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He praised a sovereign who conformed strictly to ministerial advice and defended the Crown as a national institution standing above the party contest of ministers.",
+      "sources": [
+        "hc1936"
+      ]
     },
     "force-to-prevent-secession": {
       "value": null,
@@ -1610,10 +2165,12 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The River War presents British rule in the Sudan as the channel by which European civilisation would reach peoples he described as of low development, after war and slavery had afflicted them.",
+      "sources": [
+        "riverwar"
+      ]
     },
     "patriotic-education": {
       "value": null,
@@ -1640,11 +2197,33 @@
       "sources": []
     },
     "former-empire-influence": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He regarded Britain’s world-power position as dependent on continuing imperial and Commonwealth ties.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the earlier answer rested on Wikipedia alone, and the statement concerns a successor state and its predecessor empire, which Britain under him was not.",
       "sources": [
         "reference"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He regarded Britain’s world-power position as dependent on continuing imperial and Commonwealth ties.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the earlier answer rested on Wikipedia alone, and the statement concerns a successor state and its predecessor empire, which Britain under him was not.",
+          "sources": [
+            "reference"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "delink-world-market": {
@@ -1698,10 +2277,12 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "At the abdication in 1936 he named \"the supremacy of Parliament over the Crown\" and the sovereign's duty to act on ministers' advice as settled constitutional principles.",
+      "sources": [
+        "hc1936"
+      ]
     },
     "animal-suffering-matters": {
       "value": null,
@@ -1904,10 +2485,12 @@
       "sources": []
     },
     "arm-foreign-insurgents": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As Secretary for War in 1919 he directed munitions and supplies to the White armies of Denikin and Kolchak fighting the Bolshevik government.",
+      "sources": [
+        "russia1919"
+      ]
     },
     "intervene-in-bloc": {
       "value": null,
@@ -1940,10 +2523,13 @@
       "sources": []
     },
     "job-guarantee": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "As a Liberal minister in 1906 he said the State should increasingly assume the position of \"the reserve employer of labour\"; in 1943 he said the best insurance against unemployment was to have none.",
+      "sources": [
+        "liberal",
+        "fouryears"
+      ]
     },
     "democratic-peace": {
       "value": null,
@@ -1958,10 +2544,12 @@
       "sources": []
     },
     "non-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His government sent British troops into the December 1944 Athens fighting to keep the ELAS movement from taking power in liberated Greece.",
+      "sources": [
+        "greece1944"
+      ]
     },
     "industrial-unions": {
       "value": null,
@@ -2030,10 +2618,13 @@
       "sources": []
     },
     "defeat-communism": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "In 1919 he backed the armies fighting to overthrow the Bolsheviks, but as Prime Minister in 1953 he sought a summit with the Soviet leaders and a Locarno-style settlement; his words changed over time.",
+      "sources": [
+        "hc1919",
+        "hc1953"
+      ]
     },
     "mixed-public-service-providers": {
       "value": null,
@@ -2096,11 +2687,33 @@
       "sources": []
     },
     "historical-land-claim": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He invoked earlier Jewish occupation of Palestine in rejecting the description of Jews as foreign intruders.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His 1922 White Paper said the Jewish people were in Palestine \"as of right and not on sufferance\" because of their ancient historic connection, but also that no part of the Arab population was to be subordinated and Palestine was not to be made as Jewish as England is English.",
       "sources": [
-        "race"
+        "whitepaper1922"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He invoked earlier Jewish occupation of Palestine in rejecting the description of Jews as foreign intruders.",
+          "sources": [
+            "race"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His 1922 White Paper said the Jewish people were in Palestine \"as of right and not on sufferance\" because of their ancient historic connection, but also that no part of the Arab population was to be subordinated and Palestine was not to be made as Jewish as England is English.",
+          "sources": [
+            "whitepaper1922"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "holocaust-denial": {
@@ -2208,10 +2821,13 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "In 1950 he rejected the choice between \"universal regulation of a Socialist State\" and \"the anarchy of the jungle\" for a middle course, and in 1946 paired free enterprise with safeguards he called balustrades on the stairway of life.",
+      "sources": [
+        "hc1950h",
+        "conservative"
+      ]
     },
     "abolish-armed-forces": {
       "value": null,
@@ -2226,10 +2842,12 @@
       "sources": []
     },
     "stay-neutral-between-blocs": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He called for a \"fraternal association of the English-speaking peoples\" and a special relationship with the United States against Soviet expansion, rejecting a neutral course.",
+      "sources": [
+        "peace"
+      ]
     },
     "dynastic-succession": {
       "value": null,
@@ -2420,10 +3038,12 @@
       ]
     },
     "no-foreign-bases": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "At Fulton he proposed the joint use by Britain and the United States of \"all Naval and Air Force bases in the possession of either country all over the world\".",
+      "sources": [
+        "peace"
+      ]
     },
     "recognise-genocide": {
       "value": null,
@@ -2618,9 +3238,31 @@
     "defensive-wars-only": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "His government maintained military campaigns against insurgencies in Malaya and Kenya rather than limiting force to repelling external invasion.",
+      "rationale": "In December 1944 his government sent British forces into the Athens fighting against the ELAS insurgents, a use of force abroad that was not defence against an attack on Britain.",
       "sources": [
-        "reference"
+        "greece1944"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "His government maintained military campaigns against insurgencies in Malaya and Kenya rather than limiting force to repelling external invasion.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "In December 1944 his government sent British forces into the Athens fighting against the ELAS insurgents, a use of force abroad that was not defence against an attack on Britain.",
+          "sources": [
+            "greece1944"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "language-defines-nation": {
@@ -2700,10 +3342,13 @@
       "sources": []
     },
     "collective-bargaining": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Introducing the Trade Boards Bill he praised organised \"healthy bargaining\" between capital and labour as raising the standard of life, and in 1946 said wage-earners should be able to bargain collectively.",
+      "sources": [
+        "hc1909",
+        "conservative"
+      ]
     },
     "in-work-tax-credits": {
       "value": null,
@@ -2780,10 +3425,12 @@
       "sources": []
     },
     "farm-price-support": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 1943 he said the expansion of British agriculture and a reasonable level of farm prices must be maintained, with substantial charges the State must be prepared to shoulder.",
+      "sources": [
+        "fouryears"
+      ]
     },
     "keep-nuclear-weapons": {
       "value": 2,
@@ -2862,11 +3509,33 @@
       "sources": []
     },
     "democracy-is-procedure": {
-      "value": 2,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "He emphasised free elections, opposition liberties and the ability to replace governments as the hallmarks of free countries.",
+      "rationale": "At Fulton he listed free elections with a secret ballot alongside freedom of speech and thought and courts independent of the executive as the \"title deeds of freedom\", so elections alone were not enough.",
       "sources": [
         "peace"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He emphasised free elections, opposition liberties and the ability to replace governments as the hallmarks of free countries.",
+          "sources": [
+            "peace"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "At Fulton he listed free elections with a secret ballot alongside freedom of speech and thought and courts independent of the executive as the \"title deeds of freedom\", so elections alone were not enough.",
+          "sources": [
+            "peace"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "premarital-sex": {
@@ -2888,10 +3557,12 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "In 1910 he said sex disqualification was unreasonable and he wished to remove \"the slur of inferiority\", yet he said most women did not want the vote and spoke and voted against the Conciliation Bill; his stated view points both ways.",
+      "sources": [
+        "hc1910"
+      ]
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3132,15 +3803,686 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "As Chancellor he announced Britain's return to the gold standard in his 1925 budget and carried the Gold Standard Act 1925.",
+      "sources": [
+        "act1925",
+        "gold1925"
+      ]
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Under his premiership the February 1942 directive aimed Bomber Command at \"the morale of the enemy civil population, and in particular of the industrial workers\", and he backed Harris's area attacks on German cities.",
+      "sources": [
+        "bombing"
+      ]
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "avoid-permanent-military-alliances": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "At Fulton he asked that the wartime British-American military ties continue in peacetime, with shared bases, weapons and staff training, as a lasting association.",
+      "sources": [
+        "peace"
+      ]
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He said Conservatives did not seek \"to pull down improvidently the structures of society\" but to add safeguards step by step, citing his own unemployment insurance and pension measures.",
+      "sources": [
+        "conservative"
+      ]
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "At Fulton he said Britain and America must \"never cease to proclaim\" free elections, free speech and independent courts to other peoples, while not interfering forcibly in countries they had not conquered.",
+      "sources": [
+        "peace"
+      ]
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
-  "notes": "Postwar Conservative positions take precedence over early Liberal economic speeches where the views changed. European unity is not treated as a commitment to every later EU institution. Racial hierarchy is recorded without treating it as proof of a specific genetic theory. Predictions about climate control or synthetic food do not establish modern environmental or biotechnology policies.",
+  "notes": "Second pass (rules 5). His mature position is taken from his Conservative years and premierships (1924-1955); early Liberal speeches answer only where nothing later contradicts them. His record as minister answers where it exists (Trade Boards Act 1909, Home Office capital cases and prison reform 1910-1911, the 1919 supplies to the White armies, the Dyer decision 1920, the 1922 Palestine White Paper, the Gold Standard Act 1925, the 1942 bombing directive, Greece 1944, National Service and the steel and road haulage denationalisations of 1952-1953). Answers that rested on Wikipedia were re-sourced or nulled. His Commons speeches 1901-1955 were searched in the local Hansard corpus and historic Hansard by theme: economy (wages, unions, closed shop, nationalisation, controls, taxes, gold, free trade, pensions), government (franchise, electoral systems, Lords, Crown, devolution, referendums), society (women's vote, eugenics, immigration, religion), world (Russia, Palestine, India, Greece, Europe, NATO, the bomb) and liberty (capital punishment, detention). His Gutenberg books (Liberalism and the Social Problem, The River War, My African Journey) were searched by theme. Pages refused to scripted access and left out: IWM's SOE history, the National Archives internment blog and Toye's article on the 1945 Gestapo broadcast (core.ac.uk). The 1954-1955 cabinet discussion of Commonwealth immigration is known only from archive catalogue entries, so immigration statements stay null. Many statements on later or doctrinal topics (the internet, gender identity, Marxist theory, decolonisation doctrine) have no record and stay null.",
   "reviews": [
     {
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
