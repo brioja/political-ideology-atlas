@@ -3820,9 +3820,9 @@ const QUESTIONS = [
  {
   "id": "sacred-nation",
   "theme": "culture",
-  "text": "The nation is a sacred community that outlasts its individual members and gives their lives lasting meaning.",
+  "text": "The nation is a sacred community that outlasts its members, giving their lives lasting meaning.",
   "agree": "The nation is a sacred, enduring community in which individuals find lasting meaning.",
-  "disagree": "The nation is not a sacred community that outlasts its individual members and gives their lives lasting meaning.",
+  "disagree": "The nation is not a sacred community that outlasts its members, giving their lives lasting meaning.",
   "note": "About whether the nation is treated as sacred.",
   "icon": "⛪"
  },
