@@ -561,11 +561,33 @@
       "sources": []
     },
     "racial-group-interests": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Combahee holds that Black women should organise around their own identity and shares solidarity with Black men around race, though it rejects the same politics for white women's separatism.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale limits support to Black women's situation and rejects white separatist politics, which is not the same prescription for each racial group, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Combahee holds that Black women should organise around their own identity and shares solidarity with Black men around race, though it rejects the same politics for white women's separatism.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-30"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale limits support to Black women's situation and rejects white separatist politics, which is not the same prescription for each racial group, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "racial-pride": {
@@ -3327,5 +3349,13 @@
       "addedAs": "free-basic-services-for-all"
     }
   ],
-  "notes": "Searched all ten themes in these texts; economy, society and liberty hold most answers, government, world, ecology and technology are almost wholly silent in the sources. Answers resting on Davis alone (death penalty, legalizing drugs and sex work, socialized care) rest on one defining thinker; the Combahee/NBFO split (socialist vs liberal) and Beal's 1969 Black Power context are the main strand differences. Not opened: the NBFO statement of purpose, Black Women's Manifesto, Collins's full Black Feminist Thought, Lorde's Sister Outsider, hooks's Ain't I a Woman. Deepen pass 2026-10-30: Lorde's Sister Outsider read in full and the Third World Women's Alliance's platform (archive.org pamphlet) added. Themes searched: economy, health, employment, income, education, family and reproduction, sexuality, anti-imperialism, war, police, prison, welfare. Lorde-only positions (the erotic and work, Grenada and non-intervention, female circumcision, anger) stay null because no other Black feminist source states them; Davis-only positions (prisons, death penalty, drugs, sex work) stay null. Blocked: Combahee's other texts and the Home Girls and All the Women Are White anthologies (lending-only on archive.org), the Black Woman's Manifesto as a page (the Dartmouth copy is images; its platform is in the Alliance pamphlet)."
+  "notes": "Searched all ten themes in these texts; economy, society and liberty hold most answers, government, world, ecology and technology are almost wholly silent in the sources. Answers resting on Davis alone (death penalty, legalizing drugs and sex work, socialized care) rest on one defining thinker; the Combahee/NBFO split (socialist vs liberal) and Beal's 1969 Black Power context are the main strand differences. Not opened: the NBFO statement of purpose, Black Women's Manifesto, Collins's full Black Feminist Thought, Lorde's Sister Outsider, hooks's Ain't I a Woman. Deepen pass 2026-10-30: Lorde's Sister Outsider read in full and the Third World Women's Alliance's platform (archive.org pamphlet) added. Themes searched: economy, health, employment, income, education, family and reproduction, sexuality, anti-imperialism, war, police, prison, welfare. Lorde-only positions (the erotic and work, Grenada and non-intervention, female circumcision, anger) stay null because no other Black feminist source states them; Davis-only positions (prisons, death penalty, drugs, sex work) stay null. Blocked: Combahee's other texts and the Home Girls and All the Women Are White anthologies (lending-only on archive.org), the Black Woman's Manifesto as a page (the Dartmouth copy is images; its platform is in the Alliance pamphlet).",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

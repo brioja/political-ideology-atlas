@@ -2816,11 +2816,33 @@
       "sources": []
     },
     "racial-group-interests": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Pan-Somalism is an ethnic nationalism holding the Somali people have a common interest in reunification; ethnic not racial, but it maps closest.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the position is ethnic rather than racial, mapped as the closest choice, so the sources cited here do not answer this statement.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Pan-Somalism is an ethnic nationalism holding the Somali people have a common interest in reunification; ethnic not racial, but it maps closest.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the position is ethnic rather than racial, mapped as the closest choice, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "racial-pride": {
@@ -3420,6 +3442,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 13
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

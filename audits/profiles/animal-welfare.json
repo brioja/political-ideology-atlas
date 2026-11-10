@@ -2674,11 +2674,33 @@
       ]
     },
     "racial-group-interests": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Race and politics are outside animal welfare's concern; adherents span the spectrum.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale places the topic outside its concern; silence is not a position, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Race and politics are outside animal welfare's concern; adherents span the spectrum.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale places the topic outside its concern; silence is not a position, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "racial-pride": {
@@ -3305,6 +3327,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 85
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
