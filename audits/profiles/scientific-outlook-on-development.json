@@ -678,11 +678,33 @@
       ]
     },
     "distribute-by-need": {
-      "value": 0,
-      "confidence": "medium",
-      "rationale": "The report keeps distribution according to work as the main principle at the primary stage while the ultimate ideal is by need.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale gives need as the ultimate ideal and counts present work-based distribution against it, a different stage that \"ultimately\" already allows for, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "medium",
+          "rationale": "The report keeps distribution according to work as the main principle at the primary stage while the ultimate ideal is by need.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale gives need as the ultimate ideal and counts present work-based distribution against it, a different stage that \"ultimately\" already allows for, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "production-for-use": {
@@ -3625,6 +3647,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 170
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

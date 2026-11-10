@@ -813,11 +813,33 @@
       ]
     },
     "distribute-by-need": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Missions deliver food, health and education on need, but no stated communist principle.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale admits no stated communist distribution principle, so the sources cited here do not answer this statement.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Missions deliver food, health and education on need, but no stated communist principle.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale admits no stated communist distribution principle, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "production-for-use": {
@@ -3804,6 +3826,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

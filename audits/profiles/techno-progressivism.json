@@ -488,11 +488,33 @@
       ]
     },
     "distribute-by-need": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "A guaranteed income, healthcare and education for everyone is need-based, though full distribution by need is not claimed.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale notes that guaranteed income and universal services are not full distribution by need, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "A guaranteed income, healthcare and education for everyone is need-based, though full distribution by need is not claimed.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale notes that guaranteed income and universal services are not full distribution by need, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "production-for-use": {
@@ -3539,6 +3561,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
