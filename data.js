@@ -1336,9 +1336,9 @@ const QUESTIONS = [
  {
   "id": "state-strengthens-encirclement",
   "theme": "government",
-  "text": "A socialist state should grow stronger, not wither away, for as long as it is surrounded by hostile states.",
-  "agree": "While hostile states surround it, a socialist state should grow stronger instead of withering away.",
-  "disagree": "A socialist state should not put growing stronger ahead of withering away, even while it is surrounded by hostile states.",
+  "text": "A socialist state surrounded by hostile countries should pursue a policy of strengthening state power.",
+  "agree": "A socialist state surrounded by hostile countries should pursue a policy of strengthening state power.",
+  "disagree": "A socialist state surrounded by hostile countries should not pursue a policy of strengthening state power.",
   "note": "About Marx's idea that the state will \"wither away\" under communism, and Stalin's view that it must first grow stronger while enemies surround it.",
   "icon": "🛡️"
  },
