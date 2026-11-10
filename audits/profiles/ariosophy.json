@@ -1009,11 +1009,33 @@
       ]
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Lanz rejects class war but envisions a hierarchy of lords and servile labour rather than partnership.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the doctrine envisions servile labour under lords rather than partnership, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Lanz rejects class war but envisions a hierarchy of lords and servile labour rather than partnership.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the doctrine envisions servile labour under lords rather than partnership, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "sacrifice-heritage": {
@@ -3505,6 +3527,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
