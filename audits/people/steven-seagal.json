@@ -1423,11 +1423,33 @@
       "sources": []
     },
     "kin-peoples-union": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "In March 2022 he told Fox News Digital that he looks at Russia and Ukraine 'as one family' (reported by The Independent via Yahoo). This expresses kinship, not a call for political unity across borders, so the confidence is low. Sources: s5.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the family metaphor is not a call for political unity, so the sources cited here do not answer this statement.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "In March 2022 he told Fox News Digital that he looks at Russia and Ukraine 'as one family' (reported by The Independent via Yahoo). This expresses kinship, not a call for political unity across borders, so the confidence is low. Sources: s5.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the family metaphor is not a call for political unity, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "national-cultural-autonomy": {
@@ -3011,6 +3033,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
