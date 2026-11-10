@@ -1233,10 +1233,8 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
 
   // Two columns, unlabelled (avatars and bars tell them apart): the next three ideologies, and three
   // more people. Rows in both columns share centres.
-  const colW = (W - PAD * 2 - 28) / 2, ch = 200;
+  const ch = 200;
   const morePeople = people.slice(1, 4);
-  const ideoW = morePeople.length ? colW : W - PAD * 2;
-  card(PAD, y, ideoW, ch);
   // Names in a column share one size: as large as fits the longest (down to `min`); a name that
   // still doesn't fit is shortened.
   const columnSize = (names, maxW, weight, size, min) => {
@@ -1251,21 +1249,44 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   };
   // Each ideology: name and percentage on one row, in the people column's type. No bars: the next
   // matches are usually within a few points of each other, so bars on a 0-100% scale all looked the
-  // same length; no color mark either, so the name gets the room (Brandon, 2026-11-10).
-  const closeIdeos = ranked.slice(1, 4), ideoNameW = ideoW - 64 - 76;
-  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 600, 30, 22);
+  // same length; no color mark beside the name either, so the name gets the room (Brandon, 2026-11-10).
+  const closeIdeos = ranked.slice(1, 4);
+  // The divider floats (Brandon, 2026-11-10): each column asks for the width its longest name needs
+  // at full size plus its fixed parts (padding, percentage, avatar). If both fit, they share what is
+  // left equally. If not, people keep full size (their names are short; at most half the room) and the
+  // ideologies get the rest, so one very long ideology name can't squeeze the people column.
+  const IDEO_FIXED = 64 + 76, PERSON_FIXED = 64 + 68 + 62, IDEO_PX = 30, PERSON_PX = 29;
+  const widestAt = (names, px) => { ctx.font = `600 ${px}px ${CARD_FONTS.body}`; return Math.max(0, ...names.map((t) => ctx.measureText(t).width)); };
+  let ideoW = W - PAD * 2, peopleW = 0;
+  if (morePeople.length) {
+    const room = W - PAD * 2 - 28;
+    const askI = widestAt(closeIdeos.map((r) => r.name), IDEO_PX) + IDEO_FIXED;
+    const askP = widestAt(morePeople.map((p) => p.name), PERSON_PX) + PERSON_FIXED;
+    ideoW = askI + askP <= room ? askI + (room - askI - askP) / 2 : room - Math.min(askP, room / 2);
+    ideoW = Math.round(Math.max(room / 2, ideoW));
+    peopleW = room - ideoW;
+  }
+  card(PAD, y, ideoW, ch);
+  const ideoNameW = ideoW - IDEO_FIXED;
+  // Floor 26px: about 25 characters fit, enough to tell all but ~15 ideologies apart; a longer name is cut
+  // rather than shrinking the other two.
+  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 600, IDEO_PX, 26);
   closeIdeos.forEach((r, i) => {
     const cy = y + 54 + i * 54 - 8, x = PAD + 32;
     ctx.fillStyle = CARD.ink;
-    ctx.fillText(fitName(r.name, ideoNameW, 600, ideoSize), x, cy + 10);
+    const shown = fitName(r.name, ideoNameW, 600, ideoSize);
+    ctx.fillText(shown, x, cy + 10);
+    // A stripe in the ideology's color at the row's left edge: color without a bar's look of a
+    // percentage (Brandon, 2026-11-10).
+    ctx.fillStyle = markColor(r); ctx.fillRect(PAD + 14, cy - 16, 5, 32);
     ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
     ctx.fillText(pct(r.similarity), PAD + ideoW - 32, cy + 10); ctx.textAlign = "left";
   });
   if (morePeople.length) {
-    const x0 = PAD + colW + 28;
-    card(x0, y, colW, ch);
-    const personNameW = colW - 64 - 68 - 62;
-    const personSize = columnSize(morePeople.map((p) => p.name), personNameW, 600, 29, 22);
+    const x0 = PAD + ideoW + 28;
+    card(x0, y, peopleW, ch);
+    const personNameW = peopleW - PERSON_FIXED;
+    const personSize = columnSize(morePeople.map((p) => p.name), personNameW, 600, PERSON_PX, 22);
     morePeople.forEach((p, i) => {
       const cy = y + 54 + i * 54 - 8, r = 24, x = x0 + 32;
       ctx.save();
@@ -1276,7 +1297,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
       ctx.fillStyle = CARD.ink;
       ctx.fillText(fitName(p.name, personNameW, 600, personSize), x + 68, cy + 10);
       ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
-      ctx.fillText(pct(p.similarity), x0 + colW - 32, cy + 10); ctx.textAlign = "left";
+      ctx.fillText(pct(p.similarity), x0 + peopleW - 32, cy + 10); ctx.textAlign = "left";
     });
   }
   y += ch + 12;
