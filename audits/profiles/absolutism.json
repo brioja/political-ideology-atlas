@@ -1670,11 +1670,33 @@
       "sources": []
     },
     "economic-self-sufficiency": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Mercantilism, which the sources tie to absolutism, aimed at a favourable balance of trade and exclusive colonial markets, though it did not seek full closure.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale admits full external closure was not sought, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Mercantilism, which the sources tie to absolutism, aimed at a favourable balance of trade and exclusive colonial markets, though it did not seek full closure.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale admits full external closure was not sought, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "trade-labor-env-standards": {
@@ -3383,6 +3405,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 279
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

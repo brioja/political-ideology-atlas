@@ -1915,12 +1915,36 @@
       "sources": []
     },
     "economic-self-sufficiency": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The programme calls for self-reliant, independent development and an end to imperialist control of trade and finance, which approaches a self-sufficient bloc, though it favours dealings on equal terms.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale supports equal dealings with foreign countries, which contradicts a bloc closed to outside trade, so the sources cited here do not answer this statement.",
       "sources": [
         "s5",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The programme calls for self-reliant, independent development and an end to imperialist control of trade and finance, which approaches a self-sufficient bloc, though it favours dealings on equal terms.",
+          "sources": [
+            "s5",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale supports equal dealings with foreign countries, which contradicts a bloc closed to outside trade, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s5",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "trade-labor-env-standards": {
@@ -3738,6 +3762,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
