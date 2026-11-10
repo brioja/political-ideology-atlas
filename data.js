@@ -2182,10 +2182,10 @@ const QUESTIONS = [
  {
   "id": "patriotic-education",
   "theme": "society",
-  "text": "Schools should teach pupils loyalty and pride toward the nation, its flag and its anthem.",
-  "agree": "Public schools should build patriotic feeling and respect for national symbols.",
-  "disagree": "Schools should not teach pupils loyalty and pride toward the nation, its flag and its anthem.",
-  "note": "About patriotism as a goal of schooling.",
+  "text": "Schools should teach pupils to be patriotic.",
+  "agree": "Schools should cultivate patriotic feeling: loyalty to and pride in the nation, expressed for example through respect for its flag and anthem.",
+  "disagree": "Schools should not teach pupils to be patriotic.",
+  "note": "About patriotism as an educational goal, beyond learning facts about national history or symbols. It does not require unquestioning support for a government, compulsory ceremonies or claims that one's nation is superior. A nation need not have its own state.",
   "icon": "🏫"
  },
  {
