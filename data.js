@@ -1075,10 +1075,10 @@ const QUESTIONS = [
  {
   "id": "reason-over-faith",
   "theme": "society",
-  "text": "Reason, not faith or emotion, should be the only guide to knowledge and action.",
-  "agree": "Beliefs and choices should rest on evidence and logic, not on revelation, tradition or feeling.",
-  "disagree": "Reason should not take the place of faith and emotion as the only guide to knowledge and action.",
-  "note": "About what should ground our beliefs and choices.",
+  "text": "Reason alone should guide our beliefs and choices.",
+  "agree": "What we believe and how we choose to act should rest solely on evidence and logical reasoning, not on faith or feeling as independent guides.",
+  "disagree": "Reason should not be the sole guide to our beliefs and choices.",
+  "note": "About all beliefs and choices, not just scientific inquiry or public policy. “Reason” here includes reasoning from evidence, not merely abstract deduction. Disagreement does not mean rejecting reason; it includes accepting another guide alongside it. The statement concerns what should guide judgment, not whether people experience emotions.",
   "icon": "🧠"
  },
  {
