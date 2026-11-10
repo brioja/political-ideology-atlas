@@ -2,7 +2,8 @@
 // on Wikipedia would take days, so the people Wikidata ties to politics are checked: a political
 // occupation (politician, political activist, political pundit, political scientist, theorist,
 // philosopher, economist...), a political office held, a stated political ideology, or plain
-// "activist" as an occupation. These labels are triage, not a filter: they decide whose views are
+// "activist" as an occupation: a heuristic for who is likely to pass an audit, since a public political
+// record is what places someone on every dividing line. These labels are triage, not a filter: they decide whose views are
 // fetched, never who may be in the catalog. The only filter is the views cutoff
 // (scripts/candidate-filter.js), and anyone above it may be added, label or not (Destiny, xQc).
 // The uncertainty rule, not the catalog, decides who appears in the test; scripts/triage.js then
