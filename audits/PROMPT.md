@@ -156,8 +156,8 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   the sources' own words" and "Lessons from earlier reviews").
 - Then run `node scripts/statements-check.js --wording audits/profiles/<id>.json` and reword every
   error and every warning that test 3 confirms (two claims joined, a list where one general word
-  would do, a means attached to a goal, a vague scope). If an error-level word is right, say why in
-  the entry's `"wordingOk"` field.
+  would do, a means attached to a goal, a vague scope). Errors are absolute: reword every one; no
+  explanation excuses it.
 
 ## 6. Output format
 

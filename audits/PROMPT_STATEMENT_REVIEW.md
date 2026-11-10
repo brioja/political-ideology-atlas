@@ -42,10 +42,11 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
   (a thin rationale, not shown wrong). Clear conflicts get nulled; the rest wait for the audit's next pass.
 - **"Keep as is" is a fine verdict.** Some statements fail the check without a real problem; `sacred-nation`
   kept its wording because its two halves are one idea in every source.
-- **"and" is absolute** (Brandon, 2026-11-10): the statement text never keeps an "and", even with an
-  explanation; `statements-check.js` won't accept a `wordingOk` for it. Fold a list into a general word, use a
-  colon or a single phrase ("kindred peoples"), or put the list in the agree text. Other error words can still
-  be explained when they're right.
+- **Errors are absolute** (Brandon, 2026-11-10): the statement text never keeps an error word ("and",
+  "can", "may", "rather", "so", "because", "as well as", "not only"), whatever the explanation;
+  `statements-check.js` no longer accepts one. Fold a list into a general word, use a colon or a single phrase
+  ("kindred peoples"), put the list in the agree text, or say a permission or ability another way ("able
+  to"). Only warnings may stand, when test 3 confirms them.
 - **One claim, no hidden second one.** Fold a list into one general word ("major industries", not "energy,
   rail and utilities"); move examples to the agree text. Where two halves can come apart, check the rationales
   for which half decided the answers; related statements may already measure the other half.

@@ -8,7 +8,7 @@
 //   node scripts/statements-check.js --wording [file.json ...]
 //     Test 3: marks wording in candidate statements, or in the statements of proposal or review
 //     files (statement-pass and Codex review JSON), at two levels (lists and reasons in lib.js WORDING).
-//     Errors almost always mean a defect: "can"/"may" (a permission is almost always trivially true:
+//     Errors are absolute and always need rewording (Brandon, 2026-11-10): "can"/"may" (a permission is almost always trivially true:
 //     "a monarch can be a good ruler"), "rather" ("X rather than Y" asks two things, so a disagree is
 //     ambiguous), "so"/"because" (a reason: the bank asks positions), "as well as"/"not only" (a
 //     comparison slips in a second claim), "and" (two claims joined, or a list a general word would replace).
@@ -24,8 +24,7 @@ const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
   // Statements in a proposal file ({proposals: [{statement}]}), a review file ([{statement}]) or an
-  // audit file (its open missingStatements). A "wordingOk" field explains why an error-level word is
-  // right there (e.g. "can" in "cannot").
+  // audit file (its open missingStatements). Errors are absolute: a "wordingOk" field no longer excuses one.
   const fromFile = (f) => {
     const j = readJson(path.resolve(f));
     const items = Array.isArray(j) ? j : j.missingStatements
@@ -41,15 +40,14 @@ if (process.argv.includes("--wording")) {
   for (const s of list) {
     const m = wordingMarks(s.text);
     if (!m.errors.length && !m.warnings.length) continue;
-    // "and" is absolute (Brandon, 2026-11-10): a wordingOk explains other error words, never "and".
-    const explained = s.wordingOk && !m.errors.includes("and");
-    const level = m.errors.length ? (explained ? "error (explained)" : "ERROR") : "warning";
-    if (m.errors.length && !explained) errors++; else warnings++;
+    // Errors are absolute (Brandon, 2026-11-10): no explanation excuses one; reword.
+    const level = m.errors.length ? "ERROR" : "warning";
+    if (m.errors.length) errors++; else warnings++;
     const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings]), (w) => `**${w.toUpperCase()}**`);
-    console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}${s.wordingOk ? ` (${s.wordingOk})` : ""}`);
+    console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}`);
   }
   console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}: ` +
-    `reword, or explain in the proposal's "wordingOk"; "and" can't be explained), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
+    `always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
     `check against test 3 in audits/statements/STANDARD.md: two claims joined, a list where one general word would do, ` +
     `a means instead of a position, a vague scope).`);
   process.exit(0);

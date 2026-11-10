@@ -34,7 +34,7 @@ A statement is **asked in the test** only when it meets all four:
    - **A general word, not a list.** "Objects that people worship", not "statues, shrines and
      tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
      `node scripts/statements-check.js --wording` marks wording at two levels: errors ("can", "may",
-     "rather", "so", "because", "as well as", "not only", "and") are almost always a defect ("and" always: it can't be explained away in a `wordingOk`); warnings
+     "rather", "so", "because", "as well as", "not only", "and") are a defect and always reworded (Brandon, 2026-11-10: errors are absolute, no explanation excuses one); warnings
      ("or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as") are often fine but worth a look ("in economic life"
      is a vague scope; "in war" is just a place; a "not" statement usually has a positive form that
      is easier to answer; an "if", "unless" or "when" condition is hard to negate ("even when" and "even if" only add emphasis and aren't marked; "provided" is marked only as a condition, not as a verb: "provided by"), since a disagree could reject
