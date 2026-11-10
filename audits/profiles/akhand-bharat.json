@@ -771,11 +771,33 @@
       "sources": []
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Debates on freedom as material capacity are foreign to the sources, which treat liberty in national terms.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the question is foreign to the sources; silence is not a position, so this is null rather than a value.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Debates on freedom as material capacity are foreign to the sources, which treat liberty in national terms.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the question is foreign to the sources; silence is not a position, so this is null rather than a value.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "media-academia-power": {
@@ -3436,6 +3458,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 7
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

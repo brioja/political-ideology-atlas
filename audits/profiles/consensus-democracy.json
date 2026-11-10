@@ -736,11 +736,33 @@
       ]
     },
     "positive-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The model concerns institutions, not theories of liberty, so adherents are split.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the theory does not address this definition; silence is not a position, so this is null rather than a value.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The model concerns institutions, not theories of liberty, so adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the theory does not address this definition; silence is not a position, so this is null rather than a value.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "media-academia-power": {
@@ -3424,6 +3446,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 192
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
