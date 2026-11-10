@@ -1161,9 +1161,9 @@
    "sources": []
   },
   "equal-moral-worth": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "In MN 98, MN 93 and DN 27 he rejects the claim that birth makes brahmins superior and says worth lies in deeds; this denies rank by birth but does not say worth is equal or speak of legal rights.",
+   "rationale": "Nulled (statement review, 2026-11-10): its rationale says equal worth is not stated and addresses no legal equality, so the sources cited here do not answer this statement.",
    "sources": [
     "s6",
     "s7",
@@ -1172,9 +1172,37 @@
     "b13",
     "b14"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "In MN 98, MN 93 and DN 27 he rejects the claim that birth makes brahmins superior and says worth lies in deeds; this denies rank by birth but does not say worth is equal or speak of legal rights.",
+     "sources": [
+      "s6",
+      "s7",
+      "s3",
+      "b11",
+      "b13",
+      "b14"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-28"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-10): its rationale says equal worth is not stated and addresses no legal equality, so the sources cited here do not answer this statement.",
+     "sources": [
+      "s6",
+      "s7",
+      "s3",
+      "b11",
+      "b13",
+      "b14"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "socialism-one-country": {
@@ -3410,6 +3438,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }
