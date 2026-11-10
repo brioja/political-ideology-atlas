@@ -3014,12 +3014,36 @@
       ]
     },
     "language-defines-nation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Gökalp defines the nation by shared language and culture and Turan as the unity of Turkic-speaking peoples across borders, but he also counts shared religious and moral ideals in the nation, against the statement's \"whatever religions divide them\".",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says its religious element cuts against \"whatever religions divide them\", so the sources cited here do not answer this statement.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Gökalp defines the nation by shared language and culture and Turan as the unity of Turkic-speaking peoples across borders, but he also counts shared religious and moral ideals in the nation, against the statement's \"whatever religions divide them\".",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says its religious element cuts against \"whatever religions divide them\", so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "communal-electorates": {
@@ -3635,6 +3659,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

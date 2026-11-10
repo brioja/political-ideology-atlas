@@ -3065,11 +3065,33 @@
       "sources": []
     },
     "language-defines-nation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Polish identity defined by language and culture, though Catholicism also needed, which cuts against it.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says Catholicism is also needed, making shared language and history insufficient across religious division, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Polish identity defined by language and culture, though Catholicism also needed, which cuts against it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says Catholicism is also needed, making shared language and history insufficient across religious division, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "communal-electorates": {
@@ -3704,6 +3726,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     },
     {
       "kind": "nulling",
