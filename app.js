@@ -1270,7 +1270,12 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   const ideoNameW = ideoW - IDEO_FIXED;
   // Floor 26px: about 25 characters fit, enough to tell all but ~15 ideologies apart; a longer name is cut
   // rather than shrinking the other two.
-  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 600, IDEO_PX, 26);
+  const personNameW = peopleW - PERSON_FIXED;
+  // Both columns' names share one size, the smaller of the two, so the two boxes match
+  // (Brandon, 2026-11-10: different sizes left and right looked off).
+  const nameSize = Math.min(columnSize(closeIdeos.map((r) => r.name), ideoNameW, 600, IDEO_PX, 26),
+    morePeople.length ? columnSize(morePeople.map((p) => p.name), personNameW, 600, PERSON_PX, 22) : Infinity);
+  const ideoSize = nameSize;
   closeIdeos.forEach((r, i) => {
     const cy = y + 54 + i * 54 - 8, x = PAD + 32;
     ctx.fillStyle = CARD.ink;
@@ -1285,8 +1290,7 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
   if (morePeople.length) {
     const x0 = PAD + ideoW + 28;
     card(x0, y, peopleW, ch);
-    const personNameW = peopleW - PERSON_FIXED;
-    const personSize = columnSize(morePeople.map((p) => p.name), personNameW, 600, PERSON_PX, 22);
+    const personSize = nameSize;
     morePeople.forEach((p, i) => {
       const cy = y + 54 + i * 54 - 8, r = 24, x = x0 + 32;
       ctx.save();
