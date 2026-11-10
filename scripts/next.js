@@ -8,7 +8,14 @@ const { execFileSync } = require("child_process");
 const path = require("path");
 const skipArg = process.argv.indexOf("--skip");
 const SKIP = new Set(skipArg > -1 ? process.argv[skipArg + 1].split(",") : []);
-const pending = (args) => JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--limit", String(SKIP.size + 1), ...args]).toString()).filter((e) => !SKIP.has(e.id));
+const pending = (args, limit = SKIP.size + 1) => JSON.parse(execFileSync("node", [path.join(__dirname, "pending.js"), "--limit", String(limit), ...args], { maxBuffer: 64 * 1024 * 1024 }).toString()).filter((e) => !SKIP.has(e.id));
+// The new-audit turn takes the first pending entry with no audit file yet. pending.js also lists existing audits
+// that fail validation once their gap has passed; those are later passes, so they come only when nothing new is
+// left (Brandon, 2026-11-10: the first alternating run drew ten old failing audits and no one new).
+const firstNew = (list, kind) => {
+  const lib = require("./lib"), file = kind === "person" ? lib.personPath : lib.profilePath;
+  return list.find((e) => !require("fs").existsSync(file(e.id))) || list[0];
+};
 // People in triage order (most likely to pass first, scripts/triage.js; Brandon 2026-11-06), ideologies by views.
 const TRIAGE = require("fs").existsSync(path.join(__dirname, "..", "audits", "people-triage.json"));
 const { readJson, catalog, peopleCatalog } = require("./lib");
@@ -132,8 +139,8 @@ if (lastWasNew()) {
   if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
 }
 
-const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);
-const [ideology] = PEOPLE_ONLY ? [] : pending(["--by-views"]);
+const person = IDEOLOGIES_ONLY ? null : firstNew(pending(["--people", TRIAGE ? "--triage" : "--by-views"], Infinity), "person");
+const ideology = PEOPLE_ONLY ? null : firstNew(pending(["--by-views"], Infinity), "ideology");
 const p = person && { kind: "person", ...person, views12m: views(peopleCatalog(), person.id) };
 const i = ideology && { kind: "ideology", ...ideology, views12m: views(catalog(), ideology.id) };
 // Default (Brandon, 2026-11-05): the most-viewed pending entry of whichever kind has fewer live on the
