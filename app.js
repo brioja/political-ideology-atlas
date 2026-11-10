@@ -1249,17 +1249,17 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     while (ctx.measureText(text).width > maxW && text.length > 4) text = text.slice(0, -2) + "…";
     return text;
   };
-  // Each ideology's name gets the full width; its percentage sits at the end of its bar.
-  const closeIdeos = ranked.slice(1, 4), ideoNameW = ideoW - 64;
-  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 400, 30, 24);
+  // Each ideology: name and percentage on one row, in the people column's type. No bars: the next
+  // matches are usually within a few points of each other, so bars on a 0-100% scale all looked the
+  // same length; no color mark either, so the name gets the room (Brandon, 2026-11-10).
+  const closeIdeos = ranked.slice(1, 4), ideoNameW = ideoW - 64 - 76;
+  const ideoSize = columnSize(closeIdeos.map((r) => r.name), ideoNameW, 600, 30, 22);
   closeIdeos.forEach((r, i) => {
-    const ry = y + 50 + i * 54, x = PAD + 32, w = ideoW - 64, barW = w - 76;
+    const cy = y + 54 + i * 54 - 8, x = PAD + 32;
     ctx.fillStyle = CARD.ink;
-    ctx.fillText(fitName(r.name, ideoNameW, 400, ideoSize), x, ry);
-    ctx.fillStyle = "rgba(23, 32, 43, 0.1)"; ctx.fillRect(x, ry + 18, barW, 6);
-    ctx.fillStyle = markColor(r); ctx.fillRect(x, ry + 18, barW * r.similarity, 6);
-    ctx.fillStyle = CARD.muted; ctx.font = `400 24px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
-    ctx.fillText(pct(r.similarity), x + w, ry + 26); ctx.textAlign = "left";
+    ctx.fillText(fitName(r.name, ideoNameW, 600, ideoSize), x, cy + 10);
+    ctx.fillStyle = CARD.muted; ctx.font = `400 26px ${CARD_FONTS.mono}`; ctx.textAlign = "right";
+    ctx.fillText(pct(r.similarity), PAD + ideoW - 32, cy + 10); ctx.textAlign = "left";
   });
   if (morePeople.length) {
     const x0 = PAD + colW + 28;
@@ -1361,8 +1361,17 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     endLabel(L.low, x0 - 24, ty, "right");
     endLabel(L.high, x1 + 24, ty, "left");
     // Bigger lines (more of the differences) get a thicker track; the biggest comes first.
-    ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = 2 + 6 * lineWeight(i); ctx.lineCap = "round";
+    const track = 2 + 6 * lineWeight(i);
+    ctx.strokeStyle = "rgba(23, 32, 43, 0.18)"; ctx.lineWidth = track; ctx.lineCap = "round";
     ctx.beginPath(); ctx.moveTo(x0, ty); ctx.lineTo(x1, ty); ctx.stroke(); ctx.lineCap = "butt";
+    // Ticks to read a place by: the middle of the track, and smaller ones halfway to each end
+    // (Brandon, 2026-11-10: without them it was hard to see who is nearer the middle). Only marks on
+    // the track as drawn; the track still runs between the two furthest ideologies.
+    ctx.strokeStyle = "rgba(23, 32, 43, 0.45)";
+    [[0.5, 2.5, track / 2 + 9], [0.25, 1.5, track / 2 + 5], [0.75, 1.5, track / 2 + 5]].forEach(([f, w, h]) => {
+      const tx = x0 + f * (x1 - x0);
+      ctx.lineWidth = w; ctx.beginPath(); ctx.moveTo(tx, ty - h); ctx.lineTo(tx, ty + h); ctx.stroke();
+    });
     dotMark(px(top.scores[i]), ty, 9);
     if (nearScores) diamondMark(px(nearScores[i]), ty, 7.5); // a diamond's points reach 1.2x: about the dot's size
     const ux = px(you[i]);
