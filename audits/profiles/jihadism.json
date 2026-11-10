@@ -1270,11 +1270,33 @@
       ]
     },
     "diversity-weakens-cohesion": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement values a community of true believers and treats others unequally, which leans toward homogeneity, though the sources discuss religion, not ethnicity.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the sources concern religion rather than ethnicity, so the sources cited here do not answer this statement.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The movement values a community of true believers and treats others unequally, which leans toward homogeneity, though the sources discuss religion, not ethnicity.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the sources concern religion rather than ethnicity, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "offices-by-lottery": {
@@ -3655,6 +3677,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
