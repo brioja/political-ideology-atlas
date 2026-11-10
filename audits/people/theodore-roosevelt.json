@@ -1,11 +1,25 @@
 {
   "id": "theodore-roosevelt",
   "name": "Theodore Roosevelt",
-  "auditedAt": "2026-10-23",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-10",
+  "auditor": [
+    "claude-sonnet-5-5",
+    "claude-opus-5-5"
+  ],
+  "rules": 5,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-11-10"
+    }
+  ],
   "living": false,
   "role": "26th president of the United States (1901-1909); Progressive (Bull Moose) Party candidate (1912)",
-  "summary": "A Republican-turned-Progressive who as president and in his 1910-1912 New Nationalism backed strong federal regulation of corporations, labor protections, graduated income and inheritance taxes, conservation, and direct democracy such as primaries, recall and the popular review of some state court decisions. He was also a firm advocate of naval and military strength, American expansion and tutelage over peoples he judged less advanced, and the Americanization of immigrants, and held race views that were hierarchical but reportedly changed late in life.",
+  "summary": "A Republican-turned-Progressive who as president (1901-1909) and in his 1910-1912 New Nationalism backed strong federal regulation of corporations, labor protections, graduated income and inheritance taxes, conservation and direct democracy, including primaries, recall and a popular vote on some state court rulings. He was a firm advocate of naval and military strength, universal military service, American expansion and tutelage over peoples he judged less advanced, strict separation of church and state, and the full Americanization of immigrants in one language and one allegiance, and he held hierarchical views of race alongside a stated rule of judging each man on his merits.",
   "wikipedia": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
   "sources": [
     {
@@ -13,16 +27,19 @@
       "kind": "primary",
       "title": "Theodore Roosevelt: An Autobiography (1913)",
       "author": "Theodore Roosevelt",
-      "url": "https://www.gutenberg.org/cache/epub/3335/pg3335.txt",
-      "usedFor": "executive power, labor, socialism, Philippines, Santo Domingo, Panama, preparedness, peace and international force, suffrage"
+      "url": "https://www.gutenberg.org/ebooks/3335",
+      "usedFor": "executive power, labor, socialism, Philippines, Santo Domingo, Panama, preparedness, peace and international force, suffrage",
+      "evidence": "words",
+      "library": "3335 Roosevelt - Theodore Roosevelt An Autobiography.txt"
     },
     {
       "id": "s2",
       "kind": "primary",
-      "title": "The New Nationalism (Osawatomie speech excerpt, 1910)",
+      "title": "The New Nationalism (Osawatomie speech, August 31, 1910), full text",
       "author": "Theodore Roosevelt",
-      "url": "https://teachingamericanhistory.org/document/the-new-nationalism/",
-      "usedFor": "property vs. human welfare, labor regulation, direct democracy, recall, national power, family and character"
+      "url": "https://obamawhitehouse.archives.gov/blog/2011/12/06/archives-president-teddy-roosevelts-new-nationalism-speech",
+      "usedFor": "property and human welfare, labor regulation, graduated income and inheritance taxes, wealth and power, conservation, executive stewardship, separation of powers, direct primary, campaign money, conditional help",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +47,8 @@
       "title": "Progressive Party Platform of 1912",
       "author": "Progressive Party (written under Roosevelt's leadership)",
       "url": "https://www.presidency.ucsb.edu/documents/progressive-party-platform-1912",
-      "usedFor": "direct democracy, courts, labor, taxes, tariff, corporations, currency, conservation, immigrants, peace and navy"
+      "usedFor": "direct democracy, courts, labor, taxes, tariff, corporations, currency, conservation, immigrants, peace and navy",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -38,7 +56,8 @@
       "title": "Fifth Annual Message (1905)",
       "author": "Theodore Roosevelt",
       "url": "https://www.presidency.ucsb.edu/documents/fifth-annual-message-4",
-      "usedFor": "immigration limits, railroad rate regulation, trusts and labor unions"
+      "usedFor": "immigration limits, railroad rate regulation, trusts and labor unions",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +65,8 @@
       "title": "Seventh Annual Message (1907)",
       "author": "Theodore Roosevelt",
       "url": "https://www.presidency.ucsb.edu/documents/seventh-annual-message-4",
-      "usedFor": "income and inheritance tax, labor injunctions, arbitration"
+      "usedFor": "income and inheritance tax, labor injunctions, arbitration",
+      "evidence": "words"
     },
     {
       "id": "s6",
@@ -54,7 +74,9 @@
       "title": "The Strenuous Life (1899)",
       "author": "Theodore Roosevelt",
       "url": "https://en.wikisource.org/wiki/The_Strenuous_Life",
-      "usedFor": "war, struggle, expansion, duty in the Philippines"
+      "usedFor": "war, struggle, expansion, duty in the Philippines",
+      "evidence": "words",
+      "library": "58821 Roosevelt - The Strenuous Life The Works of Theodore Roosevelt, Volume 1.txt"
     },
     {
       "id": "s7",
@@ -62,7 +84,8 @@
       "title": "Citizenship in a Republic (1910)",
       "author": "Theodore Roosevelt",
       "url": "https://en.wikisource.org/wiki/Citizenship_in_a_Republic",
-      "usedFor": "duties of the privileged, wealth, class hatred, liberty and tolerance"
+      "usedFor": "duties of the privileged, wealth, class hatred, liberty and tolerance",
+      "evidence": "words"
     },
     {
       "id": "s8",
@@ -70,7 +93,9 @@
       "title": "The Winning of the West, vol. 1 (1889)",
       "author": "Theodore Roosevelt",
       "url": "https://www.gutenberg.org/cache/epub/11941/pg11941.txt",
-      "usedFor": "Indian land claims, expansion, savagery and civilization"
+      "usedFor": "Indian land claims, expansion, savagery and civilization",
+      "evidence": "words",
+      "library": "11941 Roosevelt - The Winning of the West, Volume 1 From the Alleghanies to th.txt"
     },
     {
       "id": "s9",
@@ -78,15 +103,398 @@
       "title": "Theodore Roosevelt (Wikipedia)",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
-      "usedFor": "Booker T. Washington dinner, Brownsville, 1905 southern tour, League of Peace, 1916 hyphenated Americans"
+      "usedFor": "Booker T. Washington dinner, Brownsville, 1905 southern tour, League of Peace, 1916 hyphenated Americans",
+      "evidence": "words"
     },
     {
       "id": "s10",
-      "kind": "scholarly",
+      "kind": "reference",
       "title": "Political positions of Theodore Roosevelt (Wikipedia)",
       "author": "Wikipedia contributors (citing Dyer, Dalton and others)",
       "url": "https://en.wikipedia.org/wiki/Political_positions_of_Theodore_Roosevelt",
-      "usedFor": "Americanization quotes 1894/1907/1915, 1914 sterilization statement, race views, Roosevelt Corollary, universal military service"
+      "usedFor": "Americanization quotes 1894/1907/1915, 1914 sterilization statement, race views, Roosevelt Corollary, universal military service",
+      "evidence": "words"
+    },
+    {
+      "id": "sotu",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "State of the Union Addresses, 1901-1908 (Project Gutenberg)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/5032",
+      "library": "5032 Roosevelt - State of the Union Addresses.txt",
+      "usedFor": "Indian policy, Chinese exclusion, merit system, divorce law, birth rate, eight-hour goal, campaign contributions, Philippines, international police, disarmament, arbitration"
+    },
+    {
+      "id": "compil",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "A Compilation of the Messages and Papers of the Presidents: Theodore Roosevelt supplement, proclamations and executive orders, 1901-1902",
+      "author": "Theodore Roosevelt (ed. James D. Richardson)",
+      "url": "https://www.gutenberg.org/ebooks/13891",
+      "library": "13891 Roosevelt - A Compilation of the Messages and Papers of the Presidents..txt",
+      "usedFor": "Philippine amnesty proclamation of July 4, 1902; forest reserve proclamations"
+    },
+    {
+      "id": "miller",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "President's letters ordering the reinstatement of W. A. Miller at the Government Printing Office, July 13-14, 1903, in Presidential Addresses and State Papers, vol. 2",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/74680",
+      "usedFor": "open shop in government employment"
+    },
+    {
+      "id": "amism",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Americanism: address before the Knights of Columbus, Carnegie Hall, October 12, 1915",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68152",
+      "library": "68152 Roosevelt - Americanism.txt",
+      "usedFor": "church and state, non-sectarian schools, hyphenated Americans, English language, deportation of aliens who do not learn English, aliens' property rights, duty before rights, universal military service"
+    },
+    {
+      "id": "kcs",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Roosevelt in the Kansas City Star: War-time Editorials (1917-1918)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/67811",
+      "library": "67811 Roosevelt - Roosevelt in the Kansas City Star War-time Editorials.txt",
+      "usedFor": "Chinese coolie labor, immigrants as future citizens, tenant farming, Bolsheviki, universal military training, League of Nations"
+    },
+    {
+      "id": "awar",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "America and the World War (1915)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/53651",
+      "library": "53651 Roosevelt - America and the World War.txt",
+      "usedFor": "neutrality, Belgium, treaties without force, disarmament, world league backed by force"
+    },
+    {
+      "id": "sqd",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "A Square Deal (1906 compilation of his addresses and messages)",
+      "author": "Theodore Roosevelt (comp. Horace Markley)",
+      "url": "https://www.gutenberg.org/ebooks/66890",
+      "library": "66890 Roosevelt - A Square Deal.txt",
+      "usedFor": "divorce, race suicide"
+    },
+    {
+      "id": "pap1",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Presidential Addresses and State Papers, vol. 1 (1901-1903)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/74572",
+      "library": "74572 Roosevelt - Presidential addresses and state papers, Volume 1 (of 7).txt",
+      "usedFor": "lynching, child labor laws, power of the presidency"
+    },
+    {
+      "id": "pap2",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Presidential Addresses and State Papers, vol. 2 (1903-1904)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/74680",
+      "library": "74680 Roosevelt - Presidential addresses and state papers, Volume 2 (of 7).txt",
+      "usedFor": "black appointees and the 'door of hope' letter (1903), letter to Governor Durbin on lynching, race suicide letter"
+    },
+    {
+      "id": "pap3",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Presidential Addresses and State Papers, vol. 3 (1904-1905)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/74681",
+      "library": "74681 Roosevelt - Presidential addresses and state papers, Volume 3 (of 7).txt",
+      "usedFor": "juvenile offenders and probation, Philippines"
+    },
+    {
+      "id": "pap4",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Presidential Addresses and State Papers, vol. 4 (1905)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/76020",
+      "library": "76020 Roosevelt - Presidential addresses and state papers, Volume 4 (of 7).txt",
+      "usedFor": "government ownership of railroads (Raleigh, 1905), Chinese coolie exclusion, merit system, lynching"
+    },
+    {
+      "id": "amprob",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "American Problems (Works, 1910-1913 essays)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/64224",
+      "library": "64224 Roosevelt - American problems.txt",
+      "usedFor": "progressive inheritance and income taxes, tariff commission, employers' liability"
+    },
+    {
+      "id": "outlook",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Outlook Editorials (1909-1913)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/77590",
+      "library": "77590 Roosevelt - Outlook editorials.txt",
+      "usedFor": "courts, freedom of contract and vested rights"
+    },
+    {
+      "id": "realiz",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Realizable Ideals (Earl Lectures, 1911)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/79515",
+      "library": "79515 Roosevelt - Realizable ideals.txt",
+      "usedFor": "duties and rights, suffrage"
+    },
+    {
+      "id": "amid",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "American Ideals, and Other Essays, Social and Political (1897)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/71581",
+      "library": "71581 Roosevelt - American ideals, and other essays, social and political.txt",
+      "usedFor": "public schools, English in schools, parochial school funds, Chinese exclusion and race, birth rate, police board"
+    },
+    {
+      "id": "histlit",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "History as Literature, and Other Essays (1913)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/75294",
+      "library": "75294 Roosevelt - History as literature, and other essays.txt",
+      "usedFor": "religion and duty, race theories"
+    },
+    {
+      "id": "bioan",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Biological Analogies in History (Romanes Lecture, Oxford, 1910)",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/72288",
+      "library": "72288 Roosevelt - Biological analogies in history.txt",
+      "usedFor": "rule over alien races, national decay"
+    },
+    {
+      "id": "afeu",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "African and European Addresses (1910), including Citizenship in a Republic and the Nobel address on international peace",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/13930",
+      "library": "13930 Roosevelt - African and European Addresses.txt",
+      "usedFor": "League of Peace, arbitration, birth rate, luxury, fighting edge"
+    },
+    {
+      "id": "boston",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Address delivered at Boston, Mass., April 27, 1912",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68081",
+      "library": "68081 Roosevelt - Address of Hon. Theodore Roosevelt, delivered at Boston, Mas.txt",
+      "usedFor": "courts and the people's right to decide fundamental justice, removing corrupt judges"
+    },
+    {
+      "id": "provincetown",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Address at the laying of the corner stone of the Pilgrim Memorial Monument, Provincetown, August 20, 1907",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68052",
+      "library": "68052 Roosevelt - Address of President Roosevelt on the Occasion of the Laying.txt",
+      "usedFor": "malefactors of great wealth, income and inheritance taxes, employers' liability"
+    },
+    {
+      "id": "muckrake",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Address at the laying of the corner stone of the House office building ('The Man with the Muck-rake'), April 14, 1906",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68449",
+      "library": "68449 Roosevelt - Address of President Roosevelt at the laying of the corner s.txt",
+      "usedFor": "progressive inheritance tax, press criticism"
+    },
+    {
+      "id": "lincolndinner",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Address at the Lincoln dinner of the Republican Club of New York, February 13, 1905",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68266",
+      "library": "68266 Roosevelt - Address of President Roosevelt at the Lincoln dinner of the.txt",
+      "usedFor": "race relations in the South, lynching"
+    },
+    {
+      "id": "keokuk",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Address at Keokuk, Iowa, October 1, 1907",
+      "author": "Theodore Roosevelt",
+      "url": "https://www.gutenberg.org/ebooks/68119",
+      "library": "68119 Roosevelt - Address of President Roosevelt at Keokuk, Iowa, October 1, 1.txt",
+      "usedFor": "the owner-worked farm home as a political and social bulwark"
+    },
+    {
+      "id": "davenport",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Letter to Charles B. Davenport, January 3, 1913 (American Philosophical Society, Davenport Papers; image and transcript)",
+      "author": "Theodore Roosevelt",
+      "url": "https://dnalc.cshl.edu/view/11219-t-roosevelt-letter-to-c-davenport-about-degenerates-reproducing-.html",
+      "usedFor": "eugenics: degenerates reproducing"
+    },
+    {
+      "id": "mcdom",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Theodore Roosevelt: Domestic Affairs",
+      "author": "Sidney Milkis, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/roosevelt/domestic-affairs",
+      "usedFor": "Northern Securities suit, Hepburn Act, coal strike, conservation orders, Meat Inspection and Pure Food Acts, Brownsville discharge, black suffrage and appointments"
+    },
+    {
+      "id": "mcfor",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Theodore Roosevelt: Foreign Affairs",
+      "author": "Sidney Milkis, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/roosevelt/foreign-affairs",
+      "usedFor": "Philippines, Panama revolution and canal, Roosevelt Corollary and Santo Domingo customs, Venezuela arbitration, Portsmouth mediation, Great White Fleet, acting without Congress"
+    },
+    {
+      "id": "mcbefore",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Theodore Roosevelt: Life Before the Presidency",
+      "author": "Sidney Milkis, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/roosevelt/life-before-the-presidency",
+      "usedFor": "Civil Service Commission, New York police board and Sunday liquor law, governorship"
+    },
+    {
+      "id": "mccamp",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Theodore Roosevelt: Campaigns and Elections",
+      "author": "Sidney Milkis, Miller Center, University of Virginia",
+      "url": "https://millercenter.org/president/roosevelt/campaigns-and-elections",
+      "usedFor": "1908 no-third-term pledge kept, 1912 candidacy, African safari"
+    },
+    {
+      "id": "hsjapan",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "Japanese-American Relations at the Turn of the Century, 1900-1922",
+      "author": "Office of the Historian, U.S. Department of State",
+      "url": "https://history.state.gov/milestones/1899-1913/japanese-relations",
+      "usedFor": "Gentlemen's Agreement restricting Japanese labor immigration; San Francisco school segregation order withdrawn"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "file": "3337 Roosevelt - Hunting the Grisly and Other Sketches An Account of the Big.txt",
+      "reason": "Hunting the Grisly and Other Sketches: big-game hunting narrative; searched by theme and it states no political positions beyond what the Autobiography covers."
+    },
+    {
+      "file": "6467 Roosevelt - Letters to His Children.txt",
+      "reason": "Letters to His Children: private family letters edited by J. B. Bishop; searched and they record no political positions beyond those in his public works."
+    },
+    {
+      "file": "9104 Roosevelt - The Naval War of 1812 Or the History of the United States Na.txt",
+      "reason": "The Naval War of 1812: a naval history of the war; its judgments are about 1812 tactics and ships, not positions on the statements."
+    },
+    {
+      "file": "11746 Roosevelt - Through the Brazilian Wilderness.txt",
+      "reason": "Through the Brazilian Wilderness: an account of the 1914 Amazon expedition; natural history and travel, no political positions on the statements."
+    },
+    {
+      "file": "11942 Roosevelt - The Winning of the West, Volume 2 From the Alleghanies to th.txt",
+      "reason": "The Winning of the West, vol. 2: continues the frontier history of vol. 1, which is cited for his views on Indian land and conquest; nothing new on the statements."
+    },
+    {
+      "file": "11943 Roosevelt - The Winning of the West, Volume 3 The Founding of the Trans-.txt",
+      "reason": "The Winning of the West, vol. 3: continues the frontier history of vol. 1, which is cited; its narrative adds no new position on the statements."
+    },
+    {
+      "file": "11944 Roosevelt - The Winning of the West, Volume 4 Louisiana and the Northwes.txt",
+      "reason": "The Winning of the West, vol. 4: continues the frontier history of vol. 1, which is cited; its narrative adds no new position on the statements."
+    },
+    {
+      "file": "13000 Roosevelt - The Rough Riders.txt",
+      "reason": "The Rough Riders: memoir of the 1898 Cuban campaign; his views on war and service in it are stated more fully in the Autobiography and speeches cited."
+    },
+    {
+      "file": "34135 Roosevelt - A Book-Lover's Holidays in the Open.txt",
+      "reason": "A Book-Lover's Holidays in the Open: hunting and travel essays; searched by theme, no political positions on the statements."
+    },
+    {
+      "file": "36292 Roosevelt - Average Americans.txt",
+      "reason": "Average Americans: written by his son Theodore Roosevelt Jr. about the First World War; a relative's book is not his own position."
+    },
+    {
+      "file": "37122 Roosevelt - Hunting in Many Lands The Book of the Boone and Crockett Cl.txt",
+      "reason": "Hunting in Many Lands: Boone and Crockett Club book of hunting essays by several authors that he co-edited; no political positions on the statements."
+    },
+    {
+      "file": "37656 Roosevelt - Thomas Hart Benton.txt",
+      "reason": "Thomas Hart Benton: a biography of a senator; its judgments are about Benton's era and career, not his own positions on the statements."
+    },
+    {
+      "file": "39915 Roosevelt - Gouverneur Morris.txt",
+      "reason": "Gouverneur Morris: a biography of a founder; its judgments are about Morris's career, not his own positions on the statements."
+    },
+    {
+      "file": "61935 Roosevelt - Outdoor pastimes of an American hunter.txt",
+      "reason": "Outdoor Pastimes of an American Hunter: hunting narrative; searched by theme, no political positions on the statements."
+    },
+    {
+      "file": "63051 Roosevelt - Oliver Cromwell.txt",
+      "reason": "Oliver Cromwell: a biography of Cromwell; its judgments concern seventeenth-century England, not his own positions on the statements."
+    },
+    {
+      "file": "67632 Roosevelt - Good hunting; in pursuit of big game in the West.txt",
+      "reason": "Good Hunting: hunting narrative for young readers; no political positions on the statements."
+    },
+    {
+      "file": "68070 Roosevelt - Address of President Roosevelt at Canton, Ohio, September 30.txt",
+      "reason": "Address at Canton, Ohio, 1907: a memorial address at the McKinley monument; searched, no positions on the statements beyond tributes."
+    },
+    {
+      "file": "68136 Roosevelt - Address of President Roosevelt at Cairo, Illinois, October 3.txt",
+      "reason": "Address at Cairo, Illinois, 1907: searched; its positions on the navy and corporate regulation repeat those cited from the annual messages."
+    },
+    {
+      "file": "68181 Roosevelt - Address of President Roosevelt at St. Louis, Missouri, Octob.txt",
+      "reason": "Address at St. Louis, 1907: searched; its positions on railroad regulation and the navy repeat those cited from the annual messages."
+    },
+    {
+      "file": "68309 Roosevelt - Address of President Roosevelt at Chautauqua, New York, Augu.txt",
+      "reason": "Address at Chautauqua, 1905: searched; its positions on corporations, factory laws and employers' liability repeat those cited from the annual messages."
+    },
+    {
+      "file": "68350 Roosevelt - Address of President Roosevelt on the occasion of the celebr.txt",
+      "reason": "Address at the Lincoln centenary, Hodgenville, 1909: a commemorative address on Lincoln and the Union; nothing on the statements beyond what is cited."
+    },
+    {
+      "file": "68422 Roosevelt - Address of the President at the unveiling of the monument to.txt",
+      "reason": "Address at the unveiling of the Sheridan monument, 1908: a commemorative address on the fusion of old-world strains into one American type, said more fully in Americanism (cited)."
+    },
+    {
+      "file": "77136 Roosevelt - The wilderness hunter.txt",
+      "reason": "The Wilderness Hunter: hunting narrative; searched by theme, no political positions on the statements."
+    },
+    {
+      "file": "77204 Roosevelt - East of the sun and west of the moon.txt",
+      "reason": "East of the Sun and West of the Moon: travel book by his sons Theodore Jr. and Kermit; a relative's book is not his own position."
     }
   ],
   "answers": {
@@ -99,27 +507,76 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The 1912 platform he led pledged minimum wage standards for working women to provide a living wage, and his Autobiography names opponents of minimum wage laws as reactionaries.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
     },
     "markets-allocate-better": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Held that the public welfare outranks market outcomes and that government must supervise business and set rates (railroads), while not opposing business as such.",
+      "rationale": "His administration won the Hepburn Act giving the Interstate Commerce Commission power to set railroad rates and broke up the Northern Securities combination, putting federal regulation over market outcomes while leaving big business in place.",
       "sources": [
-        "s2",
-        "s3",
-        "s4"
+        "mcdom"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Held that the public welfare outranks market outcomes and that government must supervise business and set rates (railroads), while not opposing business as such.",
+          "sources": [
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "His administration won the Hepburn Act giving the Interstate Commerce Commission power to set railroad rates and broke up the Northern Securities combination, putting federal regulation over market outcomes while leaving big business in place.",
+          "sources": [
+            "mcdom"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "public-ownership": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "Platform said natural resources should be owned or controlled by the nation and urged government acquisition of railroads in Alaska; no call to own major industries generally.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "At Raleigh in 1905 he said he did not believe in government ownership of anything that could properly be left in private hands and would most strenuously object to government ownership of railroads; in 1910 he still hoped to avoid nationalizing them, backing public hands only for the remaining natural resources.",
       "sources": [
-        "s3"
+        "pap4",
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Platform said natural resources should be owned or controlled by the nation and urged government acquisition of railroads in Alaska; no call to own major industries generally.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "At Raleigh in 1905 he said he did not believe in government ownership of anything that could properly be left in private hands and would most strenuously object to government ownership of railroads; in 1910 he still hoped to avoid nationalizing them, backing public hands only for the remaining natural resources.",
+          "sources": [
+            "pap4",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "tax-the-wealthy": {
@@ -150,11 +607,33 @@
     },
     "regulate-corporations": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Demanded strong national regulation of interstate corporations by a federal commission; said corporate wealth must be under publicity, supervision and regulation, while accepting large corporations.",
+      "confidence": "medium",
+      "rationale": "As president he had the Justice Department break up the Northern Securities railroad combination, won the Hepburn Act on railroad rates and pushed through the Meat Inspection and Pure Food and Drug Acts of 1906.",
       "sources": [
-        "s3",
-        "s4"
+        "mcdom"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Demanded strong national regulation of interstate corporations by a federal commission; said corporate wealth must be under publicity, supervision and regulation, while accepting large corporations.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "As president he had the Justice Department break up the Northern Securities railroad combination, won the Hepburn Act on railroad rates and pushed through the Meat Inspection and Pure Food and Drug Acts of 1906.",
+          "sources": [
+            "mcdom"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "cut-welfare": {
@@ -193,11 +672,33 @@
     "strong-leader": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Held that the executive may do whatever the Constitution and Congress do not forbid, and the New Nationalism was impatient of deadlock from divided powers; also opposed one-man rule and limited his own terms.",
+      "rationale": "He acted aggressively in foreign affairs often without the support or consent of Congress, as in Panama, while keeping elections and stepping down after two terms.",
       "sources": [
-        "s1",
-        "s2",
-        "s9"
+        "mcfor"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Held that the executive may do whatever the Constitution and Congress do not forbid, and the New Nationalism was impatient of deadlock from divided powers; also opposed one-man rule and limited his own terms.",
+          "sources": [
+            "s1",
+            "s2",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He acted aggressively in foreign affairs often without the support or consent of Congress, as in Panama, while keeping elections and stepping down after two terms.",
+          "sources": [
+            "mcfor"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "state-harmful": {
@@ -216,19 +717,43 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
+      "value": 2,
       "confidence": "medium",
-      "rationale": "Called for a strong navy and a trained reserve and said every young man owes preparation for service.",
+      "rationale": "As president he built the navy into one of the largest in the world, adding battleships and enlisted men, and sent the battle fleet around the world.",
       "sources": [
-        "s1",
-        "s3"
+        "mcfor"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Called for a strong navy and a trained reserve and said every young man owes preparation for service.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "As president he built the navy into one of the largest in the world, adding battleships and enlisted men, and sent the battle fleet around the world.",
+          "sources": [
+            "mcfor"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "legalize-sex-work": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "From his police years he drew the very strong conviction that the law ought not to tolerate prostitution, and urged that brothel keepers be imprisoned, never fined.",
+      "sources": [
+        "s1"
+      ]
     },
     "decide-locally": {
       "value": -2,
@@ -240,19 +765,46 @@
       ]
     },
     "rehabilitation": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He wanted juvenile offenders formed by probation rather than treated as criminals, yet insisted on certain and swift punishment and imprisonment for adult offenders: his words point both ways.",
+      "sources": [
+        "pap3",
+        "s1"
+      ]
     },
     "traditional-family": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Said the success of civilization depends on citizens being sound in their home and the father and mother of healthy children, and warned of race suicide.",
+      "rationale": "He said civilization succeeds only as far as citizens are sound in their home and the father and mother of healthy children, and called easy divorce a bane to any nation and a menace to the home.",
       "sources": [
         "s2",
-        "s7",
-        "s10"
+        "pap3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Said the success of civilization depends on citizens being sound in their home and the father and mother of healthy children, and warned of race suicide.",
+          "sources": [
+            "s2",
+            "s7",
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He said civilization succeeds only as far as citizens are sound in their home and the father and mother of healthy children, and called easy divorce a bane to any nation and a menace to the home.",
+          "sources": [
+            "s2",
+            "pap3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "same-sex-marriage": {
@@ -262,10 +814,12 @@
       "sources": []
     },
     "abortion-legal": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He listed a man inducing a girl he had seduced to commit abortion among the crimes for which he refused leniency as governor and president.",
+      "sources": [
+        "s1"
+      ]
     },
     "more-religion-public": {
       "value": null,
@@ -274,10 +828,12 @@
       "sources": []
     },
     "correct-racial-injustice": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His record was mixed: he did little to preserve black suffrage in the South and discharged 160 black soldiers without trial after Brownsville, yet invited Booker T. Washington to the White House and appointed some black officials.",
+      "sources": [
+        "mcdom"
+      ]
     },
     "gender-social-construct": {
       "value": null,
@@ -286,11 +842,33 @@
       "sources": []
     },
     "preserve-national-culture": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Held the crucible must turn out Americans of one American nationality, not dwellers in a polyglot boarding house.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He said Americans are developing their own distinctive culture and civilization, whose worth depends on the determination to keep it distinctively their own.",
       "sources": [
-        "s10"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Held the crucible must turn out Americans of one American nationality, not dwellers in a polyglot boarding house.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He said Americans are developing their own distinctive culture and civilization, whose worth depends on the determination to keep it distinctively their own.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "gradual-change": {
@@ -313,10 +891,32 @@
     "empower-international-orgs": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "In 1910 proposed a League of Peace of great powers to enforce peace by force if necessary, while saying no international police yet exists.",
+      "rationale": "In his 1910 Nobel address he proposed a League of Peace of the great powers to keep the peace among themselves and prevent it being broken by others, by force if necessary, and developing the Hague tribunal.",
       "sources": [
-        "s9",
-        "s1"
+        "afeu"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In 1910 proposed a League of Peace of great powers to enforce peace by force if necessary, while saying no international police yet exists.",
+          "sources": [
+            "s9",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In his 1910 Nobel address he proposed a League of Peace of the great powers to keep the peace among themselves and prevent it being broken by others, by force if necessary, and developing the Hague tribunal.",
+          "sources": [
+            "afeu"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "free-trade": {
@@ -342,10 +942,12 @@
       ]
     },
     "open-borders": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He asked Congress to strengthen the laws excluding immigrants and to keep out every anarchist, every person of bad character and the physically unfit, so that American citizenship is built from sound stocks.",
+      "sources": [
+        "sotu"
+      ]
     },
     "limit-growth": {
       "value": -1,
@@ -374,16 +976,21 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His government supported the 1903 Panamanian revolution against Colombia with a naval blockade that kept Colombian troops from landing.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "experts-over-public": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He wanted an expert tariff commission removed from political pressure, yet insisted that the people, not judges, must decide for themselves what fundamental justice means in law: his words point both ways.",
+      "sources": [
+        "s2",
+        "boston"
+      ]
     },
     "central-planning": {
       "value": null,
@@ -413,10 +1020,12 @@
       ]
     },
     "basic-income": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In the New Nationalism he said to help any man who stumbles, but that if he lies down it is a poor job to try to carry him: help is conditional on effort.",
+      "sources": [
+        "s2"
+      ]
     },
     "tariffs-protect-industry": {
       "value": 2,
@@ -433,10 +1042,13 @@
       "sources": []
     },
     "widespread-small-property": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "He urged laws to stop the growth of absentee landlords and tenant-worked estates so that farmers own their land, but his platform held business concentration inevitable and necessary and only to be regulated: the evidence points both ways.",
+      "sources": [
+        "kcs",
+        "s3"
+      ]
     },
     "abolish-money-wages": {
       "value": null,
@@ -445,10 +1057,12 @@
       "sources": []
     },
     "abolish-central-banks": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His 1912 platform called the issue of currency fundamentally a government function whose control should be lodged with the government, not left to private agencies.",
+      "sources": [
+        "s3"
+      ]
     },
     "corporatist-bargaining": {
       "value": null,
@@ -507,10 +1121,12 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His government backed the 1903 insurrection that separated Panama from Colombia, blockading Colombian troops.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "war-builds-character": {
       "value": 2,
@@ -522,10 +1138,12 @@
       ]
     },
     "separate-church-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He said there must be complete severance of Church and State, that public money must not advance any creed, and that the public schools must be non-sectarian.",
+      "sources": [
+        "amism"
+      ]
     },
     "laws-from-scripture": {
       "value": null,
@@ -550,11 +1168,33 @@
     },
     "ethnic-nation": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Wanted a single American nationality formed by assimilating German, Irish and other immigrants, though his racial writings favored Anglo-Saxon expansion.",
+      "confidence": "medium",
+      "rationale": "He described the United States as an experiment in making a new nation out of divers race stocks, aiming not to imitate an older racial type but to maintain a new American type.",
       "sources": [
-        "s10",
-        "s8"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Wanted a single American nationality formed by assimilating German, Irish and other immigrants, though his racial writings favored Anglo-Saxon expansion.",
+          "sources": [
+            "s10",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He described the United States as an experiment in making a new nation out of divers race stocks, aiming not to imitate an older racial type but to maintain a new American type.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "class-struggle-history": {
@@ -567,10 +1207,12 @@
       ]
     },
     "equal-outcomes": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He said the thing to do for every man is to give him a chance to make his greatest contribution, not to push him up if he will not be pushed, and stressed equality of opportunity.",
+      "sources": [
+        "s2"
+      ]
     },
     "indigenous-land-authority": {
       "value": -2,
@@ -603,12 +1245,34 @@
       ]
     },
     "duties-before-rights": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Treated suffrage and citizenship as duties first; said no law avails without character and the duty of public service.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He told the Knights of Columbus that a republic cannot succeed unless its citizens put devotion to duty before the question of individual rights, and that undue prominence had been given to rights.",
       "sources": [
-        "s1",
-        "s7"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Treated suffrage and citizenship as duties first; said no law avails without character and the duty of public service.",
+          "sources": [
+            "s1",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He told the Knights of Columbus that a republic cannot succeed unless its citizens put devotion to duty before the question of individual rights, and that undue prominence had been given to rights.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "nature-intrinsic-value": {
@@ -619,11 +1283,35 @@
     },
     "limit-population": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Warned against race suicide and said a people's failure to bear children is the greatest failure.",
+      "confidence": "high",
+      "rationale": "He called wilful sterility the one sin for which the penalty is national death and said a race whose death rate surpasses its birth rate deserves extinction.",
       "sources": [
-        "s7",
-        "s10"
+        "sotu",
+        "amid"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Warned against race suicide and said a people's failure to bear children is the greatest failure.",
+          "sources": [
+            "s7",
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He called wilful sterility the one sin for which the penalty is national death and said a race whose death rate surpasses its birth rate deserves extinction.",
+          "sources": [
+            "sotu",
+            "amid"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "industrial-civilization-disaster": {
@@ -762,11 +1450,33 @@
     },
     "conscription": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "In 1917 emphasized the need for universal military service and held it a duty of young men to be ready for war.",
+      "confidence": "high",
+      "rationale": "He wanted universal military service on the Swiss model, saying the most important of all things is to introduce universal military service.",
       "sources": [
-        "s10",
-        "s1"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "In 1917 emphasized the need for universal military service and held it a duty of young men to be ready for war.",
+          "sources": [
+            "s10",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He wanted universal military service on the Swiss model, saying the most important of all things is to introduce universal military service.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "exit-over-voice": {
@@ -798,9 +1508,31 @@
     "hereditarian-race": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Held neo-Lamarckian race views and wrote that blacks were as a race inferior; but by 1917-18 reportedly rejected racist hereditarian theory. Evidence mixed.",
+      "rationale": "In his 1911 review of Houston Stewart Chamberlain he called loose talk of the equality and identity of races pernicious, yet ridiculed Chamberlain's theory that progress depends on Teutonic descent; whether differences are inborn is left open, so his words point both ways.",
       "sources": [
-        "s10"
+        "histlit"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Held neo-Lamarckian race views and wrote that blacks were as a race inferior; but by 1917-18 reportedly rejected racist hereditarian theory. Evidence mixed.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "In his 1911 review of Houston Stewart Chamberlain he called loose talk of the equality and identity of races pernicious, yet ridiculed Chamberlain's theory that progress depends on Teutonic descent; whether differences are inborn is left open, so his words point both ways.",
+          "sources": [
+            "histlit"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "organic-representation": {
@@ -823,11 +1555,33 @@
     },
     "territorial-expansion": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Defended the historic American policy of expansion and national responsibilities in Hawaii, Cuba, Puerto Rico and the Philippines.",
+      "confidence": "medium",
+      "rationale": "He backed Panama's secession and secured perpetual U.S. control of the Canal Zone, kept the Philippines and made the United States the dominant military power in Central America.",
       "sources": [
-        "s6",
-        "s8"
+        "mcfor"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Defended the historic American policy of expansion and national responsibilities in Hawaii, Cuba, Puerto Rico and the Philippines.",
+          "sources": [
+            "s6",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He backed Panama's secession and secured perpetual U.S. control of the Canal Zone, kept the Philippines and made the United States the dominant military power in Central America.",
+          "sources": [
+            "mcfor"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "personal-loyalty-rule": {
@@ -885,10 +1639,12 @@
       "sources": []
     },
     "school-vouchers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He declared against any division of the school fund, any public money for sectarian purposes and any State aid to parochial schools, and for the public school system in its entirety.",
+      "sources": [
+        "amid"
+      ]
     },
     "avoid-deficit-stimulus": {
       "value": null,
@@ -909,10 +1665,12 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He kept the Philippines under U.S. rule rather than granting independence, while Cuba became independent.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "force-without-un": {
       "value": null,
@@ -933,10 +1691,12 @@
       "sources": []
     },
     "work-for-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He held that public help should give a worthy man a chance to show his worth, not carry the man who lies down and will not be pushed.",
+      "sources": [
+        "s2"
+      ]
     },
     "class-collaboration": {
       "value": 2,
@@ -1004,10 +1764,32 @@
     "assimilate-immigrants": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Said immigrants must Americanize in speech, ideas and loyalty, that there is room for one language only, and that hyphenated Americans have no place.",
+      "rationale": "He said there is no room for hyphenated Americans, that immigrants must become Americans and nothing else, speaking English and renouncing every other allegiance, and that immigrant colonies must end.",
       "sources": [
-        "s10",
-        "s9"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Said immigrants must Americanize in speech, ideas and loyalty, that there is room for one language only, and that hyphenated Americans have no place.",
+          "sources": [
+            "s10",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He said there is no room for hyphenated Americans, that immigrants must become Americans and nothing else, speaking English and renouncing every other allegiance, and that immigrant colonies must end.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "elite-replacement": {
@@ -1023,10 +1805,12 @@
       "sources": []
     },
     "national-mission": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He believed that the exportation of American values and ideals would have an ennobling effect on the world.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "patriarchy-structural": {
       "value": null,
@@ -1045,9 +1829,31 @@
     "heritable-defect-limits": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Wrote in 1914 that criminals should be sterilized and feeble-minded persons forbidden to leave offspring.",
+      "rationale": "He wrote to the eugenicist Charles Davenport in 1913 that society has no business to permit degenerates to reproduce their kind or to permit the perpetuation of citizens of the wrong type.",
       "sources": [
-        "s10"
+        "davenport"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Wrote in 1914 that criminals should be sterilized and feeble-minded persons forbidden to leave offspring.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He wrote to the eugenicist Charles Davenport in 1913 that society has no business to permit degenerates to reproduce their kind or to permit the perpetuation of citizens of the wrong type.",
+          "sources": [
+            "davenport"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "security-forces-accountable": {
@@ -1075,11 +1881,35 @@
     "equal-moral-worth": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Said each man should be treated on his merits and defended a square deal, but also wrote of racial hierarchy and dismissed aboriginal claims; views reportedly shifted late in life.",
+      "rationale": "He said each man is to be treated on his worth as a man without regard to the land of his forefathers or his creed, yet wrote of the conquest of savages as righteous and of inferior races: his words point both ways.",
       "sources": [
-        "s9",
-        "s10",
+        "amism",
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Said each man should be treated on his merits and defended a square deal, but also wrote of racial hierarchy and dismissed aboriginal claims; views reportedly shifted late in life.",
+          "sources": [
+            "s9",
+            "s10",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He said each man is to be treated on his worth as a man without regard to the land of his forefathers or his creed, yet wrote of the conquest of savages as righteous and of inferior races: his words point both ways.",
+          "sources": [
+            "amism",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1113,10 +1943,12 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He held that the public schools shall be non-sectarian and that no public money should advance any particular creed.",
+      "sources": [
+        "amism"
+      ]
     },
     "state-strengthens-encirclement": {
       "value": null,
@@ -1173,10 +2005,12 @@
       "sources": []
     },
     "separated-powers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His New Nationalism was impatient of the impotence that springs from over-division of governmental powers and asked that the executive be the steward of the public welfare.",
+      "sources": [
+        "s2"
+      ]
     },
     "vanguard-party": {
       "value": null,
@@ -1291,10 +2125,32 @@
     },
     "defeat-own-government-war": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "In WWI called pacifists who supported Germany traitors and demanded unreserved national loyalty.",
+      "confidence": "high",
+      "rationale": "In 1918 he wrote that the men who clamor for an early or negotiated peace with Germany, or seek to divide the United States from its allies, are acting as friends of Germany and therefore as enemies of the United States.",
       "sources": [
-        "s10"
+        "kcs"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "In WWI called pacifists who supported Germany traitors and demanded unreserved national loyalty.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In 1918 he wrote that the men who clamor for an early or negotiated peace with Germany, or seek to divide the United States from its allies, are acting as friends of Germany and therefore as enemies of the United States.",
+          "sources": [
+            "kcs"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "censor-art-for-virtue": {
@@ -1305,10 +2161,32 @@
     },
     "unlimited-reelection": {
       "value": -1,
-      "confidence": "low",
-      "rationale": "Said limited terms check dictatorship and declined a third term in 1908, though he ran for a non-consecutive third term in 1912.",
+      "confidence": "medium",
+      "rationale": "After winning in 1904 he pledged not to run again, following the two-term precedent, and kept the pledge in 1908; in 1912 he sought a non-consecutive third term.",
       "sources": [
-        "s9"
+        "mccamp"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Said limited terms check dictatorship and declined a third term in 1908, though he ran for a non-consecutive third term in 1912.",
+          "sources": [
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "After winning in 1904 he pledged not to run again, following the two-term precedent, and kept the pledge in 1908; in 1912 he sought a non-consecutive third term.",
+          "sources": [
+            "mccamp"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "recall-officials": {
@@ -1333,16 +2211,20 @@
       "sources": []
     },
     "people-in-arms": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He wanted universal military training but also a greatly increased regular army and navy with a regular reserve, not a citizen militia in place of the professional forces.",
+      "sources": [
+        "amism"
+      ]
     },
     "rural-life-healthier": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He called the owner-worked farm home one of the strongest political and social bulwarks and the best place to breed vigorous leaders for country and city alike.",
+      "sources": [
+        "keokuk"
+      ]
     },
     "reunify-divided-nation": {
       "value": null,
@@ -1359,18 +2241,44 @@
     "cultures-equal-different": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Wrote of savagery versus civilization and the dominant world races, and held that advanced societies must lead others.",
+      "rationale": "He wrote of the advance of civilization over savagery as ultimately righteous and of the duty of advanced nations to lead backward peoples.",
       "sources": [
         "s8",
-        "s6",
-        "s10"
+        "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Wrote of savagery versus civilization and the dominant world races, and held that advanced societies must lead others.",
+          "sources": [
+            "s8",
+            "s6",
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He wrote of the advance of civilization over savagery as ultimately righteous and of the duty of advanced nations to lead backward peoples.",
+          "sources": [
+            "s8",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "death-penalty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that he always felt impatient contempt for the effort to abolish the death penalty out of sympathy with criminals, and that no criminal who has earned death should be allowed to shirk it.",
+      "sources": [
+        "s1"
+      ]
     },
     "sex-ed-in-schools": {
       "value": null,
@@ -1385,10 +2293,12 @@
       "sources": []
     },
     "restrict-pornography": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "high",
+      "rationale": "He named the circulation of indecent literature among the crimes for which requests for pardon only made him angry as governor and president.",
+      "sources": [
+        "s1"
+      ]
     },
     "citizenship-by-descent": {
       "value": null,
@@ -1398,10 +2308,34 @@
     },
     "minority-language-support": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Said there is room for but one language in this country, English.",
+      "confidence": "high",
+      "rationale": "He opposed any school exercises in a language other than English and condemned a foreign government's plan to foster the Russian language among immigrants as antagonistic to American sentiment.",
       "sources": [
-        "s10"
+        "amid",
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Said there is room for but one language in this country, English.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He opposed any school exercises in a language other than English and condemned a foreign government's plan to foster the Russian language among immigrants as antagonistic to American sentiment.",
+          "sources": [
+            "amid",
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-exemptions": {
@@ -1419,10 +2353,32 @@
     "sovereign-debt-cancellation": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "In Santo Domingo, ran the custom-houses so creditors were paid and revolution-driven debts settled; backed enforcement rather than cancellation.",
+      "rationale": "He had an American collector take over Santo Domingo's custom houses so that its foreign debts would be paid.",
       "sources": [
-        "s1",
-        "s10"
+        "mcfor"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "In Santo Domingo, ran the custom-houses so creditors were paid and revolution-driven debts settled; backed enforcement rather than cancellation.",
+          "sources": [
+            "s1",
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He had an American collector take over Santo Domingo's custom houses so that its foreign debts would be paid.",
+          "sources": [
+            "mcfor"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "independence-needs-economic-change": {
@@ -1496,10 +2452,12 @@
       "sources": []
     },
     "collective-defense": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In his 1910 Nobel address he proposed that the great powers form a League of Peace to keep the peace among themselves and to prevent, by force if necessary, its being broken by others.",
+      "sources": [
+        "afeu"
+      ]
     },
     "annexed-territory-occupation": {
       "value": null,
@@ -1634,10 +2592,32 @@
     },
     "national-cultural-autonomy": {
       "value": -2,
-      "confidence": "medium",
-      "rationale": "Opposed hyphenated loyalties and insisted all immigrants become Americans and nothing else.",
+      "confidence": "high",
+      "rationale": "He said the sure way to ruin the nation would be to let it become a tangle of nationalities each preserving its separate nationality, and wanted no immigrant colonies or foreign-language institutions kept apart.",
       "sources": [
-        "s10"
+        "amism"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Opposed hyphenated loyalties and insisted all immigrants become Americans and nothing else.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He said the sure way to ruin the nation would be to let it become a tangle of nationalities each preserving its separate nationality, and wanted no immigrant colonies or foreign-language institutions kept apart.",
+          "sources": [
+            "amism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "rights-where-you-live": {
@@ -1658,10 +2638,32 @@
     "ban-cartels": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Said blanket prohibition of combination is futile, but urged strengthening the Sherman Law against agreements to divide territory or limit output and directed suits against trusts.",
+      "rationale": "His Justice Department sued the Northern Securities combination, which the Supreme Court ordered dismantled in 1904, though he otherwise sought to supervise rather than abolish large combinations.",
       "sources": [
-        "s3",
-        "s4"
+        "mcdom"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Said blanket prohibition of combination is futile, but urged strengthening the Sherman Law against agreements to divide territory or limit output and directed suits against trusts.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "His Justice Department sued the Northern Securities combination, which the Supreme Court ordered dismantled in 1904, though he otherwise sought to supervise rather than abolish large combinations.",
+          "sources": [
+            "mcdom"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "no-bailouts": {
@@ -1723,11 +2725,33 @@
     },
     "civilizing-tutelage": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Said the US must train Filipinos for self-government and administered Cuba, Santo Domingo and Panama; called leaving the islands infamy.",
+      "confidence": "medium",
+      "rationale": "He kept U.S. rule over the Philippines, building a government of Americans assisted by Filipinos with an elected assembly, and ran Santo Domingo's custom houses.",
       "sources": [
-        "s1",
-        "s6"
+        "mcfor"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Said the US must train Filipinos for self-government and administered Cuba, Santo Domingo and Panama; called leaving the islands infamy.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He kept U.S. rule over the Philippines, building a government of Americans assisted by Filipinos with an elected assembly, and ran Santo Domingo's custom houses.",
+          "sources": [
+            "mcfor"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "patriotic-education": {
@@ -1819,16 +2843,20 @@
       "sources": []
     },
     "animal-suffering-matters": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He condemned bull-fighting because the torture and death of the horses is enough to blast the sport, and wanted every form of harmless wild life shielded.",
+      "sources": [
+        "s1"
+      ]
     },
     "animal-use-humane": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "A lifelong hunter, he accepted shooting game in legitimate numbers while condemning any sport built on the torture of animals.",
+      "sources": [
+        "s1"
+      ]
     },
     "noblesse-oblige": {
       "value": 2,
@@ -1953,10 +2981,12 @@
       "sources": []
     },
     "office-by-exam": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As Civil Service Commissioner he enforced the civil service laws against party regulars who wanted patronage, and as governor refused to give the main patronage posts to party regulars.",
+      "sources": [
+        "mcbefore"
+      ]
     },
     "foreign-takeover-block": {
       "value": null,
@@ -1965,10 +2995,13 @@
       "sources": []
     },
     "no-fault-divorce": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He called easy divorce a bane to any nation, a curse to society and a menace to the home, and asked that marriage and divorce be put under national law to end the scandals of lax State laws.",
+      "sources": [
+        "pap3",
+        "sotu"
+      ]
     },
     "recallable-delegates": {
       "value": null,
@@ -1995,16 +3028,21 @@
       "sources": []
     },
     "single-official-language": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wanted English and no other language used for all school exercises and named a common language, the English language, as the first essential of Americanization, condemning foreign efforts to keep other languages alive among immigrants.",
+      "sources": [
+        "amid",
+        "amism"
+      ]
     },
     "foreign-land-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "In 1915 he called any discrimination against aliens a wrong and said there should be no denial or limitation of the alien's opportunity to work and to own property.",
+      "sources": [
+        "amism"
+      ]
     },
     "disparate-impact-discrimination": {
       "value": null,
@@ -2013,16 +3051,21 @@
       "sources": []
     },
     "consumerism-harmful": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "At the Sorbonne in 1910 he called the growth in luxury and love of ease evident and unhealthy, and in 1910 he warned against the triumph of a sordid and selfish materialism.",
+      "sources": [
+        "afeu",
+        "s2"
+      ]
     },
     "arm-foreign-insurgents": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His government supported Panama's revolt against Colombia with money and a naval blockade, a single case.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "intervene-in-bloc": {
       "value": null,
@@ -2031,10 +3074,13 @@
       "sources": []
     },
     "corporate-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He said great special business interests too often control and corrupt the men and methods of government and must be driven out of politics, and his platform described an invisible government of corrupt business.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
     },
     "restrict-foreign-funding": {
       "value": null,
@@ -2067,16 +3113,21 @@
       "sources": []
     },
     "no-duty-to-obey": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He held that unions and corporations alike must obey the law, writing in 1903 that no rule of a union could be permitted to override the laws he was sworn to enforce, and condemned lawlessness by rich and poor alike.",
+      "sources": [
+        "s2",
+        "pap2"
+      ]
     },
     "non-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He announced the Roosevelt Corollary that the United States would intervene in Latin American countries with chronic problems, and took over Santo Domingo's custom houses.",
+      "sources": [
+        "mcfor"
+      ]
     },
     "industrial-unions": {
       "value": null,
@@ -2121,10 +3172,12 @@
       "sources": []
     },
     "religious-nation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He held it a cardinal sin against democracy to support or oppose a man because of his creed and said Catholics, Protestants and Jews stand on an equality as Americans.",
+      "sources": [
+        "amism"
+      ]
     },
     "deference-to-leading-power": {
       "value": null,
@@ -2241,10 +3294,12 @@
       "sources": []
     },
     "colonies-serve-metropole": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He said the United States was governing the Philippines in the interest of the Philippine people themselves.",
+      "sources": [
+        "pap3"
+      ]
     },
     "defensive-jihad-duty": {
       "value": null,
@@ -2319,16 +3374,21 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As president he regulated railroads, food and drugs, prosecuted monopoly and brokered the coal strike while treating big business as a natural part of a maturing economy he never sought to abolish.",
+      "sources": [
+        "mcdom"
+      ]
     },
     "abolish-armed-forces": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He wrote that if the great civilized nations completely disarmed the result would be an immediate recrudescence of barbarism, and likened disarmament to abolishing a city's police.",
+      "sources": [
+        "sotu",
+        "awar"
+      ]
     },
     "rich-first": {
       "value": null,
@@ -2391,10 +3451,12 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He appointed black men to federal patronage posts in the South and refused to apologize when the South denounced it.",
+      "sources": [
+        "mcdom"
+      ]
     },
     "online-participation": {
       "value": null,
@@ -2403,10 +3465,12 @@
       "sources": []
     },
     "open-government-data": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1912 platform pledged publicity of committee hearings except on foreign affairs, the recording of all votes in committee and the registration of lobbyists.",
+      "sources": [
+        "s3"
+      ]
     },
     "interfaith-marriage-restriction": {
       "value": null,
@@ -2433,10 +3497,13 @@
       "sources": []
     },
     "wealth-concentration-endangers-liberty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His platform called the concentration of vast wealth under an unregulated corporate system a power insufferable in a free government, and he warned of a small class of enormously wealthy men accumulating power against the general welfare.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
     },
     "open-lgbt-military-service": {
       "value": null,
@@ -2493,10 +3560,12 @@
       "sources": []
     },
     "shared-marital-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He described marriage as a partnership that should be one of equal rights, love and self-respect.",
+      "sources": [
+        "s1"
+      ]
     },
     "foreign-residents-local-vote": {
       "value": null,
@@ -2541,10 +3610,12 @@
       "sources": []
     },
     "income-for-work-not-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He said no man should receive a dollar unless it was fairly earned and that every dollar should represent service rendered, not gambling in stocks, while not dismissing dividends.",
+      "sources": [
+        "s2"
+      ]
     },
     "never-kill-self-defence": {
       "value": null,
@@ -2655,10 +3726,12 @@
       "sources": []
     },
     "family-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "high",
+      "rationale": "He said no man can be a good citizen unless his wage is more than sufficient to cover the bare cost of living, and that a man must be able to support his family.",
+      "sources": [
+        "s2"
+      ]
     },
     "ageing-research-funding": {
       "value": null,
@@ -2721,10 +3794,13 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He called wars with barbarous or semi-barbarous peoples a regrettable but necessary international police duty, and held that peace yields to righteousness when they conflict.",
+      "sources": [
+        "sotu",
+        "s6"
+      ]
     },
     "language-defines-nation": {
       "value": null,
@@ -2757,10 +3833,12 @@
       "sources": []
     },
     "future-generations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "As president he moved federal policy from exploiting natural resources to managing them, creating 150 national forests, five national parks, eighteen national monuments and 51 wildlife refuges.",
+      "sources": [
+        "mcdom"
+      ]
     },
     "women-distinct-values": {
       "value": null,
@@ -2769,10 +3847,13 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "His platform favored an international agreement to limit naval forces, yet he warned that it would be wicked for the civilized powers to disarm and built two battleships a year: his words point both ways.",
+      "sources": [
+        "s3",
+        "sotu"
+      ]
     },
     "open-diplomacy": {
       "value": null,
@@ -2799,10 +3880,13 @@
       "sources": []
     },
     "collective-bargaining": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1912 platform favored the organization of workers, men and women, as a means of protecting their interests, and he wrote that he became a strong believer in labor unions.",
+      "sources": [
+        "s3",
+        "s1"
+      ]
     },
     "in-work-tax-credits": {
       "value": null,
@@ -2877,10 +3961,12 @@
       "sources": []
     },
     "farm-price-support": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1912 platform pledged to foster agricultural credit and co-operation for farmers.",
+      "sources": [
+        "s3"
+      ]
     },
     "keep-nuclear-weapons": {
       "value": null,
@@ -2931,16 +4017,20 @@
       "sources": []
     },
     "immigrants-learn-language": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He proposed that an alien who remains without learning to speak English for more than a certain number of years should be deported, and named a common language, English, as the first essential.",
+      "sources": [
+        "amism"
+      ]
     },
     "no-compulsory-union": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 1903 he ordered the reinstatement of a Government Printing Office foreman removed only for expulsion from his union, writing that no union rule could override the law.",
+      "sources": [
+        "miller"
+      ]
     },
     "voter-id": {
       "value": null,
@@ -2961,10 +4051,12 @@
       "sources": []
     },
     "premarital-sex": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He urged a single standard of sex morality, early marriage and a strict sense of conjugal obligation to raise the standard of chastity.",
+      "sources": [
+        "s1"
+      ]
     },
     "internet-shutdowns": {
       "value": null,
@@ -2979,10 +4071,13 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that voting is as much a right of women as of men and that he became a zealous adherent of woman suffrage; his 1912 platform pledged equal suffrage to men and women alike.",
+      "sources": [
+        "s1",
+        "s3"
+      ]
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3039,10 +4134,12 @@
       "sources": []
     },
     "national-church-status": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He held that there must never be any union of Church and State and that such union is partly accomplished whenever a given creed is aided by the State.",
+      "sources": [
+        "amism"
+      ]
     },
     "minority-territorial-autonomy": {
       "value": null,
@@ -3105,10 +4202,12 @@
       "sources": []
     },
     "resources-common-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His platform said natural resources are owned by the people and should stay in public hands, opened to use on terms giving the people a moderate return, with reasonable compensation for water power rights.",
+      "sources": [
+        "s3"
+      ]
     },
     "self-ownership": {
       "value": null,
@@ -3129,10 +4228,12 @@
       "sources": []
     },
     "bypass-parties-groups": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "As president he used the press as a bully pulpit to reach the people directly, bypassing political parties and machines, and took the Hepburn Act to the public over the Senate's resistance.",
+      "sources": [
+        "mcdom"
+      ]
     },
     "no-business-privileges": {
       "value": null,
@@ -3223,9 +4324,698 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In his annual messages he asked that all kinds of money be kept interchangeable and convertible at the holder's will into the established gold standard.",
+      "sources": [
+        "sotu"
+      ]
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His administration made the 1907-1908 Gentlemen's Agreement under which Japan restricted the emigration of laborers to the United States.",
+      "sources": [
+        "hsjapan"
+      ]
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 1910 he quoted Lincoln that labor is prior to and the superior of capital, and said Lincoln took substantially the attitude we ought to take on capital and labor.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His platform said the people must use their sovereign powers in accordance with the needs of each generation and pledged an easier, quicker method of amending the federal Constitution.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "On his 1909-1910 African safari he took more than 3,000 animal trophies, including elephants, hippos, lions and rhinos.",
+      "sources": [
+        "mccamp"
+      ]
+    },
+    "avoid-permanent-military-alliances": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He preached not the doctrine of ignoble ease but of the strenuous life, the life of toil and effort, of labor and strife.",
+      "sources": [
+        "s6"
+      ]
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "In his first annual message he said the time had come to recognize the Indian as an individual and not as a member of a tribe, calling the Allotment Act a mighty pulverizing engine to break up the tribal mass.",
+      "sources": [
+        "sotu"
+      ]
+    },
+    "indigenous-internal-justice": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He asked that the marriage laws of the Indians be made the same as those of the whites and that tribal funds be broken up into individual holdings.",
+      "sources": [
+        "sotu"
+      ]
+    },
+    "abolish-income-tax": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He urged a graduated income tax on big fortunes in 1910 and a moderate but progressive income tax in his later essays.",
+      "sources": [
+        "s2",
+        "amprob"
+      ]
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He asked Congress for national power to deal radically and efficiently with polygamy, saying it was neither safe nor proper to leave it to the States.",
+      "sources": [
+        "sotu"
+      ]
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He wrote that universal suffrage had not made the Haytians able to govern themselves, and that the Filipinos were wholly unfit to govern themselves when the United States took the islands.",
+      "sources": [
+        "s1",
+        "sotu"
+      ]
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His platform kept agricultural lands open to the genuine settler and to patent under the Homestead Law, reserving public ownership for forests, coal, oil and water power.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He demanded that Germany and Britain submit their Venezuela dispute to arbitration and mediated the Portsmouth peace and the Algeciras settlement.",
+      "sources": [
+        "mcfor"
+      ]
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He said allegiance must be purely to the United States, that any man of dual or divided allegiance would have been removed from his administration, and that the immigrant must renounce allegiance to every foreign government.",
+      "sources": [
+        "amism"
+      ]
+    },
+    "limit-campaign-donations": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1912 platform pledged legislation compelling strict limitation of all campaign contributions and expenditures, and he asked that corporate funds for political purposes be prohibited.",
+      "sources": [
+        "s3",
+        "s2"
+      ]
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He held that the settlers' conquest of the West from the Indians was ultimately righteous and that the Indians never had real title to the land.",
+      "sources": [
+        "s8"
+      ]
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
-  "notes": "Positions are drawn from his presidency, the 1912 campaign and his autobiography; the 1912 platform is a party text he led. Secondary sources (Wikipedia, citing Dyer and Dalton) are used for Brownsville, Americanization quotes, the 1914 sterilization statement and the view that his racial views shifted by 1917-18; the Osawatomie speech was read as an excerpt only. Race views are marked contested (low) because they changed over time. Dyer and Dalton were not opened directly.",
+  "notes": "Second pass (rules 5): every book of his in the local library was searched by theme and cited or declined in booksNotUsed. His presidential record (antitrust suits, Hepburn Act, conservation orders, Panama, the Roosevelt Corollary and Santo Domingo customs, the navy, the Gentlemen's Agreement, the Brownsville discharge, appointments) is cited from Miller Center and State Department reports and from his proclamations and orders, and where it exists it answers the statement alone; his words answer the rest. Answers that rested on Wikipedia now cite the original (Americanism, 1915; the Davenport letter, 1913; the Kansas City Star editorials; the 1910 Nobel address). The New Nationalism is now cited from a full text rather than an excerpt. Race views are mixed in his own words (equal treatment by merit beside racial hierarchy) and are answered low. Themes searched: economy (trusts, tariffs, taxes, currency, labor law, unions), government (courts, recall, primaries, civil service, terms, executive power), world (Philippines, Panama, Latin America, arbitration, disarmament, the League, the First World War), society (immigration, language, religion, family, race, crime, prostitution, eugenics), ecology (conservation, wild life). Most statements on later topics (technology, the internet, gender identity, communist doctrine, decolonisation) have no record and stay null. The Outlook article 'Twisted Eugenics' (1914) was not found in an open full text; the 1913 Davenport letter is cited instead.",
   "reviews": [
     {
       "kind": "inference",
