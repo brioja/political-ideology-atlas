@@ -1029,11 +1029,33 @@
       ]
     },
     "night-watchman-state": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Minimal-state theory is absent from the sources; adherents seek a Circassian polity of unspecified size.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the size of the proposed polity is unspecified and minimal-state theory absent, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Minimal-state theory is absent from the sources; adherents seek a Circassian polity of unspecified size.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the size of the proposed polity is unspecified and minimal-state theory absent, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "discourage-race-mixing": {
@@ -3381,6 +3403,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

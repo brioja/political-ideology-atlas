@@ -1073,11 +1073,33 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "No doctrinal position in the sources consulted, so the answer rests on the nature of the creed rather than a stated position.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale records no doctrinal position; silence is not a position, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "No doctrinal position in the sources consulted, so the answer rests on the nature of the creed rather than a stated position.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale records no doctrinal position; silence is not a position, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "discourage-race-mixing": {
@@ -3411,6 +3433,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
