@@ -3007,12 +3007,36 @@
       "sources": []
     },
     "sacred-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "It stands for cultural or civic nationalism, but its civic framing stops short of treating the nation as sacred.",
+      "rationale": "Nulled: the rationale says alt-lite civic or cultural nationalism stops short of treating the nation as sacred, which does not support agreeing with this statement (Codex review, 2026-11-10); its sources need re-reading.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "It stands for cultural or civic nationalism, but its civic framing stops short of treating the nation as sacred.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the rationale says alt-lite civic or cultural nationalism stops short of treating the nation as sacred, which does not support agreeing with this statement (Codex review, 2026-11-10); its sources need re-reading.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "student-debt-relief": {
@@ -3482,6 +3506,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
