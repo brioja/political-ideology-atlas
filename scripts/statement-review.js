@@ -40,7 +40,16 @@ const statements = allStatements();
 const byId = new Map(statements.map((s) => [s.id, s]));
 const marks = (s) => wordingMarks(s.text);
 const fails = (s) => { const m = marks(s); return m.errors.length > 0 || (WARNINGS && m.warnings.length > 0); };
-const reviewed = (id) => fs.existsSync(path.join(OUT, `${id}-results.md`));
+// A review counts only if the statement text it proposes passes the check: errors are absolute (Brandon,
+// 2026-11-10), so a review that keeps or proposes an error word sends the statement back to the queue.
+const resultsFile = (id) => path.join(OUT, `${id}-results.md`);
+const proposedText = (id) => {
+  if (!fs.existsSync(resultsFile(id))) return null;
+  const m = fs.readFileSync(resultsFile(id), "utf8").match(/^\*\*Statement:\*\*\s*(.+?)\s*$/m);
+  return m ? m[1].replace(/^["“]|["”]$/g, "") : null;
+};
+const proposalFails = (id) => { const t = proposedText(id); return !t || wordingMarks(t).errors.length > 0; };
+const reviewed = (id) => fs.existsSync(resultsFile(id)) && !proposalFails(id);
 
 function queue() {
   return quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && fails(x.s));
@@ -117,7 +126,7 @@ Write your reply to \`scratchpad/statement-review/${s.id}-results.md\` (a new fi
 ${JSON.stringify(entry, null, 1)}
 \`\`\`
 
-Wording check: ${m.errors.length ? `**errors** ${m.errors.map((w) => `"${w}"`).join(", ")}` : "no errors"}${m.warnings.length ? `; warnings ${m.warnings.map((w) => `"${w}"`).join(", ")}` : ""}.
+${fs.existsSync(resultsFile(s.id)) ? `**An earlier review proposed a text that still fails the check** (${proposedText(s.id) ? `"${proposedText(s.id)}"` : "no **Statement:** line found"}). Errors are absolute: propose a text with none, and overwrite \`${s.id}-results.md\`.\n\n` : ""}Wording check: ${m.errors.length ? `**errors** ${m.errors.map((w) => `"${w}"`).join(", ")}` : "no errors"}${m.warnings.length ? `; warnings ${m.warnings.map((w) => `"${w}"`).join(", ")}` : ""}.
 Marked: ${marked}
 
 ## Evidence: what the audits answered
@@ -163,7 +172,8 @@ if (ONE) {
   console.log(path.relative(ROOT, f));
 } else if (mode === "list") {
   const q = queue();
-  for (const { step, s } of q) console.log(`${String(step).padStart(3)} ${reviewed(s.id) ? "reviewed" : "pending "} ${s.id}: ${s.text}`);
+  const state = (id) => (reviewed(id) ? "reviewed" : fs.existsSync(resultsFile(id)) ? "redo    " : "pending ");
+  for (const { step, s } of q) console.log(`${String(step).padStart(3)} ${state(s.id)} ${s.id}: ${s.text}`);
   console.log(`\n${q.length} statements fail the check${WARNINGS ? " (errors or warnings)" : " (errors)"}; ${q.filter((x) => reviewed(x.s.id)).length} reviewed.`);
 } else if (mode === "next") {
   const next = queue().find((x) => !reviewed(x.s.id));
