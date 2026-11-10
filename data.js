@@ -2074,10 +2074,10 @@ const QUESTIONS = [
  {
   "id": "material-conditions-drive-history",
   "theme": "society",
-  "text": "Social and political change is driven mainly by changes in how society produces and exchanges goods, not by ideas or moral insight.",
-  "agree": "Economic conditions, more than ideas, decide how societies change.",
-  "disagree": "Social and political change is not driven mainly by changes in how society produces and exchanges goods.",
-  "note": "About what moves history.",
+  "text": "Changes to the economic structure of society are the main cause of historical change.",
+  "agree": "Changes in how society produces and exchanges goods explain historical change more than ideas or moral insight do.",
+  "disagree": "Changes to the economic structure of society are not the main cause of historical change.",
+  "note": "About the main cause of social and political change over history. Economic structure means how production and exchange are organised. Calling it the main cause allows ideas and political action to have effects too.",
   "icon": "⚙️"
  },
  {
