@@ -4198,9 +4198,9 @@ const QUESTIONS = [
  {
   "id": "close-ties-china",
   "theme": "world",
-  "text": "A country should rely more on close ties with China than on the United States.",
-  "agree": "A country should lean toward China more than toward the United States.",
-  "disagree": "A country should rely on the United States at least as much as on China.",
+  "text": "A country should seek closer ties with China than with the United States.",
+  "agree": "A country should seek closer ties with China than with the United States.",
+  "disagree": "A country should seek ties with the United States at least as close as its ties with China.",
   "note": "About which great power a country should lean on.",
   "icon": "🐉"
  },
