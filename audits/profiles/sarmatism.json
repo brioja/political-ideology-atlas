@@ -460,11 +460,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Commonwealth had a king, but elected and bound by contract, so a hereditary monarch is not what Sarmatists favoured and adherents accept a king only if elective.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says adherents accepted a king only if elective and did not favour a hereditary monarch, so the sources cited here do not answer this statement.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Commonwealth had a king, but elected and bound by contract, so a hereditary monarch is not what Sarmatists favoured and adherents accept a king only if elective.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says adherents accepted a king only if elective and did not favour a hereditary monarch, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-best": {
@@ -3569,6 +3591,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
