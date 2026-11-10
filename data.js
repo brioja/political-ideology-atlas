@@ -778,10 +778,10 @@ const QUESTIONS = [
  {
   "id": "production-for-use",
   "theme": "economy",
-  "text": "Goods and services should be produced to meet people's needs rather than to make a profit.",
-  "agree": "The economy should be organized around what people need, not what sells at a profit.",
-  "disagree": "Meeting people's needs should not take priority over making a profit in producing goods and services.",
-  "note": "About the purpose of production.",
+  "text": "Meeting people's needs should replace making a profit as the purpose of production.",
+  "agree": "Production should be organised to provide what people need, instead of being organised around what yields a profit.",
+  "disagree": "Meeting people's needs should not replace making a profit as the purpose of production.",
+  "note": "About what guides production throughout the economy, including services. This is stronger than regulating profitable businesses or providing a safety net. It does not specify who should own production, require a central state plan, or prescribe a distribution rule. It concerns profit as the organising purpose, not simply whether any enterprise ever records an accounting surplus.",
   "icon": "🏭"
  },
  {
