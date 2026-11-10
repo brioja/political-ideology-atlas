@@ -1342,13 +1342,39 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Movement opposes U.S. bases and military use of Hawaiian land, and denies the legitimacy of the U.S. presence.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to U.S. bases on Hawaiian land, not alliances.",
       "sources": [
         "s1",
         "s5",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Movement opposes U.S. bases and military use of Hawaiian land, and denies the legitimacy of the U.S. presence.",
+          "sources": [
+            "s1",
+            "s5",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to U.S. bases on Hawaiian land, not alliances.",
+          "sources": [
+            "s1",
+            "s5",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -3397,6 +3423,16 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "The movement opposes U.S. bases and military use of Hawaiian land and denies the legitimacy of the U.S. presence, so it wants those troops withdrawn; it states no general view on stationing troops abroad.",
+      "sources": [
+        "s1",
+        "s5",
+        "s6"
+      ]
     }
   },
   "missingStatements": [
@@ -3449,6 +3485,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 12
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

@@ -1367,11 +1367,33 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Ferry says France will 'never leave' its colonies and bases (s2); withdrawing troops from abroad is the opposite.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to keeping colonies and bases, not alliances.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Ferry says France will 'never leave' its colonies and bases (s2); withdrawing troops from abroad is the opposite.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to keeping colonies and bases, not alliances.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -3431,6 +3453,14 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ferry says France will 'never leave' its colonies and bases (s2); bringing troops home from abroad is the opposite.",
+      "sources": [
+        "s2"
+      ]
     }
   },
   "missingStatements": [
@@ -3475,6 +3505,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

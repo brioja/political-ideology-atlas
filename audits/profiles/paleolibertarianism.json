@@ -1502,12 +1502,36 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Rockwell says America should come home, and Rothbard says to stop supporting bums abroad.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to 'come home, America' and ending support abroad, not alliances (neither text names an alliance, pact or bloc).",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Rockwell says America should come home, and Rothbard says to stop supporting bums abroad.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to 'come home, America' and ending support abroad, not alliances (neither text names an alliance, pact or bloc).",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -3714,6 +3738,15 @@
       "sources": [
         "s1"
       ]
+    },
+    "troops-home-from-abroad": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Rockwell endorses Buchanan's call for America to 'come home', not to be the world's policeman, and Rothbard's America First programme says 'Come home America'.",
+      "sources": [
+        "s2",
+        "s3"
+      ]
     }
   },
   "missingStatements": [
@@ -3774,6 +3807,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

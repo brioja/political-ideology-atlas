@@ -1504,11 +1504,33 @@
       ]
     },
     "end-foreign-alliances": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The platform would close most foreign bases and cut the military.",
+      "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to closing foreign bases and bringing troops home, not alliances (the platform names no alliance, pact or bloc).",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The platform would close most foreign bases and cut the military.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to closing foreign bases and bringing troops home, not alliances (the platform names no alliance, pact or bloc).",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -3707,6 +3729,14 @@
       "sources": [
         "s4"
       ]
+    },
+    "troops-home-from-abroad": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The Green Party US platform urges phasing out all foreign bases not under a U.N. peacekeeping resolution and bringing home troops stationed abroad, except embassy guards.",
+      "sources": [
+        "s4"
+      ]
     }
   },
   "missingStatements": [
@@ -3759,6 +3789,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

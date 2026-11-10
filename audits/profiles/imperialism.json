@@ -1363,12 +1363,36 @@
       "sources": []
     },
     "end-foreign-alliances": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Ferry vows that France will never leave Saigon, Tunisia or Madagascar because the fleet needs those stations, and Mahan urges the United States to acquire coaling and repair stations abroad.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to holding colonies and naval stations abroad, not alliances.",
       "sources": [
         "s3",
         "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Ferry vows that France will never leave Saigon, Tunisia or Madagascar because the fleet needs those stations, and Mahan urges the United States to acquire coaling and repair stations abroad.",
+          "sources": [
+            "s3",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks only about permanent military alliances (the troops half moved to troops-home-from-abroad, 2026-11-10), and these sources speak to holding colonies and naval stations abroad, not alliances.",
+          "sources": [
+            "s3",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "abolish-rental-housing": {
@@ -3382,6 +3406,15 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Ferry vows that France will never leave Saigon, Tunisia or Madagascar because the fleet needs those stations, and Mahan urges the United States to acquire coaling and repair stations abroad.",
+      "sources": [
+        "s3",
+        "s11"
+      ]
     }
   },
   "missingStatements": [
@@ -3432,6 +3465,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 343
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
