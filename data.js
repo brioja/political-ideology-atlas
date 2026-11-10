@@ -1480,10 +1480,10 @@ const QUESTIONS = [
  {
   "id": "emergency-suspend-protections",
   "theme": "government",
-  "text": "In a national emergency, a government may suspend ordinary legal protections to defeat its internal enemies.",
-  "agree": "Courts and rights can be set aside or sped up when the state faces a mortal threat from within.",
-  "disagree": "Ordinary legal protections should hold even in a national emergency.",
-  "note": "About whether emergencies justify setting aside the rule of law.",
+  "text": "During a national emergency, governments should be allowed to suspend ordinary legal protections to defeat internal enemies.",
+  "agree": "A national emergency sometimes justifies temporarily withdrawing normal legal safeguards against people the government regards as internal enemies, such as protections against detention without trial.",
+  "disagree": "Governments should not be allowed to suspend ordinary legal protections to defeat internal enemies, even during a national emergency.",
+  "note": "About permission to suspend normal safeguards during an emergency, not a requirement to do so in every emergency. Suspension might itself be authorised by a constitution; agreement does not require rejecting every legal limit or permitting every abuse. “Internal enemies” means those the government identifies as threats from within the country, not a judgment that its designation is correct.",
   "icon": "🚨"
  },
  {
