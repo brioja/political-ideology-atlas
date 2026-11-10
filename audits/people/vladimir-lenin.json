@@ -1,11 +1,25 @@
 {
   "id": "vladimir-lenin",
   "name": "Vladimir Lenin",
-  "auditedAt": "2026-10-22",
-  "auditor": "gpt-6.1-sol",
+  "auditedAt": "2026-11-10",
+  "auditor": [
+    "gpt-6.1-sol",
+    "claude-opus-5-5"
+  ],
+  "passes": [
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-22"
+    },
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-11-10"
+    }
+  ],
+  "rules": 5,
   "living": false,
   "role": "Bolshevik revolutionary and head of Soviet government (1917–1924)",
-  "summary": "Lenin advocated proletarian revolution, Communist Party leadership and a transition toward a classless society. His later economic programme permitted controlled private trade and concessions while promoting cooperatives and state industry; he supported national self-determination and women’s legal and economic emancipation.",
+  "summary": "Lenin was the Bolshevik leader who led the October 1917 insurrection and headed the Soviet government until 1924, arguing for a vanguard party, the dictatorship of the proletariat and soviets in place of parliament. In power his government nationalised land, banks, foreign trade and large industry, separated church and state, liberalised marriage and divorce, dissolved the Constituent Assembly, outlawed opposition parties and used terror, before turning in 1921 to the New Economic Policy of controlled markets and concessions.",
   "wikipedia": "https://en.wikipedia.org/wiki/Vladimir_Lenin",
   "sources": [
     {
@@ -14,7 +28,9 @@
       "title": "The State and Revolution, chapter III (1917)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch03.htm",
-      "usedFor": "decide-locally; workers-councils; state-class-instrument; separated-powers; representatives-worker-pay; recall-officials; people-in-arms; recallable-delegates; smash-state-machine"
+      "usedFor": "decide-locally; workers-councils; state-class-instrument; separated-powers; representatives-worker-pay; recall-officials; people-in-arms; recallable-delegates; smash-state-machine",
+      "evidence": "words",
+      "library": "86 Books on Soviet Socialism - state-and-revolution.txt"
     },
     {
       "id": "state5",
@@ -22,7 +38,8 @@
       "title": "The State and Revolution, chapter V (1917)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch05.htm",
-      "usedFor": "property-fundamental; state-harmful; democracy-best; equal-outcomes; abolish-division-of-labor; distribute-by-need; dictatorship-of-proletariat; suppress-opposition; socialism-needs-workers-power"
+      "usedFor": "property-fundamental; state-harmful; democracy-best; equal-outcomes; abolish-division-of-labor; distribute-by-need; dictatorship-of-proletariat; suppress-opposition; socialism-needs-workers-power",
+      "evidence": "words"
     },
     {
       "id": "tax",
@@ -30,7 +47,8 @@
       "title": "The Tax in Kind (1921)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1921/apr/21.htm",
-      "usedFor": "markets-allocate-better; results-over-ideology; moral-incentives; foreign-takeover-block; market-under-party-rule"
+      "usedFor": "markets-allocate-better; results-over-ideology; moral-incentives; foreign-takeover-block; market-under-party-rule",
+      "evidence": "words"
     },
     {
       "id": "cooperation",
@@ -38,7 +56,8 @@
       "title": "On Cooperation (1923)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1923/jan/06.htm",
-      "usedFor": "public-ownership; worker-ownership; socialized-markets; collective-farming; class-collaboration; moral-incentives; no-business-privileges"
+      "usedFor": "public-ownership; worker-ownership; socialized-markets; collective-farming; class-collaboration; moral-incentives; no-business-privileges",
+      "evidence": "words"
     },
     {
       "id": "religion",
@@ -46,7 +65,8 @@
       "title": "Socialism and Religion (1905)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1905/dec/03.htm",
-      "usedFor": "more-religion-public; separate-church-state; restrict-conversion; no-religion-state-schools; religion-illusion; punish-blasphemy; religious-equal-recognition; national-church-status; no-denominational-politics"
+      "usedFor": "more-religion-public; separate-church-state; restrict-conversion; no-religion-state-schools; religion-illusion; punish-blasphemy; religious-equal-recognition; national-church-status; no-denominational-politics",
+      "evidence": "words"
     },
     {
       "id": "women",
@@ -54,7 +74,8 @@
       "title": "Tasks of the Working Women’s Movement in the Soviet Republic (1919)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1919/sep/23a.htm",
-      "usedFor": "work-for-welfare; patriarchy-structural; no-fault-divorce; women-equality-needs-economic-change; socialized-care; democracy-is-procedure; women-suffrage; wife-divorce-without-consent"
+      "usedFor": "work-for-welfare; patriarchy-structural; no-fault-divorce; women-equality-needs-economic-change; socialized-care; democracy-is-procedure; women-suffrage; wife-divorce-without-consent",
+      "evidence": "words"
     },
     {
       "id": "nation",
@@ -62,7 +83,8 @@
       "title": "The Socialist Revolution and the Right of Nations to Self-Determination (1916)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1916/jan/x01.htm",
-      "usedFor": "right-to-secede; national-self-determination; workers-nation; national-cultural-autonomy; colonies-serve-metropole"
+      "usedFor": "right-to-secede; national-self-determination; workers-nation; national-cultural-autonomy; colonies-serve-metropole",
+      "evidence": "words"
     },
     {
       "id": "technology",
@@ -70,7 +92,8 @@
       "title": "Third Congress of the Communist International: economic report (1921)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1921/jun/12.htm",
-      "usedFor": "central-planning; state-directs-investment; industrial-civilization-disaster; accelerate-technology; return-to-foraging; socialism-one-country"
+      "usedFor": "central-planning; state-directs-investment; industrial-civilization-disaster; accelerate-technology; return-to-foraging; socialism-one-country",
+      "evidence": "words"
     },
     {
       "id": "party",
@@ -78,7 +101,8 @@
       "title": "What Is To Be Done?, chapter II (1902)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1901/witbd/ii.htm",
-      "usedFor": "vanguard-party; workers-own-party"
+      "usedFor": "vanguard-party; workers-own-party",
+      "evidence": "words"
     },
     {
       "id": "unions",
@@ -86,7 +110,8 @@
       "title": "Role and Functions of Trade Unions Under the New Economic Policy (1922)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1921/dec/30.htm",
-      "usedFor": "unions-good; workplace-democracy; independent-unions; collective-bargaining; no-compulsory-union"
+      "usedFor": "unions-good; workplace-democracy; independent-unions; collective-bargaining; no-compulsory-union",
+      "evidence": "words"
     },
     {
       "id": "defeat",
@@ -94,7 +119,8 @@
       "title": "The Defeat of One’s Own Government in the Imperialist War (1915)",
       "author": "Vladimir Lenin",
       "url": "https://www.marxists.org/archive/lenin/works/1915/jul/26.htm",
-      "usedFor": "revolution-justified; political-violence-never; defeat-own-government-war; soldiers-refuse-war"
+      "usedFor": "revolution-justified; political-violence-never; defeat-own-government-war; soldiers-refuse-war",
+      "evidence": "words"
     },
     {
       "id": "reference",
@@ -102,15 +128,487 @@
       "title": "Vladimir Lenin",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Vladimir_Lenin",
-      "usedFor": "empower-police-military; one-party-rule; emergency-suspend-protections; party-controls-media; people-in-arms; death-penalty"
+      "usedFor": "empower-police-military; one-party-rule; emergency-suspend-protections; party-controls-media; people-in-arms; death-penalty",
+      "evidence": "action"
+    },
+    {
+      "id": "peace",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Peace, read and moved by Lenin at the Second Congress of Soviets (8 November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/oct/25-26/26b.htm",
+      "usedFor": "open diplomacy, secret treaties, annexation"
+    },
+    {
+      "id": "land",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Land, read and moved by Lenin at the Second Congress of Soviets (8 November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/oct/25-26/26d.htm",
+      "usedFor": "land confiscation, nationalisation of land and minerals, tenure by use"
+    },
+    {
+      "id": "decl",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Declaration of Rights of the Working and Exploited People (drafted by Lenin, adopted January 1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/jan/03.htm",
+      "usedFor": "soviet power, federation, land, banks, labour conscription, Red Army, loans, colonies, exclusion of exploiters"
+    },
+    {
+      "id": "dissolve",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Draft Decree on the Dissolution of the Constituent Assembly (January 1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/jan/06a.htm",
+      "usedFor": "Constituent Assembly, parliamentary system"
+    },
+    {
+      "id": "press",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Suppression of Hostile Newspapers (Decree on the Press), signed by Lenin (27 October 1917)",
+      "author": "Council of People's Commissars (signed Vladimir Ulianov (Lenin))",
+      "url": "https://www.marxists.org/history/ussr/government/1917/10/27.htm",
+      "usedFor": "closure of opposition press"
+    },
+    {
+      "id": "recall",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Draft Decree on the Right of Recall (November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/nov/19.htm",
+      "usedFor": "recall of deputies, proportional representation"
+    },
+    {
+      "id": "salaries",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "The Salaries of High-Ranking Office Employees and Officials: draft decree adopted by the Council of People's Commissars (November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/nov/18b.htm",
+      "usedFor": "salary limit for people's commissars"
+    },
+    {
+      "id": "kadets",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Arrest of the Leaders of the Civil War Against the Revolution, signed by Lenin (28 November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/nov/28.htm",
+      "usedFor": "Kadet party outlawed, surveillance"
+    },
+    {
+      "id": "cheka",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Note to F. E. Dzerzhinsky, with a draft decree on fighting counter-revolutionaries and saboteurs (December 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/dec/07.htm",
+      "usedFor": "founding of the Cheka, registration of the wealthy"
+    },
+    {
+      "id": "hanging",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Telegram to the Penza communists (\"hanging order\", 11 August 1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/aug/11c.htm",
+      "usedFor": "order to hang kulaks publicly and take hostages"
+    },
+    {
+      "id": "kursky1",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Addendum to the Draft Preamble to the Criminal Code of the R.S.F.S.R. and a letter to D. I. Kursky (15 May 1922)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1922/may/15b.htm",
+      "usedFor": "death penalty for counter-revolutionary crimes, extended to Menshevik and SR activity"
+    },
+    {
+      "id": "kursky2",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Letter to D. I. Kursky with a draft article for the Criminal Code (17 May 1922)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1922/may/17.htm",
+      "usedFor": "terror legalised as a principle, broadly formulated"
+    },
+    {
+      "id": "georgia",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Telegrams to the Revolutionary Military Council of the 11th Army (14 and 15 February 1921)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1921/feb/14b.htm",
+      "usedFor": "authorising the Red Army to support the uprising in Georgia and occupy Tiflis"
+    },
+    {
+      "id": "uprising",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Meeting of the Central Committee of the R.S.D.L.P.(B.), 10 October 1917: Lenin's report and resolution on the armed uprising",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/oct/10a.htm",
+      "usedFor": "armed insurrection of October 1917"
+    },
+    {
+      "id": "admission",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Admission to Higher Educational Institutions: draft decision of the Council of People's Commissars (August 1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/aug/02c.htm",
+      "usedFor": "free admission to higher education, priority for workers and poor peasants"
+    },
+    {
+      "id": "houses",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Theses for a Law on the Confiscation of Apartment and Tenement Houses (November 1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/nov/20.htm",
+      "usedFor": "nationalisation of urban land and let houses"
+    },
+    {
+      "id": "peoples",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Declaration of Rights of the Peoples of Russia (15 November 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "equality of peoples, secession, abolition of national privileges, minorities"
+    },
+    {
+      "id": "estates",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Abolition of Social Estates and Civil Ranks (24 November 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "abolition of estates and titles"
+    },
+    {
+      "id": "judicature",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Judicature (5 December 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "elected courts, revolutionary conscience, revolutionary tribunals"
+    },
+    {
+      "id": "divorce",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Divorce (29 December 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "divorce on request of either spouse, regardless of religion"
+    },
+    {
+      "id": "marriage",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Civil Marriage, on Children and on the Keeping of Registers (31 December 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "civil marriage only, no married persons, children born out of wedlock"
+    },
+    {
+      "id": "finland",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on State Independence for Finland (31 December 1917), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "recognition of Finland's secession"
+    },
+    {
+      "id": "conscience",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on Freedom of Conscience, and on Clerical and Religious Societies (2 February 1918, as amended by Lenin), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "separation of church and state and of school and church, property of religious societies"
+    },
+    {
+      "id": "monuments",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Monuments of the Republic (12 April 1918), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "removal of monuments to tsars"
+    },
+    {
+      "id": "foreigntrade",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Nationalisation of Foreign Trade (22 April 1918), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "state monopoly of foreign trade"
+    },
+    {
+      "id": "inheritance",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Abolition of Inheritance (27 April 1918, approved by the Council of People's Commissars as amended by Lenin), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "inheritance abolished, small household property exempt"
+    },
+    {
+      "id": "nationalise",
+      "kind": "primary",
+      "evidence": "action",
+      "title": "Decree on the Nationalisation of Enterprises in a Number of Industries, Railway Transport Enterprises, Public Utilities and Steam Mills (28 June 1918), in First Decrees of Soviet Power (Akhapkin, comp., 1970)",
+      "author": "Council of People's Commissars, signed V. Ulyanov (Lenin)",
+      "url": "https://www.marxists.org/history/ussr/government/1917/firstdecreesofsovietpower.pdf",
+      "usedFor": "nationalisation of large industry, railways and public utilities"
+    },
+    {
+      "id": "prog1917",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Materials Relating to the Revision of the Party Programme: Draft of Revised Programme (1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/reviprog/ch04.htm",
+      "usedFor": "single chamber, elections, languages, militia, taxes, education, labour, land"
+    },
+    {
+      "id": "prog1919",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Draft Programme of the R.C.P.(B.) (1919)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1919/mar/x02.htm",
+      "usedFor": "soviet democracy, disfranchisement, money, taxes, religion, schools, war and disarmament, courts"
+    },
+    {
+      "id": "language",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Is a Compulsory Official Language Needed? (1914)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1914/jan/18.htm",
+      "usedFor": "official language"
+    },
+    {
+      "id": "malthus",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Working Class and Neo-Malthusianism (1913)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1913/jun/29.htm",
+      "usedFor": "abortion laws, neo-Malthusianism"
+    },
+    {
+      "id": "materialism",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "On the Significance of Militant Materialism (1922)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1922/mar/12.htm",
+      "usedFor": "atheist propaganda"
+    },
+    {
+      "id": "youth",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Tasks of the Youth Leagues (1920)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1920/oct/02.htm",
+      "usedFor": "class morality"
+    },
+    {
+      "id": "insurrection",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Marxism and Insurrection (1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/sep/13.htm",
+      "usedFor": "conditions for insurrection"
+    },
+    {
+      "id": "prrk1",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Proletarian Revolution and the Renegade Kautsky: How Kautsky Turned Marx into a Common Liberal (1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/prrk/common_liberal.htm",
+      "usedFor": "dictatorship unrestricted by any laws"
+    },
+    {
+      "id": "prrk2",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Proletarian Revolution and the Renegade Kautsky: Bourgeois and Proletarian Democracy (1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1918/prrk/democracy.htm",
+      "usedFor": "indirect elections, freedom of press and assembly"
+    },
+    {
+      "id": "comintern",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Terms of Admission into the Communist International (1920)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1920/jul/x01.htm",
+      "usedFor": "illegal organisation, military discipline, binding decisions"
+    },
+    {
+      "id": "colonial",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Draft Theses on National and Colonial Questions (1920)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1920/jun/05.htm",
+      "usedFor": "alliance with liberation movements, Pan-Islamism, bourgeois democracy in colonies"
+    },
+    {
+      "id": "cong2",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Second Congress of the Communist International: reports (1920)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1920/jul/x03.htm",
+      "usedFor": "non-capitalist development of backward countries"
+    },
+    {
+      "id": "unity",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Preliminary Draft Resolution of the Tenth Congress of the R.C.P. on Party Unity (1921)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1921/10thcong/ch04.htm",
+      "usedFor": "ban on factions, party discipline"
+    },
+    {
+      "id": "imperialism",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Imperialism, the Highest Stage of Capitalism, ch. VIII: Parasitism and Decay of Capitalism (1916)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1916/imp-hsc/ch08.htm",
+      "usedFor": "bribery of the upper strata of the proletariat"
+    },
+    {
+      "id": "reformism",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Marxism and Reformism (1913)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1913/sep/12b.htm",
+      "usedFor": "struggle for reforms"
+    },
+    {
+      "id": "pride",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "On the National Pride of the Great Russians (1914)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1914/dec/12a.htm",
+      "usedFor": "patriotism"
+    },
+    {
+      "id": "marx2",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Karl Marx, ch. II: The Marxist Doctrine (1914)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1914/granat/ch02.htm",
+      "usedFor": "materialist conception of history, class struggle"
+    },
+    {
+      "id": "marx3",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Karl Marx, ch. III: Marx's Economic Doctrine (1914)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1914/granat/ch03.htm",
+      "usedFor": "value, surplus value"
+    },
+    {
+      "id": "devcap",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Development of Capitalism in Russia, ch. I, section VIII (1899)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1899/dcr8i/i8viii.htm",
+      "usedFor": "progressive historical work of capitalism"
+    },
+    {
+      "id": "sw",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Socialism and War, ch. I (1915)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1915/s-w/ch01.htm",
+      "usedFor": "just and defensive wars of oppressed nations"
+    },
+    {
+      "id": "syndic",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Impending Catastrophe and How to Combat It: Compulsory Association (1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/ichtci/07.htm",
+      "usedFor": "compulsory syndication"
+    },
+    {
+      "id": "staterev1",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The State and Revolution, ch. I (1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/staterev/ch01.htm",
+      "usedFor": "power of wealth in democratic republics"
+    },
+    {
+      "id": "witbd4",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "What Is To Be Done?, ch. IV (1902)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1901/witbd/iv.htm",
+      "usedFor": "organisation of revolutionaries"
+    },
+    {
+      "id": "alliance",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Alliance Between the Workers and Exploited Peasants (1917)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.marxists.org/archive/lenin/works/1917/nov/18.htm",
+      "usedFor": "worker-peasant coalition"
+    },
+    {
+      "id": "letter",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "A Letter to American Workingmen, from the Socialist Soviet Republic of Russia (1918)",
+      "author": "Vladimir Lenin",
+      "url": "https://www.gutenberg.org/ebooks/35232",
+      "library": "35232 Lenin - A Letter to American Workingmen, from the Socialist Soviet R.txt",
+      "usedFor": "sacrifice of territory, the fatherland and the international revolution, terror and civil war"
     }
   ],
   "answers": {
     "universal-healthcare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1917 programme demands full social insurance for wage-workers with free medical and medicinal aid, at the capitalists' cost.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "raise-minimum-wage": {
       "value": null,
@@ -129,16 +627,41 @@
     "public-ownership": {
       "value": 2,
       "confidence": "high",
-      "rationale": "His final cooperative programme retained state power over large-scale means of production.",
+      "rationale": "His government's decree of June 1918, signed by him, nationalised large industry, railway transport enterprises and public utilities.",
       "sources": [
-        "cooperation"
+        "nationalise"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His final cooperative programme retained state power over large-scale means of production.",
+          "sources": [
+            "cooperation"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His government's decree of June 1918, signed by him, nationalised large industry, railway transport enterprises and public utilities.",
+          "sources": [
+            "nationalise"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "tax-the-wealthy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His programmes demanded a progressive tax on incomes and inheritances, and in 1919 a graduated income-and-property tax wherever feasible.",
+      "sources": [
+        "prog1917",
+        "prog1919"
+      ]
     },
     "unions-good": {
       "value": 2,
@@ -151,22 +674,48 @@
     "property-fundamental": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He defended expropriation of capitalists and social ownership of productive resources.",
+      "rationale": "His Decree on Land abolished landed proprietorship forthwith without compensation and abolished private ownership of land for ever.",
       "sources": [
-        "state5"
+        "land"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He defended expropriation of capitalists and social ownership of productive resources.",
+          "sources": [
+            "state5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His Decree on Land abolished landed proprietorship forthwith without compensation and abolished private ownership of land for ever.",
+          "sources": [
+            "land"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "regulate-corporations": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His government nationalised large industry outright by the June 1918 decree he signed, going beyond regulation of corporations.",
+      "sources": [
+        "nationalise"
+      ]
     },
     "cut-welfare": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His 1917 programme demands full social insurance covering sickness, old age, disablement, child-birth, widowhood and unemployment.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "worker-ownership": {
       "value": 2,
@@ -177,10 +726,12 @@
       ]
     },
     "surveillance-ok": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His decree ordered the local soviets to keep the Kadet party under special surveillance because of its connection with the civil war.",
+      "sources": [
+        "kadets"
+      ]
     },
     "legalize-drugs": {
       "value": null,
@@ -202,10 +753,32 @@
     },
     "state-harmful": {
       "value": 0,
-      "confidence": "high",
-      "rationale": "He demanded transitional proletarian state power but expected every state eventually to wither away.",
+      "confidence": "low",
+      "rationale": "He held that the proletariat needs a state for the transition but that every state, the proletarian one included, will wither away under communism, so his position on the statement points both ways.",
       "sources": [
         "state5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "high",
+          "rationale": "He demanded transitional proletarian state power but expected every state eventually to wither away.",
+          "sources": [
+            "state5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He held that the proletariat needs a state for the transition but that every state, the proletarian one included, will wither away under communism, so his position on the statement points both ways.",
+          "sources": [
+            "state5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "limit-guns": {
@@ -217,9 +790,31 @@
     "empower-police-military": {
       "value": 2,
       "confidence": "medium",
-      "rationale": "He sustained the Red Army and Cheka as instruments defending Bolshevik power.",
+      "rationale": "He drafted the decree on fighting counter-revolutionaries and saboteurs presented with the founding of the Cheka, with registration of the wealthy and punishments up to being sent to the front.",
       "sources": [
-        "reference"
+        "cheka"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He sustained the Red Army and Cheka as instruments defending Bolshevik power.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He drafted the decree on fighting counter-revolutionaries and saboteurs presented with the founding of the Cheka, with registration of the wealthy and punishments up to being sent to the front.",
+          "sources": [
+            "cheka"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -230,10 +825,32 @@
     },
     "decide-locally": {
       "value": 0,
-      "confidence": "high",
-      "rationale": "He defended voluntary democratic centralism and local Commune organisation together.",
+      "confidence": "low",
+      "rationale": "He defended democratic centralism and a strictly centralised state alongside broad local self-government on the Commune model, so his writings point both ways.",
       "sources": [
         "state3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "high",
+          "rationale": "He defended voluntary democratic centralism and local Commune organisation together.",
+          "sources": [
+            "state3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He defended democratic centralism and a strictly centralised state alongside broad local self-government on the Commune model, so his writings point both ways.",
+          "sources": [
+            "state3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "rehabilitation": {
@@ -255,17 +872,41 @@
       "sources": []
     },
     "abortion-legal": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He demanded the unconditional annulment of all laws against abortion and against the distribution of medical literature on contraception.",
+      "sources": [
+        "malthus"
+      ]
     },
     "more-religion-public": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He advocated scientific socialist politics and treating religion as private in relation to the state.",
+      "rationale": "The decree on freedom of conscience he signed banned religious rites and ceremonies from the acts of state institutions and abolished the religious oath.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He advocated scientific socialist politics and treating religion as private in relation to the state.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The decree on freedom of conscience he signed banned religious rites and ceremonies from the acts of state institutions and abolished the religious oath.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "correct-racial-injustice": {
@@ -287,10 +928,12 @@
       "sources": []
     },
     "gradual-change": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His 1917 programme says only a proletarian socialist revolution can lead humanity out of the impasse of imperialism and makes the conquest of power the task of the day.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "reduce-immigration": {
       "value": null,
@@ -305,16 +948,20 @@
       "sources": []
     },
     "free-trade": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The decree he signed in April 1918 nationalised all foreign trade and forbade any import or export transaction outside the state bodies.",
+      "sources": [
+        "foreigntrade"
+      ]
     },
     "nation-first": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He asked whether socialists should place the integrity and safety of the fatherland created by the bourgeoisie over the interests of the international socialist revolution, and answered no.",
+      "sources": [
+        "letter"
+      ]
     },
     "humanitarian-intervention": {
       "value": null,
@@ -355,9 +1002,31 @@
     "revolution-justified": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He advocated revolutionary action to overthrow governments participating in imperialist war.",
+      "rationale": "He led the Bolshevik Central Committee to resolve on the armed uprising of October 1917 against the Provisional Government.",
       "sources": [
-        "defeat"
+        "uprising"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He advocated revolutionary action to overthrow governments participating in imperialist war.",
+          "sources": [
+            "defeat"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He led the Bolshevik Central Committee to resolve on the armed uprising of October 1917 against the Provisional Government.",
+          "sources": [
+            "uprising"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "experts-over-public": {
@@ -389,16 +1058,20 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The Central Executive Committee's decree of April 1918, which the Council of People's Commissars approved as Lenin amended it, abolished inheritance except for small household property.",
+      "sources": [
+        "inheritance"
+      ]
     },
     "basic-income": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His Declaration made labour compulsory through universal labour conscription, which leaves no room for an income paid without work.",
+      "sources": [
+        "decl"
+      ]
     },
     "tariffs-protect-industry": {
       "value": null,
@@ -415,22 +1088,28 @@
       ]
     },
     "widespread-small-property": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His 1917 programme warns the rural proletariat against the false attraction of petty farming, which can never abolish mass poverty, and calls for social ownership.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "abolish-money-wages": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1919 programme commits the party to the most radical measures to pave the way for the abolition of money, with equal remuneration for all work as the ultimate aim.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "abolish-central-banks": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His Declaration confirmed the conversion of all banks into the property of the workers' and peasants' state, the opposite of leaving money to the market.",
+      "sources": [
+        "decl"
+      ]
     },
     "corporatist-bargaining": {
       "value": null,
@@ -440,24 +1119,72 @@
     },
     "one-party-rule": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "His government suppressed rival parties and consolidated Communist political monopoly.",
+      "confidence": "high",
+      "rationale": "He outlawed the Kadet party as enemies of the people in 1917 and in 1922 asked that the death penalty be extended to all forms of Menshevik and Socialist-Revolutionary activity.",
       "sources": [
-        "reference"
+        "kadets",
+        "kursky1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "His government suppressed rival parties and consolidated Communist political monopoly.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He outlawed the Kadet party as enemies of the people in 1917 and in 1922 asked that the death penalty be extended to all forms of Menshevik and Socialist-Revolutionary activity.",
+          "sources": [
+            "kadets",
+            "kursky1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "monarchy-legitimate": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His party programme makes the overthrow of the tsarist autocracy, the bulwark of barbarism, its first task and demands a republic.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "democracy-best": {
-      "value": -1,
+      "value": -2,
       "confidence": "high",
-      "rationale": "He defended excluding exploiters from democracy during the revolutionary transition.",
+      "rationale": "His decree dissolving the elected Constituent Assembly declared the bourgeois parliamentary system absolutely incompatible with socialism and set the Assembly's majority aside in favour of Soviet power.",
       "sources": [
-        "state5"
+        "dissolve"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "He defended excluding exploiters from democracy during the revolutionary transition.",
+          "sources": [
+            "state5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His decree dissolving the elected Constituent Assembly declared the bourgeois parliamentary system absolutely incompatible with socialism and set the Assembly's majority aside in favour of Soviet power.",
+          "sources": [
+            "dissolve"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "direct-votes": {
@@ -469,17 +1196,65 @@
     "workers-councils": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He advocated a Commune-type working body replacing bourgeois parliamentary representation.",
+      "rationale": "His Declaration of Rights of the Working and Exploited People proclaimed a Republic of Soviets in which all power, centrally and locally, is vested in the soviets, and his government dissolved the Constituent Assembly in their favour.",
       "sources": [
-        "state3"
+        "decl",
+        "dissolve"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He advocated a Commune-type working body replacing bourgeois parliamentary representation.",
+          "sources": [
+            "state3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His Declaration of Rights of the Working and Exploited People proclaimed a Republic of Soviets in which all power, centrally and locally, is vested in the soviets, and his government dissolved the Constituent Assembly in their favour.",
+          "sources": [
+            "decl",
+            "dissolve"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "right-to-secede": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He argued that a free union is a deception without the right to separate.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His government recognised Finland's secession in December 1917, but in February 1921 he authorised the Red Army to support an uprising in independent Georgia and occupy Tiflis, so his record points both ways.",
       "sources": [
-        "nation"
+        "finland",
+        "georgia"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He argued that a free union is a deception without the right to separate.",
+          "sources": [
+            "nation"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His government recognised Finland's secession in December 1917, but in February 1921 he authorised the Red Army to support an uprising in independent Georgia and occupy Tiflis, so his record points both ways.",
+          "sources": [
+            "finland",
+            "georgia"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "natural-rulers": {
@@ -491,9 +1266,31 @@
     "political-violence-never": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He sought revolutionary struggle against governments conducting imperialist war.",
+      "rationale": "In October 1917 he moved the Central Committee resolution declaring an armed uprising inevitable and fully ripe and instructing the party to prepare it.",
       "sources": [
-        "defeat"
+        "uprising"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He sought revolutionary struggle against governments conducting imperialist war.",
+          "sources": [
+            "defeat"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In October 1917 he moved the Central Committee resolution declaring an armed uprising inevitable and fully ripe and instructing the party to prepare it.",
+          "sources": [
+            "uprising"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "war-builds-character": {
@@ -505,16 +1302,40 @@
     "separate-church-state": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He explicitly demanded complete separation of church and state.",
+      "rationale": "The decree on freedom of conscience, approved as Lenin amended it and signed by him, separated the church from the state and stripped religious societies of privileges and state subsidies.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He explicitly demanded complete separation of church and state.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The decree on freedom of conscience, approved as Lenin amended it and signed by him, separated the church from the state and stripped religious societies of privileges and state subsidies.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "laws-from-scripture": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The decree on freedom of conscience he signed separated church and state and removed religion from all official acts and from the acts of state institutions.",
+      "sources": [
+        "conscience"
+      ]
     },
     "private-courts-defense": {
       "value": null,
@@ -535,10 +1356,12 @@
       "sources": []
     },
     "class-struggle-history": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His account of Marxism presents the theory of the class struggle as the guide to the laws governing history.",
+      "sources": [
+        "marx2"
+      ]
     },
     "equal-outcomes": {
       "value": 1,
@@ -561,10 +1384,12 @@
       "sources": []
     },
     "civilizational-union": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His theses on the colonial question call for combating Pan-Islamism and similar trends that tie the liberation movement to the positions of khans, landowners and mullahs.",
+      "sources": [
+        "colonial"
+      ]
     },
     "self-interest-moral": {
       "value": null,
@@ -585,10 +1410,12 @@
       "sources": []
     },
     "limit-population": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He called class-conscious workers unconditional enemies of neo-Malthusianism, while defending free access to contraception and abortion.",
+      "sources": [
+        "malthus"
+      ]
     },
     "industrial-civilization-disaster": {
       "value": -2,
@@ -639,16 +1466,20 @@
       ]
     },
     "direct-action": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme says bourgeois parliamentarism was to be used only for the political education and organisation of the masses before power passed to the Soviets, and calls any return to it reactionary.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "means-match-ends": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He held that a classless, stateless society can be reached only through a transitional proletarian state that forcibly suppresses the exploiters.",
+      "sources": [
+        "state5"
+      ]
     },
     "return-to-foraging": {
       "value": -2,
@@ -675,16 +1506,20 @@
       ]
     },
     "production-for-use": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His programme calls for social in place of private ownership and planned organisation of production to ensure the well-being and many-sided development of all members of society.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "profit-exploitation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His exposition of Marx's economics explains capital's growth by surplus value, which he treats as created by the unpaid labour of workers.",
+      "sources": [
+        "marx3"
+      ]
     },
     "dictatorship-of-proletariat": {
       "value": 2,
@@ -703,10 +1538,12 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His party programme states that under imperialism wars for world domination, markets and the subjugation of weaker nations are inevitable.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "taxation-theft": {
       "value": null,
@@ -769,10 +1606,12 @@
       "sources": []
     },
     "total-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme makes schools an instrument of the proletarian dictatorship and puts production and distribution under state direction.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "national-rebirth": {
       "value": null,
@@ -805,10 +1644,12 @@
       "sources": []
     },
     "universal-morality": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He rejected any morality based on extra-human and extra-class concepts and said communist morality is entirely subordinated to the interests of the proletariat's class struggle.",
+      "sources": [
+        "youth"
+      ]
     },
     "single-common-good": {
       "value": null,
@@ -867,11 +1708,37 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He demanded the right of oppressed nations to free political secession.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His government proclaimed the right of the peoples of Russia to secede and form independent states and recognised Finland, yet he authorised the occupation of independent Georgia in 1921; the record points both ways.",
       "sources": [
-        "nation"
+        "peoples",
+        "finland",
+        "georgia"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He demanded the right of oppressed nations to free political secession.",
+          "sources": [
+            "nation"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "His government proclaimed the right of the peoples of Russia to secede and form independent states and recognised Finland, yet he authorised the occupation of independent Georgia in 1921; the record points both ways.",
+          "sources": [
+            "peoples",
+            "finland",
+            "georgia"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "force-without-un": {
@@ -881,10 +1748,12 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He urged a militant materialist and atheist propaganda grounded in science against religion and its defenders.",
+      "sources": [
+        "materialism"
+      ]
     },
     "welfare-for-citizens": {
       "value": null,
@@ -915,10 +1784,12 @@
       "sources": []
     },
     "dominated-front": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His theses call for the closest alliance of all national and colonial liberation movements with Soviet Russia against world imperialism.",
+      "sources": [
+        "colonial"
+      ]
     },
     "workers-nation": {
       "value": -2,
@@ -929,10 +1800,12 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He made it Soviet power's task to make politics available to every working woman and to make men and women equal by law.",
+      "sources": [
+        "women"
+      ]
     },
     "ban-interest": {
       "value": null,
@@ -941,10 +1814,12 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The nationalities declaration he signed abolished all national and national-religious privileges and restrictions, contrary to legal separation by race or nation.",
+      "sources": [
+        "peoples"
+      ]
     },
     "state-class-instrument": {
       "value": 2,
@@ -973,10 +1848,12 @@
       "sources": []
     },
     "proportional-representation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His draft decree on recall calls proportional representation more democratic than the majority system and keeps it for re-elections.",
+      "sources": [
+        "recall"
+      ]
     },
     "national-mission": {
       "value": null,
@@ -1011,10 +1888,12 @@
       "sources": []
     },
     "night-watchman-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His programme calls for nationalising banks and trusts, planned social production and full social insurance, far beyond defence, justice and property.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "discourage-race-mixing": {
       "value": null,
@@ -1023,10 +1902,12 @@
       "sources": []
     },
     "equal-moral-worth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His Declaration denies the exploiting classes any place in government bodies, and his 1919 programme defends excluding exploiters from full rights, so equal rights before the law did not extend to them.",
+      "sources": [
+        "decl"
+      ]
     },
     "socialism-one-country": {
       "value": 1,
@@ -1043,17 +1924,41 @@
       "sources": []
     },
     "uniform-civil-code": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The divorce decree he signed applies to all citizens of the Russian Republic regardless of their religion and transferred all divorce cases from religious bodies to the courts.",
+      "sources": [
+        "divorce"
+      ]
     },
     "restrict-conversion": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He defended everyone’s freedom to profess any religion or none.",
+      "rationale": "The decree on freedom of conscience he signed gave every citizen the freedom to profess any religion or none and abolished all deprivations of rights connected with religion.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He defended everyone’s freedom to profess any religion or none.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The decree on freedom of conscience he signed gave every citizen the freedom to profess any religion or none and abolished all deprivations of rights connected with religion.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "ban-cattle-slaughter": {
@@ -1065,9 +1970,31 @@
     "no-religion-state-schools": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He demanded separation of church and school as part of religious freedom.",
+      "rationale": "The decree on freedom of conscience he signed separated school from church and forbade religious instruction in all state, public and private schools teaching general subjects.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He demanded separation of church and school as part of religious freedom.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The decree on freedom of conscience he signed separated school from church and forbade religious instruction in all state, public and private schools teaching general subjects.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "state-strengthens-encirclement": {
@@ -1107,10 +2034,12 @@
       "sources": []
     },
     "ban-extremist-parties": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He outlawed the Kadets as a party of enemies of the people for their link to the civil war against the revolution.",
+      "sources": [
+        "kadets"
+      ]
     },
     "freedom-as-non-domination": {
       "value": null,
@@ -1135,10 +2064,12 @@
       ]
     },
     "priority-to-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His decision on higher education gave priority to workers and poor peasants, with grants on an extensive scale.",
+      "sources": [
+        "admission"
+      ]
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1153,10 +2084,12 @@
       "sources": []
     },
     "population-causes-poverty": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He answered the neo-Malthusian wish for fewer children by blaming capitalism and petty production for workers' suffering and urging struggle instead.",
+      "sources": [
+        "malthus"
+      ]
     },
     "diversity-weakens-cohesion": {
       "value": null,
@@ -1173,9 +2106,31 @@
     "emergency-suspend-protections": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The Red Terror authorised summary repression and executions outside ordinary judicial safeguards.",
+      "rationale": "His August 1918 telegram to Penza ordered that no fewer than a hundred kulaks be hanged publicly, their grain seized and hostages taken, as a civil-war measure.",
       "sources": [
-        "reference"
+        "hanging"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Red Terror authorised summary repression and executions outside ordinary judicial safeguards.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His August 1918 telegram to Penza ordered that no fewer than a hundred kulaks be hanged publicly, their grain seized and hostages taken, as a civil-war measure.",
+          "sources": [
+            "hanging"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "price-controls-essentials": {
@@ -1187,9 +2142,31 @@
     "party-controls-media": {
       "value": 2,
       "confidence": "high",
-      "rationale": "His government closed opposition newspapers through the 1917 press decree.",
+      "rationale": "His government's decree of 27 October 1917, which he signed, made opposition newspapers liable to closure by resolution of the Council of People's Commissars.",
       "sources": [
-        "reference"
+        "press"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His government closed opposition newspapers through the 1917 press decree.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His government's decree of 27 October 1917, which he signed, made opposition newspapers liable to closure by resolution of the Council of People's Commissars.",
+          "sources": [
+            "press"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "party-commands-army": {
@@ -1206,17 +2183,41 @@
     },
     "representatives-worker-pay": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "He endorsed limiting officials’ salaries to ordinary workers’ wages.",
+      "confidence": "medium",
+      "rationale": "His decree of November 1917 capped the salary of people's commissars at 500 rubles a month and ordered excessive salaries of high officials cut; higher pay was later allowed for specialists, not for commissars.",
       "sources": [
-        "state3"
+        "salaries"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He endorsed limiting officials’ salaries to ordinary workers’ wages.",
+          "sources": [
+            "state3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "His decree of November 1917 capped the salary of people's commissars at 500 rubles a month and ordered excessive salaries of high officials cut; higher pay was later allowed for specialists, not for commissars.",
+          "sources": [
+            "salaries"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "party-discipline-binding": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His resolution on party unity ordered all factional groups dissolved and made non-observance grounds for unconditional and instant expulsion.",
+      "sources": [
+        "unity"
+      ]
     },
     "pool-sovereignty": {
       "value": null,
@@ -1237,10 +2238,12 @@
       "sources": []
     },
     "clerical-rule": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His decree separated the church from the state and placed religious societies under the general law on private associations, with no public powers.",
+      "sources": [
+        "conscience"
+      ]
     },
     "defeat-own-government-war": {
       "value": 2,
@@ -1265,9 +2268,31 @@
     "recall-officials": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He endorsed election and recall at any time for all officials.",
+      "rationale": "His draft decree on the right of recall gave the soviets of each district the right to call re-elections to every representative body, the Constituent Assembly included.",
       "sources": [
-        "state3"
+        "recall"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He endorsed election and recall at any time for all officials.",
+          "sources": [
+            "state3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His draft decree on the right of recall gave the soviets of each district the right to call re-elections to every representative body, the Constituent Assembly included.",
+          "sources": [
+            "recall"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "end-foreign-alliances": {
@@ -1315,9 +2340,31 @@
     "death-penalty": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He supported executions and the Red Terror against perceived enemies of Soviet rule.",
+      "rationale": "In drafting the 1922 Criminal Code he gave the revolutionary tribunals the power of capital punishment for counter-revolutionary crimes and asked to extend it, including for illicit return from abroad.",
       "sources": [
-        "reference"
+        "kursky1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He supported executions and the Red Terror against perceived enemies of Soviet rule.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In drafting the 1922 Criminal Code he gave the revolutionary tribunals the power of capital punishment for counter-revolutionary crimes and asked to extend it, including for illicit return from abroad.",
+          "sources": [
+            "kursky1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "sex-ed-in-schools": {
@@ -1327,10 +2374,12 @@
       "sources": []
     },
     "creationism-in-schools": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The decree he signed forbade religious instruction in every school where general subjects are taught, leaving religion to be taught privately.",
+      "sources": [
+        "conscience"
+      ]
     },
     "restrict-pornography": {
       "value": null,
@@ -1345,16 +2394,20 @@
       "sources": []
     },
     "minority-language-support": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1917 programme demands schools teaching in the native tongue at public expense and the native language used on a level with the official language in local and state institutions.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "religious-exemptions": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "His decree said no one may evade civic duties on the plea of religious views, but allowed a people's court to substitute one civic duty for another in particular cases.",
+      "sources": [
+        "conscience"
+      ]
     },
     "encourage-eccentricity": {
       "value": null,
@@ -1363,10 +2416,12 @@
       "sources": []
     },
     "sovereign-debt-cancellation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His Declaration hailed the Soviet law cancelling the loans contracted by the tsar's and the bourgeoisie's governments as a first blow at international finance capital.",
+      "sources": [
+        "decl"
+      ]
     },
     "independence-needs-economic-change": {
       "value": null,
@@ -1375,10 +2430,12 @@
       "sources": []
     },
     "constituent-assembly": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He drafted the decree that dissolved the elected Constituent Assembly after its majority refused to recognise Soviet power.",
+      "sources": [
+        "dissolve"
+      ]
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -1411,10 +2468,12 @@
       "sources": []
     },
     "no-land-for-peace": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Defending Brest-Litovsk, he wrote that a socialist must not hesitate to make even the sacrifice of territory, and accept military defeat, in the interests of victory over the bourgeoisie.",
+      "sources": [
+        "letter"
+      ]
     },
     "property-serves-common-good": {
       "value": null,
@@ -1441,16 +2500,21 @@
       "sources": []
     },
     "annexed-territory-occupation": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "The Decree on Peace he moved defines any nation retained within a state without a free vote as annexed, but in 1921 he authorised the Red Army to occupy Tiflis and end Georgia's independence; the record points both ways.",
+      "sources": [
+        "peace",
+        "georgia"
+      ]
     },
     "subordinate-church-to-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The decree on freedom of conscience he signed denied religious societies the right to own property, declared all their property the people's and left places of worship to them only by decision of the state.",
+      "sources": [
+        "conscience"
+      ]
     },
     "nonpartisan-head-of-state": {
       "value": null,
@@ -1459,10 +2523,13 @@
       "sources": []
     },
     "force-to-prevent-secession": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "He recognised Finland's secession but authorised the Red Army to overthrow independent Georgia's government in 1921, so his record points both ways.",
+      "sources": [
+        "finland",
+        "georgia"
+      ]
     },
     "region-keeps-system": {
       "value": null,
@@ -1477,10 +2544,12 @@
       "sources": []
     },
     "flat-income-tax": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His party programme called for a progressive tax on incomes and inheritances instead of indirect taxes.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "character-from-environment": {
       "value": null,
@@ -1525,10 +2594,12 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His Decree on Land confiscated the landed estates without compensation and placed them at the disposal of peasant land committees, to be used by those who cultivate them.",
+      "sources": [
+        "land"
+      ]
     },
     "refugee-return": {
       "value": null,
@@ -1543,10 +2614,12 @@
       "sources": []
     },
     "apostasy-punishable": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The decree on freedom of conscience he signed makes every citizen free to profess any religion or none, without loss of any right.",
+      "sources": [
+        "conscience"
+      ]
     },
     "women-must-cover": {
       "value": null,
@@ -1581,16 +2654,20 @@
       "sources": []
     },
     "material-conditions-drive-history": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His exposition of Marx's doctrine presents materialism as a scientific study of history governed by laws rooted in the conditions of material production.",
+      "sources": [
+        "marx2"
+      ]
     },
     "ban-cartels": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He proposed compulsory syndication, forcing industrialists into associations under state control, rather than breaking up concentrations of capital.",
+      "sources": [
+        "syndic"
+      ]
     },
     "no-bailouts": {
       "value": null,
@@ -1632,16 +2709,20 @@
       ]
     },
     "armed-group-creates-revolution": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He wrote that a successful insurrection must rely not upon conspiracy and not upon a party but upon the advanced class and a revolutionary upsurge of the people.",
+      "sources": [
+        "insurrection"
+      ]
     },
     "abolish-hereditary-privilege": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The decree he signed in November 1917 abolished all social estates, titles such as prince and count, civil ranks and the privileges stemming from them.",
+      "sources": [
+        "estates"
+      ]
     },
     "history-own-civilization": {
       "value": null,
@@ -1650,10 +2731,12 @@
       "sources": []
     },
     "civilizing-tutelage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Decree on Peace he moved condemns the forcible incorporation of a nation irrespective of its degree of development or backwardness and wherever it lies, overseas included.",
+      "sources": [
+        "peace"
+      ]
     },
     "patriotic-education": {
       "value": null,
@@ -1674,10 +2757,13 @@
       "sources": []
     },
     "capitalism-adapts": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "He held imperialism to be decaying capitalism, but told the Comintern in 1920 that there is no absolutely hopeless situation for the bourgeoisie, which can still buy off part of the exploited.",
+      "sources": [
+        "cong2",
+        "imperialism"
+      ]
     },
     "former-empire-influence": {
       "value": null,
@@ -1692,10 +2778,12 @@
       "sources": []
     },
     "labor-aristocracy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He held that imperialist superprofits make it possible to bribe the upper strata of the proletariat, not the mass of workers in the rich countries.",
+      "sources": [
+        "imperialism"
+      ]
     },
     "freedom-to-discriminate": {
       "value": null,
@@ -1704,10 +2792,12 @@
       "sources": []
     },
     "entrenched-bill-of-rights": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He defined the revolutionary dictatorship of the proletariat as rule won and maintained by force against the bourgeoisie and unrestricted by any laws.",
+      "sources": [
+        "prrk1"
+      ]
     },
     "colonial-treaties-void": {
       "value": null,
@@ -1716,16 +2806,20 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1917 programme demands that all officials be elective and subject to recall at any time.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "minority-veto": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His 1921 resolution on party unity required strict discipline and the dissolution of all groups formed on separate platforms, under penalty of expulsion.",
+      "sources": [
+        "unity"
+      ]
     },
     "resist-lawless-ruler": {
       "value": null,
@@ -1776,10 +2870,12 @@
       "sources": []
     },
     "world-economy-extracts-surplus": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He described imperialism as high monopoly profits for a handful of very rich countries drawn from the exploitation of other countries and colonies.",
+      "sources": [
+        "imperialism"
+      ]
     },
     "native-born-offices": {
       "value": null,
@@ -1788,10 +2884,12 @@
       "sources": []
     },
     "party-own-road": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His terms of admission made all decisions of the Communist International binding on every affiliated party, while asking it to take the diversity of national conditions into account.",
+      "sources": [
+        "comintern"
+      ]
     },
     "self-reliance-over-aid": {
       "value": null,
@@ -1830,10 +2928,12 @@
       "sources": []
     },
     "preserve-contested-monuments": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The decree on monuments he signed ordered monuments to the tsars and their servitors without historical or artistic value removed from squares and streets, and new revolutionary monuments put up.",
+      "sources": [
+        "monuments"
+      ]
     },
     "male-disadvantage-attention": {
       "value": null,
@@ -1879,26 +2979,92 @@
     },
     "foreign-takeover-block": {
       "value": 0,
-      "confidence": "high",
-      "rationale": "He accepted conditional foreign concessions while retaining state control and eventual reversion of the enterprises.",
+      "confidence": "low",
+      "rationale": "He accepted foreign concessions in industry under the New Economic Policy while keeping state ownership and the right to take the enterprises back, which points both ways.",
       "sources": [
         "tax"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "high",
+          "rationale": "He accepted conditional foreign concessions while retaining state control and eventual reversion of the enterprises.",
+          "sources": [
+            "tax"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "He accepted foreign concessions in industry under the New Economic Policy while keeping state ownership and the right to take the enterprises back, which points both ways.",
+          "sources": [
+            "tax"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "no-fault-divorce": {
       "value": 2,
-      "confidence": "medium",
-      "rationale": "His defence of freeing women from the old divorce regime supports accessible divorce without patriarchal legal obstacles.",
+      "confidence": "high",
+      "rationale": "The divorce decree he signed dissolved a marriage at the request of both spouses or either of them, with no grounds to be proved.",
       "sources": [
-        "women"
+        "divorce"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "His defence of freeing women from the old divorce regime supports accessible divorce without patriarchal legal obstacles.",
+          "sources": [
+            "women"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The divorce decree he signed dissolved a marriage at the request of both spouses or either of them, with no grounds to be proved.",
+          "sources": [
+            "divorce"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "recallable-delegates": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He supported binding mandates and recallable delegates in the Commune’s political organisation.",
+      "rationale": "His draft decree calls the electors' right to recall those elected the fundamental principle of true democracy and lets the soviets call re-elections at any time.",
       "sources": [
-        "state3"
+        "recall"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He supported binding mandates and recallable delegates in the Commune’s political organisation.",
+          "sources": [
+            "state3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His draft decree calls the electors' right to recall those elected the fundamental principle of true democracy and lets the soviets call re-elections at any time.",
+          "sources": [
+            "recall"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -1908,10 +3074,12 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Under the Decree on Land the right to use land belongs to those who cultivate it by their own labour, only as long as they are able to do so, and land may not be sold or leased.",
+      "sources": [
+        "land"
+      ]
     },
     "budget-needs-parliament": {
       "value": null,
@@ -1920,10 +3088,12 @@
       "sources": []
     },
     "single-official-language": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He opposed a compulsory official language as coercion, \"the cudgel\", and his 1917 programme demands its abolition.",
+      "sources": [
+        "language"
+      ]
     },
     "foreign-land-ownership": {
       "value": null,
@@ -1944,10 +3114,12 @@
       "sources": []
     },
     "arm-foreign-insurgents": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His February 1921 telegrams authorised the 11th Army to support the insurgents against Georgia's Menshevik government, presenting it as local protection of the insurgents.",
+      "sources": [
+        "georgia"
+      ]
     },
     "intervene-in-bloc": {
       "value": null,
@@ -1956,16 +3128,20 @@
       "sources": []
     },
     "corporate-influence": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that in a democratic republic wealth exercises its power through the direct corruption of officials and the alliance of government and stock exchange.",
+      "sources": [
+        "staterev1"
+      ]
     },
     "restrict-foreign-funding": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His draft article for the 1922 Criminal Code made assistance to the international bourgeoisie by means such as financing the press punishable by death.",
+      "sources": [
+        "kursky2"
+      ]
     },
     "pronatalist-incentives": {
       "value": null,
@@ -1998,10 +3174,12 @@
       "sources": []
     },
     "non-intervention": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "In February 1921 he had the Central Committee authorise the 11th Army to give active support to the uprising in Georgia and occupy Tiflis.",
+      "sources": [
+        "georgia"
+      ]
     },
     "industrial-unions": {
       "value": null,
@@ -2016,10 +3194,13 @@
       "sources": []
     },
     "abolish-legal-marriage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His decrees kept marriage as a registered civil institution carrying maintenance and custody rights, while ending its religious form.",
+      "sources": [
+        "marriage",
+        "divorce"
+      ]
     },
     "public-access-to-information": {
       "value": null,
@@ -2034,10 +3215,12 @@
       "sources": []
     },
     "informal-organisation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He argued that political revolution requires building a strong organisation of revolutionaries to train the proletariat in steadfast struggle.",
+      "sources": [
+        "witbd4"
+      ]
     },
     "national-law-over-international": {
       "value": null,
@@ -2064,10 +3247,12 @@
       "sources": []
     },
     "personal-possessions-private": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The inheritance decree he amended left a homestead, household furnishings and tools worth up to 10,000 rubles to the family while abolishing inheritance of other property.",
+      "sources": [
+        "inheritance"
+      ]
     },
     "defeat-communism": {
       "value": null,
@@ -2090,10 +3275,12 @@
       ]
     },
     "capitalism-progressive": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote of the progressive historical work of capitalism, which destroys the isolation of economies and links all countries of the world into a single whole.",
+      "sources": [
+        "devcap"
+      ]
     },
     "women-equality-needs-economic-change": {
       "value": 2,
@@ -2136,10 +3323,12 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His programmes set communist society, reached through the dictatorship of the proletariat, as the goal that replaces capitalism.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "historical-land-claim": {
       "value": null,
@@ -2162,25 +3351,91 @@
     "suppress-opposition": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He advocated forcible suppression of exploiting classes’ resistance during socialist transition.",
+      "rationale": "His decree made the leaders of the Kadet party liable to arrest and trial by revolutionary tribunal and ordered the local soviets to keep the party under special surveillance.",
       "sources": [
-        "state5"
+        "kadets"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He advocated forcible suppression of exploiting classes’ resistance during socialist transition.",
+          "sources": [
+            "state5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His decree made the leaders of the Kadet party liable to arrest and trial by revolutionary tribunal and ordered the local soviets to keep the party under special surveillance.",
+          "sources": [
+            "kadets"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "punish-blasphemy": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He condemned laws persecuting belief or disbelief and violating conscience.",
+      "rationale": "The decree on freedom of conscience he signed forbade any law restricting freedom of conscience or privileging a religion and removed religious affiliation from all official acts.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He condemned laws persecuting belief or disbelief and violating conscience.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The decree on freedom of conscience he signed forbade any law restricting freedom of conscience or privileging a religion and removed religious affiliation from all official acts.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "colonies-serve-metropole": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He demanded immediate liberation of colonies and struggle against imperialist domination.",
+      "rationale": "His Declaration of Rights of the Working and Exploited People demanded a complete break with colonial policy and endorsed the evacuation of troops from Persia and Finland's independence.",
       "sources": [
-        "nation"
+        "decl"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He demanded immediate liberation of colonies and struggle against imperialist domination.",
+          "sources": [
+            "nation"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His Declaration of Rights of the Working and Exploited People demanded a complete break with colonial policy and endorsed the evacuation of troops from Persia and Finland's independence.",
+          "sources": [
+            "decl"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "defensive-jihad-duty": {
@@ -2196,10 +3451,12 @@
       "sources": []
     },
     "participatory-democracy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme sets the aim of drawing literally all the working population into independent participation in state administration.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "intersecting-oppressions": {
       "value": null,
@@ -2238,10 +3495,12 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "He told the Youth League that Communists do not believe in God and that the ruling classes invoked God's name to further their own interests.",
+      "sources": [
+        "youth"
+      ]
     },
     "religious-dress-in-state": {
       "value": null,
@@ -2262,10 +3521,12 @@
       "sources": []
     },
     "abolish-armed-forces": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His 1919 programme rejects disarmament under capitalism as a reactionary philistine illusion and calls instead for arming the proletariat.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "rich-first": {
       "value": null,
@@ -2298,10 +3559,12 @@
       "sources": []
     },
     "property-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His Declaration held that there could be no place for exploiters in any government body, excluding the propertied classes from power rather than reserving it to them.",
+      "sources": [
+        "decl"
+      ]
     },
     "domination-women-nature": {
       "value": null,
@@ -2316,22 +3579,29 @@
       "sources": []
     },
     "press-owned-by-wealth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that for the bourgeoisie freedom of the press meant freedom for the rich to publish and for capitalists to control the newspapers, and called for public ownership of paper mills and printing presses.",
+      "sources": [
+        "prog1919",
+        "prrk2"
+      ]
     },
     "promulgated-standing-laws": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "In drafting the 1922 Criminal Code he wanted terror legalised as a principle and formulated as broadly as possible, its limits set by revolutionary law and revolutionary conscience.",
+      "sources": [
+        "kursky2"
+      ]
     },
     "racial-franchise": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Declaration of Rights of the Peoples of Russia he signed proclaimed the equality of the peoples of Russia and abolished every national and national-religious restriction.",
+      "sources": [
+        "peoples"
+      ]
     },
     "online-participation": {
       "value": null,
@@ -2346,10 +3616,12 @@
       "sources": []
     },
     "interfaith-marriage-restriction": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The civil marriage decree he signed lists age, close kinship, an existing marriage and insanity as the only obstacles to marriage, with no religious bar.",
+      "sources": [
+        "marriage"
+      ]
     },
     "boycott-minority-shops": {
       "value": null,
@@ -2382,10 +3654,13 @@
       "sources": []
     },
     "state-promotes-atheism": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His 1919 programme calls for emancipating the working people from religious prejudices by propaganda, and in 1922 he urged untiring atheist propaganda alongside the state institutions in charge of it.",
+      "sources": [
+        "prog1919",
+        "materialism"
+      ]
     },
     "abolish-police-prisons": {
       "value": null,
@@ -2430,10 +3705,12 @@
       "sources": []
     },
     "shared-marital-authority": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He boasted that Soviet power had left nothing of the laws putting women in a subordinate position, naming the laws on divorce, on children born out of wedlock and on paternity.",
+      "sources": [
+        "women"
+      ]
     },
     "foreign-residents-local-vote": {
       "value": null,
@@ -2478,10 +3755,12 @@
       "sources": []
     },
     "income-for-work-not-ownership": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His Declaration aims to abolish all exploitation of man by man and institutes universal labour conscription against the parasitic sections of society.",
+      "sources": [
+        "decl"
+      ]
     },
     "never-kill-self-defence": {
       "value": null,
@@ -2572,16 +3851,20 @@
       ]
     },
     "local-essentials-public": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The June 1918 decree he signed nationalised railway transport enterprises and public utilities along with large industry.",
+      "sources": [
+        "nationalise"
+      ]
     },
     "second-chamber": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His 1917 draft programme vests supreme power in the people's representatives constituting a single popular assembly, a single chamber.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "municipal-property": {
       "value": null,
@@ -2626,10 +3909,12 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He called for a militant materialist journal waging an untiring atheist fight against the defenders of clericalism.",
+      "sources": [
+        "materialism"
+      ]
     },
     "regional-powers-revocable": {
       "value": null,
@@ -2662,10 +3947,12 @@
       "sources": []
     },
     "defensive-wars-only": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His 1919 programme says that in revolutionary wars between proletarian and bourgeois countries the distinction between defensive and offensive wars becomes utterly meaningless.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "language-defines-nation": {
       "value": null,
@@ -2686,10 +3973,12 @@
       "sources": []
     },
     "free-public-college": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His draft decision of August 1918 opened higher education to all who wished to study, without privileges for the propertied, alongside the decree that abolished tuition fees.",
+      "sources": [
+        "admission"
+      ]
     },
     "pollution-taxes": {
       "value": null,
@@ -2710,16 +3999,20 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He rejected the hope of disarmament under capitalism and opposed replacing the demand for an armed nation by a disarmament slogan.",
+      "sources": [
+        "prog1919"
+      ]
     },
     "open-diplomacy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The Decree on Peace he moved abolished secret diplomacy, promised to conduct all negotiations openly before the whole people and to publish the secret treaties, which were published from November 1917.",
+      "sources": [
+        "peace"
+      ]
     },
     "capital-controls": {
       "value": null,
@@ -2818,10 +4111,12 @@
       "sources": []
     },
     "religions-one-truth": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He treated all religion as an illusion born of material oppression, to be fought with scientific socialist propaganda.",
+      "sources": [
+        "religion"
+      ]
     },
     "farm-price-support": {
       "value": null,
@@ -2844,10 +4139,12 @@
       ]
     },
     "women-property-inheritance": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Decree on Land gives the right to use land to all citizens without distinction of sex.",
+      "sources": [
+        "land"
+      ]
     },
     "one-language-many-names": {
       "value": null,
@@ -2902,9 +4199,31 @@
     "religious-equal-recognition": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He rejected discrimination among citizens on the basis of religious convictions.",
+      "rationale": "His decree on freedom of conscience forbade any local law that would establish advantages or privileges on account of citizens' religion.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He rejected discrimination among citizens on the basis of religious convictions.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His decree on freedom of conscience forbade any local law that would establish advantages or privileges on account of citizens' religion.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-is-procedure": {
@@ -2972,10 +4291,12 @@
       "sources": []
     },
     "scripture-inerrant": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He called religion a kind of spiritual booze and an illusion that consoles the oppressed, to be overcome by scientific outlook.",
+      "sources": [
+        "religion"
+      ]
     },
     "gendered-self-government": {
       "value": null,
@@ -2990,30 +4311,59 @@
       "sources": []
     },
     "indirect-election": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Against Kautsky he defended indirect elections to non-local soviets as making congresses easier to hold and the apparatus more flexible and accessible to workers and peasants.",
+      "sources": [
+        "prrk2"
+      ]
     },
     "national-church-status": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He opposed an established church receiving state subsidies or privileged legal status.",
+      "rationale": "Under the decree on freedom of conscience he signed, all religious societies came under the general rules for private societies, with no privileges, no state subsidies and no right to own property.",
       "sources": [
-        "religion"
+        "conscience"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He opposed an established church receiving state subsidies or privileged legal status.",
+          "sources": [
+            "religion"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Under the decree on freedom of conscience he signed, all religious societies came under the general rules for private societies, with no privileges, no state subsidies and no right to own property.",
+          "sources": [
+            "conscience"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "minority-territorial-autonomy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His Declaration founded the Soviet Republic as a federation of Soviet national republics, leaving each nation to decide on what terms it joins.",
+      "sources": [
+        "decl"
+      ]
     },
     "disputed-territory-plebiscite": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "rationale": "The Decree on Peace requires that a nation decide the form of its state by a free vote after the withdrawal of troops, but Georgia was occupied in 1921 on his authorisation without any such vote; the record is mixed.",
+      "sources": [
+        "peace",
+        "georgia"
+      ]
     },
     "keep-colonial-borders": {
       "value": null,
@@ -3076,10 +4426,12 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His party programme demanded the abolition of all indirect taxes as a basic condition of democratising the economy.",
+      "sources": [
+        "prog1917"
+      ]
     },
     "targeted-social-spending": {
       "value": null,
@@ -3118,16 +4470,40 @@
     "wife-divorce-without-consent": {
       "value": 2,
       "confidence": "high",
-      "rationale": "He celebrated removing divorce laws that subordinated and humiliated women.",
+      "rationale": "Under the divorce decree he signed, a marriage is dissolved on the request of either spouse alone, the absent spouse being summoned only to settle names, custody and maintenance.",
       "sources": [
-        "women"
+        "divorce"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He celebrated removing divorce laws that subordinated and humiliated women.",
+          "sources": [
+            "women"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Under the divorce decree he signed, a marriage is dissolved on the request of either spouse alone, the absent spouse being summoned only to settle names, custody and maintenance.",
+          "sources": [
+            "divorce"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "national-resource-control": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His Decree on Land put all mineral wealth, forests and waters of state importance into the exclusive use of the state; his later policy admitted foreign concessions without giving up state ownership.",
+      "sources": [
+        "land"
+      ]
     },
     "distribution-by-process": {
       "value": null,
@@ -3166,16 +4542,20 @@
       "sources": []
     },
     "labour-theory-of-value": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His exposition of Marx's economic doctrine sets out value as determined by socially necessary labour and the origin of surplus value.",
+      "sources": [
+        "marx3"
+      ]
     },
     "patriotism-serves-workers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "high",
+      "rationale": "He wrote that national pride is not alien to class-conscious Great-Russian proletarians, who love their language and country and work to raise its toiling masses.",
+      "sources": [
+        "pride"
+      ]
     },
     "material-over-identity": {
       "value": null,
@@ -3190,9 +4570,709 @@
       "sources": [
         "tax"
       ]
+    },
+    "replace-appointed-officials": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme requires that the administrative jobs of soviet members be consistently changed so that they embrace all branches of government, and the 1917 programme abolishes state-appointed local authorities.",
+      "sources": [
+        "prog1919",
+        "prog1917"
+      ]
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "His Declaration confirmed that all banks became state property, concentrating banking in the state.",
+      "sources": [
+        "decl"
+      ]
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "avoid-permanent-military-alliances": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His 1919 programme says the exploiters' resistance inevitably brings civil wars and revolutionary wars between proletarian and bourgeois countries, to be fought until victory over the world bourgeoisie.",
+      "sources": [
+        "prog1919"
+      ]
+    },
+    "military-organisation-revolutionary-party": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His terms of admission required communist parties to be organised in a most centralised manner with an iron discipline bordering on military discipline.",
+      "sources": [
+        "comintern"
+      ]
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The State and Revolution describes a lower phase of communist society and a period of proletarian dictatorship between capitalism and communism.",
+      "sources": [
+        "state5"
+      ]
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Declaration of Rights of the Peoples of Russia he signed abolished all national privileges and restrictions and guaranteed the free development of national minorities and ethnic groups.",
+      "sources": [
+        "peoples"
+      ]
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that an honest coalition of workers and the working and exploited peasants is both possible and necessary, since their interests do not radically diverge.",
+      "sources": [
+        "alliance"
+      ]
+    },
+    "small-step-social-reform": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He called reformism, which restricts the working class to winning reforms, a bourgeois deception of the workers.",
+      "sources": [
+        "reformism"
+      ]
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "His theses tell the Communist International to enter a temporary alliance with bourgeois democracy in colonial and backward countries, but never to merge with it.",
+      "sources": [
+        "colonial"
+      ]
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "At the Second Comintern Congress he denied that backward nations must inevitably pass through the capitalist stage if the Soviet governments come to their aid.",
+      "sources": [
+        "cong2"
+      ]
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "He wrote that, unlike the anarchists, Marxists recognise the struggle for reforms that improve workers' conditions, while fighting reformism.",
+      "sources": [
+        "reformism"
+      ]
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He described women under capitalism as living in double slavery, household drudgery included, and called for public institutions to free them from it.",
+      "sources": [
+        "women"
+      ]
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His decree dissolving the Constituent Assembly states that the working classes had learned that the bourgeois parliamentary system was absolutely incompatible with the aim of achieving socialism.",
+      "sources": [
+        "dissolve"
+      ]
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His civil marriage decree barred the registry offices from accepting marriage applications from persons already married.",
+      "sources": [
+        "marriage"
+      ]
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "His terms of admission to the Communist International required communists to place no trust in bourgeois legality and to build a parallel illegal organisation everywhere.",
+      "sources": [
+        "comintern"
+      ]
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme calls any step back to bourgeois parliamentarism and bourgeois democracy a reactionary service to the exploiters and promotes Soviet power instead.",
+      "sources": [
+        "prog1919"
+      ]
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His Declaration abolished private ownership of land and made all land the property of the entire working people, confirming the Decree on Land.",
+      "sources": [
+        "decl"
+      ]
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 1919 programme aims to abolish money and to end all exploitation of man by man, though it keeps differential pay for the transition.",
+      "sources": [
+        "prog1919"
+      ]
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "His Declaration of Rights of the Working and Exploited People instituted universal labour conscription to abolish the parasitic sections of society.",
+      "sources": [
+        "decl"
+      ]
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He wrote that wars of oppressed and dependent countries against their oppressors, such as India against England, are just and defensive whoever attacked first.",
+      "sources": [
+        "sw"
+      ]
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The marriage decree he signed made civil marriage the only marriage recognised by the Russian Republic, a religious ceremony being a private affair.",
+      "sources": [
+        "marriage"
+      ]
+    },
+    "conquest-no-lawful-claim": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "His Decree on Peace called the forcible incorporation of a nation seizure and violence whenever it took place, yet he authorised the conquest of Menshevik Georgia in 1921, so the record points both ways.",
+      "sources": [
+        "peace",
+        "georgia"
+      ]
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
-  "notes": "Late NEP and cooperative texts qualify earlier economic prescriptions. The Commune-inspired armed-citizen ideal is marked as an inference because actual Soviet practice retained a regular army. Constitutional or emancipatory language is not treated as proof that Bolshevik government respected political liberties. No position is assigned on later digital or climate questions.",
+  "notes": "Later pass (claude-opus-5-5, 2026-11-10) to rules 5: sources tagged as actions or words, Wikipedia no longer cited, candidate statements answered, and record over words applied to his time as Chairman of the Council of People's Commissars (1917-1924). His record is the decrees, draft decrees, orders and telegrams he wrote, moved or signed (Decree on Peace and on Land, the Declaration of Rights of the Working and Exploited People, the press decree, the Kadet decree, the dissolution of the Constituent Assembly, the decrees on conscience, marriage, divorce, estates, foreign trade, nationalisation and monuments, the Penza telegram, the 1921 Georgia telegrams and his 1922 drafts for the Criminal Code); these now answer statements earlier answered from his words (democracy, opposition, press, religion, divorce, recall, salaries, secession). Self-determination is answered as mixed: his government recognised Finland but he authorised the occupation of Georgia in 1921. Several 0 answers left at high confidence were lowered to low, as mixed evidence. Themes searched in his collected works (Marxists Internet Archive, local corpus) and the First Decrees of Soviet Power: taxation, money and banking, land and housing, trade, labour and welfare, education, family and abortion, religion and atheism, language and nationality, colonies and the Comintern, war, disarmament and insurrection, courts and terror, elections and recall, party discipline. Not covered by his writings or record: LGBT questions, drugs, gun ownership, environment and ecology, technology beyond electrification, immigration and most modern policy questions, which stay null.",
   "reviews": [
     {
       "kind": "inference",
