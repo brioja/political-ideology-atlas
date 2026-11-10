@@ -1248,11 +1248,33 @@
       ]
     },
     "party-commands-army": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Foreign to the movement.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says the question is foreign to the movement, which records no opposition; silence is not a position, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Foreign to the movement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says the question is foreign to the movement, which records no opposition; silence is not a position, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "long-naturalization-wait": {
@@ -3409,6 +3431,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
