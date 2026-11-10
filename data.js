@@ -2965,9 +2965,9 @@ const QUESTIONS = [
  {
   "id": "intersecting-oppressions",
   "theme": "society",
-  "text": "Racism, sexism and class oppression overlap and cannot be addressed one at a time.",
-  "agree": "Different forms of oppression compound each other and must be tackled together.",
-  "disagree": "It is not true that racism, sexism and class oppression overlap and cannot be addressed one at a time.",
+  "text": "Overlapping forms of oppression must be addressed together.",
+  "agree": "Tackling oppression requires a combined approach to its overlapping forms, such as racism, sexism and class oppression.",
+  "disagree": "Overlapping forms of oppression should not be addressed together.",
   "note": "About whether forms of oppression must be tackled together.",
   "icon": "🔀"
  },
