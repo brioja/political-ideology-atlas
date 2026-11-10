@@ -166,9 +166,9 @@ const QUESTIONS = [
  {
   "id": "decide-locally",
   "theme": "liberty",
-  "text": "Decisions should be made as locally as possible rather than by national government.",
-  "agree": "Towns and regions make most decisions rather than the national government.",
-  "disagree": "Local decision-making should not take priority over decisions by the national government.",
+  "text": "Decisions should be made as locally as possible.",
+  "agree": "Political decisions should rest with the smallest local community able to handle them, with wider authorities handling matters that need a wider reach.",
+  "disagree": "Decisions should not be made as locally as possible.",
   "note": "About decentralization.",
   "icon": "🏘️"
  },
