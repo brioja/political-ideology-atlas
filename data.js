@@ -130,9 +130,9 @@ const QUESTIONS = [
  {
   "id": "state-harmful",
   "theme": "liberty",
-  "text": "The state itself is unnecessary and harmful.",
+  "text": "The state should be abolished.",
   "agree": "Society would be better off without governments at all.",
-  "disagree": "The state itself is not unnecessary and harmful.",
+  "disagree": "The state should not be abolished.",
   "note": "Separates anarchists from everyone else.",
   "icon": "🏛️"
  },
