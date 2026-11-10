@@ -4379,7 +4379,7 @@ const QUESTIONS = [
   "id": "material-over-identity",
   "theme": "society",
   "text": "The political left should focus more on workers' material interests than on cultural identity issues.",
-  "agree": "Living standards should come first for the left, ahead of identity campaigns.",
+  "agree": "The left should care more about workers' material interests than about cultural identity issues.",
   "disagree": "The political left should give cultural identity issues at least as much attention as workers' material interests.",
   "note": "About what the left should prioritise.",
   "icon": "🛠️"
