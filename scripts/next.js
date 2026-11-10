@@ -3,7 +3,7 @@
 // (audits/search-priority.json) come first when due for a later pass; the JSON then has a "reason".
 //   node scripts/next.js [--ideologies | --people] [--by-views]   (--ideologies / --people: only that kind, so two serial
 //   runs can split the kinds; default: the kind with fewer live on the site, most viewed first; --skip id,id,...: pass
-//   over those, e.g. people waiting for books)
+//   over those, e.g. people waiting for books). Later passes and new audits alternate (see lastWasNew below).
 const { execFileSync } = require("child_process");
 const path = require("path");
 const skipArg = process.argv.indexOf("--skip");
@@ -92,8 +92,45 @@ function reauditQueue() {
   }
   return null;
 }
-const priority = searchPriority() || reauditQueue();
-if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
+// Then any audit under an older rules version whose re-audit gap has passed: oldest rules first, then most viewed.
+function olderRules() {
+  const fs = require("fs"), lib = require("./lib");
+  const { nextPassFrom, CURRENT_RULES } = require("./validate");
+  const today = new Date().toISOString().slice(0, 10);
+  const due = [];
+  for (const kind of ["person", "ideology"]) {
+    if (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY) continue;
+    for (const entry of kind === "person" ? peopleCatalog() : catalog()) {
+      if (SKIP.has(entry.id) || (kind === "ideology" && (lib.duplicateOf(entry.id) || !lib.notable(entry.id)))) continue;
+      const f = kind === "person" ? lib.personPath(entry.id) : lib.profilePath(entry.id);
+      if (!fs.existsSync(f)) continue;
+      const a = readJson(f);
+      if (a.notAnIdeology || (a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
+      due.push({ kind, entry, rules: a.rules || 0 });
+    }
+  }
+  due.sort((a, b) => a.rules - b.rules || (b.entry.views12m || 0) - (a.entry.views12m || 0));
+  if (!due.length) return null;
+  const { kind, entry, rules } = due[0];
+  const { id, name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
+  return { kind, id, name, wikipedia, wikipediaMatch, born, living, scopeNote, views12m: entry.views12m || 0,
+    reason: `audit under rules v${rules}, later pass to current rules` };
+}
+// Later passes and new audits take turns (Brandon, 2026-11-10: "reaudit then someone new"). Stateless: if the last
+// "Audit <name>" commit added its audit file it was a new audit, so a later pass is next; if it modified one, a new
+// audit is next. Either kind falls back to the other when it has nothing due.
+function lastWasNew() {
+  try {
+    const out = execFileSync("git", ["-C", path.join(__dirname, ".."), "log", "-1", "--format=", "--name-status",
+      "--grep=^Audit ", "--", "audits/people", "audits/profiles"]).toString().trim();
+    return !out || out.startsWith("A");
+  } catch { return true; }
+}
+const reaudit = () => searchPriority() || reauditQueue() || olderRules();
+if (lastWasNew()) {
+  const priority = reaudit();
+  if (priority) { console.log(JSON.stringify(priority)); process.exit(0); }
+}
 
 const [person] = IDEOLOGIES_ONLY ? [] : pending(["--people", TRIAGE ? "--triage" : "--by-views"]);
 const [ideology] = PEOPLE_ONLY ? [] : pending(["--by-views"]);
@@ -110,4 +147,4 @@ else {
   const order = live.person < live.ideology ? [p, i] : [i, p];
   pick = order.find(Boolean);
 }
-console.log(JSON.stringify(pick || null));
+console.log(JSON.stringify(pick || (lastWasNew() ? null : reaudit()) || null));
