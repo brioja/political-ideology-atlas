@@ -73,13 +73,14 @@ statement's id and answers; one that changes the meaning needs a new id.
 
 `audits/people-catalog.json` lists about 3,000 public figures taken from data, not hand-picked:
 everyone above a cutoff of English Wikipedia views over 12 months (the period moves every two
-months; `scripts/candidate-filter.js`, the only filter). Checking the views of everyone on Wikipedia
-would take days, so they are checked for the people Wikidata labels tie to politics (a political
-occupation including political theorists, philosophers, economists and activists, a political
-office, or a stated political ideology; `scripts/candidate-triage.js`). The labels are a heuristic
-for who is likely to pass an audit: someone with a public political record is the most likely to
-take positions across every dividing line, which the uncertainty rule below requires. They are
-triage, not a filter, so someone above the cutoff without one can be added too. `node scripts/people-report.js` reports the mix of gender, region and
+months; `scripts/candidate-filter.js`, the only filter). Ranked by views alone, the top of Wikipedia is
+mostly actors, athletes and musicians, who rarely have a record across the dividing lines, and auditing
+everyone above the cutoff would take years. So views are checked for the people Wikidata labels tie to
+politics (a political occupation including political theorists, philosophers, economists and
+activists, a political office, or a stated political ideology; `scripts/candidate-triage.js`): a
+heuristic for who is likely to pass an audit, since the uncertainty rule below needs positions across
+every dividing line. The labels are triage, not a filter, so someone above the cutoff without one can
+be added too. `node scripts/people-report.js` reports the mix of gender, region and
 era, and an imbalance is reported rather than corrected by hand. Each gets
 an audit at `audits/people/<id>.json` following `audits/PROMPT_PEOPLE.md`: positions come from the
 person's own words and record, and a statement with no reliable evidence is `null` instead of a guess.
