@@ -1031,11 +1031,33 @@
    "sources": []
   },
   "distinct-gender-roles": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Cultural conservatives defend traditional gender roles in society, but law fixing them is not a defined position.",
+   "rationale": "Nulled (statement review, 2026-11-10): its rationale says law fixing roles is not a defined position, so the sources cited here do not answer this statement.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Cultural conservatives defend traditional gender roles in society, but law fixing them is not a defined position.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-16"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-10): its rationale says law fixing roles is not a defined position, so the sources cited here do not answer this statement.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "ban-interest": {
@@ -3620,6 +3642,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 205
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }

@@ -908,11 +908,33 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He described manly heroes and women's quiet sacrifice as distinct examples of loyalty for Germans, though he did not propose laws.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says he proposed no laws in the cited passage, so the sources cited here do not answer this statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He described manly heroes and women's quiet sacrifice as distinct examples of loyalty for Germans, though he did not propose laws.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says he proposed no laws in the cited passage, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "ban-interest": {
@@ -3187,6 +3209,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 12
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

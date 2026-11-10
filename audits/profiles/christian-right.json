@@ -968,12 +968,36 @@
       "sources": []
     },
     "distinct-gender-roles": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The movement opposed the ERA and upholds distinct family roles, but most do not seek law imposing them.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says most adherents do not seek law imposing the roles, so the sources cited here do not answer this statement.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The movement opposed the ERA and upholds distinct family roles, but most do not seek law imposing them.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says most adherents do not seek law imposing the roles, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "ban-interest": {
@@ -3422,6 +3446,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 310
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

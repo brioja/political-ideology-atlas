@@ -1088,12 +1088,36 @@
       ]
     },
     "distinct-gender-roles": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Traditionalists defend inherited sex roles in the family, but legal prescription is less clear.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale says legal prescription of the roles is unclear, so the sources cited here do not answer this statement.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Traditionalists defend inherited sex roles in the family, but legal prescription is less clear.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale says legal prescription of the roles is unclear, so the sources cited here do not answer this statement.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "ban-interest": {
@@ -3812,6 +3836,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 188
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
