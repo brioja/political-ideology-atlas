@@ -1931,7 +1931,7 @@ const QUESTIONS = [
   "id": "character-from-environment",
   "theme": "society",
   "text": "A person's character comes more from their environment than from innate nature.",
-  "agree": "A person's character comes mainly from their environment.",
+  "agree": "A person's character comes more from their environment than from innate nature.",
   "disagree": "Innate nature shapes a person's character at least as much as their environment does.",
   "note": "About nature versus nurture in human character.",
   "icon": "🌱"
