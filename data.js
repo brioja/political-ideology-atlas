@@ -2956,10 +2956,10 @@ const QUESTIONS = [
  {
   "id": "participatory-democracy",
   "theme": "government",
-  "text": "Ordinary people should take part directly in the decisions that shape their lives, in workplaces, communities and universities, rather than leaving them to distant officials.",
-  "agree": "Citizens should have a direct say in decisions where they work, live and study.",
-  "disagree": "Direct participation by ordinary people in the decisions that shape their lives should not replace decision-making by distant officials.",
-  "note": "About direct participation in everyday decisions.",
+  "text": "Ordinary people should take part directly in the decisions that shape their daily lives.",
+  "agree": "People should have a direct role in making decisions where they work, live and study, rather than having those decisions made entirely for them.",
+  "disagree": "Ordinary people should not take part directly in the decisions that shape their daily lives.",
+  "note": "About an active role in decisions within everyday institutions, such as workplaces, neighbourhoods and universities. Participation means a real role in making decisions, not simply being informed of them. It does not require abolishing every representative, manager or official. Voting directly on national laws is asked separately.",
   "icon": "🗣️"
  },
  {
