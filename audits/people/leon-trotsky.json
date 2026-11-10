@@ -1,8 +1,22 @@
 {
  "id": "leon-trotsky",
  "name": "Leon Trotsky",
- "auditedAt": "2026-10-24",
- "auditor": "claude-sonnet-5-5",
+ "auditedAt": "2026-11-10",
+ "auditor": [
+  "claude-sonnet-5-5",
+  "claude-opus-5-5"
+ ],
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-24"
+  },
+  {
+   "auditor": "claude-opus-5-5",
+   "auditedAt": "2026-11-10"
+  }
+ ],
+ "rules": 5,
  "living": false,
  "role": "Russian revolutionary, Red Army founder and leader of the Left Opposition and Fourth International (1879-1940)",
  "summary": "Trotsky was a Marxist revolutionary who helped lead the October Revolution, built the Red Army and, after losing to Stalin, argued that the USSR was a degenerated workers' state needing a political revolution to restore soviet democracy. He championed permanent revolution, internationalism, planned economy and a vanguard party, defended revolutionary violence and dictatorship of the proletariat in the civil war period, and later demanded soviet pluralism and press freedom.",
@@ -14,7 +28,8 @@
    "title": "The Revolution Betrayed (1936)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1936/revbet/index.htm",
-   "usedFor": "Soviet economy, family, democracy, bureaucracy, army, state, planning, culture (chapters 1-12)"
+   "usedFor": "Soviet economy, family, democracy, bureaucracy, army, state, planning, culture (chapters 1-12)",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +37,8 @@
    "title": "Their Morals and Ours (1938)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1938/morals/morals.htm",
-   "usedFor": "Ends and means, morality, violence, religion"
+   "usedFor": "Ends and means, morality, violence, religion",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +46,8 @@
    "title": "The Transitional Program (1938), part 1",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1938/tp/tp-text.htm",
-   "usedFor": "Expropriation, workers' control, unions, war, price committees"
+   "usedFor": "Expropriation, workers' control, unions, war, price committees",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +55,8 @@
    "title": "The Transitional Program (1938), part 2",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1938/tp/tp-text2.htm",
-   "usedFor": "Soviet democracy, soviet parties, backward countries, secret diplomacy"
+   "usedFor": "Soviet democracy, soviet parties, backward countries, secret diplomacy",
+   "evidence": "words"
   },
   {
    "id": "s5",
@@ -46,7 +64,8 @@
    "title": "The Permanent Revolution (1931)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1931/tpr/pr-index.htm",
-   "usedFor": "Permanent revolution, socialism in one country, 1905 programme, colonial countries"
+   "usedFor": "Permanent revolution, socialism in one country, 1905 programme, colonial countries",
+   "evidence": "words"
   },
   {
    "id": "s6",
@@ -54,7 +73,9 @@
    "title": "Terrorism and Communism (1920)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1920/terrcomm/index.htm",
-   "usedFor": "Dictatorship of the proletariat, terror, democracy, compulsory labour"
+   "usedFor": "Dictatorship of the proletariat, terror, democracy, compulsory labour",
+   "evidence": "words",
+   "library": "38982 Trotsky - Dictatorship vs. Democracy (Terrorism and Communism) a repl.txt"
   },
   {
    "id": "s7",
@@ -62,7 +83,8 @@
    "title": "Independence of the Ukraine and Sectarian Muddleheads (1939)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1939/07/ukraine.htm",
-   "usedFor": "Independent Soviet Ukraine, national self-determination"
+   "usedFor": "Independent Soviet Ukraine, national self-determination",
+   "evidence": "words"
   },
   {
    "id": "s8",
@@ -70,7 +92,8 @@
    "title": "Hue and Cry over Kronstadt (1938)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1938/01/kronstadt.htm",
-   "usedFor": "Suppression of the Kronstadt rising"
+   "usedFor": "Suppression of the Kronstadt rising",
+   "evidence": "words"
   },
   {
    "id": "s9",
@@ -78,7 +101,8 @@
    "title": "On the Jewish Problem (1937-40)",
    "author": "Leon Trotsky",
    "url": "https://www.marxists.org/archive/trotsky/1940/xx/jewish.htm",
-   "usedFor": "Zionism, assimilation, anti-Semitism"
+   "usedFor": "Zionism, assimilation, anti-Semitism",
+   "evidence": "words"
   },
   {
    "id": "s10",
@@ -86,7 +110,193 @@
    "title": "Leon Trotsky",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Leon_Trotsky",
-   "usedFor": "Biography, roles, death in 1940, Left Opposition platform"
+   "usedFor": "Biography, roles, death in 1940, Left Opposition platform",
+   "evidence": "words"
+  },
+  {
+   "id": "s11",
+   "kind": "scholarly",
+   "evidence": "action",
+   "title": "The Militarization of the Labor Force (Seventeen Moments in Soviet History)",
+   "author": "Lewis Siegelbaum",
+   "url": "https://soviethistory.msu.edu/1921/militarization-of-labor/",
+   "usedFor": "Labour armies and compulsory labour mobilisations Trotsky set up in 1920"
+  },
+  {
+   "id": "s12",
+   "kind": "scholarly",
+   "evidence": "action",
+   "title": "State-Building: the Red Army (Seventeen Moments in Soviet History)",
+   "author": "Lewis Siegelbaum",
+   "url": "https://soviethistory.msu.edu/1917/red-guard-into-army/",
+   "usedFor": "Trotsky as architect of the Red Army: universal military training and general mobilisation of conscripts in 1918"
+  },
+  {
+   "id": "s13",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Order of the Chairman of the Revolutionary War Council of the Republic, 30 September 1918 (holding families of officers hostage)",
+   "author": "Leon Trotsky",
+   "url": "https://soviethistory.msu.edu/1917/red-guard-into-army/red-guard-into-army-texts/order-of-the-chairman-of-the-revolutionary-war-council-of-the-republic/",
+   "usedFor": "Order to arrest the families of officers who defected"
+  },
+  {
+   "id": "s14",
+   "kind": "scholarly",
+   "evidence": "action",
+   "title": "Introduction to two essays by Trotsky on the trade unions (1920)",
+   "author": "Ken Tarbuck",
+   "url": "https://www.marxists.org/history/etol/revhist/supplem/ktintro.htm",
+   "usedFor": "Trotsky put railway workers under martial law and removed the railway union leaders in 1920"
+  },
+  {
+   "id": "s15",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "How the Revolution Armed, vol. 1: The Fight for Kazan (orders of August 1918)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1918/military/ch33.htm",
+   "usedFor": "Orders that collaborators with the Czechs and White Guards be shot"
+  },
+  {
+   "id": "s16",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Order No. 180 on measures for overcoming guerrilla-ism (11 December 1919)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1919/military/ch109.htm",
+   "usedFor": "Guerrilla detachments dissolved into or subordinated to the regular Red Army"
+  },
+  {
+   "id": "s17",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Protocol of the Politburo meeting of 20 March 1922 on the confiscation of church valuables (Seventeen Moments in Soviet History)",
+   "author": "L. B. Kamenev (with Stalin, Trotsky, Molotov)",
+   "url": "https://soviethistory.msu.edu/1921/confiscating-church-gold/confiscating-church-gold-texts/politburo-plans-the-campaign/",
+   "usedFor": "Secret commissions to confiscate church valuables, meeting weekly with Trotsky"
+  },
+  {
+   "id": "s18",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "From October to Brest-Litovsk (History of the Russian Revolution to Brest-Litovsk, 1918)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1918/hrr/index.htm",
+   "library": "6413 Trotsky - From October to Brest-Litovsk.txt",
+   "usedFor": "His report, as Commissar for Foreign Affairs, that the Soviet government published the secret treaties"
+  },
+  {
+   "id": "s19",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "My Life (1930), ch. on the Commissariat of Foreign Affairs",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1930/mylife/index.htm",
+   "library": "trotsky_my_life - leon_trotsky_my_life.txt",
+   "usedFor": "Publication of the secret diplomatic documents by his commissariat"
+  },
+  {
+   "id": "s20",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Our Revolution: Essays on Working-Class and International Revolution, 1904-1917 (1918)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1918/ourrevo/index.htm",
+   "library": "36303 Trotsky - Our Revolution Essays on Working-Class and International Re.txt",
+   "usedFor": "The proletariat in power and the peasantry"
+  },
+  {
+   "id": "s21",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "The Bolsheviki and World Peace (War and the International, 1914)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1914/war/index.htm",
+   "library": "40273 Trotsky - The Bolsheviki and World Peace.txt",
+   "usedFor": "Peace without annexations, republican United States of Europe"
+  },
+  {
+   "id": "s22",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Is the Time Ripe for the Slogan: \"The United States of Europe\"? (1923)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1923/06/europe.htm",
+   "usedFor": "Budget of a workers' Europe based on a graduated income tax and levies on capital"
+  },
+  {
+   "id": "s23",
+   "kind": "program",
+   "evidence": "words",
+   "title": "Platform of the Joint Opposition (1927), chs. 1 and 3",
+   "author": "Leon Trotsky and the Joint Opposition",
+   "url": "https://www.marxists.org/archive/trotsky/1927/opposition/ch01.htm",
+   "usedFor": "Indirect taxes, nationalisation of the land"
+  },
+  {
+   "id": "s24",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Europe and America (1926)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1926/02/europe.htm",
+   "usedFor": "Malthusianism as a remedy for unemployment"
+  },
+  {
+   "id": "s25",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "The Comintern and the GPU (1940)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1940/08/gpu.htm",
+   "usedFor": "Mexican oil expropriation and control of natural resources"
+  },
+  {
+   "id": "s26",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Tasks of the 12th Congress of the RCP (April 1923)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1923/04/tasks-of-12th-congress.htm",
+   "usedFor": "National languages in the state machine"
+  },
+  {
+   "id": "s27",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Soviet government documents (Brest-Litovsk statements, 1918)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1918/commissar/gov.htm",
+   "usedFor": "Frontier changes only by the will of the peoples concerned; national plebiscite"
+  },
+  {
+   "id": "s28",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "May Day in the West and the East (1924)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1924/04/mayday.htm",
+   "usedFor": "US exclusion of Japanese immigrants"
+  },
+  {
+   "id": "s29",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "In Defence of the October Revolution (Copenhagen speech, November 1932)",
+   "author": "Leon Trotsky",
+   "url": "https://www.marxists.org/archive/trotsky/1932/11/defrev.htm",
+   "usedFor": "Socialism freeing people from spending most of life in physical labour"
+  }
+ ],
+ "booksNotUsed": [
+  {
+   "file": "trotsky_lenin - leon_trotsky_lenin.txt",
+   "reason": "A memoir of Lenin (1925) that mostly reports Lenin's own words and decisions (Brest-Litovsk, the Constituent Assembly, forming the government); searched by theme, its few statements of Trotsky's own views settle no statement not already answered from his programmatic works."
+  },
+  {
+   "file": "trotsky_stalin_school - leon_trotsky_stalin_school_of_falsification.txt",
+   "reason": "Documents and letters on the falsification of party history in the 1917-1927 inner-party struggle, with an editor's introduction; searched for party democracy, discipline and the themes left null, it settles no statement beyond those answered from his other works."
   }
  ],
  "answers": {
@@ -420,10 +630,12 @@
    ]
   },
   "abolish-central-banks": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Transitional Program demands the expropriation of the private banks and their merger into a single national institution holding the whole credit system, not money left to the market.",
+   "sources": [
+    "s3"
+   ]
   },
   "corporatist-bargaining": {
    "value": null,
@@ -700,10 +912,32 @@
   "collective-farming": {
    "value": 1,
    "confidence": "medium",
-   "rationale": "Supported gradual, voluntary collectivisation (Lenin's co-operative plan) and condemned Stalin's forced collectivisation and dekulakisation.",
+   "rationale": "The Revolution Betrayed holds that large-scale collective farming must rest on an industry able to supply it with machinery, and calls Stalin's exaggeratedly swift collectivisation an economic adventure.",
    "sources": [
-    "s1",
-    "s10"
+    "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Supported gradual, voluntary collectivisation (Lenin's co-operative plan) and condemned Stalin's forced collectivisation and dekulakisation.",
+     "sources": [
+      "s1",
+      "s10"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The Revolution Betrayed holds that large-scale collective farming must rest on an industry able to supply it with machinery, and calls Stalin's exaggeratedly swift collectivisation an economic adventure.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "capitalism-causes-war": {
@@ -734,12 +968,34 @@
    "sources": []
   },
   "conscription": {
-   "value": 1,
+   "value": 2,
    "confidence": "medium",
-   "rationale": "Built the Red Army through mass mobilisation and defended compulsory labour service; the Transitional Program backs military training of workers.",
+   "rationale": "As People's Commissar for War he built the Red Army by abandoning the volunteer principle for universal military training in April 1918 and a general mobilisation of conscripts later that year.",
    "sources": [
-    "s6",
-    "s3"
+    "s12"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Built the Red Army through mass mobilisation and defended compulsory labour service; the Transitional Program backs military training of workers.",
+     "sources": [
+      "s6",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "As People's Commissar for War he built the Red Army by abandoning the volunteer principle for universal military training in April 1918 and a general mobilisation of conscripts later that year.",
+     "sources": [
+      "s12"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "exit-over-voice": {
@@ -1179,10 +1435,12 @@
    "sources": []
   },
   "population-causes-poverty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In Europe and America (1926) he calls the search for remedies to unemployment in Malthusianism a return to the most reactionary theories of primitive accumulation.",
+   "sources": [
+    "s24"
+   ]
   },
   "diversity-weakens-cohesion": {
    "value": null,
@@ -1197,11 +1455,33 @@
    "sources": []
   },
   "emergency-suspend-protections": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Defended revolutionary terror and repression as legitimate in civil war against counter-revolution, and rejected abstract legality.",
+   "value": 2,
+   "confidence": "high",
+   "rationale": "His order of 30 September 1918 had the families of officers who went over to the enemy listed and arrested, without any charge against the relatives themselves, as a civil-war measure.",
    "sources": [
-    "s6"
+    "s13"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Defended revolutionary terror and repression as legitimate in civil war against counter-revolution, and rejected abstract legality.",
+     "sources": [
+      "s6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "His order of 30 September 1918 had the families of officers who went over to the enemy listed and arrested, without any charge against the relatives themselves, as a civil-war measure.",
+     "sources": [
+      "s13"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "price-controls-essentials": {
@@ -1248,10 +1528,12 @@
    "sources": []
   },
   "pool-sovereignty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Bolsheviki and World Peace proposes a republican United States of Europe as the foundation of a United States of the World, replacing the national fatherland as an obstacle to development.",
+   "sources": [
+    "s21"
+   ]
   },
   "head-commands-forces": {
    "value": null,
@@ -1345,10 +1627,12 @@
    "sources": []
   },
   "death-penalty": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "His orders at Kazan in August 1918 laid down that anyone who had collaborated with the Czechs and White Guards would be shot and their property confiscated.",
+   "sources": [
+    "s15"
+   ]
   },
   "sex-ed-in-schools": {
    "value": null,
@@ -1375,10 +1659,12 @@
    "sources": []
   },
   "minority-language-support": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At the 12th Party Congress (1923) he warned that estranging the state machine from the people in respect of language is very dangerous and that the national language of a people must be treated seriously, above all in Ukraine.",
+   "sources": [
+    "s26"
+   ]
   },
   "religious-exemptions": {
    "value": null,
@@ -1484,10 +1770,12 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Politburo protocol of March 1922 set up secret commissions, meeting weekly with Trotsky, to confiscate church valuables and to split the clergy by taking loyal priests under state protection.",
+   "sources": [
+    "s17"
+   ]
   },
   "nonpartisan-head-of-state": {
    "value": null,
@@ -1514,10 +1802,13 @@
    "sources": []
   },
   "flat-income-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "His programme work called for a graduated income tax, and in 1923 he said the budget of a workers' and peasants' Europe would rest on a graduated income tax and levies on capital.",
+   "sources": [
+    "s5",
+    "s22"
+   ]
   },
   "character-from-environment": {
    "value": null,
@@ -1672,10 +1963,12 @@
    "sources": []
   },
   "moral-incentives": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "Terrorism and Communism argues that under socialised production wages must correspond as closely as possible to individual productivity, with piece-work and bonuses rewarding those who do more.",
+   "sources": [
+    "s6"
+   ]
   },
   "armed-group-creates-revolution": {
    "value": -2,
@@ -1740,10 +2033,12 @@
    "sources": []
   },
   "delink-world-market": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "The Revolution Betrayed calls autarchy a reactionary reflex of senile capitalism and holds that socialist development depends on the world division of labour.",
+   "sources": [
+    "s1"
+   ]
   },
   "labor-aristocracy": {
    "value": null,
@@ -1975,10 +2270,12 @@
    "sources": []
   },
   "single-official-language": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In 1923 he argued that the Soviet state machine must work in the national language of each people rather than estrange itself from it, a question \"of tenfold importance for the Ukraine\".",
+   "sources": [
+    "s26"
+   ]
   },
   "foreign-land-ownership": {
    "value": null,
@@ -2202,10 +2499,12 @@
    "sources": []
   },
   "neither-capitalism-nor-communism": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Transitional Program presents socialist revolution, and nothing between capitalism and socialism, as the only way out of capitalism's death agony.",
+   "sources": [
+    "s3"
+   ]
   },
   "historical-land-claim": {
    "value": null,
@@ -2626,12 +2925,36 @@
    "sources": []
   },
   "independent-unions": {
-   "value": 2,
+   "value": -1,
    "confidence": "medium",
-   "rationale": "Fights any attempt to subordinate unions to the bourgeois state and demands the freedom of trade unions from the Soviet bureaucracy.",
+   "rationale": "In 1920 he put the railway workers under martial law and removed the leaders of their union, and he pressed for the unions to be made organs of the state; his later calls for union freedom are words against that record.",
    "sources": [
-    "s3",
-    "s4"
+    "s14",
+    "s11"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Fights any attempt to subordinate unions to the bourgeois state and demands the freedom of trade unions from the Soviet bureaucracy.",
+     "sources": [
+      "s3",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "In 1920 he put the railway workers under martial law and removed the leaders of their union, and he pressed for the unions to be made organs of the state; his later calls for union freedom are words against that record.",
+     "sources": [
+      "s14",
+      "s11"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "socialism-needs-workers-power": {
@@ -2788,11 +3111,35 @@
   },
   "open-diplomacy": {
    "value": 2,
-   "confidence": "high",
-   "rationale": "Demands complete abolition of secret diplomacy and publication of all treaties and the Kremlin's diplomatic correspondence.",
+   "confidence": "medium",
+   "rationale": "As Commissar for Foreign Affairs his commissariat opened the tsarist archives and published the secret treaties in November 1917, which he reported as an obligation the Bolsheviks had promised the people.",
    "sources": [
-    "s3",
-    "s4"
+    "s18",
+    "s19"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Demands complete abolition of secret diplomacy and publication of all treaties and the Kremlin's diplomatic correspondence.",
+     "sources": [
+      "s3",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "As Commissar for Foreign Affairs his commissariat opened the tsarist archives and published the secret treaties in November 1917, which he reported as an obligation the Bolsheviks had promised the people.",
+     "sources": [
+      "s18",
+      "s19"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "capital-controls": {
@@ -2802,10 +3149,12 @@
    "sources": []
   },
   "state-arms-monopoly": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "high",
+   "rationale": "Order No. 180 (1919) forbade guerrilla detachments from fighting as such in the Red Army, denied them supplies until fully subordinated and had them broken up into regular units.",
+   "sources": [
+    "s16"
+   ]
   },
   "soldiers-refuse-war": {
    "value": null,
@@ -3074,10 +3423,12 @@
    "sources": []
   },
   "disputed-territory-plebiscite": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "At Brest-Litovsk he declared that any change of frontiers or formation of new states must be accomplished solely by the will of the peoples concerned, and denounced the German terms for turning the plebiscite into a ritual.",
+   "sources": [
+    "s27"
+   ]
   },
   "keep-colonial-borders": {
    "value": null,
@@ -3140,10 +3491,12 @@
    "sources": []
   },
   "cut-consumption-tax": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 1927 Opposition Platform warns that indirect taxes are growing alarmingly at the expense of direct ones, shifting the tax burden from the wealthier to the poorer.",
+   "sources": [
+    "s23"
+   ]
   },
   "targeted-social-spending": {
    "value": null,
@@ -3182,10 +3535,12 @@
    "sources": []
   },
   "national-resource-control": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "high",
+   "rationale": "He wrote in 1940 that he had defended in the world press the right of the Mexican people to be masters of their own natural resources, supporting the expropriation of the foreign oil companies.",
+   "sources": [
+    "s25"
+   ]
   },
   "distribution-by-process": {
    "value": null,
@@ -3212,10 +3567,12 @@
    "sources": []
   },
   "automate-paid-work": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his 1932 Copenhagen speech he said a planned socialist increase in productive forces would free people from devoting the greater part of their lives to physical labour.",
+   "sources": [
+    "s29"
+   ]
   },
   "multipolar-world": {
    "value": null,
@@ -3250,9 +3607,696 @@
    "sources": [
     "s1"
    ]
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Transitional Program calls for all banks to be merged into one state bank that concentrates the entire credit system along a national plan.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In 1924 he mocked the American law barring Japanese immigrants as treating them as \"an inferior race, a yellow race\", citing it against the claimed brotherhood of peoples.",
+   "sources": [
+    "s28"
+   ]
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "avoid-permanent-military-alliances": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Revolution Betrayed is built on a transitional period between capitalism and communism, a lower stage in which the state, money and wage differences still remain.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Our Revolution argues that the working class in power must win over the peasantry, recognising its agrarian gains and drawing peasant leaders into a government with a workers' majority.",
+   "sources": [
+    "s20"
+   ]
+  },
+  "small-step-social-reform": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Transitional Program declares war on \"reformism without reforms\" and holds that decaying capitalism leaves no room for gradual reform, only transitional demands leading to revolution.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Transitional Program says that in colonial countries the workers must be opposed to the \"national\" bourgeoisie on a revolutionary democratic programme, and he condemned the Comintern's bloc with the Kuomintang.",
+   "sources": [
+    "s4",
+    "s5"
+   ]
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "The Permanent Revolution rejects a separate democratic stage in colonial and backward countries: their democratic tasks can be solved only by the proletarian dictatorship passing over to socialist measures.",
+   "sources": [
+    "s5"
+   ]
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Transitional Program says the Fourth International tirelessly defends the democratic rights and social conquests of the workers and keeps the minimal demands that retain life, but within a revolutionary perspective.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "In 1923 he wrote that the budget of a workers' and peasants' Europe would be based on a graduated income tax, among levies on capital.",
+   "sources": [
+    "s22"
+   ]
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Against rising prices the Transitional Program demands committees of workers and housewives to control prices and a sliding scale of wages tied to the cost of living.",
+   "sources": [
+    "s3"
+   ]
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": -2,
+   "confidence": "high",
+   "rationale": "Terrorism and Communism argues that the working class cannot reach power and socialism through a parliamentary majority, only through revolution and the dictatorship of the proletariat.",
+   "sources": [
+    "s6"
+   ]
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "The Transitional Program calls for a political revolution to overthrow the Soviet bureaucracy, a repressive regime, rather than confining the opposition to legal means.",
+   "sources": [
+    "s4"
+   ]
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The 1927 Opposition Platform defends the nationalisation of the land and demands measures to reinforce it against kulak control of land communities.",
+   "sources": [
+    "s23"
+   ]
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Revolution Betrayed says that in a communist society the state and money will disappear and goods will go by need, while wages tied to individual labour belong to the transitional period.",
+   "sources": [
+    "s1"
+   ]
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "In 1920 he turned the Third Army into the First Labour Army and directed compulsory mobilisations of workers that fixed them to enterprises or transferred them where labour was short.",
+   "sources": [
+    "s11"
+   ]
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "conquest-no-lawful-claim": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The Bolsheviki and World Peace calls for a peace without annexations or indemnities, with no enforced incorporation of occupied countries and the right of nations to choose their own government.",
+   "sources": [
+    "s21"
+   ]
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
   }
  },
- "notes": "Positions shifted from the civil war (banning rival parties, compulsory labour, terror) to a 1930s programme of soviet pluralism and press freedom; the latter is used where they conflict. Not covered by his available writings: LGBT issues, drugs, environment, healthcare provision and most modern policy questions, which stay null.",
+ "notes": "Later pass (claude-opus-5-5, 2026-11-10) to rules 5: sources tagged as actions or words, the candidate statements answered, Wikipedia no longer cited, and record over words applied where his time in power (1917-1925) left a record: conscription, the hostage order, the shooting orders, compulsory labour, the railway union, guerrilla detachments, church valuables and the secret treaties now answer from that record, and his later words on those questions are left out. Elsewhere his positions shifted from the civil war (banning rival parties, terror) to a 1930s programme of soviet pluralism and press freedom; the latter is used where they conflict and no record of his own acts settles the statement. Themes searched in his collected works (Marxists Internet Archive, local corpus) and the library books: taxation, money and banking, land, prices, trade, labour and incentives, language and nationality, religion, immigration and race, frontiers and annexation, militia and army, death penalty, censorship, ecology and population, technology. Not covered by his writings: LGBT issues, drugs, environment, healthcare provision and most modern policy questions, which stay null.",
  "reviews": [
   {
    "kind": "inference",
