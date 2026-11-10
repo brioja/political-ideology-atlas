@@ -1875,11 +1875,33 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Orwell wanted political democracy and an end to hereditary privilege, though he accepted a symbolic crown.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks whether the head of state should be elected, and this rationale says Orwell accepted a symbolic crown, which does not support agreeing; its sources need re-reading.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Orwell wanted political democracy and an end to hereditary privilege, though he accepted a symbolic crown.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks whether the head of state should be elected, and this rationale says Orwell accepted a symbolic crown, which does not support agreeing; its sources need re-reading.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "minority-veto": {
@@ -3794,6 +3816,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 32
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
