@@ -17,12 +17,12 @@ for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
   assert(Math.abs(d - (i === j ? 1 : 0)) < 1e-9, "eigenvectors not orthonormal");
 }
 
-// 1b. Statements keep their wording: audits answered the recorded text, so a reworded statement
-// needs a new id (see scripts/lib.js).
+// 1b. Statements keep their wording: audits answered the recorded text. A new meaning needs a new
+// id; a reader fix that keeps the meaning updates texts.json too (see scripts/lib.js).
 const { allStatements, TEXTS, readJson } = require("./scripts/lib");
 const texts = require("fs").existsSync(TEXTS) ? readJson(TEXTS) : {};
 for (const s of allStatements()) {
-  assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; give the new wording a new id`);
+  assert(!(s.id in texts) || texts[s.id] === s.text, `statement '${s.id}' was reworded; a new meaning needs a new id, a reader fix that keeps the meaning updates audits/statements/texts.json too`);
 }
 
 // 1b. Duplicates are decided by data (scripts/lib.js duplicateOf): no audit exists for an entry whose

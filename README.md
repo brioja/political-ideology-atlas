@@ -66,7 +66,8 @@ note the positions no statement captures as missing statements (`missingStatemen
 pass rewords them, and approved ones join `statements.json` as candidates; new audits answer them,
 older audits answer them at their next completing pass (a missing answer counts as null until then), and `node scripts/statements-check.js` shows when one
 carries enough signal on the dividing lines to be asked. Adding or removing a statement leaves existing
-audits valid; rewording one needs a new id.
+audits valid. A rewording that keeps the claim the audits answered (clearer for readers) keeps the
+statement's id and answers; one that changes the meaning needs a new id.
 
 ## People
 

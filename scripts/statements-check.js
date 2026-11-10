@@ -16,7 +16,7 @@
 //     negate; a passive "chosen by voters" is fine), "in" (a vague scope: "in economic life"), "not" (state
 //     the positive position instead, where one exists).
 //     Report only; statement-pass.js done refuses unexplained errors.
-//     --all also marks the active statements (reference only: rewording them needs new ids).
+//     --all also marks the active statements (reference only: a new meaning needs a new id; a reader fix keeps the id, see scripts/lib.js).
 const fs = require("fs");
 const path = require("path");
 const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, wordingMarks } = require("./lib");

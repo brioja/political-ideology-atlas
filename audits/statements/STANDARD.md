@@ -79,7 +79,9 @@ Anarcho-primitivism is a live match, and it doesn't make the test longer for any
 4. Once test 2 passes it is promoted automatically: every audit run ends with
    `node scripts/statement-signal.js --apply`, which also demotes active statements that fail it.
 
-Rewording a statement changes what was answered, so a reworded statement gets a new id.
+A rewording that changes the meaning changes what was answered, so it gets a new id. A rewording that
+only fixes how readers parse a statement, keeping the claim the audits answered, keeps its id and
+answers; record the new text in `audits/statements/texts.json` (Brandon, 2026-11-09).
 
 ## Explanations
 

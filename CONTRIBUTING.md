@@ -60,8 +60,10 @@ that usually means their public record covers too few kinds of issues for a mean
 Statements live in `statements.json` and follow `audits/statements/STANDARD.md`: a statement
 must be a real, sourced position that ideologies disagree on. To propose one, open an issue with
 the wording and a source for an ideology's stance. New statements start as candidates and existing
-audits only need to answer them. Rewording a statement needs a new id, because audits answered
-the old text. The `agree`, `disagree` and `note` explanations can be edited freely.
+audits only need to answer them. A rewording that only makes a
+statement clearer, keeping the claim the audits answered, keeps its id and answers (update its text in
+`audits/statements/texts.json` too). A rewording that changes the meaning needs a new id, because the
+audits answered the old claim. The `agree`, `disagree` and `note` explanations can be edited freely.
 
 ## Before opening a pull request
 

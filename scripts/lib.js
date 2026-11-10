@@ -92,9 +92,10 @@ function duplicateOf(id) {
 const redirectAliases = (id) => { duplicateOf("_"); return catalog().filter((e) => dupMap.get(e.id) === id).map((e) => e.name); };
 
 // Audits go stale per statement, not all at once: a new statement only needs answering, and a
-// removed one is ignored. Rewording would silently change what was answered, so a reworded
-// statement gets a new id; audits/statements/texts.json records each id's text and test.js
-// fails if one changes.
+// removed one is ignored. A rewording that changes the meaning would silently change what was
+// answered, so it gets a new id. audits/statements/texts.json records each id's text and test.js
+// fails if one changes, so a rewording that keeps the meaning (a reader fix) is a deliberate
+// in-place edit: change the text in both files and keep the id and answers (Brandon, 2026-11-09).
 const TEXTS = path.join(ROOT, "audits", "statements", "texts.json");
 const unanswered = (answers, statements = allStatements()) => statements.filter((s) => !(answers && answers[s.id])).map((s) => s.id);
 
