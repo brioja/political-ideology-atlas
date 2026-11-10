@@ -1097,11 +1097,33 @@
       ]
     },
     "discourage-race-mixing": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Dmowski judged Jews too numerous to assimilate and encouraged separation, yet this does not directly cover racial marriage.",
+      "rationale": "Nulled (Codex review, 2026-11-10): its rationale concedes that the position on Jewish assimilation and separation does not directly cover racial marriage, so it does not support agreeing; its sources need re-reading against the statement.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Dmowski judged Jews too numerous to assimilate and encouraged separation, yet this does not directly cover racial marriage.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): its rationale concedes that the position on Jewish assimilation and separation does not directly cover racial marriage, so it does not support agreeing; its sources need re-reading against the statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "equal-moral-worth": {
@@ -3682,6 +3704,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
