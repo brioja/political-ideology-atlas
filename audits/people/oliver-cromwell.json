@@ -1025,13 +1025,12 @@
    "sources": []
   },
   "direct-action": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He removed Parliaments by force (approving Pride's Purge and expelling the Rump), though he also summoned elected Parliaments under the Instrument.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
    "sources": [
     "g1"
    ],
-   "auditor": "claude-opus-5-5",
    "reviewHistory": [
     {
      "value": 1,
@@ -1048,6 +1047,16 @@
      "value": 1,
      "confidence": "medium",
      "rationale": "He removed Parliaments by force (approving Pride's Purge and expelling the Rump), though he also summoned elected Parliaments under the Instrument.",
+     "sources": [
+      "g1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
      "sources": [
       "g1"
      ],
@@ -5281,6 +5290,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 5
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }

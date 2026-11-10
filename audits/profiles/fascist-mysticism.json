@@ -697,11 +697,33 @@
       ]
     },
     "direct-action": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Doctrine honours the squads' action and the fighting spirit, although the regime also used elections and parliament.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Doctrine honours the squads' action and the fighting spirit, although the regime also used elections and parliament.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "means-match-ends": {
@@ -3787,6 +3809,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

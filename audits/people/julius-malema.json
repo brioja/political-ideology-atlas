@@ -661,11 +661,33 @@
       "sources": []
     },
     "direct-action": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "His programme treats mass activism and land occupations as foundational alongside elections.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "His programme treats mass activism and land occupations as foundational alongside elections.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "means-match-ends": {
@@ -3221,5 +3243,13 @@
       "sources": []
     }
   },
-  "notes": "Full 2024 manifesto, founding programme and 2025 judgment downloaded and searched across all themes. Reviewed all 490 statements and remaining nulls. Foundational commitments are used where retained by the later programme. The 2025 judgment concerns a 2022 speech, separately from the struggle-song litigation: it records the attacks on EFF members, his retaliatory remarks, his metaphor defense and the court’s rejection of that defense. The record is not characterized as a judicial finding of genocide or a general order to kill all white people. His 2009 sexist remarks and 2010 adverse judgment were reviewed; later explicit gender-equality commitments are used. The later rejection of capital punishment supersedes his earlier referendum proposal. Marijuana remarks do not establish legalization of all recreational drugs. Continental free movement does not mean immediate abolition of every border worldwide. General LGBTQ support is not substituted for an explicit marriage policy. No inference from Marxist-Leninist labels, identity, party membership or criminal firearm conduct. Graduate-only job and stipend promises do not establish an unconditional income or job guarantee for everyone. Apartheid monuments would be relocated to a museum, rather than destroyed. Recognition of domestic labour and equal allocation of land-use rights do not settle direct payment for unpaid household work or inheritance rights."
+  "notes": "Full 2024 manifesto, founding programme and 2025 judgment downloaded and searched across all themes. Reviewed all 490 statements and remaining nulls. Foundational commitments are used where retained by the later programme. The 2025 judgment concerns a 2022 speech, separately from the struggle-song litigation: it records the attacks on EFF members, his retaliatory remarks, his metaphor defense and the court’s rejection of that defense. The record is not characterized as a judicial finding of genocide or a general order to kill all white people. His 2009 sexist remarks and 2010 adverse judgment were reviewed; later explicit gender-equality commitments are used. The later rejection of capital punishment supersedes his earlier referendum proposal. Marijuana remarks do not establish legalization of all recreational drugs. Continental free movement does not mean immediate abolition of every border worldwide. General LGBTQ support is not substituted for an explicit marriage policy. No inference from Marxist-Leninist labels, identity, party membership or criminal firearm conduct. Graduate-only job and stipend promises do not establish an unconditional income or job guarantee for everyone. Apartheid monuments would be relocated to a museum, rather than destroyed. Recognition of domestic labour and equal allocation of land-use rights do not settle direct payment for unpaid household work or inheritance rights.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

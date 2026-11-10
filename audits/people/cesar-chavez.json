@@ -424,18 +424,42 @@
       ]
     },
     "direct-action": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Wikipedia reports he judged boycotts and marches better than electoral politics, but after 1975 he redirected effort to elections under the state labour law.",
+      "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
       "sources": [
         "s4",
         "s1",
         "b1",
         "b2"
       ],
-      "auditor": [
-        "claude-haiku-5-5",
-        "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Wikipedia reports he judged boycotts and marches better than electoral politics, but after 1975 he redirected effort to elections under the state labour law.",
+          "sources": [
+            "s4",
+            "s1",
+            "b1",
+            "b2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
+          "sources": [
+            "s4",
+            "s1",
+            "b1",
+            "b2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "means-match-ends": {
@@ -4076,6 +4100,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-07",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ],
   "rules": 5

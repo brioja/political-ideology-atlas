@@ -753,14 +753,37 @@
    "sources": []
   },
   "direct-action": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Publicly endorsed destruction of ULEZ cameras, alongside electoral campaigning; later denied the criminal charge of encouragement.",
+   "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
    "sources": [
     "s10",
     "s11"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Publicly endorsed destruction of ULEZ cameras, alongside electoral campaigning; later denied the criminal charge of encouragement.",
+     "sources": [
+      "s10",
+      "s11"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: the statement now asks whether direct action should replace electoral politics (reworded 2026-11-10, Codex review). This answer rested on direct action used alongside elections or on a mixed record, which does not support agreeing that it should replace them; its sources need re-reading against the new text.",
+     "sources": [
+      "s10",
+      "s11"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
+   ]
   },
   "means-match-ends": {
    "value": null,
@@ -3325,6 +3348,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
    "nulled": 1
   }
  ]
