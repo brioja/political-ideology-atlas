@@ -175,9 +175,9 @@ const QUESTIONS = [
  {
   "id": "rehabilitation",
   "theme": "liberty",
-  "text": "Prisons should focus on rehabilitation rather than punishment.",
-  "agree": "Prisons mainly try to help offenders change and return to society.",
-  "disagree": "Prisons should not put rehabilitation ahead of punishment.",
+  "text": "Prisons should focus more on rehabilitation than on punishment.",
+  "agree": "Prisons should mainly help offenders rejoin society.",
+  "disagree": "Prisons should focus at least as much on punishment as on rehabilitation.",
   "note": "About the purpose of criminal justice.",
   "icon": "⛓️"
  },
@@ -1930,9 +1930,9 @@ const QUESTIONS = [
  {
   "id": "character-from-environment",
   "theme": "society",
-  "text": "A person's character is formed mainly by upbringing and circumstances rather than by innate nature.",
-  "agree": "People become who they are mainly through upbringing and surroundings, not through inborn nature.",
-  "disagree": "A person's character is not formed mainly by upbringing and circumstances; innate nature matters at least as much.",
+  "text": "A person's character comes more from their environment than from innate nature.",
+  "agree": "A person's character comes mainly from their environment.",
+  "disagree": "Innate nature shapes a person's character at least as much as their environment does.",
   "note": "About nature versus nurture in human character.",
   "icon": "🌱"
  },
@@ -2389,9 +2389,9 @@ const QUESTIONS = [
  {
   "id": "self-reliance-over-aid",
   "theme": "economy",
-  "text": "A poor country should rely on its own resources for development rather than on foreign aid, loans or investment.",
-  "agree": "A poor country should develop with its own resources rather than foreign aid, loans or investment.",
-  "disagree": "A poor country's own resources should not take priority over foreign aid, loans and investment in its development.",
+  "text": "A poor country should rely more on its own resources for development than on foreign money.",
+  "agree": "A poor country should develop mainly with its own resources.",
+  "disagree": "A poor country should rely on foreign money at least as much as on its own resources.",
   "note": "About independence versus outside help in development.",
   "icon": "🌱"
  },
@@ -2767,9 +2767,9 @@ const QUESTIONS = [
  {
   "id": "regional-revenue-retention",
   "theme": "economy",
-  "text": "Revenue raised in a region should mostly be spent in that region rather than shared with other regions.",
-  "agree": "A region should keep most of the money it raises rather than subsidize others.",
-  "disagree": "Spending revenue in the region that raised it should not take priority over sharing it with other regions.",
+  "text": "Regions should keep most of the revenue they raise.",
+  "agree": "Regions should keep most of the revenue they raise.",
+  "disagree": "Regions should share at least half of the revenue they raise with other regions.",
   "note": "About whether regions should keep the revenue they raise.",
   "icon": "🗺️"
  },
@@ -3685,9 +3685,9 @@ const QUESTIONS = [
  {
   "id": "pollution-taxes",
   "theme": "ecology",
-  "text": "Pollution and the use of finite resources should be taxed so that polluters pay, rather than relying mainly on regulation or subsidies.",
-  "agree": "Polluters and users of finite resources should pay taxes for what they use up, instead of mainly relying on regulation or subsidies.",
-  "disagree": "Taxing pollution and the use of finite resources should not replace regulation and subsidies as the main way to make polluters pay.",
+  "text": "Taxing polluters should do more to protect the environment than regulating them.",
+  "agree": "Taxing polluters should do more to protect the environment than regulating them.",
+  "disagree": "Regulating polluters should do at least as much to protect the environment as taxing them.",
   "note": "About taxing pollution versus other environmental tools.",
   "icon": "🏭"
  },
@@ -4198,9 +4198,9 @@ const QUESTIONS = [
  {
   "id": "close-ties-china",
   "theme": "world",
-  "text": "A country should seek close economic and diplomatic ties with China rather than rely mainly on the United States.",
-  "agree": "Trade, loans and diplomacy should lean toward China.",
-  "disagree": "Close economic and diplomatic ties with China should not take priority over relying mainly on the United States.",
+  "text": "A country should rely more on close ties with China than on the United States.",
+  "agree": "A country should lean toward China more than toward the United States.",
+  "disagree": "A country should rely on the United States at least as much as on China.",
   "note": "About which great power a country should lean on.",
   "icon": "🐉"
  },
@@ -4378,9 +4378,9 @@ const QUESTIONS = [
  {
   "id": "material-over-identity",
   "theme": "society",
-  "text": "The political left should concentrate on workers' material interests rather than cultural identity issues.",
-  "agree": "Wages, jobs and living standards should come first, ahead of identity and lifestyle campaigns.",
-  "disagree": "The political left should not put workers' material interests ahead of cultural identity issues.",
+  "text": "The political left should focus more on workers' material interests than on cultural identity issues.",
+  "agree": "Living standards should come first for the left, ahead of identity campaigns.",
+  "disagree": "The political left should give cultural identity issues at least as much attention as workers' material interests.",
   "note": "About what the left should prioritise.",
   "icon": "🛠️"
  },
