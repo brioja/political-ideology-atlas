@@ -1,0 +1,28 @@
+name: Missing person
+description: Someone above the page-views cutoff isn't in the people catalog
+title: "Missing person: <name>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The people catalog is everyone above a Wikipedia page-views cutoff (`scripts/candidate-filter.js`).
+        A person only appears once their record places them precisely enough on the test's dividing lines,
+        so someone in the catalog may still be hidden; that's computed from the data, not a judgement.
+  - type: input
+    id: name
+    attributes:
+      label: Name
+    validations:
+      required: true
+  - type: input
+    id: wikipedia
+    attributes:
+      label: English Wikipedia article
+      placeholder: https://en.wikipedia.org/wiki/...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Optional. For example, sources for their positions that an audit should use.

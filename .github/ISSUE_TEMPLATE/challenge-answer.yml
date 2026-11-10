@@ -1,0 +1,56 @@
+name: Challenge an answer
+description: An ideology or person is placed wrong on a statement
+title: "Answer: <ideology or person> on <statement>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every answer comes from a public audit: `audits/profiles/<id>.json` for ideologies,
+        `audits/people/<id>.json` for people. A correction needs a source that shows the position.
+        Primary sources (founding texts, or the person's own words, votes and actions) beat commentary.
+  - type: input
+    id: subject
+    attributes:
+      label: Ideology or person
+      description: The name, or a link to their page on the site.
+      placeholder: https://ideologyatlas.fyi/people/...
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement
+      description: Quote the statement as the test shows it.
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current answer
+      placeholder: e.g. Agree
+    validations:
+      required: true
+  - type: dropdown
+    id: proposed
+    attributes:
+      label: What it should be
+      options:
+        - Strongly agree
+        - Agree
+        - Neither agree nor disagree
+        - Disagree
+        - Strongly disagree
+        - No known position (people only)
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: A link to a page you read that shows the position, with a short quote and a page number if it's a book.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else

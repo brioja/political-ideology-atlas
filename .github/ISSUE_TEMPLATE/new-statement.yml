@@ -1,0 +1,28 @@
+name: Propose a statement
+description: A position ideologies disagree on that the test doesn't ask about
+title: "Statement: <short wording>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Statements follow `audits/statements/STANDARD.md`: a real, sourced position that ideologies
+        disagree on. New statements start as candidates. To fix how an existing statement reads,
+        say which one and what's unclear.
+  - type: textarea
+    id: wording
+    attributes:
+      label: Wording
+      description: The statement as someone taking the test would read it.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: At least one ideology's stance on it, with a link and a short quote. One on each side is best.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
