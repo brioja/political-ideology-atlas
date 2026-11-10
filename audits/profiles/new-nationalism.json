@@ -198,12 +198,36 @@
       "sources": []
     },
     "strong-leader": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Roosevelt called the presidency the steward of the public welfare and said strong leadership was needed against party bosses, but he spoke of leading, not bypassing, the people.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale distinguishes leading from bypassing, so it does not support agreeing; its sources need re-reading.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Roosevelt called the presidency the steward of the public welfare and said strong leadership was needed against party bosses, but he spoke of leading, not bypassing, the people.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale distinguishes leading from bypassing, so it does not support agreeing; its sources need re-reading.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "state-harmful": {
@@ -3613,6 +3637,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 196
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

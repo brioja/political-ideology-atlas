@@ -162,11 +162,33 @@
       "sources": []
     },
     "strong-leader": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mudde pairs nativism with authoritarianism, so a strong leader is plausible, though the 1850s Know Nothings did not demand one.",
+      "rationale": "Nulled (statement review, 2026-11-10): its rationale infers a strong leader only as plausible from associated authoritarianism, so it does not support agreeing; its sources need re-reading.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Mudde pairs nativism with authoritarianism, so a strong leader is plausible, though the 1850s Know Nothings did not demand one.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-10): its rationale infers a strong leader only as plausible from associated authoritarianism, so it does not support agreeing; its sources need re-reading.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "state-harmful": {
@@ -3393,6 +3415,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }
