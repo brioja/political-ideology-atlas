@@ -2430,13 +2430,39 @@
    "sources": []
   },
   "divine-source-of-authority": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "He said God raises up those in authority and that rights derive from God, but he also holds that legitimate government rests on the consent of the governed.",
+   "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
    "sources": [
     "accept",
     "mfl",
     "limgov"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He said God raises up those in authority and that rights derive from God, but he also holds that legitimate government rests on the consent of the governed.",
+     "sources": [
+      "accept",
+      "mfl",
+      "limgov"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+     "sources": [
+      "accept",
+      "mfl",
+      "limgov"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "religious-dress-in-state": {
@@ -3384,6 +3410,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
    "nulled": 1
   }
  ]

@@ -2483,12 +2483,36 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents are split: many believe authority is ultimately from God, but the democratic reform strands also stress popular consent.",
+      "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents are split: many believe authority is ultimately from God, but the democratic reform strands also stress popular consent.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-dress-in-state": {
@@ -3551,6 +3575,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

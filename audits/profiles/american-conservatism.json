@@ -2832,12 +2832,36 @@
       ]
     },
     "divine-source-of-authority": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Kirk's moral order and Goldwater's laws of God and nature place authority's source in God, though the Declaration roots government in consent too.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Kirk's moral order and Goldwater's laws of God and nature place authority's source in God, though the Declaration roots government in consent too.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-dress-in-state": {
@@ -4129,6 +4153,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 133
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

@@ -2267,12 +2267,36 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mencius 5A5 says Heaven gives the throne but shows its will through the people's acceptance, and Heaven is not a personal God for Xunzi (IEP), so authority comes from both and the statement splits.",
+      "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
       "sources": [
         "s2",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mencius 5A5 says Heaven gives the throne but shows its will through the people's acceptance, and Heaven is not a personal God for Xunzi (IEP), so authority comes from both and the statement splits.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-dress-in-state": {
@@ -3247,5 +3271,13 @@
       "declined": "Specific to one doctrine."
     }
   ],
-  "notes": "Searched every theme; most modern statements are null because the classics are silent. Xunzi alone says the state needs punishments for the unreformable and rejects replacement of rulers by the people at will (IEP), so consent answers are low. Mencius-only positions (well-field land system, tax rates, ministers' right to dethrone) are used only where Xunzi or the Analects agree. Many lines will have wide error bars; failure of the uncertainty rule would be an honest result. Citations of Mencius use the standard Book/part number (e.g. 1B8), identified from the Legge text on Wikisource; Xunzi citations use Dubs's book numbers."
+  "notes": "Searched every theme; most modern statements are null because the classics are silent. Xunzi alone says the state needs punishments for the unreformable and rejects replacement of rulers by the people at will (IEP), so consent answers are low. Mencius-only positions (well-field land system, tax rates, ministers' right to dethrone) are used only where Xunzi or the Analects agree. Many lines will have wide error bars; failure of the uncertainty rule would be an honest result. Citations of Mencius use the standard Book/part number (e.g. 1B8), identified from the Legge text on Wikisource; Xunzi citations use Dubs's book numbers.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

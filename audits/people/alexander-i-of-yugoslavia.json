@@ -2368,13 +2368,34 @@
    "sources": []
   },
   "divine-source-of-authority": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "The preamble to his constitution issues it 'by the grace of God and the will of the People', naming both sources.",
+   "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
    "sources": [
     "b6"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "The preamble to his constitution issues it 'by the grace of God and the will of the People', naming both sources.",
+     "sources": [
+      "b6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+     "sources": [
+      "b6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
+   ]
   },
   "religious-dress-in-state": {
    "value": null,
@@ -3363,5 +3384,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
+  }
+ ]
 }

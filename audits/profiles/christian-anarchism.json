@@ -2455,12 +2455,36 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Christian anarchists hold that only God holds legitimate authority and reject the state's claim to it, but they deny that this makes any human government legitimate, so agreement with the statement is qualified.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Christian anarchists hold that only God holds legitimate authority and reject the state's claim to it, but they deny that this makes any human government legitimate, so agreement with the statement is qualified.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (Codex review, 2026-11-10): the statement now asks only whether political authority ultimately comes from God, no longer \"rather than from the people\". This answer weighed divine origin against the people (or treated moral authority as political authority), which the new text no longer sets against each other; its sources need re-reading.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "religious-dress-in-state": {
@@ -3532,6 +3556,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
