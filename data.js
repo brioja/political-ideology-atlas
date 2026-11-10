@@ -31,9 +31,9 @@ const QUESTIONS = [
  {
   "id": "public-ownership",
   "theme": "economy",
-  "text": "Major industries like energy, rail and utilities should be publicly owned.",
-  "agree": "Key industries are run by the state or public bodies instead of private companies.",
-  "disagree": "Major industries like energy, rail and utilities should not be publicly owned.",
+  "text": "Major industries should be publicly owned.",
+  "agree": "Industries such as energy, rail and utilities should be owned by the state or public bodies, not private companies.",
+  "disagree": "Major industries should not be publicly owned.",
   "note": "About whether key industries are run by the state or by private companies.",
   "icon": "🏭"
  },
