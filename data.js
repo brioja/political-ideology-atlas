@@ -544,10 +544,10 @@ const QUESTIONS = [
  {
   "id": "separate-church-state",
   "theme": "society",
-  "text": "Religion and the state should be strictly separated.",
-  "agree": "Religion and government should have nothing to do with each other.",
-  "disagree": "Religion and the state should not be strictly separated.",
-  "note": "About secularism.",
+  "text": "The state should be strictly separate from religion.",
+  "agree": "Government should maintain a strict institutional separation from religion.",
+  "disagree": "The state should not be strictly separate from religion.",
+  "note": "About institutional separation, not whether religious people may hold personal beliefs or participate in public debate.",
   "icon": "🔀"
  },
  {
