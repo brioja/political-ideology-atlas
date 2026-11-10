@@ -41,13 +41,15 @@ if (process.argv.includes("--wording")) {
   for (const s of list) {
     const m = wordingMarks(s.text);
     if (!m.errors.length && !m.warnings.length) continue;
-    const level = m.errors.length ? (s.wordingOk ? "error (explained)" : "ERROR") : "warning";
-    if (m.errors.length && !s.wordingOk) errors++; else warnings++;
+    // "and" is absolute (Brandon, 2026-11-10): a wordingOk explains other error words, never "and".
+    const explained = s.wordingOk && !m.errors.includes("and");
+    const level = m.errors.length ? (explained ? "error (explained)" : "ERROR") : "warning";
+    if (m.errors.length && !explained) errors++; else warnings++;
     const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings]), (w) => `**${w.toUpperCase()}**`);
     console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}${s.wordingOk ? ` (${s.wordingOk})` : ""}`);
   }
   console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}: ` +
-    `reword, or explain in the proposal's "wordingOk"), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
+    `reword, or explain in the proposal's "wordingOk"; "and" can't be explained), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
     `check against test 3 in audits/statements/STANDARD.md: two claims joined, a list where one general word would do, ` +
     `a means instead of a position, a vague scope).`);
   process.exit(0);
