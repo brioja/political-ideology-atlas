@@ -913,11 +913,33 @@
       ]
     },
     "territorial-expansion": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Regional influence-seeking and military operations in Syria and Iraq reflect a maximalist foreign policy.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: the statement now asks about expanding territory only (\"and influence\" was dropped, 2026-11-10). s2 (Yilmaz and Morieson) describes Erdoganism as seeking regional influence and hegemony (neo-Ottoman imperialism, Pax Ottomana, leadership of the ummah) and records no claim to annex or hold territory, so it does not answer this.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Regional influence-seeking and military operations in Syria and Iraq reflect a maximalist foreign policy.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: the statement now asks about expanding territory only (\"and influence\" was dropped, 2026-11-10). s2 (Yilmaz and Morieson) describes Erdoganism as seeking regional influence and hegemony (neo-Ottoman imperialism, Pax Ottomana, leadership of the ummah) and records no claim to annex or hold territory, so it does not answer this.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "personal-loyalty-rule": {
@@ -3790,6 +3812,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]
