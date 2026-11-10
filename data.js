@@ -1219,9 +1219,9 @@ const QUESTIONS = [
  {
   "id": "patriarchy-structural",
   "theme": "society",
-  "text": "Society is organized so as to systematically advantage men over women.",
+  "text": "Society is organized in a way that systematically advantages men over women.",
   "agree": "Laws, institutions and customs still favor men over women.",
-  "disagree": "Society is not organised so as to systematically advantage men over women.",
+  "disagree": "Society is not organized in a way that systematically advantages men over women.",
   "note": "About whether sex-based hierarchy is built into society.",
   "icon": "🏛️"
  },
