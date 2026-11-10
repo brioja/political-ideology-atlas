@@ -208,14 +208,15 @@ const awaitingReaudit = () => {
 
 // Statement wording markers (STANDARD.md test 3). Errors almost always mean a defect: a permission
 // ("can", "may"), two questions ("rather"), a reason ("so", "because") or a comparison ("as well as",
-// "not only"). Warnings are often fine but worth a look: "and"/"or" (a list may be one claim),
+// "not only") or a joined claim ("and": Brandon, 2026-11-10, "I've not yet seen an 'and' apply cleanly"; a list of
+// one claim folds into one general word). Warnings are often fine but worth a look: "or" (a list may be one claim),
 // "like", "by"/"through" (a means, or just who acts: "chosen by voters"), "in" (a vague scope such as
 // "in economic life", or just a place: "in war"), "not" (state the positive position and let an
 // ideology answer -2: "work should be the centre of people's lives", not "work should not be..."), "if"/"unless"/"when"/"whenever"/"while"/"until"/"provided"/"as long as" (a
 // condition is hard to negate: does disagreeing reject the claim or the condition? "while" and "until" added 2026-11-10).
 const WORDING = {
-  errors: ["can", "may", "rather", "so", "because", "as well as", "not only"],
-  warnings: ["and", "or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as"],
+  errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and"],
+  warnings: ["or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as"],
 };
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {

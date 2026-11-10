@@ -11,8 +11,8 @@
 //     Errors almost always mean a defect: "can"/"may" (a permission is almost always trivially true:
 //     "a monarch can be a good ruler"), "rather" ("X rather than Y" asks two things, so a disagree is
 //     ambiguous), "so"/"because" (a reason: the bank asks positions), "as well as"/"not only" (a
-//     comparison slips in a second claim). Warnings are often fine: "and"/"or" (a list of things is
-//     one claim; two claims joined fail), "like", "by"/"through" (a means attached to a goal is hard to
+//     comparison slips in a second claim), "and" (two claims joined, or a list a general word would replace).
+//     Warnings are often fine: "or" (a list of things is one claim; two claims joined fail), "like", "by"/"through" (a means attached to a goal is hard to
 //     negate; a passive "chosen by voters" is fine), "in" (a vague scope: "in economic life"), "not" (state
 //     the positive position instead, where one exists).
 //     Report only; statement-pass.js done refuses unexplained errors.
