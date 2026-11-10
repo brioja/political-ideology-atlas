@@ -267,10 +267,32 @@
     },
     "gradual-change": {
       "value": 1,
-      "confidence": "high",
-      "rationale": "He says the socialisation of investment can be introduced gradually without a break in the traditions of society and that the euthanasia of the rentier needs no revolution.",
+      "confidence": "medium",
+      "rationale": "He says the next step must come from thought, 'not from political agitation or premature experiments', and prefers gradual reform.",
       "sources": [
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "He says the socialisation of investment can be introduced gradually without a break in the traditions of society and that the euthanasia of the rentier needs no revolution.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He says the next step must come from thought, 'not from political agitation or premature experiments', and prefers gradual reform.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3394,11 +3416,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He says the next step must come from thought, 'not from political agitation or premature experiments', and prefers gradual reform.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He says the next step must come from thought, 'not from political agitation or premature experiments', and prefers gradual reform.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3793,5 +3837,13 @@
       "sources": []
     }
   },
-  "notes": "Texts searched: Essays in Persuasion, General Theory, Economic Consequences of the Peace, Means to Prosperity, National Self-Sufficiency and three Lords speeches (1944-45). Themes searched: economy, taxation, trade, money, government form, peace and alliances, sex and drugs, population, technology. Eugenics Society roles were found but his own position on state action is not stated, so those statements stay null. Positions on tariffs and free trade shift between 1925, 1931-33 and 1944-45 and are recorded as mixed. O'Donnell (s9) reports continuity in his political philosophy over time."
+  "notes": "Texts searched: Essays in Persuasion, General Theory, Economic Consequences of the Peace, Means to Prosperity, National Self-Sufficiency and three Lords speeches (1944-45). Themes searched: economy, taxation, trade, money, government form, peace and alliances, sex and drugs, population, technology. Eugenics Society roles were found but his own position on state action is not stated, so those statements stay null. Positions on tariffs and free trade shift between 1925, 1931-33 and 1944-45 and are recorded as mixed. O'Donnell (s9) reports continuity in his political philosophy over time.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

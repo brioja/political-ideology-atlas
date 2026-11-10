@@ -656,8 +656,8 @@
     },
     "gradual-change": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "The movement's statement says it is revolutionary because it is not interested in tinkering with the works of an unjust system.",
+      "confidence": "medium",
+      "rationale": "The movement's statement rejects tinkering with an unjust system and promises that party reforms cannot help.",
       "sources": [
         "s12"
       ],
@@ -681,6 +681,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The movement's statement rejects tinkering with an unjust system and promises that party reforms cannot help.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -9231,11 +9241,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The movement's statement rejects tinkering with an unjust system and promises that party reforms cannot help.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The movement's statement rejects tinkering with an unjust system and promises that party reforms cannot help.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -9715,6 +9747,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 131
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

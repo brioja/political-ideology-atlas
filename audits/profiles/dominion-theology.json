@@ -267,11 +267,33 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 1,
-      "confidence": "low",
-      "rationale": "North wants steady, majority-backed change, but he also wants humanist institutions replaced by biblical ones, so respect for established institutions is only partly shared.",
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "North says dominion religion preaches steady transformation, in contrast to the rapid change and revolution of the power religion (chapter 5 summary).",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "North wants steady, majority-backed change, but he also wants humanist institutions replaced by biblical ones, so respect for established institutions is only partly shared.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "North says dominion religion preaches steady transformation, in contrast to the rapid change and revolution of the power religion (chapter 5 summary).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3389,11 +3411,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "North says dominion religion preaches steady transformation, in contrast to the rapid change and revolution of the power religion (chapter 5 summary).",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "North says dominion religion preaches steady transformation, in contrast to the rapid change and revolution of the power religion (chapter 5 summary).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3793,5 +3837,13 @@
       ]
     }
   ],
-  "notes": "Strands differ: the charismatic and Pentecostal strand is documented here only on the dominion mandate, government control and spiritual warfare, so its positions on economics, family and law enforcement are not recorded. Rushdoony and North reject a clerical state and say comprehensive legal reform needs a voluntary majority, while Saiya reports reconstructionist proposals for death penalties and a Christian franchise from other texts not opened here. Themes searched in North: law, state, economy, family, church, education, welfare, tax, war and revolution; no usable passages were found on immigration, foreign policy, the environment or technology."
+  "notes": "Strands differ: the charismatic and Pentecostal strand is documented here only on the dominion mandate, government control and spiritual warfare, so its positions on economics, family and law enforcement are not recorded. Rushdoony and North reject a clerical state and say comprehensive legal reform needs a voluntary majority, while Saiya reports reconstructionist proposals for death penalties and a Christian franchise from other texts not opened here. Themes searched in North: law, state, economy, family, church, education, welfare, tax, war and revolution; no usable passages were found on immigration, foreign policy, the environment or technology.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

@@ -292,9 +292,31 @@
     "gradual-change": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Théorie Communiste describes the revolution as a rupture, not a gradual extension of demands-based struggle.",
+      "rationale": "Théorie Communiste says that from struggles over demands to revolution there can only be a rupture, a qualitative leap.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Théorie Communiste describes the revolution as a rupture, not a gradual extension of demands-based struggle.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Théorie Communiste says that from struggles over demands to revolution there can only be a rupture, a qualitative leap.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3441,11 +3463,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Théorie Communiste says that from struggles over demands to revolution there can only be a rupture, a qualitative leap.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Théorie Communiste says that from struggles over demands to revolution there can only be a rupture, a qualitative leap.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3890,6 +3934,14 @@
       "name": "communisation",
       "source": "s5",
       "quote": "119 Bruno Astarian, ‘Crisis Activity & Communization’, Mute Magazine (2011), http://www.metamute.org/en/news_and_analysis/crisis_activity_ communisation. Theodor Adorno, Aesthetic Theory, trans. Robert Hullot-Kentor (London: 120 Continuum, 2007), p.55. 121 Ibid. 122 Paulo Virno, ‘The Dismeasure of Art. An Interview with Paolo Virno’"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

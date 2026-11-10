@@ -309,12 +309,36 @@
     },
     "gradual-change": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "Tronti's non-collaboration, Negri's destructuring of capitalist power and Hardt and Negri's insurrection all reject gradual change within established institutions.",
+      "confidence": "medium",
+      "rationale": "Negri ridicules the reformists' 'salami theory' of taking power slice by slice, and Hardt and Negri distinguish their transition from reformist gradualism.",
       "sources": [
-        "s1",
         "s6",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Tronti's non-collaboration, Negri's destructuring of capitalist power and Hardt and Negri's insurrection all reject gradual change within established institutions.",
+          "sources": [
+            "s1",
+            "s6",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Negri ridicules the reformists' 'salami theory' of taking power slice by slice, and Hardt and Negri distinguish their transition from reformist gradualism.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3470,12 +3494,36 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Negri ridicules the reformists' 'salami theory' of taking power slice by slice, and Hardt and Negri distinguish their transition from reformist gradualism.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s6",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Negri ridicules the reformists' 'salami theory' of taking power slice by slice, and Hardt and Negri distinguish their transition from reformist gradualism.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3910,5 +3958,13 @@
       "addedAs": "automate-paid-work"
     }
   ],
-  "notes": "Hardt and Negri's Commonwealth is read as the post-operaist strand and Tronti's 1965 text as the founding one; where they differ from Cleaver (party, transition) the answer is 0 at low. Themes searched: party and union, state, democracy, money and wages, work time and income, housework and gender, race, migration and borders, imperialism and nation, ecology, technology; the sources are silent on ecology policy, religion, culture, courts, police, defence and most social-liberty questions, which stay null. Autonomism (a separate entry) overlaps in subject; this entry is answered from its own sources only."
+  "notes": "Hardt and Negri's Commonwealth is read as the post-operaist strand and Tronti's 1965 text as the founding one; where they differ from Cleaver (party, transition) the answer is 0 at low. Themes searched: party and union, state, democracy, money and wages, work time and income, housework and gender, race, migration and borders, imperialism and nation, ecology, technology; the sources are silent on ecology policy, religion, culture, courts, police, defence and most social-liberty questions, which stay null. Autonomism (a separate entry) overlaps in subject; this entry is answered from its own sources only.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

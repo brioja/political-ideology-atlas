@@ -637,12 +637,36 @@
       "sources": []
     },
     "gradual-change": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "The Manifesto says communist ends can be attained only by forcible overthrow of all existing social conditions, and the Commune text rejects taking over the old state.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Split: communist ends are reached only by the forcible overthrow of existing conditions, yet once in power the proletariat is to wrest capital from the bourgeoisie by degrees through measures that outstrip themselves.",
       "sources": [
         "s4",
-        "s8"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Manifesto says communist ends can be attained only by forcible overthrow of all existing social conditions, and the Commune text rejects taking over the old state.",
+          "sources": [
+            "s4",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Split: communist ends are reached only by the forcible overthrow of existing conditions, yet once in power the proletariat is to wrest capital from the bourgeoisie by degrees through measures that outstrip themselves.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3960,12 +3984,36 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split: communist ends are reached only by the forcible overthrow of existing conditions, yet once in power the proletariat is to wrest capital from the bourgeoisie by degrees through measures that outstrip themselves.",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s4",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Split: communist ends are reached only by the forcible overthrow of existing conditions, yet once in power the proletariat is to wrest capital from the bourgeoisie by degrees through measures that outstrip themselves.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "opposition-only-legal-channels": {
@@ -4544,6 +4592,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 13
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ],
   "passes": [

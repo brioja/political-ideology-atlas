@@ -885,9 +885,31 @@
     "gradual-change": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He rejected slow reform as a sufficient path from capitalism to socialism.",
+      "rationale": "He told Wells that reforms are concessions by which the ruling class preserves its rule, and that social systems cannot change by an imperceptible transition through reforms.",
       "sources": [
-        "materialism"
+        "wells"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He rejected slow reform as a sufficient path from capitalism to socialism.",
+          "sources": [
+            "materialism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He told Wells that reforms are concessions by which the ruling class preserves its rule, and that social systems cannot change by an imperceptible transition through reforms.",
+          "sources": [
+            "wells"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -4606,11 +4628,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He told Wells that reforms are concessions by which the ruling class preserves its rule, and that social systems cannot change by an imperceptible transition through reforms.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "wells"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He told Wells that reforms are concessions by which the ruling class preserves its rule, and that social systems cannot change by an imperceptible transition through reforms.",
+          "sources": [
+            "wells"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "wells"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -5069,6 +5113,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]

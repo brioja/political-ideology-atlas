@@ -268,10 +268,32 @@
     "gradual-change": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Biagini calls Gladstonianism a creed of gradual reform and organic innovation, and Bebbington stresses reverence for customary ways and leaders.",
+      "rationale": "Biagini calls Gladstonianism a creed of gradual reform consistent with the Liberal quest for rational government.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Biagini calls Gladstonianism a creed of gradual reform and organic innovation, and Bebbington stresses reverence for customary ways and leaders.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Biagini calls Gladstonianism a creed of gradual reform consistent with the Liberal quest for rational government.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3416,11 +3438,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Biagini calls Gladstonianism a creed of gradual reform consistent with the Liberal quest for rational government.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Biagini calls Gladstonianism a creed of gradual reform consistent with the Liberal quest for rational government.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3855,5 +3899,13 @@
       ]
     }
   ],
-  "notes": "Searched themes: economy and taxation, church and state, family, local government, Ireland, foreign policy and war, franchise and civil liberty. Technology, ecology, race, gender-identity, and most modern questions are anachronistic and left null. Strands: Biagini and Bebbington stress different emphases (finance and participation against community and communitarianism) but agree on the listed positions; Irish coercion 1881-85 and Egypt 1882 are recorded as tensions."
+  "notes": "Searched themes: economy and taxation, church and state, family, local government, Ireland, foreign policy and war, franchise and civil liberty. Technology, ecology, race, gender-identity, and most modern questions are anachronistic and left null. Strands: Biagini and Bebbington stress different emphases (finance and participation against community and communitarianism) but agree on the listed positions; Irish coercion 1881-85 and Egypt 1882 are recorded as tensions.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

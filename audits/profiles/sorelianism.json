@@ -227,11 +227,33 @@
       "sources": []
     },
     "gradual-change": {
-      "value": -2,
+      "value": -1,
       "confidence": "medium",
-      "rationale": "Sorel contrasts his catastrophic myths, which prepare a combat destroying the existing order, with utopias that only direct minds toward patching up the existing system.",
+      "rationale": "He treats reform legislation as what utopias lead to, and prefers myths that prepare an overthrow, though he does not discuss reform as such at length.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Sorel contrasts his catastrophic myths, which prepare a combat destroying the existing order, with utopias that only direct minds toward patching up the existing system.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He treats reform legislation as what utopias lead to, and prefers myths that prepare an overthrow, though he does not discuss reform as such at length.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3265,11 +3287,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He treats reform legislation as what utopias lead to, and prefers myths that prepare an overthrow, though he does not discuss reform as such at length.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He treats reform legislation as what utopias lead to, and prefers myths that prepare an overthrow, though he does not discuss reform as such at length.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3694,6 +3738,14 @@
       "last": "Sorel",
       "source": "s2",
       "quote": "Miti e utopie della modernità nelle Riflessioni sulla violenza di Georges Sorel | Materiali di Estetica. Terza serie Miti e utopie della modernità nelle Riflessioni"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

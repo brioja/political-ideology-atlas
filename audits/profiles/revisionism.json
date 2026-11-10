@@ -658,10 +658,10 @@
     "gradual-change": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Bernstein's founding claim is that legislation works as 'a systematic force' and liberal institutions need only to be developed further, so that a steady advance is safer than a catastrophe.",
+      "rationale": "Bernstein holds that important periods in the development of nations cannot be leapt over, that legislation works as a systematic force, and that a steady advance offers more security than a catastrophe.",
       "sources": [
-        "s3",
-        "s4"
+        "s8",
+        "s3"
       ],
       "reviewHistory": [
         {
@@ -685,6 +685,17 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Bernstein holds that important periods in the development of nations cannot be leapt over, that legislation works as a systematic force, and that a steady advance offers more security than a catastrophe.",
+          "sources": [
+            "s8",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -7078,12 +7089,36 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Bernstein holds that important periods in the development of nations cannot be leapt over, that legislation works as a systematic force, and that a steady advance offers more security than a catastrophe.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s8",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Bernstein holds that important periods in the development of nations cannot be leapt over, that legislation works as a systematic force, and that a steady advance offers more security than a catastrophe.",
+          "sources": [
+            "s8",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s8",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -7547,6 +7582,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 63
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

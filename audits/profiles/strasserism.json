@@ -621,9 +621,9 @@
       ]
     },
     "gradual-change": {
-      "value": -1,
+      "value": -2,
       "confidence": "medium",
-      "rationale": "The Aufbau calls for revolution, though Germany Tomorrow holds that historical processes need time to ripen and that federations should begin with the minimum.",
+      "rationale": "Gregor Strasser's text in Germany Tomorrow rejects being 'social reformers' who plaster over capitalism's sores, and the Aufbau expects revolution.",
       "sources": [
         "s7"
       ],
@@ -648,6 +648,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Gregor Strasser's text in Germany Tomorrow rejects being 'social reformers' who plaster over capitalism's sores, and the Aufbau expects revolution.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -7841,11 +7851,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Gregor Strasser's text in Germany Tomorrow rejects being 'social reformers' who plaster over capitalism's sores, and the Aufbau expects revolution.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Gregor Strasser's text in Germany Tomorrow rejects being 'social reformers' who plaster over capitalism's sores, and the Aufbau expects revolution.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -8334,6 +8366,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 53
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

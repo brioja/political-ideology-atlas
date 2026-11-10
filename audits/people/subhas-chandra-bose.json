@@ -212,9 +212,31 @@
     "gradual-change": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "At Karachi in 1931 he attacked the Congress for a programme of 'adjustments' between landlord and tenant, capitalist and wage earner, rather than radicalism, and called for revolutionary change.",
+      "rationale": "His 1931 Karachi address rejects a programme of adjustments and calls for organising peasants and workers on a socialistic programme and abolishing caste, not reform by small steps.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "At Karachi in 1931 he attacked the Congress for a programme of 'adjustments' between landlord and tenant, capitalist and wage earner, rather than radicalism, and called for revolutionary change.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His 1931 Karachi address rejects a programme of adjustments and calls for organising peasants and workers on a socialistic programme and abolishing caste, not reform by small steps.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3291,11 +3313,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "His 1931 Karachi address rejects a programme of adjustments and calls for organising peasants and workers on a socialistic programme and abolishing caste, not reform by small steps.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His 1931 Karachi address rejects a programme of adjustments and calls for organising peasants and workers on a socialistic programme and abolishing caste, not reform by small steps.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3681,5 +3725,13 @@
       "sources": []
     }
   },
-  "notes": "Over time: Congress years (1921-40) used non-violent methods and he stated at Haripura (1938) that satyagraha should remain the method; from 1941 to 1945 he worked for armed struggle with Axis help, kept in words and acts for four years, so violence and bloc answers follow that record. His 1934 praise of a communism-fascism synthesis was clarified in 1939. Themes searched: economy, land, labour, society and religion, government and party, foreign alliances, women, language. Searched his own texts for law and order, criminal justice, environment, technology, gender and family, money and trade and found no stated position, so those are null. The Selected Speeches volume was read through keyword searches, not cover to cover. Borrowable books (Netaji Collected Works volumes 5, 9, 10, 11, 12 and Crossroads) were not accessible."
+  "notes": "Over time: Congress years (1921-40) used non-violent methods and he stated at Haripura (1938) that satyagraha should remain the method; from 1941 to 1945 he worked for armed struggle with Axis help, kept in words and acts for four years, so violence and bloc answers follow that record. His 1934 praise of a communism-fascism synthesis was clarified in 1939. Themes searched: economy, land, labour, society and religion, government and party, foreign alliances, women, language. Searched his own texts for law and order, criminal justice, environment, technology, gender and family, money and trade and found no stated position, so those are null. The Selected Speeches volume was read through keyword searches, not cover to cover. Borrowable books (Netaji Collected Works volumes 5, 9, 10, 11, 12 and Crossroads) were not accessible.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

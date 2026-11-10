@@ -781,11 +781,33 @@
   },
   "gradual-change": {
    "value": -2,
-   "confidence": "high",
-   "rationale": "Rejects waiting and reformism; insurrection can itself create the conditions and armed struggle is the main road.",
+   "confidence": "medium",
+   "rationale": "He told the Youth Congress that a government offering timid agrarian reform cannot call itself revolutionary; reform must transform property relations at once.",
    "sources": [
-    "s3",
-    "s5"
+    "s15"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "Rejects waiting and reformism; insurrection can itself create the conditions and armed struggle is the main road.",
+     "sources": [
+      "s3",
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-09"
+    },
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "He told the Youth Congress that a government offering timid agrarian reform cannot call itself revolutionary; reform must transform property relations at once.",
+     "sources": [
+      "s15"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "reduce-immigration": {
@@ -7899,11 +7921,33 @@
    ]
   },
   "small-step-social-reform": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "He told the Youth Congress that a government offering timid agrarian reform cannot call itself revolutionary; reform must transform property relations at once.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
    "sources": [
     "s15"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "He told the Youth Congress that a government offering timid agrarian reform cannot call itself revolutionary; reform must transform property relations at once.",
+     "sources": [
+      "s15"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-09"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+     "sources": [
+      "s15"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "democracy-needs-political-clash": {
@@ -8436,6 +8480,12 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-09",
    "nulled": 123
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }

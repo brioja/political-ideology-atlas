@@ -701,10 +701,9 @@
     "gradual-change": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The Vision says conservative democracy 'favors gradual and phased change over top-down change' and refuses radicalism and social engineering; Çağlıyan-İçener calls gradual, evolutionary change an essential part of the identity.",
+      "rationale": "The Vision describes the party's 'silent revolutions' as resting on 'an understanding of gradual change and societal dynamics'.",
       "sources": [
-        "s5",
-        "s7"
+        "s5"
       ],
       "reviewHistory": [
         {
@@ -727,6 +726,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-08"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Vision describes the party's 'silent revolutions' as resting on 'an understanding of gradual change and societal dynamics'.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -8206,11 +8215,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The Vision describes the party's 'silent revolutions' as resting on 'an understanding of gradual change and societal dynamics'.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Vision describes the party's 'silent revolutions' as resting on 'an understanding of gradual change and societal dynamics'.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-08"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -8643,6 +8674,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-08",
       "nulled": 58
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

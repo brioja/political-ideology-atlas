@@ -239,12 +239,34 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Popper's piecemeal reform is gradual, and he values tradition as a framework of regularity, though he asks for a critical attitude toward it, so respect for institutions is conditional.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Popper advocates altering one social institution at a time and reforming institutions little by little, as the only method of improvement that has succeeded anywhere.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Popper's piecemeal reform is gradual, and he values tradition as a framework of regularity, though he asks for a critical attitude toward it, so respect for institutions is conditional.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Popper advocates altering one social institution at a time and reforming institutions little by little, as the only method of improvement that has succeeded anywhere.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3398,11 +3420,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Popper advocates altering one social institution at a time and reforming institutions little by little, as the only method of improvement that has succeeded anywhere.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Popper advocates altering one social institution at a time and reforming institutions little by little, as the only method of improvement that has succeeded anywhere.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3832,5 +3876,13 @@
       "declined": "A philosophical claim; covered by material-conditions-drive-history."
     }
   ],
-  "notes": "Themes searched in Popper's text, the IEP and the SEP: democracy and tolerance, violence and revolution, economic intervention, welfare and taxation, nationalism and race, war, planning, religion, education, international organisation. Popper writes little on gender, family, immigration, environment, technology, drugs and policing, so those are null. His readings of Plato, Hegel and Marx are contested and are not evidence for those ideologies."
+  "notes": "Themes searched in Popper's text, the IEP and the SEP: democracy and tolerance, violence and revolution, economic intervention, welfare and taxation, nationalism and race, war, planning, religion, education, international organisation. Popper writes little on gender, family, immigration, environment, technology, drugs and policing, so those are null. His readings of Plato, Hegel and Marx are contested and are not evidence for those ideologies.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

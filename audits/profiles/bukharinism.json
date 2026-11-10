@@ -288,10 +288,34 @@
     "gradual-change": {
       "value": 0,
       "confidence": "low",
-      "rationale": "Bean finds him a gradualist who wanted to grow into socialism by market means, yet his programme calls for destroying the bourgeois state by revolution.",
+      "rationale": "Bean reports his gradualism in economic policy, which sits beside a programme of revolutionary overthrow.",
       "sources": [
         "s6",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Bean finds him a gradualist who wanted to grow into socialism by market means, yet his programme calls for destroying the bourgeois state by revolution.",
+          "sources": [
+            "s6",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Bean reports his gradualism in economic policy, which sits beside a programme of revolutionary overthrow.",
+          "sources": [
+            "s6",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3468,12 +3492,36 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Bean reports his gradualism in economic policy, which sits beside a programme of revolutionary overthrow.",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s6",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Bean reports his gradualism in economic policy, which sits beside a programme of revolutionary overthrow.",
+          "sources": [
+            "s6",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s6",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3893,6 +3941,14 @@
       "last": "Bukharin",
       "source": "s6",
       "quote": "Nikolai Bukharin and the New Economic Policy A Middle Way? —————— ✦ —————— JONATHAN J. B EAN ocialists"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

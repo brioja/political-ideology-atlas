@@ -127,21 +127,69 @@
    ]
   },
   "gradual-change": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He said progress must come from constant struggle rather than 'artificial forcing' and judged Reconstruction artificial and forced; the statement's part on institutions is not discussed directly.",
-   "sources": [
-    "s1",
-    "s2"
-   ]
-  },
-  "small-step-social-reform": {
    "value": 1,
    "confidence": "medium",
    "rationale": "His stated method was gradual advance through education, property and character, set against agitation and forcing.",
    "sources": [
     "s1",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "He said progress must come from constant struggle rather than 'artificial forcing' and judged Reconstruction artificial and forced; the statement's part on institutions is not discussed directly.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-06"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His stated method was gradual advance through education, property and character, set against agitation and forcing.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
+   ]
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+   "sources": [
+    "s1",
+    "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His stated method was gradual advance through education, property and character, set against agitation and forcing.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-06"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "widespread-small-property": {
@@ -3651,5 +3699,13 @@
    "sources": []
   }
  },
- "notes": "Deepening searched government (franchise, courts, parties, patronage), world (Africa, Congo, Europe, Spanish war), religion, labour and unions, property, taxation, education funding, gender and suffrage, immigration, and violence/lynching in his nine Gutenberg books and the NPS record; the record is about race, education and self-help, so most dividing lines stay unreached and failing the uncertainty rule is the honest result. Searched local Gutenberg texts of Washington's books for every theme (economy, government, society, world, liberty, ecology, technology, means); most statements fall outside his writing and stay null. Words on segregation are left out where the record (secret litigation) answers. Woman suffrage letters (Binghamton collection) were not available in full text, so that statement is null."
+ "notes": "Deepening searched government (franchise, courts, parties, patronage), world (Africa, Congo, Europe, Spanish war), religion, labour and unions, property, taxation, education funding, gender and suffrage, immigration, and violence/lynching in his nine Gutenberg books and the NPS record; the record is about race, education and self-help, so most dividing lines stay unreached and failing the uncertainty rule is the honest result. Searched local Gutenberg texts of Washington's books for every theme (economy, government, society, world, liberty, ecology, technology, means); most statements fall outside his writing and stay null. Words on segregation are left out where the record (secret litigation) answers. Woman suffrage letters (Binghamton collection) were not available in full text, so that statement is null.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
+  }
+ ]
 }

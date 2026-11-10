@@ -702,10 +702,9 @@
     "gradual-change": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "The Nest Leader's Manual calls for 'an entire people's great revolution of mind' and a 'forceful offensive', and Codreanu says a real elite 'is born out of a war with the degenerate elite' (For My Legionaries).",
+      "rationale": "The Manual says the new state cannot be built with 'old people' and needs a whole people's 'great revolution of mind', not piecemeal reform.",
       "sources": [
-        "s10",
-        "s2"
+        "s10"
       ],
       "reviewHistory": [
         {
@@ -728,6 +727,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Manual says the new state cannot be built with 'old people' and needs a whole people's 'great revolution of mind', not piecemeal reform.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -7856,11 +7865,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Manual says the new state cannot be built with 'old people' and needs a whole people's 'great revolution of mind', not piecemeal reform.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Manual says the new state cannot be built with 'old people' and needs a whole people's 'great revolution of mind', not piecemeal reform.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -8313,6 +8344,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 97
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

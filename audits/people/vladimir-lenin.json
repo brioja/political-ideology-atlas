@@ -928,11 +928,33 @@
       "sources": []
     },
     "gradual-change": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "His 1917 programme says only a proletarian socialist revolution can lead humanity out of the impasse of imperialism and makes the conquest of power the task of the day.",
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "He called reformism, which restricts the working class to winning reforms, a bourgeois deception of the workers.",
       "sources": [
-        "prog1917"
+        "reformism"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His 1917 programme says only a proletarian socialist revolution can lead humanity out of the impasse of imperialism and makes the conquest of power the task of the day.",
+          "sources": [
+            "prog1917"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He called reformism, which restricts the working class to winning reforms, a bourgeois deception of the workers.",
+          "sources": [
+            "reformism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -4815,11 +4837,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He called reformism, which restricts the working class to winning reforms, a bourgeois deception of the workers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "reformism"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He called reformism, which restricts the working class to winning reforms, a bourgeois deception of the workers.",
+          "sources": [
+            "reformism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "reformism"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -5278,6 +5322,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
       "nulled": 1
     }
   ]

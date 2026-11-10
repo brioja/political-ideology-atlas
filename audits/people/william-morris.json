@@ -364,11 +364,35 @@
     },
     "gradual-change": {
       "value": -1,
-      "confidence": "medium",
-      "rationale": "He insisted on the word revolution, a change in the basis of society, and rejected concealing the aim by 'little and little' steps.",
+      "confidence": "low",
+      "rationale": "He welcomed some reforms as machinery of socialism but called them palliatives and wanted a great change, not a small one.",
       "sources": [
-        "s16",
+        "s14",
         "s15"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He insisted on the word revolution, a change in the basis of society, and rejected concealing the aim by 'little and little' steps.",
+          "sources": [
+            "s16",
+            "s15"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "He welcomed some reforms as machinery of socialism but called them palliatives and wanted a great change, not a small one.",
+          "sources": [
+            "s14",
+            "s15"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3606,12 +3630,36 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He welcomed some reforms as machinery of socialism but called them palliatives and wanted a great change, not a small one.",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s14",
         "s15"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "He welcomed some reforms as machinery of socialism but called them palliatives and wanted a great change, not a small one.",
+          "sources": [
+            "s14",
+            "s15"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s14",
+            "s15"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -4013,5 +4061,13 @@
       "sources": []
     }
   },
-  "notes": "Based on the Gutenberg texts of News from Nowhere, Signs of Change and Hopes and Fears for Art and on Morris's lectures and Commonweal articles at marxists.org (1882-1893). Themes searched: economy and property, state and parliament, law and punishment, marriage and sex, religion, nations, empire, Ireland, war, work and machinery, towns and country, art and ancient buildings, education, trade unions, violence and revolution, anarchism, immigration, animals, technology, ecology. He wrote almost nothing on policing detail, healthcare, immigration policy, drugs, guns, race, gender identity, central banking or tax rates, so those are null. He left the Socialist League in 1890 and later supported the Hammersmith Socialist Society; his core positions were stable across 1884-1893. News from Nowhere is a utopian romance and counts as his stated vision, at medium confidence where nothing else backs it."
+  "notes": "Based on the Gutenberg texts of News from Nowhere, Signs of Change and Hopes and Fears for Art and on Morris's lectures and Commonweal articles at marxists.org (1882-1893). Themes searched: economy and property, state and parliament, law and punishment, marriage and sex, religion, nations, empire, Ireland, war, work and machinery, towns and country, art and ancient buildings, education, trade unions, violence and revolution, anarchism, immigration, animals, technology, ecology. He wrote almost nothing on policing detail, healthcare, immigration policy, drugs, guns, race, gender identity, central banking or tax rates, so those are null. He left the Socialist League in 1890 and later supported the Hammersmith Socialist Society; his core positions were stable across 1884-1893. News from Nowhere is a utopian romance and counts as his stated vision, at medium confidence where nothing else backs it.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }

@@ -3847,11 +3847,33 @@
    ]
   },
   "small-step-social-reform": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The Transitional Program declares war on \"reformism without reforms\" and holds that decaying capitalism leaves no room for gradual reform, only transitional demands leading to revolution.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
    "sources": [
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "The Transitional Program declares war on \"reformism without reforms\" and holds that decaying capitalism leaves no room for gradual reform, only transitional demands leading to revolution.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-10"
+    }
    ]
   },
   "democracy-needs-political-clash": {
@@ -4305,6 +4327,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-10",
+   "nulled": 1
   }
  ]
 }

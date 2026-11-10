@@ -909,12 +909,11 @@
       "sources": []
     },
     "gradual-change": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The defining sources describe social change by gradual, incremental reform within parliamentary institutions; they do not present respect for established institutions as such as a value, so the agreement is partial.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Brandal, Bratberg and Thorsen take as a core lesson of Nordic social democracy that it has no utopian end point, only incremental improvements and gradual reform, with methods changing as the world changes.",
       "sources": [
-        "s10",
-        "s5"
+        "s10"
       ],
       "reviewHistory": [
         {
@@ -938,6 +937,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-07"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Brandal, Bratberg and Thorsen take as a core lesson of Nordic social democracy that it has no utopian end point, only incremental improvements and gradual reform, with methods changing as the world changes.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -13502,11 +13511,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Brandal, Bratberg and Thorsen take as a core lesson of Nordic social democracy that it has no utopian end point, only incremental improvements and gradual reform, with methods changing as the world changes.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Brandal, Bratberg and Thorsen take as a core lesson of Nordic social democracy that it has no utopian end point, only incremental improvements and gradual reform, with methods changing as the world changes.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -13939,6 +13970,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-07",
       "nulled": 371
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

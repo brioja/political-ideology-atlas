@@ -645,9 +645,31 @@
     "gradual-change": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "He defended constitutional safeguards and deliberation before substantial institutional change.",
+      "rationale": "He said Conservatives did not seek \"to pull down improvidently the structures of society\" but to add safeguards step by step, citing his own unemployment insurance and pension measures.",
       "sources": [
-        "democracy"
+        "conservative"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He defended constitutional safeguards and deliberation before substantial institutional change.",
+          "sources": [
+            "democracy"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He said Conservatives did not seek \"to pull down improvidently the structures of society\" but to add safeguards step by step, citing his own unemployment insurance and pension measures.",
+          "sources": [
+            "conservative"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -4040,11 +4062,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He said Conservatives did not seek \"to pull down improvidently the structures of society\" but to add safeguards step by step, citing his own unemployment insurance and pension measures.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "conservative"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He said Conservatives did not seek \"to pull down improvidently the structures of society\" but to add safeguards step by step, citing his own unemployment insurance and pension measures.",
+          "sources": [
+            "conservative"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "conservative"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -4477,6 +4521,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     },
     {
       "kind": "nulling",

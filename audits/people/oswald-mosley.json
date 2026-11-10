@@ -328,11 +328,33 @@
     },
     "gradual-change": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "Demanded a 'revolution in the machinery of government' (Hansard, 1930) and a dynamic transition to a new civilisation, rejecting the static and the gradual.",
+      "confidence": "medium",
+      "rationale": "His long-held contention was that 'great things can only be done in a great way', and he rejected piecemeal change.",
       "sources": [
-        "s5",
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Demanded a 'revolution in the machinery of government' (Hansard, 1930) and a dynamic transition to a new civilisation, rejecting the static and the gradual.",
+          "sources": [
+            "s5",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His long-held contention was that 'great things can only be done in a great way', and he rejected piecemeal change.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -4104,11 +4126,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "His long-held contention was that 'great things can only be done in a great way', and he rejected piecemeal change.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "His long-held contention was that 'great things can only be done in a great way', and he rejected piecemeal change.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -4555,6 +4599,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 10
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

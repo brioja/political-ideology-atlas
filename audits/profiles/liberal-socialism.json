@@ -595,10 +595,9 @@
     "gradual-change": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Rosselli says socialisation can come only gradually, step by step, and Calogero asks that reforms go no faster than their durability allows; Mill wants socialist ideas tried by experiment rather than imposed at a stroke.",
+      "rationale": "Rosselli wants socialisation reached gradually, by mediated steps, and Mill wants changes tried first on a small experimental scale.",
       "sources": [
         "s5",
-        "s6",
         "s9"
       ],
       "reviewHistory": [
@@ -624,6 +623,17 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Rosselli wants socialisation reached gradually, by mediated steps, and Mill wants changes tried first on a small experimental scale.",
+          "sources": [
+            "s5",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -8064,12 +8074,36 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Rosselli wants socialisation reached gradually, by mediated steps, and Mill wants changes tried first on a small experimental scale.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s5",
         "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Rosselli wants socialisation reached gradually, by mediated steps, and Mill wants changes tried first on a small experimental scale.",
+          "sources": [
+            "s5",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s5",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -8537,6 +8571,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 94
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

@@ -817,10 +817,9 @@
     "gradual-change": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "The Cartilha 'does not believe in fragmentary solutions' to the social question, and Barroso calls for the complete, integral transformation of Brazilian society.",
+      "rationale": "The Cartilha rejects partial solutions to the social question and asks for a radical revision of codes and a modification of the whole structure of the state.",
       "sources": [
-        "s8",
-        "s13"
+        "s8"
       ],
       "reviewHistory": [
         {
@@ -844,6 +843,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-09"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Cartilha rejects partial solutions to the social question and asks for a radical revision of codes and a modification of the whole structure of the state.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
         }
       ]
     },
@@ -8935,11 +8944,33 @@
       "sources": []
     },
     "small-step-social-reform": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Cartilha rejects partial solutions to the social question and asks for a radical revision of codes and a modification of the whole structure of the state.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Cartilha rejects partial solutions to the social question and asks for a radical revision of codes and a modification of the whole structure of the state.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -9429,6 +9460,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 98
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

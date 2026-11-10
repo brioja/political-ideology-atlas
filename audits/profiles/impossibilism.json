@@ -245,10 +245,36 @@
     "gradual-change": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "The Declaration and the WSM reject the 'tamed by reforms' road and call for the immediate, democratic replacement of capitalism, not gradual change.",
+      "rationale": "The SPGB holds that reform steps leave capitalism's basis untouched and works only for the immediate establishment of socialism.",
       "sources": [
         "s1",
-        "s3"
+        "s3",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Declaration and the WSM reject the 'tamed by reforms' road and call for the immediate, democratic replacement of capitalism, not gradual change.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The SPGB holds that reform steps leave capitalism's basis untouched and works only for the immediate establishment of socialism.",
+          "sources": [
+            "s1",
+            "s3",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "reduce-immigration": {
@@ -3390,13 +3416,39 @@
       ]
     },
     "small-step-social-reform": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The SPGB holds that reform steps leave capitalism's basis untouched and works only for the immediate establishment of socialism.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1",
         "s3",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The SPGB holds that reform steps leave capitalism's basis untouched and works only for the immediate establishment of socialism.",
+          "sources": [
+            "s1",
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1",
+            "s3",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "democracy-needs-political-clash": {
@@ -3802,6 +3854,14 @@
       "last": "Lawrence",
       "source": "s5",
       "quote": "PrinciEles EXElained, p.22. 57 The German Ideology by Karl Marx and Friedrich Engels (Lawrence and Wishart, London, 1970) p.56. 58 Socialist Principles Explained, p.21. 59 guestions"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
     }
   ]
 }

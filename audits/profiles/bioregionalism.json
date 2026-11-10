@@ -324,11 +324,33 @@
       ]
     },
     "small-step-social-reform": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Sale names gradualism a virtue of bioregionalism, with change steady and slow, not by revolutionary decree or legislative fiat.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Sale names gradualism a virtue of bioregionalism, with change steady and slow, not by revolutionary decree or legislative fiat.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: this id now asks whether social change should respect established institutions (reused 2026-11-10); this answer was to its earlier text, \"Social reform should proceed in small steps.\", and moved to gradual-change, which now has that text.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "left-right-obsolete": {
@@ -473,10 +495,32 @@
     "gradual-change": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Sale names gradualism a virtue of bioregionalism and Aberley describes resistance and renewal carried on within and alongside existing power structures.",
+      "rationale": "Sale names gradualism a virtue of bioregionalism, with change steady and slow, not by revolutionary decree or legislative fiat.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Sale names gradualism a virtue of bioregionalism and Aberley describes resistance and renewal carried on within and alongside existing power structures.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Sale names gradualism a virtue of bioregionalism, with change steady and slow, not by revolutionary decree or legislative fiat.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-10"
+        }
       ]
     },
     "universal-healthcare": {
@@ -3763,5 +3807,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Sale accepts any political system a region may choose, while Aberley's tenets call for democratic, participatory governance; this is why democracy answers are 0 at low. Silence on most statements is genuine: the movement rarely addresses welfare, taxes, social policy or foreign relations."
+  "notes": "Sale accepts any political system a region may choose, while Aberley's tenets call for democratic, participatory governance; this is why democracy answers are 0 at low. Silence on most statements is genuine: the movement rarely addresses welfare, taxes, social policy or foreign relations.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-10",
+      "nulled": 1
+    }
+  ]
 }
