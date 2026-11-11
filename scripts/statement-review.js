@@ -5,7 +5,7 @@
 // check and has no review yet. A reviewer (Codex, following audits/PROMPT_STATEMENT_REVIEW.md) answers each
 // brief in scratchpad/statement-review/<id>-results.md; nothing here edits statements.json or any audit, and the
 // maintainer decides which proposals to apply.
-//   node scripts/statement-review.js next [--warnings]   write the next brief, print its path (or "none")
+//   node scripts/statement-review.js next   write the next brief, print its path (or "none")
 //   node scripts/statement-review.js list   print the queue (errors first, then warnings, each in quiz order), reviewed ones marked
 //   --warnings also takes statements with wording warnings only (default: errors only)
 //   --id <id>: write the brief for that statement, reviewed or not
@@ -194,5 +194,5 @@ if (ONE) {
   fs.writeFileSync(f, brief(next.step, next.s));
   console.log(path.relative(ROOT, f));
 } else {
-  console.log("usage: node scripts/statement-review.js next|list [--warnings] | --id <id>");
+  console.log("usage: node scripts/statement-review.js next|list | --id <id>");
 }
