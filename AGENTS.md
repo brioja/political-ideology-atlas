@@ -62,9 +62,9 @@ agents too. This file adds what matters when running the audit workflows in
 
 - Check `git status`. Agents sometimes leave files uncommitted (often
   `audits/statements/texts.json`) or skip a rebuild because of someone else's uncommitted work.
-- Check the report for audits that weren't produced, failed tests, new `notAnIdeology` records and
-  new uncertainty exclusions. Judgment calls (an exclusion that looks wrong) go to the
-  maintainer rather than being fixed silently.
+- Check the report for audits that weren't produced, failed tests and new `notAnIdeology` records.
+  Judgment calls go to the maintainer rather than being fixed silently. Who the uncertainty rule
+  includes or excludes is not one: it follows from the data, so shifts are never flagged.
 - Don't pad rationales by script. `validate.js` rejects high-confidence answers that share a
   rationale; a stock phrase is at most medium confidence.
 - Promote a candidate once it carries signal on the real lines (test 2 in
