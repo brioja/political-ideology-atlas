@@ -29,7 +29,8 @@ A statement is **asked in the test** only when it meets all four:
      case or the circumstances".
    - **Not relative to the status quo.** It states a position, not "more" or "less" than now, which
      means different things in different countries ("the minimum wage should be raised"). The wording
-     check marks "cut", "reduce", "raise", "increase", "expand" and "lower" as warnings for this.
+     check marks "cut", "reduce", "raise", "increase", "expand" and "lower" as warnings for this, and
+     "more", "less" or "fewer" with no "than" after them ("rather than" doesn't count).
    - **General.** It doesn't name an ideology, party or movement, and isn't so local that only one
      country's politics could take a side ("public transport on the Sabbath").
    - **A general word, not a list.** "Objects that people worship", not "statues, shrines and
