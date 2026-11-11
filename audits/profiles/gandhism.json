@@ -1544,11 +1544,33 @@
       "sources": []
     },
     "land-redistribution": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Gandhi said the land a peasant cultivates should come to belong to him, but only through nonviolence and not by forcing zamindars, who could become trustees (Selections paras 307, 306).",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale limits the transfer to nonviolent means without forcing the landlords, who may remain trustees, so the sources cited here do not support transfer against the owners' wishes.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Gandhi said the land a peasant cultivates should come to belong to him, but only through nonviolence and not by forcing zamindars, who could become trustees (Selections paras 307, 306).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale limits the transfer to nonviolent means without forcing the landlords, who may remain trustees, so the sources cited here do not support transfer against the owners' wishes.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "refugee-return": {
@@ -3965,5 +3987,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Gandhi's statements are mostly answered from his own writings; Selections is an editor's arrangement of original periodical passages, cited by its paragraph numbers. Strands: his texts permit violence over cowardice (political-violence-never kept at +1), and keep ideal and practice apart on the State and on armed forces (low). The later Gandhian formulation of an income cap (museum formula, 1952) is a successor's wording, so maximum-personal-income rests on his equal-wage and regulated-commission remarks. Death penalty, cow-slaughter law, abortion and most technology, immigration, treaties and foreign policy questions are null because no passage in the local library settles them. The two candidate statements proposed in the statement pass, physical-labour-duty and civil-disobedience-accept-penalty, are already in the bank and are answered. Themes searched: economy, state and democracy, war and nonviolence, religion and state, women and marriage, education and language, animals, labour."
+  "notes": "Gandhi's statements are mostly answered from his own writings; Selections is an editor's arrangement of original periodical passages, cited by its paragraph numbers. Strands: his texts permit violence over cowardice (political-violence-never kept at +1), and keep ideal and practice apart on the State and on armed forces (low). The later Gandhian formulation of an income cap (museum formula, 1952) is a successor's wording, so maximum-personal-income rests on his equal-wage and regulated-commission remarks. Death penalty, cow-slaughter law, abortion and most technology, immigration, treaties and foreign policy questions are null because no passage in the local library settles them. The two candidate statements proposed in the statement pass, physical-labour-duty and civil-disobedience-accept-penalty, are already in the bank and are answered. Themes searched: economy, state and democracy, war and nonviolence, religion and state, women and marriage, education and language, animals, labour.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

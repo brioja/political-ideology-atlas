@@ -3180,12 +3180,36 @@
       ]
     },
     "smash-state-machine": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Neo-Ba'athists took power by coup and rebuilt the state around the party, army and security services, but kept the existing state apparatus in use.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale says the movement kept the existing state apparatus in use, so the sources cited here do not support replacing the state's institutions.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Neo-Ba'athists took power by coup and rebuilt the state around the party, army and security services, but kept the existing state apparatus in use.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale says the movement kept the existing state apparatus in use, so the sources cited here do not support replacing the state's institutions.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "free-economic-experiment": {
@@ -3695,6 +3719,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }
