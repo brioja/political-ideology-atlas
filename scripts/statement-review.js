@@ -7,7 +7,6 @@
 // maintainer decides which proposals to apply.
 //   node scripts/statement-review.js next   write the next brief, print its path (or "none")
 //   node scripts/statement-review.js list   print the queue (errors first, then warnings, each in quiz order), reviewed ones marked
-//   --warnings also takes statements with wording warnings only (default: errors only)
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
