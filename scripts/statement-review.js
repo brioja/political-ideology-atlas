@@ -54,7 +54,8 @@ const proposalFails = (id) => { const t = proposedText(id); return !t || wording
 const reviewed = (id) => fs.existsSync(resultsFile(id)) && !proposalFails(id);
 
 function queue() {
-  return quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && fails(x.s));
+  // A statement the maintainer sent for review (a <id>-maintainer.md note) is queued even when its wording passes.
+  return quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && (fails(x.s) || fs.existsSync(maintainerFile(x.s.id))));
 }
 
 // Every audit's answer to one statement, with the subject's id and kind.
