@@ -230,12 +230,36 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "In Napoleonic Ideas he saw in monarchy no divine right but valued the hereditary principle as a guarantee of a nation's integrity; he made the Empire hereditary in 1852 with his own plebiscite.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
    "sources": [
     "s1",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "In Napoleonic Ideas he saw in monarchy no divine right but valued the hereditary principle as a guarantee of a nation's integrity; he made the Empire hereditary in 1852 with his own plebiscite.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+     "sources": [
+      "s1",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -2327,10 +2351,14 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found in the sources reviewed.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "In Napoleonic Ideas he saw in monarchy no divine right but valued the hereditary principle as a guarantee of a nation's integrity; he made the Empire hereditary in 1852 with his own plebiscite. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+   "sources": [
+    "s1",
+    "s2"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3209,5 +3237,13 @@
    "sources": []
   }
  },
- "notes": "Historical figure, died 1873. Answers rest on his own writings and speeches, and on measures he personally drove (the 1860 tariff treaty, the 1851 coup, the 1852 decree, the 1864 coalitions law); laws passed by ministers or the legislature are not counted. His views shifted from the social-reform pamphlets of the 1840s towards authoritarian rule in the 1850s and liberalisation in the 1860s."
+ "notes": "Historical figure, died 1873. Answers rest on his own writings and speeches, and on measures he personally drove (the 1860 tariff treaty, the 1851 coup, the 1852 decree, the 1864 coalitions law); laws passed by ministers or the legislature are not counted. His views shifted from the social-reform pamphlets of the 1840s towards authoritarian rule in the 1850s and liberalisation in the 1860s.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

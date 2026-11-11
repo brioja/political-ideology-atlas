@@ -380,12 +380,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "More served Henry VII's and Henry VIII's governments to the end of his life as a royal councillor and Chancellor; his epigrams distinguish good kings from tyrants and leave the choice between hereditary monarchy and a senate open.",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s6",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "More served Henry VII's and Henry VIII's governments to the end of his life as a royal councillor and Chancellor; his epigrams distinguish good kings from tyrants and leave the choice between hereditary monarchy and a senate open.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s6",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2161,10 +2185,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found in the sources consulted.",
-      "sources": []
+      "rationale": "More served Henry VII's and Henry VIII's governments to the end of his life as a royal councillor and Chancellor; his epigrams distinguish good kings from tyrants and leave the choice between hereditary monarchy and a senate open. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s6",
+        "s7"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3672,5 +3700,13 @@
       "sources": []
     }
   },
-  "notes": "Mature position: the 1529-1535 polemical works and his conduct as Chancellor and prisoner. Utopia (1516) is left out of the answers: the narrator, More's namesake, disagrees with much of it and scholars give no agreed reading (SEP). Themes searched in the local texts (Dialogue Concerning Heresies, Debellation, Dialogue of Comfort, Utopia, trial report): heresy and church-state relations, resistance to the Turk, divorce and marriage, charity and wealth, Parliament, conscience and obedience, usury, enclosure, sodomy, vernacular Bible. Economy, ecology, technology, globalism and most government statements have no stated position of More's own in those sources. Not read in full: the Confutation of Tyndale's Answer, the Apology, Richard III, the epigrams and the letters."
+  "notes": "Mature position: the 1529-1535 polemical works and his conduct as Chancellor and prisoner. Utopia (1516) is left out of the answers: the narrator, More's namesake, disagrees with much of it and scholars give no agreed reading (SEP). Themes searched in the local texts (Dialogue Concerning Heresies, Debellation, Dialogue of Comfort, Utopia, trial report): heresy and church-state relations, resistance to the Turk, divorce and marriage, charity and wealth, Parliament, conscience and obedience, usury, enclosure, sodomy, vernacular Bible. Economy, ecology, technology, globalism and most government statements have no stated position of More's own in those sources. Not read in full: the Confutation of Tyndale's Answer, the Apology, Richard III, the epigrams and the letters.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

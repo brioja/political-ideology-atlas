@@ -488,11 +488,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Legitimacy rests on free deliberation among equals, so a hereditary monarch cannot be legitimate on that basis, though a figurehead in a democracy is not condemned.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Legitimacy rests on free deliberation among equals, so a hereditary monarch cannot be legitimate on that basis, though a figurehead in a democracy is not condemned.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2462,10 +2484,13 @@
       ]
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Legitimacy rests on free deliberation among equals, so a hereditary monarch cannot be legitimate on that basis, though a figurehead in a democracy is not condemned. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3569,6 +3594,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

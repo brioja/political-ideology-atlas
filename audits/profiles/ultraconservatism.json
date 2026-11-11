@@ -403,12 +403,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Maistre's essay opens by calling hereditary monarchy the most stable, happiest and most natural government, and the Restoration ultras were the Bourbon dynasty's most intransigent partisans.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Maistre's essay opens by calling hereditary monarchy the most stable, happiest and most natural government, and the Restoration ultras were the Bourbon dynasty's most intransigent partisans.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2164,10 +2188,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "The sources record no ultraconservative position on this question, and no stated principle bears on it.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Maistre's essay opens by calling hereditary monarchy the most stable, happiest and most natural government, and the Restoration ultras were the Bourbon dynasty's most intransigent partisans. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3662,5 +3690,13 @@
   },
   "missingStatements": [],
   "notes": "Most statements are null because the sources record no position and the label covers many unrelated modern uses. Themes searched in the local library: government, society, means; economy, ecology, technology and world are unsupported. The record answers (budget, indirect election) rest on one early-Restoration period, hence medium. 2026-11-05 (Brandon): 8 answers resting only on sources that never discuss Ultraconservatism (borrowing: Essay on the Generative Principle of Political Constitutions; Conservatism) were cleared to null.",
-  "aliases": []
+  "aliases": [],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

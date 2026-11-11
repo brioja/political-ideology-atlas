@@ -313,11 +313,33 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Ruled as hereditary emperor for 44 years; his constitution vests all sovereignty in the Emperor and attaches the imperial dignity perpetually to his line.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Ruled as hereditary emperor for 44 years; his constitution vests all sovereignty in the Emperor and attaches the imperial dignity perpetually to his line.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "sacred-ruler": {
@@ -3408,5 +3430,13 @@
    "sources": []
   }
  },
- "notes": "Evidence is his own constitution, speeches and interviews and the record of his rule; Rastafari beliefs about him are not his positions. The imperial press translations of speeches are hosted on Wikisource and cited as mirrors of the originals. Not available: his autobiography 'My Life and Ethiopia's Progress' (archive.org lending copy only, borrow-restricted), the 1931 constitution full text, and his land-reform and Eritrea 1962 speeches, so land redistribution and Eritrean self-determination rest on scholarly accounts or are null. The 1955 constitution is treated as his own measure (he states he prepared it; the Library of Congress study says Parliament played no part in drawing it up), but its rights chapter is weighed against the record that the guarantees were largely unrealised. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means. Most economy (taxes, welfare, labour, housing), personal-liberty (drugs, sex, guns), gender and identity, ideology-specific and technology statements are null because he said nothing on them in the sources reached."
+ "notes": "Evidence is his own constitution, speeches and interviews and the record of his rule; Rastafari beliefs about him are not his positions. The imperial press translations of speeches are hosted on Wikisource and cited as mirrors of the originals. Not available: his autobiography 'My Life and Ethiopia's Progress' (archive.org lending copy only, borrow-restricted), the 1931 constitution full text, and his land-reform and Eritrea 1962 speeches, so land redistribution and Eritrean self-determination rest on scholarly accounts or are null. The 1955 constitution is treated as his own measure (he states he prepared it; the Library of Congress study says Parliament played no part in drawing it up), but its rights chapter is weighed against the record that the guarantees were largely unrealised. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means. Most economy (taxes, welfare, labour, housing), personal-liberty (drugs, sex, guns), gender and identity, ideology-specific and technology statements are null because he said nothing on them in the sources reached.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

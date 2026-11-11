@@ -405,11 +405,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The letter addresses the Orthodox tsar, whose predecessors he descends from, as the only true Christian ruler under the sky, selected by God.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The letter addresses the Orthodox tsar, whose predecessors he descends from, as the only true Christian ruler under the sky, selected by God.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3665,5 +3687,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Only 8 of 592 statements have a stated position: the doctrine is a short religious-political formula, and the sources opened (the translated excerpt, Encyclopedia of Ukraine, Arzamas's summary of Poe, Goldfrank in the Encyclopedia of Russian History) cover rulers, church, faith and the ruler's duties only. Themes searched without finding a position: economy, civil liberties, foreign policy and war, government structure, technology, ecology, gender and family. The second letter, which reportedly urges suppressing homosexuality, is not in the excerpt opened and its authorship is doubtful, so it is not used. No position was proposed as a missing statement because the doctrine's own claim (the last state of the true faith) appears in only one primary place."
+  "notes": "Only 8 of 592 statements have a stated position: the doctrine is a short religious-political formula, and the sources opened (the translated excerpt, Encyclopedia of Ukraine, Arzamas's summary of Poe, Goldfrank in the Encyclopedia of Russian History) cover rulers, church, faith and the ruler's duties only. Themes searched without finding a position: economy, civil liberties, foreign policy and war, government structure, technology, ecology, gender and family. The second letter, which reportedly urges suppressing homosexuality, is not in the excerpt opened and its authorship is doubtful, so it is not used. No position was proposed as a missing statement because the doctrine's own claim (the last state of the true faith) appears in only one primary place.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

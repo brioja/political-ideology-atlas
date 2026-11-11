@@ -394,12 +394,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He governs and issues charters as hereditary king, pursuing a royal rather than elective succession settlement.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s2",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He governs and issues charters as hereditary king, pursuing a royal rather than elective succession settlement.",
+          "sources": [
+            "s2",
+            "s6"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s2",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3052,5 +3076,13 @@
       "sources": []
     }
   },
-  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed, including thin society, ecology, technology and economic-policy themes. Complete scholarly chapters and the succession-document volume were downloaded and searched; surviving acts were checked through the charter calendar and a quoted burgh charter. The main RPS database returned an unavailable page, although its historical introduction remained readable through the web reader. Parliamentary refusals and concessions obtained under pressure are not automatically attributed as David’s constitutional ideals. Noble land confiscation does not establish redistribution to peasants; customs duties raised for revenue do not establish industrial protectionism. Royal anointing and personal piety do not alone establish divine descent or scriptural legislation. Later guild regulations are excluded. Scholarly conjectures about assassinations and possible final diplomatic reversals are not recorded as certain personal acts. Inclusion failure is retained if necessary."
+  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed, including thin society, ecology, technology and economic-policy themes. Complete scholarly chapters and the succession-document volume were downloaded and searched; surviving acts were checked through the charter calendar and a quoted burgh charter. The main RPS database returned an unavailable page, although its historical introduction remained readable through the web reader. Parliamentary refusals and concessions obtained under pressure are not automatically attributed as David’s constitutional ideals. Noble land confiscation does not establish redistribution to peasants; customs duties raised for revenue do not establish industrial protectionism. Royal anointing and personal piety do not alone establish divine descent or scriptural legislation. Later guild regulations are excluded. Scholarly conjectures about assassinations and possible final diplomatic reversals are not recorded as certain personal acts. Inclusion failure is retained if necessary.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

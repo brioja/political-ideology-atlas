@@ -554,11 +554,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Says that if government is small the form hardly matters, citing the monarchy of Liechtenstein as one nobody seeks to overthrow.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Says that if government is small the form hardly matters, citing the monarchy of Liechtenstein as one nobody seeks to overthrow.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -4045,5 +4067,13 @@
       ]
     }
   },
-  "notes": "Pilot under the 2026-11-05 rules: every statement in statements.json was answered, candidates included (null where no position was found). Searched: his six books in the local reference corpus (full text searched by keyword and, for Liberty Defined, chapter by chapter), his House floor speeches and extensions of remarks (Congressional Record, GovInfo, local congress corpus), and his House roll calls (local Voteview dataset). Themes searched: economy (taxes, money, Fed, welfare, labor, trade, health, education), government (Constitution, war powers, federalism, executive power, term limits, elections, direct democracy, secession), world (UN, NATO, alliances, aid, sanctions, interventions, trade agreements, Israel), liberty (drugs, guns, surveillance, civil liberties, conscription, speech), society (abortion, marriage, religion in public life, race, discrimination, immigration), ecology (climate, nuclear, pollution), technology (encryption, internet) and means (civil disobedience, revolution, nullification). Where he has a roll-call record on a statement (minimum wage, USA PATRIOT reauthorizations, Iraq 2002, the 2008 bailout, estate-tax repeal) the answer rests on the vote alone and is medium. His mature positions are used: on the death penalty he says his view changed from support to not supporting the federal death penalty. No answer was made from his party, newsletters published under his name, or critics. YouTube was not used. Most society, culture and technology statements concern doctrines on which he has said nothing, so they stay null."
+  "notes": "Pilot under the 2026-11-05 rules: every statement in statements.json was answered, candidates included (null where no position was found). Searched: his six books in the local reference corpus (full text searched by keyword and, for Liberty Defined, chapter by chapter), his House floor speeches and extensions of remarks (Congressional Record, GovInfo, local congress corpus), and his House roll calls (local Voteview dataset). Themes searched: economy (taxes, money, Fed, welfare, labor, trade, health, education), government (Constitution, war powers, federalism, executive power, term limits, elections, direct democracy, secession), world (UN, NATO, alliances, aid, sanctions, interventions, trade agreements, Israel), liberty (drugs, guns, surveillance, civil liberties, conscription, speech), society (abortion, marriage, religion in public life, race, discrimination, immigration), ecology (climate, nuclear, pollution), technology (encryption, internet) and means (civil disobedience, revolution, nullification). Where he has a roll-call record on a statement (minimum wage, USA PATRIOT reauthorizations, Iraq 2002, the 2008 bailout, estate-tax repeal) the answer rests on the vote alone and is medium. His mature positions are used: on the death penalty he says his view changed from support to not supporting the federal death penalty. No answer was made from his party, newsletters published under his name, or critics. YouTube was not used. Most society, culture and technology statements concern doctrines on which he has said nothing, so they stay null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

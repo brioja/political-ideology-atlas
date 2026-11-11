@@ -439,12 +439,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He declared a sincere love of kings and said Kings should keep their crowns, and he swore his Guild's members to obey the monarch.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s4",
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He declared a sincere love of kings and said Kings should keep their crowns, and he swore his Guild's members to obey the monarch.",
+          "sources": [
+            "s4",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s4",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2248,10 +2272,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources checked.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He declared a sincere love of kings and said Kings should keep their crowns, and he swore his Guild's members to obey the monarch. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s4",
+        "s8"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3763,5 +3791,13 @@
       "sources": []
     }
   },
-  "notes": "Sources: his own books and letters (Gutenberg texts of Unto This Last, Crown of Wild Olive with Munera Pulveris, Time and Tide, Fors Clavigera vols 1-5, Sesame and Lilies, Lectures on Art, Stones of Venice) plus the 1911 Britannica. Themes searched without finding a stated position: healthcare, taxation, unions as such, immigration, race, abortion, sexuality, drugs, nuclear power, climate. His views shifted little from Unto This Last (1860-62) to Fors Clavigera (1871-84); from 1876 he attacked interest and rent in earnest (s12), but his earlier note on usury already leaned the same way. The Fors Clavigera volumes after vol. 5 were not read in full."
+  "notes": "Sources: his own books and letters (Gutenberg texts of Unto This Last, Crown of Wild Olive with Munera Pulveris, Time and Tide, Fors Clavigera vols 1-5, Sesame and Lilies, Lectures on Art, Stones of Venice) plus the 1911 Britannica. Themes searched without finding a stated position: healthcare, taxation, unions as such, immigration, race, abortion, sexuality, drugs, nuclear power, climate. His views shifted little from Unto This Last (1860-62) to Fors Clavigera (1871-84); from 1876 he attacked interest and rent in earnest (s12), but his earlier note on usury already leaned the same way. The Fors Clavigera volumes after vol. 5 were not read in full.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

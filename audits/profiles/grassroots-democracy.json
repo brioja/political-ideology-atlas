@@ -498,11 +498,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "A hereditary head of state is not chosen by or accountable to the people, which cuts against the principle, though symbolic monarchies are rarely a priority target.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "A hereditary head of state is not chosen by or accountable to the people, which cuts against the principle, though symbolic monarchies are rarely a priority target.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3296,6 +3318,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 380
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

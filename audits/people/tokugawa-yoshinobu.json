@@ -397,12 +397,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He personally returned authority to the hereditary emperor and subsequently accepted princely rank.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He personally returned authority to the hereditary emperor and subsequently accepted princely rank.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2169,10 +2193,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He personally returned authority to the hereditary emperor and subsequently accepted princely rank. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3053,5 +3081,13 @@
       "sources": []
     }
   },
-  "notes": "Gregorian shogunal dates follow the catalog biography; some references use1866–1867 under Japanese dating. The entire resignation memorial was downloaded and read, and the full Burkman article was downloaded and theme-searched. Other documents on the same University of Tokyo page are not his and were not attributed to him. His resignation and surrender under political and military pressure do not erase his hereditary governing record. Nishi Amane’s proposed separation of powers was not treated as Yoshinobu’s adopted policy. Neither later Meiji conscription and religious repression nor earlier shoguns’ economic rules establish his personal position. Searches covered economy, government, religion and social hierarchy, foreign affairs, liberty, culture, technology, ecology and political means; all remaining statements were reviewed. No inference from his father’s Mito ideology or his personal hobbies."
+  "notes": "Gregorian shogunal dates follow the catalog biography; some references use1866–1867 under Japanese dating. The entire resignation memorial was downloaded and read, and the full Burkman article was downloaded and theme-searched. Other documents on the same University of Tokyo page are not his and were not attributed to him. His resignation and surrender under political and military pressure do not erase his hereditary governing record. Nishi Amane’s proposed separation of powers was not treated as Yoshinobu’s adopted policy. Neither later Meiji conscription and religious repression nor earlier shoguns’ economic rules establish his personal position. Searches covered economy, government, religion and social hierarchy, foreign affairs, liberty, culture, technology, ecology and political means; all remaining statements were reviewed. No inference from his father’s Mito ideology or his personal hobbies.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

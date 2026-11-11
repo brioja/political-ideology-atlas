@@ -455,11 +455,33 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He holds power as a ruler of a hereditary dynasty (Abu Dhabi ruler, president chosen by the Federal Supreme Council of dynastic rulers) and has kept that system; his own record, not a stated defence of monarchy.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s12"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He holds power as a ruler of a hereditary dynasty (Abu Dhabi ruler, president chosen by the Federal Supreme Council of dynastic rulers) and has kept that system; his own record, not a stated defence of monarchy.",
+     "sources": [
+      "s12"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s12"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -3130,5 +3152,13 @@
    "sources": []
   }
  },
- "notes": "Thin by design: few long interviews exist, so most statements are null. Own words come from presidential speeches (2022-2024) and a 2018 armed-forces speech; his views on political Islam, elections, Iran and the US come only from US embassy cables (secondhand, medium at most). Answers on dynastic rule, banned parties and the UAE94 case rest on the record as reported by Freedom House, HRW and AFP; they are the UAE government's acts, which he leads. Searched: economy, government, society, world, liberty, culture, ecology, technology, means; no stated position found on welfare, markets, taxes, drugs, family, abortion, same-sex marriage or most others. Not opened: Britannica (bot wall)."
+ "notes": "Thin by design: few long interviews exist, so most statements are null. Own words come from presidential speeches (2022-2024) and a 2018 armed-forces speech; his views on political Islam, elections, Iran and the US come only from US embassy cables (secondhand, medium at most). Answers on dynastic rule, banned parties and the UAE94 case rest on the record as reported by Freedom House, HRW and AFP; they are the UAE government's acts, which he leads. Searched: economy, government, society, world, liberty, culture, ecology, technology, means; no stated position found on welfare, markets, taxes, drugs, family, abortion, same-sex marriage or most others. Not opened: Britannica (bot wall).",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

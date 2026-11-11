@@ -2631,9 +2631,9 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Speaking in 2022 about his granddaughter's first Council of State meeting, he said he felt the strength and security in 'one generation following another', and told Ingrid Alexandra she represents the fifth generation of the monarchy.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
    "sources": [
     "s18",
     "b10",
@@ -2642,6 +2642,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Speaking in 2022 about his granddaughter's first Council of State meeting, he said he felt the strength and security in 'one generation following another', and told Ingrid Alexandra she represents the fifth generation of the monarchy.",
+     "sources": [
+      "s18",
+      "b10",
+      "b14"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+     "sources": [
+      "s18",
+      "b10",
+      "b14"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "interest-free-mutual-credit": {
@@ -3571,6 +3597,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

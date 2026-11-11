@@ -354,12 +354,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Goethe served for decades as chief adviser and minister to the hereditary Duke of Saxe-Weimar and speaks of the Grand Duke and the court as a settled part of his life, with no sign he thought hereditary rule illegitimate; his own conversations show him at ease within it.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Goethe served for decades as chief adviser and minister to the hereditary Duke of Saxe-Weimar and speaks of the Grand Duke and the court as a settled part of his life, with no sign he thought hereditary rule illegitimate; his own conversations show him at ease within it.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2108,10 +2132,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources read.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Goethe served for decades as chief adviser and minister to the hereditary Duke of Saxe-Weimar and speaks of the Grand Duke and the court as a settled part of his life, with no sign he thought hereditary rule illegitimate; his own conversations show him at ease within it. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s1",
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3602,5 +3630,13 @@
       "sources": []
     }
   },
-  "notes": "Searched the maxims, the Eckermann conversations and the Kampagne in Frankreich text for government, revolution, press, nation, trade, war and religion. Goethe's political remarks are scattered and mostly general, so almost every statement is null; the Johanna Hohn death-penalty vote is disputed in the scholarship and left out. Failing the uncertainty rule is the honest result."
+  "notes": "Searched the maxims, the Eckermann conversations and the Kampagne in Frankreich text for government, revolution, press, nation, trade, war and religion. Goethe's political remarks are scattered and mostly general, so almost every statement is null; the Johanna Hohn death-penalty vote is disputed in the scholarship and left out. Failing the uncertainty rule is the honest result.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

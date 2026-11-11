@@ -522,13 +522,39 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "The 1947 Law of Succession declares Spain a kingdom; in 1958 and 1964 he called the 'traditional, Catholic, social and representative' monarchy the best fit for his doctrine.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s4",
     "s5",
     "s9"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "The 1947 Law of Succession declares Spain a kingdom; in 1958 and 1964 he called the 'traditional, Catholic, social and representative' monarchy the best fit for his doctrine.",
+     "sources": [
+      "s4",
+      "s5",
+      "s9"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s4",
+      "s5",
+      "s9"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -3571,6 +3597,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 14
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

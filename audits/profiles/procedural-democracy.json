@@ -475,11 +475,33 @@
    ]
   },
   "monarchy-legitimate": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Popper's test of peaceful dismissal is compatible with constitutional monarchy but not with absolute rule, so adherents split by type of monarchy.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Popper's test of peaceful dismissal is compatible with constitutional monarchy but not with absolute rule, so adherents split by type of monarchy.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-20"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -3631,6 +3653,12 @@
    "reviewer": "scripts/unsourced-to-null.js",
    "reviewedAt": "2026-11-02",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

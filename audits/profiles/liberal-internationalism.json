@@ -446,11 +446,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Liberal democracy is the goal, though constitutional monarchies are accepted; hereditary head of state is not endorsed.",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Liberal democracy is the goal, though constitutional monarchies are accepted; hereditary head of state is not endorsed.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2538,10 +2560,13 @@
       ]
     },
     "dynastic-succession": {
-      "value": null,
+      "value": -1,
       "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "rationale": "Liberal democracy is the goal, though constitutional monarchies are accepted; hereditary head of state is not endorsed. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3550,6 +3575,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

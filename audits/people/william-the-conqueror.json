@@ -387,11 +387,33 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He claimed the English throne on the strength of Edward the Confessor's alleged promise, was crowned in 1066, held to kingship for the rest of his life and bequeathed the crown to a son.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "He claimed the English throne on the strength of Edward the Confessor's alleged promise, was crowned in 1066, held to kingship for the rest of his life and bequeathed the crown to a son.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -3054,6 +3076,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 7
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

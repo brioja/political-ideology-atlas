@@ -389,11 +389,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "His 1471 proclamation asserted his hereditary right to the English crown.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His 1471 proclamation asserted his hereditary right to the English crown.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3052,5 +3074,13 @@
       "sources": []
     }
   },
-  "notes": "Coverage spans accession, the 1469–1471 crises, restoration, the French settlement, Clarence’s prosecution and the final Scottish campaign. The medieval record yields few answers to modern policy questions. Later narrative reports receive medium confidence at most; uncertain stories about particular murders are not treated as direct admissions. Formal royal assent and policies merely advocated by ministers do not establish personal views. Royal favour to merchants and the 1478 corrective letter are recorded as mixed evidence, not a general free-trade doctrine. No historical inferences were added. The full statement list was reviewed against downloaded primary texts and scholarship; unsupported questions remain null."
+  "notes": "Coverage spans accession, the 1469–1471 crises, restoration, the French settlement, Clarence’s prosecution and the final Scottish campaign. The medieval record yields few answers to modern policy questions. Later narrative reports receive medium confidence at most; uncertain stories about particular murders are not treated as direct admissions. Formal royal assent and policies merely advocated by ministers do not establish personal views. Royal favour to merchants and the 1478 corrective letter are recorded as mixed evidence, not a general free-trade doctrine. No historical inferences were added. The full statement list was reviewed against downloaded primary texts and scholarship; unsupported questions remain null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

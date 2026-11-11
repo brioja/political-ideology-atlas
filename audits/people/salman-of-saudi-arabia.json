@@ -379,12 +379,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Ruled as hereditary absolute monarch from 2015 and, per Wikipedia, installed his son as crown prince; his own speeches present the state as founded on the Quran and Sunnah under the royal house. Position shown by conduct rather than an explicit statement.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ruled as hereditary absolute monarch from 2015 and, per Wikipedia, installed his son as crown prince; his own speeches present the state as founded on the Quran and Sunnah under the royal house. Position shown by conduct rather than an explicit statement.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3032,5 +3056,13 @@
       "sources": []
     }
   },
-  "notes": "The record of his own words is thin: mostly annual Shura Council speeches and summit addresses, some delivered on his behalf. Much current policy is associated with Mohammed bin Salman and is not attributed to the king without evidence. Many reforms (women driving, religious police) are not credited to him personally."
+  "notes": "The record of his own words is thin: mostly annual Shura Council speeches and summit addresses, some delivered on his behalf. Much current policy is associated with Mohammed bin Salman and is not attributed to the king without evidence. Many reforms (women driving, religious police) are not credited to him personally.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

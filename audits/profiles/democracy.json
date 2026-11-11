@@ -407,11 +407,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy concerns who holds political power, so a ceremonial monarch is compatible with it while a hereditary ruler with real power is not; adherents are split.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy concerns who holds political power, so a ceremonial monarch is compatible with it while a hereditary ruler with real power is not; adherents are split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3525,6 +3547,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 82
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

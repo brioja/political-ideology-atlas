@@ -2500,11 +2500,33 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Constitutional monarchies accept hereditary succession, while republican constitutionalists reject it; adherents split.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Constitutional monarchies accept hereditary succession, while republican constitutionalists reject it; adherents split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "interest-free-mutual-credit": {
@@ -3579,6 +3601,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 125
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

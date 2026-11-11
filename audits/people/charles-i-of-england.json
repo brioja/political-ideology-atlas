@@ -373,12 +373,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Defended hereditary monarchy as the 'regulated Monarchie' needed to preserve the laws and subjects' liberties, and refused to give up the powers 'transmitted to Us from so many Ancestors'; died defending it.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Defended hereditary monarchy as the 'regulated Monarchie' needed to preserve the laws and subjects' liberties, and refused to give up the powers 'transmitted to Us from so many Ancestors'; died defending it.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3061,5 +3085,13 @@
       "sources": []
     }
   },
-  "notes": "Eikon Basilike was not used (disputed authorship). Laws he assented to only under pressure (Petition of Right, Triennial Act, Strafford's attainder) are not counted as his positions. Several answers are contested between his stated principles and his personal-rule record."
+  "notes": "Eikon Basilike was not used (disputed authorship). Laws he assented to only under pressure (Petition of Right, Triennial Act, Strafford's attainder) are not counted as his positions. Several answers are contested between his stated principles and his personal-rule record.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

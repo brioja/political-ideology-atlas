@@ -2627,11 +2627,33 @@
    ]
   },
   "dynastic-succession": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "The regime accepted the hereditary monarchy of the House of Savoy, though Mussolini was not hereditary.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "The regime accepted the hereditary monarchy of the House of Savoy, though Mussolini was not hereditary.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "interest-free-mutual-credit": {
@@ -3688,6 +3710,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 190
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

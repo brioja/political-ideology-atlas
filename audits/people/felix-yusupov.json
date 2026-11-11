@@ -391,12 +391,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He says his object was saving the dynasty and recoils from a proposal to replace it by taking the throne himself.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s4",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He says his object was saving the dynasty and recoils from a proposal to replace it by taking the throne himself.",
+          "sources": [
+            "s4",
+            "s5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s4",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2150,10 +2174,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He says his object was saving the dynasty and recoils from a proposal to replace it by taking the throne himself. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s4",
+        "s5"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3032,5 +3060,13 @@
       "sources": []
     }
   },
-  "notes": "Downloaded all 27 chapters of the first memoir volume and searched across the ten statement themes. Reviewed every statement and null against the evidence. Memoirs are evidence of his retrospective self-presentation, not independent verification of every episode, especially the sensational details of Rasputin’s death. His defense of that assassination is recorded even though it conflicts with his stated peaceful temperament. Proposed voluntary gifts of land are not evidence for legal confiscation, and intended hospitals are not universal public healthcare. Private sexuality and cross-dressing do not establish a position on criminal law, marriage equality or gender identity. Other people’s statements about divine authority, usurpation and constitutional arrangements are not attributed to him. No specific ecological, technological, trade or international-institution platform located. No inferred answers."
+  "notes": "Downloaded all 27 chapters of the first memoir volume and searched across the ten statement themes. Reviewed every statement and null against the evidence. Memoirs are evidence of his retrospective self-presentation, not independent verification of every episode, especially the sensational details of Rasputin’s death. His defense of that assassination is recorded even though it conflicts with his stated peaceful temperament. Proposed voluntary gifts of land are not evidence for legal confiscation, and intended hospitals are not universal public healthcare. Private sexuality and cross-dressing do not establish a position on criminal law, marriage equality or gender identity. Other people’s statements about divine authority, usurpation and constitutional arrangements are not attributed to him. No specific ecological, technological, trade or international-institution platform located. No inferred answers.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

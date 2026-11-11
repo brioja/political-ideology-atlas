@@ -1111,12 +1111,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Aksakov argues the people-and-monarchy type of state is Russia's own and Pobedonostsev holds unlimited monarchy better than parliamentary rule at reconciling a nation's peoples.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s18",
         "s19"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Aksakov argues the people-and-monarchy type of state is Russia's own and Pobedonostsev holds unlimited monarchy better than parliamentary rule at reconciling a nation's peoples.",
+          "sources": [
+            "s18",
+            "s19"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-30"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s18",
+            "s19"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3340,5 +3364,13 @@
       "addedAs": "institutions-fit-civilization"
     }
   ],
-  "notes": "Searched all ten themes across the Putin corpus, the Constitution, the 2023 Concept, Decree 809, the 2024 Council order, Solzhenitsyn, Dugin and Verkhovsky. Economy, welfare, government structure, liberty, ecology and technology belong to the regime's wider programme and are null. Strands differ on ethnicity (state nationalism rejects an ethnic Russian state, DPNI-type nationalism wants one), on empire (Solzhenitsyn urges shedding non-Slavic republics) and on self-determination, and those answers are 0 at low. Blocked: Britannica and the OSW analysis (bot wall), the mid.ru Concept page (empty), and Laruelle, Kolstoe and Pain (not openly available). Strand pass (2026-10-30): the state's documents, foreign policy beyond the national question (colonialism, the world economy, deference, intervention, dominated-front) and social policy held by one strand only are null; an answer is kept only where two strands state it, and split (0, low) where strands take opposite positions. Danilevsky's Russia and Europe was read in the 1871 OCR text; Ilyin's, Aksakov's and Khomyakov's political texts were not found openly. Deepen pass (2026-10-30): added Katkov, Aksakov, Pobedonostsev, Dostoevsky, Kireevsky, Khomyakov and the DPNI programme. Not found: Ilyin's Nashi zadachi, Solzhenitsyn's Russia in Collapse, Rodina's 2003-2006 programme (its Wayback capture was an empty news page). Aksakov's 'Jewish question' essay was not used. Review (2026-10-30): democracy-best made a split (0 low): Putin's 2013 Valdai answer backs democracy against the Slavophile and Pobedonostsev line."
+  "notes": "Searched all ten themes across the Putin corpus, the Constitution, the 2023 Concept, Decree 809, the 2024 Council order, Solzhenitsyn, Dugin and Verkhovsky. Economy, welfare, government structure, liberty, ecology and technology belong to the regime's wider programme and are null. Strands differ on ethnicity (state nationalism rejects an ethnic Russian state, DPNI-type nationalism wants one), on empire (Solzhenitsyn urges shedding non-Slavic republics) and on self-determination, and those answers are 0 at low. Blocked: Britannica and the OSW analysis (bot wall), the mid.ru Concept page (empty), and Laruelle, Kolstoe and Pain (not openly available). Strand pass (2026-10-30): the state's documents, foreign policy beyond the national question (colonialism, the world economy, deference, intervention, dominated-front) and social policy held by one strand only are null; an answer is kept only where two strands state it, and split (0, low) where strands take opposite positions. Danilevsky's Russia and Europe was read in the 1871 OCR text; Ilyin's, Aksakov's and Khomyakov's political texts were not found openly. Deepen pass (2026-10-30): added Katkov, Aksakov, Pobedonostsev, Dostoevsky, Kireevsky, Khomyakov and the DPNI programme. Not found: Ilyin's Nashi zadachi, Solzhenitsyn's Russia in Collapse, Rodina's 2003-2006 programme (its Wayback capture was an empty news page). Aksakov's 'Jewish question' essay was not used. Review (2026-10-30): democracy-best made a split (0 low): Putin's 2013 Valdai answer backs democracy against the Slavophile and Pobedonostsev line.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

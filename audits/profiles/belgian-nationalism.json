@@ -2498,12 +2498,36 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The throne passes by primogeniture (Art. 85), and Belgian nationalists accept the hereditary monarchy, though the statement concerns any state leader.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
       "sources": [
         "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The throne passes by primogeniture (Art. 85), and Belgian nationalists accept the hereditary monarchy, though the statement concerns any state leader.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "interest-free-mutual-credit": {
@@ -3521,6 +3545,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 15
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

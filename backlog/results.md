@@ -120,3 +120,13 @@ the audits at the time: 559 -> 536 ideologies (+6 that failed only on line 14, -
 searched; Joe Rogan and Alex Jones among them). Line 13's allowance was removed with it. A Joe Rogan
 Experience transcript mirror was tried to fill his line 11 (secession) and deleted: his silence there is
 real.
+
+## Rename dividing line 6 (revisit when the statement review queue is empty)
+
+2026-11-11: splitting monarchy-legitimate (now ceremonial head of state) from dynastic-succession (a ruler
+passing power to a child) rotated line 6. Its ends now read more like established institutions
+(gradual-change, separated-powers, promulgated-standing-laws, parliament-supreme) against populism
+(bypass-parties-groups, strong-leader, direct-votes, political-elite-corrupt, leader-cult). Brandon kept
+"Centralism / Decentralism" for now, re-anchoring Decentralism with direct-votes, because statements are
+still changing. Decide when every statement passes the wording check (no errors or warnings): candidates
+were "Institutions / Populism" and "Rule of law / Popular will".

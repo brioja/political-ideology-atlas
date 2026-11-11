@@ -460,11 +460,33 @@
       ]
     },
     "monarchy-legitimate": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Reformists generally prefer republican democracy, but constitutional monarchy is accepted in many reformist parties.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Reformists generally prefer republican democracy, but constitutional monarchy is accepted in many reformist parties.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale weighs a ceremonial monarch against a ruler with real power, and the statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3609,6 +3631,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -347,11 +347,33 @@
       ]
     },
     "dynastic-succession": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He accepts the general rule of hereditary succession to the Crown as part of the constitution he praises, while noting it has no provision for a failed monarch.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
       "sources": [
         "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He accepts the general rule of hereditary succession to the Crown as part of the constitution he praises, while noting it has no provision for a failed monarch.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "resist-lawless-ruler": {
@@ -3786,5 +3808,13 @@
       "sources": []
     }
   },
-  "notes": "Sources read: his Midlothian speeches (1879), 1864 franchise speech, 1866-68 and 1886 Commons speeches, the 1888 Home Rule speech, Gleanings of Past Years vols 1 and 4, A Chapter of Autobiography, the 1892 letter on female suffrage, and Morley's three-volume Life as a scholarly account of his record. Themes searched: franchise and constitution, monarchy and Parliament, church and state, education, Ireland (land, coercion, Home Rule), free trade and finance, foreign policy and empire, arbitration, armaments, women and the family, divorce, the civil service. No stated position or record was found on healthcare, welfare, wages, unions, drugs, abortion, sexuality, race, immigration, the environment, technology, nuclear weapons or most twentieth-century questions, so those are null. Where his record points both ways (income tax kept after pledges to end it; church establishment; territorial expansion) the answer is 0 at low confidence. Gladstone's Church views changed over time: his early Church and State position (1838) yielded to the 1869 disestablishment of the Irish Church, which he explained in the 1868 Autobiography chapter. Not used: Hansard pages on the 1884 women's amendment, which did not give his own speech. Wikipedia was used only to find leads."
+  "notes": "Sources read: his Midlothian speeches (1879), 1864 franchise speech, 1866-68 and 1886 Commons speeches, the 1888 Home Rule speech, Gleanings of Past Years vols 1 and 4, A Chapter of Autobiography, the 1892 letter on female suffrage, and Morley's three-volume Life as a scholarly account of his record. Themes searched: franchise and constitution, monarchy and Parliament, church and state, education, Ireland (land, coercion, Home Rule), free trade and finance, foreign policy and empire, arbitration, armaments, women and the family, divorce, the civil service. No stated position or record was found on healthcare, welfare, wages, unions, drugs, abortion, sexuality, race, immigration, the environment, technology, nuclear weapons or most twentieth-century questions, so those are null. Where his record points both ways (income tax kept after pledges to end it; church establishment; territorial expansion) the answer is 0 at low confidence. Gladstone's Church views changed over time: his early Church and State position (1838) yielded to the 1869 disestablishment of the Irish Church, which he explained in the 1868 Autobiography chapter. Not used: Hansard pages on the 1884 women's amendment, which did not give his own speech. Wikipedia was used only to find leads.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

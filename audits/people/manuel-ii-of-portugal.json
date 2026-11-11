@@ -377,11 +377,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He explicitly maintained his rights to the ancestral throne.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He explicitly maintained his rights to the ancestral throne.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3033,5 +3055,13 @@
       "sources": []
     }
   },
-  "notes": "Research covers his reign, labour initiative, wartime cooperation, 1919 letter, later succession disputes and cultural bequests. The 1919 letter is distinguished from hostile integralist annotations. Its rejection of revolution was conditional, not categorical pacifism. Speech quotations reported by Mendes receive medium confidence; generic rights do not answer specific religious or gender laws. Parliamentary and social proposals receiving only formal royal assent were excluded. Checked all statement themes; no specific environmental or technology policy found."
+  "notes": "Research covers his reign, labour initiative, wartime cooperation, 1919 letter, later succession disputes and cultural bequests. The 1919 letter is distinguished from hostile integralist annotations. Its rejection of revolution was conditional, not categorical pacifism. Speech quotations reported by Mendes receive medium confidence; generic rights do not answer specific religious or gender laws. Parliamentary and social proposals receiving only formal royal assent were excluded. Checked all statement themes; no specific environmental or technology policy found.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

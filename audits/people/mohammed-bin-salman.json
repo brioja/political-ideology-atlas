@@ -428,11 +428,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He took the position of heir by replacing Muhammad bin Nayef in 2017 and has described the ruler as the head of the Islamic establishment (wali al-amr); his conduct shows he treats hereditary monarchy as legitimate.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He took the position of heir by replacing Muhammad bin Nayef in 2017 and has described the ruler as the head of the Islamic establishment (wali al-amr); his conduct shows he treats hereditary monarchy as legitimate.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3141,5 +3163,13 @@
       "sources": []
     }
   },
-  "notes": "The Atlantic (2018, 2022), 60 Minutes 2018, Al Arabiya 2021 and Fox full broadcast texts were unreachable or paywalled, so answers rely on the sources listed. Positions on Israel have shifted: support for a Jewish homeland in 2018, closeness to normalisation in 2023, then insistence on a Palestinian state in 2024. Khashoggi: he accepted responsibility as leader but denied ordering the killing; US intelligence assessed otherwise."
+  "notes": "The Atlantic (2018, 2022), 60 Minutes 2018, Al Arabiya 2021 and Fox full broadcast texts were unreachable or paywalled, so answers rely on the sources listed. Positions on Israel have shifted: support for a Jewish homeland in 2018, closeness to normalisation in 2023, then insistence on a Palestinian state in 2024. Khashoggi: he accepted responsibility as leader but denied ordering the killing; US intelligence assessed otherwise.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

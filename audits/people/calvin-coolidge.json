@@ -468,12 +468,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Contrasted a system of divine right of rulers by inheritance, where he said there is no real freedom, with self-government.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s3",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Contrasted a system of divine right of rulers by inheritance, where he said there is no real freedom, with self-government.",
+          "sources": [
+            "s3",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s3",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2283,10 +2307,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Contrasted a system of divine right of rulers by inheritance, where he said there is no real freedom, with self-government. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s3",
+        "s7"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3189,6 +3217,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

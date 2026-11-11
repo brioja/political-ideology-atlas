@@ -2623,12 +2623,36 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "One-nation Tories defend the Crown and other inherited institutions as part of the organic social order, so hereditary succession in a monarchy is accepted.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "One-nation Tories defend the Crown and other inherited institutions as part of the organic social order, so hereditary succession in a monarchy is accepted.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "interest-free-mutual-credit": {
@@ -3651,6 +3675,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

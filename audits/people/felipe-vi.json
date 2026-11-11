@@ -329,12 +329,36 @@
       ]
     },
     "dynastic-succession": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Succeeded his father on the throne in 2014 and has staged and affirmed the succession line to his daughter, speaking of her oath as continuing the Monarchy.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
       "sources": [
         "s1",
         "s20"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Succeeded his father on the throne in 2014 and has staged and affirmed the succession line to his daughter, speaking of her oath as continuing the Monarchy.",
+          "sources": [
+            "s1",
+            "s20"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a constitutional or ceremonial crown, and the statement now asks only about passing real governing power to a child.",
+          "sources": [
+            "s1",
+            "s20"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-hereditary-privilege": {
@@ -3265,6 +3289,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

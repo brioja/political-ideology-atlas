@@ -381,12 +381,36 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Defended preserving the sultanate inherited from his ancestors.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Defended preserving the sultanate inherited from his ancestors.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2157,10 +2181,14 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Defended preserving the sultanate inherited from his ancestors. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s2",
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3039,5 +3067,13 @@
       "sources": []
     }
   },
-  "notes": "Formal assent does not transfer ministers’ policies to him. Reported reluctance over war and executions qualifies interpretation of his public role. The ghazal circulated in his handwriting, but composition remains disputed; its use stays low confidence. Volunteer-unit sponsorship corroborates religious mobilization without proving every fatwa doctrine. No general death-penalty position follows from pleading for a relative. Signatures establish neither personal direction of Armenian deportations and genocide nor endorsement; an uncited overview’s claim of private opposition supplies no additional specific policy. Private thrift, philanthropy, fear of electricity and personal piety do not establish fiscal rules, a welfare system or technology policy. Specific gender, religious-penalty and ecological questions remain unknown after theme review. No inference from throne or party was added."
+  "notes": "Formal assent does not transfer ministers’ policies to him. Reported reluctance over war and executions qualifies interpretation of his public role. The ghazal circulated in his handwriting, but composition remains disputed; its use stays low confidence. Volunteer-unit sponsorship corroborates religious mobilization without proving every fatwa doctrine. No general death-penalty position follows from pleading for a relative. Signatures establish neither personal direction of Armenian deportations and genocide nor endorsement; an uncited overview’s claim of private opposition supplies no additional specific policy. Private thrift, philanthropy, fear of electricity and personal piety do not establish fiscal rules, a welfare system or technology policy. Specific gender, religious-penalty and ecological questions remain unknown after theme review. No inference from throne or party was added.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

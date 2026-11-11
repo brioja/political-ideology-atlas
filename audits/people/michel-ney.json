@@ -387,11 +387,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "In March 1815 he defended Napoleon’s dynasty as the legitimate monarchy adopted by France.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In March 1815 he defended Napoleon’s dynasty as the legitimate monarchy adopted by France.",
+          "sources": [
+            "s1"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3039,5 +3061,13 @@
       "sources": []
     }
   },
-  "notes": "The review covers revolutionary service, the Swiss mission, imperial campaigns, the Bourbon interlude, the Hundred Days and his final defence. The family-published memoirs are partisan biographies, not a continuous autobiography: correspondence is distinguished from editorial claims, and narrated actions receive medium confidence at most. Swiss federal policy devised by Napoleon, statements by Swiss negotiators, and the prosecutor’s allegations are not automatically Ney’s positions. Amnesty followed his earlier detention of opposition leaders. The proclamation is his delivered public position even though its drafter is uncertain. General appeals to liberty do not establish specific modern civil-rights or economic policies. All statement themes and remaining null answers were checked; no historical inferences were added. His objection to his own treason prosecution is not treated as opposition to capital punishment: an earlier letter pressed for enforcement of military death sentences."
+  "notes": "The review covers revolutionary service, the Swiss mission, imperial campaigns, the Bourbon interlude, the Hundred Days and his final defence. The family-published memoirs are partisan biographies, not a continuous autobiography: correspondence is distinguished from editorial claims, and narrated actions receive medium confidence at most. Swiss federal policy devised by Napoleon, statements by Swiss negotiators, and the prosecutor’s allegations are not automatically Ney’s positions. Amnesty followed his earlier detention of opposition leaders. The proclamation is his delivered public position even though its drafter is uncertain. General appeals to liberty do not establish specific modern civil-rights or economic policies. All statement themes and remaining null answers were checked; no historical inferences were added. His objection to his own treason prosecution is not treated as opposition to capital punishment: an earlier letter pressed for enforcement of military death sentences.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

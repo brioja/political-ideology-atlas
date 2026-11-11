@@ -444,9 +444,9 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He ruled as hereditary king and pressed a hereditary claim to a second crown, which treats monarchy as legitimate.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s1",
         "s4",
@@ -456,6 +456,34 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He ruled as hereditary king and pressed a hereditary claim to a second crown, which treats monarchy as legitimate.",
+          "sources": [
+            "s1",
+            "s4",
+            "b1",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s1",
+            "s4",
+            "b1",
+            "b2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3194,5 +3222,13 @@
       "sources": []
     }
   },
-  "notes": "Shakespeare's play was not used. The 1419 ordinances of war and Henry's will were not found in full text, so no answers rest on them. Chambers and Daunt's A Book of London English could not be opened; the letters were read through British History Online summaries and Riley's Memorials. Agincourt prisoner killing and the Rouen expulsion are recorded in sources but match no statement.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 11 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Two chroniclers' reports (the Gesta Henrici Quinti and the reported reply to the Dauphin's tennis-balls taunt) were not used for any answer because they are secondhand and not opened in full; this audit rests on the London record of his 1415 speech and on secondary summaries of his acts. Most answers are record-based rather than statements of principle, so they are medium at most. Inclusion is expected to fail: the record here is thin on his own stated views."
+  "notes": "Shakespeare's play was not used. The 1419 ordinances of war and Henry's will were not found in full text, so no answers rest on them. Chambers and Daunt's A Book of London English could not be opened; the letters were read through British History Online summaries and Riley's Memorials. Agincourt prisoner killing and the Rouen expulsion are recorded in sources but match no statement.\n\nMerged with an independent claude-haiku-5-5 audit: 3 answers taken from it, 11 agreed, 0 conflicts settled by the integrator.\n\nclaude-haiku-5-5 notes: Two chroniclers' reports (the Gesta Henrici Quinti and the reported reply to the Dauphin's tennis-balls taunt) were not used for any answer because they are secondhand and not opened in full; this audit rests on the London record of his 1415 speech and on secondary summaries of his acts. Most answers are record-based rather than statements of principle, so they are medium at most. Inclusion is expected to fail: the record here is thin on his own stated views.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

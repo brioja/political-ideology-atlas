@@ -191,9 +191,9 @@
  ],
  "answers": {
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "She ruled as hereditary queen for 44 years and described herself as God's instrument and a monarch ruling with her subjects' love (Golden Speech, Tilbury).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s2",
     "s3",
@@ -202,6 +202,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "She ruled as hereditary queen for 44 years and described herself as God's instrument and a monarch ruling with her subjects' love (Golden Speech, Tilbury).",
+     "sources": [
+      "s2",
+      "s3",
+      "b1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-31"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s2",
+      "s3",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "parliament-supreme": {
@@ -3360,6 +3386,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ],

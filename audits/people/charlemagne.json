@@ -476,9 +476,9 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He held the Frankish kingship by inheritance and arranged the succession to his sons (the 806 division and the 813 coronation of Louis), so he treated hereditary rule as legitimate.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
    "sources": [
     "s6",
     "b9"
@@ -486,6 +486,30 @@
    "auditor": [
     "claude-haiku-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "He held the Frankish kingship by inheritance and arranged the succession to his sons (the 806 division and the 813 coronation of Louis), so he treated hereditary rule as legitimate.",
+     "sources": [
+      "s6",
+      "b9"
+     ],
+     "author": "claude-haiku-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+     "sources": [
+      "s6",
+      "b9"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -3336,6 +3360,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 15
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

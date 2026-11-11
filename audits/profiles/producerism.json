@@ -573,13 +573,35 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Weaver calls the divine right of kings a fiction and says the crown's prerogatives consist of the people's stolen liberties.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "Weaver calls the divine right of kings a fiction and says the crown's prerogatives consist of the people's stolen liberties.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "democracy-best": {
    "value": null,
@@ -2495,10 +2517,13 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "The sources record no stated position on this statement, and no stated principle of the doctrine settles it.",
-   "sources": []
+   "value": -2,
+   "confidence": "medium",
+   "rationale": "Weaver calls the divine right of kings a fiction and says the crown's prerogatives consist of the people's stolen liberties. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+   "sources": [
+    "s3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3488,5 +3513,13 @@
    "addedAs": "reduce-immigration"
   }
  ],
- "notes": "Strands differ: the Knights (industrial producerism) call wage employment wage slavery and favor co-operatives, while Peffer's farmers want a fair profit on their capital. White Populists and the Knights differed on race and immigration; Weaver welcomed immigrants while Omaha's resolutions and the Knights sought to restrict undesirable and contract labor. Powderly personally advocated a single tax on land values and Weaver urged proportional representation; each is recorded only where it settles a statement, and left null where it speaks for one author only. Themes searched without result: religion and state, schooling, sex and gender, foreign policy and war, culture, ecology, technology, which the texts do not address. Race and women's suffrage appear only in Illinois-level platforms and the order's practice, so they are null.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 4 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Rebuilt without reading old answers. Full Omaha and Knights primary texts, plus the Temple scholarly chapter, downloaded and searched across property/finance/work, government, social rights, religion/culture, international affairs, technology/ecology and means. Bryan’s full speech was read in the browser; its attempted local fetch returned 503. Cole’s work was consulted as its university abstract only. The alien-landownership prohibition is an explicit positive answer, not a deduction from economic nationalism. Unrelated Populist election rules, veterans’ pensions and the personal religion of Bryan do not become producerist positions. Monetary-conspiracy rhetoric is not automatically an ethnic conspiracy. Wider immigration levels, racial hierarchy, alliances, modern energy and digital policy remain unrecorded. The primary texts concern classic producerist planks, while a future profile of a modern right-producerist branch would require its own scope. Final evidence check leaves nearby-case extrapolations unknown where no stated general principle establishes the broader claim."
+ "notes": "Strands differ: the Knights (industrial producerism) call wage employment wage slavery and favor co-operatives, while Peffer's farmers want a fair profit on their capital. White Populists and the Knights differed on race and immigration; Weaver welcomed immigrants while Omaha's resolutions and the Knights sought to restrict undesirable and contract labor. Powderly personally advocated a single tax on land values and Weaver urged proportional representation; each is recorded only where it settles a statement, and left null where it speaks for one author only. Themes searched without result: religion and state, schooling, sex and gender, foreign policy and war, culture, ecology, technology, which the texts do not address. Race and women's suffrage appear only in Illinois-level platforms and the order's practice, so they are null.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 4 answers taken from it, 18 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Rebuilt without reading old answers. Full Omaha and Knights primary texts, plus the Temple scholarly chapter, downloaded and searched across property/finance/work, government, social rights, religion/culture, international affairs, technology/ecology and means. Bryan’s full speech was read in the browser; its attempted local fetch returned 503. Cole’s work was consulted as its university abstract only. The alien-landownership prohibition is an explicit positive answer, not a deduction from economic nationalism. Unrelated Populist election rules, veterans’ pensions and the personal religion of Bryan do not become producerist positions. Monetary-conspiracy rhetoric is not automatically an ethnic conspiracy. Wider immigration levels, racial hierarchy, alliances, modern energy and digital policy remain unrecorded. The primary texts concern classic producerist planks, while a future profile of a modern right-producerist branch would require its own scope. Final evidence check leaves nearby-case extrapolations unknown where no stated general principle establishes the broader claim.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

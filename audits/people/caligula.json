@@ -402,9 +402,9 @@
    "sources": []
   },
   "monarchy-legitimate": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Suetonius quotes him on hearing kings dispute their descent: 'Let there be one Lord, one King', and says he nearly took a crown and turned the principate into a monarchy; he took all Augustus's honours at once (Dio).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
    "sources": [
     "s1",
     "s2",
@@ -413,6 +413,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Suetonius quotes him on hearing kings dispute their descent: 'Let there be one Lord, one King', and says he nearly took a crown and turned the principate into a monarchy; he took all Augustus's honours at once (Dio).",
+     "sources": [
+      "s1",
+      "s2",
+      "b3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+     "sources": [
+      "s1",
+      "s2",
+      "b3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "democracy-best": {
@@ -2259,10 +2285,15 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Suetonius quotes him on hearing kings dispute their descent: 'Let there be one Lord, one King', and says he nearly took a crown and turned the principate into a monarchy; he took all Augustus's honours at once (Dio). (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+   "sources": [
+    "s1",
+    "s2",
+    "b3"
+   ],
+   "auditor": "claude-opus-5-5"
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3170,6 +3201,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 7
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

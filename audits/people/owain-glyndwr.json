@@ -385,11 +385,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Claimed princely rights for hereditary successors.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Claimed princely rights for hereditary successors.",
+          "sources": [
+            "s2"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a monarch who rules, and the statement now asks only about a ceremonial head of state, on which the sources cited here are silent.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -3051,5 +3073,13 @@
       "sources": []
     }
   },
-  "notes": "Pennal’s religious punishment request concerns church destruction, not a general apostasy law. Universities imply no tuition policy. Assemblies of notables establish no modern democratic franchise. Transmitted letters and treaty texts receive medium confidence where original-document provenance is indirect. Legendary ancestry is his claim, not accepted genealogy. Older biography’s dates and reconstructions yield to modern corroboration. Patronage, opposition to heavy taxation and proposed restoration of Welsh law do not specify an economic blueprint or every traditional family rule. No inference from lordship, military service, bardic praise or later nationalist folklore fills remaining nulls after review across all ten themes."
+  "notes": "Pennal’s religious punishment request concerns church destruction, not a general apostasy law. Universities imply no tuition policy. Assemblies of notables establish no modern democratic franchise. Transmitted letters and treaty texts receive medium confidence where original-document provenance is indirect. Legendary ancestry is his claim, not accepted genealogy. Older biography’s dates and reconstructions yield to modern corroboration. Patronage, opposition to heavy taxation and proposed restoration of Welsh law do not specify an economic blueprint or every traditional family rule. No inference from lordship, military service, bardic praise or later nationalist folklore fills remaining nulls after review across all ten themes.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

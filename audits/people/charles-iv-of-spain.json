@@ -377,11 +377,33 @@
       "sources": []
     },
     "monarchy-legitimate": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "His final crown-cession agreement treats royal title as legitimate and provides for another monarch to succeed him.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "His final crown-cession agreement treats royal title as legitimate and provides for another monarch to succeed him.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to dynastic-succession: its rationale is about inherited rule, and this statement now asks only about a ceremonial head of state.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "democracy-best": {
@@ -2151,10 +2173,13 @@
       "sources": []
     },
     "dynastic-succession": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "His final crown-cession agreement treats royal title as legitimate and provides for another monarch to succeed him. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+      "sources": [
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     },
     "interest-free-mutual-credit": {
       "value": null,
@@ -3039,5 +3064,13 @@
       "sources": []
     }
   },
-  "notes": "Research covered his early reform proposals, accession, ministers, response to the French Revolution, fiscal and ecclesiastical policies, colonial decrees, forest and heritage measures, scientific patronage, 1807 repression and final 1808 settlement. Full accessible decree and biography texts were downloaded. The later requirement for Catholic exclusivity confirms continuity with the 1789 religious instruction provisions. The protective slave code encountered resistance and uneven enforcement; it is evidence of a royal prescription, not universal colonial compliance. No views were copied from Charles III, Godoy acting independently, Napoleon’s later constitution, or Ferdinand VII. Slavery was not conflated with the statement about serfs legally bound to land. Vaccine patronage does not establish universal healthcare or optimism that technology solves most problems. No historical inferences were added."
+  "notes": "Research covered his early reform proposals, accession, ministers, response to the French Revolution, fiscal and ecclesiastical policies, colonial decrees, forest and heritage measures, scientific patronage, 1807 repression and final 1808 settlement. Full accessible decree and biography texts were downloaded. The later requirement for Catholic exclusivity confirms continuity with the 1789 religious instruction provisions. The protective slave code encountered resistance and uneven enforcement; it is evidence of a royal prescription, not universal colonial compliance. No views were copied from Charles III, Godoy acting independently, Napoleon’s later constitution, or Ferdinand VII. Slavery was not conflated with the statement about serfs legally bound to land. Vaccine patronage does not establish universal healthcare or optimism that technology solves most problems. No historical inferences were added.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
