@@ -2977,12 +2977,36 @@
       "sources": []
     },
     "language-defines-nation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The school defined Jews as one nation by shared culture, history and Hebrew heritage across all the states they lived in, not by religion alone.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
       "sources": [
         "s6",
         "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The school defined Jews as one nation by shared culture, history and Hebrew heritage across all the states they lived in, not by religion alone.",
+          "sources": [
+            "s6",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+          "sources": [
+            "s6",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "communal-electorates": {
@@ -3563,6 +3587,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 115
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

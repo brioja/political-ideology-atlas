@@ -3037,11 +3037,33 @@
       ]
     },
     "language-defines-nation": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The founding programme aims at German unity across many separate states; the nation is defined by common German identity and not state borders. Religion-divided German states were to be united too.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The founding programme aims at German unity across many separate states; the nation is defined by common German identity and not state borders. Religion-divided German states were to be united too.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "communal-electorates": {
@@ -3600,6 +3622,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 267
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

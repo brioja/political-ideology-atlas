@@ -1526,11 +1526,33 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "The secular constitution disfavours clerical authority, but the movement did not set out to curb religious property; split.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
    "sources": [
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "The secular constitution disfavours clerical authority, but the movement did not set out to curb religious property; split.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-19"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "nonpartisan-head-of-state": {
@@ -3468,6 +3490,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 193
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

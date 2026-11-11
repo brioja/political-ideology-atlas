@@ -2237,12 +2237,36 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Land is held in trust for the people and race under blood and soil, not as a commodity, though inheritance of farms was protected.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Land is held in trust for the people and race under blood and soil, not as a commodity, though inheritance of farms was protected.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "budget-needs-parliament": {
@@ -3725,6 +3749,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 181
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

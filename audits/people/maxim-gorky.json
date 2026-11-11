@@ -1925,11 +1925,33 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He says private ownership of land should be destroyed and labour in the fields socialised.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He says private ownership of land should be destroyed and labour in the fields socialised.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "budget-needs-parliament": {
@@ -3793,5 +3815,13 @@
       "sources": []
     }
   },
-  "notes": "Answers follow the position of the 1920s-1930s (Soviet supporter, Marxist), read from his essays of 1919-1934; his 1917-18 criticism of Bolshevik shootings and of the dissolution of the Constituent Assembly is reflected only where noted. His Untimely Thoughts (1917-18), On the Russian Peasantry (1922), the 1930 article on destroying the enemy and the 1934 Proletarian Humanism text could not be opened in full (no free copy found), so the homosexuality-law passage, executions beyond a scholar's report, and views on women, family, Jews as a minority, courts and health are left null. Gutenberg holds only his fiction, which was not used. Themes searched: economy, government (party, dictatorship, assembly, monarchy), society (religion, race, peasantry), world (war, imperialism, nations), culture, technology. Three scans were read by OCR, so quoted details are paraphrased."
+  "notes": "Answers follow the position of the 1920s-1930s (Soviet supporter, Marxist), read from his essays of 1919-1934; his 1917-18 criticism of Bolshevik shootings and of the dissolution of the Constituent Assembly is reflected only where noted. His Untimely Thoughts (1917-18), On the Russian Peasantry (1922), the 1930 article on destroying the enemy and the 1934 Proletarian Humanism text could not be opened in full (no free copy found), so the homosexuality-law passage, executions beyond a scholar's report, and views on women, family, Jews as a minority, courts and health are left null. Gutenberg holds only his fiction, which was not used. Themes searched: economy, government (party, dictatorship, assembly, monarchy), society (religion, race, peasantry), world (war, imperialism, nations), culture, technology. Three scans were read by OCR, so quoted details are paraphrased.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

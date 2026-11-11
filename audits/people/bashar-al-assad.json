@@ -2716,11 +2716,33 @@
    "sources": []
   },
   "language-defines-nation": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Spoke of the Arab nation and of Arab nationalism and solidarity as worth reviving beyond state borders.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Spoke of the Arab nation and of Arab nationalism and solidarity as worth reviving beyond state borders.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "communal-electorates": {
@@ -3241,6 +3263,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   },
   {

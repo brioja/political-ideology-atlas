@@ -1397,11 +1397,33 @@
       ]
     },
     "head-commands-forces": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Leader commands the armed forces and appoints key officials, though ministers are chosen by the president.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Leader commands the armed forces and appoints key officials, though ministers are chosen by the president.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "church-by-bishops": {
@@ -3709,6 +3731,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 201
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

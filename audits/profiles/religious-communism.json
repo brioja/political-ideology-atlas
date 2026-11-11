@@ -2694,13 +2694,39 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Winstanley made the earth a common treasury and Hutterite colonies own land as a body, so individuals hold it only as members.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
       "sources": [
         "s2",
         "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Winstanley made the earth a common treasury and Hutterite colonies own land as a body, so individuals hold it only as members.",
+          "sources": [
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+          "sources": [
+            "s2",
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "independence-needs-economic-change": {
@@ -3613,6 +3639,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

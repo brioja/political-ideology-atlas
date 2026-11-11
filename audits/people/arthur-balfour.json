@@ -1625,13 +1625,35 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "He argues against taking the Church in Wales's endowments, saying a Church is not improved by being deprived of its property.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
    "sources": [
     "b8"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "He argues against taking the Church in Wales's endowments, saying a Church is not improved by being deprived of its property.",
+     "sources": [
+      "b8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+     "sources": [
+      "b8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "nonpartisan-head-of-state": {
    "value": null,
@@ -3410,6 +3432,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   },
   {

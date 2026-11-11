@@ -1661,12 +1661,36 @@
       "sources": []
     },
     "subordinate-church-to-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Burke defends the established church and its property as an inheritance and condemns confiscation of church lands.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Burke defends the established church and its property as an inheritance and condemns confiscation of church lands.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -3617,6 +3641,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 261
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

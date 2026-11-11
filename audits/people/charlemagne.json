@@ -1569,9 +1569,9 @@
    "sources": []
   },
   "subordinate-church-to-state": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "The 802 capitulary places bishops and abbots under royal envoys, but his Saxon law enlarged church revenue through compulsory tithes and protected church sanctuary, so the record points both ways.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
    "sources": [
     "s2",
     "s1",
@@ -1580,6 +1580,32 @@
    "auditor": [
     "claude-haiku-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "The 802 capitulary places bishops and abbots under royal envoys, but his Saxon law enlarged church revenue through compulsory tithes and protected church sanctuary, so the record points both ways.",
+     "sources": [
+      "s2",
+      "s1",
+      "b4"
+     ],
+     "author": "claude-haiku-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+     "sources": [
+      "s2",
+      "s1",
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "nonpartisan-head-of-state": {
@@ -3360,6 +3386,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 15
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

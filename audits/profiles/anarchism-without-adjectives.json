@@ -999,11 +999,33 @@
       ]
     },
     "workplace-democracy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Workers' own cooperation is central to de Cleyre's mutualist and communist options, though the statement's public vote is a state-like element.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Workers' own cooperation is central to de Cleyre's mutualist and communist options, though the statement's public vote is a state-like element.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "school-vouchers": {
@@ -3958,6 +3980,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 80
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

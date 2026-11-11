@@ -2259,9 +2259,9 @@
       "sources": []
     },
     "local-production": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Convened work on a 'much more local model of food production and distribution' and urged buying British produce.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about food, farming or national purchasing alone, and the statement now asks about most goods being produced close to where they are consumed.",
       "sources": [
         "s15",
         "s16",
@@ -2270,6 +2270,32 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-sonnet-5-5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Convened work on a 'much more local model of food production and distribution' and urged buying British produce.",
+          "sources": [
+            "s15",
+            "s16",
+            "b1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about food, farming or national purchasing alone, and the statement now asks about most goods being produced close to where they are consumed.",
+          "sources": [
+            "s15",
+            "s16",
+            "b1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "informal-organisation": {
@@ -3511,6 +3537,14 @@
     {
       "auditor": "claude-sonnet-5-5",
       "auditedAt": "2026-10-25"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

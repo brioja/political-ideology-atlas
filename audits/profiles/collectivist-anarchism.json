@@ -892,11 +892,33 @@
       "sources": []
     },
     "workplace-democracy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Workers' associations running collectively owned enterprises is workplace democracy, though the public as such has no vote.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Workers' associations running collectively owned enterprises is workplace democracy, though the public as such has no vote.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "school-vouchers": {
@@ -3585,6 +3607,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 235
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

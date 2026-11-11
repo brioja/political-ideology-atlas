@@ -2153,15 +2153,41 @@
    "sources": []
   },
   "head-commands-forces": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "As Leader he was commander-in-chief of the armed forces and appointed their commanders by edict; ministers are chosen by the president with the Majlis, not by him.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
    "sources": [
     "b33",
     "b34",
     "b35"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "As Leader he was commander-in-chief of the armed forces and appointed their commanders by edict; ministers are chosen by the president with the Majlis, not by him.",
+     "sources": [
+      "b33",
+      "b34",
+      "b35"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
+     "sources": [
+      "b33",
+      "b34",
+      "b35"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "church-by-bishops": {
    "value": null,
@@ -4347,6 +4373,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

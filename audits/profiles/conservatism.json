@@ -1577,12 +1577,36 @@
       "sources": []
     },
     "subordinate-church-to-state": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Burke condemned the confiscation of church estates and called it sacrilege, and conservatives value religion as a pillar of social order.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Burke condemned the confiscation of church estates and called it sacrilege, and conservatives value religion as a pillar of social order.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -3755,6 +3779,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 228
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

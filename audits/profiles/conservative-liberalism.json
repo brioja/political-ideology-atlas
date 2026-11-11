@@ -1574,12 +1574,36 @@
       "sources": []
     },
     "subordinate-church-to-state": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Burke defended church property against confiscation, and Tocqueville saw religion as a bulwark of liberty and mores.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
       "sources": [
         "s2",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Burke defended church property against confiscation, and Tocqueville saw religion as a bulwark of liberty and mores.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -3599,6 +3623,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 275
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

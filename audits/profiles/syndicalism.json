@@ -1993,11 +1993,33 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They want production and resources held by the unions on behalf of the community; not specifically addressed for land.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "They want production and resources held by the unions on behalf of the community; not specifically addressed for land.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "budget-needs-parliament": {
@@ -3399,6 +3421,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 301
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -2101,11 +2101,33 @@
       "sources": []
     },
     "land-use-tenure": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "His government nationalized all land in August 1984, ending chiefs' control over who may farm.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
       "sources": [
         "s15"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "His government nationalized all land in August 1984, ending chiefs' control over who may farm.",
+          "sources": [
+            "s15"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+          "sources": [
+            "s15"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "budget-needs-parliament": {
@@ -3475,6 +3497,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

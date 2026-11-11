@@ -1093,12 +1093,36 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Anne personally chose and changed her ministers; the Wikipedia article says she dismissed the Whig ministers in 1710, and the Warwick lecture describes her as relying on ministerial managers. The record is of royal choice of ministers, but Parliament's pressure also shaped those choices.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
       "sources": [
         "s5",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Anne personally chose and changed her ministers; the Wikipedia article says she dismissed the Whig ministers in 1710, and the Warwick lecture describes her as relying on ministerial managers. The record is of royal choice of ministers, but Parliament's pressure also shaped those choices.",
+          "sources": [
+            "s5",
+            "s7"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
+          "sources": [
+            "s5",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "church-by-bishops": {
@@ -3022,6 +3046,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

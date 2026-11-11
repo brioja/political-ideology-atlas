@@ -2897,12 +2897,36 @@
       ]
     },
     "language-defines-nation": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The League sought to unite Germans of all states, including Austria and minorities abroad, on the basis of shared German nationhood.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The League sought to unite Germans of all states, including Austria and minorities abroad, on the basis of shared German nationhood.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "communal-electorates": {
@@ -3488,6 +3512,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

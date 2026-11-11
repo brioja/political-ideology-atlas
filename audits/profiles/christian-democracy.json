@@ -1171,11 +1171,33 @@
       "sources": []
     },
     "workplace-democracy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian democracy prefers co-determination, though a public vote on firm governance goes beyond that.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Christian democracy prefers co-determination, though a public vote on firm governance goes beyond that.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "school-vouchers": {
@@ -3761,6 +3783,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 215
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

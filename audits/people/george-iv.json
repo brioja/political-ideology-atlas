@@ -1105,11 +1105,33 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed: as Regent he kept Perceval's ministry in 1812 and chose Canning in 1827, but he accepted that a ministry must hold a Commons majority; the evidence points both ways.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed: as Regent he kept Perceval's ministry in 1812 and chose Canning in 1827, but he accepted that a ministry must hold a Commons majority; the evidence points both ways.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "church-by-bishops": {
@@ -3024,6 +3046,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

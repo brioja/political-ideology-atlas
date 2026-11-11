@@ -2745,11 +2745,33 @@
       ]
     },
     "language-defines-nation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Beijing's white paper rests unification on shared Chinese ancestry, history and culture across the Strait, treating the nation as one despite the political division.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Beijing's white paper rests unification on shared Chinese ancestry, history and culture across the Strait, treating the nation as one despite the political division.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "communal-electorates": {
@@ -3336,6 +3358,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

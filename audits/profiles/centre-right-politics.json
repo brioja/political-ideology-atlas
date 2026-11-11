@@ -1041,12 +1041,36 @@
       ]
     },
     "workplace-democracy": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian democrats favour co-determination in Europe, but broad democratic control of firms by the public is disfavoured by the centre-right.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
       "sources": [
         "s4",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Christian democrats favour co-determination in Europe, but broad democratic control of firms by the public is disfavoured by the centre-right.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "school-vouchers": {
@@ -4101,6 +4125,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

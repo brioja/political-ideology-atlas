@@ -2565,12 +2565,36 @@
       "sources": []
     },
     "language-defines-nation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Advocates built the union on a shared Malay history and culture (Majapahit, Srivijaya, Melaka, Aceh) that colonial borders had divided, treating those peoples as one nation of intent.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Advocates built the union on a shared Malay history and culture (Majapahit, Srivijaya, Melaka, Aceh) that colonial borders had divided, treating those peoples as one nation of intent.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "communal-electorates": {
@@ -3693,6 +3717,14 @@
     {
       "name": "Melayu Raya",
       "wikidata": true
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

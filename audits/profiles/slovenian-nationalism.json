@@ -448,9 +448,9 @@
    "auditor": "claude-sonnet-5-5"
   },
   "language-defines-nation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The Constitution and the SNS programme treat Slovenes in Austria, Italy, Hungary and Croatia as part of the Slovene nation across state borders.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
    "sources": [
     "s1",
     "s4",
@@ -459,6 +459,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The Constitution and the SNS programme treat Slovenes in Austria, Italy, Hungary and Croatia as part of the Slovene nation across state borders.",
+     "sources": [
+      "s1",
+      "s4",
+      "b3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale rests on descent, history or culture rather than language, and the statement now asks whether a shared language alone makes a people one nation.",
+     "sources": [
+      "s1",
+      "s4",
+      "b3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "ethnic-nation": {
@@ -3321,6 +3347,12 @@
  ],
  "notes": "Sources opened: the Constitution, May Declaration account, 1991 Charter, SNS programmes and a scholarly SNS study. The SDS programme and STA reports on it could not be opened, so the SDS-backed conservative strand is not documented and EU, NATO, economics, religion and morality are mostly null. The SNS itself differs from other strands on the EU, NATO and the Church, and its early 1990s positions (revoking citizenship, a 90 percent reduction of non-Slovenes) were later moderated per the scholarship; those are not scored.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 7 answers taken from it, 5 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Old metadata and source leads only; no old answers consulted. Full declarations, constitutional text and historical paper downloaded into this folder; searched sovereignty/government, international association and borders, language/culture, economy/social policy, rights, religion, ecology, technology and political means. The independence declaration does mention a social state and market economy, but those are not assumed to define every strand of Slovenian nationalism. No nuclear, military-spending, party-media, church or immigration-level answer is borrowed from SDS/SNS. The 1991 archive had a certificate/ browser-fetch failure, but its complete English text was retrieved locally with certificate verification disabled and read.",
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

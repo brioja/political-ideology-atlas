@@ -907,11 +907,33 @@
       "sources": []
     },
     "workplace-democracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Pesch backed codetermination, but a democratic public vote on company management is not part of the doctrine; adherents split.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Pesch backed codetermination, but a democratic public vote on company management is not part of the doctrine; adherents split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on a vote for the public, and the statement now asks only about a vote for workers.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "school-vouchers": {
@@ -3578,6 +3600,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

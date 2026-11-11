@@ -1378,12 +1378,36 @@
       "sources": []
     },
     "subordinate-church-to-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The 1672 declaration asserts the crown's supreme power in ecclesiastical matters, yet it keeps tithes, revenues and benefices for the established clergy. The evidence is mixed.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
       "sources": [
         "s2",
         "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The 1672 declaration asserts the crown's supreme power in ecclesiastical matters, yet it keeps tithes, revenues and benefices for the established clergy. The evidence is mixed.",
+          "sources": [
+            "s2",
+            "s9"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on church property, privileges or separation, and the statement now asks only whether religious institutions should operate under the government's authority.",
+          "sources": [
+            "s2",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "nonpartisan-head-of-state": {
@@ -3109,6 +3133,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -2157,11 +2157,33 @@
    "sources": []
   },
   "land-use-tenure": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Fonseca wanted peasants to own the land they work, but state farms and cooperatives were favoured; split.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
    "sources": [
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Fonseca wanted peasants to own the land they work, but state farms and cooperatives were favoured; split.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-19"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about community or state ownership of land, and the statement now asks only whether a right to hold land should end when the holder stops using it.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "budget-needs-parliament": {
@@ -3657,6 +3679,12 @@
    "reviewer": "scripts/unsourced-to-null.js",
    "reviewedAt": "2026-11-02",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

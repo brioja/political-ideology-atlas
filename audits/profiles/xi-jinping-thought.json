@@ -1364,12 +1364,36 @@
       ]
     },
     "head-commands-forces": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Party commands the army and the head of the Party also leads the state and the military, though ministers are appointed by the Party-controlled legislature rather than by the head alone.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Party commands the army and the head of the Party also leads the state and the military, though ministers are appointed by the Party-controlled legislature rather than by the head alone.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on who chooses ministers, and the statement now asks only about command of the armed forces.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "church-by-bishops": {
@@ -3598,6 +3622,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 230
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }
