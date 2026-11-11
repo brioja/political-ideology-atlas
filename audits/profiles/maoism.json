@@ -1112,11 +1112,33 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Cultural Revolution campaigned against party elite 'capitalist roaders' out of touch with the masses.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about elites being out of touch or general anti-establishment feeling, not about elites putting their own interests first, which this statement now asks.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Cultural Revolution campaigned against party elite 'capitalist roaders' out of touch with the masses.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about elites being out of touch or general anti-establishment feeling, not about elites putting their own interests first, which this statement now asks.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3780,6 +3802,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 139
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

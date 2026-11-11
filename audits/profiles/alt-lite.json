@@ -1080,12 +1080,36 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The Breitbart guide says natural conservatives were abandoned by both sides of the political establishment, and Milo vowed to dedicate his life to 'the destruction of the Republican Party'.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about elites being out of touch or general anti-establishment feeling, not about elites putting their own interests first, which this statement now asks.",
       "sources": [
         "s3",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Breitbart guide says natural conservatives were abandoned by both sides of the political establishment, and Milo vowed to dedicate his life to 'the destruction of the Republican Party'.",
+          "sources": [
+            "s3",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about elites being out of touch or general anti-establishment feeling, not about elites putting their own interests first, which this statement now asks.",
+          "sources": [
+            "s3",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3512,6 +3536,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]
