@@ -43,6 +43,8 @@ const fails = (s) => { const m = marks(s); return m.errors.length > 0 || (WARNIN
 // A review counts only if the statement text it proposes passes the check: errors are absolute (Brandon,
 // 2026-11-10), so a review that keeps or proposes an error word sends the statement back to the queue.
 const resultsFile = (id) => path.join(OUT, `${id}-results.md`);
+// Guidance from the maintainer for one statement, shown in its brief (a rejected review sent back).
+const maintainerFile = (id) => path.join(OUT, `${id}-maintainer.md`);
 const proposedText = (id) => {
   if (!fs.existsSync(resultsFile(id))) return null;
   const m = fs.readFileSync(resultsFile(id), "utf8").match(/^\*\*Statement:\*\*\s*(.+?)\s*$/m);
@@ -126,7 +128,11 @@ Write your reply to \`scratchpad/statement-review/${s.id}-results.md\` (a new fi
 ${JSON.stringify(entry, null, 1)}
 \`\`\`
 
-${fs.existsSync(resultsFile(s.id)) ? `**An earlier review proposed a text that still fails the check** (${proposedText(s.id) ? `"${proposedText(s.id)}"` : "no **Statement:** line found"}). Errors are absolute: propose a text with none, and overwrite \`${s.id}-results.md\`.\n\n` : ""}Wording check: ${m.errors.length ? `**errors** ${m.errors.map((w) => `"${w}"`).join(", ")}` : "no errors"}${m.warnings.length ? `; warnings ${m.warnings.map((w) => `"${w}"`).join(", ")}` : ""}.
+${fs.existsSync(maintainerFile(s.id)) ? `## From the maintainer
+
+${fs.readFileSync(maintainerFile(s.id), "utf8").trim()}
+
+` : ""}${fs.existsSync(resultsFile(s.id)) ? `**An earlier review proposed a text that still fails the check** (${proposedText(s.id) ? `"${proposedText(s.id)}"` : "no **Statement:** line found"}). Errors are absolute: propose a text with none, and overwrite \`${s.id}-results.md\`.\n\n` : ""}Wording check: ${m.errors.length ? `**errors** ${m.errors.map((w) => `"${w}"`).join(", ")}` : "no errors"}${m.warnings.length ? `; warnings ${m.warnings.map((w) => `"${w}"`).join(", ")}` : ""}.
 Marked: ${marked}
 
 ## Evidence: what the audits answered
