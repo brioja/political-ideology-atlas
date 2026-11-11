@@ -472,10 +472,10 @@ const QUESTIONS = [
  {
   "id": "direct-votes",
   "theme": "government",
-  "text": "Citizens should vote directly on major laws rather than leaving them to representatives.",
-  "agree": "Citizens should decide major laws themselves through referendums.",
-  "disagree": "Citizens should not vote directly on major laws.",
-  "note": "About direct versus representative democracy.",
+  "text": "Citizens should decide major laws in direct votes.",
+  "agree": "Major laws should be decided by citizens voting on them themselves.",
+  "disagree": "Major laws should not be decided by direct votes of citizens.",
+  "note": "Direct votes include referendums and popular assemblies; this is not merely electing representatives or approving an exceptional constitutional change.",
   "icon": "✋"
  },
  {
@@ -580,10 +580,10 @@ const QUESTIONS = [
  {
   "id": "equal-outcomes",
   "theme": "society",
-  "text": "Society should aim for equality of outcomes, not only of opportunity.",
-  "agree": "Society should aim for people to end up with similar levels of wealth and well-being.",
-  "disagree": "Society should not aim for equality of outcomes as well as of opportunity.",
-  "note": "About kinds of equality.",
+  "text": "Society should aim for equality of outcomes.",
+  "agree": "Society should aim for people to end up with broadly equal material conditions.",
+  "disagree": "Equality of outcomes should not be society's goal.",
+  "note": "A goal of substantial equality, not identical lives or a claim that every individual must receive the same reward. Equal opportunity alone does not meet this goal.",
   "icon": "🟰"
  },
  {
@@ -958,10 +958,10 @@ const QUESTIONS = [
  {
   "id": "single-common-good",
   "theme": "government",
-  "text": "Politics should aim at one common good worked out by reason, rather than balancing the competing interests of different groups.",
-  "agree": "Politics should seek the one good of the whole society, found by reasoning, rather than a balance between competing groups' interests.",
-  "disagree": "Politics should not put one common good worked out by reason ahead of balancing the competing interests of different groups.",
-  "note": "About whether politics should find what is best for all, or strike compromises between groups such as business, workers and regions.",
+  "text": "Politics should put a reasoned common good ahead of bargaining among competing groups.",
+  "agree": "Politics should prioritise a single common good identified by reasoning over compromises among organised interests.",
+  "disagree": "Politics should not put a reasoned common good ahead of bargaining among competing groups.",
+  "note": "A reasoned common good means a good for society as a whole that reasoning can identify. \"Ahead of\" asks priority, not whether every compromise must be forbidden.",
   "icon": "🧮"
  },
  {
@@ -1111,10 +1111,10 @@ const QUESTIONS = [
  {
   "id": "workers-nation",
   "theme": "society",
-  "text": "The working class should organize along national lines rather than as an international class.",
-  "agree": "Workers of each country should organize within their own nation, not across borders.",
-  "disagree": "National organization of the working class should not take priority over its organization as an international class.",
-  "note": "About whether class or nation is the main unit of solidarity.",
+  "text": "Workers should put national solidarity ahead of international class solidarity.",
+  "agree": "Workers' solidarity with their own nation should take priority over solidarity with workers across borders.",
+  "disagree": "Workers should not put national solidarity ahead of international class solidarity.",
+  "note": "This is a priority between forms of solidarity, not a prohibition on all international cooperation or on national unions.",
   "icon": "🚩"
  },
  {
@@ -1138,10 +1138,10 @@ const QUESTIONS = [
  {
   "id": "racial-segregation-law",
   "theme": "society",
-  "text": "The law should classify people by race and keep the races separate in where they live, study and use public facilities.",
-  "agree": "The state sorts people into racial groups and enforces separate neighbourhoods, schools and public spaces.",
-  "disagree": "The law should not classify people by race and keep the races separate in where they live, study and use public facilities.",
-  "note": "About legally enforced racial classification and separation.",
+  "text": "The law should enforce racial segregation in everyday public life.",
+  "agree": "Law should require people of different races to use separate public spaces, such as schools and public facilities.",
+  "disagree": "The law should not enforce racial segregation in everyday public life.",
+  "note": "Includes compulsory separation of racial groups in residential and public settings. Voluntary separation or different sovereign states alone does not satisfy this claim.",
   "icon": "🚧"
  },
  {
@@ -1165,10 +1165,10 @@ const QUESTIONS = [
  {
   "id": "assimilate-immigrants",
   "theme": "society",
-  "text": "Immigrants should be expected to give up their original culture and assimilate into the national culture.",
-  "agree": "Newcomers should adopt the host nation's culture and leave their own behind.",
-  "disagree": "Immigrants should not be expected to give up their original culture and assimilate into the national culture.",
-  "note": "About assimilation versus keeping other cultures.",
+  "text": "Immigrants should replace their original culture with the national culture.",
+  "agree": "Newcomers should adopt the host nation's culture in place of their original culture.",
+  "disagree": "Immigrants should not be expected to replace their original culture with the national culture.",
+  "note": "This concerns cultural replacement, not learning a common language or respecting laws while retaining a distinct heritage.",
   "icon": "🧩"
  },
  {
@@ -1399,10 +1399,10 @@ const QUESTIONS = [
  {
   "id": "vanguard-party",
   "theme": "government",
-  "text": "The working class will not reach revolutionary politics on its own; it needs a disciplined party of committed revolutionaries to lead it.",
-  "agree": "A tightly organized party of dedicated activists must bring political direction to workers.",
-  "disagree": "The working class may reach revolutionary politics on its own, without a disciplined party of committed revolutionaries to lead it.",
-  "note": "About whether workers need a party of professional revolutionaries to lead them, as Lenin argued.",
+  "text": "Workers need a disciplined party of committed revolutionaries to lead them.",
+  "agree": "Workers require political leadership from a tightly organised revolutionary party.",
+  "disagree": "Workers do not need a disciplined revolutionary party to lead them.",
+  "note": "This is a political prescription for workers' leadership, not a prediction about whether workers spontaneously become revolutionary.",
   "icon": "🚩"
  },
  {
@@ -1651,10 +1651,10 @@ const QUESTIONS = [
  {
   "id": "cultures-equal-different",
   "theme": "society",
-  "text": "No culture or civilization is higher or lower than another; they are only different.",
-  "agree": "Cultures can be different but none is more advanced or better than the others.",
-  "disagree": "Some cultures or civilizations are higher or lower than others.",
-  "note": "About ranking cultures against each other.",
+  "text": "No culture is superior to another.",
+  "agree": "Cultures do not rank above one another in overall worth.",
+  "disagree": "Some cultures are superior to others.",
+  "note": "Cultures here includes the broad cultural traditions often called civilizations. Comparing particular practices or technologies is distinct from ranking whole cultures.",
   "icon": "⚖️"
  },
  {
@@ -1759,10 +1759,10 @@ const QUESTIONS = [
  {
   "id": "restrict-freedoms-for-growth",
   "theme": "liberty",
-  "text": "A country may restrict political freedoms for a time to secure rapid economic development.",
-  "agree": "A country may limit political freedoms for a period to achieve rapid economic development.",
-  "disagree": "A country may not restrict political freedoms for a time to secure rapid economic development.",
-  "note": "About trading political freedom for development.",
+  "text": "Rapid economic development justifies temporary restrictions on political freedom.",
+  "agree": "Temporary limits on political freedom are justified to achieve rapid economic development.",
+  "disagree": "Rapid economic development does not justify temporary restrictions on political freedom.",
+  "note": "Concerns justification of a temporary trade-off for economic development, not whether repression and growth have ever coexisted.",
   "icon": "🏗️"
  },
  {
@@ -1813,10 +1813,10 @@ const QUESTIONS = [
  {
   "id": "property-serves-common-good",
   "theme": "economy",
-  "text": "Private property is justified only so far as it serves the common good.",
-  "agree": "People are entitled to their property only so far as owning it also serves society.",
-  "disagree": "Private property is not justified only so far as it serves the common good.",
-  "note": "About the social duties of owners, for example whether land may be left unused or a factory closed at will.",
+  "text": "Private property is justified only to the extent that it serves the common good.",
+  "agree": "Private ownership is legitimate only insofar as it benefits society.",
+  "disagree": "Private property does not need to serve the common good to be justified.",
+  "note": "Concerns whether social benefit is necessary for justifying private ownership; it does not say social benefit is sufficient.",
   "icon": "🤝"
  },
  {
@@ -2038,10 +2038,10 @@ const QUESTIONS = [
  {
   "id": "national-cultural-autonomy",
   "theme": "society",
-  "text": "A national minority should have its own self-governing cultural institutions and schools within the state, rather than a state of its own.",
-  "agree": "Minorities run their own cultural life and schools inside the country, without needing their own state.",
-  "disagree": "A national minority should not have self-governing cultural institutions within the state instead of a state of its own.",
-  "note": "About autonomy for minorities within a state.",
+  "text": "National minorities should govern their own cultural life within a shared state instead of establishing separate states.",
+  "agree": "A minority should control its own cultural institutions, including schools, within the existing state in place of seeking its own state.",
+  "disagree": "Cultural self-government within a shared state should not replace separate statehood for national minorities.",
+  "note": "Cultural self-government concerns institutions run by the minority, not merely government support for its language. This is a proposed alternative to separate statehood.",
   "icon": "🏫"
  },
  {
@@ -2227,10 +2227,10 @@ const QUESTIONS = [
  {
   "id": "freedom-to-discriminate",
   "theme": "liberty",
-  "text": "Private owners should be free to refuse to associate with, hire or serve anyone on any grounds, even where this means discrimination.",
-  "agree": "Private owners should be free to refuse to hire, serve or deal with anyone, on any grounds.",
-  "disagree": "Private owners should not be free to refuse to associate with, hire or serve anyone on any grounds, even where this means discrimination.",
-  "note": "About freedom of association versus anti-discrimination law.",
+  "text": "Private owners should have unrestricted legal freedom to choose whom they deal with.",
+  "agree": "Private owners should be free to refuse association, employment or service on any grounds, including discriminatory ones.",
+  "disagree": "Private owners' choice of whom they deal with should be subject to some restrictions.",
+  "note": "This concerns private freedom of association, including commercial dealings and employment. It is a legal freedom, not approval of prejudiced conduct.",
   "icon": "🚪"
  },
  {
@@ -2344,10 +2344,10 @@ const QUESTIONS = [
  {
   "id": "world-economy-extracts-surplus",
   "theme": "world",
-  "text": "Poor countries stay poor because the world economy is structured to transfer their surplus to richer countries.",
-  "agree": "Trade, finance and investment drain wealth from poorer nations to richer ones.",
-  "disagree": "Poor countries do not stay poor because the world economy is structured to transfer their surplus to richer countries.",
-  "note": "About why some countries are poor.",
+  "text": "The world economy's transfer of wealth from poor countries to rich countries keeps the poor countries poor.",
+  "agree": "The global economic system keeps poorer countries poor by directing their wealth toward richer countries.",
+  "disagree": "Transfers of wealth to richer countries do not explain poor countries' continuing poverty.",
+  "note": "A structural explanation of lasting poverty: profits, resources and surplus drained from poor countries through trade and investment, not simply that some wealth crosses borders.",
   "icon": "🌍"
  },
  {
@@ -2659,10 +2659,10 @@ const QUESTIONS = [
  {
   "id": "non-intervention",
   "theme": "world",
-  "text": "No state or group of states has the right to intervene in the internal affairs of another, for any reason.",
-  "agree": "Outside powers may never interfere in another country's internal affairs, whatever the reason.",
-  "disagree": "States can sometimes have the right to intervene in another's internal affairs.",
-  "note": "About whether states may intervene in each other's internal affairs.",
+  "text": "Foreign powers have no right to intervene in a country's internal affairs, whatever the reason.",
+  "agree": "Outside governments have no entitlement to interfere in another country's internal affairs for any purpose.",
+  "disagree": "Foreign powers sometimes have a right to intervene in a country's internal affairs.",
+  "note": "Includes states acting collectively. This is an absolute prohibition on interference, not just opposition to wars of conquest.",
   "icon": "🚫"
  },
  {
@@ -2767,10 +2767,10 @@ const QUESTIONS = [
  {
   "id": "defeat-communism",
   "theme": "world",
-  "text": "Communism should be defeated rather than coexisted with.",
-  "agree": "Communism should be defeated, not lived alongside as a rival system.",
-  "disagree": "Defeating communism should not take priority over coexisting with it.",
-  "note": "Communism here means the communist parties and one-party states of the 20th century, such as the USSR and Mao's China, not the stateless society Marx described.",
+  "text": "Defeating communism should take priority over coexisting with it.",
+  "agree": "The political goal should be victory over communism ahead of accommodation with it.",
+  "disagree": "Defeating communism should not take priority over coexistence with it.",
+  "note": "Communism here refers to communist parties and one-party states, not Marx's proposed stateless society. Defeat does not necessarily mean war.",
   "icon": "🛑"
  },
  {
@@ -2857,10 +2857,10 @@ const QUESTIONS = [
  {
   "id": "neither-capitalism-nor-communism",
   "theme": "economy",
-  "text": "Neither capitalism nor communism offers a sound basis for society; a third course is needed.",
-  "agree": "Capitalism fails, and so does communism's collective ownership of the economy; society should follow a different, third way.",
-  "disagree": "Capitalism or communism offers a sound basis for society; a third course is not needed.",
-  "note": "Communism here means collective ownership of the economy as communist states practiced it.",
+  "text": "Neither capitalism nor communism offers a sound basis for society.",
+  "agree": "Society should follow a third course beyond capitalism and communism.",
+  "disagree": "Society does not need a third course beyond capitalism and communism.",
+  "note": "Communism here refers to the system of collective economic ownership practiced in communist states. A regulated capitalist economy alone does not constitute a third system.",
   "icon": "⚖️"
  },
  {
@@ -3406,10 +3406,10 @@ const QUESTIONS = [
  {
   "id": "politics-spiritual-struggle",
   "theme": "society",
-  "text": "Politics is fundamentally a spiritual struggle between good and evil.",
-  "agree": "Public life is at bottom a fight between spiritual forces, not only interests.",
-  "disagree": "Politics is not fundamentally a spiritual struggle between good and evil.",
-  "note": "About whether politics is a moral or spiritual war.",
+  "text": "Politics is fundamentally a spiritual struggle against evil.",
+  "agree": "At its core, politics is a struggle between spiritual good and evil.",
+  "disagree": "Politics is not fundamentally a spiritual struggle against evil.",
+  "note": "\"Spiritual\" concerns forces or purposes beyond ordinary material interests; a moral disagreement alone is insufficient.",
   "icon": "⚔️"
  },
  {
@@ -4225,10 +4225,10 @@ const QUESTIONS = [
  {
   "id": "bypass-parties-groups",
   "theme": "government",
-  "text": "Political parties and interest groups stand between the people and their leader and should be bypassed.",
-  "agree": "The leader should deal directly with the people, not through parties, unions or other groups.",
-  "disagree": "It is not true that political parties and interest groups stand between the people and their leader and should be bypassed.",
-  "note": "About direct versus organised political representation.",
+  "text": "The leader should deal directly with the people without political intermediaries.",
+  "agree": "The leader should bypass parties and organised interest groups in dealing with the people.",
+  "disagree": "The leader should not bypass political intermediaries in dealing with the people.",
+  "note": "Political intermediaries means organised bodies representing people to their leader, not advisers or administrative staff.",
   "icon": "🔗"
  },
  {
