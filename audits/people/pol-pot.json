@@ -1565,13 +1565,35 @@
       "auditor": "claude-sonnet-5-5"
     },
     "competition-drives-progress": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Condemned competition among individuals and cooperatives as producing corruption and individualism, and said the competition was only for money.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
       "sources": [
         "b3"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Condemned competition among individuals and cooperatives as producing corruption and individualism, and said the competition was only for money.",
+          "sources": [
+            "b3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
+          "sources": [
+            "b3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "ban-extremist-parties": {
       "value": 2,
@@ -4217,6 +4239,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 31
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -1296,12 +1296,36 @@
       "sources": []
     },
     "competition-drives-progress": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He said the driving force behind the welfare state was collective responsibility and solidarity, not private profit motives, and decried the 'competition society's' losers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
       "sources": [
         "s11",
         "s16"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He said the driving force behind the welfare state was collective responsibility and solidarity, not private profit motives, and decried the 'competition society's' losers.",
+          "sources": [
+            "s11",
+            "s16"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
+          "sources": [
+            "s11",
+            "s16"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "ban-extremist-parties": {
@@ -3561,6 +3585,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

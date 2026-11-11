@@ -1271,13 +1271,35 @@
       "sources": []
     },
     "competition-drives-progress": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Buffalo speech describes commercial competition as indispensable to advances in agriculture, industry and business.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
       "sources": [
         "c5"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Buffalo speech describes commercial competition as indispensable to advances in agriculture, industry and business.",
+          "sources": [
+            "c5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about competition between individuals or in markets, and this statement now asks only about struggle between peoples.",
+          "sources": [
+            "c5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "ban-extremist-parties": {
       "value": null,
@@ -3396,6 +3418,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",
