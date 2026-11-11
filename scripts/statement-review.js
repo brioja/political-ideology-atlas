@@ -6,7 +6,7 @@
 // brief in scratchpad/statement-review/<id>-results.md; nothing here edits statements.json or any audit, and the
 // maintainer decides which proposals to apply.
 //   node scripts/statement-review.js next [--warnings]   write the next brief, print its path (or "none")
-//   node scripts/statement-review.js list [--warnings]   print the queue in quiz order, reviewed ones marked
+//   node scripts/statement-review.js list   print the queue (errors first, then warnings, each in quiz order), reviewed ones marked
 //   --warnings also takes statements with wording warnings only (default: errors only)
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
@@ -14,7 +14,6 @@ const path = require("path");
 const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING } = require("./lib");
 
 const OUT = path.join(ROOT, "scratchpad", "statement-review");
-const WARNINGS = process.argv.includes("--warnings");
 const idArg = process.argv.indexOf("--id");
 const ONE = idArg > -1 ? process.argv[idArg + 1] : null;
 const mode = process.argv[2];
@@ -39,7 +38,8 @@ function quizOrder() {
 const statements = allStatements();
 const byId = new Map(statements.map((s) => [s.id, s]));
 const marks = (s) => wordingMarks(s.text);
-const fails = (s) => { const m = marks(s); return m.errors.length > 0 || (WARNINGS && m.warnings.length > 0); };
+const hasError = (s) => marks(s).errors.length > 0;
+const fails = (s) => { const m = marks(s); return m.errors.length > 0 || m.warnings.length > 0; };
 // A review counts only if the statement text it proposes passes the check: errors are absolute (Brandon,
 // 2026-11-10), so a review that keeps or proposes an error word sends the statement back to the queue.
 const resultsFile = (id) => path.join(OUT, `${id}-results.md`);
@@ -54,8 +54,11 @@ const proposalFails = (id) => { const t = proposedText(id); return !t || wording
 const reviewed = (id) => fs.existsSync(resultsFile(id)) && !proposalFails(id);
 
 function queue() {
-  // A statement the maintainer sent for review (a <id>-maintainer.md note) is queued even when its wording passes.
-  return quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && (fails(x.s) || fs.existsSync(maintainerFile(x.s.id))));
+  // Errors first, then warnings, each in quiz order (Brandon, 2026-11-11); a review fixes both. A statement the
+  // maintainer sent for review (a <id>-maintainer.md note) is queued with the errors even when its wording passes.
+  const sent = (s) => fs.existsSync(maintainerFile(s.id));
+  const all = quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && (fails(x.s) || sent(x.s)));
+  return [...all.filter((x) => hasError(x.s) || sent(x.s)), ...all.filter((x) => !hasError(x.s) && !sent(x.s))];
 }
 
 // Every audit's answer to one statement, with the subject's id and kind.
@@ -149,11 +152,12 @@ ${related(s, 8).map((o) => `- \`${o.id}\`${o.status === "candidate" ? " (candida
 
 ## Rules the wording must meet
 
-The statement text (not the agree text) must pass \`node scripts/statements-check.js --wording\` with no errors,
-and ideally no warnings (\`WORDING\` in \`scripts/lib.js\`; test 3 in \`audits/statements/STANDARD.md\`):
+The statement text (not the agree text) must pass \`node scripts/statements-check.js --wording\` with no errors.
+Fix the warnings too: reword each one away, or say in your reply why test 3 confirms it (a literal "cut", a real
+comparison) (\`WORDING\` in \`scripts/lib.js\`; test 3 in \`audits/statements/STANDARD.md\`):
 
 - **Errors:** ${WORDING.errors.map((w) => `"${w}"`).join(", ")}.
-- **Warnings:** ${WORDING.warnings.map((w) => `"${w}"`).join(", ")}.
+- **Warnings:** ${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, "more"/"less"/"fewer" with no later "than", a second sentence.
 - One claim, read literally, in plain neutral words both sides would accept as fair. Not relative to the status
   quo. The maintainer rejects overloaded or odd phrasing: a "should" that could be a prediction or an aim,
   jargon, figurative verbs.
@@ -181,7 +185,7 @@ if (ONE) {
   const q = queue();
   const state = (id) => (reviewed(id) ? "reviewed" : fs.existsSync(resultsFile(id)) ? "redo    " : "pending ");
   for (const { step, s } of q) console.log(`${String(step).padStart(3)} ${state(s.id)} ${s.id}: ${s.text}`);
-  console.log(`\n${q.length} statements fail the check${WARNINGS ? " (errors or warnings)" : " (errors)"}; ${q.filter((x) => reviewed(x.s.id)).length} reviewed.`);
+  console.log(`\n${q.length} statements fail the check (${q.filter((x) => hasError(x.s)).length} with errors, the rest warnings only); ${q.filter((x) => reviewed(x.s.id)).length} reviewed.`);
 } else if (mode === "next") {
   const next = queue().find((x) => !reviewed(x.s.id));
   if (!next) { console.log("none"); process.exit(0); }
