@@ -1162,11 +1162,33 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Ecofascists treat political and elite classes as enabling replacement and ecological ruin.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ecofascists treat political and elite classes as enabling replacement and ecological ruin.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3681,6 +3703,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 181
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

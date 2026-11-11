@@ -1087,11 +1087,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mossadegh named government corruption as a problem, along with foreign interference.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Mossadegh named government corruption as a problem, along with foreign interference.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3563,6 +3585,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 81
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

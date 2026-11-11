@@ -729,11 +729,33 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian democratic parties are established governing parties and do not hold this populist view.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Christian democratic parties are established governing parties and do not hold this populist view.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "ban-extremist-parties": {
@@ -3729,6 +3751,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 215
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -1049,11 +1049,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement was itself composed of the established elite and loyal court-connected nobility.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The movement was itself composed of the established elite and loyal court-connected nobility.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3593,6 +3615,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

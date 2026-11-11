@@ -1212,12 +1212,36 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The proclamation blames parliament and party conflicts, and Metaxas stressed the parliamentary elite's squabbles and failure.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The proclamation blames parliament and party conflicts, and Metaxas stressed the parliamentary elite's squabbles and failure.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3805,6 +3829,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

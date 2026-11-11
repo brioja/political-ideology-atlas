@@ -1059,9 +1059,9 @@
    "sources": []
   },
   "political-elite-corrupt": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He publicly attacked power brokers and patronage within his own party.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
    "sources": [
     "s4",
     "b1"
@@ -1069,6 +1069,30 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "He publicly attacked power brokers and patronage within his own party.",
+     "sources": [
+      "s4",
+      "b1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+     "sources": [
+      "s4",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "heritable-defect-limits": {
@@ -3336,5 +3360,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

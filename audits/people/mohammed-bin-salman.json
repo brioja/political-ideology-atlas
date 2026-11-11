@@ -979,12 +979,36 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He launched the anti-corruption campaign that detained princes and ministers in 2017, saying no one would be spared, and said over $35 billion was recovered; this treats elite corruption as real.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s3",
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He launched the anti-corruption campaign that detained princes and ministers in 2017, saying no one would be spared, and said over $35 billion was recovered; this treats elite corruption as real.",
+          "sources": [
+            "s3",
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s3",
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3165,6 +3189,12 @@
   },
   "notes": "The Atlantic (2018, 2022), 60 Minutes 2018, Al Arabiya 2021 and Fox full broadcast texts were unreachable or paywalled, so answers rely on the sources listed. Positions on Israel have shifted: support for a Jewish homeland in 2018, closeness to normalisation in 2023, then insistence on a Palestinian state in 2024. Khashoggi: he accepted responsibility as leader but denied ordering the killing; US intelligence assessed otherwise.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

@@ -1047,11 +1047,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "At the 2019 launch he said never-ending corruption was a cancer that had marred the economy for 20 years and should be cut out.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s13"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "At the 2019 launch he said never-ending corruption was a cancer that had marred the economy for 20 years and should be cut out.",
+          "sources": [
+            "s13"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s13"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3870,5 +3892,13 @@
       "sources": []
     }
   },
-  "notes": "Position changes: in his second term (2018-2020) he pledged to repeal the Sedition Act, Printing Presses Act and mandatory death sentences and announced a death penalty moratorium, but this lasted under two years and mostly stayed pledges, so the death penalty is recorded as mixed and the earlier security record stands on suppression. Themes searched: economy (privatisation, industrial policy, 1998 crisis response, taxes), government (ISA, press, judiciary, Anwar), society (Bumiputera policy, family, LGBT), world (UN, Israel, trade, arms, intervention, China), ecology (Rio 1992, forests, climate). Not available: the full text of The Malay Dilemma (archive.org lending only) and Malaysia's parliamentary record, so his positions on race and heredity, elections, courts, women, language and welfare were left null. The Anwar and other ISA arrests are attributed to the government where the sources do not name him personally."
+  "notes": "Position changes: in his second term (2018-2020) he pledged to repeal the Sedition Act, Printing Presses Act and mandatory death sentences and announced a death penalty moratorium, but this lasted under two years and mostly stayed pledges, so the death penalty is recorded as mixed and the earlier security record stands on suppression. Themes searched: economy (privatisation, industrial policy, 1998 crisis response, taxes), government (ISA, press, judiciary, Anwar), society (Bumiputera policy, family, LGBT), world (UN, Israel, trade, arms, intervention, China), ecology (Rio 1992, forests, climate). Not available: the full text of The Malay Dilemma (archive.org lending only) and Malaysia's parliamentary record, so his positions on race and heredity, elections, courts, women, language and welfare were left null. The Anwar and other ISA arrests are attributed to the government where the sources do not name him personally.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

@@ -560,13 +560,35 @@
    "sources": []
   },
   "political-elite-corrupt": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Justified the 1971 coup and his rule as removing corruption, and described his mission as leading the country out of 'corruption, depression and slavery' (1978 US Senate document, quoted on Wikiquote).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
    "sources": [
     "s3"
    ],
-   "auditor": "claude-haiku-5-5"
+   "auditor": "claude-haiku-5-5",
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Justified the 1971 coup and his rule as removing corruption, and described his mission as leading the country out of 'corruption, depression and slavery' (1978 US Senate document, quoted on Wikiquote).",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-haiku-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "leader-cult": {
    "value": 1,
@@ -3434,6 +3456,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

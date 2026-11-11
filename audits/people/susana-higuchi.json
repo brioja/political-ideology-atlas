@@ -885,11 +885,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "She publicly alleged diversion of charitable donations by presidential relatives and later exposed alleged hidden funds and official wrongdoing.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "She publicly alleged diversion of charitable donations by presidential relatives and later exposed alleged hidden funds and official wrongdoing.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3022,5 +3044,13 @@
       "sources": []
     }
   },
-  "notes": "Allegations are attributed, not treated as adjudicated facts. Later family reconciliation is retained alongside earlier opposition. Party membership and support for relatives do not supply their policy platforms. Searches covered all themes, including congressional proposals; many official debate PDFs were inaccessible and indexed snippets were not used to assign positions. No complete political book or manifesto was available. The restricted thesis contributes only its public abstract. No inferred answers."
+  "notes": "Allegations are attributed, not treated as adjudicated facts. Later family reconciliation is retained alongside earlier opposition. Party membership and support for relatives do not supply their policy platforms. Searches covered all themes, including congressional proposals; many official debate PDFs were inaccessible and indexed snippets were not used to assign positions. No complete political book or manifesto was available. The restricted thesis contributes only its public abstract. No inferred answers.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

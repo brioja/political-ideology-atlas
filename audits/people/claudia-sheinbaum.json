@@ -1060,11 +1060,33 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Repeatedly denounces the previous \"régimen de corrupción y privilegios\", though she is herself part of the political elite.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Repeatedly denounces the previous \"régimen de corrupción y privilegios\", though she is herself part of the political elite.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3329,5 +3351,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: only record-based answers; nothing was inferred from party or label. Her energy stance has moved from a ban on fracking toward openness to new techniques (2026), and from \"hugs not bullets\" toward a harder line on organised crime; the recent position was used. Abortion and equal-marriage answers rest on her own earlier statements and tweets quoted in press; she says little on them as president. The Wikipedia pages are used for her record of enacted measures. gob.mx stenographic versions were blocked from this environment, so morning-conference quotes come via press reports."
+  "notes": "Living person: only record-based answers; nothing was inferred from party or label. Her energy stance has moved from a ban on fracking toward openness to new techniques (2026), and from \"hugs not bullets\" toward a harder line on organised crime; the recent position was used. Abortion and equal-marriage answers rest on her own earlier statements and tweets quoted in press; she says little on them as president. The Wikipedia pages are used for her record of enacted measures. gob.mx stenographic versions were blocked from this environment, so morning-conference quotes come via press reports.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

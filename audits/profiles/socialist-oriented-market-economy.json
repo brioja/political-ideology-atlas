@@ -1096,11 +1096,33 @@
       ]
     },
     "political-elite-corrupt": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Trong names 'corruption, bureaucracy and degradation' as the main risk to the ruling party, so adherents see corruption as a risk to combat, not a settled condition of the elite.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Trong names 'corruption, bureaucracy and degradation' as the main risk to the ruling party, so adherents see corruption as a risk to combat, not a settled condition of the elite.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale infers the answer from the subject being or backing the establishment, not from a stated view of how politicians behave.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3646,6 +3668,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 7
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

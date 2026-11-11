@@ -881,11 +881,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Accounts attribute extensive narcotics-related corruption allegations to Gavin, while his embassy denied being the information source.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Accounts attribute extensive narcotics-related corruption allegations to Gavin, while his embassy denied being the information source.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about one government, party or regime, or about fighting corruption, not a general claim that most politicians put their own interests first, which this statement now asks.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -3017,5 +3039,13 @@
       "sources": []
     }
   },
-  "notes": "The scholarly chapter documents his personal advocacy without treating every Reagan policy as his. Its judgments about his diplomatic temperament are excluded. Political opening was selective in practice; support for conservative opposition does not establish suppression of every other party. Interference evidence remains contested between his stated justification and the documented pressure he exerted. No specific armed-insurgent funding position is imputed from general support for Reagan’s regional policy. Union lobbying does not establish positions on compulsory membership or every collective-bargaining rule. Discomfort with film violence or sexuality does not establish legal censorship. His family background, acting roles, business appointments and party label establish no policy positions. The contemporary letters’ factual allegations are not adopted as independent findings. All remaining nulls reviewed across ten themes; no historical inference used."
+  "notes": "The scholarly chapter documents his personal advocacy without treating every Reagan policy as his. Its judgments about his diplomatic temperament are excluded. Political opening was selective in practice; support for conservative opposition does not establish suppression of every other party. Interference evidence remains contested between his stated justification and the documented pressure he exerted. No specific armed-insurgent funding position is imputed from general support for Reagan’s regional policy. Union lobbying does not establish positions on compulsory membership or every collective-bargaining rule. Discomfort with film violence or sexuality does not establish legal censorship. His family background, acting roles, business appointments and party label establish no policy positions. The contemporary letters’ factual allegations are not adopted as independent findings. All remaining nulls reviewed across ten themes; no historical inference used.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
