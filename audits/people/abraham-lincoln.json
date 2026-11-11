@@ -1376,15 +1376,41 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Urged in 1838 that 'cold, calculating, unimpassioned reason' must govern and in 1842 praised 'all conquering mind', but he also spoke in providential terms in later years.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
       "sources": [
         "s1",
         "s20",
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Urged in 1838 that 'cold, calculating, unimpassioned reason' must govern and in 1842 praised 'all conquering mind', but he also spoke in providential terms in later years.",
+          "sources": [
+            "s1",
+            "s20",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
+          "sources": [
+            "s1",
+            "s20",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "welfare-for-citizens": {
       "value": null,
@@ -3804,6 +3830,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

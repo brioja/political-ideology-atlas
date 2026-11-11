@@ -918,11 +918,33 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "He says the intellect must be the servant of the heart, never its slave, and that affection preponderates in action, while demanding that knowledge rest on observation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "He says the intellect must be the servant of the heart, never its slave, and that affection preponderates in action, while demanding that knowledge rest on observation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -3267,6 +3289,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 8
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

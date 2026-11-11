@@ -927,11 +927,33 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He says loyalty is 'a matter of the heart, never of the mind' and that the SS can only be understood with 'blood and heart'.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He says loyalty is 'a matter of the heart, never of the mind' and that the SS can only be understood with 'blood and heart'.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tradition, feeling, will or reason in general, not religious faith, which this statement now asks about.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -3264,6 +3286,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",
