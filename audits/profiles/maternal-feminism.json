@@ -2598,11 +2598,33 @@
    ]
   },
   "abolish-police-prisons": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
-   "rationale": "Reformers wanted protection and prison reform, not abolition. None of the cited sources takes up this question, so the answer is an inference.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "low",
+     "rationale": "Reformers wanted protection and prison reform, not abolition. None of the cited sources takes up this question, so the answer is an inference.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "power-sharing-divided-societies": {
@@ -3567,6 +3589,12 @@
    "reviewer": "scripts/unsourced-to-null.js",
    "reviewedAt": "2026-11-02",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

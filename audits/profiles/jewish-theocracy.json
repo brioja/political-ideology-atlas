@@ -1800,11 +1800,33 @@
       ]
     },
     "abolish-police-prisons": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Maimonides' state includes courts that enforce penalties.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Maimonides' state includes courts that enforce penalties.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "ageing-research-funding": {
@@ -3675,6 +3697,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 19
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

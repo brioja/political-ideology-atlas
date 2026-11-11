@@ -2585,11 +2585,33 @@
       "sources": []
     },
     "abolish-police-prisons": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Owen held that crime comes from circumstances and should be reformed rather than punished, so punitive prisons are rejected; but he did not call for abolishing all safeguards, an inference.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Owen held that crime comes from circumstances and should be reformed rather than punished, so punitive prisons are rejected; but he did not call for abolishing all safeguards, an inference.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "power-sharing-divided-societies": {
@@ -3494,6 +3516,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 230
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

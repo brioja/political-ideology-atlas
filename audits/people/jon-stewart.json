@@ -206,11 +206,33 @@
       ]
     },
     "abolish-police-prisons": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "In 2026 he told Mayor Mamdani he does not think abolishing all prisons is a good idea and said order and security are also a progressive value.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "In 2026 he told Mayor Mamdani he does not think abolishing all prisons is a good idea and said order and security are also a progressive value.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "open-borders": {
@@ -3111,5 +3133,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Commentary comes mainly from comedy broadcasts, where satire can blur sincere positions; only clear statements were used. Many reports are secondary summaries of his remarks."
+  "notes": "Commentary comes mainly from comedy broadcasts, where satire can blur sincere positions; only clear statements were used. Many reports are secondary summaries of his remarks.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

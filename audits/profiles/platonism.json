@@ -2564,11 +2564,33 @@
       ]
     },
     "abolish-police-prisons": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Laws sets out a detailed penal code with courts, guardians of the law and prison, and the Republic treats punishment as curative.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Laws sets out a detailed penal code with courts, guardians of the law and prison, and the Republic treats punishment as curative.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "power-sharing-divided-societies": {
@@ -3443,6 +3465,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 271
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

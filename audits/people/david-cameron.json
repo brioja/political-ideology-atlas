@@ -2647,12 +2647,36 @@
       "sources": []
     },
     "abolish-police-prisons": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "In his prison speech he said serious offenders must go to jail and argued for a more effective prison system rather than abolition.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s13",
         "s27"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "In his prison speech he said serious offenders must go to jail and argued for a more effective prison system rather than abolition.",
+          "sources": [
+            "s13",
+            "s27"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s13",
+            "s27"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "power-sharing-divided-societies": {
@@ -3490,5 +3514,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Positions are taken from his own speeches, the 2015 manifesto he led and his recorded Commons and Lords statements. His EU stance moved from reform to a referendum he lost, and he accepted the result. His China stance was warmer as Prime Minister than as Foreign Secretary in 2024, where the later view counts. His government's legislation is treated as his only where he personally drove or stated it."
+  "notes": "Positions are taken from his own speeches, the 2015 manifesto he led and his recorded Commons and Lords statements. His EU stance moved from reform to a referendum he lost, and he accepted the result. His China stance was warmer as Prime Minister than as Foreign Secretary in 2024, where the later view counts. His government's legislation is treated as his only where he personally drove or stated it.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

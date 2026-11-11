@@ -2446,11 +2446,33 @@
    "sources": []
   },
   "abolish-police-prisons": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Writing of his own imprisonment (autobiography, ch. 10) he said 'I am not saying there shouldn't be prisons, but there shouldn't be bars', so he wanted prisons reformed, not abolished.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
    "sources": [
     "s13"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Writing of his own imprisonment (autobiography, ch. 10) he said 'I am not saying there shouldn't be prisons, but there shouldn't be bars', so he wanted prisons reformed, not abolished.",
+     "sources": [
+      "s13"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+     "sources": [
+      "s13"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "power-sharing-divided-societies": {
@@ -3266,6 +3288,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 5
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

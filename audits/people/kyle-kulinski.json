@@ -2408,11 +2408,33 @@
    "sources": []
   },
   "abolish-police-prisons": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Disagreed that prisons should be abolished, calling that utopian and silly for violent crime.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "Disagreed that prisons should be abolished, calling that utopian and silly for violent crime.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-02"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "power-sharing-divided-societies": {
@@ -3216,5 +3238,13 @@
    "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Rests mostly on two quizzes he took on camera in the same period (8 Values and Left Values); where a quiz item only partly matches a statement the answer is medium. Searched themes outside the quizzes (Israel, Ukraine, courts, elections, trans issues, free speech): his own words were not available in sources opened, so those stay null. Wikipedia reports he later called Israel's Gaza war a genocide and supported campus protests; the cited articles did not carry his own words, so not used."
+ "notes": "Rests mostly on two quizzes he took on camera in the same period (8 Values and Left Values); where a quiz item only partly matches a statement the answer is medium. Searched themes outside the quizzes (Israel, Ukraine, courts, elections, trans issues, free speech): his own words were not available in sources opened, so those stay null. Wikipedia reports he later called Israel's Gaza war a genocide and supported campus protests; the cited articles did not carry his own words, so not used.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

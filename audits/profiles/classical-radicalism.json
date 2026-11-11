@@ -2787,12 +2787,36 @@
       ]
     },
     "abolish-police-prisons": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Radicals reformed rather than abolished the penal system; Bentham designed prisons and the radicals sought rational penal reform.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s2",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Radicals reformed rather than abolished the penal system; Bentham designed prisons and the radicals sought rational penal reform.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "power-sharing-divided-societies": {
@@ -3725,6 +3749,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 224
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

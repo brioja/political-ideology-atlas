@@ -2265,13 +2265,39 @@
       "sources": []
     },
     "abolish-police-prisons": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Served as prisons minister and visited every prison; later argued Victorian prisons should be rebuilt and that serious offenders belong in prison.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
       "sources": [
         "s1",
         "s2",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Served as prisons minister and visited every prison; later argued Victorian prisons should be rebuilt and that serious offenders belong in prison.",
+          "sources": [
+            "s1",
+            "s2",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about prisons or punishment, and the statement now asks only whether the police should be abolished.",
+          "sources": [
+            "s1",
+            "s2",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "power-sharing-divided-societies": {
@@ -3050,5 +3076,13 @@
       "sources": []
     }
   },
-  "notes": "Wikipedia states she was found dead at her Devon home on 9 July 2026 (death c. 8 July), so living is false. Prisons-minister, Hansard and Strictly Ann texts could not be reached; several topics (economy, welfare, tax, trade, most culture questions) have no sourced position and are null. On the Commons she took the opposing side on 15 of 17 LGBT-equality votes per Public Whip as reported by Wikipedia."
+  "notes": "Wikipedia states she was found dead at her Devon home on 9 July 2026 (death c. 8 July), so living is false. Prisons-minister, Hansard and Strictly Ann texts could not be reached; several topics (economy, welfare, tax, trade, most culture questions) have no sourced position and are null. On the Commons she took the opposing side on 15 of 17 LGBT-equality votes per Public Whip as reported by Wikipedia.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
