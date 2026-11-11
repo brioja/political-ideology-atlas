@@ -1377,12 +1377,36 @@
       ]
     },
     "party-controls-media": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Heavy state censorship existed, but under a no-party regime and not via party control; the stance is partly applicable.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value discounts control of the media by a crown or regime because it was not a party's, and the statement now asks about government control of any kind.",
       "sources": [
         "s3",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Heavy state censorship existed, but under a no-party regime and not via party control; the stance is partly applicable.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value discounts control of the media by a crown or regime because it was not a party's, and the statement now asks about government control of any kind.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "party-commands-army": {
@@ -3754,6 +3778,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

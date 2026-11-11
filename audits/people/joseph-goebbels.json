@@ -669,14 +669,38 @@
       "sources": []
     },
     "corporatist-bargaining": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He drove the mandatory Reich Chamber of Culture (1933), whose sub-chambers controlled entry to each trade, and the Labour Front replaced unions. These are state-organised bodies, though not wage-setting bodies.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it says wages were set without bargaining bodies, yet gives a positive.",
       "sources": [
         "b2",
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He drove the mandatory Reich Chamber of Culture (1933), whose sub-chambers controlled entry to each trade, and the Labour Front replaced unions. These are state-organised bodies, though not wage-setting bodies.",
+          "sources": [
+            "b2",
+            "b1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it says wages were set without bargaining bodies, yet gives a positive.",
+          "sources": [
+            "b2",
+            "b1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "one-party-rule": {
       "value": 2,
@@ -4109,6 +4133,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 26
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -488,11 +488,33 @@
       ]
     },
     "corporatist-bargaining": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Social democrats accept collective bargaining, but state-recognised bodies setting prices jointly with employers is corporatist, not socialist.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Social democrats accept collective bargaining, but state-recognised bodies setting prices jointly with employers is corporatist, not socialist.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "one-party-rule": {
@@ -3804,6 +3826,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 167
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

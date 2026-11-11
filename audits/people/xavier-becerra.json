@@ -2413,9 +2413,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Said in 2020 he supports protecting transgender students and adults (a 2016 record item on not elevating gender identity as a protected class conflicts; the 2020 position is later).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s2",
     "b13"
@@ -2423,6 +2423,30 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Said in 2020 he supports protecting transgender students and adults (a 2016 record item on not elevating gender identity as a protected class conflicts; the 2020 position is later).",
+     "sources": [
+      "s2",
+      "b13"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s2",
+      "b13"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3433,6 +3457,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   },
   {

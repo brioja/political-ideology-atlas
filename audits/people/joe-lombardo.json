@@ -2450,9 +2450,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "He signed transgender healthcare and prison protections, but later opposed provider shields and transgender participation in female sports.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s10",
     "b26",
@@ -2461,6 +2461,32 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "He signed transgender healthcare and prison protections, but later opposed provider shields and transgender participation in female sports.",
+     "sources": [
+      "s10",
+      "b26",
+      "b4"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s10",
+      "b26",
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3493,6 +3519,12 @@
  ],
  "rules": 2,
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

@@ -2669,9 +2669,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He supports the Equality Act’s protections based on gender identity.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s4",
     "b15"
@@ -2679,6 +2679,30 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He supports the Equality Act’s protections based on gender identity.",
+     "sources": [
+      "s4",
+      "b15"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s4",
+      "b15"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3699,5 +3723,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

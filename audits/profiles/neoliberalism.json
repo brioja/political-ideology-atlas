@@ -335,12 +335,36 @@
       ]
     },
     "corporatist-bargaining": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The SEP has neoliberals defend market-set prices against planning, and Boas and Gans-Morse list eliminating price controls as neoliberal policy.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The SEP has neoliberals defend market-set prices against planning, and Boas and Gans-Morse list eliminating price controls as neoliberal policy.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "price-controls-essentials": {
@@ -3171,5 +3195,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Answered only where the SEP, Boas and Gans-Morse or the MPS statement speak. Not opened: Slobodian's Globalists, Mirowski and Plehwe's The Road from Mont Pelerin, Britannica (blocked). Single-thinker positions in the SEP (Friedman's negative income tax, Buchanan's inheritance tax) are left null. Themes searched: economy, government, liberty, world, means."
+  "notes": "Answered only where the SEP, Boas and Gans-Morse or the MPS statement speak. Not opened: Slobodian's Globalists, Mirowski and Plehwe's The Road from Mont Pelerin, Britannica (blocked). Single-thinker positions in the SEP (Friedman's negative income tax, Buchanan's inheritance tax) are left null. Themes searched: economy, government, liberty, world, means.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

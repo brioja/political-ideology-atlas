@@ -900,11 +900,33 @@
       "sources": []
     },
     "elite-replacement": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He alleged that Democrats deliberately permit immigration to gain census seats and future voters.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about weakening the nation or gaining votes, and the statement now asks only about deliberately replacing the native population.",
       "sources": [
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He alleged that Democrats deliberately permit immigration to gain census seats and future voters.",
+          "sources": [
+            "s6"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about weakening the nation or gaining votes, and the statement now asks only about deliberately replacing the native population.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "proportional-representation": {
@@ -3063,6 +3085,12 @@
   },
   "notes": "The full 2019 testimony and current interview were checked against all statement themes. Immigration enforcement does not establish his views on universal economic, climate, technological, penal or religious-law questions. Family separation is documented in the summary; the bank has no exact family-separation item. No historical inferences used. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

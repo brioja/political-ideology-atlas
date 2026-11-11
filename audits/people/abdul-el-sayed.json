@@ -2192,12 +2192,36 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Pledges to protect people regardless of gender identity and backs gender-affirming care decisions staying with patients and doctors.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s1",
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Pledges to protect people regardless of gender identity and backs gender-affirming care decisions staying with patients and doctors.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3204,5 +3228,13 @@
    "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Positions on policing changed: in 2020 he endorsed shifting police funds to social services ('defund' in his words), while in 2026 he says he does not support defunding and backs law-enforcement recruitment and retention. On Israel he declines to affirm a right to exist as a Jewish state, which is recorded as contested (0). Many broad-liberty answers (religion, expression, voting) rest on his general platform commitments at medium confidence. Unreachable: web.archive.org (blocked), 2018 campaign site, Jewish Insider, Mediaite, Metro Times (403), his books and podcast (no full text obtained)."
+ "notes": "Positions on policing changed: in 2020 he endorsed shifting police funds to social services ('defund' in his words), while in 2026 he says he does not support defunding and backs law-enforcement recruitment and retention. On Israel he declines to affirm a right to exist as a Jewish state, which is recorded as contested (0). Many broad-liberty answers (religion, expression, voting) rest on his general platform commitments at medium confidence. Unreachable: web.archive.org (blocked), 2018 campaign site, Jewish Insider, Mediaite, Metro Times (403), his books and podcast (no full text obtained).",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

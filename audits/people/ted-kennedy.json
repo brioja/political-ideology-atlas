@@ -2367,13 +2367,35 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Signed the 2009 Employment Non-Discrimination Act, which covers gender identity, and backed the 2007 version.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s2"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Signed the 2009 Employment Non-Discrimination Act, which covers gender identity, and backed the 2007 version.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "assisted-dying": {
       "value": null,
@@ -3401,6 +3423,14 @@
     {
       "auditor": "gpt-6.1-sol",
       "auditedAt": "2026-10-26"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -963,11 +963,33 @@
       ]
     },
     "elite-replacement": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Claims Democrats import migrants for permanent electoral dominance.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about weakening the nation or gaining votes, and the statement now asks only about deliberately replacing the native population.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Claims Democrats import migrants for permanent electoral dominance.",
+          "sources": [
+            "s2"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about weakening the nation or gaining votes, and the statement now asks only about deliberately replacing the native population.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "proportional-representation": {
@@ -3190,6 +3212,12 @@
   },
   "notes": "Reviewed his complete campaign policy page, full 2026 CIS immigration interview, two substantial CNN interviews, personally introduced bills and recent profiles, then checked all 490 statements. Publicly available CIS text was fetched via https://r.jina.ai/https://cis.org/Transcript/Immigration-Newsmaker-Transcript-Conversation-Rep-Brandon-Gill after the direct fetch failed. Host questions and descriptions of policies by other speakers are not his positions. Strongest later clarification on Ilhan Omar in the March 2026 interview conditions denaturalization and deportation on an investigation establishing immigration fraud; allegations are not treated as proven or as blanket authority to expel citizens. His campaigns against Islamic immigration, multiculturalism and DEI are recorded without assuming racial hereditarianism, racial franchise rules or an ethnic immigration quota. Opposition to minors’ transition surgery does not establish his view on adult legal recognition or every gender proposition. Opposition to sharia does not establish a position on Christian scriptural government. Descent-related answer is qualified: he rejects automatic citizenship for particular noncitizen parents, not all territorial citizenship. Judicial-checks evidence is mixed rather than equated with rejection of every constitutional limit. No positions borrowed from his wife, father-in-law, Trump endorsements or party label; no inferred answers.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

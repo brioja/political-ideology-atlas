@@ -3760,11 +3760,33 @@
       ]
     },
     "self-ownership": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Constitution makes work a duty and honour of every able-bodied citizen and requires protection of socialist property, so individual labour is called on for the common good.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about rights over labour or property, and the statement now asks only about ownership of one's own body.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The Constitution makes work a duty and honour of every able-bodied citizen and requires protection of socialist property, so individual labour is called on for the common good.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about rights over labour or property, and the statement now asks only about ownership of one's own body.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "cut-consumption-tax": {
@@ -3956,6 +3978,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 192
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

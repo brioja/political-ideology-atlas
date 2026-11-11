@@ -2523,12 +2523,36 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Voted No on the Equality Act in 2019 (roll 217) and 2021 (roll 39), which bars gender-identity discrimination, and cosponsored the End Taxpayer Funding of Gender Experimentation Act.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s1",
         "s43"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Voted No on the Equality Act in 2019 (roll 217) and 2021 (roll 39), which bars gender-identity discrimination, and cosponsored the End Taxpayer Funding of Gender Experimentation Act.",
+          "sources": [
+            "s1",
+            "s43"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s1",
+            "s43"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3525,5 +3549,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Evidence is his House record (roll calls, bills sponsored and cosponsored) and floor speeches in the Congressional Record, 2017-2024; his book and OAN-era interviews were not searched at length, so views stated only there are left null. Cannabis votes (MORE Act yes in 2020 and 2022, a bill to move marijuana to schedule III) are not answers to the all-drugs statement. Illegal-immigration measures are not answers to immigration levels or welfare for immigrants. The Green Real Deal resolutions (2019, 2021) and his later opposition to the Paris accord pull apart; the later position leads. Cosponsorships and single votes are capped at medium."
+  "notes": "Evidence is his House record (roll calls, bills sponsored and cosponsored) and floor speeches in the Congressional Record, 2017-2024; his book and OAN-era interviews were not searched at length, so views stated only there are left null. Cannabis votes (MORE Act yes in 2020 and 2022, a bill to move marijuana to schedule III) are not answers to the all-drugs statement. Illegal-immigration measures are not answers to immigration levels or welfare for immigrants. The Green Real Deal resolutions (2019, 2021) and his later opposition to the Paris accord pull apart; the later position leads. Cosponsorships and single votes are capped at medium.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

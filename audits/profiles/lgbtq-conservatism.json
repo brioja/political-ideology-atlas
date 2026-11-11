@@ -2486,11 +2486,33 @@
       ]
     },
     "gender-identity-recognition": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "LCR dropped trans rights from its mission in 2026 and some chapters backed limits on youth care, though it had earlier backed trans protections in 2015; adherents split with a lean to disagree.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "LCR dropped trans rights from its mission in 2026 and some chapters backed limits on youth care, though it had earlier backed trans protections in 2015; adherents split with a lean to disagree.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3567,6 +3589,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 10
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

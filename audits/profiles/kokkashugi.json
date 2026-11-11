@@ -3053,12 +3053,36 @@
       "sources": []
     },
     "state-arms-monopoly": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The sacred state commands the armed forces under the emperor (s1), but the movement's own coups and assassinations, such as Kita Ikki's plan (s2), show adherents accepting private force; split, so mild agreement.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes armed groups outside the state, yet gives a positive on a state monopoly of arms.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The sacred state commands the armed forces under the emperor (s1), but the movement's own coups and assassinations, such as Kita Ikki's plan (s2), show adherents accepting private force; split, so mild agreement.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes armed groups outside the state, yet gives a positive on a state monopoly of arms.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "soldiers-refuse-war": {
@@ -3561,6 +3585,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 10
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

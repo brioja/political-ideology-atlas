@@ -470,11 +470,33 @@
       ]
     },
     "corporatist-bargaining": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Ordoliberals oppose state-run economic coordination; price setting by state bodies is contrary to a competitive order.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Ordoliberals oppose state-run economic coordination; price setting by state bodies is contrary to a competitive order.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about price setting, and the statement now asks only about setting wages.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "one-party-rule": {
@@ -3623,6 +3645,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 275
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -2453,9 +2453,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "His October 2026 letter demands enforcement of housing protections based on gender identity and sexual orientation.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s5",
     "b9",
@@ -2464,6 +2464,32 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "His October 2026 letter demands enforcement of housing protections based on gender identity and sexual orientation.",
+     "sources": [
+      "s5",
+      "b9",
+      "b8"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s5",
+      "b9",
+      "b8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3468,5 +3494,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

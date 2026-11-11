@@ -2619,9 +2619,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Backed Proposal 1 on gender identity protections, supports gender-affirming care, created an Office of LGBTQIA+ Affairs.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s2",
     "s9",
@@ -2631,6 +2631,34 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Backed Proposal 1 on gender identity protections, supports gender-affirming care, created an Office of LGBTQIA+ Affairs.",
+     "sources": [
+      "s2",
+      "s9",
+      "b19",
+      "b2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s2",
+      "s9",
+      "b19",
+      "b2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3699,6 +3727,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

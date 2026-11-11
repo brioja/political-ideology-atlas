@@ -2405,12 +2405,36 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Platform supports banning discrimination based on gender identity (Equality Act), ending the transgender military ban and shelter access; in 2025 he separately said sports eligibility should be set locally, not by federal bans.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s12",
         "s26"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Platform supports banning discrimination based on gender identity (Equality Act), ending the transgender military ban and shelter access; in 2025 he separately said sports eligibility should be set locally, not by federal bans.",
+          "sources": [
+            "s12",
+            "s26"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s12",
+            "s26"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3431,5 +3455,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Most evidence is from the 2019-2020 campaign platform and speeches; the most recent clear position was used where views moved (Medicare for All in 2018 vs a public option from 2019; Israel arms sales in August 2025 are context only and not mapped to a statement). In 2025 he said transgender sports eligibility should be decided locally and acknowledged parents' concerns; this is recorded as context only. No recorded position was found for most statements, which are null."
+  "notes": "Most evidence is from the 2019-2020 campaign platform and speeches; the most recent clear position was used where views moved (Medicare for All in 2018 vs a public option from 2019; Israel arms sales in August 2025 are context only and not mapped to a statement). In 2025 he said transgender sports eligibility should be decided locally and acknowledged parents' concerns; this is recorded as context only. No recorded position was found for most statements, which are null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

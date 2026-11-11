@@ -2337,13 +2337,35 @@
    "sources": []
   },
   "racial-franchise": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Praised Arab parliamentary and public officeholding.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "Praised Arab parliamentary and public officeholding.",
+     "sources": [
+      "s1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "online-participation": {
    "value": null,
@@ -3210,6 +3232,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

@@ -2427,11 +2427,33 @@
    "sources": []
   },
   "racial-franchise": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "She rejects racial restrictions on citizens’ eligibility for public office.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
    "sources": [
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "She rejects racial restrictions on citizens’ eligibility for public office.",
+     "sources": [
+      "s3"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-31"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "online-participation": {
@@ -3312,6 +3334,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

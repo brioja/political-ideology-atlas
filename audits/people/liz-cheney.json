@@ -2171,11 +2171,33 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Voted against the Equality Act in 2019 and 2021, which added gender identity protections.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Voted against the Equality Act in 2019 and 2021, which added gender identity protections.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-07"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3755,5 +3777,13 @@
    "sources": []
   }
  },
- "notes": "Answers rest mainly on House roll calls (2017-2023); her words are used only where no vote speaks. Searched: Voteview (about 250 keyword queries), Congressional Record floor speeches and hearings, congress tweets, MediaSum interviews, news reports of the 2013 and 2021 marriage statements. Same-sex marriage: opposed in 2013, said she was wrong in 2021 and voted for the Respect for Marriage Act; the record answers. Abortion: self-described pro-life; in 2024 she criticized state bans that block life-saving care."
+ "notes": "Answers rest mainly on House roll calls (2017-2023); her words are used only where no vote speaks. Searched: Voteview (about 250 keyword queries), Congressional Record floor speeches and hearings, congress tweets, MediaSum interviews, news reports of the 2013 and 2021 marriage statements. Same-sex marriage: opposed in 2013, said she was wrong in 2021 and voted for the Respect for Marriage Act; the record answers. Abortion: self-described pro-life; in 2024 she criticized state bans that block life-saving care.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

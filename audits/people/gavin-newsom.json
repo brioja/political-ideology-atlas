@@ -2649,9 +2649,9 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Signed SB 107 (refuge for trans youth) and the SAFETY Act protecting students' gender identity privacy. He separately called trans athletes in women's sports unfair.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s1",
     "s13",
@@ -2660,6 +2660,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Signed SB 107 (refuge for trans youth) and the SAFETY Act protecting students' gender identity privacy. He separately called trans athletes in women's sports unfair.",
+     "sources": [
+      "s1",
+      "s13",
+      "b21"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s1",
+      "s13",
+      "b21"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3734,6 +3760,12 @@
  ],
  "rules": 3,
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

@@ -2475,12 +2475,36 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Pushed the Equality Act, which bars discrimination based on gender identity, and says Republican attacks on trans Americans infringe their rights.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s21",
         "s41"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Pushed the Equality Act, which bars discrimination based on gender identity, and says Republican attacks on trans Americans infringe their rights.",
+          "sources": [
+            "s21",
+            "s41"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s21",
+            "s41"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3488,6 +3512,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

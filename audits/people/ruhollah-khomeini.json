@@ -2110,11 +2110,33 @@
       ]
     },
     "arm-foreign-insurgents": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "His government supplied financial and political support to allied Shia groups abroad such as Lebanese Hezbollah and the Iraqi Da'wa Party, and he called for exporting the revolution.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about financial and political support, and the statement now asks only about arming insurgents.",
       "sources": [
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "His government supplied financial and political support to allied Shia groups abroad such as Lebanese Hezbollah and the Iraqi Da'wa Party, and he called for exporting the revolution.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about financial and political support, and the statement now asks only about arming insurgents.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "intervene-in-bloc": {
@@ -3490,6 +3512,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

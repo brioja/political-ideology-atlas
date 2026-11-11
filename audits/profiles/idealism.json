@@ -3234,11 +3234,33 @@
       ]
     },
     "state-arms-monopoly": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Idealism glorifies the state as protector of nation and homeland, which supports a state arms monopoly in principle despite the party's own armed groups.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes armed groups outside the state, yet gives a positive on a state monopoly of arms.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Idealism glorifies the state as protector of nation and homeland, which supports a state arms monopoly in principle despite the party's own armed groups.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes armed groups outside the state, yet gives a positive on a state monopoly of arms.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "soldiers-refuse-war": {
@@ -3770,6 +3792,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 14
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

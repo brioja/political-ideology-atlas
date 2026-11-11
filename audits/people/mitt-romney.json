@@ -2353,11 +2353,33 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed: he praised the Fairness for All Act, which would bar discrimination against LGBT people, but in 2021 opposed the Biden rule allowing transgender girls in girls' sports.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed: he praised the Fairness for All Act, which would bar discrimination against LGBT people, but in 2021 opposed the Biden rule allowing transgender girls in girls' sports.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3384,5 +3406,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Positions shifted over time and the most recent clear one is used: pro-choice-leaning in 1994-2002 but pro-life since 2005; opposed same-sex marriage until 2012 but voted for the Respect for Marriage Act in 2022; backed 2009 stimulus but opposed it in 2012; favored higher taxes on the wealthy in December 2025 (read only via Wikipedia's summary of a New York Times essay). Several 2007-2012 positions (Guantanamo, enhanced interrogation, DADT, marijuana) have no recent restatement. The book No Apology was not available as full text."
+  "notes": "Positions shifted over time and the most recent clear one is used: pro-choice-leaning in 1994-2002 but pro-life since 2005; opposed same-sex marriage until 2012 but voted for the Respect for Marriage Act in 2022; backed 2009 stimulus but opposed it in 2012; favored higher taxes on the wealthy in December 2025 (read only via Wikipedia's summary of a New York Times essay). Several 2007-2012 positions (Guantanamo, enhanced interrogation, DADT, marijuana) have no recent restatement. The book No Apology was not available as full text.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

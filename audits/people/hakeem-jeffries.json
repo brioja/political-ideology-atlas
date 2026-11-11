@@ -2489,12 +2489,36 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Voted for the Equality Act in 2019 and supports banning discrimination based on gender identity, though in 2016 he said gender identity should not be elevated as a protected class.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s1",
         "s25"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Voted for the Equality Act in 2019 and supports banning discrimination based on gender identity, though in 2016 he said gender identity should not be elevated as a protected class.",
+          "sources": [
+            "s1",
+            "s25"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s1",
+            "s25"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3506,6 +3530,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

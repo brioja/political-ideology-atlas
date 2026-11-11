@@ -2362,11 +2362,33 @@
       ]
     },
     "socialized-care": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Lula governments expanded public childcare and social programmes, but Lulism does not call for socialising housework; mild inference.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it supports public services but not replacing family care, which is what the statement asks.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Lula governments expanded public childcare and social programmes, but Lulism does not call for socialising housework; mild inference.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it supports public services but not replacing family care, which is what the statement asks.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "purge-loanwords": {
@@ -3529,6 +3551,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 222
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

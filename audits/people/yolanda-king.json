@@ -2115,11 +2115,33 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Explicitly includes transgender people in her demand for equal rights and protection from discrimination.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Explicitly includes transgender people in her demand for equal rights and protection from discrimination.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3082,6 +3104,12 @@
   },
   "notes": "Audits Yolanda Denise King, not her niece Yolanda Renee King. Parents’, siblings’ and allies’ positions are not automatically attributed. Opposition to the Iraq and Gulf wars does not establish an absolute prohibition on every foreign intervention. Broad equality does not establish every specific franchise, religious or reproductive policy. Original Smith and Seattle archive links failed, so the reproduced excerpts are used cautiously as secondary evidence. The American Archive transcript was not fully retrievable and is not cited for economic claims. Remaining null statements reviewed across all ten themes; no matching record found for detailed fiscal, ecological, nuclear or AI policy.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

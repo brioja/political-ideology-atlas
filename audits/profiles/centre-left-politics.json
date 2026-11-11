@@ -2447,11 +2447,33 @@
       "sources": []
     },
     "socialized-care": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The 2024 manifesto backs public childcare and care services, though not abolishing private family care.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it supports public services but not replacing family care, which is what the statement asks.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The 2024 manifesto backs public childcare and care services, though not abolishing private family care.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it supports public services but not replacing family care, which is what the statement asks.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "purge-loanwords": {
@@ -2563,11 +2585,33 @@
       ]
     },
     "gender-identity-recognition": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The PES manifesto supports LGBTI equality and protection against discrimination, though the position of the US strand varies.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The PES manifesto supports LGBTI equality and protection against discrimination, though the position of the US strand varies.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3719,6 +3763,18 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -2717,12 +2717,36 @@
    "sources": []
   },
   "gender-identity-recognition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Signed an executive order adding gender identity to federal anti-discrimination protections in hiring and a hate-crimes law covering gender identity, and listed transgender Americans among groups facing struggles for justice.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
    "sources": [
     "s47",
     "s18"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Signed an executive order adding gender identity to federal anti-discrimination protections in hiring and a hate-crimes law covering gender identity, and listed transgender Americans among groups facing struggles for justice.",
+     "sources": [
+      "s47",
+      "s18"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+     "sources": [
+      "s47",
+      "s18"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "assisted-dying": {
@@ -3773,5 +3797,13 @@
    "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Answers rest on his own speeches and signed record from 2006 to 2018. On same-sex marriage his position moved from support for civil unions to public support for marriage in May 2012 (ABC interview); the later position is recorded. Where his speeches balance two sides (surveillance, free trade, drugs, immigration) the answer follows the policies he actually pursued. A prior pilot audit was discarded and none of its answers were carried over. No inference was made from party or label; statements without a recorded position are null. Sources were full speech texts where available; his books (The Audacity of Hope, A Promised Land) and the JAMA ACA article were not available as full text and were not used."
+ "notes": "Answers rest on his own speeches and signed record from 2006 to 2018. On same-sex marriage his position moved from support for civil unions to public support for marriage in May 2012 (ABC interview); the later position is recorded. Where his speeches balance two sides (surveillance, free trade, drugs, immigration) the answer follows the policies he actually pursued. A prior pilot audit was discarded and none of its answers were carried over. No inference was made from party or label; statements without a recorded position are null. Sources were full speech texts where available; his books (The Audacity of Hope, A Promised Land) and the JAMA ACA article were not available as full text and were not used.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

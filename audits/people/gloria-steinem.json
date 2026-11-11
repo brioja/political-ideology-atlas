@@ -137,12 +137,36 @@
       ]
     },
     "gender-identity-recognition": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "In 2013 said trans lives should be celebrated, not questioned, and backed the Employment Non-Discrimination Act; in 2020 opposed the Trump administration's rollback of trans health-care protections. Retracted her 1977 remarks.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s6",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In 2013 said trans lives should be celebrated, not questioned, and backed the Employment Non-Discrimination Act; in 2020 opposed the Trump administration's rollback of trans health-care protections. Retracted her 1977 remarks.",
+          "sources": [
+            "s6",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s6",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "women-suffrage": {
@@ -3073,6 +3097,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

@@ -2149,11 +2149,33 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "She promises legal protection and funded access for gender-affirming care, alongside privacy and nondiscrimination protections.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "She promises legal protection and funded access for gender-affirming care, alongside privacy and nondiscrimination protections.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3129,5 +3151,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Reviewed early public activity, congressional policy and immigration statements, Interior tenure and controversies, and the 2026 gubernatorial platform through October. Downloaded and searched all four complete current policy plans, ACLU responses and current interview transcripts. Older Medicare-for-All advocacy is represented by the latest explicit public-coverage/public-option plan, rather than assuming a continuing single-payer-only requirement. The May 2026 oil-and-gas answer distinguishes public lands from private production; implementation of presidential or legally mandated leasing decisions is not automatically her personal policy. The Senate questionnaire was read through the web reader after direct download returned HTML, and senators’ nuclear-expansion questions were not mistaken for her answers: her own broad technology response does not settle the nuclear item. Current privacy and data-center proposals do not answer internet anonymity, encryption, algorithmic government or a universal ban on technology. Antitrust action against algorithmic rent fixing is not a legal rent cap. Tribal sovereignty is not an assertion that every nation needs an independent state, that Indigenous descendants should rule settlers, or that ethnic territorial claims justify foreign annexation. Boarding-school acknowledgment does not itself establish financial colonial reparations. Foreign-policy searches found less current direct evidence than domestic sources; no blanket nonintervention or alliance position is inferred. Family background and religious identity supply no answers. Reviewed each remaining null across all 490 statements and themes. No inferred answers. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant."
+  "notes": "Reviewed early public activity, congressional policy and immigration statements, Interior tenure and controversies, and the 2026 gubernatorial platform through October. Downloaded and searched all four complete current policy plans, ACLU responses and current interview transcripts. Older Medicare-for-All advocacy is represented by the latest explicit public-coverage/public-option plan, rather than assuming a continuing single-payer-only requirement. The May 2026 oil-and-gas answer distinguishes public lands from private production; implementation of presidential or legally mandated leasing decisions is not automatically her personal policy. The Senate questionnaire was read through the web reader after direct download returned HTML, and senators’ nuclear-expansion questions were not mistaken for her answers: her own broad technology response does not settle the nuclear item. Current privacy and data-center proposals do not answer internet anonymity, encryption, algorithmic government or a universal ban on technology. Antitrust action against algorithmic rent fixing is not a legal rent cap. Tribal sovereignty is not an assertion that every nation needs an independent state, that Indigenous descendants should rule settlers, or that ethnic territorial claims justify foreign annexation. Boarding-school acknowledgment does not itself establish financial colonial reparations. Foreign-policy searches found less current direct evidence than domestic sources; no blanket nonintervention or alliance position is inferred. Family background and religious identity supply no answers. Reviewed each remaining null across all 490 statements and themes. No inferred answers. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

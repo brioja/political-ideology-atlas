@@ -2152,11 +2152,33 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He explicitly supports transgender-inclusive civil-rights protections and describes his own nondiscrimination executive order.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He explicitly supports transgender-inclusive civil-rights protections and describes his own nondiscrimination executive order.",
+          "sources": [
+            "s5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3122,6 +3144,12 @@
   },
   "notes": "No inferences from Democratic affiliation, independent candidacy or endorsements. The latest questionnaire notes his May 2026 gubernatorial withdrawal. All remaining statements were reviewed against the full platforms and available record: narrower policies do not establish broad propositions. His split-rate property-tax proposal leaves land-value-tax null because replacing most other taxes is not established; cannabis retail regulation does not establish legalizing all recreational drugs. Tuition assistance does not establish cancellation of existing debt. LGBTQ protections do not alone establish a specific marriage-law position. Immigration-detainer cooperation does not establish a preferred immigration level. Climate plans do not establish nuclear or fossil-fuel positions. Union evidence is recorded as contested, not extrapolated from endorsement or opponents’ labels. No independent individual foreign-policy, religious-law or modern technology doctrine found.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

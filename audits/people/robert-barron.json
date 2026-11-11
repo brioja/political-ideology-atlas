@@ -2237,11 +2237,33 @@
       "sources": []
     },
     "gender-identity-recognition": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He opposed the proposed state amendment protecting gender identity and expression, citing religious-liberty conflicts.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
       "sources": [
         "era"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He opposed the proposed state amendment protecting gender identity and expression, citing religious-liberty conflicts.",
+          "sources": [
+            "era"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about protection from discrimination, and the statement now asks only about legal recognition according to gender identity.",
+          "sources": [
+            "era"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "assisted-dying": {
@@ -3226,5 +3248,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Reviewed writings from 2011–2026 across all themes, downloaded full essays and the April 2026 commission transcript, and checked later immigration, gender and religious-liberty statements. Only Barron’s own articles, statements and reported words are attributed to him; other Word on Fire contributors and general Catholic teaching are not substituted for his views. A 2015 economics article currently credited only to Word on Fire was not used for answers. Moral opposition to same-sex marriage is qualified by his explicit prudential opposition to trying to reverse civil recognition. His 2015 defense of tolerating adult transition is distinguished from later opposition to legal gender-identity provisions and transition interventions for minors. Recognizing ecological problems does not establish a specific climate-legislation position. Religion in public life is distinguished from formal establishment. Participation in the Trump commission is not an endorsement of all administration policies."
+  "notes": "Reviewed writings from 2011–2026 across all themes, downloaded full essays and the April 2026 commission transcript, and checked later immigration, gender and religious-liberty statements. Only Barron’s own articles, statements and reported words are attributed to him; other Word on Fire contributors and general Catholic teaching are not substituted for his views. A 2015 economics article currently credited only to Word on Fire was not used for answers. Moral opposition to same-sex marriage is qualified by his explicit prudential opposition to trying to reverse civil recognition. His 2015 defense of tolerating adult transition is distinguished from later opposition to legal gender-identity provisions and transition interventions for minors. Recognizing ecological problems does not establish a specific climate-legislation position. Religion in public life is distinguished from formal establishment. Participation in the Trump commission is not an endorsement of all administration policies.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

@@ -2527,13 +2527,35 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "She rejects judging eligibility for public office by race or religion.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
       "sources": [
         "b5"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "She rejects judging eligibility for public office by race or religion.",
+          "sources": [
+            "b5"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about eligibility for public office, and the statement now asks only about voting.",
+          "sources": [
+            "b5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "online-participation": {
       "value": null,
@@ -3466,6 +3488,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }
