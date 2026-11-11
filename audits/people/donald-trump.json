@@ -1521,11 +1521,33 @@
    "sources": []
   },
   "citizenship-by-descent": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Order tries to deny birthright citizenship to children of unlawfully present or temporary-status parents, tying citizenship to parental status; it does not touch children of citizens or permanent residents.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale keeps citizenship at birth for children of permanent residents, and the statement now asks whether it should go only to children of citizens.",
    "sources": [
     "s10"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Order tries to deny birthright citizenship to children of unlawfully present or temporary-status parents, tying citizenship to parental status; it does not touch children of citizens or permanent residents.",
+     "sources": [
+      "s10"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale keeps citizenship at birth for children of permanent residents, and the statement now asks whether it should go only to children of citizens.",
+     "sources": [
+      "s10"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "minority-language-support": {
@@ -3408,6 +3430,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   },
   {

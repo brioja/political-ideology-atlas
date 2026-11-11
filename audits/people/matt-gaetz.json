@@ -1647,11 +1647,33 @@
       "sources": []
     },
     "citizenship-by-descent": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Wrote the End Birthright Citizenship Fraud Act: automatic birth citizenship only where a parent is a US national, refugee, permanent resident or service member, moving toward descent but keeping residence-based categories.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale keeps citizenship at birth for children of permanent residents, refugees and service members, and the statement now asks whether it should go only to children of citizens.",
       "sources": [
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Wrote the End Birthright Citizenship Fraud Act: automatic birth citizenship only where a parent is a US national, refugee, permanent resident or service member, moving toward descent but keeping residence-based categories.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale keeps citizenship at birth for children of permanent residents, refugees and service members, and the statement now asks whether it should go only to children of citizens.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "minority-language-support": {
@@ -3551,6 +3573,12 @@
   },
   "notes": "Evidence is his House record (roll calls, bills sponsored and cosponsored) and floor speeches in the Congressional Record, 2017-2024; his book and OAN-era interviews were not searched at length, so views stated only there are left null. Cannabis votes (MORE Act yes in 2020 and 2022, a bill to move marijuana to schedule III) are not answers to the all-drugs statement. Illegal-immigration measures are not answers to immigration levels or welfare for immigrants. The Green Real Deal resolutions (2019, 2021) and his later opposition to the Paris accord pull apart; the later position leads. Cosponsorships and single votes are capped at medium.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
