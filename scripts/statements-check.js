@@ -43,11 +43,13 @@ if (process.argv.includes("--wording")) {
     // Errors are absolute (Brandon, 2026-11-10): no explanation excuses one; reword.
     const level = m.errors.length ? "ERROR" : "warning";
     if (m.errors.length) errors++; else warnings++;
-    const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings]), (w) => `**${w.toUpperCase()}**`);
+    const words = [...m.errors, ...m.warnings].filter((w) => /^[a-z ]+$/i.test(w) && w !== "second sentence");
+    const marked = s.text.replace(wordingRe(words), (w) => `**${w.toUpperCase()}**`).replace(/;/g, "**;**")
+      .replace(/([.!?])(\s+\S)/g, m.warnings.includes("second sentence") ? "$1**|**$2" : "$1$2");
     console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}`);
   }
   console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}: ` +
-    `always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}: ` +
+    `always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, "more"/"less"/"fewer" with no later "than", ";", a second sentence: ` +
     `check against test 3 in audits/statements/STANDARD.md: two claims joined, a list where one general word would do, ` +
     `a means instead of a position, a vague scope).`);
   process.exit(0);

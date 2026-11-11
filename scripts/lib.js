@@ -216,7 +216,7 @@ const awaitingReaudit = () => {
 // condition is hard to negate: does disagreeing reject the claim or the condition? "while" and "until" added 2026-11-10),
 // "cut"/"reduce"/"raise"/"increase"/"expand"/"lower" (a change from today's level, which differs by country and era:
 // state the level instead; Brandon, 2026-11-11. "Cut internet access" or "lower-level councils" are fine), and
-// "more"/"less"/"fewer" without a later "than" (marked in wordingMarks).
+// "more"/"less"/"fewer" without a later "than", a semicolon and a second sentence (marked in wordingMarks).
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and"],
   warnings: ["or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as",
@@ -232,7 +232,9 @@ function wordingMarks(text) {
   // today's level ("should have more power"); with a "than" they are a comparison ("more on rehabilitation than on
   // punishment") and aren't marked (Brandon, 2026-11-11).
   const relative = [...t.matchAll(/\b(more|less|fewer)\b/gi)].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
-  return { errors: find(WORDING.errors), warnings: [...new Set([...find(WORDING.warnings, t), ...relative])] };
+  // A semicolon or a second sentence usually joins a second claim, as "and" does (Brandon, 2026-11-11).
+  const joins = [...(/;/.test(text) ? [";"] : []), ...(/[.!?]\s+\S/.test(text.trim()) ? ["second sentence"] : [])];
+  return { errors: find(WORDING.errors), warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...joins])] };
 }
 
 module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,

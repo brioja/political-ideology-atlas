@@ -96,7 +96,7 @@ const clip = (t, n = 220) => (t.length > n ? t.slice(0, n - 1).trimEnd() + "…"
 function brief(step, s) {
   const m = marks(s), ans = answersTo(s.id), spread = {};
   for (const a of ans) spread[a.value] = (spread[a.value] || 0) + 1;
-  const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings]), (w) => `**${w.toUpperCase()}**`);
+  const marked = s.text.replace(wordingRe([...m.errors, ...m.warnings].filter((w) => w !== ";" && w !== "second sentence")), (w) => `**${w.toUpperCase()}**`).replace(/;/g, "**;**");
   const entry = Object.fromEntries(["id", "text", "agree", "disagree", "note", "status"].filter((k) => s[k] !== undefined).map((k) => [k, s[k]]));
   const sampleBlock = [2, 1, 0, -1, -2].map((v) => {
     const list = samples(ans, v, v === 0 ? 4 : 3);
