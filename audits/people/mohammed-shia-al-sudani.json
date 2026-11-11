@@ -308,9 +308,9 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "His drug-policy speech supports more decisive central policing, additional security facilities, training and updated technology for enforcement.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s6",
     "b3",
@@ -319,6 +319,32 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "His drug-policy speech supports more decisive central policing, additional security facilities, training and updated technology for enforcement.",
+     "sources": [
+      "s6",
+      "b3",
+      "b8"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s6",
+      "b3",
+      "b8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3303,6 +3329,17 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His drug-policy speech supports more decisive central policing, additional security facilities, training and updated technology for enforcement. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s6",
+    "b3",
+    "b8"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Reviewed all 490 statements against the full downloaded 2024 UN speech, his government-formation speech, the 2025 UK joint statement and later statements through August 2026. Former prime-minister status verified rather than assumed current. No view is inferred from his party, sect or alliance with other politicians. Parliament’s 2024 same-sex criminalisation and 2025 personal-status changes are not automatically attributed as personal endorsements without evidence of his own position. IDP return advocacy is not expanded into an explicit position on descendants’ refugee-return rights. Digital government is not algorithmic rule. Ending the coalition combat mission does not imply ending every military partnership: his January 2026 statement expressly retains coalition counterterrorism cooperation. His latest disarmament statement links sequencing to foreign withdrawal and airspace sovereignty. The Arabic state-agency drug speech is dated 9 December 2023, whereas the HRW article describes its linked statement as September; the primary text and its displayed date control here. Evidence of treatment for drug dependency is not a documented position on the overarching purpose of prisons.\n\nMerged with an independent claude-sonnet-5-5 audit: 8 answers taken from it, 16 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Themes searched: economy, government, world, liberty, society, ecology, from his two UN speeches, the programme speech, April 2025 remarks, Reuters/Arab News/WSJ-era interviews on the coalition, the Arabic drug-offence speech, UK joint statement, January 2026 weapons statement and the personal status law episode. The 2024-25 personal status amendments and the same-sex criminalisation law were passed by parliament; no statement of his own endorsing them was found, so they are null. Pmo.iq returned 404 and 964media returned 403 directly; the latter was read from a Wayback capture. The Commons Library page returned 403 and was read via Wayback. Answers on armed-forces, state-investment and Kurdistan rest partly on his programme speech as reported, not full text. Government acts count only where he spoke for them.",
@@ -3316,5 +3353,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

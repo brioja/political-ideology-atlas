@@ -320,12 +320,36 @@
       ]
     },
     "empower-police-military": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "In capitalist states the police and army are seen as instruments of class rule, while in a socialist state defense is a sacred duty; answered here as adherents living under capitalism would.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s2",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "In capitalist states the police and army are seen as instruments of class rule, while in a socialist state defense is a sacred duty; answered here as adherents living under capitalism would.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3923,6 +3947,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 192
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

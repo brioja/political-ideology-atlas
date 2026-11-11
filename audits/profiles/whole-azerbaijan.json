@@ -166,11 +166,33 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Elchibey said a people without its own army is not free and that Azerbaijan needed a national army to protect its territory and citizens.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Elchibey said a people without its own army is not free and that Azerbaijan needed a national army to protect its territory and citizens.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "national-resource-control": {
@@ -3658,6 +3680,14 @@
       "source": "s3",
       "quote": "gelebileceğini öngörmüştür. Elçibey bu düşüncesini; “…Biz önce Karabağ’ın kurtuluşunu, sonra Bütöv Azerbaycan’ı düşünüyoruz. Bütöv Azerbaycan uzun yoldur, 5-6 yıl sürer. Karabağ’ı ise, hemen",
       "type": "translation"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

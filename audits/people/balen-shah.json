@@ -200,13 +200,35 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "It expands border-police personnel, equipment and infrastructure (97).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "It expands border-police personnel, equipment and infrastructure (97).",
+     "sources": [
+      "s2"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3114,6 +3136,15 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "It expands border-police personnel, equipment and infrastructure (97). (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "No inferred answers. The full 2026 RSP program was downloaded and read using Nepali OCR and visual checks; program positions are medium, grounded in his explicit commitment to lead implementation, not merely party membership. The complete UN speech and 2022 municipal interview were reviewed. Reported implementation and critiques cover both mayoral and national records through 2026. Do not attribute rights organizations’ recommendations to him. His ritual observance does not establish a religious-state policy. A directly elected executive proposal does not answer our head-of-state election item: Nepal’s prime minister and president are distinct offices. The Greater Nepal map is nationalist symbolism, not sufficient evidence of demanding the recovery of all former territories. Film censorship for national identity does not establish moral-character censorship generally. Eviction of unregistered settlements does not establish abolition of private property. Border policing does not establish a preference for fewer lawful immigrants or terrorism surveillance. Digital service delivery is not evidence for rule by AI. All 490 statements and remaining unknowns reviewed.\n\nMerged with an independent claude-sonnet-5-5 audit: 0 answers taken from it, 0 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Searched (English and Hindi press; Nepali Facebook/X posts not reachable): federalism and provinces, border dispute and mediation, Hindu state and monarchy, social-media ban and protests, mayoral actions, economy and business meetings (the PMO readout of a businesses meeting quotes no position of his). Answered only where a source reports his own words or acts; the federalism remarks, border remarks and Janakpur speech do not settle any test statement (no test item on federalism as such; border dispute is not 'return of territory lost in a war'). The Hindu-state/monarchy answers rest on an attendee's account in a Hindi outlet: low. Blocked: pekacademy.com post on a Facebook note about MCC/USAID (DNS failure). Nepali-language and UN/MediaSum corpora gave nothing for him.",
@@ -3127,5 +3158,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

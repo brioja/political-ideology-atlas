@@ -241,12 +241,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Campaigned on \"he who does it pays\", said the state turned its back on those who protect citizens, and kept security spending out of the main cuts.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s7",
         "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Campaigned on \"he who does it pays\", said the state turned its back on those who protect citizens, and kept security spending out of the main cuts.",
+          "sources": [
+            "s7",
+            "s11"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s7",
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3391,6 +3415,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

@@ -236,12 +236,36 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Kokutai no Hongi counts growing national defence as part of the nation's rise, and Nippon Kaigi says defence arrangements must be built up urgently.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Kokutai no Hongi counts growing national defence as part of the nation's rise, and Nippon Kaigi says defence arrangements must be built up urgently.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-30"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3251,5 +3275,13 @@
       "addedAs": "apologise-for-past-wrongs"
     }
   ],
-  "notes": "The old audit leaned on the Wikipedia article and the party and government programme; this one rests on the Kokutai no Hongi read in full (Japanese) and Nippon Kaigi's own pages. The Kokutai no Hongi is the state's statement for 1937 and Nippon Kaigi is postwar and does not claim the emperor's divinity or expansion, so answers on divinity, expansion and direct rule rest on the former only. Searched by theme: government, liberty, society, economy (national-duty framing only), world, culture, means. Economy, ecology, technology and most policy statements are null: no stated position. Not opened: the English Kokutai no Hongi (archive.org lending copy, 401), Kita Ikki's Outline Plan, Aizawa Seishisai's Shinron, the Rescript to Soldiers and Sailors, Britannica (bot wall). Tanaka's text is OCR with errors. Strand and scope pass (2026-10-30): answers resting on the Kokutai no Hongi alone were kept only with a second source (Rescript, Meiji Constitution and oath, Tanaka or Nippon Kaigi); where the prewar and postwar strands differ (divinity, divine authority, democracy, consent, constituent assembly, expansion, defensive-only wars, cultural equality, national mission) the answer is a split (0, low). Prewar general political theory (workers' councils, private courts, state as business, harm principle, self-ownership, self-interest, smash-the-state, withdrawal from politics, reason over faith, dictatorship of the proletariat, state as class instrument, material conditions, moral incentives, capitalism-communism, class collaboration, defeating communism, religion as illusion, night-watchman state, unjust law, personal loyalty rule) and positions only Nippon Kaigi states (collective defence, alliances, China, foreign suffrage, gender-as-construct) are null as no shared position. All 490 statements were checked. Review (2026-10-30): clerical-rule nulled (deduced, not stated). Strand ruling (2026-10-30, integrator): answers resting only on the prewar state texts are null, consistent with pan-arabism."
+  "notes": "The old audit leaned on the Wikipedia article and the party and government programme; this one rests on the Kokutai no Hongi read in full (Japanese) and Nippon Kaigi's own pages. The Kokutai no Hongi is the state's statement for 1937 and Nippon Kaigi is postwar and does not claim the emperor's divinity or expansion, so answers on divinity, expansion and direct rule rest on the former only. Searched by theme: government, liberty, society, economy (national-duty framing only), world, culture, means. Economy, ecology, technology and most policy statements are null: no stated position. Not opened: the English Kokutai no Hongi (archive.org lending copy, 401), Kita Ikki's Outline Plan, Aizawa Seishisai's Shinron, the Rescript to Soldiers and Sailors, Britannica (bot wall). Tanaka's text is OCR with errors. Strand and scope pass (2026-10-30): answers resting on the Kokutai no Hongi alone were kept only with a second source (Rescript, Meiji Constitution and oath, Tanaka or Nippon Kaigi); where the prewar and postwar strands differ (divinity, divine authority, democracy, consent, constituent assembly, expansion, defensive-only wars, cultural equality, national mission) the answer is a split (0, low). Prewar general political theory (workers' councils, private courts, state as business, harm principle, self-ownership, self-interest, smash-the-state, withdrawal from politics, reason over faith, dictatorship of the proletariat, state as class instrument, material conditions, moral incentives, capitalism-communism, class collaboration, defeating communism, religion as illusion, night-watchman state, unjust law, personal loyalty rule) and positions only Nippon Kaigi states (collective defence, alliances, China, foreign suffrage, gender-as-construct) are null as no shared position. All 490 statements were checked. Review (2026-10-30): clerical-rule nulled (deduced, not stated). Strand ruling (2026-10-30, integrator): answers resting only on the prewar state texts are null, consistent with pan-arabism.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

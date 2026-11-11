@@ -132,12 +132,36 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He built a state around its army, with strict discipline, a guard and mass military organisation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s2",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He built a state around its army, with strict discipline, a guard and mass military organisation.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3694,6 +3718,12 @@
   },
   "notes": "Evidence is limited to the Secret History, Juvaini and a reference overview; his own words survive only as reported. Themes searched: government, world, liberty, religion, economy, society, means. Economy, ecology, technology and most culture statements have no recorded position and stay null.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

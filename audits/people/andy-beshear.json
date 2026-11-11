@@ -319,12 +319,36 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His budgets raised State Police pay, added troopers and funded local police training; no statement on added authority.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s1",
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His budgets raised State Police pay, added troopers and funded local police training; no statement on added authority.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-28"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3217,7 +3241,25 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His budgets raised State Police pay, added troopers and funded local police training; no statement on added authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s1",
+    "s3"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Most answers come from his veto messages and addresses. Many statements are null because he has not spoken to them or only a nearby issue is documented (death penalty, recreational drugs, same-sex marriage, minimum wage, climate and foreign policy have no cited primary source in this audit). He has said he supports the death penalty for some crimes, but only a news report of that was not opened, so it is left null. As of 2026 he is a prospective 2028 presidential candidate and chair of the Democratic Governors Association."
+ "notes": "Most answers come from his veto messages and addresses. Many statements are null because he has not spoken to them or only a nearby issue is documented (death penalty, recreational drugs, same-sex marriage, minimum wage, climate and foreign policy have no cited primary source in this audit). He has said he supports the death penalty for some crimes, but only a news report of that was not opened, so it is left null. As of 2026 he is a prospective 2028 presidential candidate and chair of the Democratic Governors Association.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

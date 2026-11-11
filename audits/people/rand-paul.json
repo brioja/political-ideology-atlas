@@ -677,9 +677,9 @@
    ]
   },
   "empower-police-military": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
-   "rationale": "He seeks to stop transfers of battlefield equipment to civilian police.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "s4",
     "b37",
@@ -688,6 +688,32 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "He seeks to stop transfers of battlefield equipment to civilian police.",
+     "sources": [
+      "s4",
+      "b37",
+      "b40"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-11-03"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "s4",
+      "b37",
+      "b40"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3888,5 +3914,13 @@
    "auditedAt": "2026-11-03"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

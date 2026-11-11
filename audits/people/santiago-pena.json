@@ -368,9 +368,9 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Promises more police on streets, improved equipment and training.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "s1",
     "b1"
@@ -378,6 +378,30 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Promises more police on streets, improved equipment and training.",
+     "sources": [
+      "s1",
+      "b1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "s1",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3464,5 +3488,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

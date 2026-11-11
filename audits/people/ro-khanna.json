@@ -314,12 +314,36 @@
    ]
   },
   "empower-police-military": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Wants more funding for community policing and law enforcement, but opposes a 'bloated' Pentagon budget and Pentagon increases.",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s10",
     "s11"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Wants more funding for community policing and law enforcement, but opposes a 'bloated' Pentagon budget and Pentagon increases.",
+     "sources": [
+      "s10",
+      "s11"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s10",
+      "s11"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3319,7 +3343,25 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Wants more funding for community policing and law enforcement, but opposes a 'bloated' Pentagon budget and Pentagon increases. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s10",
+    "s11"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Living person: no inference; answers only where he spoke or acted on the specific statement. Books (Entrepreneurial Nation, Dignity in a Digital Age, Progressive Capitalism) were not reachable as full text. Israel positions shifted after October 2023 (earlier self-described pro-Israel progressive); the most recent statements are used. Wealth-tax and Gaza genocide positions come from 2025-26."
+ "notes": "Living person: no inference; answers only where he spoke or acted on the specific statement. Books (Entrepreneurial Nation, Dignity in a Digital Age, Progressive Capitalism) were not reachable as full text. Israel positions shifted after October 2023 (earlier self-described pro-Israel progressive); the most recent statements are used. Wealth-tax and Gaza genocide positions come from 2025-26.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

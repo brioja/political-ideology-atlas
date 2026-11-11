@@ -309,13 +309,39 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His governments raised police numbers to record levels and added new powers (anti-social behaviour orders, 2005 anti-extremism measures); 2005 manifesto promises more police and forces 'the most flexible and effective in the world'.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2",
     "s3",
     "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His governments raised police numbers to record levels and added new powers (anti-social behaviour orders, 2005 anti-extremism measures); 2005 manifesto promises more police and forces 'the most flexible and effective in the world'.",
+     "sources": [
+      "s2",
+      "s3",
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2",
+      "s3",
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3326,7 +3352,26 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "His governments raised police numbers to record levels and added new powers (anti-social behaviour orders, 2005 anti-extremism measures); 2005 manifesto promises more police and forces 'the most flexible and effective in the world'. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2",
+    "s3",
+    "s8"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Living (born 6 May 1953, Wikipedia says age 73). Views that changed: immigration (no transitional limits on eastern Europeans in 2004; proposed curbs on EU immigration in 2017-18, most recent used), Freedom of Information (supported in 1996-97, regretted in 2010), nuclear power (no case for new stations in 1997; in the energy mix 2005; backed again in 2025). Iraq war and civil-liberties measures are contested; answers are limited to what he stated or enacted. A Journey (2010) and On Leadership (2024) were not available as full text; A Journey is cited only through a secondary article. Tony Blair Institute digital ID and AI proposals were not answered because no statement matches specifically."
+ "notes": "Living (born 6 May 1953, Wikipedia says age 73). Views that changed: immigration (no transitional limits on eastern Europeans in 2004; proposed curbs on EU immigration in 2017-18, most recent used), Freedom of Information (supported in 1996-97, regretted in 2010), nuclear power (no case for new stations in 1997; in the energy mix 2005; backed again in 2025). Iraq war and civil-liberties measures are contested; answers are limited to what he stated or enacted. A Journey (2010) and On Leadership (2024) were not available as full text; A Journey is cited only through a secondary article. Tony Blair Institute digital ID and AI proposals were not answered because no statement matches specifically.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

@@ -376,13 +376,39 @@
       ]
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Built up the military and said defense is government's prime responsibility; pushed crime legislation, tougher sentences, and said the legal system overprotected criminals.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s12",
         "s8",
         "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Built up the military and said defense is government's prime responsibility; pushed crime legislation, tougher sentences, and said the legal system overprotected criminals.",
+          "sources": [
+            "s12",
+            "s8",
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s12",
+            "s8",
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3425,6 +3451,17 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Built up the military and said defense is government's prime responsibility; pushed crime legislation, tougher sentences, and said the legal system overprotected criminals. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s12",
+        "s8",
+        "s10"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Born 1911, died 2004. He was a New Deal Democrat until the 1950s and switched to the Republican Party in 1962; answers use his positions as president and in the 1964 Goldwater speech. On abortion he signed California's 1967 Therapeutic Abortion Act as governor but from about 1980 on opposed abortion firmly, and the later position is used. His 1986 immigration law is read as a record of enforcement plus legalization. Where his rhetoric (low taxes, balanced budget) differed from his record (TEFRA and other tax rises, large deficits) the answer follows the stated position and says so. Few answers rely on inference; none was added to pass the inclusion check.",
@@ -3434,6 +3471,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

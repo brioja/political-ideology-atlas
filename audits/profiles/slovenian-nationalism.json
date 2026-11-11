@@ -280,13 +280,35 @@
    "auditor": "claude-sonnet-5-5"
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The SNS programmes ask for more police, better police pay and a properly equipped army, though not wider powers.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The SNS programmes ask for more police, better police pay and a properly equipped army, though not wider powers.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "reduce-immigration": {
    "value": 2,
@@ -3265,6 +3287,15 @@
    "confidence": "low",
    "rationale": "The opened sources (Slovene founding documents, SNS programmes, scholarship) state no position on this, and no stated principle settles it.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "The SNS programmes ask for more police, better police pay and a properly equipped army, though not wider powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s4"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "missingStatements": [
@@ -3288,5 +3319,13 @@
    "declined": "Specific to one country's minority law."
   }
  ],
- "notes": "Sources opened: the Constitution, May Declaration account, 1991 Charter, SNS programmes and a scholarly SNS study. The SDS programme and STA reports on it could not be opened, so the SDS-backed conservative strand is not documented and EU, NATO, economics, religion and morality are mostly null. The SNS itself differs from other strands on the EU, NATO and the Church, and its early 1990s positions (revoking citizenship, a 90 percent reduction of non-Slovenes) were later moderated per the scholarship; those are not scored.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 7 answers taken from it, 5 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Old metadata and source leads only; no old answers consulted. Full declarations, constitutional text and historical paper downloaded into this folder; searched sovereignty/government, international association and borders, language/culture, economy/social policy, rights, religion, ecology, technology and political means. The independence declaration does mention a social state and market economy, but those are not assumed to define every strand of Slovenian nationalism. No nuclear, military-spending, party-media, church or immigration-level answer is borrowed from SDS/SNS. The 1991 archive had a certificate/ browser-fetch failure, but its complete English text was retrieved locally with certificate verification disabled and read."
+ "notes": "Sources opened: the Constitution, May Declaration account, 1991 Charter, SNS programmes and a scholarly SNS study. The SDS programme and STA reports on it could not be opened, so the SDS-backed conservative strand is not documented and EU, NATO, economics, religion and morality are mostly null. The SNS itself differs from other strands on the EU, NATO and the Church, and its early 1990s positions (revoking citizenship, a 90 percent reduction of non-Slovenes) were later moderated per the scholarship; those are not scored.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 7 answers taken from it, 5 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Old metadata and source leads only; no old answers consulted. Full declarations, constitutional text and historical paper downloaded into this folder; searched sovereignty/government, international association and borders, language/culture, economy/social policy, rights, religion, ecology, technology and political means. The independence declaration does mention a social state and market economy, but those are not assumed to define every strand of Slovenian nationalism. No nuclear, military-spending, party-media, church or immigration-level answer is borrowed from SDS/SNS. The 1991 archive had a certificate/ browser-fetch failure, but its complete English text was retrieved locally with certificate verification disabled and read.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

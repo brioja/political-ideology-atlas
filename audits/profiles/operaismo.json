@@ -245,11 +245,33 @@
       ]
     },
     "empower-police-military": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Tronti describes force as capital's reply to workers' refusal; the movement's sources treat police repression as state violence against workers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Tronti describes force as capital's reply to workers' refusal; the movement's sources treat police repression as state violence against workers.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3480,6 +3502,15 @@
         "s1",
         "s4"
       ]
+    },
+    "police-more-powers": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Tronti describes force as capital's reply to workers' refusal; the movement's sources treat police repression as state violence against workers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "reviews": [
@@ -3494,6 +3525,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 209
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

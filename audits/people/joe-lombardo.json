@@ -412,9 +412,9 @@
    ]
   },
   "empower-police-military": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He proposes increased public-safety pay and stronger enforcement powers.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s1",
     "b1",
@@ -424,6 +424,34 @@
    "auditor": [
     "gpt-6.1-sol",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "He proposes increased public-safety pay and stronger enforcement powers.",
+     "sources": [
+      "s1",
+      "b1",
+      "b9",
+      "b13"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s1",
+      "b1",
+      "b9",
+      "b13"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3438,6 +3466,18 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "He proposes increased public-safety pay and stronger enforcement powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s1",
+    "b1",
+    "b9",
+    "b13"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Reviewed sheriff-era body-camera accountability and 2022 interview, downloaded complete 2023 address and searched every theme, then checked 2024 interviews, primary 2025 vetoes and immigration agreement, and 2026 campaign reporting. All 490 statements reviewed, including remaining nulls. Early openness to rent control is superseded by explicit later opposition. Abortion protection and personal restriction preferences coexist; transgender healthcare protections and sports restrictions are both retained. Opposition to one price-fixing bill is not blanket endorsement of cartels. Collective bargaining support does not erase restrictions on teacher strikes or union-only contracting. Need-based meals do not establish elimination of welfare. Immigration enforcement is not a complete ban on legal migration or a racial deportation doctrine. Stronger habitual-offender sanctions do not by themselves establish fixed sentences without judicial discretion. Public-option opposition is not conclusive evidence against every model of universal coverage; detailed national healthcare and monetary views remain unknown. Undersheriff Kevin McMahill’s 2015 interview remarks were not assigned to Lombardo. No inferred answers.\n\nMerged with an independent claude-sonnet-5-5 audit: 5 answers taken from it, 21 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second, independent pass. Searched: both State of the State addresses (2023, 2025), the 2023 and 2025 veto messages (about 160 PDFs, read by topic), 150 press releases and executive-order notes, KTNV, KNPR and Nevada Independent interviews and debate coverage. World-affairs and most culture and philosophy statements have no stated position and stay null; no Alex Jones Show guest segment was found (corpus hits are mentions only). Right-to-work and tariffs rest on reports or narrow cases and are null here. Answers resting on vetoes use his own veto reasoning; a veto message is read only for the reason it gives. 2022 candidate positions (abortion, guns, public option) come through news transcripts, flagged as reference sources.",
@@ -3451,5 +3491,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

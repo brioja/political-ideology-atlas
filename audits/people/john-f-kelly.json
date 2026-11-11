@@ -225,11 +225,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "He requested updated DHS authorities and greater border personnel, infrastructure and surveillance capabilities, while affirming legal limits.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "house"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "He requested updated DHS authorities and greater border personnel, infrastructure and surveillance capabilities, while affirming legal limits.",
+          "sources": [
+            "house"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "house"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3101,7 +3123,24 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He requested updated DHS authorities and greater border personnel, infrastructure and surveillance capabilities, while affirming legal limits. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "house"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Reviewed military service and SOUTHCOM, DHS testimony, White House interviews and later constitutional criticisms. No positions attributed from Trump’s platform or Kelly’s employment alone. The 2018 NPR interview explicitly defends family separation as deterrence, while also supporting citizenship for DACA and long-term TPS residents. The 2017 travel-ban testimony personally defends enhanced vetting; it does not establish hostility to Islam or an ethnic definition of citizenship. Comments about integration do not establish a requirement to abandon immigrants’ original culture. The Civil War answer records his stated alternative explanation, not support for slavery. Thin economic and ecological policy evidence remains null; recognizing climate threats does not establish support for drastic climate legislation."
+  "notes": "Reviewed military service and SOUTHCOM, DHS testimony, White House interviews and later constitutional criticisms. No positions attributed from Trump’s platform or Kelly’s employment alone. The 2018 NPR interview explicitly defends family separation as deterrence, while also supporting citizenship for DACA and long-term TPS residents. The 2017 travel-ban testimony personally defends enhanced vetting; it does not establish hostility to Islam or an ethnic definition of citizenship. Comments about integration do not establish a requirement to abandon immigrants’ original culture. The Civil War answer records his stated alternative explanation, not support for slavery. Thin economic and ecological policy evidence remains null; recognizing climate threats does not establish support for drastic climate legislation.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

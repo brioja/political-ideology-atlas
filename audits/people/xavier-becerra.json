@@ -390,15 +390,41 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Said in 2025 he would invest in local law enforcement, but also sought to reduce bias and unnecessary force in policing (2020); critics said he resisted police-record disclosure.",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2",
     "s11",
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Said in 2025 he would invest in local law enforcement, but also sought to reduce bias and unnecessary force in policing (2020); critics said he resisted police-record disclosure.",
+     "sources": [
+      "s2",
+      "s11",
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2",
+      "s11",
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3368,6 +3394,17 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Said in 2025 he would invest in local law enforcement, but also sought to reduce bias and unnecessary force in policing (2020); critics said he resisted police-record disclosure. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2",
+    "s11",
+    "s1"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Positions taken as AG and HHS Secretary were mostly his own litigation or administration priorities; only statements he made himself were used. Some OnTheIssues items are secondary summaries.\n\nMerged with an independent gpt-6.1-sol audit: 28 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent second pass; existing answers were not copied. All 490 statement texts and remaining nulls were reviewed. Saved full current campaign sections, the full debate and PBS interview, ten separately extracted CalMatters answers, the ACLU survey, the full 2005 trade hearing and the 2019–2020 DOJ report. Read Becerra’s prepared trade testimony separately from other witnesses. The DOJ report is a report of acts, not the acts themselves, so its evidence is medium at most. His 2026 campaign is distinguished from his record: withholding police files and defending capital sentences prevent unqualified pro-transparency or anti-death-penalty answers. The 2024 conscience rule is personally signed by him; its retained exemptions prevent treating the earlier litigation as blanket rejection of religious accommodation. Legal border regulation does not establish a view on immigration levels. Opposition to the Iran war does not establish defensive-wars-only or a general UN-approval requirement. International health cooperation is documented, but this does not establish a general transfer of political authority to international bodies. AI safeguards do not establish an extinction-risk priority, and child protection does not establish legal pornography or hate-speech bans. Minority-language services do not establish language assimilation rules. Culture was searched separately, including monuments and religious public life; Catholic identity, family background and generic rights do not answer specific cultural or theological propositions. No inferred answers. Inclusion-only validation failures are accepted without padding.",
@@ -3386,6 +3423,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

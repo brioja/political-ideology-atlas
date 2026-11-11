@@ -185,11 +185,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "No documented stance; Vanuatu had a small paramilitary force and the 1980 secession crisis, but no doctrine on policing.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "No documented stance; Vanuatu had a small paramilitary force and the 1980 secession crisis, but no doctrine on policing.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3373,6 +3395,15 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "No documented stance; Vanuatu had a small paramilitary force and the 1980 secession crisis, but no doctrine on policing. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3399,6 +3430,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 207
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

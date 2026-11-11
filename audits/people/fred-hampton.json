@@ -230,9 +230,9 @@
    ]
   },
   "empower-police-military": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Denounced the police as fascist 'pigs' who occupy communities like a foreign territory and campaigned to decentralise them.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "s6",
     "s4",
@@ -241,6 +241,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "Denounced the police as fascist 'pigs' who occupy communities like a foreign territory and campaigned to decentralise them.",
+     "sources": [
+      "s6",
+      "s4",
+      "b1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "s6",
+      "s4",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3355,6 +3381,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

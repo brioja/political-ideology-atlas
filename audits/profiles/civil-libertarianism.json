@@ -212,12 +212,36 @@
       ]
     },
     "empower-police-military": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The ACLU's focus on policing abuses, prisoners' rights and post-9/11 security overreach leads adherents to resist expanding coercive powers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s3",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The ACLU's focus on policing abuses, prisoners' rights and post-9/11 security overreach leads adherents to resist expanding coercive powers.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3472,6 +3496,16 @@
         "s1",
         "s3"
       ]
+    },
+    "police-more-powers": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The ACLU's focus on policing abuses, prisoners' rights and post-9/11 security overreach leads adherents to resist expanding coercive powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s3",
+        "s5"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3523,6 +3557,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

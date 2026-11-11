@@ -173,12 +173,36 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He ordered police and the Railway Protection Force to hand detained migrants to the BSF, and has stressed law and order against syndicates and extortion, which expands enforcement powers.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s2",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He ordered police and the Railway Protection Force to hand detained migrants to the BSF, and has stressed law and order against syndicates and extortion, which expands enforcement powers.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s2",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3037,7 +3061,25 @@
       "confidence": "low",
       "rationale": "No statement of his on this topic found in the sources checked (deportation, CAA, cattle slaughter, conversion, Jadavpur remarks, investment speeches).",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "He ordered police and the Railway Protection Force to hand detained migrants to the BSF, and has stressed law and order against syndicates and extortion, which expands enforcement powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s2",
+        "s7"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Office changed during the audit window: the premise of 'Leader of the Opposition' is from 2021 to May 2026; he has been Chief Minister since 9 May 2026, so answers rely mostly on statements made as Chief Minister. Many statements are reported by wire agencies and not verified against transcripts. The Wire and several search-only leads (Gaza remark, Organiser OBC bill, May 2026 'legal channels' remark, Sandeshkhali terrorism claim) were not opened or not confirmed, so they are not used. Muslim OBC reservation changes (June 2026 bill) are attributed to the government rather than to him in the report opened, so no answer."
+  "notes": "Office changed during the audit window: the premise of 'Leader of the Opposition' is from 2021 to May 2026; he has been Chief Minister since 9 May 2026, so answers rely mostly on statements made as Chief Minister. Many statements are reported by wire agencies and not verified against transcripts. The Wire and several search-only leads (Gaza remark, Organiser OBC bill, May 2026 'legal channels' remark, Sandeshkhali terrorism claim) were not opened or not confirmed, so they are not used. Muslim OBC reservation changes (June 2026 bill) are attributed to the government rather than to him in the report opened, so no answer.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

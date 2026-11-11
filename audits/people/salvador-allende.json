@@ -348,11 +348,33 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Program promised the armed forces proper materials and fair pay, but also disbanded the riot police unit and reorganised the police so they could not repress the people.",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Program promised the armed forces proper materials and fair pay, but also disbanded the riot police unit and reorganised the police so they could not repress the people.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3600,6 +3622,15 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 0,
+   "confidence": "low",
+   "rationale": "Program promised the armed forces proper materials and fair pay, but also disbanded the riot police unit and reorganised the police so they could not repress the people. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s1"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Answers rest mainly on his own speeches and interviews (marxists.org archive) and the Unidad Popular program he championed. He said in 1972 that workers would administer, not own, nationalised firms. Evidence on the 1972-73 economic crisis and on tolerance of armed leftist groups is contested and mostly not recorded as answers. He took office after accepting the Statute of Constitutional Guarantees demanded by the Christian Democrats.",
@@ -3609,6 +3640,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

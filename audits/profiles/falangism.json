@@ -226,11 +226,33 @@
       ]
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Point 4 promises the armed forces all dignity and wants their military view of life to infuse Spanish life.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Point 4 promises the armed forces all dignity and wants their military view of life to infuse Spanish life.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "conscription": {
@@ -3195,5 +3217,13 @@
       "addedAs": "legal-duty-to-work"
     }
   ],
-  "notes": "Themes searched: economy, government, society, world, liberty, means, culture. The programme is short (26 points), so most statements, especially on ecology, technology, gender, race, immigration, criminal justice and civil liberties, are null: the defining texts are silent. Payne records that the 1930s emphases changed under Franco (violence and empire dropped after 1943, 'moderated capitalism' by 1956-57); those later regime positions are a carrying regime's and are not used. The PDF is the revised 1937 text (26 points), not the 1934 27-point original. Expect the uncertainty rule to fail."
+  "notes": "Themes searched: economy, government, society, world, liberty, means, culture. The programme is short (26 points), so most statements, especially on ecology, technology, gender, race, immigration, criminal justice and civil liberties, are null: the defining texts are silent. Payne records that the 1930s emphases changed under Franco (violence and empire dropped after 1943, 'moderated capitalism' by 1956-57); those later regime positions are a carrying regime's and are not used. The PDF is the revised 1937 text (26 points), not the 1934 27-point original. Expect the uncertainty rule to fail.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

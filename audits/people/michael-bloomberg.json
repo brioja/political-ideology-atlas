@@ -611,13 +611,39 @@
       ]
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed: as mayor in 2013 he defended NYPD stops and intelligence gathering against oversight and credited police tools for crime cuts; his 2020 plan raises use-of-force standards, adds independent oversight and calls for reducing incarceration.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "n9",
         "n4",
         "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed: as mayor in 2013 he defended NYPD stops and intelligence gathering against oversight and credited police tools for crime cuts; his 2020 plan raises use-of-force standards, adds independent oversight and calls for reducing incarceration.",
+          "sources": [
+            "n9",
+            "n4",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "n9",
+            "n4",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3612,6 +3638,17 @@
       "confidence": "low",
       "rationale": "No position of his own on this statement turned up in his debate answers, 2020 platform, speeches, columns or mayoral record.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mixed: as mayor in 2013 he defended NYPD stops and intelligence gathering against oversight and credited police tools for crime cuts; his 2020 plan raises use-of-force standards, adds independent oversight and calls for reducing incarceration. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "n9",
+        "n4",
+        "s9"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Evidence comes from his own words and record: the 2020 platform pages, debate and speeches, op-eds and columns (2015-2026), and mayoral texts and laws. Where his views changed, the recent position was used: after the February 2020 debate he reversed on non-disclosure agreements, and in 2019 he apologized for the stop-and-frisk policy he had defended as mayor in 2012-2013 (the 2013 words are kept for the specific statements they bear on, at lower confidence). 2020 campaign pledges are his stated programme, not governing record, since he never held national office; where the 2020 platform differs from his mayoral years, the 2020 position is used as the more recent one. Term limits are a mixed case: he supported limits but sought and signed an extension to three terms for himself in 2008. Evidence about nearby but different questions (decriminalizing marijuana versus legalizing all drugs, tariff or ownership stakes in AI versus public ownership of utilities, Israeli two-state policy versus national self-determination in general) was left null.",
@@ -3621,6 +3658,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

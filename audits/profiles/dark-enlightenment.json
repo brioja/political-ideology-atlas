@@ -226,12 +226,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Security is the realm's top priority and the sovereign keeps the option of martial law, though the movement also wants to shrink the civil bureaucracy drastically.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Security is the realm's top priority and the sovereign keeps the option of martial law, though the movement also wants to shrink the civil bureaucracy drastically.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3642,6 +3666,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

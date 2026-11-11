@@ -832,13 +832,35 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He personally expands State Police recruitment and resources alongside violence prevention.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "b5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He personally expands State Police recruitment and resources alongside violence prevention.",
+     "sources": [
+      "b5"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "b5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3562,6 +3584,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

@@ -179,12 +179,36 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Campaign calls for 7,000 more NYPD officers and restoring about $1 billion to the police budget; says the NYPD needs more officers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Campaign calls for 7,000 more NYPD officers and restoring about $1 billion to the police budget; says the NYPD needs more officers.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3045,5 +3069,13 @@
       "sources": []
     }
   },
-  "notes": "Most platform specifics (bail, taxes, homelessness, rent, congestion pricing, charter schools, sanctuary city, Trump) match no statement in the list, so they are not recorded as answers. Full debate transcripts could not be found; debate coverage was used. Social-issue answers rest on Wikipedia and are low confidence."
+  "notes": "Most platform specifics (bail, taxes, homelessness, rent, congestion pricing, charter schools, sanctuary city, Trump) match no statement in the list, so they are not recorded as answers. Full debate transcripts could not be found; debate coverage was used. Social-issue answers rest on Wikipedia and are low confidence.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

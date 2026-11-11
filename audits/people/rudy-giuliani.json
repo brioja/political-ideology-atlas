@@ -376,12 +376,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Wrote that the Army needs at least ten new combat brigades and that the 'peace dividend' left the military too small; as mayor built up the NYPD, defended police after the Diallo verdict and backed aggressive enforcement.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s1",
         "s18"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Wrote that the Army needs at least ten new combat brigades and that the 'peace dividend' left the military too small; as mayor built up the NYPD, defended police after the Diallo verdict and backed aggressive enforcement.",
+          "sources": [
+            "s1",
+            "s18"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s1",
+            "s18"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3374,6 +3398,16 @@
       "confidence": "low",
       "rationale": "No statement or record from Giuliani that addresses this was found in the sources reviewed.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Wrote that the Army needs at least ten new combat brigades and that the 'peace dividend' left the military too small; as mayor built up the NYPD, defended police after the Diallo verdict and backed aggressive enforcement. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s1",
+        "s18"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Most answers rest on his 2007-2008 presidential campaign (debates, interviews, a Foreign Affairs essay) because that is when he stated positions across the widest range of issues; later statements override earlier ones where found. Views that changed: same-sex marriage (opposed in 2007 and 2011, supportive by June 2015); his abortion position (pro-choice, with the partial-birth ban, parental consent and the Hyde amendment) is the same in 2007 and 2015. No Giuliani statement on the Dobbs ruling, tariffs, NATO or Ukraine, voter ID, or later gun or immigration policy was found. His post-2020 election claims and Ukraine activities are not tied to any statement in the list. OnTheIssues pages are a dated compilation that quotes debate transcripts, interviews and his book Leadership; they were used as references and the debate transcripts (s2, s3) were checked directly.",
@@ -3383,6 +3417,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

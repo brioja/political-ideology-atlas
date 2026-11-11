@@ -235,11 +235,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "He personally advocates expanded police authority to prevent disruptive protest offences.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "He personally advocates expanded police authority to prevent disruptive protest offences.",
+          "sources": [
+            "s12"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3138,7 +3160,24 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He personally advocates expanded police authority to prevent disruptive protest offences. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s12"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "No inference from party affiliation or government membership. Own statements span pre-parliamentary writing, foreign and home secretary service, leadership campaign and subsequent assisted-dying debate. The 2025 assisted-dying speech opposes specific safeguards and implementation; it is not the later Diane Abbott passage supporting the principle. His China engagement does not mean preferring China to the United States. Removal to Rwanda does not establish expulsion of an ethnic minority. The downloaded full texts and remaining null statements were checked across themes. Generic equality does not establish specific transgender laws, religious policies or women’s institutions; budget restraint alone does not establish opposition to deficit stimulus or legally binding fiscal rules. Technology optimism about clean energy does not establish a belief that technology solves most human problems."
+  "notes": "No inference from party affiliation or government membership. Own statements span pre-parliamentary writing, foreign and home secretary service, leadership campaign and subsequent assisted-dying debate. The 2025 assisted-dying speech opposes specific safeguards and implementation; it is not the later Diane Abbott passage supporting the principle. His China engagement does not mean preferring China to the United States. Removal to Rwanda does not establish expulsion of an ethnic minority. The downloaded full texts and remaining null statements were checked across themes. Generic equality does not establish specific transgender laws, religious policies or women’s institutions; budget restraint alone does not establish opposition to deficit stimulus or legally binding fiscal rules. Technology optimism about clean energy does not establish a belief that technology solves most human problems.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

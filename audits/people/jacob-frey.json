@@ -176,12 +176,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Backed annual MPD budget increases and said even the charter floor of 731 officers is not enough; he wants nearly 900.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Backed annual MPD budget increases and said even the charter floor of 731 officers is not enough; he wants nearly 900.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3036,5 +3060,13 @@
       "sources": []
     }
   },
-  "notes": "Living person: only stated positions and record used. Vetoes of the 2023 rideshare pay ordinance and 2024 Labor Standards Board were not scored because they concern process and design, not a position on a listed statement."
+  "notes": "Living person: only stated positions and record used. Vetoes of the 2023 rideshare pay ordinance and 2024 Labor Standards Board were not scored because they concern process and design, not a position on a listed statement.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

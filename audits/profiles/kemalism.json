@@ -193,11 +193,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The republic relied on the army and coercive institutions to defend the reforms and the nation, and the army saw itself as Kemalism's guardian.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The republic relied on the army and coercive institutions to defend the reforms and the nation, and the army saw itself as Kemalism's guardian.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3594,6 +3616,15 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The republic relied on the army and coercive institutions to defend the reforms and the nation, and the army saw itself as Kemalism's guardian. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3636,6 +3667,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -262,11 +262,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Not a theme; the school was wary of force and power politics but did not address policing.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s11"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Not a theme; the school was wary of force and power politics but did not address policing.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3504,6 +3526,15 @@
       "confidence": "low",
       "rationale": "No stated position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Not a theme; the school was wary of force and power politics but did not address policing. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s11"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3532,6 +3563,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 115
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -449,13 +449,35 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "He advocates full DHS funding and stronger border enforcement, paired with ICE reform.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "He advocates full DHS funding and stronger border enforcement, paired with ICE reform.",
+     "sources": [
+      "s6"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": 0,
@@ -3514,6 +3536,15 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He advocates full DHS funding and stronger border enforcement, paired with ICE reform. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s6"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Researched whole career rather than party inference: early mayoral immigrant inclusion, county administration, 2009 marriage reversal, full 2022 gubernatorial questionnaire, congressional record and own 2025 columns, and current 2026 affordability platform and reforms. Downloaded and read the complete questionnaire, platform, columns and relevant releases, plus campaign accomplishments. Later clear marriage and abortion positions supersede earlier reservations; qualification of sex-work decriminalization is retained. The WISH plan is mixed insurance, not rejection of universal coverage. SALT deduction advocacy does not establish opposition to all higher taxes on wealthy people. No living-person inferences. Specific near-matches in immigration, extraction, pronatalism, public money and speech are annotated. All themes and remaining statement texts checked against gathered evidence.\n\nMerged with an independent claude-sonnet-5-5 audit: 24 answers taken from it, 18 agreed, 1 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass from his own op-eds, interviews, floor remarks and press releases (2017-2026), CNN transcripts and his roll-call votes; the first audit's questionnaire and platform were not reused. Themes searched: economy, society, government (executive power, Congress, elections), world (alliances, Israel, China, Ukraine, human rights), ecology, technology (AI, surveillance), liberty (speech, guns, drugs), means. His 2026 mandatory national service proposal offers civilian, skills or military pathways, so it was not read as an answer on military conscription. Votes are medium at most and used only on named passage votes. Answers resting on his later (2025-26) statements supersede earlier ones. He criticised the Mamdani platform's free college tuition as utopian, which was left null because it was one item in a package aimed at city-level tax increases.",
@@ -3527,5 +3558,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

@@ -299,13 +299,35 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Promises at least 3,000 additional constables and tougher community policing.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "Promises at least 3,000 additional constables and tougher community policing.",
+     "sources": [
+      "s1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3329,6 +3351,15 @@
    "confidence": "low",
    "rationale": "No recorded position found in the sources reviewed.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Promises at least 3,000 additional constables and tougher community policing. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s1"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Read the complete 2021 personal manifesto, full available interviews and transcripts, and later 2026 election statements; reviewed all 490 statements. His political record merits a full audit despite his acting career. Transcripts contain multiple speakers: Peterson’s nuclear proposals, Clouston’s nationalization and tariff proposals, and Calvin Robinson’s religious policies are not Fox’s. Fox’s own 2024 call to remove Islam is documented separately from Robinson’s similar remarks; it does not by itself specify deportation of all Muslim citizens or a criminal penalty for worship. Later claims of love for Muslim individuals are retained as mixed evidence, not used to erase the exclusionary statement. A not-guilty plea does not establish guilt or a policy reversal. Age-specific sex-education objections are not an opposition to all factual biology teaching. Mocking Pride, working with conservative Christians or denouncing abortion advocates does not establish his position on gay marriage, adult same-sex criminalization or abortion law. General small-state language does not establish a specific tax schedule or abolition of healthcare. No inferred answers.\n\nMerged with an independent claude-sonnet-5-5 audit: 6 answers taken from it, 11 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Sources are interview captions (speakers unlabelled; only passages clearly his own were used) and two press interviews quoting him; the existing audit's sources were avoided. Searched all themes; government and world are thin because he rarely addresses them. Not found: Ukraine/NATO position (only a tweet that 'Putin must fail' is the new 'Hands face space', too thin to settle a statement), tax, NHS, abortion, monarchy, nuclear power. Calling Islam a threat and the Oxford Union speech are covered by the first audit. Mixed climate quotes kept at medium.",
@@ -3354,6 +3385,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

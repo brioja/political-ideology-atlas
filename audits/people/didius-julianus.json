@@ -147,11 +147,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Herodian reports promises of exceptionally large payments and restoration of the guards’ privileges and lax discipline.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Herodian reports promises of exceptionally large payments and restoration of the guards’ privileges and lax discipline.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3011,5 +3033,13 @@
       "sources": []
     }
   },
-  "notes": "No surviving own political treatise or contemporary speech transcript was found. Narrative testimony is medium confidence at most; the late Historia Augusta and disputed accounts are low. Buying military support is not a proposal to operate government as a business. Augusta titles for his wife and daughter do not establish hereditary succession. Earlier administration of poor relief does not establish a personally driven welfare policy, and currency debasement is not a stated view on central banking or deficit stimulus. The reported ritual killing of boys is not treated as established fact. Remaining null statements reviewed across all ten themes; the short reign and limited evidence do not support modern policy extrapolations."
+  "notes": "No surviving own political treatise or contemporary speech transcript was found. Narrative testimony is medium confidence at most; the late Historia Augusta and disputed accounts are low. Buying military support is not a proposal to operate government as a business. Augusta titles for his wife and daughter do not establish hereditary succession. Earlier administration of poor relief does not establish a personally driven welfare policy, and currency debasement is not a stated view on central banking or deficit stimulus. The reported ritual killing of boys is not treated as established fact. Remaining null statements reviewed across all ten themes; the short reign and limited evidence do not support modern policy extrapolations.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

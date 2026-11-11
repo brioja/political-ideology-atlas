@@ -183,11 +183,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The doctrine is silent; Douglas's anti-centralism and the later parties' law-and-order conservatism pull in different directions.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The doctrine is silent; Douglas's anti-centralism and the later parties' law-and-order conservatism pull in different directions.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3395,6 +3417,15 @@
         "s1",
         "s2"
       ]
+    },
+    "police-more-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The doctrine is silent; Douglas's anti-centralism and the later parties' law-and-order conservatism pull in different directions. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s1"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3432,6 +3463,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 255
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -399,9 +399,9 @@
       ]
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Throughout his bulletin messages he demanded firmer support and authority for police against rising crime and mob violence, and criticised courts and officials who restrained them.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s6",
         "s8",
@@ -410,6 +410,32 @@
       "auditor": [
         "claude-sonnet-5-5",
         "gpt-6.1-sol"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Throughout his bulletin messages he demanded firmer support and authority for police against rising crime and mob violence, and criticised courts and officials who restrained them.",
+          "sources": [
+            "s6",
+            "s8",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-29"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s6",
+            "s8",
+            "b2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "patriotic-education": {
@@ -3271,6 +3297,17 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources searched.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Throughout his bulletin messages he demanded firmer support and authority for police against rising crime and mob violence, and criticised courts and officials who restrained them. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s6",
+        "s8",
+        "b2"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Independent second pass. Read his 1947 HUAC testimony, his 1964 Warren Commission testimony, the 1970 campus unrest statement, the Director's messages in the FBI Law Enforcement Bulletin (1964-1971, one per issue sampled) and Masters of Deceit searched for each theme, plus the Church Committee COINTELPRO report for the record. Searched economy (unions, markets, welfare, property), society, world (aid, UN, alliances, trade), ecology and technology: nothing stated on those statements, so they stay null; Masters' remarks on communist front demands answer only the draft, defence spending and arms questions. Quotations of communists are not his positions. Answers resting on COINTELPRO rest on programmes he approved, not on his words. The gun answer is licensing and registration of buyers, not strict limits.\n\nMerged with an independent gpt-6.1-sol audit: 10 answers taken from it, 11 agreed, 1 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: No inferred answers. Complete Masters of Deceit downloaded and searched across statement themes; quotations of communist opponents are not Hoover’s positions. Public ideals are weighed against his operational record. COINTELPRO’s 1971 termination does not establish a repudiation of its premises. Police surveillance and anti-pornography campaigning do not establish views on every adjacent liberty question. Assigned school debates and disputed claims about his private sexuality are not policy evidence. Economic, ecological and technological policies remain unknown where searches and his writing did not address the exact statements. Subsequent FBI reforms are not attributed to him. All 490 statements were reviewed; broad religious language does not establish scripture-based law, apostasy penalties or denominational privilege.",
@@ -3290,6 +3327,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

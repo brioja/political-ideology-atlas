@@ -540,9 +540,9 @@
    "auditor": "claude-sonnet-5-5"
   },
   "empower-police-military": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Said he does not want more officers and the NYPD's size is appropriate; proposed a civilian Community Safety department and abolishing the Strategic Response Group; kept the commissioner.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "s4",
     "s5",
@@ -553,6 +553,36 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Said he does not want more officers and the NYPD's size is appropriate; proposed a civilian Community Safety department and abolishing the Strategic Response Group; kept the commissioner.",
+     "sources": [
+      "s4",
+      "s5",
+      "s2",
+      "b8",
+      "b15"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "s4",
+      "s5",
+      "s2",
+      "b8",
+      "b15"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3657,6 +3687,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ],
  "rules": 3

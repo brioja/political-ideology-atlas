@@ -403,11 +403,33 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "She advocates additional police resources, hiring support and equipment while supporting police reforms.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "She advocates additional police resources, hiring support and equipment while supporting police reforms.",
+          "sources": [
+            "s12"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-11-01"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3361,5 +3383,13 @@
       "auditedAt": "2026-11-01"
     }
   ],
-  "rules": 3
+  "rules": 3,
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

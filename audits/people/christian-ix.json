@@ -179,11 +179,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "He explicitly demanded effective national defense measures and criticized parliamentary obstruction of defense expenditure in 1885.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "He explicitly demanded effective national defense measures and criticized parliamentary obstruction of defense expenditure in 1885.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3043,5 +3065,13 @@
       "sources": []
     }
   },
-  "notes": "Full 1866 constitution, 1885 royal address, 1891 pension and poor-relief laws, and contemporary Icelandic constitutional account downloaded and searched. Enacted provisions are recorded as his legislative assent, not assumed private philosophical beliefs; retained 1849 provisions are identified where relevant. The 1901 change qualifies earlier opposition to parliamentary cabinet responsibility and provisional budget practices. Mixed answers concern surviving royal prerogatives, legal immunity and restrictions alongside constitutional protections. State support for the national church does not establish views on blasphemy, apostasy or scriptural legislation. Citizenship terminology is not treated as a native-born-office rule. The 1864 confederation proposal was conditional, not a programme of ethnic German unification. General biographies’ claims about unemployment benefits in 1892 were not used; contemporary social laws were preferred. No historical inferences used. Revised under the updated instruction excluding formal royal assent as evidence of personal belief: constitutional clauses and 1891 welfare laws alone are not treated as his positions. The retained answers concern his own 1885 address, personal 1864 proposal, or documented political decisions."
+  "notes": "Full 1866 constitution, 1885 royal address, 1891 pension and poor-relief laws, and contemporary Icelandic constitutional account downloaded and searched. Enacted provisions are recorded as his legislative assent, not assumed private philosophical beliefs; retained 1849 provisions are identified where relevant. The 1901 change qualifies earlier opposition to parliamentary cabinet responsibility and provisional budget practices. Mixed answers concern surviving royal prerogatives, legal immunity and restrictions alongside constitutional protections. State support for the national church does not establish views on blasphemy, apostasy or scriptural legislation. Citizenship terminology is not treated as a native-born-office rule. The 1864 confederation proposal was conditional, not a programme of ethnic German unification. General biographies’ claims about unemployment benefits in 1892 were not used; contemporary social laws were preferred. No historical inferences used. Revised under the updated instruction excluding formal royal assent as evidence of personal belief: constitutional clauses and 1891 welfare laws alone are not treated as his positions. The retained answers concern his own 1885 address, personal 1864 proposal, or documented political decisions.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

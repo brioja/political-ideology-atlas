@@ -261,11 +261,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "His 2003 order authorises National Guard activation to protect airports, bridges, tunnels and localities facing public-safety threats.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s13"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "His 2003 order authorises National Guard activation to protect airports, bridges, tunnels and localities facing public-safety threats.",
+          "sources": [
+            "s13"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s13"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3135,7 +3157,24 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "His 2003 order authorises National Guard activation to protect airports, bridges, tunnels and localities facing public-safety threats. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s13"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Reviewed all 490 statements against governorship records, the downloaded 2004 taxation report and 2025 debate transcript, a 2011 interview and later reentry work. The campaign domain returned unrelated gambling content on direct retrieval and is not relied on as a source. Official records and published attributed statements are used instead. His 2025 promise to avoid municipal property-tax increases does not reverse the earlier state tax increase specifically on very high incomes. The death-penalty entry is low confidence: the documented veto resisted review, while subsequent reentry advocacy does not itself establish opposition to executions. Domestic partnerships alone are not treated as marriage equality; the later explicit interview supplies that evidence. Stem-cell research does not establish a general position on human enhancement. Targeted healthcare and tuition schemes do not establish universal healthcare or universal free college. No position is inferred from sexuality, faith, party or occupation."
+  "notes": "Reviewed all 490 statements against governorship records, the downloaded 2004 taxation report and 2025 debate transcript, a 2011 interview and later reentry work. The campaign domain returned unrelated gambling content on direct retrieval and is not relied on as a source. Official records and published attributed statements are used instead. His 2025 promise to avoid municipal property-tax increases does not reverse the earlier state tax increase specifically on very high incomes. The death-penalty entry is low confidence: the documented veto resisted review, while subsequent reentry advocacy does not itself establish opposition to executions. Domestic partnerships alone are not treated as marriage equality; the later explicit interview supplies that evidence. Stem-cell research does not establish a general position on human enhancement. Targeted healthcare and tuition schemes do not establish universal healthcare or universal free college. No position is inferred from sexuality, faith, party or occupation.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

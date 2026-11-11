@@ -604,11 +604,33 @@
       ]
     },
     "empower-police-military": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "CONAIE asks that the armed forces and police be held to their specific missions, under civilian justice and social control, rather than given more authority.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "CONAIE asks that the armed forces and police be held to their specific missions, under civilian justice and social control, rather than given more authority.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "military-guardian-role": {
@@ -3965,6 +3987,15 @@
       "confidence": "low",
       "rationale": "The sources record no position on this, and no stated principle of plurinationalism bears on it.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "CONAIE asks that the armed forces and police be held to their specific missions, under civilian justice and social control, rather than given more authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s5"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -4014,5 +4045,13 @@
       "addedAs": "local-production"
     }
   ],
-  "notes": "Evidence is the Indigenous movements' own programmes (CONAIE 2007; Pact of Unity 2006) plus the 2008 and 2009 constitutions they shaped and two scholarly accounts. Themes searched: state character, territory and autonomy, legal pluralism, representation and democracy, economic model, resources, land and water, agriculture, rights, language and education, health and social security, women, armed forces, international relations, nature. Left null because the movements' texts record nothing on them: abortion, marriage, drugs, migration, guns, speech, religion beyond secularism, technology, most Marxist and anarchist doctrine. A split is recorded (0, low) on the second chamber (Ecuador's CONAIE wants one chamber, Bolivia has two), regional resource ownership (national state property versus peoples' ownership in their territories) and centralised versus local decision-making. Hesketh's 'actually existing plurinationalism' (extractivism, centralised state power under Bolivia's MAS) is a documented gap between the movements' demands and a government's practice; answers follow the demands and the constitutional text, not the later governments' policy. Bolivian and Ecuadorian provisions are read as the plurinational project only where the movements' programmes state the same position."
+  "notes": "Evidence is the Indigenous movements' own programmes (CONAIE 2007; Pact of Unity 2006) plus the 2008 and 2009 constitutions they shaped and two scholarly accounts. Themes searched: state character, territory and autonomy, legal pluralism, representation and democracy, economic model, resources, land and water, agriculture, rights, language and education, health and social security, women, armed forces, international relations, nature. Left null because the movements' texts record nothing on them: abortion, marriage, drugs, migration, guns, speech, religion beyond secularism, technology, most Marxist and anarchist doctrine. A split is recorded (0, low) on the second chamber (Ecuador's CONAIE wants one chamber, Bolivia has two), regional resource ownership (national state property versus peoples' ownership in their territories) and centralised versus local decision-making. Hesketh's 'actually existing plurinationalism' (extractivism, centralised state power under Bolivia's MAS) is a documented gap between the movements' demands and a government's practice; answers follow the demands and the constitutional text, not the later governments' policy. Bolivian and Ecuadorian provisions are read as the plurinational project only where the movements' programmes state the same position.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

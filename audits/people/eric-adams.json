@@ -434,9 +434,9 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Reinstated the plainclothes anti-gun unit, surged officers on streets and subways, and said stopping and questioning is part of responsible policing.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
    "sources": [
     "s2",
     "s6",
@@ -446,6 +446,34 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Reinstated the plainclothes anti-gun unit, surged officers on streets and subways, and said stopping and questioning is part of responsible policing.",
+     "sources": [
+      "s2",
+      "s6",
+      "s1",
+      "b2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+     "sources": [
+      "s2",
+      "s6",
+      "s1",
+      "b2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3420,6 +3448,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

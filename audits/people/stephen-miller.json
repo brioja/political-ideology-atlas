@@ -303,9 +303,9 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Pushed ICE budget increases, Guard deployments to cities and a large immigration enforcement force.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2",
     "s4",
@@ -315,6 +315,34 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Pushed ICE budget increases, Guard deployments to cities and a large immigration enforcement force.",
+     "sources": [
+      "s2",
+      "s4",
+      "s1",
+      "b8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2",
+      "s4",
+      "s1",
+      "b8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3320,6 +3348,18 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "Pushed ICE budget increases, Guard deployments to cities and a large immigration enforcement force. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2",
+    "s4",
+    "s1",
+    "b8"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Leaked 2015-16 emails to Breitbart (published by SPLC in 2019) were not opened directly (SPLC pages unreachable) and are used only as a contested low-confidence item. Several quotes come from news reports of interviews. Not reached: White House archive of the 2017 briefing, SPLC Hatewatch pages, Axios and Washington Times (blocked).\n\nMerged with an independent gpt-6.1-sol audit: 20 answers taken from it, 15 agreed, 0 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass under the October 28 source-priority rules, using original briefing and interview transcripts, own video captions and documented acts rather than the previous audit’s answers. All rhetoric is medium or lower. Reporting of immigration enforcement is used as record, not as a paraphrase of his beliefs. Miller’s position on constitutional authority is attributed, not treated as an accurate statement of constitutional law. His 2022 deposition describes alternate electors as contingent on successful challenges; the committee’s record establishes their lack of lawful certification. This is not an allegation that he personally organised every elector or commanded the January 6 violence. The qualified drug-killing answer concerns alleged trafficking crews at sea, not a claimed endorsement of killing every drug user; the administration calls this warfare and its legal basis is disputed. No positions attributed from Trump, his wife, Gene Hamilton, Hassett or Waltz. No inference from party or ideology. Original transcripts and the complete 490 statements, including remaining nulls, reviewed. Immigration restriction includes the legal RAISE proposal; drug-trafficking opposition does not establish all-drug prohibition. Cultural ancestry remarks do not establish genetic racial superiority or marriage restrictions. Industrial AI optimism does not establish technological solutionism or algorithmic government. No broad political-method doctrine, encryption position, abortion or same-sex-marriage position found in the sources reviewed.",
@@ -3339,6 +3379,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

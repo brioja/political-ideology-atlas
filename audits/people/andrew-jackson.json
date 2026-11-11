@@ -1015,14 +1015,38 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He asked for and signed the Force Bill of 1833 to enforce federal law, and in his first inaugural he calls the militia the bulwark of defence.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "b9",
         "b1"
       ],
-      "auditor": "claude-haiku-5-5"
+      "auditor": "claude-haiku-5-5",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He asked for and signed the Force Bill of 1833 to enforce federal law, and in his first inaugural he calls the militia the bulwark of defence.",
+          "sources": [
+            "b9",
+            "b1"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "b9",
+            "b1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -3492,6 +3516,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

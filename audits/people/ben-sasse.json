@@ -386,12 +386,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Platform calls for spending to keep 'the greatest fighting force' and he backed funding to prosecute gun crimes; no position found on police authority.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s2",
         "s12"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Platform calls for spending to keep 'the greatest fighting force' and he backed funding to prosecute gun crimes; no position found on police authority.",
+          "sources": [
+            "s2",
+            "s12"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s2",
+            "s12"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3398,7 +3422,25 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Platform calls for spending to keep 'the greatest fighting force' and he backed funding to prosecute gun crimes; no position found on police authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s2",
+        "s12"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Full texts of his books (The Vanishing American Adult, Them) were not reachable, so no answers rest on them. Several 2014 positions come from his campaign platform as reproduced by OnTheIssues. Votes were taken from OnTheIssues' vote pages, not congress.gov. Dec 2020 COVID relief yes vote versus later opposition to deficit spending is treated as mixed. Verified living as of 2026 via Wikipedia (diagnosis announced 23 Dec 2025)."
+  "notes": "Full texts of his books (The Vanishing American Adult, Them) were not reachable, so no answers rest on them. Several 2014 positions come from his campaign platform as reproduced by OnTheIssues. Votes were taken from OnTheIssues' vote pages, not congress.gov. Dec 2020 COVID relief yes vote versus later opposition to deficit spending is treated as mixed. Verified living as of 2026 via Wikipedia (diagnosis announced 23 Dec 2025).",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

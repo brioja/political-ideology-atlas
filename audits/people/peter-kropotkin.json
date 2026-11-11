@@ -209,11 +209,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He demands removal of policing and penal authority rather than granting it additional coercive powers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He demands removal of policing and penal authority rather than granting it additional coercive powers.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3137,7 +3159,24 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "He demands removal of policing and penal authority rather than granting it additional coercive powers. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s4"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Read the complete statement list against downloaded books and essays across economic, political, ethical, technological and international themes. Positions come from his own arguments rather than an anarchist label. The 1916 co-signed manifesto is retained despite the controversy it caused; later criticism of intervention in Russia is recorded separately. Regional production is not an endorsement of a closed imperial trading bloc. Common housing is not a demand for every family to own its dwelling, and criticism of patents alone does not establish the combined patents-and-copyright statement. General opposition to state authority is not used to manufacture positions on each specific modern civil law. The Western Europe letter is headed April 1919 in the consulted transcription, with an editorial note giving English publication in July 1920. No inferred answers were needed. Opposition to central bureaucracy does not rank central planning against markets, both of which he rejected. His Russian non-intervention demand is not broadened into the statement’s exceptionless rule."
+  "notes": "Read the complete statement list against downloaded books and essays across economic, political, ethical, technological and international themes. Positions come from his own arguments rather than an anarchist label. The 1916 co-signed manifesto is retained despite the controversy it caused; later criticism of intervention in Russia is recorded separately. Regional production is not an endorsement of a closed imperial trading bloc. Common housing is not a demand for every family to own its dwelling, and criticism of patents alone does not establish the combined patents-and-copyright statement. General opposition to state authority is not used to manufacture positions on each specific modern civil law. The Western Europe letter is headed April 1919 in the consulted transcription, with an editorial note giving English publication in July 1920. No inferred answers were needed. Opposition to central bureaucracy does not rank central planning against markets, both of which he rejected. His Russian non-intervention demand is not broadened into the statement’s exceptionless rule.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

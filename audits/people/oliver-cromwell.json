@@ -353,9 +353,9 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "In 1655 he set up the Major-Generals, giving army officers command of regional militias and police powers over crime, Royalists and public morals.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s5"
    ],
@@ -382,6 +382,16 @@
      ],
      "author": "claude-opus-5-5",
      "date": "2026-11-10"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
     }
    ]
   },
@@ -5267,6 +5277,15 @@
    "rationale": "No position on this found in his letters and speeches, the Putney Debates, the Protectorate's constitutional documents, or the Firth and Gardiner biographies.",
    "sources": [],
    "auditor": "claude-opus-5-5"
+  },
+  "police-more-powers": {
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "In 1655 he set up the Major-Generals, giving army officers command of regional militias and police powers over crime, Royalists and public morals. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s5"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Nulls mark topics with no recorded statement in the sources used: Jews (readmission and their status) and Catholic civil rights beyond the Mass and the franchise are not addressed in the letters and speeches read. His kingship view is taken from the 1657 debates, where he refused the title but accepted that the Instrument could be amended. The Putney property remarks quoted in the record are mostly Ireton's and Rainborough's, not Cromwell's, and are not counted. Carlyle's commentary is treated as narration, not Cromwell's words, except where quoted as his speech.\n\nMerged with an independent gpt-6.1-sol audit: 27 answers taken from it, 21 agreed, 3 conflicts settled by the integrator.\n\ngpt-6.1-sol notes: Independent pass; the existing audit was consulted only for its notes and bibliography. Downloaded and searched the Cromwell Association’s complete Carlyle collection of 19 speeches and 205 letters, separating Cromwell’s words from editorial commentary. Source numbering and some dates in the site index are inconsistent; identify passages by speech contents and PDF titles. All 490 statements reviewed; modern economic doctrines were not assigned from a mercantilist or Puritan label. Of the ten priority questions only equal-outcomes receives a stated answer: explicit opposition to levelling fortunes. Restrictions on trade and an exclusive company monopoly do not establish a theory of profit, production for use or public industrial ownership. No direct ecology or technology position located. Protestant toleration and Jewish readmission do not erase explicit restrictions on Catholic worship. The record of coups and exclusions qualifies constitutional rhetoric. Historical inferences are individually marked. Diplomatic support for the Piedmont Protestants does not establish a position on humanitarian military intervention, which remains null.\n\nclaude-opus-5-5 later pass (2026-11-10, search traffic; brought to rules 5): every source tagged as actions or words, and every answer that mixed them now rests on the record alone (record over words), with the replaced versions kept in reviewHistory. Added Gardiner's Constitutional Documents (the death warrant he signed, the Instrument of Government, his 1654 ordinance of union with Scotland, the Humble Petition and Advice) and Gardiner's 1901 biography. political-violence-never now rests on the forcible expulsion of the Rump and Pride's Purge, not on Drogheda (state force). non-intervention lowered to medium (Firth is a secondary report). The Dictionary of Irish Biography (b12) now returns a bot check, so it was not reopened and no new answer rests on it. Themes searched for the candidate statements: government (dissolutions, judges, ordinances, the Recognition, succession), world (Piedmont, Western Design, Dutch league, union with Scotland), society and culture (schools, reformation of manners, Jews, Quakers, Irish plantation and transplantation). Civil marriage (1653) was an act of the Barebone's Parliament, not his, and stays null; the transplantation to Connacht is left null because Firth says he had little to do with its details and cut back the universal scheme.",
@@ -5295,6 +5314,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

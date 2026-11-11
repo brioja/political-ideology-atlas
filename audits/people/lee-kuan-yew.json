@@ -359,12 +359,36 @@
    ]
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Built up the armed forces and police, defended National Service and detention powers against calls to dissolve them.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s27",
     "s12"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Built up the armed forces and police, defended National Service and detention powers against calls to dissolve them.",
+     "sources": [
+      "s27",
+      "s12"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s27",
+      "s12"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3464,6 +3488,16 @@
     "s1",
     "s11"
    ]
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Built up the armed forces and police, defended National Service and detention powers against calls to dissolve them. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s27",
+    "s12"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Lee died in 2015, so answers use his own statements and his government's record. His emphasis moved from a 1960s democratic-socialist vocabulary (1965-66 speeches) to explicit defence of incentives, anti-welfare self-reliance and 'Asian values' from the 1980s-90s; later positions win where they differ. Several 2000s remarks (Islam, homosexuality) were softened or retracted later and are rated low. Primary sources are National Archives of Singapore transcripts; the 1994 Foreign Affairs interview was read from a full reproduction on tl.net because the Foreign Affairs page was unavailable.",
@@ -3472,6 +3506,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

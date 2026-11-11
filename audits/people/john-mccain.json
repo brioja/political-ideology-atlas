@@ -315,12 +315,36 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Called for enlarging the Army and Marine Corps to 900,000 and for maintaining military leadership; as Armed Services chairman pushed defense legislation. Said nothing comparable on police authority.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s19",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Called for enlarging the Army and Marine Corps to 900,000 and for maintaining military leadership; as Armed Services chairman pushed defense legislation. Said nothing comparable on police authority.",
+          "sources": [
+            "s19",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s19",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3403,6 +3427,16 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Called for enlarging the Army and Marine Corps to 900,000 and for maintaining military leadership; as Armed Services chairman pushed defense legislation. Said nothing comparable on police authority. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s19",
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "notes": "Some positions moved over time: opposed Bush tax cuts in 2001 and 2003 but backed making them permanent by 2008; earlier supported partly private Social Security accounts, later disavowed privatization; opposed the MLK holiday in 1983 and later reversed; moved from an opposed-then-favoured stance on a ban on affirmative action; softened on LGBT issues in later years while keeping his stated opposition to same-sex marriage. Most recent clear positions are used.",
@@ -3412,6 +3446,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

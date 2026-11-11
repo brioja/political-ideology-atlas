@@ -309,14 +309,38 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Raised the regular army to its authorized maximum in 1898 and in his annual messages said the Secretary of War's recommendation for a permanent increase of the army had his unqualified approval.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s3",
         "b6"
       ],
-      "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+      "auditor": "claude-sonnet-5-5+claude-haiku-5-5",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Raised the regular army to its authorized maximum in 1898 and in his annual messages said the Secretary of War's recommendation for a permanent increase of the army had his unqualified approval.",
+          "sources": [
+            "s3",
+            "b6"
+          ],
+          "author": "claude-sonnet-5-5+claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s3",
+            "b6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "legalize-sex-work": {
       "value": null,
@@ -3372,6 +3396,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

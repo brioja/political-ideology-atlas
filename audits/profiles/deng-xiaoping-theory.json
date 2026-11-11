@@ -216,12 +216,36 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Deng backed strict crackdowns on crime and, in 1989, martial law to secure stability, and also pushed to modernise the army.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2",
     "s7"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Deng backed strict crackdowns on crime and, in 1989, martial law to secure stability, and also pushed to modernise the army.",
+     "sources": [
+      "s2",
+      "s7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-17"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2",
+      "s7"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3706,6 +3730,16 @@
     "s3",
     "s2"
    ]
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "Deng backed strict crackdowns on crime and, in 1989, martial law to secure stability, and also pushed to modernise the army. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2",
+    "s7"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "missingStatements": [
@@ -3770,6 +3804,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-10",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

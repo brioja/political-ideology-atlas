@@ -383,13 +383,39 @@
       ]
     },
     "empower-police-military": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed record: platform stresses police accountability (body cameras, use-of-force guidelines, ending profiling) while she co-introduced a bill adding 80,000 Army soldiers in 2005 and called for ending the defense sequester.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s8",
         "s31",
         "s22"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Mixed record: platform stresses police accountability (body cameras, use-of-force guidelines, ending profiling) while she co-introduced a bill adding 80,000 Army soldiers in 2005 and called for ending the defense sequester.",
+          "sources": [
+            "s8",
+            "s31",
+            "s22"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s8",
+            "s31",
+            "s22"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "rehabilitation": {
@@ -3413,7 +3439,26 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Mixed record: platform stresses police accountability (body cameras, use-of-force guidelines, ending profiling) while she co-introduced a bill adding 80,000 Army soldiers in 2005 and called for ending the defense sequester. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s8",
+        "s31",
+        "s22"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Same-sex marriage: favoured civil unions in 2008, then announced support for marriage in March 2013 (most recent used). TPP: praised it as Secretary of State, opposed the final deal from 2015 (opposition used). Iraq: voted for the 2002 authorisation and later called it a mistake; the later view is reflected in the Iraq-related answers. Bill Clinton's positions were not used. Wayback Machine access was blocked in this environment, so the 2016 campaign issue pages were read from hillaryclinton.com directly; her books were not available as full text and were not used."
+  "notes": "Same-sex marriage: favoured civil unions in 2008, then announced support for marriage in March 2013 (most recent used). TPP: praised it as Secretary of State, opposed the final deal from 2015 (opposition used). Iraq: voted for the 2002 authorisation and later called it a mistake; the later view is reflected in the Iraq-related answers. Bill Clinton's positions were not used. Wayback Machine access was blocked in this environment, so the 2016 campaign issue pages were read from hillaryclinton.com directly; her books were not available as full text and were not used.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

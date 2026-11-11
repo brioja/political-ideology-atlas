@@ -262,12 +262,36 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Police and army are proper government functions and Objectivists favor a firm defense, but authority is confined to rights protection.",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Police and army are proper government functions and Objectivists favor a firm defense, but authority is confined to rights protection.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3769,6 +3793,16 @@
         "s3",
         "s10"
       ]
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "low",
+      "rationale": "Police and army are proper government functions and Objectivists favor a firm defense, but authority is confined to rights protection. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
   "missingStatements": [
@@ -3801,6 +3835,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

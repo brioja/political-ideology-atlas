@@ -639,9 +639,9 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He signed the Omnibus Crime Control and Safe Streets Act of 1968, which created federal grants to improve and equip state and local police.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
       "sources": [
         "s39"
       ],
@@ -667,6 +667,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is not about military spending, which this statement now asks about alone.",
+          "sources": [
+            "s39"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
         }
       ]
     },
@@ -4714,5 +4724,13 @@
       "sources": []
     }
   },
-  "notes": "Pass 2 (claude-opus-5-5, 2026-11-07, rules 4): every source tagged action or words; answers with a record (his House and Senate roll calls 1937-1960 from Voteview, and laws he signed, cited from the Statutes at Large on GovInfo) were re-sourced to the record alone and their earlier word-based versions kept in reviewHistory. no-compulsory-union changed from -2 (his 1966 request to repeal Taft-Hartley 14(b), words) to +1 on his votes for Taft-Hartley and for state union-shop precedence (1947, 1949). Over time: he voted against anti-lynching and anti-poll-tax bills in the House and for a 1950 segregated-units amendment, then supported the 1957 and 1960 acts, the 1960 anti-poll-tax amendment and signed the 1964-68 laws; the later sustained record is used. Themes searched: economy (taxes, wages, labor, price and rent controls, trade, capital), government (term limits, electoral college, treaties, internal security), world (alliances, aid, Vietnam, Dominican Republic), liberty (drugs, prisons, wiretaps, information), society and culture (immigration, language, race), ecology and technology (oil depletion, space, pollution). Searched: Voteview roll calls (all 3,038 of his votes), the Stanford parsed Congressional Record (his floor speeches 1937-1960), the Miller Center speeches, and his signed statutes. A 1958 floor passage defending the oil depletion allowance was left out because it is an inserted statement by another speaker (it refers to '18 years on the Senate Finance Committee'). presidency.ucsb.edu's robots.txt now disallows ClaudeBot, so new presidential texts were taken from the Miller Center corpus and GovInfo instead. Vietnam: he escalated the war after the Tonkin Gulf Resolution (1964) and on March 31, 1968 limited the bombing and said he would not seek reelection."
+  "notes": "Pass 2 (claude-opus-5-5, 2026-11-07, rules 4): every source tagged action or words; answers with a record (his House and Senate roll calls 1937-1960 from Voteview, and laws he signed, cited from the Statutes at Large on GovInfo) were re-sourced to the record alone and their earlier word-based versions kept in reviewHistory. no-compulsory-union changed from -2 (his 1966 request to repeal Taft-Hartley 14(b), words) to +1 on his votes for Taft-Hartley and for state union-shop precedence (1947, 1949). Over time: he voted against anti-lynching and anti-poll-tax bills in the House and for a 1950 segregated-units amendment, then supported the 1957 and 1960 acts, the 1960 anti-poll-tax amendment and signed the 1964-68 laws; the later sustained record is used. Themes searched: economy (taxes, wages, labor, price and rent controls, trade, capital), government (term limits, electoral college, treaties, internal security), world (alliances, aid, Vietnam, Dominican Republic), liberty (drugs, prisons, wiretaps, information), society and culture (immigration, language, race), ecology and technology (oil depletion, space, pollution). Searched: Voteview roll calls (all 3,038 of his votes), the Stanford parsed Congressional Record (his floor speeches 1937-1960), the Miller Center speeches, and his signed statutes. A 1958 floor passage defending the oil depletion allowance was left out because it is an inserted statement by another speaker (it refers to '18 years on the Senate Finance Committee'). presidency.ucsb.edu's robots.txt now disallows ClaudeBot, so new presidential texts were taken from the Miller Center corpus and GovInfo instead. Vietnam: he escalated the war after the Tonkin Gulf Resolution (1964) and on March 31, 1968 limited the bombing and said he would not seek reelection.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

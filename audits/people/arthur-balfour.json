@@ -307,13 +307,35 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He defended police repression and ordered military assistance with Irish evictions.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He defended police repression and ordered military assistance with Irish evictions.",
+     "sources": [
+      "s2"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3360,6 +3382,15 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "He defended police repression and ordered military assistance with Irish evictions. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s2"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "One historical deduction is marked Inferred. Later Irish treaty acquiescence qualifies earlier unionism. National home is not automatically equated with sovereign statehood. The eugenics speech calls for research and anticipates conscious management of heredity but does not establish a specific compulsory sterilization, marriage prohibition or racial-genetic ability policy; these remain null. The entire statement list was reviewed against full downloaded writing and debates. No positions assigned from aristocratic status, Conservative membership, church affiliation or signature alone. Philosophical theism does not establish scriptural civil law or a particular established-church constitution. Environmental and modern technology propositions lack individual evidence.\n\nMerged with an independent claude-sonnet-5-5 audit: 27 answers taken from it, 13 agreed, 2 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Second independent pass, reading his own speeches and essays rather than the first audit's answers. Themes searched: economy (1924 Socialism speech, Economic Notes, 1909 Budget), government (Lords, Parliament Bill, referendum, 1887 crimes bill), world (1916-17 war writings, League of Nations, India, Zionism), society (class war, nationality, Welsh Church, religious education). Left null: tax and welfare detail, gender, ecology, technology, civil liberties beyond Ireland, and policing/defence statements he never addressed. National self-determination and consent are 0 low because he backed European nationality claims while denying them to India. Blocked: Britannica and the Dictionary of Irish Biography sit behind bot walls.",
@@ -3379,6 +3410,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

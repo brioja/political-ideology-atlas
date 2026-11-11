@@ -226,11 +226,33 @@
    ]
   },
   "empower-police-military": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "On the OAAU platform (June 1964) he argued that adding police in Harlem had not reduced crime ('the more cops we have, the more crime we have') and called for a struggle against police brutality; he said some police were good but did not ask for more police power.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "On the OAAU platform (June 1964) he argued that adding police in Harlem had not reduced crime ('the more cops we have, the more crime we have') and called for a struggle against police brutality; he said some police were good but did not ask for more police power.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "legalize-sex-work": {
@@ -3203,6 +3225,15 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": -1,
+   "confidence": "medium",
+   "rationale": "On the OAAU platform (June 1964) he argued that adding police in Harlem had not reduced crime ('the more cops we have, the more crime we have') and called for a struggle against police brutality; he said some police were good but did not ask for more police power. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s3"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "reviews": [
@@ -3211,6 +3242,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 5
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ],
  "passes": [

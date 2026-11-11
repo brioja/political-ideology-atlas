@@ -171,11 +171,33 @@
       "sources": []
     },
     "empower-police-military": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "He calls for additional enforcement resources and detention capacity for immigration agencies.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He calls for additional enforcement resources and detention capacity for immigration agencies.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3028,7 +3050,24 @@
       "confidence": "low",
       "rationale": "No recorded position found in the sources reviewed.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "He calls for additional enforcement resources and detention capacity for immigration agencies. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s3"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "The full 2019 testimony and current interview were checked against all statement themes. Immigration enforcement does not establish his views on universal economic, climate, technological, penal or religious-law questions. Family separation is documented in the summary; the bank has no exact family-separation item. No historical inferences used. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant."
+  "notes": "The full 2019 testimony and current interview were checked against all statement themes. Immigration enforcement does not establish his views on universal economic, climate, technological, penal or religious-law questions. Family separation is documented in the summary; the bank has no exact family-separation item. No historical inferences used. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

@@ -229,13 +229,35 @@
    "sources": []
   },
   "empower-police-military": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Defends warrantless cybercrime searches by senior police officers while requiring technical training.",
+   "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
    "sources": [
     "s7"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Defends warrantless cybercrime searches by senior police officers while requiring technical training.",
+     "sources": [
+      "s7"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+     "sources": [
+      "s7"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "legalize-sex-work": {
    "value": null,
@@ -3167,6 +3189,15 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "police-more-powers": {
+   "value": 1,
+   "confidence": "low",
+   "rationale": "Defends warrantless cybercrime searches by senior police officers while requiring technical training. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+   "sources": [
+    "s7"
+   ],
+   "auditor": "claude-opus-5-5"
   }
  },
  "notes": "Whole-career review includes Emergency opposition, parliamentary politics, telecom and IT legislation, the temple movement, nuclear policy and interviews through 2006. His 2004 language about moderation on Article 370 is superseded by explicit opposition in the 2006 Thapar interview, reproduced in the collected statements. The same collection reproduces a TIME interview and a Neena Vyas interview; their original questions are distinguished from his answers. The 2006 infrastructure speech is used narrowly. State support for public telecom firms coexists with private entry; licensing favouritism allegations are disputed and are not treated as established corruption or general approval of business privileges. The temple position does not establish support for scriptural law or racial citizenship. Counterterrorism cooperation does not establish approval of every subsequent war. Family allegations and his murder provide no evidence of positions on criminal punishment or gender rights. All remaining null statements reviewed across ten themes; no positions inferred from BJP or RSS affiliation.\n\nMerged with an independent claude-sonnet-5-5 audit: 0 answers taken from it, 4 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Independent second pass. Full texts found that the first audit did not use: the March 2000 DATAQUEST interview, the November 2003 BBC Hindi transcript and the December 2003 Gulf News interview. Mostly reached the same positions as the first audit (civil code, Article 370). Searched economy, government, world, liberty, society, ecology and technology; his own words on most of them were not reachable. Blocked: eparlib.nic.in / sansad.in Lok Sabha PDFs (timeouts), indiankanoon.org (Cloudflare challenge; a Wayback copy of the 29 Aug 2001 telecom-policy debate opened but the minister speaking was not Mahajan), TIME interview URL (404), Rediff 2004 'Mahajan accepts blame' (404). MediaSum and Infowars corpora held no segment by him. A 2005 Tribune editorial reports him calling the Gujarat riots a black spot; it is secondhand, so left null. The Dawn ban during Kargil is a critic's account, not used.",
@@ -3180,5 +3211,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

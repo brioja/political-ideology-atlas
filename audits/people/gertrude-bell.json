@@ -181,11 +181,33 @@
       ]
     },
     "empower-police-military": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "She wanted sufficient British divisions and an Arab army and gendarmerie to enforce order.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "She wanted sufficient British divisions and an Arab army and gendarmerie to enforce order.",
+          "sources": [
+            "s2"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Moved (statement review, 2026-11-11) to police-more-powers: its rationale is about police powers, and this statement now asks only about military spending.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "legalize-sex-work": {
@@ -3064,7 +3086,24 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "police-more-powers": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "She wanted sufficient British divisions and an Arab army and gendarmerie to enforce order. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "sources": [
+        "s2"
+      ],
+      "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Both full letter volumes were downloaded and searched across statement themes. The narrative introductions written by Cox, Dobbs and the editor are not treated as her own words. Her last letters anticipate the end of direct British responsibility; early military proposals are not turned into a permanent foreign-base doctrine. Women’s emancipation and hypothetical Labour voting do not alone establish a clear reversal on the franchise or Labour economic policies. Iraqi independence under guidance is distinguished from unrestricted self-determination for every group. Sectarian exclusion in state-building is considered alongside her own objections to excluding Shi’a officials. Archaeological protection does not mean opposing all export of finds. No historical inferences were required."
+  "notes": "Both full letter volumes were downloaded and searched across statement themes. The narrative introductions written by Cox, Dobbs and the editor are not treated as her own words. Her last letters anticipate the end of direct British responsibility; early military proposals are not turned into a permanent foreign-base doctrine. Women’s emancipation and hypothetical Labour voting do not alone establish a clear reversal on the franchise or Labour economic policies. Iraqi independence under guidance is distinguished from unrestricted self-determination for every group. Sectarian exclusion in state-building is considered alongside her own objections to excluding Shi’a officials. Archaeological protection does not mean opposing all export of finds. No historical inferences were required.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
