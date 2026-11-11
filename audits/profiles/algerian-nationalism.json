@@ -1788,12 +1788,36 @@
       "sources": []
     },
     "kin-peoples-union": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The proclamation seeks North African unity in an Arab-Islamic framework.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The proclamation seeks North African unity in an Arab-Islamic framework.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "national-cultural-autonomy": {
@@ -3720,6 +3744,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 168
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

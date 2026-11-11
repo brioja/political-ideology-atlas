@@ -1653,11 +1653,33 @@
       "sources": []
     },
     "kin-peoples-union": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Stoddard and Grant call for kindred white or Nordic peoples to unite.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Stoddard and Grant call for kindred white or Nordic peoples to unite.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "decide-locally": {
@@ -3415,6 +3437,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 271
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

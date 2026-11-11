@@ -1843,12 +1843,36 @@
    "sources": []
   },
   "kin-peoples-union": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Pursued Latin American integration through the Andean Pact and a Latin American organisation of states, citing the unity dreamed of by the founders.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
    "sources": [
     "s5",
     "s22"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Pursued Latin American integration through the Andean Pact and a Latin American organisation of states, citing the unity dreamed of by the founders.",
+     "sources": [
+      "s5",
+      "s22"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
+     "sources": [
+      "s5",
+      "s22"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "national-cultural-autonomy": {
@@ -3649,6 +3673,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

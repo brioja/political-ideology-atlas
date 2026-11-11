@@ -71,12 +71,36 @@
   ],
   "answers": {
     "kin-peoples-union": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Turan Society aimed to harmonize the interests of the supposed Turanian relatives and eventually bind them into one alliance, though its statutes called it apolitical and the mainstream stressed cultural cooperation, so the answer is for alliance and cooperation rather than full political unity.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Turan Society aimed to harmonize the interests of the supposed Turanian relatives and eventually bind them into one alliance, though its statutes called it apolitical and the mainstream stressed cultural cooperation, so the answer is for alliance and cooperation rather than full political unity.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a league, federation, cooperation or unity in general, not one state, which this statement now asks.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "preserve-national-culture": {
@@ -3654,5 +3678,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Sources searched: the full ERNIE entry, Farkas 2024 (mainstream/radical, Japan), and the 1913 first volume of Turan. Themes with no recorded position: economy, government, society, liberty, ecology, technology, means, most of world. Scholars stress Turanism was not a homogeneous ideology and never official policy, so most statements are null."
+  "notes": "Sources searched: the full ERNIE entry, Farkas 2024 (mainstream/radical, Japan), and the 1913 first volume of Turan. Themes with no recorded position: economy, government, society, liberty, ecology, technology, means, most of world. Scholars stress Turanism was not a homogeneous ideology and never official policy, so most statements are null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
