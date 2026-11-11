@@ -2410,12 +2410,36 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Distributists want markets of widely held property with associations and wage protection, so they partly agree, though they reject both capitalism and a state-run economy as framed here.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Distributists want markets of widely held property with associations and wage protection, so they partly agree, though they reject both capitalism and a state-run economy as framed here.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-armed-forces": {
@@ -3456,6 +3480,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 273
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

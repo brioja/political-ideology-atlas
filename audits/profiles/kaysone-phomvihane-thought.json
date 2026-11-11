@@ -2489,12 +2489,36 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The NEM combines markets with state leadership and socialist orientation, a related but different model.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The NEM combines markets with state leadership and socialist orientation, a related but different model.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-armed-forces": {
@@ -3556,6 +3580,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

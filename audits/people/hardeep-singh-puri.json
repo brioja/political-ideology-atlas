@@ -2417,15 +2417,41 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Combines competitive markets with farm guarantees, subsidized essentials and public housing support.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
    "sources": [
     "s9",
     "s7",
     "s6"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Combines competitive markets with farm guarantees, subsidized essentials and public housing support.",
+     "sources": [
+      "s9",
+      "s7",
+      "s6"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+     "sources": [
+      "s9",
+      "s7",
+      "s6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "abolish-armed-forces": {
    "value": null,
@@ -3382,5 +3408,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

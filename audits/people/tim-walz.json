@@ -2527,9 +2527,9 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He pairs a 'pro-business' state with paid leave, child care and worker protections, arguing in the debate that Minnesota's paid leave helps employers retain workers.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
    "sources": [
     "s1",
     "s2",
@@ -2539,6 +2539,34 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He pairs a 'pro-business' state with paid leave, child care and worker protections, arguing in the debate that Minnesota's paid leave helps employers retain workers.",
+     "sources": [
+      "s1",
+      "s2",
+      "b4",
+      "b6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-29"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+     "sources": [
+      "s1",
+      "s2",
+      "b4",
+      "b6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "abolish-armed-forces": {
@@ -3487,6 +3515,12 @@
   }
  ],
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

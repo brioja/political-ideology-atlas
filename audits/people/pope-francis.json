@@ -2377,12 +2377,36 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Called for a proactive economic policy favouring productive diversity and business creativity while rejecting market autonomy; he called business a noble vocation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Called for a proactive economic policy favouring productive diversity and business creativity while rejecting market autonomy; he called business a noble vocation.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-armed-forces": {
@@ -3343,6 +3367,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

@@ -2416,11 +2416,33 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Symons reads ecomodernism as social democratic, combining markets with a strong public role; the manifesto itself rejects both laissez-faire and planning.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
    "sources": [
     "s4"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Symons reads ecomodernism as social democratic, combining markets with a strong public role; the manifesto itself rejects both laissez-faire and planning.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-20"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "abolish-armed-forces": {
@@ -3475,6 +3497,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 151
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

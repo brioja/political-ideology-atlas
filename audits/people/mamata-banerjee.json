@@ -2541,14 +2541,38 @@
    "sources": []
   },
   "social-market-economy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "She explicitly combines pro-industry investment policy with inclusive development for the masses.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
    "sources": [
     "b5",
     "b1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "She explicitly combines pro-industry investment policy with inclusive development for the masses.",
+     "sources": [
+      "b5",
+      "b1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+     "sources": [
+      "b5",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "abolish-armed-forces": {
    "value": null,
@@ -3497,6 +3521,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

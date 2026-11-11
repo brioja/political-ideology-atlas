@@ -2642,9 +2642,9 @@
    "auditor": "gpt-6.1-sol"
   },
   "social-market-economy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Argues that being pro-business and pro-worker are compatible, pairing business-climate commitments with paid leave, paid sick days and a $15 minimum wage.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
    "sources": [
     "s1",
     "b1"
@@ -2652,6 +2652,30 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Argues that being pro-business and pro-worker are compatible, pairing business-climate commitments with paid leave, paid sick days and a $15 minimum wage.",
+     "sources": [
+      "s1",
+      "b1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about regulation, competition or state direction, not a public safety net, which this statement now asks about.",
+     "sources": [
+      "s1",
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "abolish-armed-forces": {
@@ -3609,5 +3633,13 @@
    "auditedAt": "2026-10-31"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }
