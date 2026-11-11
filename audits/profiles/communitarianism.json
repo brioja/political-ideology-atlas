@@ -2669,12 +2669,36 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Communitarians put civil society and local groups between individual and state, but responsive communitarians also back state-supported social rights, so agreement is partial.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Communitarians put civil society and local groups between individual and state, but responsive communitarians also back state-supported social rights, so agreement is partial.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "term-limits": {
@@ -3561,6 +3585,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

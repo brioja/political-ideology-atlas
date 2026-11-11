@@ -3283,12 +3283,36 @@
       "sources": []
     },
     "homeland-spiritual-bond": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Revisionism rested on the claim that the Jewish people have a historic right to the land on both banks of the Jordan and must defend it, as the Iron Wall essay and Likud platform assert.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defending or claiming the homeland, not a spiritual bond with it, which is all the statement now asks about.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Revisionism rested on the claim that the Jewish people have a historic right to the land on both banks of the Jordan and must defend it, as the Iron Wall essay and Likud platform assert.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defending or claiming the homeland, not a spiritual bond with it, which is all the statement now asks about.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "extrajudicial-killing": {
@@ -3507,6 +3531,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

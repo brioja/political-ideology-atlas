@@ -2613,12 +2613,36 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Quadragesimo anno's subsidiarity gives lesser communities, families and associations priority over the state in helping people.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
       "sources": [
         "s4",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Quadragesimo anno's subsidiarity gives lesser communities, families and associations priority over the state in helping people.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
+          "sources": [
+            "s4",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "term-limits": {
@@ -3502,6 +3526,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 273
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

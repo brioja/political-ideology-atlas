@@ -1917,12 +1917,36 @@
       "sources": []
     },
     "institutions-fit-civilization": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject Western state institutions, but not as a civilisational relativism; primitivists criticise civilization generally.",
+      "rationale": "Nulled (statement review, 2026-11-11): its negative rests on rejecting the idea that other civilizations should develop their own forms of government, and the statement now asks only whether Western institutions are unsuitable for some civilizations.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject Western state institutions, but not as a civilisational relativism; primitivists criticise civilization generally.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its negative rests on rejecting the idea that other civilizations should develop their own forms of government, and the statement now asks only whether Western institutions are unsuitable for some civilizations.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "military-guardian-role": {
@@ -3651,6 +3675,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 258
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

@@ -2427,11 +2427,33 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Yale reports Hoover believed states and local communities should provide relief for jobless workers, though his government also lent money for relief and public works, so the support for local over federal aid is qualified.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Yale reports Hoover believed states and local communities should provide relief for jobless workers, though his government also lent money for relief and public works, so the support for local over federal aid is qualified.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "term-limits": {
@@ -3834,6 +3856,12 @@
   "missingStatements": [],
   "notes": "Sources are Hoover's own texts plus one teaching unit; no encyclopedia entry defining the phrase could be opened (Britannica, Etymonline blocked or offline). Themes searched in the local library: economy, government in business, relief, liberty, spiritual grounds, class and equality. Hoover's texts say nothing on culture, gender, religion in law, world affairs, ecology or technology policy, so those answers are null; Hoover's tariff, immigration and foreign policy were not borrowed because they are not tied to the doctrine by the defining sources. Hoover's 1931 unemployment relief speeches were read but not cited, because no defining source ties them to the phrase.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

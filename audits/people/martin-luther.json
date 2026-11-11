@@ -2471,12 +2471,36 @@
    "sources": []
   },
   "charity-over-state-aid": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "He wanted each city or parish, not wandering mendicants, to care for its poor, and he backed a levy to fund it; both local and public elements appear.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
    "sources": [
     "s14",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "He wanted each city or parish, not wandering mendicants, to care for its poor, and he backed a levy to fund it; both local and public elements appear.",
+     "sources": [
+      "s14",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about families, local communities or local government rather than private charity, which is all the statement now asks about.",
+     "sources": [
+      "s14",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "term-limits": {
@@ -3283,6 +3307,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 11
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }
