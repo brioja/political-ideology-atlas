@@ -384,11 +384,20 @@ function validate(id) {
       }
     }
   }
+  // Answers to a statement since removed from the bank keep their history. A nulling review recorded
+  // before the removal counted those nullings; one recorded after it (ban-fgm, 2026-11-10) did not, so
+  // either total matches.
+  const current = new Set(statements.map((s) => s.id));
+  let removedNulled = 0;
+  for (const [id, x] of Object.entries(answers)) {
+    const h = !current.has(id) && x && x.reviewHistory;
+    if (Array.isArray(h)) for (let i = 1; i < h.length; i++) if (h[i - 1] && h[i] && h[i - 1].value !== null && h[i].value === null) removedNulled++;
+  }
   const reviewed = nullings.reduce((n, r) => n + (Number.isInteger(r.nulled) ? r.nulled : 0), 0);
   // A first audit (one pass, no nulling review) is the original text: it has no review history.
   const firstAudit = !(Array.isArray(a.passes) && a.passes.length > 1) && !nullings.length;
   if (historyIds.length && firstAudit) errors.push(`${historyIds.join(", ")}: "reviewHistory" in a first audit: its answers are the original text and have no history; only a later pass or review (recorded in "passes" or "reviews") replaces answers`);
-  else if (nulledCount !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
+  else if (nulledCount !== reviewed && nulledCount + removedNulled !== reviewed) errors.push(`"reviews" count ${reviewed} nulled answer(s) but "reviewHistory" holds ${nulledCount} nulling(s); each nulling review records how many it nulled`);
   // Append-only: the committed history must still be there, unchanged, at the start of each list.
   const before = committedVersion(id, p);
   if (before && before.answers) {
