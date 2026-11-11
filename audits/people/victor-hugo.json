@@ -1917,11 +1917,33 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Hugo declared himself ready to accept the contractual mandate that binds a deputy to his voters' programme, sanctioned by resignation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Hugo declared himself ready to accept the contractual mandate that binds a deputy to his voters' programme, sanctioned by resignation.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3802,5 +3824,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Read from his own collected speeches and pamphlets (Actes et Paroles I-III, Napoleon the Little, History of a Crime). His early royalism and Catholicism (before about 1848) are not used: answers reflect the mature republican position held from the 1848 Assembly to his death; the later speeches of 1876-1885 and the 1879 banquet addresses were not read. Novels and poems were not used as evidence of his positions. Themes searched: economy (property, tax, work, trade, relief), government (suffrage, executive, army, press, courts, local government), society (church and school, women, family, colonisation), world (war, Europe, nationalities, intervention, annexation), liberty (death penalty, press, theatre). Nothing found on healthcare, drugs, abortion, guns, immigration levels, environment or technology."
+  "notes": "Read from his own collected speeches and pamphlets (Actes et Paroles I-III, Napoleon the Little, History of a Crime). His early royalism and Catholicism (before about 1848) are not used: answers reflect the mature republican position held from the 1848 Assembly to his death; the later speeches of 1876-1885 and the 1879 banquet addresses were not read. Novels and poems were not used as evidence of his positions. Themes searched: economy (property, tax, work, trade, relief), government (suffrage, executive, army, press, courts, local government), society (church and school, women, family, colonisation), world (war, Europe, nationalities, intervention, annexation), liberty (death penalty, press, theatre). Nothing found on healthcare, drugs, abortion, guns, immigration levels, environment or technology.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

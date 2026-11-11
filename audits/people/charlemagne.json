@@ -2329,9 +2329,9 @@
    ]
   },
   "punish-blasphemy": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Sections 7 and 9 of the Saxon capitulary make open pagan cremation and human sacrifice capital crimes, so the civil power punished open practice of a rival religion.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
    "sources": [
     "s1",
     "b4",
@@ -2340,6 +2340,32 @@
    "auditor": [
     "claude-haiku-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Sections 7 and 9 of the Saxon capitulary make open pagan cremation and human sacrifice capital crimes, so the civil power punished open practice of a rival religion.",
+     "sources": [
+      "s1",
+      "b4",
+      "b5"
+     ],
+     "author": "claude-haiku-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+     "sources": [
+      "s1",
+      "b4",
+      "b5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "colonies-serve-metropole": {
@@ -3386,6 +3412,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 15
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

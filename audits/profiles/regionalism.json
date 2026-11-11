@@ -2022,12 +2022,36 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Regionalists favour closer accountability of decision-makers but the sources do not endorse binding mandates.",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Regionalists favour closer accountability of decision-makers but the sources do not endorse binding mandates.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3496,6 +3520,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

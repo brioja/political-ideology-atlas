@@ -2160,9 +2160,9 @@
       "auditor": "claude-haiku-5-5"
     },
     "punish-blasphemy": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "She revived the heresy laws in January 1555 and held to the burnings of about 280 Protestants despite advisers' warnings, so the open practice of what her church deemed false religion was punished by the state.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
       "sources": [
         "s4",
         "s6",
@@ -2171,6 +2171,32 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "She revived the heresy laws in January 1555 and held to the burnings of about 280 Protestants despite advisers' warnings, so the open practice of what her church deemed false religion was punished by the state.",
+          "sources": [
+            "s4",
+            "s6",
+            "b3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+          "sources": [
+            "s4",
+            "s6",
+            "b3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "colonies-serve-metropole": {
@@ -3189,6 +3215,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

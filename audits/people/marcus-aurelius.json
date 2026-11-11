@@ -2084,12 +2084,36 @@
       ]
     },
     "punish-blasphemy": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Wikipedia says persecution of Christians appears to have increased during his reign, but his personal role is unclear and much debated; his Meditations (XI, section III) mentions Christians only to criticise them.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
       "sources": [
         "s1",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Wikipedia says persecution of Christians appears to have increased during his reign, but his personal role is unclear and much debated; his Meditations (XI, section III) mentions Christians only to criticise them.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+          "sources": [
+            "s1",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "colonies-serve-metropole": {
@@ -3108,6 +3132,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 8
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

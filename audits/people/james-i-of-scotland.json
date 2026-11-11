@@ -2230,13 +2230,35 @@
    "sources": []
   },
   "punish-blasphemy": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He enforced anti-heresy policy and rewarded the inquisitor responsible for Paul Crawar’s prosecution.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
    "sources": [
     "s5"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He enforced anti-heresy policy and rewarded the inquisitor responsible for Paul Crawar’s prosecution.",
+     "sources": [
+      "s5"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "colonies-serve-metropole": {
    "value": null,
@@ -3278,6 +3300,12 @@
  ],
  "rules": 2,
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

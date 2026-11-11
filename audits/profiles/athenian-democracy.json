@@ -1954,11 +1954,33 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Magistrates answered to the Assembly and could be removed by its vote (Ath. Pol. 59, 61), but Athens had no body of elected delegates bound by mandates.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Magistrates answered to the Assembly and could be removed by its vote (Ath. Pol. 59, 61), but Athens had no body of elected delegates bound by mandates.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3975,5 +3997,13 @@
       "declined": "A historical institution that no one proposes today."
     }
   ],
-  "notes": "Themes searched in the Athenian Constitution (parts 1-69), Thucydides (Pericles, Cleon, Diodotus, Athenagoras, Alcibiades), Demosthenes, Lysias II and the reference works: government, citizenship, law and courts, war and empire, alliances, religion, welfare and public pay, property and debt, gender and exclusion. The record is silent on economics beyond public finance, on technology, ecology and culture, which are null. The Athenian Constitution is a description by the Aristotelian school, used here as the record of institutions. Plato and Aristotle on democracy are critics and are not used."
+  "notes": "Themes searched in the Athenian Constitution (parts 1-69), Thucydides (Pericles, Cleon, Diodotus, Athenagoras, Alcibiades), Demosthenes, Lysias II and the reference works: government, citizenship, law and courts, war and empire, alliances, religion, welfare and public pay, property and debt, gender and exclusion. The record is silent on economics beyond public finance, on technology, ecology and culture, which are null. The Athenian Constitution is a description by the Aristotelian school, used here as the record of institutions. Plato and Aristotle on democracy are critics and are not used.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

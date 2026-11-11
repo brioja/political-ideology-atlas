@@ -229,11 +229,33 @@
       ]
     },
     "punish-blasphemy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Madkhali treats the Covenant of Umar, which bars non-Muslims from publicly displaying their faith's symbols, as binding authority and argues that Qutb's religious freedom would perpetuate infidelity.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Madkhali treats the Covenant of Umar, which bars non-Muslims from publicly displaying their faith's symbols, as binding authority and argues that Qutb's religious freedom would perpetuate infidelity.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "religions-one-truth": {
@@ -3745,5 +3767,13 @@
       ]
     }
   ],
-  "notes": "Themes searched: government, liberty, economy, society, world, culture, means. The record is about obedience to rulers, creed and relations with other Islamists; Madkhalis state nothing on economics, welfare, markets, environment, technology, crime, family law or foreign policy beyond what is answered, so those stay null. Libyan Madkhali factions took opposite sides in the civil war, so no Libyan position is used. Full primary texts (al-Madkhali's books and fatwas) were not obtainable, so positions rest on scholarly reports."
+  "notes": "Themes searched: government, liberty, economy, society, world, culture, means. The record is about obedience to rulers, creed and relations with other Islamists; Madkhalis state nothing on economics, welfare, markets, environment, technology, crime, family law or foreign policy beyond what is answered, so those stay null. Libyan Madkhali factions took opposite sides in the civil war, so no Libyan position is used. Full primary texts (al-Madkhali's books and fatwas) were not obtainable, so positions rest on scholarly reports.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

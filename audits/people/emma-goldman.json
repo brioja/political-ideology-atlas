@@ -477,12 +477,36 @@
       "sources": []
     },
     "abolish-money-wages": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Said syndicalism aims at the complete overthrow of the wage system and held there can be no freedom while mercenary and commercial considerations rule conduct; envisaged free communism.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
       "sources": [
         "s8",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Said syndicalism aims at the complete overthrow of the wage system and held there can be no freedom while mercenary and commercial considerations rule conduct; envisaged free communism.",
+          "sources": [
+            "s8",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
+          "sources": [
+            "s8",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-central-banks": {
@@ -3593,6 +3617,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

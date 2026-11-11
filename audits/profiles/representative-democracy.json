@@ -2194,12 +2194,36 @@
       ]
     },
     "recallable-delegates": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Burke's trustee view and Madison's filtering of opinion reject binding mandate.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Burke's trustee view and Madison's filtering of opinion reject binding mandate.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3739,6 +3763,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 93
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

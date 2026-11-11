@@ -491,12 +491,36 @@
       ]
     },
     "abolish-money-wages": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The Manifesto treats wage labor as capital's basis and communism ends it; Kropotkin's anarcho-communism shares this.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The Manifesto treats wage labor as capital's basis and communism ends it; Kropotkin's anarcho-communism shares this.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-central-banks": {
@@ -3742,6 +3766,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 211
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

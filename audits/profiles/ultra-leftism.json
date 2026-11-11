@@ -463,11 +463,33 @@
       ]
     },
     "abolish-money-wages": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Opposition to wage labour is listed among its defining positions.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Opposition to wage labour is listed among its defining positions.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-central-banks": {
@@ -2030,11 +2052,33 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Pannekoek states that council delegates are temporary messengers of the assemblies.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Pannekoek states that council delegates are temporary messengers of the assemblies.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3496,6 +3540,18 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 270
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -593,12 +593,36 @@
    "sources": []
   },
   "abolish-money-wages": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Described the council as an organisation of producers, not of wage-earners who are slaves of capital, and looked to a classless communist society.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
    "sources": [
     "s3",
     "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Described the council as an organisation of producers, not of wage-earners who are slaves of capital, and looked to a classless communist society.",
+     "sources": [
+      "s3",
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
+     "sources": [
+      "s3",
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "abolish-central-banks": {
@@ -2129,11 +2153,33 @@
    "sources": []
   },
   "recallable-delegates": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Had factory delegates elected with a fixed and conditional mandate, so they answer to those who chose them.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
    "sources": [
     "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Had factory delegates elected with a fixed and conditional mandate, so they answer to those who chose them.",
+     "sources": [
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+     "sources": [
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "individual-pension-accounts": {
@@ -3446,6 +3492,18 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

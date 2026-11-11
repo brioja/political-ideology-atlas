@@ -915,9 +915,9 @@
       ]
     },
     "population-transfer": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Urged emigration west of the Mississippi and signed the Indian Removal Act; he called removal voluntary, but his administration pressed removal treaties, though it moved tribes within the country.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about voluntary or encouraged emigration, or moving people within the country, and the statement now asks about expelling a minority.",
       "sources": [
         "s1",
         "s7",
@@ -927,6 +927,34 @@
       "auditor": [
         "claude-sonnet-5-5",
         "claude-haiku-5-5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Urged emigration west of the Mississippi and signed the Indian Removal Act; he called removal voluntary, but his administration pressed removal treaties, though it moved tribes within the country.",
+          "sources": [
+            "s1",
+            "s7",
+            "b7",
+            "b8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about voluntary or encouraged emigration, or moving people within the country, and the statement now asks about expelling a minority.",
+          "sources": [
+            "s1",
+            "s7",
+            "b7",
+            "b8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "internal-colonialism": {
@@ -3516,6 +3544,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 6
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

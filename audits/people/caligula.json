@@ -2174,13 +2174,35 @@
    ]
   },
   "punish-blasphemy": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Philo §§333–337 reports threats against resistance to his divine cult; religious dissent and political disloyalty overlap here.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
    "sources": [
     "b1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Philo §§333–337 reports threats against resistance to his divine cult; religious dissent and political disloyalty overlap here.",
+     "sources": [
+      "b1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about punishing heresy or the practice of other religions, and the statement now asks only whether public blasphemy should be a crime.",
+     "sources": [
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "colonies-serve-metropole": {
    "value": null,
@@ -3201,6 +3223,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 7
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

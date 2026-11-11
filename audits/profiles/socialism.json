@@ -447,12 +447,36 @@
       ]
     },
     "abolish-money-wages": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Marx's higher phase has producers no longer exchanging products and labour as a prime want, but SEP does not treat abolishing wage labour as a standalone goal and democratic socialists keep wages.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
       "sources": [
         "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Marx's higher phase has producers no longer exchanging products and labour as a prime want, but SEP does not treat abolishing wage labour as a standalone goal and democratic socialists keep wages.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about abolishing wage labour, not money, and the statement now asks only about money; wage labour has its own statement.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "abolish-central-banks": {
@@ -3780,6 +3804,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 167
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

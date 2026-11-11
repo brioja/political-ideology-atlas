@@ -1864,12 +1864,36 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Poland makes deputies follow written instructions and be eligible again only if they followed them; Social Contract III.15 calls deputies mere commissioners who cannot conclude anything.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Poland makes deputies follow written instructions and be eligible again only if they followed them; Social Contract III.15 calls deputies mere commissioners who cannot conclude anything.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its value turns on whether representatives must follow binding instructions, and the statement now asks only whether voters can recall them at any time.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -3813,5 +3837,13 @@
       "sources": []
     }
   },
-  "notes": "Researched themes: government and elections, sovereignty and representation, property and taxation, religion and civil religion, war and the military, nationhood and education, women and family, technology and progress. Not answered: health, welfare, drugs, sexuality, immigration, modern finance and environment, where the sources give no stated position. Sources are Rousseau's own texts read in the Project Gutenberg editions (via the local mirror), the Poland text and the SEP. Letter to d'Alembert and the Corsican Constitutional Project were not read. Poland (1772) is advice for a specific country and is treated as his words on politics, not a general doctrine."
+  "notes": "Researched themes: government and elections, sovereignty and representation, property and taxation, religion and civil religion, war and the military, nationhood and education, women and family, technology and progress. Not answered: health, welfare, drugs, sexuality, immigration, modern finance and environment, where the sources give no stated position. Sources are Rousseau's own texts read in the Project Gutenberg editions (via the local mirror), the Poland text and the SEP. Letter to d'Alembert and the Corsican Constitutional Project were not read. Poland (1772) is advice for a specific country and is treated as his words on politics, not a general doctrine.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
