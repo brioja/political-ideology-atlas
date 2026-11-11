@@ -221,6 +221,36 @@ const WORDING = {
   warnings: ["or", "like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
+// Why each mark matters, printed by statements-check.js and in review briefs (Brandon, 2026-11-11).
+const WORDING_REASONS = {
+  can: "a permission or ability is almost always trivially true; state the position",
+  may: "a permission is almost always trivially true; state the position",
+  rather: "\"A rather than B\" asks two things: a disagree could reject A or prefer a third option",
+  so: "a reason joined to the claim: a disagree could reject the claim or the reason",
+  because: "a reason joined to the claim: a disagree could reject the claim or the reason",
+  "as well as": "joins a second claim",
+  "not only": "joins a second claim",
+  and: "joins a second claim, or a list where one general word would do",
+  ";": "joins a second claim",
+  or: "a list where one general word would do, or two claims a subject may answer differently",
+  like: "a comparison or example that adds a claim of its own",
+  by: "may tie a means to the position (\"by requiring\"); a passive \"by\" (\"chosen by voters\") is fine",
+  through: "may tie a means to the position (\"through lobbying\")",
+  not: "a negative statement is harder to answer than its positive form",
+  if: "a condition: a disagree could reject the claim or the condition",
+  unless: "a condition: a disagree could reject the claim or the condition",
+  when: "a condition: a disagree could reject the claim or the condition",
+  whenever: "a condition: a disagree could reject the claim or the condition",
+  while: "a condition or a second claim",
+  until: "a condition on time: a disagree could reject the claim or the condition",
+  provided: "a condition: a disagree could reject the claim or the condition",
+  "as long as": "a condition: a disagree could reject the claim or the condition",
+  ...Object.fromEntries(["cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"]
+    .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),
+  ...Object.fromEntries(["more", "less", "fewer"].map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
+  "second sentence": "a second sentence usually adds a second claim",
+};
+const wordingReason = (w) => WORDING_REASONS[w.toLowerCase()] || "";
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {
   const find = (words, t = text) => [...new Set((t.match(wordingRe(words)) || []).map((w) => w.toLowerCase()))];
@@ -237,6 +267,6 @@ function wordingMarks(text) {
   return { errors: [...find(WORDING.errors), ...semicolon], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
 }
 
-module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

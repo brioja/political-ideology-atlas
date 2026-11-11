@@ -19,7 +19,7 @@
 //     --all also marks the active statements (reference only: a new meaning needs a new id; a reader fix keeps the id, see scripts/lib.js).
 const fs = require("fs");
 const path = require("path");
-const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, wordingMarks } = require("./lib");
+const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, wordingMarks, wordingReason } = require("./lib");
 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
@@ -47,6 +47,8 @@ if (process.argv.includes("--wording")) {
     const marked = s.text.replace(wordingRe(words), (w) => `**${w.toUpperCase()}**`).replace(/;/g, "**;**")
       .replace(/([.!?])(\s+\S)/g, m.warnings.includes("second sentence") ? "$1**|**$2" : "$1$2");
     console.log(`  ${level}: ${s.from ? `[${s.from}] ` : ""}${s.id}: ${marked}`);
+    for (const w of m.errors) console.log(`      error "${w}": ${wordingReason(w)}`);
+    for (const w of m.warnings) console.log(`      warning "${w}": ${wordingReason(w)}`);
   }
   console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}, ` +
     `";": always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, "more"/"less"/"fewer" with no later "than", a second sentence: ` +

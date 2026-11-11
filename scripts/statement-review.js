@@ -10,7 +10,7 @@
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING } = require("./lib");
+const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING, wordingReason } = require("./lib");
 
 const OUT = path.join(ROOT, "scratchpad", "statement-review");
 const idArg = process.argv.indexOf("--id");
@@ -136,6 +136,7 @@ ${fs.existsSync(maintainerFile(s.id)) ? `## From the maintainer
 ${fs.readFileSync(maintainerFile(s.id), "utf8").trim()}
 
 ` : ""}${fs.existsSync(resultsFile(s.id)) ? `**An earlier review proposed a text that still fails the check** (${proposedText(s.id) ? `"${proposedText(s.id)}"` : "no **Statement:** line found"}). Errors are absolute: propose a text with none, and overwrite \`${s.id}-results.md\`.\n\n` : ""}Wording check: ${m.errors.length ? `**errors** ${m.errors.map((w) => `"${w}"`).join(", ")}` : "no errors"}${m.warnings.length ? `; warnings ${m.warnings.map((w) => `"${w}"`).join(", ")}` : ""}.
+${[...m.errors.map((w) => `- error "${w}": ${wordingReason(w)}`), ...m.warnings.map((w) => `- warning "${w}": ${wordingReason(w)}`)].join("\n")}
 Marked: ${marked}
 
 ## Evidence: what the audits answered

@@ -379,4 +379,10 @@ model.components.slice(0, 6).forEach((c, i) => {
 for (const t of ["validate-rules.test.js", "validate-ideology-rules.test.js"]) {
   console.log(require("child_process").execFileSync("node", [require("path").join(__dirname, "tests", t)], { encoding: "utf8" }).trim());
 }
+// Every wording mark carries the reason statements-check.js and review briefs print (Brandon, 2026-11-11).
+{
+  const { WORDING, WORDING_REASONS } = require("./scripts/lib");
+  for (const w of [...WORDING.errors, ...WORDING.warnings, ";", "more", "less", "fewer", "second sentence"]) assert.ok(WORDING_REASONS[w], `wording mark "${w}" has no reason in WORDING_REASONS (scripts/lib.js)`);
+}
+
 console.log("\nAll checks passed.");
