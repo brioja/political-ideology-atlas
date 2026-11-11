@@ -1156,10 +1156,10 @@ const QUESTIONS = [
  {
   "id": "expand-fossil-fuels",
   "theme": "ecology",
-  "text": "Domestic oil, gas and coal production should be expanded.",
-  "agree": "Drill and mine more oil, gas and coal at home.",
-  "disagree": "Domestic oil, gas and coal production should not be expanded.",
-  "note": "About energy supply versus climate.",
+  "text": "New fossil fuel extraction should be allowed.",
+  "agree": "New oil and gas wells and coal mines should be permitted.",
+  "disagree": "New fossil fuel extraction should not be allowed.",
+  "note": "About energy supply versus climate: whether to open new oil, gas and coal production.",
   "icon": "🛢️"
  },
  {
@@ -1219,10 +1219,10 @@ const QUESTIONS = [
  {
   "id": "heritable-defect-limits",
   "theme": "society",
-  "text": "The state should discourage or prevent people with heritable defects from having children.",
+  "text": "The state should discourage people with inherited disabilities from having children.",
   "agree": "Public policy, such as sterilization or incentives, should reduce the passing on of inherited disabilities.",
-  "disagree": "The state should not discourage or prevent people with heritable defects from having children.",
-  "note": "About whether the state should steer who has children.",
+  "disagree": "The state should not discourage people with inherited disabilities from having children.",
+  "note": "About whether the state should steer who has children. Preventing them by law is a stronger form of discouraging.",
   "icon": "🧬"
  },
  {
@@ -3487,10 +3487,10 @@ const QUESTIONS = [
  {
   "id": "local-essentials-public",
   "theme": "economy",
-  "text": "Local essentials such as water, hospitals and local transport should remain in public hands.",
-  "agree": "Basic local services stay publicly owned and run.",
-  "disagree": "Local essentials such as water, hospitals and local transport should not remain in public hands.",
-  "note": "About keeping basic local services public.",
+  "text": "Essential local services should be publicly owned.",
+  "agree": "Basic local services, such as water, hospitals and local transport, stay publicly owned and run.",
+  "disagree": "Essential local services should not be publicly owned.",
+  "note": "About keeping basic local services public. Ownership of major industries is a separate question.",
   "icon": "🚰"
  },
  {
@@ -3712,9 +3712,9 @@ const QUESTIONS = [
  {
   "id": "capital-controls",
   "theme": "economy",
-  "text": "The state should control the movement of capital in and out of the country.",
+  "text": "The state should control the movement of capital across its borders.",
   "agree": "Governments should limit how money and investment can be moved across borders.",
-  "disagree": "The state should not control the movement of capital in and out of the country.",
+  "disagree": "The state should not control the movement of capital across its borders.",
   "note": "About limits on moving money and investments into or out of a country.",
   "icon": "🛂"
  },
@@ -4000,10 +4000,10 @@ const QUESTIONS = [
  {
   "id": "women-suffrage",
   "theme": "government",
-  "text": "Women should have the same right as men to vote and hold public office.",
+  "text": "Women should have the same political rights as men.",
   "agree": "Women vote and stand for office on the same terms as men.",
-  "disagree": "Women should not have the same right as men to vote and hold public office.",
-  "note": "About women's political rights.",
+  "disagree": "Women should not have the same political rights as men.",
+  "note": "About women's political rights, such as voting and holding public office.",
   "icon": "🗳️"
  },
  {
