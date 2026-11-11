@@ -744,11 +744,33 @@
       ]
     },
     "collective-farming": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Kautsky insists that socialism cannot preserve small farms but would not coerce peasants into collectives; the program emphasizes persuasion.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale says socialism cannot preserve small farms and should persuade peasants into collectives; it rejects only coercion, which the statement does not require, so the sources cited here do not support this answer.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Kautsky insists that socialism cannot preserve small farms but would not coerce peasants into collectives; the program emphasizes persuasion.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale says socialism cannot preserve small farms and should persuade peasants into collectives; it rejects only coercion, which the statement does not require, so the sources cited here do not support this answer.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "capitalism-causes-war": {
@@ -3558,6 +3580,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     }
   ]

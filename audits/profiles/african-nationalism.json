@@ -1713,11 +1713,33 @@
       "sources": []
     },
     "moral-incentives": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Arusha's emphasis on hard work for the nation and leaders' self-restraint reflects moral incentives, though not as the main spur.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale says moral incentives are not the main spur to work, so the sources cited here do not support social duty replacing material rewards as the main motivation.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Arusha's emphasis on hard work for the nation and leaders' self-restraint reflects moral incentives, though not as the main spur.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale says moral incentives are not the main spur to work, so the sources cited here do not support social duty replacing material rewards as the main motivation.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "armed-group-creates-revolution": {
@@ -3717,6 +3739,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 156
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }
