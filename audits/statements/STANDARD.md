@@ -26,7 +26,9 @@ A statement is **asked in the test** only when it meets all four:
      trivially true. State the position itself ("civilians are legitimate targets", not "civilians
      can be legitimate targets").
    - **No unstated context.** It can be answered flatly, without "it depends on the country, the
-     case or the circumstances".
+     case or the circumstances". "My country" is fine with "should" ("my country should stay
+     neutral": a stance anyone can take about their own country) but not in a claim of fact ("foreign
+     powers are plotting against my country"), whose answer depends on where the reader lives.
    - **Not relative to the status quo.** It states a position, not "more" or "less" than now, which
      means different things in different countries ("the minimum wage should be raised"). The wording
      check marks "cut", "reduce", "raise", "increase", "expand" and "lower" as warnings for this, and
@@ -38,7 +40,7 @@ A statement is **asked in the test** only when it meets all four:
      tombs": a list invites "what about a fourth thing?" and its "and"/"or" can hide two claims.
      `node scripts/statements-check.js --wording` marks wording at two levels: errors ("can", "may",
      "rather", "so", "because", "as well as", "not only", "and", "or", a semicolon) are a defect and always reworded (Brandon, 2026-11-10: errors are absolute, no explanation excuses one); warnings
-     ("like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "cut", "reduce", "raise", "increase", "expand", "lower") are often fine but worth a look (a vague scope such as "in economic life" is not marked, since "in" is
+     ("like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "cut", "reduce", "raise", "increase", "expand", "lower") are often fine but worth a look (a vague scope such as "in economic life" is not marked, since "in" is
      mostly a place, but test 3 still rules it out; a "not" statement usually has a positive form that
      is easier to answer; an "if", "unless" or "when" condition is hard to negate ("even when" and "even if" only add emphasis and aren't marked; "provided" is marked only as a condition, not as a verb: "provided by"), since a disagree could reject
      the claim or the condition).

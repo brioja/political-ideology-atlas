@@ -217,10 +217,11 @@ const awaitingReaudit = () => {
 // "cut"/"reduce"/"raise"/"increase"/"expand"/"lower" (a change from today's level, which differs by country and era:
 // state the level instead; Brandon, 2026-11-11. "Cut internet access" or "lower-level councils" are fine), and
 // "more"/"less"/"fewer" without a later "than", a semicolon and a second sentence (marked in wordingMarks), and
-// "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11).
+// "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11), and "my country"
+// (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or"],
-  warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead",
+  warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country",
     "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
 // Why each mark matters, printed by statements-check.js and in review briefs (Brandon, 2026-11-11).
@@ -247,6 +248,7 @@ const WORDING_REASONS = {
   until: "a condition on time: a disagree could reject the claim or the condition",
   provided: "a condition: a disagree could reject the claim or the condition",
   "as long as": "a condition: a disagree could reject the claim or the condition",
+  "my country": "fine with \"should\" (a stance anyone can take about their own country); a claim of fact about it depends on which country the reader lives in",
   instead: "\"A instead of B\" asks two things, as \"rather than\" does: a disagree could reject A or prefer a third option",
   ...Object.fromEntries(["cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"]
     .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),

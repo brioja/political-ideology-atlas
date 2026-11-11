@@ -113,7 +113,7 @@ Write `scratchpad/statement-pass/<id>.json` (and nothing else outside `scratchpa
 Then run `node scripts/statements-check.js --wording scratchpad/statement-pass/<id>.json`. Reword every
 error ("can", "may", "rather", "so", "because", "as well as", "not only", "and", "or", a semicolon); errors are absolute and no
 explanation excuses one. Check every warning ("like", "by", "through", "not", "if", "unless",
-"when", "whenever", "while", "until", "provided", "as long as", "instead", "cut", "reduce", "raise", "increase", "expand", "lower") against test 3: no two claims joined, one general word over a list, no means
+"when", "whenever", "while", "until", "provided", "as long as", "instead", "my country", "cut", "reduce", "raise", "increase", "expand", "lower") against test 3: no two claims joined, one general word over a list, no means
 attached to a goal, no vague scope ("in economic life").
 
 If you were given the queue (`node scripts/statement-pass.js next`), finish with
