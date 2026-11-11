@@ -2252,12 +2252,36 @@
       ]
     },
     "suppress-opposition": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Told his son to punish Puritan leaders who incite rebellion and to forbid church meetings without leave; but he also invited grievances in Parliament and said he never blamed those who raised them properly.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about independent organisations, not political opposition, which this statement now asks about alone.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Told his son to punish Puritan leaders who incite rebellion and to forbid church meetings without leave; but he also invited grievances in Parliament and said he never blamed those who raised them properly.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about independent organisations, not political opposition, which this statement now asks about alone.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "punish-blasphemy": {
@@ -3324,6 +3348,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 8
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

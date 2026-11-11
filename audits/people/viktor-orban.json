@@ -2382,14 +2382,38 @@
    "sources": []
   },
   "suppress-opposition": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He seeks legal action against independent groups labelled foreign agents; the NGO law imposed restrictive sanctions.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about independent organisations, not political opposition, which this statement now asks about alone.",
    "sources": [
     "b9",
     "b14"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He seeks legal action against independent groups labelled foreign agents; the NGO law imposed restrictive sanctions.",
+     "sources": [
+      "b9",
+      "b14"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about independent organisations, not political opposition, which this statement now asks about alone.",
+     "sources": [
+      "b9",
+      "b14"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "punish-blasphemy": {
    "value": null,
@@ -3428,5 +3452,13 @@
    "auditedAt": "2026-10-31"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }
