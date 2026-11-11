@@ -91,3 +91,9 @@ section on the results, Compare, ideology and person pages, each with its statem
   active statements use "X rather than Y"; turning them into "X should matter more than Y" would
   need new ids and re-answering in every audit, for little gain to quiz takers (Brandon). New
   statements avoid "rather than" (wording check); existing ones stay.
+
+- **A statement on police or military strength** (2026-11-11): "The police and military need more
+  funding and authority" was split, then both halves dropped (Brandon). The answers measured "more
+  than now", which depends on each country's status quo, and a level ("a strong police force", "a strong
+  military") doesn't say what it means. The military half also matched military-superiority (0.89);
+  police powers are measured by surveillance-ok, emergency-suspend-protections and abolish-police-prisons.
