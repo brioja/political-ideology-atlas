@@ -2110,10 +2110,10 @@ const QUESTIONS = [
  {
   "id": "gender-parity-bodies",
   "theme": "government",
-  "text": "Public bodies should be required to have equal or near-equal representation of women and men.",
-  "agree": "Quotas or rules make sure women and men are about equally represented in public bodies.",
-  "disagree": "Public bodies should not be required to have equal or near-equal representation of women and men.",
-  "note": "About gender quotas in public bodies.",
+  "text": "Public bodies should be required to have roughly as many women as men.",
+  "agree": "Binding composition rules should ensure that public bodies have approximately equal numbers of women and men.",
+  "disagree": "Public bodies should not be required to have roughly as many women as men.",
+  "note": "About binding rules for the numbers of women and men in public decision-making bodies, such as assemblies, councils and public boards. A rule requiring only a smaller share of women, such as a third, does not count, nor does equal eligibility or a voluntary aim.",
   "icon": "🚻"
  },
  {
