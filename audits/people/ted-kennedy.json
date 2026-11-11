@@ -2485,13 +2485,35 @@
       "sources": []
     },
     "property-franchise": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He fought to remove poll taxes that conditioned voting on payment.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tax or poll-tax qualifications, or no voting at all, and the statement now asks about a property qualification.",
       "sources": [
         "b13"
       ],
-      "auditor": "gpt-6.1-sol"
+      "auditor": "gpt-6.1-sol",
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He fought to remove poll taxes that conditioned voting on payment.",
+          "sources": [
+            "b13"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about tax or poll-tax qualifications, or no voting at all, and the statement now asks about a property qualification.",
+          "sources": [
+            "b13"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "domination-women-nature": {
       "value": null,
@@ -3426,6 +3448,12 @@
     }
   ],
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

@@ -1560,9 +1560,9 @@
    "sources": []
   },
   "welfare-for-citizens": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Introduced the Preserving Social Security and Medicare for Citizens Act limiting benefits to citizens, nationals and lawful permanent residents.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
    "sources": [
     "s42",
     "b21"
@@ -1570,6 +1570,30 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Introduced the Preserving Social Security and Medicare for Citizens Act limiting benefits to citizens, nationals and lawful permanent residents.",
+     "sources": [
+      "s42",
+      "b21"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
+     "sources": [
+      "s42",
+      "b21"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "work-for-welfare": {
@@ -3976,5 +4000,13 @@
   }
  },
  "notes": "Living person: answers come only from her own statements, bills and recorded votes. Views changed: she voted for the Respect for Marriage Act and introduced the States Reform Act (2021) but in 2025-26 made sharply critical statements about gay couples and has campaigned on a more restrictive agenda; the most recent clear positions are used. She lost the 9 June 2026 Republican gubernatorial primary (Wikipedia). Her 2001 book In the Company of Men could not be opened in full text (only excerpts via OnTheIssues). Statements in debate captions were attributed only where moderators named her.\n\nMerged with an independent claude-sonnet-5-5 audit: 1 answers taken from it, 29 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5 notes: Positions have shifted: on same-sex marriage (voted for the Respect for Marriage Act in 2022, later posted 'Adam and Eve, not Adam and Steve'), transgender policy (from 'strongly support LGBTQ rights' in 2021 to the 2024-25 bills on sex-based facilities and minors' treatment), abortion exceptions, and Trump (critical after Jan 6, later an ally). The most recent clear position is used. Search budget ran out before police, welfare, energy, tariffs and other topics could be checked; those are null, not negative.\n\nDeepening pass 2026-11-01 (claude-sonnet-5-5): searched her House floor speeches and committee hearings (Congressional Record, GovInfo) and Voteview for the statements on the widest lines: pornography, religion and church-state, assisted dying, divorce, official language, minority and Native languages and treaties, recall, second chamber, lobbying and corporate influence, FOIA and government information, foreign funding, international courts, foreign bases, mandatory sentences, drugs, political violence. Nothing settled any of them: her pornography remarks concern child exploitation and non-consensual or revenge images (narrower); the Guidance Out of Darkness Act (agency guidance posted online) and the Epstein Files Transparency Act vote are narrower than a general right of access to government information; her vote for the Illegitimate Court Counteraction Act (sanctions on the ICC) does not say whether leaders who commit atrocities should face international courts; her comments after Charlie Kirk's killing blame the left and are not a statement on whether political violence is ever justified. All left null.",
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

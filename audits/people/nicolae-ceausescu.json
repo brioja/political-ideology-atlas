@@ -3251,13 +3251,35 @@
    "sources": []
   },
   "defend-planned-state": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "His final speech called for defense of socialist construction against attacks on Romania.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
    "sources": [
     "s9"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "His final speech called for defense of socialist construction against attacks on Romania.",
+     "sources": [
+      "s9"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
+     "sources": [
+      "s9"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "indirect-election": {
    "value": null,
@@ -3472,5 +3494,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

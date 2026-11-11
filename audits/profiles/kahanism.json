@@ -938,11 +938,33 @@
       ]
     },
     "work-for-welfare": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Unemployment benefits limited to those who cannot work or cannot find work.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it keeps benefits for people who cannot find work, yet gives a positive on requiring work.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Unemployment benefits limited to those who cannot work or cannot find work.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it keeps benefits for people who cannot find work, yet gives a positive on requiring work.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "class-collaboration": {
@@ -3479,6 +3501,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

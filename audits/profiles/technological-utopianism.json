@@ -2996,12 +2996,36 @@
       "sources": []
     },
     "shared-human-nature": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The doctrine's aim includes transforming human nature and ending suffering, which treats human nature as something to redesign.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine's aim includes transforming human nature and ending suffering, which treats human nature as something to redesign.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "public-service-media": {
@@ -3456,6 +3480,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

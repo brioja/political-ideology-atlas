@@ -767,11 +767,33 @@
       ]
     },
     "capitalism-causes-war": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Bonanno describes managed imperialism as part of capital's restructuring.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about imperialism, and the statement now asks only whether capitalism inevitably causes wars between great powers.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Bonanno describes managed imperialism as part of capital's restructuring.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about imperialism, and the statement now asks only whether capitalism inevitably causes wars between great powers.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "taxation-theft": {
@@ -3714,6 +3736,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 207
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

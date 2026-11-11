@@ -1267,11 +1267,33 @@
       "sources": []
     },
     "sex-ed-in-schools": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "She opposes school teaching of gender ideology and favours parental control of such instruction.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "She opposes school teaching of gender ideology and favours parental control of such instruction.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "creationism-in-schools": {
@@ -3116,5 +3138,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Official policy pages were downloaded directly when web rendering returned errors. All themes and remaining nulls reviewed. Statements from her own pages are attributed positions, not verification of the factual claims used to justify them. No extrapolation from party membership, religious identity or endorsements. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant."
+  "notes": "Official policy pages were downloaded directly when web rendering returned errors. All themes and remaining nulls reviewed. Statements from her own pages are attributed positions, not verification of the factual claims used to justify them. No extrapolation from party membership, religious identity or endorsements. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

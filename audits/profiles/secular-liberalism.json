@@ -1541,11 +1541,33 @@
       ]
     },
     "sex-ed-in-schools": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Secular liberalism supports teaching without religious dogma and is associated with social equality.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Secular liberalism supports teaching without religious dogma and is associated with social equality.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "creationism-in-schools": {
@@ -3893,6 +3915,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

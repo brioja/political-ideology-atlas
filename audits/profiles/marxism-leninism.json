@@ -1684,11 +1684,33 @@
       "sources": []
     },
     "sex-ed-in-schools": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The constitution guarantees women equal rights and the state promotes education on a scientific, materialist basis.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The constitution guarantees women equal rights and the state promotes education on a scientific, materialist basis.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-17"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "creationism-in-schools": {
@@ -3978,6 +4000,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 192
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

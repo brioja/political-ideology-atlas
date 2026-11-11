@@ -997,12 +997,36 @@
       "sources": []
     },
     "welfare-for-citizens": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The Sweden Democrats oppose welfare for people who are not citizens or permanent residents, and welfare burden is a core restrictionist argument.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Sweden Democrats oppose welfare for people who are not citizens or permanent residents, and welfare burden is a core restrictionist argument.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "work-for-welfare": {
@@ -3677,6 +3701,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 7
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

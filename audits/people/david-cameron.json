@@ -1090,13 +1090,39 @@
       "sources": []
     },
     "welfare-for-citizens": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He sought to bar EU migrants from tax credits for four years and to restrict benefits for new arrivals, though not reserving all welfare for citizens.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
       "sources": [
         "s10",
         "s6",
         "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He sought to bar EU migrants from tax credits for four years and to restrict benefits for new arrivals, though not reserving all welfare for citizens.",
+          "sources": [
+            "s10",
+            "s6",
+            "s9"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it includes non-citizen residents, yet gives a positive on reserving welfare for citizens.",
+          "sources": [
+            "s10",
+            "s6",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "work-for-welfare": {
@@ -3516,6 +3542,12 @@
   },
   "notes": "Positions are taken from his own speeches, the 2015 manifesto he led and his recorded Commons and Lords statements. His EU stance moved from reform to a referendum he lost, and he accepted the result. His China stance was warmer as Prime Minister than as Foreign Secretary in 2024, where the later view counts. His government's legislation is treated as his only where he personally drove or stated it.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

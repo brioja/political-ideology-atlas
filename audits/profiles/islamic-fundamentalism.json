@@ -1851,11 +1851,33 @@
       ]
     },
     "history-own-civilization": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Qutb and the revivalists see history as the story of Islam against jahiliyya, so teaching centres the Muslim community's civilization.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a civilization, a region or Eurocentrism rather than the student's own nation, which is all the statement now asks about.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Qutb and the revivalists see history as the story of Islam against jahiliyya, so teaching centres the Muslim community's civilization.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a civilization, a region or Eurocentrism rather than the student's own nation, which is all the statement now asks about.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "civilizing-tutelage": {
@@ -3642,6 +3664,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 191
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

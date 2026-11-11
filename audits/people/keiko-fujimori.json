@@ -1568,9 +1568,9 @@
    "auditor": "claude-sonnet-5-5"
   },
   "sex-ed-in-schools": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "Supports teaching gender equality and equal rights, but wants education content on gender reviewed by parents and eliminates 'gender ideology'; mixed.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
    "sources": [
     "s8",
     "s9",
@@ -1579,6 +1579,32 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Supports teaching gender equality and equal rights, but wants education content on gender reviewed by parents and eliminates 'gender ideology'; mixed.",
+     "sources": [
+      "s8",
+      "s9",
+      "b4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
+     "sources": [
+      "s8",
+      "s9",
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "creationism-in-schools": {
@@ -3515,6 +3541,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

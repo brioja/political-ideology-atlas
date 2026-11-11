@@ -3202,12 +3202,36 @@
       "sources": []
     },
     "shared-human-nature": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rousseau's legislator is to change human nature, transforming individuals into parts of a greater whole, so a fixed nature that should not be redesigned is rejected.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rousseau's legislator is to change human nature, transforming individuals into parts of a greater whole, so a fixed nature that should not be redesigned is rejected.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "public-service-media": {
@@ -3640,6 +3664,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 184
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

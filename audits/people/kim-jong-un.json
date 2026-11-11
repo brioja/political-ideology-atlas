@@ -514,12 +514,36 @@
       ]
     },
     "foreign-partition-plot": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Says US and ROK dream of the DPRK's 'collapse' and 'unification by absorption', and that the US keeps sanctions to gradually reduce the country's strength.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes annexation or collapse, not partition.",
       "sources": [
         "s3",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Says US and ROK dream of the DPRK's 'collapse' and 'unification by absorption', and that the US keeps sanctions to gradually reduce the country's strength.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it describes annexation or collapse, not partition.",
+          "sources": [
+            "s3",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "annexed-territory-occupation": {
@@ -3227,5 +3251,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Most KCNA texts are official summaries, not verbatim speeches; the full 8th Congress report was never published. Reunification: positive in 2018-2019 (inter-Korean declarations), reversed in Dec 2023 / Jan 2024; the latest position is used. Party and state positions are attributed to him only where his own reports or orders state them. The 2020 anti-reactionary thought law and the Singapore/Hanoi texts were not opened and are not used."
+  "notes": "Most KCNA texts are official summaries, not verbatim speeches; the full 8th Congress report was never published. Reunification: positive in 2018-2019 (inter-Korean declarations), reversed in Dec 2023 / Jan 2024; the latest position is used. Party and state positions are attributed to him only where his own reports or orders state them. The 2020 anti-reactionary thought law and the Singapore/Hanoi texts were not opened and are not used.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

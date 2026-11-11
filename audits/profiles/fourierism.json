@@ -1866,11 +1866,33 @@
       ]
     },
     "history-own-civilization": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He used \"civilization\" pejoratively and sought universal harmony.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a civilization, a region or Eurocentrism rather than the student's own nation, which is all the statement now asks about.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "He used \"civilization\" pejoratively and sought universal harmony.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a civilization, a region or Eurocentrism rather than the student's own nation, which is all the statement now asks about.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "civilizing-tutelage": {
@@ -3619,6 +3641,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 236
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

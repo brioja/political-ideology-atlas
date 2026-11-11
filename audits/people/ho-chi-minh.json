@@ -935,11 +935,33 @@
       ]
     },
     "defend-planned-state": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Said attempts to blemish the Soviet Union would fail and urged strengthening the socialist camp against imperialist plots.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
       "sources": [
         "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Said attempts to blemish the Soviet Union would fail and urged strengthening the socialist camp against imperialist plots.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "martyrs-honoured": {
@@ -3420,6 +3442,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

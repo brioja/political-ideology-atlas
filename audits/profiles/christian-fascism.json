@@ -1495,11 +1495,33 @@
       ]
     },
     "sex-ed-in-schools": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Ustase pushed the patriarchal family and morals laws, opposing gender equality curricula.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The Ustase pushed the patriarchal family and morals laws, opposing gender equality curricula.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about teaching gender equality, and the statement now asks only about sex education.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "creationism-in-schools": {
@@ -3719,6 +3741,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 207
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

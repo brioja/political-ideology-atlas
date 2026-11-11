@@ -3218,12 +3218,36 @@
       "sources": []
     },
     "defend-planned-state": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The treatise requires protecting the revolutionary achievements and the planned socialist state from imperialist attack.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The treatise requires protecting the revolutionary achievements and the planned socialist state from imperialist attack.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about defence against foreign attack, and the statement now asks only about defence against capitalist restoration.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "indirect-election": {
@@ -3466,6 +3490,12 @@
   ],
   "notes": "Only positions the doctrine, the constitution or the sustained record settle are answered; most social, cultural and many foreign-policy statements are null. Where the constitution's words conflict with the record (rights, recall, elections) the record is used. Themes searched: economy, government, liberty, world, culture, means; the library holds no Juche texts beyond the two Kim speeches, so no further primary sources were available.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

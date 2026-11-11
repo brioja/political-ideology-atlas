@@ -2000,12 +2000,36 @@
       "sources": []
     },
     "delink-world-market": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The project favours resource sovereignty and regional alternatives such as ALBA over neoliberal integration, but kept trading oil; only partly delinking.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it says trade ties were kept, yet gives a positive on ending economic ties.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The project favours resource sovereignty and regional alternatives such as ALBA over neoliberal integration, but kept trading oil; only partly delinking.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale argues against its value: it says trade ties were kept, yet gives a positive on ending economic ties.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "labor-aristocracy": {
@@ -3830,6 +3854,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

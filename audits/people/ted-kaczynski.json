@@ -503,9 +503,9 @@
    "auditor": "claude-sonnet-5-5"
   },
   "shared-human-nature": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Treats human nature as biological and unfit for engineering, and includes it in 'wild nature' that should be free of organized-society control (paras. 157, 183); he does not ground rights in it.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
    "sources": [
     "s1",
     "b2"
@@ -513,6 +513,30 @@
    "auditor": [
     "claude-sonnet-5-5",
     "claude-sonnet-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Treats human nature as biological and unfit for engineering, and includes it in 'wild nature' that should be free of organized-society control (paras. 157, 183); he does not ground rights in it.",
+     "sources": [
+      "s1",
+      "b2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale turns on whether human nature should be redesigned, and the statement now asks only whether a shared human nature is the basis of rights.",
+     "sources": [
+      "s1",
+      "b2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "character-from-environment": {
@@ -3346,6 +3370,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 8
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }
