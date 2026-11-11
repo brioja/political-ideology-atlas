@@ -228,10 +228,10 @@ function wordingMarks(text) {
   // "even when"/"even if" stress the claim rather than adding a condition, so they aren't marked; "provided" is
   // marked only as a condition ("provided that", or opening a clause), not as a verb ("provided by") (Brandon, 2026-11-09).
   const t = text.replace(/\beven (when|if)\b/gi, "").replace(/\bprovided\b(?! that\b)/gi, (w, at, s) => /(^|[,;:]\s*)$/.test(s.slice(0, at)) ? w : "");
-  // "more"/"less"/"fewer" with no "than" after them (other than "rather than") usually mean "than now", a change from
+  // "more"/"less"/"fewer" with no "than" after them usually mean "than now", a change from
   // today's level ("should have more power"); with a "than" they are a comparison ("more on rehabilitation than on
   // punishment") and aren't marked (Brandon, 2026-11-11).
-  const relative = [...t.matchAll(/\b(more|less|fewer)\b/gi)].filter((m) => !/\bthan\b/i.test(t.slice(m.index).replace(/\brather than\b/gi, ""))).map((m) => m[1].toLowerCase());
+  const relative = [...t.matchAll(/\b(more|less|fewer)\b/gi)].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
   return { errors: find(WORDING.errors), warnings: [...new Set([...find(WORDING.warnings, t), ...relative])] };
 }
 
