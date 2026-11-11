@@ -232,9 +232,10 @@ function wordingMarks(text) {
   // today's level ("should have more power"); with a "than" they are a comparison ("more on rehabilitation than on
   // punishment") and aren't marked (Brandon, 2026-11-11).
   const relative = [...t.matchAll(/\b(more|less|fewer)\b/gi)].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
-  // A semicolon or a second sentence usually joins a second claim, as "and" does (Brandon, 2026-11-11).
-  const joins = [...(/;/.test(text) ? [";"] : []), ...(/[.!?]\s+\S/.test(text.trim()) ? ["second sentence"] : [])];
-  return { errors: find(WORDING.errors), warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...joins])] };
+  // A semicolon joins a second claim, as "and" does: an error (Brandon, 2026-11-11). A second sentence usually does too: a warning.
+  const semicolon = /;/.test(text) ? [";"] : [];
+  const sentences = /[.!?]\s+\S/.test(text.trim()) ? ["second sentence"] : [];
+  return { errors: [...find(WORDING.errors), ...semicolon], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
 }
 
 module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,

@@ -43,7 +43,7 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
 - **"Keep as is" is a fine verdict.** Some statements fail the check without a real problem; `sacred-nation`
   kept its wording because its two halves are one idea in every source.
 - **Errors are absolute** (Brandon, 2026-11-10): the statement text never keeps an error word ("and",
-  "can", "may", "rather", "so", "because", "as well as", "not only"), whatever the explanation;
+  "can", "may", "rather", "so", "because", "as well as", "not only", a semicolon), whatever the explanation;
   `statements-check.js` no longer accepts one. Fold a list into a general word, use a colon or a single phrase
   ("kindred peoples"), put the list in the agree text, or say a permission or ability another way ("able
   to"). Only warnings may stand, when test 3 confirms them.
