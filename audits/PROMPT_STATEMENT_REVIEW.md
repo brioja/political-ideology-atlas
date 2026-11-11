@@ -50,6 +50,11 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
 - **One claim, no hidden second one.** Fold a list into one general word ("major industries", not "energy,
   rail and utilities"); move examples to the agree text. Where two halves can come apart, check the rationales
   for which half decided the answers; related statements may already measure the other half.
+- **A general word must not hide silence** (Brandon, 2026-11-11). A list, or a general word that stands for
+  one, claims a subject supports every part, while an audit often has evidence for only one ("night-watchman
+  state": a source limiting the state to protecting property says nothing on defence). Use a general word only
+  where the answers' evidence speaks to the general claim itself; otherwise keep the part the audits answered
+  and name the answers that rest on the dropped part, or propose a new id.
 - **"A rather than B":** ask what the contrast meant. Emphasis becomes "more A than B"; substitution becomes
   "A should replace B"; a redundant contrast is dropped ("Decisions should be made as locally as possible").
 - **Plain words.** No jargon ("the political nation", "interlocking"), no figurative verbs ("turn away

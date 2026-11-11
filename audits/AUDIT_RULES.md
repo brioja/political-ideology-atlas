@@ -90,6 +90,11 @@ free trade, not about markets in general.
   absence of evidence is never a negative answer ("no rehabilitative aim recorded" is not a position
   on prisons). Matching leaves a `null` out: it never counts as agreement, "Neither" or
   disagreement.
+- **Evidence for one part is not evidence for the whole** (Brandon, 2026-11-11). Where a statement covers
+  several things (a list, or a general word such as "security forces" for police and military), agree or
+  disagree only on evidence that covers the whole claim. Support for one part, with the sources silent on the
+  rest, never implies the rest: that silence is not a position. Answer `null` unless the sources speak to the
+  whole claim.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
