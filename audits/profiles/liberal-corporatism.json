@@ -798,12 +798,36 @@
       "sources": []
     },
     "organic-representation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Interest representation through trade bodies; but liberal corporatism keeps parties and parliament, so only agree.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale says liberal corporatism keeps parties and parliament, so the sources cited here do not support replacing parties as the basis of representation.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Interest representation through trade bodies; but liberal corporatism keeps parties and parliament, so only agree.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale says liberal corporatism keeps parties and parliament, so the sources cited here do not support replacing parties as the basis of representation.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "total-state": {
@@ -3483,6 +3507,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 210
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }
