@@ -225,12 +225,36 @@
       ]
     },
     "leader-cult": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Veneration of Lee, Davis and Jackson through statues, portraits and ritual praise was central to the movement, though not as 'embodiment of the nation' in the statement's sense.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale says the veneration of Confederate leaders was not as the embodiment of the nation, so the sources cited here do not support this statement.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Veneration of Lee, Davis and Jackson through statues, portraits and ritual praise was central to the movement, though not as 'embodiment of the nation' in the statement's sense.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale says the veneration of Confederate leaders was not as the embodiment of the nation, so the sources cited here do not support this statement.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "preserve-national-culture": {
@@ -3763,5 +3787,13 @@
       "declined": "A historical claim about one country."
     }
   ],
-  "notes": "Sources read: the four reference works, Pollard's two books (searched for secession, slavery, tariffs, suffrage, race, habeas corpus, nullification, monuments themes), Rutherford's full Measuring Rod. Jefferson Davis, Alexander Stephens and Jubal Early were downloaded but not used: the defining sources name Davis and Early only as heroes or memory-makers, not as texts of the movement. Nothing found on economics, ecology, technology, religion in law, gender roles in law, foreign policy or the economy beyond tariffs; the movement is a memory and race-and-region politics, so most themes are null."
+  "notes": "Sources read: the four reference works, Pollard's two books (searched for secession, slavery, tariffs, suffrage, race, habeas corpus, nullification, monuments themes), Rutherford's full Measuring Rod. Jefferson Davis, Alexander Stephens and Jubal Early were downloaded but not used: the defining sources name Davis and Early only as heroes or memory-makers, not as texts of the movement. Nothing found on economics, ecology, technology, religion in law, gender roles in law, foreign policy or the economy beyond tariffs; the movement is a memory and race-and-region politics, so most themes are null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }
