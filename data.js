@@ -2155,10 +2155,10 @@ const QUESTIONS = [
  {
   "id": "abolish-hereditary-privilege",
   "theme": "government",
-  "text": "Hereditary titles and privileges should be abolished.",
-  "agree": "Nobody should hold rank or privilege by birth.",
-  "disagree": "Hereditary titles and privileges should not be abolished.",
-  "note": "About inherited rank and privilege.",
+  "text": "Hereditary rank should be abolished.",
+  "agree": "Nobody should hold a special rank by birth, such as a noble title, a hereditary crown or a caste position, or the special rights attached to one.",
+  "disagree": "Hereditary rank should not be abolished.",
+  "note": "About status passed down by birth: noble titles, a hereditary crown, caste or estate rank, and the special rights attached to them, such as hereditary seats in a legislature. An inherited title counts even without material privilege. This is not about ordinary inheritance of property or wealth, earned honours, or private forms of address.",
   "icon": "👑"
  },
  {
