@@ -1696,10 +1696,10 @@ const QUESTIONS = [
  {
   "id": "citizenship-by-descent",
   "theme": "world",
-  "text": "Citizenship should pass by descent from citizen parents rather than by birth on the territory.",
-  "agree": "Children of citizens are citizens wherever they are born; birth on the soil alone does not confer it.",
-  "disagree": "Citizenship by descent from citizen parents should not replace citizenship by birth on the territory.",
-  "note": "About who counts as a citizen by birth.",
+  "text": "Citizenship at birth should go only to children of citizens.",
+  "agree": "Children of citizens are citizens wherever they are born; being born in the country is not enough.",
+  "disagree": "Citizenship at birth should not go only to children of citizens.",
+  "note": "About who becomes a citizen at birth. Children of permanent residents or of anyone born in the country count as exceptions.",
   "icon": "🪪"
  },
  {
@@ -4036,10 +4036,10 @@ const QUESTIONS = [
  {
   "id": "homestead-ownership",
   "theme": "economy",
-  "text": "The first person to claim and work unowned land or resources thereby becomes their rightful owner.",
-  "agree": "Whoever first claims and works unowned resources owns them.",
-  "disagree": "Claiming and working unowned land or resources does not by itself make someone their rightful owner.",
-  "note": "About how property first comes to be owned.",
+  "text": "Land belongs to whoever first puts it to use.",
+  "agree": "Whoever first settles and works unowned land becomes its rightful owner.",
+  "disagree": "Land does not belong to whoever first puts it to use.",
+  "note": "About how land that no one owns first becomes property.",
   "icon": "🌾"
  },
  {
