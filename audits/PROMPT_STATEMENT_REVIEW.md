@@ -56,6 +56,8 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
   from"), no "should" that could read as a prediction ("should do more" for "should rely more on").
 - **The agree text means exactly the statement**, in plainer words or with examples; it never adds a claim the
   statement lacks. The disagree text is the exact negation ("at least as much B as A" for "more A than B").
+- **Don't imply everyone is one of two genders** (Brandon, 2026-11-11): "gender balance" and "the sexes"
+  are out; name the groups compared ("roughly as many women as men").
 - **Check the sources' own terms** before choosing a word ("struggling against", not "fought"; "sacred", not a
   softer word that would also fit ordinary patriotism).
 
