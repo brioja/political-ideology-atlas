@@ -213,10 +213,13 @@ const awaitingReaudit = () => {
 // "like", "by"/"through" (a means, or just who acts: "chosen by voters"), "in" (a vague scope such as
 // "in economic life", or just a place: "in war"), "not" (state the positive position and let an
 // ideology answer -2: "work should be the centre of people's lives", not "work should not be..."), "if"/"unless"/"when"/"whenever"/"while"/"until"/"provided"/"as long as" (a
-// condition is hard to negate: does disagreeing reject the claim or the condition? "while" and "until" added 2026-11-10).
+// condition is hard to negate: does disagreeing reject the claim or the condition? "while" and "until" added 2026-11-10),
+// "cut"/"reduce"/"raise"/"increase"/"expand"/"lower" (a change from today's level, which differs by country and era:
+// state the level instead; Brandon, 2026-11-11. "Cut internet access" or "lower-level councils" are fine).
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and"],
-  warnings: ["or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as"],
+  warnings: ["or", "like", "by", "through", "in", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as",
+    "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
 const wordingRe = (words) => new RegExp(`\\b(${words.join("|")})\\b`, "gi");
 function wordingMarks(text) {
