@@ -1,8 +1,10 @@
 {
   "id": "niccolo-machiavelli",
   "name": "Niccolò Machiavelli",
-  "auditedAt": "2026-10-24",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-12",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "Florentine diplomat and political theorist (1469–1527)",
   "summary": "Machiavelli served the Florentine Republic as secretary and diplomat and wrote The Prince, a manual of power for rulers, and the Discourses on Livy, which favours a mixed republic with an armed citizenry. He separates political success from conventional morality, defends a citizen militia over mercenaries, and treats religion as a civic tool while criticising the Church's role in Italian division. The Prince and the Discourses differ in sympathy and are read here with the Discourses as closer to his own preference.",
@@ -14,7 +16,9 @@
       "title": "The Prince (trans. W. K. Marriott)",
       "author": "Niccolò Machiavelli",
       "url": "https://www.gutenberg.org/cache/epub/1232/pg1232.txt",
-      "usedFor": "Advice to a ruler: arms, fear, faith, neutrality, fortresses."
+      "usedFor": "Advice to a ruler: arms, fear, faith, neutrality, fortresses.",
+      "evidence": "words",
+      "library": "1232 Machiavelli - The Prince.txt"
     },
     {
       "id": "s2",
@@ -22,7 +26,9 @@
       "title": "Discourses on the First Decade of Titus Livius (trans. N. H. Thomson)",
       "author": "Niccolò Machiavelli",
       "url": "https://www.gutenberg.org/cache/epub/10827/pg10827.txt",
-      "usedFor": "Republican views: mixed constitution, religion, expansion, armed citizens, equality, nobles."
+      "usedFor": "Republican views: mixed constitution, religion, expansion, armed citizens, equality, nobles.",
+      "evidence": "words",
+      "library": "10827 Machiavelli - Discourses on the First Decade of Titus Livius.txt"
     },
     {
       "id": "s3",
@@ -30,7 +36,9 @@
       "title": "Machiavelli, Volume I (includes The Art of War and the editor's introduction)",
       "author": "Niccolò Machiavelli",
       "url": "https://www.gutenberg.org/cache/epub/15772/pg15772.txt",
-      "usedFor": "Citizen militia, conscription, discipline and exercise."
+      "usedFor": "Citizen militia, conscription, discipline and exercise.",
+      "evidence": "words",
+      "library": "15772 Machiavelli - Machiavelli, Volume I.txt"
     },
     {
       "id": "s4",
@@ -38,7 +46,8 @@
       "title": "Niccolò Machiavelli (Wikipedia)",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Niccol%C3%B2_Machiavelli",
-      "usedFor": "Life dates and career; died 1527."
+      "usedFor": "Life dates and career; died 1527.",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +55,27 @@
       "title": "Niccolò Machiavelli (Stanford Encyclopedia of Philosophy)",
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/machiavelli/",
-      "usedFor": "Republicanism, religion, and the neo-Roman reading of liberty."
+      "usedFor": "Republicanism, religion, and the neo-Roman reading of liberty.",
+      "evidence": "words"
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "History of Florence and of the Affairs of Italy (trans. Thomas Roscoe)",
+      "author": "Niccolò Machiavelli",
+      "url": "https://www.gutenberg.org/cache/epub/2464/pg2464.txt",
+      "library": "2464 Machiavelli - History of Florence and of the Affairs of Italy From the Ear.txt",
+      "usedFor": "Book III opening on the enmities of nobles and people in Rome and Florence."
+    },
+    {
+      "id": "s7",
+      "kind": "scholarly",
+      "evidence": "action",
+      "title": "Niccolò Machiavelli (Stanford Encyclopedia of Philosophy), biography",
+      "author": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/machiavelli/",
+      "usedFor": "Record: he organised the Florentine republic's civic militia and served fourteen years on diplomatic missions."
     }
   ],
   "answers": {
@@ -463,10 +492,13 @@
       ]
     },
     "war-builds-character": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Prince ch. 14 says a prince should never stand idle in peace, and Discourses I.21 praises states that never relax warlike discipline in peace; neither says war itself builds character, so this is only weakly settled.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
     },
     "separate-church-state": {
       "value": 0,
@@ -690,10 +722,32 @@
     },
     "conscription": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Art of War: citizens are enrolled, armed and exercised in arms on holy days; the editor's introduction describes his scheme of drilling all able-bodied men of 17-40. He organised the Florentine militia as secretary.",
+      "confidence": "medium",
+      "rationale": "As secretary of the Florentine republic he organised its civic militia of enrolled citizens in place of mercenaries, which the scholarly biography records.",
       "sources": [
-        "s3"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Art of War: citizens are enrolled, armed and exercised in arms on holy days; the editor's introduction describes his scheme of drilling all able-bodied men of 17-40. He organised the Florentine militia as secretary.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "As secretary of the Florentine republic he organised its civic militia of enrolled citizens in place of mercenaries, which the scholarly biography records.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "exit-over-voice": {
@@ -873,10 +927,13 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Discourses I.4 praises the tumults between nobles and commons as the source of Roman liberty, while Florentine Histories III.1 calls those enmities the cause of most troubles in cities.",
+      "sources": [
+        "s2",
+        "s6"
+      ]
     },
     "sacrifice-heritage": {
       "value": null,
@@ -1182,10 +1239,12 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": null,
+      "value": 0,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Prince ch. 12 says a prince should go in person as captain of his armies, but that a republic should send its citizens as captains and hold them by the laws.",
+      "sources": [
+        "s1"
+      ]
     },
     "church-by-bishops": {
       "value": null,
@@ -1237,12 +1296,34 @@
     },
     "people-in-arms": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "Prince chs. 12-13, Discourses I.21 (a reproach to lack a national army) and the Art of War urge replacing mercenaries with armed citizens; he organised the Florentine militia.",
+      "confidence": "medium",
+      "rationale": "As secretary he organised the Florentine republic's civic militia of citizens, as the biography records; this is the arming of citizens in place of hired troops.",
       "sources": [
-        "s1",
-        "s2",
-        "s3"
+        "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Prince chs. 12-13, Discourses I.21 (a reproach to lack a national army) and the Art of War urge replacing mercenaries with armed citizens; he organised the Florentine militia.",
+          "sources": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "As secretary he organised the Florentine republic's civic militia of citizens, as the biography records; this is the arming of citizens in place of hired troops.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "rural-life-healthier": {
@@ -2340,10 +2421,12 @@
       "sources": []
     },
     "reinterpret-religion": {
-      "value": null,
+      "value": 1,
       "confidence": "low",
-      "rationale": "No recorded position found.",
-      "sources": []
+      "rationale": "Discourses II.2 blames interpretations of Christianity that favour idleness and says it should be read as permitting the defence and exaltation of the country.",
+      "sources": [
+        "s2"
+      ]
     },
     "wealth-concentration-endangers-liberty": {
       "value": 1,
@@ -3154,9 +3237,681 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Prince ch. 26 calls on Italy to take up arms against the foreign \"barbarians\" occupying it: that war is just which is necessary, and arms are hallowed when there is no other hope.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "human-decline-since-golden-age": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Discourses II, preface says the world stays the same in its total of good and evil, which only shifts from one country to another, so humanity as a whole is not in decline.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "democracy-needs-political-clash": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Discourses I.4 holds that the conflict between the people and the great in a republic is where all laws favourable to freedom originate.",
+      "sources": [
+        "s2"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No position on this question found in his works or record.",
+      "sources": []
     }
   },
-  "notes": "The Prince (advice to a prince) and the Discourses (republicanism) differ on the people, law-bound rule and succession; scholarly consensus treats the Discourses as closer to his own preference, and contested items are low or 0. Inferred answers are marked in the rationale. His personal religious belief is disputed.",
+  "notes": "The Prince (advice to a prince) and the Discourses (republicanism) differ on the people, law-bound rule and succession; scholarly consensus treats the Discourses as closer to his own preference, and contested items are low or 0. Inferred answers are marked in the rationale. His personal religious belief is disputed. Pass 2026-11-12 (rules 7): added the History of Florence, tagged sources as actions or words, moved the militia answers onto the record, and answered the candidates the texts settle. Themes searched in the texts: economy, liberty, society, government, world, means, ecology, technology; most statements on modern topics (welfare, gender, environment, technology, trade) have no position in any of his texts and stay null.",
   "reviews": [
     {
       "kind": "inference",
@@ -3170,5 +3925,23 @@
       "reviewedAt": "2026-11-11",
       "nulled": 1
     }
-  ]
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-24"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-12"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "file": "57037 Machiavelli - The Prince.txt",
+      "reason": "A second translation (Ricci) of The Prince, already used in the Marriott translation (s1); it adds no separate text."
+    }
+  ],
+  "notFound": []
 }
