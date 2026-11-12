@@ -3163,13 +3163,34 @@
       "sources": []
     },
     "open-diplomacy": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He relied on secret negotiations and concealed military action in Cambodia.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
       "sources": [
         "b8"
       ],
-      "auditor": "gpt-6.1-sol"
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He relied on secret negotiations and concealed military action in Cambodia.",
+          "sources": [
+            "b8"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+          "sources": [
+            "b8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "capital-controls": {
       "value": null,
@@ -3631,6 +3652,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

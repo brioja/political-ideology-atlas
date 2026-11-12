@@ -3187,11 +3187,33 @@
       "sources": []
     },
     "open-diplomacy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Sovereigntists criticise opaque EU dealing, but Gaullist statecraft prized discretion and the presidential foreign-policy domain; the sources are silent.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Sovereigntists criticise opaque EU dealing, but Gaullist statecraft prized discretion and the presidential foreign-policy domain; the sources are silent.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "capital-controls": {
@@ -3784,6 +3806,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 150
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

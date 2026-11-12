@@ -2816,15 +2816,33 @@
    ]
   },
   "open-diplomacy": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He conducted the 1971 opening to China through a secret mission ('The President asked that this mission be secret until after we meet', he told Zhou Enlai), and ran confidential back channels rather than public negotiation.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
    "sources": [
     "o6"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-haiku-5-5"
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "He conducted the 1971 opening to China through a secret mission ('The President asked that this mission be secret until after we meet', he told Zhou Enlai), and ran confidential back channels rather than public negotiation.",
+     "sources": [
+      "o6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-31"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+     "sources": [
+      "o6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "capital-controls": {
@@ -3299,6 +3317,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ],

@@ -2644,11 +2644,33 @@
       "sources": []
     },
     "open-diplomacy": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "He conducts secret negotiations with England on terms not approved by the Scottish estates.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He conducts secret negotiations with England on terms not approved by the Scottish estates.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "capital-controls": {
@@ -3110,6 +3132,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

@@ -3578,11 +3578,33 @@
       ]
     },
     "open-diplomacy": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Told the House that foreign negotiations require caution and often depend on secrecy, and refused to hand over the Jay Treaty instructions.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
       "sources": [
         "s19"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Told the House that foreign negotiations require caution and often depend on secrecy, and refused to hand over the Jay Treaty instructions.",
+          "sources": [
+            "s19"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+          "sources": [
+            "s19"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "capital-controls": {
@@ -4766,6 +4788,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

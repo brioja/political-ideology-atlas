@@ -2930,13 +2930,34 @@
    "sources": []
   },
   "open-diplomacy": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "On the China talks in 2019 he said his strong preference was for negotiations to take place behind closed doors, with transparency only once a deal is reached.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
    "sources": [
     "b7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "On the China talks in 2019 he said his strong preference was for negotiations to take place behind closed doors, with transparency only once a deal is reached.",
+     "sources": [
+      "b7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on confidential negotiation or discretion in diplomacy, and the statement now asks only whether agreements between governments should ever be secret.",
+     "sources": [
+      "b7"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "capital-controls": {
    "value": 1,
@@ -3417,6 +3438,12 @@
  ],
  "rules": 2,
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
