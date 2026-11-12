@@ -242,6 +242,7 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   ok("rules 5: no rules-6 checks", E(base(), (a) => { a.rules = 5; }));
   ok("rules 7: a 0 on one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "The roll calls show votes both for and against it.", sources: ["s1"] }; }));
   fails("rules 7: a 0 splitting actions against words", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "Voted for it once and spoke against it in 2021.", sources: ["s1", "s3"] }; }), /record over words/);
+  fails("rules 7: a 0 setting words against actions inside one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "His memoir records that he said it was wrong but signed it into law anyway.", sources: ["s5"] }; }), /sets words \("said"\) against actions \("signed"\)/);
   setTextsForTests(null); setLibraryForTests(null);
 }
 

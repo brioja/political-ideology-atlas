@@ -520,6 +520,18 @@ function validate(id) {
       for (const x of sentences) errors.push(`notes call a source unavailable: "${x.trim().slice(0, 160)}". List the work in "notFound" with at least two places tried, or find it`);
     }
   }
+  // Rules 7 (Brandon, 2026-11-12): a 0 is a split within actions or within words. Source tags can't see a split
+  // inside one source (a biography recording both a speech and a law), so the rationale is read too: a 0 that
+  // names both something said and something done is words against actions, which the actions decide.
+  if (a.rules >= 7) {
+    const SAID = /\b(said|says|saying|wrote|writes|written|argued|argues|arguing|stated|speech|speeches|praised|critici[sz]ed|denounced|interview|told|essay|pamphlet|called for|calls for|urged|urges|insisted|warned|rhetoric|manifesto|the green book)\b/i;
+    const DONE = /\b(voted|votes|signed(?! (?:an? |the )?(?:open )?(?:letter|petition|statement|pledge))|enacted|decreed|decree|vetoed|veto|ordered|nationali[sz]ed|abolished|banned|imprisoned|executed|implemented|appointed|deported|expelled|invaded|annexed|legislated|cosponsored|sponsored|passed (?:a|the) (?:law|bill|act))\b/i;
+    for (const [sid, x] of Object.entries(answers)) {
+      if (!x || x.value !== 0) continue;
+      const w = (x.rationale || "").match(SAID), d = (x.rationale || "").match(DONE);
+      if (w && d) errors.push(`${sid}: a 0 whose rationale sets words ("${w[0]}") against actions ("${d[0]}"); record over words: that is no split, answer from the actions. (If "${w[0]}" only names what a source says, reword the rationale.)`);
+    }
+  }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');

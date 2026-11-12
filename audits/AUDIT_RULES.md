@@ -100,7 +100,8 @@ free trade, not about markets in general.
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
   doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites the evidence for each
   side, which one source may hold, of the same kind: actions against actions or words against words.
-  Words against actions is not a split; answer from the actions (`validate.js` checks). Adherents
+  Words against actions is not a split, even inside one source; answer from the actions (`validate.js`
+  checks the cited sources' tags and the rationale's wording). Adherents
   disagreeing among themselves while the sources take no side is silence: `null`.
 - **±2** only when the position is central or stated explicitly and forcefully.
 - **Every answer is stated or null; there are no inferences.** An answer is stated when the
