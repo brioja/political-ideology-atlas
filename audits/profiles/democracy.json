@@ -1,7 +1,7 @@
 {
   "id": "democracy",
   "name": "Democracy",
-  "auditedAt": "2026-10-15",
+  "auditedAt": "2026-11-12",
   "auditor": "claude-sonnet-5-5",
   "summary": "Democracy holds that political authority rests on the people, who rule themselves as political equals, usually by electing representatives in free and periodic elections. Its mainstream, liberal form pairs majority rule with civil liberties, equality before the law and constitutional protection of minorities. It is a view about who should hold power and how, and takes few positions on economic, social or foreign policy.",
   "scope": "The mainstream modern ideal of representative, liberal democracy as set out in John Stuart Mill's Considerations on Representative Government, the Universal Declaration of Human Rights (Article 21) and the Stanford Encyclopedia's account of democratic theory. It treats democracy as a political ideal, not a bundle of economic or cultural policies, so most statements outside government and rights are answered neutral with low confidence. It excludes democratic socialism and social democracy, which have their own profiles.",
@@ -45,7 +45,8 @@
       "title": "Democracy",
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/democracy/",
-      "usedFor": "Definition, justifications, limits on majority rule, expertise, representation and the boundary problem"
+      "usedFor": "Definition, justifications, limits on majority rule, expertise, representation and the boundary problem",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -53,7 +54,8 @@
       "title": "Democracy",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Democracy",
-      "usedFor": "Forms of democracy, rule of law, political equality, free elections and civil liberties"
+      "usedFor": "Forms of democracy, rule of law, political equality, free elections and civil liberties",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -61,7 +63,8 @@
       "title": "Considerations on Representative Government",
       "author": "John Stuart Mill",
       "url": "https://www.gutenberg.org/cache/epub/5669/pg5669.txt",
-      "usedFor": "Case against benevolent despotism, representative bodies, suffrage, proportional representation, nationality and federation"
+      "usedFor": "Case against benevolent despotism, representative bodies, suffrage, proportional representation, nationality and federation",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -69,7 +72,17 @@
       "title": "Universal Declaration of Human Rights",
       "author": "United Nations",
       "url": "https://www.un.org/en/about-us/universal-declaration-of-human-rights",
-      "usedFor": "Will of the people as basis of authority, equality, expression, religion, association, unions"
+      "usedFor": "Will of the people as basis of authority, equality, expression, religion, association, unions",
+      "evidence": "words"
+    },
+    {
+      "id": "s5",
+      "kind": "reference",
+      "evidence": "words",
+      "title": "Democracy",
+      "author": "United Nations",
+      "url": "https://www.un.org/en/global-issues/democracy",
+      "usedFor": "The UN account of democracy as a core value embodied in the Universal Declaration of Human Rights (the will of the people as the basis of the authority of government)"
     }
   ],
   "answers": {
@@ -193,11 +206,33 @@
       "sources": []
     },
     "decide-locally": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy can operate at any level; the sources leave the level of decision open.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy can operate at any level; the sources leave the level of decision open.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "rehabilitation": {
@@ -455,12 +490,34 @@
       ]
     },
     "workers-councils": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Mainstream democratic theory centres on elected representative bodies open to all citizens rather than class-based councils.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Mainstream democratic theory centres on elected representative bodies open to all citizens rather than class-based councils.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "right-to-secede": {
@@ -566,12 +623,34 @@
       "sources": []
     },
     "duties-before-rights": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The UDHR and civil-liberties tradition place individual rights first.",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s4",
-        "s2"
+        "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The UDHR and civil-liberties tradition place individual rights first.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "nature-intrinsic-value": {
@@ -617,11 +696,33 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mill judges governments by their promotion of progress and citizens' growth.",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Mill judges governments by their promotion of progress and citizens' growth.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "results-over-ideology": {
@@ -721,12 +822,34 @@
       "sources": []
     },
     "exit-over-voice": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Democracy treats participation and the vote as the means by which citizens defend their interests; exit is secondary.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s3",
-        "s1"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Democracy treats participation and the vote as the means by which citizens defend their interests; exit is secondary.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "state-as-business": {
@@ -754,12 +877,34 @@
       "sources": []
     },
     "organic-representation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mainstream democracy represents citizens through free elections, with group representation debated only as a supplement.",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Mainstream democracy represents citizens through free elections, with group representation debated only as a supplement.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "total-state": {
@@ -857,12 +1002,34 @@
       "sources": []
     },
     "rule-by-example": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Democracy relies on law and election, not the moral example of rulers.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s2",
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Democracy relies on law and election, not the moral example of rulers.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "national-self-determination": {
@@ -992,11 +1159,33 @@
       "sources": []
     },
     "political-elite-corrupt": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy makes leaders accountable to voters but takes no stance on whether they are in fact corrupt.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy makes leaders accountable to voters but takes no stance on whether they are in fact corrupt.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "heritable-defect-limits": {
@@ -1036,19 +1225,63 @@
       ]
     },
     "socialism-one-country": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of rule and takes no side on socialist strategy; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of rule and takes no side on socialist strategy; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "settler-state-colonial": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of rule and takes no side on this historical question; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of rule and takes no side on this historical question; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "uniform-civil-code": {
@@ -1072,19 +1305,63 @@
       "sources": []
     },
     "no-religion-state-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on religious instruction in schools, which varies across democracies.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on religious instruction in schools, which varies across democracies.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "state-strengthens-encirclement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on the strategy of socialist states; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on the strategy of socialist states; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "consent-of-governed": {
@@ -1097,19 +1374,63 @@
       ]
     },
     "no-neutral-knowledge": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of decision-making and takes no side on the nature of knowledge; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of decision-making and takes no side on the nature of knowledge; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "trade-surplus": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on trade policy; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on trade policy; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "population-transfer": {
@@ -1122,19 +1443,63 @@
       ]
     },
     "initiating-force-wrong": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy accepts collectively authorised force such as law enforcement and taxation but has no doctrine on initiating force; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy accepts collectively authorised force such as law enforcement and taxation but has no doctrine on initiating force; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "competition-drives-progress": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on the engine of progress; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on the engine of progress; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "ban-extremist-parties": {
@@ -1171,11 +1536,33 @@
       "sources": []
     },
     "priority-to-poor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a view about who holds power, not about economic priorities; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a view about who holds power, not about economic priorities; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "right-to-buy-council-homes": {
@@ -1185,20 +1572,64 @@
       "sources": []
     },
     "restrict-strikes-picketing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on how far law should limit industrial action; its adherents differ, though the UDHR protects association and unions.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on how far law should limit industrial action; its adherents differ, though the UDHR protects association and unions.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "population-causes-poverty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on the causes of poverty; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on the causes of poverty; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "diversity-weakens-cohesion": {
@@ -1227,11 +1658,33 @@
       ]
     },
     "price-controls-essentials": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on price controls; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on price controls; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "party-controls-media": {
@@ -1256,11 +1709,33 @@
       "sources": []
     },
     "representatives-worker-pay": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on officials' pay; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on officials' pay; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "party-discipline-binding": {
@@ -1330,19 +1805,63 @@
       "sources": []
     },
     "abolish-rental-housing": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is indifferent to housing tenure; the question is left to democratic decision.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is indifferent to housing tenure; the question is left to democratic decision.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "people-in-arms": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory does not decide between a professional army and a citizen militia, though Mill-style civilian control is assumed.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory does not decide between a professional army and a citizen militia, though Mill-style civilian control is assumed.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "rural-life-healthier": {
@@ -1364,67 +1883,243 @@
       "sources": []
     },
     "cultures-equal-different": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Declaration affirms equal dignity of persons and cultural participation but democracy takes no position on ranking cultures.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Declaration affirms equal dignity of persons and cultural participation but democracy takes no position on ranking cultures.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "death-penalty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracies differ on capital punishment and the ideal gives no answer; the Declaration protects life but does not abolish it.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracies differ on capital punishment and the ideal gives no answer; the Declaration protects life but does not abolish it.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sex-ed-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Curricula are matters for democratic decision; the Declaration's right to education mentions tolerance and equality but is not specific.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Curricula are matters for democratic decision; the Declaration's right to education mentions tolerance and equality but is not specific.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "creationism-in-schools": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy leaves curriculum content to democratic and expert decision, and its theory is neutral on creationism.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy leaves curriculum content to democratic and expert decision, and its theory is neutral on creationism.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "restrict-pornography": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Declaration protects freedom of expression, but democracies disagree on pornography law, so this is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Declaration protects freedom of expression, but democracies disagree on pornography law, so this is neutral.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "citizenship-by-descent": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic states differ on citizenship rules and the ideal takes no side.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic states differ on citizenship rules and the ideal takes no side.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "minority-language-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a political ideal does not decide minority-language policy; the Declaration is non-discriminatory but not specific.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a political ideal does not decide minority-language policy; the Declaration is non-discriminatory but not specific.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religious-exemptions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The Declaration protects freedom of religion, but whether exemptions from general laws follow is left to democratic decision.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The Declaration protects freedom of religion, but whether exemptions from general laws follow is left to democratic decision.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "encourage-eccentricity": {
@@ -1434,19 +2129,63 @@
       "sources": []
     },
     "sovereign-debt-cancellation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on this question; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on this question; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on this question; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on this question; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "constituent-assembly": {
@@ -1465,19 +2204,63 @@
       ]
     },
     "rich-countries-aid-poor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a method takes no side on foreign aid; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a method takes no side on foreign aid; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "independent-nuclear-deterrent": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a method takes no side on defence policy; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a method takes no side on defence policy; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "direct-election-head-of-state": {
@@ -1496,35 +2279,123 @@
       "sources": []
     },
     "no-land-for-peace": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a method takes no side on territorial disputes; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a method takes no side on territorial disputes; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "property-serves-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a method takes no side on the limits of property; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a method takes no side on the limits of property; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "soviet-state-capitalist": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a method takes no side on how to classify the USSR; its adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a method takes no side on how to classify the USSR; its adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "precautionary-principle": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a view about who rules, not about environmental policy; democratic electorates may choose either approach.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a view about who rules, not about environmental policy; democratic electorates may choose either approach.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "collective-defense": {
@@ -1546,11 +2417,33 @@
       "sources": []
     },
     "nonpartisan-head-of-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracies include ceremonial monarchs and presidents, and partisan elected presidents; the democratic ideal does not decide the matter.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracies include ceremonial monarchs and presidents, and partisan elected presidents; the democratic ideal does not decide the matter.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-to-prevent-secession": {
@@ -1647,11 +2540,33 @@
       ]
     },
     "equal-parenting": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Custody law is outside democratic theory; democracies legislate it differently.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Custody law is outside democratic theory; democracies legislate it differently.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "class-struggle-under-socialism": {
@@ -1802,11 +2717,33 @@
       ]
     },
     "patriotic-education": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position on patriotic education; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position on patriotic education; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "end-racial-preferences": {
@@ -1861,11 +2798,33 @@
       ]
     },
     "colonial-treaties-void": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of rule and takes no side on colonial treaties; self-determination arguments cut both ways.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of rule and takes no side on colonial treaties; self-determination arguments cut both ways.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "elective-rulers": {
@@ -1890,12 +2849,34 @@
       "sources": []
     },
     "parliament-supreme": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy backs elected lawmaking but also constitutional limits and judicial review, so it does not settle the question.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy backs elected lawmaking but also constitutional limits and judicial review, so it does not settle the question.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "animal-suffering-matters": {
@@ -1962,11 +2943,33 @@
       "sources": []
     },
     "return-lost-territory": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position on reopening borders; self-determination arguments cut both ways.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position on reopening borders; self-determination arguments cut both ways.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "indigenous-political-leadership": {
@@ -2161,11 +3164,33 @@
       "sources": []
     },
     "restrict-foreign-funding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory takes no side on this question and adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory takes no side on this question and adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "pronatalist-incentives": {
@@ -2193,11 +3218,33 @@
       "sources": []
     },
     "no-duty-to-obey": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory debates political obligation, and adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory debates political obligation, and adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "non-intervention": {
@@ -2270,12 +3317,34 @@
       "sources": []
     },
     "regional-revenue-retention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a decision method and takes no side on regional revenue; democratic states differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a decision method and takes no side on regional revenue; democratic states differ.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "personal-possessions-private": {
@@ -2285,20 +3354,64 @@
       "sources": []
     },
     "defeat-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy opposes one-party rule but takes no stand on defeating other systems; democrats differ on coexistence.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy opposes one-party rule but takes no stand on defeating other systems; democrats differ on coexistence.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "mixed-public-service-providers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is silent on how public services are delivered; democrats differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is silent on how public services are delivered; democrats differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religion-illusion": {
@@ -2314,20 +3427,64 @@
       "sources": []
     },
     "women-equality-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is committed to political equality of all citizens, but takes no position on whether economic change is needed for it; democrats differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is committed to political equality of all citizens, but takes no position on whether economic change is needed for it; democrats differ.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "socialized-care": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position on who should do domestic and care work; democrats differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position on who should do domestic and care work; democrats differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "purge-loanwords": {
@@ -2355,19 +3512,63 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position on economic systems; democrats differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position on economic systems; democrats differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "historical-land-claim": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of rule and takes no side on competing land claims; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of rule and takes no side on competing land claims; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "holocaust-denial": {
@@ -2432,11 +3633,33 @@
       ]
     },
     "intersecting-oppressions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy as a political ideal takes no stand on this theory of oppression; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy as a political ideal takes no stand on this theory of oppression; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "gender-identity-recognition": {
@@ -2448,11 +3671,33 @@
       ]
     },
     "assisted-dying": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "A matter for democratic decision, not something the ideal itself settles; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "A matter for democratic decision, not something the ideal itself settles; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "left-right-obsolete": {
@@ -2462,11 +3707,33 @@
       "sources": []
     },
     "alienated-labor": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "An economic theory outside democracy's scope; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "An economic theory outside democracy's scope; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "islam-incompatible": {
@@ -2485,27 +3752,93 @@
       ]
     },
     "religious-dress-in-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracies differ on state religious neutrality and dress rules; democracy as such is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracies differ on state religious neutrality and dress rules; democracy as such is neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "ban-nda-harassment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "A policy question democratic majorities may decide either way; the ideal is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "A policy question democratic majorities may decide either way; the ideal is neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "social-market-economy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic organisation is outside democracy's scope; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic organisation is outside democracy's scope; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "abolish-armed-forces": {
@@ -2515,11 +3848,33 @@
       "sources": []
     },
     "rich-first": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic development strategy is outside democracy's scope.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic development strategy is outside democracy's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "stay-neutral-between-blocs": {
@@ -2537,11 +3892,33 @@
       ]
     },
     "interest-free-mutual-credit": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of decision-making and takes no side on banking structure; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of decision-making and takes no side on banking structure; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "refuse-lender-austerity": {
@@ -2665,11 +4042,33 @@
       ]
     },
     "charity-over-state-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position on welfare versus charity; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position on welfare versus charity; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "term-limits": {
@@ -2679,11 +4078,33 @@
       "sources": []
     },
     "vote-delegation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Delegable voting is a debated variant of direct democracy; mainstream representative democrats are split.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Delegable voting is a debated variant of direct democracy; mainstream representative democrats are split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "existential-risk-priority": {
@@ -2785,12 +4206,34 @@
       "sources": []
     },
     "politics-spiritual-struggle": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The democratic ideal sees politics as interests, institutions and compromise under the rule of law, not a cosmic war.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The democratic ideal sees politics as interests, institutions and compromise under the rule of law, not a cosmic war.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "homeland-cultural-centre": {
@@ -2818,12 +4261,34 @@
       "sources": []
     },
     "economy-in-majority-hands": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Equality before the law and equal rights in the Declaration mean economic roles should be open to all regardless of group.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
       "sources": [
-        "s4",
-        "s2"
+        "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Equality before the law and equal rights in the Declaration mean economic roles should be open to all regardless of group.",
+          "sources": [
+            "s4",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "single-unit-for-people": {
@@ -2841,11 +4306,33 @@
       "sources": []
     },
     "socialism-needs-workers-power": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy does not settle economic regimes; its adherents differ, so neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy does not settle economic regimes; its adherents differ, so neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "local-essentials-public": {
@@ -2861,19 +4348,63 @@
       "sources": []
     },
     "municipal-property": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy does not settle ownership questions; neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy does not settle ownership questions; neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "confederal-coordination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is compatible with both unitary and confederal designs; neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is compatible with both unitary and confederal designs; neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "family-wage": {
@@ -2895,19 +4426,63 @@
       "sources": []
     },
     "anonymous-payments": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on payment privacy; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on payment privacy; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "online-anonymity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on online identity; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on online identity; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "person-over-state": {
@@ -2917,19 +4492,63 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a view about political power, not human nature; neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a view about political power, not human nature; neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "regional-powers-revocable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is compatible with both entrenched and revocable regional powers; neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is compatible with both entrenched and revocable regional powers; neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "gm-crops": {
@@ -2987,20 +4606,64 @@
       "sources": []
     },
     "pollution-taxes": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Instruments of environmental policy are left to democratic choice, so the ideal is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Instruments of environmental policy are left to democratic choice, so the ideal is neutral.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "future-generations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory debates whether future people have a claim, and the ideal itself is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory debates whether future people have a claim, and the ideal itself is neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "women-distinct-values": {
@@ -3010,11 +4673,33 @@
       "sources": []
     },
     "arms-reduction": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a view about political authority, not defence levels; neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a view about political authority, not defence levels; neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-diplomacy": {
@@ -3063,11 +4748,33 @@
       "sources": []
     },
     "soldiers-refuse-war": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory does not address military discipline, and adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory does not address military discipline, and adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "collective-bargaining": {
@@ -3085,12 +4792,34 @@
       "sources": []
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democrats differ on constitutional debt limits; the ideal is silent on them.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s2"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democrats differ on constitutional debt limits; the ideal is silent on them.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "restructure-world-economy": {
@@ -3145,12 +4874,34 @@
       "sources": []
     },
     "public-service-media": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The UDHR protects free expression, but funding of public media is a policy choice on which democrats differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The UDHR protects free expression, but funding of public media is a policy choice on which democrats differ.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religions-one-truth": {
@@ -3160,19 +4911,63 @@
       "sources": []
     },
     "farm-price-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on farm policy; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on farm policy; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "keep-nuclear-weapons": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on nuclear policy, which democracies decide differently; it is left neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on nuclear policy, which democracies decide differently; it is left neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "workers-own-party": {
@@ -3202,11 +4997,33 @@
       "sources": []
     },
     "pollution-tort-liability": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy leaves the choice between courts and agencies to democratic decision, and adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy leaves the choice between courts and agencies to democratic decision, and adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "customary-chiefs-lawmaking": {
@@ -3222,19 +5039,63 @@
       "sources": []
     },
     "mandatory-sentences": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory is silent on sentencing design, and democracies vary, so it is neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory is silent on sentencing design, and democracies vary, so it is neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "immigrants-learn-language": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on language requirements for immigrants; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on language requirements for immigrants; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "no-compulsory-union": {
@@ -3282,11 +5143,33 @@
       "sources": []
     },
     "negative-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Welfare design is an economic-policy question on which democrats differ, and the ideology takes no position on it.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Welfare design is an economic-policy question on which democrats differ, and the ideology takes no position on it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "women-suffrage": {
@@ -3311,11 +5194,33 @@
       "sources": []
     },
     "gender-equality-agencies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democrats support equal rights but differ on whether dedicated state agencies are the right means, so this is left neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democrats support equal rights but differ on whether dedicated state agencies are the right means, so this is left neutral.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "homestead-ownership": {
@@ -3366,12 +5271,34 @@
       "sources": []
     },
     "minority-territorial-autonomy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democratic theory discusses federation and minority protection but does not require territorial autonomy.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s3",
-        "s1"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democratic theory discusses federation and minority protection but does not require territorial autonomy.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "disputed-territory-plebiscite": {
@@ -3393,12 +5320,34 @@
       "sources": []
     },
     "restrict-indigenous-settlement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no position, and adherents balance minority protection against freedom of movement.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no position, and adherents balance minority protection against freedom of movement.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "equal-conscription": {
@@ -3408,11 +5357,33 @@
       "sources": []
     },
     "homeland-spiritual-bond": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of rule and takes no position on a spiritual tie to land; adherents differ, so it is left neutral.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of rule and takes no position on a spiritual tie to land; adherents differ, so it is left neutral.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "extrajudicial-killing": {
@@ -3424,11 +5395,33 @@
       ]
     },
     "close-ties-china": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on which great power a country leans toward; this is a foreign-policy choice democrats make differently.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on which great power a country leans toward; this is a foreign-policy choice democrats make differently.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "protect-kin-minorities": {
@@ -3438,11 +5431,33 @@
       "sources": []
     },
     "resources-common-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy does not settle who owns natural resources; liberal, socialist and libertarian democrats answer differently.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy does not settle who owns natural resources; liberal, socialist and libertarian democrats answer differently.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "self-ownership": {
@@ -3452,19 +5467,63 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tax structure is a policy matter democracies decide by vote, not a position of the ideal itself.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Tax structure is a policy matter democracies decide by vote, not a position of the ideal itself.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "targeted-social-spending": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Targeted versus universal social spending is left to democratic majorities and divides democrats.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Targeted versus universal social spending is left to democratic majorities and divides democrats.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "bypass-parties-groups": {
@@ -3505,27 +5564,93 @@
       ]
     },
     "national-resource-control": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "National control of resources is an economic question democracies answer differently depending on their strand.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "National control of resources is an economic question democracies answer differently depending on their strand.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "distribution-by-process": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on how to judge distributive justice; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on how to judge distributive justice; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "financial-transactions-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on financial taxation; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on financial taxation; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "racism-not-main-obstacle": {
@@ -3541,53 +5666,871 @@
       "sources": []
     },
     "automate-paid-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on automation; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on automation; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "multipolar-world": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a view about internal rule and takes no side on the arrangement of world powers; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a view about internal rule and takes no side on the arrangement of world powers; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "labour-theory-of-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy is a method of collective decision-making and takes no side on economic value theory; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy is a method of collective decision-making and takes no side on economic value theory; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "patriotism-serves-workers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on how patriotism relates to working-class politics; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on how patriotism relates to working-class politics; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "material-over-identity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Democracy takes no side on what the left should prioritise; adherents differ.",
+      "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+      "sources": [
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Democracy takes no side on what the left should prioritise; adherents differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources present democracy as a way of deciding who rules and say nothing on this question; a remark that adherents differ answers no particular statement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    "market-under-party-rule": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+      "sources": [
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Democracy rests on free elections and competition for power with political equality, which sits uneasily with a ruling-party monopoly, whatever the economic system.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "The sources state democracy's general commitments (political equality, rights, elected representation) but none of them speaks to this statement, and a general value answers no specific statement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Universal Declaration bars arbitrary exile and distinctions of race or origin, and guarantees equal rights to everyone, which excludes removing a people from its lands.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Article 18 of the Universal Declaration protects freedom of religion, including manifesting it in worship, which destroying what people worship would violate.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Universal Declaration states that all human beings are born free and equal in dignity and rights, without distinction of race or origin, which is incompatible with one people being superior to the rest.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Mill holds that disputes over federal powers must go to an independent Supreme Court that is supreme over state and federal governments alike, not to the member states themselves (ch. 17).",
+      "sources": [
+        "s3"
+      ]
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The Universal Declaration bars arbitrary exile and distinctions of race or origin, and protects the right to a nationality, which excludes expelling an ethnic group.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "The Stanford entry notes that requiring consensus or unanimity fails because there is rarely agreement, and that decision procedures exist to settle matters despite disagreement; the democratic rule is not unanimity.",
       "sources": [
         "s1"
       ]
     },
-    "market-under-party-rule": {
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Democracy rests on free elections and competition for power with political equality, which sits uneasily with a ruling-party monopoly, whatever the economic system.",
+      "rationale": "Mill argues that peoples in a savage or wild state, or too passive and submissive to tyranny, are unfit for representative government, so not every country is ready (ch. 4).",
       "sources": [
-        "s2",
+        "s3"
+      ]
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Mill says it is desirable that the chief of the executive hold the power to dissolve Parliament, even where his tenure is fixed, to avoid deadlock between executive and assembly (ch. 18).",
+      "sources": [
+        "s3"
+      ]
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 5 of the Universal Declaration states that no one shall be subjected to torture or to cruel, inhuman or degrading treatment or punishment.",
+      "sources": [
         "s4"
       ]
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Article 25 of the Universal Declaration gives everyone the right to a standard of living adequate for health and well-being, with security in unemployment, sickness and old age.",
+      "sources": [
+        "s4"
+      ]
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3639,6 +6582,25 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 102
     }
-  ]
+  ],
+  "rules": 6,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-12"
+    }
+  ],
+  "notFound": [],
+  "aliases": []
 }
