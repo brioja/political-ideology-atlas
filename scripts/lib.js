@@ -259,7 +259,7 @@ const WORDING_REASONS = {
     .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),
   ...Object.fromEntries(COMPARATIVES.map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
   ...Object.fromEntries(["sometimes", "at times", "occasionally", "in some cases"]
-    .map((w) => [w, "a hedge: almost anyone agrees something is true some of the time, so agreeing says little; state the general claim or the case"])),
+    .map((w) => [w, "a hedge: almost anyone agrees, and disagreeing means \"never\", which audits misread as preferring something else (revolution-justified, humanitarian-intervention, 2026-11-12); state it as \"never\" or as the general claim"])),
   "second sentence": "a second sentence usually adds a second claim",
 };
 const wordingReason = (w) => WORDING_REASONS[w.toLowerCase()] || "";
