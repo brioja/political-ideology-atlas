@@ -4342,10 +4342,10 @@ const QUESTIONS = [
  {
   "id": "patriotism-serves-workers",
   "theme": "culture",
-  "text": "Love of one's own country and a politics that serves ordinary working people belong together.",
-  "agree": "Love of one's own country and a politics that serves ordinary working people support one another.",
-  "disagree": "Love of one's own country and a politics that serves ordinary working people do not belong together.",
-  "note": "About whether patriotism fits with left-wing or worker-focused politics.",
+  "text": "Serving the nation means serving its working people.",
+  "agree": "The nation's cause and the cause of its ordinary working people are one and the same.",
+  "disagree": "Serving the nation does not mean serving its working people.",
+  "note": "About fusing national and workers' politics, as in Peronism or Arab socialism. Internationalists who say workers have no nation disagree, as do nationalists who put the nation above any class.",
   "icon": "🚩"
  },
  {
