@@ -670,9 +670,9 @@ const QUESTIONS = [
  {
   "id": "human-enhancement",
   "theme": "technology",
-  "text": "People should be free to enhance their bodies and minds with technology.",
-  "agree": "People may use technology to improve their bodies and minds.",
-  "disagree": "People should not be free to enhance their bodies and minds with technology.",
+  "text": "Adults should be free to enhance themselves with technology.",
+  "agree": "Adults may use technology to improve their bodies and minds.",
+  "disagree": "Adults should not be free to enhance themselves with technology.",
   "note": "About using technology, such as gene editing, implants or drugs, to make people stronger, smarter or longer-lived.",
   "icon": "🦾"
  },
@@ -1093,9 +1093,9 @@ const QUESTIONS = [
  {
   "id": "sacrifice-heritage",
   "theme": "society",
-  "text": "Museums, libraries and other inherited cultural institutions should be sacrificed if they hold back new creation.",
-  "agree": "Old institutions matter less than room for the new, and may be swept away.",
-  "disagree": "Museums, libraries and other inherited cultural institutions should not be sacrificed if they hold back new creation.",
+  "text": "Cultural heritage that holds back new creation should be destroyed.",
+  "agree": "Old museums, libraries and institutions matter less than room for the new, and may be swept away.",
+  "disagree": "Cultural heritage that holds back new creation should not be destroyed.",
   "note": "About whether cultural heritage should yield to novelty.",
   "icon": "🏛️"
  },
@@ -2074,10 +2074,10 @@ const QUESTIONS = [
  {
   "id": "no-bailouts",
   "theme": "economy",
-  "text": "Governments should not bail out failing banks or firms with public money.",
+  "text": "Failing companies should be left to fail.",
   "agree": "Firms and banks bear the cost of their own failures, with no rescue from taxpayers.",
-  "disagree": "Governments should bail out failing banks or firms with public money.",
-  "note": "About rescuing failing businesses.",
+  "disagree": "Failing companies should not always be left to fail.",
+  "note": "About rescuing failing businesses, including banks.",
   "icon": "🛟"
  },
  {
@@ -2452,10 +2452,10 @@ const QUESTIONS = [
  {
   "id": "paid-care-work",
   "theme": "economy",
-  "text": "Unpaid domestic and care work should be recognised and paid as labour.",
+  "text": "Unpaid work in the home should be paid.",
   "agree": "Housework and care at home count as work and deserve wages.",
-  "disagree": "Unpaid domestic and care work should not be recognised and paid as labour.",
-  "note": "About the value of unpaid work at home.",
+  "disagree": "Unpaid work in the home should not be paid.",
+  "note": "About the value of unpaid housework and care at home.",
   "icon": "🧺"
  },
  {
@@ -2767,9 +2767,9 @@ const QUESTIONS = [
  {
   "id": "mixed-public-service-providers",
   "theme": "economy",
-  "text": "Public services should be delivered by a mix of public, private and independent providers within a publicly funded system.",
-  "agree": "Publicly funded services can be run by private and independent providers as well as the state.",
-  "disagree": "Publicly funded services should not be delivered by a mix of public, private and independent providers.",
+  "text": "Private companies should deliver publicly funded services.",
+  "agree": "Publicly funded services such as hospitals and schools should be run by private companies and charities as well as the state.",
+  "disagree": "Private companies should not deliver publicly funded services.",
   "note": "About who runs publicly funded services such as hospitals and schools: the state only, or also private companies and charities.",
   "icon": "🏥"
  },
@@ -3001,19 +3001,19 @@ const QUESTIONS = [
  {
   "id": "religious-dress-in-state",
   "theme": "society",
-  "text": "Public officials and state-school students should not wear religious dress in state institutions.",
+  "text": "Religious dress should be banned in state institutions.",
   "agree": "State institutions stay free of visible religious dress for staff and pupils.",
-  "disagree": "Public officials and state-school students may wear religious dress in state institutions.",
-  "note": "About religious symbols in public institutions.",
+  "disagree": "Religious dress should not be banned in state institutions.",
+  "note": "About religious symbols worn by officials, teachers and state-school pupils.",
   "icon": "🧕"
  },
  {
   "id": "ban-nda-harassment",
   "theme": "economy",
-  "text": "Employers should not be able to use nondisclosure agreements or mandatory arbitration to keep sexual harassment complaints out of court.",
+  "text": "Employment contracts should never keep sexual harassment complaints out of court.",
   "agree": "Employers should not be able to use nondisclosure agreements or mandatory arbitration to keep sexual harassment complaints out of court.",
-  "disagree": "Employers should be able to use nondisclosure agreements or mandatory arbitration to keep sexual harassment complaints out of court.",
-  "note": "About limits on private contracts that silence harassment claims.",
+  "disagree": "Employment contracts should sometimes be able to keep sexual harassment complaints out of court.",
+  "note": "About limits on private contracts, such as nondisclosure agreements or arbitration clauses, that silence harassment claims.",
   "icon": "🤐"
  },
  {
@@ -3298,10 +3298,10 @@ const QUESTIONS = [
  {
   "id": "abolish-ip",
   "theme": "economy",
-  "text": "Patents and copyrights should be abolished.",
+  "text": "Intellectual property should be abolished.",
   "agree": "Ideas and creative works can be copied freely; no one holds a legal monopoly on them.",
-  "disagree": "Patents and copyrights should be kept.",
-  "note": "About whether intellectual property is legitimate property.",
+  "disagree": "Intellectual property should not be abolished.",
+  "note": "About whether patents and copyrights are legitimate property.",
   "icon": "©️"
  },
  {
@@ -3874,9 +3874,9 @@ const QUESTIONS = [
  {
   "id": "women-property-inheritance",
   "theme": "society",
-  "text": "Women should have the same legal right as men to inherit and own land.",
+  "text": "Women should have the same legal rights to land as men.",
   "agree": "Daughters and widows inherit and own land on the same terms as sons and husbands.",
-  "disagree": "Women should not have the same legal right as men to inherit and own land.",
+  "disagree": "Women should not have the same legal rights to land as men.",
   "note": "About equal inheritance and land rights for women.",
   "icon": "🏡"
  },
