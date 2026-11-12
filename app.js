@@ -1834,12 +1834,16 @@ function sourcesList(audit) {
       <span class="muted small">· ${esc(s.kind)}</span></li>`).join("")}</ol></section>`;
 }
 
-// The audit JSON is published next to the site; fetch it for reasoning and sources.
+// The audit JSON is published next to the site; fetch it for reasoning and sources. It carries the same deploy
+// stamp as the scripts (?v=<commit>), so a browser or CDN copy cached for up to 10 minutes can't pair an old audit's
+// reasoning with the new data.js positions (2026-11-12: Social liberalism showed a -2 stance with an old
+// "No stated position found." under it).
 const auditCache = new Map();
+const DEPLOY_STAMP = ((document.querySelector('script[src*="app.js"]') || {}).src || "").split("?v=")[1] || "";
 function loadAudit(folder, id) {
   const key = `${folder}/${id}`;
   if (!auditCache.has(key)) {
-    auditCache.set(key, fetch(`audits/${folder}/${encodeURIComponent(id)}.json`)
+    auditCache.set(key, fetch(`audits/${folder}/${encodeURIComponent(id)}.json${DEPLOY_STAMP ? `?v=${DEPLOY_STAMP}` : ""}`)
       .then((r) => (r.ok ? r.json() : null)).catch(() => null));
   }
   return auditCache.get(key);
