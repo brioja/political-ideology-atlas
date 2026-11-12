@@ -810,13 +810,39 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The NPD refuses interference in other states and Der III. Weg allows foreign missions only for Germany's own security, and the NSM would cut the military's global footprint to homeland defence.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s3",
         "s4",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The NPD refuses interference in other states and Der III. Weg allows foreign missions only for Germany's own security, and the NSM would cut the military's global footprint to homeland defence.",
+          "sources": [
+            "s3",
+            "s4",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s3",
+            "s4",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "non-intervention": {
@@ -3728,5 +3754,13 @@
       "addedAs": "economy-in-majority-hands"
     }
   ],
-  "notes": "Of 490 statements, 155 carry a value (high where three or more of the four branches state the position, medium for two, low for documented splits); the rest are null because the programmes read are silent or only one branch speaks. Not answered for lack of two independent branches: Holocaust denial (no programme read states it; the NPD only attacks 'guilt cult' and the reference says denial is often used in neo-Nazi circles), leader cult, one-party rule, homosexuality as a crime, abortion, creationism, gender-identity recognition and most of the Marxist-theory statements. The German branch (NPD, Der III. Weg) is more parliamentary and welfare-oriented than the US and Nordic ones, and the NPD says it is not against Islam as a religion; Golden Dawn is read only through one thesis and itself rejects the neo-Nazi label. Der III. Weg's longer explanatory pages and the National Alliance's 'Program' beyond the 2004 copy were not read."
+  "notes": "Of 490 statements, 155 carry a value (high where three or more of the four branches state the position, medium for two, low for documented splits); the rest are null because the programmes read are silent or only one branch speaks. Not answered for lack of two independent branches: Holocaust denial (no programme read states it; the NPD only attacks 'guilt cult' and the reference says denial is often used in neo-Nazi circles), leader cult, one-party rule, homosexuality as a crime, abortion, creationism, gender-identity recognition and most of the Marxist-theory statements. The German branch (NPD, Der III. Weg) is more parliamentary and welfare-oriented than the US and Nordic ones, and the NPD says it is not against Islam as a religion; Golden Dawn is read only through one thesis and itself rejects the neo-Nazi label. Der III. Weg's longer explanatory pages and the National Alliance's 'Program' beyond the 2004 copy were not read.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

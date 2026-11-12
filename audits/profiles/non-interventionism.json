@@ -307,13 +307,39 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adams says America goes not abroad in search of monsters to destroy and would lose her liberty by enlisting even under the banners of foreign independence, and OAS Article 19 bars intervention for any reason whatever; the IEP notes that some legal positivists allow a humanitarian exception, but the categorical doctrine does not.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s4",
         "s2",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Adams says America goes not abroad in search of monsters to destroy and would lose her liberty by enlisting even under the banners of foreign independence, and OAS Article 19 bars intervention for any reason whatever; the IEP notes that some legal positivists allow a humanitarian exception, but the categorical doctrine does not.",
+          "sources": [
+            "s4",
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s4",
+            "s2",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3698,5 +3724,13 @@
       ]
     }
   ],
-  "notes": "Thin record by construction: the ideology is a foreign-policy principle, so most of the bank's economic, social and government statements are null. Searched: wars and alliances, intervention and humanitarian exceptions, territory and occupation, neutrality, armed forces, trade and commerce, colonies, international organisations and law, democracy promotion, treaties, debt (Washington's and Jefferson's domestic counsel is not the ideology's, so left null) in the local library, the Miller Center corpus (Jefferson, Monroe), Cobden's pamphlet and the OAS Charter. Taft's 1951 book, the UN Friendly Relations Declaration and Princeton's encyclopedia could not be obtained as primary text (secondary summaries only, or blocked). The OAS Charter is a treaty with security exceptions, so its absolute wording is read together with the Washington and Adams strand; the IEP records both categorical and pragmatic variants. 2026-11-05 (Brandon): 9 answers resting only on sources that never discuss Non-interventionism (borrowing: Charter of the Organization of American States; Farewell Address; July 4; March 4; December 2; Russia) were cleared to null."
+  "notes": "Thin record by construction: the ideology is a foreign-policy principle, so most of the bank's economic, social and government statements are null. Searched: wars and alliances, intervention and humanitarian exceptions, territory and occupation, neutrality, armed forces, trade and commerce, colonies, international organisations and law, democracy promotion, treaties, debt (Washington's and Jefferson's domestic counsel is not the ideology's, so left null) in the local library, the Miller Center corpus (Jefferson, Monroe), Cobden's pamphlet and the OAS Charter. Taft's 1951 book, the UN Friendly Relations Declaration and Princeton's encyclopedia could not be obtained as primary text (secondary summaries only, or blocked). The OAS Charter is a treaty with security exceptions, so its absolute wording is read together with the Washington and Adams strand; the IEP records both categorical and pragmatic variants. 2026-11-05 (Brandon): 9 answers resting only on sources that never discuss Non-interventionism (borrowing: Charter of the Organization of American States; Farewell Address; July 4; March 4; December 2; Russia) were cleared to null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

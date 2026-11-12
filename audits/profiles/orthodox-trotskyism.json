@@ -727,12 +727,36 @@
    ]
   },
   "humanitarian-intervention": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The ICFI statements condemn imperialist wars fought on human-rights pretexts and demand withdrawal from Iraq and Afghanistan.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s3",
     "s4"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "The ICFI statements condemn imperialist wars fought on human-rights pretexts and demand withdrawal from Iraq and Afghanistan.",
+     "sources": [
+      "s3",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-03"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s3",
+      "s4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "open-borders": {
@@ -3345,5 +3369,13 @@
   }
  },
  "missingStatements": [],
- "notes": "Mostly null by design: the strand rule leaves out positions only one group states. Splits not scored: Spartacists defend China, Vietnam, North Korea and Cuba as deformed workers' states while the ICFI treats the Stalinist regimes as a tool of the world bourgeoisie; the ICFI rejects identity politics and quotas where the Spartacists endorse black liberation and women's liberation programmes. Themes searched with little result: government institutions, ecology, culture, technology, religion."
+ "notes": "Mostly null by design: the strand rule leaves out positions only one group states. Splits not scored: Spartacists defend China, Vietnam, North Korea and Cuba as deformed workers' states while the ICFI treats the Stalinist regimes as a tool of the world bourgeoisie; the ICFI rejects identity politics and quotas where the Spartacists endorse black liberation and women's liberation programmes. Themes searched with little result: government institutions, ecology, culture, technology, religion.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

@@ -337,11 +337,33 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Goldwater would limit foreign commitments and aid to national interest; spending reducers dislike costly missions, though hawks differ.",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Goldwater would limit foreign commitments and aid to national interest; spending reducers dislike costly missions, though hawks differ.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3675,6 +3697,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 194
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

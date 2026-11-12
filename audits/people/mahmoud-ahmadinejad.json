@@ -347,11 +347,33 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He said the war on Iraq was waged on a pretext and that spreading democracy through war from outside is impossible.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He said the war on Iraq was waged on a pretext and that spreading democracy through war from outside is impossible.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3242,6 +3264,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

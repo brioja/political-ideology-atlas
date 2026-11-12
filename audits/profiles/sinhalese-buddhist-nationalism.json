@@ -342,11 +342,33 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Nationalists reject outside intervention in Sri Lanka's war and internal affairs and resist human-rights-based foreign pressure.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Nationalists reject outside intervention in Sri Lanka's war and internal affairs and resist human-rights-based foreign pressure.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3778,6 +3800,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 14
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

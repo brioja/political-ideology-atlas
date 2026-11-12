@@ -370,12 +370,36 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Non-interventionism is a defining libertarian commitment; the platform opposes military aid, sanctions and regime change.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s1",
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Non-interventionism is a defining libertarian commitment; the platform opposes military aid, sanctions and regime change.",
+          "sources": [
+            "s1",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s1",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3964,6 +3988,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 196
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

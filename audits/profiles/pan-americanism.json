@@ -256,12 +256,36 @@
    ]
   },
   "humanitarian-intervention": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "Charter Art. 19 says no state or group of states may intervene, directly or indirectly, for any reason whatever, and Montevideo Art. 8 says no state has the right to intervene in the affairs of another.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s1",
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Charter Art. 19 says no state or group of states may intervene, directly or indirectly, for any reason whatever, and Montevideo Art. 8 says no state has the right to intervene in the affairs of another.",
+     "sources": [
+      "s1",
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s1",
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "national-self-determination": {
@@ -3355,5 +3379,13 @@
    "addedAs": "arbitrator-settles-disputes"
   }
  ],
- "notes": "Researched theme by theme: economy (Act of Bogota, Alliance for Progress, OAS Charter ch. VII), government and liberty (Democratic Charter, American Declaration), world (Rio Treaty, Pact of Bogota, Montevideo, Chapultepec, Caracas, San Jose, Cuba resolutions, Monroe Doctrine), society (non-discrimination clauses), culture, ecology, technology, means and globalism (nothing stated beyond cooperation and non-intervention). The system is silent on most domestic questions, so most answers are null. Strands differ: Latin American readings stress anti-hegemony and non-intervention, US readings stress leadership and the Monroe Doctrine; Bolivar's own texts could not be opened and the audit leans on Lockey for them. The OAS Charter, Democratic Charter, Rio Treaty and American Declaration pages were read through a summarising fetch tool, not as raw text."
+ "notes": "Researched theme by theme: economy (Act of Bogota, Alliance for Progress, OAS Charter ch. VII), government and liberty (Democratic Charter, American Declaration), world (Rio Treaty, Pact of Bogota, Montevideo, Chapultepec, Caracas, San Jose, Cuba resolutions, Monroe Doctrine), society (non-discrimination clauses), culture, ecology, technology, means and globalism (nothing stated beyond cooperation and non-intervention). The system is silent on most domestic questions, so most answers are null. Strands differ: Latin American readings stress anti-hegemony and non-intervention, US readings stress leadership and the Monroe Doctrine; Bolivar's own texts could not be opened and the audit leans on Lockey for them. The OAS Charter, Democratic Charter, Rio Treaty and American Declaration pages were read through a summarising fetch tool, not as raw text.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

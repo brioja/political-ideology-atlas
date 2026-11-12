@@ -321,12 +321,36 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Hardt and Negri treat contemporary war as biopower and police action of Empire; autonomists are anti-imperialist.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s3",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Hardt and Negri treat contemporary war as biopower and police action of Empire; autonomists are anti-imperialist.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s3",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3685,6 +3709,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

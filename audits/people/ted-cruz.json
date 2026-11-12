@@ -504,12 +504,36 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Criticizes nation-building and toppling governments to promote democracy and says intervention should serve US national security; also backed arming Kurds and later Syria strikes.",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s8",
     "s28"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Criticizes nation-building and toppling governments to promote democracy and says intervention should serve US national security; also backed arming Kurds and later Syria strikes.",
+     "sources": [
+      "s8",
+      "s28"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s8",
+      "s28"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "open-borders": {
@@ -3419,6 +3443,12 @@
  },
  "notes": "Most primary evidence is from his 2015-16 presidential campaign and Senate record; recent positions rely on interviews and reporting (2025 tariffs, Iran). He moved from opposing to cooperating with Donald Trump after 2016. Positions on tariffs and free trade are mixed (supported trade promotion authority, opposed TPP and fast track in 2015, opposed 2025 tariffs). Sources cited only where opened in this session.",
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

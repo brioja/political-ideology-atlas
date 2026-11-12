@@ -368,16 +368,36 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "He rejected Western invocation of human rights to intervene in Soviet domestic affairs.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s8",
     "b2"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He rejected Western invocation of human rights to intervene in Soviet domestic affairs.",
+     "sources": [
+      "s8",
+      "b2"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s8",
+      "b2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "open-borders": {
@@ -3423,5 +3443,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

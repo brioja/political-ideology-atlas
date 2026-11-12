@@ -1180,14 +1180,37 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "At the 2012 Non-Aligned Summit he criticised states that protect Western interests in the name of 'human rights' and interfere militarily in other countries in the name of 'democracy'; he also opposed NATO's 2011 Libya intervention.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "b65",
         "b50"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "At the 2012 Non-Aligned Summit he criticised states that protect Western interests in the name of 'human rights' and interfere militarily in other countries in the name of 'democracy'; he also opposed NATO's 2011 Libya intervention.",
+          "sources": [
+            "b65",
+            "b50"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "b65",
+            "b50"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "open-borders": {
       "value": null,
@@ -5253,6 +5276,12 @@
     {
       "kind": "nulling",
       "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
     }

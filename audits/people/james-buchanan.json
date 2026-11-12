@@ -381,13 +381,34 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "His postwar defense explicitly rejects armed intervention to eliminate another society’s slavery or other perceived domestic wrongs.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s8"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "His postwar defense explicitly rejects armed intervention to eliminate another society’s slavery or other perceived domestic wrongs.",
+     "sources": [
+      "s8"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "open-borders": {
    "value": null,
@@ -3296,5 +3317,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

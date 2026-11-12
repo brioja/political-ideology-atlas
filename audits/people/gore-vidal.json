@@ -301,11 +301,33 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He said US military intervention in Rwanda was certainly not justified, while allowing humanitarian help to keep the peace through the UN.",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He said US military intervention in Rwanda was certainly not justified, while allowing humanitarian help to keep the peace through the UN.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3708,5 +3730,13 @@
       "sources": []
     }
   },
-  "notes": "Searched, theme by theme, his own essays and interviews (Nation, Salon, PBS, In These Times) and scholarly reviews: economy (health, ownership, corporate power), liberty (drugs, sex, surveillance, police), society and religion, world (wars, alliances, UN, Israel, nuclear), government (campaign money, courts, constitution, impeachment) and means. The Vanity Fair essays on McVeigh and 9/11, Homage to Daniel Shays and the Nation essays 'Time for a People's Convention' and 'Rise of the National Security State' could not be opened in full (404, 403 or snippets only), and the local corpora hold only broadcast fragments (MediaSum: CNN and NPR), so taxes, welfare, guns, abortion, same-sex marriage, the death penalty, trade and most economic statements stay null. He never held office, so there is no voting record; he stood for the House (1960) and Senate (1982). The PBS transcripts carry no speaker labels, so they are used only for long monologues that are plainly Vidal's. Vidal wrote that he wanted the 'real' state of the union, so statements from his 1972 speech reprinted in 2004 are treated as a settled position held for decades. Fails the uncertainty rule: many lines have no known position."
+  "notes": "Searched, theme by theme, his own essays and interviews (Nation, Salon, PBS, In These Times) and scholarly reviews: economy (health, ownership, corporate power), liberty (drugs, sex, surveillance, police), society and religion, world (wars, alliances, UN, Israel, nuclear), government (campaign money, courts, constitution, impeachment) and means. The Vanity Fair essays on McVeigh and 9/11, Homage to Daniel Shays and the Nation essays 'Time for a People's Convention' and 'Rise of the National Security State' could not be opened in full (404, 403 or snippets only), and the local corpora hold only broadcast fragments (MediaSum: CNN and NPR), so taxes, welfare, guns, abortion, same-sex marriage, the death penalty, trade and most economic statements stay null. He never held office, so there is no voting record; he stood for the House (1960) and Senate (1982). The PBS transcripts carry no speaker labels, so they are used only for long monologues that are plainly Vidal's. Vidal wrote that he wanted the 'real' state of the union, so statements from his 1972 speech reprinted in 2004 are treated as a settled position held for decades. Fails the uncertainty rule: many lines have no known position.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

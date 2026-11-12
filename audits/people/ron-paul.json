@@ -399,12 +399,36 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Argued on the floor that bombing Yugoslavia and sending troops to Kosovo was wrong legally and morally, whatever one thinks of the cause; rejects war for nation-building.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s13",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Argued on the floor that bombing Yugoslavia and sending troops to Kosovo was wrong legally and morally, whatever one thinks of the cause; rejects war for nation-building.",
+          "sources": [
+            "s13",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s13",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -4083,6 +4107,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

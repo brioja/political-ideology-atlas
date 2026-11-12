@@ -296,11 +296,33 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Butler's critique of the state of exception and her nonviolence stance make adherents cautious about military force, though human-rights concern pulls the other way.",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Butler's critique of the state of exception and her nonviolence stance make adherents cautious about military force, though human-rights concern pulls the other way.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3353,6 +3375,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

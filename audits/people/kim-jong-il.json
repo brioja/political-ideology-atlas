@@ -426,12 +426,36 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Described foreign intervention and 'globalization' as imperialist domination, not as protection of rights.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s6",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Described foreign intervention and 'globalization' as imperialist domination, not as protection of rights.",
+          "sources": [
+            "s6",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s6",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3362,6 +3386,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

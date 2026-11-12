@@ -463,14 +463,37 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Calls herself a 'dove' on regime-change wars, said there are very few examples of wars justifying US force (citing World War II) and opposed intervention in Syria and Libya-style change efforts. She did not address human-rights interventions by name.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s2",
         "s3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Calls herself a 'dove' on regime-change wars, said there are very few examples of wars justifying US force (citing World War II) and opposed intervention in Syria and Libya-style change efforts. She did not address human-rights interventions by name.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "open-borders": {
       "value": -2,
@@ -3493,6 +3516,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

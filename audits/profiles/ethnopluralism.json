@@ -267,12 +267,36 @@
       "sources": []
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The Manifesto (II.6, II.8) calls human rights ideology a weapon of Western ethnocentrism and Westernisation an imperialist movement; Schlembach notes Benoist's rejection of Western humanitarian imperialism.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The Manifesto (II.6, II.8) calls human rights ideology a weapon of Western ethnocentrism and Westernisation an imperialist movement; Schlembach notes Benoist's rejection of Western humanitarian imperialism.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-borders": {
@@ -3715,6 +3739,14 @@
       "last": "de Benoist",
       "source": "s2",
       "quote": "nativism is ‘ethnopluralism’, associated with French New Right theorist Alain de Benoist. It has been influential in the European identitäre Bewegung and the American alt-right,"
+    }
+  ],
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

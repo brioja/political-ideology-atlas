@@ -293,12 +293,36 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The Bangkok Declaration rejects use of human rights as an instrument of political pressure and stresses non-interference, and Mahathir ridicules threats of sanctions over other states' norms.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Bangkok Declaration rejects use of human rights as an instrument of political pressure and stresses non-interference, and Mahathir ridicules threats of sanctions over other states' norms.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "central-planning": {
@@ -3800,5 +3824,13 @@
     }
   },
   "missingStatements": [],
-  "notes": "Searched all themes against two Mahathir speeches, Lee's 1995 and 1997 texts, the Bangkok Declaration, the SEP and Tew. Lee's Foreign Affairs interview, Kim Dae-jung's reply and the 1991 Singapore Shared Values white paper were not available in an open original and are not cited. Most economic, liberty, ecology and technology themes are unaddressed by these sources and stay null."
+  "notes": "Searched all themes against two Mahathir speeches, Lee's 1995 and 1997 texts, the Bangkok Declaration, the SEP and Tew. Lee's Foreign Affairs interview, Kim Dae-jung's reply and the 1991 Singapore Shared Values white paper were not available in an open original and are not cited. Most economic, liberty, ecology and technology themes are unaddressed by these sources and stay null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

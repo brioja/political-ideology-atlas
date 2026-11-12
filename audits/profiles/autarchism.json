@@ -504,11 +504,33 @@
       ]
     },
     "humanitarian-intervention": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He criticises the state's intervention in the affairs of other nations and holds force begets force (Autarchy, paras 39, 66).",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "He criticises the state's intervention in the affairs of other nations and holds force begets force (Autarchy, paras 39, 66).",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3960,5 +3982,13 @@
       "addedAs": "private-courts-defense"
     }
   ],
-  "notes": "Sources are LeFevre's own essays plus one scholarly review (Holmes); no encyclopedia entry defining autarchism could be opened (libertarianism.org returned HTTP 429). Themes searched in the local library: government, economy, liberty, world and war, religion, property, means. LeFevre says nothing on culture, gender, ecology, technology, immigration, or most institutional design, so those answers are null. Answers on state provision and regulation rest on his rejection of taxation and coercion in economics, not on named programmes, so they are medium confidence. Holmes and Wikipedia report Rothbard's dispute with LeFevre over defensive force; the statement answers follow Holmes."
+  "notes": "Sources are LeFevre's own essays plus one scholarly review (Holmes); no encyclopedia entry defining autarchism could be opened (libertarianism.org returned HTTP 429). Themes searched in the local library: government, economy, liberty, world and war, religion, property, means. LeFevre says nothing on culture, gender, ecology, technology, immigration, or most institutional design, so those answers are null. Answers on state provision and regulation rest on his rejection of taxation and coercion in economics, not on named programmes, so they are medium confidence. Holmes and Wikipedia report Rothbard's dispute with LeFevre over defensive force; the statement answers follow Holmes.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

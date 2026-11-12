@@ -655,12 +655,36 @@
    ]
   },
   "humanitarian-intervention": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "The report and Jiang's 2001 speech say states should not resort to the use or threat of force, should not interfere in one another's internal affairs, and treat US-led NATO action over Yugoslavia as an attack.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "s2",
     "s1"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The report and Jiang's 2001 speech say states should not resort to the use or threat of force, should not interfere in one another's internal affairs, and treat US-led NATO action over Yugoslavia as an attack.",
+     "sources": [
+      "s2",
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "s2",
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "limit-growth": {
@@ -3460,5 +3484,13 @@
    "addedAs": "rule-by-example"
   }
  ],
- "notes": "Searched Jiang's Three Represents speeches, the 2002 report and the 2002 Party constitution for each theme (economy, government, society, world, liberty, culture, ecology, technology, means, globalism). The texts are about Party building, ownership, politics, culture, defence, Taiwan and foreign policy; they record nothing on healthcare guarantees, the minimum wage, drugs, sexuality, abortion, nuclear power, climate, guns, immigration or most liberty and gender questions, so those are null. Answers about religion, ethnic policy and the army rest on Jiang's statements as codified in these texts; the actual record of the Party-state on rights and legal equality is mixed and is not scored here, so a few answers are capped at medium. Not opened: the CSIS Interpret translation and marxists.org document that the earlier audit cited, Jiang's Selected Works volume 3 and Chinese-language sources."
+ "notes": "Searched Jiang's Three Represents speeches, the 2002 report and the 2002 Party constitution for each theme (economy, government, society, world, liberty, culture, ecology, technology, means, globalism). The texts are about Party building, ownership, politics, culture, defence, Taiwan and foreign policy; they record nothing on healthcare guarantees, the minimum wage, drugs, sexuality, abortion, nuclear power, climate, guns, immigration or most liberty and gender questions, so those are null. Answers about religion, ethnic policy and the army rest on Jiang's statements as codified in these texts; the actual record of the Party-state on rights and legal equality is mixed and is not scored here, so a few answers are capped at medium. Not opened: the CSIS Interpret translation and marxists.org document that the earlier audit cited, Jiang's Selected Works volume 3 and Chinese-language sources.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

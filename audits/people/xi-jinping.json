@@ -386,13 +386,34 @@
    "sources": []
   },
   "humanitarian-intervention": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "In his talks with Ban Ki-moon (Foundation for Peaceful Development) he says external military intervention will make flashpoints worse, and he condemns \"neo-interventionism\" and interference in internal affairs.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
    "sources": [
     "b1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "In his talks with Ban Ki-moon (Foundation for Peaceful Development) he says external military intervention will make flashpoints worse, and he condemns \"neo-interventionism\" and interference in internal affairs.",
+     "sources": [
+      "b1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether military intervention abroad is sometimes necessary to protect human rights, and this disagreement rested on opposing particular interventions or interventions by particular powers, which doesn't say it is never necessary.",
+     "sources": [
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "open-borders": {
    "value": null,
@@ -3484,6 +3505,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ]
 }
