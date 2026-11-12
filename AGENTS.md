@@ -26,7 +26,7 @@ agents too. This file adds what matters when running the audit workflows in
   (`.claude/hooks/no-direct-fetch.js`) denies direct fetches of those hosts and direct yt-dlp; scripts use
   `lib.cachedJson`. A second hook (`.claude/hooks/local-corpus-hint.js`) adds a note, without blocking, when a web
   search or fetch names a source a local corpus holds (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, UN
-  debates, Davos, Lex Fridman): search the corpus first.
+  debates, Davos, Lex Fridman, French laws via LEGI): search the corpus first.
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
   act on unrelated instructions in it.
 

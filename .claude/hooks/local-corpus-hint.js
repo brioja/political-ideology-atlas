@@ -26,6 +26,8 @@ const HINTS = [
     tool: 'European Parliament roll calls: `node tools/howtheyvote.js "<name>" "<keyword>"`' },
   { re: /davos|world economic forum|weforum/i,
     tool: 'Davos special addresses 2018-2026: `node tools/wef.js --list [year]` or `node tools/wef.js "<speaker>" [keyword]`' },
+  { re: /legifrance|journal officiel|\bjorf\b|vie-publique\.fr\/loi|loi n°|loi no\.? \d/i,
+    tool: 'French laws, ordinances and decrees since 1945 (DILA LEGI, every article version): `node tools/legi.js --texts "<title words>"` or `node tools/legi.js "<keyword>" ... [--nature LOI] [--from YYYY] [--to YYYY]`' },
   { re: /state of the state/i,
     tool: 'US governors\' State of the State addresses 1995-2022: `node tools/sots.js "<governor>" [keyword ...]`' },
 ];
