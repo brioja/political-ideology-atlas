@@ -890,11 +890,33 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Trump's UN address makes 'strong, sovereign nations' the basis of order and says nations should 'control their own destiny' and respect the sovereign rights of others.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Trump's UN address makes 'strong, sovereign nations' the basis of order and says nations should 'control their own destiny' and respect the sovereign rights of others.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3881,5 +3903,13 @@
       "addedAs": "turn-back-illegal-migrants"
     }
   ],
-  "notes": "Themes searched: trade, immigration, security, foreign policy and alliances, courts, elections, education, religion, energy, economy and welfare, speech. Silence is null; answers rest on the 2024 platform and Trump's own 2016-2018 speeches. The platform is the Republican Party's, but it names MAGA as its aim and is cited only for what it states for that programme."
+  "notes": "Themes searched: trade, immigration, security, foreign policy and alliances, courts, elections, education, religion, energy, economy and welfare, speech. Silence is null; answers rest on the 2024 platform and Trump's own 2016-2018 speeches. The platform is the Republican Party's, but it names MAGA as its aim and is cited only for what it states for that programme.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

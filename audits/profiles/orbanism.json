@@ -1010,12 +1010,36 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Article D speaks of one Hungarian nation, and sovereignty against outside interference is the ideology's core.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Article D speaks of one Hungarian nation, and sovereignty against outside interference is the ideology's core.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3762,6 +3786,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 12
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -1039,13 +1039,39 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Says he likes 'competing nation states with an accountable parliament' and wants sovereignty over borders, fishing and law.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s20",
         "s17",
         "s15"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Says he likes 'competing nation states with an accountable parliament' and wants sovereignty over borders, fishing and law.",
+          "sources": [
+            "s20",
+            "s17",
+            "s15"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s20",
+            "s17",
+            "s15"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3489,6 +3515,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

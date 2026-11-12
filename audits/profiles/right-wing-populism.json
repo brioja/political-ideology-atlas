@@ -901,12 +901,36 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "\"It is the right of all nations to put their own interests first\"; sovereignty is central.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "\"It is the right of all nations to put their own interests first\"; sovereignty is central.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3543,6 +3567,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

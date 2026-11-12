@@ -897,14 +897,37 @@
       "auditor": "claude-sonnet-5-5"
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "UNGA 2023: aggression against any state should end 'not because your land will be divided' but because 'your territory and sovereignty will be fully restored'; supports each nation's sovereignty and says Ukrainians 'have chosen Europe'.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s2",
         "s3"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "UNGA 2023: aggression against any state should end 'not because your land will be divided' but because 'your territory and sovereignty will be fully restored'; supports each nation's sovereignty and says Ukrainians 'have chosen Europe'.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "refugee-return": {
       "value": null,
@@ -3796,6 +3819,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

@@ -852,11 +852,33 @@
       "sources": []
     },
     "national-self-determination": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The Declaration's new international order rests on respect for national sovereignty and the right to national self-government (para 32).",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Declaration's new international order rests on respect for national sovereignty and the right to national self-government (para 32).",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-03"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on the sovereignty of existing countries, and the statement now asks whether every people that sees itself as a nation has the right to a state of its own.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "force-without-un": {
@@ -3294,5 +3316,13 @@
       "declined": "Too abstract to answer flatly."
     }
   ],
-  "notes": "Only a few dozen statements are settled by the defining sources: the Socialist International's Declaration covers democracy, economy, peace, development, gender and technology but is silent on healthcare, taxes, migration, religion-state questions and many others; Newman and Sears define the family mostly by its method (peaceful, constitutional) and its break with Bolshevism. Silence is null. Statements where the Declaration's general values (equal rights, freedom of belief) might bear on specific laws (apostasy, blasphemy, conversion) were left null."
+  "notes": "Only a few dozen statements are settled by the defining sources: the Socialist International's Declaration covers democracy, economy, peace, development, gender and technology but is silent on healthcare, taxes, migration, religion-state questions and many others; Newman and Sears define the family mostly by its method (peaceful, constitutional) and its break with Bolshevism. Silence is null. Statements where the Declaration's general values (equal rights, freedom of belief) might bear on specific laws (apostasy, blasphemy, conversion) were left null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }
