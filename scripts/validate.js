@@ -421,7 +421,10 @@ function validate(id) {
         nulledCount++;
         lastNulled = prev;
         const act = kinds(prev.sources, "action"), why = kinds(next.sources, "words");
-        if (act.length && why.length) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
+        // A statement-review nulling changes the question, not the evidence: it cites the answer's own sources,
+        // so the words-against-action rule doesn't apply to it.
+        const reworded = /^Nulled \(statement review/.test(String(next.rationale || ""));
+        if (act.length && why.length && !reworded) errors.push(`${where}: words (${why.join(", ")}) can't null an action (${act.join(", ")})`);
       } else if (prev.value === null && next.value !== null && lastNulled) {
         if (kinds(lastNulled.sources, "action").length && !kinds(next.sources, "action").length) errors.push(`${where}: the nulled answer rested on an action, so a new answer needs an action too (words can't overturn it)`);
       }
