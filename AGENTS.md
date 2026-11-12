@@ -8,6 +8,8 @@ agents too. This file adds what matters when running the audit workflows in
 
 - **Launch by script path**, not by name. Launching by name can run a copy cached when the
   session started, so edits to the workflow file are silently ignored.
+- **Name the audit model:** `{"model": "sonnet"}` in the args. Without it the audit agents inherit the session's
+  model; a PreToolUse hook (`.claude/hooks/serial-audits-model.js`) denies a launch without one, or with Haiku.
 - **One `serial-audits` workflow at a time** (two at once, split by kind in separate checkouts, was tried
   2026-11-06 and dropped: agents wrote into the wrong checkout). Alternate `{"kind": "people"}` and
   `{"kind": "ideologies"}` runs instead.
