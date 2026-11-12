@@ -563,11 +563,33 @@
       "sources": []
     },
     "workers-councils": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Gave directly elected workers' councils management of enterprises, but did not replace the Federal Assembly with them.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale says the councils it describes are community, neighbourhood or citizen bodies, or sit alongside parliament, and the statement asks whether workplace councils should replace parliaments.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Gave directly elected workers' councils management of enterprises, but did not replace the Federal Assembly with them.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale says the councils it describes are community, neighbourhood or citizen bodies, or sit alongside parliament, and the statement asks whether workplace councils should replace parliaments.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "right-to-secede": {
@@ -3557,6 +3579,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

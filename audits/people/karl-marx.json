@@ -900,11 +900,33 @@
       "sources": []
     },
     "workers-councils": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Describes the Commune, mostly working men, as a working, not a parliamentary body, executive and legislative at once. These were municipal councils elected by wards, not workplace councils.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale says the councils it describes are community, neighbourhood or citizen bodies, or sit alongside parliament, and the statement asks whether workplace councils should replace parliaments.",
       "sources": [
         "s8"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Describes the Commune, mostly working men, as a working, not a parliamentary body, executive and legislative at once. These were municipal councils elected by wards, not workplace councils.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale says the councils it describes are community, neighbourhood or citizen bodies, or sit alongside parliament, and the statement asks whether workplace councils should replace parliaments.",
+          "sources": [
+            "s8"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "right-to-secede": {
@@ -4635,6 +4657,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ],
