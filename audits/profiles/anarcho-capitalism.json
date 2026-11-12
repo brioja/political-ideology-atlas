@@ -811,11 +811,33 @@
       ]
     },
     "state-as-business": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The idea of customers who can leave matches some adherents' views of competing providers, but the ideology rejects the state altogether.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
       "sources": [
         "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The idea of customers who can leave matches some adherents' views of competing providers, but the ideology rejects the state altogether.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "positive-liberty": {
@@ -3722,6 +3744,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

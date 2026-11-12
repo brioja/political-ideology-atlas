@@ -798,11 +798,33 @@
       ]
     },
     "state-as-business": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "A welfare-state tradition rejects treating citizens as customers.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "A welfare-state tradition rejects treating citizens as customers.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "positive-liberty": {
@@ -3712,6 +3734,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

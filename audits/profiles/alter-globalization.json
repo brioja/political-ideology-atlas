@@ -809,13 +809,34 @@
    "auditor": "claude-sonnet-5-5"
   },
   "state-as-business": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "The Bamako Appeal rejects reducing citizens to consumers and wants economy and finance placed in service of a societal programme rather than markets.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
    "sources": [
     "s4"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "The Bamako Appeal rejects reducing citizens to consumers and wants economy and finance placed in service of a societal programme rather than markets.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "individual-rights-only": {
    "value": -2,
@@ -3791,5 +3812,13 @@
    "addedAs": "ban-patents-on-life"
   }
  ],
- "notes": "Researched afresh under rules 3 from the movement's own programmes and assembly declarations, independent of the earlier audit's answers. The Charter bars the Forum from adopting positions, so only programmes and the Assembly of Social Movements speak for strands; the Porto Alegre Manifesto was signed personally and the Bamako Appeal reflects the more radical Southern and anti-imperialist wing, so answers resting on them are medium rather than high where wider strands (Attac, NGOs) may differ. Statements on same-sex marriage, humanitarian intervention, central planning, vouchers, population and most cultural and moral questions are null because the texts do not state them. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means, globalism.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 3 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Independent re-audit, using earlier sources only as leads. The full WSF charter and ATTAC founding platform were downloaded and read. Thin government and world themes were researched through democratic accountability, institutional reform, transnational action, debt and development; the university study distinguishes concrete WTO engagement from a generic anti-institutional stance. Ecology and technology were checked against the common texts without adding participating groups’ energy or technology preferences. Society, culture and personal-liberty questions have many nulls because pluralism does not supply a full policy platform. Bernard Cassen is identified as a major organiser, without treating his personal policies as binding on a decentralised movement. Validator caveat: corporate-influence was lowered to low because the validator interprets the term “speculative finance” as an admission of speculative reasoning. The cited position is directly documented, and this apparent lexical false positive is left for maintainer review rather than evaded by rewording."
+ "notes": "Researched afresh under rules 3 from the movement's own programmes and assembly declarations, independent of the earlier audit's answers. The Charter bars the Forum from adopting positions, so only programmes and the Assembly of Social Movements speak for strands; the Porto Alegre Manifesto was signed personally and the Bamako Appeal reflects the more radical Southern and anti-imperialist wing, so answers resting on them are medium rather than high where wider strands (Attac, NGOs) may differ. Statements on same-sex marriage, humanitarian intervention, central planning, vouchers, population and most cultural and moral questions are null because the texts do not state them. Themes searched: economy, government, society, world, liberty, culture, ecology, technology, means, globalism.\n\nMerged with an independent claude-sonnet-5-5+GPT-6.1-Sol audit: 3 answers taken from it, 17 agreed, 0 conflicts settled by the integrator.\n\nclaude-sonnet-5-5+GPT-6.1-Sol notes: Independent re-audit, using earlier sources only as leads. The full WSF charter and ATTAC founding platform were downloaded and read. Thin government and world themes were researched through democratic accountability, institutional reform, transnational action, debt and development; the university study distinguishes concrete WTO engagement from a generic anti-institutional stance. Ecology and technology were checked against the common texts without adding participating groups’ energy or technology preferences. Society, culture and personal-liberty questions have many nulls because pluralism does not supply a full policy platform. Bernard Cassen is identified as a major organiser, without treating his personal policies as binding on a decentralised movement. Validator caveat: corporate-influence was lowered to low because the validator interprets the term “speculative finance” as an admission of speculative reasoning. The cited position is directly documented, and this apparent lexical false positive is left for maintainer review rather than evaded by rewording.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

@@ -820,11 +820,33 @@
       ]
     },
     "state-as-business": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Saint-Simon wanted administration by industrial managers but not customer-citizens.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Saint-Simon wanted administration by industrial managers but not customer-citizens.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether citizens are customers who can leave, and the statement now asks only whether government should be run on business principles.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "positive-liberty": {
@@ -3649,6 +3671,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]
