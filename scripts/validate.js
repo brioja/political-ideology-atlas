@@ -25,7 +25,7 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
-const CURRENT_RULES = 6;
+const CURRENT_RULES = 7;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
 // of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
 const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
@@ -519,6 +519,12 @@ function validate(id) {
       const sentences = String(a.notes || "").split(/(?<=[.;])\s+/).filter((x) => UNFOUND.test(x) && !covered(x));
       for (const x of sentences) errors.push(`notes call a source unavailable: "${x.trim().slice(0, 160)}". List the work in "notFound" with at least two places tried, or find it`);
     }
+  }
+  // Rules 7 (Brandon, 2026-11-12): a 0 is a documented split, so it cites at least two sources. A 0 on one source was
+  // usually a hedge (a later pass dropping the old side's sources) or "adherents are split" on a source that takes no side.
+  if (a.rules >= 7) {
+    const thin = Object.entries(answers).filter(([, x]) => x && x.value === 0 && new Set(x.sources || []).size < 2).map(([k]) => k);
+    if (thin.length) errors.push(`${thin.join(", ")}: 0 on fewer than two sources. 0 means the record points both ways (or the subject deliberately takes no side): cite the sources for each side, or answer the side the evidence supports, or null if the sources are silent`);
   }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');

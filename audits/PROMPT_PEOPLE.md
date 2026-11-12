@@ -133,7 +133,7 @@ finish: search those first for stated positions. If the record really has nothin
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
-  "rules": 6,
+  "rules": 7,
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",

@@ -4,11 +4,11 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 6` in the audit
+"The subject" below is the ideology or the person being audited. Write `"rules": 7` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
 in the local library; rules 6 accounts for every text known to exist by a person and lists every source
-not found, with two places tried.)
+not found, with two places tried; rules 7 cites at least two sources for every 0.)
 
 ## 1. Standard
 
@@ -98,7 +98,9 @@ free trade, not about markets in general.
   whole claim.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
-  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call.
+  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites at least two sources,
+  the evidence for each side (`validate.js` checks); adherents disagreeing among themselves while the
+  sources take no side is silence: `null`.
 - **±2** only when the position is central or stated explicitly and forcefully.
 - **Every answer is stated or null; there are no inferences.** An answer is stated when the
   subject's own stated position settles the statement: the statement says the same on the same
@@ -240,7 +242,7 @@ says which rule). Build on the existing audit rather than starting over:
 - Add your model id to `auditor` if it isn't there yet (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 6` and bring the whole file up to it, older answers
+  the date of your pass. Set `"rules": 7` and bring the whole file up to it, older answers
   and sources included (`validate.js` says what is missing).
 - If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.

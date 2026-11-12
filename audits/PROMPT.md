@@ -167,7 +167,7 @@ captures, even loosely. Leave it as an empty list if there are none, and don't p
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<model id that did the research>",
-  "rules": 6,
+  "rules": 7,
   "summary": "Two to four sentences, in your own words, on what the ideology holds.",
   "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "scope": "Which strand, period, thinkers and texts this profile represents, and what it excludes.",

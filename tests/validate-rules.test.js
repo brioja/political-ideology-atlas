@@ -240,6 +240,8 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   ok("rules 6: notFound with two places tried", r6((a) => { all(a); a.notes = "His Senate speeches were not available."; a.notFound = [{ work: "Senate speeches 1827-1836", tried: [
     { where: "local corpora", how: "crec.js and voteview.js by name" }, { where: "Library of Congress, A Century of Lawmaking", how: "searched the Register of Debates index for him" }] }]; }));
   ok("rules 5: no rules-6 checks", E(base(), (a) => { a.rules = 5; }));
+  fails("rules 7: a 0 on one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "Pushed both ways on this in the one interview cited.", sources: ["s2"] }; }), /0 on fewer than two sources/);
+  ok("rules 7: a 0 on two sources", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "Voted for it in one roll call and against it in the second.", sources: ["s1", "s4"] }; }));
   setTextsForTests(null); setLibraryForTests(null);
 }
 
