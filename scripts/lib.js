@@ -216,9 +216,13 @@ const awaitingReaudit = () => {
 // condition is hard to negate: does disagreeing reject the claim or the condition? "while" and "until" added 2026-11-10),
 // "cut"/"reduce"/"raise"/"increase"/"expand"/"lower" (a change from today's level, which differs by country and era:
 // state the level instead; Brandon, 2026-11-11. "Cut internet access" or "lower-level councils" are fine), and
-// "more"/"less"/"fewer" without a later "than", a semicolon and a second sentence (marked in wordingMarks), and
+// "more"/"less"/"fewer" and the comparatives in COMPARATIVES ("higher", "larger", ...; Brandon, 2026-11-12) without a
+// later "than", a semicolon and a second sentence (marked in wordingMarks), and
 // "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11), and "my country"
 // (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
+// Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
+const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
+  "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country",
@@ -252,7 +256,7 @@ const WORDING_REASONS = {
   instead: "\"A instead of B\" asks two things, as \"rather than\" does: a disagree could reject A or prefer a third option",
   ...Object.fromEntries(["cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"]
     .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),
-  ...Object.fromEntries(["more", "less", "fewer"].map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
+  ...Object.fromEntries(COMPARATIVES.map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
   "second sentence": "a second sentence usually adds a second claim",
 };
 const wordingReason = (w) => WORDING_REASONS[w.toLowerCase()] || "";
@@ -262,16 +266,16 @@ function wordingMarks(text) {
   // "even when"/"even if" stress the claim rather than adding a condition, so they aren't marked; "provided" is
   // marked only as a condition ("provided that", or opening a clause), not as a verb ("provided by") (Brandon, 2026-11-09).
   const t = text.replace(/\beven (when|if)\b/gi, "").replace(/\bprovided\b(?! that\b)/gi, (w, at, s) => /(^|[,;:]\s*)$/.test(s.slice(0, at)) ? w : "");
-  // "more"/"less"/"fewer" with no "than" after them usually mean "than now", a change from
+  // "more"/"less"/"fewer" and other comparatives with no "than" after them usually mean "than now", a change from
   // today's level ("should have more power"); with a "than" they are a comparison ("more on rehabilitation than on
   // punishment") and aren't marked (Brandon, 2026-11-11).
-  const relative = [...t.matchAll(/\b(more|less|fewer)\b/gi)].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
+  const relative = [...t.matchAll(new RegExp(`\\b(${COMPARATIVES.join("|")})\\b`, "gi"))].filter((m) => !/\bthan\b/i.test(t.slice(m.index))).map((m) => m[1].toLowerCase());
   // A semicolon joins a second claim, as "and" does: an error (Brandon, 2026-11-11). A second sentence usually does too: a warning.
   const semicolon = /;/.test(text) ? [";"] : [];
   const sentences = /[.!?]\s+\S/.test(text.trim()) ? ["second sentence"] : [];
   return { errors: [...find(WORDING.errors), ...semicolon], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
 }
 
-module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

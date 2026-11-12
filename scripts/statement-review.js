@@ -10,7 +10,7 @@
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING, wordingReason } = require("./lib");
+const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING, COMPARATIVES, wordingReason } = require("./lib");
 
 const OUT = path.join(ROOT, "scratchpad", "statement-review");
 const idArg = process.argv.indexOf("--id");
@@ -157,7 +157,7 @@ Fix the warnings too: reword each one away, or say in your reply why test 3 conf
 comparison) (\`WORDING\` in \`scripts/lib.js\`; test 3 in \`audits/statements/STANDARD.md\`):
 
 - **Errors:** ${WORDING.errors.map((w) => `"${w}"`).join(", ")}.
-- **Warnings:** ${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, "more"/"less"/"fewer" with no later "than", a second sentence.
+- **Warnings:** ${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, ${COMPARATIVES.map((w) => `"${w}"`).join("/")} with no later "than", a second sentence.
 - One claim, read literally, in plain neutral words both sides would accept as fair. Not relative to the status
   quo. The maintainer rejects overloaded or odd phrasing: a "should" that could be a prediction or an aim,
   jargon, figurative verbs.

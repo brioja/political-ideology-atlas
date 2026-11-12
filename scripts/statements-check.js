@@ -19,7 +19,7 @@
 //     --all also marks the active statements (reference only: a new meaning needs a new id; a reader fix keeps the id, see scripts/lib.js).
 const fs = require("fs");
 const path = require("path");
-const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, wordingRe, wordingMarks, wordingReason } = require("./lib");
+const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, COMPARATIVES, wordingRe, wordingMarks, wordingReason } = require("./lib");
 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
@@ -51,7 +51,7 @@ if (process.argv.includes("--wording")) {
     for (const w of m.warnings) console.log(`      warning "${w}": ${wordingReason(w)}`);
   }
   console.log(`\n${list.length} statements: ${errors} with errors (${WORDING.errors.map((w) => `"${w}"`).join(", ")}, ` +
-    `";": always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, "more"/"less"/"fewer" with no later "than", a second sentence: ` +
+    `";": always reword), ${warnings} with warnings (${WORDING.warnings.map((w) => `"${w}"`).join(", ")}, ${COMPARATIVES.map((w) => `"${w}"`).join("/")} with no later "than", a second sentence: ` +
     `check against test 3 in audits/statements/STANDARD.md: two claims joined, a list where one general word would do, ` +
     `a means instead of a position, a vague scope).`);
   process.exit(0);
