@@ -488,12 +488,36 @@
       ]
     },
     "revolution-justified": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Maistre calls the French Revolution an antireligious and antisocial insurrection and the king's killing a national crime, and James VI and I calls disputing royal power sedition.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
       "sources": [
         "s3",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Maistre calls the French Revolution an antireligious and antisocial insurrection and the king's killing a national crime, and James VI and I calls disputing royal power sedition.",
+          "sources": [
+            "s3",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
+          "sources": [
+            "s3",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "experts-over-public": {
@@ -3739,6 +3763,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

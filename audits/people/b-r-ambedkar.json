@@ -495,11 +495,33 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "In 1949 he said that where constitutional methods are open there is no justification for unconstitutional methods and that the bloody methods of revolution must be abandoned.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "In 1949 he said that where constitutional methods are open there is no justification for unconstitutional methods and that the bloody methods of revolution must be abandoned.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-haiku-5-5",
+          "date": "2026-11-10"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "experts-over-public": {
@@ -4359,6 +4381,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-10",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

@@ -340,18 +340,42 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "She treated rebellion against her as treason, yet her own 1553 seizure of the throne from Jane Grey's government was framed by her as a lawful assertion of title, so the evidence is mixed.",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
       "sources": [
         "s1",
         "s2",
         "s4",
         "b2"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-haiku-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "She treated rebellion against her as treason, yet her own 1553 seizure of the throne from Jane Grey's government was framed by her as a lawful assertion of title, so the evidence is mixed.",
+          "sources": [
+            "s1",
+            "s2",
+            "s4",
+            "b2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
+          "sources": [
+            "s1",
+            "s2",
+            "s4",
+            "b2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "experts-over-public": {
@@ -3220,6 +3244,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

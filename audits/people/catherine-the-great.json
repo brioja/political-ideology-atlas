@@ -443,18 +443,42 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed, leaning against: she crushed the Pugachev rebellion, executed its leader and condemned the French Revolution, but funded and armed Greek and Slavic uprisings against the Ottomans as part of her own war aims.",
+      "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
       "sources": [
         "s2",
         "s6",
         "s8",
         "b10"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "gpt-6.1-sol"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Mixed, leaning against: she crushed the Pugachev rebellion, executed its leader and condemned the French Revolution, but funded and armed Greek and Slavic uprisings against the Ottomans as part of her own war aims.",
+          "sources": [
+            "s2",
+            "s6",
+            "s8",
+            "b10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): the old wording asked whether revolution is sometimes justified, and this disagreement rested on a preference for reform or lawful means, which doesn't say revolution is never justified.",
+          "sources": [
+            "s2",
+            "s6",
+            "s8",
+            "b10"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "experts-over-public": {
@@ -3475,6 +3499,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]
