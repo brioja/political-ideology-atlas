@@ -868,10 +868,10 @@ const QUESTIONS = [
  {
   "id": "media-academia-power",
   "theme": "society",
-  "text": "Universities and the news media together hold more real political power than elected officials.",
-  "agree": "The real power lies with academia and the press, not the people elected.",
-  "disagree": "Universities and the news media do not together hold more real political power than elected officials.",
-  "note": "About where power really lies.",
+  "text": "Cultural elites hold more political power than elected officials.",
+  "agree": "The people who run the press, universities and other cultural institutions have more real power than the people voters elect.",
+  "disagree": "Cultural elites do not hold more political power than elected officials.",
+  "note": "About where power really lies. Cultural elites means those who shape opinion, such as journalists, academics and editors.",
   "icon": "📰"
  },
  {
