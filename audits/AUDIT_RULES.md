@@ -223,7 +223,7 @@ says which rule). Build on the existing audit rather than starting over:
   stated (cite the source of the position that settles it) or `null`. One deduced from a general
   value is `null`.
 - A later pass comes at least half the project's age (days since its first commit, 2026-10-14) after the previous one, so the gap grows over time (`validate.js` enforces it).
-- Any audit model may do a later pass, including one that audited the subject before. Add your model id to `auditor` once (a list, the
+- Add your model id to `auditor` if it isn't there yet (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
   the date of your pass. Set `"rules": 5` and bring the whole file up to it, older answers
