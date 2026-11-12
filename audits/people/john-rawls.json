@@ -1,8 +1,11 @@
 {
   "id": "john-rawls",
   "name": "John Rawls",
-  "auditedAt": "2026-10-23",
-  "auditor": "gpt-6.1-sol",
+  "auditedAt": "2026-11-12",
+  "auditor": [
+    "gpt-6.1-sol",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "American political philosopher (1921–2002)",
   "summary": "Rawls defended equal basic liberties, fair opportunity and institutions improving the position of the least advantaged. His mature theory favoured dispersed productive wealth or liberal socialism over welfare capitalism. Internationally, he combined assistance and qualified non-intervention with toleration of decent non-liberal societies.",
@@ -14,7 +17,8 @@
       "title": "John Rawls",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/John_Rawls",
-      "usedFor": "Career and publication chronology."
+      "usedFor": "Career and publication chronology.",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -22,7 +26,8 @@
       "title": "John Rawls, Stanford Encyclopedia of Philosophy",
       "author": "Leif Wenar",
       "url": "https://plato.stanford.edu/entries/rawls/",
-      "usedFor": "Overview and interpretive cross-checks."
+      "usedFor": "Overview and interpretive cross-checks.",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -30,7 +35,8 @@
       "title": "A Theory of Justice, revised edition (1999)",
       "author": "John Rawls",
       "url": "https://www.cita.or.id/wp-content/uploads/2016/06/John-Rawls-A-Theory-of-Justice-Belknap-Press-1999.pdf",
-      "usedFor": "Full book downloaded; sections cited in rationales."
+      "usedFor": "Full book downloaded; sections cited in rationales.",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -38,7 +44,8 @@
       "title": "Justice as Fairness: A Restatement (2001)",
       "author": "John Rawls; edited by Erin Kelly",
       "url": "https://pdfcoffee.com/john-rawls-2001-justice-as-fairness-pdf-free.html",
-      "usedFor": "Mature domestic theory; section numbers identify passages."
+      "usedFor": "Mature domestic theory; section numbers identify passages.",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -46,7 +53,8 @@
       "title": "The Law of Peoples (1999)",
       "author": "John Rawls",
       "url": "https://pdf.stafforini.com/rawls-1999-law-peoples-idea.pdf",
-      "usedFor": "Full scan downloaded and OCR searched; page references."
+      "usedFor": "Full scan downloaded and OCR searched; page references.",
+      "evidence": "words"
     },
     {
       "id": "s6",
@@ -54,7 +62,8 @@
       "title": "The Idea of Public Reason Revisited (1997), excerpts",
       "author": "John Rawls",
       "url": "https://www.nlnrac.org/critics/rawls/primary-source-documents/public-reason.html",
-      "usedFor": "Pluralism, public justification and abortion clarification."
+      "usedFor": "Pluralism, public justification and abortion clarification.",
+      "evidence": "words"
     },
     {
       "id": "s7",
@@ -62,7 +71,8 @@
       "title": "50 Years After Hiroshima, Dissent (Summer 1995), pp. 323–327",
       "author": "John Rawls",
       "url": "https://dissentmagazine.org/wp-content/files_mf/1428085978JohnRawls.pdf",
-      "usedFor": "War ethics; Rawls’s contribution starts on p. 323 after preceding author’s conclusion."
+      "usedFor": "War ethics; Rawls’s contribution starts on p. 323 after preceding author’s conclusion.",
+      "evidence": "words"
     },
     {
       "id": "s8",
@@ -70,7 +80,8 @@
       "title": "Politics, Religion, and the Public Good (1998 interview)",
       "author": "John Rawls; interviewer Bernard G. Prusak",
       "url": "https://www.nlnrac.org/critics/rawls/primary-source-documents/politics-religion.html",
-      "usedFor": "Assisted dying and religious arguments; authorised republication."
+      "usedFor": "Assisted dying and religious arguments; authorised republication.",
+      "evidence": "words"
     },
     {
       "id": "s9",
@@ -78,16 +89,49 @@
       "title": "Rawls on the EU (2011), quoting his June 23, 1998 letter",
       "author": "Daniel Little",
       "url": "https://undsoc.org/2011/09/05/rawls-on-the-eu/",
-      "usedFor": "Reported letter; distinguish Rawls’s quoted text from Little’s interpretation."
+      "usedFor": "Reported letter; distinguish Rawls’s quoted text from Little’s interpretation.",
+      "evidence": "words"
+    },
+    {
+      "id": "s10",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Political Liberalism, expanded edition (Columbia University Press, 2005)",
+      "author": "John Rawls",
+      "url": "https://openlibrary.org/isbn/9780231130899",
+      "library": "Rawls, John - Political Liberalism - Expanded Edition (2005).txt",
+      "usedFor": "Basic health care and the social minimum, neutrality of aim, the constitution and judicial review, campaign finance, the family and gender, apostasy, the surfers note."
     }
   ],
   "answers": {
     "universal-healthcare": {
       "value": 2,
       "confidence": "high",
-      "rationale": "§51 guarantees basic healthcare for all.",
+      "rationale": "In the Introduction to the Paperback Edition (section 6) he lists basic health care assured to all citizens among the institutions a stable constitutional regime needs.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§51 guarantees basic healthcare for all.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "In the Introduction to the Paperback Edition (section 6) he lists basic health care assured to all citizens among the institutions a stable constitutional regime needs.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "raise-minimum-wage": {
@@ -107,17 +151,61 @@
     "public-ownership": {
       "value": 0,
       "confidence": "low",
-      "rationale": "§42 leaves private ownership versus liberal socialism open.",
+      "rationale": "Theory of Justice section 42 allows public ownership with worker-managed firms in a liberal socialist regime and private ownership alike, and says the theory itself favours neither; the choice depends on a country's conditions.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "§42 leaves private ownership versus liberal socialism open.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Theory of Justice section 42 allows public ownership with worker-managed firms in a liberal socialist regime and private ownership alike, and says the theory itself favours neither; the choice depends on a country's conditions.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "tax-the-wealthy": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "§49 supports progressive taxes against excessive wealth concentration.",
+      "value": 0,
+      "confidence": "low",
+      "rationale": "Theory of Justice section 43 prefers a proportional expenditure tax in the ideal scheme and wants progressive rates only where needed to prevent concentrated property and power, while allowing steeply progressive income taxes under existing injustice.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "§49 supports progressive taxes against excessive wealth concentration.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Theory of Justice section 43 prefers a proportional expenditure tax in the ideal scheme and wants progressive rates only where needed to prevent concentrated property and power, while allowing steeply progressive income taxes under existing injustice.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "unions-good": {
@@ -129,9 +217,31 @@
     "property-fundamental": {
       "value": 0,
       "confidence": "low",
-      "rationale": "§52 contrasts basic personal property with conditional productive ownership.",
+      "rationale": "Political Liberalism (Lecture VIII) makes the right to hold personal property a basic liberty, but excludes rights of acquisition, bequest and ownership of means of production from the basic liberties.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "§52 contrasts basic personal property with conditional productive ownership.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Political Liberalism (Lecture VIII) makes the right to hold personal property a basic liberty, but excludes rights of acquisition, bequest and ownership of means of production from the basic liberties.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "regulate-corporations": {
@@ -149,11 +259,33 @@
       "sources": []
     },
     "worker-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "§52 accepts cooperatives; their superiority remains unsettled.",
+      "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 42 has publicly owned firms managed by workers' councils as one option, not workers owning their firms, and leaves the regime choice open.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "§52 accepts cooperatives; their superiority remains unsettled.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 42 has publicly owned firms managed by workers' councils as one option, not workers owning their firms, and leaves the regime choice open.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "surveillance-ok": {
@@ -227,9 +359,31 @@
     "same-sex-marriage": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "§50 admits same-sex families compatible with children’s wellbeing.",
+      "rationale": "A note on the family in Political Liberalism says no particular form of family (monogamous, heterosexual or otherwise) is required, and that gay and lesbian rights and duties consistent with orderly family life and the education of children are admissible.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "§50 admits same-sex families compatible with children’s wellbeing.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "A note on the family in Political Liberalism says no particular form of family (monogamous, heterosexual or otherwise) is required, and that gay and lesbian rights and duties consistent with orderly family life and the education of children are admissible.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "abortion-legal": {
@@ -323,9 +477,31 @@
     "nation-first": {
       "value": -1,
       "confidence": "high",
-      "rationale": "Principle 6 subordinates national-interest calculations to moral war limits.",
+      "rationale": "The Law of Peoples section 14.1, principle (vi), says weighing national interests must always be strictly limited by the principles governing the conduct of war.",
       "sources": [
-        "s7"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "Principle 6 subordinates national-interest calculations to moral war limits.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "The Law of Peoples section 14.1, principle (vi), says weighing national interests must always be strictly limited by the principles governing the conduct of war.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "humanitarian-intervention": {
@@ -401,19 +577,63 @@
       "sources": []
     },
     "tax-inheritance": {
-      "value": 2,
+      "value": 1,
       "confidence": "high",
-      "rationale": "§49 supports progressive taxation of inherited receipts.",
+      "rationale": "Theory of Justice section 43 has inheritance and gift taxes and limits on bequest, applying the progressive principle at the beneficiary's end, to correct the distribution of wealth; it does not call for heavy taxes as such.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§49 supports progressive taxation of inherited receipts.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Theory of Justice section 43 has inheritance and gift taxes and limits on bequest, applying the progressive principle at the beneficiary's end, to correct the distribution of wealth; it does not call for heavy taxes as such.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "basic-income": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "§53 excludes subsidies for voluntarily nonworking surfers.",
+      "rationale": "A note in Political Liberalism (Lecture VIII) says those who surf all day off Malibu would not be entitled to public funds, though he adds it is not an endorsement of any particular policy.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "§53 excludes subsidies for voluntarily nonworking surfers.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "A note in Political Liberalism (Lecture VIII) says those who surf all day off Malibu would not be entitled to public funds, though he adds it is not an endorsement of any particular policy.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "tariffs-protect-industry": {
@@ -431,9 +651,31 @@
     "widespread-small-property": {
       "value": 2,
       "confidence": "high",
-      "rationale": "§49 seeks widely dispersed productive assets.",
+      "rationale": "The Preface to the revised Theory of Justice and section 43 aim at the steady dispersal of ownership of capital and resources among citizens generally, through inheritance law and related institutions.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§49 seeks widely dispersed productive assets.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Preface to the revised Theory of Justice and section 43 aim at the steady dispersal of ownership of capital and resources among citizens generally, through inheritance law and related institutions.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "abolish-money-wages": {
@@ -501,11 +743,33 @@
       "sources": []
     },
     "political-violence-never": {
-      "value": -1,
-      "confidence": "high",
-      "rationale": "He explicitly defends just defensive warfare.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (pass of 2026-11-12): the answer rested on a defence of just war, which is state force; the statement is about violence for political ends outside lawful authority.",
       "sources": [
-        "s7"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "high",
+          "rationale": "He explicitly defends just defensive warfare.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): the answer rested on a defence of just war, which is state force; the statement is about violence for political ends outside lawful authority.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "war-builds-character": {
@@ -557,9 +821,31 @@
     "equal-outcomes": {
       "value": 0,
       "confidence": "low",
-      "rationale": "§46 rejects equal wealth; §18 requires fair distributive outcomes.",
+      "rationale": "Theory of Justice sections 11 and 13 start from equal shares of primary goods but allow inequalities that benefit the least advantaged, so he neither aims at equal outcomes nor leaves outcomes to chance.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "§46 rejects equal wealth; §18 requires fair distributive outcomes.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Theory of Justice sections 11 and 13 start from equal shares of primary goods but allow inequalities that benefit the least advantaged, so he neither aims at equal outcomes nor leaves outcomes to chance.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "indigenous-land-authority": {
@@ -593,11 +879,33 @@
       "sources": []
     },
     "nature-intrinsic-value": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "§46 accepts natural beauty itself as a conservation reason.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 77 calls cruelty to animals wrong and destruction of a species a great evil but does not say that nature has value apart from its usefulness to humans.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "§46 accepts natural beauty itself as a conservation reason.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 77 calls cruelty to animals wrong and destruction of a species a great evil but does not say that nature has value apart from its usefulness to humans.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "limit-population": {
@@ -659,9 +967,31 @@
     "means-match-ends": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Principle 5 requires wartime conduct to foreshadow just peace.",
+      "rationale": "The Law of Peoples section 14.1, principle (v), has well-ordered peoples foreshadow during a war the kind of peace they aim for, and principle (vi) limits means-end reasoning.",
       "sources": [
-        "s7"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Principle 5 requires wartime conduct to foreshadow just peace.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The Law of Peoples section 14.1, principle (v), has well-ordered peoples foreshadow during a war the kind of peace they aim for, and principle (vi) limits means-end reasoning.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "return-to-foraging": {
@@ -851,11 +1181,33 @@
       "sources": []
     },
     "workplace-democracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "§52 explicitly leaves institutional merits unresolved.",
+      "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 42 mentions workers' councils only as one way of managing firms under liberal socialism and does not take a side on workers voting in large firms.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "§52 explicitly leaves institutional merits unresolved.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Theory of Justice section 42 mentions workers' councils only as one way of managing firms under liberal socialism and does not take a side on workers voting in large firms.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "school-vouchers": {
@@ -908,10 +1260,32 @@
     },
     "work-for-welfare": {
       "value": 1,
-      "confidence": "high",
-      "rationale": "§53 expects work under fair cooperative conditions.",
+      "confidence": "medium",
+      "rationale": "A note in Political Liberalism (Lecture VIII) says those unwilling to work would not be entitled to public funds, though he adds it is not an endorsement of any particular policy.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "§53 expects work under fair cooperative conditions.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "A note in Political Liberalism (Lecture VIII) says those unwilling to work would not be entitled to public funds, though he adds it is not an endorsement of any particular policy.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "class-collaboration": {
@@ -941,9 +1315,31 @@
     "distinct-gender-roles": {
       "value": -2,
       "confidence": "high",
-      "rationale": "§50 excludes gender distinctions restricting equal rights.",
+      "rationale": "Political Liberalism (Introduction to the Paperback Edition and a note in 'Public Reason Revisited') says a liberal conception of justice implies equal justice for women and that a democracy aims at full equality for all its citizens, women included.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "§50 excludes gender distinctions restricting equal rights.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Political Liberalism (Introduction to the Paperback Edition and a note in 'Public Reason Revisited') says a liberal conception of justice implies equal justice for women and that a democracy aims at full equality for all its citizens, women included.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "ban-interest": {
@@ -995,11 +1391,33 @@
       "sources": []
     },
     "patriarchy-structural": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "§50 identifies injustice in women’s disproportionate care burdens.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Political Liberalism says only that if women's inequality rests on the traditional division of labour, steps are needed, a conditional claim.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§50 identifies injustice in women’s disproportionate care burdens.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Political Liberalism says only that if women's inequality rests on the traditional division of labour, steps are needed, a conditional claim.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "political-elite-corrupt": {
@@ -1145,9 +1563,31 @@
     "priority-to-poor": {
       "value": 2,
       "confidence": "high",
-      "rationale": "§18 prioritises the least advantaged, subject to liberties.",
+      "rationale": "Theory of Justice section 13 sets out the difference principle, under which inequalities are allowed only if they work to the greatest benefit of the least advantaged, within the priority of liberty.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§18 prioritises the least advantaged, subject to liberties.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Theory of Justice section 13 sets out the difference principle, under which inequalities are allowed only if they work to the greatest benefit of the least advantaged, within the priority of liberty.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "right-to-buy-council-homes": {
@@ -1554,9 +1994,31 @@
     "apostasy-punishable": {
       "value": -2,
       "confidence": "high",
-      "rationale": "§50 excludes apostasy as a legal crime.",
+      "rationale": "Political Liberalism says the principles of justice require that public law not recognise heresy and apostasy as crimes and that church members stay free to leave their faith.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "§50 excludes apostasy as a legal crime.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Political Liberalism says the principles of justice require that public law not recognise heresy and apostasy as crimes and that church members stay free to leave their faith.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "women-must-cover": {
@@ -1612,9 +2074,33 @@
     "courts-bound-by-majority": {
       "value": -2,
       "confidence": "high",
-      "rationale": "§44 protects liberties against ordinary majorities.",
+      "rationale": "Political Liberalism (Lecture VI) defends a constitution with a bill of rights and a supreme court as exemplar of public reason, and Theory of Justice section 37 treats constitutional limits on bare majority rule as serving equal liberty.",
       "sources": [
-        "s4"
+        "s10",
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "§44 protects liberties against ordinary majorities.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Political Liberalism (Lecture VI) defends a constitution with a bill of rights and a supreme court as exemplar of public reason, and Theory of Justice section 37 treats constitutional limits on bare majority rule as serving equal liberty.",
+          "sources": [
+            "s10",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "gender-parity-bodies": {
@@ -1714,11 +2200,33 @@
       "sources": []
     },
     "entrenched-bill-of-rights": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "§44 requires constitutional protection of basic liberties.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Political Liberalism (Lecture VI) describes a democratically ratified constitution with a bill of rights fixing constitutional essentials, and allows entrenchment beyond amendment as another reasonable regime, but does not require a bill of rights.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "§44 requires constitutional protection of basic liberties.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Political Liberalism (Lecture VI) describes a democratically ratified constitution with a bill of rights fixing constitutional essentials, and allows entrenchment beyond amendment as another reasonable regime, but does not require a bill of rights.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "colonial-treaties-void": {
@@ -1876,11 +2384,33 @@
       "sources": []
     },
     "paid-care-work": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "§50 supports equal marital income shares recognising care.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Political Liberalism mentions counting a wife's contribution as a claim to half the family income as a common proposal and leaves the method open, which is not wages for housework.",
       "sources": [
-        "s4"
+        "s10"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "§50 supports equal marital income shares recognising care.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): its source, a third-party upload of the Restatement, was removed; Political Liberalism mentions counting a wife's contribution as a claim to half the family income as a common proposal and leaves the method open, which is not wages for housework.",
+          "sources": [
+            "s10"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "filial-duty": {
@@ -2190,11 +2720,33 @@
       "sources": []
     },
     "colonies-serve-metropole": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "He condemns domination and exploitation of subjected peoples.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (pass of 2026-11-12): the answer rested on the 1995 Dissent essay, which this pass could not re-read, and the sources read here do not say what colonies are for.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "He condemns domination and exploitation of subjected peoples.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (pass of 2026-11-12): the answer rested on the 1995 Dissent essay, which this pass could not re-read, and the sources read here do not say what colonies are for.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "defensive-jihad-duty": {
@@ -2510,9 +3062,31 @@
     "never-kill-self-defence": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Principle 3 permits attacking soldiers when defence requires it.",
+      "rationale": "The Law of Peoples section 14.1 holds that a well-ordered people may attack an outlaw state's soldiers directly because it has no other way to defend itself.",
       "sources": [
-        "s7"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Principle 3 permits attacking soldiers when defence requires it.",
+          "sources": [
+            "s7"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Law of Peoples section 14.1 holds that a well-ordered people may attack an outlaw state's soldiers directly because it has no other way to defend itself.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "unbroken-national-continuity": {
@@ -2931,10 +3505,32 @@
     },
     "democracy-is-procedure": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "§44 rejects purely procedural democracy.",
+      "confidence": "medium",
+      "rationale": "Theory of Justice sections 36 and 37 hold that bare majority rule must be restricted by constitutional mechanisms and basic liberties, so fair procedure alone does not make a regime just.",
       "sources": [
-        "s4"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "§44 rejects purely procedural democracy.",
+          "sources": [
+            "s4"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Theory of Justice sections 36 and 37 hold that bare majority rule must be restricted by constitutional mechanisms and basic liberties, so fair procedure alone does not make a regime just.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "premarital-sex": {
@@ -3208,15 +3804,712 @@
       "confidence": "low",
       "rationale": "No recorded position found.",
       "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Introduction to the Paperback Edition, section 6, lists a decent distribution of income and wealth giving all citizens all-purpose means, society as employer of last resort, and basic health care for all as prerequisites of a just constitutional regime.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Theory of Justice section 55 makes willingness to accept the legal consequences part of civil disobedience, though he says one does not accept the punishment as deserved and the charge may be contested.",
+      "sources": [
+        "s3"
+      ]
+    },
+    "limit-campaign-donations": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Political Liberalism (Lecture VIII, section 12) takes public financing of campaigns and various limits on contributions to be essential for the fair value of the political liberties.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "state-supports-good-ways-of-life": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "Political Liberalism (Lecture V, section 3) has the state neutral in aim, doing nothing intended to favour a comprehensive doctrine, and rejects the perfectionist state while allowing political virtues.",
+      "sources": [
+        "s10"
+      ]
+    },
+    "civilians-legitimate-targets": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Law of Peoples section 14.1 requires well-ordered peoples to distinguish an outlaw state's civilians from its leaders and soldiers, and section 15 calls the bombing of civilians in 1945 great wrongs, with only a narrow supreme-emergency exemption.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "religious-offensive-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The Law of Peoples (pp. 41-42) rejects the alternative under which a state may go to war to pursue religious, dynastic or territorial interests or the glory of conquest and empire.",
+      "sources": [
+        "s5"
+      ]
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found in the sources read.",
+      "sources": []
     }
   },
-  "notes": "The revised Theory was downloaded and searched. The Law of Peoples scan was downloaded, OCR processed and searched across themes. Local downloads of Restatement and some shorter works were blocked; available browser texts and authorised excerpts were read. Later Restatement positions control revisions. Public Reason Revisited is an independently published 1997 essay. Decent hierarchical regimes are objects of international toleration, not his domestic ideal. Open institutional questions remain qualified. Genetic-policy speculation does not establish restricting reproduction. Property ownership does not settle women’s inheritance specifically. His stationary-state arguments do not establish a particular climate policy. No historical inferences were used.",
+  "notes": "Later pass to rules 7 (2026-11-12). The third-party upload of the Restatement (pdfcoffee) was removed from the evidence: its answers were re-sourced to Political Liberalism (read in the local library) and A Theory of Justice, or nulled with a talk-page record. The Law of Peoples scan was OCR'd again and searched for the war, immigration and toleration passages. The 1995 Dissent essay was not re-read in this pass, so its answers moved to the Law of Peoples section 14.1, which sets out the same principles. Themes searched: economy, government (constitution, courts, majority rule, campaign finance), society (family, gender, religion), world (war, toleration, intervention, aid), liberty, ecology. No position was found on immigration by race, ethnic removal, the parliamentary road to socialism, abolishing wage labour or former empires. Decent hierarchical regimes are objects of international toleration, not his domestic ideal. Open institutional questions stay qualified. Property ownership does not settle women's inheritance specifically. His stationary-state arguments do not establish a particular climate policy.",
   "reviews": [
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 7
     }
-  ]
+  ],
+  "passes": [
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-23"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-12"
+    }
+  ],
+  "rules": 7,
+  "booksNotUsed": [],
+  "notFound": []
 }
