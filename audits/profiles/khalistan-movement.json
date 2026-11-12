@@ -1586,11 +1586,33 @@
       "sources": []
     },
     "national-cultural-autonomy": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "The movement seeks a sovereign state, not only cultural autonomy inside India; the Akali Dal autonomy wing is excluded from this scope.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on seeking a separate state rather than cultural autonomy, and the statement now asks only whether minorities should govern their own cultural affairs within the state they live in.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "The movement seeks a sovereign state, not only cultural autonomy inside India; the Akali Dal autonomy wing is excluded from this scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on seeking a separate state rather than cultural autonomy, and the statement now asks only whether minorities should govern their own cultural affairs within the state they live in.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "rights-where-you-live": {
@@ -3269,6 +3291,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 280
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",
