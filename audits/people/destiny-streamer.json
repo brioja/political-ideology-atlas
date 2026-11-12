@@ -2795,13 +2795,35 @@
       "sources": []
     },
     "free-public-college": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Said yes to the federal government paying for four-year college tuition in 2020, with a hesitation that it be partial.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
       "sources": [
         "s1"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "auditor": "claude-sonnet-5-5",
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Said yes to the federal government paying for four-year college tuition in 2020, with a hesitation that it be partial.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-02"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
+      ]
     },
     "pollution-taxes": {
       "value": null,
@@ -3321,6 +3343,12 @@
     }
   ],
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

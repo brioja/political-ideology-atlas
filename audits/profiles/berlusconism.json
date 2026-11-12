@@ -1667,11 +1667,33 @@
       ]
     },
     "flat-income-tax": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Two-rate plan of 33% and 23% and a flat-tax discourse.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Two-rate plan of 33% and 23% and a flat-tax discourse.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "character-from-environment": {
@@ -3677,6 +3699,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

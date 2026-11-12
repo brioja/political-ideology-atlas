@@ -917,12 +917,36 @@
       ]
     },
     "personal-loyalty-rule": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Rule runs through loyalty networks of siloviki and loyal oligarchs, though without formal oaths.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes patronage or loyalty without oaths.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Rule runs through loyalty networks of siloviki and loyal oligarchs, though without formal oaths.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes patronage or loyalty without oaths.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "bound-labor": {
@@ -3766,6 +3790,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

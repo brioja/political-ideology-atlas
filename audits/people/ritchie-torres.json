@@ -2972,13 +2972,35 @@
    "sources": []
   },
   "free-public-college": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "He supports free community college for low-income students; this is narrower than universal free college.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
    "sources": [
     "s2"
    ],
-   "auditor": "gpt-6.1-sol"
+   "auditor": "gpt-6.1-sol",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "He supports free community college for low-income students; this is narrower than universal free college.",
+     "sources": [
+      "s2"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "pollution-taxes": {
    "value": null,
@@ -3496,6 +3518,12 @@
  ],
  "rules": 2,
  "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",

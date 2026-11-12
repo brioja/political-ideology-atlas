@@ -468,11 +468,33 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The programme wants the tax system cleared of burdens such as too-high VAT.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The programme wants the tax system cleared of burdens such as too-high VAT.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-05"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "pollution-taxes": {
@@ -3912,6 +3934,12 @@
     }
   ],
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

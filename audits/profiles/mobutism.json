@@ -886,12 +886,36 @@
       "sources": []
     },
     "personal-loyalty-rule": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Authority rested on loyalty to Mobutu, who rotated cabinets to keep clients dependent.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes patronage or loyalty without oaths.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Authority rested on loyalty to Mobutu, who rotated cabinets to keep clients dependent.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes patronage or loyalty without oaths.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "bound-labor": {
@@ -3689,6 +3713,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 13
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

@@ -1250,12 +1250,36 @@
    "sources": []
   },
   "long-naturalization-wait": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His government abolished the traffic-light fast-track naturalisation (3 years); programme: 'the German passport comes at the end of integration, not at the start'.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
    "sources": [
     "s1",
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His government abolished the traffic-light fast-track naturalisation (3 years); programme: 'the German passport comes at the end of integration, not at the start'.",
+     "sources": [
+      "s1",
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-28"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
+     "sources": [
+      "s1",
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "representatives-worker-pay": {
@@ -3284,5 +3308,13 @@
    "auditedAt": "2026-10-31"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

@@ -3470,11 +3470,33 @@
    "sources": []
   },
   "indirect-election": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The regime replaced elections with a party-selected parliament and a chamber of corporations.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes appointment from above or no elections, not delegates chosen by councils.",
    "sources": [
     "s4"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The regime replaced elections with a party-selected parliament and a chamber of corporations.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes appointment from above or no elections, not delegates chosen by councils.",
+     "sources": [
+      "s4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "national-church-status": {
@@ -3728,6 +3750,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-31",
    "nulled": 190
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

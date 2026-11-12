@@ -724,12 +724,36 @@
       ]
     },
     "free-public-college": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Platform makes community college tuition-free and in-state public four-year tuition free for families earning up to $125,000 (phased in), not for all students.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
       "sources": [
         "s6",
         "s27"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Platform makes community college tuition-free and in-state public four-year tuition free for families earning up to $125,000 (phased in), not for all students.",
+          "sources": [
+            "s6",
+            "s27"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
+          "sources": [
+            "s6",
+            "s27"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "racism-not-main-obstacle": {
@@ -3464,6 +3488,12 @@
   },
   "notes": "Same-sex marriage: favoured civil unions in 2008, then announced support for marriage in March 2013 (most recent used). TPP: praised it as Secretary of State, opposed the final deal from 2015 (opposition used). Iraq: voted for the 2002 authorisation and later called it a mistake; the later view is reflected in the Iraq-related answers. Bill Clinton's positions were not used. Wayback Machine access was blocked in this environment, so the 2016 campaign issue pages were read from hillaryclinton.com directly; her books were not available as full text and were not used.",
   "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
     {
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",

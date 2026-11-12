@@ -1984,11 +1984,33 @@
       "sources": []
     },
     "party-own-road": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Titoist Yugoslavia broke with Moscow in 1948, but the scope centres on interwar Yugoslavism, so this rests on an excluded strand.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it rests on Titoism, outside the audit's scope.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Titoist Yugoslavia broke with Moscow in 1948, but the scope centres on interwar Yugoslavism, so this rests on an excluded strand.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it rests on Titoism, outside the audit's scope.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "self-reliance-over-aid": {
@@ -3564,6 +3586,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 160
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

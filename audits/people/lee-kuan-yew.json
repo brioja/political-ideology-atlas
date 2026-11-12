@@ -2167,12 +2167,36 @@
    "sources": []
   },
   "individual-pension-accounts": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Built the Central Provident Fund on personally owned accounts and rejected pooling Medisave into a common fund, but the accounts are run by a state board, not private companies.",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites state-run accounts, not privately managed ones.",
    "sources": [
     "s8",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Built the Central Provident Fund on personally owned accounts and rejected pooling Medisave into a common fund, but the accounts are run by a state board, not private companies.",
+     "sources": [
+      "s8",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites state-run accounts, not privately managed ones.",
+     "sources": [
+      "s8",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "land-use-tenure": {
@@ -3517,6 +3541,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   },
   {

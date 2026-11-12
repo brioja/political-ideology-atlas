@@ -2154,13 +2154,35 @@
    "sources": []
   },
   "creationism-in-schools": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Advocated Christian creationism and said Darwin had been debunked; no specific school-curriculum proposal found.",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it documents curtailing evolution or no curriculum proposal, not teaching creationism alongside it.",
    "sources": [
     "s7"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Advocated Christian creationism and said Darwin had been debunked; no specific school-curriculum proposal found.",
+     "sources": [
+      "s7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it documents curtailing evolution or no curriculum proposal, not teaching creationism alongside it.",
+     "sources": [
+      "s7"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
+   ]
   },
   "restrict-pornography": {
    "value": null,
@@ -4197,6 +4219,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 3
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   },
   {
    "kind": "nulling",

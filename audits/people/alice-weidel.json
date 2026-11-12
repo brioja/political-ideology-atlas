@@ -3372,13 +3372,39 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "She calls for abolishing the CO2 levy and electricity tax and sharply cutting fuel and energy taxes; her group moved to cut electricity tax and the programme lowers VAT for restaurants to 7%.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s13",
         "s26",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "She calls for abolishing the CO2 levy and electricity tax and sharply cutting fuel and energy taxes; her group moved to cut electricity tax and the programme lowers VAT for restaurants to 7%.",
+          "sources": [
+            "s13",
+            "s26",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s13",
+            "s26",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "targeted-social-spending": {
@@ -3519,6 +3545,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

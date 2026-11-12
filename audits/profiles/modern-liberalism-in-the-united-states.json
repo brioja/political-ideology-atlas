@@ -3266,11 +3266,33 @@
       "sources": []
     },
     "free-public-college": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Democratic platform backs debt-free and tuition-free community college and more aid, short of free tuition at all public colleges.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Democratic platform backs debt-free and tuition-free community college and more aid, short of free tuition at all public colleges.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "pollution-taxes": {
@@ -3715,12 +3737,36 @@
       ]
     },
     "cut-consumption-tax": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Liberals favour progressive income and wealth taxes over regressive consumption taxes.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Liberals favour progressive income and wealth taxes over regressive consumption taxes.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "targeted-social-spending": {
@@ -3882,6 +3928,18 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 185
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

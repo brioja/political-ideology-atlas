@@ -477,9 +477,9 @@
    ]
   },
   "long-naturalization-wait": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Moving settlement from 5 to 10 years as a norm and to 20 years for refugees.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
    "sources": [
     "s3",
     "s1",
@@ -489,6 +489,34 @@
    "auditor": [
     "claude-sonnet-5-5",
     "gpt-6.1-sol"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Moving settlement from 5 to 10 years as a norm and to 20 years for refugees.",
+     "sources": [
+      "s3",
+      "s1",
+      "b6",
+      "b4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
+     "sources": [
+      "s3",
+      "s1",
+      "b6",
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "diversity-weakens-cohesion": {
@@ -3431,6 +3459,14 @@
   {
    "auditor": "gpt-6.1-sol",
    "auditedAt": "2026-10-26"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

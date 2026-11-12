@@ -3446,12 +3446,36 @@
       "sources": []
     },
     "equal-conscription": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Opposed all conscription and told soldiers to refuse to do the masters' killing.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it opposes conscription for everyone, which gives men and women the same obligation.",
       "sources": [
         "s4",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Opposed all conscription and told soldiers to refuse to do the masters' killing.",
+          "sources": [
+            "s4",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it opposes conscription for everyone, which gives men and women the same obligation.",
+          "sources": [
+            "s4",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "homeland-spiritual-bond": {
@@ -3639,6 +3663,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

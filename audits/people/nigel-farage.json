@@ -1272,12 +1272,36 @@
       "sources": []
     },
     "long-naturalization-wait": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Wants to abolish indefinite leave to remain, replacing it with a renewable five-year visa and requiring existing holders to reapply; no explicit citizenship-wait statement opened.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
       "sources": [
         "s17",
         "s16"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Wants to abolish indefinite leave to remain, replacing it with a renewable five-year visa and requiring existing holders to reapply; no explicit citizenship-wait statement opened.",
+          "sources": [
+            "s17",
+            "s16"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about settled status or a wait shorter than ten years, and the statement now asks about at least ten years before citizenship.",
+          "sources": [
+            "s17",
+            "s16"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "representatives-worker-pay": {
@@ -3296,5 +3320,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Party-programme answers rely on the 2024 Contract, whose foreword Farage signed and which he launched; later 2025 announcements (Operation Restoring Justice, ILR abolition) were read through press and scholarly accounts. Views changed on NHS funding (insurance model floated 2012-2025, then 'always free at the point of delivery') and climate (2024 shift from party climate denial to 'not arguing the science'). Unreachable: Hansard and TheyWorkForYou (403/503), europarl.europa.eu not tried, Express & Star, SCMP, Deccan Herald, Pravda (403), his books (no full text). Assisted dying vote, water nationalisation and Islam-specific claims were found only in unopened search summaries and are left null."
+  "notes": "Party-programme answers rely on the 2024 Contract, whose foreword Farage signed and which he launched; later 2025 announcements (Operation Restoring Justice, ILR abolition) were read through press and scholarly accounts. Views changed on NHS funding (insurance model floated 2012-2025, then 'always free at the point of delivery') and climate (2024 shift from party climate denial to 'not arguing the science'). Unreachable: Hansard and TheyWorkForYou (403/503), europarl.europa.eu not tried, Express & Star, SCMP, Deccan Herald, Pravda (403), his books (no full text). Assisted dying vote, water nationalisation and Islam-specific claims were found only in unopened search summaries and are left null.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

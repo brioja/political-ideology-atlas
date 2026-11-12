@@ -1807,11 +1807,33 @@
       ]
     },
     "ban-cartels": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The state replaced private monopolies with state ones; breaking up private concentrations is consistent, though the stated method was nationalisation.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites nationalisation or no state prohibition, not a ban on cartels.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The state replaced private monopolies with state ones; breaking up private concentrations is consistent, though the stated method was nationalisation.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites nationalisation or no state prohibition, not a ban on cartels.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "no-bailouts": {
@@ -3655,6 +3677,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

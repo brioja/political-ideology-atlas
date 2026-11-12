@@ -1706,11 +1706,33 @@
       "sources": []
     },
     "flat-income-tax": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Championed 'flatter rates' and signed the 1986 act collapsing brackets, but retained a graduated schedule rather than a single rate.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
       "sources": [
         "s17"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Championed 'flatter rates' and signed the 1986 act collapsing brackets, but retained a graduated schedule rather than a single rate.",
+          "sources": [
+            "s17"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
+          "sources": [
+            "s17"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "character-from-environment": {
@@ -3483,6 +3505,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

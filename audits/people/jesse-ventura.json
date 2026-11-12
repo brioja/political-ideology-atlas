@@ -3191,11 +3191,33 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Proposed replacing income tax with a national consumption tax of about 15 percent (one version exempting necessities), the opposite of cutting sales taxes.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s20"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Proposed replacing income tax with a national consumption tax of about 15 percent (one version exempting necessities), the opposite of cutting sales taxes.",
+          "sources": [
+            "s20"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s20"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "targeted-social-spending": {
@@ -3310,5 +3332,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Primary-source excerpts come from OnTheIssues compilations of his books (I Ain't Got Time to Bleed, 1999; Do I Stand Alone?, 2000; Don't Start the Revolution Without Me, 2008; American Conspiracies, 2010; 63 Documents, 2011) and his 1998 campaign site; full texts were not accessible. Resolutions and policy papers he formally adopted from the National Governors Association or Midwestern Governors Conference were not treated as his own positions. Views on same-sex marriage moved from domestic partnership (2000) to marriage support; on the draft from opposed (1999) to wartime draft (2008); on the death penalty from tolerating it to opposing it."
+  "notes": "Primary-source excerpts come from OnTheIssues compilations of his books (I Ain't Got Time to Bleed, 1999; Do I Stand Alone?, 2000; Don't Start the Revolution Without Me, 2008; American Conspiracies, 2010; 63 Documents, 2011) and his 1998 campaign site; full texts were not accessible. Resolutions and policy papers he formally adopted from the National Governors Association or Midwestern Governors Conference were not treated as his own positions. Views on same-sex marriage moved from domestic partnership (2000) to marriage support; on the draft from opposed (1999) to wartime draft (2008); on the death penalty from tolerating it to opposing it.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

@@ -3039,12 +3039,36 @@
       "sources": []
     },
     "free-public-college": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Proposed free community college and free state university for families earning under $125,000, short of free tuition at all public colleges.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
       "sources": [
         "s13",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Proposed free community college and free state university for families earning under $125,000, short of free tuition at all public colleges.",
+          "sources": [
+            "s13",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes free tuition only at some institutions or for some students.",
+          "sources": [
+            "s13",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "pollution-taxes": {
@@ -3579,5 +3603,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Answers rest on his own speeches, orders and signed laws from 2021 to January 2025, plus two Wikipedia articles for record items. His 50-year record changed on several issues (crime and the 1994 bill, the Defense of Marriage Act, the Hyde Amendment, same-sex marriage, the death penalty); the recent clear position is recorded, so same-sex marriage reads +2 on his 2012 and 2022 acts. Statements with no recorded position of his own are null; nothing was filled from party or label. A prior pilot audit was discarded and none of its answers were carried over. Judgment calls: the death penalty (-1: he commuted 37 of 40 federal death sentences but left terrorism and hate-crime cases), empower-police-military (0: more funding but restricted authority), expand-fossil-fuels (0, low: both directions), legalize-drugs (-1: pardons and decriminalization talk, not endorsement of legal recreational drugs). He did not commit publicly to nuclear power, tax on inheritances or the Supreme Court beyond term limits in the sources opened, so those are null. Cited sources were opened in this session as full texts (American Presidency Project) or Wikipedia."
+  "notes": "Answers rest on his own speeches, orders and signed laws from 2021 to January 2025, plus two Wikipedia articles for record items. His 50-year record changed on several issues (crime and the 1994 bill, the Defense of Marriage Act, the Hyde Amendment, same-sex marriage, the death penalty); the recent clear position is recorded, so same-sex marriage reads +2 on his 2012 and 2022 acts. Statements with no recorded position of his own are null; nothing was filled from party or label. A prior pilot audit was discarded and none of its answers were carried over. Judgment calls: the death penalty (-1: he commuted 37 of 40 federal death sentences but left terrorism and hate-crime cases), empower-police-military (0: more funding but restricted authority), expand-fossil-fuels (0, low: both directions), legalize-drugs (-1: pardons and decriminalization talk, not endorsement of legal recreational drugs). He did not commit publicly to nuclear power, tax on inheritances or the Supreme Court beyond term limits in the sources opened, so those are null. Cited sources were opened in this session as full texts (American Presidency Project) or Wikipedia.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

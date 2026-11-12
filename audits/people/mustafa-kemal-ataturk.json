@@ -2366,12 +2366,36 @@
       "sources": []
     },
     "shared-marital-authority": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He advanced monogamy and women’s civil rights, but the adopted code retained the husband’s legal headship.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says the adopted code kept the husband's headship.",
       "sources": [
         "s6",
         "s9"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He advanced monogamy and women’s civil rights, but the adopted code retained the husband’s legal headship.",
+          "sources": [
+            "s6",
+            "s9"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says the adopted code kept the husband's headship.",
+          "sources": [
+            "s6",
+            "s9"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "foreign-residents-local-vote": {
@@ -3113,5 +3137,13 @@
       "sources": []
     }
   },
-  "notes": "Later quotation collections are treated as secondhand with medium confidence. No contemporary stances on climate, nuclear energy or digital technology are attributed. All nulls reviewed against collected writings, economic history, reform record and scholarship on repression; no historical extrapolations used. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant."
+  "notes": "Later quotation collections are treated as secondhand with medium confidence. No contemporary stances on climate, nuclear energy or digital technology are attributed. All nulls reviewed against collected writings, economic history, reform record and scholarship on repression; no historical extrapolations used. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

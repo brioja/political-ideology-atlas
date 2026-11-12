@@ -1978,15 +1978,37 @@
    "sources": []
   },
   "flat-income-tax": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "His 2010 campaign site said scrapping the tax code for one that is flatter and fairer would be ideal, with lower marginal rates in the meantime; he did not call for a single rate.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
    "sources": [
     "c1"
    ],
    "auditor": [
     "claude-sonnet-5-5",
     "claude-opus-5-5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "His 2010 campaign site said scrapping the tax code for one that is flatter and fairer would be ideal, with lower marginal rates in the meantime; he did not call for a single rate.",
+     "sources": [
+      "c1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
+     "sources": [
+      "c1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "character-from-environment": {
@@ -3719,5 +3741,13 @@
    "auditedAt": "2026-10-31"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
+  }
+ ]
 }

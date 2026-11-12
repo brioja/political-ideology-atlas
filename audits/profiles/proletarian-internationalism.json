@@ -1887,11 +1887,33 @@
       ]
     },
     "labor-aristocracy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Lenin traced social-chauvinism to opportunism among a privileged layer of workers in imperialist countries, as in Socialism and War.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites only an upper stratum of workers, not most workers.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Lenin traced social-chauvinism to opportunism among a privileged layer of workers in imperialist countries, as in Socialism and War.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites only an upper stratum of workers, not most workers.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "freedom-to-discriminate": {
@@ -3581,6 +3603,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 249
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

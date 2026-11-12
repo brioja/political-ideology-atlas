@@ -2534,11 +2534,33 @@
       "sources": []
     },
     "reinterpret-religion": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The movement calls Judaism a human creation that is always changing, but it treats religious law as a resource rather than something to reinterpret.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes Salafi reform or treating law as a resource, not reinterpretation.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The movement calls Judaism a human creation that is always changing, but it treats religious law as a resource rather than something to reinterpret.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-29"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes Salafi reform or treating law as a resource, not reinterpretation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "wealth-concentration-endangers-liberty": {
@@ -3424,6 +3446,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 20
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

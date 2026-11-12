@@ -1764,11 +1764,33 @@
       ]
     },
     "flat-income-tax": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The declaration asks for a less progressive tax system with fewer brackets, which moves toward a flat rate.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The declaration asks for a less progressive tax system with fewer brackets, which moves toward a flat rate.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it describes fewer brackets or several rates, not a single rate.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "character-from-environment": {
@@ -3583,12 +3605,36 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Policy Declaration seeks lower taxes, and Harper cut the GST from 7 percent to 5 percent; the favoured tax cut was on consumption.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Policy Declaration seeks lower taxes, and Harper cut the GST from 7 percent to 5 percent; the favoured tax cut was on consumption.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "targeted-social-spending": {
@@ -3771,6 +3817,18 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

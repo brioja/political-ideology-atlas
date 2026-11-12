@@ -2430,11 +2430,33 @@
       "sources": []
     },
     "interest-free-mutual-credit": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Schweickart's model has public banks allocate investment at cost, which resembles but is not user-owned mutual credit.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says its public investment banks are not user-owned.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Schweickart's model has public banks allocate investment at cost, which resembles but is not user-owned mutual credit.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says its public investment banks are not user-owned.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "refuse-lender-austerity": {
@@ -3399,6 +3421,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {

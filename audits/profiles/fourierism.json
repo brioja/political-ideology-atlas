@@ -1799,11 +1799,33 @@
       ]
     },
     "ban-cartels": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "He attacked commerce's speculators and monopolisers but looked to association, not state prohibition.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites nationalisation or no state prohibition, not a ban on cartels.",
       "sources": [
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "He attacked commerce's speculators and monopolisers but looked to association, not state prohibition.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it cites nationalisation or no state prohibition, not a ban on cartels.",
+          "sources": [
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "no-bailouts": {
@@ -3641,6 +3663,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 236
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

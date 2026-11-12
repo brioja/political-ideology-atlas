@@ -736,13 +736,39 @@
    ]
   },
   "socialized-markets": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Defended markets inside a socialist system with predominant public ownership, but also allowed private and foreign-owned firms, so the condition in the statement is only partly his.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about markets under state or public ownership, and the statement now asks about worker-owned businesses.",
    "sources": [
     "s4",
     "s3",
     "s14"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Defended markets inside a socialist system with predominant public ownership, but also allowed private and foreign-owned firms, so the condition in the statement is only partly his.",
+     "sources": [
+      "s4",
+      "s3",
+      "s14"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about markets under state or public ownership, and the statement now asks about worker-owned businesses.",
+     "sources": [
+      "s4",
+      "s3",
+      "s14"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "land-value-tax": {
@@ -3669,6 +3695,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
+   "nulled": 1
   }
  ]
 }

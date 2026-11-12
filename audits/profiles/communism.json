@@ -2233,12 +2233,36 @@
       ]
     },
     "ruling-class-consent": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Classical texts stress state coercion but also ruling-class ideas; Lenin's emphasis on force makes consent a secondary matter.",
+      "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says consent is secondary to force.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Classical texts stress state coercion but also ruling-class ideas; Lenin's emphasis on force makes consent a secondary matter.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its own rationale does not support its value under the reworded statement: it says consent is secondary to force.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "world-economy-extracts-surplus": {
@@ -4030,6 +4054,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 173
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

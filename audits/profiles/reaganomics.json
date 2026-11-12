@@ -3073,11 +3073,33 @@
       "sources": []
     },
     "cut-consumption-tax": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Niskanen records that some federal excise tax rates were raised during the Reagan years to offset the income-tax cuts.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Niskanen records that some federal excise tax rates were raised during the Reagan years to offset the income-tax cuts.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about general consumption tax levels, and the statement now asks only whether basic necessities should be exempt.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "targeted-social-spending": {
@@ -3867,5 +3889,13 @@
       "declined": "Relative to the status quo; covered by cut-welfare and night-watchman-state."
     }
   ],
-  "notes": "Themes searched: economy, government, ecology, world, then, after the uncertainty check, the lines it named (secularism/theocracy, racial equality/ethnonationalism, revolution and political violence, pluralism, monarchism, nationalism, gender and family) in the programme documents and in the 15 Reagan speeches that name 'Reaganomics' at least twice (American Presidency Project search); those passages are about taxes, spending, farms and defense pay, and nothing in the defining sources ties Reaganomics to a position on those lines. Detail: economy (taxes, spending, welfare, regulation, money, trade, labour), government (federalism, fiscal rules), ecology and energy, world (trade, defense spending). The programme is an economic one, so its sources say nothing on most social, cultural, religious and foreign-policy statements, which are null; Reagan's own positions on those belong to him or to the Reagan Doctrine, not to Reaganomics. Primary texts are tied by the defining sources' name for the 1981 programme or name 'Reaganomics' themselves; Reagan's other speeches (inaugural, State of the Union) are not named by the defining sources and were not used directly. Trade, business subsidies and deficits follow the record (Niskanen) rather than the free-trade and balanced-budget rhetoric. Blocked and not circumvented: Charles E. Jacob, 'Reaganomics: The Revolution in American Political Economy' (Law and Contemporary Problems 1985; Duke repository and CORE, 403), Weidenbaum's 'An Economist in Government' (WUSTL repository, 403), Cato Institute pages (403)."
+  "notes": "Themes searched: economy, government, ecology, world, then, after the uncertainty check, the lines it named (secularism/theocracy, racial equality/ethnonationalism, revolution and political violence, pluralism, monarchism, nationalism, gender and family) in the programme documents and in the 15 Reagan speeches that name 'Reaganomics' at least twice (American Presidency Project search); those passages are about taxes, spending, farms and defense pay, and nothing in the defining sources ties Reaganomics to a position on those lines. Detail: economy (taxes, spending, welfare, regulation, money, trade, labour), government (federalism, fiscal rules), ecology and energy, world (trade, defense spending). The programme is an economic one, so its sources say nothing on most social, cultural, religious and foreign-policy statements, which are null; Reagan's own positions on those belong to him or to the Reagan Doctrine, not to Reaganomics. Primary texts are tied by the defining sources' name for the 1981 programme or name 'Reaganomics' themselves; Reagan's other speeches (inaugural, State of the Union) are not named by the defining sources and were not used directly. Trade, business subsidies and deficits follow the record (Niskanen) rather than the free-trade and balanced-budget rhetoric. Blocked and not circumvented: Charles E. Jacob, 'Reaganomics: The Revolution in American Political Economy' (Law and Contemporary Problems 1985; Duke repository and CORE, 403), Weidenbaum's 'An Economist in Government' (WUSTL repository, 403), Cato Institute pages (403).",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
+    }
+  ]
 }

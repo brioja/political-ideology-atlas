@@ -2909,12 +2909,36 @@
       ]
     },
     "racial-pride": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Irish national and cultural pride in ancestry is central to the tradition, although it is framed as nationhood rather than race.",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about pride in ancestry, culture or nation with reservations about race, and the statement now asks only about pride in one's race.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Irish national and cultural pride in ancestry is central to the tradition, although it is framed as nationhood rather than race.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about pride in ancestry, culture or nation with reservations about race, and the statement now asks only about pride in one's race.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "defensive-wars-only": {
@@ -3511,6 +3535,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 270
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",
