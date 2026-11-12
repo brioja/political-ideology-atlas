@@ -7,7 +7,7 @@ const QUESTIONS = [
   "text": "The government should provide universal healthcare.",
   "agree": "Everyone gets health care paid for or guaranteed by the state, usually through taxes.",
   "disagree": "The government should not provide universal healthcare.",
-  "note": "About how far the state should guarantee basic services.",
+  "note": "About the state guaranteeing health care for everyone, whether it runs the services or pays for them. Public care only for the poor is not enough.",
   "icon": "🏥"
  },
  {
@@ -16,7 +16,7 @@ const QUESTIONS = [
   "text": "The legal minimum wage should cover a full-time worker's basic living costs.",
   "agree": "Full-time work at the legal wage floor should pay enough to meet basic living costs.",
   "disagree": "The legal minimum wage need not cover a full-time worker's basic living costs.",
-  "note": "About how much the state should set pay.",
+  "note": "About the level of the legal wage floor: whether full-time work at it should cover basic costs such as rent and food. Having a minimum wage at all is a different question.",
   "icon": "💵"
  },
  {
@@ -25,7 +25,7 @@ const QUESTIONS = [
   "text": "Free markets allocate resources better than governments do.",
   "agree": "Prices and competition generally decide better than officials what gets made and who gets it.",
   "disagree": "Free markets do not allocate resources better than governments do.",
-  "note": "A core economic question: markets or the state.",
+  "note": "About which generally decides better what gets made and who gets it: prices and competition, or officials. Accepting some regulation or public services doesn't count against it.",
   "icon": "📈"
  },
  {
@@ -34,7 +34,7 @@ const QUESTIONS = [
   "text": "Major industries should be publicly owned.",
   "agree": "Industries such as energy, rail and utilities should be owned by the state or public bodies, not private companies.",
   "disagree": "Major industries should not be publicly owned.",
-  "note": "About whether key industries are run by the state or by private companies.",
+  "note": "About state or public ownership of key industries such as energy, rail and utilities. Regulating private firms, or owning a single company, is not the same.",
   "icon": "🏭"
  },
  {
@@ -43,7 +43,7 @@ const QUESTIONS = [
   "text": "The wealthy should pay a much larger share of their income in tax than others.",
   "agree": "High earners and the very rich should pay tax at a much higher rate than everyone else.",
   "disagree": "The wealthy should not pay a much larger share of their income in tax than others.",
-  "note": "About redistribution through taxes.",
+  "note": "About tax rates: whether the rich should pay a much higher share of their income than others, not just more money in total.",
   "icon": "💰"
  },
  {
@@ -70,7 +70,7 @@ const QUESTIONS = [
   "text": "Corporations should face strict government regulation.",
   "agree": "Government should impose strict rules on how corporations operate.",
   "disagree": "Corporations should not face strict government regulation.",
-  "note": "About the state's oversight of business.",
+  "note": "About strict rules on how companies operate, for example on safety, pollution or competition. Basic rules such as contract law are not enough.",
   "icon": "🏢"
  },
  {
@@ -79,7 +79,7 @@ const QUESTIONS = [
   "text": "Workers should collectively own the businesses they work in.",
   "agree": "Businesses should belong to the people who work in them, for example as cooperatives.",
   "disagree": "Workers should not collectively own the businesses they work in.",
-  "note": "About who owns workplaces.",
+  "note": "About workers owning their firms together, as in cooperatives. Employee share schemes or state ownership are not the same.",
   "icon": "👷"
  },
  {
@@ -88,7 +88,7 @@ const QUESTIONS = [
   "text": "Government surveillance to prevent terrorism is acceptable.",
   "agree": "It is acceptable for the government to monitor people when that helps prevent terrorism.",
   "disagree": "Government surveillance is not acceptable, even to prevent terrorism.",
-  "note": "About security versus civil liberties.",
+  "note": "About the government monitoring communications or movements to prevent terrorism. Caring about security, or about civil liberties, is not the same as taking a side on this.",
   "icon": "📹"
  },
  {
@@ -97,7 +97,7 @@ const QUESTIONS = [
   "text": "Recreational drugs should be legal for adults.",
   "agree": "Adults may legally buy and use drugs such as cannabis, possibly with regulation.",
   "disagree": "Recreational drugs should be illegal for adults.",
-  "note": "About personal freedom versus protection from harm.",
+  "note": "About legal sale and use of recreational drugs by adults, not only decriminalising possession or allowing medical use.",
   "icon": "💊"
  },
  {
@@ -106,7 +106,7 @@ const QUESTIONS = [
   "text": "Hate speech should be legally restricted.",
   "agree": "Speech that attacks groups for who they are can be punished by law.",
   "disagree": "Hate speech should be legal.",
-  "note": "About limits on free speech.",
+  "note": "About making speech that attacks people for who they are a legal offence. Social disapproval, or bans on direct threats, are not the same.",
   "icon": "🗣️"
  },
  {
@@ -124,7 +124,7 @@ const QUESTIONS = [
   "text": "The state should be abolished.",
   "agree": "Society would be better off without governments at all.",
   "disagree": "The state should not be abolished.",
-  "note": "Separates anarchists from everyone else.",
+  "note": "About doing away with government entirely. Wanting a much smaller state is a different position.",
   "icon": "🏛️"
  },
  {
@@ -133,7 +133,7 @@ const QUESTIONS = [
   "text": "Gun ownership should be strictly limited.",
   "agree": "Gun ownership should be strictly limited by law.",
   "disagree": "Gun ownership should not be strictly limited.",
-  "note": "About gun rights versus gun control.",
+  "note": "About strict limits on who may own guns and which guns, not only background checks or other light rules.",
   "icon": "🔫"
  },
  {
@@ -142,7 +142,7 @@ const QUESTIONS = [
   "text": "Sex work between consenting adults should be legal.",
   "agree": "Adults can legally sell sexual services to other consenting adults.",
   "disagree": "Sex work between consenting adults should be illegal.",
-  "note": "About personal freedom, morality and exploitation.",
+  "note": "About whether selling sex between consenting adults should be legal. Laws against trafficking or coercion are a different question.",
   "icon": "🌃"
  },
  {
@@ -151,7 +151,7 @@ const QUESTIONS = [
   "text": "Decisions should be made as locally as possible.",
   "agree": "Political decisions should rest with the smallest local community able to handle them, with wider authorities handling matters that need a wider reach.",
   "disagree": "Decisions should not be made as locally as possible.",
-  "note": "About decentralization.",
+  "note": "About where decisions sit by default: with the smallest community able to handle them. Having some local government is not enough.",
   "icon": "🏘️"
  },
  {
@@ -160,7 +160,7 @@ const QUESTIONS = [
   "text": "Prisons should focus more on rehabilitation than on punishment.",
   "agree": "Prisons should mainly help offenders rejoin society.",
   "disagree": "Prisons should focus at least as much on punishment as on rehabilitation.",
-  "note": "About the purpose of criminal justice.",
+  "note": "About the main aim of prison: helping offenders return to society. Keeping prisons and sentences doesn't count against it.",
   "icon": "⛓️"
  },
  {
@@ -178,7 +178,7 @@ const QUESTIONS = [
   "text": "Same-sex marriage should be legal.",
   "agree": "Two people of the same sex can legally marry each other.",
   "disagree": "The law should not extend marriage to same-sex couples.",
-  "note": "About LGBT equality and tradition.",
+  "note": "About legal marriage for same-sex couples, not civil unions. A religion's own rules on marriage are a different question.",
   "icon": "💍"
  },
  {
@@ -187,7 +187,7 @@ const QUESTIONS = [
   "text": "Abortion should be legal in most cases.",
   "agree": "Women can legally choose to end most pregnancies.",
   "disagree": "Abortion should be illegal in most cases.",
-  "note": "About reproductive rights and the status of the unborn.",
+  "note": "About whether women can legally end most pregnancies. Whether abortion is morally right is a different question.",
   "icon": "🤰"
  },
  {
@@ -196,7 +196,7 @@ const QUESTIONS = [
   "text": "Religion should play a major role in public life.",
   "agree": "Religious values and institutions should shape laws, schools and public life.",
   "disagree": "Religion should not play a major role in public life.",
-  "note": "About religion in public life.",
+  "note": "About religious values and institutions shaping laws, schools and public life. Religious people taking part in public life as individuals is not enough.",
   "icon": "🛐"
  },
  {
@@ -205,7 +205,7 @@ const QUESTIONS = [
   "text": "Society should actively work to correct historical racial injustices.",
   "agree": "Society should take active steps, such as targeted programs, to repair past discrimination.",
   "disagree": "Society should not actively work to correct historical racial injustices.",
-  "note": "About how to deal with historical racism.",
+  "note": "About society taking active steps, such as targeted programs, to repair past discrimination. Condemning past racism, or banning discrimination today, is not enough.",
   "icon": "✊"
  },
  {
@@ -214,7 +214,7 @@ const QUESTIONS = [
   "text": "Gender is primarily a social construct.",
   "agree": "Ideas of what men and women are like come mostly from culture, not biology.",
   "disagree": "Gender is not primarily a social construct.",
-  "note": "About whether differences between how men and women think and behave come mostly from upbringing and culture or from biology.",
+  "note": "About whether ideas of what men and women are like come mostly from upbringing and culture rather than biology. Accepting some biological differences doesn't count against it.",
   "icon": "⚧️"
  },
  {
@@ -232,7 +232,7 @@ const QUESTIONS = [
   "text": "Social reform should proceed in small steps.",
   "agree": "Social reform should proceed in small steps.",
   "disagree": "Social reform need not proceed in small steps.",
-  "note": "About the pace of change: conservative or radical.",
+  "note": "About whether social reform should proceed in small steps rather than big sudden changes. Whether a particular reform is wanted at all is a different question.",
   "icon": "⏱️"
  },
  {
@@ -241,7 +241,7 @@ const QUESTIONS = [
   "text": "Immigration should be tightly restricted.",
   "agree": "The country should impose strict limits on immigration.",
   "disagree": "Immigration should not be tightly restricted.",
-  "note": "About immigration.",
+  "note": "About strict limits on how many people may immigrate. Having some border rules is not the same as tight restrictions.",
   "icon": "🛂"
  },
  {
@@ -259,7 +259,7 @@ const QUESTIONS = [
   "text": "Free trade benefits everyone in the long run.",
   "agree": "Fewer tariffs and trade barriers make all countries better off over time.",
   "disagree": "Free trade does not benefit everyone in the long run.",
-  "note": "About globalization.",
+  "note": "About whether removing tariffs and other trade barriers leaves all countries better off over time. Some industries or workers losing out in the short run doesn't count against it.",
   "icon": "🚢"
  },
  {
@@ -268,7 +268,7 @@ const QUESTIONS = [
   "text": "My country should put its own interests ahead of global cooperation.",
   "agree": "A country should put its own interests ahead of cooperating with the rest of the world.",
   "disagree": "My country should not put its own interests ahead of global cooperation.",
-  "note": "About nationalism versus internationalism.",
+  "note": "About a country putting its own interests ahead of cooperating with other countries. Cooperating where it also helps the country doesn't count against it.",
   "icon": "📍"
  },
  {
@@ -277,7 +277,7 @@ const QUESTIONS = [
   "text": "Military intervention abroad is sometimes necessary to protect human rights.",
   "agree": "Using military force in other countries can sometimes be necessary to protect people's human rights.",
   "disagree": "Military intervention abroad is not necessary to protect human rights.",
-  "note": "About foreign policy.",
+  "note": "About using military force in other countries to protect people's human rights, for example to stop a massacre. Sanctions, aid or diplomacy are a different question.",
   "icon": "🪖"
  },
  {
@@ -286,7 +286,7 @@ const QUESTIONS = [
   "text": "National borders should eventually be open.",
   "agree": "In the long run people should be free to live and work in any country.",
   "disagree": "National borders should not eventually be open.",
-  "note": "About borders as such.",
+  "note": "About whether, in the long run, people should be free to live and work in any country. Wanting more immigration than today is not enough.",
   "icon": "🚪"
  },
  {
@@ -295,7 +295,7 @@ const QUESTIONS = [
   "text": "Economic growth should be limited to protect the environment.",
   "agree": "Protecting nature can mean accepting less economic growth.",
   "disagree": "Economic growth should not be limited for the sake of the environment.",
-  "note": "About growth versus ecology.",
+  "note": "About accepting less economic growth when that is what protecting nature takes. Wanting cleaner growth with no loss of output is not enough.",
   "icon": "🌱"
  },
  {
@@ -304,7 +304,7 @@ const QUESTIONS = [
   "text": "Climate change requires drastic government action.",
   "agree": "Climate change calls for drastic action by governments.",
   "disagree": "Climate change does not require drastic government action.",
-  "note": "About climate change.",
+  "note": "About drastic government action to deal with climate change. Believing climate change is real, or wanting modest measures, is not enough.",
   "icon": "🌡️"
  },
  {
@@ -313,7 +313,7 @@ const QUESTIONS = [
   "text": "Technological progress will solve most of humanity's problems.",
   "agree": "Science and technology will fix most of what goes wrong for people.",
   "disagree": "Technology will not solve most of humanity's problems.",
-  "note": "About optimism about technology.",
+  "note": "About whether science and technology will fix most of what goes wrong for people. Believing technology helps with some problems is not enough.",
   "icon": "🔬"
  },
  {
@@ -322,7 +322,7 @@ const QUESTIONS = [
   "text": "Governments should support the construction of nuclear power plants.",
   "agree": "Government should support building nuclear power plants.",
   "disagree": "Governments should not support construction of nuclear power plants.",
-  "note": "About energy policy; splits even environmentalists.",
+  "note": "About government backing for building nuclear power plants, for example through funding or permits. Letting existing plants keep running is not enough.",
   "icon": "⚛️"
  },
  {
@@ -340,7 +340,7 @@ const QUESTIONS = [
   "text": "Experts should have more say in policy than the general public.",
   "agree": "Specialists should have more weight in decisions than public opinion.",
   "disagree": "Experts should not have more say in policy than the general public.",
-  "note": "About technocracy versus democracy.",
+  "note": "About giving specialists more weight than public opinion in deciding policy. Consulting experts before elected officials decide is not enough.",
   "icon": "🎓"
  },
  {
@@ -376,7 +376,7 @@ const QUESTIONS = [
   "text": "Large inheritances should be heavily taxed.",
   "agree": "Large inheritances should be taxed heavily.",
   "disagree": "Large inheritances should not be heavily taxed.",
-  "note": "About inherited wealth.",
+  "note": "About heavy taxes on large inheritances. Taxing income or wealth in general is a different question.",
   "icon": "📜"
  },
  {
@@ -385,7 +385,7 @@ const QUESTIONS = [
   "text": "Every adult should receive an unconditional basic income from the state.",
   "agree": "Every adult gets a regular payment from the state, whether or not they work.",
   "disagree": "Every adult should not receive an unconditional basic income from the state.",
-  "note": "About universal basic income.",
+  "note": "About a regular payment from the state to every adult, with no conditions such as work or need. Benefits only for the poor or unemployed are not enough.",
   "icon": "🪙"
  },
  {
@@ -394,7 +394,7 @@ const QUESTIONS = [
   "text": "Tariffs should protect domestic industry from foreign competition.",
   "agree": "Taxes on imports should shield domestic producers from foreign competition.",
   "disagree": "Tariffs should not be used to protect domestic industry from foreign competition.",
-  "note": "About protectionism.",
+  "note": "About taxes on imports meant to shield domestic producers from foreign competition. Tariffs used only to raise revenue are a different question.",
   "icon": "🧱"
  },
  {
@@ -466,7 +466,7 @@ const QUESTIONS = [
   "text": "Democracy is the best form of government, even when voters choose badly.",
   "agree": "Democracy is best even when voters make poor choices.",
   "disagree": "Democracy is not the best form of government when voters choose badly.",
-  "note": "About commitment to democracy.",
+  "note": "About whether democracy is the best form of government even when voters make poor choices. Disliking one election result doesn't count against it.",
   "icon": "🗳️"
  },
  {
@@ -493,7 +493,7 @@ const QUESTIONS = [
   "text": "Regions should have the right to secede from the country.",
   "agree": "Regions should be able to leave the country.",
   "disagree": "Regions should have no right to secede from the country.",
-  "note": "About self-determination.",
+  "note": "About whether regions should be able to leave the country. Wanting more self-government within the country is not enough.",
   "icon": "✂️"
  },
  {
@@ -502,7 +502,7 @@ const QUESTIONS = [
   "text": "Some people are naturally better suited to rule than others.",
   "agree": "Some people are better suited by nature to govern.",
   "disagree": "Some people are not naturally better suited to rule than others.",
-  "note": "About hierarchy and equality.",
+  "note": "About whether some people are better suited by nature to govern. Skills gained through training or experience are a different question.",
   "icon": "🏰"
  },
  {
@@ -511,7 +511,7 @@ const QUESTIONS = [
   "text": "Political violence is never justified.",
   "agree": "Violence is never an acceptable way to pursue political goals.",
   "disagree": "Political violence is sometimes justified.",
-  "note": "About political violence.",
+  "note": "About whether violence is ever an acceptable way to pursue political goals. Ordinary self-defence is a different question.",
   "icon": "⚠️"
  },
  {
@@ -520,7 +520,7 @@ const QUESTIONS = [
   "text": "War strengthens a nation's character.",
   "agree": "War develops virtues in a nation, such as courage and discipline.",
   "disagree": "War does not strengthen a nation's character.",
-  "note": "A general character-building claim associated with militarism, not a claim that every war is beneficial. Honouring soldiers, accepting necessary defence and noting one incidental benefit are distinct from this claim.",
+  "note": "A general character-building claim, not a claim that every war is beneficial. Honouring soldiers, accepting necessary defence and noting one incidental benefit are distinct from this claim.",
   "icon": "⚔️"
  },
  {
@@ -538,7 +538,7 @@ const QUESTIONS = [
   "text": "Laws should be based on religious scripture.",
   "agree": "Laws should follow religious texts.",
   "disagree": "Laws should not be based on religious scripture.",
-  "note": "About taking the law from holy books, such as the Bible or the Quran (for example sharia law).",
+  "note": "About taking the law from holy books, such as the Bible or the Quran (for example sharia law). Laws that merely happen to match religious teaching are not enough.",
   "icon": "📖"
  },
  {
@@ -574,7 +574,7 @@ const QUESTIONS = [
   "text": "Class conflict is the main driving force of history.",
   "agree": "History is mainly driven by conflict between economic classes.",
   "disagree": "Class conflict is not the main driving force of history.",
-  "note": "About whether history moves mainly through struggles between classes, such as lords and peasants or owners and workers.",
+  "note": "About whether history moves mainly through struggles between classes, such as lords and peasants or owners and workers. Believing classes exist, or that some conflicts were class-based, is not enough.",
   "icon": "⚒️"
  },
  {
@@ -592,7 +592,7 @@ const QUESTIONS = [
   "text": "Indigenous peoples should have authority over their traditional lands.",
   "agree": "Indigenous peoples should control their traditional territories.",
   "disagree": "Indigenous peoples should not have authority over their traditional lands.",
-  "note": "About indigenous rights.",
+  "note": "About indigenous peoples controlling their traditional lands, for example deciding how the land is used. Recognising past wrongs, or a right to be consulted, is not enough.",
   "icon": "🪶"
  },
  {
@@ -601,7 +601,7 @@ const QUESTIONS = [
   "text": "Former colonial powers owe reparations to the nations they colonized.",
   "agree": "Countries that had colonies should compensate the countries they colonized.",
   "disagree": "Former colonial powers do not owe reparations to the nations they colonized.",
-  "note": "About historical justice between nations.",
+  "note": "About whether countries that had colonies owe compensation to the countries they colonised. An apology alone is not enough.",
   "icon": "🧭"
  },
  {
@@ -709,7 +709,7 @@ const QUESTIONS = [
   "text": "Policies should be judged on their results regardless of whether they fit an ideology.",
   "agree": "Judge policies by what they achieve, independently of whether they match an ideology.",
   "disagree": "Whether a policy fits an ideology should count independently of its results.",
-  "note": "About pragmatism versus principle.",
+  "note": "About judging a policy by what it achieves, not by whether it fits a set of beliefs. Weighing results alongside ideology is not enough.",
   "icon": "🎯"
  },
  {
@@ -718,7 +718,7 @@ const QUESTIONS = [
   "text": "Direct action should replace electoral politics as the way to achieve political change.",
   "agree": "People seeking political change should act directly—for example, with strikes, boycotts or occupations—instead of pursuing change through elections and parliaments.",
   "disagree": "Direct action should not replace electoral politics as the way to achieve political change.",
-  "note": "About direct action, such as strikes, boycotts, blockades and occupations, versus voting and lawmaking.",
+  "note": "About using direct action, such as strikes, boycotts, blockades and occupations, instead of elections and lawmaking. Using direct action alongside voting is not enough.",
   "icon": "✊"
  },
  {
@@ -727,7 +727,7 @@ const QUESTIONS = [
   "text": "The methods used to change society should reflect the society one wants to create.",
   "agree": "You can't reach a free, fair society by unfree or unfair means.",
   "disagree": "The methods used to change society should not reflect the society one wants to create.",
-  "note": "About whether ends justify means.",
+  "note": "About whether the methods used to change society should reflect the society one aims for, for example democratic means for a democratic goal. Whether the goal is worth pursuing is a different question.",
   "icon": "🪞"
  },
  {
@@ -736,7 +736,7 @@ const QUESTIONS = [
   "text": "Humanity would be better off returning to a hunter-gatherer way of life.",
   "agree": "Humanity would be better off living as hunter-gatherers again.",
   "disagree": "Humanity would not be better off returning to a hunter-gatherer way of life.",
-  "note": "About rejecting civilization itself.",
+  "note": "About whether humanity would be better off living as hunter-gatherers again. Wanting a simpler or less industrial life is not enough.",
   "icon": "🏹"
  },
  {
@@ -772,7 +772,7 @@ const QUESTIONS = [
   "text": "Profit made from owning businesses comes from exploiting the workers who produce it.",
   "agree": "Owners' profit is value taken from workers' labor.",
   "disagree": "Profit made from owning businesses does not come from exploiting the workers who produce it.",
-  "note": "About where profit comes from.",
+  "note": "About whether owners' profit is value taken from the labor of the workers who produce it. Unfair pay or bad conditions at some firms is not enough.",
   "icon": "💰"
  },
  {
@@ -781,7 +781,7 @@ const QUESTIONS = [
   "text": "After a revolution, the working class should hold dictatorial power over the former ruling classes until classes disappear.",
   "agree": "A workers' state must suppress the old ruling class for a time.",
   "disagree": "After a revolution, the working class should not hold dictatorial power over the former ruling classes until classes disappear.",
-  "note": "About the Marxist \"dictatorship of the proletariat\": workers holding unchecked power over the former owners after a revolution.",
+  "note": "About the working class holding dictatorial power over the former owners and rulers after a revolution, until classes disappear. A revolution alone is a different question.",
   "icon": "⚒️"
  },
  {
@@ -835,7 +835,7 @@ const QUESTIONS = [
   "text": "The government should be able to conscript citizens into military service.",
   "agree": "The government should be able to require citizens to serve in the military.",
   "disagree": "Military service should always be voluntary.",
-  "note": "About compulsory military service.",
+  "note": "About whether the government may require citizens to serve in the military, as in a draft. Encouraging voluntary service is a different question.",
   "icon": "🪖"
  },
  {
@@ -880,7 +880,7 @@ const QUESTIONS = [
   "text": "Average differences in ability between racial groups are largely genetic.",
   "agree": "Group differences in ability are mostly inherited.",
   "disagree": "Average differences in ability between racial groups are not largely genetic.",
-  "note": "About the causes of group differences, a position some ideologies are defined by.",
+  "note": "About whether average ability differences between racial groups are mostly inherited. Differences between individuals within a group are a different question.",
   "icon": "🧬"
  },
  {
@@ -907,7 +907,7 @@ const QUESTIONS = [
   "text": "The nation needs a radical rebirth to overcome a period of decadence.",
   "agree": "The nation has decayed and must be reborn.",
   "disagree": "The nation does not need a radical rebirth to overcome decadence.",
-  "note": "About national decline and renewal.",
+  "note": "About whether the nation has decayed and needs a radical rebirth. Wanting ordinary reforms is not enough.",
   "icon": "🔥"
  },
  {
@@ -916,7 +916,7 @@ const QUESTIONS = [
   "text": "A strong nation should expand its territory.",
   "agree": "Great nations grow, including by gaining territory.",
   "disagree": "A strong nation should not expand its territory.",
-  "note": "About expansionism.",
+  "note": "About a strong nation gaining more territory, for example by annexation or conquest. Defending or keeping its existing borders is not enough.",
   "icon": "🗺️"
  },
  {
@@ -943,7 +943,7 @@ const QUESTIONS = [
   "text": "No knowledge is neutral: what a society counts as true reflects who holds power in it.",
   "agree": "What gets treated as fact or expert knowledge reflects the interests of whoever has power, not a neutral search for truth.",
   "disagree": "Some knowledge is neutral.",
-  "note": "About knowledge and power.",
+  "note": "About whether what a society treats as true or expert knowledge is shaped by those in power, so that none of it is neutral. Some bias in some fields is not enough.",
   "icon": "🔍"
  },
  {
@@ -952,7 +952,7 @@ const QUESTIONS = [
   "text": "Some moral truths hold across all cultures.",
   "agree": "Some things are right or wrong for everyone, in every culture and era.",
   "disagree": "No moral truths hold across all cultures.",
-  "note": "About moral universalism. How such truths are known, by reason or by revelation, is a separate question.",
+  "note": "About whether at least some moral rules apply to everyone, in every culture and era. How such truths are known, by reason or by revelation, is a different question.",
   "icon": "⚖️"
  },
  {
@@ -970,7 +970,7 @@ const QUESTIONS = [
   "text": "The Jewish people have a right to a state of their own in the Land of Israel.",
   "agree": "Jews, as a people, are entitled to a country of their own in the Land of Israel.",
   "disagree": "The Jewish people do not have a right to a state of their own in the Land of Israel.",
-  "note": "About Zionism: whether there should be a Jewish state in the land of Israel.",
+  "note": "About whether Jews, as a people, have a right to their own state in the Land of Israel. How that state should treat its neighbours or its minorities is a different question.",
   "icon": "🕍"
  },
  {
@@ -988,7 +988,7 @@ const QUESTIONS = [
   "text": "A national language that has fallen out of everyday use should be revived as the language of the state.",
   "agree": "A national language that has fallen out of everyday use should be brought back as the language of the state.",
   "disagree": "A national language that has fallen out of everyday use should not be revived as the language of the state.",
-  "note": "About language revival.",
+  "note": "About bringing back a national language that people no longer use every day and making it the official language of the state, as with Hebrew or Irish. Merely teaching or protecting the language is not enough.",
   "icon": "🗣️"
  },
  {
@@ -997,7 +997,7 @@ const QUESTIONS = [
   "text": "Workers should have a democratic vote in how large companies are run.",
   "agree": "Employees should have voting rights in the management of large companies.",
   "disagree": "Workers should not have democratic voting rights in the management of large companies.",
-  "note": "Votes on company management are distinct from votes about union representation. Ownership need not change.",
+  "note": "About employees having a vote on how large companies are run, such as seats on the board. Voting on union representation is a different question, and ownership need not change.",
   "icon": "🗳️"
  },
  {
@@ -1006,7 +1006,7 @@ const QUESTIONS = [
   "text": "Parents should receive public vouchers to spend on any school they choose.",
   "agree": "Public education money follows the child to whichever school the family picks.",
   "disagree": "Parents should not receive public vouchers to spend on any school they choose.",
-  "note": "About school choice and who provides education.",
+  "note": "About public money for schooling going to parents as vouchers they can spend at any school, including private ones. Letting families choose among state-run schools only is not the same.",
   "icon": "🎒"
  },
  {
@@ -1015,7 +1015,7 @@ const QUESTIONS = [
   "text": "Governments should avoid running large budget deficits to stimulate the economy.",
   "agree": "Governments should not borrow heavily, spending much more than they collect in taxes, to boost the economy.",
   "disagree": "Governments may borrow heavily, spending much more than they collect in taxes, to boost the economy.",
-  "note": "About whether governments should borrow and spend more to lift a weak economy, for example in a recession.",
+  "note": "About whether governments should borrow heavily to boost a weak economy, for example in a recession. Wanting low taxes or small government is a different question.",
   "icon": "📉"
  },
  {
@@ -1024,7 +1024,7 @@ const QUESTIONS = [
   "text": "Political freedom cannot last without economic freedom.",
   "agree": "Free citizens need the freedom to own property, trade and choose work, or political freedom cannot last.",
   "disagree": "Political freedom can last without economic freedom.",
-  "note": "About whether free markets and free politics depend on each other.",
+  "note": "About whether political freedom can survive without economic freedom, meaning the freedom to own property, trade and choose work. Liking free markets for their own sake is not enough.",
   "icon": "🗽"
  },
  {
@@ -1033,7 +1033,7 @@ const QUESTIONS = [
   "text": "Government should rely more on its rulers' moral example than on legal enforcement.",
   "agree": "Government should depend more on leaders setting a good example than on enforcing laws with penalties.",
   "disagree": "Government should rely at least as much on legal enforcement as on its rulers' moral example.",
-  "note": "About the relative weight of example and legal enforcement, not abolishing law.",
+  "note": "About whether government should depend more on rulers setting a good moral example than on enforcing laws with penalties. Abolishing law is not what it asks.",
   "icon": "🎎"
  },
  {
@@ -1042,7 +1042,7 @@ const QUESTIONS = [
   "text": "Every people that sees itself as a nation has the right to a state of its own.",
   "agree": "A people with a shared national identity is entitled to its own self-governing state.",
   "disagree": "Not every people that sees itself as a nation has the right to a state of its own.",
-  "note": "About national self-determination: a people's claim to its own state, not the sovereignty of existing countries.",
+  "note": "About whether every people that sees itself as a nation has a right to its own state. Respecting the borders of existing countries is a different question.",
   "icon": "🏳️"
  },
  {
@@ -1051,7 +1051,7 @@ const QUESTIONS = [
   "text": "My country should be willing to use force abroad without approval from the UN Security Council.",
   "agree": "A country can act militarily on its own judgment even if the UN does not authorize it.",
   "disagree": "My country should not be willing to use force abroad without approval from the UN Security Council.",
-  "note": "About acting without international approval.",
+  "note": "About whether a country should be willing to use military force abroad even when the UN Security Council has not approved it. Whether any particular war is justified is a different question.",
   "icon": "⚔️"
  },
  {
@@ -1060,7 +1060,7 @@ const QUESTIONS = [
   "text": "Reason is more important than religious faith.",
   "agree": "Where they conflict, evidence and reasoning should count for more than faith, God, revelation or scripture.",
   "disagree": "Reason is not more important than religious faith.",
-  "note": "About reason against religious faith. Whether tradition, feeling or will should guide us is not asked.",
+  "note": "About whether, where they conflict, evidence and reasoning should count for more than religious faith. Whether tradition, feeling or will should guide us is a different question.",
   "icon": "🧠"
  },
  {
@@ -1096,7 +1096,7 @@ const QUESTIONS = [
   "text": "Cultural heritage that holds back new creation should be destroyed.",
   "agree": "Old museums, libraries and institutions matter less than room for the new, and may be swept away.",
   "disagree": "Cultural heritage that holds back new creation should not be destroyed.",
-  "note": "About whether cultural heritage should yield to novelty.",
+  "note": "About whether old cultural heritage, such as museums, libraries and institutions, may be destroyed when it holds back new creation. Merely preferring new art is not enough.",
   "icon": "🏛️"
  },
  {
@@ -1105,7 +1105,7 @@ const QUESTIONS = [
   "text": "Countries that see themselves as dominated by the leading Western powers should form a common front against them.",
   "agree": "Countries that feel dominated by Western powers should band together to resist them.",
   "disagree": "Countries that see themselves as dominated by the leading Western powers should not form a common front against them.",
-  "note": "About whether non-Western or resisting countries should act as a bloc.",
+  "note": "About whether countries that feel dominated by leading Western powers should band together to resist them. Simply disliking Western influence is not enough.",
   "icon": "🤝"
  },
  {
@@ -1132,7 +1132,7 @@ const QUESTIONS = [
   "text": "Lending money at interest should be prohibited by law.",
   "agree": "Charging interest on loans is banned by law.",
   "disagree": "Lending money at interest should be legal.",
-  "note": "About whether lending at interest should be allowed.",
+  "note": "About a legal ban on lending money at interest. Disliking high interest rates or capping them is not the same.",
   "icon": "🏦"
  },
  {
@@ -1150,7 +1150,7 @@ const QUESTIONS = [
   "text": "The state is essentially a tool by which the ruling class dominates the others.",
   "agree": "Laws, police and government mainly serve the interests of whoever owns the economy and holds power.",
   "disagree": "The state is not essentially a tool by which the ruling class dominates the others.",
-  "note": "About whose interests the state really serves.",
+  "note": "About whether the state, with its laws, police and government, mainly serves the interests of those who own the economy. Believing the state is sometimes biased is not enough.",
   "icon": "♟️"
  },
  {
@@ -1159,7 +1159,7 @@ const QUESTIONS = [
   "text": "New fossil fuel extraction should be allowed.",
   "agree": "New oil and gas wells and coal mines should be permitted.",
   "disagree": "New fossil fuel extraction should not be allowed.",
-  "note": "About energy supply versus climate: whether to open new oil, gas and coal production.",
+  "note": "About permitting new oil, gas and coal production, such as new wells and mines. Keeping existing production going is a different question.",
   "icon": "🛢️"
  },
  {
@@ -1186,7 +1186,7 @@ const QUESTIONS = [
   "text": "Legislative seats should be allocated to parties in proportion to the votes they receive.",
   "agree": "A party with a fifth of the votes gets about a fifth of the seats.",
   "disagree": "Legislative seats should not be allocated to parties in proportion to the votes they receive.",
-  "note": "About how votes should turn into seats.",
+  "note": "About giving parties legislative seats in proportion to their share of the votes, so a party with a fifth of the votes gets about a fifth of the seats. Having several parties under another system is not the same.",
   "icon": "🗳️"
  },
  {
@@ -1195,7 +1195,7 @@ const QUESTIONS = [
   "text": "My country should treat spreading its form of government abroad as a special national mission.",
   "agree": "Spreading our political system abroad should be a special calling of our nation.",
   "disagree": "Spreading its form of government abroad should not be a special national mission of my country.",
-  "note": "About national mission and exceptionalism.",
+  "note": "About whether a country should treat spreading its own form of government abroad as a special calling. Simply being proud of its system is not enough.",
   "icon": "🧭"
  },
  {
@@ -1204,7 +1204,7 @@ const QUESTIONS = [
   "text": "Society is organized in a way that systematically advantages men over women.",
   "agree": "Laws, institutions and customs still favor men over women.",
   "disagree": "Society is not organized in a way that systematically advantages men over women.",
-  "note": "About whether sex-based hierarchy is built into society.",
+  "note": "About whether laws, institutions and customs systematically favor men over women today. Some individual cases of sexism are not enough.",
   "icon": "🏛️"
  },
  {
@@ -1240,7 +1240,7 @@ const QUESTIONS = [
   "text": "Government should exist solely to protect people from physical violence.",
   "agree": "A government should exist, with protection against physical violence as its only task.",
   "disagree": "Government should not exist solely to protect people from physical violence.",
-  "note": "About a minimal state whose only task is protection from force, such as police, courts and defence. Anarchists, who want no government at all, disagree.",
+  "note": "About a minimal government whose only task is protecting people from force, such as police, courts and defence. Wanting a smaller state that still does other things is not enough.",
   "icon": "🛡️"
  },
  {
@@ -1249,7 +1249,7 @@ const QUESTIONS = [
   "text": "Starting families across racial lines should be discouraged.",
   "agree": "People of different races should be discouraged from forming a family together, whether through marriage or having children.",
   "disagree": "Starting families across racial lines should not be discouraged.",
-  "note": "About whether race should shape family life.",
+  "note": "About whether people of different races should be discouraged from marrying or having children together. Personal preference about whom to marry is a different question.",
   "icon": "💍"
  },
  {
@@ -1276,7 +1276,7 @@ const QUESTIONS = [
   "text": "A state created by settlement from abroad that displaced the existing population is a colonial project.",
   "agree": "Settling a land and displacing its people is colonialism, whatever the settlers' motives.",
   "disagree": "A state created by settlement from abroad that displaced the existing population is not a colonial project.",
-  "note": "About how to classify states founded by settlement.",
+  "note": "About whether a state founded by settlers from abroad who displaced the existing population counts as colonialism. Whether that state should now continue to exist is a different question.",
   "icon": "🏚️"
  },
  {
@@ -1285,7 +1285,7 @@ const QUESTIONS = [
   "text": "All citizens should be governed by the same civil laws regardless of their religion.",
   "agree": "Marriage, inheritance and family law are the same for everyone, not set by each religious community.",
   "disagree": "All citizens should not be governed by the same civil laws regardless of their religion.",
-  "note": "About one common law versus religious personal law.",
+  "note": "About whether marriage, inheritance and family law should be the same for everyone, rather than set by each religious community. A religion's own rules for its members in private life are a different question.",
   "icon": "📜"
  },
  {
@@ -1294,7 +1294,7 @@ const QUESTIONS = [
   "text": "Religious conversion should be restricted by law.",
   "agree": "The law limits or polices changing religion, for example to prevent pressure or inducement.",
   "disagree": "Religious conversion should be free of legal restriction.",
-  "note": "About limits on religious conversion.",
+  "note": "About laws that limit or police changing religion, for example to prevent pressure or inducement. Social disapproval of conversion is not the same.",
   "icon": "⛪"
  },
  {
@@ -1303,7 +1303,7 @@ const QUESTIONS = [
   "text": "The slaughter of cattle should be banned by law.",
   "agree": "Killing cows and similar cattle is outlawed.",
   "disagree": "The slaughter of cattle should be legal.",
-  "note": "About legal protection of animals held sacred.",
+  "note": "About a legal ban on killing cows and similar cattle, often because they are held sacred. Rules on how animals are slaughtered are a different question.",
   "icon": "🐄"
  },
  {
@@ -1312,7 +1312,7 @@ const QUESTIONS = [
   "text": "State schools should not provide religious instruction.",
   "agree": "State schools should not teach religion.",
   "disagree": "State schools may provide religious instruction.",
-  "note": "About religion in public education.",
+  "note": "About whether state schools should teach religion as part of their instruction. Teaching about religions as a subject of study is a different question.",
   "icon": "🏫"
  },
  {
@@ -1321,7 +1321,7 @@ const QUESTIONS = [
   "text": "A socialist state surrounded by hostile countries should pursue a policy of strengthening state power.",
   "agree": "A socialist state surrounded by hostile countries should pursue a policy of strengthening state power.",
   "disagree": "A socialist state surrounded by hostile countries should not pursue a policy of strengthening state power.",
-  "note": "About Marx's idea that the state will \"wither away\" under communism, and Stalin's view that it must first grow stronger while enemies surround it.",
+  "note": "About whether a socialist state surrounded by hostile countries should build up state power instead of letting it fade away. Strengthening defence alone is not enough.",
   "icon": "🛡️"
  },
  {
@@ -1330,7 +1330,7 @@ const QUESTIONS = [
   "text": "Political authority needs the consent of the governed to be legitimate.",
   "agree": "Rulers have a right to rule only because the people they rule have agreed to it.",
   "disagree": "Consent of the governed is not the only basis of legitimate political authority.",
-  "note": "About where a government gets its right to rule.",
+  "note": "About whether a government's right to rule depends on the agreement of the people it governs. Holding elections is not the same.",
   "icon": "🤝"
  },
  {
@@ -1339,7 +1339,7 @@ const QUESTIONS = [
   "text": "A country should aim to export more than it imports.",
   "agree": "A country should try to sell more abroad than it buys from abroad.",
   "disagree": "A country should not aim to export more than it imports.",
-  "note": "About whether trade surpluses are a national goal.",
+  "note": "About whether a country should aim to sell more abroad than it buys. Having a surplus by chance is not the same as aiming for one.",
   "icon": "⚖️"
  },
  {
@@ -1366,7 +1366,7 @@ const QUESTIONS = [
   "text": "Struggle between peoples is the main engine of human progress.",
   "agree": "Rivalry and conflict between nations or peoples do more than anything else to drive humanity forward.",
   "disagree": "Struggle between peoples is not the main engine of human progress.",
-  "note": "About struggle between peoples or nations as the driver of progress, not competition between individuals or firms in a market.",
+  "note": "About struggle between peoples or nations as the main driver of human progress. Competition between individuals or firms in a market is a different question.",
   "icon": "🏁"
  },
  {
@@ -1384,7 +1384,7 @@ const QUESTIONS = [
   "text": "Living under someone else's arbitrary power is a loss of freedom, even without actual interference.",
   "agree": "A person loses freedom from being at another person's mercy, even if that power is never exercised.",
   "disagree": "Unused arbitrary power over a person does not itself reduce that person's freedom.",
-  "note": "About whether unused power over you limits your freedom.",
+  "note": "About whether living at someone else's mercy costs a person freedom even if that power is never used. Actual interference is a different question.",
   "icon": "⛓️"
  },
  {
@@ -1393,7 +1393,7 @@ const QUESTIONS = [
   "text": "Political power should be divided among separate bodies that check one another.",
   "agree": "Political power should be split among separate branches and levels that can each limit the others.",
   "disagree": "Political power should not be divided among separate bodies that check one another.",
-  "note": "About whether power should be divided or concentrated.",
+  "note": "About whether political power should be divided among separate branches and levels that can each limit the others. Having elections alone is not enough.",
   "icon": "⚖️"
  },
  {
@@ -1420,7 +1420,7 @@ const QUESTIONS = [
   "text": "Council tenants should have a legal right to buy their homes.",
   "agree": "People who rent their homes from the council should be able to buy them by right.",
   "disagree": "Council tenants should not have a legal right to buy their homes.",
-  "note": "About public housing: homes owned by local government (\"council\" homes in Britain) and whether their tenants may buy them.",
+  "note": "About whether tenants of publicly owned homes, called council homes in Britain, have a legal right to buy them. Whether new public housing should be built is a different question.",
   "icon": "🏠"
  },
  {
@@ -1429,7 +1429,7 @@ const QUESTIONS = [
   "text": "The law should restrict strikes.",
   "agree": "There should be legal limits on strike action.",
   "disagree": "The law should impose no restrictions on strikes.",
-  "note": "About legal limits on workers stopping work, without requiring a particular ballot rule.",
+  "note": "About whether the law should put limits on strikes, with no particular ballot rule required. Having rules on how a strike is run is not the same as banning strikes.",
   "icon": "✊"
  },
  {
@@ -1438,7 +1438,7 @@ const QUESTIONS = [
   "text": "Population growth is the main cause of lasting poverty.",
   "agree": "Population growth is the leading explanation of persistent poverty.",
   "disagree": "Population growth is not the main cause of lasting poverty.",
-  "note": "About what causes poverty.",
+  "note": "About whether population growth is the leading cause of lasting poverty. Population growth being one factor among others is not enough.",
   "icon": "👥"
  },
  {
@@ -1474,7 +1474,7 @@ const QUESTIONS = [
   "text": "Governments should fix maximum prices for essential foods in times of scarcity.",
   "agree": "Governments should set legal price ceilings on essential foods when supplies are scarce.",
   "disagree": "Governments should not fix maximum prices for essential foods, even in times of scarcity.",
-  "note": "About whether the state should cap prices of necessities.",
+  "note": "About legal ceilings on the prices of essential foods when supplies are scarce. Handing out food aid or subsidies is a different question.",
   "icon": "🌾"
  },
  {
@@ -1483,7 +1483,7 @@ const QUESTIONS = [
   "text": "The government should control the news media.",
   "agree": "The people in power should decide what the country's news media publish.",
   "disagree": "The government should not control the news media.",
-  "note": "About political control of news content, including control without formal state ownership, by a party, a king or a junta.",
+  "note": "About political control over what news media publish, whether by a party, a king or a junta, with or without state ownership. Ordinary regulation such as libel law is not the same.",
   "icon": "📺"
  },
  {
@@ -1510,7 +1510,7 @@ const QUESTIONS = [
   "text": "Elected representatives should be paid no more than an average worker.",
   "agree": "Those who hold public office are paid no more than an average worker.",
   "disagree": "Elected representatives may be paid more than an average worker.",
-  "note": "About how much pay public office should carry.",
+  "note": "About capping pay for elected representatives at an average worker's pay. Paying them a modest salary above that is not enough.",
   "icon": "💼"
  },
  {
@@ -1528,7 +1528,7 @@ const QUESTIONS = [
   "text": "Nations should pool part of their sovereignty in a supranational union such as the European Union.",
   "agree": "Countries should hand part of their decision-making power to a union of nations, such as the European Union.",
   "disagree": "Nations should not hand part of their decision-making power to a union of nations, such as the European Union.",
-  "note": "About how far nations should hand power to a shared body.",
+  "note": "About whether countries should hand part of their decision-making power to a union of nations, such as the European Union. Ordinary treaties and trade deals are not the same.",
   "icon": "🇪🇺"
  },
  {
@@ -1555,7 +1555,7 @@ const QUESTIONS = [
   "text": "Senior religious scholars should hold the highest political authority.",
   "agree": "The most senior religious scholars should have the highest authority over the state and its laws.",
   "disagree": "Senior religious scholars should not hold the highest political authority.",
-  "note": "About who should hold final power in the state.",
+  "note": "About whether the most senior religious scholars should hold final authority over the state and its laws. Religion influencing politics without clerics holding the top office is not enough.",
   "icon": "🕌"
  },
  {
@@ -1573,7 +1573,7 @@ const QUESTIONS = [
   "text": "Art should be censored to protect citizens' moral character.",
   "agree": "Art, poetry and stories that harm people's moral character should be censored.",
   "disagree": "Art should not be censored for its effect on people's moral character.",
-  "note": "About whether the state should police culture for moral effect.",
+  "note": "About whether art, poetry and stories that harm people's moral character should be censored. Censorship for other reasons, such as security, is a different question.",
   "icon": "🎭"
  },
  {
@@ -1582,7 +1582,7 @@ const QUESTIONS = [
   "text": "A president should be allowed to stand for re-election without limit.",
   "agree": "A president should be free to stand for re-election as many times as they like.",
   "disagree": "A president should be limited in how many times he or she may stand for re-election.",
-  "note": "About whether leaders should face limits on how long they can serve.",
+  "note": "About whether a president may stand for re-election as many times as they like. A single long term is a different question.",
   "icon": "🗳️"
  },
  {
@@ -1591,7 +1591,7 @@ const QUESTIONS = [
   "text": "Voters should be able to remove elected officials from office before their term ends.",
   "agree": "Voters should be able to remove elected officials before their terms end.",
   "disagree": "Elected officials should serve out their full terms.",
-  "note": "About how much control voters keep between elections.",
+  "note": "About whether voters can remove elected officials before their term ends. Voting them out at the next election is not enough.",
   "icon": "🗳️"
  },
  {
@@ -1600,7 +1600,7 @@ const QUESTIONS = [
   "text": "A country should stay out of permanent military alliances.",
   "agree": "A country should stay out of permanent military alliances.",
   "disagree": "A country should not rule out permanent military alliances.",
-  "note": "About permanent alliance commitments, independently of stationing troops abroad.",
+  "note": "About whether a country should stay out of permanent military alliances. Stationing troops abroad is a different question.",
   "icon": "🪖"
  },
  {
@@ -1618,7 +1618,7 @@ const QUESTIONS = [
   "text": "A professional army should be replaced by an armed citizenry.",
   "agree": "Defense should rest with armed ordinary citizens, not a standing force.",
   "disagree": "A professional army should not be replaced by an armed citizenry.",
-  "note": "About replacing professional soldiers with a citizen militia: ordinary people trained to fight and keeping arms.",
+  "note": "About replacing a professional army with ordinary citizens trained to fight and keeping arms. Adding a citizen reserve to a standing army is not enough.",
   "icon": "🔫"
  },
  {
@@ -1627,7 +1627,7 @@ const QUESTIONS = [
   "text": "Rural life is morally healthier than life in cities.",
   "agree": "Life in the countryside is morally healthier than life in cities.",
   "disagree": "Rural life is not morally healthier than life in cities.",
-  "note": "About whether where people live shapes their virtue.",
+  "note": "About whether life in the countryside makes people morally better than life in cities. Preferring rural scenery or lifestyle is not enough.",
   "icon": "🌾"
  },
  {
@@ -1636,7 +1636,7 @@ const QUESTIONS = [
   "text": "A nation divided between states by a border drawn by an outside power should be reunified as one state.",
   "agree": "A people split by an imposed border should be brought together in a single state.",
   "disagree": "A nation divided between states by a border drawn by an outside power should not be reunified as one state.",
-  "note": "About partition and reunification, for example Korea, or Germany before 1990.",
+  "note": "About whether a nation split between states by a border an outside power drew should become one state again, as with Korea or Germany before 1990. Closer cooperation across the border is not enough.",
   "icon": "🧩"
  },
  {
@@ -1645,7 +1645,7 @@ const QUESTIONS = [
   "text": "University-educated people tend to be out of touch with the realities of ordinary life.",
   "agree": "People with advanced schooling are cut off from how ordinary people live and work.",
   "disagree": "University-educated people are not especially out of touch with the realities of ordinary life.",
-  "note": "About whether education separates people from the public.",
+  "note": "About whether people with a university education tend to be cut off from how ordinary people live. Disagreeing with their views is not enough.",
   "icon": "🎓"
  },
  {
@@ -1663,7 +1663,7 @@ const QUESTIONS = [
   "text": "The state should be able to execute people convicted of the gravest crimes, such as terrorism.",
   "agree": "The worst crimes can be punished by death.",
   "disagree": "The state should be barred from executing people convicted of the gravest crimes, such as terrorism.",
-  "note": "About capital punishment.",
+  "note": "About whether the state may execute people convicted of the gravest crimes, such as terrorism. Support for harsh prison sentences is a different question.",
   "icon": "⚖️"
  },
  {
@@ -1690,7 +1690,7 @@ const QUESTIONS = [
   "text": "Pornography should be restricted by law.",
   "agree": "The law should limit the making or sale of pornography.",
   "disagree": "Pornography should be free of legal restriction.",
-  "note": "About whether the state should restrict pornography.",
+  "note": "About laws that limit the making or sale of pornography. Personal disapproval of it is not enough.",
   "icon": "🔞"
  },
  {
@@ -1717,7 +1717,7 @@ const QUESTIONS = [
   "text": "Members of religious minorities should be exempt from general laws that burden their religious practice.",
   "agree": "Believers can be excused from rules, such as dress or work-day rules, that conflict with their faith.",
   "disagree": "Religious minorities should not be exempt from general laws that burden their practice.",
-  "note": "About exemptions from general law for religious practice.",
+  "note": "About excusing believers from general laws that burden their religious practice, such as dress or work-day rules. Freedom to hold beliefs is a different question.",
   "icon": "🕍"
  },
  {
@@ -1726,7 +1726,7 @@ const QUESTIONS = [
   "text": "Unconventional ways of living should be encouraged.",
   "agree": "People should be encouraged to live in ways that differ from social custom.",
   "disagree": "Unconventional ways of living should not be encouraged.",
-  "note": "About encouraging unusual lives, beyond merely allowing them.",
+  "note": "About actively encouraging people to live in unconventional ways. Merely allowing them to is not enough.",
   "icon": "🦄"
  },
  {
@@ -1771,7 +1771,7 @@ const QUESTIONS = [
   "text": "Wealthy countries have a duty to give substantial aid to the world's poor, wherever those people live.",
   "agree": "Distance and nationality do not weaken the duty of the rich to help the poor abroad.",
   "disagree": "Wealthy countries have no duty to give substantial aid to the world's poor abroad.",
-  "note": "About obligations to people in other countries.",
+  "note": "About whether wealthy countries have a duty to give substantial aid to poor people abroad, whatever their nationality or distance. Giving aid when it suits national interest is not enough.",
   "icon": "🌍"
  },
  {
@@ -1807,7 +1807,7 @@ const QUESTIONS = [
   "text": "A country should not give up land it claims as its historic homeland in exchange for peace agreements.",
   "agree": "Land claimed as the historic homeland is not traded away, even for peace.",
   "disagree": "A country may give up land it claims as its historic homeland in exchange for peace agreements.",
-  "note": "About trading territory for peace.",
+  "note": "About refusing to give up land a country claims as its historic homeland in return for peace. Wanting peace in general is a different question.",
   "icon": "🗺️"
  },
  {
@@ -1825,7 +1825,7 @@ const QUESTIONS = [
   "text": "The Soviet Union was a state-capitalist society.",
   "agree": "The Soviet economy was capitalist under state ownership, with the state taking the place of private capitalists.",
   "disagree": "The Soviet Union was not a state-capitalist society.",
-  "note": "State capitalism means an economy in which the state takes the role of a capitalist employer and exploiter, rather than workers collectively controlling production.",
+  "note": "About whether the Soviet economy worked like capitalism with the state as the single owner and employer, rather than workers controlling production. Calling it a failure or a dictatorship is not enough.",
   "icon": "🏭"
  },
  {
@@ -1834,7 +1834,7 @@ const QUESTIONS = [
   "text": "Governments should act on environmental risks even before there is scientific certainty that harm will occur.",
   "agree": "Lack of full certainty is no reason to delay protective action.",
   "disagree": "Governments should not act on environmental risks before there is scientific certainty that harm will occur.",
-  "note": "About acting on uncertain environmental risks.",
+  "note": "About acting to prevent possible environmental harm before science has confirmed it, such as restricting a chemical on early warning signs. Waiting until harm is proven is a different position.",
   "icon": "⚠️"
  },
  {
@@ -1843,7 +1843,7 @@ const QUESTIONS = [
   "text": "An armed attack on one allied country should be treated as an attack on all of them.",
   "agree": "Allies are bound to defend one another against armed attack.",
   "disagree": "An armed attack on one allied country should not be treated as an attack on all of them.",
-  "note": "About mutual-defence pacts, such as NATO's promise that an attack on one member is an attack on all.",
+  "note": "About mutual-defence pacts, such as NATO's promise that an attack on one member is an attack on all. Helping an ally in some other way, or only agreeing to consult, is not enough.",
   "icon": "🛡️"
  },
  {
@@ -1852,7 +1852,7 @@ const QUESTIONS = [
   "text": "A territory annexed without the consent of its people remains under unlawful occupation.",
   "agree": "A territory annexed without its people's consent is still under unlawful occupation.",
   "disagree": "A territory annexed without the consent of its people does not remain under unlawful occupation.",
-  "note": "About land that a state takes over and declares its own against its people's will, for example Crimea or Western Sahara.",
+  "note": "About land that a state takes over and declares its own against its people's will, for example Crimea or Western Sahara. Whether the land should be handed back is a different question.",
   "icon": "🏝️"
  },
  {
@@ -1870,7 +1870,7 @@ const QUESTIONS = [
   "text": "A head of state should stand above party politics as a symbol of national unity.",
   "agree": "The nation's figurehead is non-partisan and belongs to everyone.",
   "disagree": "A head of state should not stand above party politics as a symbol of national unity.",
-  "note": "About whether the head of state is a unifying symbol or a political actor.",
+  "note": "About the head of state staying out of party politics and standing for the whole nation, as a ceremonial monarch or president might. Whether the head of state is elected, or holds real powers, is a different question.",
   "icon": "🏛️"
  },
  {
@@ -1915,7 +1915,7 @@ const QUESTIONS = [
   "text": "A person's character comes more from their environment than from innate nature.",
   "agree": "A person's character comes more from their environment than from innate nature.",
   "disagree": "Innate nature shapes a person's character at least as much as their environment does.",
-  "note": "About nature versus nurture in human character.",
+  "note": "About whether upbringing, society and experience shape a person's character more than inborn traits do. Accepting that some traits are inborn doesn't count against it.",
   "icon": "🌱"
  },
  {
@@ -1933,7 +1933,7 @@ const QUESTIONS = [
   "text": "Expanding humanity into space should be a central goal of civilization.",
   "agree": "Civilization should aim to spread into space.",
   "disagree": "Expanding humanity into space should not be a central goal of civilization.",
-  "note": "About space expansion as a civilizational goal.",
+  "note": "About spreading humanity beyond Earth, such as settling other planets, as one of civilization's main aims. Supporting some space research is not enough.",
   "icon": "🚀"
  },
  {
@@ -1942,7 +1942,7 @@ const QUESTIONS = [
   "text": "The best constitution combines rule by the few with rule by the many.",
   "agree": "The best government combines a governing role for a few with a governing role for the wider population.",
   "disagree": "The best constitution does not combine rule by the few with rule by the many.",
-  "note": "About combining elite and popular elements in government, such as a senate alongside a popular assembly.",
+  "note": "About combining elite and popular elements in government, such as a senate alongside a popular assembly. A government built on only one of them is not the same.",
   "icon": "🏛️"
  },
  {
@@ -1960,7 +1960,7 @@ const QUESTIONS = [
   "text": "Courts should presume that children of separated parents spend equal time with each parent.",
   "agree": "Equal shared parenting is the starting point unless there is a reason against it.",
   "disagree": "Courts should not presume that children of separated parents spend equal time with each parent.",
-  "note": "About custody after separation.",
+  "note": "About a default rule that children of separated parents spend equal time with each parent unless there is a reason against it. Courts deciding each case on its own facts is a different approach.",
   "icon": "👨‍👧"
  },
  {
@@ -2005,7 +2005,7 @@ const QUESTIONS = [
   "text": "Leaving one's religion should be punishable by law.",
   "agree": "Abandoning the faith is a crime that the state may punish.",
   "disagree": "People must be free to leave their religion without legal penalty.",
-  "note": "About apostasy.",
+  "note": "About making it a crime, punished by the state, to leave one's religion. Social disapproval, or a religion's own rules for its members, is not the same.",
   "icon": "🚪"
  },
  {
@@ -2014,7 +2014,7 @@ const QUESTIONS = [
   "text": "The law should require women to cover themselves fully in public.",
   "agree": "The law requires women to cover themselves fully in public.",
   "disagree": "The law should not require women to cover themselves fully in public.",
-  "note": "About compulsory covering of women.",
+  "note": "About a law forcing women to cover themselves fully in public, such as with a full veil. Women choosing to cover, or a ban on covering, is a different question.",
   "icon": "🧕"
  },
  {
@@ -2023,7 +2023,7 @@ const QUESTIONS = [
   "text": "A single currency shared by several countries is better than separate national currencies.",
   "agree": "A single currency shared by several countries is better than separate national currencies.",
   "disagree": "A single currency shared by several countries is not better than separate national currencies.",
-  "note": "About monetary unions, such as the euro.",
+  "note": "About several countries sharing one currency, such as the euro. Fixing exchange rates between separate currencies is not the same.",
   "icon": "💶"
  },
  {
@@ -2077,7 +2077,7 @@ const QUESTIONS = [
   "text": "Failing companies should be left to fail.",
   "agree": "Firms and banks bear the cost of their own failures, with no rescue from taxpayers.",
   "disagree": "Failing companies should not always be left to fail.",
-  "note": "About rescuing failing businesses, including banks.",
+  "note": "About refusing to rescue failing companies, including banks, with taxpayers' money. Helping the workers of a failed firm is a different question.",
   "icon": "🛟"
  },
  {
@@ -2176,7 +2176,7 @@ const QUESTIONS = [
   "text": "Race-based affirmative action should be abolished.",
   "agree": "Admissions, hiring and contracts should not give preference to anyone because of their race.",
   "disagree": "Race-based affirmative action should not be abolished.",
-  "note": "About affirmative action in college admissions, hiring and government contracts.",
+  "note": "About ending preferences based on race in college admissions, hiring and government contracts. Helping poorer applicants of any race doesn't count against it.",
   "icon": "⚖️"
  },
  {
@@ -2203,7 +2203,7 @@ const QUESTIONS = [
   "text": "Poor countries should end their economic ties with rich countries.",
   "agree": "Poor countries should stop economic relations with wealthy countries.",
   "disagree": "Poor countries should retain economic ties with rich countries.",
-  "note": "About ending those economic relations, not merely pursuing independent policy within them.",
+  "note": "About poor countries cutting their trade, investment and lending ties with rich countries. Trading on better terms, or protecting some industries, is not the same.",
   "icon": "✂️"
  },
  {
@@ -2239,7 +2239,7 @@ const QUESTIONS = [
   "text": "Colonial-era treaties that divided a people without consulting it have no binding force today.",
   "agree": "Borders and treaties imposed by colonial powers without local consent can be set aside.",
   "disagree": "Colonial-era treaties that divided a people without consulting it have binding force today.",
-  "note": "About whether colonial borders keep their legitimacy.",
+  "note": "About whether treaties and borders imposed by colonial powers, without the consent of the people they divided, still bind today. Agreeing that they were unjust is not enough.",
   "icon": "🗺️"
  },
  {
@@ -2284,7 +2284,7 @@ const QUESTIONS = [
   "text": "Animals are sentient beings whose suffering matters morally.",
   "agree": "Animals can suffer, and that suffering counts in how we treat them.",
   "disagree": "Animals are not sentient beings whose suffering matters morally.",
-  "note": "About the moral weight of animal suffering.",
+  "note": "About whether animals can suffer and whether that suffering matters morally. Whether animals have the same rights as humans, or may be used for food, is a different question.",
   "icon": "🐾"
  },
  {
@@ -2347,7 +2347,7 @@ const QUESTIONS = [
   "text": "Public offices should be reserved for native-born citizens.",
   "agree": "Only people born in the country should hold public office.",
   "disagree": "Public offices should not be reserved for native-born citizens.",
-  "note": "About whether citizens by birth and by naturalization are equal.",
+  "note": "About limiting public office to people born in the country, so that naturalized citizens are excluded. Requiring citizenship alone is not the same.",
   "icon": "🏛️"
  },
  {
@@ -2365,7 +2365,7 @@ const QUESTIONS = [
   "text": "A poor country should rely more on its own resources for development than on foreign money.",
   "agree": "A poor country should develop mainly with its own resources.",
   "disagree": "A poor country should rely on foreign money at least as much as on its own resources.",
-  "note": "About independence versus outside help in development.",
+  "note": "About whether a poor country's development should be paid for mainly from its own resources rather than foreign loans, aid and investment. Accepting some foreign help doesn't count against it.",
   "icon": "🌱"
  },
  {
@@ -2374,7 +2374,7 @@ const QUESTIONS = [
   "text": "A country should demand the return of territory it lost to a neighbour in a past war.",
   "agree": "Land lost in an old war can rightly be claimed back.",
   "disagree": "A country should not demand the return of territory it lost to a neighbour in a past war.",
-  "note": "About reopening old border settlements.",
+  "note": "About a country demanding back land it lost to a neighbour in a past war. Regretting the loss is not enough.",
   "icon": "🗺️"
  },
  {
@@ -2383,7 +2383,7 @@ const QUESTIONS = [
   "text": "The descendants of a country's pre-colonial peoples should hold political leadership over the descendants of settlers.",
   "agree": "Political leadership should belong to the country's original peoples.",
   "disagree": "The descendants of a country's pre-colonial peoples should not hold political leadership over the descendants of settlers.",
-  "note": "About ancestry and who should lead.",
+  "note": "About political leadership belonging to the descendants of a country's original peoples rather than to the descendants of settlers. Equal rights, or guaranteed representation, for indigenous peoples is not the same.",
   "icon": "🪶"
  },
  {
@@ -2392,7 +2392,7 @@ const QUESTIONS = [
   "text": "Anti-fascism should be regarded as a founding value of a democratic constitution.",
   "agree": "A democratic constitution should rest on rejecting fascism.",
   "disagree": "Anti-fascism should not be regarded as a founding value of a democratic constitution.",
-  "note": "About the foundations of a democratic state.",
+  "note": "About a democratic constitution being founded on an explicit rejection of fascism. Banning particular parties or symbols is a different question.",
   "icon": "🏗️"
  },
  {
@@ -2410,7 +2410,7 @@ const QUESTIONS = [
   "text": "Slavery was not the main cause of the American Civil War.",
   "agree": "The main cause of the American Civil War was something other than slavery.",
   "disagree": "Slavery was the main cause of the American Civil War.",
-  "note": "About the causes of the American Civil War.",
+  "note": "About what the main cause of the American Civil War was, not whether slavery was wrong. Slavery being one of several causes is not the same as being the main one.",
   "icon": "📜"
  },
  {
@@ -2428,7 +2428,7 @@ const QUESTIONS = [
   "text": "Western political institutions are unsuitable for some civilizations.",
   "agree": "Political institutions developed in the West are not a suitable model for every civilization.",
   "disagree": "Western political institutions are suitable for every civilization.",
-  "note": "About the suitability of political institutions, not merely opposition to imposing them by force. A claim that one's own country prefers Western institutions does not settle whether they suit every society.",
+  "note": "About the suitability of political institutions, not merely opposition to imposing them by force. A claim that one's own country prefers Western institutions does not say whether they suit every society.",
   "icon": "🏯"
  },
  {
@@ -2446,7 +2446,7 @@ const QUESTIONS = [
   "text": "Unpaid work in the home should be paid.",
   "agree": "Housework and care at home count as work and deserve wages.",
   "disagree": "Unpaid work in the home should not be paid.",
-  "note": "About the value of unpaid housework and care at home.",
+  "note": "About paying wages for housework and care at home, such as looking after children or a sick relative. Recognising such work as valuable is not enough.",
   "icon": "🧺"
  },
  {
@@ -2473,7 +2473,7 @@ const QUESTIONS = [
   "text": "Governments should block foreign companies from buying firms in strategic industries.",
   "agree": "The state can stop foreign buyers from taking over key national businesses.",
   "disagree": "Governments should not block foreign companies from buying firms in strategic industries.",
-  "note": "About foreign ownership of important industries.",
+  "note": "About the state stopping foreign companies from buying firms in strategic industries such as energy, ports or defence. Screening that never blocks a purchase is not enough.",
   "icon": "🛑"
  },
  {
@@ -2482,7 +2482,7 @@ const QUESTIONS = [
   "text": "Adults should be free to end a marriage without having to prove fault.",
   "agree": "Either spouse can leave a marriage without showing wrongdoing by the other.",
   "disagree": "Ending a marriage should not be possible without proving fault.",
-  "note": "About how easily marriages can be dissolved.",
+  "note": "About ending a marriage without having to prove that a spouse did something wrong, such as adultery. Rules on dividing property or custody are different questions.",
   "icon": "💔"
  },
  {
@@ -2509,7 +2509,7 @@ const QUESTIONS = [
   "text": "A person's right to hold land should end once they stop using it.",
   "agree": "People should lose their right to a plot of land when they no longer use it.",
   "disagree": "A person's right to hold land need not end when they stop using it.",
-  "note": "About continued use as a condition of holding land, whoever holds the title.",
+  "note": "About losing the right to hold a plot of land once you stop using it, whoever holds the title. Taxing unused land is not the same.",
   "icon": "🌾"
  },
  {
@@ -2536,7 +2536,7 @@ const QUESTIONS = [
   "text": "Foreigners should not be allowed to own land in the country.",
   "agree": "Land stays in the hands of citizens; foreigners may not buy it.",
   "disagree": "Foreigners should be allowed to own land in the country.",
-  "note": "About foreign ownership of land.",
+  "note": "About banning foreigners from owning land in the country. Limiting foreign ownership in some places, such as border areas, is not enough.",
   "icon": "🏞️"
  },
  {
@@ -2545,7 +2545,7 @@ const QUESTIONS = [
   "text": "A policy that produces unequal outcomes between racial groups should be treated as discriminatory, whatever its intent.",
   "agree": "A policy whose results are unequal between racial groups counts as discriminatory, whatever was intended.",
   "disagree": "A policy that produces unequal outcomes between racial groups should not be treated as discriminatory, whatever its intent.",
-  "note": "About judging discrimination by intent or by effect, for example a hiring test that one racial group fails more often.",
+  "note": "About judging discrimination by a policy's effect rather than its intent, for example a hiring test that one racial group fails more often. Disagreeing doesn't mean approving of intentional discrimination.",
   "icon": "⚖️"
  },
  {
@@ -2590,7 +2590,7 @@ const QUESTIONS = [
   "text": "Governments should restrict foreign funding of domestic organizations.",
   "agree": "The state should limit or screen money that foreign donors give to charities, campaign groups, the press and universities.",
   "disagree": "Governments should not restrict foreign funding of domestic organizations.",
-  "note": "About foreign money in domestic politics and civil society.",
+  "note": "About the state limiting or screening money from abroad that goes to domestic charities, campaign groups, the press and universities. Banning foreign gifts to political parties alone is not enough.",
   "icon": "🏛️"
  },
  {
@@ -2617,7 +2617,7 @@ const QUESTIONS = [
   "text": "Governments should guarantee a job to everyone willing to work, acting as employer of last resort.",
   "agree": "The state offers public work to anyone who wants a job and cannot find one.",
   "disagree": "Governments should not guarantee a job to everyone willing to work, acting as employer of last resort.",
-  "note": "About whether the state should guarantee employment.",
+  "note": "About the state offering a public job to anyone willing to work who cannot find one. Unemployment benefits or job training alone is not enough.",
   "icon": "🧰"
  },
  {
@@ -2626,7 +2626,7 @@ const QUESTIONS = [
   "text": "Spreading democracy brings peace.",
   "agree": "More democracies means fewer wars, so promoting democracy serves peace.",
   "disagree": "Spreading democracy does not bring peace.",
-  "note": "About whether democracy promotes peace between states.",
+  "note": "About whether the spread of democracy makes the world more peaceful, with fewer wars between states. Whether democracy is good in itself is a different question.",
   "icon": "🕊️"
  },
  {
@@ -2680,7 +2680,7 @@ const QUESTIONS = [
   "text": "Everyone should have a legal right of access to government information.",
   "agree": "Citizens have a legal right to see government information.",
   "disagree": "Everyone should not have a legal right of access to government information.",
-  "note": "About public access to government records.",
+  "note": "About a legal right for anyone to see government records, as freedom-of-information laws give. Voluntary openness, or access only for journalists, is not enough.",
   "icon": "📂"
  },
  {
@@ -2689,7 +2689,7 @@ const QUESTIONS = [
   "text": "Most goods should be produced close to where they are consumed.",
   "agree": "The goods people consume should mainly come from nearby producers.",
   "disagree": "Most goods need not be produced close to their place of consumption.",
-  "note": "Goods include food.",
+  "note": "About most goods, food included, being made close to where they are used. Some local production is not enough.",
   "icon": "🥕"
  },
  {
@@ -2698,7 +2698,7 @@ const QUESTIONS = [
   "text": "Small informal groups of trusted people should replace permanent organizations in political struggle.",
   "agree": "Small, informal, trust-based groups are the right form for political action, not lasting parties, unions or federations.",
   "disagree": "Small informal groups of trusted people should not replace permanent organizations in political struggle.",
-  "note": "About how political movements should organize. Permanent organizations include parties, unions and federations.",
+  "note": "About small, trust-based groups taking the place of lasting parties, unions and federations in political action. Using informal groups alongside permanent organizations is not enough.",
   "icon": "🤝"
  },
  {
@@ -2716,7 +2716,7 @@ const QUESTIONS = [
   "text": "The national community should be defined by a shared religion.",
   "agree": "Belonging to the nation goes with sharing its religion.",
   "disagree": "The national community should not be defined by a shared religion.",
-  "note": "About whether religion defines the nation.",
+  "note": "About whether sharing a religion is what makes someone part of the national community. A nation that merely has a majority religion is not the same.",
   "icon": "🕌"
  },
  {
@@ -2734,7 +2734,7 @@ const QUESTIONS = [
   "text": "Regions should keep most of the revenue they raise.",
   "agree": "Regions should keep most of the revenue they raise.",
   "disagree": "Regions should share at least half of the revenue they raise with other regions.",
-  "note": "About whether regions should keep the revenue they raise.",
+  "note": "About regions keeping most of the revenue raised within them, rather than sharing much of it with other regions. Giving regions more self-rule is a different question.",
   "icon": "🗺️"
  },
  {
@@ -2743,7 +2743,7 @@ const QUESTIONS = [
   "text": "Personal belongings should remain private under common ownership of production.",
   "agree": "In an economy with common ownership of productive assets, people should still own their personal belongings.",
   "disagree": "Common ownership of production need not leave personal belongings private.",
-  "note": "About the line between personal possessions and productive property.",
+  "note": "About people keeping personal belongings such as clothes and household goods as their own, even where farms and factories are commonly owned. Whether production should be commonly owned is a different question.",
   "icon": "⌚"
  },
  {
@@ -2761,7 +2761,7 @@ const QUESTIONS = [
   "text": "Private companies should deliver publicly funded services.",
   "agree": "Publicly funded services such as hospitals and schools should be run by private companies and charities as well as the state.",
   "disagree": "Private companies should not deliver publicly funded services.",
-  "note": "About who runs publicly funded services such as hospitals and schools: the state only, or also private companies and charities.",
+  "note": "About private companies and charities running publicly funded services such as hospitals and schools, alongside the state. The state paying for services is not enough.",
   "icon": "🏥"
  },
  {
@@ -2770,7 +2770,7 @@ const QUESTIONS = [
   "text": "Religion offers illusory comfort for material suffering.",
   "agree": "Religion gives people a false consolation for hardship in their material lives.",
   "disagree": "Religion does not offer illusory comfort for material suffering.",
-  "note": "About an explanation of religious belief, without predicting its disappearance.",
+  "note": "About whether religion offers a false comfort for hardship in people's material lives. Religion having other effects is a different question.",
   "icon": "🕯️"
  },
  {
@@ -2779,7 +2779,7 @@ const QUESTIONS = [
   "text": "Capitalism has been a historically progressive force that created the material basis for a better society.",
   "agree": "Capitalism built the productive power and wealth that later and better societies rest on.",
   "disagree": "Capitalism has not been a historically progressive force that created the material basis for a better society.",
-  "note": "About how to judge capitalism over the long run.",
+  "note": "About whether capitalism in the past built the productive wealth that a better society can rest on. Approving of capitalism today is a different question.",
   "icon": "🏭"
  },
  {
@@ -2788,7 +2788,7 @@ const QUESTIONS = [
   "text": "Women's equality cannot be fully achieved without transforming the economic system.",
   "agree": "Women's subordination is tied to how the economy is organised, so reform of laws and attitudes is not enough.",
   "disagree": "Women's equality can be fully achieved without transforming the economic system.",
-  "note": "About whether economic change is needed for gender equality.",
+  "note": "About whether full equality for women needs changes to how the economy is organised, beyond changes to laws and attitudes. Wanting economic change for other reasons is a different question.",
   "icon": "⚖️"
  },
  {
@@ -2806,7 +2806,7 @@ const QUESTIONS = [
   "text": "Words borrowed from foreign languages should be purged from the national language.",
   "agree": "Foreign loanwords should be removed from the national language and replaced with native words.",
   "disagree": "Words borrowed from foreign languages should not be purged from the national language.",
-  "note": "About keeping a national language free of foreign words.",
+  "note": "About removing foreign loanwords from the national language and replacing them with native words. Merely preferring native words is not enough.",
   "icon": "📖"
  },
  {
@@ -2824,7 +2824,7 @@ const QUESTIONS = [
   "text": "Society should be reorganised into small self-governing cooperative communities that hold their property in common.",
   "agree": "People should live and work in communities that own land and goods together and govern themselves.",
   "disagree": "Society should not be reorganised into small self-governing cooperative communities that hold their property in common.",
-  "note": "About communal living as a model for society.",
+  "note": "About reorganising society into small self-governing communities that own their property in common. Having some cooperatives alongside other kinds of firms is not enough.",
   "icon": "🏘️"
  },
  {
@@ -2833,7 +2833,7 @@ const QUESTIONS = [
   "text": "The majority ethnic group should be encouraged to settle in regions where minorities are the majority.",
   "agree": "The state should encourage the majority group to settle in regions where minorities are the majority.",
   "disagree": "The majority ethnic group should not be encouraged to settle in regions where minorities are the majority.",
-  "note": "About state-promoted settlement in minority regions.",
+  "note": "About the state encouraging members of the majority group to move to regions where minorities are the majority. People moving there on their own is not the same.",
   "icon": "🚆"
  },
  {
@@ -2860,7 +2860,7 @@ const QUESTIONS = [
   "text": "The Holocaust did not happen as historians describe it.",
   "agree": "The mass murder of Europe's Jews by Nazi Germany was invented or greatly exaggerated.",
   "disagree": "The Holocaust happened as historians describe it.",
-  "note": "About whether the established historical account of the Holocaust is accurate.",
+  "note": "About whether the Nazi mass murder of Europe's Jews happened as historians describe it. How it should be remembered is a different question.",
   "icon": "🕯️"
  },
  {
@@ -2869,7 +2869,7 @@ const QUESTIONS = [
   "text": "Sexual relations between adults of the same sex should be a criminal offence.",
   "agree": "Same-sex relations between consenting adults should be punishable by law.",
   "disagree": "The law should not punish consenting adults for same-sex relations.",
-  "note": "About criminal penalties for same-sex relations.",
+  "note": "About criminal penalties for same-sex relations between consenting adults. Disapproving of them without making them a crime is not enough.",
   "icon": "⚖️"
  },
  {
@@ -2896,7 +2896,7 @@ const QUESTIONS = [
   "text": "A country's overseas territories should be governed for the economic benefit of the ruling country.",
   "agree": "Colonies should be run mainly to supply markets, materials and outlets for the ruling country.",
   "disagree": "A country's overseas territories should not be governed for the economic benefit of the ruling country.",
-  "note": "About whose interests colonial rule should serve.",
+  "note": "About whether overseas territories should be run mainly for the economic benefit of the ruling country. The territory also gaining from the arrangement doesn't count against it.",
   "icon": "🚢"
  },
  {
@@ -2905,7 +2905,7 @@ const QUESTIONS = [
   "text": "Armed resistance to a non-Muslim invasion of Muslim land is a duty of every Muslim.",
   "agree": "Every Muslim is obliged to take part in armed resistance against such an invasion.",
   "disagree": "Armed resistance to a non-Muslim invasion of Muslim land is not a duty binding every Muslim.",
-  "note": "About whether armed defence of invaded Muslim lands is a duty on all Muslims.",
+  "note": "About whether every Muslim has a personal duty to join armed resistance when non-Muslim forces invade Muslim land. Believing such resistance is permitted is not enough.",
   "icon": "🛡️"
  },
  {
@@ -2932,7 +2932,7 @@ const QUESTIONS = [
   "text": "Overlapping forms of oppression must be addressed together.",
   "agree": "Tackling oppression requires a combined approach to its overlapping forms, such as racism, sexism and class oppression.",
   "disagree": "Overlapping forms of oppression should not be addressed together.",
-  "note": "About whether forms of oppression must be tackled together.",
+  "note": "About tackling racism, sexism, class oppression and similar forms of oppression together rather than one at a time. Opposing each of them separately is not enough.",
   "icon": "🔀"
  },
  {
@@ -2950,7 +2950,7 @@ const QUESTIONS = [
   "text": "Medical professionals should be allowed to help terminally ill adults end their lives.",
   "agree": "Terminally ill adults should be able to get medical help to die.",
   "disagree": "Medical professionals should not be allowed to help terminally ill adults end their lives.",
-  "note": "About assisted dying for terminally ill adults.",
+  "note": "About allowing medical professionals to help terminally ill adults end their lives, for example by providing a lethal drug. Withdrawing treatment or palliative care is a different question.",
   "icon": "🕊️"
  },
  {
@@ -2995,7 +2995,7 @@ const QUESTIONS = [
   "text": "Religious dress should be banned in state institutions.",
   "agree": "State institutions stay free of visible religious dress for staff and pupils.",
   "disagree": "Religious dress should not be banned in state institutions.",
-  "note": "About religious symbols worn by officials, teachers and state-school pupils.",
+  "note": "About a ban on visible religious dress for officials, teachers and pupils in state institutions. Religious dress in private life is a different question.",
   "icon": "🧕"
  },
  {
@@ -3022,7 +3022,7 @@ const QUESTIONS = [
   "text": "Countries should abolish their armed forces.",
   "agree": "A country can and should do without a standing military.",
   "disagree": "Countries should keep their armed forces.",
-  "note": "About whether states should keep militaries at all.",
+  "note": "About doing without a standing military altogether. Cutting military spending or keeping only a small force is a different position.",
   "icon": "🕊️"
  },
  {
@@ -3040,7 +3040,7 @@ const QUESTIONS = [
   "text": "My country should stay out of the military blocs of rival great powers.",
   "agree": "A country stays neutral and non-aligned rather than joining either bloc.",
   "disagree": "My country should not stay out of the military blocs of rival great powers.",
-  "note": "About neutrality versus joining great-power blocs.",
+  "note": "About staying out of the military alliances led by rival great powers. Trading or having friendly relations with them is a different question.",
   "icon": "🏳️"
  },
  {
@@ -3067,7 +3067,7 @@ const QUESTIONS = [
   "text": "Governments should refuse austerity conditions imposed by international lenders such as the IMF.",
   "agree": "A country should reject spending cuts demanded in return for loans and set its own course.",
   "disagree": "Governments should not refuse austerity conditions imposed by international lenders such as the IMF.",
-  "note": "About who sets economic policy when a country owes money abroad.",
+  "note": "About refusing the spending cuts that lenders such as the IMF attach to loans. Disliking a particular cut while accepting such conditions is not enough.",
   "icon": "🧾"
  },
  {
@@ -3103,7 +3103,7 @@ const QUESTIONS = [
   "text": "Media owned by the rich make press freedom meaningless.",
   "agree": "Formal press freedom is hollow when wealth decides who can actually be heard.",
   "disagree": "Media owned by the rich do not make press freedom meaningless.",
-  "note": "About whether formal freedoms depend on who owns the media.",
+  "note": "About whether press freedom means little when wealthy owners control the media. Wanting rules on media ownership is a different question.",
   "icon": "📰"
  },
  {
@@ -3112,7 +3112,7 @@ const QUESTIONS = [
   "text": "Rulers should govern only under established public laws applied by recognised judges.",
   "agree": "Rulers must act under lasting, publicly known laws administered by recognised courts.",
   "disagree": "Rulers need not govern only under established public laws applied by recognised judges.",
-  "note": "About whether rulers are bound by fixed, published law.",
+  "note": "About rulers being bound to lasting, published laws applied by recognised judges. Rulers making rules as they go is not the same.",
   "icon": "📜"
  },
  {
@@ -3139,7 +3139,7 @@ const QUESTIONS = [
   "text": "The law should restrict marriage between members of different religions.",
   "agree": "The law may limit or closely check marriages between people of different religions.",
   "disagree": "Adults may marry across religions without legal restriction.",
-  "note": "About whether law should limit marriage across religions.",
+  "note": "About laws limiting or closely checking marriage between people of different religions. A religion's own rules on whom its members may marry are a different question.",
   "icon": "💍"
  },
  {
@@ -3148,7 +3148,7 @@ const QUESTIONS = [
   "text": "Consumers should deliberately avoid shops owned by members of a particular religious minority.",
   "agree": "People should deliberately avoid buying from shops owned by members of a particular religious minority.",
   "disagree": "Consumers should not deliberately avoid shops owned by members of a particular religious minority.",
-  "note": "About boycotting businesses by owners' religion.",
+  "note": "About deliberately avoiding shops because their owners belong to a particular religious minority. Avoiding a shop for other reasons is not the same.",
   "icon": "🛒"
  },
  {
@@ -3175,7 +3175,7 @@ const QUESTIONS = [
   "text": "Great concentrations of wealth endanger a free society.",
   "agree": "Very large concentrations of wealth threaten a free society.",
   "disagree": "Great concentrations of wealth do not endanger a free society.",
-  "note": "About whether wealth inequality threatens political freedom.",
+  "note": "About whether very large concentrations of wealth threaten a free society. Disliking inequality on other grounds is a different question.",
   "icon": "🏛️"
  },
  {
@@ -3229,7 +3229,7 @@ const QUESTIONS = [
   "text": "Elected politicians should be limited to a small number of terms in any office.",
   "agree": "Elected politicians should serve only a small number of terms.",
   "disagree": "Elected politicians should be able to serve any number of terms in any office.",
-  "note": "About limiting how long one person can hold elected office.",
+  "note": "About capping how many terms one person can serve in elected office. Limiting the length of a single term is not enough.",
   "icon": "⏳"
  },
  {
@@ -3265,7 +3265,7 @@ const QUESTIONS = [
   "text": "Foreign residents should be allowed to vote in local elections.",
   "agree": "Long-term residents without citizenship have a say in the places where they live.",
   "disagree": "Voting in local elections should be reserved for citizens.",
-  "note": "About who counts as part of the local electorate.",
+  "note": "About letting non-citizens who live in a place vote in its local elections. Voting in national elections is a different question.",
   "icon": "🗳️"
  },
  {
@@ -3274,7 +3274,7 @@ const QUESTIONS = [
   "text": "Rents should be capped by law in areas of housing shortage.",
   "agree": "The law limits how much landlords can charge where homes are scarce.",
   "disagree": "Rents should be left uncapped by law in areas of housing shortage.",
-  "note": "About whether the state should set housing prices.",
+  "note": "About legal limits on rents where homes are scarce. Other housing policies, such as building more homes, are different questions.",
   "icon": "🏘️"
  },
  {
@@ -3283,7 +3283,7 @@ const QUESTIONS = [
   "text": "Intellectual property should be abolished.",
   "agree": "Ideas and creative works can be copied freely; no one holds a legal monopoly on them.",
   "disagree": "Intellectual property should not be abolished.",
-  "note": "About whether patents and copyrights are legitimate property.",
+  "note": "About ending patents, copyrights and similar legal rights over ideas and creative works. Shorter or weaker protection is not enough.",
   "icon": "©️"
  },
  {
@@ -3292,7 +3292,7 @@ const QUESTIONS = [
   "text": "Young people should be organised into uniformed, drilled youth movements that train them for national service.",
   "agree": "Youth belong to disciplined organisations that prepare them to serve the nation.",
   "disagree": "Young people should not be organised into uniformed, drilled youth movements that train them for national service.",
-  "note": "About whether the state or movement should organise youth.",
+  "note": "About drilled, uniformed youth organisations that prepare young people to serve the nation. Voluntary scouts or sports clubs are not the same.",
   "icon": "🎖️"
  },
  {
@@ -3301,7 +3301,7 @@ const QUESTIONS = [
   "text": "Nuclear weapons should not be based on my country's territory.",
   "agree": "No nuclear weapons, ours or an ally's, should be stationed here.",
   "disagree": "Nuclear weapons may be based on my country's territory.",
-  "note": "About where nuclear weapons may be kept.",
+  "note": "About allowing no nuclear weapons, whoever owns them, to be stationed on the country's land. Opposing nuclear weapons elsewhere is a different question.",
   "icon": "☢️"
  },
  {
@@ -3310,7 +3310,7 @@ const QUESTIONS = [
   "text": "A country should not host foreign military bases on its territory.",
   "agree": "Foreign armies should not be based on the country's territory.",
   "disagree": "A country may host foreign military bases on its territory.",
-  "note": "About foreign troops on national soil.",
+  "note": "About allowing no foreign military bases on the country's land. Joining alliances or holding joint exercises is not the same.",
   "icon": "🏴"
  },
  {
@@ -3319,7 +3319,7 @@ const QUESTIONS = [
   "text": "Governments should formally recognise past mass killings of a people as genocide.",
   "agree": "States should officially name and acknowledge such killings.",
   "disagree": "Governments should not formally recognise past mass killings of a people as genocide.",
-  "note": "About official recognition of historical atrocities, such as the killing of Armenians in 1915.",
+  "note": "About governments officially naming past mass killings of a people as genocide, such as the killing of Armenians in 1915. Mourning or condemning them without that word is not enough.",
   "icon": "🕯️"
  },
  {
@@ -3337,7 +3337,7 @@ const QUESTIONS = [
   "text": "Killing another person is wrong, even in self-defence.",
   "agree": "Taking a life is never justified, even to stop an attacker.",
   "disagree": "Killing another person can be right in self-defence or in defence of others.",
-  "note": "About whether killing can ever be justified.",
+  "note": "About whether killing is wrong in every case, including to stop an attacker. Opposing war or the death penalty is a different question.",
   "icon": "🕊️"
  },
  {
@@ -3346,7 +3346,7 @@ const QUESTIONS = [
   "text": "A nation's identity runs in unbroken continuity from its ancient origins to the present.",
   "agree": "Today's nation is the same people as its ancient and medieval forebears.",
   "disagree": "A nation's identity does not run in unbroken continuity from its ancient origins to the present.",
-  "note": "About how old and continuous nations are.",
+  "note": "About whether today's nation is continuously the same people as its ancient and medieval forebears. Sharing a history or culture is not enough.",
   "icon": "🏛️"
  },
  {
@@ -3364,7 +3364,7 @@ const QUESTIONS = [
   "text": "Feminist politics should avoid relying on a single fixed definition of 'women'.",
   "agree": "Feminist politics should avoid treating one unchanging definition of women as its foundation.",
   "disagree": "A single fixed definition of women is an acceptable foundation for feminist politics.",
-  "note": "About whether 'women' is a stable political group.",
+  "note": "About whether feminist politics should avoid resting on one fixed definition of who counts as a woman. Whether feminism should work for women at all is a different question.",
   "icon": "👥"
  },
  {
@@ -3400,7 +3400,7 @@ const QUESTIONS = [
   "text": "Cultural renewal of a nation should come before building its state.",
   "agree": "A nation should revive its culture first and build its state afterward.",
   "disagree": "Cultural renewal of a nation should not come before building its state.",
-  "note": "About whether culture or the state comes first.",
+  "note": "About reviving a nation's culture first and building its state afterward. Working on both at once is not enough.",
   "icon": "📜"
  },
  {
@@ -3409,7 +3409,7 @@ const QUESTIONS = [
   "text": "God should not be described in exclusively male terms.",
   "agree": "Religious language and imagery should include more than male terms for God.",
   "disagree": "God may be described in exclusively male terms.",
-  "note": "About how religion speaks of God.",
+  "note": "About whether religious language should use more than male terms for God. Women's roles in religion are a different question.",
   "icon": "✨"
  },
  {
@@ -3436,7 +3436,7 @@ const QUESTIONS = [
   "text": "Administrative regions where one people live should be merged into a single territorial unit for that people.",
   "agree": "A people should have one region of its own rather than being split across several.",
   "disagree": "Administrative regions where one people live should not be merged into a single territorial unit for that people.",
-  "note": "About whether internal borders should follow peoples.",
+  "note": "About merging regions where one people lives into a single territorial unit for that people. Giving a people cultural rights without changing borders is not enough.",
   "icon": "🗺️"
  },
  {
@@ -3454,7 +3454,7 @@ const QUESTIONS = [
   "text": "Socialism requires the working class itself to hold real political power.",
   "agree": "Without workers' own political power, state ownership is not socialism.",
   "disagree": "A society can be socialist without the working class itself holding political power.",
-  "note": "About what counts as socialism.",
+  "note": "About whether state ownership counts as socialism when the working class itself holds no real political power. Whether socialism is desirable is a different question.",
   "icon": "🏭"
  },
  {
@@ -3472,7 +3472,7 @@ const QUESTIONS = [
   "text": "A legislature should include a second chamber alongside the directly elected parliament.",
   "agree": "A legislature should have a second chamber as well as its directly elected parliament.",
   "disagree": "A legislature should not include a second chamber alongside the directly elected parliament.",
-  "note": "About whether lawmaking needs two chambers.",
+  "note": "About having a second chamber, such as a senate, alongside the directly elected parliament. How its members are chosen is a different question.",
   "icon": "🏛️"
  },
  {
@@ -3481,7 +3481,7 @@ const QUESTIONS = [
   "text": "The means of production should be owned by the local community, neither by private owners nor by the national state.",
   "agree": "Farms, factories and utilities belong to the town or city that uses them.",
   "disagree": "Local community ownership of the means of production should not replace private or state ownership.",
-  "note": "About who should own the economy's main assets.",
+  "note": "About local communities, such as towns and cities, owning farms, factories and utilities. Ownership by the national state or by private owners doesn't count.",
   "icon": "🏘️"
  },
  {
@@ -3562,7 +3562,7 @@ const QUESTIONS = [
   "text": "Genetically engineered crops should be embraced as a tool for sustainable agriculture.",
   "agree": "Genetically engineered crops are a good tool for sustainable agriculture.",
   "disagree": "Genetically engineered crops should not be embraced as a tool for sustainable agriculture.",
-  "note": "About genetically engineered crops.",
+  "note": "About welcoming genetically engineered crops as a tool for sustainable agriculture. Using them in some cases without embracing them is not enough.",
   "icon": "🌽"
  },
  {
@@ -3589,7 +3589,7 @@ const QUESTIONS = [
   "text": "Armed forces should be used only to defend the country against attack, never to start wars.",
   "agree": "Force is for self-defence alone.",
   "disagree": "Armed forces should not be used only to defend the country against attack, never to start wars.",
-  "note": "About when a country may use force.",
+  "note": "About whether armed forces may ever be used to start a war, rather than only to defend the country against attack. Having a strong army is not the same.",
   "icon": "🛡️"
  },
  {
@@ -3607,7 +3607,7 @@ const QUESTIONS = [
   "text": "Members of each religious community should vote for their own representatives in separate electorates.",
   "agree": "Each community should elect its own representatives.",
   "disagree": "Members of each religious community should not vote for their own representatives in separate electorates.",
-  "note": "About separate voter rolls, for example Muslims voting only for Muslim seats in British India.",
+  "note": "About separate voter rolls for each religious community, for example Muslims voting only for Muslim seats in British India. Reserved seats chosen by all voters are a different question.",
   "icon": "🗳️"
  },
  {
@@ -3634,7 +3634,7 @@ const QUESTIONS = [
   "text": "Taxing polluters should do more to protect the environment than regulating them.",
   "agree": "Taxing polluters should do more to protect the environment than regulating them.",
   "disagree": "Regulating polluters should do at least as much to protect the environment as taxing them.",
-  "note": "About taxing pollution versus other environmental tools.",
+  "note": "About whether charging polluters does more for the environment than setting legal limits on what they may emit. Wanting both together doesn't say which does more.",
   "icon": "🏭"
  },
  {
@@ -3643,7 +3643,7 @@ const QUESTIONS = [
   "text": "Present generations owe it to future generations to hand on the Earth undamaged.",
   "agree": "We have a duty to leave the planet in good condition for those who come after us.",
   "disagree": "Present generations do not owe it to future ones to hand on the Earth undamaged.",
-  "note": "About duties to future generations.",
+  "note": "About a duty to leave the Earth in good condition for later generations, for example its climate, soil and water. Caring about the environment for today's people is not the same.",
   "icon": "🌍"
  },
  {
@@ -3670,7 +3670,7 @@ const QUESTIONS = [
   "text": "The state should control the movement of capital across its borders.",
   "agree": "Governments should limit how money and investment can be moved across borders.",
   "disagree": "The state should not control the movement of capital across its borders.",
-  "note": "About limits on moving money and investments into or out of a country.",
+  "note": "About limits on moving money and investment into or out of a country. Controls on trade in goods are a different question.",
   "icon": "🛂"
  },
  {
@@ -3688,7 +3688,7 @@ const QUESTIONS = [
   "text": "Soldiers should refuse orders to fight in wars between states.",
   "agree": "Individual soldiers and conscripts have a duty to refuse to fight in state wars.",
   "disagree": "Soldiers should not refuse orders to fight in wars between states.",
-  "note": "About whether conscience should override military orders.",
+  "note": "About whether soldiers should refuse orders to fight in wars between states. Opposing a particular war as a citizen is not the same.",
   "icon": "✊"
  },
  {
@@ -3706,7 +3706,7 @@ const QUESTIONS = [
   "text": "Governments should top up the incomes of low-paid working families through tax credits.",
   "agree": "The state adds to the pay of low-income working households through the tax system.",
   "disagree": "Governments should not top up the incomes of low-paid working families through tax credits.",
-  "note": "About supplementing low wages with public money.",
+  "note": "About the state adding to the low earnings of working families through tax credits. A higher minimum wage, or benefits only for people without jobs, is not the same.",
   "icon": "💷"
  },
  {
@@ -3724,7 +3724,7 @@ const QUESTIONS = [
   "text": "The rules of the international economy should be restructured in favour of developing countries.",
   "agree": "Trade, finance and debt rules should be changed to give poorer countries a fairer share.",
   "disagree": "International economic rules should not be reshaped to favour developing countries.",
-  "note": "About reforming the global economic order.",
+  "note": "About changing the rules of trade, finance and debt to favour developing countries. Giving aid within the current rules is not enough.",
   "icon": "🌍"
  },
  {
@@ -3742,7 +3742,7 @@ const QUESTIONS = [
   "text": "Different communities should be free to try different economic systems, with no fixed blueprint for the economy of a free society.",
   "agree": "Communities should be free to choose their own economic arrangements, and a free society has no fixed blueprint for its economy.",
   "disagree": "Different communities should not be free to try different economic systems, with no fixed blueprint for the economy of a free society.",
-  "note": "About pluralism over how an economy should be organised.",
+  "note": "About letting communities try different economic arrangements, with no single plan for how a free society's economy must work. One system imposed on every community is a different position.",
   "icon": "🧪"
  },
  {
@@ -3760,7 +3760,7 @@ const QUESTIONS = [
   "text": "The nation is a sacred community that outlasts its members, giving their lives lasting meaning.",
   "agree": "The nation is a sacred, enduring community in which individuals find lasting meaning.",
   "disagree": "The nation is not a sacred community that outlasts its members, giving their lives lasting meaning.",
-  "note": "About whether the nation is treated as sacred.",
+  "note": "About seeing the nation as a sacred community that outlasts its members and gives their lives meaning. Ordinary patriotism or pride in one's country is not enough.",
   "icon": "⛪"
  },
  {
@@ -3769,7 +3769,7 @@ const QUESTIONS = [
   "text": "Governments should cancel at least part of graduates' outstanding student loan debt.",
   "agree": "Government action should write off some or all of the student loan balance that graduates already owe.",
   "disagree": "Governments should not cancel any of graduates' outstanding student loan debt.",
-  "note": "This concerns writing off existing balances, not solely lowering future interest, extending repayment time, subsidising tuition or making new loans cheaper. It does not require complete cancellation, settle which graduates qualify or prescribe executive action without legislative authority.",
+  "note": "This concerns writing off existing balances, not solely lowering future interest, extending repayment time, subsidising tuition or making new loans cheaper. It does not require complete cancellation, specify which graduates qualify or prescribe executive action without legislative authority.",
   "icon": "🎓"
  },
  {
@@ -3787,7 +3787,7 @@ const QUESTIONS = [
   "text": "A shared human nature is the basis of human rights.",
   "agree": "Human rights come from the nature that all human beings share.",
   "disagree": "A shared human nature is not the basis of human rights.",
-  "note": "About the foundation of human rights, without taking a position on changing human traits.",
+  "note": "About human rights resting on the nature all people share, rather than on laws, agreements or a government's grant. Simply supporting human rights is not enough.",
   "icon": "🧬"
  },
  {
@@ -3805,7 +3805,7 @@ const QUESTIONS = [
   "text": "All authentic religions express one underlying spiritual truth.",
   "agree": "Behind their different forms, the great religions point to one shared truth.",
   "disagree": "Not all authentic religions express one underlying spiritual truth.",
-  "note": "About whether the world's religions share one truth.",
+  "note": "About whether the great religions all point to one shared spiritual truth beneath their differences. Respecting other religions is not enough.",
   "icon": "🕉️"
  },
  {
@@ -3814,7 +3814,7 @@ const QUESTIONS = [
   "text": "The state should protect farmers from swings in market prices.",
   "agree": "Farmers should get price floors, state buying or cheap credit to keep them secure.",
   "disagree": "The state should not protect farmers from swings in market prices.",
-  "note": "About state support for farmers.",
+  "note": "About state protection for farmers against price swings, such as price floors, state buying or cheap credit. General help for rural areas is not the same.",
   "icon": "🌾"
  },
  {
@@ -3832,7 +3832,7 @@ const QUESTIONS = [
   "text": "Working people should have their own political party, independent of the established parties.",
   "agree": "Workers need a party of their own to represent their interests in government.",
   "disagree": "Working people should not have their own political party, independent of the established parties.",
-  "note": "About independent parties for working people.",
+  "note": "About working people having a party of their own, independent of the established parties. Voting for an existing party that favours workers is not enough.",
   "icon": "🗳️"
  },
  {
@@ -3841,7 +3841,7 @@ const QUESTIONS = [
   "text": "Women should have the same legal rights to land as men.",
   "agree": "Daughters and widows inherit and own land on the same terms as sons and husbands.",
   "disagree": "Women should not have the same legal rights to land as men.",
-  "note": "About equal inheritance and land rights for women.",
+  "note": "About women having the same legal rights as men to own and inherit land, as daughters and widows. Equal rights in other areas of law are a different question.",
   "icon": "🏡"
  },
  {
@@ -3859,7 +3859,7 @@ const QUESTIONS = [
   "text": "Customary chiefs should have an official advisory role in making national law.",
   "agree": "Customary chiefs should have an official advisory role in making national law.",
   "disagree": "Customary chiefs should not have an official advisory role in making national law.",
-  "note": "About a formal role for traditional chiefs in lawmaking.",
+  "note": "About a formal advisory role for traditional chiefs in making national law. Chiefs ruling local customary matters is a different question.",
   "icon": "🪶"
  },
  {
@@ -3886,7 +3886,7 @@ const QUESTIONS = [
   "text": "Immigrants should be required to learn the national language.",
   "agree": "Learning the language is a duty of settling, and the state may require it.",
   "disagree": "Immigrants should not be required to learn the national language.",
-  "note": "About language requirements for immigrants.",
+  "note": "About requiring immigrants to learn the national language, for example as a condition of settling. Offering free classes, or merely hoping they learn it, is not enough.",
   "icon": "🔤"
  },
  {
@@ -3922,7 +3922,7 @@ const QUESTIONS = [
   "text": "Fair elections are all a government needs to be democratic, whatever policies it pursues.",
   "agree": "Democracy is a method for choosing and removing rulers, and fair elections are enough to make a government democratic.",
   "disagree": "A government needs more than fair elections to be democratic.",
-  "note": "About what makes a government democratic.",
+  "note": "About whether fair elections alone make a government democratic, whatever it does with its power. Valuing elections is not enough.",
   "icon": "🗳️"
  },
  {
@@ -3949,7 +3949,7 @@ const QUESTIONS = [
   "text": "Welfare programs should be replaced by a cash payment that shrinks as a person's earnings rise.",
   "agree": "One cash payment, withdrawn gradually as income grows, should replace separate welfare programs.",
   "disagree": "Welfare programs should not be replaced by a cash payment that shrinks as earnings rise.",
-  "note": "About a negative income tax versus existing welfare programs.",
+  "note": "About replacing separate welfare programs with one cash payment that shrinks gradually as earnings rise. A payment given to everyone, or one added on top of existing programs, is not the same.",
   "icon": "➖"
  },
  {
@@ -3958,7 +3958,7 @@ const QUESTIONS = [
   "text": "Women should have the same political rights as men.",
   "agree": "Women vote and stand for office on the same terms as men.",
   "disagree": "Women should not have the same political rights as men.",
-  "note": "About women's political rights, such as voting and holding public office.",
+  "note": "About women's political rights, such as voting and holding public office. Equality at work or in family law is a different question.",
   "icon": "🗳️"
  },
  {
@@ -3967,7 +3967,7 @@ const QUESTIONS = [
   "text": "Religion is a major cause of women's oppression.",
   "agree": "Religious teaching and institutions are a main reason women have been held down.",
   "disagree": "Religion is not a major cause of women's oppression.",
-  "note": "About religion's role in women's status.",
+  "note": "About whether religious teaching and institutions are a main reason women have been held down. Religion having some effect on women's status is not enough.",
   "icon": "⛪"
  },
  {
@@ -3976,7 +3976,7 @@ const QUESTIONS = [
   "text": "Racial categories are social constructs without a scientific basis.",
   "agree": "Races are not natural scientific divisions of humanity but categories created by society.",
   "disagree": "Racial categories are not merely social constructs without a scientific basis.",
-  "note": "About whether race is a social or biological category.",
+  "note": "About whether races are natural divisions of humanity or categories created by society. Whether racism and its effects are real is a different question.",
   "icon": "🧬"
  },
  {
@@ -3994,7 +3994,7 @@ const QUESTIONS = [
   "text": "Land belongs to whoever first puts it to use.",
   "agree": "Whoever first settles and works unowned land becomes its rightful owner.",
   "disagree": "Land does not belong to whoever first puts it to use.",
-  "note": "About how land that no one owns first becomes property.",
+  "note": "About land that no one owns becoming the property of whoever first settles and works it. Buying land or inheriting it is a different question.",
   "icon": "🌾"
  },
  {
@@ -4048,7 +4048,7 @@ const QUESTIONS = [
   "text": "A country's traditional national church should have a special legal status above other religious bodies.",
   "agree": "The national church is recognised in law above other religions.",
   "disagree": "A country's traditional national church should not have a special legal status above other religious bodies.",
-  "note": "About a privileged legal status for a national church.",
+  "note": "About giving a country's traditional church a special legal rank above other religious bodies. Simply being its largest or oldest church is not enough.",
   "icon": "⛪"
  },
  {
@@ -4057,7 +4057,7 @@ const QUESTIONS = [
   "text": "Regions where an ethnic minority forms the majority should have territorial autonomy within the state.",
   "agree": "Such regions should run many of their own affairs.",
   "disagree": "Regions where an ethnic minority forms the majority should not have territorial autonomy within the state.",
-  "note": "About autonomy for regions of ethnic minorities.",
+  "note": "About self-government for regions where an ethnic minority is the local majority, within the existing state. Full independence is a different question.",
   "icon": "🗺️"
  },
  {
@@ -4066,7 +4066,7 @@ const QUESTIONS = [
   "text": "The inhabitants of a disputed territory should decide by vote which country it belongs to.",
   "agree": "The people who live there should choose.",
   "disagree": "The inhabitants of a disputed territory should not decide by vote which country it belongs to.",
-  "note": "About who decides the status of a disputed territory.",
+  "note": "About letting the people living in a disputed territory vote on which country it belongs to. Deciding by treaty, history or military control is not the same.",
   "icon": "🗳️"
  },
  {
@@ -4093,7 +4093,7 @@ const QUESTIONS = [
   "text": "The authorities should restrict outside settlement in regions where an indigenous people is the original majority.",
   "agree": "Settlement by outsiders should be limited to protect the indigenous majority.",
   "disagree": "The authorities should not restrict outside settlement in regions where an indigenous people is the original majority.",
-  "note": "About limiting settlement by outsiders in indigenous homelands.",
+  "note": "About authorities limiting outsiders moving into regions where an indigenous people is the original majority. Protecting indigenous land ownership alone is not enough.",
   "icon": "🏘️"
  },
  {
@@ -4129,7 +4129,7 @@ const QUESTIONS = [
   "text": "A country should seek closer ties with China than with the United States.",
   "agree": "A country should seek closer ties with China than with the United States.",
   "disagree": "A country should seek ties with the United States at least as close as its ties with China.",
-  "note": "About which great power a country should lean on.",
+  "note": "About a country seeking closer ties with China than with the United States, in trade, diplomacy or security. Good relations with both is not enough.",
   "icon": "🐉"
  },
  {
@@ -4147,7 +4147,7 @@ const QUESTIONS = [
   "text": "Whoever takes natural resources for their own use owes compensation to everyone else.",
   "agree": "Whoever uses land or resources owes the rest of society a share of their value.",
   "disagree": "Whoever takes natural resources for their own use does not owe compensation to everyone else.",
-  "note": "About who owns natural resources and what users owe others.",
+  "note": "About whether those who take natural resources such as land owe the rest of society a share of their value. Taxing income or wealth in general is not the same.",
   "icon": "🌍"
  },
  {
@@ -4192,7 +4192,7 @@ const QUESTIONS = [
   "text": "Governments should not give special legal privileges to well-connected businesses.",
   "agree": "No subsidies, licences or protections that favour firms close to government.",
   "disagree": "Governments may give special legal privileges to well-connected businesses.",
-  "note": "About whether the state may favour particular businesses.",
+  "note": "About governments not giving subsidies, licences or protections to firms close to them. Ordinary rules that apply to every business alike don't count against it.",
   "icon": "🏢"
  },
  {
@@ -4201,7 +4201,7 @@ const QUESTIONS = [
   "text": "Politics should not be organised along religious denominations.",
   "agree": "Parties and offices should cut across religious lines.",
   "disagree": "Politics may be organised along religious denominations.",
-  "note": "About religion as a basis for politics, for example Lebanon, where top offices are shared out between religious communities.",
+  "note": "About religion as a basis for organising politics, for example Lebanon, where top offices are shared out between religious communities. Religious people taking part in politics is a different question.",
   "icon": "⛪"
  },
  {
@@ -4237,7 +4237,7 @@ const QUESTIONS = [
   "text": "Whether a distribution of wealth is just depends on how it came about, not on how equal it is.",
   "agree": "Whether a distribution of wealth is fair depends on how it came about, not on how equal it is.",
   "disagree": "Whether a distribution of wealth is just does not depend only on how it came about.",
-  "note": "About judging fairness by process or by outcome.",
+  "note": "About whether a distribution of wealth is fair because of how people came by it, not because of how equal the result is. Thinking some inequality is acceptable is not enough.",
   "icon": "⚖️"
  },
  {
@@ -4255,7 +4255,7 @@ const QUESTIONS = [
   "text": "Racism is no longer the main obstacle to the advancement of disadvantaged racial groups.",
   "agree": "Other factors such as policy, family and culture now hold people back more than racism does.",
   "disagree": "Racism is still the main obstacle to the advancement of disadvantaged racial groups.",
-  "note": "About how much racism still limits people today.",
+  "note": "About whether racism is still the main thing holding back disadvantaged racial groups today. Racism being serious in the past is a different question.",
   "icon": "🧱"
  },
  {
@@ -4291,7 +4291,7 @@ const QUESTIONS = [
   "text": "The value of goods is created by the labour that produces them.",
   "agree": "What things are worth comes from the work put into them.",
   "disagree": "The value of goods is not created by the labour that produces them.",
-  "note": "About where economic value comes from.",
+  "note": "About whether the value of goods comes from the work that produces them. Workers deserving fair pay is a different question.",
   "icon": "🔨"
  },
  {
@@ -4300,7 +4300,7 @@ const QUESTIONS = [
   "text": "Serving the nation means serving its working people.",
   "agree": "The nation's cause and the cause of its ordinary working people are one and the same.",
   "disagree": "Serving the nation does not mean serving its working people.",
-  "note": "About fusing national and workers' politics, as in Peronism or Arab socialism. Internationalists who say workers have no nation disagree, as do nationalists who put the nation above any class.",
+  "note": "About the nation's cause and its working people's cause being one and the same. Love of country alone is not enough.",
   "icon": "🚩"
  },
  {
@@ -4309,7 +4309,7 @@ const QUESTIONS = [
   "text": "The political left should focus more on workers' material interests than on cultural identity issues.",
   "agree": "The left should care more about workers' material interests than about cultural identity issues.",
   "disagree": "The political left should give cultural identity issues at least as much attention as workers' material interests.",
-  "note": "About what the left should prioritise.",
+  "note": "About whether the left should give workers' pay, jobs and living costs more attention than cultural identity issues. Opposing identity causes is not required.",
   "icon": "🛠️"
  },
  {
@@ -4327,7 +4327,7 @@ const QUESTIONS = [
   "text": "Immigration should be restricted on the basis of race.",
   "agree": "Immigration should be restricted on the basis of race.",
   "disagree": "Immigration should not be restricted on the basis of race.",
-  "note": "About racial selection of immigrants, independently of the total number admitted.",
+  "note": "About choosing who may immigrate by race, whatever the total number admitted. Wanting fewer immigrants overall is a different question.",
   "icon": "🛂"
  },
  {
@@ -4345,7 +4345,7 @@ const QUESTIONS = [
   "text": "Parliamentary democracy is a viable path to socialism.",
   "agree": "Parliamentary democracy is a viable path to socialism.",
   "disagree": "Parliamentary democracy is not a viable path to socialism.",
-  "note": "About the possibility of a socialist transition within democratic parliamentary institutions.",
+  "note": "About whether socialism can be reached through elections and parliament. Winning some reforms in parliament is not enough.",
   "icon": "🗳️"
  },
  {
