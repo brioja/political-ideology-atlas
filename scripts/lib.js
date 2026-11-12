@@ -219,14 +219,15 @@ const awaitingReaudit = () => {
 // "more"/"less"/"fewer" and the comparatives in COMPARATIVES ("higher", "larger", ...; Brandon, 2026-11-12) without a
 // later "than", a semicolon and a second sentence (marked in wordingMarks), and
 // "instead" ("A instead of B" is "rather than" in other words: hard to negate; Brandon, 2026-11-11), and "my country"
-// (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11).
+// (fine with "should"; a claim of fact about the reader's country has unstated context; Brandon, 2026-11-11), and
+// "sometimes"/"at times"/"occasionally"/"in some cases" (a hedge almost anyone agrees with; Brandon, 2026-11-12).
 // Comparatives that, with no later "than", mean "than now" ("Taxes on the wealthy should be significantly higher").
 const COMPARATIVES = ["more", "less", "fewer", "higher", "larger", "greater", "bigger", "smaller", "stronger", "weaker",
   "tighter", "looser", "stricter", "tougher", "harsher", "wider", "narrower", "broader"];
 const WORDING = {
   errors: ["can", "may", "rather", "so", "because", "as well as", "not only", "and", "or"],
   warnings: ["like", "by", "through", "not", "if", "unless", "when", "whenever", "while", "until", "provided", "as long as", "instead", "my country",
-    "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
+    "sometimes", "at times", "occasionally", "in some cases", "cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"],
 };
 // Why each mark matters, printed by statements-check.js and in review briefs (Brandon, 2026-11-11).
 const WORDING_REASONS = {
@@ -257,6 +258,8 @@ const WORDING_REASONS = {
   ...Object.fromEntries(["cut", "cuts", "reduce", "reduced", "raise", "raised", "increase", "increased", "expand", "expanded", "lower", "lowered"]
     .map((w) => [w, "a change from today's level, which differs by country and era; state the level (a literal use is fine)"])),
   ...Object.fromEntries(COMPARATIVES.map((w) => [w, "with no \"than\" it means \"than now\", which differs by country and era; state the level"])),
+  ...Object.fromEntries(["sometimes", "at times", "occasionally", "in some cases"]
+    .map((w) => [w, "a hedge: almost anyone agrees something is true some of the time, so agreeing says little; state the general claim or the case"])),
   "second sentence": "a second sentence usually adds a second claim",
 };
 const wordingReason = (w) => WORDING_REASONS[w.toLowerCase()] || "";
