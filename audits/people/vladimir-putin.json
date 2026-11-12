@@ -1494,11 +1494,33 @@
       "sources": []
     },
     "constituent-assembly": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rejected adopting a new Constitution, favouring amendments with a national vote.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on keeping the current constitution, and the statement now asks only who should write a constitution.",
       "sources": [
         "s14"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rejected adopting a new Constitution, favouring amendments with a national vote.",
+          "sources": [
+            "s14"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on keeping the current constitution, and the statement now asks only who should write a constitution.",
+          "sources": [
+            "s14"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "restrict-freedoms-for-growth": {
@@ -3403,6 +3425,12 @@
       "kind": "inference",
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]
