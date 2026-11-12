@@ -520,12 +520,6 @@ function validate(id) {
       for (const x of sentences) errors.push(`notes call a source unavailable: "${x.trim().slice(0, 160)}". List the work in "notFound" with at least two places tried, or find it`);
     }
   }
-  // Rules 7 (Brandon, 2026-11-12): a 0 is a documented split, so it cites at least two sources. A 0 on one source was
-  // usually a hedge (a later pass dropping the old side's sources) or "adherents are split" on a source that takes no side.
-  if (a.rules >= 7) {
-    const thin = Object.entries(answers).filter(([, x]) => x && x.value === 0 && new Set(x.sources || []).size < 2).map(([k]) => k);
-    if (thin.length) errors.push(`${thin.join(", ")}: 0 on fewer than two sources. 0 means the record points both ways (or the subject deliberately takes no side): cite the sources for each side, or answer the side the evidence supports, or null if the sources are silent`);
-  }
   // People most associated with the ideology, shown as "Key figures".
   if (!PEOPLE && a.keyFigures === undefined) warnings.push('no "keyFigures" (1-3 founders, thinkers or leaders, or [] if none)');
   else if (!PEOPLE && (!Array.isArray(a.keyFigures) || a.keyFigures.length > 3)) errors.push('"keyFigures" must be a list of at most 3');

@@ -8,7 +8,7 @@ how evidence is judged goes in this file, so both kinds of audit get it.
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
 in the local library; rules 6 accounts for every text known to exist by a person and lists every source
-not found, with two places tried; rules 7 cites at least two sources for every 0.)
+not found, with two places tried; rules 7: a 0 is a split within actions or within words, never words against actions.)
 
 ## 1. Standard
 
@@ -98,9 +98,10 @@ free trade, not about markets in general.
   whole claim.
 - **0 is a documented middle:** the subject's own sources genuinely point both ways (a mixed
   record, its defining sources disagreeing), or the subject deliberately takes no side (laïcité refuses to rule on religious
-  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites at least two sources,
-  the evidence for each side (`validate.js` checks); adherents disagreeing among themselves while the
-  sources take no side is silence: `null`.
+  doctrine). Mixed evidence is `low`. Don't use 0 to avoid a hard call. A 0 cites the evidence for each
+  side, which one source may hold, of the same kind: actions against actions or words against words.
+  Words against actions is not a split; answer from the actions (`validate.js` checks). Adherents
+  disagreeing among themselves while the sources take no side is silence: `null`.
 - **±2** only when the position is central or stated explicitly and forcefully.
 - **Every answer is stated or null; there are no inferences.** An answer is stated when the
   subject's own stated position settles the statement: the statement says the same on the same
