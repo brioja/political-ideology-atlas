@@ -1262,8 +1262,14 @@ async function drawShareCard(canvas, result, site = `${location.host}${location.
     const room = W - PAD * 2 - 28;
     const askI = widestAt(closeIdeos.map((r) => r.name), IDEO_PX) + IDEO_FIXED;
     const askP = widestAt(morePeople.map((p) => p.name), PERSON_PX) + PERSON_FIXED;
-    ideoW = askI + askP <= room ? askI + (room - askI - askP) / 2 : room - Math.min(askP, room / 2);
-    ideoW = Math.round(Math.max(room / 2, ideoW));
+    // Too little room for both: a column that fits in half keeps its full-size width and the other gets the
+    // rest (a long person name beside short ideology names no longer shrinks both); if neither fits in
+    // half, they split it evenly.
+    if (askI + askP <= room) ideoW = askI + (room - askI - askP) / 2;
+    else if (askI <= room / 2) ideoW = askI;
+    else if (askP <= room / 2) ideoW = room - askP;
+    else ideoW = room / 2;
+    ideoW = Math.round(ideoW);
     peopleW = room - ideoW;
   }
   card(PAD, y, ideoW, ch);
