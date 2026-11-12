@@ -156,6 +156,27 @@ function keepLineOrder(rotated, k) {
   rotated.slice(0, k).forEach((c, i) => old.forEach((o, slot) => pairs.push({ i, slot, c: cos(c.vector, o) })));
   pairs.sort((x, y) => Math.abs(y.c) - Math.abs(x.c));
   const bySlot = new Map(), taken = new Set();
+  // A named slot first keeps the line that still holds its anchors (the same test that names it below), so a
+  // small line that happens to resemble a changed one can't take the slot of a named line that still exists
+  // (Brandon, 2026-11-12: Centralism/Decentralism slipped to slot 12 behind the smallest line).
+  const sets = readJson(path.join(ROOT, "audits", "line-labels.json")).lines;
+  const qi = Object.fromEntries(statements.map((s, j) => [s.id, j]));
+  (prev.MODEL.labels || []).forEach((lab, slot) => {
+    if (!lab || slot >= old.length) return;
+    const set = sets.find((s) => s.ends.some((e) => e.name === lab.low) && s.ends.some((e) => e.name === lab.high));
+    if (!set) return;
+    const holds = (end, top) => end.anchors.filter((id) => top.has(qi[id])).length >= Math.min(2, end.anchors.length);
+    for (let i = 0; i < k; i++) {
+      if (taken.has(i)) continue;
+      const order = rotated[i].vector.map((w, j) => [w, j]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+      const lo = new Set(order.slice(0, 10)), hi = new Set(order.slice(-10));
+      const [a, b] = set.ends;
+      if ((holds(a, lo) && holds(b, hi)) || (holds(b, lo) && holds(a, hi))) {
+        const c = pairs.find((p) => p.i === i && p.slot === slot).c;
+        bySlot.set(slot, { i, slot, c }); taken.add(i); break;
+      }
+    }
+  });
   for (const p of pairs) if (!bySlot.has(p.slot) && !taken.has(p.i)) { bySlot.set(p.slot, p); taken.add(p.i); }
   const free = rotated.slice(0, k).map((_, i) => i).filter((i) => !taken.has(i));
   const order = [];
