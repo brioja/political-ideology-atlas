@@ -3118,12 +3118,36 @@
       "sources": []
     },
     "internal-colonialism": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Venetists present Veneto as an exploited region whose taxes flow to Rome, an internal-colonial style claim central to the movement.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a richer region drained by the rest of the country, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Venetists present Veneto as an exploited region whose taxes flow to Rome, an internal-colonial style claim central to the movement.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a richer region drained by the rest of the country, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "shared-human-nature": {
@@ -3559,6 +3583,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 9
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     }
   ]
 }

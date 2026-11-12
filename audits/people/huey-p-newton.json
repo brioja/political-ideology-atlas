@@ -1042,12 +1042,36 @@
    ]
   },
   "internal-colonialism": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Described Black communities as a dispersed colony in 1971 but said in 1972 that Black Americans are not colonial subjects strictly speaking.",
+   "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a people treated as a colony, not about regions, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
    "sources": [
     "s9",
     "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Described Black communities as a dispersed colony in 1971 but said in 1972 that Black Americans are not colonial subjects strictly speaking.",
+     "sources": [
+      "s9",
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a people treated as a colony, not about regions, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
+     "sources": [
+      "s9",
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-11"
+    }
    ]
   },
   "defend-planned-state": {
@@ -3368,6 +3392,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-11",
    "nulled": 1
   }
  ]

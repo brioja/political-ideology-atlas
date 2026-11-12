@@ -3198,11 +3198,33 @@
       "sources": []
     },
     "internal-colonialism": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "The declaration describes the Italian state as a colonial power draining Padania's taxes to the clientelist South, the movement's core grievance.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a richer region drained by the rest of the country, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
       "sources": [
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The declaration describes the Italian state as a colonial power draining Padania's taxes to the clientelist South, the movement's core grievance.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-21"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a richer region drained by the rest of the country, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
+          "sources": [
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "shared-human-nature": {
@@ -3671,6 +3693,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 25
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
+      "nulled": 1
     },
     {
       "kind": "nulling",

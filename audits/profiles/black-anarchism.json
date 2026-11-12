@@ -3281,12 +3281,36 @@
       "sources": []
     },
     "internal-colonialism": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Ervin treats Black Americans as a colonized people within the United States, an internal-colony analysis.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a people treated as a colony, not about regions, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
       "sources": [
         "s2",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Ervin treats Black Americans as a colonized people within the United States, an internal-colony analysis.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-20"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-11): its rationale is about a people treated as a colony, not about regions, and the statement now asks whether richer regions owe their wealth to exploiting poorer ones.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-11"
+        }
       ]
     },
     "shared-human-nature": {
@@ -3757,6 +3781,12 @@
       "kind": "unsourced",
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-11",
       "nulled": 1
     },
     {
