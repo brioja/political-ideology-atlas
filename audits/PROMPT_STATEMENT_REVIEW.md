@@ -58,6 +58,9 @@ These came out of the reviews on 2026-11-10 and are what the maintainer accepted
   and name the answers that rest on the dropped part, or propose a new id.
 - **"A rather than B":** ask what the contrast meant. Emphasis becomes "more A than B"; substitution becomes
   "A should replace B"; a redundant contrast is dropped ("Decisions should be made as locally as possible").
+  Use "replace" only when B is what exists now (parliaments, craft unions). When B is a rival goal (separate
+  statehood versus cultural autonomy), disagreeing joins the subjects who want neither with those who want B:
+  drop the contrast and leave B to its own statement (Brandon, 2026-11-12).
 - **Plain words.** No jargon ("the political nation", "interlocking"), no figurative verbs ("turn away
   from"), no "should" that could read as a prediction ("should do more" for "should rely more on").
 - **The agree text means exactly the statement**, in plainer words or with examples; it never adds a claim the
