@@ -152,12 +152,36 @@
    "sources": []
   },
   "tax-the-wealthy": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Davos 2026, in his own words: \"Since my government took office, we have cut taxes on incomes, on capital gains and business investment\" (presented as building strength at home). He also cancelled the capital gains inclusion increase; the platform promises a corporate tax review and tougher evasion enforcement, but he has not called for higher taxes on the wealthy.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value turns on the current tax level, and the statement now asks whether the wealthy should pay a much larger share of their income in tax than others.",
    "sources": [
     "s12",
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Davos 2026, in his own words: \"Since my government took office, we have cut taxes on incomes, on capital gains and business investment\" (presented as building strength at home). He also cancelled the capital gains inclusion increase; the platform promises a corporate tax review and tougher evasion enforcement, but he has not called for higher taxes on the wealthy.",
+     "sources": [
+      "s12",
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value turns on the current tax level, and the statement now asks whether the wealthy should pay a much larger share of their income in tax than others.",
+     "sources": [
+      "s12",
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "unions-good": {
@@ -3297,6 +3321,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   },
   {

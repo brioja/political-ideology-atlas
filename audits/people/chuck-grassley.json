@@ -722,12 +722,36 @@
    ]
   },
   "tax-the-wealthy": {
-   "value": -2,
-   "confidence": "high",
-   "rationale": "His 2012 floor statement opposed President Obama's proposal to raise taxes on households above $250,000, arguing the wealthy already pay the bulk of federal taxes and higher rates do not raise revenue; he later voted for the 2017 tax law.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value turns on the current tax level, and the statement now asks whether the wealthy should pay a much larger share of their income in tax than others.",
    "sources": [
     "s3",
     "s43"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "His 2012 floor statement opposed President Obama's proposal to raise taxes on households above $250,000, arguing the wealthy already pay the bulk of federal taxes and higher rates do not raise revenue; he later voted for the 2017 tax law.",
+     "sources": [
+      "s3",
+      "s43"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-28"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value turns on the current tax level, and the statement now asks whether the wealthy should pay a much larger share of their income in tax than others.",
+     "sources": [
+      "s3",
+      "s43"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "regulate-corporations": {
@@ -3843,6 +3867,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]
