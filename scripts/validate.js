@@ -25,7 +25,7 @@ const EVIDENCE = ["action", "words"]; // rules 4: what a source records of the s
 const NOT_AN_IDEOLOGY_REASONS = ["PERSON", "PARTY", "ORGANIZATION", "STATE", "GOVERNMENT_BODY", "EVENT", "DOES_NOT_INCLUDE_IDEAS"];
 const CONFIDENCE = ["high", "medium", "low"];
 // The rules version new audits and later passes write ("rules" in audits/AUDIT_RULES.md, PROMPT.md, PROMPT_PEOPLE.md).
-const CURRENT_RULES = 5;
+const CURRENT_RULES = 6;
 // Minimum gap between audit passes: half the project's age (days since PROJECT_START, the first commit) on the date
 // of the later pass, so it grows by a day every two days. REAUDIT_FROM: the date the rule applies from.
 const PROJECT_START = "2026-10-14", REAUDIT_FROM = "2026-11-08";
@@ -94,6 +94,49 @@ function personBooks(name, born) {
   const gut = lib0.gutenberg.filter((b) => { const a = fold(b.authors); return a.startsWith(`${surname},`) && (born ? a.includes(String(born)) : a.includes(first)); }).map((b) => b.file);
   return [...ref, ...gut];
 }
+
+// Rules 6 (Brandon, 2026-11-12: audits stopped at "not in the local corpora"): texts by the person that are known
+// to exist, each cited or declined. Project Gutenberg's whole catalog (English texts whose catalog author is the
+// person: surname, plus birth year or first name; scripts/gutenberg.js fetches any of them), their Miller Center
+// speeches, and whether Voteview has them as a member of Congress. Local to this machine: skipped where the corpora
+// aren't present.
+let textsForTests = null, textsCache;
+function personTexts(name, born) {
+  if (textsForTests) return textsForTests;
+  const path = require("path"), root = path.join(require("os").homedir(), ".cache", "political-ideology-atlas", "corpora");
+  if (textsCache === undefined) {
+    try {
+      const t = fs.readFileSync(path.join(root, "gutenberg", "raw", "pg_catalog.csv"), "utf8"), rows = []; let row = [], f = "", q = false;
+      for (let i = 0; i < t.length; i++) {
+        const c = t[i];
+        if (q) { if (c === '"') { if (t[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+        else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; }
+        else if (c === "\n") { row.push(f); rows.push(row); row = []; f = ""; } else if (c !== "\r") f += c;
+      }
+      const [head, ...rest] = rows, col = (k) => head.indexOf(k);
+      const gutenberg = rest.filter((r) => r[col("Language")] === "en" && r[col("Type")] === "Text")
+        .map((r) => ({ id: r[col("Text#")], title: r[col("Title")].replace(/\s+/g, " "), authors: r[col("Authors")] }));
+      const miller = fs.readFileSync(path.join(root, "millercenter", "speeches.jsonl"), "utf8").split("\n").filter(Boolean)
+        .map((l) => { const j = JSON.parse(l); return { speaker: j.speaker, url: j.url, title: j.title }; });
+      const members = fs.readFileSync(path.join(root, "voteview", "HSall_members.csv"), "utf8");
+      textsCache = { gutenberg, miller, members };
+    } catch { textsCache = null; }
+  }
+  if (!textsCache) return null;
+  const fold = (x) => String(x || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const parts = fold(name).split(/\s+/).filter(Boolean), surname = parts[parts.length - 1], first = parts[0];
+  const gutenberg = textsCache.gutenberg.filter((b) => fold(b.authors).split(";").some((x) => { x = x.trim();
+    return x.startsWith(`${surname},`) && (born ? x.includes(String(born)) : x.includes(first)); }));
+  const miller = textsCache.miller.filter((m) => fold(m.speaker) === parts.join(" "));
+  const voteview = born ? textsCache.members.includes(`"${surname.toUpperCase()}, ${first[0].toUpperCase()}${first.slice(1)}`) &&
+    new RegExp(`"${surname.toUpperCase()}, [^"]*",[A-Z0-9]*,${born}\\.0,`, "i").test(textsCache.members) : false;
+  return { gutenberg, miller, voteview };
+}
+
+// Rules 6: a source the audit reports it could not get. Notes that say a work was unavailable name it in "notFound",
+// with at least two attempts in different places (Brandon, 2026-11-12: one look is not a search).
+const UNFOUND = /\b(?:not (?:available|accessible|online|found|located|obtainable|digiti[sz]ed|in the local corpora)|unavailable|(?:could|was|were) not (?:be )?(?:found|obtained|accessed|located|read)|no (?:online|digital|accessible|full)[- ](?:copy|text|edition|transcript))\b/i;
+const STOP = new Set(["the", "and", "his", "her", "their", "from", "with", "that", "this", "were", "which", "into", "over", "about", "speeches", "speech", "text", "texts", "local", "corpora"]);
 
 function validate(id) {
   const errors = [];
@@ -431,12 +474,50 @@ function validate(id) {
     if (books) {
       const cited = new Set(sources.map((s) => s.library).filter(Boolean));
       const declined = Array.isArray(a.booksNotUsed) ? a.booksNotUsed : [];
-      for (const d of declined) if (!d || typeof d.file !== "string" || typeof d.reason !== "string" || d.reason.trim().length < 20) {
-        errors.push('"booksNotUsed" entries are { "file": the library file name, "reason": why it is not used (a sentence) }'); break;
+      for (const d of declined) if (!d || !(typeof d.file === "string" || d.gutenberg !== undefined || Array.isArray(d.urls) || typeof d.corpus === "string") || typeof d.reason !== "string" || d.reason.trim().length < 20) {
+        errors.push('"booksNotUsed" entries are { "file": the library file name (or "gutenberg", "urls", "corpus"), "reason": why it is not used (a sentence) }'); break;
       }
       for (const f of books) if (!cited.has(f) && !declined.some((d) => d && d.file === f)) {
         errors.push(`book in the local library not used: "${f}": read it and cite it (a source with "library": "${f}"), or list it in "booksNotUsed" with the reason`);
       }
+    }
+  }
+  // Rules 6, people: every text known to exist by them (personTexts) is cited or declined in "booksNotUsed", which
+  // also takes { "gutenberg": id or [ids] }, { "urls": [Miller Center speech URLs] } or { "corpus": "voteview" }.
+  if (PEOPLE && a.rules >= 6) {
+    const entry0 = catalog().find((c) => c.id === id) || {};
+    const known = personTexts(a.name || entry0.name, entry0.born);
+    if (known) {
+      const declined = Array.isArray(a.booksNotUsed) ? a.booksNotUsed.filter((d) => d && typeof d.reason === "string" && d.reason.trim().length >= 20) : [];
+      const has = (d, k, v) => [].concat(d[k] === undefined ? [] : d[k]).map(String).includes(String(v));
+      const gutCited = (gid) => sources.some((s) => (s.library && String(s.library).startsWith(`${gid} `)) || new RegExp(`gutenberg\\.org/(?:ebooks|files|cache/epub)/${gid}(?:\\D|$)`).test(s.url || ""))
+        || declined.some((d) => has(d, "gutenberg", gid) || (typeof d.file === "string" && d.file.startsWith(`${gid} `)));
+      const missingG = known.gutenberg.filter((b) => !gutCited(b.id));
+      if (missingG.length) errors.push(`Project Gutenberg has ${missingG.length} text${missingG.length > 1 ? "s" : ""} by them not cited or declined: ${missingG.slice(0, 12).map((b) => `${b.id} "${b.title.slice(0, 60)}"`).join(", ")}${missingG.length > 12 ? ", …" : ""}. Fetch with node scripts/gutenberg.js <id>, read, and cite it (a source with "library": its file), or decline it in "booksNotUsed" as { "gutenberg": <id or [ids]>, "reason" }`);
+      const norm = (u) => String(u || "").replace(/\/+$/, "");
+      const urls = new Set(sources.map((s) => norm(s.url)));
+      const missingM = known.miller.filter((m) => !urls.has(norm(m.url)) && !declined.some((d) => [].concat(d.urls || []).map(norm).includes(norm(m.url))));
+      if (missingM.length) errors.push(`${missingM.length} Miller Center speech${missingM.length > 1 ? "es" : ""} by them not cited or declined: ${missingM.slice(0, 8).map((m) => m.title).join("; ")}${missingM.length > 8 ? "; …" : ""}. Read them (node tools/miller.js in the corpora) and cite each one used, or decline the rest in "booksNotUsed" as { "urls": [...], "reason" }`);
+      if (known.voteview && !sources.some((s) => /voteview/i.test(`${s.url || ""} ${s.title || ""}`)) && !declined.some((d) => d.corpus === "voteview"))
+        errors.push('Voteview lists them as a member of Congress: search their roll calls (node tools/voteview.js in the corpora) and cite them, or decline in "booksNotUsed" as { "corpus": "voteview", "reason" }');
+    }
+  }
+  // Rules 6, every audit: a work the notes call unavailable is listed in "notFound" as
+  // { "work", "tried": [{ "where", "how" }, ...] } with at least two attempts in different places.
+  if (a.rules >= 6) {
+    const nf = a.notFound === undefined ? [] : a.notFound;
+    if (!Array.isArray(nf)) errors.push('"notFound" must be a list of { "work", "tried": [{ "where", "how" }] }');
+    else {
+      for (const [i, e] of nf.entries()) {
+        const tried = e && Array.isArray(e.tried) ? e.tried.filter((t) => t && typeof t.where === "string" && t.where.trim() && typeof t.how === "string" && t.how.trim().length >= 10) : [];
+        const places = new Set(tried.map((t) => t.where.trim().toLowerCase()));
+        if (!e || typeof e.work !== "string" || e.work.trim().length < 5) errors.push(`notFound[${i}]: "work" names the work looked for`);
+        else if (places.size < 2) errors.push(`notFound[${i}] ("${e.work.slice(0, 60)}"): ${places.size} place tried; try a second place before calling it unavailable ("tried": at least two { "where", "how" } in different places)`);
+      }
+      const words = (x) => (String(x).toLowerCase().match(/[a-z0-9]{4,}/g) || []).filter((w) => !STOP.has(w));
+      const covered = (sentence) => nf.some((e) => e && words(e.work).some((w) => sentence.toLowerCase().includes(w)));
+      const sentences = String(a.notes || "").split(/(?<=[.;])\s+/).filter((x) => UNFOUND.test(x) && !covered(x));
+      for (const x of sentences) errors.push(`notes call a source unavailable: "${x.trim().slice(0, 160)}". List the work in "notFound" with at least two places tried, or find it`);
     }
   }
   // People most associated with the ideology, shown as "Key figures".
@@ -551,4 +632,5 @@ if (require.main === module) main();
 // Tests (tests/validate-rules.test.js) stand in for the committed copy of an audit.
 const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
-module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap, PROJECT_START };
+const setTextsForTests = (t) => { textsForTests = t; };
+module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap, PROJECT_START };

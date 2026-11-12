@@ -17,7 +17,7 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests, setLibraryForTests, nextPassFrom, reauditGap } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap } = require("../scripts/validate");
 
 const st = lib.activeStatements().map((s) => s.id);
 const [A, B, C, D] = st; // A: answered from an action, B: answered from words, C and D: nothing found
@@ -216,6 +216,31 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   fails("rules 5: decline without a reason", E(r5(), (a) => { cite(a, own, "b1"); cite(a, gut, "b2"); cite(a, surnameFirst, "b3"); a.booksNotUsed = [{ file: critic, reason: "critic" }]; }), /"booksNotUsed" entries are/);
   ok("rules 4: no book check", base());
   setLibraryForTests(null);
+}
+
+// Rules 6: texts known to exist by them (Gutenberg catalog, Miller Center speeches, Voteview membership) are cited or
+// declined, and a work the notes call unavailable is in "notFound" with two places tried (Brandon, 2026-11-12).
+{
+  setLibraryForTests({ reference: [], gutenberg: [] });
+  const speech = "https://millercenter.org/the-presidency/presidential-speeches/fixture";
+  setTextsForTests({ gutenberg: [{ id: "77777", title: "Collected Letters" }], miller: [{ url: speech, title: "Fixture Address" }], voteview: true });
+  const r6 = (f) => E(base(), (a) => { a.rules = 6; if (f) f(a); });
+  const all = (a) => { a.sources.push({ id: "g1", kind: "primary", evidence: "words", title: "Collected Letters", url: "https://www.gutenberg.org/ebooks/77777", usedFor: "letters" },
+    { id: "m1", kind: "primary", evidence: "words", title: "Fixture Address", url: speech }, { id: "v1", kind: "primary", evidence: "action", title: "Roll calls (Voteview)", url: "https://voteview.com/person/1" }); };
+  fails("rules 6: Gutenberg text by them not accounted for", r6(), /Project Gutenberg has 1 text by them not cited or declined: 77777/);
+  fails("rules 6: Miller Center speech not accounted for", r6(), /1 Miller Center speech by them not cited or declined: Fixture Address/);
+  fails("rules 6: Voteview member without roll calls", r6(), /Voteview lists them/);
+  ok("rules 6: every known text cited", r6(all));
+  ok("rules 6: known texts declined with reasons", r6((a) => { a.booksNotUsed = [
+    { gutenberg: ["77777"], reason: "Private family letters with no political content at all." },
+    { urls: [speech], reason: "A ceremonial address that takes no position on any statement." },
+    { corpus: "voteview", reason: "Served one month in an era with no recorded roll calls by them." }]; }));
+  fails("rules 6: notes call a work unavailable, no notFound", r6((a) => { all(a); a.notes = "His Senate speeches were not available, so many lines stay wide."; }), /notes call a source unavailable/);
+  fails("rules 6: notFound with one place tried", r6((a) => { all(a); a.notes = "His Senate speeches were not available."; a.notFound = [{ work: "Senate speeches 1827-1836", tried: [{ where: "local corpora", how: "crec.js and voteview.js by name" }] }]; }), /1 place tried; try a second place/);
+  ok("rules 6: notFound with two places tried", r6((a) => { all(a); a.notes = "His Senate speeches were not available."; a.notFound = [{ work: "Senate speeches 1827-1836", tried: [
+    { where: "local corpora", how: "crec.js and voteview.js by name" }, { where: "Library of Congress, A Century of Lawmaking", how: "searched the Register of Debates index for him" }] }]; }));
+  ok("rules 5: no rules-6 checks", E(base(), (a) => { a.rules = 5; }));
+  setTextsForTests(null); setLibraryForTests(null);
 }
 
 // A later pass comes at least half the project's age after the previous one (from 2026-11-08; earlier passes stand).

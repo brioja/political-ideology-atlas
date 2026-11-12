@@ -133,7 +133,7 @@ finish: search those first for stated positions. If the record really has nothin
   "name": "{{name}}",
   "auditedAt": "YYYY-MM-DD",
   "auditor": "<full exact model id, e.g. claude-sonnet-5-5 or gpt-6.1-sol, not just gpt-6>",
-  "rules": 5,
+  "rules": 6,
   "living": true,
   "role": "Short description, e.g. 'German chancellor (2005–2021)'",
   "summary": "Two or three neutral sentences on their political outlook, in your own words.",
@@ -142,7 +142,9 @@ finish: search those first for stated positions. If the record really has nothin
     { "id": "s1", "kind": "primary | scholarly | reference | program", "evidence": "action | words", "title": "…", "author": "…", "url": "https://…", "usedFor": "…" },
     { "id": "s2", "kind": "primary", "evidence": "words", "title": "<their book>", "url": "https://… (a page for the book)", "library": "<file name in the local library>", "usedFor": "…" }
   ],
-  "booksNotUsed": [{ "file": "<file name in the local library>", "reason": "Why it isn't used, e.g. a critic's book that only names them." }],
+  "booksNotUsed": [{ "file": "<file name in the local library>", "reason": "Why it isn't used, e.g. a critic's book that only names them." },
+    { "gutenberg": ["<id>"], "reason": "…" }, { "urls": ["<Miller Center speech URL>"], "reason": "…" }, { "corpus": "voteview", "reason": "…" }],
+  "notFound": [{ "work": "<a source looked for and not found>", "tried": [{ "where": "<place 1>", "how": "<what you searched>" }, { "where": "<place 2>", "how": "…" }] }],
   "answers": {
     "<statement id>": { "value": 1, "confidence": "high | medium | low", "rationale": "…", "sources": ["s1"] },
     "<statement id>": { "value": null, "confidence": "low", "rationale": "No recorded position found.", "sources": [] }

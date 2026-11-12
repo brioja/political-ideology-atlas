@@ -4,10 +4,11 @@ These rules apply to every audit: ideologies (`audits/PROMPT.md`) and people (`a
 Those prompts add only what is specific to their subject and never loosen a rule here. A change to
 how evidence is judged goes in this file, so both kinds of audit get it.
 
-"The subject" below is the ideology or the person being audited. Write `"rules": 5` in the audit
+"The subject" below is the ideology or the person being audited. Write `"rules": 6` in the audit
 file, to record that it follows these rules. (Rules 2 allowed marked inferences; rules 3 has none;
 rules 4 tags every source as actions or words; rules 5 accounts for every one of a person's own books
-in the local library.)
+in the local library; rules 6 accounts for every text known to exist by a person and lists every source
+not found, with two places tried.)
 
 ## 1. Standard
 
@@ -207,6 +208,19 @@ keep researching before you finish: the lines the validator names, then the stat
 new sources (the local corpora too). Stop when they are covered or when the record really has nothing
 more, and say in `notes` which themes you searched. Never raise a confidence to pass.
 
+**Texts known to exist** (people, Brandon 2026-11-12). Every text by the person that the validator knows
+of is read and cited, or declined in `booksNotUsed` with a reason: Project Gutenberg's whole catalog
+(`node scripts/gutenberg.js --search "<name>"`, then `node scripts/gutenberg.js <id>` fetches it), their
+Miller Center speeches, and their Voteview roll calls if they sat in Congress. `validate.js` names each one
+missing.
+
+**Not found means tried twice** (Brandon, 2026-11-12). A source you looked for and couldn't get goes in
+`notFound`: `[{ "work": "Senate speeches, 1827-1836", "tried": [{ "where": "local corpora", "how":
+"crec.js and voteview.js by name" }, { "where": "Library of Congress, A Century of Lawmaking", "how":
+"Register of Debates index" }] }]`, with at least two attempts in different places (a local corpus, a
+library or archive site, a web search, a scholarly edition). Notes that call a source unavailable without
+a `notFound` entry for it fail validation.
+
 A later pass on a finished audit has one of three reasons: new sources became available (a new corpus, a
 book the maintainer supplies), the audit predates the shared rules (no `"rules"` field) and is brought
 up to them, or it applied a rule the maintainer has since found misapplied (`audits/reaudit-queue.json`
@@ -226,7 +240,7 @@ says which rule). Build on the existing audit rather than starting over:
 - Add your model id to `auditor` if it isn't there yet (a list, the
   first auditor first) and list every pass in `passes`, e.g. `[{ "auditor": "<first>",
   "auditedAt": "<its date>" }, { "auditor": "<you>", "auditedAt": "YYYY-MM-DD" }]`; `auditedAt` is
-  the date of your pass. Set `"rules": 5` and bring the whole file up to it, older answers
+  the date of your pass. Set `"rules": 6` and bring the whole file up to it, older answers
   and sources included (`validate.js` says what is missing).
 - If the record really has nothing more, failing the uncertainty rule is the correct outcome. Say in `notes`
   which themes you searched.
