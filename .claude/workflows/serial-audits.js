@@ -36,8 +36,8 @@ const tickPrompt = `You do one step of a serial audit. Working directory: ${ROOT
    or (when the JSON has a "reason") it is due for a later pass for that reason (search traffic on an audit under older rules, or a
    queued rule that was misapplied): this pass brings it up to the current rules ("rules" set to the current version,
    every answer checked against audits/AUDIT_RULES.md, the reason's rule above all). Either way,
-   build on it as a later pass (audits/AUDIT_RULES.md section 6), never overwrite it from scratch. Use a model not yet in its
-   "auditor", add yours to "auditor" and "passes", and keep every committed sourced answer you change in that statement's
+   build on it as a later pass (audits/AUDIT_RULES.md section 6), never overwrite it from scratch. Any model may do it, including
+   one already in its "auditor": add yours to "auditor" (once) and to "passes", and keep every committed sourced answer you change in that statement's
    "reviewHistory" (scripts/validate.js explains it); validate.js checks this against the committed file.
    If "kind" is "person": audit that person yourself following audits/AUDIT_RULES.md and audits/PROMPT_PEOPLE.md exactly
    (answer every statement, candidates included; no source limit; research to the end within the audit, since no later pass fills gaps; local corpora first; save every
