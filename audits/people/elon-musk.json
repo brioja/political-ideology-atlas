@@ -902,15 +902,40 @@
       "auditor": "claude-sonnet-5-5"
     },
     "expand-nuclear": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Called nuclear shutdowns madness and urged keeping plants running and restarting closed ones.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
       "sources": [
         "s10",
         "b15",
         "b14"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Called nuclear shutdowns madness and urged keeping plants running and restarting closed ones.",
+          "sources": [
+            "s10",
+            "b15",
+            "b14"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
+          "sources": [
+            "s10",
+            "b15",
+            "b14"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "revolution-justified": {
       "value": null,
@@ -3055,13 +3080,12 @@
       "sources": []
     },
     "online-participation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Record over words: he decided Trump's reinstatement on Twitter by an open online poll of over 15 million users and said he would have kept the ban had it lost (Isaacson, ch. 88 'Hardcore'); one platform decision, so low.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
       "sources": [
         "b1a"
       ],
-      "auditor": "claude-opus-5-5",
       "reviewHistory": [
         {
           "value": 1,
@@ -3083,6 +3107,16 @@
           ],
           "author": "claude-opus-5-5",
           "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
+          "sources": [
+            "b1a"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
         }
       ]
     },
@@ -3683,18 +3717,42 @@
       "sources": []
     },
     "voter-id": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Backed the SAVE Act requiring proof of citizenship to register and said opponents were traitors.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
       "sources": [
         "s15",
         "b11",
         "c2",
         "c3"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Backed the SAVE Act requiring proof of citizenship to register and said opponents were traitors.",
+          "sources": [
+            "s15",
+            "b11",
+            "c2",
+            "c3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+          "sources": [
+            "s15",
+            "b11",
+            "c2",
+            "c3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religious-equal-recognition": {
@@ -4783,6 +4841,24 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5 (integrator review)",
       "reviewedAt": "2026-11-07",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ],

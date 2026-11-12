@@ -811,21 +811,69 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "In 2016 he called for 'an immigration system that affords greater control and reduces the numbers'; as Prime Minister he backs the Home Secretary's reform of indefinite leave to remain and blames the Conservatives for migration 'out of control'.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
    "sources": [
     "h15",
     "h7",
     "b4"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "In 2016 he called for 'an immigration system that affords greater control and reduces the numbers'; as Prime Minister he backs the Home Secretary's reform of indefinite leave to remain and blames the Conservatives for migration 'out of control'.",
+     "sources": [
+      "h15",
+      "h7",
+      "b4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-01"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
+     "sources": [
+      "h15",
+      "h7",
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "empower-international-orgs": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "He says Britain will support the UN so that 'the UN's standing rises in these times, because we need it more now', while being open to UN reform.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "h4"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "He says Britain will support the UN so that 'the UN's standing rises in these times, because we need it more now', while being open to UN reform.",
+     "sources": [
+      "h4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-01"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "h4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -3834,6 +3882,18 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 6
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ],
  "rules": 3

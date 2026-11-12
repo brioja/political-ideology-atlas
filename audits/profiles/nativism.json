@@ -3097,12 +3097,36 @@
       ]
     },
     "voter-id": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Preferring native citizens over immigrants and restricting citizenship makes proof of citizenship at the ballot box a natural, commonly stated nativist aim. None of the cited sources takes up this question, so the answer is an inference.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Preferring native citizens over immigrants and restricting citizenship makes proof of citizenship at the ballot box a natural, commonly stated nativist aim. None of the cited sources takes up this question, so the answer is an inference.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religious-equal-recognition": {
@@ -3457,6 +3481,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

@@ -2270,12 +2270,36 @@
       "sources": []
     },
     "personal-possessions-private": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "They reject property as such and reclaim goods individually; collective ownership of the means of production is not their programme.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "They reject property as such and reclaim goods individually; collective ownership of the means of production is not their programme.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "defeat-communism": {
@@ -3535,6 +3559,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 216
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

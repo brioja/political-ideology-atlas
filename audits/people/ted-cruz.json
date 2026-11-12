@@ -3094,11 +3094,33 @@
    "sources": []
   },
   "voter-id": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Introduced a bill letting states require proof of citizenship to vote and lists election integrity as a priority.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "s25"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Introduced a bill letting states require proof of citizenship to vote and lists election integrity as a priority.",
+     "sources": [
+      "s25"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "s25"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "religious-equal-recognition": {
@@ -3395,5 +3417,13 @@
    "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Most primary evidence is from his 2015-16 presidential campaign and Senate record; recent positions rely on interviews and reporting (2025 tariffs, Iran). He moved from opposing to cooperating with Donald Trump after 2016. Positions on tariffs and free trade are mixed (supported trade promotion authority, opposed TPP and fast track in 2015, opposed 2025 tariffs). Sources cited only where opened in this session."
+ "notes": "Most primary evidence is from his 2015-16 presidential campaign and Senate record; recent positions rely on interviews and reporting (2025 tariffs, Iran). He moved from opposing to cooperating with Donald Trump after 2016. Positions on tariffs and free trade are mixed (supported trade promotion authority, opposed TPP and fast track in 2015, opposed 2025 tariffs). Sources cited only where opened in this session.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

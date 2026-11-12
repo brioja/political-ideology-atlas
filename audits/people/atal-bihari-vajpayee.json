@@ -1595,12 +1595,36 @@
       ]
     },
     "region-keeps-system": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mixed: his government rejected the 2000 Jammu and Kashmir autonomy resolution and the manifesto calls for abrogating Article 370, but he spoke of alternatives to the beaten track on Kashmir.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s3",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Mixed: his government rejected the 2000 Jammu and Kashmir autonomy resolution and the manifesto calls for abrogating Article 370, but he spoke of alternatives to the beaten track on Kashmir.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sacred-ruler": {
@@ -3312,6 +3336,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 4
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

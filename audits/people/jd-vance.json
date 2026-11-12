@@ -322,16 +322,36 @@
    ]
   },
   "expand-nuclear": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Told Rogan that Germany closing its nuclear plants (with coal) left it dependent on Russian gas, treating the shutdown as a mistake; he has not described a nuclear policy of his own in the sources found.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
    "sources": [
     "s4",
     "b7"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Told Rogan that Germany closing its nuclear plants (with coal) left it dependent on Russian gas, treating the shutdown as a mistake; he has not described a nuclear policy of his own in the sources found.",
+     "sources": [
+      "s4",
+      "b7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
+     "sources": [
+      "s4",
+      "b7"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "automate-paid-work": {
@@ -3609,6 +3629,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]

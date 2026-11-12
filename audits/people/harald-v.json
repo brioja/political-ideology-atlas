@@ -563,18 +563,42 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Called the UN the most important common forum for peace and cooperation (2001), urged keeping its strong standing (1992), and in 1999 said the world has come far too short in binding cooperation and solidarity across borders.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s11",
     "s24",
     "s22",
     "b17"
    ],
-   "auditor": [
-    "claude-sonnet-5-5",
-    "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Called the UN the most important common forum for peace and cooperation (2001), urged keeping its strong standing (1992), and in 1999 said the world has come far too short in binding cooperation and solidarity across borders.",
+     "sources": [
+      "s11",
+      "s24",
+      "s22",
+      "b17"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s11",
+      "s24",
+      "s22",
+      "b17"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -2719,13 +2743,34 @@
    "sources": []
   },
   "online-participation": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In his 2008 New Year's address he called it a strength for democracy that more people take part in open debate on the internet.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
    "sources": [
     "b4"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "In his 2008 New Year's address he called it a strength for democracy that more people take part in open debate on the internet.",
+     "sources": [
+      "b4"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
+     "sources": [
+      "b4"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "open-government-data": {
    "value": null,
@@ -3611,6 +3656,18 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]

@@ -3622,13 +3622,34 @@
    "sources": []
   },
   "dense-cities": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Opposed a move toward walkable cities, saying without a car \"you are a captive of the government in an open air prison\".",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on preferring villages or the countryside, on land use, or on reasons other than the environment, and the statement now asks only whether dense cities produce lower greenhouse-gas emissions per resident than suburbs.",
    "sources": [
     "s13"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Opposed a move toward walkable cities, saying without a car \"you are a captive of the government in an open air prison\".",
+     "sources": [
+      "s13"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on preferring villages or the countryside, on land use, or on reasons other than the environment, and the statement now asks only whether dense cities produce lower greenhouse-gas emissions per resident than suburbs.",
+     "sources": [
+      "s13"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "racial-group-interests": {
    "value": null,
@@ -4230,6 +4251,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]

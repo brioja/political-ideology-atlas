@@ -538,13 +538,34 @@
    "sources": []
   },
   "expand-nuclear": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Praised expansion of nuclear-fuel recycling and enrichment as strategic industrial investment.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
    "sources": [
     "s14"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Praised expansion of nuclear-fuel recycling and enrichment as strategic industrial investment.",
+     "sources": [
+      "s14"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
+     "sources": [
+      "s14"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "revolution-justified": {
    "value": null,
@@ -3394,5 +3415,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

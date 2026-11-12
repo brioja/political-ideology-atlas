@@ -3493,16 +3493,43 @@
    "auditor": "gpt-6.1-sol"
   },
   "voter-id": {
-   "value": -2,
-   "confidence": "medium",
-   "rationale": "Called the SAVE America Act a voter-suppression bill; backed federal bills to expand access (vote by mail, online registration, short lines).",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "s37",
     "s10",
     "s16",
     "s38"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "Called the SAVE America Act a voter-suppression bill; backed federal bills to expand access (vote by mail, online registration, short lines).",
+     "sources": [
+      "s37",
+      "s10",
+      "s16",
+      "s38"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "s37",
+      "s10",
+      "s16",
+      "s38"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "religious-equal-recognition": {
    "value": null,
@@ -3818,6 +3845,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ],

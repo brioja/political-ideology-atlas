@@ -2833,11 +2833,33 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Some antimilitarists link nonviolence to women's perspective, but the creed is not committed either way and adherents split.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Some antimilitarists link nonviolence to women's perspective, but the creed is not committed either way and adherents split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3403,6 +3425,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 170
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

@@ -1482,11 +1482,33 @@
       ]
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The doctrine does not address autonomy arrangements; it supports autonomy for the nation's own people but not necessarily minorities.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The doctrine does not address autonomy arrangements; it supports autonomy for the nation's own people but not necessarily minorities.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sacred-ruler": {
@@ -3448,6 +3470,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-31",
       "nulled": 148
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

@@ -1610,11 +1610,33 @@
       ]
     },
     "animal-use-humane": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "He held vivisection justifiable for real physiological research, gave evidence to the 1875 Royal Commission and helped draft a bill requiring licences and insensibility, while rejecting its use for mere curiosity.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on research use of animals or on keeping animals rather than killing them for food, and the statement now asks only whether killing animals for food is morally acceptable under humane conditions.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "He held vivisection justifiable for real physiological research, gave evidence to the 1875 Royal Commission and helped draft a bill requiring licences and insensibility, while rejecting its use for mere curiosity.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-06"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on research use of animals or on keeping animals rather than killing them for food, and the statement now asks only whether killing animals for food is morally acceptable under humane conditions.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "noblesse-oblige": {
@@ -3641,5 +3663,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Searched his own books, autobiography and letters (local Project Gutenberg corpus) plus the Darwin Correspondence Project for slavery, civil war, empire, poor relief, inheritance and primogeniture, suffrage, religion, vivisection, socialism and political parties. He avoided politics and said his political opinions were formed rather by the way than with serious thought, so most statements are null. Statements on socialism and welfare are not settled by his words: he only remarked that the supposed link between socialism and natural selection was a foolish idea. The early Beagle remark that tyranny suited South American states better than republicanism was about those states only and is not used. His statements on civilisation changed little over his life."
+  "notes": "Searched his own books, autobiography and letters (local Project Gutenberg corpus) plus the Darwin Correspondence Project for slavery, civil war, empire, poor relief, inheritance and primogeniture, suffrage, religion, vivisection, socialism and political parties. He avoided politics and said his political opinions were formed rather by the way than with serious thought, so most statements are null. Statements on socialism and welfare are not settled by his words: he only remarked that the supposed link between socialism and natural selection was a foolish idea. The early Beagle remark that tyranny suited South American states better than republicanism was about those states only and is not used. His statements on civilisation changed little over his life.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

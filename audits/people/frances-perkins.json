@@ -350,13 +350,34 @@
    "auditor": "gpt-6.1-sol"
   },
   "empower-international-orgs": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Advocated expanding the ILO beyond minimum labour standards into international economic planning and policy.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s8"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Advocated expanding the ILO beyond minimum labour standards into international economic planning and policy.",
+     "sources": [
+      "s8"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "free-trade": {
    "value": null,
@@ -3239,5 +3260,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

@@ -2358,12 +2358,36 @@
       "sources": []
     },
     "personal-possessions-private": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Free-market advocates defend private property, and a private personal-possessions line is accepted, but they reject common ownership of the means of production, so the statement as a whole is mostly rejected.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Free-market advocates defend private property, and a private personal-possessions line is accepted, but they reject common ownership of the means of production, so the statement as a whole is mostly rejected.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "defeat-communism": {
@@ -3625,6 +3649,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 2
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

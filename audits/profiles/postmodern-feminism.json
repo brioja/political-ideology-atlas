@@ -3014,12 +3014,36 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The school rejects an essential 'woman' and any shared women's nature; Haraway rejects the natural unity of women, so distinct feminine values are denied.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The school rejects an essential 'woman' and any shared women's nature; Haraway rejects the natural unity of women, so distinct feminine values are denied.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3601,6 +3625,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 7
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

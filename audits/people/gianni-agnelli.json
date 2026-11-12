@@ -376,16 +376,36 @@
    "auditor": "gpt-6.1-sol"
   },
   "empower-international-orgs": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He demands greater capacity for international institutions to manage global problems.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s4",
     "b9"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "He demands greater capacity for international institutions to manage global problems.",
+     "sources": [
+      "s4",
+      "b9"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s4",
+      "b9"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -3333,5 +3353,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

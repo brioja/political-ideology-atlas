@@ -3270,11 +3270,33 @@
       ]
     },
     "voter-id": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Voted Aye on the 2024 SAVE Act (roll 345), requiring proof of citizenship to register; this covers proof of citizenship, and he was not found speaking to ID at the polls.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Voted Aye on the 2024 SAVE Act (roll 345), requiring proof of citizenship to register; this covers proof of citizenship, and he was not found speaking to ID at the polls.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-28"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religious-equal-recognition": {
@@ -3583,6 +3605,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

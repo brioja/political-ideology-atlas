@@ -341,13 +341,39 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Rejected supranational bodies: the Fouchet Plan sought an intergovernmental Europe, he caused the 1965 empty chair crisis and withdrew from NATO's integrated command.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
       "sources": [
         "s14",
         "s3",
         "s7"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Rejected supranational bodies: the Fouchet Plan sought an intergovernmental Europe, he caused the 1965 empty chair crisis and withdrew from NATO's integrated command.",
+          "sources": [
+            "s14",
+            "s3",
+            "s7"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+          "sources": [
+            "s14",
+            "s3",
+            "s7"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "free-trade": {
@@ -3327,6 +3353,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 5
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

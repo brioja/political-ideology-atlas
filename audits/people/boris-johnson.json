@@ -472,12 +472,36 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "The 2019 manifesto says overall numbers will come down with fewer lower-skilled migrants, and at the 2021 conference he said the answer was to control immigration rather than use it to keep wages low.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
    "sources": [
     "s2",
     "s6"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "The 2019 manifesto says overall numbers will come down with fewer lower-skilled migrants, and at the 2021 conference he said the answer was to control immigration rather than use it to keep wages low.",
+     "sources": [
+      "s2",
+      "s6"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
+     "sources": [
+      "s2",
+      "s6"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "empower-international-orgs": {
@@ -3412,5 +3436,13 @@
    "auditor": "claude-sonnet-5-5"
   }
  },
- "notes": "Views changed: as Mayor (2008-16) he backed an amnesty for illegal migrants, same-sex marriage and wrote climate-sceptic columns; as PM (2019-22) he adopted net zero, a points-based system, the Rwanda policy and strong Ukraine support. Latest clear position used. Some Telegraph and Spectator columns, Hansard votes and his memoir 'Unleashed' were not available as full text, so answers rely mainly on his PM speeches, the 2019 manifesto and reference summaries."
+ "notes": "Views changed: as Mayor (2008-16) he backed an amnesty for illegal migrants, same-sex marriage and wrote climate-sceptic columns; as PM (2019-22) he adopted net zero, a points-based system, the Rwanda policy and strong Ukraine support. Latest clear position used. Some Telegraph and Spectator columns, Hansard votes and his memoir 'Unleashed' were not available as full text, so answers rely mainly on his PM speeches, the 2019 manifesto and reference summaries.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

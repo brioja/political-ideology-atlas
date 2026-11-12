@@ -298,11 +298,33 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Wikipedia lists participation in global governance among radical centrist positions, though the sources give little detail.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Wikipedia lists participation in global governance among radical centrist positions, though the sources give little detail.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "free-trade": {
@@ -2480,11 +2502,33 @@
       ]
     },
     "online-participation": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Satin's Radical Middle backs wider citizen participation, including electronic means, to renew democracy; the claim is moderate.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Satin's Radical Middle backs wider citizen participation, including electronic means, to renew democracy; the claim is moderate.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "open-government-data": {
@@ -3403,6 +3447,18 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 304
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     },
     {
       "kind": "nulling",

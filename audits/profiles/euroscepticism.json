@@ -1384,12 +1384,36 @@
       ]
     },
     "region-keeps-system": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents split: the national-interest strand prefers one national legal system, while others favour regional autonomy.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents split: the national-interest strand prefers one national legal system, while others favour regional autonomy.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sacred-ruler": {
@@ -3284,6 +3308,12 @@
       "reviewer": "scripts/unsourced-to-null.js",
       "reviewedAt": "2026-11-02",
       "nulled": 9
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

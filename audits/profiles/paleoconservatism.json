@@ -1582,12 +1582,36 @@
       "sources": []
     },
     "region-keeps-system": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Localism and voluntary community, as in Kirk's principles, favour regions keeping their own laws and institutions.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Localism and voluntary community, as in Kirk's principles, favour regions keeping their own laws and institutions.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sacred-ruler": {
@@ -2942,11 +2966,33 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Paleoconservatives stress traditional sex roles but not giving women's distinct values more political weight; adherents are split.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Paleoconservatives stress traditional sex roles but not giving women's distinct values more political weight; adherents are split.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3487,6 +3533,18 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 273
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

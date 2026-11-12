@@ -139,11 +139,33 @@
       ]
     },
     "regulate-corporations": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Libertarian socialists oppose corporations as hierarchical institutions and want them replaced by self-management; they would curb corporate power, but distrust state regulation as the remedy.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale turns on whether regulation should be tighter than now, or on replacing corporations instead of regulating them, and the statement now asks whether corporations should face strict government regulation.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Libertarian socialists oppose corporations as hierarchical institutions and want them replaced by self-management; they would curb corporate power, but distrust state regulation as the remedy.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale turns on whether regulation should be tighter than now, or on replacing corporations instead of regulating them, and the statement now asks whether corporations should face strict government regulation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "cut-welfare": {
@@ -1583,11 +1605,33 @@
       "sources": []
     },
     "region-keeps-system": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Federalist, decentralised self-government with communities arranging their own affairs is core to the tradition, though they want no state above the region either.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Federalist, decentralised self-government with communities arranging their own affairs is core to the tradition, though they want no state above the region either.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "sacred-ruler": {
@@ -3454,6 +3498,18 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 321
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

@@ -3497,13 +3497,34 @@
    "sources": []
   },
   "voter-id": {
-   "value": -1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Opposes the 2026 SAVE America Act, which requires documentary proof of citizenship to register, saying it is 'not about voter ID' and that driver's licences should be enough; he did not state a general position on ID requirements.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "s37"
    ],
-   "auditor": "claude-sonnet-5-5+claude-haiku-5-5"
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "low",
+     "rationale": "Opposes the 2026 SAVE America Act, which requires documentary proof of citizenship to register, saying it is 'not about voter ID' and that driver's licences should be enough; he did not state a general position on ID requirements.",
+     "sources": [
+      "s37"
+     ],
+     "author": "claude-sonnet-5-5+claude-haiku-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "s37"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "religious-equal-recognition": {
    "value": null,
@@ -3801,6 +3822,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ],
  "rules": 3

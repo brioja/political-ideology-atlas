@@ -3164,17 +3164,39 @@
    "sources": []
   },
   "voter-id": {
-   "value": -1,
-   "confidence": "high",
-   "rationale": "She opposes new documentary voting requirements that exclude eligible voters to address negligible illegal voting.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "s2",
     "b2",
     "b11"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "high",
+     "rationale": "She opposes new documentary voting requirements that exclude eligible voters to address negligible illegal voting.",
+     "sources": [
+      "s2",
+      "b2",
+      "b11"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "s2",
+      "b2",
+      "b11"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "religious-equal-recognition": {
@@ -3480,6 +3502,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]

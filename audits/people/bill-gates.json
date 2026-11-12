@@ -696,9 +696,9 @@
       ]
     },
     "empower-international-orgs": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Funds and champions multilateral bodies (Gavi, Global Fund, WHO-linked work) and in his Aug 2026 AI essay proposed a new international body modeled on nuclear inspection and aviation regulation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
       "sources": [
         "s1",
         "s15",
@@ -707,9 +707,37 @@
         "c18",
         "c11"
       ],
-      "auditor": [
-        "claude-sonnet-5-5",
-        "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Funds and champions multilateral bodies (Gavi, Global Fund, WHO-linked work) and in his Aug 2026 AI essay proposed a new international body modeled on nuclear inspection and aviation regulation.",
+          "sources": [
+            "s1",
+            "s15",
+            "b1",
+            "b2",
+            "c18",
+            "c11"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+          "sources": [
+            "s1",
+            "s15",
+            "b1",
+            "b2",
+            "c18",
+            "c11"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "free-trade": {
@@ -4566,6 +4594,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ],

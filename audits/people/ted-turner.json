@@ -229,12 +229,36 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Gave $1 billion in 1997 to support UN humanitarian work and said he was acknowledging Kofi Annan's reform efforts; his stated aim was backing the UN, not explicitly giving it more power.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s2",
     "s3"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Gave $1 billion in 1997 to support UN humanitarian work and said he was acknowledging Kofi Annan's reform efforts; his stated aim was backing the UN, not explicitly giving it more power.",
+     "sources": [
+      "s2",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s2",
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -3020,5 +3044,13 @@
    "sources": []
   }
  },
- "notes": "Wikipedia gives his death as 6 May 2026. Unreachable: unfoundation.org and nti.org (403), the NTI statement PDF (unreadable), NPR 2010 interview (timeout), Tampa Bay Times reprint (paywall). The 2008 Charlie Rose interview text was not opened, so the 'two children' remark is not used."
+ "notes": "Wikipedia gives his death as 6 May 2026. Unreachable: unfoundation.org and nti.org (403), the NTI statement PDF (unreadable), NPR 2010 interview (timeout), Tampa Bay Times reprint (paywall). The 2008 Charlie Rose interview text was not opened, so the 'two children' remark is not used.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

@@ -3076,14 +3076,37 @@
    "sources": []
   },
   "voter-id": {
-   "value": 0,
+   "value": null,
    "confidence": "low",
-   "rationale": "He signed a law moving mail ballots to ID-number verification and praised it, but said voting security must never make it harder for legal voters and that fraud claims are wrong, so his stance on proof of citizenship and ID is mixed.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "b20",
     "b2"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "He signed a law moving mail ballots to ID-number verification and praised it, but said voting security must never make it harder for legal voters and that fraud claims are wrong, so his stance on proof of citizenship and ID is mixed.",
+     "sources": [
+      "b20",
+      "b2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "b20",
+      "b2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "religious-equal-recognition": {
    "value": null,
@@ -3377,5 +3400,13 @@
    "auditedAt": "2026-10-30"
   }
  ],
- "rules": 2
+ "rules": 2,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

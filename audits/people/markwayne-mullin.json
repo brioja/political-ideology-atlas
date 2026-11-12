@@ -3194,13 +3194,34 @@
    ]
   },
   "voter-id": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "He supports requiring voters to prove U.S. citizenship and identifies the SAVE America Act as constitutional.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
    "sources": [
     "b1"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "He supports requiring voters to prove U.S. citizenship and identifies the SAVE America Act as constitutional.",
+     "sources": [
+      "b1"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-31"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+     "sources": [
+      "b1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "religious-equal-recognition": {
    "value": null,
@@ -3503,5 +3524,13 @@
    "auditedAt": "2026-10-31"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

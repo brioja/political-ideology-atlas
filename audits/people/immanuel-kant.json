@@ -308,13 +308,39 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "He argues states must leave the state of nature for a voluntary federation or permanent congress of nations, which has no coercive sovereign over its members.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s1",
     "s2",
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "He argues states must leave the state of nature for a voluntary federation or permanent congress of nations, which has no coercive sovereign over its members.",
+     "sources": [
+      "s1",
+      "s2",
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s1",
+      "s2",
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -3292,5 +3318,13 @@
    "auditor": "claude-opus-5-5"
   }
  },
- "notes": "Sources are his own texts in English (Hastie, Smith, Semple, Beck, Bernard) and German. Themes searched: government and law (Rechtslehre, Theory and Practice, Perpetual Peace), world (Perpetual Peace, Rechtslehre sec. 53-62, Universal History), liberty and punishment, religion (Religion, Enlightenment, Rechtslehre on church), society and race and gender (1764 Observations, 1775 and 1785 race essays). Not opened: the Metaphysics of Morals Doctrine of Virtue and Anthropology lectures, so duties to animals, suicide in the Doctrine of Virtue, and later gender and race remarks are unanswered. Mixed evidence (equal-moral-worth) is 0 at low. The Rechtslehre was read in the 1887 Hastie translation, which uses older terms such as 'paederasty'."
+ "notes": "Sources are his own texts in English (Hastie, Smith, Semple, Beck, Bernard) and German. Themes searched: government and law (Rechtslehre, Theory and Practice, Perpetual Peace), world (Perpetual Peace, Rechtslehre sec. 53-62, Universal History), liberty and punishment, religion (Religion, Enlightenment, Rechtslehre on church), society and race and gender (1764 Observations, 1775 and 1785 race essays). Not opened: the Metaphysics of Morals Doctrine of Virtue and Anthropology lectures, so duties to animals, suicide in the Doctrine of Virtue, and later gender and race remarks are unanswered. Mixed evidence (equal-moral-worth) is 0 at low. The Rechtslehre was read in the 1887 Hastie translation, which uses older terms such as 'paederasty'.",
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

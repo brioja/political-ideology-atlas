@@ -2885,11 +2885,33 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Berberist sources stress the equality of men and women, but do not claim distinct values for women; no clear line.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Berberist sources stress the equality of men and women, but do not claim distinct values for women; no clear line.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3433,6 +3455,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

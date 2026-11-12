@@ -405,11 +405,33 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "As a 2004 Democratic candidate he backed raising the federal minimum from $5.15 to $6.65; in a 2016 Senate survey he opposed a livable-wage question. Evidence from different periods points both ways and no recent statement was found.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether the rise would be substantial compared with today, or it addresses a wage floor tied to living costs directly, and the statement now asks whether the minimum wage should cover a full-time worker's basic living costs.",
       "sources": [
         "s44"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "As a 2004 Democratic candidate he backed raising the federal minimum from $5.15 to $6.65; in a 2016 Senate survey he opposed a livable-wage question. Evidence from different periods points both ways and no recent statement was found.",
+          "sources": [
+            "s44"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value turns on whether the rise would be substantial compared with today, or it addresses a wage floor tied to living costs directly, and the statement now asks whether the minimum wage should cover a full-time worker's basic living costs.",
+          "sources": [
+            "s44"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "markets-allocate-better": {
@@ -3523,5 +3545,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "Switched from Democrat to Republican in August 2007; his 2004 Senate campaign positions (e.g. raising the minimum wage) predate that switch and were not treated as current. Statements read from senate.gov were fetched through Internet Archive copies because the live site blocks automated access."
+  "notes": "Switched from Democrat to Republican in August 2007; his 2004 Senate campaign positions (e.g. raising the minimum wage) predate that switch and were not treated as current. Statements read from senate.gov were fetched through Internet Archive copies because the live site blocks automated access.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

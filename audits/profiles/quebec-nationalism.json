@@ -325,12 +325,36 @@
       ]
     },
     "reduce-immigration": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Québec government's 2026-2029 plan lowers permanent admissions to about 45,000 a year and cuts temporary residents by 13 percent against 2024, linking this to the share of French-speaking newcomers (s10); the PQ goes further, and the movement mainly backs lower levels.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
       "sources": [
         "s10",
         "s6"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Québec government's 2026-2029 plan lowers permanent admissions to about 45,000 a year and cuts temporary residents by 13 percent against 2024, linking this to the share of French-speaking newcomers (s10); the PQ goes further, and the movement mainly backs lower levels.",
+          "sources": [
+            "s10",
+            "s6"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-16"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
+          "sources": [
+            "s10",
+            "s6"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "empower-international-orgs": {
@@ -3616,6 +3640,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

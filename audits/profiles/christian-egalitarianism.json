@@ -2724,12 +2724,36 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "CBE holds that gifts rather than gender should determine roles, and rejects fixed gender-based differences in aptitude, so it disfavours weighing women's typical outlook differently.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "CBE holds that gifts rather than gender should determine roles, and rejects fixed gender-based differences in aptitude, so it disfavours weighing women's typical outlook differently.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3265,6 +3289,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

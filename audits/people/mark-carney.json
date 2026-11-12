@@ -318,13 +318,39 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": 1,
-   "confidence": "high",
-   "rationale": "Campaigned on and enacted lower levels: temporary residents capped below 5% of the population, permanent residents under 1% a year, calling prior levels unsustainable.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
    "sources": [
     "s1",
     "s2",
     "s8"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "high",
+     "rationale": "Campaigned on and enacted lower levels: temporary residents capped below 5% of the population, permanent residents under 1% a year, calling prior levels unsustainable.",
+     "sources": [
+      "s1",
+      "s2",
+      "s8"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
+     "sources": [
+      "s1",
+      "s2",
+      "s8"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "empower-international-orgs": {
@@ -3271,6 +3297,12 @@
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ],

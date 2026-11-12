@@ -423,13 +423,34 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "He advocates stronger multilateral institutions and common enforcement to sustain open markets and regulate cross-border risks.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "openness"
    ],
-   "auditor": "gpt-6.1-sol"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "He advocates stronger multilateral institutions and common enforcement to sustain open markets and regulate cross-border risks.",
+     "sources": [
+      "openness"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-11-02"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "openness"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "free-trade": {
    "value": 1,
@@ -3427,5 +3448,13 @@
    "auditedAt": "2026-11-02"
   }
  ],
- "rules": 3
+ "rules": 3,
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  }
+ ]
 }

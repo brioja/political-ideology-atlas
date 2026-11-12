@@ -1256,11 +1256,33 @@
       "sources": []
     },
     "expand-nuclear": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The Ninth Congress report credits Saddam with devising Iraq's nuclear research strategy and heading its Nuclear Energy Commission.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
       "sources": [
         "s19"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The Ninth Congress report credits Saddam with devising Iraq's nuclear research strategy and heading its Nuclear Energy Commission.",
+          "sources": [
+            "s19"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-09"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
+          "sources": [
+            "s19"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "revolution-justified": {
@@ -10742,6 +10764,12 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-09",
       "nulled": 188
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

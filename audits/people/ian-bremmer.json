@@ -473,18 +473,42 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Advocates stronger global institutions, including enforceable international digital governance.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s5",
     "b10",
     "b9",
     "b23"
    ],
-   "auditor": [
-    "gpt-6.1-sol",
-    "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Advocates stronger global institutions, including enforceable international digital governance.",
+     "sources": [
+      "s5",
+      "b10",
+      "b9",
+      "b23"
+     ],
+     "author": "gpt-6.1-sol",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s5",
+      "b10",
+      "b9",
+      "b23"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -3421,6 +3445,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ]

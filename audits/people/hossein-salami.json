@@ -334,11 +334,33 @@
       "sources": []
     },
     "expand-nuclear": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "He defends Iran’s nuclear power and enrichment capabilities against US opposition.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "He defends Iran’s nuclear power and enrichment capabilities against US opposition.",
+          "sources": [
+            "s3"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-24"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on nuclear research, enrichment, keeping existing plants open or opposing public support, not on building nuclear power plants, and the statement now asks whether governments should support the construction of nuclear power plants.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "revolution-justified": {
@@ -3078,5 +3100,13 @@
       "sources": []
     }
   },
-  "notes": "Whole-career review included missile doctrine, threats to Israel, domestic repression, the civilian-airliner downing, regional partners, economics, technology and social controls. Contemporary state-media speech reports are primary records of his public messaging, not independent confirmation of their factual claims; confidence remains medium for translated reported remarks. The full October 2022 speech report was downloaded and searched. No social-policy positions were inferred from IRGC membership; a Tehran commander’s hijab-enforcement announcement was not misattributed to Salami. Praise of technology does not establish that it solves most human problems. Modern environmental and other unmatched statements remain null. All statements and remaining nulls reviewed; no inferred answers. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant."
+  "notes": "Whole-career review included missile doctrine, threats to Israel, domestic repression, the civilian-airliner downing, regional partners, economics, technology and social controls. Contemporary state-media speech reports are primary records of his public messaging, not independent confirmation of their factual claims; confidence remains medium for translated reported remarks. The full October 2022 speech report was downloaded and searched. No social-policy positions were inferred from IRGC membership; a Tehran commander’s hijab-enforcement announcement was not misattributed to Salami. Praise of technology does not establish that it solves most human problems. Modern environmental and other unmatched statements remain null. All statements and remaining nulls reviewed; no inferred answers. Auditor identification: the runtime identifies this assistant as GPT-6/Codex but does not expose an exact version or variant; gpt-6 is the available identifier, not an asserted variant.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

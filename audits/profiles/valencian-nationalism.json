@@ -181,13 +181,34 @@
    "auditor": "claude-sonnet-5-5"
   },
   "region-keeps-system": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Base 3 of the 1918 Declaration holds the Valencian State compatible with a Spanish or Iberian federation, with a clear distribution of powers and a divided treasury; base 8 lets it pool with other states for specific ends while keeping its personality intact.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
    "sources": [
     "s1"
    ],
-   "auditor": "claude-sonnet-5-5"
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Base 3 of the 1918 Declaration holds the Valencian State compatible with a Spanish or Iberian federation, with a clear distribution of powers and a divided treasury; base 8 lets it pool with other states for specific ends while keeping its personality intact.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-30"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
+   ]
   },
   "regional-powers-revocable": {
    "value": -2,
@@ -3290,6 +3311,14 @@
    "source": "b4",
    "quote": "predecessors i predecessores i ser dignes hereus de la valentia que sempre ha demostrat el valencianisme”. L’actualització ideològica que la ponència del BLOC-Compromís planteja condensa",
    "type": "translation"
+  }
+ ],
+ "reviews": [
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ]
 }

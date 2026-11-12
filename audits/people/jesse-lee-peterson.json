@@ -2659,12 +2659,36 @@
       "sources": []
     },
     "women-distinct-values": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "He says female leadership produces confusion and urges men, rather than women, to lead public life.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
       "sources": [
         "s6",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "He says female leadership produces confusion and urges men, rather than women, to lead public life.",
+          "sources": [
+            "s6",
+            "s2"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on women's distinct roles, giving their values more weight, a claim about innate nature or no stated position, and the statement now asks only whether women tend to be more compassionate than men.",
+          "sources": [
+            "s6",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "arms-reduction": {
@@ -3140,5 +3164,13 @@
       "auditor": "claude-opus-5-5"
     }
   },
-  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed against evidence across themes. Own columns and complete 2020 interview captions were downloaded and searched; some WND downloads were blocked but the full columns were readable through the web reader. Captions identify explicit answers, not jokes or interviewer proposals. Racial-segregation evidence is mixed: recent praise of life under Jim Crow is recorded alongside explicit equal-protection and anti-separation statements, without treating the praise alone as a detailed segregation-law program. Criticism of minimum wages is not inferred from a colleague’s news segment. Show guests’ foreign-policy views and generic episode descriptions are not treated as Peterson’s positions. Scientific race claims, constitutional arrangements, AI, nuclear power and other unsupported questions remain null. His 2020 uncertainty about wealthy-earner tax rates qualifies his earlier opposition."
+  "notes": "No inferred answers. All 490 statements and remaining nulls reviewed against evidence across themes. Own columns and complete 2020 interview captions were downloaded and searched; some WND downloads were blocked but the full columns were readable through the web reader. Captions identify explicit answers, not jokes or interviewer proposals. Racial-segregation evidence is mixed: recent praise of life under Jim Crow is recorded alongside explicit equal-protection and anti-separation statements, without treating the praise alone as a detailed segregation-law program. Criticism of minimum wages is not inferred from a colleague’s news segment. Show guests’ foreign-policy views and generic episode descriptions are not treated as Peterson’s positions. Scientific race claims, constitutional arrangements, AI, nuclear power and other unsupported questions remain null. His 2020 uncertainty about wealthy-earner tax rates qualifies his earlier opposition.",
+  "reviews": [
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    }
+  ]
 }

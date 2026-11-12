@@ -1575,11 +1575,33 @@
    "sources": []
   },
   "region-keeps-system": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Supported Poland keeping its own legislature and administration within the Russian state while sharing common state affairs.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
    "sources": [
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Supported Poland keeping its own legislature and administration within the Russian state while sharing common state affairs.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-24"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "sacred-ruler": {
@@ -3359,6 +3381,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 2
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ]
 }

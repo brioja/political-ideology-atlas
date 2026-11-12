@@ -278,11 +278,33 @@
    "sources": []
   },
   "empower-international-orgs": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Lerner favors global cooperation through a Global Marshall Plan, but does not discuss the UN.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Lerner favors global cooperation through a Global Marshall Plan, but does not discuss the UN.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-trade": {
@@ -2898,11 +2920,33 @@
    ]
   },
   "foreign-partition-plot": {
-   "value": -2,
+   "value": null,
    "confidence": "low",
-   "rationale": "Paranoid nationalism is not part of the movement.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on whether a foreign plot is believed to exist, or on foreign hostility in general rather than territorial partition, and the statement now asks whether preventing foreign-backed partition should be a central aim of national policy.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "low",
+     "rationale": "Paranoid nationalism is not part of the movement.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-21"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on whether a foreign plot is believed to exist, or on foreign hostility in general rather than territorial partition, and the statement now asks whether preventing foreign-backed partition should be a central aim of national policy.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "free-public-college": {
@@ -3512,6 +3556,18 @@
    "reviewer": "scripts/unsourced-to-null.js",
    "reviewedAt": "2026-11-02",
    "nulled": 12
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ]
 }

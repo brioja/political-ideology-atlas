@@ -1426,13 +1426,34 @@
       ]
     },
     "region-keeps-system": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Wikipedia reports that, urging princes to accede on defence, external affairs and communications, he stressed the instruments left them all the practical independence they needed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
       "sources": [
         "s5"
       ],
-      "auditor": "claude-sonnet-5-5"
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Wikipedia reports that, urging princes to accede on defence, external affairs and communications, he stressed the instruments left them all the practical independence they needed.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on general self-government, separate laws or no stated position, not on keeping a distinct economic system, and the statement now asks only whether a region joining a larger state should be free to keep its economic system.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
+      ]
     },
     "sacred-ruler": {
       "value": null,
@@ -3127,6 +3148,12 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 9
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ]
 }

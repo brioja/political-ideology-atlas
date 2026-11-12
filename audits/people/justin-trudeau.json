@@ -564,11 +564,33 @@
    "sources": []
   },
   "reduce-immigration": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "In October 2024 announced cuts to immigration levels to pause population growth while also calling immigration vital; most recent position is to reduce levels.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
    "sources": [
     "s5"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "In October 2024 announced cuts to immigration levels to pause population growth while also calling immigration vital; most recent position is to reduce levels.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its value rests on cutting immigration from its current level, and the statement now asks whether immigration should be tightly restricted.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "empower-international-orgs": {
@@ -3474,6 +3496,12 @@
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
+   "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
    "nulled": 1
   }
  ],

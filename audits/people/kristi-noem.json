@@ -2808,11 +2808,33 @@
    "sources": []
   },
   "online-participation": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Set up habitat.sd.gov so every South Dakotan can contribute ideas to policymaking online and livestreamed state meetings (2019); a narrow policy area.",
+   "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
    "sources": [
     "n19"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Set up habitat.sd.gov so every South Dakotan can contribute ideas to policymaking online and livestreamed state meetings (2019); a narrow policy area.",
+     "sources": [
+      "n19"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled (statement review, 2026-11-12): its rationale is about online deliberation, consultation or political participation in general, not voting, and the statement now asks whether citizens should have the option to vote online in public elections.",
+     "sources": [
+      "n19"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-11-12"
+    }
    ]
   },
   "open-government-data": {
@@ -3681,6 +3703,12 @@
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 4
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-opus-5-5",
+   "reviewedAt": "2026-11-12",
+   "nulled": 1
   }
  ],
  "rules": 3

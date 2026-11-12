@@ -139,12 +139,36 @@
       ]
     },
     "regulate-corporations": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The model has antitrust and competition rules, but Novak defends the corporation as a voluntary community, so a call for tighter regulation divides adherents.",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale turns on whether regulation should be tighter than now, or on replacing corporations instead of regulating them, and the statement now asks whether corporations should face strict government regulation.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The model has antitrust and competition rules, but Novak defends the corporation as a voluntary community, so a call for tighter regulation divides adherents.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale turns on whether regulation should be tighter than now, or on replacing corporations instead of regulating them, and the statement now asks whether corporations should face strict government regulation.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "cut-welfare": {
@@ -2331,11 +2355,33 @@
       "sources": []
     },
     "personal-possessions-private": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Private property in general is defended, so personal goods are private, but the question presupposes common ownership of production, which the model rejects.",
+      "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Private property in general is defended, so personal goods are private, but the question presupposes common ownership of production, which the model rejects.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-19"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its value rests on accepting or rejecting common ownership of production, or on private property in general, and the statement now asks only whether personal belongings should stay private where production is held in common.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "defeat-communism": {
@@ -3649,6 +3695,18 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

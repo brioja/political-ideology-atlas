@@ -375,11 +375,33 @@
       "sources": []
     },
     "empower-international-orgs": {
-      "value": 1,
-      "confidence": "high",
-      "rationale": "Called for strengthening the UN and reforming its Security Council.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
       "sources": [
         "un18"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "high",
+          "rationale": "Called for strengthening the UN and reforming its Security Council.",
+          "sources": [
+            "un18"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-23"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale is about other international bodies (such as the EU, WTO, IMF or WHO) or about support, funding or reform without enforcement powers, and the statement now asks whether the UN should have powers to enforce its decisions against member states.",
+          "sources": [
+            "un18"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "free-trade": {
@@ -3246,6 +3268,12 @@
       "kind": "nulling",
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-11",
+      "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
       "nulled": 1
     }
   ]

@@ -3730,11 +3730,33 @@
       ]
     },
     "voter-id": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "In 2026 said election rules should always have proof of citizenship, but opposed the SAVE Act as voter suppression.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
       "sources": [
         "s15"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "In 2026 said election rules should always have proof of citizenship, but opposed the SAVE Act as voter suppression.",
+          "sources": [
+            "s15"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-07"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (statement review, 2026-11-12): its rationale rests on proof of citizenship, documents at registration or postal-ballot rules, and the statement now asks only whether voters should show photo ID at polling stations.",
+          "sources": [
+            "s15"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-11-12"
+        }
       ]
     },
     "religious-equal-recognition": {
@@ -4096,6 +4118,12 @@
       "reviewer": "claude-opus-5-5 (integrator review)",
       "reviewedAt": "2026-11-07",
       "nulled": 3
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-opus-5-5",
+      "reviewedAt": "2026-11-12",
+      "nulled": 1
     }
   ],
   "passes": [
