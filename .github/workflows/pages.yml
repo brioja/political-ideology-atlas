@@ -5,6 +5,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # Files the site never shows. A push touching only these starts no deploy, so it can't cancel one;
+    # the next deploy uploads them anyway. scripts/ isn't listed: pages.js runs here.
+    paths-ignore:
+      - '.claude/**'
+      - 'backlog/**'
+      - 'tests/**'
+      - 'test.js'
+      - 'AGENTS.md'
+      - 'CONTRIBUTING.md'
+      - 'README.md'
+      - 'audits/**/*.md'
   workflow_dispatch:
 
 permissions:
