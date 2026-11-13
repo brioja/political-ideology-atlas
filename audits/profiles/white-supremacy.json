@@ -1,10 +1,12 @@
 {
   "id": "white-supremacy",
   "name": "White supremacy",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
+  "auditedAt": "2026-11-13",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
   "summary": "White supremacy is the belief that white people are inherently superior to other races and should hold power, privilege and often separate territory. Its adherents draw on 19th and early 20th century race science, defend or seek segregation, exclusion of non-white immigrants and denial of equal political rights, and frequently adopt antisemitic conspiracy theories. Strands range from legal segregationists and slaveholder ideology to Nazi-style racial states, white nationalist ethnostate projects and violent militias.",
-  "scope": "The mainstream of explicitly white-supremacist belief as documented in Wikipedia's account of the doctrine, with Madison Grant's The Passing of the Great Race and Alexander Stephens's Cornerstone Speech as primary expressions, plus white nationalist separatism. It does not cover the broader topic of racism or non-white supremacist movements, and economic and religious positions vary widely between strands.",
+  "scope": "The doctrine of white racial superiority as stated in Lothrop Stoddard's The Rising Tide of Color Against White World-Supremacy (which names white supremacy) and Madison Grant's The Passing of the Great Race, a founding Nordicist text that Wikipedia's account of white supremacy names, with white nationalism as the separatist strand. It does not cover racism generally, non-white supremacist movements or the economic and religious positions of particular movements, which vary.",
   "wikipedia": "https://en.wikipedia.org/wiki/White_supremacy",
   "furtherReading": [
     {
@@ -19,12 +21,12 @@
     },
     {
       "title": "The Passing of the Great Race (Project Gutenberg)",
-      "url": "https://gutenberg.org/cache/epub/68185/pg68185-images.html",
+      "url": "https://www.gutenberg.org/ebooks/68185",
       "note": "A founding text of American racial ideology, read as a historical document."
     },
     {
       "title": "Cornerstone Speech (Teaching American History)",
-      "url": "https://teachingamericanhistory.org/document/cornerstone-speech/",
+      "url": "https://en.wikisource.org/wiki/Cornerstone_Speech",
       "note": "A Confederate leader's explicit statement of racial hierarchy as a basis of government."
     }
   ],
@@ -62,23 +64,26 @@
       "title": "White supremacy",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/White_supremacy",
-      "usedFor": "Definition, thinkers, segregation, antisemitism, religion, violence and colonialism."
+      "usedFor": "Definition, thinkers, segregation, antisemitism, religion, violence and colonialism.",
+      "evidence": "words"
     },
     {
       "id": "s2",
       "kind": "primary",
-      "title": "The Passing of the Great Race",
+      "title": "The Passing of the Great Race (Project Gutenberg, text 68185)",
       "author": "Madison Grant (1916; 1923 edition)",
-      "url": "https://gutenberg.org/cache/epub/68185/pg68185-images.html",
-      "usedFor": "Nordic hierarchy, race mixing, immigration, eugenics, elite rule and democracy."
+      "url": "https://www.gutenberg.org/ebooks/68185",
+      "usedFor": "Nordic hierarchy, race mixing, immigration, eugenics, elite rule and democracy.",
+      "evidence": "words"
     },
     {
       "id": "s3",
       "kind": "primary",
-      "title": "Cornerstone Speech",
+      "title": "Cornerstone Speech (Wikisource copy)",
       "author": "Alexander H. Stephens (1861)",
-      "url": "https://teachingamericanhistory.org/document/cornerstone-speech/",
-      "usedFor": "Explicit rejection of racial equality and defence of racial subordination as the basis of government."
+      "url": "https://en.wikisource.org/wiki/Cornerstone_Speech",
+      "usedFor": "Explicit rejection of racial equality and defence of racial subordination as the basis of government.",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -86,7 +91,17 @@
       "title": "White nationalism",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/White_nationalism",
-      "usedFor": "Ethnostate, immigration, replacement beliefs, religion and relation to supremacism."
+      "usedFor": "Ethnostate, immigration, replacement beliefs, religion and relation to supremacism.",
+      "evidence": "words"
+    },
+    {
+      "id": "s5",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "The Rising Tide of Color Against White World-Supremacy (Project Gutenberg, text 37408)",
+      "author": "Lothrop Stoddard (1920)",
+      "url": "https://www.gutenberg.org/ebooks/37408",
+      "usedFor": "Immigration exclusion, white solidarity, race-consciousness, eugenics, democracy and Bolshevism."
     }
   ],
   "answers": {
@@ -103,29 +118,99 @@
       "sources": []
     },
     "markets-allocate-better": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands split between market-friendly and anti-capitalist positions, as the sources centre on racial control of resources, not on markets.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands split between market-friendly and anti-capitalist positions, as the sources centre on racial control of resources, not on markets.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "public-ownership": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Neo-Nazi strands favour state economic control while others favour private enterprise; the sources document no common line.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Neo-Nazi strands favour state economic control while others favour private enterprise; the sources document no common line.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "tax-the-wealthy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Some strands attack Jewish finance while others defend white property-holders; economic questions are not settled in the sources.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Some strands attack Jewish finance while others defend white property-holders; economic questions are not settled in the sources.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "unions-good": {
@@ -183,12 +268,36 @@
       "sources": []
     },
     "state-harmful": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Historic supremacists wanted the state to enforce racial hierarchy, though militias are hostile to government; most adherents are not anarchists.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Historic supremacists wanted the state to enforce racial hierarchy, though militias are hostile to government; most adherents are not anarchists.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "limit-guns": {
@@ -234,12 +343,36 @@
       "sources": []
     },
     "decide-locally": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Segregation was defended via states' rights, but nationalist strands want central white-majority states; split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Segregation was defended via states' rights, but nationalist strands want central white-majority states; split.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "rehabilitation": {
@@ -249,20 +382,66 @@
       "sources": []
     },
     "traditional-family": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Sources note rigid views on gender and sexuality in some groups and concern for white birth rates.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Sources note rigid views on gender and sexuality in some groups and concern for white birth rates.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "same-sex-marriage": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The sources note that white supremacist groups target LGBTQ+ people.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The sources note that white supremacist groups target LGBTQ+ people.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "abortion-legal": {
@@ -272,21 +451,69 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian Identity favours religious politics while Creativity is atheist and others are pagan; genuinely split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Christian Identity favours religious politics while Creativity is atheist and others are pagan; genuinely split.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "correct-racial-injustice": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The doctrine rejects racial equality as a principle, so adherents reject redress for racial injustice.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine rejects racial equality as a principle, so adherents reject redress for racial injustice.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-social-construct": {
@@ -296,12 +523,36 @@
       "sources": []
     },
     "preserve-national-culture": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "White nationalists see white culture as foremost and Grant sought to preserve Nordic heritage.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "White nationalists see white culture as foremost and Grant sought to preserve Nordic heritage.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gradual-change": {
@@ -313,11 +564,35 @@
     "reduce-immigration": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Immigration restriction is central: Grant, the 1790 and 1920s laws and white nationalist aims all stress it.",
+      "rationale": "Stoddard argues that the white world must rigidly restrict immigration ('slam its doors'), calling restriction 'a species of segregation on a large scale', and the white nationalist account holds that immigration should be limited to people of European ancestry.",
       "sources": [
-        "s1",
-        "s2",
+        "s5",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Immigration restriction is central: Grant, the 1790 and 1920s laws and white nationalist aims all stress it.",
+          "sources": [
+            "s1",
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Stoddard argues that the white world must rigidly restrict immigration ('slam its doors'), calling restriction 'a species of segregation on a large scale', and the white nationalist account holds that immigration should be limited to people of European ancestry.",
+          "sources": [
+            "s5",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "empower-international-orgs": {
@@ -347,19 +622,63 @@
     "open-borders": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Open borders contradict the central aim of preserving a white majority or homeland.",
+      "rationale": "Stoddard says white countries must refuse Asiatic migration and rigorously curtail even migration of 'lower' European types, to the point of preferring war to yielding on it.",
       "sources": [
-        "s1",
-        "s2",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Open borders contradict the central aim of preserving a white majority or homeland.",
+          "sources": [
+            "s1",
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Stoddard says white countries must refuse Asiatic migration and rigorously curtail even migration of 'lower' European types, to the point of preferring war to yielding on it.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "limit-growth": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant was interested in conservation but strands disagree on growth; not a defining issue.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant was interested in conservation but strands disagree on growth; not a defining issue.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "drastic-climate-action": {
@@ -381,12 +700,36 @@
       "sources": []
     },
     "revolution-justified": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Militia groups seek to overthrow the government and form a white homeland, though mainstream segregationists worked through the law.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Militia groups seek to overthrow the government and form a white homeland, though mainstream segregationists worked through the law.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "experts-over-public": {
@@ -432,11 +775,33 @@
       "sources": []
     },
     "state-directs-investment": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands split between statist and market positions.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands split between statist and market positions.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "widespread-small-property": {
@@ -458,37 +823,127 @@
       "sources": []
     },
     "corporatist-bargaining": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nazi-influenced strands favoured it while others did not address it.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Nazi-influenced strands favoured it while others did not address it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "one-party-rule": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nazism and one-party Jim Crow South relied on it but other strands are indifferent.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Nazism and one-party Jim Crow South relied on it but other strands are indifferent.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "monarchy-legitimate": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant admired aristocracy, but strands lack a common view on monarchy.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant admired aristocracy, but strands lack a common view on monarchy.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "democracy-best": {
       "value": -1,
       "confidence": "medium",
-      "rationale": "Non-whites were disenfranchised and Grant argued universal suffrage favours the average over the capable.",
+      "rationale": "Grant holds that universal suffrage 'tends toward the selection of the average man' and increases the preponderance of lower types, and prefers government 'by the wisest and best' to the rule of the majority.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Non-whites were disenfranchised and Grant argued universal suffrage favours the average over the capable.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Grant holds that universal suffrage 'tends toward the selection of the average man' and increases the preponderance of lower types, and prefers government 'by the wisest and best' to the rule of the majority.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "direct-votes": {
@@ -498,11 +953,33 @@
       "sources": []
     },
     "workers-councils": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "A left-wing form of rule the movement rejects.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "A left-wing form of rule the movement rejects.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "right-to-secede": {
@@ -514,43 +991,155 @@
     "natural-rulers": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Racial superiority and Grant's rule by the picked best are core to the doctrine.",
+      "rationale": "Grant defines true aristocracy or republic as 'government by the wisest and best', a small minority, and holds that universal suffrage drags rule down to the average.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Racial superiority and Grant's rule by the picked best are core to the doctrine.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Grant defines true aristocracy or republic as 'government by the wisest and best', a small minority, and holds that universal suffrage drags rule down to the average.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "political-violence-never": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Lynchings, the Holocaust and attacks like Christchurch show the movement's acceptance of violence.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Lynchings, the Holocaust and attacks like Christchurch show the movement's acceptance of violence.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "war-builds-character": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant called war dysgenic while Nazism glorified it; strands split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant called war dysgenic while Nazism glorified it; strands split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "separate-church-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands span Christian Identity, paganism and atheism.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands span Christian Identity, paganism and atheism.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "laws-from-scripture": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Christian Identity favours it but others do not.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Christian Identity favours it but others do not.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "private-courts-defense": {
@@ -567,36 +1156,130 @@
     },
     "ethnic-nation": {
       "value": 2,
-      "confidence": "high",
-      "rationale": "A mainly white nation or white ethnostate is the central nationalist aim.",
+      "confidence": "medium",
+      "rationale": "Stoddard holds that democratic institutions work only among a 'homogeneous population' of one racial stock and that mixed populations are inhabited by different races in conflict, and white nationalism is described as building national identity around white ethnicity.",
       "sources": [
-        "s1",
+        "s5",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "A mainly white nation or white ethnostate is the central nationalist aim.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Stoddard holds that democratic institutions work only among a 'homogeneous population' of one racial stock and that mixed populations are inhabited by different races in conflict, and white nationalism is described as building national identity around white ethnicity.",
+          "sources": [
+            "s5",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "class-struggle-history": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "The doctrine puts race, not class, as the driver of history, as with Stoddard's racial struggle.",
+      "rationale": "Grant presents history as having a racial basis (the 'heredity interpretation of history') and Stoddard condemns the Bolshevik doctrine of social war between classes.",
       "sources": [
-        "s1"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine puts race, not class, as the driver of history, as with Stoddard's racial struggle.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant presents history as having a racial basis (the 'heredity interpretation of history') and Stoddard condemns the Bolshevik doctrine of social war between classes.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "equal-outcomes": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Grant and Stephens deny natural equality.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant and Stephens deny natural equality.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "indigenous-land-authority": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "White supremacy justified colonialism and dispossession, such as in Native Land Court practice.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "White supremacy justified colonialism and dispossession, such as in Native Land Court practice.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "colonial-reparations": {
@@ -608,10 +1291,32 @@
     "civilizational-union": {
       "value": 1,
       "confidence": "medium",
-      "rationale": "Pan-white unity across nations appears in Nordic and Aryan racial doctrines.",
+      "rationale": "Stoddard calls a 'Pan-Nordic syndication of power' among the white nations a 'glorious aspiration' that would have averted war, and blames national-imperialism for defeating it.",
       "sources": [
-        "s1",
-        "s4"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Pan-white unity across nations appears in Nordic and Aryan racial doctrines.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Stoddard calls a 'Pan-Nordic syndication of power' among the white nations a 'glorious aspiration' that would have averted war, and blames national-imperialism for defeating it.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "self-interest-moral": {
@@ -627,28 +1332,96 @@
       "sources": []
     },
     "nature-intrinsic-value": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Not a defining issue.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Not a defining issue.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "limit-population": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Concern for low white birth rates points against limiting population generally, though Grant wanted undesirable lines reduced.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Concern for low white birth rates points against limiting population generally, though Grant wanted undesirable lines reduced.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "industrial-civilization-disaster": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Mainstream strands credit white civilisation with achievement; esoteric strands oppose modernity.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Mainstream strands credit white civilisation with achievement; esoteric strands oppose modernity.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "accelerate-technology": {
@@ -658,11 +1431,33 @@
       "sources": []
     },
     "human-enhancement": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Eugenic strands favour breeding for improvement, but this concerns technology; split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Eugenic strands favour breeding for improvement, but this concerns technology; split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "algorithmic-government": {
@@ -678,12 +1473,36 @@
       "sources": []
     },
     "restore-past-order": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Adherents lament decline of a white order, as with Grant.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Adherents lament decline of a white order, as with Grant.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "results-over-ideology": {
@@ -693,11 +1512,33 @@
       "sources": []
     },
     "direct-action": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Violent militias and street groups favour direct action.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Violent militias and street groups favour direct action.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "means-match-ends": {
@@ -707,19 +1548,63 @@
       "sources": []
     },
     "return-to-foraging": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejected as contrary to claims of white civilisational achievement.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Rejected as contrary to claims of white civilisational achievement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "abolish-division-of-labor": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Hierarchical outlook rejects it.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Hierarchical outlook rejects it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "distribute-by-need": {
@@ -735,43 +1620,153 @@
       "sources": []
     },
     "profit-exploitation": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "A Marxist claim the movement rejects.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "A Marxist claim the movement rejects.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "dictatorship-of-proletariat": {
       "value": -2,
-      "confidence": "low",
-      "rationale": "A Marxist doctrine the movement rejects.",
+      "confidence": "medium",
+      "rationale": "Stoddard calls Bolshevism's cardinal tenets, 'the dictatorship of the proletariat, and the destruction of the classes by social war', of 'truly hideous import'.",
       "sources": [
-        "s1"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "A Marxist doctrine the movement rejects.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Stoddard calls Bolshevism's cardinal tenets, 'the dictatorship of the proletariat, and the destruction of the classes by social war', of 'truly hideous import'.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "collective-farming": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejected as a Communist policy.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Rejected as a Communist policy.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "capitalism-causes-war": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Marxist analysis rejected; some strands blame Jewish finance for wars.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Marxist analysis rejected; some strands blame Jewish finance for wars.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "taxation-theft": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split between libertarian-leaning and statist strands.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Split between libertarian-leaning and statist strands.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "harm-principle": {
@@ -781,12 +1776,36 @@
       "sources": []
     },
     "individual-rights-only": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The doctrine ascribes standing to racial groups and denies equal rights.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The doctrine ascribes standing to racial groups and denies equal rights.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "conscription": {
@@ -814,20 +1833,64 @@
       "sources": []
     },
     "media-academia-power": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Creativity promotes a theory of Jewish control of governments, banks and media.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Creativity promotes a theory of Jewish control of governments, banks and media.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "hereditarian-race": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Innate racial differences in ability are the core claim.",
+      "rationale": "Grant argues that races differ innately in intellectual and moral capacity ('the heredity interpretation of history') and that the Nordic race has been responsible for most of civilization's achievements.",
       "sources": [
-        "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Innate racial differences in ability are the core claim.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Grant argues that races differ innately in intellectual and moral capacity ('the heredity interpretation of history') and that the Nordic race has been responsible for most of civilization's achievements.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "organic-representation": {
@@ -837,28 +1900,96 @@
       "sources": []
     },
     "total-state": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nazi strands favoured it; others did not.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Nazi strands favoured it; others did not.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "national-rebirth": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant ends with FINIS AMERICAE and decline-and-renewal rhetoric is common.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Grant ends with FINIS AMERICAE and decline-and-renewal rhetoric is common.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "territorial-expansion": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "White supremacy justified European colonialism and Nazi expansion.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "White supremacy justified European colonialism and Nazi expansion.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "personal-loyalty-rule": {
@@ -886,11 +2017,33 @@
       "sources": []
     },
     "jewish-state-israel": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Views on Israel are split; many oppose Zionism, others support Israel.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Views on Israel are split; many oppose Zionism, others support Israel.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "diaspora-return-right": {
@@ -930,20 +2083,66 @@
       "sources": []
     },
     "rule-by-example": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant favoured rule by the wisest and best, but nothing on moral example.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant favoured rule by the wisest and best, but nothing on moral example.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "national-self-determination": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "A white homeland and nationhood is central to nationalist strands.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "A white homeland and nationhood is central to nationalist strands.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "force-without-un": {
@@ -953,11 +2152,33 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Creativity is atheist while Christian Identity is faith-based.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Creativity is atheist while Christian Identity is faith-based.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -973,43 +2194,153 @@
       "sources": []
     },
     "class-collaboration": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nazi-influenced racial community ideas stress cooperation.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Nazi-influenced racial community ideas stress cooperation.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "sacrifice-heritage": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant valued inherited cultural achievement.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Grant valued inherited cultural achievement.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "dominated-front": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents identify with the West.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Adherents identify with the West.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "workers-nation": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "National racial community stressed over class.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "National racial community stressed over class.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "distinct-gender-roles": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The sources note rigid gender views in some groups.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The sources note rigid gender views in some groups.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "ban-interest": {
@@ -1019,20 +2350,64 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": 2,
-      "confidence": "high",
-      "rationale": "Segregation, apartheid and racial classification by law are core.",
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Grant says Negroes are a valuable element only while they 'remain in the same relation to the whites as in the past' and that once 'raised to social equality' their influence would be destructive, and he urges repudiating the claim that Americans acknowledge no distinction of race.",
       "sources": [
-        "s1",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Segregation, apartheid and racial classification by law are core.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Grant says Negroes are a valuable element only while they 'remain in the same relation to the whites as in the past' and that once 'raised to social equality' their influence would be destructive, and he urges repudiating the claim that Americans acknowledge no distinction of race.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "state-class-instrument": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "A Marxist theory the movement rejects.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "A Marxist theory the movement rejects.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "expand-fossil-fuels": {
@@ -1042,21 +2417,69 @@
       "sources": []
     },
     "assimilate-immigrants": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Non-white immigration is opposed outright, not accepted subject to assimilation.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Non-white immigration is opposed outright, not accepted subject to assimilation.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "elite-replacement": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Great Replacement or white genocide beliefs are widely held among adherents.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Great Replacement or white genocide beliefs are widely held among adherents.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "proportional-representation": {
@@ -1072,28 +2495,98 @@
       "sources": []
     },
     "patriarchy-structural": {
-      "value": -2,
+      "value": null,
       "confidence": "low",
-      "rationale": "Rejected as a feminist claim.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "low",
+          "rationale": "Rejected as a feminist claim.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "political-elite-corrupt": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Conspiracy theories about elites, such as ZOG, are widespread.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Conspiracy theories about elites, such as ZOG, are widespread.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "heritable-defect-limits": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Grant argues the state through sterilization must stop defective lines.",
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Grant says the state must see through sterilization that the line of the criminal, diseased and insane 'stops with him', and Stoddard looks to segregation of defectives as race-betterment.",
       "sources": [
-        "s2"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Grant argues the state through sterilization must stop defective lines.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Grant says the state must see through sterilization that the line of the criminal, diseased and insane 'stops with him', and Stoddard looks to segregation of defectives as race-betterment.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "security-forces-accountable": {
@@ -1111,19 +2604,65 @@
     "discourage-race-mixing": {
       "value": 2,
       "confidence": "high",
-      "rationale": "Marriage outside the white race is rejected and Grant calls race crossing reversion to the lower type.",
+      "rationale": "Grant calls bringing half-breeds into the world 'a social and racial crime of the first magnitude' and says laws against miscegenation 'must be greatly extended'; Stoddard likewise wants to exorcise 'the lurking spectre of miscegenation'.",
       "sources": [
-        "s1",
-        "s2"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Marriage outside the white race is rejected and Grant calls race crossing reversion to the lower type.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Grant calls bringing half-breeds into the world 'a social and racial crime of the first magnitude' and says laws against miscegenation 'must be greatly extended'; Stoddard likewise wants to exorcise 'the lurking spectre of miscegenation'.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "equal-moral-worth": {
       "value": -2,
-      "confidence": "high",
-      "rationale": "The Cornerstone Speech rests the Confederacy on the principle that the races are not equal, and the doctrine denies equal rights before the law.",
+      "confidence": "medium",
+      "rationale": "Grant laments the grant of citizenship to Negroes and 'inferior races' as ruining the republic, says such races have shown little capacity to comprehend republican institutions, and wants the claim of no distinction by race repudiated.",
       "sources": [
-        "s1",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The Cornerstone Speech rests the Confederacy on the principle that the races are not equal, and the doctrine denies equal rights before the law.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant laments the grant of citizenship to Negroes and 'inferior races' as ruining the republic, says such races have shown little capacity to comprehend republican institutions, and wants the claim of no distinction by race repudiated.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1133,12 +2672,36 @@
       "sources": []
     },
     "settler-state-colonial": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents defend white settler states and colonial rule as the proper outcome of white superiority.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Adherents defend white settler states and colonial rule as the proper outcome of white superiority.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "uniform-civil-code": {
@@ -1190,28 +2753,96 @@
       "sources": []
     },
     "population-transfer": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "White nationalist projects seek an ethnostate and exclusion or removal of non-white populations.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "White nationalist projects seek an ethnostate and exclusion or removal of non-white populations.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "initiating-force-wrong": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Segregation, subordination and violence against non-whites are central to the doctrine, so force is not restricted to defence.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Segregation, subordination and violence against non-whites are central to the doctrine, so force is not restricted to defence.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "competition-drives-progress": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Grant presents racial struggle and survival of the fittest race as the driver of history.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Grant presents racial struggle and survival of the fittest race as the driver of history.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "ban-extremist-parties": {
@@ -1239,10 +2870,12 @@
       "sources": []
     },
     "priority-to-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Grant holds that charity and humanitarian efforts that keep the 'unfit' alive injure the race 'more than black death or smallpox' and should not shape policy.",
+      "sources": [
+        "s2"
+      ]
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1263,18 +2896,42 @@
       "sources": []
     },
     "diversity-weakens-cohesion": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Stoddard quotes with approval Prescott Hall's argument that a community of many races dissipates energy on 'keeping things going along old lines' and that great men need 'a certain homogeneity of environment'.",
+      "sources": [
+        "s5"
+      ]
     },
     "offices-by-lottery": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Stephens and Grant rest government on racial hierarchy and elite rule, which a lottery among all citizens would undo.",
+      "rationale": "Grant holds that government should be by the wisest and best, a picked minority, and complains that universal suffrage selects the average man for office.",
       "sources": [
-        "s2",
-        "s3"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Stephens and Grant rest government on racial hierarchy and elite rule, which a lottery among all citizens would undo.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant holds that government should be by the wisest and best, a picked minority, and complains that universal suffrage selects the average man for office.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "emergency-suspend-protections": {
@@ -1332,11 +2989,33 @@
       "sources": []
     },
     "church-by-bishops": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Religion varies sharply between strands, from Christian Identity to paganism and atheism.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Religion varies sharply between strands, from Christian Identity to paganism and atheism.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "clerical-rule": {
@@ -1408,9 +3087,33 @@
     "cultures-equal-different": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Belief in the inherent superiority of white people directly denies the equality of cultures.",
+      "rationale": "Grant credits the Nordic race with the great achievements of civilization and Stoddard defends the supremacy of white civilization, so neither holds that no culture is superior.",
       "sources": [
-        "s1"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Belief in the inherent superiority of white people directly denies the equality of cultures.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant credits the Nordic race with the great achievements of civilization and Stoddard defends the supremacy of white civilization, so neither holds that no culture is superior.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "death-penalty": {
@@ -1468,11 +3171,33 @@
       "sources": []
     },
     "independence-needs-economic-change": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The sources do not link independence to economic change, and strands differ on economics.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The sources do not link independence to economic change, and strands differ on economics.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "constituent-assembly": {
@@ -1518,11 +3243,33 @@
       "sources": []
     },
     "property-serves-common-good": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic views vary widely between strands and the sources give no answer.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic views vary widely between strands and the sources give no answer.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "soviet-state-capitalist": {
@@ -1544,11 +3291,33 @@
       "sources": []
     },
     "annexed-territory-occupation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents are split; white nationalists focus on race rather than the status of annexed territory.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents are split; white nationalists focus on race rather than the status of annexed territory.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "subordinate-church-to-state": {
@@ -1606,19 +3375,63 @@
       "sources": []
     },
     "flat-income-tax": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Tax policy is secondary to race and strands differ.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Tax policy is secondary to race and strands differ.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "character-from-environment": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Grant argues that race, not environment, fixes character and ability, and that mixing yields reversion to the lower type.",
+      "rationale": "Grant argues that race, not environment, fixes character and that baptism and church-going do not turn a Negro into a white man.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant argues that race, not environment, fixes character and ability, and that mixing yields reversion to the lower type.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant argues that race, not environment, fixes character and that baptism and church-going do not turn a Negro into a white man.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "sovereign-above-law": {
@@ -1741,10 +3554,34 @@
     "material-conditions-drive-history": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "The doctrine holds that race, a biological fact, shapes history and civilisation, as Grant argues.",
+      "rationale": "Grant and Stoddard treat race as the basis of history and civilization, not economic structure.",
       "sources": [
-        "s1",
-        "s2"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine holds that race, a biological fact, shapes history and civilisation, as Grant argues.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant and Stoddard treat race as the basis of history and civilization, not economic structure.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "ban-cartels": {
@@ -1796,10 +3633,12 @@
       "sources": []
     },
     "abolish-hereditary-privilege": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "Grant laments that 'we have nearly succeeded in destroying the privilege of birth' and values the advantage a man of good stock brings into the world.",
+      "sources": [
+        "s2"
+      ]
     },
     "history-own-civilization": {
       "value": null,
@@ -1874,19 +3713,63 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Confederate and white-republic strands favored elected white rulers while fascist strands favored a leader; adherents split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Confederate and white-republic strands favored elected white rulers while fascist strands favored a leader; adherents split.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "minority-veto": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Southern states-rights thought used nullification as a minority veto, but other strands are authoritarian; split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Southern states-rights thought used nullification as a minority veto, but other strands are authoritarian; split.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "resist-lawless-ruler": {
@@ -1914,11 +3797,33 @@
       "sources": []
     },
     "noblesse-oblige": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Paternal duty toward subordinate groups is claimed in slaveholder ideology but in-group duties differ by strand; split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Paternal duty toward subordinate groups is claimed in slaveholder ideology but in-group duties differ by strand; split.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "withdraw-from-politics": {
@@ -1972,9 +3877,31 @@
     "indigenous-political-leadership": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "The doctrine holds that whites should hold power over other races.",
+      "rationale": "Stoddard says it is wrong for the white man 'to share his blood with, or intrust his ideals to, brown, yellow, black, or red men' and holds that white control of the tropics must 'stand fast'.",
       "sources": [
-        "s1"
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine holds that whites should hold power over other races.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Stoddard says it is wrong for the white man 'to share his blood with, or intrust his ideals to, brown, yellow, black, or red men' and holds that white control of the tropics must 'stand fast'.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "antifascism-founding-value": {
@@ -1984,19 +3911,63 @@
       "sources": []
     },
     "totalitarianisms-equivalent": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Nazi-style strands reject the equation while anti-communist strands might accept it; leans reject.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Nazi-style strands reject the equation while anti-communist strands might accept it; leans reject.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "slavery-not-civil-war-cause": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Modern adherents favor the Lost Cause view, though Stephens' Cornerstone Speech itself names slavery as the foundation.",
+      "rationale": "Nulled (later pass, 2026-11-13): the Cornerstone Speech, which names slavery as the immediate cause of the secession, is not tied to this ideology by any defining source outside Wikipedia, so it cannot answer here; the earlier answer had it backwards.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Modern adherents favor the Lost Cause view, though Stephens' Cornerstone Speech itself names slavery as the foundation.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the Cornerstone Speech, which names slavery as the immediate cause of the secession, is not tied to this ideology by any defining source outside Wikipedia, so it cannot answer here; the earlier answer had it backwards.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "preserve-contested-monuments": {
@@ -2030,11 +4001,33 @@
       "sources": []
     },
     "paid-care-work": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Pronatalist strands favor support for mothers, traditionalist strands oppose wages for housework; split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Pronatalist strands favor support for mothers, traditionalist strands oppose wages for housework; split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "filial-duty": {
@@ -2098,12 +4091,36 @@
       "sources": []
     },
     "disparate-impact-discrimination": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents deny that unequal racial outcomes show discrimination and attribute them to inherent racial differences, as Grant does.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Adherents deny that unequal racial outcomes show discrimination and attribute them to inherent racial differences, as Grant does.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "consumerism-harmful": {
@@ -2125,11 +4142,33 @@
       "sources": []
     },
     "corporate-influence": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic positions vary sharply between strands, so adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic positions vary sharply between strands, so adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "restrict-foreign-funding": {
@@ -2169,35 +4208,123 @@
       "sources": []
     },
     "non-intervention": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Foreign policy varies between strands; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Foreign policy varies between strands; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic organisation varies sharply between strands.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic organisation varies sharply between strands.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "minority-conspiracy": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Reference accounts note that adherents frequently adopt antisemitic conspiracy theories, which supports agreement but not as a universal tenet.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Reference accounts note that adherents frequently adopt antisemitic conspiracy theories, which supports agreement but not as a universal tenet.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "abolish-legal-marriage": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Marriage rules enforcing racial lines and reproduction mean legal marriage is wanted, not abolished.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Marriage rules enforcing racial lines and reproduction mean legal marriage is wanted, not abolished.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "public-access-to-information": {
@@ -2225,11 +4352,33 @@
       "sources": []
     },
     "religious-nation": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Religion varies from Christian Identity to paganism to atheism, so adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Religion varies from Christian Identity to paganism to atheism, so adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "deference-to-leading-power": {
@@ -2269,11 +4418,33 @@
       "sources": []
     },
     "capitalism-progressive": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands split between pro-market and anti-capitalist views.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands split between pro-market and anti-capitalist views.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "women-equality-needs-economic-change": {
@@ -2289,11 +4460,33 @@
       "sources": []
     },
     "purge-loanwords": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Some strands such as Nazi Germany purged foreign words, while others did not; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Some strands such as Nazi Germany purged foreign words, while others did not; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "treaties-binding": {
@@ -2327,11 +4520,33 @@
       "sources": []
     },
     "holocaust-denial": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Holocaust denial is common among neo-Nazi strands and antisemitic conspiracy theories, though segregationist strands do not share it.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Holocaust denial is common among neo-Nazi strands and antisemitic conspiracy theories, though segregationist strands do not share it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "criminalize-homosexuality": {
@@ -2353,11 +4568,33 @@
       "sources": []
     },
     "colonies-serve-metropole": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Colonial and slaveholder strands treated subject peoples as existing for the benefit of the dominant race.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Colonial and slaveholder strands treated subject peoples as existing for the benefit of the dominant race.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "defensive-jihad-duty": {
@@ -2379,11 +4616,33 @@
       "sources": []
     },
     "intersecting-oppressions": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "The doctrine denies that racial hierarchy is oppression and rejects the equality claims on which intersectional analysis rests.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "The doctrine denies that racial hierarchy is oppression and rejects the equality claims on which intersectional analysis rests.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-identity-recognition": {
@@ -2417,11 +4676,33 @@
       "sources": []
     },
     "divine-source-of-authority": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands split between Christian Identity-style religious claims and secular race science.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands split between Christian Identity-style religious claims and secular race science.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "religious-dress-in-state": {
@@ -2437,11 +4718,33 @@
       "sources": []
     },
     "social-market-economy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic positions vary widely between strands, from slaveholder to corporatist views, as the scope notes.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic positions vary widely between strands, from slaveholder to corporatist views, as the scope notes.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "abolish-armed-forces": {
@@ -2511,12 +4814,36 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": 2,
+      "value": 1,
       "confidence": "medium",
-      "rationale": "Stephens states that government rests on racial inequality, and white supremacy seeks power held by whites, with exclusion of others from political rights.",
+      "rationale": "Grant counts the grant of citizenship to Negroes and 'inferior races' as a cause of the ruin of a republic, and Stoddard speaks against intrusting democratic ideals to non-whites; neither states a voting rule outright.",
       "sources": [
-        "s3",
-        "s1"
+        "s2",
+        "s5"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Stephens states that government rests on racial inequality, and white supremacy seeks power held by whites, with exclusion of others from political rights.",
+          "sources": [
+            "s3",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Grant counts the grant of citizenship to Negroes and 'inferior races' as a cause of the ruin of a republic, and Stoddard speaks against intrusting democratic ideals to non-whites; neither states a voting rule outright.",
+          "sources": [
+            "s2",
+            "s5"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "online-participation": {
@@ -2556,11 +4883,33 @@
       "sources": []
     },
     "wealth-concentration-endangers-liberty": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic positions vary widely between strands, from slaveholder and capitalist views to Nazi-style anti-finance ones, so there is no common answer.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic positions vary widely between strands, from slaveholder and capitalist views to Nazi-style anti-finance ones, so there is no common answer.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "open-lgbt-military-service": {
@@ -2588,11 +4937,33 @@
       "sources": []
     },
     "charity-over-state-aid": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands differ on welfare, and the sources open say little on charity versus state aid.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands differ on welfare, and the sources open say little on charity versus state aid.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "term-limits": {
@@ -2734,11 +5105,33 @@
       "sources": []
     },
     "economy-in-majority-hands": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The doctrine holds that white people should hold power and privilege and be preferred in economic and political life.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The doctrine holds that white people should hold power and privilege and be preferred in economic and political life.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "single-unit-for-people": {
@@ -2760,19 +5153,63 @@
       "sources": []
     },
     "local-essentials-public": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic positions vary widely between strands.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic positions vary widely between strands.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "second-chamber": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Never addressed; structure of legislatures varies.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Never addressed; structure of legislatures varies.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "municipal-property": {
@@ -2782,12 +5219,36 @@
       "sources": []
     },
     "confederal-coordination": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents split between centralised racial states and states'-rights segregation; never addressed.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents split between centralised racial states and states'-rights segregation; never addressed.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "family-wage": {
@@ -2827,19 +5288,63 @@
       "sources": []
     },
     "spiritual-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands range from Christian Identity to pagan and atheist; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands range from Christian Identity to pagan and atheist; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "regional-powers-revocable": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Never addressed; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Never addressed; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gm-crops": {
@@ -2857,27 +5362,97 @@
     "racial-group-interests": {
       "value": 2,
       "confidence": "high",
-      "rationale": "The doctrine holds that whites are a group with interests to defend through organising, as the white nationalist strand states explicitly.",
+      "rationale": "Stoddard calls on white men to acquire 'a true race-consciousness', speaks of a 'race-duty' to resist Asiatic permeation of white areas, and white nationalists likewise advocate the self-preservation of white people.",
       "sources": [
-        "s1",
+        "s5",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "The doctrine holds that whites are a group with interests to defend through organising, as the white nationalist strand states explicitly.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": 2,
+          "confidence": "high",
+          "rationale": "Stoddard calls on white men to acquire 'a true race-consciousness', speaks of a 'race-duty' to resist Asiatic permeation of white areas, and white nationalists likewise advocate the self-preservation of white people.",
+          "sources": [
+            "s5",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "racial-pride": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "White racial pride is central to the doctrine and to white nationalism. The cited sources describe it in general terms rather than stating it as a programme.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "White racial pride is central to the doctrine and to white nationalism. The cited sources describe it in general terms rather than stating it as a programme.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "defensive-wars-only": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Strands range from defensive segregationists to Nazi-style conquest; adherents are split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Strands range from defensive segregationists to Nazi-style conquest; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "language-defines-nation": {
@@ -3013,12 +5588,36 @@
       "sources": []
     },
     "shared-human-nature": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Grant and Stephens hold that races differ in kind and that equality is false, which rejects a shared nature grounding equal dignity and rights.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Grant and Stephens hold that races differ in kind and that equality is false, which rejects a shared nature grounding equal dignity and rights.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "public-service-media": {
@@ -3034,11 +5633,33 @@
       "sources": []
     },
     "farm-price-support": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Economic positions vary widely between strands, as the scope notes.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Economic positions vary widely between strands, as the scope notes.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "keep-nuclear-weapons": {
@@ -3120,12 +5741,36 @@
       "sources": []
     },
     "democracy-is-procedure": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Grant and other theorists distrust democratic majorities and want rule by a racial elite, so adherents would not call a government legitimate merely for holding fair elections.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Grant and other theorists distrust democratic majorities and want rule by a racial elite, so adherents would not call a government legitimate merely for holding fair elections.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "premarital-sex": {
@@ -3161,10 +5806,32 @@
     "race-social-construct": {
       "value": -2,
       "confidence": "high",
-      "rationale": "The doctrine rests on race as a real biological hierarchy; Grant's text treats racial types as fixed hereditary groups.",
+      "rationale": "Grant treats racial types as fixed hereditary groups: a cross of a white man and a Negro 'is a Negro', and children of crosses between contrasted races belong to the lower type.",
       "sources": [
-        "s2",
-        "s1"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "The doctrine rests on race as a real biological hierarchy; Grant's text treats racial types as fixed hereditary groups.",
+          "sources": [
+            "s2",
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Grant treats racial types as fixed hereditary groups: a cross of a white man and a Negro 'is a Negro', and children of crosses between contrasted races belong to the lower type.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-equality-agencies": {
@@ -3270,11 +5937,33 @@
       "sources": []
     },
     "protect-kin-minorities": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "White nationalism holds that white people abroad belong to one nation and should be defended and supported, and the sources stress kinship across borders.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "White nationalism holds that white people abroad belong to one nation and should be defended and supported, and the sources stress kinship across borders.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "resources-common-ownership": {
@@ -3314,12 +6003,36 @@
       "sources": []
     },
     "no-denominational-politics": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Religion varies widely between strands (Christian Identity, paganism, secular), so adherents are genuinely split.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Religion varies widely between strands (Christian Identity, paganism, secular), so adherents are genuinely split.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "tech-with-ancestral-values": {
@@ -3353,12 +6066,36 @@
       "sources": []
     },
     "racism-not-main-obstacle": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Adherents deny that racism holds back non-white groups and attribute disparities to inherent racial differences, as Grant's racial hierarchy does.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Adherents deny that racism holds back non-white groups and attribute disparities to inherent racial differences, as Grant's racial hierarchy does.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "unjust-law-not-binding": {
@@ -3386,20 +6123,66 @@
       "sources": []
     },
     "patriotism-serves-workers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents prize love of one's own race and nation, but whether this joins with a workers' politics varies by strand, and some are explicitly anti-labour.",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents prize love of one's own race and nation, but whether this joins with a workers' politics varies by strand, and some are explicitly anti-labour.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "material-over-identity": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Race identity is the core of the doctrine, so an adherent holds that identity, not class economics, drives politics; Grant and white nationalists put race first.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
       "sources": [
         "s2",
         "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Race identity is the core of the doctrine, so an adherent holds that identity, not class economics, drives politics; Grant and white nationalists put race first.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited source states no position on this; the earlier answer was inferred from the doctrine's general outlook, which rules 7 does not allow.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "market-under-party-rule": {
@@ -3409,13 +6192,704 @@
       "sources": []
     },
     "police-more-powers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Segregationist states relied on police power while modern militias distrust the federal government, so strands split. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+      "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
       "sources": [
         "s1"
       ],
-      "auditor": "claude-opus-5-5"
+      "auditor": "claude-opus-5-5",
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Segregationist states relied on police power while modern militias distrust the federal government, so strands split. (Moved from empower-police-military, 2026-11-11, when that statement became about military spending alone.)",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, 2026-11-13): the cited sources describe strands that disagree or say nothing on this, so they state no position; adherents differing while the sources take no side is silence, not a 0.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
+      ]
+    },
+    "race-based-immigration-restrictions": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Stoddard states that the 'admission of aliens should ... be regarded just as solemnly as the begetting of children' and that Asiatic and 'lower human types' must be kept out on racial grounds; most white nationalists likewise say immigration should be restricted to people of European ancestry.",
+      "sources": [
+        "s5",
+        "s4"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "reserved-seats-excluded-groups": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "torture-always-illegal": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "decent-living-guarantee": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No stated position found.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3430,7 +6904,7 @@
       "addedAs": "discourage-race-mixing"
     }
   ],
-  "notes": "Economic positions (market versus statist) and religion (Christian Identity, paganism, atheism) vary sharply between strands, so many answers on those topics are low confidence or neutral. Many answers rest on inference because the sources focus on race and not on policy.",
+  "notes": "Searched themes: race and heredity, immigration, democracy and suffrage, eugenics, intermarriage, white solidarity, Bolshevism and class, economy (tariffs, labour, charity), religion, war and empire. The defining primary texts (Grant, Stoddard) speak almost only to race and its political consequences; economic, religious, ecological, technological and most institutional questions are not addressed, and adherents differ on them, so those answers are null. The Cornerstone Speech was read (Wikisource copy) but cannot be cited for current answers because no defining source outside Wikipedia ties it to the ideology by name. Gobineau (Gutenberg 69751) was read but is a defining author of scientific racism, not of this ideology, so it is not cited. The profile fails the uncertainty rule; no confidence was raised to pass it.",
   "reviews": [
     {
       "kind": "silence",
@@ -3467,6 +6941,25 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-13",
+      "nulled": 102
+    }
+  ],
+  "aliases": [],
+  "authors": [],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-13"
     }
   ]
 }
