@@ -1,10 +1,12 @@
 {
   "id": "scientific-racism",
   "name": "Scientific racism",
-  "auditedAt": "2026-10-15",
-  "auditor": "claude-sonnet-5-5",
-  "summary": "Scientific racism is the belief that humanity divides into biologically distinct races whose hereditary traits justify ranking them and treating them differently. Its classic form (Gobineau, Grant) holds that race drives the rise and fall of civilizations and calls for immigration limits, eugenics and rule by the best-bred; its modern 'race realism' or human biodiversity form stresses genetic group differences in intelligence. Modern science rejects its central claims.",
-  "scope": "The classic tradition from Gobineau (1853) to Madison Grant (1916) and the eugenics era, plus the modern race-realist or human biodiversity current as described by Wikipedia (Jensen, Rushton, Lynn). It is a set of empirical claims with political implications rather than a full program, so many economic and constitutional answers are low-confidence inferences.",
+  "auditedAt": "2026-11-13",
+  "auditor": [
+    "claude-sonnet-5-5"
+  ],
+  "summary": "Scientific racism is the belief, dressed as science, that humanity divides into biologically distinct races whose inherited traits justify ranking them and treating them differently. Its classic texts (Gobineau, Grant) make race the key to history, warn that race mixture and immigration doom a people, and call for restriction of entry, eugenic breeding and rule by the best-bred. Modern science rejects its central claims.",
+  "scope": "The classic tradition as the reference works describe it: Gobineau's Essay on the Inequality of the Human Races (1853-55), the American strand of Madison Grant (The Passing of the Great Race, 1916), and the eugenics of Francis Galton as the encyclopedias tie it to racial theory. The later 'human biodiversity' current is named by Wikipedia but its own texts are not used here, and no answer rests on it. Positions of regimes or parties that used the claims (Nazi Germany, apartheid) are other subjects.",
   "wikipedia": "https://en.wikipedia.org/wiki/Scientific_racism",
   "furtherReading": [
     {
@@ -13,19 +15,19 @@
       "note": "History, key figures and the scientific rejection of the idea."
     },
     {
-      "title": "Human biodiversity movement (Wikipedia)",
-      "url": "https://en.wikipedia.org/wiki/Human_biodiversity_movement",
-      "note": "The modern 'race realist' current and its politics."
-    },
-    {
       "title": "The Passing of the Great Race (Project Gutenberg)",
-      "url": "https://gutenberg.org/cache/epub/68185/pg68185-images.html",
+      "url": "https://www.gutenberg.org/ebooks/68185",
       "note": "Grant's 1916 tract, a primary text of the American strand."
     },
     {
       "title": "The Inequality of Human Races (Project Gutenberg)",
-      "url": "http://www.gutenberg.org/cache/epub/69751/pg69751-images.html",
+      "url": "https://www.gutenberg.org/ebooks/69751",
       "note": "Gobineau's founding racialist essay."
+    },
+    {
+      "title": "Race and Racism (Encyclopedia.com)",
+      "url": "https://www.encyclopedia.com/social-sciences-and-law/sociology-and-social-reform/sociology-general-terms-and-concepts/racism",
+      "note": "Scholarly overview of how racial science arose and was criticised."
     }
   ],
   "keyFigures": [
@@ -60,34 +62,65 @@
     {
       "id": "s1",
       "kind": "reference",
-      "title": "Scientific racism",
+      "evidence": "words",
+      "title": "Scientific racism (Wikipedia)",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Scientific_racism",
-      "usedFor": "History, figures, claimed policy uses (eugenics, immigration, segregation) and modern proponents."
+      "usedFor": "Definition, history, key figures and the policies the claims were used for."
     },
     {
       "id": "s2",
       "kind": "primary",
-      "title": "The Passing of the Great Race",
+      "evidence": "words",
+      "title": "The Passing of the Great Race (Madison Grant, 1916; Project Gutenberg #68185)",
       "author": "Madison Grant",
-      "url": "https://gutenberg.org/cache/epub/68185/pg68185-images.html",
+      "url": "https://www.gutenberg.org/ebooks/68185",
       "usedFor": "Grant's positions on heredity, race mixture, immigration, sterilization, democracy and aristocracy."
     },
     {
       "id": "s3",
       "kind": "primary",
-      "title": "The Inequality of Human Races",
+      "evidence": "words",
+      "title": "The Inequality of Human Races (Gobineau, tr. Collins 1915; Project Gutenberg #69751)",
       "author": "Arthur de Gobineau",
-      "url": "http://www.gutenberg.org/cache/epub/69751/pg69751-images.html",
+      "url": "https://www.gutenberg.org/ebooks/69751",
       "usedFor": "Race as the key to history, race mixture as decline, rejection of equality and democracy."
     },
     {
       "id": "s4",
       "kind": "reference",
-      "title": "Human biodiversity movement",
+      "evidence": "words",
+      "title": "Human Biodiversity Institute (Wikipedia)",
       "author": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Human_biodiversity_movement",
-      "usedFor": "Modern race-realist beliefs, hereditarian claims, genetic engineering and policy positions."
+      "url": "https://en.wikipedia.org/wiki/Human_Biodiversity_Institute",
+      "usedFor": "Names the modern human-biodiversity current as scientific racism; no answer rests on it."
+    },
+    {
+      "id": "s8",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Scientific Racism, History of (Encyclopedia of Bioethics / Encyclopedia of Science, Technology, and Ethics), via Encyclopedia.com",
+      "author": "Gale",
+      "url": "https://www.encyclopedia.com/social-sciences/encyclopedias-almanacs-transcripts-and-maps/scientific-racism-history",
+      "usedFor": "Defines scientific racism and traces it from Gobineau through Galton's eugenics to Grant and the immigration and sterilization laws."
+    },
+    {
+      "id": "s6",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Essays in Eugenics (Francis Galton; Project Gutenberg #73802)",
+      "author": "Francis Galton",
+      "url": "https://www.gutenberg.org/ebooks/73802",
+      "usedFor": "Galton's definition and aims of eugenics."
+    },
+    {
+      "id": "s7",
+      "kind": "scholarly",
+      "evidence": "words",
+      "title": "Race and Racism (Encyclopedia of Bioethics; Encyclopedia of Western Colonialism since 1450), via Encyclopedia.com",
+      "author": "Gale",
+      "url": "https://www.encyclopedia.com/social-sciences-and-law/sociology-and-social-reform/sociology-general-terms-and-concepts/racism",
+      "usedFor": "Scholarly account of the rise of scientific racism and its link to Galton and eugenics."
     }
   ],
   "answers": {
@@ -140,12 +173,34 @@
       "sources": []
     },
     "cut-welfare": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split: Grant attacked charity as preserving inferior stock and some modern proponents oppose equalising programmes, but the strands differ on welfare.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s2",
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Split: Grant attacked charity as preserving inferior stock and some modern proponents oppose equalising programmes, but the strands differ on welfare.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "worker-ownership": {
@@ -235,21 +290,67 @@
       "sources": []
     },
     "more-religion-public": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Gobineau doubts religion's power and Grant criticizes church influence on breeding.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Gobineau doubts religion's power and Grant criticizes church influence on breeding.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "correct-racial-injustice": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Proponents deny that group gaps stem from injustice and oppose affirmative action.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Proponents deny that group gaps stem from injustice and oppose affirmative action.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-social-construct": {
@@ -345,12 +446,34 @@
       "sources": []
     },
     "experts-over-public": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Grant wants government by the wisest and best, and the movement presents itself as science that the public resists.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s2",
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Grant wants government by the wisest and best, and the movement presents itself as science that the public resists.",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "central-planning": {
@@ -588,11 +711,33 @@
       "sources": []
     },
     "human-enhancement": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "The movement is documented as promoting genetic engineering and neo-eugenics.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "The movement is documented as promoting genetic engineering and neo-eugenics.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "algorithmic-government": {
@@ -850,12 +995,36 @@
       "sources": []
     },
     "reason-over-faith": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Presents itself as science rather than faith, though Gobineau and Grant also lean on race mysticism.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Presents itself as science rather than faith, though Gobineau and Grant also lean on race mysticism.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "welfare-for-citizens": {
@@ -907,12 +1076,36 @@
       "sources": []
     },
     "racial-segregation-law": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split: classic scientific racism was cited to justify segregation and apartheid, while modern race realists more often favour informal differentiation than formal law.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Split: classic scientific racism was cited to justify segregation and apartheid, while modern race realists more often favour informal differentiation than formal law.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "state-class-instrument": {
@@ -996,12 +1189,36 @@
       ]
     },
     "equal-moral-worth": {
-      "value": -2,
-      "confidence": "high",
-      "rationale": "Gobineau and Grant reject equality of races and of persons and rank people by heredity.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Gobineau and Grant reject equality of races and of persons and rank people by heredity.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "socialism-one-country": {
@@ -1056,12 +1273,34 @@
       ]
     },
     "no-neutral-knowledge": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Scientific racism presents itself as objective empirical science and rejects the view that knowledge reflects power; modern race realists attack this claim as censorship.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Scientific racism presents itself as objective empirical science and rejects the view that knowledge reflects power; modern race realists attack this claim as censorship.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "trade-surplus": {
@@ -1083,12 +1322,36 @@
       "sources": []
     },
     "competition-drives-progress": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Gobineau and Grant treat struggle between races as the driver of civilizational rise and fall.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Gobineau and Grant treat struggle between races as the driver of civilizational rise and fall.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "ban-extremist-parties": {
@@ -1104,27 +1367,75 @@
       "sources": []
     },
     "separated-powers": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Classic strands favored rule by the best-bred and modern strands accept liberal constitutions; adherents are split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1",
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Classic strands favored rule by the best-bred and modern strands accept liberal constitutions; adherents are split.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "vanguard-party": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "No stated position; the doctrine is not a class-revolutionary one, and inference from its elitist but non-Marxist frame gives mild disagreement.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "No stated position; the doctrine is not a class-revolutionary one, and inference from its elitist but non-Marxist frame gives mild disagreement.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "priority-to-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Grant argues that indiscriminate efforts to preserve the lower classes injure the race and that the state's aim is the quality of the stock, not the needs of the poor.",
+      "sources": [
+        "s2"
+      ]
     },
     "right-to-buy-council-homes": {
       "value": null,
@@ -1291,9 +1602,31 @@
     "cultures-equal-different": {
       "value": -2,
       "confidence": "medium",
-      "rationale": "Its central claim is that races and their civilizations are biologically ranked higher and lower.",
+      "rationale": "Gobineau ranks the races and their civilizations by inborn capacity and holds that civilizations rise or fall with their racial blood, the opposite of treating cultures as equal.",
       "sources": [
-        "s1"
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Its central claim is that races and their civilizations are biologically ranked higher and lower.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Gobineau ranks the races and their civilizations by inborn capacity and holds that civilizations rise or fall with their racial blood, the opposite of treating cultures as equal.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "death-penalty": {
@@ -1321,11 +1654,33 @@
       "sources": []
     },
     "citizenship-by-descent": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Grant wanted the nation held by the old Nordic stock, so membership by descent over birthplace follows directly.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Grant wanted the nation held by the old Nordic stock, so membership by descent over birthplace follows directly.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "minority-language-support": {
@@ -1553,11 +1908,33 @@
       "sources": []
     },
     "national-cultural-autonomy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Segregationists could accept separate institutions while others want strict exclusion, so adherents split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Segregationists could accept separate institutions while others want strict exclusion, so adherents split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "rights-where-you-live": {
@@ -1587,11 +1964,33 @@
       "sources": []
     },
     "courts-bound-by-majority": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Grant and Gobineau reject democracy and equality and favor rule by the best-bred, so they distrust unchecked majorities and wish institutions to be in elite hands.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Grant and Gobineau reject democracy and equality and favor rule by the best-bred, so they distrust unchecked majorities and wish institutions to be in elite hands.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-parity-bodies": {
@@ -1693,11 +2092,33 @@
       "sources": []
     },
     "entrenched-bill-of-rights": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant's tradition is not tied to constitutional design and adherents are divided.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant's tradition is not tied to constitutional design and adherents are divided.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "colonial-treaties-void": {
@@ -1707,11 +2128,33 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Gobineau and Grant rejected democracy and favored rule by the racially best-bred and aristocratic elites over popular election.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Gobineau and Grant rejected democracy and favored rule by the racially best-bred and aristocratic elites over popular election.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "minority-veto": {
@@ -1745,10 +2188,12 @@
       "sources": []
     },
     "noblesse-oblige": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No stated position found.",
-      "sources": []
+      "value": -1,
+      "confidence": "medium",
+      "rationale": "Grant holds that when altruism and philanthropy shield the unfit from the consequences of reckless breeding, the multiplication of inferior types is encouraged and the race injured, so he rejects a general duty of the wealthy to help the less fortunate.",
+      "sources": [
+        "s2"
+      ]
     },
     "withdraw-from-politics": {
       "value": null,
@@ -1757,11 +2202,33 @@
       "sources": []
     },
     "mass-culture-pacifies": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "No stated position; Gobineau lamented cultural decline but not through media pacification.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "No stated position; Gobineau lamented cultural decline but not through media pacification.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "ruling-class-consent": {
@@ -1771,11 +2238,33 @@
       "sources": []
     },
     "world-economy-extracts-surplus": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Hereditarians attribute differences between national wealth to inherited group abilities, not to exploitation.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Hereditarians attribute differences between national wealth to inherited group abilities, not to exploitation.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "native-born-offices": {
@@ -1891,11 +2380,33 @@
       "sources": []
     },
     "recallable-delegates": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Gobineau and Grant reject democracy and equality and favor rule by a racial elite, so binding delegates to the mass is opposed.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Gobineau and Grant reject democracy and equality and favor rule by a racial elite, so binding delegates to the mass is opposed.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "individual-pension-accounts": {
@@ -1929,11 +2440,33 @@
       "sources": []
     },
     "disparate-impact-discrimination": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Adherents attribute group outcome gaps to heredity rather than discrimination, so unequal outcomes prove nothing about bias.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Adherents attribute group outcome gaps to heredity rather than discrimination, so unequal outcomes prove nothing about bias.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "consumerism-harmful": {
@@ -1967,11 +2500,33 @@
       "sources": []
     },
     "pronatalist-incentives": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Grant and the eugenicists want the fit stock to breed more and immigration cut, which this matches.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Grant and the eugenicists want the fit stock to breed more and immigration cut, which this matches.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "residents-only-property": {
@@ -2005,27 +2560,93 @@
       "sources": []
     },
     "industrial-unions": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Labour organisation is outside the sources; adherents are indifferent or split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Labour organisation is outside the sources; adherents are indifferent or split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "minority-conspiracy": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Classic writers had antisemitic strands but the modern race-realist current mostly disowns conspiracy claims, so adherents are split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Classic writers had antisemitic strands but the modern race-realist current mostly disowns conspiracy claims, so adherents are split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "abolish-legal-marriage": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Eugenic programs depend on the state regulating marriage and breeding, so abolishing legal marriage runs against them.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Eugenic programs depend on the state regulating marriage and breeding, so abolishing legal marriage runs against them.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "public-access-to-information": {
@@ -2053,11 +2674,33 @@
       "sources": []
     },
     "religious-nation": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition defines community by race and heredity, not by shared religion.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "The tradition defines community by race and heredity, not by shared religion.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "deference-to-leading-power": {
@@ -2097,12 +2740,34 @@
       "sources": []
     },
     "capitalism-progressive": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Adherents are split: eugenicists saw industrial society as dysgenic, while modern race realists mostly accept markets.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Adherents are split: eugenicists saw industrial society as dysgenic, while modern race realists mostly accept markets.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "women-equality-needs-economic-change": {
@@ -2142,12 +2807,34 @@
       "sources": []
     },
     "neither-capitalism-nor-communism": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition is not an economic program and adherents split between market, corporatist and elitist views.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s1",
-        "s4"
+        "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The tradition is not an economic program and adherents split between market, corporatist and elitist views.",
+          "sources": [
+            "s1",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "historical-land-claim": {
@@ -2334,11 +3021,33 @@
       "sources": []
     },
     "racial-franchise": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split: Grant and the classic tradition backed racially restricted citizenship and franchise, as Wikipedia documents, but modern race realists do not generally call for it.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "Split: Grant and the classic tradition backed racially restricted citizenship and franchise, as Wikipedia documents, but modern race realists do not generally call for it.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "online-participation": {
@@ -2402,12 +3111,36 @@
       "sources": []
     },
     "power-sharing-divided-societies": {
-      "value": -2,
-      "confidence": "medium",
-      "rationale": "Gobineau and Grant reject the equality of races and deny that communities share power equally; the tradition favors the dominance of the supposedly superior race.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "medium",
+          "rationale": "Gobineau and Grant reject the equality of races and deny that communities share power equally; the tradition favors the dominance of the supposedly superior race.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "charity-over-state-aid": {
@@ -2561,11 +3294,33 @@
       "sources": []
     },
     "single-unit-for-people": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The sources state nothing about regional administration.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The sources state nothing about regional administration.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "independent-unions": {
@@ -2629,11 +3384,33 @@
       "sources": []
     },
     "online-anonymity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Modern human biodiversity writers often use pseudonyms but the sources show no stated position.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Modern human biodiversity writers often use pseudonyms but the sources show no stated position.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "person-over-state": {
@@ -2646,11 +3423,33 @@
       ]
     },
     "spiritual-nature": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition's biological determinism is secular, but Gobineau and others invoke spiritual claims; adherents are split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The tradition's biological determinism is secular, but Gobineau and others invoke spiritual claims; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "regional-powers-revocable": {
@@ -2672,21 +3471,69 @@
       "sources": []
     },
     "racial-group-interests": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "Grant and Gobineau hold that races have distinct hereditary interests and that the 'Nordic' race should act to protect itself.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "Grant and Gobineau hold that races have distinct hereditary interests and that the 'Nordic' race should act to protect itself.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "racial-pride": {
-      "value": 2,
-      "confidence": "medium",
-      "rationale": "The tradition ranks races and treats the superior race's pride and preservation as justified.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2",
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": 2,
+          "confidence": "medium",
+          "rationale": "The tradition ranks races and treats the superior race's pride and preservation as justified.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "defensive-wars-only": {
@@ -2708,11 +3555,33 @@
       "sources": []
     },
     "foreign-partition-plot": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Grant fears immigration swamping the native stock, but the sources describe no plots by foreign powers, so adherents are split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Grant fears immigration swamping the native stock, but the sources describe no plots by foreign powers, so adherents are split.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "free-public-college": {
@@ -2782,11 +3651,33 @@
       "sources": []
     },
     "fiscal-rules-binding": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition has no stated position on fiscal rules; adherents are split across conservative and radical positions.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The tradition has no stated position on fiscal rules; adherents are split across conservative and radical positions.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "restructure-world-economy": {
@@ -2796,11 +3687,33 @@
       "sources": []
     },
     "smash-state-machine": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition has no stated position on the form of the state; classic authors wanted rule by the best-bred but did not call for smashing the state.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The tradition has no stated position on the form of the state; classic authors wanted rule by the best-bred but did not call for smashing the state.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "free-economic-experiment": {
@@ -2939,11 +3852,33 @@
       "sources": []
     },
     "democracy-is-procedure": {
-      "value": -1,
-      "confidence": "medium",
-      "rationale": "Gobineau and Grant reject democracy and equality in favor of rule by the best-bred, so they would not accept a purely procedural test.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "medium",
+          "rationale": "Gobineau and Grant reject democracy and equality in favor of rule by the best-bred, so they would not accept a purely procedural test.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "premarital-sex": {
@@ -2979,9 +3914,35 @@
     "race-social-construct": {
       "value": -2,
       "confidence": "high",
-      "rationale": "Scientific racism holds that races are biologically real and hereditarily different, and modern race realists restate this against the social-construct view.",
+      "rationale": "Scientific racism is defined as the belief that humanity divides into biologically distinct races, so calling racial categories social constructs without scientific basis is the opposite of its central claim; Gobineau and Grant treat race as a real inherited biological fact.",
       "sources": [
-        "s4"
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Scientific racism holds that races are biologically real and hereditarily different, and modern race realists restate this against the social-construct view.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "Scientific racism is defined as the belief that humanity divides into biologically distinct races, so calling racial categories social constructs without scientific basis is the opposite of its central claim; Gobineau and Grant treat race as a real inherited biological fact.",
+          "sources": [
+            "s1",
+            "s2",
+            "s3"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "gender-equality-agencies": {
@@ -3165,11 +4126,33 @@
       "sources": []
     },
     "racism-not-main-obstacle": {
-      "value": 1,
-      "confidence": "medium",
-      "rationale": "Race realists hold that group gaps come largely from heredity, so racism is not the main cause of disadvantage.",
+      "value": null,
+      "confidence": "low",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
-        "s4"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "medium",
+          "rationale": "Race realists hold that group gaps come largely from heredity, so racism is not the main cause of disadvantage.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "unjust-law-not-binding": {
@@ -3203,11 +4186,33 @@
       "sources": []
     },
     "material-over-identity": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "The tradition treats race as primary but gives no view on what the left should do; adherents are split.",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
       "sources": [
         "s1"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "The tradition treats race as primary but gives no view on what the left should do; adherents are split.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s1"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "market-under-party-rule": {
@@ -3217,14 +4222,74 @@
       "sources": []
     },
     "decent-living-guarantee": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Split: Grant attacked charity as preserving inferior stock and some modern proponents oppose equalising programmes, but the strands differ on welfare. (Carried over from cut-welfare, \"Welfare programs create dependency and should be cut.\", with the value reversed, 2026-11-11.)",
+      "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+      "sources": [
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Split: Grant attacked charity as preserving inferior stock and some modern proponents oppose equalising programmes, but the strands differ on welfare. (Carried over from cut-welfare, \"Welfare programs create dependency and should be cut.\", with the value reversed, 2026-11-11.)",
+          "sources": [
+            "s2",
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-10-15"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled (later pass, rules 7): the sources cited do not state a position that settles this statement; the earlier answer was a guess about what the doctrine or its adherents would hold, or rested on a modern current outside this profile's scope.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
+      ]
+    },
+    "race-based-immigration-restrictions": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Grant's 1916 book, in its later preface, celebrates its effect of the US Congress adopting 'discriminatory and restrictive measures against the immigration of undesirable races and peoples', and the encyclopedia records the 1924 restriction of Italian and eastern European Jewish immigration as the result.",
       "sources": [
         "s2",
-        "s4"
-      ],
-      "auditor": "claude-opus-5-5"
+        "s8"
+      ]
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The sources record no position on this.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3239,7 +4304,7 @@
       "addedAs": "heritable-defect-limits"
     }
   ],
-  "notes": "Modern science rejects the premise of biologically ranked races. Strands differ: classic writers favored aristocracy and compulsory eugenics, while modern race realists often present themselves as empiricists and stress free inquiry.",
+  "notes": "Searched the local Gutenberg texts of Grant, Gobineau, Stoddard and Galton, and the Wikipedia and Encyclopedia.com articles, for every theme (economy, government, society, world, liberty, culture, ecology, technology, means). The classic texts are about race, heredity, immigration, eugenics and rule by the best-bred; they say nothing on most economic, constitutional or ecological questions, which stay null. The modern human-biodiversity current is named by Wikipedia but has no texts here, so earlier answers resting on it were nulled. Earlier answers that guessed what adherents would think (including 0 'splits' with no evidence on each side) were nulled. The record leaves the Secularism / Theocracy line (religion appears only as Gobineau's claim that Christianity neither creates nor changes a race's capacity for civilization, and Grant's remarks on the Church) and the foreign-policy and economy lines thinly covered; the uncertainty rule rejects the profile on that evidence, which is an honest result.",
   "reviews": [
     {
       "kind": "silence",
@@ -3252,6 +4317,50 @@
       "reviewer": "scripts/inference-to-null.js",
       "reviewedAt": "2026-10-30",
       "nulled": 252
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-13",
+      "nulled": 42
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-10-15"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-13"
+    }
+  ],
+  "aliases": [
+    {
+      "name": "biological racism",
+      "source": "s1",
+      "quote": "Scientific racism, sometimes termed biological racism, is the pseudoscientific belief"
+    }
+  ],
+  "authors": [
+    {
+      "first": "Arthur",
+      "last": "de Gobineau",
+      "source": "s8",
+      "quote": "His name was Count Arthur de Gobineau (1816–1882)"
+    },
+    {
+      "first": "Madison",
+      "last": "Grant",
+      "source": "s8",
+      "quote": "a Yale-educated lawyer and amateur naturalist named Madison Grant, syncretized Davenport’s genetics with Gobineau’s racism"
+    },
+    {
+      "first": "Francis",
+      "last": "Galton",
+      "source": "s8",
+      "quote": "Galton called for the scientific control of human breeding"
     }
   ]
 }
