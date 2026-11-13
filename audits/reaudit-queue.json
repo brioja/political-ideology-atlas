@@ -1,5 +1,5 @@
 {
- "note": "Audits queued for a later pass because they applied a rule since found misapplied (AUDIT_RULES.md section 6). scripts/next.js picks them after the search-priority pages, most viewed first, once the re-audit gap allows; an entry is done when its audit has a pass dated on or after the group's queuedAt.",
+ "note": "Audits queued for a later pass because they applied a rule since found misapplied (AUDIT_RULES.md section 6). scripts/next.js picks them first on its later-pass turns, in queue order, once the re-audit gap allows; an entry is done when its audit has a pass dated on or after the group's queuedAt.",
  "groups": [
   {
    "queuedAt": "2026-11-12",
