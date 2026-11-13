@@ -340,6 +340,16 @@
    "author": "Franklin D. Roosevelt",
    "url": "https://millercenter.org/the-presidency/presidential-speeches/january-11-1944-fireside-chat-28-state-union",
    "usedFor": "The economic bill of rights."
+  },
+  {
+   "id": "ships",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Introduction (Hyde Park, 4 June 1924) to Hawthorne Daniel, Ships of the Seven Seas (1925), Project Gutenberg",
+   "author": "Franklin D. Roosevelt",
+   "url": "https://www.gutenberg.org/ebooks/72859",
+   "usedFor": "His 1924 remark that America can no longer say it is sufficient for itself.",
+   "library": "72859 Daniel - Ships of the seven seas.txt"
   }
  ],
  "answers": {
@@ -589,10 +599,36 @@
   "nation-first": {
    "value": -2,
    "confidence": "high",
-   "rationale": "He rejected isolation: 'we cannot live alone, at peace; our own well-being is dependent on the well-being of other Nations', and called 'ostrich isolationism' a tragic error.",
+   "rationale": "He rejected isolation: 'we cannot live alone, at peace; our own well-being is dependent on the well-being of other Nations', and called 'ostrich isolationism' a tragic error. In 1924 he already wrote 'No longer can we say “America is sufficient for us; our thought and lives must stay at home.” We are part of the world now, very dependent on the rest of the peoples of the world'.",
    "sources": [
     "s5",
-    "s7"
+    "s7",
+    "ships"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "He rejected isolation: 'we cannot live alone, at peace; our own well-being is dependent on the well-being of other Nations', and called 'ostrich isolationism' a tragic error.",
+     "sources": [
+      "s5",
+      "s7"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "He rejected isolation: 'we cannot live alone, at peace; our own well-being is dependent on the well-being of other Nations', and called 'ostrich isolationism' a tragic error. In 1924 he already wrote 'No longer can we say “America is sufficient for us; our thought and lives must stay at home.” We are part of the world now, very dependent on the rest of the peoples of the world'.",
+     "sources": [
+      "s5",
+      "s7",
+      "ships"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-13"
+    }
    ]
   },
   "humanitarian-intervention": {
@@ -4353,7 +4389,7 @@
    "sources": []
   }
  },
- "notes": "Answers rest on his own speeches and messages (1932-1945) and on the record of laws and orders he signed. Where views changed, the later position is used: his 1932 pledge to balance the budget gave way to deficit-financed relief; peacetime neutrality gave way to aid to the Allies and a call for a world organization. His 1937 letter held that collective bargaining cannot be transplanted into the public service and that strikes of federal employees are intolerable; his support for unions applies to private-sector workers. One answer is inferred (marked 'Inferred:') and is low confidence. No position was recorded for many cultural, religious and gender statements; none were guessed. Later pass 2026-11-13 (rules 7): sources tagged by kind (executive orders, acts and the court bill are actions); the four answers that rested only on Wikipedia pages now cite primary texts: tax-inheritance (1935 tax message, +2 high), freedom-to-discriminate (Executive Order 8802), unlimited-reelection and term-limits (the 1940 acceptance of a third nomination); answers that cited both actions and words were cut to the actions, with history. New answers from the Miller Center chats: money-backed-by-precious-metals, pay-off-national-debt, decent-living-guarantee and job-guarantee (second Bill of Rights, 1944), wealth concentration.",
+ "notes": "Answers rest on his own speeches and messages (1932-1945) and on the record of laws and orders he signed. Where views changed, the later position is used: his 1932 pledge to balance the budget gave way to deficit-financed relief; peacetime neutrality gave way to aid to the Allies and a call for a world organization. His 1937 letter held that collective bargaining cannot be transplanted into the public service and that strikes of federal employees are intolerable; his support for unions applies to private-sector workers. One answer is inferred (marked 'Inferred:') and is low confidence. No position was recorded for many cultural, religious and gender statements; none were guessed. Later pass 2026-11-13 (rules 7): sources tagged by kind (executive orders, acts and the court bill are actions); the four answers that rested only on Wikipedia pages now cite primary texts: tax-inheritance (1935 tax message, +2 high), freedom-to-discriminate (Executive Order 8802), unlimited-reelection and term-limits (the 1940 acceptance of a third nomination); answers that cited both actions and words were cut to the actions, with history. New answers from the Miller Center chats: money-backed-by-precious-metals, pay-off-national-debt, decent-living-guarantee and job-guarantee (second Bill of Rights, 1944), wealth concentration. Ships of the Seven Seas (Gutenberg 72859), whose 1924 introduction Roosevelt wrote, is cited for nation-first.",
  "reviews": [
   {
    "kind": "inference",
@@ -4430,10 +4466,6 @@
     "5767"
    ],
    "reason": "Gutenberg copies of his first inaugural, the State of the Union addresses collection and the fireside chats: the same texts are cited from the American Presidency Project and Miller Center copies."
-  },
-  {
-   "gutenberg": "72859",
-   "reason": "Ships of the Seven Seas is Hawthorne Daniel's book; Roosevelt's part is only an introductory note on the sea and shipping, with no position on the test's statements."
   }
  ]
 }
