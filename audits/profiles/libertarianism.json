@@ -2,7 +2,10 @@
   "id": "libertarianism",
   "name": "Libertarianism",
   "auditedAt": "2026-10-14",
-  "auditor": "claude-opus-5-5",
+  "auditor": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5"
+  ],
   "summary": "Libertarianism treats individual liberty as the highest political value and holds that force may be used only to defend people's rights, not to make them serve others or themselves. Built on self-ownership and strong property rights, it wants a sharply limited government, free markets, free trade and free movement, low or no taxes and no redistribution. It also defends civil liberties: free speech, gun rights, legal drugs and sex work, privacy from surveillance, and non-interventionist foreign policy.",
   "scope": "Mainstream contemporary right-libertarianism, chiefly in its US form: the Libertarian Party platform, Nozick's minimal-state theory, and Cato-style libertarianism as set out by David Boaz, with Hayek and Friedman as consequentialist influences. Where the family splits (minarchism versus anarcho-capitalism, abortion), the answers follow the mainstream or record the split. It excludes left-libertarianism, libertarian socialism and Objectivism, and treats anarcho-capitalism and paleolibertarianism as strands rather than the centre.",
   "wikipedia": "https://en.wikipedia.org/wiki/Libertarianism",
@@ -53,7 +56,8 @@
       "title": "Libertarian Party Platform",
       "author": "Libertarian Party (US)",
       "url": "https://lp.org/platform/",
-      "usedFor": "Policy positions: healthcare, price controls, taxation, unions, property, welfare, surveillance, drugs, speech, guns, sex work, justice, marriage, religion, immigration, trade, foreign policy, energy and environment, banking, secession, the right to abolish government"
+      "usedFor": "Policy positions: healthcare, price controls, taxation, unions, property, welfare, surveillance, drugs, speech, guns, sex work, justice, marriage, religion, immigration, trade, foreign policy, energy and environment, banking, secession, the right to abolish government",
+      "evidence": "words"
     },
     {
       "id": "s2",
@@ -61,7 +65,8 @@
       "title": "Libertarianism",
       "author": "Stanford Encyclopedia of Philosophy",
       "url": "https://plato.stanford.edu/entries/libertarianism/",
-      "usedFor": "Self-ownership, historical theory of justice, Nozick on taxation, minimal state versus anarchism, left versus right libertarianism, borders and war"
+      "usedFor": "Self-ownership, historical theory of justice, Nozick on taxation, minimal state versus anarchism, left versus right libertarianism, borders and war",
+      "evidence": "words"
     },
     {
       "id": "s3",
@@ -69,7 +74,8 @@
       "title": "Libertarianism",
       "author": "Internet Encyclopedia of Philosophy",
       "url": "https://iep.utm.edu/libertar/",
-      "usedFor": "Core commitments, minimal state, welfare and dependency, drugs and prostitution, egoism, natural-rights versus consequentialist strands, Hayek on knowledge, Friedman on minimum wage"
+      "usedFor": "Core commitments, minimal state, welfare and dependency, drugs and prostitution, egoism, natural-rights versus consequentialist strands, Hayek on knowledge, Friedman on minimum wage",
+      "evidence": "words"
     },
     {
       "id": "s4",
@@ -77,7 +83,8 @@
       "title": "What Is Libertarianism?",
       "author": "David Boaz (Cato Institute), libertarianism.org",
       "url": "https://archive.libertarianism.org/essays/what-is-libertarianism",
-      "usedFor": "Individual rights, limited constitutional government, free markets and trade, toleration, peace over war, opposition to censorship, conscription and redistribution"
+      "usedFor": "Individual rights, limited constitutional government, free markets and trade, toleration, peace over war, opposition to censorship, conscription and redistribution",
+      "evidence": "words"
     },
     {
       "id": "s5",
@@ -85,7 +92,8 @@
       "title": "Libertarianism",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Libertarianism",
-      "usedFor": "Non-aggression principle, right-libertarianism as the dominant US form, non-interventionism, opposition to spending on health and welfare, drug legalization, currency competition"
+      "usedFor": "Non-aggression principle, right-libertarianism as the dominant US form, non-interventionism, opposition to spending on health and welfare, drug legalization, currency competition",
+      "evidence": "words"
     },
     {
       "id": "s6",
@@ -93,7 +101,8 @@
       "title": "Negative income tax",
       "author": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Negative_income_tax",
-      "usedFor": "Milton Friedman's advocacy of a negative income tax as fitting limited-government and free-market thinking, and its later spread to other camps."
+      "usedFor": "Milton Friedman's advocacy of a negative income tax as fitting limited-government and free-market thinking, and its later spread to other camps.",
+      "evidence": "words"
     }
   ],
   "answers": {
@@ -2188,11 +2197,33 @@
       ]
     },
     "party-own-road": {
-      "value": 1,
+      "value": null,
       "confidence": "low",
-      "rationale": "The statement concerns communist parties; the answer is a loose inference from libertarian commitments to individual liberty, property rights, voluntary association and minimal government favouring national autonomy.",
+      "rationale": "Nulled: The statement concerns communist parties; the answer was a loose deduction from general libertarian values, which settle no position on it.",
       "sources": [
         "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 1,
+          "confidence": "low",
+          "rationale": "The statement concerns communist parties; the answer is a loose inference from libertarian commitments to individual liberty, property rights, voluntary association and minimal government favouring national autonomy.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: The statement concerns communist parties; the answer was a loose deduction from general libertarian values, which settle no position on it.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "self-reliance-over-aid": {
@@ -2562,12 +2593,34 @@
       ]
     },
     "defeat-communism": {
-      "value": -1,
+      "value": null,
       "confidence": "low",
-      "rationale": "Libertarians oppose communism but favour peace and non-intervention over wars to defeat it; this is an inference about the mainstream.",
+      "rationale": "Nulled: The sources record opposition to communism and to foreign intervention, but no stated position on whether it should be defeated; the earlier answer guessed an outcome.",
       "sources": [
-        "s4",
-        "s5"
+        "s4"
+      ],
+      "reviewHistory": [
+        {
+          "value": -1,
+          "confidence": "low",
+          "rationale": "Libertarians oppose communism but favour peace and non-intervention over wars to defeat it; this is an inference about the mainstream.",
+          "sources": [
+            "s4",
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: The sources record opposition to communism and to foreign intervention, but no stated position on whether it should be defeated; the earlier answer guessed an outcome.",
+          "sources": [
+            "s4"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "mixed-public-service-providers": {
@@ -3819,11 +3872,33 @@
       ]
     },
     "tech-with-ancestral-values": {
-      "value": 0,
+      "value": null,
       "confidence": "low",
-      "rationale": "Libertarians welcome technology and leave values to individual choice, so they neither demand nor oppose a return to ancestral values; paleolibertarians differ.",
+      "rationale": "Nulled: The only source cited was Wikipedia, which is no evidence; the defining sources state no position on combining technology with ancestral values.",
       "sources": [
-        "s5"
+        "s2"
+      ],
+      "reviewHistory": [
+        {
+          "value": 0,
+          "confidence": "low",
+          "rationale": "Libertarians welcome technology and leave values to individual choice, so they neither demand nor oppose a return to ancestral values; paleolibertarians differ.",
+          "sources": [
+            "s5"
+          ],
+          "author": "claude-opus-5-5",
+          "date": "2026-10-14"
+        },
+        {
+          "value": null,
+          "confidence": "low",
+          "rationale": "Nulled: The only source cited was Wikipedia, which is no evidence; the defining sources state no position on combining technology with ancestral values.",
+          "sources": [
+            "s2"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-13"
+        }
       ]
     },
     "wife-divorce-without-consent": {
@@ -3941,6 +4016,731 @@
         "s4"
       ],
       "auditor": "claude-opus-5-5"
+    },
+    "abolish-income-tax": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The platform calls for repeal of the income tax and abolition of the Internal Revenue Service.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "constitutional-jury-trial": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The platform says the constitutional rights of the accused, including trial by jury, must be preserved, and asserts the right of juries to judge the justice of the law.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "torture-always-illegal": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "The platform opposes the use of torture and other cruel and unusual punishments without exception.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "one-spouse-at-a-time": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform holds that government has no authority to define, license or restrict personal relationships regardless of the number of participants.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "criminalize-genocide-denial": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform opposes all government censorship and says offensive language is no cause for legal action, which rules out criminalising speech such as denial of a genocide.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "turn-back-illegal-migrants": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform demands unrestricted movement of people across borders and says individuals should not be unreasonably constrained by government in crossing them, which excludes turning back border-crossers.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "build-apartments-freely": {
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "The platform would free property owners from government restrictions on controlling and enjoying their property as long as others' rights are not infringed.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "local-veto-new-housing": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform upholds the owner's right to use property free of government restrictions, so a legal power of neighbours to block building cuts against it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "limit-campaign-donations": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform calls for repeal of all laws that restrict voluntary financing of election campaigns.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "free-trade-promotes-peace": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Boaz presents toleration and trade as the libertarian alternative to war, and the platform says peace and prosperity are realised only through freedom.",
+      "sources": [
+        "s4",
+        "s1"
+      ]
+    },
+    "free-basic-services-for-all": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform opposes forcible collection of money to fund services and wants public services funded voluntarily where possible, so it rejects tax-funded free services for all.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-supports-good-ways-of-life": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform says government must not interfere with how people live and may use force only to protect rights, and opposes government acts that aid or attack religion or promote relationships.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "price-controls-fight-inflation": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform names governmental controls on prices of goods and services as abridgements of fundamental rights and calls for an end to inflationary policy by other means.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "tax-holding-cash": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform opposes any increase on any tax for any reason and aims at the eventual repeal of all taxation.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "maximum-personal-income": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform lists governmental limits on profits among abridgements of property and contract rights and opposes government redistribution of wealth.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "legal-duty-to-work": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform says people should not be forced to sacrifice their lives for others and opposes compulsory national service, and Nozick likens forced redistribution to forced labour.",
+      "sources": [
+        "s1",
+        "s2"
+      ]
+    },
+    "unions-run-economy": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform holds the free market the only economic system compatible with rights and says management of trade by anyone with government power is improper.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "abolish-wage-labour": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform treats employment and compensation agreements between employers and employees as voluntary contracts outside government's scope.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "all-land-state-owned": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform opposes confiscation, nationalization and eminent domain and bases property on homesteading, contract and rectification.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "state-finances-worker-businesses": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform opposes all government subsidies and bailouts to business, labor or any other special interest.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform says government should not compete with private enterprise.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "reserved-seats-excluded-groups": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform says government should neither deny nor abridge any individual's rights based on sex, ethnicity or similar traits and rejects that groups have inherent rights.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "race-based-immigration-restrictions": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform upholds the rights of every person regardless of race or ethnicity, bars government from abridging rights by national origin, and demands unrestricted movement across borders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform upholds every person's rights regardless of ethnicity and forbids initiating force against others; Boaz names ethnic cleansing as a statist crime.",
+      "sources": [
+        "s1",
+        "s4"
+      ]
+    },
+    "remove-indigenous-peoples": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform forbids initiating force and the confiscation of property and upholds rights regardless of ethnicity, so forced removal from land is excluded.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "racial-community-economic-control": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform rejects that groups have inherent rights and holds that rights belong to individuals regardless of race.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "religious-offensive-war": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform says the principle of non-initiation of force should guide relationships between governments.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "civilians-legitimate-targets": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform condemns the use of force against the innocent, especially terrorism, whether by governments or revolutionary groups.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "promote-ethnic-return-migration": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform says government should not deny or abridge rights based on ethnicity or national origin and defends free movement of people.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "immigration-favours-shared-culture": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform says government should not abridge rights based on national origin and demands unrestricted movement of people across borders.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "property-sabotage-justified": {
+      "value": -2,
+      "confidence": "high",
+      "rationale": "The platform forbids the initiation of force, defines aggression as trespass against another's owned resource, and condemns it whoever commits it.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform supports removing governmental impediments to trade and ending tariffs and economic sanctions.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "promote-democracy-abroad": {
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "The platform would end foreign intervention including military and economic aid and regime change and favours peace with all nations.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "youth-equal-civil-rights": {
+      "value": 0,
+      "confidence": "low",
+      "rationale": "The platform says government should not deny rights on the basis of age, yet it also upholds parental authority over children and accepts age-based presumptions of judgment.",
+      "sources": [
+        "s1"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "human-caused-global-warming": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "indigenous-internal-justice": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "parliamentary-road-socialism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "The Libertarian Party platform and the defining sources record no position on this statement, and no stated principle settles it.",
+      "sources": []
     }
   },
   "missingStatements": [
@@ -3975,7 +4775,7 @@
       "addedAs": "taxation-theft"
     }
   ],
-  "notes": "The family is split between minarchists and anarcho-capitalists (separate catalog entries), and on abortion and, since the 2022 rise of the Mises Caucus, on immigration. Left-libertarians would answer differently on land-value tax, basic income and class. The answers follow mainstream US right-libertarianism.",
+  "notes": "The family is split between minarchists and anarcho-capitalists (separate catalog entries), and on abortion and, since the 2022 rise of the Mises Caucus, on immigration. Left-libertarians would answer differently on land-value tax, basic income and class. The answers follow mainstream US right-libertarianism. 2026-11-13 later pass (rules 7): saved the four defining sources locally, answered the 109 statements added since the first audit (candidates included; most null where the sources record no position), nulled three answers resting on deduction or Wikipedia alone. Platform positions (s1) are used as the party statement of libertarian principles; Boaz (s4), the SEP (s2) and IEP (s3) define the ideology. Themes searched in the saved sources: economy, government, society, world, liberty, culture, ecology, technology, means, globalism; no further sources were fetched.",
   "reviews": [
     {
       "kind": "silence",
@@ -4006,6 +4806,23 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    },
+    {
+      "kind": "nulling",
+      "reviewer": "claude-sonnet-5-5",
+      "reviewedAt": "2026-11-13",
+      "nulled": 3
     }
-  ]
+  ],
+  "passes": [
+    {
+      "auditor": "claude-opus-5-5",
+      "auditedAt": "2026-10-14"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-13"
+    }
+  ],
+  "rules": 7
 }
