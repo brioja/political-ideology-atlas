@@ -35,13 +35,15 @@ words; don't paste long passages.
   directly: their rate limits stop runs (a project hook blocks direct fetches). The same goes for YouTube
   (`node scripts/yt.js`, captions and search, paced) and Project Gutenberg (`node scripts/gutenberg.js`, its
   mirror, as its robot policy requires).
-- Cite a publisher's, author's, library's or archive's own copy (university repositories, publisher
-  open-access pages, archive.org scans), never a third-party book-upload site (emaanlibrary, pdfcoffee,
-  dokumen.pub, Scribd uploads); if that is the only copy, leave the source out.
+- Prefer a publisher's, author's, library's or archive's own copy (university repositories, publisher
+  open-access pages, archive.org scans). When that copy can't be opened, an archived copy (Wayback), a
+  mirror or a third-party copy of the same text is fine to read and cite (Brandon, 2026-11-12: there is
+  no reason to think the text there is wrong); say in the source title which copy it is.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
-  or out of context. If the original is blocked or offline, look for it elsewhere (an archive.org
-  copy, another site hosting the same text, the official record) before giving up. A site that refuses
-  scripted access (403, a bot check, a captcha, a 429) stays refused (a robots.txt block aimed only at
+  or out of context. If the original is blocked or offline, look for it elsewhere (a Wayback or archive.org
+  copy, a mirror, another site hosting the same text, the official record) before giving up; a copy
+  elsewhere is fine to use even when the original refuses scripted access. The refusing site itself
+  (403, a bot check, a captcha, a 429) stays refused (a robots.txt block aimed only at
   crawlers, such as `User-agent: ClaudeBot`, is not a refusal: an audit fetches pages, it doesn't crawl): don't change the user agent, reuse
   cookies or retry through another tool. Name the page in your report instead; the maintainer can open it
   by hand (`backlog/blocked-sources.md` tracks audits held back this way).

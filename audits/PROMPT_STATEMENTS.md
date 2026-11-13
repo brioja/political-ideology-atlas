@@ -26,7 +26,7 @@ ideology's local source library and (2) propose the defining statements the bank
   only if it yields no text (a scan). List every file in
   `scratchpad/sources/<id>/index.json` as `[{ "file", "title", "url", "downloaded": "YYYY-MM-DD", "kind": "primary"|"scholarly" }]`.
   Check a site's robots.txt **before** the first fetch from it, and skip the site if it blocks AI
-  crawlers or Claude; follow its terms; no archive copies of sites that block AI; don't push past a 403, a bot check or a
+  crawlers or Claude; follow its terms (an archived, mirrored or third-party copy of a page is fine); don't push past a 403, a bot check or a
   captcha, and never change the user-agent to get a page.
 - For extremist movements, take primary texts from scholarly or research collections (university,
   research-centre or court-record translations), not from the movement's own distribution sites.
