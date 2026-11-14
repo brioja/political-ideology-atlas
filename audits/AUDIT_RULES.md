@@ -39,6 +39,9 @@ words; don't paste long passages.
   open-access pages, archive.org scans). When that copy can't be opened, an archived copy (Wayback), a
   mirror or a third-party copy of the same text is fine to read and cite (Brandon, 2026-11-12: there is
   no reason to think the text there is wrong); say in the source title which copy it is.
+- A publisher's or bookseller's book preview (a sample PDF, preview pages) is fine to read and cite for the
+  pages it shows: front matter, preface, introduction, a sample chapter (Brandon, 2026-11-14). Say in the source
+  title that it is the preview, and cite only what it shows.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (a Wayback or archive.org
   copy, a mirror, another site hosting the same text, the official record) before giving up; a copy
