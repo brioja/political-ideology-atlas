@@ -12,6 +12,16 @@
         ]
       },
       {
+        "matcher": "Bash|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/no-browser-agent.js\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
         "matcher": "Workflow",
         "hooks": [
           {
