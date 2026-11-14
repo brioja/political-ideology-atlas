@@ -741,6 +741,26 @@ function showResults(shared = null) {
       </details></li>`;
   }).join("");
 
+  // What sets you apart (Brandon, 2026-11-14): your answers that the fewest ideologies share, counting only
+  // ideologies that take a side on the statement (so a statement few ideologies answer doesn't look rare) and only
+  // statements at least a quarter of them take a side on.
+  const sideOf = (q, a) => {
+    let on = 0, taking = 0;
+    for (const i of model.ideologies) { const v = i.profile[q]; if (v == null || v === 0) continue; taking++; if (Math.sign(v) === Math.sign(a)) on++; }
+    return { on, taking };
+  };
+  const apartFromMost = given.map((a, q) => (a == null || a === 0 ? null : { q, a, ...sideOf(q, a) }))
+    .filter((d) => d && d.taking >= model.ideologies.length / 4)
+    .sort((x, y) => x.on / x.taking - y.on / y.taking || Math.abs(y.a) - Math.abs(x.a))
+    .slice(0, 4).filter((d) => d.on / d.taking < 0.5);
+  const apartSection = apartFromMost.length ? `
+    <section>
+      <h2>What sets ${shared ? "them" : "you"} apart</h2>
+      <p class="muted small">${shared ? "Their" : "Your"} answers that the fewest ideologies share.</p>
+      <ul class="iconed">${apartFromMost.map((d) => `<li>${topicIcon(QUESTIONS[d.q])}<span><span class="who">${You}, ${stance(QUESTIONS[d.q], d.a).tag.toLowerCase()}:</span> ${statementLink(QUESTIONS[d.q], stance(QUESTIONS[d.q], d.a).text, shared ? null : [])}<br>
+        <span class="muted small">Shared by ${pct(d.on / d.taking)} of ideologies that take a side.</span></span></li>`).join("")}</ul>
+    </section>` : "";
+
   // Opposites (Brandon, 2026-11-14): the ideology and the person furthest away on the dividing lines, each with
   // the statements where the answers are furthest apart.
   const opposite = ranked[ranked.length - 1];
@@ -811,6 +831,8 @@ function showResults(shared = null) {
       </div>
       ${shared ? "" : `<div class="row"><a class="btn" href="${compareHref("me", `i:${top.id}`)}">Full comparison with ${esc(top.name)}</a><a class="btn" href="#/compare">Compare with anyone</a></div>`}
     </section>
+
+    ${apartSection}
 
     <section>
       <h2>Other close matches</h2>
