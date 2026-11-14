@@ -741,6 +741,33 @@ function showResults(shared = null) {
       </details></li>`;
   }).join("");
 
+  // Opposites (Brandon, 2026-11-14): the ideology and the person furthest away on the dividing lines, each with
+  // the statements where the answers are furthest apart.
+  const opposite = ranked[ranked.length - 1];
+  const oppositePerson = typeof PEOPLE !== "undefined" && PEOPLE.length
+    ? matchPeople(model, given, PEOPLE.map((p) => ({ ...p, profile: p.profile.slice(0, QUESTIONS.length) }))).at(-1) : null;
+  const oppositeItem = (name, glyph, sim, diffsOf, href, key) => {
+    const apart = diffsOf.filter((d) => d.gap >= 2).sort(apartOrder).slice(0, 3);
+    return `
+      <li><details>
+        <summary><span class="match-name">${glyph}${esc(name)}</span><span class="bar"><span style="width:${pct(sim)}"></span></span><span class="mono">${pct(sim)}</span></summary>
+        <div class="match-body">
+          ${apart.length ? `<h4>Where ${you_} differ most</h4><ul class="iconed">${apart.map((d) =>
+            versus(QUESTIONS[d.q], d.a, d.t, You, name, key)).join("")}</ul>` : ""}
+          <p><a class="more-link" href="${href}">Full page for ${esc(name)} →</a></p>
+        </div>
+      </details></li>`;
+  };
+  const oppositesSection = `
+    <section>
+      <h2>${shared ? "Their" : "Your"} opposites</h2>
+      <p class="muted small">The ideology and the figure furthest from ${shared ? "this person" : "you"} on the dividing lines.</p>
+      <ul class="matches">
+        ${oppositeItem(opposite.name, posGlyph(opposite), opposite.similarity, answeredDiffs(opposite), ideologyHref(opposite.id), linkKey(opposite))}
+        ${oppositePerson ? oppositeItem(oppositePerson.name, avatar(oppositePerson), oppositePerson.similarity, answeredDiffs(oppositePerson), personHref(oppositePerson.id), shared ? null : `p:${oppositePerson.id}`) : ""}
+      </ul>
+    </section>`;
+
   R.innerHTML = `
     ${shared ? `<div class="shared-banner"><span>You're viewing someone's shared result.</span><button class="primary" id="own-test">Take the test yourself</button></div>` : ""}
     <div class="verdict tinted" style="${flagTint(top)}">
@@ -803,6 +830,8 @@ function showResults(shared = null) {
         </details></li>`).join("")}
       </ul>
     </section>` : ""}
+
+    ${oppositesSection}
 
     <section>
       <h2>Where ${you_} stand</h2>
