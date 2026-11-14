@@ -4,7 +4,7 @@
 //   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
 //     the sources that discuss the ideology (defining sources and primary texts that passed on their
 //     own) name it twice by the head of its title (two words or more): one mention may be in passing.
-//   - Wikipedia is never a defining source. An alias must be a name, not an everyday word.
+//   - Wikipedia is never a defining source. An alias must be a name (a coined word counts), not an everyday word.
 //   - Aliases are liberal (Brandon, 2026-11-05): any name for the ideology, as long as it is a name
 //     (not an everyday word) and no other ideology's name or alias.
 // Texts are the copies saved in scratchpad/sources/<id>/ (index.json maps each file to its URL): the
@@ -76,10 +76,19 @@ const isWikipedia = (s) => /(^|\.)wikipedia\.org$/.test((() => { try { return ne
 // An alias is a name, not an everyday word: several words, an acronym of the name, an -ism/-ist/-ian form, the eponym an
 // "-ism" is named after ("Fortuyn" for "Fortuynism", "Mao" for "Maoism"), or a spelling variant of the
 // name or a translation sharing its first four letters ("communisation" for "communization",
-// "laïcité" for "laicism"). Be liberal with aliases: what
+// "laïcité" for "laicism"), or a coined word: four letters or more and not in the English word list
+// (Brandon, 2026-11-14: "Neoreaction" for Dark Enlightenment, "Ancap", "Radfem"; "Equality" and
+// "Moderate" stay out). Be liberal with aliases: what
 // the check exists to catch is a broader ideology's name ("communism" for World communism), and the
 // uniqueness check stops that.
+let english = null;
+const isEnglish = (w) => {
+  if (!english) english = new Set(fs.readFileSync(path.join(__dirname, "english-words.txt"), "utf8").split("\n").filter((x) => x && !x.startsWith("#")));
+  return english.has(w);
+};
+const isCoined = (w) => /^[a-z]{4,}$/.test(w) && !isEnglish(w);
 const isName = (al, name) => { const w = norm(al).trim().split(" "); if (w.length >= 2) return true;
+  if (isCoined(w[0])) return true;
   const flat = norm(name).trim().replace(/ /g, "");
   // An acronym of the name's words ("TERF" for trans-exclusionary radical feminism).
   const initials = norm(name).trim().split(" ").map((x) => x[0]).join("");
@@ -247,7 +256,7 @@ function check(id, audit, { strict = false } = {}) {
   // Catalog names that Wikipedia redirects to this ideology's article are aliases too (one to one).
   const redirectNames = lib.redirectAliases(id).filter((n) => norm(n) !== norm(audit.name));
   const aliases = [...list(audit.aliases), ...eponyms, ...redirectNames];
-  for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, or a spelling variant of the name)`);
+  for (const al of aliases) if (typeof al === "string" && al.trim() && !isName(al, audit.name)) problems.push(`alias "${al}" is an everyday word, not a name (use several words, an -ism/-ist/-ian form, a coined word, or a spelling variant of the name)`);
   // Uniqueness. An ideology's own name is never another's alias. An alias two ideologies claim belongs
   // to the one whose defining sources use it most (the sources decide, Brandon 2026-11-05); the others
   // lose it. A tie leaves it to none of them.
