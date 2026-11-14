@@ -55,6 +55,12 @@ Audit work discussed but not started.
   record). Honest re-audits leave most nationalisms short of the bar, so until all are redone, treatment
   differs by whether one has been re-audited. Re-audit them in turn, or decide another scope with Brandon.
 
+- **Pro-Europeanism leans on European values (Brandon, 2026-11-14).** Its "Europeanism" sources (s10 Ostrowski,
+  and s6 the Treaty on European Union as tied through it) are about European values, a separate catalog entry
+  (`european-values`, not yet audited); the alias rested on Wikidata, and Wikipedia redirects "Europeanism" to
+  European values. Pro-Europeanism fails the source check until its next pass answers from its own defining
+  sources. That material belongs to the European values audit.
+
 ## Source check: gaps it can't see (2026-11-05)
 
 `scripts/source-check.js` (run by validate.js) checks whole sources, not the passage an answer rests on.
