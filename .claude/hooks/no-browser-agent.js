@@ -15,9 +15,11 @@ let input = "";
 process.stdin.on("data", (d) => (input += d)).on("end", () => {
   let j; try { j = JSON.parse(input); } catch { return; }
   const ti = j.tool_input || {};
+  // Write/Edit: only code files (a note or doc quoting the rule's example is not a fetch).
+  const code = /\.(js|mjs|cjs|ts|py|sh|bash|rb|pl|php)$/i.test(String(ti.file_path || ""));
   const text = j.tool_name === "Bash" ? String(ti.command || "")
-    : j.tool_name === "Write" ? String(ti.content || "")
-    : j.tool_name === "Edit" ? String(ti.new_string || "") : "";
+    : j.tool_name === "Write" && code ? String(ti.content || "")
+    : j.tool_name === "Edit" && code ? String(ti.new_string || "") : "";
   if (!text) return;
   const found = [...text.matchAll(NAMED), ...(/\b(curl|wget)\b/.test(text) ? text.matchAll(SHORT) : [])];
   for (const m of found) {
