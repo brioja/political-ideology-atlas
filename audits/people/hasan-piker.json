@@ -14,7 +14,8 @@
    "title": "I TOOK A POLITICAL ALIGNMENT TEST ON STREAM (YouTube; captions, en-orig track)",
    "author": "Hasan Piker",
    "url": "https://www.youtube.com/watch?v=-tQqfwbuAPE",
-   "usedFor": "Quiz answers read aloud and his commentary; high confidence only where the quiz item matches the statement."
+   "usedFor": "Quiz answers read aloud and his commentary; high confidence only where the quiz item matches the statement.",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    "title": "Hasan Piker (Wikipedia)",
    "author": "Wikipedia contributors",
    "url": "https://en.wikipedia.org/wiki/Hasan_Piker",
-   "usedFor": "Biography (born 1991, living), reported positions on healthcare, workplace democracy, gun control, Israel, China."
+   "usedFor": "Biography (born 1991, living), reported positions on healthcare, workplace democracy, gun control, Israel, China.",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    "title": "Hasan Piker on Streaming, Zohran Mamdani, and the Future of Socialism (interview)",
    "author": "Nathan J. Robinson, Current Affairs",
    "url": "https://www.currentaffairs.org/news/hasan-piker-on-streaming-zohran-mamdani-and-the-future-of-socialism",
-   "usedFor": "Anti-Zionism, view of Democrats and corporations, electoral politics."
+   "usedFor": "Anti-Zionism, view of Democrats and corporations, electoral politics.",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +41,8 @@
    "title": "Socialist streamer Hasan Piker talks 'imperialism,' labor and politics",
    "author": "The Stanford Daily",
    "url": "https://stanforddaily.com/2026/04/02/hasan-piker-us-labor-politics/",
-   "usedFor": "Reported remarks on empire, military spending, labor and strikes, capital."
+   "usedFor": "Reported remarks on empire, military spending, labor and strikes, capital.",
+   "evidence": "words"
   },
   {
    "id": "s5",
@@ -46,7 +50,8 @@
    "title": "Axios interview with Hasan Piker (Deseret News write-up)",
    "author": "Alex Thompson, Axios / Deseret News",
    "url": "https://www.deseret.com/politics/2026/09/18/axios-alex-thompson-interview-with-democratic-socialist-streamer-hasan-piker/",
-   "usedFor": "Quoted statements on Israel, China, nuclear weapons, political violence, 9/11."
+   "usedFor": "Quoted statements on Israel, China, nuclear weapons, political violence, 9/11.",
+   "evidence": "words"
   },
   {
    "id": "s6",
@@ -54,7 +59,8 @@
    "title": "A Socialist Saviour, Streaming to You Live (interview)",
    "author": "i-D",
    "url": "https://i-d.co/article/hasan-piker-interview-socialism-twitch/",
-   "usedFor": "Statements on capitalism, class, scapegoating and workers."
+   "usedFor": "Statements on capitalism, class, scapegoating and workers.",
+   "evidence": "words"
   }
  ],
  "answers": {
@@ -167,11 +173,33 @@
    "sources": []
   },
   "limit-guns": {
-   "value": 1,
-   "confidence": "medium",
-   "rationale": "Wikipedia lists support for gun control; degree not specified.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; the quiz transcript, the Current Affairs, Stanford Daily, i-D and Axios interviews carry no statement on gun ownership.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "Wikipedia lists support for gun control; degree not specified.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; the quiz transcript, the Current Affairs, Stanford Daily, i-D and Axios interviews carry no statement on gun ownership.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-13"
+    }
    ]
   },
   "empower-police-military": {
@@ -648,11 +676,33 @@
    ]
   },
   "dictatorship-of-proletariat": {
-   "value": 1,
+   "value": null,
    "confidence": "low",
-   "rationale": "Said at the Yale Political Union: \"If a dictatorship is inevitable, I'd rather have it be a dictatorship of the proletariat\" (conditional, as reported by Wikipedia).",
+   "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article's description of his Marxism; none of his own statements in the quiz or interviews addresses the dictatorship of the proletariat.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "Said at the Yale Political Union: \"If a dictatorship is inevitable, I'd rather have it be a dictatorship of the proletariat\" (conditional, as reported by Wikipedia).",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article's description of his Marxism; none of his own statements in the quiz or interviews addresses the dictatorship of the proletariat.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-13"
+    }
    ]
   },
   "collective-farming": {
@@ -804,11 +854,33 @@
    "sources": []
   },
   "workplace-democracy": {
-   "value": 2,
-   "confidence": "high",
-   "rationale": "Wikipedia lists workplace democracy among his stated policy positions.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; the quiz transcript and interviews opened carry no statement on workplace democracy.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "high",
+     "rationale": "Wikipedia lists workplace democracy among his stated policy positions.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; the quiz transcript and interviews opened carry no statement on workplace democracy.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-13"
+    }
    ]
   },
   "school-vouchers": {
@@ -994,11 +1066,33 @@
    "sources": []
   },
   "settler-state-colonial": {
-   "value": 2,
-   "confidence": "medium",
-   "rationale": "Described Israel as a \"fascist settler colonial apartheid state\" (as quoted by Wikipedia); stated about Israel, applied here to the general claim.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; none of his statements in the quiz or interviews calls any state a settler-colonial state.",
    "sources": [
     "s2"
+   ],
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "Described Israel as a \"fascist settler colonial apartheid state\" (as quoted by Wikipedia); stated about Israel, applied here to the general claim.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-22"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "points to evidence but is not evidence: The only source was the Wikipedia article; none of his statements in the quiz or interviews calls any state a settler-colonial state.",
+     "sources": [
+      "s2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-13"
+    }
    ]
   },
   "uniform-civil-code": {
@@ -2420,10 +2514,12 @@
    "sources": []
   },
   "recognise-genocide": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In an October 2025 Current Affairs interview he spoke of the genocide in Gaza and 'Israel's genocide', noting that the New York Times and genocide scholars have opened themselves to the idea that Israel is committing a genocide.",
+   "sources": [
+    "s3"
+   ]
   },
   "income-for-work-not-ownership": {
    "value": null,
@@ -3116,15 +3212,713 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "conquest-no-lawful-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources read.",
+   "sources": []
   }
  },
- "notes": "Quiz answers come from a 60-question quiz on stream (s1); he misread or joked on several items and those were excluded. Interview material (s3, s5, s6) is partly secondhand write-ups, so many positions stay null. Statements about Hamas, Oct 7 and China are contested and are not mapped to statements here without a direct match.",
+ "notes": "Quiz answers come from a 60-question quiz on stream (s1); he misread or joked on several items and those were excluded. Interview material (s3, s5, s6) is partly secondhand write-ups, so many positions stay null. Statements about Hamas, Oct 7 and China are contested and are not mapped to statements here without a direct match. Later pass 2026-11-13 (rules 7): sources tagged by evidence. Four answers that rested only on the Wikipedia article (limit-guns, dictatorship-of-proletariat, workplace-democracy, settler-state-colonial) are nulled: the Current Affairs (2025), Stanford Daily (2026), i-D and Axios/Deseret interviews and the quiz-stream captions were searched for guns, workers' control, the dictatorship of the proletariat and settler colonialism and hold no statement. recognise-genocide is answered from the Current Affairs interview.",
  "reviews": [
   {
    "kind": "inference",
    "reviewer": "scripts/inference-to-null.js",
    "reviewedAt": "2026-10-30",
    "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-sonnet-5-5",
+   "reviewedAt": "2026-11-13",
+   "nulled": 4
+  }
+ ],
+ "rules": 7,
+ "notFound": [
+  {
+   "work": "Hasan Piker's stream and podcast transcripts (Twitch and YouTube VODs)",
+   "tried": [
+    {
+     "where": "YouTube via scripts/yt.js",
+     "how": "captions of the quiz stream used; YouTube then refused further requests (rate limit or captcha) and requests stopped for an hour"
+    },
+    {
+     "where": "MediaSum and the local corpora",
+     "how": "no transcripts matched his name"
+    }
+   ]
+  }
+ ],
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-22"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-13"
   }
  ]
 }
