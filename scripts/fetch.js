@@ -20,7 +20,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Minimum gap between requests to one host, in ms. Hosts not listed get DEFAULT_GAP.
 const HOST_GAP = {
-  "en.wikipedia.org": 3000,      // the API and article pages (wiki.js, resolve-articles, people-aliases, triage...)
+  "en.wikipedia.org": 400,       // the API and article pages: wikipedia.js's old pace (Brandon, 2026-11-14); 429s are waited out
   "www.wikidata.org": 2000,
   "query.wikidata.org": 1000,    // SPARQL: each query is slow anyway
   "qlever.dev": 1000,
