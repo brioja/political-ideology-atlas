@@ -1,7 +1,7 @@
 {
  "id": "daryl-hannah",
  "name": "Daryl Hannah",
- "auditedAt": "2026-10-23",
+ "auditedAt": "2026-11-14",
  "auditor": "claude-sonnet-5-5",
  "living": true,
  "role": "Actress and environmental activist",
@@ -14,7 +14,8 @@
    "title": "Daryl Hannah Arrested Outside White House During Protest of Tar Sands Pipeline",
    "author": "ABC News",
    "url": "https://abcnews.com/blogs/politics/2011/08/daryl-hannah-arrested-outside-white-house-during-protest-of-tar-sands-pipeline",
-   "usedFor": "Her quoted statements at the 2011 Keystone XL sit-in"
+   "usedFor": "Her quoted statements at the 2011 Keystone XL sit-in",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    "title": "One on One with Daryl Hannah",
    "author": "Vegetarian Times",
    "url": "https://www.vegetariantimes.com/life-garden/one-on-one-with-daryl-hannah/?scope=anon",
-   "usedFor": "Her account of becoming vegetarian and view of the environment"
+   "usedFor": "Her account of becoming vegetarian and view of the environment",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +32,44 @@
    "title": "Daryl Hannah",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Daryl_Hannah",
-   "usedFor": "Record of protests, arrests, veganism, Sea Shepherd campaign"
+   "usedFor": "Record of protests, arrests, veganism, Sea Shepherd campaign",
+   "evidence": "words"
+  },
+  {
+   "id": "s4",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "CNN Newsroom, 19 Sept 2011: interview with Daryl Hannah on the Keystone XL pipeline (CNN transcript, via the MediaSum corpus, CNN-172622)",
+   "author": "Daryl Hannah",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/1109/19/cnr.07.html",
+   "usedFor": "Tar sands, fossil fuels and renewable energy"
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Anderson Cooper 360, 19 Dec 2009: Copenhagen climate summit panel (CNN transcript, via the MediaSum corpus, CNN-146205)",
+   "author": "Daryl Hannah",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/0912/19/acd.02.html",
+   "usedFor": "Climate action by world leaders"
+  },
+  {
+   "id": "s6",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "CNN Newsroom, 19 Jan 2012: interview with Daryl Hannah on the Keystone XL decision (CNN transcript, via the MediaSum corpus, CNN-179650)",
+   "author": "Daryl Hannah",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/1201/19/cnr.06.html",
+   "usedFor": "Keystone XL, oil-funded job studies"
+  },
+  {
+   "id": "s7",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Showbiz Tonight, 15 June 2006: Daryl Hannah on the South Central Farm (CNN transcript, via the MediaSum corpus, CNN-107162)",
+   "author": "Daryl Hannah",
+   "url": "http://transcripts.cnn.com/TRANSCRIPTS/0606/15/sbt.01.html",
+   "usedFor": "South Central Farm protest; settles no statement"
   }
  ],
  "answers": {
@@ -245,10 +284,12 @@
    "sources": []
   },
   "drastic-climate-action": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 2,
+   "confidence": "medium",
+   "rationale": "At the 2009 Copenhagen summit she called it a defining moment for politicians and world leaders to take a stand to make real change, moving beyond a fossil fuel economy to a new energy economy.",
+   "sources": [
+    "s5"
+   ]
   },
   "tech-solves-problems": {
    "value": null,
@@ -816,11 +857,35 @@
   },
   "expand-fossil-fuels": {
    "value": -2,
-   "confidence": "medium",
-   "rationale": "At the 2011 White House sit-in she said 'We want to be free from our dependence on foreign oil and fossil fuels' and pointed to clean energy instead; she was arrested opposing Keystone XL. This is stated opposition to fossil-fuel dependence, though not specifically about domestic production.",
+   "confidence": "high",
+   "rationale": "At the 2011 White House sit-in she said 'We want to be free from our dependence on foreign oil and fossil fuels', and on CNN that month called tar sands one of the most destructive industrial environmental disasters on the planet that would shackle the country to fossil fuels, saying 'we need to move towards clean, renewable, safe jobs and safe energy'.",
    "sources": [
     "s1",
-    "s3"
+    "s4"
+   ],
+   "reviewHistory": [
+    {
+     "value": -2,
+     "confidence": "medium",
+     "rationale": "At the 2011 White House sit-in she said 'We want to be free from our dependence on foreign oil and fossil fuels' and pointed to clean energy instead; she was arrested opposing Keystone XL. This is stated opposition to fossil-fuel dependence, though not specifically about domestic production.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": -2,
+     "confidence": "high",
+     "rationale": "At the 2011 White House sit-in she said 'We want to be free from our dependence on foreign oil and fossil fuels', and on CNN that month called tar sands one of the most destructive industrial environmental disasters on the planet that would shackle the country to fossil fuels, saying 'we need to move towards clean, renewable, safe jobs and safe energy'.",
+     "sources": [
+      "s1",
+      "s4"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-14"
+    }
    ]
   },
   "assimilate-immigrants": {
@@ -2979,7 +3044,699 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "conquest-no-lawful-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
   }
  },
- "notes": "Thin political record beyond environmental and animal activism; early-exit rule applied. Standing Rock searches found no statements of hers. Protest participation alone was not used to answer statements she did not address."
+ "notes": "Thin political record beyond environmental and animal activism; early-exit rule applied. Standing Rock searches found no statements of hers. Protest participation alone was not used to answer statements she did not address. Later pass 2026-11-14 (claude-sonnet-5-5): added her CNN interviews (MediaSum corpus) on Keystone XL and Copenhagen; expand-fossil-fuels is now high and rests on her own words, and drastic-climate-action is new. Her protest arrests (White House 2011, South Central Farm 2006) show activism but state no position on statements beyond the environment.",
+ "notFound": [
+  {
+   "work": "Her interviews and statements on Standing Rock, Medicare, elections and animal agriculture beyond those cited",
+   "tried": [
+    {
+     "where": "local corpus: MediaSum (CNN/NPR)",
+     "how": "searched her turns by keyword (oil, climate, farm, animal, energy, government, war, Obama): only environmental activism"
+    },
+    {
+     "where": "web search",
+     "how": "earlier pass found no Standing Rock statements of hers"
+    }
+   ]
+  }
+ ],
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-14"
+  }
+ ]
 }
