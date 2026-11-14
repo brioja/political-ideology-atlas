@@ -23,7 +23,7 @@ async function sparql(query) {
     if (unreachable.has(url) && unreachable.size < ENDPOINTS.length) continue;
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const res = await politeFetch(url, { method: "POST", headers: HEADERS, body: new URLSearchParams({ query }), signal: AbortSignal.timeout(TIMEOUT_MS), pauseMs: 0 });
+        const res = await politeFetch(url, { method: "POST", headers: HEADERS, body: new URLSearchParams({ query }), signal: AbortSignal.timeout(TIMEOUT_MS) });
         if (res.ok) {
           next = (next + k + 1) % ENDPOINTS.length;
           return (await res.json()).results.bindings;

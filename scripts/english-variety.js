@@ -22,7 +22,7 @@ const TEMPLATES = {
 };
 const titleOf = (e) => decodeURIComponent(String(e.wikipedia || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/_/g, " ");
 
-const get = (url) => lib.cachedJson(url, { pauseMs: 3000 }); // waits out a 429 itself
+const get = (url) => lib.cachedJson(url); // waits out a 429 itself
 
 async function main() {
   const entries = [...lib.catalog().map((e) => ({ id: e.id, title: lib.articleTitle(e) })), ...lib.peopleCatalog().map((p) => ({ id: p.id, title: titleOf(p) }))]

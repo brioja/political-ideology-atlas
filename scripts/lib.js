@@ -48,7 +48,7 @@ const htmlToText = (html) => html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " "
   .replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/[ \t]+/g, " ");
 const articleHtml = (e) => { const t = articleTitle(e), f = t && cacheFile(articleUrl(t)); return f && fs.existsSync(f) ? htmlOf(JSON.parse(fs.readFileSync(f, "utf8"))) : null; };
 const articleText = (e) => { const h = articleHtml(e); return h && htmlToText(h); };
-const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf(await cachedJson(articleUrl(t), { pauseMs: 3000 })) : null; };
+const fetchArticle = async (e) => { const t = articleTitle(e); return t ? htmlOf(await cachedJson(articleUrl(t))) : null; };
 // Notability by Wikipedia, decided by data: an article of its own (resolve-articles.js). Entries not yet
 // resolved count as notable until the file says otherwise.
 // Other names for an entry's article: redirects Wikipedia files as another name for it (resolve-articles.js).

@@ -136,7 +136,7 @@ async function topTitles() {
   const names = new Set();
   for (let d = new Date(start); d <= end; d.setUTCMonth(d.getUTCMonth() + 1)) {
     const m = String(d.getUTCMonth() + 1).padStart(2, "0");
-    const res = await require("./fetch").politeFetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${d.getUTCFullYear()}/${m}/all-days`, { pauseMs: 0 });
+    const res = await require("./fetch").politeFetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${d.getUTCFullYear()}/${m}/all-days`);
     if (!res.ok) throw new Error(`${res.status} for top articles ${d.getUTCFullYear()}-${m}`);
     for (const a of (await res.json()).items[0].articles) if (!a.article.includes(":")) names.add(a.article.replace(/_/g, " "));
   }

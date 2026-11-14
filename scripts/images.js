@@ -25,7 +25,7 @@ const { politeFetch } = require("./fetch");
 
 async function api(params, base = API) {
   const url = `${base}?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-  const res = await politeFetch(url, { pauseMs: 300 });
+  const res = await politeFetch(url);
   if (res.ok) return res.json();
   throw new Error(`${res.status} for ${url}`);
 }
@@ -94,7 +94,7 @@ async function checkPhotos(data) {
   for (const p of data[LIST].filter((x) => shown.has(x.id) && x.image && x.image.url)) {
     checked++;
     let status;
-    try { status = (await politeFetch(p.image.url, { method: "HEAD", pauseMs: 150 })).status; } catch { continue; } // network trouble: next month
+    try { status = (await politeFetch(p.image.url, { method: "HEAD" })).status; } catch { continue; } // network trouble: next month
     if (status !== 404) continue;
     // Renamed on Commons: the old file page redirects to the new name; take the new name's thumbnail.
     const r = await api({ action: "query", redirects: "1", titles: `File:${p.image.file}`, prop: "imageinfo", iiprop: "url", iiurlwidth: "330" }, COMMONS);
@@ -190,7 +190,7 @@ async function saveThumbs() {
       wanted.add(path.basename(rel));
       if (fs.existsSync(file)) continue;
       let res;
-      try { res = await politeFetch(e.image.url, { pauseMs: 300 }); } catch { res = null; }
+      try { res = await politeFetch(e.image.url); } catch { res = null; }
       if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); continue; }
       // Re-encoded with ImageMagick: some stored URLs are full-size originals or large PNG thumbnails.
       try { fs.writeFileSync(file, toWebp(Buffer.from(await res.arrayBuffer()))); }

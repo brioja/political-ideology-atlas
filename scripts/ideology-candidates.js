@@ -29,7 +29,7 @@ const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().rep
 
 async function getJson(url, opts = {}) {
   for (let attempt = 0; ; attempt++) {
-    const res = await politeFetch(url, { ...opts, pauseMs: 0 }); // 429s waited out there; other failures retried here
+    const res = await politeFetch(url, { ...opts }); // 429s waited out there; other failures retried here
     if (res.ok) return res.json();
     if (res.status === 404) return null;
     if (attempt >= 5) throw new Error(`${res.status} for ${url.slice(0, 200)}`);

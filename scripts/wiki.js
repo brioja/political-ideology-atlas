@@ -12,7 +12,7 @@
 const lib = require("./lib");
 
 // lib.cachedJson waits out a 429 itself.
-const cached = (url) => lib.cachedJson(url, { pauseMs: 3000 });
+const cached = (url) => lib.cachedJson(url);
 const title = (s) => decodeURIComponent(String(s).replace(/^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//, "").replace(/[#?].*$/, "")).replace(/_/g, " ");
 const api = (host, params) => `https://${host}/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
 

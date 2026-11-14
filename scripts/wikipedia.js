@@ -18,7 +18,7 @@ const { politeFetch } = require("./fetch");
 // Paced, with 429s waited out (scripts/fetch.js).
 async function api(params) {
   const url = `${API}?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-  const res = await politeFetch(url, { pauseMs: 400 });
+  const res = await politeFetch(url);
   if (res.ok) return res.json();
   throw new Error(`${res.status} for ${url}`);
 }

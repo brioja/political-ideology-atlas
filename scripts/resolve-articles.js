@@ -21,7 +21,7 @@ const lib = require("./lib");
 
 const OUT = path.join(lib.ROOT, "audits", "wikipedia-articles.json");
 // Cached; lib.cachedJson waits out a 429 itself.
-const get = (params) => lib.cachedJson(`https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`, { pauseMs: 5000 });
+const get = (params) => lib.cachedJson(`https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`);
 // Redirect categories that make a redirect another name for its target.
 const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
 const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;

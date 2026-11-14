@@ -13,7 +13,7 @@ const LIST = IDEOLOGIES ? "ideologies" : "people";
 const { fetchJson } = require("./fetch");
 
 // Fresh every run (no cache): paced, 404 = null, 429s waited out (scripts/fetch.js).
-const getJson = (url) => fetchJson(url, { pauseMs: 150 });
+const getJson = (url) => fetchJson(url);
 
 const titleOf = (url) => decodeURIComponent(url.split("/wiki/")[1]).replace(/_/g, " ");
 const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");

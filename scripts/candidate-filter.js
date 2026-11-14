@@ -35,7 +35,7 @@ async function views(p) {
   if (cache.has(key)) return cache.get(key);
   const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`;
   for (let attempt = 0; ; attempt++) {
-    const res = await politeFetch(url, { pauseMs: 0 }); // 429s waited out there; other failures retried here
+    const res = await politeFetch(url); // 429s waited out there; other failures retried here
     if (res.ok) return remember(key, (await res.json()).items.reduce((s, x) => s + x.views, 0));
     if (res.status === 404) return remember(key, 0);
     if (attempt >= 10) throw new Error(`${res.status} for ${url}`);
