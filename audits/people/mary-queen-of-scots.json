@@ -14,7 +14,8 @@
    "title": "Mary, Queen of Scots",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Mary,_Queen_of_Scots",
-   "usedFor": "1561 proclamation, council, Chaseabout Raid, succession claim, 1584 association proposal, trial statements"
+   "usedFor": "1561 proclamation, council, Chaseabout Raid, succession claim, 1584 association proposal, trial statements",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    "title": "A First Interview with Queen Mary, 1561 (from Knox, History of the Reformation)",
    "author": "John Knox (hostile witness recording Mary's words)",
    "url": "https://reformed.org/historic-confessions/a-first-interview-with-queen-mary-1561-by-john-knox/",
-   "usedFor": "Mary's quoted words on the Roman church, obedience of subjects and resistance to princes"
+   "usedFor": "Mary's quoted words on the Roman church, obedience of subjects and resistance to princes",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +32,8 @@
    "title": "Babington Plot",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Babington_Plot",
-   "usedFor": "Mary's July 1586 reply, support for foreign-aided rescue, succession claim"
+   "usedFor": "Mary's July 1586 reply, support for foreign-aided rescue, succession claim",
+   "evidence": "words"
   },
   {
    "id": "s4",
@@ -38,7 +41,35 @@
    "title": "Execution of Mary, Queen of Scots",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Execution_of_Mary,_Queen_of_Scots",
-   "usedFor": "Trial claim to be a foreign anointed queen, final letter to Henri III (paraphrased)"
+   "usedFor": "Trial claim to be a foreign anointed queen, final letter to Henri III (paraphrased)",
+   "evidence": "words"
+  },
+  {
+   "id": "m1",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Letters of Mary, Queen of Scots, and documents connected with her personal history, ed. Agnes Strickland, vol. I (Colburn, 1842): her letter to the Archbishop of Glasgow, 1 Oct 1565, Internet Archive lettersofmaryque01mary",
+   "author": "Mary, Queen of Scots",
+   "url": "https://archive.org/details/lettersofmaryque01mary",
+   "usedFor": "1565: the army she and Darnley led in person against the rebel lords"
+  },
+  {
+   "id": "m2",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Letters of Mary, Queen of Scots, ed. Agnes Strickland, vol. II (Colburn, 1845): her letter to Mendoza of 20 May 1586 and her statements to the commissioners at Fotheringay, Oct 1586, Internet Archive lettersofmary02mary",
+   "author": "Mary, Queen of Scots",
+   "url": "https://archive.org/details/lettersofmary02mary",
+   "usedFor": "Succession to her throne; her claim to be a crowned and anointed sovereign"
+  },
+  {
+   "id": "m3",
+   "kind": "primary",
+   "evidence": "action",
+   "title": "Letters of Mary, Queen of Scots, ed. Agnes Strickland, vol. II (1845): her letters to Mendoza of 2 and 27 July 1586, Internet Archive lettersofmary02mary",
+   "author": "Mary, Queen of Scots",
+   "url": "https://archive.org/details/lettersofmary02mary",
+   "usedFor": "1586: her plan sent to the English Catholics for an enterprise backed by Spain"
   }
  ],
  "answers": {
@@ -273,10 +304,35 @@
   "revolution-justified": {
    "value": 0,
    "confidence": "low",
-   "rationale": "Mixed: she crushed Moray's rebellion in 1565, yet her July 1586 reply endorsed a rescue with foreign help and the killing of Elizabeth to place her on the throne.",
+   "rationale": "Her acts point both ways: in 1565 she called out the army to put down the lords in arms against her ('my rebels', 'our army... with which the king and I intend to go in person'), while in July 1586 she sent the English Catholics 'a plan, with my opinion on each point' for an enterprise backed by Spain to free her.",
    "sources": [
-    "s1",
-    "s3"
+    "m1",
+    "m3"
+   ],
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Mixed: she crushed Moray's rebellion in 1565, yet her July 1586 reply endorsed a rescue with foreign help and the killing of Elizabeth to place her on the throne.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 0,
+     "confidence": "low",
+     "rationale": "Her acts point both ways: in 1565 she called out the army to put down the lords in arms against her ('my rebels', 'our army... with which the king and I intend to go in person'), while in July 1586 she sent the English Catholics 'a plan, with my opinion on each point' for an enterprise backed by Spain to free her.",
+     "sources": [
+      "m1",
+      "m3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-14"
+    }
    ]
   },
   "experts-over-public": {
@@ -1106,10 +1162,33 @@
   },
   "head-commands-forces": {
    "value": 1,
-   "confidence": "low",
-   "rationale": "She personally led her forces against Moray in the 1565 Chaseabout Raid and appointed her own Privy Council and advisers in 1561; no stated constitutional view.",
+   "confidence": "medium",
+   "rationale": "In 1565, writing of the lords in revolt against her marriage, she told her ambassador that 'our army, which is to set out to-morrow... with which the king and I intend to go in person'; she took the field herself in the Chaseabout Raid.",
    "sources": [
-    "s1"
+    "m1"
+   ],
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 1,
+     "confidence": "low",
+     "rationale": "She personally led her forces against Moray in the 1565 Chaseabout Raid and appointed her own Privy Council and advisers in 1561; no stated constitutional view.",
+     "sources": [
+      "s1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "In 1565, writing of the lords in revolt against her marriage, she told her ambassador that 'our army, which is to set out to-morrow... with which the king and I intend to go in person'; she took the field herself in the Chaseabout Raid.",
+     "sources": [
+      "m1"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-14"
+    }
    ]
   },
   "church-by-bishops": {
@@ -2139,14 +2218,36 @@
    "sources": []
   },
   "dynastic-succession": {
-   "value": 2,
+   "value": 1,
    "confidence": "medium",
-   "rationale": "She claimed and defended royal rank by descent, called herself an anointed queen at her 1586 trial, and pressed her claim as heir to England. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+   "rationale": "On 20 May 1586 she wrote that, unless her son embraced the Catholic religion, she would 'cede and give by will my right to the said succession to this crown' to Philip II, so that the default she envisaged was the throne passing to her son, withheld only for heresy; at Fotheringay she called herself 'a queen, a sovereign, crowned and anointed in the church of God'.",
    "sources": [
-    "s1",
-    "s3"
+    "m2"
    ],
-   "auditor": "claude-opus-5-5"
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": 2,
+     "confidence": "medium",
+     "rationale": "She claimed and defended royal rank by descent, called herself an anointed queen at her 1586 trial, and pressed her claim as heir to England. (Moved from monarchy-legitimate, 2026-11-11, when that statement became about ceremonial heads of state.)",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-opus-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": 1,
+     "confidence": "medium",
+     "rationale": "On 20 May 1586 she wrote that, unless her son embraced the Catholic religion, she would 'cede and give by will my right to the said succession to this crown' to Philip II, so that the default she envisaged was the throne passing to her son, withheld only for heresy; at Fotheringay she called herself 'a queen, a sovereign, crowned and anointed in the church of God'.",
+     "sources": [
+      "m2"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-14"
+    }
+   ]
   },
   "interest-free-mutual-credit": {
    "value": null,
@@ -3027,9 +3128,675 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "conquest-no-lawful-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No stated position found.",
+   "sources": []
   }
  },
- "notes": "Knox's account of the 1561 interviews is hostile and was published decades later, so answers from it are low confidence. Her original letters (Labanoff, Calendar of State Papers) were not opened; quotes from her letters come via Wikipedia. Her final letter to Henri III was seen only in paraphrase.",
+ "notes": "Knox's account of the 1561 interviews is hostile and was published decades later, so answers from it are low confidence. Her original letters (Labanoff, Calendar of State Papers) were not opened; quotes from her letters come via Wikipedia. Her final letter to Henri III was seen only in paraphrase.\n\nLater pass (claude-sonnet-5-5, 2026-11-14): brought to rules 7. Three answers that rested only on Wikipedia now cite Mary's own letters and her statements at Fotheringay from Agnes Strickland's editions (1842, 1845) on the Internet Archive; head-commands-forces and the mixed revolution answer rest on her acts, the succession answer on her words.",
  "reviews": [
   {
    "kind": "inference",
@@ -3042,6 +3809,32 @@
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  }
+ ],
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-14"
+  }
+ ],
+ "notFound": [
+  {
+   "work": "Her July 1586 reply to Babington, and Cobbett's State Trials account of her trial",
+   "tried": [
+    {
+     "where": "Strickland's letters (Internet Archive)",
+     "how": "read the Mendoza letters of May-July 1586 and the trial narrative; the Babington letters themselves are not printed there"
+    },
+    {
+     "where": "Cobbett's State Trials (Internet Archive volume found)",
+     "how": "the volume searched has no trial of Mary"
+    }
+   ]
   }
  ]
 }
