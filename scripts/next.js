@@ -47,6 +47,8 @@ function reauditQueue() {
   return null;
 }
 // Then any audit under an older rules version whose re-audit gap has passed: oldest rules first, then most viewed.
+// People only if they are on the site, i.e. pass the uncertainty rule as build.js judges it (Brandon, 2026-11-14:
+// "later passes should only include people already on the site"); a person off the site gets no later pass.
 function olderRules() {
   const fs = require("fs"), lib = require("./lib");
   const { nextPassFrom, CURRENT_RULES } = require("./validate");
@@ -60,6 +62,7 @@ function olderRules() {
       if (!fs.existsSync(f)) continue;
       const a = readJson(f);
       if (a.notAnIdeology || (a.rules || 0) >= CURRENT_RULES || nextPassFrom(a) > today) continue;
+      if (kind === "person" && !lib.personUncertainty(a.answers || {}).placed) continue;
       due.push({ kind, entry, rules: a.rules || 0 });
     }
   }
