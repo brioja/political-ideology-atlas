@@ -27,7 +27,10 @@ full audit if the entry is:
   France" (`GOVERNMENT_BODY`; a form of government such as totalitarianism is a set of ideas), or an event
   such as a war, revolution, election, battle or protest (`EVENT`); or
 - not a set of political ideas for how to run a society (`DOES_NOT_INCLUDE_IDEAS`): its content holds
-  none. It must also pass a code check: if the entry's Wikipedia article says "ideas" anywhere,
+  none. Decide this by trying, not by its label: go through the statements and look for an answer in its
+  sources, and record `DOES_NOT_INCLUDE_IDEAS` only if fewer than two can be answered (two positions make a
+  set of ideas); otherwise audit it in full. Say in the explanation what you looked through (Brandon,
+  2026-11-14). It must also pass a code check: if the entry's Wikipedia article says "ideas" anywhere,
   `scripts/validate.js` rejects the reason (Brandon, 2026-11-06), and you audit the entry in full.
   Notability and duplicates are also checked in code before an entry reaches you.
 

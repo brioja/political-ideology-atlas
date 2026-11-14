@@ -42,7 +42,8 @@ The audit (`audits/PROMPT.md`) records `notAnIdeology` instead of answers if the
   government body (not a form of government) or event (`notAnIdeology.reason` PERSON, PARTY,
   ORGANIZATION, STATE, GOVERNMENT_BODY, EVENT); or
 - **not a set of political ideas for how to run a society** (DOES_NOT_INCLUDE_IDEAS): its content holds none,
-  and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
+  shown by trying: the agent looked for answers to the statements in its sources and found fewer than two
+  (Brandon, 2026-11-14), and it passes the code check: the entry's Wikipedia article (the whole page, cached) never says "ideas".
   `scripts/validate.js` rejects the reason otherwise, and the entry is audited in full (Brandon, 2026-11-06).
   Notability and duplicates are gate 1, checked in code.
 
