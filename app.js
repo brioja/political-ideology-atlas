@@ -1727,9 +1727,10 @@ function renderPeople() {
     return;
   }
   const q = fold($("people-search").value.trim());
-  const shown = list.filter((p) => (!peopleRegion || p.region === peopleRegion) &&
-    (!q || fold(p.name).includes(q) || fold(p.role || "").includes(q)))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  // Name matches first, then other names ("AOC"), then roles; A-Z within each.
+  const tier = (p) => (!q || fold(p.name).includes(q) ? 0 : (p.aliases || []).some((n) => fold(n).includes(q)) ? 1 : fold(p.role || "").includes(q) ? 2 : 3);
+  const shown = list.filter((p) => (!peopleRegion || p.region === peopleRegion) && tier(p) < 3)
+    .sort((a, b) => tier(a) - tier(b) || a.name.localeCompare(b.name));
   $("people-count").textContent = `${shown.length} of ${list.length} people`;
   $("people-list").innerHTML = shown.map(personRow).join("") || `<li class="muted">No one matches “${esc(q)}”.</li>`;
 }
@@ -1984,7 +1985,7 @@ const compareOptions = () => [
   ...(myAnswers() ? [{ key: "me", label: "You (your answers)" }] : []),
   ...model.ideologies.map((i) => ({ key: `i:${i.id}`, label: i.name, aliases: i.aliases || [] })),
   // Names show plainly; a person who shares a name with an ideology gets "(person)" to tell them apart.
-  ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: model.ideologies.some((i) => i.name === p.name) ? `${p.name} (person)` : p.name })),
+  ...PEOPLE_LIST.map((p) => ({ key: `p:${p.id}`, label: model.ideologies.some((i) => i.name === p.name) ? `${p.name} (person)` : p.name, aliases: p.aliases || [] })),
 ];
 function comparePicker(selfKey) {
   const mine = myAnswers() ? `<a class="btn" href="${compareHref("me", selfKey)}">Compare with your answers</a>` : "";

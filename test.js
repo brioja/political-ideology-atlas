@@ -341,6 +341,19 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   }
 }
 
+// 6b2. People's other names (build.js peopleAliases): each finds exactly one shown person, and is never another
+// person's or an ideology's name or other name.
+{
+  const fold = (x) => String(x).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  const taken = new Map();
+  for (const x of [...PEOPLE, ...IDEOLOGIES]) taken.set(fold(x.name), (taken.get(fold(x.name)) || 0) + 1);
+  for (const i of IDEOLOGIES) for (const al of i.aliases || []) taken.set(fold(al), (taken.get(fold(al)) || 0) + 1);
+  for (const p of PEOPLE) for (const al of p.aliases || []) {
+    assert(!taken.has(fold(al)), `other name "${al}" of ${p.id} is also another entry's name or other name`);
+    taken.set(fold(al), 1);
+  }
+}
+
 // 6c. People thumbnails: every shown person has had their photo looked up (scripts/images.js). A lookup that found
 // no free photo stores "image": null; no "image" field at all means the lookup never ran since they were added.
 {

@@ -97,3 +97,9 @@ section on the results, Compare, ideology and person pages, each with its statem
   than now", which depends on each country's status quo, and a level ("a strong police force", "a strong
   military") doesn't say what it means. The military half also matched military-superiority (0.89);
   police powers are measured by surveillance-ok, emergency-suspend-protections and abolish-police-prisons.
+- **Wikidata as a source for names or facts the site shows** (2026-11-14), aliases included, alone or as a check
+  on Wikipedia. It is often wrong: its aliases miss common names ("AOC" for Alexandria Ocasio-Cortez, "JFK")
+  and carry misspellings ("Alexandra Ocasio-Cortez"). Wikidata no longer connects aliases at all: people's
+  other names come from Wikipedia redirects filed as other names (`scripts/people-aliases.js`), and an
+  ideology's aliases need a source quote (669f810bf). Wikidata labels stay as catalog triage only, and
+  photo lookups (`scripts/images.js`) still find the Commons file through it.

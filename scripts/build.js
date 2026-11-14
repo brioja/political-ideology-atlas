@@ -291,6 +291,7 @@ function writePeople(model, judge = undefined) {
   const dropped = people.filter((p) => !kept.has(p.id));
   people.splice(0, people.length, ...people.filter((p) => kept.has(p.id)));
   disambiguate(people);
+  peopleAliases(people, model.ideologies);
   // Each person's place on the lines, reliability and bars on each, as ideologies ship theirs.
   for (const p of people) {
     const l = locate(model, p.profile);
@@ -406,6 +407,42 @@ const texts = fs.existsSync(TEXTS) ? readJson(TEXTS) : {};
 for (const s of require("./lib").allStatements()) if (!(s.id in texts)) texts[s.id] = s.text;
 fs.writeFileSync(TEXTS, JSON.stringify(texts, null, 1) + "\n");
 console.log("Wrote data.js");
+
+// A person's other names for search (Brandon, 2026-11-14: "AOC"): the Wikipedia redirects filed as other names for
+// them (scripts/people-aliases.js). As for ideologies, a name another shown person or an ideology also has, as its
+// name or another name, finds neither through it. A name inside the person's name or inside another of their names
+// is left out: search matches parts of names, so it would find nothing more.
+function peopleAliases(people, ideologies) {
+  const file = path.join(ROOT, "audits", "people-aliases.json");
+  const all = fs.existsSync(file) ? readJson(file).people : {};
+  const key = (x) => String(x).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  // The page's own search folding (app.js), for what a typed text finds.
+  const typed = (s) => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase()
+    .replace(/đ/g, "d").replace(/ł/g, "l").replace(/ø/g, "o").replace(/æ/g, "ae").replace(/œ/g, "oe").replace(/ß/g, "ss").replace(/ı/g, "i");
+  const owners = new Map();
+  const claim = (names) => { for (const k of new Set(names.map(key))) owners.set(k, (owners.get(k) || 0) + 1); };
+  const candidates = new Map();
+  for (const p of people) {
+    const seen = new Set([key(p.name)]), names = [];
+    for (const r of all[p.id] || []) {
+      const n = String(r).replace(/\s*\([^)]*\)\s*$/, "").trim();
+      if (n.length < 2 || seen.has(key(n))) continue;
+      seen.add(key(n)); names.push(n);
+    }
+    candidates.set(p.id, names);
+    claim([p.name, ...names]);
+  }
+  for (const i of ideologies) claim([i.name, ...(i.aliases || [])]);
+  let missing = 0;
+  for (const p of people) {
+    if (p.kind !== "model" && !(p.id in all)) missing++;
+    const unique = candidates.get(p.id).filter((n) => owners.get(key(n)) === 1);
+    const aliases = unique.filter((n) => !typed(p.name).includes(typed(n)) &&
+      !unique.some((m) => typed(m) !== typed(n) && typed(m).includes(typed(n))));
+    if (aliases.length) p.aliases = aliases;
+  }
+  if (missing) console.log(`${missing} shown people have no other names looked up: run node scripts/people-aliases.js.`);
+}
 
 // An ideology's other names for search: the audit's sourced aliases and the names Wikipedia files as redirects to
 // its article (both checked one to one by scripts/coatrack-check.js), minus spelling variants of its own name.
