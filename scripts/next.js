@@ -30,19 +30,22 @@ const PEOPLE_ONLY = process.argv.includes("--people");
 function reauditQueue() {
   const fs = require("fs"), lib = require("./lib");
   const file = path.join(__dirname, "..", "audits", "reaudit-queue.json");
-  if (!fs.existsSync(file) || PEOPLE_ONLY) return null;
+  if (!fs.existsSync(file)) return null;
   const { nextPassFrom } = require("./validate");
   const today = new Date().toISOString().slice(0, 10);
+  // People are queued too (Brandon, 2026-11-14: "it should automatically pop people off of the re-audit queue"): an id
+  // is a person if it has a people audit, an ideology if it has a profile; --people / --ideologies take only that kind.
   for (const g of readJson(file).groups) for (const id of g.ids) {
-    const f = lib.profilePath(id);
-    if (SKIP.has(id) || !fs.existsSync(f)) continue;
-    const a = readJson(f);
+    if (SKIP.has(id)) continue;
+    const kind = fs.existsSync(lib.profilePath(id)) ? "ideology" : fs.existsSync(lib.personPath(id)) ? "person" : null;
+    if (!kind || (kind === "person" ? IDEOLOGIES_ONLY : PEOPLE_ONLY)) continue;
+    const a = readJson(kind === "person" ? lib.personPath(id) : lib.profilePath(id));
     const last = (Array.isArray(a.passes) && a.passes.length ? a.passes.map((p) => p.auditedAt) : [a.auditedAt]).filter(Boolean).sort().pop() || "";
     if (a.notAnIdeology || last >= g.queuedAt || nextPassFrom(a) > today) continue;
-    const entry = catalog().find((x) => x.id === id);
+    const entry = (kind === "person" ? peopleCatalog() : catalog()).find((x) => x.id === id);
     if (!entry) continue;
-    const { name, wikipedia, wikipediaMatch, scopeNote } = entry;
-    return { kind: "ideology", id, name, wikipedia, wikipediaMatch, scopeNote, views12m: entry.views12m || 0, reason: `queued later pass: ${g.reason}` };
+    const { name, wikipedia, wikipediaMatch, born, living, scopeNote } = entry;
+    return { kind, id, name, wikipedia, wikipediaMatch, born, living, scopeNote, views12m: entry.views12m || 0, reason: `queued later pass: ${g.reason}` };
   }
   return null;
 }
