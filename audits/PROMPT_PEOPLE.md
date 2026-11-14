@@ -32,9 +32,8 @@ is specific to people.
 - For people whose output is mostly video (streamers, podcasters, commentators), search their own
   channels and clips by theme ("<name> on NATO", "<name> Supreme Court", "<name> elections") and
   read the captions with `node scripts/yt.js "<url>"` (search: `node scripts/yt.js --search "<words>"`). Their reactions to news segments state positions too.
-- If a page comes back as an empty JavaScript shell (common on transcript databases), render it with
-  headless Chrome: `google-chrome --headless=new --disable-gpu --virtual-time-budget=15000
-  --dump-dom <url>`, then strip the tags. Transcripts and captions rarely label speakers: use a
+- A page that comes back as an empty JavaScript shell (common on transcript databases) is rendered by
+  the headless browsers in `node scripts/get.js <id> <url>`. Transcripts and captions rarely label speakers: use a
   passage only when context makes clear the person themselves is speaking, not a guest or a bit.
 - A maintainer-supplied text (AUDIT_RULES.md, section 2) has a date: check later positions on the
   web.

@@ -28,7 +28,8 @@ agents too. This file adds what matters when running the audit workflows in
   search or fetch names a source a local corpus holds (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, UN
   debates, Davos, Lex Fridman, French laws via LEGI): search the corpus first. A third hook
   (`.claude/hooks/no-browser-agent.js`) denies a fetch, in a command or a written script, whose User-Agent poses
-  as a browser: a site that refuses the honest one stays refused.
+  as a browser. Other sites go through `node scripts/get.js <id> <url>`, which tries each download agent (curl,
+  wget, wget2, aria2c, lynx, w3m, headless Firefox and Chrome) under its own name and keeps the first good copy.
 - **Launch prompts should hold only the task.** Workflow agents may echo the launching message and
   act on unrelated instructions in it.
 

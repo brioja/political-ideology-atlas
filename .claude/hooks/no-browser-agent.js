@@ -1,6 +1,6 @@
-// PreToolUse guard (Brandon, 2026-11-14): never disguise a fetch as a web browser. A site that refuses scripted
-// access stays refused (AUDIT_RULES.md section 2: "don't change the user agent"); a browser User-Agent is how
-// a script gets past that refusal. Prompted by a serial-run agent running `curl -A "Mozilla/5.0"` on Britannica.
+// PreToolUse guard (Brandon, 2026-11-14): never disguise a fetch as a web browser. Prompted by a serial-run agent
+// running curl with a browser's User-Agent on Britannica. Each download agent uses its own name; real browsers
+// run headless are fine, and scripts/get.js tries them all in turn (AUDIT_RULES.md section 2).
 // Denies a shell command, or a script written with Write/Edit, that sets a User-Agent naming a browser
 // (Mozilla, Chrome, Safari, AppleWebKit, Gecko, Firefox, Edge, Opera) unless it names this project, as the
 // project's own agents do (scripts/fetch.js, validate.js's link check: "... (political-ideology-atlas ...)").
@@ -26,7 +26,7 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
     const agent = m[2] || m[3] || "";
     if (BROWSER.test(agent) && !OWN.test(agent)) {
       process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", permissionDecision: "deny",
-        permissionDecisionReason: `Don't disguise a fetch as a browser (User-Agent "${agent.slice(0, 60)}"). Use the default or the project's own agent; a site that refuses it stays refused (AUDIT_RULES.md section 2): record it in notFound and try another copy (Wayback, archive.org, a mirror).` } }));
+        permissionDecisionReason: `Don't disguise a fetch as a browser (User-Agent "${agent.slice(0, 60)}"). Download with \`node scripts/get.js <audit id> <url>\`: it tries curl, wget, wget2, aria2c, lynx, w3m, headless Firefox and headless Chrome, each under its own name (AUDIT_RULES.md section 2).` } }));
       return;
     }
   }

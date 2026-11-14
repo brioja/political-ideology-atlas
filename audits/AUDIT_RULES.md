@@ -45,11 +45,14 @@ words; don't paste long passages.
 - Check a quotation in the original: one on Wikiquote or in an article can be cut, misattributed
   or out of context. If the original is blocked or offline, look for it elsewhere (a Wayback or archive.org
   copy, a mirror, another site hosting the same text, the official record) before giving up; a copy
-  elsewhere is fine to use even when the original refuses scripted access. The refusing site itself
-  (403, a bot check, a captcha, a 429) stays refused (a robots.txt block aimed only at
-  crawlers, such as `User-agent: ClaudeBot`, is not a refusal: an audit fetches pages, it doesn't crawl): don't change the user agent, reuse
-  cookies or retry through another tool. Name the page in your report instead; the maintainer can open it
-  by hand (`backlog/blocked-sources.md` tracks audits held back this way).
+  elsewhere is fine to use even when the original refuses scripted access.
+- Download pages and documents with `node scripts/get.js <id> <url>`: it saves into the source library and
+  tries each download agent in turn (curl, wget, wget2, aria2c, lynx, w3m, headless Firefox, headless Chrome),
+  moving on after any refusal (a 403, a 429, a bot check; Brandon, 2026-11-14), and records which one got it.
+  Each agent uses its own name; never set a browser's User-Agent on a script (a hook blocks it), reuse cookies
+  or solve a captcha. A robots.txt block aimed only at crawlers, such as `User-agent: ClaudeBot`, doesn't stop
+  an audit: it fetches pages, it doesn't crawl. If no agent gets the page, name it in your report; the
+  maintainer can open it by hand (`backlog/blocked-sources.md` tracks audits held back this way).
 - Song lyrics are the subject's own words only if the subject wrote or co-wrote them. Lyrics
   written by someone else and only performed by the subject are not evidence of the subject's views.
   Check the songwriting credit (the album notes or a rights database such as ASCAP, BMI or PRS) and
