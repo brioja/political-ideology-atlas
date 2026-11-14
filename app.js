@@ -904,7 +904,7 @@ function showResults(shared = null) {
 
 function drawScree(svg) {
   const W = 640, H = 220, left = 40, bottom = 30, top = 14;
-  const comps = model.components.slice(0, 15);
+  const comps = model.components.slice(0, REAL_LINES);
   const max = Math.ceil(comps[0].share * 10) / 10;
   const bw = (W - left - 10) / comps.length;
   const y = (v) => H - bottom - (v / max) * (H - bottom - top);

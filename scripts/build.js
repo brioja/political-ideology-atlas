@@ -187,7 +187,9 @@ function keepLineOrder(rotated, k) {
       order.push(p.c < 0 ? { ...rotated[p.i], vector: rotated[p.i].vector.map((x) => -x) } : rotated[p.i]);
     } else order.push(rotated[free.shift()]);
   }
-  return [...order, ...rotated.slice(k)];
+  // Only the shown, named lines need stable slots; the lines after them are unnamed, so they're kept in order of
+  // size (Brandon, 2026-11-14: the About page's bar chart had lines 9 and up out of order).
+  return [...order.slice(0, SHOWN), ...order.slice(SHOWN).sort((a, b) => b.share - a.share), ...rotated.slice(k)];
 }
 const labelSets = readJson(path.join(ROOT, "audits", "line-labels.json")).lines;
 const qIndex = Object.fromEntries(statements.map((s, j) => [s.id, j]));
