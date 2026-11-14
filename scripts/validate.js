@@ -558,7 +558,7 @@ function validate(id) {
     if (!s.placed && s.known < s.bars.length) {
       // Fewer positions than dividing lines: no error bar can be solved, so every line would read "no position reaches
       // it" whatever the answers are (Brandon, 2026-11-14: make this clearer). Say so once instead.
-      errors.push(`uncertainty: ${s.known} ${PEOPLE ? "recorded" : "stated"} position${s.known === 1 ? "" : "s"}; placing anyone needs at least ${s.bars.length} (one per dividing line), so no error bar can be computed yet. Find more positions, or accept the failure if the record has no more.`);
+      errors.push("uncertainty: too few positions to place them on the dividing lines yet. Find more positions, or accept the failure if the record has no more.");
     } else if (!s.placed) {
       const bar = (b) => (isFinite(b) ? `±${b.toFixed(2)}` : "no position reaches it");
       const weak = s.bars.map((b, i) => [b, i]).filter(([b]) => b > s.maxBar).sort((x, y) => y[0] - x[0])
