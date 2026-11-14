@@ -139,7 +139,7 @@ free trade, not about markets in general.
   unauthorized migration doesn't settle immigration levels. A source counts by what it settles, not by
   its type: the subject's own votes, laws, acts, speeches, writings, interviews and posts answer only
   the statements they settle.
-- **No coatracks.** A coatrack hangs another subject's positions on this one: another movement,
+- **No coatracks.** (Checked by `scripts/coatrack-check.js`, run by validate.js.) A coatrack hangs another subject's positions on this one: another movement,
   organisation, party or person (a relative, an employer), or a broader, narrower or related ideology,
   used as if its sources were the subject's. Sources about a related subject don't answer for the
   subject, in either direction: secularism's not for Jewish secularism, nor a member movement's for

@@ -1,4 +1,6 @@
-// Source check for ideology audits (Brandon, 2026-11-05): the sources have to discuss the ideology.
+// Coatrack check for ideology audits (audits/AUDIT_RULES.md, "No coatracks"; Brandon, 2026-11-05): the sources
+// have to discuss the ideology, so another subject's sources can't answer for it. Run by validate.js. All of the
+// check's logic lives here.
 //   - A defining source (kind "reference" or "scholarly") must contain the ideology's name or one of
 //     its `aliases` in its saved text.
 //   - A primary source ("primary" or "program") passes if its own text names the ideology twice, or if
@@ -201,8 +203,21 @@ function evidence(id, audit, field, x, strict, contains) {
   return [];
 }
 
-function check(id, audit, { strict = false } = {}) {
+function check(id, full, { strict = false } = {}) {
   const problems = [], unchecked = [];
+  // A source cited only on talk pages (reviewHistory) or as the reason for a nulling documents a replaced version,
+  // often the very source it was replaced for (Wikipedia, another subject's text): it isn't evidence of a current
+  // position, so the check skips it.
+  const citedNow = new Set([
+    ...Object.values(full.answers || {}).flatMap((x) => (x && x.value !== null && Array.isArray(x.sources) ? x.sources : [])),
+    ...(Array.isArray(full.keyFigures) ? full.keyFigures : []).flatMap((f) => f.sources || []),
+    ...(Array.isArray(full.missingStatements) ? full.missingStatements : []).flatMap((m) => [...(m.sources || []), ...(m.quotes || []).map((q) => q.source)]),
+    ...[...(Array.isArray(full.aliases) ? full.aliases : []), ...(Array.isArray(full.authors) ? full.authors : [])].map((x) => x && x.source),
+    ...(Array.isArray(full.sources) ? full.sources : []).flatMap((s) => (s.titles || []).map((t) => t && t.source)),
+  ].filter(Boolean));
+  const historyOnly = new Set(Object.values(full.answers || {}).flatMap((x) => (x && Array.isArray(x.reviewHistory) ? x.reviewHistory : []))
+    .flatMap((e) => (e && Array.isArray(e.sources) ? e.sources : [])).filter((sid) => !citedNow.has(sid)));
+  const audit = historyOnly.size ? { ...full, sources: (full.sources || []).filter((s) => !historyOnly.has(s.id)) } : full;
   if (audit.aliases !== undefined && (!Array.isArray(audit.aliases) || audit.aliases.some((x) => !entryName(x).trim()))) {
     problems.push('"aliases" must be a list of names (use [] for none)');
   }

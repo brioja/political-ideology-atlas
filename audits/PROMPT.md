@@ -58,7 +58,7 @@ texts, thinkers or programs they name as its own. Record that in `scope`, citing
 text counts for the subject only as far as they tie it to the subject; don't choose a scope that
 no defining source states.
 
-**Every source has to discuss the ideology** (`scripts/source-check.js`, run by validate.js). A
+**Every source has to discuss the ideology** (the coatrack check, `scripts/coatrack-check.js`, run by validate.js). A
 defining source (`reference` or `scholarly`) must name the ideology, by its name or an alias. A
 `primary` or `program` source must name it too, or be named (by title or author) in a defining source
 that does. List in `aliases` the other names the defining sources use for it, liberally (spelling variants,

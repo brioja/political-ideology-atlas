@@ -406,7 +406,7 @@ fs.writeFileSync(TEXTS, JSON.stringify(texts, null, 1) + "\n");
 console.log("Wrote data.js");
 
 // An ideology's other names for search: the audit's sourced aliases and the names Wikipedia files as redirects to
-// its article (both checked one to one by scripts/source-check.js), minus spelling variants of its own name.
+// its article (both checked one to one by scripts/coatrack-check.js), minus spelling variants of its own name.
 function searchNames(entry, a) {
   const lib = require("./lib");
   const fold = (x) => String(x).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();

@@ -1,4 +1,4 @@
-// Unit tests for the rules validate.js and source-check.js enforce on ideology audits only (the rules shared with
+// Unit tests for the rules validate.js and coatrack-check.js enforce on ideology audits only (the rules shared with
 // people, rules 4 included, are covered by tests/validate-rules.test.js and run the same code).
 //   node tests/validate-ideology-rules.test.js        (also run by test.js)
 // The fixture is a catalog ideology with no audit and no source library yet; its audit is a temp file and its
@@ -20,7 +20,7 @@ lib.profilePath = (id) => (id === subject.id ? tmp : profilePath(id));
 const { validate, setCommittedForTests, CURRENT_RULES } = require("../scripts/validate");
 setCommittedForTests(() => null);
 
-// The saved source texts the source check reads.
+// The saved source texts the coatrack check reads.
 const libDir = path.join(LIBDIR, subject.id);
 const N = subject.name;
 const TEXTS = {

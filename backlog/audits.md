@@ -58,12 +58,12 @@ Audit work discussed but not started.
 - **Pro-Europeanism leans on European values (Brandon, 2026-11-14).** Its "Europeanism" sources (s10 Ostrowski,
   and s6 the Treaty on European Union as tied through it) are about European values, a separate catalog entry
   (`european-values`, not yet audited); the alias rested on Wikidata, and Wikipedia redirects "Europeanism" to
-  European values. Pro-Europeanism fails the source check until its next pass answers from its own defining
+  European values. Pro-Europeanism fails the coatrack check until its next pass answers from its own defining
   sources. That material belongs to the European values audit.
 
 ## Source check: gaps it can't see (2026-11-05)
 
-`scripts/source-check.js` (run by validate.js) checks whole sources, not the passage an answer rests on.
+`scripts/coatrack-check.js` (run by validate.js) checks whole sources, not the passage an answer rests on.
 Open gaps, to revisit (Brandon: "could be problematic, but it can be revisited"):
 - **A named primary text passes for every answer.** Once a defining source names a text by title, any
   passage of it can answer anything, including parts unrelated to the ideology.
@@ -82,7 +82,7 @@ surroundings discuss the ideology.
 
 ## Source check: filtered sources to look at (2026-11-05)
 
-Answers in these audits rest on sources the source check filters (`node scripts/validate.js <id>`
+Answers in these audits rest on sources the coatrack check filters (`node scripts/validate.js <id>`
 lists them), but the texts look like the ideology's own, missing a defining author, title or alias
 rather than coatracks. Left as they are; look again when the audit gets its next pass, or add
 `authors` / `titles` / `aliases` with evidence if a defining source supports them.
