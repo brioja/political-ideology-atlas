@@ -20,7 +20,7 @@ const SUBCLASS_ROOT = "Q12909644"; // political ideology: its subclasses count t
 // article: "Feminism in India", "Conservatism in Canada", "History of democracy".
 const NOT_OWN_TOPIC = /^(History|List|Timeline) of | in (the |[A-Z])/;
 const CATALOG = path.join(ROOT, "audits", "catalog.json");
-const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
+const { politeFetch } = require("./fetch");
 const CONCURRENCY = 20;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const articleUrl = (title) => `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, "_"))}`;
@@ -29,7 +29,7 @@ const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().rep
 
 async function getJson(url, opts = {}) {
   for (let attempt = 0; ; attempt++) {
-    const res = await fetch(url, { ...opts, headers: { ...HEADERS, ...(opts.headers || {}) } });
+    const res = await politeFetch(url, { ...opts, pauseMs: 0 }); // 429s waited out there; other failures retried here
     if (res.ok) return res.json();
     if (res.status === 404) return null;
     if (attempt >= 5) throw new Error(`${res.status} for ${url.slice(0, 200)}`);

@@ -22,7 +22,6 @@ const { sparql } = require("./sparql");
 
 const MIN_LINKS = 10;
 const SAMPLE_BELOW = 3000;
-const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
 
 const PREFIX = `PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX schema: <http://schema.org/>
@@ -137,7 +136,7 @@ async function topTitles() {
   const names = new Set();
   for (let d = new Date(start); d <= end; d.setUTCMonth(d.getUTCMonth() + 1)) {
     const m = String(d.getUTCMonth() + 1).padStart(2, "0");
-    const res = await fetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${d.getUTCFullYear()}/${m}/all-days`, { headers: HEADERS });
+    const res = await require("./fetch").politeFetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${d.getUTCFullYear()}/${m}/all-days`, { pauseMs: 0 });
     if (!res.ok) throw new Error(`${res.status} for top articles ${d.getUTCFullYear()}-${m}`);
     for (const a of (await res.json()).items[0].articles) if (!a.article.includes(":")) names.add(a.article.replace(/_/g, " "));
   }
@@ -168,6 +167,6 @@ async function triage() {
   return { check, sample };
 }
 
-module.exports = { triage, cachedSparql, PREFIX, REGION_OF, titleOf, viewsPeriod, CACHE_DIR, HEADERS, MIN_LINKS };
+module.exports = { triage, cachedSparql, PREFIX, REGION_OF, titleOf, viewsPeriod, CACHE_DIR, MIN_LINKS };
 
 if (require.main === module) triage().catch((e) => { console.error(e); process.exit(1); });

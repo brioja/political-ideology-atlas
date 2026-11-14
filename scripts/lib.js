@@ -23,32 +23,9 @@ const isCandidate = (s) => s.status === "candidate";
 const activeStatements = () => allStatements().filter((s) => !isCandidate(s));
 const catalog = () => readJson(path.join(ROOT, "audits", "catalog.json")).ideologies;
 
-// Wikipedia and Wikidata requests, cached on disk (~/.cache/political-ideology-atlas/http/<sha1>.json)
-// so a rerun reads local copies instead of asking Wikimedia again (rate limits). Polite: one request
-// at a time, a pause after each network fetch. A 429 is waited out here, for every caller: the server's
-// retry-after plus 10 s (60 s when it gives none), at most 5 times in a row for one request, then the run
-// stops (Brandon, 2026-11-14: each script had its own retry loop, with different limits).
-const HTTP_CACHE = path.join(process.env.XDG_CACHE_HOME || path.join(require("os").homedir(), ".cache"), "political-ideology-atlas", "http");
-const cacheFile = (url, body = null) => path.join(HTTP_CACHE, require("crypto").createHash("sha1").update(url + "\n" + (body || "")).digest("hex") + ".json");
-async function cachedJson(url, { body = null, headers = {}, pauseMs = 1000 } = {}) {
-  fs.mkdirSync(HTTP_CACHE, { recursive: true });
-  const file = cacheFile(url, body);
-  if (fs.existsSync(file)) return JSON.parse(fs.readFileSync(file, "utf8"));
-  let res;
-  for (let throttled = 0; ; throttled++) {
-    res = await fetch(url, { method: body ? "POST" : "GET", body, headers: { "User-Agent": "ideology-atlas-catalog-check/1.0 (research script)", ...headers } });
-    if (res.status !== 429) break;
-    const after = Number(res.headers.get("retry-after")) || 50;
-    if (throttled >= 4) throw new Error(`HTTP 429 from ${new URL(url).host} 5 times in a row (retry-after ${after} s): stopping`);
-    process.stderr.write(`HTTP 429 from ${new URL(url).host}: waiting ${after + 10} s\n`);
-    await new Promise((r) => setTimeout(r, (after + 10) * 1000));
-  }
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url.slice(0, 120)}`);
-  const json = await res.json();
-  fs.writeFileSync(file, JSON.stringify(json));
-  await new Promise((r) => setTimeout(r, pauseMs));
-  return json;
-}
+// Wikipedia and Wikidata requests go through the fetch library (scripts/fetch.js): cached on disk, paced,
+// 429s waited out. Re-exported here for the scripts that already take it from lib.
+const { cachedJson, cacheFile } = require("./fetch");
 
 // Duplicates, decided by data: one catalog entry per Wikipedia article (after redirects). The owner is
 // the entry whose own title is the article ("exact"), else the most viewed; every other entry on that

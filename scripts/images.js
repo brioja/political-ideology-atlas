@@ -21,18 +21,13 @@ const REFRESH = process.argv.includes("--refresh");
 const CATALOG = path.join(ROOT, "audits", IDEOLOGIES ? "catalog.json" : "people-catalog.json");
 const LIST = IDEOLOGIES ? "ideologies" : "people";
 const API = "https://en.wikipedia.org/w/api.php";
-const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const { politeFetch } = require("./fetch");
 
 async function api(params, base = API) {
   const url = `${base}?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-  for (let attempt = 0; ; attempt++) {
-    await sleep(300);
-    const res = await fetch(url, { headers: HEADERS });
-    if (res.ok) return res.json();
-    if (res.status !== 429 || attempt >= 5) throw new Error(`${res.status} for ${url}`);
-    await sleep(5000 * (attempt + 1));
-  }
+  const res = await politeFetch(url, { pauseMs: 300 });
+  if (res.ok) return res.json();
+  throw new Error(`${res.status} for ${url}`);
 }
 
 // Ideology images must not show a real person (a portrait could be mistaken for the person match,
@@ -97,10 +92,9 @@ async function checkPhotos(data) {
   const shown = new Set(require(path.join(ROOT, "people.js")).PEOPLE.map((p) => p.id));
   let renamed = 0, gone = 0, checked = 0;
   for (const p of data[LIST].filter((x) => shown.has(x.id) && x.image && x.image.url)) {
-    await sleep(150);
     checked++;
     let status;
-    try { status = (await fetch(p.image.url, { method: "HEAD", headers: HEADERS })).status; } catch { continue; } // network trouble: next month
+    try { status = (await politeFetch(p.image.url, { method: "HEAD", pauseMs: 150 })).status; } catch { continue; } // network trouble: next month
     if (status !== 404) continue;
     // Renamed on Commons: the old file page redirects to the new name; take the new name's thumbnail.
     const r = await api({ action: "query", redirects: "1", titles: `File:${p.image.file}`, prop: "imageinfo", iiprop: "url", iiurlwidth: "330" }, COMMONS);
@@ -196,12 +190,7 @@ async function saveThumbs() {
       wanted.add(path.basename(rel));
       if (fs.existsSync(file)) continue;
       let res;
-      for (let attempt = 0; ; attempt++) {
-        await sleep(300);
-        try { res = await fetch(e.image.url, { headers: HEADERS }); } catch { res = null; }
-        if (res && res.status === 429 && attempt < 5) { await sleep(5000 * (attempt + 1)); continue; }
-        break;
-      }
+      try { res = await politeFetch(e.image.url, { pauseMs: 300 }); } catch { res = null; }
       if (!res || !res.ok) { failed.push(`${e.id} (${res ? res.status : "network"})`); continue; }
       // Re-encoded with ImageMagick: some stored URLs are full-size originals or large PNG thumbnails.
       try { fs.writeFileSync(file, toWebp(Buffer.from(await res.arrayBuffer()))); }

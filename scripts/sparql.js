@@ -5,8 +5,8 @@ const ENDPOINTS = [
   "https://query.wikidata.org/sparql", // Wikimedia's own service; queries time out after 60s there
 ];
 // (qlever.cs.uni-freiburg.de is the same server as qlever.dev, so it is no fallback.)
+const { politeFetch } = require("./fetch");
 const HEADERS = {
-  "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)",
   accept: "application/sparql-results+json",
   "content-type": "application/x-www-form-urlencoded",
 };
@@ -23,13 +23,13 @@ async function sparql(query) {
     if (unreachable.has(url) && unreachable.size < ENDPOINTS.length) continue;
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const res = await fetch(url, { method: "POST", headers: HEADERS, body: new URLSearchParams({ query }), signal: AbortSignal.timeout(TIMEOUT_MS) });
+        const res = await politeFetch(url, { method: "POST", headers: HEADERS, body: new URLSearchParams({ query }), signal: AbortSignal.timeout(TIMEOUT_MS), pauseMs: 0 });
         if (res.ok) {
           next = (next + k + 1) % ENDPOINTS.length;
           return (await res.json()).results.bindings;
         }
         failures.push(`${url}: ${res.status} ${(await res.text()).slice(0, 200)}`);
-        if (res.status < 500 && res.status !== 429) break; // the query itself was refused; another endpoint may accept it
+        if (res.status < 500) break; // the query itself was refused; another endpoint may accept it (429s are waited out in politeFetch)
         await sleep(5000 * (attempt + 1));
       } catch (e) {
         failures.push(`${url}: ${e.cause?.code || e.name || e.message}`);

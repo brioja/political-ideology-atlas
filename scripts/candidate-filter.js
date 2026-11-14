@@ -9,7 +9,8 @@
 const fs = require("fs");
 const path = require("path");
 const { ROOT, readJson, PEOPLE_DIR } = require("./lib");
-const { triage, cachedSparql, PREFIX, REGION_OF, titleOf, viewsPeriod, CACHE_DIR, HEADERS, MIN_LINKS } = require("./candidate-triage");
+const { triage, cachedSparql, PREFIX, REGION_OF, titleOf, viewsPeriod, CACHE_DIR, MIN_LINKS } = require("./candidate-triage");
+const { politeFetch } = require("./fetch");
 
 const CONCURRENCY = 6;
 const CATALOG = path.join(ROOT, "audits", "people-catalog.json");
@@ -34,13 +35,12 @@ async function views(p) {
   if (cache.has(key)) return cache.get(key);
   const url = `https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/${t}/monthly/${ymd(start)}/${ymd(end)}`;
   for (let attempt = 0; ; attempt++) {
-    const res = await fetch(url, { headers: HEADERS });
+    const res = await politeFetch(url, { pauseMs: 0 }); // 429s waited out there; other failures retried here
     if (res.ok) return remember(key, (await res.json()).items.reduce((s, x) => s + x.views, 0));
     if (res.status === 404) return remember(key, 0);
     if (attempt >= 10) throw new Error(`${res.status} for ${url}`);
-    // Rate limited: wait as asked, else back off exponentially (3s, 6s, 12s ... capped at 2 min).
-    const retryAfter = Number(res.headers.get("retry-after")) * 1000;
-    await sleep(retryAfter || Math.min(3000 * 2 ** attempt, 120000));
+    // A server error: back off exponentially (3s, 6s, 12s ... capped at 2 min).
+    await sleep(Math.min(3000 * 2 ** attempt, 120000));
   }
 }
 

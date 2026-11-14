@@ -10,19 +10,10 @@ const { ROOT, readJson } = require("./lib");
 const IDEOLOGIES = process.argv.includes("--ideologies");
 const CATALOG = path.join(ROOT, "audits", IDEOLOGIES ? "catalog.json" : "people-catalog.json");
 const LIST = IDEOLOGIES ? "ideologies" : "people";
-const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja/political-ideology-atlas)" };
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const { fetchJson } = require("./fetch");
 
-async function getJson(url) {
-  for (let attempt = 0; ; attempt++) {
-    await sleep(150);
-    const res = await fetch(url, { headers: HEADERS });
-    if (res.ok) return res.json();
-    if (res.status === 404) return null;
-    if (res.status !== 429 || attempt >= 5) throw new Error(`${res.status} for ${url}`);
-    await sleep(5000 * (attempt + 1));
-  }
-}
+// Fresh every run (no cache): paced, 404 = null, 429s waited out (scripts/fetch.js).
+const getJson = (url) => fetchJson(url, { pauseMs: 150 });
 
 const titleOf = (url) => decodeURIComponent(url.split("/wiki/")[1]).replace(/_/g, " ");
 const ymd = (d) => d.toISOString().slice(0, 10).replace(/-/g, "");

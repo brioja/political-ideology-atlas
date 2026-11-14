@@ -12,20 +12,15 @@ const { ROOT, readJson } = require("./lib");
 
 const CATALOG = path.join(ROOT, "audits", "catalog.json");
 const API = "https://en.wikipedia.org/w/api.php";
-const HEADERS = { "user-agent": "political-ideology-atlas/1.0 (https://github.com/brioja)" };
+const { politeFetch } = require("./fetch");
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// Throttled, with backoff when Wikipedia rate-limits us.
+// Paced, with 429s waited out (scripts/fetch.js).
 async function api(params) {
   const url = `${API}?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-  for (let attempt = 0; ; attempt++) {
-    await sleep(400);
-    const res = await fetch(url, { headers: HEADERS });
-    if (res.ok) return res.json();
-    if (res.status !== 429 || attempt >= 5) throw new Error(`${res.status} for ${url}`);
-    await sleep(5000 * (attempt + 1));
-  }
+  const res = await politeFetch(url, { pauseMs: 400 });
+  if (res.ok) return res.json();
+  throw new Error(`${res.status} for ${url}`);
 }
 
 const articleUrl = (title) => `https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, "_"))}`;
