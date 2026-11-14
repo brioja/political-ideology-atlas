@@ -130,3 +130,9 @@ passing power to a child) rotated line 6. Its ends now read more like establishe
 "Centralism / Decentralism" for now, re-anchoring Decentralism with direct-votes, because statements are
 still changing. Decide when every statement passes the wording check (no errors or warnings): candidates
 were "Institutions / Populism" and "Rule of law / Popular will".
+
+## Closest across eras or places (idea, 2026-11-14)
+
+Beside "People who think like you": the closest historical figure next to the closest living one, or the closest
+person in each region (people already carry `born`/`living` and `region`). Offered with "Your opposites" and "What
+sets you apart" (both shipped 2026-11-14); not picked yet.
