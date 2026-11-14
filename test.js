@@ -316,7 +316,10 @@ console.log(`people.js: ${PEOPLE.length} entries (${PEOPLE.filter((p) => p.kind 
   assert.deepStrictEqual(decodeShare(encodeShare(decodeShare(v3, ids, fileSlots), ids, fileSlots), ids, fileSlots), given, "v3 -> v4 round-trip");
   // "4." links are gap-packed: a sparse result is short, long skips are exact, nothing answered is "4.".
   const sparse = ids.map(() => null);
-  for (const [k, a] of [[0, -2], [11, 2], [12, 0], [200, 1], [fileSlots.length - 1, -1]]) sparse[ids.indexOf(fileSlots[k])] = a;
+  // Slots of demoted statements stay in share-slots.json (append-only) but have no question: pick the nearest active
+  // slot at or before each position, so a demotion (e.g. of the newest statement) doesn't break the test.
+  const activeAt = (k) => { while (k > 0 && !ids.includes(fileSlots[k])) k--; return k; };
+  for (const [k, a] of [[0, -2], [11, 2], [12, 0], [200, 1], [fileSlots.length - 1, -1]]) sparse[ids.indexOf(fileSlots[activeAt(k)])] = a;
   const s4 = encodeShare(sparse, ids, fileSlots);
   assert(/^4\.[A-Za-z0-9_-]+$/.test(s4) && s4.length < 15, `sparse v4 link is short and URL-safe: ${s4}`);
   assert.deepStrictEqual(decodeShare(s4, ids, fileSlots), sparse, "sparse v4 round-trip (gaps of 0, 10, 0, 187, and to the last slot)");
