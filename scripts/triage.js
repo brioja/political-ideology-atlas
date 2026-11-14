@@ -23,15 +23,7 @@ async function entities(qids) {
   for (let i = 0; i < qids.length; i += 50) {
     const batch = qids.slice(i, i + 50);
     const url = `https://www.wikidata.org/w/api.php?${new URLSearchParams({ action: "wbgetentities", ids: batch.join("|"), props: "claims|sitelinks", format: "json" })}`;
-    let r;
-    for (let tries = 0; ; tries++) {
-      try { r = await lib.cachedJson(url, { pauseMs: 2000 }); break; }
-      catch (e) {
-        const m = e.message.match(/429.*retry-after (\d+)/);
-        if (!m || tries >= 5) throw e;
-        await new Promise((res) => setTimeout(res, (Number(m[1]) + 15) * 1000));
-      }
-    }
+    const r = await lib.cachedJson(url, { pauseMs: 2000 }); // waits out a 429 itself
     for (const [q, e] of Object.entries(r.entities || {})) {
       const c = e.claims || {};
       const vals = (p) => (c[p] || []).map((s) => s.mainsnak && s.mainsnak.datavalue && s.mainsnak.datavalue.value && s.mainsnak.datavalue.value.id).filter(Boolean);

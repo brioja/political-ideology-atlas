@@ -20,19 +20,8 @@ const path = require("path");
 const lib = require("./lib");
 
 const OUT = path.join(lib.ROOT, "audits", "wikipedia-articles.json");
-// Cached; a 429 is waited out (its retry-after plus a margin), at most three times in a run.
-let throttles = 0;
-async function get(params) {
-  const url = `https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
-  for (;;) {
-    try { return await lib.cachedJson(url, { pauseMs: 5000 }); }
-    catch (e) {
-      const m = e.message.match(/429.*retry-after (\d+)/);
-      if (!m || ++throttles > 60) throw e;
-      await new Promise((r) => setTimeout(r, (Number(m[1]) + 10) * 1000));
-    }
-  }
-}
+// Cached; lib.cachedJson waits out a 429 itself.
+const get = (params) => lib.cachedJson(`https://en.wikipedia.org/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`, { pauseMs: 5000 });
 // Redirect categories that make a redirect another name for its target.
 const SAME = /Redirects from (alternative|other|alternate|modification|short|long|plural|ambiguous term|abbreviation|acronym|initialism|alternative spelling|alternative name|alternative language|non-English|other language|other capitalisation|miscapitalisation|American|British|incorrect hyphenation|hyphenation|diacritic|ASCII|title without diacritics|unnecessary disambiguation|synonym)/i;
 const OTHER = /Redirects (from subtopic|to related topic|to section|to anchor|to list|from member|from related word|with possibilities|from former name|from historic name)/i;

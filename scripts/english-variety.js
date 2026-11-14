@@ -22,12 +22,7 @@ const TEMPLATES = {
 };
 const titleOf = (e) => decodeURIComponent(String(e.wikipedia || "").replace(/^https?:\/\/en\.wikipedia\.org\/wiki\//, "")).replace(/_/g, " ");
 
-async function get(url) {
-  for (let t = 0; ; t++) {
-    try { return await lib.cachedJson(url, { pauseMs: 3000 }); }
-    catch (e) { const m = e.message.match(/retry-after (\d+)/); if (!m || t >= 10) throw e; await new Promise((r) => setTimeout(r, (+m[1] + 10) * 1000)); }
-  }
-}
+const get = (url) => lib.cachedJson(url, { pauseMs: 3000 }); // waits out a 429 itself
 
 async function main() {
   const entries = [...lib.catalog().map((e) => ({ id: e.id, title: lib.articleTitle(e) })), ...lib.peopleCatalog().map((p) => ({ id: p.id, title: titleOf(p) }))]

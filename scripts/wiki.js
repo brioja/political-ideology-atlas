@@ -11,17 +11,8 @@
 "use strict";
 const lib = require("./lib");
 
-async function cached(url) {
-  for (let tries = 0; ; tries++) {
-    try { return await lib.cachedJson(url, { pauseMs: 3000 }); }
-    catch (e) {
-      const m = e.message.match(/429.*retry-after (\d+)/);
-      if (!m || tries >= 5) throw e;
-      process.stderr.write(`rate-limited, waiting ${Number(m[1]) + 10} s\n`);
-      await new Promise((r) => setTimeout(r, (Number(m[1]) + 10) * 1000));
-    }
-  }
-}
+// lib.cachedJson waits out a 429 itself.
+const cached = (url) => lib.cachedJson(url, { pauseMs: 3000 });
 const title = (s) => decodeURIComponent(String(s).replace(/^https?:\/\/en\.(m\.)?wikipedia\.org\/wiki\//, "").replace(/[#?].*$/, "")).replace(/_/g, " ");
 const api = (host, params) => `https://${host}/w/api.php?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
 
