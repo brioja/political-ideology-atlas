@@ -692,6 +692,15 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
         <p class="lede">Political leaders, thinkers and activists from every region, era and side of politics. Your results show whose recorded positions are closest to yours.</p>
       </div>
       <p class="notice" id="people-status" hidden></p>
+      <figure>
+        <div class="row map-pickers">
+          <label for="people-across">Across</label><select id="people-across" class="across"></select>
+          <label for="people-up">Up</label><select id="people-up" class="up"></select>
+        </div>
+        <svg id="people-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the people on two dividing lines"></svg>
+        <figcaption class="map-note"></figcaption>
+      </figure>
+      <div class="pick" id="people-pick" hidden></div>
       <div class="stack" id="people-browse">
         <label class="visually-hidden" for="people-search">Search people</label>
         <input id="people-search" class="search" type="search" placeholder="Search by name or role" autocomplete="off">

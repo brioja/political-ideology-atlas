@@ -73,6 +73,8 @@ function savedResult() {
 
 // How many dividing lines to show: the real ones (matchLines in pca.js, counted by the build and
 // shipped with the model), at least 2 and at most MAX_SHOWN_LINES (pca.js).
+// People placed on the same lines (people.js, loaded only where people are included).
+const PEOPLE_LIST = typeof PEOPLE === "undefined" ? [] : PEOPLE;
 const REAL_LINES = matchLines(model);
 const SHOWN_LINES = Math.min(MAX_SHOWN_LINES, model.components.length, Math.max(2, REAL_LINES));
 
@@ -154,6 +156,10 @@ const lineTitle = (L) => (L.unnamed ? esc(L.name) : `${endTitle(L.low, L.lowId)}
 const POINT = "var(--muted)";
 const styleOf = () => ({ shape: "circle" });
 const colorOf = () => POINT;
+// The one map marker, for ideologies and people alike, so every map draws them the same way: a filled
+// circle, larger for your top match, faded when other dots carry the labels.
+const mapMarker = (x, y, { hot = false, faded = false } = {}) =>
+  el("path", { d: shapePath(styleOf().shape, x, y, hot ? 6.5 : 4.5), fill: colorOf(), opacity: faded ? 0.4 : 1 });
 
 // SVG path data for a marker of radius r centered on (x, y). Path2D accepts the same data,
 // so the share image draws identical shapes.
@@ -202,14 +208,20 @@ function el(tag, attrs, text) {
   return node;
 }
 
-// Draws ideologies (and optionally you) on two dividing lines. Every dot can be tapped or
-// clicked: it gets a label on the map and `onPick(ideology)` is called. Tapping it again, tapping
-// empty space or pressing Escape clears it and calls `onUnpick()`. Returns `pick(id)` so other
-// parts of the page can select a dot too; `svg.unpick()` clears the selection.
-function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onPick = null, onUnpick = null } = {}) {
+// Draws ideologies or people (`show`), and optionally you, on two dividing lines. People sit on the
+// same lines as ideologies (their `at`, placed at build time) and are drawn as rings. Every dot can be
+// tapped or clicked: it gets a label on the map and `onPick(item, kind)` is called, kind "ideology" or
+// "person". Tapping it again, tapping empty space or pressing Escape clears it and calls `onUnpick()`.
+// Returns `pick(id)` so other parts of the page can select a dot too; `svg.unpick()` clears the selection.
+// `labels` names the ideologies labelled on the map, `peopleLabels` the people (by id).
+function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, peopleLabels = null, spreadPeople = 0, show = "ideologies", onPick = null, onUnpick = null } = {}) {
   svg.replaceChildren();
   const W = 640, H = 440, pad = 46;
-  const points = model.ideologies.map((i) => [i.scores[xi], i.scores[yi]]);
+  const dots = [
+    ...(show === "ideologies" ? model.ideologies.map((i) => ({ kind: "ideology", key: i.id, item: i, name: i.name, s: i.scores })) : []),
+    ...(show === "people" ? PEOPLE_LIST.map((p) => ({ kind: "person", key: `p:${p.id}`, item: p, name: p.name, s: p.at })) : []),
+  ];
+  const points = dots.map((d) => [d.s[xi], d.s[yi]]);
   if (you) points.push([you[xi], you[yi]]);
   const lim = Math.max(...points.flat().map(Math.abs)) * 1.1;
   const sx = (v) => W / 2 + (v / lim) * (W / 2 - pad);
@@ -231,19 +243,46 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
   const placed = [];
   if (you) placed.push({ x0: sx(you[xi]) - 16, x1: sx(you[xi]) + 16, y0: sy(you[yi]) - 26, y1: sy(you[yi]) + 10 });
   const hits = (b) => b.x0 < 4 || b.x1 > W - 4 || placed.some((p) => b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0);
+  // `spreadPeople`: name that many people picked at random, each at least SPREAD from the others on the map,
+  // so the names spread out and don't overlap (Brandon: random rather than most-viewed, which favoured whoever
+  // is in the news).
+  if (spreadPeople && show === "people") {
+    const SPREAD = 70, chosen = [];
+    // Start with two outliers, so the map's edges get names (a quiz taker's suggestion, 2026-11-15): one of the
+    // 5 farthest from the centre, then one of the 5 farthest in a different direction (over 90 degrees away);
+    // the rest in random order.
+    const far = [...dots].sort((a, b) => Math.hypot(b.s[xi], b.s[yi]) - Math.hypot(a.s[xi], a.s[yi]));
+    const anyOf = (list) => list[Math.floor(Math.random() * Math.min(5, list.length))];
+    const angle = (d) => Math.atan2(d.s[yi], d.s[xi]);
+    const first = anyOf(far);
+    const turn = (d) => Math.abs(Math.atan2(Math.sin(angle(d) - angle(first)), Math.cos(angle(d) - angle(first))));
+    const second = anyOf(far.filter((d) => turn(d) > Math.PI / 2));
+    const seeds = [first, second].filter(Boolean);
+    for (const d of [...seeds, ...dots.filter((d) => !seeds.includes(d)).sort(() => Math.random() - 0.5)]) {
+      const x = sx(d.s[xi]), y = sy(d.s[yi]);
+      if (chosen.every((c) => Math.hypot(c.x - x, c.y - y) >= SPREAD)) chosen.push({ x, y, id: d.item.id });
+      if (chosen.length >= spreadPeople) break;
+    }
+    peopleLabels = new Set(chosen.map((c) => c.id));
+  }
+  // Which dots carry a name on the map: the given ideologies (all of them when no set is given and only
+  // ideologies are shown) and the given people.
+  const labelled = (d) => (d.kind === "ideology" ? (labels ? labels.has(d.name) : show === "ideologies") : !!peopleLabels && peopleLabels.has(d.item.id));
+  const faded = (d) => (d.kind === "ideology" ? !!labels && !labels.has(d.name) : !!peopleLabels && !peopleLabels.has(d.item.id));
   // Unlabeled dots first, so labeled ones are drawn on top.
-  const ordered = labels ? [...model.ideologies].sort((a, b) => labels.has(a.name) - labels.has(b.name)) : model.ideologies;
-  for (const ideo of ordered) {
-    const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
-    const hot = ideo.name === highlight;
-    const g = el("g", { class: "dot", "data-id": ideo.id });
-    g.append(el("title", {}, ideo.name));
-    g.append(el("path", { d: shapePath(styleOf(ideo).shape, x, y, hot ? 6.5 : 4.5), fill: colorOf(ideo), opacity: !labels || labels.has(ideo.name) ? 1 : 0.4 }));
+  const ordered = [...dots].sort((a, b) => labelled(a) - labelled(b));
+  for (const d of ordered) {
+    const x = sx(d.s[xi]), y = sy(d.s[yi]);
+    const hot = d.kind === "ideology" && d.name === highlight;
+    const g = el("g", { class: "dot", "data-id": d.key });
+    g.append(el("title", {}, d.name));
+    g.append(mapMarker(x, y, { hot, faded: faded(d) }));
     // Your top match: same marker, larger, with a dark ring (not a different color).
     if (hot) g.append(el("circle", { cx: x, cy: y, r: 11, fill: "none", stroke: "var(--ink)", "stroke-width": 2 }));
     g.append(el("circle", { cx: x, cy: y, r: 13, fill: "transparent" })); // bigger tap target
     svg.append(g);
-    if (labels && !labels.has(ideo.name)) continue;
+    if (!labelled(d)) continue;
+    const ideo = d; // the label code below reads .name
     const w = ideo.name.length * 6.4;
     let spot = null;
     for (const dy of [0, -12, 12, -24, 24]) {
@@ -278,11 +317,11 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     if (onUnpick) onUnpick();
   };
   const pick = (id) => {
-    const ideo = model.ideologies.find((i) => i.id === id);
+    const ideo = dots.find((d) => d.key === id);
     if (!ideo) return;
     if (id === picked) return unpick();
     picked = id;
-    const x = sx(ideo.scores[xi]), y = sy(ideo.scores[yi]);
+    const x = sx(ideo.s[xi]), y = sy(ideo.s[yi]);
     pickLayer.replaceChildren();
     const ring = el("circle", { cx: x, cy: y, r: 12, fill: "none", stroke: "var(--ink)", "stroke-width": 1.5, "stroke-dasharray": "3 2" });
     const label = el("text", { class: "pick-lbl", x, y: y - 16, "text-anchor": "middle" }, ideo.name);
@@ -294,7 +333,7 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
     if (b.y < 4) label.setAttribute("y", y + 26);
     const nb = label.getBBox();
     for (const [k, v] of Object.entries({ x: nb.x - 6, y: nb.y - 3, width: nb.width + 12, height: nb.height + 6 })) box.setAttribute(k, v);
-    if (onPick) onPick(ideo);
+    if (onPick) onPick(ideo.item, ideo.kind);
   };
   svg.setAttribute("viewBox", "0 0 640 440");
   svg.onclick = (e) => {
@@ -309,9 +348,22 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, onP
 
 // Draws the flat map with "Across" and "Up" pickers over the real dividing lines.
 // `figure` holds the svg, the two selects and a .map-note caption; `opts` go to drawMap.
+// A select.show switches between ideologies and people (only where PEOPLE is loaded); without one the map
+// shows `opts.show` ("ideologies" or "people"). Never both at once: overlaid they're too crowded (Brandon).
 function mountMap(figure, opts, { extraNote = "" } = {}) {
   const svg = figure.querySelector("svg"), note = figure.querySelector(".map-note");
   const xs = figure.querySelector("select.across"), ys = figure.querySelector("select.up");
+  const shows = figure.querySelector("select.show");
+  if (shows) {
+    if (PEOPLE_LIST.length) {
+      shows.innerHTML = [["ideologies", "Ideologies"], ["people", "People"]].map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
+      shows.value = opts.show || "ideologies";
+    } else {
+      shows.hidden = true;
+      const label = figure.querySelector(`label[for="${shows.id}"]`);
+      if (label) label.hidden = true;
+    }
+  }
   const options = Array.from({ length: SHOWN_LINES }, (_, i) => `<option value="${i}">${esc(lineInfo(i).name)}</option>`).join("");
   xs.innerHTML = options;
   ys.innerHTML = options;
@@ -325,11 +377,15 @@ function mountMap(figure, opts, { extraNote = "" } = {}) {
     }
     const x = Number(xs.value), y = Number(ys.value);
     lastX = x; lastY = y;
-    drawMap(svg, x, y, opts);
+    const show = shows && PEOPLE_LIST.length ? shows.value : opts.show || "ideologies";
+    if (svg.unpick) svg.unpick();
+    drawMap(svg, x, y, { ...opts, show });
     const share = model.components[x].share + model.components[y].share;
-    note.textContent = `Together these two lines cover about ${pct(share)} of how ideologies differ. Tap a dot to see which ideology it is. ${extraNote}`;
+    note.textContent = `Together these two lines cover about ${pct(share)} of how ideologies differ. ` +
+      `Tap a dot to see which ${show === "people" ? "person" : "ideology"} it is. ${extraNote}`;
   };
   xs.onchange = ys.onchange = draw;
+  if (shows) shows.onchange = draw;
   draw();
 }
 
@@ -630,6 +686,19 @@ function pickCard(container, ideo, { similarity = null, onClose = null } = {}) {
   if (onClose) container.querySelector(".pick-close").onclick = onClose;
 }
 
+// The card for a tapped person on a map: who they are, their match if given, and a link to their page.
+function personPickCard(container, p, { similarity = null, onClose = null } = {}) {
+  container.hidden = false;
+  container.innerHTML = `
+    <div class="pick-head"><h3>${avatar(p, 28)} ${esc(p.name)}</h3>
+      ${similarity != null ? `<span class="mono small">${pct(similarity)} match</span>` : ""}
+      ${onClose ? `<button type="button" class="pick-close" aria-label="Close">×</button>` : ""}</div>
+    ${p.role ? `<p class="muted small">${esc(p.role)}</p>` : ""}
+    ${p.summary ? `<p>${esc(p.summary)}</p>` : ""}
+    <p><a class="more-link" href="${personHref(p.id)}">Open the full page for ${esc(p.name)} →</a></p>`;
+  if (onClose) container.querySelector(".pick-close").onclick = onClose;
+}
+
 function readMore(ideo) {
   const links = [];
   if (ideo.wikipedia) links.push(`<a href="${esc(ideo.wikipedia)}" target="_blank" rel="noopener">Wikipedia</a>`);
@@ -869,6 +938,7 @@ function showResults(shared = null) {
         <div class="row map-pickers">
           <label for="result-across">Across</label><select id="result-across" class="across"></select>
           <label for="result-up">Up</label><select id="result-up" class="up"></select>
+          <label for="result-show">Show</label><select id="result-show" class="show"></select>
         </div>
         <svg id="result-map" class="chart" viewBox="0 0 640 440" role="img" aria-label="Map of the ideologies on two dividing lines"></svg>
         <figcaption class="map-note"></figcaption>
@@ -925,8 +995,14 @@ function showResults(shared = null) {
 
   const near = new Set(ranked.slice(0, 8).map((r) => r.name));
   const simById = new Map(ranked.map((r) => [r.id, r.similarity]));
+  // People closest to you are named when people are shown; a tapped person shows their match.
+  const peopleRanked = PEOPLE_LIST.length ? matchPeople(model, given, PEOPLE_LIST) : [];
+  const personSim = new Map(peopleRanked.map((p) => [p.id, p.similarity]));
   mountMap($("result-map").closest("figure"), { you, highlight: top.name, labels: model.ideologies.length > 25 ? near : null,
-    onPick: (ideo) => pickCard($("result-pick"), ideo, { similarity: simById.get(ideo.id), onClose: () => $("result-map").unpick() }),
+    peopleLabels: new Set(peopleRanked.slice(0, 6).map((p) => p.id)),
+    onPick: (item, kind) => (kind === "person"
+      ? personPickCard($("result-pick"), item, { similarity: personSim.get(item.id), onClose: () => $("result-map").unpick() })
+      : pickCard($("result-pick"), item, { similarity: simById.get(item.id), onClose: () => $("result-map").unpick() })),
     onUnpick: () => { $("result-pick").hidden = true; } },
     { extraNote: `Close dots answer alike. ${shared ? "Their" : "Your"} match list uses every answer, not just these lines.` });
 
@@ -1673,10 +1749,15 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 // ---------- Static page content ----------
 
 const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
+const mapPick = (box, svgId) => (item, kind) => (kind === "person" ? personPickCard : pickCard)($(box), item, { onClose: () => $(svgId).unpick() });
 mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25 ? extremes : null,
-  onPick: (ideo) => pickCard($("ideo-pick"), ideo, { onClose: () => $("ideo-map").unpick() }),
+  onPick: mapPick("ideo-pick", "ideo-map"),
   onUnpick: () => { $("ideo-pick").hidden = true; } },
   { extraNote: "Close dots answer alike." });
+// The People page map: people only, with the same Across and Up pickers as the other maps.
+if (PEOPLE_LIST.length) mountMap($("people-map").closest("figure"), { show: "people", spreadPeople: 14, onPick: mapPick("people-pick", "people-map"), onUnpick: () => { $("people-pick").hidden = true; } },
+  { extraNote: "Close dots answer alike." });
+else $("people-map").closest("figure").hidden = true;
 // The deploy writes the count in already (scripts/pages.js --stamp); rewriting the same text would
 // repaint the hero paragraph, which browsers then report as the page's main paint.
 for (const el of document.querySelectorAll(".ideology-count")) {
@@ -1815,7 +1896,6 @@ function renderPeople() {
 // ---------- Detail pages: one per ideology and per person ----------
 // (Row and link helpers are function declarations: the lists use them before this point in the file.)
 
-const PEOPLE_LIST = typeof PEOPLE === "undefined" ? [] : PEOPLE;
 function ideologyHref(id) { return `#/ideologies/${encodeURIComponent(id)}`; }
 function personHref(id) { return `#/people/${encodeURIComponent(id)}`; }
 // Profiles can cover more statements than the site's current model; use only the shared ones.
