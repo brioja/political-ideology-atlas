@@ -969,7 +969,12 @@ function listLineSizes(box) {
   // The smaller, unnamed lines in a collapsed section, as on the results page (moreLines).
   const n = lines.length - SHOWN_LINES;
   box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
-    ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary><ol class="line-sizes">${lines.slice(SHOWN_LINES).join("")}</ol></details>`
+    ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary>` +
+      // Why they have no names (backlog/decided-against.md, 2026-11-01), in plain words.
+      `<p class="ls-why">These lines have no names. Each is small and mixes several issues rather than one clear idea, ` +
+      `and what goes into it shifts as ideologies are added or revised, so any name would mislead or soon go out of date. ` +
+      `They still count: your matches use all ${REAL_LINES} lines, and your results list the statements behind each one.</p>` +
+      `<ol class="line-sizes">${lines.slice(SHOWN_LINES).join("")}</ol></details>`
     : "");
   // What the percentages mean, in plain words; the total says why they don't add up to 100%.
   const total = model.components.slice(0, REAL_LINES).reduce((t, c) => t + c.share, 0);
