@@ -401,8 +401,8 @@ const QUESTIONS = [
   "id": "state-directs-investment",
   "theme": "economy",
   "text": "The state should direct investment toward strategic industries.",
-  "agree": "The government should steer money into industries it considers important.",
-  "disagree": "The state should not direct investment toward strategic industries.",
+  "agree": "The government should steer investment into industries it sees as key to the country's future.",
+  "disagree": "The government should not steer investment into industries it sees as key to the country's future.",
   "note": "About industrial policy: the state backing industries it sees as key, such as energy, chips or steel.",
   "icon": "🏗️"
  },
@@ -3758,8 +3758,8 @@ const QUESTIONS = [
   "id": "sacred-nation",
   "theme": "culture",
   "text": "The nation is a sacred community that outlasts its members, giving their lives lasting meaning.",
-  "agree": "The nation is a sacred, enduring community in which individuals find lasting meaning.",
-  "disagree": "The nation is not a sacred community that outlasts its members, giving their lives lasting meaning.",
+  "agree": "Belonging to the nation ties a person's life to a sacred community that goes on after their death.",
+  "disagree": "Belonging to the nation does not tie a person's life to a sacred community that goes on after their death.",
   "note": "About seeing the nation as a sacred community that outlasts its members and gives their lives meaning. Ordinary patriotism or pride in one's country is not enough.",
   "icon": "⛪"
  },
