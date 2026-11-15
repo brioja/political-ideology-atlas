@@ -299,6 +299,20 @@ function quizOrder() {
   return order;
 }
 
-module.exports = { quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+// Every audit's answer to one statement, with the subject's id and kind.
+function answersTo(id) {
+  const out = [];
+  for (const [dir, kind] of [["profiles", "ideology"], ["people", "person"]]) {
+    const d = path.join(ROOT, "audits", dir);
+    for (const f of fs.readdirSync(d).filter((f) => f.endsWith(".json"))) {
+      const a = readJson(path.join(d, f));
+      const x = a.answers && a.answers[id];
+      if (x && x.value !== null && x.value !== undefined) out.push({ who: `${dir}/${f.replace(/\.json$/, "")}`, kind, value: x.value, rationale: x.rationale || "" });
+    }
+  }
+  return out;
+}
+
+module.exports = { answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

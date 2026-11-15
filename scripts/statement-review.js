@@ -10,7 +10,7 @@
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, allStatements, quizOrder, wordingMarks, wordingRe, WORDING, COMPARATIVES, wordingReason } = require("./lib");
+const { ROOT, readJson, allStatements, quizOrder, answersTo, wordingMarks, wordingRe, WORDING, COMPARATIVES, wordingReason } = require("./lib");
 
 const OUT = path.join(ROOT, "scratchpad", "statement-review");
 const idArg = process.argv.indexOf("--id");
@@ -41,20 +41,6 @@ function queue() {
   const sent = (s) => fs.existsSync(maintainerFile(s.id));
   const all = quizOrder().map((id, i) => ({ step: i + 1, s: byId.get(id) })).filter((x) => x.s && (fails(x.s) || sent(x.s)));
   return [...all.filter((x) => hasError(x.s) || sent(x.s)), ...all.filter((x) => !hasError(x.s) && !sent(x.s))];
-}
-
-// Every audit's answer to one statement, with the subject's id and kind.
-function answersTo(id) {
-  const out = [];
-  for (const [dir, kind] of [["profiles", "ideology"], ["people", "person"]]) {
-    const d = path.join(ROOT, "audits", dir);
-    for (const f of fs.readdirSync(d).filter((f) => f.endsWith(".json"))) {
-      const a = readJson(path.join(d, f));
-      const x = a.answers && a.answers[id];
-      if (x && x.value !== null && x.value !== undefined) out.push({ who: `${dir}/${f.replace(/\.json$/, "")}`, kind, value: x.value, rationale: x.rationale || "" });
-    }
-  }
-  return out;
 }
 
 // Samples per value, rationales that weigh two things against each other first: those are where a statement that
