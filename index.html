@@ -186,7 +186,7 @@ details.how > .stack { margin-top: 1rem; }
 .axis-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
 .line-weight { width: 5rem; height: 6px; align-self: center; }
 /* About page: how much each dividing line covers, as rows of name, bar and share (readable at any width). */
-.line-sizes { list-style: none; margin: 0 0 0.5rem; padding: 0; display: grid; gap: 0.6rem; }
+.line-sizes { list-style: none; margin: 0 0 0.75rem; padding: 0; display: grid; gap: 0.6rem; }
 .line-sizes li { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name pct" "bar bar"; gap: 0.2rem 0.75rem; align-items: center; }
 .line-sizes .ls-name { grid-area: name; font-size: 0.95rem; overflow-wrap: anywhere; }
 .line-sizes .ls-pct { grid-area: pct; font: 400 0.85rem var(--mono); color: var(--muted); text-align: right; }
@@ -714,8 +714,8 @@ a.btn.big { padding: 1rem 1.5rem; font-size: 1.05rem; }
       <p><strong>The ideologies.</strong> Each of the <span class="ideology-count">many</span> ideologies has an answer to every statement, describing how a committed adherent would answer.</p>
       <p><strong>The dividing lines.</strong> The test looks at how the ideologies' answers differ and finds the directions in which they differ most, using a method called principal component analysis. To tell real dividing lines from noise, it shuffles every statement's answers at random many times and keeps only the lines that are clearly bigger than anything the shuffled data produces.</p>
       <figure>
-        <ol id="line-sizes" class="line-sizes" aria-label="How much of the disagreement between ideologies each dividing line accounts for"></ol>
-        <figcaption>How much of the disagreement between ideologies each line accounts for. Coloured bars are the lines shown in your results.</figcaption>
+        <div id="line-sizes" aria-label="How much of the disagreement between ideologies each dividing line accounts for"></div>
+        <figcaption>How much of the disagreement between ideologies each line accounts for. The named lines are the ones drawn in your results.</figcaption>
       </figure>
       <p><strong>The questions.</strong> Statements are picked one at a time. The first ones are those the ideologies disagree about most. After that, each statement is the one that best separates the ideologies you're still close to, so you can stop early once they've narrowed it down.</p>
       <p><strong>The match percentage.</strong> Your answers place you on the real dividing lines, and the percentage is how close you sit to each ideology there. 100% means the same place, and 0% means as far apart as the two most opposite ideologies.</p>

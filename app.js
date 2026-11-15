@@ -958,16 +958,19 @@ function showResults(shared = null) {
 // About page: one row per real dividing line with its name, a bar scaled to the biggest line and its share;
 // the lines drawn in results are coloured, the smaller unnamed ones muted. HTML rather than a chart, so the
 // names and numbers stay readable on a phone.
-function listLineSizes(list) {
+function listLineSizes(box) {
   const max = maxShare();
   // One decimal under 10%, so the small lines don't all read "1%".
   const share = (x) => (x < 0.1 ? `${(x * 100).toFixed(1)}%` : pct(x));
-  list.innerHTML = model.components.slice(0, REAL_LINES).map((c, i) => {
-    const shown = i < SHOWN_LINES;
-    return `<li class="${shown ? "shown" : "unshown"}"><span class="ls-name">${i + 1}. ${esc(lineInfo(i).name)}</span>` +
-      `<span class="bar" aria-hidden="true"><span style="width:${pct(c.share / max)}"></span></span>` +
-      `<span class="ls-pct">${share(c.share)}</span></li>`;
-  }).join("");
+  const row = (c, i) => `<li class="${i < SHOWN_LINES ? "shown" : "unshown"}"><span class="ls-name">${i + 1}. ${esc(lineInfo(i).name)}</span>` +
+    `<span class="bar" aria-hidden="true"><span style="width:${pct(c.share / max)}"></span></span>` +
+    `<span class="ls-pct">${share(c.share)}</span></li>`;
+  const lines = model.components.slice(0, REAL_LINES).map(row);
+  // The smaller, unnamed lines in a collapsed section, as on the results page (moreLines).
+  const n = lines.length - SHOWN_LINES;
+  box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
+    ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary><ol class="line-sizes">${lines.slice(SHOWN_LINES).join("")}</ol></details>`
+    : "");
 }
 
 // ---------- Sharing ----------
