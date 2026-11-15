@@ -1754,10 +1754,10 @@ const mapPick = (box, svgId) => (item, kind) => (kind === "person" ? personPickC
 mountMap($("ideo-map").closest("figure"), { spread: 14,
   onPick: mapPick("ideo-pick", "ideo-map"),
   onUnpick: () => { $("ideo-pick").hidden = true; } },
-  { extraNote: "Close dots answer alike." });
+  { extraNote: "Close dots answer alike. The names are picked at random: two near the edges, then others spread out so they don't overlap." });
 // The People page map: people only, with the same Across and Up pickers as the other maps.
 if (PEOPLE_LIST.length) mountMap($("people-map").closest("figure"), { show: "people", spread: 14, onPick: mapPick("people-pick", "people-map"), onUnpick: () => { $("people-pick").hidden = true; } },
-  { extraNote: "Close dots answer alike." });
+  { extraNote: "Close dots answer alike. The names are picked at random: two near the edges, then others spread out so they don't overlap." });
 else $("people-map").closest("figure").hidden = true;
 // The deploy writes the count in already (scripts/pages.js --stamp); rewriting the same text would
 // repaint the hero paragraph, which browsers then report as the page's main paint.
