@@ -555,7 +555,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "My country should be militarily stronger than its rivals.",
   "agree": "My country's military strength should exceed that of its rivals.",
-  "disagree": "My country should not seek greater military strength than its rivals.",
+  "disagree": "My country need not be militarily stronger than its rivals.",
   "note": "This concerns superiority, not merely adequate defence, parity, high spending or a larger domestic arms industry. It does not assert that the country currently has superiority.",
   "icon": "🛩️"
  },
