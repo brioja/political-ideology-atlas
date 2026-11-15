@@ -49,7 +49,8 @@ The integrator reviews each proposal and applies the accepted ones.
   subjects want in its place, stated broadly enough for all of them ("Society needs government of some
   kind"); what they accept that the statement rules out ("A country may let foreign allies keep troops and
   bases on its land"); "at least as much" for a comparison; a "need not" or "may" framed around the
-  practical case rather than the agree's words.
+  practical case rather than the agree's words. Where no positive opposite fits, the negation rephrased in
+  other words is fine: a rewording still helps a reader see the meaning (Brandon, 2026-11-15).
 - **Plain neutral words**, one sentence each, nothing either side would call loaded. Don't imply everyone is
   one of two genders.
 - **"Keep" is a fine verdict** when no faithful rewording exists; say why.
