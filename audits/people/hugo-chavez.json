@@ -1,8 +1,11 @@
 {
   "id": "hugo-chavez",
   "name": "Hugo Chávez",
-  "auditedAt": "2026-10-22",
-  "auditor": "gpt-6.1-sol",
+  "auditedAt": "2026-11-15",
+  "auditor": [
+    "gpt-6.1-sol",
+    "claude-sonnet-5-5"
+  ],
   "living": false,
   "role": "President of Venezuela (1999–2013)",
   "summary": "Chávez promoted Bolivarian socialism through public control of strategic resources, social programmes and communal participation. He combined competitive elections and recall mechanisms with concentrated executive power, and pursued Latin American cooperation and a multipolar international order.",
@@ -14,7 +17,8 @@
       "title": "2012 election programme for the 2013–2019 socialist Bolivarian government",
       "author": "Hugo Chávez",
       "url": "https://links.org.au/venezuela-hugo-chavezs-six-year-plan-bolivarian-revolution",
-      "usedFor": "public-ownership; empower-police-military; rehabilitation; socialized-markets; tariffs-protect-industry; state-directs-investment; expand-fossil-fuels; close-ties-china; national-resource-control; multipolar-world"
+      "usedFor": "public-ownership; empower-police-military; rehabilitation; socialized-markets; tariffs-protect-industry; state-directs-investment; expand-fossil-fuels; close-ties-china; national-resource-control; multipolar-world",
+      "evidence": "words"
     },
     {
       "id": "climate",
@@ -22,23 +26,26 @@
       "title": "Speech at Copenhagen climate conference (16 December 2009)",
       "author": "Hugo Chávez",
       "url": "https://venezuelanalysis.com/analysis/5013/",
-      "usedFor": "limit-growth; drastic-climate-action; consumerism-harmful; existential-risk-priority; future-generations"
+      "usedFor": "limit-growth; drastic-climate-action; consumerism-harmful; existential-risk-priority; future-generations",
+      "evidence": "words"
     },
     {
       "id": "un",
       "kind": "primary",
-      "title": "Speech to the United Nations (20 September 2006)",
+      "title": "Speech to the United Nations General Assembly (20 September 2006), Hands Off Venezuela transcript",
       "author": "Hugo Chávez",
       "url": "https://www.handsoffvenezuela.org/chavez-speech-united-nations21.htm",
-      "usedFor": "empower-international-orgs; humanitarian-intervention; national-self-determination; force-without-un; dominated-front"
+      "usedFor": "empower-international-orgs; humanitarian-intervention; national-self-determination; force-without-un; dominated-front",
+      "evidence": "words"
     },
     {
       "id": "constitution",
       "kind": "primary",
-      "title": "Constitution of the Bolivarian Republic of Venezuela (1999)",
+      "title": "Constitution of the Bolivarian Republic of Venezuela (1999, revised 2009), Constitute Project copy",
       "author": "Venezuelan National Constituent Assembly",
-      "url": "https://www.refworld.org/sites/default/files/attachments/5485a9064.pdf",
-      "usedFor": "universal-healthcare; cut-welfare; restrict-hate-speech; direct-votes; indigenous-land-authority; proportional-representation; recall-officials; death-penalty; minority-language-support; religious-exemptions; free-public-college; religious-equal-recognition"
+      "url": "https://www.constituteproject.org/constitution/Venezuela_2009",
+      "usedFor": "universal-healthcare; cut-welfare; restrict-hate-speech; direct-votes; indigenous-land-authority; proportional-representation; recall-officials; death-penalty; minority-language-support; religious-exemptions; free-public-college; religious-equal-recognition",
+      "evidence": "action"
     },
     {
       "id": "communes",
@@ -46,7 +53,8 @@
       "title": "Golpe de Timón: cabinet speech (20 October 2012)",
       "author": "Hugo Chávez",
       "url": "https://www.marxists.org/espanol/chavez/2012/2012-golpe-de-timon.pdf",
-      "usedFor": "markets-allocate-better; worker-ownership; central-planning; workplace-democracy; party-controls-media; participatory-democracy; municipal-property; democracy-is-procedure"
+      "usedFor": "markets-allocate-better; worker-ownership; central-planning; workplace-democracy; party-controls-media; participatory-democracy; municipal-property; democracy-is-procedure",
+      "evidence": "words"
     },
     {
       "id": "crs",
@@ -54,7 +62,8 @@
       "title": "Venezuela: Issues for Congress (27 June 2011)",
       "author": "Mark P. Sullivan, Congressional Research Service",
       "url": "https://www.everycrsreport.com/files/20110627_R40938_cbbc8490e9937d08f911fba839b422face8a729c.html",
-      "usedFor": "strong-leader; one-party-rule; separated-powers; unlimited-reelection; suppress-opposition; term-limits"
+      "usedFor": "strong-leader; one-party-rule; separated-powers; unlimited-reelection; suppress-opposition; term-limits",
+      "evidence": "action"
     },
     {
       "id": "guns",
@@ -62,7 +71,8 @@
       "title": "Chávez prohíbe venta de armas a civiles (2 June 2012)",
       "author": "La Tercera",
       "url": "https://www.latercera.com/diario-impreso/chavez-prohibe-venta-de-armas-a-civiles-para-frenar-ola-de-violencia/",
-      "usedFor": "limit-guns"
+      "usedFor": "limit-guns",
+      "evidence": "action"
     },
     {
       "id": "labor",
@@ -70,7 +80,8 @@
       "title": "En vigor reforma de Ley del Trabajo en Venezuela (8 May 2012)",
       "author": "AFP",
       "url": "https://www.elespectador.com/mundo/america/en-vigor-reforma-de-ley-del-trabajo-en-venezuela-article-344637/",
-      "usedFor": "regulate-corporations"
+      "usedFor": "regulate-corporations",
+      "evidence": "action"
     },
     {
       "id": "reference",
@@ -78,7 +89,53 @@
       "title": "Hugo Chávez",
       "author": "Wikipedia contributors",
       "url": "https://en.wikipedia.org/wiki/Hugo_Ch%C3%A1vez",
-      "usedFor": "revolution-justified; political-violence-never"
+      "usedFor": "superseded: only in the reviewHistory of revolution-justified and political-violence-never (replaced by crs)",
+      "evidence": "action"
+    },
+    {
+      "id": "ungdc",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Speeches of Hugo Chávez to the UN General Assembly general debate, 1999, 2001, 2002 and 2009 (UN General Debate Corpus, Harvard Dataverse)",
+      "author": "Hugo Chávez",
+      "url": "https://doi.org/10.7910/DVN/0TJX8Y",
+      "usedFor": "constituent-assembly; financial-transactions-tax; restructure-world-economy; world-economy-extracts-surplus; rich-countries-aid-poor; profit-exploitation; parliamentary-road-socialism"
+    },
+    {
+      "id": "un05",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Speech to the 60th UN General Assembly (15 September 2005), Marxists Internet Archive copy of the Wikisource text",
+      "author": "Hugo Chávez",
+      "url": "https://www.marxists.org/espanol/chavez/2005/0001.htm",
+      "usedFor": "free-trade; restructure-world-economy"
+    },
+    {
+      "id": "comunas09",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Aló Presidente Teórico No. 1: Las comunas y los cinco frentes para la construcción del socialismo (11 June 2009)",
+      "author": "Hugo Chávez",
+      "url": "https://www.marxists.org/espanol/chavez/2009/2009-comunas-y-cinco-frentes.pdf",
+      "usedFor": "self-interest-moral; moral-incentives; cooperative-communities"
+    },
+    {
+      "id": "mensaje11",
+      "kind": "primary",
+      "evidence": "words",
+      "title": "Mensaje anual a la Asamblea Nacional (15 January 2011)",
+      "author": "Hugo Chávez",
+      "url": "https://www.marxists.org/espanol/chavez/2011/2011-mensaje-anual-a-la-asamblea-nacional.pdf",
+      "usedFor": "personal-possessions-private"
+    },
+    {
+      "id": "hrw",
+      "kind": "reference",
+      "evidence": "action",
+      "title": "A Decade Under Chávez: Political Intolerance and Lost Opportunities for Advancing Human Rights in Venezuela (Human Rights Watch, 2008)",
+      "author": "Human Rights Watch",
+      "url": "https://www.hrw.org/report/2008/09/18/decade-chavez/political-intolerance-and-lost-opportunities-advancing-human-rights",
+      "usedFor": "independent-unions"
     }
   ],
   "answers": {
@@ -91,10 +148,12 @@
       ]
     },
     "raise-minimum-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Article 91 has the State guarantee a vital minimum salary adjusted each year with the cost of a basic market basket as one reference, though the article does not set the level itself.",
+      "sources": [
+        "constitution"
+      ]
     },
     "markets-allocate-better": {
       "value": -2,
@@ -309,10 +368,12 @@
       ]
     },
     "free-trade": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "At the UN in 2005 he called market opening and neoliberal policies the fundamental cause of the misery and inequality of Latin America (un05).",
+      "sources": [
+        "un05"
+      ]
     },
     "nation-first": {
       "value": null,
@@ -387,9 +448,31 @@
     "revolution-justified": {
       "value": -2,
       "confidence": "high",
-      "rationale": "He attempted an armed uprising in 1992 before pursuing a revolutionary programme through elections.",
+      "rationale": "CRS reports that in February 1992 he led an unsuccessful military attempt to overthrow the elected president Carlos Andrés Pérez.",
       "sources": [
-        "reference"
+        "crs"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "He attempted an armed uprising in 1992 before pursuing a revolutionary programme through elections.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "CRS reports that in February 1992 he led an unsuccessful military attempt to overthrow the elected president Carlos Andrés Pérez.",
+          "sources": [
+            "crs"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-15"
+        }
       ]
     },
     "experts-over-public": {
@@ -543,9 +626,31 @@
     "political-violence-never": {
       "value": -2,
       "confidence": "high",
-      "rationale": "His role in the 1992 attempted coup demonstrates acceptance of armed political change.",
+      "rationale": "CRS reports that in February 1992 he led an unsuccessful military coup attempt against the elected president, a record of armed political action.",
       "sources": [
-        "reference"
+        "crs"
+      ],
+      "reviewHistory": [
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "His role in the 1992 attempted coup demonstrates acceptance of armed political change.",
+          "sources": [
+            "reference"
+          ],
+          "author": "gpt-6.1-sol",
+          "date": "2026-10-22"
+        },
+        {
+          "value": -2,
+          "confidence": "high",
+          "rationale": "CRS reports that in February 1992 he led an unsuccessful military coup attempt against the elected president, a record of armed political action.",
+          "sources": [
+            "crs"
+          ],
+          "author": "claude-sonnet-5-5",
+          "date": "2026-11-15"
+        }
       ]
     },
     "war-builds-character": {
@@ -617,10 +722,12 @@
       "sources": []
     },
     "self-interest-moral": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "In the 2009 Aló Presidente Teórico he made social duty the first front of socialism and set love of others against egoism, which he said is impossible under capitalism (comunas09).",
+      "sources": [
+        "comunas09"
+      ]
     },
     "duties-before-rights": {
       "value": null,
@@ -719,10 +826,12 @@
       "sources": []
     },
     "profit-exploitation": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "At the UN in 2009 he asked why one or two capitalists should exploit many people, presenting worker takeover of a factory as socialism (ungdc, 2009 speech).",
+      "sources": [
+        "ungdc"
+      ]
     },
     "dictatorship-of-proletariat": {
       "value": null,
@@ -1103,10 +1212,12 @@
       "sources": []
     },
     "consent-of-governed": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "Article 5 of the constitution states that sovereignty resides untransferably in the people and that State organs emanate from it.",
+      "sources": [
+        "constitution"
+      ]
     },
     "trade-surplus": {
       "value": null,
@@ -1245,10 +1356,12 @@
       "sources": []
     },
     "head-commands-forces": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 236 makes the President commander in chief with supreme hierarchical authority over the National Armed Forces, including promotion of senior officers.",
+      "sources": [
+        "constitution"
+      ]
     },
     "church-by-bishops": {
       "value": null,
@@ -1399,10 +1512,12 @@
       "sources": []
     },
     "constituent-assembly": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "As he told the UN General Assembly in 1999, he called a referendum on 25 April 1999 that approved electing a constituent assembly, and its members were elected on 25 July (ungdc, 1999 speech).",
+      "sources": [
+        "ungdc"
+      ]
     },
     "restrict-freedoms-for-growth": {
       "value": null,
@@ -1411,10 +1526,12 @@
       "sources": []
     },
     "rich-countries-aid-poor": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "In 2002 he proposed an international humanitarian fund for the world poor, financed by a share of global military spending and other sources (ungdc, 2002 speech).",
+      "sources": [
+        "ungdc"
+      ]
     },
     "independent-nuclear-deterrent": {
       "value": null,
@@ -1423,10 +1540,12 @@
       "sources": []
     },
     "direct-election-head-of-state": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 228 of the constitution he promoted fills the presidency by universal suffrage with a direct secret ballot.",
+      "sources": [
+        "constitution"
+      ]
     },
     "central-bank-independence": {
       "value": null,
@@ -1645,10 +1764,12 @@
       "sources": []
     },
     "moral-incentives": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He made the moral front, the awareness of social duty over egoism and material gain, the first of five fronts of socialism construction (comunas09).",
+      "sources": [
+        "comunas09"
+      ]
     },
     "armed-group-creates-revolution": {
       "value": null,
@@ -1735,10 +1856,12 @@
       "sources": []
     },
     "elective-rulers": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 228 of the constitution he promoted makes the President of the Republic an elected office, chosen by direct secret ballot.",
+      "sources": [
+        "constitution"
+      ]
     },
     "minority-veto": {
       "value": null,
@@ -1795,10 +1918,12 @@
       "sources": []
     },
     "world-economy-extracts-surplus": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "At the UN in 2002 he described external debt as a perverse mechanism through which poor countries transfer billions to the developed world, leaving Latin America owing more after repaying more than twice its debt (ungdc, 2002 speech).",
+      "sources": [
+        "ungdc"
+      ]
     },
     "native-born-offices": {
       "value": null,
@@ -1977,10 +2102,12 @@
       "sources": []
     },
     "restrict-foreign-funding": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "medium",
+      "rationale": "CRS reports a December 2010 law, passed under his government, barring civil society groups that defend political rights or monitor government bodies from receiving foreign funds.",
+      "sources": [
+        "crs"
+      ]
     },
     "pronatalist-incentives": {
       "value": null,
@@ -2079,10 +2206,12 @@
       "sources": []
     },
     "personal-possessions-private": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "In his 2011 annual message he quoted Marx that personal and family private property is the base of human liberation, while pressing social ownership of production.",
+      "sources": [
+        "mensaje11"
+      ]
     },
     "defeat-communism": {
       "value": null,
@@ -2133,10 +2262,12 @@
       "sources": []
     },
     "cooperative-communities": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He proposed communes as the basic cell of the socialist territorial state, combining social property and communal self-government, alongside broader state ownership (comunas09).",
+      "sources": [
+        "comunas09"
+      ]
     },
     "majority-settlement": {
       "value": null,
@@ -2477,10 +2608,12 @@
       "sources": []
     },
     "no-foreign-bases": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 13 of the constitution bars any foreign military bases or facilities with military purposes on Venezuelan territory.",
+      "sources": [
+        "constitution"
+      ]
     },
     "recognise-genocide": {
       "value": null,
@@ -2567,10 +2700,12 @@
       "sources": []
     },
     "independent-unions": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": -2,
+      "confidence": "medium",
+      "rationale": "HRW reports his government interfered in union elections and bargaining and favoured parallel unions supporting its agenda.",
+      "sources": [
+        "hrw"
+      ]
     },
     "socialism-needs-workers-power": {
       "value": null,
@@ -2605,10 +2740,12 @@
       "sources": []
     },
     "family-wage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 91 gives every worker a right to a salary sufficient to cover basic material, social and intellectual needs for himself or herself and the family.",
+      "sources": [
+        "constitution"
+      ]
     },
     "ageing-research-funding": {
       "value": null,
@@ -2741,10 +2878,13 @@
       "sources": []
     },
     "state-arms-monopoly": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 324 of the constitution permits only the State to possess and use weapons of war, and his government banned private sales of firearms and ammunition in 2012.",
+      "sources": [
+        "constitution",
+        "guns"
+      ]
     },
     "soldiers-refuse-war": {
       "value": null,
@@ -2771,10 +2911,13 @@
       "sources": []
     },
     "restructure-world-economy": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "He called for a new international economic order correcting inequalities between developed and developing countries and revived the 1974 UN programme for it (un05; ungdc, 2002 speech).",
+      "sources": [
+        "un05",
+        "ungdc"
+      ]
     },
     "smash-state-machine": {
       "value": null,
@@ -2937,10 +3080,12 @@
       "sources": []
     },
     "women-suffrage": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Articles 21 and 63 of the constitution prohibit discrimination based on sex and guarantee universal suffrage.",
+      "sources": [
+        "constitution"
+      ]
     },
     "religion-oppresses-women": {
       "value": null,
@@ -3133,10 +3278,12 @@
       "sources": []
     },
     "financial-transactions-tax": {
-      "value": null,
-      "confidence": "low",
-      "rationale": "No recorded position found in the sources reviewed.",
-      "sources": []
+      "value": 2,
+      "confidence": "high",
+      "rationale": "At the UN in 2002 he proposed financing an international humanitarian fund in part with a tax on major speculative capital transactions (ungdc, 2002 speech).",
+      "sources": [
+        "ungdc"
+      ]
     },
     "racism-not-main-obstacle": {
       "value": null,
@@ -3196,9 +3343,679 @@
         "constitution"
       ],
       "auditor": "claude-opus-5-5"
+    },
+    "torture-always-illegal": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 46 of the constitution prohibits torture and cruel, inhuman or degrading treatment, and in states of exception (article 337) keeps the prohibition on torture in force.",
+      "sources": [
+        "constitution"
+      ]
+    },
+    "reserved-seats-excluded-groups": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 125 of the constitution guarantees Indigenous representation in the National Assembly and in local deliberating bodies.",
+      "sources": [
+        "constitution"
+      ]
+    },
+    "indigenous-internal-justice": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "Article 260 empowers the legitimate authorities of native peoples to apply justice based on ancestral traditions to their own members, within the constitution and public order.",
+      "sources": [
+        "constitution"
+      ]
+    },
+    "human-caused-global-warming": {
+      "value": 2,
+      "confidence": "high",
+      "rationale": "At Copenhagen in 2009 he named the destructive metabolism of capital and capitalism as the cause of the climate disaster and urged cutting emissions.",
+      "sources": [
+        "climate"
+      ]
+    },
+    "parliamentary-road-socialism": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "He described the Latin American revolution to the UN in 2009 as a peaceful, deeply democratic mass revolution with a strong socialist element, pursued through elections (ungdc, 2009 speech).",
+      "sources": [
+        "ungdc"
+      ]
+    },
+    "replace-appointed-officials": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "money-backed-by-precious-metals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-off-national-debt": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-indigenous-peoples": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-central-bank": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civilians-legitimate-targets": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "destroy-worshipped-objects": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religious-offensive-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "human-decline-since-golden-age": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "return-to-pre-conversion-religion": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "religion-from-peoples-character": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "divinely-chosen-superior-people": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-supports-good-ways-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-ethnic-return-migration": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-stability-first": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "race-based-immigration-restrictions": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "technology-never-politically-neutral": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "labour-priority-over-capital": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitutional-jury-trial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "generational-constitutional-review": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "member-state-blocks-federal-overreach": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "maximum-personal-income": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "four-day-week": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "humans-entitled-to-use-animals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "troops-home-from-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "freedom-is-self-government-of-desire": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-becomes-oligarchy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-community-economic-control": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "slavery-reparations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "regional-resource-ownership": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "socialism-needs-revolutionary-war": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "military-organisation-revolutionary-party": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "country-wealth-only-from-land": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "no-transition-to-communism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "remove-other-ethnic-groups-from-country": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "physical-labour-duty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-disobedience-accept-penalty": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "worker-farmer-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "democracy-needs-political-clash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-borders-follow-ecosystems": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "exclude-trans-women-women-only-spaces": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "prohibit-child-medical-transition": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-anti-imperialist-capitalist-alliance": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "colonial-socialism-democratic-stage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-finances-worker-businesses": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "wages-fall-to-bare-minimum": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "work-centre-of-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "workers-parties-campaign-reforms": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "women-organise-apart-from-men": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "political-decisions-consensus": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "keep-public-institutions-small": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "pay-for-effort": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "say-in-proportion-to-effect": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "refuse-to-join-illegitimate-government": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "local-veto-new-housing": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "youth-equal-civil-rights": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "vote-at-sixteen": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "students-direct-own-learning": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "constitution-recognises-indigenous-nations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-income-tax": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "automation-leaves-most-without-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "municipal-businesses-mixed-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "tax-holding-cash": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "price-controls-fight-inflation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "femininity-compatible-with-feminism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unpaid-domestic-work-exploitation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "change-traditions-that-no-longer-suit": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-nudges": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "resist-oppression-despite-death": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "one-spouse-at-a-time": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "government-encourage-intercultural-contact": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "restrict-technology-exports-to-rivals": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "state-laws-apply-online": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "opposition-only-legal-channels": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "every-country-ready-for-democracy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "racial-oppression-before-sexism": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "promote-democracy-abroad": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "head-of-state-dissolves-parliament": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "mandatory-environmental-reporting": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "all-land-state-owned": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-trade-promotes-peace": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "arbitrator-settles-disputes": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "unions-run-economy": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "abolish-wage-labour": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "property-sabotage-justified": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "evolved-behavioural-sex-differences": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "free-basic-services-for-all": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "shut-down-tax-havens": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-patents-on-life": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "immigration-favours-shared-culture": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "allow-dual-citizenship": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "limit-campaign-donations": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "legal-duty-to-work": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "apologise-for-past-wrongs": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "armed-resistance-to-occupation": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "parents-choose-intersex-surgery": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "civil-marriage": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "conquest-no-lawful-claim": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ban-spanking": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "criminalize-genocide-denial": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "turn-back-illegal-migrants": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "ethnicity-statistics": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "build-apartments-freely": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "small-step-social-reform": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
+    },
+    "former-empire-equal-treatment": {
+      "value": null,
+      "confidence": "low",
+      "rationale": "No recorded position found.",
+      "sources": []
     }
   },
-  "notes": "His final election programme and October 2012 speech govern mature economic aims. Constitutional commitments are identified as such, while practice qualifies answers on executive checks and media. His oil expansion programme is recorded alongside climate rhetoric. Later policies under Nicolás Maduro are not attributed to Chávez.",
+  "notes": "His final election programme and October 2012 speech govern mature economic aims. Constitutional commitments are identified as such, while practice qualifies answers on executive checks and media. His oil expansion programme is recorded alongside climate rhetoric. Later policies under Nicolás Maduro are not attributed to Chávez. Pass of 2026-11-15 (claude-sonnet-5-5) searched his UN General Assembly speeches (1999, 2001, 2002, 2005, 2006, 2009), the Copenhagen speech, the Aló Presidente Teórico texts on communes (2009), the PSUV and the military doctrine, the 2011 annual message, the 2012 Golpe de Timón speech, the constitution as revised in 2009, the CRS report and Human Rights Watch 2008 for economy, government, world, ecology and society themes. Themes with no stated or recorded position of his stay null: sexuality and gender, abortion, drugs, technology, immigration and citizenship, most culture and religion questions, tax design and monetary rules. His El libro azul (1992) and the Aló Presidente transcripts were available locally but his speeches and the constitution already settled the answers given; Palabras de abril is an edited volume with other authors and was not used. Printed texts known to exist by him in the Project Gutenberg catalog, Miller Center and Voteview: none.",
   "reviews": [
     {
       "kind": "nulling",
@@ -3217,6 +4034,42 @@
       "reviewer": "claude-opus-5-5",
       "reviewedAt": "2026-11-12",
       "nulled": 1
+    }
+  ],
+  "rules": 7,
+  "passes": [
+    {
+      "auditor": "gpt-6.1-sol",
+      "auditedAt": "2026-10-22"
+    },
+    {
+      "auditor": "claude-sonnet-5-5",
+      "auditedAt": "2026-11-15"
+    }
+  ],
+  "booksNotUsed": [
+    {
+      "file": "El libro azul (1992), Marxists Internet Archive PDF",
+      "reason": "Read only for its outline of a federal, participatory state; its positions are covered by his later speeches and the constitution he promoted, which give the answers recorded."
+    },
+    {
+      "file": "Aló Presidente, tomo I: 1999, Marxists Internet Archive PDF",
+      "reason": "A collection of radio programmes whose topics are covered by his dated speeches and the constitution cited; not searched line by line."
+    }
+  ],
+  "notFound": [
+    {
+      "work": "Printed books by Hugo Chávez beyond those on the Marxists Internet Archive (e.g. interview books)",
+      "tried": [
+        {
+          "where": "Project Gutenberg catalog",
+          "how": "node scripts/gutenberg.js --search \"Chavez\""
+        },
+        {
+          "where": "local reference library",
+          "how": "ls reference/text and grep for Chávez; only Cesar Chavez and other authors appear"
+        }
+      ]
     }
   ]
 }
