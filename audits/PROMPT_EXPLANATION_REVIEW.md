@@ -19,10 +19,12 @@ first. Only the `agree` and `disagree` sentences change: never the statement tex
 3. Read more than the samples: the full `answers["<id>"]` in `audits/profiles/*.json` and `audits/people/*.json`.
    Each sentence must be true of every subject on its side, whatever their reason, so look at the different
    reasons they give, including the milder answers (±1).
-4. Score your sentences with the command in the brief: agree under 60% and disagree under 90% of words shared
-   with the statement.
-5. Write `scratchpad/explanation-review/<id>-results.md`, as the brief asks, with the `**Verdict:**`,
+4. Write `scratchpad/explanation-review/<id>-results.md`, as the brief asks, with the `**Verdict:**`,
    `**Agree:**` and `**Disagree:**` lines each on one line. That file marks the statement reviewed.
+5. Verify it: `node scripts/explanation-review.js check <id>`. It checks the three lines are there, that agree
+   shares under 60% and disagree under 90% of its words with the statement, that neither gives a reason or runs
+   to a second sentence, and that disagree has no either/or. Fix what it reports and run it again. It can't
+   judge meaning: whether each sentence is exactly the statement and fits every subject on its side is yours.
 6. Go back to 1. Stop at the number you were asked for (default 2), or at `none`.
 
 `node scripts/explanation-review.js list` shows the whole queue.

@@ -6,6 +6,8 @@
 // statements.json, and the integrator applies the accepted proposals (agree/disagree texts are the integrator's call).
 //   node scripts/explanation-review.js next   write the next brief, print its path (or "none")
 //   node scripts/explanation-review.js list   print the queue in quiz order, reviewed ones marked
+//   node scripts/explanation-review.js check <id>   verify a results file: the Verdict/Agree/Disagree lines are
+//     there, neither sentence restates the statement, no reason ("because", "so that"), one sentence each; exits 1 on a problem
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
@@ -103,8 +105,7 @@ ${side("Disagree", [-1, -2])}
   For "more A than B" keep both sides ("at least as much B as A").
 - Both are true of every subject who answers that way, whatever their reason (check the rationales above).
 - Plain, neutral words both sides would accept as fair. One sentence each.
-- Check: \`node scripts/statements-check.js --explanations\` scores the current texts; to score yours, run
-  \`node -e 'const {restateSimilarity}=require("./scripts/lib");console.log(restateSimilarity(process.argv[1],process.argv[2]))' "<statement>" "<your sentence>"\`.
+- Check: after writing the results file, run \`node scripts/explanation-review.js check ${s.id}\` and fix what it reports.
 
 ## Files
 
@@ -124,6 +125,26 @@ if (ONE) {
   const s = byId.get(ONE);
   if (!s) { console.error(`no statement ${ONE}`); process.exit(1); }
   write(quizOrder().indexOf(ONE) + 1 || "-", s);
+} else if (mode === "check") {
+  const id = process.argv[3], st = byId.get(id);
+  if (!st) { console.error(`no statement ${id}`); process.exit(1); }
+  const p = proposal(id);
+  if (!p) { console.error(`no ${path.relative(ROOT, resultsFile(id))}`); process.exit(1); }
+  const problems = [];
+  if (!p.verdict) problems.push("no **Verdict:** line");
+  const keep = p.verdict && /^keep\b/i.test(p.verdict);
+  for (const k of ["agree", "disagree"]) {
+    const t = p[k];
+    if (!t) { if (!keep) problems.push(`no **${k[0].toUpperCase() + k.slice(1)}:** line`); continue; }
+    const v = restateSimilarity(st.text, t);
+    console.log(`${k} ${Math.round(v * 100)}% shared (limit under ${Math.round(RESTATE_LIMITS[k] * 100)}%): ${t}`);
+    if (!keep && v >= RESTATE_LIMITS[k]) problems.push(`${k} still restates the statement`);
+    if (/\b(because|since|so that|in order to)\b/i.test(t)) problems.push(`${k} gives a reason ("because"/"since"/"so that"/"in order to"): explanations state the position only`);
+    if (/[.!?]\s+\S/.test(t.trim())) problems.push(`${k} has a second sentence: one sentence each`);
+    if (k === "disagree" && /\b(either|or)\b/i.test(t)) problems.push(`disagree has "or": an either/or is not a position (fine if it's part of one claim; say so in the reply)`);
+  }
+  if (problems.length) { for (const x of problems) console.log(`  problem: ${x}`); process.exit(1); }
+  console.log(keep ? "ok (keep)" : "ok");
 } else if (mode === "list") {
   const q = queue();
   const state = (s) => (reviewed(s) ? "reviewed" : fs.existsSync(resultsFile(s.id)) ? "redo    " : "pending ");
@@ -134,5 +155,5 @@ if (ONE) {
   if (!next) { console.log("none"); process.exit(0); }
   write(next.step, next.s);
 } else {
-  console.log("usage: node scripts/explanation-review.js next|list | --id <id>");
+  console.log("usage: node scripts/explanation-review.js next|list|check <id> | --id <id>");
 }
