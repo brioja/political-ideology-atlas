@@ -203,12 +203,13 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   while keeping equivalent exchange. Single-claim candidate `abolish-wage-labour` added; retire the
   bundle once audits answer it.
 
-- **Reword stay-neutral-between-blocs for readers** (tabled 2026-11-15). "My country should stay out of the military
-  blocs of rival great powers" reads to a quiz taker as blocs of *my* rivals; "competing great powers" read the same
-  way. In-place drafts (same claim, id and answers kept): "My country should stay neutral between the great powers'
-  military alliances" (preferred), "My country should not take sides between the military alliances of the great
-  powers". Decide when it comes up again.
-
+- **Reword stay-neutral-between-blocs for readers** (tabled 2026-11-15; addressed by the explanations). "My country
+  should stay out of the military blocs of rival great powers" read to a quiz taker as blocs of *my* rivals. The
+  "What does this mean?" sheet now says it without "rival" (agree "My country should stay neutral and join neither
+  of the opposing great-power alliances", disagree "My country may join a military alliance led by one of the great
+  powers"), so the statement keeps its wording. Reopen only if the misreading comes up again; in-place drafts then:
+  "My country should stay neutral between the great powers' military alliances" (preferred), "My country should not
+  take sides between the military alliances of the great powers".
 - **Agree and disagree that mirror each other** (noted 2026-11-15). After the explanation review, no agree or
   disagree restates its statement, but in 142 of 487 active statements the disagree is the agree with "not" added
   (90%+ of words shared, `restateSimilarity(agree, disagree)` in scripts/lib.js): the review's fallback when no
