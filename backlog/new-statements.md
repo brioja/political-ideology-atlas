@@ -208,3 +208,10 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   way. In-place drafts (same claim, id and answers kept): "My country should stay neutral between the great powers'
   military alliances" (preferred), "My country should not take sides between the military alliances of the great
   powers". Decide when it comes up again.
+
+- **Agree and disagree that mirror each other** (noted 2026-11-15). After the explanation review, no agree or
+  disagree restates its statement, but in 142 of 487 active statements the disagree is the agree with "not" added
+  (90%+ of words shared, `restateSimilarity(agree, disagree)` in scripts/lib.js): the review's fallback when no
+  positive opposite fits every disagreeing subject. The sheet then explains the position once and repeats it. Options
+  when picked up: extend `statements-check.js --explanations` to compare agree with disagree and run the review loop
+  on them, writing a positive disagree where one fits; or accept a mirrored pair where no positive opposite exists.
