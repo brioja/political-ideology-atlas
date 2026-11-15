@@ -214,7 +214,7 @@ function el(tag, attrs, text) {
 // "person". Tapping it again, tapping empty space or pressing Escape clears it and calls `onUnpick()`.
 // Returns `pick(id)` so other parts of the page can select a dot too; `svg.unpick()` clears the selection.
 // `labels` names the ideologies labelled on the map, `peopleLabels` the people (by id).
-function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, peopleLabels = null, spreadPeople = 0, show = "ideologies", onPick = null, onUnpick = null } = {}) {
+function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, peopleLabels = null, spread = 0, show = "ideologies", onPick = null, onUnpick = null } = {}) {
   svg.replaceChildren();
   const W = 640, H = 440, pad = 46;
   const dots = [
@@ -243,10 +243,11 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, peo
   const placed = [];
   if (you) placed.push({ x0: sx(you[xi]) - 16, x1: sx(you[xi]) + 16, y0: sy(you[yi]) - 26, y1: sy(you[yi]) + 10 });
   const hits = (b) => b.x0 < 4 || b.x1 > W - 4 || placed.some((p) => b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0);
-  // `spreadPeople`: name that many people picked at random, each at least SPREAD from the others on the map,
-  // so the names spread out and don't overlap (Brandon: random rather than most-viewed, which favoured whoever
-  // is in the news).
-  if (spreadPeople && show === "people") {
+  // `spread`: name that many of the shown dots (ideologies or people, the same rule for both), picked at random,
+  // each at least SPREAD from the others on the map, so the names spread out and don't overlap (Brandon: random
+  // rather than most-viewed people, which favoured whoever is in the news). Replaces `labels`/`peopleLabels`.
+  let spreadKeys = null;
+  if (spread) {
     const SPREAD = 70, chosen = [];
     // Start with two outliers, so the map's edges get names (a quiz taker's suggestion, 2026-11-15): one of the
     // 5 farthest from the centre, then one of the 5 farthest in a different direction (over 90 degrees away);
@@ -260,15 +261,15 @@ function drawMap(svg, xi, yi, { you = null, highlight = null, labels = null, peo
     const seeds = [first, second].filter(Boolean);
     for (const d of [...seeds, ...dots.filter((d) => !seeds.includes(d)).sort(() => Math.random() - 0.5)]) {
       const x = sx(d.s[xi]), y = sy(d.s[yi]);
-      if (chosen.every((c) => Math.hypot(c.x - x, c.y - y) >= SPREAD)) chosen.push({ x, y, id: d.item.id });
-      if (chosen.length >= spreadPeople) break;
+      if (chosen.every((c) => Math.hypot(c.x - x, c.y - y) >= SPREAD)) chosen.push({ x, y, key: d.key });
+      if (chosen.length >= spread) break;
     }
-    peopleLabels = new Set(chosen.map((c) => c.id));
+    spreadKeys = new Set(chosen.map((c) => c.key));
   }
   // Which dots carry a name on the map: the given ideologies (all of them when no set is given and only
   // ideologies are shown) and the given people.
-  const labelled = (d) => (d.kind === "ideology" ? (labels ? labels.has(d.name) : show === "ideologies") : !!peopleLabels && peopleLabels.has(d.item.id));
-  const faded = (d) => (d.kind === "ideology" ? !!labels && !labels.has(d.name) : !!peopleLabels && !peopleLabels.has(d.item.id));
+  const labelled = (d) => spreadKeys ? spreadKeys.has(d.key) : (d.kind === "ideology" ? (labels ? labels.has(d.name) : show === "ideologies") : !!peopleLabels && peopleLabels.has(d.item.id));
+  const faded = (d) => spreadKeys ? !spreadKeys.has(d.key) : (d.kind === "ideology" ? !!labels && !labels.has(d.name) : !!peopleLabels && !peopleLabels.has(d.item.id));
   // Unlabeled dots first, so labeled ones are drawn on top.
   const ordered = [...dots].sort((a, b) => labelled(a) - labelled(b));
   for (const d of ordered) {
@@ -1748,14 +1749,14 @@ async function drawCard(canvas, result = null, site = `${location.host}${locatio
 
 // ---------- Static page content ----------
 
-const extremes = new Set([0, 1].flatMap((i) => { const ax = describeAxis(model, i, QUESTIONS); return [...ax.lowEnd, ...ax.highEnd]; }));
 const mapPick = (box, svgId) => (item, kind) => (kind === "person" ? personPickCard : pickCard)($(box), item, { onClose: () => $(svgId).unpick() });
-mountMap($("ideo-map").closest("figure"), { labels: model.ideologies.length > 25 ? extremes : null,
+// Named like the People map: two outliers, then a random spread.
+mountMap($("ideo-map").closest("figure"), { spread: 14,
   onPick: mapPick("ideo-pick", "ideo-map"),
   onUnpick: () => { $("ideo-pick").hidden = true; } },
   { extraNote: "Close dots answer alike." });
 // The People page map: people only, with the same Across and Up pickers as the other maps.
-if (PEOPLE_LIST.length) mountMap($("people-map").closest("figure"), { show: "people", spreadPeople: 14, onPick: mapPick("people-pick", "people-map"), onUnpick: () => { $("people-pick").hidden = true; } },
+if (PEOPLE_LIST.length) mountMap($("people-map").closest("figure"), { show: "people", spread: 14, onPick: mapPick("people-pick", "people-map"), onUnpick: () => { $("people-pick").hidden = true; } },
   { extraNote: "Close dots answer alike." });
 else $("people-map").closest("figure").hidden = true;
 // The deploy writes the count in already (scripts/pages.js --stamp); rewriting the same text would
