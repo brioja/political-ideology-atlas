@@ -123,7 +123,7 @@ const QUESTIONS = [
   "theme": "liberty",
   "text": "The state should be abolished.",
   "agree": "Society would be better off without governments at all.",
-  "disagree": "The state should not be abolished.",
+  "disagree": "Society needs government of some kind.",
   "note": "About doing away with government entirely. Wanting a much smaller state is a different position.",
   "icon": "🏛️"
  },
@@ -167,8 +167,8 @@ const QUESTIONS = [
   "id": "traditional-family",
   "theme": "society",
   "text": "Traditional family structures are the foundation of a healthy society.",
-  "agree": "Traditional family structures are what a healthy society rests on.",
-  "disagree": "Traditional family structures are not the foundation of a healthy society.",
+  "agree": "A healthy society depends on the traditional family, such as a married mother and father raising their children.",
+  "disagree": "A healthy society does not depend on the traditional family, such as a married mother and father raising their children.",
   "note": "About whether the traditional family, such as a married mother and father raising their children, is what a healthy society rests on.",
   "icon": "👪"
  },
@@ -528,7 +528,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "The state should be strictly separate from religion.",
   "agree": "Government should maintain a strict institutional separation from religion.",
-  "disagree": "The state should not be strictly separate from religion.",
+  "disagree": "Some institutional ties between government and religion are acceptable.",
   "note": "About institutional separation, not whether religious people may hold personal beliefs or participate in public debate.",
   "icon": "🔀"
  },
@@ -564,7 +564,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "A nation should be made up mainly of one ethnic group.",
   "agree": "A nation should be mainly one ethnic people.",
-  "disagree": "A nation should not be made up mainly of one ethnic group.",
+  "disagree": "A nation does not need one main ethnic group: it can be made up of people of many ancestries.",
   "note": "About whether a country should belong mainly to one people of shared ancestry, rather than to all its citizens alike.",
   "icon": "🧬"
  },
@@ -654,7 +654,7 @@ const QUESTIONS = [
   "theme": "ecology",
   "text": "Industrial civilization has been a disaster for humanity.",
   "agree": "Industrial society has done more harm than good to humanity.",
-  "disagree": "Industrial civilization has not been a disaster for humanity.",
+  "disagree": "Industrial society has done at least as much good as harm to humanity.",
   "note": "About whether factories, machines and modern industry have, on the whole, harmed humanity.",
   "icon": "🚂"
  },
@@ -789,7 +789,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Collective farms should replace individually operated farms.",
   "agree": "Farming should be organized as joint cultivation by groups of farmers instead of separate individual farm operations.",
-  "disagree": "Collective farms should not replace individually operated farms.",
+  "disagree": "Individual farms should not give way to joint cultivation by groups of farmers.",
   "note": "About how cultivation is organized, not merely who owns the land. A collective farm pools the farming operation; a purchasing or marketing cooperative of otherwise separate farms does not by itself qualify. Collective farming need not be state-owned or compulsory. This asks which form should replace the other, without prescribing force or a timetable.",
   "icon": "🌾"
  },
@@ -1059,7 +1059,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Reason is more important than religious faith.",
   "agree": "Where they conflict, evidence and reasoning should count for more than faith, God, revelation or scripture.",
-  "disagree": "Reason is not more important than religious faith.",
+  "disagree": "Where they conflict, religious faith should count for at least as much as evidence and reasoning.",
   "note": "About whether, where they conflict, evidence and reasoning should count for more than religious faith. Whether tradition, feeling or will should guide us is a different question.",
   "icon": "🧠"
  },
@@ -1203,7 +1203,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "Society is organized in a way that systematically advantages men over women.",
   "agree": "Laws, institutions and customs still favor men over women.",
-  "disagree": "Society is not organized in a way that systematically advantages men over women.",
+  "disagree": "Laws, institutions and customs today do not systematically favor men over women.",
   "note": "About whether laws, institutions and customs systematically favor men over women today. Some individual cases of sexism are not enough.",
   "icon": "🏛️"
  },
@@ -1464,7 +1464,7 @@ const QUESTIONS = [
   "theme": "government",
   "text": "During a national emergency, governments should be allowed to suspend ordinary legal protections to defeat internal enemies.",
   "agree": "A national emergency sometimes justifies temporarily withdrawing normal legal safeguards against people the government regards as internal enemies, such as protections against detention without trial.",
-  "disagree": "Governments should not be allowed to suspend ordinary legal protections to defeat internal enemies, even during a national emergency.",
+  "disagree": "Ordinary legal protections, such as the right not to be held without trial, should stay in force even in a national emergency.",
   "note": "About permission to suspend normal safeguards during an emergency, not a requirement to do so in every emergency. Suspension might itself be authorised by a constitution; agreement does not require rejecting every legal limit or permitting every abuse. “Internal enemies” means those the government identifies as threats from within the country, not a judgment that its designation is correct.",
   "icon": "🚨"
  },
@@ -2157,7 +2157,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "Advanced societies have the right to rule less advanced ones for a time to improve them.",
   "agree": "Temporary rule by a more developed society is justified when it helps the ruled to progress.",
-  "disagree": "Advanced societies do not have the right to rule less advanced ones, even for a time to improve them.",
+  "disagree": "No society has the right to rule another for its supposed improvement, however advanced it is.",
   "note": "About temporary rule over other peoples for their supposed benefit, as in colonial 'civilizing missions'. Permanent domination for the rulers' own sake is a different claim.",
   "icon": "🧭"
  },
