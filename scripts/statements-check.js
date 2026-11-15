@@ -17,9 +17,33 @@
 //     the positive position instead, where one exists).
 //     Report only; statement-pass.js done refuses unexplained errors.
 //     --all also marks the active statements (reference only: a new meaning needs a new id; a reader fix keeps the id, see scripts/lib.js).
+//   node scripts/statements-check.js --explanations [--all]
+//     Lists agree and disagree sentences that only restate the statement (lib.js restateSimilarity at or above
+//     RESTATE_LIMITS), active statements in quiz order, then candidates with --all. "What does this mean?" shows
+//     them, so a restatement explains nothing (Brandon, 2026-11-15). Report only: the plain negation is an
+//     allowed fallback for disagree (STANDARD.md "Explanations").
 const fs = require("fs");
 const path = require("path");
-const { PROFILES_DIR, readJson, allStatements, isCandidate, WORDING, COMPARATIVES, wordingRe, wordingMarks, wordingReason } = require("./lib");
+const { PROFILES_DIR, readJson, allStatements, isCandidate, quizOrder, restateSimilarity, RESTATE_LIMITS, WORDING, COMPARATIVES, wordingRe, wordingMarks, wordingReason } = require("./lib");
+
+if (process.argv.includes("--explanations")) {
+  const byId = new Map(allStatements().map((s) => [s.id, s]));
+  const ordered = quizOrder();
+  const list = [...ordered, ...[...byId.keys()].filter((id) => !ordered.includes(id))].map((id) => byId.get(id))
+    .filter((s) => s && (process.argv.includes("--all") || !isCandidate(s)));
+  const count = { agree: 0, disagree: 0 };
+  for (const s of list) {
+    const hits = ["agree", "disagree"].map((k) => [k, restateSimilarity(s.text, s[k])]).filter(([k, v]) => s[k] && v >= RESTATE_LIMITS[k]);
+    if (!hits.length) continue;
+    hits.forEach(([k]) => count[k]++);
+    console.log(`  ${s.id}${isCandidate(s) ? " (candidate)" : ""}: ${s.text}`);
+    for (const [k, v] of hits) console.log(`      ${k} ${Math.round(v * 100)}%: ${s[k]}`);
+  }
+  console.log(`\n${list.length} statements: ${count.agree} agree and ${count.disagree} disagree sentences restate the statement ` +
+    `(content words shared: agree ${Math.round(RESTATE_LIMITS.agree * 100)}%+, disagree ${Math.round(RESTATE_LIMITS.disagree * 100)}%+). ` +
+    `An agree should help a reader see the position in other words; a disagree should be a clean positive opposite where one exists (STANDARD.md "Explanations").`);
+  process.exit(0);
+}
 
 if (process.argv.includes("--wording")) {
   const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));

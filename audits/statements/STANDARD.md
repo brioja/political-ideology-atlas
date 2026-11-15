@@ -104,6 +104,8 @@ rules, or the current amount is enough"): an either/or is not a position. For "A
 both sides ("Prisons should not put rehabilitation ahead of punishment"); for a statement that
 bundles two claims, "It is not true that ...". An `agree` sentence means exactly the statement, in other words that help a reader
 see the position; repeating the statement is the fallback when no faithful rewording exists.
+`node scripts/statements-check.js --explanations` lists the agree and disagree sentences that only restate
+the statement (in quiz order; `--all` adds candidates).
 Explanations are display text: fixing one doesn't change what was answered, so the id
 stays.
 

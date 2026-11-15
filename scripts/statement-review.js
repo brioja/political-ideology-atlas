@@ -10,29 +10,12 @@
 //   --id <id>: write the brief for that statement, reviewed or not
 const fs = require("fs");
 const path = require("path");
-const { ROOT, readJson, allStatements, wordingMarks, wordingRe, WORDING, COMPARATIVES, wordingReason } = require("./lib");
+const { ROOT, readJson, allStatements, quizOrder, wordingMarks, wordingRe, WORDING, COMPARATIVES, wordingReason } = require("./lib");
 
 const OUT = path.join(ROOT, "scratchpad", "statement-review");
 const idArg = process.argv.indexOf("--id");
 const ONE = idArg > -1 ? process.argv[idArg + 1] : null;
 const mode = process.argv[2];
-
-// Active statements in the order the quiz asks them. The selector picks by how much an answer would narrow your
-// place, which doesn't depend on the answers given, so one simulated respondent gives everyone's order (the
-// selector keeps ordering past the quiz's done point). Anything it doesn't reach follows in bank order.
-function quizOrder() {
-  const pca = require(path.join(ROOT, "pca.js"));
-  const data = require(path.join(ROOT, "data.js"));
-  const model = pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
-  const Q = data.QUESTIONS.length, answers = Array(Q).fill(null), asked = new Set(), order = [];
-  for (let k = 0; k < Q; k++) {
-    const r = pca.nextQuestion(model, answers, asked);
-    if (!r || r.q == null || asked.has(r.q)) break;
-    asked.add(r.q); answers[r.q] = 0; order.push(data.QUESTIONS[r.q].id);
-  }
-  for (const q of data.QUESTIONS) if (!order.includes(q.id)) order.push(q.id);
-  return order;
-}
 
 const statements = allStatements();
 const byId = new Map(statements.map((s) => [s.id, s]));

@@ -265,6 +265,40 @@ function wordingMarks(text) {
   return { errors: [...find(WORDING.errors), ...semicolon], warnings: [...new Set([...find(WORDING.warnings, t), ...relative, ...sentences])] };
 }
 
-module.exports = { wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+// How much of a statement an agree or disagree sentence only repeats: the share of content words the two have in
+// common (Jaccard over words with stopwords and negations removed, so "should not be X" scores 1 against "should
+// be X"). 1 is the statement's own words; a sentence that explains in other words scores low (Brandon, 2026-11-15:
+// a quiz taker found "What does this mean?" only restated the statement).
+const RESTATE_STOP = new Set(("a an the of to in on for and or by with as at from that which who whom is are was were be been being it its " +
+  "their there this these those should would will can may must do does did not no never nor need any all every each own one").split(" "));
+const restateWords = (t) => new Set((String(t || "").toLowerCase().replace(/\u2019/g, "'").match(/[a-z']+/g) || [])
+  .map((w) => w.replace(/'s$/, "")).filter((w) => !RESTATE_STOP.has(w)));
+function restateSimilarity(a, b) {
+  const A = restateWords(a), B = restateWords(b);
+  const shared = [...A].filter((w) => B.has(w)).length;
+  return shared / (new Set([...A, ...B]).size || 1);
+}
+// At or above these an explanation is reported as restating: an agree that rewords only a word or two, a disagree
+// that is the statement with "not" added (STANDARD.md allows the plain negation as a fallback, so that one is a nudge).
+const RESTATE_LIMITS = { agree: 0.6, disagree: 0.9 };
+
+// Active statements in the order the quiz asks them. The selector picks by how much an answer would narrow your
+// place, which doesn't depend on the answers given, so one simulated respondent gives everyone's order (the
+// selector keeps ordering past the quiz's done point). Anything it doesn't reach follows in bank order.
+function quizOrder() {
+  const pca = require(path.join(ROOT, "pca.js"));
+  const data = require(path.join(ROOT, "data.js"));
+  const model = pca.modelFromParts(data.IDEOLOGIES, data.MODEL, data.PLACEMENT);
+  const Q = data.QUESTIONS.length, answers = Array(Q).fill(null), asked = new Set(), order = [];
+  for (let k = 0; k < Q; k++) {
+    const r = pca.nextQuestion(model, answers, asked);
+    if (!r || r.q == null || asked.has(r.q)) break;
+    asked.add(r.q); answers[r.q] = 0; order.push(data.QUESTIONS[r.q].id);
+  }
+  for (const q of data.QUESTIONS) if (!order.includes(q.id)) order.push(q.id);
+  return order;
+}
+
+module.exports = { quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };
