@@ -279,8 +279,17 @@ function restateSimilarity(a, b) {
   return shared / (new Set([...A, ...B]).size || 1);
 }
 // At or above these an explanation is reported as restating: an agree that rewords only a word or two, a disagree
-// that is the statement with "not" added (STANDARD.md allows the plain negation as a fallback, so that one is a nudge).
-const RESTATE_LIMITS = { agree: 0.6, disagree: 0.9 };
+// that is the statement with "not" added, and (mirror) a disagree that is the agree with "not" added, so the sheet
+// explains the position once and repeats it (Brandon, 2026-11-15: both checks, no exceptions).
+const RESTATE_LIMITS = { agree: 0.6, disagree: 0.9, mirror: 0.9 };
+// Which explanations restate: "agree" and "disagree" against the statement, "mirror" the disagree against the agree.
+function restatedParts(s) {
+  const out = [];
+  if (s.agree && restateSimilarity(s.text, s.agree) >= RESTATE_LIMITS.agree) out.push(["agree", restateSimilarity(s.text, s.agree)]);
+  if (s.disagree && restateSimilarity(s.text, s.disagree) >= RESTATE_LIMITS.disagree) out.push(["disagree", restateSimilarity(s.text, s.disagree)]);
+  if (s.agree && s.disagree && restateSimilarity(s.agree, s.disagree) >= RESTATE_LIMITS.mirror) out.push(["mirror", restateSimilarity(s.agree, s.disagree)]);
+  return out;
+}
 
 // Active statements in the order the quiz asks them. The selector picks by how much an answer would narrow your
 // place, which doesn't depend on the answers given, so one simulated respondent gives everyone's order (the
@@ -313,6 +322,6 @@ function answersTo(id) {
   return out;
 }
 
-module.exports = { answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
+module.exports = { restatedParts, answersTo, quizOrder, restateSimilarity, RESTATE_LIMITS, wikipediaOtherNames, cachedJson, articleTitle, articleHtml, articleText, fetchArticle, duplicateOf, redirectAliases, articleKey, notable, WORDING, COMPARATIVES, WORDING_REASONS, wordingReason, wordingRe, wordingMarks, viewsPeriod, awaitingReaudit, linesKey, ROOT, PROFILES_DIR, readJson, allStatements, activeStatements, isCandidate, TEXTS, unanswered, catalog, profilePath,
   PEOPLE_DIR, peopleCatalog, personPath, thumbPath, shippedImage, CONTROLS_DIR, controlsCatalog, controlPath, personUncertainty, ideologyUncertainty,
   RULES, statedPositions, silentZeros, ideologyProfile, judgeParts, judgeFrom, completeIdeologies };

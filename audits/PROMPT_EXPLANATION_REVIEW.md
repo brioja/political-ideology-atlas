@@ -23,7 +23,8 @@ first. Only the `agree` and `disagree` sentences change: never the statement tex
    `**Agree:**` and `**Disagree:**` lines each on one line. That file marks the statement reviewed.
 5. Verify it: `node scripts/explanation-review.js check <id>`. It checks the three lines are there, that agree
    shares under 60% and disagree under 90% of its words with the statement, that neither gives a reason or runs
-   to a second sentence, and that disagree has no either/or. Fix what it reports and run it again. It can't
+   to a second sentence, that disagree has no either/or, and that disagree shares under 90% of its words with
+   agree. Fix what it reports and run it again. It can't
    judge meaning: whether each sentence is exactly the statement and fits every subject on its side is yours.
 6. Go back to 1. Stop at the number you were asked for (default 2), or at `none`.
 
@@ -43,9 +44,12 @@ The integrator reviews each proposal and applies the accepted ones.
   version. An example must be one every agreeing subject accepts.
 - **Disagree is a position, not the far extreme.** A clean positive opposite where one exists ("Military
   service should always be voluntary"); a -1 subject must fit it as well as a -2. If the only true opposite is
-  the plain negation, negate your new agree sentence rather than the statement, so both sides explain in the
-  same plain words (first reviews, 2026-11-15: "Belonging to the nation does not tie a person's life to a sacred
-  community that goes on after their death").
+  the plain negation, say what disagreeing looks like in practice instead of adding "not" to the agree: the
+  check rejects a disagree that repeats the agree (Brandon, 2026-11-15). Ways that work: what disagreeing
+  subjects want in its place, stated broadly enough for all of them ("Society needs government of some
+  kind"); what they accept that the statement rules out ("A country may let foreign allies keep troops and
+  bases on its land"); "at least as much" for a comparison; a "need not" or "may" framed around the
+  practical case rather than the agree's words.
 - **Plain neutral words**, one sentence each, nothing either side would call loaded. Don't imply everyone is
   one of two genders.
 - **"Keep" is a fine verdict** when no faithful rewording exists; say why.

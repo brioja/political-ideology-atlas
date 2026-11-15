@@ -24,23 +24,23 @@
 //     allowed fallback for disagree (STANDARD.md "Explanations").
 const fs = require("fs");
 const path = require("path");
-const { PROFILES_DIR, readJson, allStatements, isCandidate, quizOrder, restateSimilarity, RESTATE_LIMITS, WORDING, COMPARATIVES, wordingRe, wordingMarks, wordingReason } = require("./lib");
+const { PROFILES_DIR, readJson, allStatements, isCandidate, quizOrder, restateSimilarity, RESTATE_LIMITS, restatedParts, WORDING, COMPARATIVES, wordingRe, wordingMarks, wordingReason } = require("./lib");
 
 if (process.argv.includes("--explanations")) {
   const byId = new Map(allStatements().map((s) => [s.id, s]));
   const ordered = quizOrder();
   const list = [...ordered, ...[...byId.keys()].filter((id) => !ordered.includes(id))].map((id) => byId.get(id))
     .filter((s) => s && (process.argv.includes("--all") || !isCandidate(s)));
-  const count = { agree: 0, disagree: 0 };
+  const count = { agree: 0, disagree: 0, mirror: 0 };
   for (const s of list) {
-    const hits = ["agree", "disagree"].map((k) => [k, restateSimilarity(s.text, s[k])]).filter(([k, v]) => s[k] && v >= RESTATE_LIMITS[k]);
+    const hits = restatedParts(s);
     if (!hits.length) continue;
     hits.forEach(([k]) => count[k]++);
     console.log(`  ${s.id}${isCandidate(s) ? " (candidate)" : ""}: ${s.text}`);
-    for (const [k, v] of hits) console.log(`      ${k} ${Math.round(v * 100)}%: ${s[k]}`);
+    for (const [k, v] of hits) console.log(`      ${k} ${Math.round(v * 100)}%: ${k === "mirror" ? `disagree repeats agree: ${s.disagree}` : s[k]}`);
   }
-  console.log(`\n${list.length} statements: ${count.agree} agree and ${count.disagree} disagree sentences restate the statement ` +
-    `(content words shared: agree ${Math.round(RESTATE_LIMITS.agree * 100)}%+, disagree ${Math.round(RESTATE_LIMITS.disagree * 100)}%+). ` +
+  console.log(`\n${list.length} statements: ${count.agree} agree and ${count.disagree} disagree sentences restate the statement, ${count.mirror} disagree sentences repeat the agree ` +
+    `(content words shared: agree ${Math.round(RESTATE_LIMITS.agree * 100)}%+, disagree ${Math.round(RESTATE_LIMITS.disagree * 100)}%+, disagree against agree ${Math.round(RESTATE_LIMITS.mirror * 100)}%+). ` +
     `An agree should help a reader see the position in other words; a disagree should be a clean positive opposite where one exists (STANDARD.md "Explanations").`);
   process.exit(0);
 }
