@@ -106,7 +106,9 @@ function rangeBand(pos, x, sd, color = "var(--accent)") {
 // nearest that end, so labels stay short on phones and the share card; failing that, the most extreme.
 // How much of the differences between ideologies line i covers, relative to the biggest line (0-1):
 // shown as a bar, with the exact share only as a tooltip.
-const lineWeight = (i) => model.components[i].share / model.components[0].share;
+// The biggest line's share: lines 1-8 are rotated and ordered by their labels, so line 1 isn't always the biggest.
+const maxShare = () => Math.max(...model.components.slice(0, REAL_LINES).map((c) => c.share));
+const lineWeight = (i) => model.components[i].share / maxShare();
 const weightBar = (i) => `<span class="bar line-weight" role="img" title="${pct(model.components[i].share)} of the differences between ideologies" aria-label="${pct(model.components[i].share)} of the differences between ideologies"><span style="width:${pct(lineWeight(i))}"></span></span>`;
 
 const END_CHARS = 20;
@@ -953,23 +955,19 @@ function showResults(shared = null) {
   setHeaderAction(shared ? "take" : moreLeft ? "more" : "none");
 }
 
-function drawScree(svg) {
-  const W = 640, H = 220, left = 40, bottom = 30, top = 14;
-  const comps = model.components.slice(0, REAL_LINES);
-  const max = Math.ceil(comps[0].share * 10) / 10;
-  const bw = (W - left - 10) / comps.length;
-  const y = (v) => H - bottom - (v / max) * (H - bottom - top);
-  for (let t = 0; t <= max + 1e-9; t += 0.1) {
-    svg.append(el("line", { x1: left, x2: W - 10, y1: y(t), y2: y(t), stroke: "var(--line)" }));
-    svg.append(el("text", { x: left - 6, y: y(t) + 4, "text-anchor": "end" }, pct(t)));
-  }
-  comps.forEach((c, i) => {
-    const x = left + i * bw + 3;
-    const used = i < SHOWN_LINES;
-    svg.append(el("rect", { x, y: y(c.share), width: bw - 6, height: H - bottom - y(c.share),
-      fill: used ? "var(--accent)" : "var(--line)", rx: 2 }));
-    svg.append(el("text", { x: x + (bw - 6) / 2, y: H - bottom + 16, "text-anchor": "middle" }, i + 1));
-  });
+// About page: one row per real dividing line with its name, a bar scaled to the biggest line and its share;
+// the lines drawn in results are coloured, the smaller unnamed ones muted. HTML rather than a chart, so the
+// names and numbers stay readable on a phone.
+function listLineSizes(list) {
+  const max = maxShare();
+  // One decimal under 10%, so the small lines don't all read "1%".
+  const share = (x) => (x < 0.1 ? `${(x * 100).toFixed(1)}%` : pct(x));
+  list.innerHTML = model.components.slice(0, REAL_LINES).map((c, i) => {
+    const shown = i < SHOWN_LINES;
+    return `<li class="${shown ? "shown" : "unshown"}"><span class="ls-name">${i + 1}. ${esc(lineInfo(i).name)}</span>` +
+      `<span class="bar" aria-hidden="true"><span style="width:${pct(c.share / max)}"></span></span>` +
+      `<span class="ls-pct">${share(c.share)}</span></li>`;
+  }).join("");
 }
 
 // ---------- Sharing ----------
@@ -1680,7 +1678,7 @@ if (auditedCount < model.ideologies.length) {
     ? `Work in progress: ${auditedCount} of the ${model.ideologies.length} ideology profiles have been researched and sourced so far. The rest are preliminary profiles written by hand.`
     : `Work in progress: the ${model.ideologies.length} ideology profiles used right now are preliminary and written by hand. Researched, sourced profiles for over 250 ideologies are on the way.`;
 }
-drawScree($("scree"));
+listLineSizes($("line-sizes"));
 
 // The home page shows an example result drawn by the same code as the share image: a simulated
 // test-taker who leans toward a randomly chosen ideology (stops after 100 statements or more, says
