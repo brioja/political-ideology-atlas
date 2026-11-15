@@ -202,3 +202,9 @@ slovenian-nationalism, stoicism, egalitarianism, georgism (audits/profiles/<id>.
   should eventually be abolished." joins money with wages; the Pittsburgh programme ended wage labour
   while keeping equivalent exchange. Single-claim candidate `abolish-wage-labour` added; retire the
   bundle once audits answer it.
+
+- **Reword stay-neutral-between-blocs for readers** (tabled 2026-11-15). "My country should stay out of the military
+  blocs of rival great powers" reads to a quiz taker as blocs of *my* rivals; "competing great powers" read the same
+  way. In-place drafts (same claim, id and answers kept): "My country should stay neutral between the great powers'
+  military alliances" (preferred), "My country should not take sides between the military alliances of the great
+  powers". Decide when it comes up again.

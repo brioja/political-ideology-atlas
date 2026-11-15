@@ -136,3 +136,11 @@ were "Institutions / Populism" and "Rule of law / Popular will".
 Beside "People who think like you": the closest historical figure next to the closest living one, or the closest
 person in each region (people already carry `born`/`living` and `region`). Offered with "Your opposites" and "What
 sets you apart" (both shipped 2026-11-14); not picked yet.
+
+## Which pair of lines covers the most (tabled 2026-11-15)
+
+A quiz taker wanted to know which two lines cover the most and the fewest of how ideologies differ without trying
+every Across/Up pair (the map caption gives only the chosen pair's share), and found the About page chart showed
+little: its bars are numbered 1, 2, 3… with no names or percentages. The lines are sorted by size, so lines 1-2
+always cover the most. Options offered: each line's % in the Across/Up dropdowns; the % on each About chart bar
+with the drawn lines named; both. Decide on a second report or when the results page is next reworked.
