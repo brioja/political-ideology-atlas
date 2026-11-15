@@ -971,6 +971,11 @@ function listLineSizes(box) {
   box.innerHTML = `<ol class="line-sizes">${lines.slice(0, SHOWN_LINES).join("")}</ol>` + (n > 0
     ? `<details class="more-lines"><summary>${n} smaller dividing line${n === 1 ? "" : "s"}</summary><ol class="line-sizes">${lines.slice(SHOWN_LINES).join("")}</ol></details>`
     : "");
+  // What the percentages mean, in plain words; the total says why they don't add up to 100%.
+  const total = model.components.slice(0, REAL_LINES).reduce((t, c) => t + c.share, 0);
+  $("line-sizes-note").textContent = `Each percentage is how much of the difference between the ideologies' answers that line explains: ` +
+    `the bigger it is, the more statements it separates them on. Together these lines explain about ${pct(total)}; the rest is ` +
+    `disagreement on single issues that doesn't follow any broader divide. The named lines are the ones drawn in your results.`;
 }
 
 // ---------- Sharing ----------
