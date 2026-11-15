@@ -1311,7 +1311,7 @@ const QUESTIONS = [
   "theme": "society",
   "text": "State schools should not provide religious instruction.",
   "agree": "State schools should not teach religion.",
-  "disagree": "State schools may provide religious instruction.",
+  "disagree": "State schools may teach pupils a religious faith, for example through lessons in its beliefs and practice.",
   "note": "About whether state schools should teach religion as part of their instruction. Teaching about religions as a subject of study is a different question.",
   "icon": "🏫"
  },
@@ -2535,7 +2535,7 @@ const QUESTIONS = [
   "theme": "economy",
   "text": "Foreigners should not be allowed to own land in the country.",
   "agree": "Land stays in the hands of citizens; foreigners may not buy it.",
-  "disagree": "Foreigners should be allowed to own land in the country.",
+  "disagree": "Being a foreigner should not by itself bar someone from owning land in the country.",
   "note": "About banning foreigners from owning land in the country. Limiting foreign ownership in some places, such as border areas, is not enough.",
   "icon": "🏞️"
  },
@@ -3038,8 +3038,8 @@ const QUESTIONS = [
   "id": "stay-neutral-between-blocs",
   "theme": "world",
   "text": "My country should stay out of the military blocs of rival great powers.",
-  "agree": "A country stays neutral and non-aligned rather than joining either bloc.",
-  "disagree": "My country should not stay out of the military blocs of rival great powers.",
+  "agree": "My country should stay neutral and join neither of the opposing great-power alliances.",
+  "disagree": "My country may join a military alliance led by one of the great powers.",
   "note": "About staying out of the military alliances led by rival great powers. Trading or having friendly relations with them is a different question.",
   "icon": "🏳️"
  },
@@ -3300,7 +3300,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "Nuclear weapons should not be based on my country's territory.",
   "agree": "No nuclear weapons, ours or an ally's, should be stationed here.",
-  "disagree": "Nuclear weapons may be based on my country's territory.",
+  "disagree": "My country may have nuclear weapons stationed on its own land as part of its defence.",
   "note": "About allowing no nuclear weapons, whoever owns them, to be stationed on the country's land. Opposing nuclear weapons elsewhere is a different question.",
   "icon": "☢️"
  },
@@ -3309,7 +3309,7 @@ const QUESTIONS = [
   "theme": "world",
   "text": "A country should not host foreign military bases on its territory.",
   "agree": "Foreign armies should not be based on the country's territory.",
-  "disagree": "A country may host foreign military bases on its territory.",
+  "disagree": "A country may let foreign allies keep troops and bases on its land.",
   "note": "About allowing no foreign military bases on the country's land. Joining alliances or holding joint exercises is not the same.",
   "icon": "🏴"
  },
@@ -3408,7 +3408,7 @@ const QUESTIONS = [
   "theme": "culture",
   "text": "God should not be described in exclusively male terms.",
   "agree": "Religious language and imagery should include more than male terms for God.",
-  "disagree": "God may be described in exclusively male terms.",
+  "disagree": "Religious language may speak of God in male terms alone, as many traditions do.",
   "note": "About whether religious language should use more than male terms for God. Women's roles in religion are a different question.",
   "icon": "✨"
  },
@@ -4191,7 +4191,7 @@ const QUESTIONS = [
   "theme": "government",
   "text": "Politics should not be organised along religious denominations.",
   "agree": "Parties and offices should cut across religious lines.",
-  "disagree": "Politics may be organised along religious denominations.",
+  "disagree": "Religious communities may be a basis for political life, as when parties represent one faith and top offices are shared out between faiths.",
   "note": "About religion as a basis for organising politics, for example Lebanon, where top offices are shared out between religious communities. Religious people taking part in politics is a different question.",
   "icon": "⛪"
  },
