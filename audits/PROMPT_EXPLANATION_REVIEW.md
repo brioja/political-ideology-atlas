@@ -43,7 +43,9 @@ The integrator reviews each proposal and applies the accepted ones.
   version. An example must be one every agreeing subject accepts.
 - **Disagree is a position, not the far extreme.** A clean positive opposite where one exists ("Military
   service should always be voluntary"); a -1 subject must fit it as well as a -2. If the only true opposite is
-  the plain negation, keep it and put the effort into the agree side.
+  the plain negation, negate your new agree sentence rather than the statement, so both sides explain in the
+  same plain words (first reviews, 2026-11-15: "Belonging to the nation does not tie a person's life to a sacred
+  community that goes on after their death").
 - **Plain neutral words**, one sentence each, nothing either side would call loaded. Don't imply everyone is
   one of two genders.
 - **"Keep" is a fine verdict** when no faithful rewording exists; say why.
