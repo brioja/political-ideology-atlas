@@ -53,10 +53,9 @@ be re-run.
 - `node scripts/build.js` compiles valid audits into `data.js` (`--status` just reports progress).
 - `node scripts/wikipedia.js` refreshes suggested Wikipedia links in the catalog.
 
-To run audits, ask Claude Code to run the gather-research-deploy workflow
-(`.claude/workflows/gather-research-deploy.js`, with `{"model": "sonnet"}`): for the next pending person or
-ideology, one at a time, a Gather agent builds the source library, a Research agent audits from it and
-commits, and a deploy agent builds, tests and pushes (`{"limit": N}` audits per run, default 10). Other
+To run audits, ask Claude Code to run the serial-audits workflow
+(`.claude/workflows/serial-audits.js`): it audits the next pending person or ideology one at a time,
+each in a fresh agent, and deploys after each (`{"limit": N}` audits per run, default 10). Other
 sessions can audit alongside it as lanes following `audits/PROMPT_LANE.md`.
 
 ## Statements
@@ -110,7 +109,7 @@ person's own words and record, and a statement with no reliable evidence is `nul
   the site serves that copy itself, so a visit never contacts Wikimedia. It shows the photo with a
   credit line and falls back to initials when there's no free image. It only looks up people without an image; run it with
   `--refresh` when tagging a release to pick up newer lead images and credits.
-- People are audited by the same gather-research-deploy workflow as ideologies.
+- People are audited by the same serial-audits workflow as ideologies.
 
 ## License
 
