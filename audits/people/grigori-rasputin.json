@@ -1,11 +1,11 @@
 {
  "id": "grigori-rasputin",
  "name": "Grigori Rasputin",
- "auditedAt": "2026-10-23",
+ "auditedAt": "2026-11-16",
  "auditor": "claude-sonnet-5-5",
  "living": false,
  "role": "Siberian peasant mystic and faith healer at the court of Nicholas II (died 1916)",
- "summary": "Rasputin was a peasant holy man who gained influence over the Romanov family by treating the heir's haemophilia. He left no political programme; reports credit him with opposing Russia's entry into the First World War and with loyalty to the Tsar's rule, but most accounts of his political role are secondhand and often hostile.",
+ "summary": "Rasputin was a Siberian peasant pilgrim and healer who gained influence at court by treating the heir's haemophilia. He left no political programme; his own writings are religious reflections praising simplicity, and witnesses report that he opposed Russia's entry into the 1914 war and predicted the empire's ruin.",
  "wikipedia": "https://en.wikipedia.org/wiki/Grigori_Rasputin",
  "sources": [
   {
@@ -14,7 +14,8 @@
    "title": "Grigori Rasputin",
    "author": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Grigori_Rasputin",
-   "usedFor": "Telegrams to the imperial family; report that he urged the Tsar to avoid war in 1914"
+   "usedFor": "Telegrams to the imperial family; report that he urged the Tsar to avoid war in 1914",
+   "evidence": "words"
   },
   {
    "id": "s2",
@@ -22,7 +23,8 @@
    "title": "Grigori Rasputin (Wikiquote)",
    "author": "Wikiquote, quoting Rasputin's letter to Alexandra, 7 Dec 1916",
    "url": "https://en.wikiquote.org/wiki/Grigori_Rasputin",
-   "usedFor": "His own words telling the Tsar to remain on his throne and govern"
+   "usedFor": "His own words telling the Tsar to remain on his throne and govern",
+   "evidence": "words"
   },
   {
    "id": "s3",
@@ -30,7 +32,26 @@
    "title": "Grigori Rasputin",
    "author": "New World Encyclopedia",
    "url": "https://www.newworldencyclopedia.org/entry/Grigori_Rasputin",
-   "usedFor": "Opposition to the war; letter on the peasants as reported by Simonovich"
+   "usedFor": "Opposition to the war; letter on the peasants as reported by Simonovich",
+   "evidence": "words"
+  },
+  {
+   "id": "s4",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Rasputin, 'My Thoughts and Reflections' (Moi mysli i razmyshleniya, Petrograd 1915), 'At the Kyiv Pechersk Lavra': English excerpt with the Russian original (Rasputin Translated blog, original text from omolenko.com)",
+   "author": "Grigori Rasputin",
+   "url": "https://rasputintranslated.wordpress.com/2016/03/18/my-thoughts-and-reflections-at-the-kyiv-pechersk-lavra/",
+   "usedFor": "His own words on simplicity and the rotting of excess, written on pilgrimage in 1911; a translator's excerpt, not the full book."
+  },
+  {
+   "id": "s5",
+   "kind": "primary",
+   "evidence": "words",
+   "title": "Anna Vyrubova, Memories of the Russian Court (Gutenberg 59564; witness account of the telegram in which Rasputin opposed the 1914 war)",
+   "author": "Anna Vyrubova",
+   "url": "https://www.gutenberg.org/ebooks/59564",
+   "usedFor": "Eyewitness report that Rasputin strongly opposed the war and predicted the empire's destruction; she was his friend, so it is a report of his words, not his text."
   }
  ],
  "answers": {
@@ -416,12 +437,35 @@
    "sources": []
   },
   "war-builds-character": {
-   "value": -1,
-   "confidence": "medium",
-   "rationale": "Reported (Beevor, via Wikipedia; New World Encyclopedia) to have urged Nicholas II in 1914 not to go to war, on moral grounds and fearing political catastrophe. Secondhand; the wording of any telegram is not quoted.",
+   "value": null,
+   "confidence": "low",
+   "rationale": "Nulled in the later pass: the sources report only that he opposed the 1914 war and predicted ruin (Vyrubova); opposing one war does not state whether war builds a nation's character, and the earlier answer rested on Wikipedia and a reference compilation.",
    "sources": [
-    "s1",
-    "s3"
+    "s5"
+   ],
+   "auditor": "claude-sonnet-5-5",
+   "reviewHistory": [
+    {
+     "value": -1,
+     "confidence": "medium",
+     "rationale": "Reported (Beevor, via Wikipedia; New World Encyclopedia) to have urged Nicholas II in 1914 not to go to war, on moral grounds and fearing political catastrophe. Secondhand; the wording of any telegram is not quoted.",
+     "sources": [
+      "s1",
+      "s3"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-10-23"
+    },
+    {
+     "value": null,
+     "confidence": "low",
+     "rationale": "Nulled in the later pass: the sources report only that he opposed the 1914 war and predicted ruin (Vyrubova); opposing one war does not state whether war builds a nation's character, and the earlier answer rested on Wikipedia and a reference compilation.",
+     "sources": [
+      "s5"
+     ],
+     "author": "claude-sonnet-5-5",
+     "date": "2026-11-16"
+    }
    ]
   },
   "separate-church-state": {
@@ -1793,10 +1837,13 @@
    "sources": []
   },
   "consumerism-harmful": {
-   "value": null,
+   "value": 1,
    "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "rationale": "In 1911 he wrote that remembering one's own excess 'rots and rots' and 'drives into boredom', setting it against the simplicity of the saints.",
+   "sources": [
+    "s4"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "arm-foreign-insurgents": {
    "value": null,
@@ -2843,10 +2890,13 @@
    "sources": []
   },
   "simple-living": {
-   "value": null,
-   "confidence": "low",
-   "rationale": "No recorded position found.",
-   "sources": []
+   "value": 1,
+   "confidence": "medium",
+   "rationale": "In his 1911 reflections at the Kyiv Lavra he praised the saints' plain cheap coffins, 'no gold, no silver, only silence', and told readers to remember the vanity of life and the excess that rots.",
+   "sources": [
+    "s4"
+   ],
+   "auditor": "claude-sonnet-5-5"
   },
   "restrict-indigenous-settlement": {
    "value": null,
@@ -3003,15 +3053,854 @@
    "confidence": "low",
    "rationale": "No recorded position found.",
    "sources": []
+  },
+  "replace-appointed-officials": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "money-backed-by-precious-metals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "pay-off-national-debt": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "remove-indigenous-peoples": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "no-central-bank": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "civilians-legitimate-targets": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "destroy-worshipped-objects": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "religious-offensive-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "human-decline-since-golden-age": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "return-to-pre-conversion-religion": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "religion-from-peoples-character": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "divinely-chosen-superior-people": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "state-supports-good-ways-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "promote-ethnic-return-migration": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "price-stability-first": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "race-based-immigration-restrictions": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "technology-never-politically-neutral": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "labour-priority-over-capital": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "constitutional-jury-trial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "generational-constitutional-review": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "member-state-blocks-federal-overreach": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "maximum-personal-income": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "four-day-week": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "humans-entitled-to-use-animals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "troops-home-from-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "freedom-is-self-government-of-desire": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "democracy-becomes-oligarchy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "racial-community-economic-control": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "slavery-reparations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "regional-resource-ownership": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "socialism-needs-revolutionary-war": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "military-organisation-revolutionary-party": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "country-wealth-only-from-land": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "no-transition-to-communism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "remove-other-ethnic-groups-from-country": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "physical-labour-duty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "civil-disobedience-accept-penalty": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "worker-farmer-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "democracy-needs-political-clash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "political-borders-follow-ecosystems": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "exclude-trans-women-women-only-spaces": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "prohibit-child-medical-transition": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "workers-anti-imperialist-capitalist-alliance": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "colonial-socialism-democratic-stage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "state-finances-worker-businesses": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "wages-fall-to-bare-minimum": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "work-centre-of-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "workers-parties-campaign-reforms": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "women-organise-apart-from-men": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "human-caused-global-warming": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "political-decisions-consensus": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "keep-public-institutions-small": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "pay-for-effort": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "say-in-proportion-to-effect": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "refuse-to-join-illegitimate-government": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "local-veto-new-housing": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "youth-equal-civil-rights": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "vote-at-sixteen": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "students-direct-own-learning": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "constitution-recognises-indigenous-nations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "indigenous-internal-justice": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "abolish-income-tax": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "automation-leaves-most-without-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "municipal-businesses-mixed-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "tax-holding-cash": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "price-controls-fight-inflation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "femininity-compatible-with-feminism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "unpaid-domestic-work-exploitation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "change-traditions-that-no-longer-suit": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "government-nudges": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "parliamentary-road-socialism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "resist-oppression-despite-death": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "one-spouse-at-a-time": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "government-encourage-intercultural-contact": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "restrict-technology-exports-to-rivals": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "state-laws-apply-online": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "opposition-only-legal-channels": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "every-country-ready-for-democracy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "racial-oppression-before-sexism": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "promote-democracy-abroad": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "head-of-state-dissolves-parliament": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "mandatory-environmental-reporting": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "all-land-state-owned": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "free-trade-promotes-peace": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "arbitrator-settles-disputes": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "unions-run-economy": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "abolish-wage-labour": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "property-sabotage-justified": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "reserved-seats-excluded-groups": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "evolved-behavioural-sex-differences": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "free-basic-services-for-all": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "shut-down-tax-havens": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "ban-patents-on-life": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "immigration-favours-shared-culture": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "allow-dual-citizenship": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "limit-campaign-donations": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "legal-duty-to-work": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "apologise-for-past-wrongs": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "armed-resistance-to-occupation": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "parents-choose-intersex-surgery": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "civil-marriage": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "conquest-no-lawful-claim": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "torture-always-illegal": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "ban-spanking": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "criminalize-genocide-denial": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "turn-back-illegal-migrants": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "ethnicity-statistics": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "build-apartments-freely": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "small-step-social-reform": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "decent-living-guarantee": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
+  },
+  "former-empire-equal-treatment": {
+   "value": null,
+   "confidence": "low",
+   "rationale": "No recorded position found in the sources searched (see notes and notFound).",
+   "sources": [],
+   "auditor": "claude-sonnet-5-5"
   }
  },
- "notes": "Very thin record: no stated positions found on Jews or pogroms, the Duma or economic questions in the pages opened. A 1914 war-warning quotation found on alphahistory.com could not be opened and was not used.",
+ "notes": "Rules 7, later pass (first pass 2026-10-23; this pass brings the audit up to rules 7). Rasputin left no political programme, and almost every account of his politics is hostile or secondhand. Sources read: his own writing 'My Thoughts and Reflections' (1915) in a translator's excerpt with the Russian original (Lavra reflection, 1911, and 'Life of an Experienced Wanderer' excerpts on monasteries, clergy, pilgrimage), and Anna Vyrubova's memoir (Gutenberg 59564, 254 mentions of him), searched for the war, the Duma, ministers, Jews, peasants and land. The earlier war-builds-character answer (-1, Wikipedia and a reference compilation) is nulled with a reviewHistory entry: opposing the 1914 war and predicting ruin does not state whether war builds a nation's character. New answers: simple-living and consumerism-harmful (+1 medium each, his 1911 Lavra reflection; words only, as he has no recorded act on them). Themes searched with nothing that settles a statement: war and foreign policy, the Duma and ministers (Vyrubova denies he appointed ministers such as Sturmer), Jews and pogroms (no passage in Vyrubova or the excerpts), peasants, property and land, clergy and church governance (his criticism of the clergy's lack of spiritual life is a complaint, not a position on church-state relations), women and marriage. Failing the uncertainty rule is the honest result for a figure with this record.",
  "reviews": [
   {
    "kind": "nulling",
    "reviewer": "claude-opus-5-5",
    "reviewedAt": "2026-11-11",
    "nulled": 1
+  },
+  {
+   "kind": "nulling",
+   "reviewer": "claude-sonnet-5-5",
+   "reviewedAt": "2026-11-16",
+   "nulled": 1
+  }
+ ],
+ "rules": 7,
+ "passes": [
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-10-23"
+  },
+  {
+   "auditor": "claude-sonnet-5-5",
+   "auditedAt": "2026-11-16"
+  }
+ ],
+ "notFound": [
+  {
+   "work": "Full text of his books 'Life of an Experienced Wanderer' (1907) and 'My Thoughts and Reflections' (1915), in English or Russian",
+   "tried": [
+    {
+     "where": "archive.org advanced search (get.js)",
+     "how": "creator and title queries (thoughts, reflections, life experiences, Russian title) returned 0 results"
+    },
+    {
+     "where": "Project Gutenberg catalog (scripts/gutenberg.js --search Rasputin) and the local reference library",
+     "how": "only books about him (Le Queux, Radziwill); no volume by him"
+    },
+    {
+     "where": "Alexander Palace forum thread of translated excerpts (get.js)",
+     "how": "no agent got a good copy"
+    }
+   ]
+  },
+  {
+   "work": "His 1914 telegram to Nicholas II against the war, and his letters and telegrams to the imperial family",
+   "tried": [
+    {
+     "where": "web search for the telegram text",
+     "how": "found only Vyrubova's report of it and a truncated Polish excerpt of a 1915 telegram"
+    },
+    {
+     "where": "vdoc.pub reprint of Radzinsky, The Rasputin File (get.js)",
+     "how": "no agent got a good copy"
+    }
+   ]
+  },
+  {
+   "work": "Contemporary court records and Okhrana surveillance reports on his statements",
+   "tried": [
+    {
+     "where": "web search for Okhrana reports of Rasputin's remarks",
+     "how": "no primary text surfaced"
+    },
+    {
+     "where": "Gutenberg memoirs (Vyrubova, Radziwill)",
+     "how": "memoirs of others, not records; Vyrubova used only for the war telegram"
+    }
+   ]
   }
  ]
 }
