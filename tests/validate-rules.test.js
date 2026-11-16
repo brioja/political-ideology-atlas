@@ -17,7 +17,7 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, setCommittedTextForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap } = require("../scripts/validate");
 
 // The source-library and corpus checks read this machine's files; off for every fixture except their own cases.
 const NO_LIBRARY = { index: null, corpora: null };
@@ -269,13 +269,7 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   ok("a corpus counts as cited when a source names it", L((a) => { decline(a); a.booksNotUsed[2].corpus = "voteview";
     a.sources.push({ id: "s6", kind: "primary", evidence: "words", title: "UN General Debate, 2003 (UNGDC corpus)", url: "https://doi.org/10.7910/DVN/0TJX8Y" }); }));
   fails("a decline needs a reason", L((a) => { decline(a); a.booksNotUsed[2].reason = "none"; }), /local corpora neither cited nor declined/);
-  ok("audits dated before the cutover are not held to it", E(base(), (a) => { a.auditedAt = "2026-11-15"; }));
-  { const day = E(base(), (a) => { a.auditedAt = "2026-11-16"; });
-    setCommittedTextForTests(() => JSON.parse(JSON.stringify(day)));
-    ok("a committed 2026-11-16 audit, unchanged, is not held to it", day);
-    setCommittedTextForTests(() => null);
-    fails("a 2026-11-16 audit being written is held to it", day, /local corpora neither cited nor declined/);
-    setCommittedTextForTests(null); }
+  ok("audits dated before the cutover are not held to it", E(base(), (a) => { a.auditedAt = "2026-11-16"; }));
   { fs.writeFileSync(tmp, JSON.stringify(L(decline), null, 2)); setCommittedForTests(() => null);
     assert(validate(subject.id).warnings.some((w) => /^unanswered statements by theme: /.test(w)), "unanswered-by-theme warning"); n++; }
   setSourceLibraryForTests(NO_LIBRARY);

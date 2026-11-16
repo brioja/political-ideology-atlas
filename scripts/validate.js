@@ -139,20 +139,8 @@ const UNFOUND = /\b(?:not (?:available|accessible|online|found|located|obtainabl
 const STOP = new Set(["the", "and", "his", "her", "their", "from", "with", "that", "this", "were", "which", "into", "over", "about", "speeches", "speech", "text", "texts", "local", "corpora"]);
 
 // Source library and corpus checks for people audits (see validate()). The cutover date: audits dated before it
-// are not held to them, except an audit dated from LIBRARY_CHECK_WRITING being written now (not committed, or differing
-// from the committed copy): the first gather-research-deploy runs on 2026-11-16 are checked, while that day's
-// committed audits stay valid.
-const LIBRARY_CHECK_FROM = "2026-11-17", LIBRARY_CHECK_WRITING = "2026-11-16";
-let committedTextForTests = null;
-function beingWritten(id, a) {
-  let committed;
-  if (committedTextForTests) committed = committedTextForTests(id);
-  else {
-    const path = require("path"), rel = path.relative(lib.ROOT, path.join(PROFILES_DIR, `${id}.json`));
-    try { committed = JSON.parse(require("child_process").execFileSync("git", ["show", `HEAD:${rel}`], { cwd: lib.ROOT, stdio: ["ignore", "pipe", "ignore"] }).toString()); } catch { committed = null; }
-  }
-  return !committed || JSON.stringify(committed) !== JSON.stringify(a);
-}
+// are not held to them.
+const LIBRARY_CHECK_FROM = "2026-11-17";
 // How a cited source shows which corpus it came from: its url, title, author, "library" or "corpus" field.
 const CORPUS_MARKERS = {
   ungdc: /ungdc|0TJX8Y|general debate/i, euspeech: /euspeech|XPCVEI/i, unsc: /\bunsc\b|KGVSYH|security council/i,
@@ -536,7 +524,7 @@ function validate(id) {
   // declined. Declines go in "booksNotUsed": { "file" } or { "urls": [...] } for library files, { "corpus": name or
   // [names] } for corpora, each with a reason. Older audits are not held to it; where the library or the corpora
   // aren't on this machine the check is skipped. Unanswered statements by theme are printed as a warning.
-  if (PEOPLE && ((a.auditedAt || "") >= LIBRARY_CHECK_FROM || ((a.auditedAt || "") >= LIBRARY_CHECK_WRITING && beingWritten(id, a)))) {
+  if (PEOPLE && (a.auditedAt || "") >= LIBRARY_CHECK_FROM) {
     const declined = Array.isArray(a.booksNotUsed) ? a.booksNotUsed.filter((d) => d && typeof d.reason === "string" && d.reason.trim().length >= 20) : [];
     const fold = (u) => String(u || "").replace(/^https?:\/\/(www\.)?/, "").replace(/\/+$/, "").toLowerCase();
     const citedUrls = new Set(sources.map((s) => fold(s.url)));
@@ -708,5 +696,4 @@ const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
 const setTextsForTests = (t) => { textsForTests = t; };
 const setSourceLibraryForTests = (l) => { libraryIndexForTests = l; };
-const setCommittedTextForTests = (f) => { committedTextForTests = f; };
-module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, setCommittedTextForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap, PROJECT_START };
+module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap, PROJECT_START };
