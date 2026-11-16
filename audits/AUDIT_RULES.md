@@ -73,7 +73,7 @@ words; don't paste long passages.
   committed; its README.md indexes them and their lookup tools): US Congress roll calls since 1789, US Congress floor speeches since 1873 and committee hearing
   transcripts (each member's own turns, with the citation), UK House of Commons Hansard since 1919
   (debates, Westminster Hall, written answers; each MP's own words),
-  European Parliament roll calls since 2019, interview and show transcripts. Check them before
+  European Parliament roll calls since 2019, Knesset (Israel) plenum roll calls since 2003 and bills, interview and show transcripts. Check them before
   searching the web for a subject's votes, speeches or interviews. Before giving up on a blocked
   source, search GitHub (`gh search repos`, `gh search code`) for a mirror or dataset of it. Cite a
   dataset by its publisher's page and version, a transcript by its original broadcast or page (if that page no longer opens, link a Wayback

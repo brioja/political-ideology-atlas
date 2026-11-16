@@ -28,6 +28,8 @@ const HINTS = [
     tool: 'Davos special addresses 2018-2026: `node tools/wef.js --list [year]` or `node tools/wef.js "<speaker>" [keyword]`' },
   { re: /legifrance|journal officiel|\bjorf\b|vie-publique\.fr\/loi|loi n°|loi no\.? \d/i,
     tool: 'French laws, ordinances and decrees since 1945 (DILA LEGI, every article version): `node tools/legi.js --texts "<title words>"` or `node tools/legi.js "<keyword>" ... [--nature LOI] [--from YYYY] [--to YYYY]`' },
+  { re: /knesset|כנסת/i,
+    tool: 'Knesset (Israel) plenum roll calls 2003-today, bills 1949-today, members (official OData v4, Hebrew): `node tools/knesset.js --who "<Hebrew name>"`, then `node tools/knesset.js <PersonID> [keyword ...]` or `--bills [keyword ...]`' },
   { re: /state of the state/i,
     tool: 'US governors\' State of the State addresses 1995-2022: `node tools/sots.js "<governor>" [keyword ...]`' },
 ];
@@ -38,7 +40,7 @@ process.stdin.on("data", (d) => (input += d)).on("end", () => {
   let text = "";
   if (j.tool_name === "WebSearch") text = String(ti.query || "");
   else if (j.tool_name === "WebFetch") text = String(ti.url || "");
-  else if (j.tool_name === "Bash") { const c = String(ti.command || ""); if (/\b(curl|wget)\b/.test(c) && !/tools\//.test(c)) text = c; }
+  else if (j.tool_name === "Bash") { const c = String(ti.command || ""); if (/\b(curl|wget)\b|https?:\/\//.test(c) && !/tools\//.test(c)) text = c; }
   if (!text) return;
   const hits = HINTS.filter((h) => h.re.test(text));
   if (!hits.length) return;

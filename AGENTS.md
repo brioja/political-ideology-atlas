@@ -25,7 +25,7 @@ agents too. This file adds what matters when running the audit workflows in
   Gutenberg `node scripts/gutenberg.js` (official catalog + mirror). A PreToolUse hook
   (`.claude/hooks/no-direct-fetch.js`) denies direct fetches of those hosts and direct yt-dlp; scripts use
   `lib.cachedJson`. A second hook (`.claude/hooks/local-corpus-hint.js`) adds a note, without blocking, when a web
-  search or fetch names a source a local corpus holds (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, UN
+  search or fetch names a source a local corpus holds (CNN/NPR, Congress, Hansard, marxists.org, Miller Center, Knesset, UN
   debates, Davos, Lex Fridman, French laws via LEGI): search the corpus first. A third hook
   (`.claude/hooks/no-browser-agent.js`) denies a fetch, in a command or a written script, whose User-Agent poses
   as a browser. Other sites go through `node scripts/get.js <id> <url>`, which tries each download agent (curl,
