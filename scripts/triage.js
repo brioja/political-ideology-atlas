@@ -9,7 +9,7 @@
 // person. The regularisation strength is chosen by cross-validation; nothing is hand-weighted. Gender and
 // region are left out on purpose: they would only reproduce who has been documented, not who has a record.
 // Rerun after audits (labels grow): writes audits/people-triage.json, read by pending.js --triage.
-//   node scripts/triage.js
+//   node scripts/triage.js   (at most once a day: a second run the same day does nothing)
 "use strict";
 const fs = require("fs");
 const path = require("path");
@@ -77,6 +77,11 @@ function auc(scores, y) {
 }
 
 async function main() {
+  // At most once a day (Brandon, 2026-11-16): the date of the last fit is in the output file.
+  {
+    let last = null; try { last = JSON.parse(fs.readFileSync(OUT, "utf8")).fitted; } catch { /* never fitted */ }
+    if (last === new Date().toISOString().slice(0, 10)) { console.log(`already refitted today (${last}): nothing to do`); return; }
+  }
   const people = lib.peopleCatalog();
   const facts = await entities([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
   const works = await worksAuthored([...new Set(people.map((p) => p.wikidata).filter(Boolean))]);
