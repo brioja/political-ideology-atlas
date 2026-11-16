@@ -103,3 +103,11 @@ section on the results, Compare, ideology and person pages, each with its statem
   other names come from Wikipedia redirects filed as other names (`scripts/people-aliases.js`), and an
   ideology's aliases need a source quote (669f810bf). Wikidata labels stay as catalog triage only, and
   photo lookups (`scripts/images.js`) still find the Commons file through it.
+- **Fresh-agent review loops in the audit workflow** (piloted on Jacques Chirac, 2026-11-16, against an
+  integrator + researcher pair of Sonnet sessions): fresh Review/Revise agents each round never converged
+  (every round found new gaps), took 70 active minutes against 28, cost $0.20 per supported answer against
+  $0.14, and had more overstated or wrong answers (17.6% against 10.6%). Most of what review asked for was
+  mechanical (read the files already downloaded, search the corpora skipped), so it moved into
+  `validate.js` instead (every library file and corpus cited or declined, people audits from 2026-11-17).
+  The single-agent `serial-audits` workflow was replaced the same day by `gather-research-deploy`.
+  Write-up: `~/work/pilot-continuous-vs-fresh-2026-11-16.md`.
