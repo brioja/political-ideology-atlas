@@ -17,7 +17,11 @@ assert(subject, "needs one catalog person without an audit to use as the fixture
 const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "validate-rules-")), `${subject.id}.json`);
 const personPath = lib.personPath;
 lib.personPath = (id) => (id === subject.id ? tmp : personPath(id));
-const { validate, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap } = require("../scripts/validate");
+const { validate, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap } = require("../scripts/validate");
+
+// The source-library and corpus checks read this machine's files; off for every fixture except their own cases.
+const NO_LIBRARY = { index: null, corpora: null };
+setSourceLibraryForTests(NO_LIBRARY);
 
 const st = lib.activeStatements().map((s) => s.id);
 const [A, B, C, D] = st; // A: answered from an action, B: answered from words, C and D: nothing found
@@ -244,6 +248,31 @@ fails("history entry cites an unknown source", withHistory(laterPass(base()), A,
   fails("rules 7: a 0 splitting actions against words", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "Voted for it once and spoke against it in 2021.", sources: ["s1", "s3"] }; }), /record over words/);
   fails("rules 7: a 0 setting words against actions inside one source", r6((a) => { all(a); a.rules = 7; a.answers[C] = { value: 0, confidence: "low", rationale: "His memoir records that he said it was wrong but signed it into law anyway.", sources: ["s5"] }; }), /sets words \("said"\) against actions \("signed"\)/);
   setTextsForTests(null); setLibraryForTests(null);
+}
+
+// People audits from LIBRARY_CHECK_FROM: every source-library file and every local corpus is cited or declined
+// (Brandon, 2026-11-16).
+{
+  setSourceLibraryForTests({
+    index: [{ file: "interview.txt", url: "https://example.org/interview" }, { file: "error-page.txt", url: "https://example.org/error" },
+      { file: "legi-loi-1.txt", url: "https://www.legifrance.gouv.fr/" }],
+    corpora: ["ungdc", "voteview"],
+  });
+  const L = (f) => E(base(), (a) => { a.auditedAt = LIBRARY_CHECK_FROM; if (f) f(a); });
+  const decline = (a, extra = []) => { a.booksNotUsed = [
+    { urls: ["https://example.org/error"], reason: "A server error page, not the document it was meant to be." },
+    { file: "legi-loi-1.txt", reason: "Only the title of the law was saved; the article text was not." },
+    { corpus: ["ungdc", "voteview"], reason: "Neither holds anything by this fixture subject at all." }, ...extra]; };
+  fails("library file neither cited nor declined", L(), /2 files in the source library .* not cited or declined: error-page\.txt, legi-loi-1\.txt/);
+  fails("corpora neither cited nor declined", L(), /local corpora neither cited nor declined: ungdc, voteview/);
+  ok("library files cited or declined, corpora declined together", L(decline));
+  ok("a corpus counts as cited when a source names it", L((a) => { decline(a); a.booksNotUsed[2].corpus = "voteview";
+    a.sources.push({ id: "s6", kind: "primary", evidence: "words", title: "UN General Debate, 2003 (UNGDC corpus)", url: "https://doi.org/10.7910/DVN/0TJX8Y" }); }));
+  fails("a decline needs a reason", L((a) => { decline(a); a.booksNotUsed[2].reason = "none"; }), /local corpora neither cited nor declined/);
+  ok("audits dated before the cutover are not held to it", E(base(), (a) => { a.auditedAt = "2026-11-16"; }));
+  { fs.writeFileSync(tmp, JSON.stringify(L(decline), null, 2)); setCommittedForTests(() => null);
+    assert(validate(subject.id).warnings.some((w) => /^unanswered statements by theme: /.test(w)), "unanswered-by-theme warning"); n++; }
+  setSourceLibraryForTests(NO_LIBRARY);
 }
 
 // A later pass comes at least half the project's age after the previous one (from 2026-11-08; earlier passes stand).

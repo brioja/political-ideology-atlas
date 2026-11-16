@@ -138,6 +138,32 @@ function personTexts(name, born) {
 const UNFOUND = /\b(?:not (?:available|accessible|online|found|located|obtainable|digiti[sz]ed|in the local corpora)|unavailable|(?:could|was|were) not (?:be )?(?:found|obtained|accessed|located|read)|no (?:online|digital|accessible|full)[- ](?:copy|text|edition|transcript))\b/i;
 const STOP = new Set(["the", "and", "his", "her", "their", "from", "with", "that", "this", "were", "which", "into", "over", "about", "speeches", "speech", "text", "texts", "local", "corpora"]);
 
+// Source library and corpus checks for people audits (see validate()). The cutover date: audits dated before it
+// are not held to them.
+const LIBRARY_CHECK_FROM = "2026-11-17";
+// How a cited source shows which corpus it came from: its url, title, author, "library" or "corpus" field.
+const CORPUS_MARKERS = {
+  ungdc: /ungdc|0TJX8Y|general debate/i, euspeech: /euspeech|XPCVEI/i, unsc: /\bunsc\b|KGVSYH|security council/i,
+  mediasum: /mediasum|cnn\.com|npr\.org|\bcnn\b|\bnpr\b/i, legi: /\blegi\b|legifrance/i,
+  hansard: /hansard|theyworkforyou/i, aushansard: /aushansard|aph\.gov\.au|17351233/i,
+  congress: /congressional record|congress\.gov|govinfo|\bcrec\b/i, hearings: /hearing|CHRG/i,
+  millercenter: /millercenter|miller center/i, wef: /weforum|davos|\bwef\b/i, sots: /state of the state|\bsots\b/i,
+  congresstweets: /congresstweets|twitter\.com|x\.com\//i, trumptweets: /trumptweets|twitter\.com|x\.com\//i,
+  reference: /\breference\b/i,
+};
+let libraryIndexForTests = null;
+function sourceLibrary(id) {
+  if (libraryIndexForTests) return libraryIndexForTests;
+  const path = require("path"), os = require("os");
+  let index = null, corpora = null;
+  try { index = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "scratchpad", "sources", id, "index.json"), "utf8")); if (!Array.isArray(index)) index = null; } catch { /* no library here */ }
+  try {
+    corpora = fs.readdirSync(path.join(os.homedir(), ".cache", "political-ideology-atlas", "corpora"), { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !["tools", "wikidata-aliases"].includes(d.name)).map((d) => d.name).sort();
+  } catch { /* no corpora here */ }
+  return { index, corpora };
+}
+
 function validate(id) {
   const errors = [];
   const warnings = [];
@@ -492,6 +518,36 @@ function validate(id) {
         errors.push('Voteview lists them as a member of Congress: search their roll calls (node tools/voteview.js in the corpora) and cite them, or decline in "booksNotUsed" as { "corpus": "voteview", "reason" }');
     }
   }
+  // People audits from LIBRARY_CHECK_FROM on (Brandon, 2026-11-16; Chirac pilot: review rounds were mostly "read what
+  // you already downloaded" and "search the corpora you skipped"): every file in the subject's source library
+  // (scratchpad/sources/<id>/index.json) is cited or declined, and every local corpus is searched and cited or
+  // declined. Declines go in "booksNotUsed": { "file" } or { "urls": [...] } for library files, { "corpus": name or
+  // [names] } for corpora, each with a reason. Older audits are not held to it; where the library or the corpora
+  // aren't on this machine the check is skipped. Unanswered statements by theme are printed as a warning.
+  if (PEOPLE && (a.auditedAt || "") >= LIBRARY_CHECK_FROM) {
+    const declined = Array.isArray(a.booksNotUsed) ? a.booksNotUsed.filter((d) => d && typeof d.reason === "string" && d.reason.trim().length >= 20) : [];
+    const fold = (u) => String(u || "").replace(/^https?:\/\/(www\.)?/, "").replace(/\/+$/, "").toLowerCase();
+    const citedUrls = new Set(sources.map((s) => fold(s.url)));
+    const citedFiles = new Set(sources.map((s) => s.library).filter(Boolean));
+    const { index, corpora } = sourceLibrary(id);
+    if (index) {
+      const declinedUrls = new Set(declined.flatMap((d) => [].concat(d.urls || [])).map(fold));
+      const declinedFiles = new Set(declined.flatMap((d) => [].concat(d.file || [])));
+      const unused = index.filter((e) => e && !(e.url && (citedUrls.has(fold(e.url)) || declinedUrls.has(fold(e.url))))
+        && !(e.file && (citedFiles.has(e.file) || declinedFiles.has(e.file))));
+      if (unused.length) errors.push(`${unused.length} file${unused.length > 1 ? "s" : ""} in the source library (scratchpad/sources/${id}/) not cited or declined: ${unused.slice(0, 10).map((e) => e.file || e.url).join(", ")}${unused.length > 10 ? ", …" : ""}. Read each and cite it (a source with its url, or "library": its file), or decline it in "booksNotUsed" as { "file": ... } or { "urls": [...] } with the reason (junk pages can be declined together)`);
+    }
+    if (corpora) {
+      const srcText = sources.map((s) => `${s.url || ""} ${s.title || ""} ${s.author || ""} ${s.library || ""} ${s.corpus || ""}`).join("\n");
+      const declinedCorpora = new Set(declined.flatMap((d) => [].concat(d.corpus || [])).map(String));
+      const missing = corpora.filter((c) => !declinedCorpora.has(c) && !(CORPUS_MARKERS[c] || new RegExp(`\\b${c}\\b`, "i")).test(srcText));
+      if (missing.length) errors.push(`local corpora neither cited nor declined: ${missing.join(", ")}. Search each (tools in ~/.cache/political-ideology-atlas/corpora, see its README.md) and cite what it holds, or decline it in "booksNotUsed" as { "corpus": "<name>" or ["<name>", ...], "reason" } (e.g. US-only corpora for a French politician, together)`);
+    }
+    const byTheme = {};
+    for (const s of allStatements()) if (!answers[s.id] || answers[s.id].value === null || answers[s.id].value === undefined) byTheme[s.theme] = (byTheme[s.theme] || 0) + 1;
+    const list = Object.entries(byTheme).sort((x, y) => y[1] - x[1]).map(([t, n]) => `${t} ${n}`).join(", ");
+    if (list) warnings.push(`unanswered statements by theme: ${list}`);
+  }
   // Rules 6, every audit: a work the notes call unavailable is listed in "notFound" as
   // { "work", "tried": [{ "where", "how" }, ...] } with at least two attempts in different places.
   if (a.rules >= 6) {
@@ -639,4 +695,5 @@ if (require.main === module) main();
 const setCommittedForTests = (fn) => { committedForTests = fn; };
 const setLibraryForTests = (l) => { libraryForTests = l; };
 const setTextsForTests = (t) => { textsForTests = t; };
-module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, nextPassFrom, reauditGap, PROJECT_START };
+const setSourceLibraryForTests = (l) => { libraryIndexForTests = l; };
+module.exports = { validate, excludedOnly, CURRENT_RULES, setCommittedForTests, setLibraryForTests, setTextsForTests, setSourceLibraryForTests, LIBRARY_CHECK_FROM, nextPassFrom, reauditGap, PROJECT_START };
