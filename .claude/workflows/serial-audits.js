@@ -89,7 +89,9 @@ d. If the push is rejected: \`git fetch origin\` and \`git rebase origin/main\`.
 // After the audits: promote candidates that now carry signal on the real lines and demote active
 // statements that lost it (test 2, audits/statements/STANDARD.md; Brandon, 2026-11-05). CPU only.
 const SIGNAL_PROMPT = `Working directory: ${ROOT}.
-1. Run \`node scripts/statement-signal.js --apply\` (several minutes; run it in the background if needed). It edits
+1. Run \`node scripts/statement-signal.js --apply > signal.log 2>&1\` in the background (it takes about 10 minutes, longer than a
+   foreground command may run), then wait for it to exit before going on: the script stops if you reply while it runs, so
+   never reply, and never start step 2, until it has exited. It edits
    statements.json and prints what it promoted and demoted. If both are "none", reply with that and stop.
 2. Run \`node scripts/build.js\` and \`node test.js\`. If tests pass, \`git add\` statements.json data.js people.js img/
    audits/lines.json audits/statements/texts.json audits/share-slots.json (those that changed; a promotion appends share slots), commit as "Statements: promote/demote by signal
