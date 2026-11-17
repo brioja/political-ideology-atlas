@@ -18,7 +18,10 @@ const limit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 // to compute and is cached per process. validate.js reads --people from this command line too.
 const { validate, excludedOnly, nextPassFrom } = require("./validate");
 const today = new Date().toISOString().slice(0, 10);
+// People whose books are being fetched wait (scripts/waiting-for-books.js).
+const waiting = PEOPLE ? require("./waiting-for-books").held() : new Set();
 const pending = catalog().filter((entry) => {
+  if (waiting.has(entry.id)) return false;
   if (!PEOPLE && lib.duplicateOf(entry.id)) return false; // another entry owns its Wikipedia article
   if (!PEOPLE && !lib.notable(entry.id)) return false; // no Wikipedia article of its own
   if (!fs.existsSync(profilePath(entry.id))) return true;

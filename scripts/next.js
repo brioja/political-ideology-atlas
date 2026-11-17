@@ -21,6 +21,8 @@ const { readJson, catalog, peopleCatalog } = require("./lib");
 const views = (list, id) => (list.find((x) => x.id === id) || {}).views12m || 0;
 const IDEOLOGIES_ONLY = process.argv.includes("--ideologies");
 const PEOPLE_ONLY = process.argv.includes("--people");
+// People whose books are being fetched wait for later passes too (scripts/waiting-for-books.js; pending.js holds new ones).
+if (!IDEOLOGIES_ONLY) for (const id of require("./waiting-for-books").held()) SKIP.add(id);
 
 // Later passes (Brandon, 2026-11-12): the re-audit queue first, then older-rules audits, oldest rules first. Search-traffic
 // pages and their closest matches no longer go first: the old audits had more problems.
